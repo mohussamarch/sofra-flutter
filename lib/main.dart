@@ -317,12 +317,12 @@ class _DemoFlowState extends State<DemoFlow> {
     final total = stock.fold<double>(0, (sum, item) => sum + item.quantity);
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       _heading(houseController.text.isEmpty ? 'مطبخك' : houseController.text,
-          'دي تلجتك 👀', 'اضغطي على أي مكان تخزين علشان تشوفي اللي جواه.'),
+          'دي تلجتك', 'اضغطي على أي مكان تخزين علشان تشوفي اللي جواه.'),
       Container(
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(color: mint, borderRadius: BorderRadius.circular(22)),
         child: Row(children: [
-          const Text('🏠', style: TextStyle(fontSize: 35)),
+          const Icon(Icons.kitchen_outlined, size: 35, color: ink),
           const SizedBox(width: 12),
           Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('${stock.length} أنواع مكونات', style: const TextStyle(color: ink, fontSize: 19, fontWeight: FontWeight.w900)),
@@ -581,9 +581,9 @@ class _DemoFlowState extends State<DemoFlow> {
       _infoBox('🔕', 'الخطوات بإيدك', 'انتقلي باللمس. الصوت والأنيميشن والمؤقت الفعلي ضمن مراحل لاحقة.'),
       const SizedBox(height: 20),
       Row(children: [
-        Text('الخطوة ${stepIndex + 1} من ${steps.length}', style: const TextStyle(color: ink, fontWeight: FontWeight.w900)),
-        const Spacer(),
-        Text('${current.minutes} دقيقة تقريبًا', style: const TextStyle(color: muted, fontSize: 12)),
+        Expanded(child: Text('الخطوة ${stepIndex + 1} من ${steps.length}', style: const TextStyle(color: ink, fontWeight: FontWeight.w900))),
+        const SizedBox(width: 8),
+        Flexible(child: Text('${current.minutes} دقيقة تقريبًا', style: const TextStyle(color: muted, fontSize: 12))),
       ]),
       const SizedBox(height: 9),
       LinearProgressIndicator(value: (stepIndex + 1) / steps.length, color: orange,
@@ -673,7 +673,16 @@ class _DemoFlowState extends State<DemoFlow> {
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(color: mint, borderRadius: BorderRadius.circular(18)),
         child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(emoji, style: const TextStyle(fontSize: 23)),
+          Icon(switch (emoji) {
+            '✨' => Icons.auto_awesome,
+            'ℹ️' => Icons.info_outline,
+            '💡' => Icons.lightbulb_outline,
+            '✅' => Icons.check_circle_outline,
+            '🔕' => Icons.notifications_off_outlined,
+            '⏱️' => Icons.schedule,
+            '🧺' => Icons.kitchen_outlined,
+            _ => Icons.lightbulb_outline,
+          }, size: 23, color: ink),
           const SizedBox(width: 10),
           Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(title, style: const TextStyle(color: ink, fontWeight: FontWeight.w900, fontSize: 13)),

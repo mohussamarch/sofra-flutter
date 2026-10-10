@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
@@ -26,9 +26,9 @@ jobs:
 
   ios-simulator:
     runs-on: macos-latest
-    timeout-minutes: 50
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
@@ -49,4 +49,15 @@ jobs:
           xcrun simctl boot "$SIMULATOR_ID"
           xcrun simctl bootstatus "$SIMULATOR_ID" -b
       - name: Run the full demo flow on iOS
-        run: flutter test integration_test/app_flow_test.dart -d "$SIMULATOR_ID"
+        timeout-minutes: 11
+        run: python3 tool/run_ios_flow.py "$SIMULATOR_ID"
+      - name: Capture simulator state
+        if: always()
+        timeout-minutes: 2
+        run: xcrun simctl io "$SIMULATOR_ID" screenshot ios-simulator.png
+      - name: Save simulator screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-simulator-screenshots
+          path: ios-*.png
