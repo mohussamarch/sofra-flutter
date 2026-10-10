@@ -33,11 +33,8 @@ class StockItem {
   final double quantity;
   final StorageZone zone;
 
-  StockItem copyWith({double? quantity, StorageZone? zone}) => StockItem(
-        ingredientId,
-        quantity ?? this.quantity,
-        zone ?? this.zone,
-      );
+  StockItem copyWith({double? quantity, StorageZone? zone}) =>
+      StockItem(ingredientId, quantity ?? this.quantity, zone ?? this.zone);
 }
 
 class RecipeIngredient {

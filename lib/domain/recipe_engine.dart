@@ -15,13 +15,14 @@ class IngredientNeed {
   final double availableQuantity;
   final IngredientRole role;
 
-  double get missingQuantity => math.max(0, requiredQuantity - availableQuantity);
+  double get missingQuantity =>
+      math.max(0, requiredQuantity - availableQuantity);
   bool get isEnough => missingQuantity < 0.001;
   double get consumedCost => requiredQuantity * ingredient.pricePerUnit;
   double get purchaseCost => missingQuantity <= 0
       ? 0
       : (missingQuantity / ingredient.purchasePackQuantity).ceil() *
-          ingredient.purchasePackPrice;
+            ingredient.purchasePackPrice;
 }
 
 class RecipeEstimate {
@@ -31,23 +32,29 @@ class RecipeEstimate {
   final int servings;
   final List<IngredientNeed> needs;
 
-  List<IngredientNeed> get missing => needs.where((need) => !need.isEnough).toList();
-  List<IngredientNeed> get available => needs.where((need) => need.isEnough).toList();
-  double get consumedCost => needs.fold(0, (total, need) => total + need.consumedCost);
-  double get purchaseCost => needs.fold(0, (total, need) => total + need.purchaseCost);
+  List<IngredientNeed> get missing =>
+      needs.where((need) => !need.isEnough).toList();
+  List<IngredientNeed> get available =>
+      needs.where((need) => need.isEnough).toList();
+  double get consumedCost =>
+      needs.fold(0, (total, need) => total + need.consumedCost);
+  double get purchaseCost =>
+      needs.fold(0, (total, need) => total + need.purchaseCost);
   double get costPerServing => consumedCost / servings;
   bool get fullyAvailable => missing.isEmpty;
 
   /// Only a main ingredient makes a partly missing recipe eligible for discovery.
-  bool get hasMainIngredient => needs.any((need) =>
-      need.role == IngredientRole.main && need.availableQuantity > 0);
+  bool get hasMainIngredient => needs.any(
+    (need) => need.role == IngredientRole.main && need.availableQuantity > 0,
+  );
 
   double get availabilityFraction {
     if (needs.isEmpty) return 0;
     return needs.fold<double>(
           0,
           (total, need) =>
-              total + math.min(1, need.availableQuantity / need.requiredQuantity),
+              total +
+              math.min(1, need.availableQuantity / need.requiredQuantity),
         ) /
         needs.length;
   }
@@ -61,8 +68,11 @@ class RecipeEngine {
   RecipeEstimate evaluate(Recipe recipe, int servings, List<StockItem> stock) {
     final available = <String, double>{};
     for (final item in stock) {
-      available.update(item.ingredientId, (value) => value + item.quantity,
-          ifAbsent: () => item.quantity);
+      available.update(
+        item.ingredientId,
+        (value) => value + item.quantity,
+        ifAbsent: () => item.quantity,
+      );
     }
     final needs = recipe.ingredients.map((entry) {
       var quantity = entry.quantity * servings / recipe.baseServings;

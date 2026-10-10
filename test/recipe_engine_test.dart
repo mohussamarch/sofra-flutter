@@ -9,10 +9,22 @@ void main() {
 
   test('four servings distinguish insufficient stock and package cost', () {
     final result = engine.evaluate(meal, 4, demoStarterStock);
-    expect(result.missing.map((need) => need.ingredient.id),
-        containsAll(['chicken', 'tomato']));
-    expect(result.missing.firstWhere((need) => need.ingredient.id == 'chicken').missingQuantity, 200);
-    expect(result.missing.firstWhere((need) => need.ingredient.id == 'tomato').missingQuantity, 200);
+    expect(
+      result.missing.map((need) => need.ingredient.id),
+      containsAll(['chicken', 'tomato']),
+    );
+    expect(
+      result.missing
+          .firstWhere((need) => need.ingredient.id == 'chicken')
+          .missingQuantity,
+      200,
+    );
+    expect(
+      result.missing
+          .firstWhere((need) => need.ingredient.id == 'tomato')
+          .missingQuantity,
+      200,
+    );
     expect(result.purchaseCost, 250);
     expect(result.consumedCost, greaterThan(250));
   });
@@ -20,7 +32,12 @@ void main() {
   test('one serving rescales ingredients without changing stock', () {
     final result = engine.evaluate(meal, 1, demoStarterStock);
     expect(result.fullyAvailable, isTrue);
-    expect(result.needs.firstWhere((need) => need.ingredient.id == 'chicken').requiredQuantity, 250);
+    expect(
+      result.needs
+          .firstWhere((need) => need.ingredient.id == 'chicken')
+          .requiredQuantity,
+      250,
+    );
     expect(demoStarterStock.first.quantity, 800);
   });
 
@@ -34,7 +51,10 @@ void main() {
     expect(result.fullyAvailable, isTrue);
     final after = engine.consume(result, stock);
     expect(after.where((item) => item.ingredientId == 'chicken'), isEmpty);
-    expect(after.where((item) => item.ingredientId == 'rice').single.quantity, 100);
+    expect(
+      after.where((item) => item.ingredientId == 'rice').single.quantity,
+      100,
+    );
     expect(after.where((item) => item.ingredientId == 'tomato'), isEmpty);
   });
 }
