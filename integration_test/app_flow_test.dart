@@ -10,7 +10,7 @@ void main() {
   testWidgets('house to recipe to planned meal to confirmed cooking', (
     tester,
   ) async {
-    app.main();
+    await tester.pumpWidget(const app.TabkhaApp());
     await tester.pumpAndSettle();
 
     await exerciseDemoFlow(tester);

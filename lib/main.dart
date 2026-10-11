@@ -1,15 +1,23 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import 'data/demo_data.dart';
+import 'data/state_store.dart';
 import 'domain/models.dart';
 import 'domain/recipe_engine.dart';
 import 'ui/design.dart';
 import 'ui/illustrations.dart';
+import 'ui/session_gate.dart';
 
-void main() => runApp(const TabkhaApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const TabkhaApp(persistent: true));
+}
 
 class TabkhaApp extends StatelessWidget {
-  const TabkhaApp({super.key});
+  const TabkhaApp({super.key, this.persistent = false});
+  final bool persistent;
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -58,7 +66,16 @@ class TabkhaApp extends StatelessWidget {
     ),
     builder: (context, child) =>
         Directionality(textDirection: TextDirection.rtl, child: child!),
-    home: const SofraHome(),
+    home: persistent
+        ? SessionGate(
+            builder: (store, data, signOut) => SofraHome(
+              key: ObjectKey(store),
+              store: store,
+              initialData: data,
+              signOut: signOut,
+            ),
+          )
+        : const SofraHome(),
   );
 }
 
@@ -67,7 +84,10 @@ enum AppTab { today, fridge, recipes, table, profile }
 enum AppView { tabs, addStock, recipe, cooking }
 
 class SofraHome extends StatefulWidget {
-  const SofraHome({super.key});
+  const SofraHome({super.key, this.store, this.initialData, this.signOut});
+  final StateStore? store;
+  final Map<String, dynamic>? initialData;
+  final Future<void> Function()? signOut;
   @override
   State<SofraHome> createState() => _SofraHomeState();
 }
@@ -98,6 +118,111 @@ class _SofraHomeState extends State<SofraHome> {
   int cookingStep = 0;
   bool cooked = false;
   final saved = <String>{};
+  StateWriter? writer;
+  String lastQueued = '';
+  int saveVersion = 0;
+  bool saving = false;
+  String? saveError;
+
+  @override
+  void initState() {
+    super.initState();
+    final data = widget.initialData;
+    if (data != null) {
+      name.text = data['name'] as String? ?? '';
+      house.text = data['house'] as String? ?? '';
+      onboarded = data['onboarded'] == true;
+      servings = ((data['servings'] as num?)?.toInt() ?? 4).clamp(1, 12);
+      quickMeals = data['quickMeals'] != false;
+      reduceMotion = data['reduceMotion'] == true;
+      for (final entry in {
+        'cuisines': cuisines,
+        'allergies': allergies,
+        'meals': meals,
+        'saved': saved,
+      }.entries) {
+        final values = data[entry.key];
+        if (values is List) {
+          entry.value
+            ..clear()
+            ..addAll(values.whereType<String>());
+        }
+      }
+      for (final row in (data['stock'] as List? ?? [])) {
+        if (row is! Map || !demoIngredients.containsKey(row['id'])) continue;
+        final amount = row['quantity'];
+        final zoneName = row['zone'];
+        if (amount is! num || !amount.isFinite || amount <= 0) continue;
+        final zones = StorageZone.values.where((z) => z.name == zoneName);
+        if (zones.isEmpty) continue;
+        stock.add(
+          StockItem(row['id'] as String, amount.toDouble(), zones.first),
+        );
+      }
+      final plans = demoRecipes.where((r) => r.id == data['planned']);
+      planned = plans.isEmpty ? null : plans.first;
+    }
+    if (widget.store != null) writer = StateWriter(widget.store!);
+    lastQueued = jsonEncode(snapshot());
+    name.addListener(persist);
+    house.addListener(persist);
+  }
+
+  Map<String, dynamic> snapshot() => {
+    'schema': 1,
+    'name': name.text,
+    'house': house.text,
+    'onboarded': onboarded,
+    'servings': servings,
+    'quickMeals': quickMeals,
+    'reduceMotion': reduceMotion,
+    'cuisines': cuisines.toList(),
+    'allergies': allergies.toList(),
+    'meals': meals.toList(),
+    'saved': saved.toList(),
+    'planned': planned?.id,
+    'stock': stock
+        .map(
+          (s) => {
+            'id': s.ingredientId,
+            'quantity': s.quantity,
+            'zone': s.zone.name,
+          },
+        )
+        .toList(),
+  };
+
+  void _update(VoidCallback mutation) {
+    setState(mutation);
+    persist();
+  }
+
+  void persist({bool force = false}) {
+    if (writer == null || !mounted) return;
+    final data = snapshot();
+    final encoded = jsonEncode(data);
+    if (!force && encoded == lastQueued) return;
+    lastQueued = encoded;
+    final version = ++saveVersion;
+    setState(() {
+      saving = true;
+      saveError = null;
+    });
+    writer!
+        .save(data)
+        .then((_) {
+          if (mounted && version == saveVersion) setState(() => saving = false);
+        })
+        .catchError((Object error) {
+          if (!mounted || version != saveVersion) return;
+          setState(() {
+            saving = false;
+            saveError = error is StateConflict
+                ? 'بيانات حسابك اتغيرت على جهاز تاني. اقفل وافتح التطبيق لتحميل آخر نسخة؛ التعديلات هنا لم تُحفظ.'
+                : 'آخر تعديل لسه متحفظش. راجع الاتصال وجرب الحفظ تاني قبل الخروج.';
+          });
+        });
+  }
 
   String get displayName =>
       name.text.trim().isEmpty ? 'صاحب السفرة' : name.text.trim();
@@ -108,6 +233,8 @@ class _SofraHomeState extends State<SofraHome> {
 
   @override
   void dispose() {
+    name.removeListener(persist);
+    house.removeListener(persist);
     name.dispose();
     house.dispose();
     allergySearch.dispose();
@@ -119,7 +246,7 @@ class _SofraHomeState extends State<SofraHome> {
 
   void change(VoidCallback mutation) {
     FocusManager.instance.primaryFocus?.unfocus();
-    setState(mutation);
+    _update(mutation);
     if (scroll.hasClients) scroll.jumpTo(0);
   }
 
@@ -165,7 +292,7 @@ class _SofraHomeState extends State<SofraHome> {
   }
 
   void loadSample() {
-    setState(() {
+    _update(() {
       for (final item in demoStarterStock) {
         addIngredient(demoIngredients[item.ingredientId]!, item.quantity);
       }
@@ -201,7 +328,23 @@ class _SofraHomeState extends State<SofraHome> {
             constraints: const BoxConstraints(maxWidth: 480),
             child: Material(
               color: Sofra.cream,
-              child: SafeArea(child: onboarded ? _app() : _onboarding()),
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    if (saveError != null)
+                      MaterialBanner(
+                        content: Text(saveError!),
+                        actions: [
+                          TextButton(
+                            onPressed: () => persist(force: true),
+                            child: const Text('إعادة الحفظ'),
+                          ),
+                        ],
+                      ),
+                    Expanded(child: onboarded ? _app() : _onboarding()),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
@@ -395,7 +538,7 @@ class _SofraHomeState extends State<SofraHome> {
               controller: name,
               textInputAction: TextInputAction.next,
               maxLength: 30,
-              onChanged: (_) => setState(() {}),
+              onChanged: (_) => _update(() {}),
               decoration: const InputDecoration(
                 hintText: 'مثلًا: مريم',
                 counterText: '',
@@ -485,7 +628,7 @@ class _SofraHomeState extends State<SofraHome> {
                   const SizedBox(height: 16),
                   Counter(
                     value: servings,
-                    onChanged: (value) => setState(() => servings = value),
+                    onChanged: (value) => _update(() => servings = value),
                   ),
                   const SizedBox(height: 8),
                   const Text(
@@ -504,7 +647,7 @@ class _SofraHomeState extends State<SofraHome> {
                     (meal) => FilterChip(
                       label: Text(meal),
                       selected: meals.contains(meal),
-                      onSelected: (_) => setState(() {
+                      onSelected: (_) => _update(() {
                         meals.contains(meal)
                             ? meals.remove(meal)
                             : meals.add(meal);
@@ -547,7 +690,7 @@ class _SofraHomeState extends State<SofraHome> {
                 },
                 selected: cuisines.contains(cuisine),
                 icon: Icons.ramen_dining_rounded,
-                onTap: () => setState(() {
+                onTap: () => _update(() {
                   cuisines.contains(cuisine)
                       ? cuisines.remove(cuisine)
                       : cuisines.add(cuisine);
@@ -566,7 +709,7 @@ class _SofraHomeState extends State<SofraHome> {
                 style: TextStyle(fontSize: 12),
               ),
               value: quickMeals,
-              onChanged: (v) => setState(() => quickMeals = v),
+              onChanged: (v) => _update(() => quickMeals = v),
             ),
           ],
         );
@@ -597,7 +740,7 @@ class _SofraHomeState extends State<SofraHome> {
             TextField(
               key: const ValueKey('field-allergy-search'),
               controller: allergySearch,
-              onChanged: (_) => setState(() {}),
+              onChanged: (_) => _update(() {}),
               decoration: const InputDecoration(
                 hintText: 'دوري على مكوّن أو اكتبيه',
                 prefixIcon: Icon(Icons.search_rounded),
@@ -617,7 +760,7 @@ class _SofraHomeState extends State<SofraHome> {
                       selected: allergies.contains(item),
                       padding: const EdgeInsets.all(10),
                       selectedColor: Sofra.peach,
-                      onSelected: (_) => setState(() {
+                      onSelected: (_) => _update(() {
                         allergies.contains(item)
                             ? allergies.remove(item)
                             : allergies.add(item);
@@ -634,7 +777,7 @@ class _SofraHomeState extends State<SofraHome> {
                 child: DepthButton(
                   secondary: true,
                   label: 'إضافة «$query»',
-                  onPressed: () => setState(() {
+                  onPressed: () => _update(() {
                     allergies.add(query);
                     allergySearch.clear();
                   }),
@@ -855,7 +998,7 @@ class _SofraHomeState extends State<SofraHome> {
                 tooltip: saved.contains(selected.id)
                     ? 'إلغاء الحفظ'
                     : 'حفظ الوصفة',
-                onPressed: () => setState(() {
+                onPressed: () => _update(() {
                   saved.contains(selected.id)
                       ? saved.remove(selected.id)
                       : saved.add(selected.id);
@@ -1258,13 +1401,13 @@ class _SofraHomeState extends State<SofraHome> {
             ChoiceChip(
               label: const Text('الكل'),
               selected: zone == null,
-              onSelected: (_) => setState(() => zone = null),
+              onSelected: (_) => _update(() => zone = null),
             ),
             ...StorageZone.values.map(
               (z) => ChoiceChip(
                 label: Text(_zoneName(z)),
                 selected: zone == z,
-                onSelected: (_) => setState(() => zone = z),
+                onSelected: (_) => _update(() => zone = z),
               ),
             ),
           ],
@@ -1436,7 +1579,7 @@ class _SofraHomeState extends State<SofraHome> {
       ),
     );
     if (!mounted || result == null) return;
-    setState(() {
+    _update(() {
       stock = stock.where((s) => s.ingredientId != item.ingredientId).toList();
       if (result > 0) stock.add(item.copyWith(quantity: result));
     });
@@ -1462,7 +1605,7 @@ class _SofraHomeState extends State<SofraHome> {
         const SizedBox(height: 20),
         TextField(
           controller: ingredientSearch,
-          onChanged: (_) => setState(() {}),
+          onChanged: (_) => _update(() {}),
           decoration: const InputDecoration(
             hintText: 'دوري على مكوّن',
             prefixIcon: Icon(Icons.search_rounded),
@@ -1512,7 +1655,7 @@ class _SofraHomeState extends State<SofraHome> {
                   ),
                   IconButton.filledTonal(
                     tooltip: 'إضافة ${i.name}',
-                    onPressed: () => setState(() => addIngredient(i)),
+                    onPressed: () => _update(() => addIngredient(i)),
                     icon: const Icon(Icons.add_rounded),
                   ),
                 ],
@@ -1548,7 +1691,7 @@ class _SofraHomeState extends State<SofraHome> {
         const SizedBox(height: 8),
         TextField(
           controller: recipeSearch,
-          onChanged: (_) => setState(() {}),
+          onChanged: (_) => _update(() {}),
           decoration: const InputDecoration(
             hintText: 'نفسك في أكلة إيه؟',
             prefixIcon: Icon(Icons.search_rounded),
@@ -1564,7 +1707,7 @@ class _SofraHomeState extends State<SofraHome> {
                   label: Text(filter),
                   selected: recipeFilter == filter,
                   selectedColor: Sofra.mint,
-                  onSelected: (_) => setState(() => recipeFilter = filter),
+                  onSelected: (_) => _update(() => recipeFilter = filter),
                 ),
               )
               .toList(),
@@ -1604,7 +1747,7 @@ class _SofraHomeState extends State<SofraHome> {
                 DepthButton(
                   secondary: true,
                   label: 'عرض كل الوصفات',
-                  onPressed: () => setState(() {
+                  onPressed: () => _update(() {
                     recipeSearch.clear();
                     recipeFilter = 'الكل';
                   }),
@@ -1667,7 +1810,7 @@ class _SofraHomeState extends State<SofraHome> {
                           tooltip: saved.contains(recipe.id)
                               ? 'إلغاء الحفظ'
                               : 'حفظ الوصفة',
-                          onPressed: () => setState(() {
+                          onPressed: () => _update(() {
                             saved.contains(recipe.id)
                                 ? saved.remove(recipe.id)
                                 : saved.add(recipe.id);
@@ -1808,7 +1951,7 @@ class _SofraHomeState extends State<SofraHome> {
               ),
               Counter(
                 value: servings,
-                onChanged: (v) => setState(() => servings = v),
+                onChanged: (v) => _update(() => servings = v),
               ),
             ],
           ),
@@ -2049,7 +2192,7 @@ class _SofraHomeState extends State<SofraHome> {
             label: 'حاكي شراء الناقص وإضافته للمخزون',
             secondary: true,
             onPressed: () {
-              setState(() {
+              _update(() {
                 for (final need in e.missing) {
                   addIngredient(
                     need.ingredient,
@@ -2085,7 +2228,7 @@ class _SofraHomeState extends State<SofraHome> {
           style: TextStyle(color: Sofra.muted, fontSize: 11),
         ),
         TextButton(
-          onPressed: () => setState(() => planned = null),
+          onPressed: () => _update(() => planned = null),
           child: const Text('شيلي الوجبة من السفرة'),
         ),
       ],
@@ -2245,7 +2388,7 @@ class _SofraHomeState extends State<SofraHome> {
                 ),
                 Counter(
                   value: servings,
-                  onChanged: (v) => setState(() => servings = v),
+                  onChanged: (v) => _update(() => servings = v),
                 ),
               ],
             ),
@@ -2265,7 +2408,7 @@ class _SofraHomeState extends State<SofraHome> {
                     (c) => FilterChip(
                       label: Text(c),
                       selected: cuisines.contains(c),
-                      onSelected: (_) => setState(() {
+                      onSelected: (_) => _update(() {
                         cuisines.contains(c)
                             ? cuisines.remove(c)
                             : cuisines.add(c);
@@ -2281,7 +2424,7 @@ class _SofraHomeState extends State<SofraHome> {
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
               ),
               value: quickMeals,
-              onChanged: (v) => setState(() => quickMeals = v),
+              onChanged: (v) => _update(() => quickMeals = v),
             ),
           ],
         ),
@@ -2325,7 +2468,7 @@ class _SofraHomeState extends State<SofraHome> {
                 style: TextStyle(fontSize: 11),
               ),
               value: reduceMotion,
-              onChanged: (v) => setState(() => reduceMotion = v),
+              onChanged: (v) => _update(() => reduceMotion = v),
             ),
             const Divider(color: Sofra.line),
             ListTile(
@@ -2339,7 +2482,7 @@ class _SofraHomeState extends State<SofraHome> {
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
               ),
               subtitle: const Text(
-                'البيانات خلال الجلسة فقط. الأسعار والوصفات تجريبية، والحساب والمزامنة لسه مش متاحين.',
+                'الأسعار والوصفات أمثلة تجريبية. راجعي الكميات بنفسك قبل الطبخ.',
                 style: TextStyle(fontSize: 12, color: Sofra.muted),
               ),
             ),
@@ -2347,6 +2490,23 @@ class _SofraHomeState extends State<SofraHome> {
         ),
       ),
       const SizedBox(height: 24),
+      if (widget.store != null) ...[
+        Text(
+          saving
+              ? 'جاري حفظ التغييرات…'
+              : saveError != null
+              ? 'في تغييرات لم تُحفظ'
+              : widget.store!.label,
+          key: const ValueKey('save-status'),
+          textAlign: TextAlign.center,
+        ),
+        if (widget.signOut != null)
+          TextButton(
+            onPressed: saving || saveError != null ? null : widget.signOut,
+            child: const Text('تسجيل الخروج'),
+          ),
+        const SizedBox(height: 12),
+      ],
       DepthButton(
         secondary: true,
         label: 'راجعي بيانات البيت',
