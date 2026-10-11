@@ -51,10 +51,27 @@
 - lib/main.dart: حفظ الحالة المهمة واسترجاعها، عرض خطأ الحفظ ومنع الخروج أثناء كتابة معلقة أو فاشلة.
 - test/persistence_test.dart: عودة البيانات بعد إعادة الفتح، إعادة المحاولة بعد فشل الحفظ، وترتيب الكتابة وعدم تغير النسخة أثناء الانتظار. الثلاثة نجحت؛ flutter analyze نظيف.
 - اختبار استرجاع البيانات احتاج ضبط SnackBarTheme في إطار الاختبار؛ تم الإصلاح وإعادة الاختبار.
-- قواعد Firestore تعزل كل حساب وتفرض تسلسل revision؛ اختبار Emulator في tool/rules جاهز ويحتاج نجاح CI قبل النشر.
+- قواعد Firestore تعزل كل حساب وتفرض تسلسل revision؛ اختبار Emulator نجح في CI ونُشرت القواعد.
 - CI يبني ARM64 APK ويرفعه كأثر. فحص iOS أصبح يدويًا اختياريًا؛ لا ندعي اختبار هذه الدفعة عليه بعد.
 - أدوات الإعداد الإدارية في tool/rules/setup-firebase.cjs، تعمل على sofra-c03a1 فقط وتستخدم جلسة CLI دون طباعة الاعتمادات.
-- التالي: دفع الدفعة، نجاح CI، نشر القواعد، تفعيل البريد بعد تهيئة Auth، بناء الويب المهيأ، تنزيل APK وفحص اتصال فعلي.
+- الدفعة دُفعت في f6d5785؛ CI 38113824888 نجح: التحليل و10 اختبارات وبناء الويب وAndroid وقواعد Firestore. iOS لم يعمل لهذه الدفعة.
+- tool/rules/live-smoke.mjs جاهز لفحص حسابين مؤقتين وكتابة/استرجاع البيانات وعزل الحسابات ورفض نسخة قديمة، مع تنظيف بيانات الاختبار. فُحص نحويًا ولم يُشغّل لأن Auth لم يُهيأ.
+- آخر فحص Auth: 404 CONFIGURATION_NOT_FOUND. التالي بعد Get started: من tool/rules نفذ node setup-firebase.cjs auth-enable ثم node live-smoke.mjs.
+
+## 6. تسليم APK وGoogle Drive — 11 أكتوبر 2026
+
+- المستخدم طلب مجلد Sofra داخل WORK على Google Drive لنسخ التجارب. استخدمه لكل تسليم لاحق، مع الاحتفاظ بالنسخ السابقة وتسمية واضحة.
+- WORK: 1cT047i5RJqOvVavWwDMnLDdAhfRupme9؛ Sofra: 1qRAV-M2I1LTXW2zo1tRghAbqfL3o84CH.
+- رابط المجلد: https://drive.google.com/drive/folders/1qRAV-M2I1LTXW2zo1tRghAbqfL3o84CH
+- رُفع Sofra-v0.1.0-build1-2026-10-11-f6d5785-arm64.apk وتحقق وجوده بقراءة محتويات المجلد؛ الحجم 19613057 بايت.
+- رابط النسخة: https://drive.google.com/file/d/1OlprXHw2sG6LhpvBe7gggN2IFUrLcQZ7/view
+- المصدر: GitHub run https://github.com/mohussamarch/sofra-flutter/actions/runs/38113824888، artifact sofra-samsung-apk.
+- النسخة المحلية: ../../sofra-s24-ultra.apk. SHA256: 06E9742F4AEBB98F4DC7424B914C9E5595636FE1BDFC1ACB5B745DA1DAE32332.
+- فُحصت بنية ZIP ووجود AndroidManifest.xml ومكتبتي libapp.so وlibflutter.so للـARM64. البناء نجاح، لكن التثبيت على Samsung الفعلي لم يُتحقق بعد.
+- توقيع اختبار؛ CI يحتفظ بمفتاح debug عبر cache. إصدار متجر أو تحديثات طويلة المدى تحتاج مفتاح توقيع دائم.
+- إرشادات الجوال: ../../تجربة-سفرة-على-سامسونج.md. واجهة الدخول فُحصت بصريًا محليًا؛ الحساب الحقيقي ما زال متوقفًا على تهيئة Auth.
+- Hosting رفض APK لأن Spark يمنع الملفات التنفيذية؛ حُذف ملف APK فقط من build/web/downloads، مع إبقاء النسخ المحلية وDrive. لا تغيّر الفوترة.
+- نشر الويب وحده نجح: https://sofra-c03a1.web.app . تسجيل الحساب يتطلب حل Auth المذكور أعلاه.
 
 ## قالب أي تسليم لاحق
 
