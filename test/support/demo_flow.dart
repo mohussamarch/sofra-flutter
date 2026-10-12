@@ -38,7 +38,7 @@ Future<void> exerciseDemoFlow(WidgetTester tester) async {
   // Planning reserves no inventory. Switching tabs must preserve the plan.
   await tapKey(tester, 'nav-fridge');
   expect(stockQuantity(tester, 'rice'), riceBefore);
-  await tapKey(tester, 'nav-profile');
+  await tapKey(tester, 'open-home-settings');
   expect(find.textContaining('مريم'), findsWidgets);
   await tapKey(tester, 'nav-table');
   await tapKey(tester, 'simulate-shopping');

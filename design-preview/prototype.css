@@ -24,3 +24,5 @@ nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,4
 @keyframes enter-storage{from{opacity:0;transform:perspective(900px) translateZ(-100px) rotateY(-8deg)}to{opacity:1;transform:perspective(900px) translateZ(0) rotateY(0)}}
 @keyframes morning-light{from{opacity:.8}to{opacity:1}}
 @media(max-width:380px){.fridge-inner{padding:14px 7px 6px}.shelf-grid{gap:4px}.food-item{min-height:68px}.food-item small{font-size:8px}}
+
+.calendar-day{padding:14px 0;border-bottom:1px solid var(--line)}.calendar-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.calendar-slots small{display:block}.calendar-slots .secondary{overflow-wrap:anywhere;font-size:11px}.calendar-slots>div{min-width:0}

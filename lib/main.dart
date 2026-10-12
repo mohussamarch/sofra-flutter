@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'data/demo_data.dart';
 import 'data/state_store.dart';
 import 'domain/models.dart';
+import 'domain/market_profile.dart';
 import 'domain/recipe_engine.dart';
 import 'ui/design.dart';
 import 'ui/illustrations.dart';
@@ -100,6 +101,7 @@ class _SofraHomeState extends State<SofraHome> {
   final ingredientSearch = TextEditingController();
   final scroll = ScrollController();
   final engine = const RecipeEngine(demoIngredients);
+  MarketProfile market = const MarketProfile(MarketCountry.egypt);
   int onboarding = 0;
   bool onboarded = false;
   int servings = 4;
@@ -117,6 +119,7 @@ class _SofraHomeState extends State<SofraHome> {
   Recipe? planned;
   int cookingStep = 0;
   bool cooked = false;
+  final cookingHistory = <Map<String, dynamic>>[];
   final saved = <String>{};
   StateWriter? writer;
   String lastQueued = '';
@@ -129,6 +132,7 @@ class _SofraHomeState extends State<SofraHome> {
     super.initState();
     final data = widget.initialData;
     if (data != null) {
+      market = MarketProfile.fromCode(data['country'] as String?);
       name.text = data['name'] as String? ?? '';
       house.text = data['house'] as String? ?? '';
       onboarded = data['onboarded'] == true;
@@ -159,6 +163,11 @@ class _SofraHomeState extends State<SofraHome> {
           StockItem(row['id'] as String, amount.toDouble(), zones.first),
         );
       }
+      cookingHistory.addAll(
+        (data['cookingHistory'] as List? ?? []).whereType<Map>().map(
+          (v) => Map<String, dynamic>.from(v),
+        ),
+      );
       final plans = demoRecipes.where((r) => r.id == data['planned']);
       planned = plans.isEmpty ? null : plans.first;
     }
@@ -169,6 +178,8 @@ class _SofraHomeState extends State<SofraHome> {
   }
 
   Map<String, dynamic> snapshot() => {
+    ...?widget.initialData,
+    'country': market.code,
     'schema': 1,
     'name': name.text,
     'house': house.text,
@@ -181,6 +192,7 @@ class _SofraHomeState extends State<SofraHome> {
     'meals': meals.toList(),
     'saved': saved.toList(),
     'planned': planned?.id,
+    'cookingHistory': cookingHistory,
     'stock': stock
         .map(
           (s) => {
@@ -466,8 +478,8 @@ class _SofraHomeState extends State<SofraHome> {
                 onboarding == 0
                     ? 'خطوات صغيرة.. وطبخ أسهل كل يوم'
                     : onboarding == 5
-                    ? 'تقدري تعدّلي اختياراتك من «بيتي» في أي وقت'
-                    : 'على راحتك، تقدري ترجعي وتغيّري أي اختيار',
+                    ? 'يمكن تعديل اختياراتك من «بيتي» في أي وقت'
+                    : 'على راحتك، يمكن الرجوع وتغيير أي اختيار',
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 11, color: Sofra.muted),
               ),
@@ -509,6 +521,8 @@ class _SofraHomeState extends State<SofraHome> {
               style: TextStyle(fontSize: 16, color: Sofra.muted, height: 1.6),
             ),
             const SizedBox(height: 24),
+            _countryPicker(),
+            const SizedBox(height: 18),
             const Wrap(
               alignment: WrapAlignment.center,
               spacing: 10,
@@ -527,7 +541,7 @@ class _SofraHomeState extends State<SofraHome> {
           children: [
             _intro(
               'نتعرف الأول؟',
-              'قولي لنا نناديكي إيه، ونجهّز مكان صغير على قد بيتك.',
+              'الاسم المناسب لك، واسم البيت إن أحببت. مناسب لشخص واحد أو أكثر.',
               icon: Icons.waving_hand_outlined,
             ),
             const SizedBox(height: 24),
@@ -556,7 +570,7 @@ class _SofraHomeState extends State<SofraHome> {
               controller: house,
               maxLength: 35,
               decoration: const InputDecoration(
-                hintText: 'بيت العيلة',
+                hintText: 'بيتي',
                 counterText: '',
                 prefixIcon: Icon(Icons.home_outlined),
               ),
@@ -569,16 +583,18 @@ class _SofraHomeState extends State<SofraHome> {
                 children: [
                   const Icon(Icons.location_on_outlined, color: Sofra.green),
                   const SizedBox(width: 12),
-                  const Expanded(
+                  Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'مصر',
+                          market.country == MarketCountry.egypt
+                              ? 'مصر'
+                              : 'السعودية',
                           style: TextStyle(fontWeight: FontWeight.w800),
                         ),
                         Text(
-                          'أول سفرة لينا · الأسعار بالجنيه المصري',
+                          'العملة: ${market.currencyLabel} · الأسعار تُضاف أو تُعدل حسب البلد',
                           style: TextStyle(color: Sofra.muted, fontSize: 12),
                         ),
                       ],
@@ -590,7 +606,7 @@ class _SofraHomeState extends State<SofraHome> {
             ),
             const SizedBox(height: 18),
             const Text(
-              'دي تجربة محلية. معلوماتك هنا لتخصيص التجربة، والحفظ بين الزيارات لسه مش متاح.',
+              'معلوماتك لتخصيص التجربة؛ الحفظ على الجهاز أو في الحساب حسب وضع الدخول.',
               style: TextStyle(fontSize: 12, color: Sofra.muted),
             ),
           ],
@@ -601,7 +617,7 @@ class _SofraHomeState extends State<SofraHome> {
           children: [
             _intro(
               'كام حد على السفرة؟',
-              'هنظبط كميات الوصفات على عددكم. وتقدري تغيّريه لكل طبخة.',
+              'هنظبط كميات الوصفات على عددكم. ويمكن تغييره لكل طبخة.',
               icon: Icons.groups_outlined,
             ),
             const SizedBox(height: 24),
@@ -672,7 +688,7 @@ class _SofraHomeState extends State<SofraHome> {
           children: [
             _intro(
               'طعم البيت عندك إيه؟',
-              'اختاري المطابخ اللي بتحبوها. ممكن تختاري أكتر من واحد.',
+              'اختر المطابخ اللي بتحبوها. يمكن اختيار أكثر من مطبخ.',
               icon: Icons.restaurant_menu_rounded,
             ),
             const SizedBox(height: 24),
@@ -742,7 +758,7 @@ class _SofraHomeState extends State<SofraHome> {
               controller: allergySearch,
               onChanged: (_) => _update(() {}),
               decoration: const InputDecoration(
-                hintText: 'دوري على مكوّن أو اكتبيه',
+                hintText: 'ابحث عن مكوّن أو اكتب اسمه',
                 prefixIcon: Icon(Icons.search_rounded),
               ),
             ),
@@ -798,7 +814,7 @@ class _SofraHomeState extends State<SofraHome> {
                   SizedBox(width: 10),
                   Expanded(
                     child: Text(
-                      'هنظهر تنبيه للمكونات المسجّلة. راجعي كل وصفة وعبوات المكونات؛ التنبيه مش ضمان لخلو الأكل من مسببات الحساسية.',
+                      'هنظهر تنبيه للمكونات المسجّلة. راجع كل وصفة وعبوات المكونات؛ التنبيه مش ضمان لخلو الأكل من مسببات الحساسية.',
                       style: TextStyle(fontSize: 12, color: Color(0xFF79513D)),
                     ),
                   ),
@@ -931,7 +947,7 @@ class _SofraHomeState extends State<SofraHome> {
         _footer(
           DepthButton(
             key: const ValueKey('plan-meal'),
-            label: 'ضيفي الوجبة للسفرة',
+            label: 'إضافة الوجبة للسفرة',
             onPressed: () {
               change(() {
                 planned = selected;
@@ -952,17 +968,46 @@ class _SofraHomeState extends State<SofraHome> {
                   : 'next-cooking-step',
             ),
             label: cookingStep == selected.steps.length - 1
-                ? 'خلصنا الطبخ · اخصمي المكونات'
+                ? 'خلصنا الطبخ · تأكيد خصم المكونات'
                 : 'الخطوة اللي بعدها',
-            onPressed: () => change(() {
-              if (cookingStep < selected.steps.length - 1) {
-                cookingStep++;
-              } else {
-                stock = engine.consume(estimate(selected), stock);
-                cooked = true;
-                planned = null;
+            onPressed: () {
+              if (cooked) return;
+              final current = estimate(selected);
+              if (cookingStep == selected.steps.length - 1 &&
+                  !current.fullyAvailable) {
+                notify('المخزون غير كافٍ؛ راجع الكميات قبل التأكيد');
+                return;
               }
-            }),
+              change(() {
+                if (cookingStep < selected.steps.length - 1) {
+                  cookingStep++;
+                } else {
+                  stock = engine.consume(current, stock);
+                  cookingHistory.add({
+                    'id': DateTime.now().microsecondsSinceEpoch.toString(),
+                    'recipeId': selected.id,
+                    'servings': servings,
+                    'date': DateTime.now().toIso8601String(),
+                    'country': market.code,
+                    'cost': market.country == MarketCountry.egypt
+                        ? current.consumedCost
+                        : null,
+                    'priceSource': 'legacy-demo',
+                    'consumed': current.needs
+                        .map(
+                          (n) => {
+                            'id': n.ingredient.id,
+                            'quantity': n.requiredQuantity,
+                            'unit': n.ingredient.unit,
+                          },
+                        )
+                        .toList(),
+                  });
+                  cooked = true;
+                  planned = null;
+                }
+              });
+            },
           ),
         ),
       if (view == AppView.tabs || cooked) _bottomNav(),
@@ -1042,7 +1087,10 @@ class _SofraHomeState extends State<SofraHome> {
                 ),
                 Text(
                   switch (tab) {
-                    AppTab.today => 'نطبخ إيه النهاردة؟',
+                    AppTab.today =>
+                      market.country == MarketCountry.egypt
+                          ? 'نطبخ إيه النهارده؟'
+                          : 'وش بنطبخ اليوم؟',
                     AppTab.fridge => 'مطبخك بخير',
                     AppTab.recipes => 'وصفات على ذوقك',
                     AppTab.table => 'لمّة سفرتك',
@@ -1056,12 +1104,14 @@ class _SofraHomeState extends State<SofraHome> {
               ],
             ),
           ),
-          IconButton(
-            onPressed: () => goTab(AppTab.profile),
-            tooltip: 'بيتي',
-            style: IconButton.styleFrom(backgroundColor: Sofra.peach),
-            icon: const Icon(Icons.face_rounded, color: Color(0xFF995333)),
-          ),
+          if (tab == AppTab.today || tab == AppTab.fridge)
+            IconButton(
+              key: const ValueKey('open-home-settings'),
+              onPressed: () => goTab(AppTab.profile),
+              tooltip: 'بيتي',
+              style: IconButton.styleFrom(backgroundColor: Sofra.peach),
+              icon: const Icon(Icons.face_rounded, color: Color(0xFF995333)),
+            ),
         ],
       ),
     );
@@ -1076,16 +1126,38 @@ class _SofraHomeState extends State<SofraHome> {
     child: child,
   );
 
+  String _marketMoney(double amount) => market.country == MarketCountry.egypt
+      ? '${formatMoney(amount)} ${market.currencyLabel}'
+      : 'السعر غير محدد · ${market.currencyLabel}';
+
+  Widget _countryPicker() => DropdownButtonFormField<MarketCountry>(
+    key: const ValueKey('field-country'),
+    initialValue: market.country,
+    decoration: const InputDecoration(labelText: 'البلد'),
+    items: const [
+      DropdownMenuItem(
+        value: MarketCountry.egypt,
+        child: Text('مصر · جنيه مصري'),
+      ),
+      DropdownMenuItem(
+        value: MarketCountry.saudi,
+        child: Text('السعودية · ريال سعودي'),
+      ),
+    ],
+    onChanged: (value) {
+      if (value != null) _update(() => market = MarketProfile(value));
+    },
+  );
+
   Widget _bottomNav() {
     const icons = [
       Icons.home_rounded,
       Icons.kitchen_rounded,
       Icons.menu_book_rounded,
       Icons.restaurant_rounded,
-      Icons.person_rounded,
     ];
-    const labels = ['النهاردة', 'تلجتي', 'وصفات', 'السفرة', 'بيتي'];
-    const keys = ['today', 'fridge', 'recipes', 'table', 'profile'];
+    final labels = [market.today, market.fridge, 'وصفات', 'السفرة'];
+    const keys = ['today', 'fridge', 'recipes', 'table'];
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 10, 10, 8),
       decoration: const BoxDecoration(
@@ -1093,7 +1165,7 @@ class _SofraHomeState extends State<SofraHome> {
         border: Border(top: BorderSide(color: Sofra.line)),
       ),
       child: Row(
-        children: List.generate(5, (index) {
+        children: List.generate(4, (index) {
           final active = tab.index == index;
           return Expanded(
             child: Semantics(
@@ -1265,7 +1337,7 @@ class _SofraHomeState extends State<SofraHome> {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      'اختاري وصفة ونرتّب الوجبة سوا.',
+                      'اختر وصفة ونرتّب الوجبة سوا.',
                       style: TextStyle(fontSize: 12, color: Sofra.muted),
                     ),
                   ],
@@ -1389,7 +1461,7 @@ class _SofraHomeState extends State<SofraHome> {
         const SizedBox(height: 20),
         DepthButton(
           key: const ValueKey('add-ingredients'),
-          label: 'ضيفي مكونات',
+          label: 'إضافة مكونات',
           icon: Icons.add_rounded,
           onPressed: () => change(() => view = AppView.addStock),
         ),
@@ -1428,7 +1500,7 @@ class _SofraHomeState extends State<SofraHome> {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'ضيفي كام مكوّن كبداية. مش محتاجين جرد كامل عشان نبدأ.',
+                  'إضافة كام مكوّن كبداية. مش محتاجين جرد كامل عشان نبدأ.',
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Sofra.muted, fontSize: 14),
                 ),
@@ -1442,7 +1514,7 @@ class _SofraHomeState extends State<SofraHome> {
             padding: const EdgeInsets.only(top: 18),
             child: DepthButton(
               key: const ValueKey('add-sample-stock'),
-              label: 'جرّبي بمكونات جاهزة',
+              label: 'جرّب بمكونات جاهزة',
               secondary: true,
               onPressed: loadSample,
             ),
@@ -1548,7 +1620,7 @@ class _SofraHomeState extends State<SofraHome> {
               validator: (value) {
                 final quantity = double.tryParse(value ?? '');
                 return quantity == null || !quantity.isFinite || quantity < 0
-                    ? 'اكتبي رقم صحيح يساوي 0 أو أكتر'
+                    ? 'اكتب رقم صحيح يساوي 0 أو أكتر'
                     : null;
               },
               autofocus: true,
@@ -1557,7 +1629,7 @@ class _SofraHomeState extends State<SofraHome> {
               ),
               decoration: InputDecoration(
                 labelText: 'الكمية (${ingredient.unit})',
-                helperText: 'اكتبي 0 لإزالة المكوّن',
+                helperText: 'اكتب 0 لإزالة المكوّن',
               ),
             ),
           ),
@@ -1599,7 +1671,7 @@ class _SofraHomeState extends State<SofraHome> {
         ),
         const SizedBox(height: 8),
         const Text(
-          'اضغطي + لإضافة الكمية. تقدري تظبطيها من تلجتك.',
+          'اضغط + لإضافة الكمية. يمكن تعديلها من تلجتك.',
           style: TextStyle(color: Sofra.muted),
         ),
         const SizedBox(height: 20),
@@ -1615,7 +1687,7 @@ class _SofraHomeState extends State<SofraHome> {
         if (items.isEmpty)
           const Padding(
             padding: EdgeInsets.all(24),
-            child: Text('المكوّن مش في قائمة التجربة لسه. جرّبي مكوّن تاني.'),
+            child: Text('المكوّن مش في قائمة التجربة لسه. جرّب مكوّن تاني.'),
           ),
         ...items.map((i) {
           final qty = stock
@@ -1965,7 +2037,7 @@ class _SofraHomeState extends State<SofraHome> {
               child: Text(
                 recipeAllergens(selected).any(allergies.contains)
                     ? 'خدي بالك: الوصفة فيها ${recipeAllergens(selected).where(allergies.contains).join('، ')} من الحساسية المسجّلة.'
-                    : 'راجعي مكونات الوصفة والعبوات مع الحساسية المسجّلة: ${allergies.join('، ')}.',
+                    : 'راجع مكونات الوصفة والعبوات مع الحساسية المسجّلة: ${allergies.join('، ')}.',
                 style: const TextStyle(fontSize: 12, color: Color(0xFF79513D)),
               ),
             ),
@@ -2024,18 +2096,12 @@ class _SofraHomeState extends State<SofraHome> {
             children: [
               _moneyLine(
                 'تكلفة المكونات المستخدمة',
-                '${formatMoney(e.consumedCost)} ج.م',
+                _marketMoney(e.consumedCost),
               ),
               const SizedBox(height: 12),
-              _moneyLine(
-                'نصيب الفرد تقريبًا',
-                '${formatMoney(e.costPerServing)} ج.م',
-              ),
+              _moneyLine('نصيب الفرد تقريبًا', _marketMoney(e.costPerServing)),
               const Divider(height: 28, color: Color(0xFFCFDEC9)),
-              _moneyLine(
-                'شراء عبوات الناقص',
-                '${formatMoney(e.purchaseCost)} ج.م',
-              ),
+              _moneyLine('شراء عبوات الناقص', _marketMoney(e.purchaseCost)),
             ],
           ),
         ),
@@ -2072,13 +2138,13 @@ class _SofraHomeState extends State<SofraHome> {
           ),
           const SizedBox(height: 12),
           const Text(
-            'اختاري أكلة، وهنرتّب أطباقها ونشوف الناقص قبل ما نبدأ.',
+            'اختر أكلة، وهنرتّب أطباقها ونشوف الناقص قبل ما نبدأ.',
             textAlign: TextAlign.center,
             style: TextStyle(color: Sofra.muted, fontSize: 16),
           ),
           const SizedBox(height: 28),
           DepthButton(
-            label: 'اختاري طبخة للسفرة',
+            label: 'اختر طبخة للسفرة',
             onPressed: () => goTab(AppTab.recipes),
           ),
         ],
@@ -2180,7 +2246,7 @@ class _SofraHomeState extends State<SofraHome> {
                 const SizedBox(height: 8),
                 _moneyLine(
                   'عبوات الشراء تقريبًا',
-                  '${formatMoney(e.purchaseCost)} ج.م',
+                  _marketMoney(e.purchaseCost),
                 ),
               ],
             ),
@@ -2440,7 +2506,7 @@ class _SofraHomeState extends State<SofraHome> {
             ),
             const SizedBox(height: 8),
             const Text(
-              'تفضيلاتك بتظهر كتنبيه، وبتحتاجي تراجعي المكونات بنفسك.',
+              'تفضيلاتك بتظهر كتنبيه، وبتحتاجي تراجع المكونات بنفسك.',
               style: TextStyle(fontSize: 12, color: Sofra.muted),
             ),
             TextButton(
@@ -2482,7 +2548,7 @@ class _SofraHomeState extends State<SofraHome> {
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
               ),
               subtitle: const Text(
-                'الأسعار والوصفات أمثلة تجريبية. راجعي الكميات بنفسك قبل الطبخ.',
+                'الأسعار والوصفات أمثلة تجريبية. راجع الكميات بنفسك قبل الطبخ.',
                 style: TextStyle(fontSize: 12, color: Sofra.muted),
               ),
             ),
@@ -2509,7 +2575,7 @@ class _SofraHomeState extends State<SofraHome> {
       ],
       DepthButton(
         secondary: true,
-        label: 'راجعي بيانات البيت',
+        label: 'راجع بيانات البيت',
         onPressed: () => change(() {
           onboarded = false;
           onboarding = 1;

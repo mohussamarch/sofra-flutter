@@ -17,7 +17,7 @@ class IngredientNeed {
 
   double get missingQuantity =>
       math.max(0, requiredQuantity - availableQuantity);
-  bool get isEnough => missingQuantity < 0.001;
+  bool get isEnough => missingQuantity < 1e-9;
   double get consumedCost => requiredQuantity * ingredient.pricePerUnit;
   double get purchaseCost => missingQuantity <= 0
       ? 0
@@ -66,15 +66,37 @@ class RecipeEngine {
   final Map<String, Ingredient> ingredients;
 
   RecipeEstimate evaluate(Recipe recipe, int servings, List<StockItem> stock) {
+    if (servings < 1 || recipe.baseServings < 1) {
+      throw ArgumentError('Invalid servings');
+    }
     final available = <String, double>{};
     for (final item in stock) {
+      if (!item.quantity.isFinite || item.quantity < 0) {
+        throw ArgumentError('Invalid stock quantity');
+      }
       available.update(
         item.ingredientId,
         (value) => value + item.quantity,
         ifAbsent: () => item.quantity,
       );
     }
-    final needs = recipe.ingredients.map((entry) {
+    final entries = <String, RecipeIngredient>{};
+    for (final entry in recipe.ingredients) {
+      if (!entry.quantity.isFinite ||
+          entry.quantity <= 0 ||
+          !ingredients.containsKey(entry.ingredientId)) {
+        throw ArgumentError('Invalid recipe ingredient');
+      }
+      final previous = entries[entry.ingredientId];
+      entries[entry.ingredientId] = RecipeIngredient(
+        entry.ingredientId,
+        entry.quantity + (previous?.quantity ?? 0),
+        previous?.role == IngredientRole.main
+            ? IngredientRole.main
+            : entry.role,
+      );
+    }
+    final needs = entries.values.map((entry) {
       var quantity = entry.quantity * servings / recipe.baseServings;
       final ingredient = ingredients[entry.ingredientId]!;
       if (ingredient.unit == 'حبة' || ingredient.unit == 'علبة') {
@@ -91,8 +113,12 @@ class RecipeEngine {
   }
 
   List<StockItem> consume(RecipeEstimate estimate, List<StockItem> stock) {
+    final current = evaluate(estimate.recipe, estimate.servings, stock);
+    if (!current.fullyAvailable) {
+      throw StateError('Insufficient stock; review quantities');
+    }
     final remaining = stock.map((item) => item.copyWith()).toList();
-    for (final need in estimate.needs) {
+    for (final need in current.needs) {
       var toConsume = need.requiredQuantity;
       for (var index = 0; index < remaining.length && toConsume > 0; index++) {
         final item = remaining[index];

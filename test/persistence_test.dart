@@ -32,7 +32,11 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
     final store = TestStore();
     Widget app(Map<String, dynamic>? data) => MaterialApp(
-      theme: ThemeData(snackBarTheme: const SnackBarThemeData(behavior: SnackBarBehavior.floating)),
+      theme: ThemeData(
+        snackBarTheme: const SnackBarThemeData(
+          behavior: SnackBarBehavior.floating,
+        ),
+      ),
       home: Directionality(
         textDirection: TextDirection.rtl,
         child: SofraHome(store: store, initialData: data),
@@ -53,7 +57,7 @@ void main() {
     await tester.pumpWidget(app(await store.load()));
     await tester.pumpAndSettle();
     expect(find.byKey(const ValueKey('nav-fridge')), findsOneWidget);
-    await tapKey(tester, 'nav-profile');
+    await tapKey(tester, 'open-home-settings');
     expect(find.text('مريم'), findsWidgets);
     expect(jsonEncode(store.data), before);
     expect(tester.takeException(), isNull);
@@ -97,6 +101,31 @@ void main() {
       failing.fail = false;
       await recovery.save({'value': 2});
       expect(failing.data!['value'], 2);
+    },
+  );
+  testWidgets(
+    'country selection persists and home settings leave the bottom bar',
+    (tester) async {
+      tester.view.physicalSize = const Size(430, 932);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      final store = TestStore();
+      await tester.pumpWidget(MaterialApp(home: SofraHome(store: store)));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.byKey(const ValueKey('field-country')));
+      await tester.tap(find.byKey(const ValueKey('field-country')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('السعودية · ريال سعودي').last);
+      await tester.pumpAndSettle();
+      await completeOnboarding(tester);
+      expect(store.data!['country'], 'SA');
+      expect(find.byKey(const ValueKey('nav-profile')), findsNothing);
+      expect(find.byKey(const ValueKey('open-home-settings')), findsOneWidget);
+      expect(find.text('وش بنطبخ اليوم؟'), findsOneWidget);
+      expect(find.text('اليوم'), findsOneWidget);
+      await tapKey(tester, 'open-home-settings');
+      expect(find.text('مريم'), findsWidgets);
     },
   );
 }

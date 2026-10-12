@@ -56,7 +56,7 @@ await p.getByRole('button',{name:'أكد انتهاء الطبخ',exact:true}).c
 let cooked=await p.evaluate(()=>JSON.parse(localStorage.getItem('sofra.design.prototype.v1')));
 assert.equal(cooked.history.length,1);assert.equal(cooked.plan.length,0);assert.equal(cooked.stock.find(s=>s.name==='مكرونة').quantity,before-300);
 await p.reload();cooked=await p.evaluate(()=>JSON.parse(localStorage.getItem('sofra.design.prototype.v1')));assert.equal(cooked.history.length,1);
-await p.getByRole('button',{name:'بيتي',exact:true}).click();
+await p.getByRole('button',{name:'إعدادات البيت',exact:true}).click();
 await p.getByRole('button',{name:/مريم.*15|مريم.*١٥/}).click();
 await p.getByLabel('طرحة',{exact:true}).check();await p.getByRole('button',{name:'حفظ الفرد',exact:true}).click();
 await p.setViewportSize({width:360,height:800});

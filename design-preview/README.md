@@ -11,3 +11,5 @@ See `PROTOTYPE-HANDOFF.md` for implementation scope and verified user flows. His
 Latest: morning on every new session, sunlight from the left window, detailed isometric kitchen with unlabelled interactive appliances, focused opening/zoom motion, and at least six four-slot shelves plus leftovers. Additional rows preserve all stock. No sounds.
 
 Verification: `node --check design-preview/prototype.js`; with Playwright installed and Microsoft Edge available, run `node design-preview/check.cjs` while the server runs. It uses isolated browser contexts and writes actual screenshots to `design-preview/screenshots/`. Set `NODE_PATH` to an existing Playwright installation if necessary. No Firebase data is accessed.
+
+Functional update: EG/SA selection, neutral wording and one-person setup; male/hijab guard; four bottom tabs and Home inside Today/Kitchen; dated day/week/month meal planning and extra meals; explicit new-purchase selection. Run node design-preview/check-functional.cjs for the added flows. The 54-recipe Dart backend is separate from this local HTML prototype; see docs/BACKEND-API.md. No visual redesign or sound assets were added.

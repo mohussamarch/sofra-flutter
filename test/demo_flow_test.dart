@@ -62,7 +62,7 @@ void main() {
     for (var i = 0; i < 5; i++) {
       await tapKey(tester, 'onboarding-next');
     }
-    for (final tab in ['fridge', 'recipes', 'table', 'profile', 'today']) {
+    for (final tab in ['fridge', 'recipes', 'table', 'today']) {
       await tapKey(tester, 'nav-$tab');
     }
     expect(tester.takeException(), isNull);

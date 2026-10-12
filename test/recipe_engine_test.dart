@@ -57,4 +57,39 @@ void main() {
     );
     expect(after.where((item) => item.ingredientId == 'tomato'), isEmpty);
   });
+  test('stale estimates and short stock reject the entire consumption', () {
+    final enough = [
+      ...demoStarterStock,
+      const StockItem('chicken', 200, StorageZone.freezer),
+      const StockItem('tomato', 200, StorageZone.fridge),
+    ];
+    final old = engine.evaluate(meal, 4, enough);
+    expect(() => engine.consume(old, demoStarterStock), throwsStateError);
+    expect(demoStarterStock.first.quantity, 800);
+    expect(() => engine.evaluate(meal, 0, enough), throwsArgumentError);
+  });
+
+  test('duplicate recipe rows cannot claim the same stock twice', () {
+    final recipe = Recipe(
+      id: 'duplicate',
+      title: 'test',
+      description: 'test',
+      emoji: '',
+      category: '',
+      cuisine: '',
+      minutes: 1,
+      baseServings: 1,
+      parts: const [],
+      steps: const [],
+      ingredients: const [
+        RecipeIngredient('rice', 400, IngredientRole.main),
+        RecipeIngredient('rice', 400, IngredientRole.supporting),
+      ],
+    );
+    const stock = [StockItem('rice', 500, StorageZone.pantry)];
+    final result = engine.evaluate(recipe, 1, stock);
+    expect(result.needs.single.requiredQuantity, 800);
+    expect(result.fullyAvailable, isFalse);
+    expect(() => engine.consume(result, stock), throwsStateError);
+  });
 }

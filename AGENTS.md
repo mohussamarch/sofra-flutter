@@ -38,3 +38,10 @@
 - Record every Firebase change precisely. Only `sofra-c03a1` is authorized; no other project and no billing activation.
 - Explicitly record any changed user decisions, including audio, image generation, kitchen/fridge geometry or inventory deduction. Preserve existing decisions unless the user changes them.
 - Never write credentials, passwords, tokens or private keys into handoff files or source control.
+
+## Current scope — backend first
+
+- User now asks to complete missing logic without redesigning interfaces; the visual UI will be built elsewhere. Only the subsequently requested functional UI changes are authorized here: male/hijab correction and ordering, general language and EG/SA selection, removing Home from bottom navigation with entry inside Today/Kitchen, a day/week/month meal calendar, and explicit new-purchase selection.
+- Backend integration guide: docs/BACKEND-API.md. Use KitchenService as the single state owner in the new UI; do not run legacy UI and new backend writers over the same state simultaneously.
+- Financial decisions are explicit in docs/MONEY-RULES.md: budget covers new purchases only; user override before average; alert and suggest without automatic plan edits; explicit purchase toggle; confirmed history prices frozen; no automatic monthly carryover.
+- Do not invent current prices, nutrition or medical rules. Price sources, nutrition coverage, automatic budget plan generation and alternatives are later work. Missing data stays unknown.
