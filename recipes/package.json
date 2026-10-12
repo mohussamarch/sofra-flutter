@@ -1,0 +1,19 @@
+{
+  "name": "sufra-recipes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "دفتر وصفات سفرة: بيانات وصفات كاملة مع تعديل المقادير حسب عدد الأشخاص وأوقات لكل خطوة",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "index": "node scripts/build-index.mjs",
+    "demo": "node scripts/demo-scale.mjs",
+    "verify": "node scripts/verify-all.mjs",
+    "test": "node -e \"import('./src/scale.ts').then(m=>{const r=m.selfTest();const bad=r.filter(x=>!x.ok);console.log('tests:',r.length,'failed:',bad.length);bad.forEach(b=>console.log('FAIL',b.name,b.detail));process.exit(bad.length?1:0)})\"",
+    "check": "npm run validate && npm run test && npm run regressions && npm run verify",
+    "regressions": "node scripts/rounding-regressions.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

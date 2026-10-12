@@ -1,0 +1,1030 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-10-12",
+  "cuisines": [
+    {
+      "name": "مصري",
+      "slug": "egyptian",
+      "file": "egyptian.json",
+      "count": 12
+    },
+    {
+      "name": "شامي",
+      "slug": "levantine",
+      "file": "levantine.json",
+      "count": 14
+    },
+    {
+      "name": "سعودي",
+      "slug": "saudi",
+      "file": "saudi.json",
+      "count": 14
+    },
+    {
+      "name": "إيطالي",
+      "slug": "italian",
+      "file": "italian.json",
+      "count": 14
+    }
+  ],
+  "categories": [
+    "طبق رئيسي",
+    "فطار",
+    "حلويات",
+    "مقبلات",
+    "سلطة",
+    "مخبوزات",
+    "شوربة"
+  ],
+  "units": [
+    "كوب",
+    "ملعقة كبيرة",
+    "ملعقة صغيرة",
+    "جرام",
+    "كيلو",
+    "مل",
+    "لتر",
+    "حبة",
+    "فص",
+    "عود",
+    "رغيف",
+    "قرص",
+    "ورقة",
+    "حزمة",
+    "رشة"
+  ],
+  "recipes": [
+    {
+      "id": "eg-koshari",
+      "name": "كشري",
+      "nameEn": "Koshari",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 65,
+      "difficulty": "متوسط",
+      "tags": [
+        "شارع مصري",
+        "نباتي",
+        "غني بالبروتين"
+      ],
+      "ingredientCount": 14,
+      "stepCount": 7,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-molokhia",
+      "name": "ملوخية بالفراخ",
+      "nameEn": "Molokhia with Chicken",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 90,
+      "difficulty": "متوسط",
+      "tags": [
+        "أكل بيتي",
+        "شوربة",
+        "تقليدي"
+      ],
+      "ingredientCount": 12,
+      "stepCount": 7,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-bechamel-pasta",
+      "name": "مكرونة بالبشاميل",
+      "nameEn": "Macarona Bechamel",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 70,
+      "difficulty": "متوسط",
+      "tags": [
+        "فرن",
+        "عزومة",
+        "أكل بيتي"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 8,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-mahshi",
+      "name": "محشي كوسة وباذنجان وفلفل",
+      "nameEn": "Mahshi (Stuffed Vegetables)",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "servings": 6,
+      "totalTime": 100,
+      "difficulty": "متقدم",
+      "tags": [
+        "خضار",
+        "أكل بيتي",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 13,
+      "stepCount": 7,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-fatta",
+      "name": "فتة",
+      "nameEn": "Fatta",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 80,
+      "difficulty": "متوسط",
+      "tags": [
+        "عزومة",
+        "عيد",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-ful-medames",
+      "name": "فول مدمس",
+      "nameEn": "Ful Medames",
+      "cuisine": "مصري",
+      "category": "فطار",
+      "servings": 4,
+      "totalTime": 45,
+      "difficulty": "سهل",
+      "tags": [
+        "فطار",
+        "نباتي",
+        "سريع"
+      ],
+      "ingredientCount": 9,
+      "stepCount": 5,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-taameya",
+      "name": "طعمية (فلافل مصرية)",
+      "nameEn": "Taameya",
+      "cuisine": "مصري",
+      "category": "فطار",
+      "servings": 4,
+      "totalTime": 50,
+      "difficulty": "متوسط",
+      "tags": [
+        "فطار",
+        "نباتي",
+        "شارع مصري"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 6,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-hawawshi",
+      "name": "حواوشي",
+      "nameEn": "Hawawshi",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 50,
+      "difficulty": "سهل",
+      "tags": [
+        "سريع",
+        "شارع مصري",
+        "أكل بيتي"
+      ],
+      "ingredientCount": 9,
+      "stepCount": 5,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-rice-pudding",
+      "name": "رز بلبن",
+      "nameEn": "Rice Pudding",
+      "cuisine": "مصري",
+      "category": "حلويات",
+      "servings": 4,
+      "totalTime": 45,
+      "difficulty": "سهل",
+      "tags": [
+        "حلويات",
+        "سهل",
+        "أكل بيتي"
+      ],
+      "ingredientCount": 8,
+      "stepCount": 5,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-basbousa",
+      "name": "بسبوسة باللبن",
+      "nameEn": "Basbousa",
+      "cuisine": "مصري",
+      "category": "حلويات",
+      "servings": 8,
+      "totalTime": 50,
+      "difficulty": "سهل",
+      "tags": [
+        "حلويات",
+        "شربات",
+        "عزومة"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 5,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-sayadeya",
+      "name": "صيادية سمك",
+      "nameEn": "Sayadeya",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 55,
+      "difficulty": "متوسط",
+      "tags": [
+        "سمك",
+        "أكل بحري",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "eg-macarona-red-sauce",
+      "name": "مكرونة بالصلصة الحمراء واللحمة",
+      "nameEn": "Pasta with Red Sauce",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 40,
+      "difficulty": "سهل",
+      "tags": [
+        "سريع",
+        "أكل بيتي",
+        "مكرونة"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "egyptian.json"
+    },
+    {
+      "id": "sh-shish-tawook",
+      "name": "شيش طاووق",
+      "nameEn": "Shish Tawook",
+      "cuisine": "شامي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 55,
+      "difficulty": "سهل",
+      "tags": [
+        "مشويات",
+        "عزومة",
+        "سريع"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 8,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-hummus",
+      "name": "حمص بطحينة",
+      "nameEn": "Hummus with Tahini",
+      "cuisine": "شامي",
+      "category": "مقبلات",
+      "servings": 4,
+      "totalTime": 75,
+      "difficulty": "سهل",
+      "tags": [
+        "مقبلات",
+        "نباتي",
+        "فطار"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 7,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-mutabbal",
+      "name": "متبل باذنجان",
+      "nameEn": "Mutabbal (Baba Ghanoush)",
+      "cuisine": "شامي",
+      "category": "مقبلات",
+      "servings": 4,
+      "totalTime": 45,
+      "difficulty": "سهل",
+      "tags": [
+        "مقبلات",
+        "نباتي",
+        "مشويات"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-tabbouleh",
+      "name": "تبولة",
+      "nameEn": "Tabbouleh",
+      "cuisine": "شامي",
+      "category": "سلطة",
+      "servings": 5,
+      "totalTime": 45,
+      "difficulty": "سهل",
+      "tags": [
+        "سلطة",
+        "نباتي",
+        "سريع"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 7,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-fattoush",
+      "name": "فتوش",
+      "nameEn": "Fattoush",
+      "cuisine": "شامي",
+      "category": "سلطة",
+      "servings": 5,
+      "totalTime": 35,
+      "difficulty": "سهل",
+      "tags": [
+        "سلطة",
+        "نباتي",
+        "صيفي"
+      ],
+      "ingredientCount": 14,
+      "stepCount": 5,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-kafta-kefta",
+      "name": "كفتة مشوية",
+      "nameEn": "Kafta (Grilled Kofta)",
+      "cuisine": "شامي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 50,
+      "difficulty": "متوسط",
+      "tags": [
+        "مشويات",
+        "عزومة",
+        "لحوم"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-maqluba",
+      "name": "مقلوبة",
+      "nameEn": "Maqluba",
+      "cuisine": "شامي",
+      "category": "طبق رئيسي",
+      "servings": 6,
+      "totalTime": 140,
+      "difficulty": "متقدم",
+      "tags": [
+        "عزومة",
+        "أكل بيتي",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 13,
+      "stepCount": 9,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-warak-enab",
+      "name": "ورق عنب",
+      "nameEn": "Stuffed Grape Leaves",
+      "cuisine": "شامي",
+      "category": "مقبلات",
+      "servings": 6,
+      "totalTime": 145,
+      "difficulty": "متقدم",
+      "tags": [
+        "مقبلات",
+        "عزومة",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 14,
+      "stepCount": 7,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-kibbeh-kibbeh-balls",
+      "name": "كبة مقلية",
+      "nameEn": "Fried Kibbeh Balls",
+      "cuisine": "شامي",
+      "category": "مقبلات",
+      "servings": 6,
+      "totalTime": 130,
+      "difficulty": "متقدم",
+      "tags": [
+        "مقبلات",
+        "عزومة",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 12,
+      "stepCount": 9,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-fattet-hummus",
+      "name": "فتة حمص",
+      "nameEn": "Fattet Hummus",
+      "cuisine": "شامي",
+      "category": "فطار",
+      "servings": 5,
+      "totalTime": 60,
+      "difficulty": "سهل",
+      "tags": [
+        "فطار",
+        "أكل بيتي",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 8,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-manakish-zaatar",
+      "name": "مناقيش زعتر",
+      "nameEn": "Manakish Zaatar",
+      "cuisine": "شامي",
+      "category": "مخبوزات",
+      "servings": 6,
+      "totalTime": 90,
+      "difficulty": "متوسط",
+      "tags": [
+        "مخبوزات",
+        "فطار",
+        "نباتي"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 9,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-shawarma-dajaj",
+      "name": "شاورما دجاج",
+      "nameEn": "Chicken Shawarma",
+      "cuisine": "شامي",
+      "category": "طبق رئيسي",
+      "servings": 6,
+      "totalTime": 70,
+      "difficulty": "متوسط",
+      "tags": [
+        "مشويات",
+        "سندوتش",
+        "عزومة"
+      ],
+      "ingredientCount": 14,
+      "stepCount": 9,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-harak-osbao",
+      "name": "حراق أصبعه",
+      "nameEn": "Harak Osbao (Lentils with Pasta)",
+      "cuisine": "شامي",
+      "category": "مقبلات",
+      "servings": 5,
+      "totalTime": 80,
+      "difficulty": "متوسط",
+      "tags": [
+        "نباتي",
+        "أكل بيتي",
+        "مقبلات"
+      ],
+      "ingredientCount": 12,
+      "stepCount": 9,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sh-halawet-el-jibn",
+      "name": "حلاوة الجبن",
+      "nameEn": "Halawet El Jibn",
+      "cuisine": "شامي",
+      "category": "حلويات",
+      "servings": 6,
+      "totalTime": 70,
+      "difficulty": "متقدم",
+      "tags": [
+        "حلويات",
+        "شربات",
+        "عزومة"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 9,
+      "file": "levantine.json"
+    },
+    {
+      "id": "sa-chicken-kabsa",
+      "name": "كبسة دجاج",
+      "nameEn": "Chicken Kabsa",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 75,
+      "difficulty": "متوسط",
+      "tags": [
+        "طبق وطني",
+        "أرز",
+        "عزومة"
+      ],
+      "ingredientCount": 14,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-lamb-mandi",
+      "name": "مندي لحم",
+      "nameEn": "Lamb Mandi",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 6,
+      "totalTime": 115,
+      "difficulty": "متقدم",
+      "tags": [
+        "طهي بطيء",
+        "لحم",
+        "عزومة"
+      ],
+      "ingredientCount": 12,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-jareesh",
+      "name": "جريش",
+      "nameEn": "Jareesh",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 110,
+      "difficulty": "متوسط",
+      "tags": [
+        "قمح",
+        "أكل بيتي",
+        "شتوي"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-saleeg",
+      "name": "سليق",
+      "nameEn": "Saleeg",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 90,
+      "difficulty": "متوسط",
+      "tags": [
+        "حجازي",
+        "لبن",
+        "أكل بيتي"
+      ],
+      "ingredientCount": 9,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-mutabbaq",
+      "name": "مطبق",
+      "nameEn": "Mutabbaq",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 70,
+      "difficulty": "متقدم",
+      "tags": [
+        "حجازي",
+        "معجنات",
+        "سمك"
+      ],
+      "ingredientCount": 12,
+      "stepCount": 8,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-margoog",
+      "name": "مرقوق",
+      "nameEn": "Margoog",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 110,
+      "difficulty": "متوسط",
+      "tags": [
+        "عجين",
+        "لحم",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 13,
+      "stepCount": 8,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-qursan",
+      "name": "قُرسان",
+      "nameEn": "Qursan",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 110,
+      "difficulty": "متوسط",
+      "tags": [
+        "قصيمي",
+        "مرق",
+        "خبز"
+      ],
+      "ingredientCount": 13,
+      "stepCount": 8,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-sayadeyah",
+      "name": "صيادية السمك",
+      "nameEn": "Fish Sayadeyah",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 70,
+      "difficulty": "متوسط",
+      "tags": [
+        "سمك",
+        "أرز",
+        "أكل بحري"
+      ],
+      "ingredientCount": 13,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-sambousek",
+      "name": "سمبوسك",
+      "nameEn": "Sambousek",
+      "cuisine": "سعودي",
+      "category": "مقبلات",
+      "servings": 6,
+      "totalTime": 45,
+      "difficulty": "سهل",
+      "tags": [
+        "مقبلات",
+        "رمضان",
+        "تحمير"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-luqaimat",
+      "name": "لقيمات",
+      "nameEn": "Luqaimat",
+      "cuisine": "سعودي",
+      "category": "حلويات",
+      "servings": 6,
+      "totalTime": 45,
+      "difficulty": "سهل",
+      "tags": [
+        "حلويات",
+        "دبس التمر",
+        "رمضان"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-maamoul-tamr",
+      "name": "معمول تمر",
+      "nameEn": "Date Maamoul",
+      "cuisine": "سعودي",
+      "category": "حلويات",
+      "servings": 8,
+      "totalTime": 70,
+      "difficulty": "متوسط",
+      "tags": [
+        "حلويات",
+        "تمر",
+        "عيد"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-harees",
+      "name": "هريس",
+      "nameEn": "Harees",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 6,
+      "totalTime": 210,
+      "difficulty": "متوسط",
+      "tags": [
+        "قمح",
+        "رمضان",
+        "طهي بطيء"
+      ],
+      "ingredientCount": 9,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-maraq-bamia",
+      "name": "مرق بامية",
+      "nameEn": "Maraq Bamia",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 80,
+      "difficulty": "سهل",
+      "tags": [
+        "بامية",
+        "مرق",
+        "أكل بيتي"
+      ],
+      "ingredientCount": 12,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "sa-thareed",
+      "name": "ثريد",
+      "nameEn": "Thareed",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "servings": 5,
+      "totalTime": 105,
+      "difficulty": "سهل",
+      "tags": [
+        "خبز",
+        "مرق",
+        "طبق تقليدي"
+      ],
+      "ingredientCount": 13,
+      "stepCount": 7,
+      "file": "saudi.json"
+    },
+    {
+      "id": "it-spaghetti-bolognese",
+      "name": "سباجيتي بولونيز",
+      "nameEn": "Spaghetti Bolognese",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 110,
+      "difficulty": "متوسط",
+      "tags": [
+        "مكرونة",
+        "صلصة بطيئة",
+        "عزومة"
+      ],
+      "ingredientCount": 14,
+      "stepCount": 8,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-carbonara",
+      "name": "كاربونارا",
+      "nameEn": "Carbonara",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 25,
+      "difficulty": "متوسط",
+      "tags": [
+        "مكرونة",
+        "سريع",
+        "مطبخ روماني"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-lasagna",
+      "name": "لازانيا",
+      "nameEn": "Lasagna",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "servings": 6,
+      "totalTime": 100,
+      "difficulty": "متقدم",
+      "tags": [
+        "فرن",
+        "عزومة",
+        "طبقات"
+      ],
+      "ingredientCount": 14,
+      "stepCount": 8,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-pizza-margherita",
+      "name": "بيتزا مارغريتا",
+      "nameEn": "Pizza Margherita",
+      "cuisine": "إيطالي",
+      "category": "مخبوزات",
+      "servings": 4,
+      "totalTime": 165,
+      "difficulty": "متوسط",
+      "tags": [
+        "مخبوزات",
+        "عجين",
+        "فرن"
+      ],
+      "ingredientCount": 11,
+      "stepCount": 8,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-risotto-mushroom",
+      "name": "ريزوتو المشروم",
+      "nameEn": "Mushroom Risotto",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 50,
+      "difficulty": "متوسط",
+      "tags": [
+        "أرز",
+        "مشروم",
+        "نباتي"
+      ],
+      "ingredientCount": 12,
+      "stepCount": 7,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-penne-arrabbiata",
+      "name": "بيني أرابياتا",
+      "nameEn": "Penne all'Arrabbiata",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 35,
+      "difficulty": "سهل",
+      "tags": [
+        "مكرونة",
+        "حار",
+        "سريع"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-cacio-e-pepe",
+      "name": "كاتشو إي بيبي",
+      "nameEn": "Cacio e Pepe",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 20,
+      "difficulty": "متوسط",
+      "tags": [
+        "مكرونة",
+        "مطبخ روماني",
+        "مكونات قليلة"
+      ],
+      "ingredientCount": 8,
+      "stepCount": 6,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-fettuccine-alfredo",
+      "name": "فيتوتشيني ألفريدو",
+      "nameEn": "Fettuccine Alfredo",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 30,
+      "difficulty": "سهل",
+      "tags": [
+        "مكرونة",
+        "سريع",
+        "جبنة"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-minestrone",
+      "name": "مينستروني",
+      "nameEn": "Minestrone",
+      "cuisine": "إيطالي",
+      "category": "شوربة",
+      "servings": 6,
+      "totalTime": 70,
+      "difficulty": "سهل",
+      "tags": [
+        "شوربة",
+        "خضار",
+        "نباتي"
+      ],
+      "ingredientCount": 14,
+      "stepCount": 7,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-caprese-salad",
+      "name": "سلطة كابريزي",
+      "nameEn": "Caprese Salad",
+      "cuisine": "إيطالي",
+      "category": "سلطة",
+      "servings": 4,
+      "totalTime": 15,
+      "difficulty": "سهل",
+      "tags": [
+        "سلطة",
+        "صيف",
+        "سريع"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 5,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-tiramisu",
+      "name": "تيراميسو",
+      "nameEn": "Tiramisu",
+      "cuisine": "إيطالي",
+      "category": "حلويات",
+      "servings": 8,
+      "totalTime": 40,
+      "difficulty": "متوسط",
+      "tags": [
+        "حلويات",
+        "قهوة",
+        "بلا فرن"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 8,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-panna-cotta",
+      "name": "بانا كوتا",
+      "nameEn": "Panna Cotta",
+      "cuisine": "إيطالي",
+      "category": "حلويات",
+      "servings": 6,
+      "totalTime": 20,
+      "difficulty": "سهل",
+      "tags": [
+        "حلويات",
+        "بارد",
+        "سريع"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-focaccia",
+      "name": "فوكاتشا",
+      "nameEn": "Focaccia",
+      "cuisine": "إيطالي",
+      "category": "مخبوزات",
+      "servings": 8,
+      "totalTime": 170,
+      "difficulty": "متوسط",
+      "tags": [
+        "مخبوزات",
+        "عجين",
+        "زيت زيتون"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 7,
+      "file": "italian.json"
+    },
+    {
+      "id": "it-bruschetta",
+      "name": "بروسكيتا",
+      "nameEn": "Bruschetta",
+      "cuisine": "إيطالي",
+      "category": "مقبلات",
+      "servings": 4,
+      "totalTime": 25,
+      "difficulty": "سهل",
+      "tags": [
+        "مقبلات",
+        "سريع",
+        "خبز"
+      ],
+      "ingredientCount": 10,
+      "stepCount": 6,
+      "file": "italian.json"
+    }
+  ]
+}
