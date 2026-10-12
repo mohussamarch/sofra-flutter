@@ -255,3 +255,13 @@
 
 - نسخة العمل الوحيدة E:\work\SOFRA\app؛ basecommit e981a05fef22fd8b02262c6b56067546915bbdf7. آخرhashنهائي بعدpush في E:\work\SOFRA\HANDOFF.md وDELIVERY.json؛ لاhashذاتي داخلcommit.
 - السيرفر باقٍ127.0.0.1:8766،PID31004،node.exe من E:\work\SOFRA\app\design-preview\serve.cjs؛ فُحص مالكه ولم يُغلق. إعادة التشغيل node E:\work\SOFRA\app\design-preview\serve.cjs.
+
+## 18. قرار ملخص التغذية — 12 أكتوبر2026
+
+- العرض الأساسي 5 قيم فقط بالترتيب: السعرات kcal، البروتين، السكريات الكلية، الألياف، الدهون الكلية مرة واحدة. تظل49خانة غذائية محفوظة للمستقبل؛ لا عرض مستقل لأنواع الدهون أو الكربوهيدرات أو الصوديوم في الملخص الأساسي. المجهول لا يصبح صفرًا.
+- التنفيذ: const primaryDisplayNutrients في lib/domain/food_nutrition.dart؛ وثّق في FOOD-DATA-ARCHITECTURE وAGENTS وSTATUS. الواجهة تُبنى خارجيًا ولم تتغير؛ حفظ النواة والحسابات لم يتغير.
+- سبب القرار: اختيار المستخدم الصريح لتبسيط الملخص مع الاحتفاظ بالتفاصيل الصحية لاحقًا. يحل محل اقتراح عرض10قيم سابقًا.
+- التحقق: dart analyze lib/domain/food_nutrition.dart؛ النتيجة تثبت في إيصال الجذر بعد التشغيل. لم تُعد اختبارات البنك/التكامل السابقة لأن التغيير قائمةconstوتوثيق فقط.
+- التالي: سيشن الواجهة تستخدم القائمة المختصرة، والمتابعة الاقتصادية تستكمل البنك وفق§17. لا تعديلFirebase أوAPK أوDrive أوأصوات/صور.
+- basecommit da8ec10c5572faee0cf05e009ab546c355bf1a85؛ آخرhashنهائي في E:\work\SOFRA\HANDOFF.md وDELIVERY.json بعدpush.
+- السيرفر باقٍ127.0.0.1:8766،PID31004،node.exe،المصدرE:\work\SOFRA\app\design-preview\serve.cjs؛ لم يُغلق.

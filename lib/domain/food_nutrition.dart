@@ -60,6 +60,16 @@ enum NutrientId {
   final NutrientUnit unit;
 }
 
+/// User-approved compact summary order; storage and arithmetic retain all IDs.
+/// Total sugar and total fat each appear once, without subtype duplication.
+const primaryDisplayNutrients = <NutrientId>[
+  NutrientId.energyKcal,
+  NutrientId.protein,
+  NutrientId.totalSugars,
+  NutrientId.fibre,
+  NutrientId.fat,
+];
+
 enum NutrientQualifier { exact, lessThan, trace, unknown }
 
 enum NutrientMethod { label, analytical, calculated, estimated, unknown }

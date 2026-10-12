@@ -57,3 +57,7 @@
 ## Continuous food bank work
 
 - User explicitly authorizes ongoing economical research and one cheap collection agent. Follow docs/FOOD-BANK-CONTINUITY.md: no arbitrary final record count; checkpoint and resume, check quota with a10%reserve, and preserve quality/source licenses. Never infer successful collection from an attempted request.
+
+## Nutrition summary display
+
+- User-approved summary: energyKcal, protein, totalSugars, fibre, fat, in this order, via primaryDisplayNutrients. Show total fat once; retain all49nutrient fields for future detail. Missing values remain unknown. Do not redesign UI here.
