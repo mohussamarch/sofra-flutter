@@ -61,3 +61,8 @@
 ## Nutrition summary display
 
 - User-approved summary: energyKcal, protein, totalSugars, fibre, fat, in this order, via primaryDisplayNutrients. Show total fat once; retain all49nutrient fields for future detail. Missing values remain unknown. Do not redesign UI here.
+
+## Recipe revisions and generated cache
+
+- Follow docs/RECIPE-VARIANTS.md. Preserve full immutable snapshots and revision-specific nutrition bindings. Prefer line indices for repeated ingredient choices/measurements. Unknown legacy bindings require explicit re-review.
+- Only checkout E:\work\SOFRA\app is active. Its ignored `.dart_tool` and `build` are junctions to C:\Users\atgs0\Documents\Codex\2026-10-09\cooking-app-flutter\work\sofra-generated-cache. These are generated caches, not a second project. Inspect junction targets before cleanup; never recursively remove a computed target without validating its scope.

@@ -285,11 +285,13 @@ class PlannedMeal {
     required this.recipeId,
     required this.servings,
     this.completed = false,
+    this.recipeRevisionKey,
   }) {
     parseDay(date);
     if (id.isEmpty ||
         slot.trim().isEmpty ||
         recipeId.isEmpty ||
+        (recipeRevisionKey != null && recipeRevisionKey!.trim().isEmpty) ||
         servings < 1 ||
         servings > 1000) {
       throw ArgumentError('Invalid meal');
@@ -298,6 +300,7 @@ class PlannedMeal {
   final String id, date, slot, recipeId;
   final int servings;
   final bool completed;
+  final String? recipeRevisionKey;
   PlannedMeal done() => PlannedMeal(
     id: id,
     date: date,
@@ -305,6 +308,16 @@ class PlannedMeal {
     recipeId: recipeId,
     servings: servings,
     completed: true,
+    recipeRevisionKey: recipeRevisionKey,
+  );
+  PlannedMeal withRecipeRevision(String key) => PlannedMeal(
+    id: id,
+    date: date,
+    slot: slot,
+    recipeId: recipeId,
+    servings: servings,
+    completed: completed,
+    recipeRevisionKey: key,
   );
   Map<String, dynamic> toJson() => {
     'id': id,
@@ -313,6 +326,7 @@ class PlannedMeal {
     'recipeId': recipeId,
     'servings': servings,
     'completed': completed,
+    'recipeRevisionKey': recipeRevisionKey,
   };
   factory PlannedMeal.fromJson(Map<String, dynamic> v) => PlannedMeal(
     id: v['id'] as String,
@@ -321,6 +335,7 @@ class PlannedMeal {
     recipeId: v['recipeId'] as String,
     servings: v['servings'] as int,
     completed: v['completed'] == true,
+    recipeRevisionKey: v['recipeRevisionKey'] as String?,
   );
 }
 

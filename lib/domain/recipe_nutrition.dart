@@ -18,8 +18,11 @@ class RecipeFoodSelection {
     this.asPurchased = false,
     this.notConsumed = false,
     this.exclusionReason,
+    this.recipeRevisionKey,
   }) {
-    if (recipeId.trim().isEmpty || line < 0) {
+    if (recipeId.trim().isEmpty ||
+        line < 0 ||
+        (recipeRevisionKey != null && recipeRevisionKey!.trim().isEmpty)) {
       throw ArgumentError('Invalid recipe line');
     }
     if (notConsumed &&
@@ -28,6 +31,7 @@ class RecipeFoodSelection {
     }
   }
   final String recipeId;
+  final String? recipeRevisionKey;
   final int line;
   final FoodRecord food;
   final FoodForm amountForm, preparedForm;
@@ -37,10 +41,11 @@ class RecipeFoodSelection {
   final PreparationTransform? preparation;
   final bool asPurchased, notConsumed;
   final String? exclusionReason;
-  String get key => '$recipeId:$line';
+  String get key => jsonEncode([recipeId, recipeRevisionKey, line]);
   Map<String, dynamic> toJson() => {
     'version': 1,
     'recipeId': recipeId,
+    'recipeRevisionKey': recipeRevisionKey,
     'line': line,
     'food': food.toJson(),
     'amountForm': amountForm.name,
@@ -57,6 +62,7 @@ class RecipeFoodSelection {
     }
     return RecipeFoodSelection(
       recipeId: j['recipeId'] as String,
+      recipeRevisionKey: j['recipeRevisionKey'] as String?,
       line: j['line'] as int,
       food: FoodRecord.fromJson(Map<String, dynamic>.from(j['food'] as Map)),
       amountForm: FoodForm.values.byName(j['amountForm'] as String),
@@ -96,13 +102,17 @@ RecipeNutritionResult assessRecipeNutrition({
   required ScaledCatalogRecipe scaled,
   required List<RecipeFoodSelection> selections,
   Set<String> optionalIds = const {},
+  Set<int>? optionalLines,
+  Set<int> excludedLines = const {},
   Map<int, FoodAmount> measuredLines = const {},
   double? cookedYieldGrams,
+  String? recipeRevisionKey,
 }) {
   final recipe = scaled.recipe;
   final byLine = <int, RecipeFoodSelection>{};
   for (final binding in selections) {
     if (binding.recipeId != recipe.id ||
+        binding.recipeRevisionKey != recipeRevisionKey ||
         binding.line >= recipe.ingredients.length ||
         byLine.containsKey(binding.line)) {
       throw ArgumentError('Invalid/duplicate recipe food selection');
@@ -111,6 +121,20 @@ RecipeNutritionResult assessRecipeNutrition({
   }
   if (measuredLines.keys.any((i) => i < 0 || i >= recipe.ingredients.length)) {
     throw ArgumentError('Invalid measured line');
+  }
+  if (optionalLines != null && optionalIds.isNotEmpty) {
+    throw ArgumentError(
+      'Choose optional ingredients by IDs or lines, not both',
+    );
+  }
+  if ((optionalLines ?? {}).any(
+        (i) =>
+            i < 0 ||
+            i >= recipe.ingredients.length ||
+            !recipe.ingredients[i].optional,
+      ) ||
+      excludedLines.any((i) => i < 0 || i >= recipe.ingredients.length)) {
+    throw ArgumentError('Invalid optional/excluded recipe line');
   }
   final inputs = <RecipeFoodInput>[];
   for (var i = 0; i < recipe.ingredients.length; i++) {
@@ -136,10 +160,14 @@ RecipeNutritionResult assessRecipeNutrition({
         amount: amount,
         amountForm: binding?.amountForm ?? FoodForm.raw,
         preparedForm: binding?.preparedForm ?? FoodForm.cooked,
-        optional: row.optional || binding?.notConsumed == true,
-        selected: binding?.notConsumed == true
+        optional:
+            row.optional ||
+            binding?.notConsumed == true ||
+            excludedLines.contains(i),
+        selected: binding?.notConsumed == true || excludedLines.contains(i)
             ? false
-            : !row.optional || optionalIds.contains(row.id),
+            : !row.optional ||
+                  (optionalLines?.contains(i) ?? optionalIds.contains(row.id)),
         preparation: binding?.preparation,
         asPurchased: binding?.asPurchased ?? false,
       ),

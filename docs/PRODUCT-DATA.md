@@ -4,9 +4,9 @@ Canonical checkout: `E:\work\SOFRA\app`. This bank is a source-separated, unrevi
 
 ## Current bounded collection —12October2026
 
-777 named records with valid GTIN length/checksum; Egypt 366, Saudi 422, overlap 11. All20 category groups have records. Nutrition is present for 574 products; 519 have core macros; 369 have ingredient text; 204 have declared allergen tags; 649 have source brands. All 777 nutrition bases remain unreviewed. None is approved as an exact calculator input by this bank alone.
+802 named records with valid GTIN length/checksum; Egypt 391, Saudi 422, overlap 11. All20 category groups have records. Nutrition is present for 587 products; 529 have core macros; 378 have ingredient text; 205 have declared allergen tags; 667 have source brands. All 802 nutrition bases remain unreviewed. None is approved as an exact calculator input by this bank alone.
 
-There are 31 source archives, 82 quarantined occurrences and 106 audited duplicate occurrences. The newest three-request batch added61 unique products from Egypt rice/pasta and Saudi pasta; all three requests succeeded. Previous503 failures and retry eligibility are retained where unresolved in collection-state.json. Manifest is the authority for current counts and hashes; raw responses preserve provenance.
+There are32 source archives,84 quarantined occurrences and122 audited duplicates. Latest batch added25 unique products from Egypt condiments; Saudi flour/pulses returned503 with persisted backoff. Manifest is authoritative for counts/hashes; raw responses preserve provenance.
 
 | Category | Records |
 | --- | ---: |
@@ -14,8 +14,8 @@ There are 31 source archives, 82 quarantined occurrences and 106 audited duplica
 | Dairy / oils / ghee | 171 / 31 / 2 |
 | Rice / pasta / flour / pulses | 4 / 61 / 4 / 6 |
 | Canned fish / meat / canned vegetables | 15 / 14 / 9 |
-| Condiments / spices | 34 / 25 |
-| Beverages / frozen / bakery / baby | 123 / 13 / 42 / 9 |
+| Condiments / spices | 59 / 25 |
+| Beverages / frozen / bakery / baby | 124 / 13 / 42 / 9 |
 
 Groups overlap. Cooking categories still need sourced expansion; market availability and popularity were not independently verified.
 

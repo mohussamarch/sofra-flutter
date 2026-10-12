@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "dataset": "Sofra packaged food bank / Open Food Facts",
-  "builtAt": "2026-10-12T20:55:34.527Z",
+  "builtAt": "2026-10-12T21:01:00.086Z",
   "source": "https://world.openfoodfacts.org",
   "databaseLicense": "ODbL-1.0",
   "contentsLicense": "DbCL-1.0",
-  "productCount": 777,
-  "quarantinedCount": 82,
-  "duplicateOccurrences": 106,
-  "productsSha256": "f4b83d80fb6af1438f9aa230444cee0134618de2630c467ca3285c8d74c24339",
-  "indexSha256": "501c81398c4741508640e3c6c5475e9c252e85460cbba9079aa2e57c129bf221",
+  "productCount": 802,
+  "quarantinedCount": 84,
+  "duplicateOccurrences": 122,
+  "productsSha256": "8397263a7bc2461606c450cce757ce20c8d3622cf3379d11b1e9533f37940006",
+  "indexSha256": "e545923e2d000c1882ced3b8bedb06123f3b428018ac9b3ff17a73c92e7d0356",
   "marketCounts": {
-    "EG": 366,
+    "EG": 391,
     "SA": 422
   },
   "categoryCounts": {
@@ -29,19 +29,19 @@
     "canned-fish": 15,
     "meat": 14,
     "canned-vegetables": 9,
-    "condiments": 34,
+    "condiments": 59,
     "spices": 25,
-    "beverages": 123,
+    "beverages": 124,
     "frozen": 13,
     "bakery": 42,
     "baby": 9
   },
-  "withNutrition": 574,
-  "withCoreMacros": 519,
-  "withIngredients": 369,
-  "withBrand": 649,
-  "withDeclaredAllergens": 204,
-  "unreviewedBasisCount": 777,
+  "withNutrition": 587,
+  "withCoreMacros": 529,
+  "withIngredients": 378,
+  "withBrand": 667,
+  "withDeclaredAllergens": 205,
+  "unreviewedBasisCount": 802,
   "archives": [
     {
       "file": "raw/egypt-bakery.json",
@@ -77,6 +77,13 @@
       "records": 24,
       "retrievedAt": "2026-10-12T19:50:07.197Z",
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Achocolates"
+    },
+    {
+      "file": "raw/egypt-condiments-p1.json",
+      "sha256": "011118e19553000ad636edef886e6b15ff9c0db7a771ffbc22482aa920155505",
+      "records": 43,
+      "retrievedAt": "2026-10-12T21:00:59.917Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Acondiments"
     },
     {
       "file": "raw/egypt-dairy.json",

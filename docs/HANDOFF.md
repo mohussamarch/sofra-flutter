@@ -276,3 +276,23 @@
 - التالي بالضبط: يواصل جامعالبنك منcollection-state.json فيالمتابعة؛ يبدأ مسارربطالبشاميل بمقاديرها وحالةالمكونات الصريحة، ولا يعتمد علىمطابقةأسماء تلقائية.
 - نسخة واحدة E:\work\SOFRA\app؛ base1a6bac2923b54075e6b56d40ebe17da0bf1bde8e. آخرcommitنهائي في إيصال E:\work\SOFRA\DELIVERY.json وHANDOFF.md بعدpush.
 - السيرفر باقٍ127.0.0.1:8766،PID31004،node.exe،المصدرE:\work\SOFRA\app\design-preview\serve.cjs؛ لم يُغلق بهذه الدفعة.
+
+## 20. Immutable recipe revisions and resumed bank
+
+Objective: implement the agreed recipe-family/variant/personal-recipe logic without UI design. Sole checkout E:\work\SOFRA\app; base b22187b5ded813f0f3165c460bdf1313121b0dc0.
+
+Changed: lib/domain/recipe_variants.dart (new immutable book, validation and fingerprint); recipe_catalog.dart full serializers; kitchen_core.dart pinned plan references; recipe_nutrition.dart revision-bound selections and line choices; lib/data/kitchen_service.dart registration/planning/preview/atomic frozen cooking; test/recipe_variants_test.dart11 meaningful tests; docs/RECIPE-VARIANTS.md plus API/architecture/product/status/AGENTS updates. data/food/openfoodfacts/** and work/agent-handoffs/food-bank-growth.md contain25new sourced GTINs and checkpoint/backoff.
+
+Decisions: full snapshots avoid live inheritance; parents stay within family; new revisions affect future plans only; identical retries never roll back active content. Nutrition cannot leak across versions; old unversioned selections stay stored but require re-review. Repeated IDs use independent line choices/measurements, including stock and nutrition. Empty selected recipe is rejected, rollback preserves stock/plan. No automatically authored variants or medical mappings. User decisions on design/audio/images/inventory/finance unchanged.
+
+Review: nutrition_core completed a focused read-only audit, found repeated-ID measurements/optional choices ambiguous. Coordinator implemented line-specific APIs and tested both omission and repeated-row allocation. This was API logic work; no Blender character modelling/animation was performed.
+
+Checks actually run: flutter test --reporter expanded61passed (after fixing an initially incorrect empty-recipe test assumption); flutter analyze no issues; food collector reports node --test tool/food/import.test.mjs5passed including all shipped hashes/source values. After the final unknown-unit guard,11recipe tests passed and focused Dart analysis passed; confirmation rejects unsupported actual measurement units with rollback rather than silently reusing a stored reviewed weight. Full54recipe JSON roundtrips and216existing scaling parity cases included. Git diff --check and clean HEAD=origin/main verified at final receipt. No web/APK rebuild or device test this delivery; no Hosting/Drive/Firebase/Auth/rules/billing changes.
+
+Bank:802products, EG391/SA422/shared11,32archives,84quarantine,122duplicates,587nutrition,529core macros,667brands; all802bases unreviewed. Egypt condiments succeeded; Saudi flour/pulses503 persisted with backoff. Source licenses/provenance intact. All49nutrients retained; approved primary5 unchanged.
+
+Disk: E reached0free during writing recipe_nutrition.dart; restored file from GitHEAD then reapplied own changes, followed by full tests/analyze. Removed only own regenerable build output. Ignored build and .dart_tool now junction to C:\Users\atgs0\Documents\Codex\2026-10-09\cooking-app-flutter\work\sofra-generated-cache; source remains solelyE. User freed space; latest E free roughly47GiB. Inspect junction target before future cleanup.
+
+Open:0verified bindings across605recipe lines; labels/basis require review; real recipe variants not populated. UI must use recipeForMeal and exact revision bindings.850KBguard remains, archival/scan/budget optimizer/medical targets/external Blender work incomplete. Exact next action: source-review bechamel lines/forms/units, bind a pinned revision, then external UI integration; collector resumes due checkpoint jobs within quota/backoff policy.
+
+Final commit hash: recorded after push in E:\work\SOFRA\HANDOFF.md and DELIVERY.json (avoids self-referential hash). Server remains127.0.0.1:8766 PID31004 node.exe, source E:\work\SOFRA\app\design-preview\serve.cjs; restart `node E:\work\SOFRA\app\design-preview\serve.cjs`.

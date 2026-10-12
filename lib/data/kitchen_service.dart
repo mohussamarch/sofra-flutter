@@ -4,6 +4,8 @@ import '../domain/kitchen_core.dart';
 import '../domain/food_nutrition.dart';
 import '../domain/person_nutrition.dart';
 import '../domain/recipe_nutrition.dart';
+import '../domain/recipe_catalog.dart';
+import '../domain/recipe_variants.dart';
 import '../domain/cooking_timer.dart';
 import '../domain/market_profile.dart';
 import '../domain/models.dart';
@@ -112,6 +114,16 @@ class KitchenService {
       }
       NutritionLedger.fromJson(Map<String, dynamic>.from(n['ledger'] as Map));
     }
+    final book = _recipeBook(kitchen);
+    for (final raw in kitchen['plans'] as List) {
+      final meal = PlannedMeal.fromJson(Map<String, dynamic>.from(raw as Map));
+      if (meal.recipeRevisionKey != null &&
+          book.revisions[meal.recipeRevisionKey]?.variantId != meal.recipeId) {
+        throw const FormatException(
+          'Planned recipe revision is missing or mismatched',
+        );
+      }
+    }
     root['kitchen'] = kitchen;
     _root = _clone(root);
   }
@@ -175,19 +187,94 @@ class KitchenService {
     (_nutrition(k)['profiles'] as Map)[profile.memberId] = profile.toJson();
   });
 
-  Future<void> saveRecipeFoodSelection(RecipeFoodSelection selection) async {
-    final recipe = await recipes.get(selection.recipeId);
-    if (selection.line >= recipe.ingredients.length) {
-      throw RangeError('Recipe line');
+  RecipeBook _recipeBook(Map<String, dynamic> k) => k['recipeBook'] == null
+      ? RecipeBook.empty()
+      : RecipeBook.fromJson(Map<String, dynamic>.from(k['recipeBook'] as Map));
+
+  RecipeBook get recipeBook => _recipeBook(snapshot);
+
+  RecipeRevision _catalogDraft(CatalogRecipe recipe) => RecipeRevision(
+    familyId: 'dish:${recipe.id}',
+    revision: recipeSnapshotVersion(recipe),
+    kind: RecipeRevisionKind.catalog,
+    recipe: recipe,
+  );
+
+  RecipeBook _registerCatalog(RecipeBook book, RecipeRevision revision) {
+    if (!book.families.containsKey(revision.familyId)) {
+      book = book.addFamily(
+        RecipeFamily(id: revision.familyId, name: revision.recipe.name),
+      );
+    }
+    return book.addRevision(revision);
+  }
+
+  Future<RecipeRevision> catalogRevision(String recipeId) async {
+    final revision = _catalogDraft(await recipes.get(recipeId));
+    await _write((k) {
+      k['recipeBook'] = _registerCatalog(_recipeBook(k), revision).toJson();
+    });
+    return revision;
+  }
+
+  Future<void> saveRecipeFamily(RecipeFamily family) => _write((k) {
+    k['recipeBook'] = _recipeBook(k).addFamily(family).toJson();
+  });
+
+  Future<void> saveRecipeRevision(RecipeRevision revision) async {
+    if (revision.kind == RecipeRevisionKind.catalog ||
+        (await recipes.index).any((v) => v['id'] == revision.variantId)) {
+      throw StateError('Custom recipes cannot overwrite catalog identities');
     }
     await _write((k) {
-      (_nutrition(k)['selections'] as Map)[selection.key] = selection.toJson();
+      k['recipeBook'] = _recipeBook(k).addRevision(revision).toJson();
+    });
+  }
+
+  Future<RecipeRevision> _resolveMeal(PlannedMeal meal) async {
+    final book = recipeBook;
+    if (meal.recipeRevisionKey != null) {
+      final revision = book.revisions[meal.recipeRevisionKey];
+      if (revision == null || revision.variantId != meal.recipeId) {
+        throw StateError('Unknown or mismatched recipe revision');
+      }
+      return revision;
+    }
+    final active = book.revisions[book.active[meal.recipeId]];
+    if (active != null && active.kind != RecipeRevisionKind.catalog) {
+      return active;
+    }
+    return _catalogDraft(await recipes.get(meal.recipeId));
+  }
+
+  Future<RecipeRevision> recipeForMeal(String planId) =>
+      _resolveMeal(plans.where((v) => v.id == planId).single);
+
+  Future<void> saveRecipeFoodSelection(RecipeFoodSelection selection) async {
+    final revision = selection.recipeRevisionKey == null
+        ? _catalogDraft(await recipes.get(selection.recipeId))
+        : recipeBook.revisions[selection.recipeRevisionKey];
+    if (revision == null || revision.variantId != selection.recipeId) {
+      throw StateError('Selection must reference the exact recipe revision');
+    }
+    if (selection.line >= revision.recipe.ingredients.length) {
+      throw RangeError('Recipe line');
+    }
+    final scoped = RecipeFoodSelection.fromJson({
+      ...selection.toJson(),
+      'recipeRevisionKey': revision.key,
+    });
+    await _write((k) {
+      if (revision.kind == RecipeRevisionKind.catalog) {
+        k['recipeBook'] = _registerCatalog(_recipeBook(k), revision).toJson();
+      }
+      (_nutrition(k)['selections'] as Map)[scoped.key] = scoped.toJson();
     });
   }
 
   List<RecipeFoodSelection> _foodSelections(
     Map<String, dynamic> k,
-    String recipeId,
+    RecipeRevision revision,
   ) {
     final n = k['nutrition'] as Map?;
     return ((n?['selections'] as Map?)?.values ?? const [])
@@ -195,23 +282,31 @@ class KitchenService {
           (v) =>
               RecipeFoodSelection.fromJson(Map<String, dynamic>.from(v as Map)),
         )
-        .where((v) => v.recipeId == recipeId)
+        .where(
+          (v) =>
+              v.recipeId == revision.variantId &&
+              v.recipeRevisionKey == revision.key,
+        )
         .toList();
   }
 
   Future<RecipeNutritionResult> previewNutrition(
     String planId, {
     Set<String> optionalIds = const {},
+    Set<int>? optionalLines,
+    Set<int> excludedLines = const {},
     Map<int, FoodAmount> measuredLines = const {},
     double? cookedYieldGrams,
   }) async {
     final meal = plans.where((v) => v.id == planId).single;
-    final scaled = (await recipes.get(meal.recipeId))
-        .forServings(meal.servings);
+    final revision = await _resolveMeal(meal);
     return assessRecipeNutrition(
-      scaled: scaled,
-      selections: _foodSelections(snapshot, meal.recipeId),
+      scaled: revision.recipe.forServings(meal.servings),
+      selections: _foodSelections(snapshot, revision),
+      recipeRevisionKey: revision.key,
       optionalIds: optionalIds,
+      optionalLines: optionalLines,
+      excludedLines: excludedLines,
       measuredLines: measuredLines,
       cookedYieldGrams: cookedYieldGrams,
     );
@@ -348,17 +443,21 @@ class KitchenService {
   });
 
   Future<void> plan(PlannedMeal meal) async {
-    await recipes.get(meal.recipeId);
+    final revision = await _resolveMeal(meal);
+    final pinned = meal.withRecipeRevision(revision.key);
     await _write((k) {
+      if (revision.kind == RecipeRevisionKind.catalog) {
+        k['recipeBook'] = _registerCatalog(_recipeBook(k), revision).toJson();
+      }
       final plans = k['plans'] as List,
           index = plans.indexWhere((v) => v['id'] == meal.id);
       if (meal.completed || (index >= 0 && plans[index]['completed'] == true)) {
         throw StateError('Cannot replace a cooked meal');
       }
       if (index < 0) {
-        plans.add(meal.toJson());
+        plans.add(pinned.toJson());
       } else {
-        plans[index] = meal.toJson();
+        plans[index] = pinned.toJson();
       }
     });
   }
@@ -455,11 +554,15 @@ class KitchenService {
   }
 
   /// Caller must explicitly resolve/acknowledge unmeasured ingredients. Optional
-  /// ingredients are selected by ID, and no quantity is guessed from a label.
+  /// ingredients support line-specific selection and measurement. Legacy ID
+  /// inputs are only safe for unique lines; no quantity is guessed from a label.
   Future<Map<String, dynamic>> confirmCooking(
     String planId,
     String operationId, {
     Set<String> optionalIds = const {},
+    Set<int>? optionalLines,
+    Map<int, IngredientUse> measuredUsesByLine = const {},
+    Set<int> omitUnmeasuredLines = const {},
     Map<String, IngredientUse> measuredUses = const {},
     Set<String> omitUnmeasured = const {},
     List<UnitRule> rules = const [],
@@ -477,19 +580,72 @@ class KitchenService {
       return Map<String, dynamic>.from(old.single as Map);
     }
     final meal = plans.where((p) => p.id == planId).single;
-    final scaled = (await recipes.get(meal.recipeId))
-        .forServings(meal.servings);
+    final revision = await _resolveMeal(meal);
+    final scaled = revision.recipe.forServings(meal.servings);
+    final rows = scaled.recipe.ingredients;
+    bool validLine(int i) => i >= 0 && i < rows.length;
+    if (optionalLines != null && optionalIds.isNotEmpty) {
+      throw ArgumentError(
+        'Choose optional ingredients by IDs or lines, not both',
+      );
+    }
+    if ((optionalLines ?? {}).any((i) => !validLine(i) || !rows[i].optional) ||
+        omitUnmeasuredLines.any(
+          (i) => !validLine(i) || scaled.quantity(rows[i]) != null,
+        ) ||
+        measuredUsesByLine.entries.any(
+          (e) =>
+              !validLine(e.key) ||
+              scaled.quantity(rows[e.key]) != null ||
+              e.value.ingredientId != rows[e.key].id,
+        )) {
+      throw ArgumentError('Invalid optional/measured/omitted recipe line');
+    }
     final uses = <IngredientUse>[];
-    for (final ingredient in scaled.recipe.ingredients) {
-      if (ingredient.optional && !optionalIds.contains(ingredient.id)) continue;
+    final actualMeasured = <int, IngredientUse>{};
+    final omittedLines = <int>{};
+    final selectedOptionalLines = <int>{};
+    for (var i = 0; i < rows.length; i++) {
+      final ingredient = rows[i];
+      if (ingredient.optional) {
+        if (!(optionalLines?.contains(i) ??
+            optionalIds.contains(ingredient.id))) {
+          continue;
+        }
+        selectedOptionalLines.add(i);
+      }
       final quantity = scaled.quantity(ingredient);
       if (quantity == null) {
-        final explicit = measuredUses[ingredient.id];
-        if (explicit != null && explicit.ingredientId == ingredient.id) {
-          uses.add(explicit);
-        } else if (!omitUnmeasured.contains(ingredient.id)) {
-          throw StateError('Review unmeasured ingredient: ${ingredient.id}');
+        if (omitUnmeasuredLines.contains(i) ||
+            omitUnmeasured.contains(ingredient.id)) {
+          if (measuredUsesByLine.containsKey(i) ||
+              measuredUses.containsKey(ingredient.id)) {
+            throw ArgumentError('Cannot both measure and omit a recipe line');
+          }
+          omittedLines.add(i);
+          continue;
         }
+        final explicit = measuredUsesByLine[i] ?? measuredUses[ingredient.id];
+        if (!measuredUsesByLine.containsKey(i) &&
+            measuredUses.containsKey(ingredient.id) &&
+            rows
+                    .where(
+                      (r) =>
+                          r.id == ingredient.id && scaled.quantity(r) == null,
+                    )
+                    .length >
+                1) {
+          throw StateError(
+            'Repeated unmeasured ingredient requires line-specific measurements',
+          );
+        }
+        if (explicit == null || explicit.ingredientId != ingredient.id) {
+          throw StateError(
+            'Review unmeasured recipe line $i: ${ingredient.id}',
+          );
+        }
+        uses.add(explicit);
+        actualMeasured[i] = explicit;
       } else {
         uses.add(IngredientUse(ingredient.id, quantity, ingredient.unit!));
       }
@@ -511,7 +667,8 @@ class KitchenService {
       final current = PlannedMeal.fromJson(
         Map<String, dynamic>.from(list[index] as Map),
       );
-      if (current.recipeId != meal.recipeId ||
+      if (current.recipeRevisionKey != meal.recipeRevisionKey ||
+          current.recipeId != meal.recipeId ||
           current.servings != meal.servings) {
         throw StateError('Meal changed; review again');
       }
@@ -535,22 +692,29 @@ class KitchenService {
         }
       }
       k['inventory'] = assessment.after.map((v) => v.toJson()).toList();
-      list[index] = current.done().toJson();
+      if (revision.kind == RecipeRevisionKind.catalog) {
+        k['recipeBook'] = _registerCatalog(_recipeBook(k), revision).toJson();
+      }
+      list[index] = current.withRecipeRevision(revision.key).done().toJson();
       final measuredLines = <int, FoodAmount>{};
       for (var i = 0; i < scaled.recipe.ingredients.length; i++) {
-        final row = scaled.recipe.ingredients[i],
-            explicit = measuredUses[row.id];
+        final row = scaled.recipe.ingredients[i], explicit = actualMeasured[i];
         if (scaled.quantity(row) == null && explicit != null) {
           final unit = nutritionUnit(explicit.unit);
-          if (unit != null) {
-            measuredLines[i] = FoodAmount(value: explicit.quantity, unit: unit);
+          if (unit == null) {
+            throw StateError(
+              'Review actual measurement unit for recipe line $i',
+            );
           }
+          measuredLines[i] = FoodAmount(value: explicit.quantity, unit: unit);
         }
       }
       final nutrition = assessRecipeNutrition(
         scaled: scaled,
-        selections: _foodSelections(k, meal.recipeId),
-        optionalIds: optionalIds,
+        selections: _foodSelections(k, revision),
+        recipeRevisionKey: revision.key,
+        optionalLines: selectedOptionalLines,
+        excludedLines: omittedLines,
         measuredLines: measuredLines,
         cookedYieldGrams: cookedYieldGrams,
       );
@@ -575,6 +739,8 @@ class KitchenService {
         'operationId': operationId,
         'planId': planId,
         'recipeId': meal.recipeId,
+        'recipeRevision': revision.toJson(),
+        'recipeFamily': _recipeBook(k).families[revision.familyId]!.toJson(),
         'servings': meal.servings,
         'cookedAt': (cookedAt ?? DateTime.now()).toIso8601String(),
         'country': k['country'],
@@ -582,6 +748,8 @@ class KitchenService {
         'consumed': uses.map((v) => v.toJson()).toList(),
         'omittedUnmeasured': omitUnmeasured.toList(),
         'selectedOptional': optionalIds.toList(),
+        'selectedOptionalLines': selectedOptionalLines.toList(),
+        'omittedUnmeasuredLines': omittedLines.toList(),
         'nutrition': nutrition.toJson(),
         'nutritionBatchId': batch.id,
         'cost': unknown.isEmpty ? total : null,

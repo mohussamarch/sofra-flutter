@@ -108,6 +108,72 @@
       "done": true,
       "failures": 0,
       "nextAttemptAt": null
+    },
+    "egypt/flour": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "saudi-arabia/flour": {
+      "page": 1,
+      "done": false,
+      "failures": 1,
+      "nextAttemptAt": "2026-10-12T21:15:42.386Z"
+    },
+    "egypt/pulses": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "saudi-arabia/pulses": {
+      "page": 1,
+      "done": false,
+      "failures": 1,
+      "nextAttemptAt": "2026-10-12T21:15:50.760Z"
+    },
+    "egypt/canned-fish": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "saudi-arabia/canned-fish": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "egypt/meat": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "saudi-arabia/meat": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "egypt/canned-vegetables": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "saudi-arabia/canned-vegetables": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "egypt/condiments": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
     }
   },
   "failures": [
@@ -145,8 +211,22 @@
       "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Avegetable-oils",
       "at": "2026-10-12T20:34:41.204Z",
       "nextAttemptAt": "2026-10-12T20:49:41.204Z"
+    },
+    {
+      "key": "saudi-arabia/flour",
+      "page": 1,
+      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Aflours",
+      "at": "2026-10-12T21:00:42.386Z",
+      "nextAttemptAt": "2026-10-12T21:15:42.386Z"
+    },
+    {
+      "key": "saudi-arabia/pulses",
+      "page": 1,
+      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Alegumes",
+      "at": "2026-10-12T21:00:50.760Z",
+      "nextAttemptAt": "2026-10-12T21:15:50.760Z"
     }
   ],
-  "lastRequestAt": "2026-10-12T20:55:34.354Z",
-  "nextJobIndex": 18
+  "lastRequestAt": "2026-10-12T21:00:59.919Z",
+  "nextJobIndex": 29
 }

@@ -39,6 +39,18 @@ class CatalogIngredient {
   final String? unit, label, display, note;
   final bool scales, optional;
 
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'name': name,
+    'amount': amount,
+    'unit': unit,
+    'scale': scales,
+    'optional': optional,
+    'label': label,
+    'display': display,
+    'note': note,
+  };
+
   double? quantityFor(double factor) => amount == null || !scales
       ? amount
       : roundRecipeAmount(amount! * factor, unit);
@@ -56,6 +68,13 @@ class CatalogStep {
   final double minutes;
   final bool passive;
   final String? tip;
+  Map<String, dynamic> toJson() => {
+    'n': number,
+    'text': text,
+    'duration': minutes,
+    'passive': passive,
+    'tip': tip,
+  };
 }
 
 class CatalogRecipe {
@@ -104,6 +123,23 @@ class CatalogRecipe {
   final List<CatalogStep> steps;
   final List<String> tags;
   final String? notes;
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'name': name,
+    'cuisine': cuisine,
+    'category': category,
+    'description': description,
+    'difficulty': difficulty,
+    'servings': servings,
+    'prepTime': prepMinutes,
+    'cookTime': cookMinutes,
+    'totalTime': prepMinutes + cookMinutes,
+    'ingredients': ingredients.map((v) => v.toJson()).toList(),
+    'steps': steps.map((v) => v.toJson()).toList(),
+    'tags': tags.toList(),
+    'notes': notes,
+  };
 
   ScaledCatalogRecipe forServings(int target) {
     if (target < 1 || target > 1000) {
