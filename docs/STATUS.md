@@ -27,5 +27,9 @@
 - التالي: ملاحظات المستخدم على النموذج ثم نقله إلى Flutter. نسخة APK الحالية لم تتغير.
 - Firebase Spark رفض استضافة APK؛ التنزيل عبر Drive. نُشرت معاينة الويب: https://sofra-c03a1.web.app
 - التفاصيل: راجع العناوين المناسبة في HANDOFF.md فقط.
-- خطة المنتج: ../../sofra-product-design-plan.md
-- خطة التنفيذ: ../../sofra-execution-plan.md
+- خطة المنتج في نسخة E: ../deliverables/sofra-product-design-plan.md
+- خطة التنفيذ في نسخة E: ../deliverables/sofra-execution-plan.md
+
+- نسخة العمل المختارة: E:\work\SOFRA\app؛ نسخة Codex لقطة غير نشطة. المرجع GitHub origin/main.
+- ثُبت بروتوكول تسليم المستخدم في AGENTS.md؛ دفعة توثيق فقط بلا تعديل للتطبيق أو Firebase أو APK. راجع HANDOFF §11.
+- سيرفر 8766 شغال من نسخة E. hash التسليم النهائي وحالة النظافة والرفع في E:\work\SOFRA\DELIVERY.json وHANDOFF.md.
