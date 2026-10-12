@@ -25,4 +25,4 @@
 
 - Test device: Samsung Galaxy S24 Ultra. Android APK is the preferred native test artifact.
 - Firebase: dedicated project `sofra-c03a1`, created and supplied by the user; CLI access verified. Do not modify other projects or enable billing.
-- User explicitly authorized implementation and Firebase setup. Active milestone: authentication, persistence, and a testable Android APK. Follow the incremental execution plan.
+- User explicitly authorized implementation and Firebase setup; accounts, persistence and test APK are verified. Current design prototype source: design-preview/. Keep kitchen isometric, fridge one-point frontal perspective, characters flat and animated. No further image generation or music; sound effects cancelled for now. Review the interactive prototype before porting its design to Flutter.
