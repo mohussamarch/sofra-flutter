@@ -4,18 +4,18 @@ Canonical checkout: `E:\work\SOFRA\app`. This bank is a source-separated, unrevi
 
 ## Current bounded collection —12October2026
 
-802 named records with valid GTIN length/checksum; Egypt 391, Saudi 422, overlap 11. All20 category groups have records. Nutrition is present for 587 products; 529 have core macros; 378 have ingredient text; 205 have declared allergen tags; 667 have source brands. All 802 nutrition bases remain unreviewed. None is approved as an exact calculator input by this bank alone.
+1035 named GTIN-valid records; Egypt453, Saudi593, overlap11. All20category groups have records.757have nutrition,685core macros,484ingredient text,244declared allergen tags,844brands. All1035bases remain unreviewed; none is approved for exact calculation by this bank alone.
 
-There are32 source archives,84 quarantined occurrences and122 audited duplicates. Latest batch added25 unique products from Egypt condiments; Saudi flour/pulses returned503 with persisted backoff. Manifest is authoritative for counts/hashes; raw responses preserve provenance.
+35source archives,106quarantined occurrences and167audited duplicates. Latest3request batch succeeded (Saudi condiments p1, Egypt beverages p1, Saudi beverages p2), adding233unique products;0new failures, existing backoff retained. Manifest remains authoritative for counts/hashes.
 
 | Category | Records |
 | --- | ---: |
 | Sweets / chocolate / biscuits / salty snacks | 48 / 24 / 119 / 42 |
-| Dairy / oils / ghee | 171 / 31 / 2 |
+| Dairy / oils / ghee | 183 / 31 / 2 |
 | Rice / pasta / flour / pulses | 4 / 61 / 4 / 6 |
 | Canned fish / meat / canned vegetables | 15 / 14 / 9 |
-| Condiments / spices | 59 / 25 |
-| Beverages / frozen / bakery / baby | 124 / 13 / 42 / 9 |
+| Condiments / spices | 140 / 25 |
+| Beverages / frozen / bakery / baby | 278 / 13 / 42 / 9 |
 
 Groups overlap. Cooking categories still need sourced expansion; market availability and popularity were not independently verified.
 

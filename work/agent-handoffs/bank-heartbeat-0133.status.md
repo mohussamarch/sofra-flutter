@@ -1,0 +1,1 @@
+Food bank: one batch, 3 requests succeeded, 0 failed. Bank 1,035 products (+233), 35 archives; all bases remain unreviewed. Collector import tests: 4 passed. Next due: Saudi frozen page 1 after pacing; wait for coordinator quota check before another batch.

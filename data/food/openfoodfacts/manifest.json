@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
   "dataset": "Sofra packaged food bank / Open Food Facts",
-  "builtAt": "2026-10-12T21:01:00.086Z",
+  "builtAt": "2026-10-12T21:35:19.332Z",
   "source": "https://world.openfoodfacts.org",
   "databaseLicense": "ODbL-1.0",
   "contentsLicense": "DbCL-1.0",
-  "productCount": 802,
-  "quarantinedCount": 84,
-  "duplicateOccurrences": 122,
-  "productsSha256": "8397263a7bc2461606c450cce757ce20c8d3622cf3379d11b1e9533f37940006",
-  "indexSha256": "e545923e2d000c1882ced3b8bedb06123f3b428018ac9b3ff17a73c92e7d0356",
+  "productCount": 1035,
+  "quarantinedCount": 106,
+  "duplicateOccurrences": 167,
+  "productsSha256": "b928e72c7eaafe1cd6a4742adecdf859a44a28fa38ae8dbd024920636f57e031",
+  "indexSha256": "75efd430b5bdf4c8f69d7ee10a93c05ee6436eab652af3955f73e319413f48b5",
   "marketCounts": {
-    "EG": 391,
-    "SA": 422
+    "EG": 453,
+    "SA": 593
   },
   "categoryCounts": {
     "sweets": 48,
     "chocolate": 24,
     "biscuits": 119,
     "snacks": 42,
-    "dairy": 171,
+    "dairy": 183,
     "oils": 31,
     "ghee": 2,
     "rice": 4,
@@ -29,19 +29,19 @@
     "canned-fish": 15,
     "meat": 14,
     "canned-vegetables": 9,
-    "condiments": 59,
+    "condiments": 140,
     "spices": 25,
-    "beverages": 124,
+    "beverages": 278,
     "frozen": 13,
     "bakery": 42,
     "baby": 9
   },
-  "withNutrition": 587,
-  "withCoreMacros": 529,
-  "withIngredients": 378,
-  "withBrand": 667,
-  "withDeclaredAllergens": 205,
-  "unreviewedBasisCount": 802,
+  "withNutrition": 757,
+  "withCoreMacros": 685,
+  "withIngredients": 484,
+  "withBrand": 844,
+  "withDeclaredAllergens": 244,
+  "unreviewedBasisCount": 1035,
   "archives": [
     {
       "file": "raw/egypt-bakery.json",
@@ -49,6 +49,13 @@
       "records": 10,
       "retrievedAt": "2026-10-12T19:55:03.835Z",
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Abreads"
+    },
+    {
+      "file": "raw/egypt-beverages-p1.json",
+      "sha256": "a8a017ebe8ccf0036e39ce32f6abffa21e31ed40897568c44744e1f201ce40e3",
+      "records": 100,
+      "retrievedAt": "2026-10-12T21:35:09.483Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Abeverages"
     },
     {
       "file": "raw/egypt-biscuits.json",
@@ -191,6 +198,13 @@
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Abreads"
     },
     {
+      "file": "raw/saudi-arabia-beverages-p2.json",
+      "sha256": "e1605f0c28ba12e92b246d1a54dbb461314e084e999a1f7bc374b2c633753359",
+      "records": 100,
+      "retrievedAt": "2026-10-12T21:35:19.145Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=2&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Abeverages"
+    },
+    {
       "file": "raw/saudi-arabia-beverages.json",
       "sha256": "ec24981f12dbbabcd43b2938f7141775572dcc50d64a75b761eb6b76e442a65f",
       "records": 100,
@@ -217,6 +231,13 @@
       "records": 10,
       "retrievedAt": "2026-10-12T19:53:45.133Z",
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Acanned-vegetables"
+    },
+    {
+      "file": "raw/saudi-arabia-condiments-p1.json",
+      "sha256": "b08f925e68117e265de6a13bbb9aa95bdc0042742bc9217828c565709114e589",
+      "records": 100,
+      "retrievedAt": "2026-10-12T21:34:59.343Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Acondiments"
     },
     {
       "file": "raw/saudi-arabia-dairy.json",
