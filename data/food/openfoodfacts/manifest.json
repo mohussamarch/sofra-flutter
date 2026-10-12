@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "dataset": "Sofra packaged food bank / Open Food Facts",
-  "builtAt": "2026-10-12T20:34:41.348Z",
+  "builtAt": "2026-10-12T20:55:34.527Z",
   "source": "https://world.openfoodfacts.org",
   "databaseLicense": "ODbL-1.0",
   "contentsLicense": "DbCL-1.0",
-  "productCount": 716,
-  "quarantinedCount": 78,
-  "duplicateOccurrences": 105,
-  "productsSha256": "6020deac70f9a0e88222b73f990f4873808e658e8afa3ce08283f1c03e61f71d",
-  "indexSha256": "0f7cc18efcb9ec0019be1429b01b398285d1ab1fdb07a313a4e2040a16d1b7c4",
+  "productCount": 777,
+  "quarantinedCount": 82,
+  "duplicateOccurrences": 106,
+  "productsSha256": "f4b83d80fb6af1438f9aa230444cee0134618de2630c467ca3285c8d74c24339",
+  "indexSha256": "501c81398c4741508640e3c6c5475e9c252e85460cbba9079aa2e57c129bf221",
   "marketCounts": {
-    "EG": 349,
-    "SA": 378
+    "EG": 366,
+    "SA": 422
   },
   "categoryCounts": {
     "sweets": 48,
@@ -22,26 +22,26 @@
     "dairy": 171,
     "oils": 31,
     "ghee": 2,
-    "rice": 3,
-    "pasta": 1,
-    "flour": 3,
-    "pulses": 4,
+    "rice": 4,
+    "pasta": 61,
+    "flour": 4,
+    "pulses": 6,
     "canned-fish": 15,
     "meat": 14,
     "canned-vegetables": 9,
     "condiments": 34,
     "spices": 25,
-    "beverages": 122,
+    "beverages": 123,
     "frozen": 13,
     "bakery": 42,
     "baby": 9
   },
-  "withNutrition": 531,
-  "withCoreMacros": 476,
-  "withIngredients": 338,
-  "withBrand": 605,
-  "withDeclaredAllergens": 182,
-  "unreviewedBasisCount": 716,
+  "withNutrition": 574,
+  "withCoreMacros": 519,
+  "withIngredients": 369,
+  "withBrand": 649,
+  "withDeclaredAllergens": 204,
+  "unreviewedBasisCount": 777,
   "archives": [
     {
       "file": "raw/egypt-bakery.json",
@@ -128,11 +128,25 @@
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=2&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt"
     },
     {
+      "file": "raw/egypt-pasta-p1.json",
+      "sha256": "3147486d439de7b2f3a0d45c305e8f7aee5bc7eee5a8506bb785a71d17b8d4cb",
+      "records": 17,
+      "retrievedAt": "2026-10-12T20:55:25.229Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Apastas"
+    },
+    {
       "file": "raw/egypt-pulses.json",
       "sha256": "570dca078536b43d0b327910e013a2009f7e7ac1911cde1ea5a69b69e18e308e",
       "records": 4,
       "retrievedAt": "2026-10-12T19:52:44.454Z",
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Alegumes"
+    },
+    {
+      "file": "raw/egypt-rice-p1.json",
+      "sha256": "22b1eb43c0dbe68e73ca6574384324d6d7d78736bf887a5c4ed7da4a4c385785",
+      "records": 3,
+      "retrievedAt": "2026-10-12T20:55:16.484Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Arices"
     },
     {
       "file": "raw/egypt-snacks-p1.json",
@@ -224,6 +238,13 @@
       "records": 32,
       "retrievedAt": "2026-10-12T19:51:28.236Z",
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Avegetable-oils"
+    },
+    {
+      "file": "raw/saudi-arabia-pasta-p1.json",
+      "sha256": "af9539696eb8fe6f984232bfaf16b4448bc06cfef3fbe19df68b9bfa1602201f",
+      "records": 46,
+      "retrievedAt": "2026-10-12T20:55:34.352Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Apastas"
     },
     {
       "file": "raw/saudi-arabia-rice.json",

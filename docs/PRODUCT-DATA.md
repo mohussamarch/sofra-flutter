@@ -4,20 +4,20 @@ Canonical checkout: `E:\work\SOFRA\app`. This bank is a source-separated, unrevi
 
 ## Current bounded collection —12October2026
 
-716named records with valid GTIN length/checksum; Egypt349, Saudi378, overlap11. All20category groups below have at least one record. Nutrition is present for531products,476have energy/protein/carbohydrate/fat fields,338have ingredient text,182have declared allergen tags,605have source brands. Missing data are explicit, including111missing brands. All716nutrition bases require review; none is approved as an exact calculator input by this bank alone.
+777 named records with valid GTIN length/checksum; Egypt 366, Saudi 422, overlap 11. All20 category groups have records. Nutrition is present for 574 products; 519 have core macros; 369 have ingredient text; 204 have declared allergen tags; 649 have source brands. All 777 nutrition bases remain unreviewed. None is approved as an exact calculator input by this bank alone.
 
-28source archives include two initial100-record Egypt pages,25initial successful category/market responses, and one successful Egypt snacks page. The incremental rotation also recorded six503s during this session without retrying those same failed requests.78source occurrences are quarantined (71missing names,7invalid GTINs);105duplicate occurrences were audited. These are occurrence counts, not extra usable products. Raw archives total2,531,042bytes. The manifest is the machine-readable authority for counts/hashes; `collection-state.json` holds resumable page cursors and retry eligibility.
+There are 31 source archives, 82 quarantined occurrences and 106 audited duplicate occurrences. The newest three-request batch added61 unique products from Egypt rice/pasta and Saudi pasta; all three requests succeeded. Previous503 failures and retry eligibility are retained where unresolved in collection-state.json. Manifest is the authority for current counts and hashes; raw responses preserve provenance.
 
 | Category | Records |
 | --- | ---: |
-| Sweets / chocolate / biscuits / salty snacks |48 /24 /119 /42|
-| Dairy / oils / ghee |171 /31 /2|
-| Rice / pasta / flour / pulses |3 /1 /3 /4|
-| Canned fish / meat / canned vegetables |15 /14 /9|
-| Condiments / spices |34 /25|
-| Beverages / frozen / bakery / baby |122 /13 /42 /9|
+| Sweets / chocolate / biscuits / salty snacks | 48 / 24 / 119 / 42 |
+| Dairy / oils / ghee | 171 / 31 / 2 |
+| Rice / pasta / flour / pulses | 4 / 61 / 4 / 6 |
+| Canned fish / meat / canned vegetables | 15 / 14 / 9 |
+| Condiments / spices | 34 / 25 |
+| Beverages / frozen / bakery / baby | 123 / 13 / 42 / 9 |
 
-Groups overlap. Rice, pasta, flour, ghee and pulses have especially limited coverage; they need sourced local expansion. Market availability and popularity were not independently verified.
+Groups overlap. Cooking categories still need sourced expansion; market availability and popularity were not independently verified.
 
 ## Files
 

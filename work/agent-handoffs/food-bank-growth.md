@@ -15,3 +15,9 @@ Bank now has716valid named GTINs; EG349, SA378, shared11. It has28immutable sour
 - `node --check tool/food/collect-incremental.mjs` and `node --check tool/food/import.mjs`: passed.
 - `node --test tool/food/collect-incremental.test.mjs`:7passed, covering all-category/global rotation, cached full pages, partial/source-count exhaustion, numeric source counts, global page resume, 503 persisted backoff, and production-default no-rebuild on all-failure batches. Cursor inference has no fixed page ceiling.
 - Exact next action: run `node tool/food/collect-incremental.mjs` after persisted retry eligibility; the checkpoint in `data/food/openfoodfacts/collection-state.json` rotates past failed queries and keeps their retry times. Respect OFF backoff and inspect source response summaries only. No prices/photos/credentials/Firebase/billing/UI changes; no popularity or nutrition-review claims.
+
+## Resumed batch — 12 October 2026
+
+At base `1a6bac2`, three sequential due queries succeeded: Egypt rice p1 (3 occurrences), Egypt pasta p1 (17), and Saudi pasta p1 (46). These produced61new unique GTIN records after duplicate/quarantine processing. Bank now has777records: EG366, SA422, overlap11; rice4, pasta61, flour4, ghee2, pulses6. It has31source archives,82quarantined occurrences,106duplicates,574with nutrition,519with core macros,649with brand. All777nutrition bases remain unreviewed. Products SHA256 `f4b83d80fb6af1438f9aa230444cee0134618de2630c467ca3285c8d74c24339`; index SHA256 `501c81398c4741508640e3c6c5475e9c252e85460cbba9079aa2e57c129bf221`.
+
+`node --test tool/food/import.test.mjs`:5passed, including shipped-bank source/hash integrity after these additions. The scheduler advanced to job index18 and retained earlier503 backoff entries; it did not retry them. Next action: let the hourly collector resume from `collection-state.json`. No source failures in this three-request batch; no product nutrition basis was approved.

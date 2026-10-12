@@ -3,9 +3,9 @@
   "cursors": {
     "egypt/rice": {
       "page": 1,
-      "done": false,
-      "nextAttemptAt": "2026-10-12T20:44:02.430Z",
-      "failures": 1
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
     },
     "egypt/sweets": {
       "page": 1,
@@ -72,16 +72,45 @@
       "done": false,
       "failures": 1,
       "nextAttemptAt": "2026-10-12T20:49:41.204Z"
+    },
+    "saudi-arabia/oils": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "egypt/ghee": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "saudi-arabia/ghee": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "saudi-arabia/rice": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "egypt/pasta": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
+    },
+    "saudi-arabia/pasta": {
+      "page": 1,
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
     }
   },
   "failures": [
-    {
-      "key": "egypt/rice",
-      "page": 1,
-      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Arices",
-      "at": "2026-10-12T20:29:02.430Z",
-      "nextAttemptAt": "2026-10-12T20:44:02.430Z"
-    },
     {
       "key": "saudi-arabia/sweets",
       "page": 1,
@@ -118,6 +147,6 @@
       "nextAttemptAt": "2026-10-12T20:49:41.204Z"
     }
   ],
-  "lastRequestAt": "2026-10-12T20:34:41.204Z",
-  "nextJobIndex": 11
+  "lastRequestAt": "2026-10-12T20:55:34.354Z",
+  "nextJobIndex": 18
 }
