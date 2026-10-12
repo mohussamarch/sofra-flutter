@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 import '../domain/kitchen_core.dart';
+import '../domain/food_nutrition.dart';
+import '../domain/person_nutrition.dart';
+import '../domain/recipe_nutrition.dart';
 import '../domain/cooking_timer.dart';
 import '../domain/market_profile.dart';
 import '../domain/models.dart';
@@ -95,6 +98,20 @@ class KitchenService {
     for (final row in kitchen['plans'] as List) {
       PlannedMeal.fromJson(Map<String, dynamic>.from(row as Map));
     }
+    final nutrition = kitchen['nutrition'];
+    if (nutrition != null) {
+      final n = Map<String, dynamic>.from(nutrition as Map);
+      if (n['version'] != 1) {
+        throw const FormatException('Unsupported nutrition schema');
+      }
+      for (final v in (n['profiles'] as Map).values) {
+        NutritionPersonProfile.fromJson(Map<String, dynamic>.from(v as Map));
+      }
+      for (final v in (n['selections'] as Map).values) {
+        RecipeFoodSelection.fromJson(Map<String, dynamic>.from(v as Map));
+      }
+      NutritionLedger.fromJson(Map<String, dynamic>.from(n['ledger'] as Map));
+    }
     root['kitchen'] = kitchen;
     _root = _clone(root);
   }
@@ -106,12 +123,121 @@ class KitchenService {
       change(next['kitchen'] as Map<String, dynamic>);
       if (jsonEncode(next) == jsonEncode(_root)) return;
       next['country'] = (next['kitchen'] as Map)['country'];
+      // Firestore's current state document has a hard size limit. Keep margin
+      // for field overhead and fail without deleting historical records.
+      if (utf8.encode(jsonEncode(next)).length > 850000) {
+        throw StateError(
+          'State archive required before further saves (850KB guard)',
+        );
+      }
       await store.save(next);
       _root = next;
     });
     _tail = result.catchError((Object _) {});
     return result;
   }
+
+  Map<String, dynamic> _nutrition(Map<String, dynamic> k) => k.putIfAbsent(
+    'nutrition',
+    () => <String, dynamic>{
+      'version': 1,
+      'profiles': <String, dynamic>{},
+      'selections': <String, dynamic>{},
+      'ledger': NutritionLedger.empty().toJson(),
+    },
+  ) as Map<String, dynamic>;
+
+  NutritionLedger get nutritionLedger {
+    final n = snapshot['nutrition'] as Map?;
+    return n == null
+        ? NutritionLedger.empty()
+        : NutritionLedger.fromJson(
+            Map<String, dynamic>.from(n['ledger'] as Map),
+          );
+  }
+
+  NutritionPersonProfile? nutritionProfile(String memberId) {
+    final n = snapshot['nutrition'] as Map?;
+    final raw = (n?['profiles'] as Map?)?[memberId];
+    return raw == null
+        ? null
+        : NutritionPersonProfile.fromJson(
+            Map<String, dynamic>.from(raw as Map),
+          );
+  }
+
+  Future<void> saveNutritionProfile(NutritionPersonProfile profile) => _write((
+    k,
+  ) {
+    if (!(k['members'] as List).any((v) => v['id'] == profile.memberId)) {
+      throw StateError('Nutrition profile must reference a household member');
+    }
+    (_nutrition(k)['profiles'] as Map)[profile.memberId] = profile.toJson();
+  });
+
+  Future<void> saveRecipeFoodSelection(RecipeFoodSelection selection) async {
+    final recipe = await recipes.get(selection.recipeId);
+    if (selection.line >= recipe.ingredients.length) {
+      throw RangeError('Recipe line');
+    }
+    await _write((k) {
+      (_nutrition(k)['selections'] as Map)[selection.key] = selection.toJson();
+    });
+  }
+
+  List<RecipeFoodSelection> _foodSelections(
+    Map<String, dynamic> k,
+    String recipeId,
+  ) {
+    final n = k['nutrition'] as Map?;
+    return ((n?['selections'] as Map?)?.values ?? const [])
+        .map(
+          (v) =>
+              RecipeFoodSelection.fromJson(Map<String, dynamic>.from(v as Map)),
+        )
+        .where((v) => v.recipeId == recipeId)
+        .toList();
+  }
+
+  Future<RecipeNutritionResult> previewNutrition(
+    String planId, {
+    Set<String> optionalIds = const {},
+    Map<int, FoodAmount> measuredLines = const {},
+    double? cookedYieldGrams,
+  }) async {
+    final meal = plans.where((v) => v.id == planId).single;
+    final scaled = (await recipes.get(meal.recipeId))
+        .forServings(meal.servings);
+    return assessRecipeNutrition(
+      scaled: scaled,
+      selections: _foodSelections(snapshot, meal.recipeId),
+      optionalIds: optionalIds,
+      measuredLines: measuredLines,
+      cookedYieldGrams: cookedYieldGrams,
+    );
+  }
+
+  /// Product snacks and planned meal batches may be explicitly registered.
+  /// Cooked recipe batches are created atomically by confirmCooking instead.
+  Future<void> recordNutritionEvents({
+    MealBatch? batch,
+    required List<NutritionEvent> events,
+  }) => _write((k) {
+    final n = _nutrition(k);
+    var ledger = NutritionLedger.fromJson(
+      Map<String, dynamic>.from(n['ledger'] as Map),
+    );
+    if (batch != null) ledger = ledger.addBatch(batch);
+    for (final event in events) {
+      if (event.personId != null &&
+          !(k['members'] as List).any((v) => v['id'] == event.personId) &&
+          !ledger.events.any((v) => v.personId == event.personId)) {
+        throw StateError('Unknown nutrition person');
+      }
+      ledger = ledger.append(event);
+    }
+    n['ledger'] = ledger.toJson();
+  });
 
   Future<void> saveTimer(String id, CookingTimer timer) => _write((k) {
     if (id.isEmpty) throw ArgumentError('Missing timer ID');
@@ -338,6 +464,7 @@ class KitchenService {
     Set<String> omitUnmeasured = const {},
     List<UnitRule> rules = const [],
     DateTime? cookedAt,
+    double? cookedYieldGrams,
   }) async {
     if (operationId.trim().isEmpty) throw ArgumentError('Missing operation ID');
     final old = (snapshot['history'] as List).where(
@@ -409,6 +536,41 @@ class KitchenService {
       }
       k['inventory'] = assessment.after.map((v) => v.toJson()).toList();
       list[index] = current.done().toJson();
+      final measuredLines = <int, FoodAmount>{};
+      for (var i = 0; i < scaled.recipe.ingredients.length; i++) {
+        final row = scaled.recipe.ingredients[i],
+            explicit = measuredUses[row.id];
+        if (scaled.quantity(row) == null && explicit != null) {
+          final unit = nutritionUnit(explicit.unit);
+          if (unit != null) {
+            measuredLines[i] = FoodAmount(value: explicit.quantity, unit: unit);
+          }
+        }
+      }
+      final nutrition = assessRecipeNutrition(
+        scaled: scaled,
+        selections: _foodSelections(k, meal.recipeId),
+        optionalIds: optionalIds,
+        measuredLines: measuredLines,
+        cookedYieldGrams: cookedYieldGrams,
+      );
+      final n = _nutrition(k), allergenIds = <String>{};
+      for (final raw in (n['profiles'] as Map).values) {
+        final profile = NutritionPersonProfile.fromJson(
+          Map<String, dynamic>.from(raw as Map),
+        );
+        allergenIds.addAll(profile.allergies.map((v) => v.allergenId));
+      }
+      final batch = nutritionMealBatch(
+        nutrition,
+        batchId: 'cooked:$operationId',
+        sourceSnapshotId: operationId,
+        allergenIds: allergenIds,
+      );
+      final ledger = NutritionLedger.fromJson(
+        Map<String, dynamic>.from(n['ledger'] as Map),
+      );
+      n['ledger'] = ledger.addBatch(batch).toJson();
       history.add({
         'operationId': operationId,
         'planId': planId,
@@ -420,6 +582,8 @@ class KitchenService {
         'consumed': uses.map((v) => v.toJson()).toList(),
         'omittedUnmeasured': omitUnmeasured.toList(),
         'selectedOptional': optionalIds.toList(),
+        'nutrition': nutrition.toJson(),
+        'nutritionBatchId': batch.id,
         'cost': unknown.isEmpty ? total : null,
         'knownCost': total,
         'unpricedIngredients': unknown,

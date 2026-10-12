@@ -44,4 +44,12 @@
 - User now asks to complete missing logic without redesigning interfaces; the visual UI will be built elsewhere. Only the subsequently requested functional UI changes are authorized here: male/hijab correction and ordering, general language and EG/SA selection, removing Home from bottom navigation with entry inside Today/Kitchen, a day/week/month meal calendar, and explicit new-purchase selection.
 - Backend integration guide: docs/BACKEND-API.md. Use KitchenService as the single state owner in the new UI; do not run legacy UI and new backend writers over the same state simultaneously.
 - Financial decisions are explicit in docs/MONEY-RULES.md: budget covers new purchases only; user override before average; alert and suggest without automatic plan edits; explicit purchase toggle; confirmed history prices frozen; no automatic monthly carryover.
-- Do not invent current prices, nutrition or medical rules. Price sources, nutrition coverage, automatic budget plan generation and alternatives are later work. Missing data stays unknown.
+- Do not invent current prices, nutrition or medical rules. Nutrition core and sourced banks are authorized/implemented: docs/FOOD-DATA-ARCHITECTURE.md. Recipe/label review coverage, price sources, automatic budget generation and alternatives remain incomplete. Missing data stays unknown.
+
+
+## Nutrition and external Blender design
+
+- Food API: docs/FOOD-DATA-ARCHITECTURE.md. Keep USDA CC0 and OFF ODbL/DbCL banks separate; preserve provenance, unknowns, exact form/basis and distinct nutrient definitions.
+- Recipe selections are explicit per line.54recipes have605review lines and0verified bindings. Legacy/demo UI does not gain nutrition automatically.
+- KitchenService remains the only state owner; cooking freezes nutrition without automatic intake. Preserve append-only corrections and850KBguard. No Firebase migration/billing occurred.
+- Blender brief: docs/BLENDER-DESIGN-BRIEF.md. No models/renderer built or thread created. Renderer requires a small asset test onS24Ultra. No UI redesign/audio/image generation authorized by this brief.
