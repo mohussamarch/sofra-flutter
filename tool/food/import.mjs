@@ -84,16 +84,16 @@ export function normalize(raw, provenance) {
 
 const fields = ['code','product_name','product_name_ar','product_name_en','brands','categories_tags','countries_tags','quantity','product_quantity','product_quantity_unit','serving_size','serving_quantity','serving_quantity_unit','nutrition_data','nutrition_data_per','nutrition_data_prepared_per','nutriments','allergens','allergens_tags','traces','traces_tags','ingredients_text','ingredients_text_ar','ingredients_text_en','last_modified_t','data_quality_errors_tags','data_quality_warnings_tags','states_tags'];
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-export async function fetchArchive(out, { country, page = 1, category = null, id }) {
+export async function fetchArchive(out, { country, page = 1, category = null, id, fetchImpl = fetch, now = () => new Date().toISOString() }) {
   try { await access(path.join(out,'raw',`${id}.json`)); console.log(`${id}: cached`); return 0; } catch {}
   const url = new URL('https://world.openfoodfacts.org/cgi/search.pl');
   for (const [key, value] of Object.entries({action:'process',json:1,page_size:100,page,sort_by:'unique_scans_n',fields:fields.join(','),tagtype_0:'countries',tag_contains_0:'contains',tag_0:country})) url.searchParams.set(key, value);
   if (category) for (const [key, value] of Object.entries({tagtype_1:'categories',tag_contains_1:'contains',tag_1:category})) url.searchParams.set(key,value);
-  const response = await fetch(url, { headers: {'User-Agent':'SofraResearch/0.1 (https://github.com/mohussamarch/sofra-flutter)'}, signal: AbortSignal.timeout(60000) });
+  const response = await fetchImpl(url, { headers: {'User-Agent':'SofraResearch/0.1 (https://github.com/mohussamarch/sofra-flutter)'}, signal: AbortSignal.timeout(60000) });
   if (!response.ok) throw new Error(`OFF ${response.status}: ${url}`);
   const data = await response.json();
   if (!Array.isArray(data.products)) throw new Error('Invalid OFF response');
-  const envelope = { retrievedAt:new Date().toISOString(), requestedUrl:url.href, query:{country,page,category}, count:data.count, products:data.products };
+  const envelope = { retrievedAt:now(), requestedUrl:url.href, query:{country,page,category}, count:data.count, products:data.products };
   await mkdir(path.join(out,'raw'),{recursive:true});
   await writeFile(path.join(out,'raw',`${id}.json`),JSON.stringify(envelope)+'\n');
   console.log(`${id}: ${data.products.length} / ${data.count}`);

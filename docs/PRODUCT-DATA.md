@@ -4,13 +4,13 @@ Canonical checkout: `E:\work\SOFRA\app`. This bank is a source-separated, unrevi
 
 ## Current bounded collection —12October2026
 
-687named records with valid GTIN length/checksum; Egypt320, Saudi374, overlap7. All20category groups below have at least one record. Nutrition is present for510products,461have energy/protein/carbohydrate/fat fields,329have ingredient text,179have declared allergen tags,579have source brands. Missing data are explicit, including108missingbrands. All687nutrition bases require review; none is approved as an exact calculator input by this bank alone.
+716named records with valid GTIN length/checksum; Egypt349, Saudi378, overlap11. All20category groups below have at least one record. Nutrition is present for531products,476have energy/protein/carbohydrate/fat fields,338have ingredient text,182have declared allergen tags,605have source brands. Missing data are explicit, including111missing brands. All716nutrition bases require review; none is approved as an exact calculator input by this bank alone.
 
-27source archives include two initial100-record Egypt pages and25successful category/market responses.15of40bounded category queries returned503, recorded without automatic retries.75source occurrences were quarantined (68missingnames,7invalidGTINs);92duplicate occurrences were audited. These are occurrence counts, not extra usable products. Raw archives total2,414,882bytes. The manifest is the machine-readable authority for counts/hashes.
+28source archives include two initial100-record Egypt pages,25initial successful category/market responses, and one successful Egypt snacks page. The incremental rotation also recorded six503s during this session without retrying those same failed requests.78source occurrences are quarantined (71missing names,7invalid GTINs);105duplicate occurrences were audited. These are occurrence counts, not extra usable products. Raw archives total2,531,042bytes. The manifest is the machine-readable authority for counts/hashes; `collection-state.json` holds resumable page cursors and retry eligibility.
 
 | Category | Records |
 | --- | ---: |
-| Sweets / chocolate / biscuits / salty snacks |48 /24 /119 /13|
+| Sweets / chocolate / biscuits / salty snacks |48 /24 /119 /42|
 | Dairy / oils / ghee |171 /31 /2|
 | Rice / pasta / flour / pulses |3 /1 /3 /4|
 | Canned fish / meat / canned vegetables |15 /14 /9|
@@ -79,3 +79,7 @@ Network refresh is explicit (`fetch` for3bounded pages per market; `fetch-catego
 2. Review package identity, market variant, label basis and nutrition/allergen evidence before allowing calculation; store review provenance/revision separately.
 3. Add missing categories/products through the importer or sourced manufacturer-label records, retaining source/license separation and verified GTINs.
 4. Barcode scanning, label/photo review and live price feeds are not implemented by this collection task.
+
+## Incremental collector
+
+`tool/food/collect-incremental.mjs` rotates through all20categories in both markets and global market pagination. It processes at most six due requests per invocation. The `data/food/openfoodfacts/collection-state.json` checkpoint keeps each market/category/page cursor, global page progression, last-request time, failures and next eligible retry. Existing immutable raw archives are reused and their source counts/page lengths determine whether another page exists. An exclusive lock prevents overlapping runs; requests are spaced by at least8seconds. OFF429/503 responses are recorded and receive exponential persisted backoff (15minutes initially, capped at24hours); no same failed query is repeated during backoff. A run rebuilds derived files only when at least one new response is archived. Resume with `node tool/food/collect-incremental.mjs`. Checkpoint is data state and must be retained with the source archive set.

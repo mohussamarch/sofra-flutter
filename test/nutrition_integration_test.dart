@@ -30,6 +30,10 @@ class Store implements StateStore {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  final offManifest = jsonDecode(
+    File('data/food/openfoodfacts/manifest.json').readAsStringSync(),
+  ) as Map<String, dynamic>;
+  final offCount = offManifest['productCount'] as int;
   FoodRepository foods() => FoodRepository(read: (p) => File(p).readAsString());
   RecipeRepository recipes() =>
       RecipeRepository(read: (p) => File(p).readAsString());
@@ -56,7 +60,9 @@ void main() {
     'OFF exact markets, unknown basis and explicit sourced label review',
     () async {
       final repo = foods(), rows = await repo.products();
-      expect(rows.length, 687);
+      expect(rows.length, offCount);
+      expect(rows.map((v) => v['barcode']).toSet().length, rows.length);
+      expect(rows, isNotEmpty);
       final row = rows.firstWhere(
         (v) =>
             (v['brands'] as String).isNotEmpty &&
@@ -221,7 +227,7 @@ void main() {
     'actual bundled food index is available without bundling source archives',
     () async {
       expect((await FoodRepository().usdaIndex()).length, 8156);
-      expect((await FoodRepository().products()).length, 687);
+      expect((await FoodRepository().products()).length, offCount);
     },
   );
 }

@@ -53,3 +53,7 @@
 - Recipe selections are explicit per line.54recipes have605review lines and0verified bindings. Legacy/demo UI does not gain nutrition automatically.
 - KitchenService remains the only state owner; cooking freezes nutrition without automatic intake. Preserve append-only corrections and850KBguard. No Firebase migration/billing occurred.
 - Blender brief: docs/BLENDER-DESIGN-BRIEF.md. No models/renderer built or thread created. Renderer requires a small asset test onS24Ultra. No UI redesign/audio/image generation authorized by this brief.
+
+## Continuous food bank work
+
+- User explicitly authorizes ongoing economical research and one cheap collection agent. Follow docs/FOOD-BANK-CONTINUITY.md: no arbitrary final record count; checkpoint and resume, check quota with a10%reserve, and preserve quality/source licenses. Never infer successful collection from an attempted request.
