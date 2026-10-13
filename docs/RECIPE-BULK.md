@@ -101,3 +101,8 @@ New [ingredient-fate research](RECIPE-INGREDIENT-FATE.md) pins2source ingredient
 
 
 Spanish discovery now archived:3official API responses,CC BY-SA4.0 site policy,49first-prefix entries,0parsed recipes. [Source and next collector contract](RECIPE-SPANISH-SOURCE.md);HANDOFF§50. Consume archived firstlisting before continuation;no cuisine inference or exhausted-source reset.
+
+
+## Spanish collector checkpoint — heartbeat21:59
+
+[Spanish source contract](RECIPE-SPANISH-SOURCE.md) and data/recipes/bulk/es-wikibooks-recipes/index.json: 1043sourcepages/853parsed/6750ingredientlines/4981steps/85requestarchives. Parserv3/23tests/currentSHA+re-extraction+bootstrap49checks passed. Pending0,sourceExhausted=True,nextAttemptAt=None;read actual checkpoint. Research-only,0runtime/nutrition approvals;English/French/otherbanks unchanged,no combined unique-dish sum. Next:After actual quota/owner checks,discover Spanish singular Artes culinarias/Receta/ via bounded archived namespace0 nonredirect listing,using verified Spanish site policy;review scope/parser before collection. Then another licensed pool if needed. Preserve exhausted plural/English/French cursors,0runtime approvals. SeeHANDOFF§51.

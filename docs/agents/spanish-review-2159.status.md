@@ -1,0 +1,1 @@
+Read-only review found2parserP2gaps+nonbulletvariant;root regression23tests pass and v3 fixes confirmed by focused inspection. Reviewer last ran22tests,not23;no remaining blocker in scope. No network/bank/source edits.

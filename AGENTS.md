@@ -109,3 +109,8 @@ Read actual usage before every new source batch. If automatic command review req
 ## Ingredient fate research
 
 Use docs/RECIPE-INGREDIENT-FATE.md and validate-ingredient-fate.mjs before interpreting soaking/draining observations. Exact recipe/line/full-snapshot/method anchors and licences required; retained ingredient/nutrient amounts stay null,0runtime approval. No stock/cost/nutrition behavior changes implied. Current English and French inventories are exhausted; discover another licensed pool without resetting either cursor.
+
+
+## Independent Spanish source
+
+Use docs/RECIPE-SPANISH-SOURCE.md and collect-wikibooks-es.mjs --resume for existing bank. First49archivedentries seed pending before cursoradvance;policy/SHA/app-rootdiscovery gate required. Own source IDs/locks/backoff and parserv3 null canonical values;multiline unsupported templates/code stay raw/unparsed. Preserve raw revisions,version derived re-extraction and never reset English/French or infer cuisine from language.
