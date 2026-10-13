@@ -90,7 +90,12 @@ export async function fetchArchive(out, { country, page = 1, category = null, id
   for (const [key, value] of Object.entries({action:'process',json:1,page_size:100,page,sort_by:'unique_scans_n',fields:fields.join(','),tagtype_0:'countries',tag_contains_0:'contains',tag_0:country})) url.searchParams.set(key, value);
   if (category) for (const [key, value] of Object.entries({tagtype_1:'categories',tag_contains_1:'contains',tag_1:category})) url.searchParams.set(key,value);
   const response = await fetchImpl(url, { headers: {'User-Agent':'SofraResearch/0.1 (https://github.com/mohussamarch/sofra-flutter)'}, signal: AbortSignal.timeout(60000) });
-  if (!response.ok) throw new Error(`OFF ${response.status}: ${url}`);
+  if (!response.ok) {
+    // Undici requires consuming or cancelling bodies to release connections.
+    // Cleanup failure must not replace the HTTP status used for source backoff.
+    try { await response.body?.cancel(); } catch {}
+    throw new Error(`OFF ${response.status}: ${url}`);
+  }
   const data = await response.json();
   if (!Array.isArray(data.products)) throw new Error('Invalid OFF response');
   const envelope = { retrievedAt:now(), requestedUrl:url.href, query:{country,page,category}, count:data.count, products:data.products };

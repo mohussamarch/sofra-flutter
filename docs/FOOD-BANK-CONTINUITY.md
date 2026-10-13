@@ -32,3 +32,11 @@
 ## فحص البنك الفعلي
 
 - شغّل `$env:SOFRA_FOOD_BANK = 'E:/work/SOFRA/app/data/food/openfoodfacts'` قبل `node --test tool/food/import.test.mjs`. بدون المتغير تعمل4اختبارات عامة فقط؛ المتغير يضيف الاختبار الخامس للبنك الفعلي والبصمات والمصادر. وثّق العدد الفعلي دون خلط النوعين.
+
+
+## خروج الجامع وموارد الرد
+
+- fetchArchive يقفل جسم ردHTTPالفاشل قبل رمي خطأ المصدر؛ فشل التنظيف لا يخفيHTTPstatusالمستخدم فيbackoff. [Undici الرسمي](https://github.com/nodejs/undici#garbage-collection) يطلب استهلاك/إلغاء الجسم لتحرير الموارد.
+- طباعة ملخص الجمع ليست إثبات انتهاء العملية. انتظرexit_codeوسجّل تأخر الخروج بدقة؛ لا تختلق مدة من وقت المصدر ووقت pollالمختلفين. لا تبدأ جامعًا ثانيًا بسببظهورملخصفقط.
+- فحوص الأداة عند تعديلها:حددSOFRA_FOOD_BANKثمnode --test tool/food/fetch-response.test.mjs tool/food/import.test.mjs tool/food/collect-incremental.test.mjs tool/nutrition/reference-review.test.mjs. عندتغيّرالبنكفقط يكفي5اختبارات البنك الفعلي. لا تعادفحوصFlutterلبياناتOFFفقط.
+- اختبارchildمحلي يؤكدالخروج الطبيعي بعدإلغاءجسم503غيرمنته؛ ليسضمانًا لكلشبكة/مصدر. راقبالتشغيلالحقيقيالقادم؛ لا تُحل المشكلةبـprocess.exitإجباري أوإلغاءbackoff.

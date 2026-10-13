@@ -244,24 +244,17 @@
     "egypt/global": {
       "page": 7,
       "done": false,
-      "failures": 3,
-      "nextAttemptAt": "2026-10-13T05:52:21.486Z"
+      "failures": 4,
+      "nextAttemptAt": "2026-10-13T07:53:02.204Z"
     },
     "saudi-arabia/global": {
       "page": 1,
       "done": false,
-      "failures": 4,
-      "nextAttemptAt": "2026-10-13T05:50:13.663Z"
+      "failures": 5,
+      "nextAttemptAt": "2026-10-13T09:52:53.633Z"
     }
   },
   "failures": [
-    {
-      "key": "saudi-arabia/global",
-      "page": 1,
-      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia",
-      "at": "2026-10-13T03:50:13.663Z",
-      "nextAttemptAt": "2026-10-13T05:50:13.663Z"
-    },
     {
       "key": "saudi-arabia/dairy",
       "page": 3,
@@ -270,13 +263,20 @@
       "nextAttemptAt": "2026-10-13T06:52:13.106Z"
     },
     {
+      "key": "saudi-arabia/global",
+      "page": 1,
+      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia",
+      "at": "2026-10-13T05:52:53.633Z",
+      "nextAttemptAt": "2026-10-13T09:52:53.633Z"
+    },
+    {
       "key": "egypt/global",
       "page": 7,
       "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=7&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt",
-      "at": "2026-10-13T04:52:21.486Z",
-      "nextAttemptAt": "2026-10-13T05:52:21.486Z"
+      "at": "2026-10-13T05:53:02.204Z",
+      "nextAttemptAt": "2026-10-13T07:53:02.204Z"
     }
   ],
-  "lastRequestAt": "2026-10-13T04:52:21.486Z",
+  "lastRequestAt": "2026-10-13T05:53:02.204Z",
   "nextJobIndex": 41
 }

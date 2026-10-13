@@ -1,0 +1,15 @@
+# Food bank heartbeat 05:50Z, 13 Oct 2026
+
+- Checkout: `E:\work\SOFRA\app`; starting commit `116a9ddef1167631258bc05e706b583f5ad1cb9c`. Assigned data change is only `data/food/openfoodfacts/collection-state.json`; no product files changed.
+- Scope: authorized Open Food Facts incremental collection, capped at 6 sequential requests. After this run no further batch was launched; root later confirmed no jobs due.
+- Before batch: Codex ordinary usage allowed; 5-hour=1%, weekly=0%, both below 90%. No reset or credits used.
+- Two requests were attempted sequentially: `saudi-arabia/global` p1 and `egypt/global` p7. Both returned HTTP 503; fetched=false, with no product archives or bank rebuild. Collector printed `{requests:2,fetched:false,nextJobIndex:41}` then remained alive; process polling ultimately observed exit code 0 after the summary. The summary and exit observations were not timestamped consistently enough to state a reliable elapsed lag.
+- State checkpoint: SA global p1 failures=5, next retry `2026-10-13T09:52:53.633Z`; EG global p7 failures=4, next retry `2026-10-13T07:53:02.204Z`; SA dairy p3 next due `2026-10-13T06:52:13.106Z`. Lock was removed on exit.
+- Bank unchanged: 1,690 products (EG 686, SA 1,015, shared 11); 52 archives, 247 quarantine, 302 duplicate occurrences, nutrition 1,239, core macros 1,131, ingredients 680, brands 1,277, declared allergens 352, all 1,690 bases unknown. Manifest products hash remains `38ed95bb5044d407a2fc5a3581cd10bf55bb8113ac0747ee6a5938e118e8b8af`.
+- Quality: no new sourced data; no unknown converted to zero; no inferred price, popularity, allergen absence, or measurement basis. OFF 503s recorded with source URLs and backoff.
+- Verification: no bank test run because product records did not change; required actual-bank five-test gate remains for after any later data changes. Root verified the response cleanup change with 19 related Node tests passing. Root is adding a child-process/local-HTTP-503 exit regression; this agent made no tool/source edits.
+- Read-only review of `tool/food/import.mjs` against `tool/food/fetch-response.test.mjs`: non-OK responses await optional body cancellation, swallow cleanup errors, then throw the original status; archive creation/write is after the successful JSON/products path, so HTTP error leaves no archive. Null body remains safe via optional chaining. The four tests cover unread-body cancellation/no archive and 503, cleanup failure preserving 429/no archive, null-body 503, and successful response consumption with source evidence. No actionable issue found in this focused diff; child-process exit behavior remains under root's pending regression test.
+- Next action: no collection now; earliest scheduled job was SA dairy p3 at 06:52:13Z. Before a future batch, recheck quota and due state.
+- Release: no lock held; collector exited 0. No preview server involved.
+
+Coordinator final gate:20related Node tests passed, including local unfinished503 and child natural exit. No live collector re-run post-fix; all jobs backoff. Root owns tool fix and final push.
