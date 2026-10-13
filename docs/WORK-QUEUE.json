@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T17:57:09.941613+00:00",
-    "taskId": "recipe-quantities",
-    "summary": "Guarded identity catalog2/16/16/5/22/0runtime,30tests;French540/752,source checkpointed429",
+    "at": "2026-10-13T18:25:42.014918+00:00",
+    "taskId": "recipe-bank",
+    "summary": "French804/1169;turn+354parsed. Catalog3/24/22/9/50/1/0runtime;twoindependentlocalunitscompleted,sourcescheckpointed",
     "evidence": [
-      "tool/recipes/validate-identity-catalog.test.mjs",
-      "data/recipes/identity-proposals/catalog.json",
-      "data/recipes/bulk/fr-wikibooks-cuisine/index.json"
+      "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
+      "data/recipes/identity-proposals/alternatives-review.json",
+      "tool/recipes/validate-identity-catalog.test.mjs"
     ]
   },
   "tasks": [
@@ -75,19 +75,19 @@
       "id": "recipe-bank",
       "priority": 28,
       "dependsOn": [],
-      "status": "waiting",
-      "nextAction": "Continue French prefix cursor with bounded due requests; during backoff extend source quantity/food identity review. Inspect bounded unparsed structures before parser changes. Keep languages separate; no unique-dish total or runtime nutrition claim.",
-      "lastAttemptAt": "2026-10-13T17:51:42.094Z",
-      "lastProgressAt": "2026-10-13T17:57:09.941613+00:00",
+      "status": "ready",
+      "nextAction": "Read actual quota then continue saved French prefix cursor in short bounded batches. Recheck before every batch; use fresh fail-closed evidence if command approval requires it. No English reset; no unique-dish sum. During source backoff continue local identity/fate review.",
+      "lastAttemptAt": "2026-10-13T18:22:26.815Z",
+      "lastProgressAt": "2026-10-13T18:25:42.014918+00:00",
       "owner": null,
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
         "englishCuisineTags": 53,
-        "frenchSourcePages": 752,
-        "frenchParsedRecipes": 540,
-        "frenchIngredientLines": 3557,
-        "frenchSteps": 3210,
+        "frenchSourcePages": 1169,
+        "frenchParsedRecipes": 804,
+        "frenchIngredientLines": 5554,
+        "frenchSteps": 5133,
         "runtimeReady": 0
       },
       "evidence": [
@@ -100,9 +100,7 @@
         "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
         "docs/RECIPE-FRENCH-SOURCE.md"
       ],
-      "stage": "Independent French source collection and conservative parser implemented; English source remains exhausted",
-      "blockedUntil": "2026-10-13T18:01:42.279Z",
-      "blockedReason": "French429backoff; independent identity/fate work remains ready"
+      "stage": "Independent French source collection and conservative parser implemented; English source remains exhausted"
     },
     {
       "id": "recipe-quantities",
@@ -121,14 +119,16 @@
           "rowsWithAlternativeCue": 2598,
           "rowsWithQuantityQualifier": 1165
         },
-        "identityProposals": 16,
-        "candidateReferences": 22,
-        "foodSourceRecords": 5,
+        "identityProposals": 24,
+        "candidateReferences": 50,
+        "foodSourceRecords": 9,
         "runtimeReady": 0,
         "identityCatalog": true,
-        "registeredBanks": 2
+        "registeredBanks": 3,
+        "withoutCandidates": 1,
+        "recipeTargets": 22
       },
-      "nextAction": "Extend explicit ingredient/alternative and fate review; register new banks only after source validation and update exact catalog counts/hash. French proposals need separate source-reader integration; runtime acceptance remains distinct.",
+      "nextAction": "Review ingredient fate and explicit choices/identity/quantity/form before runtime admission; curate registered source alternatives without assuming dietary suitability or summing candidates.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -145,11 +145,12 @@
         "data/recipes/identity-proposals/spices-leavening-review.json",
         "tool/recipes/validate-identity-catalog.mjs",
         "tool/recipes/validate-identity-catalog.test.mjs",
-        "data/recipes/identity-proposals/catalog.json"
+        "data/recipes/identity-proposals/catalog.json",
+        "data/recipes/identity-proposals/alternatives-review.json"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T17:57:09.941613+00:00",
-      "stage": "Explicit identity catalog guards implemented; registered banks remain unreviewed"
+      "lastProgressAt": "2026-10-13T18:13:30.749583+00:00",
+      "stage": "Three guarded identity banks; explicit source alternatives and vegan-qualified unresolved case"
     },
     {
       "id": "preparation-evidence",
@@ -231,10 +232,10 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Readactualcursors:Egyptglobalp8after17:58:40.154Z,Saudiglobalp10after18:08:08.445Z;2266/63contentsunchangedaftersource503. Onecheapcollector,noearlyretry.",
+      "nextAction": "Readactualcursors:Saudi globalp10after19:09:27.872Z,Egyptglobalp8after19:59:41.143Z.2266/63unchangedaftersource503;onecheapcollector,noearlyretry.",
       "owner": null,
-      "blockedUntil": "2026-10-13T17:58:40.154Z",
-      "blockedReason": "OFF503backoff:Saudi p10 andEgyptp8; independent quantity/identity work remains ready",
+      "blockedUntil": "2026-10-13T19:09:27.872Z",
+      "blockedReason": "OFF503backoff; independentrecipe/identitywork remains available",
       "lastProgressAt": "2026-10-13T17:28:59.195280+00:00",
       "completedUnit": {
         "products": 2266,
@@ -300,10 +301,10 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-13T17:57:09.941613+00:00",
-    "primaryUsedPercent": 61,
-    "weeklyUsedPercent": 38,
+    "at": "2026-10-13T18:25:42.014918+00:00",
+    "primaryUsedPercent": 84,
+    "weeklyUsedPercent": 42,
     "ordinaryUsageAllowed": true,
-    "action": "Capacity available; source backoff does not block local units. No credits/reset."
+    "action": "Completedunitsdelivery;recheckfreshactualbeforeeverynewbatch,noreset/purchase. Lastguardedactualsourcecallbelow90."
   }
 }

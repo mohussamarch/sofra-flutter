@@ -66,3 +66,17 @@
 - Bank unchanged at2,266 products/63 archives; hashes same, tests not rerun.
 - Collector exit0, lock cleared. Quota after progress56% primary/37% weekly ordinary allowed.
 - Stop until saved deadlines.
+
+## Egypt due-page check — 13 Oct, 17:59 UTC
+
+- Egypt global p8 HTTP503; backoff until19:59:41.143Z. Saudi p10 remains held until18:08:08.445Z, untouched.
+- Bank unchanged at2,266 products/63 archives; hashes same; no tests rerun.
+- Collector exit0, lock cleared. Quota post69% primary/39% weekly, ordinary allowed.
+- No retry before source deadlines.
+
+## Saudi p10 gate check — 13 Oct, 18:09 UTC
+
+- Saudi global p10 HTTP503; backoff until19:09:27.872Z. Egypt p8 remains deferred until19:59:41.143Z, untouched.
+- Bank unchanged at2,266 products /63 archives; hashes same. Tests not rerun.
+- Collector exited0, lock cleared. Quota76% primary/40% weekly, ordinary allowed.
+- No requests before saved gates.

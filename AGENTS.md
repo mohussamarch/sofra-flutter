@@ -100,3 +100,7 @@ Follow docs/RECIPE-FRENCH-SOURCE.md and its own checkpoint. French prefix pages 
 ## Research identity catalog
 
 Use `node tool/recipes/validate-identity-catalog.mjs` for registered banks. Preserve exact bank SHA/expected counts/current source and food guards; duplicate targets across banks fail. New banks need explicit registration, no auto-discovery. Catalog counts remain research-only/zero runtime approval. English source reader currently excludes French proposals. Never refresh stale targets to hide drift; keep raw USDA and runtime FoodRecord snapshots distinct.
+
+## Fresh source quota evidence
+
+Read actual usage before every new source batch. If automatic command review requires an in-command guard, use a freshly tool-captured ordinary/limit/timestamp report and fail closed when absent,>=90 orolderthan30seconds. PowerShell ConvertFrom-Json may deserialize ISO timestamps to UTC DateTime: cast directly to DateTimeOffset,do not stringify/reparse as localtime. Evidence files expire and cannot be reused as current usage. Preserve source lock/backoff; no alternate route around rejected unchecked actions. See HANDOFF§47.

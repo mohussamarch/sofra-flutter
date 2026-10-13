@@ -11,14 +11,19 @@
       "id": "spices-leavening-review",
       "file": "spices-leavening-review.json",
       "sha256": "383b25f903a2e16677ae10926eb4af318390ca73ab7954646ce063aeefe823fb"
+    },
+    {
+      "id": "alternatives-review",
+      "file": "alternatives-review.json",
+      "sha256": "475e21110ef75955dc03a3992c0db8a06b62559b460ae3a649054a59fdc75901"
     }
   ],
   "expected": {
-    "proposalCount": 16,
-    "recipeCount": 16,
-    "foodCount": 5,
-    "candidateCount": 22,
-    "unresolvedCount": 0
+    "proposalCount": 24,
+    "recipeCount": 22,
+    "foodCount": 9,
+    "candidateCount": 50,
+    "unresolvedCount": 1
   },
   "limitations": [
     "Research-only catalog; no accepted identities, food selection, quantity or nutritional approval.",

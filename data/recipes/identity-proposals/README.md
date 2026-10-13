@@ -18,4 +18,8 @@ Source methods for HummusI and MushyPeas soak with baking soda then rinse/drain.
 
 ## Catalog inventory
 
-`catalog.json` explicitly registers the two research banks with raw byte hashes and guarded aggregate counts. Run `node tool/recipes/validate-identity-catalog.mjs` after English collection/indexing stops. It validates current source/food evidence and rejects repeated recipe-line targets across banks. Shared foods are loaded once, not merged. Only listed files are included; new bank registration is explicit. Report2/16/16/5/22/0runtime does not approve any identity or nutrition.
+`catalog.json` explicitly registers the two research banks with raw byte hashes and guarded aggregate counts. Run `node tool/recipes/validate-identity-catalog.mjs` after English collection/indexing stops. It validates current source/food evidence and rejects repeated recipe-line targets across banks. Shared foods are loaded once, not merged. Only listed files are included; new bank registration is explicit. Report3/24/22/9/50/1withoutcandidates/0runtime does not approve any identity or nutrition.
+
+## Third registered bank
+
+`alternatives-review.json`:8explicit butter-or-margarine source lines,4new USDA foods/28references,one vegan-qualified source line without candidates. Representative references are not exact product equivalence or exhaustive alternatives; optionality/ranges/quantity/form remain unreviewed. No all-candidates nutrient sum or automatic dietary/substitution approval. Three-bank catalog now24targets/22recipes/9foods/50refs/1withoutcandidates,0runtime. Validate with `node tool/recipes/validate-identity-catalog.mjs`.

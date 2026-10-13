@@ -100,3 +100,5 @@ EGglobalp8 andSAglobalp6 each returnedHTTP503 once; actual handledCLI exit0,lock
 ## Heartbeat16:56–17:26 — actual product growth
 
 OFF final unit: Egyptp8failed503at16:58UTC,gate17:58:40.154Z. Saudi p6,p7,p8,p9success100rows each; 1986→2266 (+280net),59→63archives,302→335quarantine,606→693duplicateoccurrences,EG736/SA1541/shared11. Nutrition1577/core1437/ingredients826/brand1623/allergens416;all2266basisunreviewed,ODbL/DbCL separate.5actualbanktests passed afterp9; source hashes preserved thereafter. Saudi p10HTTP503,gate17:37:15.832Z,actualhandledexit0/lockremoved; unchangeddata afterfailure,notestsrerun. Source failure delays only that lane; recipe/identity logic remains independent.
+
+Lateststate-only503gates:Saudiglobalp10after19:09:27.872Z,Egyptglobalp8after19:59:41.143Z;2266/63content/hashunchangedthisturn,no actualbanktestsrerun. Helperexit0/lockclear. SeeHANDOFF§47;sourcebackoffdoesnotblockindependentlogic.

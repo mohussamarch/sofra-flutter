@@ -85,3 +85,7 @@ The collector now separates generator continuation from `pendingRequest` page ID
 LatestindependentFrenchsnapshot:450parsed/625sourcepages,gate2026-10-13T17:49:47.599Z;seeRECIPE-FRENCH-SOURCE/HANDOFF§44. Englishsourcepoolremainsexhausted;neitherbankcomplete norunique-dishsum.
 
 LatestFrench snapshot:540parsed/752pages;gate2026-10-13T18:01:42.279Z. Current identitycatalog guards only registered English-source proposals;Frenchneedsseparate reviewedreader. SeeHANDOFF§45.
+
+CurrentFrench621/874,gate2026-10-13T18:14:40.525Z;catalog3registeredEnglishbanks/24targets/22recipes/9foods/50refs/1withoutcandidates,0runtime. Derivedordering differs from immutable raw append history;seeHANDOFF§46.
+
+FinalsnapshotFrench804/1169,sourcecursoravailable/nonexhausted;freshquotaeachbatch. Threeidentitybanks24targets/22recipes/9foods/50refs/1withoutcandidate,0runtime. SeeHANDOFF§45–47.

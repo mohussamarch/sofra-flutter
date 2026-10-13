@@ -85,7 +85,7 @@ flowchart TD
 
 | Source bank | Path | Coverage |
 | --- | --- | --- |
-| French Wikibooks research | [index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json), [source contract](RECIPE-FRENCH-SOURCE.md) | 752 source pages/540 parsed recipes/3557 ingredient lines/3210 steps; CC BY-SA4.0 policy, exceptions unreviewed;0runtime/nutrition approvals |
+| French Wikibooks research | [index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json), [source contract](RECIPE-FRENCH-SOURCE.md) | 1169 source pages/804 parsed recipes/5554 ingredient lines/5133 steps; CC BY-SA4.0 policy, exceptions unreviewed;0runtime/nutrition approvals |
 
 French language is not a cuisine tag. Source IDs/cursors remain separate; duplicates between English/French or dish families are not resolved. Personal recipe calculation still needs explicit food/quantity/form inputs; this research source does not automatically fill them.
 
@@ -99,4 +99,10 @@ French450parsed/625pages/2862ingredientlines/2591steps;English3640/3796/53tagsun
 
 ## Validated catalog entry point
 
-[identity catalog](../data/recipes/identity-proposals/catalog.json) + `tool/recipes/validate-identity-catalog.mjs`: explicit two-bank inventory, exact bytes/current source-food checks, cross-bank target dedup,16/16/5/22/0runtime. Only registered English-source banks are included; French source counts remain separate.
+[identity catalog](../data/recipes/identity-proposals/catalog.json) + `tool/recipes/validate-identity-catalog.mjs`: explicit three-bank inventory, exact bytes/current source-food checks, cross-bank target dedup,24targets/22recipes/9foods/50refs/1withoutcandidates/0runtime. Only registered English-source banks are included; French source counts remain separate.
+
+## Source alternatives registered
+
+[alternatives-review.json](../data/recipes/identity-proposals/alternatives-review.json) adds8lines to [catalog.json](../data/recipes/identity-proposals/catalog.json);qualifiedvegan identity unresolved,no automatic substitution or nutrient sum. Actualaggregate3/24/22/9/50/1/0runtime. Frenchliteralcategorylabels have explicitraw-vs-parsed denominators inHANDOFF§46;not cuisineclaims.
+
+CurrentFrenchsnapshot:804/1169,allcanonicalquantities/nutritionunreviewed. English3640/3796unchanged;catalog3/24/22/9/50/1/0runtime. No combinedunique-dishcount;source continuation/quotachecks inHANDOFF§47.

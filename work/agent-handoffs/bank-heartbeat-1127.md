@@ -109,3 +109,17 @@
 - Collector reported one request and `fetched=false`; actual process exit code 0 after handling the 503. Post-run usage 56% primary / 37% weekly, ordinary allowed. Lock absent after exit and no Node collector remained.
 - Bank unchanged at 2,266 products, 335 quarantined, 693 duplicate occurrences, 63 archives; EG 736 / SA 1,541. Product and index SHA-256 remain `7e634d23516e4bca3884c6b6a8b1cc94591ba219deb9cd74dd69bcb51fb345fc` and `274f788720b06dd4a8d50d6df99037ccf6d0f5f48e039fee685144ab5f85525e`. No bank tests rerun because archive/product data did not change.
 - Next Saudi p10 gate: `2026-10-13T18:08:08.445Z`; Egypt p8 gate: `2026-10-13T17:58:40.154Z`. No retries before the saved deadlines.
+
+## Egypt due-page check — 13 October 2026, 17:59 UTC
+
+- Fresh usage before request: 69% primary / 39% weekly used, ordinary allowed. Egypt global p8 gate had expired; Saudi p10 remained deferred to `2026-10-13T18:08:08.445Z` and was not touched. No collector lock/process was active.
+- Egypt global p8 returned HTTP 503. New next attempt is `2026-10-13T19:59:41.143Z`; stopped after the error without retrying. Collector reported one request and `fetched=false`; actual exit code 0. Post-run quota remained 69% / 39%, ordinary allowed; lock cleared and no Node process remained.
+- No archive or product data changed: 2,266 products, 335 quarantined, 693 duplicate occurrences, 63 archives; EG 736 / SA 1,541. Product/index hashes remain `7e634d23516e4bca3884c6b6a8b1cc94591ba219deb9cd74dd69bcb51fb345fc` and `274f788720b06dd4a8d50d6df99037ccf6d0f5f48e039fee685144ab5f85525e`. No tests rerun because bank contents were unchanged.
+- Next saved source gates: Saudi p10 `2026-10-13T18:08:08.445Z`; Egypt p8 `2026-10-13T19:59:41.143Z`. Do not retry before the deadlines.
+
+## Saudi p10 gate check — 13 October 2026, 18:09 UTC
+
+- Fresh usage before request: 76% primary / 40% weekly used, ordinary allowed. Saudi p10 was due; Egypt p8 remained deferred until `2026-10-13T19:59:41.143Z` and was not touched. No lock or active Node collector existed before launch.
+- Saudi global p10 returned HTTP 503. New saved next attempt: `2026-10-13T19:09:27.872Z`. Stopped on this first error without retries. Collector reported one request and `fetched=false`; actual process exit code 0 after handling the 503. Post-run usage remained 76% / 40%; lock cleared and no Node process remained.
+- Bank unchanged: 2,266 products, 335 quarantined, 693 duplicate occurrences, 63 archives; EG 736 / SA 1,541. Product/index hashes remain `7e634d23516e4bca3884c6b6a8b1cc94591ba219deb9cd74dd69bcb51fb345fc` and `274f788720b06dd4a8d50d6df99037ccf6d0f5f48e039fee685144ab5f85525e`. No tests rerun because archive/product data did not change.
+- Next gates: Saudi p10 `2026-10-13T19:09:27.872Z`; Egypt p8 `2026-10-13T19:59:41.143Z`. No retry before those deadlines.
