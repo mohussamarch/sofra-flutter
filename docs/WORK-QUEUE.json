@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T13:27:07.640337+00:00",
+    "at": "2026-10-13T13:51:34.530718+00:00",
     "taskId": "recipe-quantities",
-    "summary": "Section/cue extraction v1 validated and integrated: {'parserVersion': 'source-structure-v1', 'rowsWithGroup': 4173, 'rowsWithOptionalityCue': 737, 'rowsWithAlternativeCue': 1806, 'rowsWithQuantityQualifier': 838}; corpus 2554/2676/52,OFF 1986.48recipe Node tests; no runtime bindings.",
+    "summary": "Review-target guard implemented/6tests;54relatedNode tests. Corpus2788/2916/53;OFF unchanged1986. No nutrition approval.",
     "evidence": [
-      "tool/recipes/collect-wikibooks.mjs",
-      "tool/recipes/build-bulk-index.test.mjs",
+      "tool/recipes/review-target.mjs",
+      "tool/recipes/review-target.test.mjs",
       "data/recipes/bulk/wikibooks-cookbook/index.json"
     ]
   },
@@ -77,13 +77,13 @@
       "dependsOn": [],
       "status": "waiting",
       "nextAction": "Check actual usage/lock and due time; resume Wikibooks with 2s minimum pacing and Retry-After. Extend regional coverage without an all-time count cap; source failure must not block local quantity parser.",
-      "lastAttemptAt": "2026-10-13T13:20:30.706Z",
-      "lastProgressAt": "2026-10-13T13:27:07.640337+00:00",
+      "lastAttemptAt": "2026-10-13T13:46:30.700Z",
+      "lastProgressAt": "2026-10-13T13:51:34.530718+00:00",
       "owner": null,
       "completedUnit": {
-        "sourcePages": 2676,
-        "parsedRecipes": 2554,
-        "cuisineTags": 52,
+        "sourcePages": 2916,
+        "parsedRecipes": 2788,
+        "cuisineTags": 53,
         "runtimeReady": 0
       },
       "evidence": [
@@ -92,7 +92,7 @@
         "tool/recipes/build-bulk-index.mjs",
         "docs/RECIPE-BULK.md"
       ],
-      "blockedUntil": "2026-10-13T13:30:30.706Z",
+      "blockedUntil": "2026-10-13T13:56:30.700Z",
       "blockedReason": "Wikimedia HTTP429; checkpointed backoff, no early retry"
     },
     {
@@ -111,20 +111,23 @@
           "rowsWithOptionalityCue": 737,
           "rowsWithAlternativeCue": 1806,
           "rowsWithQuantityQualifier": 838
-        }
+        },
+        "reviewContract": "review-target-v1"
       },
-      "nextAction": "Build reviewed ingredient/alternative identity proposals tied to exact revision/line and source text. Source or/optional/to taste cues are not approved choices. Never sum all alternatives or convert source cues into exclusions automatically.",
+      "nextAction": "Use review-target.mjs with authoritative current recipe and food snapshots to curate exact ingredient/alternative proposals; keep unresolved issues and separate explicit runtime acceptance.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
         "data/recipes/bulk/wikibooks-cookbook/index.json",
         "docs/RECIPE-BULK.md",
         "tool/recipes/collect-wikibooks.test.mjs",
-        "docs/RECIPE-BULK.md#source-section-and-review-cues"
+        "docs/RECIPE-BULK.md#source-section-and-review-cues",
+        "tool/recipes/review-target.mjs",
+        "tool/recipes/review-target.test.mjs"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T13:27:07.640337+00:00",
-      "stage": "Source prefix and section/cue extraction complete; reviewed identity and explicit choice application still pending"
+      "lastProgressAt": "2026-10-13T13:51:34.530718+00:00",
+      "stage": "Review target/identity proposal validator implemented; no real bulk identity proposals or runtime bindings created"
     },
     {
       "id": "preparation-evidence",
@@ -205,9 +208,11 @@
       "id": "product-bank",
       "priority": 80,
       "dependsOn": [],
-      "status": "ready",
-      "nextAction": "Egypt global p8 next bounded cycle; Saudi global p6 only after2026-10-13T13:32:10.213Z. Read actual cursor/usage/lock first. Latest Egypt p7 +50net; Saudi503 backoff recorded.",
-      "owner": null
+      "status": "waiting",
+      "nextAction": "Egyptp8 only after14:01:25.417Z; Saudip6 after14:16:33.799Z. Noearlyretry; onecheapcollector. Last2failureschangedstateonly,notbank.",
+      "owner": null,
+      "blockedUntil": "2026-10-13T14:01:25.417Z",
+      "blockedReason": "Both due OFF requests returned503; per-source checkpoints authoritative"
     },
     {
       "id": "budget-planner",

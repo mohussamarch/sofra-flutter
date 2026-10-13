@@ -48,3 +48,13 @@
 - Bank before/after: products 1,936→1,986 (+50 net from 100 returned rows); quarantined 274→302 (+28); duplicate occurrences 584→606 (+22); archives 58→59. Manifest market counts EG 736 / SA 1,261; nutrition 1,419; core macros 1,298; ingredients 771; brands 1,458; declared allergens 398; unreviewed nutrition basis 1,986. Source `https://world.openfoodfacts.org`; database license ODbL-1.0; contents license DbCL-1.0.
 - Required real-bank validation: 5 tests passed, 0 failed. Product SHA-256 `3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95`; index SHA-256 `a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6`.
 - Next eligible page: Egypt global p8, due on the next cycle. Saudi global p6 is due again only after `2026-10-13T13:32:10.213Z`. Recheck quota and lock before the next maximum-two run.
+
+## Follow-up bounded run — 13 October 2026, 13:46 UTC
+
+- Fresh pre-run usage was 83% primary / 27% weekly used, ordinary usage allowed; post-run usage was 84% / 27%, ordinary still allowed (16% primary headroom remains).
+- No lock file or Node collector process existed before start. The two pages due by checkpoint were Egypt global p8 and Saudi global p6; no retry was made before either deadline.
+- Egypt global p8 returned HTTP 503; saved next attempt `2026-10-13T14:01:25.417Z`.
+- Saudi global p6 returned HTTP 503; saved next attempt `2026-10-13T14:16:33.799Z`.
+- Both attempts failed; no archive was added and no product bank rebuild ran (`fetched=false`). Collector process actually exited 0 after handling the failures. Lock was absent afterward and no Node process remained.
+- Bank contents stayed unchanged: 1,986 products; 302 quarantined; 606 duplicate occurrences; 59 archives; markets EG 736 / SA 1,261. Product SHA-256 remains `3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95`; index SHA-256 remains `a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6`. Since no archive/product bank data changed, the five real-bank tests were not rerun.
+- Next due source is Egypt global p8 at `2026-10-13T14:01:25.417Z`; Saudi global p6 follows at `2026-10-13T14:16:33.799Z`. Recheck quota and ownership/lock before a later batch; do not retry earlier.

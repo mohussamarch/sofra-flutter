@@ -19,3 +19,10 @@
 - Bank now 1,986 products, 59 archives; 5 real-bank tests pass. Collector exit 0, lock cleared.
 - Quota stayed at 75% primary / 25% weekly; ordinary allowed.
 - Next: Egypt global p8 next cycle; Saudi global p6 only after backoff. Recheck quota and lock.
+
+## Follow-up — 13 Oct, 13:46 UTC
+
+- Egypt global p8 and Saudi global p6 both returned HTTP 503. Backoffs: Egypt 14:01:25.417Z; Saudi 14:16:33.799Z.
+- No bank archives/products changed: 1,986 products / 59 archives; hashes unchanged. Tests were not rerun.
+- Collector exit 0 after handling errors; lock cleared. Usage 84% primary / 27% weekly, ordinary allowed.
+- Next: Egypt p8 at 14:01:25.417Z, then Saudi p6 at 14:16:33.799Z. No earlier retries.

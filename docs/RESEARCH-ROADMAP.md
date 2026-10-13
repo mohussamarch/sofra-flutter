@@ -79,3 +79,8 @@ User explicitly requested an additional independent economical recipe agent. Fir
 ## Heartbeat13:14 — completed source structure unit
 
 Source ingredient sections and review cues are implemented/validated in research data. recipe-quantities29 continues exact line identity/explicit alternative review; recipe-bank28 respects source checkpoint. No source failure blocks independent local logic. Preparation30 and import32 remain available after this priority. No new scheduler or clinical rules.
+
+
+## Heartbeat13:44 identity guard
+
+Source batch240pages acquired;429checkpoint respected. Research identity proposal guard complete/6tests; nextcuration/authoritativefoodreader. OFF503 waits do not stop local logic. No source count completion cap.
