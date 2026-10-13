@@ -4,17 +4,17 @@ Canonical checkout: `E:\work\SOFRA\app`. This bank is a source-separated, unrevi
 
 ## Current collected snapshot —13October2026
 
-1625 named GTIN-valid records; Egypt686, Saudi950, overlap11. 1196have nutrition,1091core macros,649ingredient text,334declared allergens,1224brands. All1625bases unreviewed; none approved for exact calculation by this bank alone.
+1690 named GTIN-valid records; Egypt686, Saudi1015, overlap11. 1239have nutrition,1131core macros,680ingredient text,352declared allergens,1277brands. All1690bases unreviewed; none approved for exact calculation by this bank alone.
 
-50archives,244quarantined occurrences,285audited duplicates. Latest hourly batch:6requests/4success/2failures, unique product delta+142. Checkpoint/backoff preserved; manifest authoritative. Next: / egypt/global / 7.
+52archives,247quarantined occurrences,302audited duplicates. Latest hourly batch:3requests/2success/1failures, unique product delta+65. Checkpoint/backoff preserved; manifest authoritative. Next:2026-10-13T03:02:34.082Z / egypt/global / 7.
 
 | Category | Records |
 | --- | ---: |
-| Sweets / chocolate / biscuits / salty snacks | 53 / 65 / 119 / 92 |
+| Sweets / chocolate / biscuits / salty snacks | 107 / 65 / 119 / 92 |
 | Dairy / oils / ghee | 273 / 35 / 2 |
-| Rice / pasta / flour / pulses | 4 / 61 / 16 / 8 |
+| Rice / pasta / flour / pulses | 4 / 61 / 16 / 19 |
 | Canned fish / meat / canned vegetables | 15 / 14 / 9 |
-| Condiments / spices | 145 / 25 |
+| Condiments / spices | 146 / 26 |
 | Beverages / frozen / bakery / baby | 435 / 42 / 42 / 9 |
 
 Groups overlap; no verified market popularity/availability claim. Recipe identity proposals are a separate CC0artifact described in RECIPE-REFERENCES.md.
