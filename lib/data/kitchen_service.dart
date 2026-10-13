@@ -262,6 +262,35 @@ class KitchenService {
     return draft;
   }
 
+  /// Explicit new personal revision: one quantified replacement, no inherited bindings.
+  Future<RecipeRevision> chooseRecipeIngredient({
+    required String sourceRevisionKey,
+    required int line,
+    required CatalogIngredient selected,
+    required String variantId,
+    required String revision,
+    required String reviewNote,
+    required DateTime reviewedAt,
+    required bool acknowledgeCompleteReplacement,
+  }) async {
+    final source = recipeBook.revisions[sourceRevisionKey];
+    if (source == null) {
+      throw StateError('Register and review exact source revision first');
+    }
+    final draft = buildIngredientChoiceRevision(
+      source: source,
+      line: line,
+      selected: selected,
+      variantId: variantId,
+      revision: revision,
+      reviewNote: reviewNote,
+      reviewedAt: reviewedAt,
+      acknowledgeCompleteReplacement: acknowledgeCompleteReplacement,
+    );
+    await saveRecipeRevision(draft);
+    return draft;
+  }
+
   Future<RecipeRevision> _resolveMeal(PlannedMeal meal) async {
     final book = recipeBook;
     if (meal.recipeRevisionKey != null) {

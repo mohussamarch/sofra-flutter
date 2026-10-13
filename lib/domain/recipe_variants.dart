@@ -79,6 +79,104 @@ class IngredientSplitReview {
   }
 }
 
+/// Caller-reviewed single replacement, not culinary equivalence or a food binding.
+class IngredientChoiceReview {
+  IngredientChoiceReview({
+    required this.sourceRevisionKey,
+    required this.sourceSnapshotVersion,
+    required this.line,
+    required CatalogIngredient selected,
+    required this.note,
+    required DateTime reviewedAt,
+  }) : selected = CatalogIngredient.fromJson(selected.toJson()),
+       reviewedAt = reviewedAt.toUtc() {
+    _requiredText(sourceRevisionKey);
+    _requiredText(sourceSnapshotVersion);
+    _requiredText(note);
+    if (line < 0 || this.selected.amount == null) {
+      throw ArgumentError('Explicit quantified single choice required');
+    }
+  }
+  final String sourceRevisionKey, sourceSnapshotVersion, note;
+  final int line;
+  final CatalogIngredient selected;
+  final DateTime reviewedAt;
+  Map<String, dynamic> toJson() => {
+    'version': 1,
+    'sourceRevisionKey': sourceRevisionKey,
+    'sourceSnapshotVersion': sourceSnapshotVersion,
+    'line': line,
+    'selected': selected.toJson(),
+    'note': note,
+    'reviewedAt': reviewedAt.toIso8601String(),
+  };
+  factory IngredientChoiceReview.fromJson(Map<String, dynamic> j) {
+    if (j['version'] != 1) {
+      throw const FormatException('Ingredient choice review version');
+    }
+    return IngredientChoiceReview(
+      sourceRevisionKey: j['sourceRevisionKey'] as String,
+      sourceSnapshotVersion: j['sourceSnapshotVersion'] as String,
+      line: j['line'] as int,
+      selected: CatalogIngredient.fromJson(
+        Map<String, dynamic>.from(j['selected'] as Map),
+      ),
+      note: j['note'] as String,
+      reviewedAt: DateTime.parse(j['reviewedAt'] as String),
+    );
+  }
+}
+
+RecipeRevision buildIngredientChoiceRevision({
+  required RecipeRevision source,
+  required int line,
+  required CatalogIngredient selected,
+  required String variantId,
+  required String revision,
+  required String reviewNote,
+  required DateTime reviewedAt,
+  required bool acknowledgeCompleteReplacement,
+}) {
+  if (!acknowledgeCompleteReplacement) {
+    throw ArgumentError(
+      'Explicit single replacement/instruction review required',
+    );
+  }
+  if (line < 0 || line >= source.recipe.ingredients.length) {
+    throw RangeError('Source ingredient line');
+  }
+  final review = IngredientChoiceReview(
+    sourceRevisionKey: source.key,
+    sourceSnapshotVersion: recipeSnapshotVersion(source.recipe),
+    line: line,
+    selected: selected,
+    note: reviewNote,
+    reviewedAt: reviewedAt,
+  );
+  if (review.selected.id == source.recipe.ingredients[line].id) {
+    throw ArgumentError('Choice cannot retain replaced unresolved identity');
+  }
+  final recipe = CatalogRecipe.fromJson({
+    ...source.recipe.toJson(),
+    'id': variantId,
+    'ingredients': [
+      ...source.recipe.ingredients.take(line).map((v) => v.toJson()),
+      review.selected.toJson(),
+      ...source.recipe.ingredients.skip(line + 1).map((v) => v.toJson()),
+    ],
+  });
+  return RecipeRevision(
+    familyId: source.familyId,
+    revision: revision,
+    kind: RecipeRevisionKind.personal,
+    parentKey: source.key,
+    region: source.region,
+    method: source.method,
+    recipe: recipe,
+    ingredientChoiceReview: review,
+  );
+}
+
 RecipeRevision buildIngredientSplitRevision({
   required RecipeRevision source,
   required int line,
@@ -144,6 +242,7 @@ class RecipeRevision {
     this.region,
     this.method,
     this.ingredientSplitReview,
+    this.ingredientChoiceReview,
   }) : recipe = CatalogRecipe.fromJson(recipe.toJson()) {
     _requiredText(familyId);
     _requiredText(revision);
@@ -158,6 +257,14 @@ class RecipeRevision {
         'Split review must reference its personal revision parent',
       );
     }
+    if (ingredientChoiceReview != null &&
+        (kind != RecipeRevisionKind.personal ||
+            parentKey != ingredientChoiceReview!.sourceRevisionKey ||
+            ingredientSplitReview != null)) {
+      throw ArgumentError(
+        'Choice review must reference its personal revision parent and cannot also split',
+      );
+    }
     if (region != null) _requiredText(region!);
     if (method != null) _requiredText(method!);
   }
@@ -166,6 +273,7 @@ class RecipeRevision {
   final CatalogRecipe recipe;
   final String? parentKey, region, method;
   final IngredientSplitReview? ingredientSplitReview;
+  final IngredientChoiceReview? ingredientChoiceReview;
   String get variantId => recipe.id;
   String get key => jsonEncode([variantId, revision]);
   Map<String, dynamic> toJson() => {
@@ -176,6 +284,7 @@ class RecipeRevision {
     'recipe': recipe.toJson(),
     'parentKey': parentKey,
     'ingredientSplitReview': ingredientSplitReview?.toJson(),
+    'ingredientChoiceReview': ingredientChoiceReview?.toJson(),
     'region': region,
     'method': method,
   };
@@ -195,6 +304,11 @@ class RecipeRevision {
           ? null
           : IngredientSplitReview.fromJson(
               Map<String, dynamic>.from(j['ingredientSplitReview'] as Map),
+            ),
+      ingredientChoiceReview: j['ingredientChoiceReview'] == null
+          ? null
+          : IngredientChoiceReview.fromJson(
+              Map<String, dynamic>.from(j['ingredientChoiceReview'] as Map),
             ),
       region: j['region'] as String?,
       method: j['method'] as String?,
@@ -256,6 +370,38 @@ class RecipeBook {
           jsonEncode(revision.recipe.toJson())) {
         throw const FormatException(
           'Unreviewed changes outside ingredient split',
+        );
+      }
+    }
+    for (final revision in this.revisions.values) {
+      final review = revision.ingredientChoiceReview;
+      if (review == null) continue;
+      final source = this.revisions[review.sourceRevisionKey]!;
+      if (review.sourceSnapshotVersion !=
+              recipeSnapshotVersion(source.recipe) ||
+          revision.region != source.region ||
+          revision.method != source.method ||
+          review.line >= source.recipe.ingredients.length ||
+          review.selected.id == source.recipe.ingredients[review.line].id) {
+        throw const FormatException(
+          'Stale or invalid ingredient choice source',
+        );
+      }
+      final expected = CatalogRecipe.fromJson({
+        ...source.recipe.toJson(),
+        'id': revision.variantId,
+        'ingredients': [
+          ...source.recipe.ingredients.take(review.line).map((v) => v.toJson()),
+          review.selected.toJson(),
+          ...source.recipe.ingredients
+              .skip(review.line + 1)
+              .map((v) => v.toJson()),
+        ],
+      });
+      if (jsonEncode(expected.toJson()) !=
+          jsonEncode(revision.recipe.toJson())) {
+        throw const FormatException(
+          'Unreviewed changes outside ingredient choice',
         );
       }
     }

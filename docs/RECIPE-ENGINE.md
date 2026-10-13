@@ -73,3 +73,8 @@ Next: explicit review tied to recipe revision/line and ingredient identity, then
 Current `source-prefix-v2` supports adjacent explicit units (`200g`, `250ml`) and leading decimals (`.5 cup`), with an explicit token boundary: `garlic`, `cupful`, `g3` and ratios such as `g/100g` are not accepted units. Fractions/known aliases remain supported. Every parsed/unresolved candidate now carries its parser version. No count/package inference, canonical mass, food identity or cup/spoon-system conversion is added.
 
 On the same2676-page/2554-recipe corpus (22394 ingredient rows), v1 produced11189 candidates; v2 produces11194:7 newly parsed and2 no longer parsed under stricter token boundaries. This is transcription coverage, not nutrient coverage.48recipe tests passed:19collector/10index/9quantity/10research contract;2additional quantity tests first failed then passed. Older v1 limitation notes above are historical. No runtime/Flutter/UI changes.
+
+
+## Explicit single ingredient choice API
+
+[RECIPE-INGREDIENT-CHOICES.md](RECIPE-INGREDIENT-CHOICES.md): KitchenService.chooseRecipeIngredient creates one caller-reviewed quantified replacement as a new personal revision. Source/full snapshot/region/method and complete expected recipe guarded;old plans/history frozen,no inherited nutrition bindings.7newtests/full107Fluttertests/analyzeclean. Research source promotion and private from-scratch creation remain separate.

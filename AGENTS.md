@@ -114,3 +114,8 @@ Use docs/RECIPE-INGREDIENT-FATE.md and validate-ingredient-fate.mjs before inter
 ## Independent Spanish source
 
 Use docs/RECIPE-SPANISH-SOURCE.md and collect-wikibooks-es.mjs --resume for existing bank. First49archivedentries seed pending before cursoradvance;policy/SHA/app-rootdiscovery gate required. Own source IDs/locks/backoff and parserv3 null canonical values;multiline unsupported templates/code stay raw/unparsed. Preserve raw revisions,version derived re-extraction and never reset English/French or infer cuisine from language.
+
+
+## Explicit single choice and operational ordering
+
+Use RECIPE-INGREDIENT-CHOICES.md:chooseRecipeIngredient stores one quantified replacement/newpersonalrevision,fullparent/region/method guards,no inherited foodbindings,history frozen. Calleracknowledgesinstructions;no culinaryequivalence/medicalapproval implied. Sourcebankexpansion nowpriority35/openaftercurrentinventories archived;readyquantity/preparation/import/authoring foundations advance. Preserve continuouseconomicalsource research/no countcap and actualquotas/backoff.

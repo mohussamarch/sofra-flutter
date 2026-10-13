@@ -108,3 +108,8 @@ See docs/HOUSEHOLD-MEASURES.md. KitchenService.acceptRecipeHouseholdMeasure save
 ## Compound line revision API
 
 KitchenService.splitRecipeIngredient creates a new reviewed personal revision with2+explicit quantified components, exact parent stamp and no inherited food selections. See COMPOUND-REVISIONS.md for contract and retry semantics. Preparation evidence index is separate in PREPARATION-EVIDENCE.md; no approved transforms yet.
+
+
+## Explicit single ingredient choice API
+
+[RECIPE-INGREDIENT-CHOICES.md](RECIPE-INGREDIENT-CHOICES.md): KitchenService.chooseRecipeIngredient creates one caller-reviewed quantified replacement as a new personal revision. Source/full snapshot/region/method and complete expected recipe guarded;old plans/history frozen,no inherited nutrition bindings.7newtests/full107Fluttertests/analyzeclean. Research source promotion and private from-scratch creation remain separate.

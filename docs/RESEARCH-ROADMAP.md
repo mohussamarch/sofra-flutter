@@ -122,3 +122,8 @@ Spanish discovery now archived:3official API responses,CC BY-SA4.0 site policy,4
 ## Spanish collector checkpoint — heartbeat21:59
 
 [Spanish source contract](RECIPE-SPANISH-SOURCE.md) and data/recipes/bulk/es-wikibooks-recipes/index.json: 1043sourcepages/853parsed/6750ingredientlines/4981steps/85requestarchives. Parserv3/23tests/currentSHA+re-extraction+bootstrap49checks passed. Pending0,sourceExhausted=True,nextAttemptAt=None;read actual checkpoint. Research-only,0runtime/nutrition approvals;English/French/otherbanks unchanged,no combined unique-dish sum. Next:After actual quota/owner checks,discover Spanish singular Artes culinarias/Receta/ via bounded archived namespace0 nonredirect listing,using verified Spanish site policy;review scope/parser before collection. Then another licensed pool if needed. Preserve exhausted plural/English/French cursors,0runtime approvals. SeeHANDOFF§51.
+
+
+## Source expansion and calculation foundation — heartbeat22:29
+
+Current English/French/Spanishplural inventories archived,Spanishsingular1candidate verified with source-quality gaps. Ongoing recipe-bank task moves operationalpriority28→35,remainsready/open without a final record cap. Quantity29/preparation30/import32/authoring34 foundations can advance;source research continues as an economical independent lane. This prevents unrestricted discovery from permanently starving calculation/import work. Product/user decisions unchanged. Explicitone-choice backendrevisionAPI is implemented;bulk preflight/review/unknown timing and from-scratch persistence remain open. SeeHANDOFF§52–53.

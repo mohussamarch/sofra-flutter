@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T22:21:59.498Z",
-    "taskId": "recipe-bank",
-    "summary": "Spanishcollector/parserv3 implemented and23tests pass;853parsed/1043pages/85archives,bootstrap49consumed,current hashes/re-extractionverified,0runtime.",
+    "at": "2026-10-13T22:54:12.792251+00:00",
+    "taskId": "recipe-quantities",
+    "summary": "Explicitsingleingredientchoice revisions/model/bookguard/service persisted;7newtests,full107Fluttertests/analyzeclean. Singularsource1candidate/2archives reviewed,0runtime imports.",
     "evidence": [
-      "tool/recipes/collect-wikibooks-es.mjs",
-      "tool/recipes/collect-wikibooks-es.test.mjs",
-      "data/recipes/bulk/es-wikibooks-recipes/index.json",
-      "data/recipes/bulk/es-wikibooks-recipes/checkpoint.json"
+      "lib/domain/recipe_variants.dart",
+      "lib/data/kitchen_service.dart",
+      "test/ingredient_choice_revisions_test.dart",
+      "docs/RECIPE-INGREDIENT-CHOICES.md"
     ]
   },
   "tasks": [
@@ -74,12 +74,12 @@
     },
     {
       "id": "recipe-bank",
-      "priority": 28,
+      "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "After actual quota/owner checks,discover Spanish singular Artes culinarias/Receta/ via bounded archived namespace0 nonredirect listing,using verified Spanish site policy;review scope/parser before collection. Then another licensed pool if needed. Preserve exhausted plural/English/French cursors,0runtime approvals.",
-      "lastAttemptAt": "2026-10-13T22:21:59.077Z",
-      "lastProgressAt": "2026-10-13T22:21:59.498Z",
+      "nextAction": "Continue licensed source expansion after currentknownpools exhausted;review another official source/category/prefix with archivedpolicy and boundedrequests. Noreset/finalcountcap;useeconomical independenthelper while local foundations advance.",
+      "lastAttemptAt": "2026-10-13T22:33:40.345Z",
+      "lastProgressAt": "2026-10-13T22:33:40.866Z",
       "owner": null,
       "completedUnit": {
         "englishSourcePages": 3796,
@@ -100,7 +100,11 @@
         "spanishApiRequests": 85,
         "spanishParser": "es-sections-and-template-v3",
         "spanishSourceExhausted": true,
-        "spanishBootstrapConsumed": true
+        "spanishBootstrapConsumed": true,
+        "spanishSingularCandidates": 1,
+        "spanishSingularSourceRequests": 2,
+        "spanishSingularIngredientLines": 9,
+        "spanishSingularSteps": 6
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
@@ -115,7 +119,9 @@
         "docs/RECIPE-SPANISH-SOURCE.md",
         "tool/recipes/collect-wikibooks-es.mjs",
         "tool/recipes/collect-wikibooks-es.test.mjs",
-        "data/recipes/bulk/es-wikibooks-recipes/index.json"
+        "data/recipes/bulk/es-wikibooks-recipes/index.json",
+        "data/recipes/source-discovery/es-wikibooks-singular/candidate.json",
+        "data/recipes/source-discovery/es-wikibooks-singular/review-notes.json"
       ],
       "stage": "Spanish collector/parser implemented and verified;source checkpoints determine next batch."
     },
@@ -147,9 +153,13 @@
         "ingredientFateObservations": 2,
         "methodStepReferences": 6,
         "unknownRetentionCount": 2,
-        "fateRuntimeReady": 0
+        "fateRuntimeReady": 0,
+        "singleIngredientChoiceRevision": true,
+        "choiceTests": 7,
+        "fullFlutterTests": 107,
+        "analyzeClean": true
       },
-      "nextAction": "Review explicit alternative selection and quantity/form decisions; retained ingredient and nutrient amounts remain null until independently reviewed. Fate research anchors2recipes/6steps are guarded,not runtime accepted.",
+      "nextAction": "Implement reviewed source-to-runtime import preflight: exact revision/line identity,quantity/form/optional/choice decisions and unknown timing/servings reported separately;never fillzero or apply unreviewedbindings.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -171,11 +181,15 @@
         "tool/recipes/validate-ingredient-fate.mjs",
         "tool/recipes/validate-ingredient-fate.test.mjs",
         "data/recipes/ingredient-fate/soaking-review.json",
-        "docs/RECIPE-INGREDIENT-FATE.md"
+        "docs/RECIPE-INGREDIENT-FATE.md",
+        "lib/domain/recipe_variants.dart",
+        "lib/data/kitchen_service.dart",
+        "test/ingredient_choice_revisions_test.dart",
+        "docs/RECIPE-INGREDIENT-CHOICES.md"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T21:45:25.728505+00:00",
-      "stage": "Three guarded identity banks; explicit source alternatives and vegan-qualified unresolved case"
+      "lastProgressAt": "2026-10-13T22:54:12.792251+00:00",
+      "stage": "Source quantity/identity/fate guards plus explicit single-choice runtime revision API implemented;bulk import preflight and review coverage remain open."
     },
     {
       "id": "preparation-evidence",
@@ -333,5 +347,5 @@
     "ordinaryUsageAllowed": true,
     "action": "Reserve reached after completed bounded unit;no further research/agents/sourcecalls. Recheck later;no credits/reset."
   },
-  "updatedAt": "2026-10-13T22:23:38.216284+00:00"
+  "updatedAt": "2026-10-13T22:54:12.792251+00:00"
 }

@@ -24,3 +24,8 @@ KitchenService copies the draft before awaits and saves through the existing ato
 Every new revision starts without automatic nutrition binding inheritance, including unchanged/shifted lines. Review/save RecipeFoodSelection per exact revision/line. Catalogue reference proposals cannot be blindly restamped onto changed ingredients; they require a fresh source review. No new authored recipes, catalogue mutations, nutritional facts, UI or APK are included.
 
 Verification:6new tests cover full immutable contents/scaling, explicit complete replacement/quantities, rollback/reload/retry, old pins and zero inherited bindings, stale/tampered source evidence, frozen history. Full92Flutter tests passed and analyze clean. Independent focused review found no must-fix defects; reviewer did not rerun tests. See HANDOFF§32.
+
+
+## Explicit single ingredient choice API
+
+[RECIPE-INGREDIENT-CHOICES.md](RECIPE-INGREDIENT-CHOICES.md): KitchenService.chooseRecipeIngredient creates one caller-reviewed quantified replacement as a new personal revision. Source/full snapshot/region/method and complete expected recipe guarded;old plans/history frozen,no inherited nutrition bindings.7newtests/full107Fluttertests/analyzeclean. Research source promotion and private from-scratch creation remain separate.
