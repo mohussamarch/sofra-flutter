@@ -75,3 +75,11 @@
 - One checkout/one owner. Diagnose active task progress with its own lastProgress taskId or lastAttemptAt fallback; after60minutes inspect owner/process/evidence before resuming or releasing it. Do not start a second writer or refresh timestamps as fake progress.
 - Current completed units: monitor, source measure catalogue and persistent measure integration. See docs/HOUSEHOLD-MEASURES.md: explicit per-revision/line acceptance, source estimate versus actual quantity, acknowledgement before estimated deduction, atomic stock/cost/nutrition consistency and frozen confidence. Compound-revisions is now implemented (COMPOUND-REVISIONS.md), with explicit quantities/full parent guard/new bindings. Next preparation-evidence has4official sources and9extracted/unmapped candidates but0approved transforms; distinguish data CC0 from unknown document license, keep unarchived hashes null, never apply a universal macro multiplier.
 - Close a proven unit with relevant tests/queue evidence/commit/push, then take the next available unit while capacity permits. Product collection remains a helper lane with one cheap gpt-6-luna/medium collector and short context; preserve lock/backoff and its handoff/status. No automatic clinical rules, invented prices or conversions.
+
+
+## Recipe research and data map —13 October2026
+
+- Start architecture lookup at docs/DATA-MAP.md; detailed food contract remains FOOD-DATA-ARCHITECTURE.md.
+- User explicitly requested an additional independent recipe collection agent. Use a bounded economical batch and its own handoff/status; coordinator owns shared files.
+- data/recipes/research-candidates.json is research-only, outside shipping recipes and Flutter assets; validate with node tool/recipes/validate-research.mjs. Docs/RECIPE-BANK.md defines provenance, licences, versioning and runtime promotion gaps.
+- Keep source licences/attribution separate, unknown times/amounts null, and0unreviewed food/nutrition bindings. Original54recipes unchanged; no guessed timing0 or gram conversions to fit CatalogRecipe.

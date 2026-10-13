@@ -1,0 +1,1026 @@
+{
+  "schemaVersion": 1,
+  "status": "research-only",
+  "reviewNotice": "Not runtime data. Candidate transcription is an independent research summary; all food bindings and nutrition remain null and require separate review.",
+  "sources": [
+    {
+      "id": "usda-myplate-preserved-archive",
+      "url": "https://myplate.food/",
+      "title": "USDA MyPlate Kitchen recipe archive (preserved edition)",
+      "publisher": "MyPlate.food independent archive; original authors credited per recipe, not all federal employees",
+      "license": "Archive asserts public-domain status for underlying works and reuse with credit for its edition. Original authors include federal, state and university contributors; primary-source and source-specific reuse rights remain unverified. No blanket federal-work classification.",
+      "retrievedAt": "2026-10-13T11:16:02Z",
+      "licenseStatus": "unverified-primary-source",
+      "credit": "MyPlate.food archive plus individual original recipe authors; see each publisherCredit. Licence claim unverified.",
+      "sha256": null,
+      "retrievedAtNote": "Timestamp recorded by prior agent; exact retrieval clock was not captured in that turn.",
+      "retrievalTimingNote": "Coordinator re-opened all four recipe pages with web reader at this measured UTC time. Earlier agent value 2026-10-13T10:00:00Z was unmeasured and is superseded, not evidence of retrieval."
+    },
+    {
+      "id": "wikibooks-cookbook-cc-by-sa",
+      "url": "https://en.wikibooks.org/wiki/Cookbook",
+      "title": "Wikibooks Cookbook pages",
+      "publisher": "Wikibooks contributors; Wikimedia Foundation project",
+      "license": "CC BY-SA 4.0 International; Wikibooks text is generally dual licensed with GFDL, subject to page-specific exceptions. Adaptations must provide attribution, indicate changes, include a license notice, and be shared under CC BY-SA 4.0 or later.",
+      "licenseStatus": "verified-license",
+      "licenseEvidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+      "retrievedAt": "2026-10-13T11:13:54Z",
+      "credit": "Credit Wikibooks contributors and link the version-specific source page; mark these Arabic summaries as modified/adapted content and distribute adapted material under CC BY-SA 4.0 or later.",
+      "sha256": null
+    }
+  ],
+  "recipes": [
+    {
+      "id": "research-usda-black-bean-burgers",
+      "sourceId": "usda-myplate-preserved-archive",
+      "sourceRecipeId": "black-bean-burgers",
+      "sourceUrl": "https://myplate.food/recipes/black-bean-burgers",
+      "publisherCredit": "USDA Center for Nutrition Policy and Promotion (as attributed by MyPlate.food)",
+      "familyId": "dish:black-bean-burgers",
+      "variantId": "usda-myplate-black-bean-burgers",
+      "familySuggestion": "New family: black bean burger. No matching existing recipe family established.",
+      "variantSuggestion": "Potential catalog candidate; keep separate until editor reviews fit and source status.",
+      "reviewStatus": "research-only",
+      "servings": 4,
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "low-sodium black beans, canned; drained and rinsed",
+          "amount": 1,
+          "unit": "can (15.5 oz)",
+          "sourceText": "1 can (15.5 oz) low-sodium black beans — drained and rinsed with cold water",
+          "foodBinding": null,
+          "amountText": "1 can (15.5 oz) low-sodium black beans — drained and rinsed with cold water"
+        },
+        {
+          "id": "i2",
+          "name": "egg, large",
+          "amount": 1,
+          "unit": "large egg",
+          "sourceText": "1 large egg",
+          "foodBinding": null,
+          "amountText": "1 large egg"
+        },
+        {
+          "id": "i3",
+          "name": "brown rice, cooked",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceText": "1/2 cup cooked brown rice",
+          "foodBinding": null,
+          "amountText": "1/2 cup cooked brown rice"
+        },
+        {
+          "id": "i4",
+          "name": "scallions, minced",
+          "amount": 2,
+          "unit": "scallions",
+          "sourceText": "2 scallions — green and white minced about 1/4 cup",
+          "foodBinding": null,
+          "amountText": "2 scallions — green and white minced about 1/4 cup"
+        },
+        {
+          "id": "i5",
+          "name": "cilantro, fresh, chopped (or basil / combination)",
+          "amount": 2,
+          "unit": "tablespoons",
+          "sourceText": "2 tablespoons chopped fresh cilantro — or basil leaves or a combination",
+          "foodBinding": null,
+          "amountText": "2 tablespoons chopped fresh cilantro — or basil leaves or a combination"
+        },
+        {
+          "id": "i6",
+          "name": "garlic, minced",
+          "amount": 1,
+          "unit": "clove",
+          "sourceText": "1 clove garlic — peeled and minced",
+          "foodBinding": null,
+          "amountText": "1 clove garlic — peeled and minced"
+        },
+        {
+          "id": "i7",
+          "name": "dried oregano or basil",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "sourceText": "1/4 teaspoon dried oregano or basil",
+          "foodBinding": null,
+          "amountText": "1/4 teaspoon dried oregano or basil"
+        },
+        {
+          "id": "i8",
+          "name": "vegetable oil",
+          "amount": 1,
+          "unit": "teaspoon",
+          "sourceText": "1 teaspoon vegetable oil",
+          "foodBinding": null,
+          "amountText": "1 teaspoon vegetable oil"
+        },
+        {
+          "id": "i9",
+          "name": "salt",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "sourceText": "1/4 teaspoon salt",
+          "foodBinding": null,
+          "amountText": "1/4 teaspoon salt"
+        },
+        {
+          "id": "i10",
+          "name": "black pepper",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "sourceText": "1/2 teaspoon black pepper",
+          "foodBinding": null,
+          "amountText": "1/2 teaspoon black pepper"
+        },
+        {
+          "id": "i11",
+          "name": "whole-wheat buns",
+          "amount": 4,
+          "unit": "buns",
+          "sourceText": "4 whole-wheat buns",
+          "foodBinding": null,
+          "amountText": "4 whole-wheat buns"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اهرسي الفاصوليا بالشوكة مع إبقاء بعض القطع.",
+          "durationMinutes": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي البيضة وامزجيها.",
+          "durationMinutes": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي الأرز والبصل الأخضر والثوم والعشب والملح والفلفل وامزجي.",
+          "durationMinutes": null
+        },
+        {
+          "n": 4,
+          "text": "شكّلي الخليط أربع أقراص بسماكة تقارب ٢ إلى ٢٫٥ سم.",
+          "durationMinutes": null
+        },
+        {
+          "n": 5,
+          "text": "سخّني مقلاة كبيرة على حرارة عالية.",
+          "durationMinutes": null
+        },
+        {
+          "n": 6,
+          "text": "أضيفي الزيت إلى المقلاة الساخنة.",
+          "durationMinutes": null
+        },
+        {
+          "n": 7,
+          "text": "اطهي الأقراص ٤–٥ دقائق لكل جهة حتى تتحمر وتسخن جيدًا.",
+          "durationMinutes": null
+        },
+        {
+          "n": 8,
+          "text": "قدّمي الأقراص داخل خبز القمح الكامل.",
+          "durationMinutes": null
+        }
+      ],
+      "sourcedDurations": {
+        "cookMinutes": null,
+        "prepMinutes": null,
+        "note": "Only a per-side cooking interval is given; aggregate duration is unknown."
+      },
+      "nutrition": null,
+      "gaps": [
+        "No canonical unit mapping or measured food identity reviewed.",
+        "Servings are source-stated; cooked weight is unknown.",
+        "Nutrition omitted.",
+        "Primary-source and original-author reuse status unresolved; archive hosting and federal redistribution do not establish all authors as US federal employees."
+      ],
+      "name": "Black Bean Burgers",
+      "nameAr": "برغر الفاصوليا السوداء",
+      "recordVersion": 1,
+      "sourceRevision": null
+    },
+    {
+      "id": "research-usda-black-bean-burrito",
+      "sourceId": "usda-myplate-preserved-archive",
+      "sourceRecipeId": "black-bean-burrito",
+      "sourceUrl": "https://myplate.food/recipes/black-bean-burrito",
+      "publisherCredit": "Michigan Department of Community Health, Healthy Recipes (as attributed by MyPlate.food)",
+      "familyId": "dish:black-bean-burrito",
+      "variantId": "usda-myplate-black-bean-burrito",
+      "familySuggestion": "New family: black bean burrito. Compare with existing recipes before adoption.",
+      "variantSuggestion": "Potential catalog candidate; source specifies corn tortillas and microwave preparation.",
+      "reviewStatus": "research-only",
+      "servings": 4,
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "black beans, cooked and mashed or low-sodium canned",
+          "amount": 1.3333333333,
+          "unit": "cup",
+          "sourceText": "1 1/3 cups cooked black beans — mashed, or low-sodium canned",
+          "foodBinding": null,
+          "amountText": "1 1/3 cups cooked black beans — mashed, or low-sodium canned"
+        },
+        {
+          "id": "i2",
+          "name": "canola oil",
+          "amount": 1,
+          "unit": "teaspoon",
+          "sourceText": "1 teaspoon canola oil",
+          "foodBinding": null,
+          "amountText": "1 teaspoon canola oil"
+        },
+        {
+          "id": "i3",
+          "name": "onion, chopped",
+          "amount": 2,
+          "unit": "tablespoons",
+          "sourceText": "2 tablespoons onion — chopped",
+          "foodBinding": null,
+          "amountText": "2 tablespoons onion — chopped"
+        },
+        {
+          "id": "i4",
+          "name": "tomatoes, chopped",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceText": "1/2 cup tomatoes — chopped",
+          "foodBinding": null,
+          "amountText": "1/2 cup tomatoes — chopped"
+        },
+        {
+          "id": "i5",
+          "name": "corn tortillas",
+          "amount": 4,
+          "unit": "tortillas",
+          "sourceText": "4 corn tortillas",
+          "foodBinding": null,
+          "amountText": "4 corn tortillas"
+        },
+        {
+          "id": "i6",
+          "name": "fresh tomato salsa",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceText": "1/2 cup fresh tomato salsa",
+          "foodBinding": null,
+          "amountText": "1/2 cup fresh tomato salsa"
+        },
+        {
+          "id": "i7",
+          "name": "plain nonfat yogurt",
+          "amount": 4,
+          "unit": "tablespoons",
+          "sourceText": "4 tablespoons yogurt, non-fat plain",
+          "foodBinding": null,
+          "amountText": "4 tablespoons yogurt, non-fat plain"
+        },
+        {
+          "id": "i8",
+          "name": "cilantro, chopped",
+          "amount": 2,
+          "unit": "tablespoons",
+          "sourceText": "2 tablespoons cilantro — chopped",
+          "foodBinding": null,
+          "amountText": "2 tablespoons cilantro — chopped"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغسلي اليدين بالماء والصابون.",
+          "durationMinutes": null
+        },
+        {
+          "n": 2,
+          "text": "اهرسي الفاصوليا مع الزيت ثم اخلطيها بالبصل والطماطم.",
+          "durationMinutes": null
+        },
+        {
+          "n": 3,
+          "text": "سخّني التورتيلا بين مناديل ورقية رطبة في الميكروويف ١٥ ثانية.",
+          "durationMinutes": null
+        },
+        {
+          "n": 4,
+          "text": "وزّعي خليط الفاصوليا على قطع التورتيلا.",
+          "durationMinutes": null
+        },
+        {
+          "n": 5,
+          "text": "اطوي كل قطعة حول الحشوة.",
+          "durationMinutes": null
+        },
+        {
+          "n": 6,
+          "text": "ضعيها في طبق مناسب للميكروويف وأضيفي الصلصة فوقها.",
+          "durationMinutes": null
+        },
+        {
+          "n": 7,
+          "text": "سخّني على الإعداد العالي ١٥ ثانية.",
+          "durationMinutes": null
+        },
+        {
+          "n": 8,
+          "text": "قدّميها مع اللبن والكزبرة.",
+          "durationMinutes": null
+        }
+      ],
+      "sourcedDurations": {
+        "cookMinutes": null,
+        "prepMinutes": null,
+        "note": "15-second microwave intervals are steps, not total duration."
+      },
+      "nutrition": null,
+      "gaps": [
+        "Source alternatives are retained in sourceText; model needs explicit choice groups.",
+        "No canonical unit mapping or measured food identity reviewed.",
+        "Nutrition omitted pending line-by-line review.",
+        "Primary-source and original-author reuse status unresolved; archive hosting and federal redistribution do not establish all authors as US federal employees."
+      ],
+      "name": "Black Bean Burrito",
+      "nameAr": "بوريتو الفاصوليا السوداء",
+      "recordVersion": 1,
+      "sourceRevision": null
+    },
+    {
+      "id": "research-usda-lentil-stew",
+      "sourceId": "usda-myplate-preserved-archive",
+      "sourceRecipeId": "lentil-stew",
+      "sourceUrl": "https://myplate.food/recipes/lentil-stew",
+      "publisherCredit": "University of Maryland Extension, Food Supplement Nutrition Education Program, 2009 Recipe Calendar (as attributed by MyPlate.food)",
+      "familyId": "dish:lentil-stew",
+      "variantId": "usda-myplate-lentil-stew",
+      "familySuggestion": "New family: lentil stew; check existing catalog IDs for conceptual overlap.",
+      "variantSuggestion": "Potential catalog candidate; oil substitution needs an explicit choice group.",
+      "reviewStatus": "research-only",
+      "servings": 10,
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "olive oil or canola oil",
+          "amount": 2,
+          "unit": "teaspoons",
+          "sourceText": "2 teaspoons olive oil — or canola oil",
+          "foodBinding": null,
+          "amountText": "2 teaspoons olive oil — or canola oil"
+        },
+        {
+          "id": "i2",
+          "name": "onion, large, chopped",
+          "amount": 1,
+          "unit": "large onion",
+          "sourceText": "1 onion — large, chopped",
+          "foodBinding": null,
+          "amountText": "1 onion — large, chopped"
+        },
+        {
+          "id": "i3",
+          "name": "garlic powder",
+          "amount": 1,
+          "unit": "teaspoon",
+          "sourceText": "1 teaspoon garlic powder",
+          "foodBinding": null,
+          "amountText": "1 teaspoon garlic powder"
+        },
+        {
+          "id": "i4",
+          "name": "frozen sliced carrots",
+          "amount": 1.5,
+          "unit": "10-ounce packages",
+          "sourceText": "1 1/2 10-ounce packages of frozen sliced carrots",
+          "foodBinding": null,
+          "amountText": "1 1/2 10-ounce packages of frozen sliced carrots"
+        },
+        {
+          "id": "i5",
+          "name": "dry lentils, rinsed and drained",
+          "amount": 1,
+          "unit": "cup",
+          "sourceText": "1 cup dry lentils — rinsed and drained",
+          "foodBinding": null,
+          "amountText": "1 cup dry lentils — rinsed and drained"
+        },
+        {
+          "id": "i6",
+          "name": "low-sodium diced tomatoes",
+          "amount": 3,
+          "unit": "14.5-ounce cans",
+          "sourceText": "3 cans diced tomatoes, low-sodium — 14.5 ounces each",
+          "foodBinding": null,
+          "amountText": "3 cans diced tomatoes, low-sodium — 14.5 ounces each"
+        },
+        {
+          "id": "i7",
+          "name": "water",
+          "amount": 3,
+          "unit": "cups",
+          "sourceText": "3 cups water",
+          "foodBinding": null,
+          "amountText": "3 cups water"
+        },
+        {
+          "id": "i8",
+          "name": "chili powder",
+          "amount": 1,
+          "unit": "teaspoon",
+          "sourceText": "1 teaspoon chili powder",
+          "foodBinding": null,
+          "amountText": "1 teaspoon chili powder"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغسلي اليدين بالماء والصابون.",
+          "durationMinutes": null
+        },
+        {
+          "n": 2,
+          "text": "سخّني الزيت في قدر كبيرة على حرارة متوسطة.",
+          "durationMinutes": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي البصل المفروم.",
+          "durationMinutes": null
+        },
+        {
+          "n": 4,
+          "text": "اطهي نحو ٣ دقائق أو حتى يطرى.",
+          "durationMinutes": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي مسحوق الثوم والجزر والعدس والطماطم والماء ومسحوق الفلفل الحار وحرّكي.",
+          "durationMinutes": null
+        },
+        {
+          "n": 6,
+          "text": "اتركي القدر مكشوفة على نار هادئة نحو ٢٠ دقيقة حتى يطرى العدس.",
+          "durationMinutes": null
+        }
+      ],
+      "sourcedDurations": {
+        "cookMinutes": null,
+        "prepMinutes": null,
+        "note": "Some steps give 3 and about 20 minutes; aggregate duration is unstated."
+      },
+      "nutrition": null,
+      "gaps": [
+        "Oil choice must be represented explicitly.",
+        "No canonical unit mapping or measured food identity reviewed.",
+        "Can/package units remain as sourced; no gram conversion.",
+        "Primary-source and original-author reuse status unresolved; archive hosting and federal redistribution do not establish all authors as US federal employees."
+      ],
+      "name": "Lentil Stew",
+      "nameAr": "يخنة العدس",
+      "recordVersion": 1,
+      "sourceRevision": null
+    },
+    {
+      "id": "research-usda-quinoa-black-bean-salad",
+      "sourceId": "usda-myplate-preserved-archive",
+      "sourceRecipeId": "quinoa-and-black-bean-salad",
+      "sourceUrl": "https://myplate.food/recipes/quinoa-and-black-bean-salad",
+      "publisherCredit": "US Department of Health and Human Services, National Heart, Lung, and Blood Institute, Latino recipe collection (as attributed by MyPlate.food)",
+      "familyId": "dish:quinoa-black-bean-salad",
+      "variantId": "usda-myplate-quinoa-black-bean-salad",
+      "familySuggestion": "New family: quinoa and black bean salad; no direct equivalent established.",
+      "variantSuggestion": "Potential catalog candidate; cold serving and chile options need review.",
+      "reviewStatus": "research-only",
+      "servings": 6,
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "quinoa, dry",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceText": "1/2 cup quinoa — dry",
+          "foodBinding": null,
+          "amountText": "1/2 cup quinoa — dry"
+        },
+        {
+          "id": "i2",
+          "name": "water",
+          "amount": 1.5,
+          "unit": "cups",
+          "sourceText": "1 1/2 cups water",
+          "foodBinding": null,
+          "amountText": "1 1/2 cups water"
+        },
+        {
+          "id": "i3",
+          "name": "olive oil",
+          "amount": 1.5,
+          "unit": "tablespoons",
+          "sourceText": "1 1/2 tablespoons olive oil",
+          "foodBinding": null,
+          "amountText": "1 1/2 tablespoons olive oil"
+        },
+        {
+          "id": "i4",
+          "name": "lime juice",
+          "amount": 3,
+          "unit": "teaspoons",
+          "sourceText": "3 teaspoons lime juice",
+          "foodBinding": null,
+          "amountText": "3 teaspoons lime juice"
+        },
+        {
+          "id": "i5",
+          "name": "cumin",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "sourceText": "1/4 teaspoon cumin",
+          "foodBinding": null,
+          "amountText": "1/4 teaspoon cumin"
+        },
+        {
+          "id": "i6",
+          "name": "coriander, ground",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "sourceText": "1/4 teaspoon coriander — ground, dried cilantro seeds",
+          "foodBinding": null,
+          "amountText": "1/4 teaspoon coriander — ground, dried cilantro seeds"
+        },
+        {
+          "id": "i7",
+          "name": "cilantro, chopped",
+          "amount": 2,
+          "unit": "tablespoons",
+          "sourceText": "2 tablespoons cilantro — chopped",
+          "foodBinding": null,
+          "amountText": "2 tablespoons cilantro — chopped"
+        },
+        {
+          "id": "i8",
+          "name": "scallions, minced",
+          "amount": 2,
+          "unit": "medium scallions",
+          "sourceText": "2 scallions — medium, minced",
+          "foodBinding": null,
+          "amountText": "2 scallions — medium, minced"
+        },
+        {
+          "id": "i9",
+          "name": "black beans, low-sodium, canned, rinsed and drained",
+          "amount": 1,
+          "unit": "15.5-ounce can",
+          "sourceText": "1 can black beans, low-sodium — 15.5 ounce can, rinsed and drained",
+          "foodBinding": null,
+          "amountText": "1 can black beans, low-sodium — 15.5 ounce can, rinsed and drained"
+        },
+        {
+          "id": "i10",
+          "name": "tomato, chopped",
+          "amount": 2,
+          "unit": "cups",
+          "sourceText": "2 cups tomato — chopped",
+          "foodBinding": null,
+          "amountText": "2 cups tomato — chopped"
+        },
+        {
+          "id": "i11",
+          "name": "red bell pepper, medium, chopped",
+          "amount": 1,
+          "unit": "medium pepper",
+          "sourceText": "1 red bell pepper — medium, chopped",
+          "foodBinding": null,
+          "amountText": "1 red bell pepper — medium, chopped"
+        },
+        {
+          "id": "i12",
+          "name": "green bell pepper, medium, chopped",
+          "amount": 1,
+          "unit": "medium pepper",
+          "sourceText": "1 green bell pepper — medium, chopped",
+          "foodBinding": null,
+          "amountText": "1 green bell pepper — medium, chopped"
+        },
+        {
+          "id": "i13",
+          "name": "green chiles, minced",
+          "amount": 2,
+          "unit": "chiles",
+          "sourceText": "2 green chiles — minced, to taste",
+          "foodBinding": null,
+          "amountText": "2 green chiles — minced, to taste"
+        },
+        {
+          "id": "i14",
+          "name": "black pepper",
+          "amount": null,
+          "unit": null,
+          "sourceText": "black pepper — to taste",
+          "foodBinding": null,
+          "amountText": "black pepper — to taste"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغسلي اليدين ثم اشطفي الكينوا بالماء البارد.",
+          "durationMinutes": null
+        },
+        {
+          "n": 2,
+          "text": "اغلي الماء وأضيفي الكينوا؛ أعيدي الغلي ثم اتركيها على نار هادئة حتى تمتص الماء (١٠–١٥ دقيقة).",
+          "durationMinutes": null
+        },
+        {
+          "n": 3,
+          "text": "اتركي الكينوا تبرد ١٥ دقيقة.",
+          "durationMinutes": null
+        },
+        {
+          "n": 4,
+          "text": "اخلطي الزيت وعصير الليمون والكمون والكزبرة والكزبرة الخضراء والبصل الأخضر.",
+          "durationMinutes": null
+        },
+        {
+          "n": 5,
+          "text": "اخلطي الخضار المقطعة والفاصوليا في وعاء كبير.",
+          "durationMinutes": null
+        },
+        {
+          "n": 6,
+          "text": "أضيفي الكينوا الباردة وخليط التتبيل وامزجي.",
+          "durationMinutes": null
+        },
+        {
+          "n": 7,
+          "text": "غطّي السلطة وبرّديها حتى التقديم.",
+          "durationMinutes": null
+        }
+      ],
+      "sourcedDurations": {
+        "cookMinutes": null,
+        "prepMinutes": null,
+        "note": "Source gives quinoa simmer 10–15 minutes and cooling 15 minutes; refrigeration duration is unstated."
+      },
+      "nutrition": null,
+      "gaps": [
+        "Black pepper has unknown amount and unit.",
+        "Chile quantity is specified 'to taste' and requires review.",
+        "No canonical unit mapping or measured food identity reviewed.",
+        "Nutrition omitted pending line-by-line review.",
+        "Primary-source and original-author reuse status unresolved; archive hosting and federal redistribution do not establish all authors as US federal employees."
+      ],
+      "name": "Quinoa and Black Bean Salad",
+      "nameAr": "سلطة الكينوا والفاصوليا السوداء",
+      "recordVersion": 1,
+      "sourceRevision": null
+    },
+    {
+      "id": "research-wikibooks-koshari-eg",
+      "name": "Koshari (Egyptian Rice with Pasta and Lentils)",
+      "nameAr": "كشري",
+      "sourceId": "wikibooks-cookbook-cc-by-sa",
+      "sourceRecipeId": "Cookbook:Koshari@oldid=4515104",
+      "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Koshari_(Egyptian_Rice_with_Pasta_and_Lentils)&oldid=4515104",
+      "publisherCredit": "Wikibooks contributors, Cookbook:Koshari (revision oldid=4515104)",
+      "familyId": "dish:koshari",
+      "variantId": "wikibooks-koshari-research",
+      "familySuggestion": "Potential Egyptian koshari variant; compare with existing Egyptian catalog family before any revision.",
+      "variantSuggestion": "Source-specific candidate only; no automatic equivalence with existing recipes.",
+      "reviewStatus": "research-only",
+      "servings": null,
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "uncooked rice",
+          "amount": 1,
+          "unit": "cup",
+          "amountText": "1 cup uncooked rice",
+          "sourceText": "1 cup uncooked rice",
+          "foodBinding": null
+        },
+        {
+          "id": "i2",
+          "name": "dried lentils",
+          "amount": 1,
+          "unit": "cup",
+          "amountText": "1 cup dried lentils",
+          "sourceText": "1 cup dried lentils",
+          "foodBinding": null
+        },
+        {
+          "id": "i3",
+          "name": "small macaroni or short pasta",
+          "amount": 1,
+          "unit": "cup",
+          "amountText": "1 cup small macaroni or short pasta",
+          "sourceText": "1 cup small macaroni or short pasta",
+          "foodBinding": null
+        },
+        {
+          "id": "i4",
+          "name": "chopped tomatoes",
+          "amount": 1,
+          "unit": "can (400 grams)",
+          "amountText": "1 can (400 grams) chopped tomatoes",
+          "sourceText": "1 can (400 grams) chopped tomatoes",
+          "foodBinding": null
+        },
+        {
+          "id": "i5",
+          "name": "tomato paste",
+          "amount": 3,
+          "unit": "tablespoons",
+          "amountText": "3 tablespoons tomato paste",
+          "sourceText": "3 tablespoons tomato paste",
+          "foodBinding": null
+        },
+        {
+          "id": "i6",
+          "name": "vegetable oil",
+          "amount": 2,
+          "unit": "tablespoons",
+          "amountText": "2 tablespoons vegetable oil",
+          "sourceText": "2 tablespoons vegetable oil",
+          "foodBinding": null
+        },
+        {
+          "id": "i7",
+          "name": "onion, large, thinly sliced",
+          "amount": 1,
+          "unit": "large onion",
+          "amountText": "1 large onion, thinly sliced",
+          "sourceText": "1 large onion, thinly sliced",
+          "foodBinding": null
+        },
+        {
+          "id": "i8",
+          "name": "garlic, minced",
+          "amount": 4,
+          "unit": "cloves",
+          "amountText": "4 cloves garlic, minced",
+          "sourceText": "4 cloves garlic, minced",
+          "foodBinding": null
+        },
+        {
+          "id": "i9",
+          "name": "ground cumin",
+          "amount": 1,
+          "unit": "teaspoon",
+          "amountText": "1 teaspoon ground cumin",
+          "sourceText": "1 teaspoon ground cumin",
+          "foodBinding": null
+        },
+        {
+          "id": "i10",
+          "name": "ground cinnamon",
+          "amount": 1,
+          "unit": "teaspoon",
+          "amountText": "1 teaspoon ground cinnamon",
+          "sourceText": "1 teaspoon ground cinnamon",
+          "foodBinding": null
+        },
+        {
+          "id": "i11",
+          "name": "salt to taste",
+          "amount": null,
+          "unit": null,
+          "amountText": "Salt to taste",
+          "sourceText": "Salt to taste",
+          "foodBinding": null
+        },
+        {
+          "id": "i12",
+          "name": "black pepper to taste",
+          "amount": null,
+          "unit": null,
+          "amountText": "Black pepper to taste",
+          "sourceText": "Black pepper to taste",
+          "foodBinding": null
+        },
+        {
+          "id": "i13",
+          "name": "chile powder, optional",
+          "amount": null,
+          "unit": null,
+          "amountText": "Chile powder (optional, for added spice)",
+          "sourceText": "Chile powder (optional, for added spice)",
+          "foodBinding": null
+        },
+        {
+          "id": "i14",
+          "name": "fresh parsley or cilantro, chopped, for garnish",
+          "amount": null,
+          "unit": null,
+          "amountText": "Fresh parsley or cilantro, chopped (for garnish)",
+          "sourceText": "Fresh parsley or cilantro, chopped (for garnish)",
+          "foodBinding": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اطهي الأرز وفق تعليمات العبوة حتى يطرى، ثم اتركيه جانبًا.",
+          "durationMinutes": null
+        },
+        {
+          "n": 2,
+          "text": "اطهي العدس في ماء مغلي حتى يطرى من دون أن يتفتت، ثم صفيه.",
+          "durationMinutes": null
+        },
+        {
+          "n": 3,
+          "text": "اسلقي المعكرونة في ماء مملح حتى تنضج مع بقائها متماسكة، ثم صفيها.",
+          "durationMinutes": null
+        },
+        {
+          "n": 4,
+          "text": "سخني الزيت على نار متوسطة واقلي شرائح البصل حتى تصبح ذهبية ومقرمشة، ثم صفيها على ورق.",
+          "durationMinutes": null
+        },
+        {
+          "n": 5,
+          "text": "في المقلاة نفسها شوحي الثوم نحو دقيقة حتى تفوح رائحته.",
+          "durationMinutes": null
+        },
+        {
+          "n": 6,
+          "text": "أضيفي الطماطم ومعجونها والكمون والقرفة والملح والفلفل ومسحوق الفلفل الحار الاختياري، وقلبي.",
+          "durationMinutes": null
+        },
+        {
+          "n": 7,
+          "text": "اتركي الصلصة على نار هادئة ١٠–١٥ دقيقة حتى تثخن قليلًا.",
+          "durationMinutes": null
+        },
+        {
+          "n": 8,
+          "text": "رتبي الأرز والعدس والمعكرونة في طبق تقديم واسكبي الصلصة فوقها.",
+          "durationMinutes": null
+        },
+        {
+          "n": 9,
+          "text": "زيني بالبصل المقرمش والبقدونس أو الكزبرة المفرومة.",
+          "durationMinutes": null
+        },
+        {
+          "n": 10,
+          "text": "قدمي الكشري ساخنًا.",
+          "durationMinutes": null
+        }
+      ],
+      "sourcedDurations": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "note": "Only tomato sauce simmer is timed at about 10–15 minutes; aggregate duration is not stated."
+      },
+      "nutrition": null,
+      "gaps": [
+        "Source gives no servings/yield or aggregate prep/cook duration.",
+        "To-taste, optional, and garnish lines need explicit runtime line semantics.",
+        "Source units and ingredient identities need review; no food bindings or nutrition inferred.",
+        "Arabic instructions are an adaptation of Wikibooks content; retain CC BY-SA 4.0 attribution, change notice, and share-alike conditions if redistributed."
+      ],
+      "recordVersion": 1,
+      "sourceRevision": "4515104",
+      "adaptationLicense": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": {
+        "authors": "Wikibooks contributors",
+        "url": "https://en.wikibooks.org/w/index.php?title=Cookbook:Koshari_(Egyptian_Rice_with_Pasta_and_Lentils)&oldid=4515104"
+      },
+      "changeNotice": "Arabic summarized adaptation and structured ingredient transcription; not an exact copy or a tested Sofra recipe."
+    },
+    {
+      "id": "research-wikibooks-shitha-sa",
+      "name": "Shitha",
+      "nameAr": "شطة (صلصة خليجية)",
+      "sourceId": "wikibooks-cookbook-cc-by-sa",
+      "sourceRecipeId": "Cookbook:Shitha (page revision not exposed in retrieval)",
+      "sourceUrl": "https://en.wikibooks.org/wiki/Cookbook:Shitha",
+      "publisherCredit": "Wikibooks contributors, Cookbook:Shitha; attribution by source page link, revision permalink unavailable in retrieved content",
+      "familyId": "dish:shitha",
+      "variantId": "wikibooks-shitha-research",
+      "familySuggestion": "New condiment family; page describes Gulf usage including Saudi Arabia.",
+      "variantSuggestion": "Potential Saudi/Gulf condiment candidate; keep separate from main dishes and review cultural fit.",
+      "reviewStatus": "research-only",
+      "servings": 3,
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "red chile powder or fresh red chilies, blended",
+          "amount": 2,
+          "unit": "tablespoons",
+          "amountText": "2 tablespoons red chile powder (or fresh red chilies, blended)",
+          "sourceText": "2 tablespoons red chile powder (or fresh red chilies, blended)",
+          "foodBinding": null
+        },
+        {
+          "id": "i2",
+          "name": "tomatoes, medium, chopped",
+          "amount": 2,
+          "unit": "medium tomatoes",
+          "amountText": "2 medium tomatoes, chopped",
+          "sourceText": "2 medium tomatoes, chopped",
+          "foodBinding": null
+        },
+        {
+          "id": "i3",
+          "name": "garlic, minced",
+          "amount": 2,
+          "unit": "cloves",
+          "amountText": "2 cloves garlic, minced",
+          "sourceText": "2 cloves garlic, minced",
+          "foodBinding": null
+        },
+        {
+          "id": "i4",
+          "name": "vegetable oil",
+          "amount": 1,
+          "unit": "tablespoon",
+          "amountText": "1 tablespoon vegetable oil",
+          "sourceText": "1 tablespoon vegetable oil",
+          "foodBinding": null
+        },
+        {
+          "id": "i5",
+          "name": "salt to taste",
+          "amount": null,
+          "unit": null,
+          "amountText": "Salt to taste",
+          "sourceText": "Salt to taste",
+          "foodBinding": null
+        },
+        {
+          "id": "i6",
+          "name": "lemon juice or vinegar, optional",
+          "amount": 1,
+          "unit": "tablespoon",
+          "amountText": "1 tablespoon lemon juice or vinegar (optional)",
+          "sourceText": "1 tablespoon lemon juice or vinegar (optional)",
+          "foodBinding": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الزيت في قدر صغيرة على نار متوسطة.",
+          "durationMinutes": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي الثوم وقلبيه حتى يصبح ذهبيًا.",
+          "durationMinutes": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي الطماطم المقطعة واطهيها حتى تلين.",
+          "durationMinutes": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي مسحوق الفلفل والملح وقلبي جيدًا.",
+          "durationMinutes": null
+        },
+        {
+          "n": 5,
+          "text": "اتركي الخليط على نار هادئة ١٠–١٥ دقيقة حتى يثخن.",
+          "durationMinutes": null
+        },
+        {
+          "n": 6,
+          "text": "أضيفي عصير الليمون أو الخل إذا رغبتِ.",
+          "durationMinutes": null
+        },
+        {
+          "n": 7,
+          "text": "اتركي الصلصة تبرد قبل التقديم.",
+          "durationMinutes": null
+        }
+      ],
+      "sourcedDurations": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "note": "Only simmering is timed at 10–15 minutes; aggregate duration is not stated."
+      },
+      "nutrition": null,
+      "gaps": [
+        "No revision-specific permalink/oldid was available in the retrieved source; version-specific attribution remains unresolved.",
+        "Source describes broad Arabian/Gulf use including Saudi Arabia, not an exclusive Saudi origin.",
+        "Chile form alternatives and optional acid need explicit choice semantics.",
+        "Arabic instructions are an adaptation of Wikibooks content; retain CC BY-SA 4.0 attribution, change notice, and share-alike conditions if redistributed."
+      ],
+      "recordVersion": 1,
+      "sourceRevision": null,
+      "adaptationLicense": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": {
+        "authors": "Wikibooks contributors",
+        "url": "https://en.wikibooks.org/wiki/Cookbook:Shitha"
+      },
+      "changeNotice": "Arabic summarized adaptation and structured ingredient transcription; not an exact copy or a tested Sofra recipe."
+    }
+  ]
+}

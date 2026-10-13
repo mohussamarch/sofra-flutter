@@ -1,0 +1,14 @@
+# Dry pasta preparation category review
+
+- Checkout/branch/base: `E:\work\SOFRA\app`, `main`, `7d9dcb4`.
+- Objective: decide whether USDA Release 6 pasta factors can be represented as conditional generic-category estimates for the exact existing dry-pasta ingredient record.
+- Added `data/nutrition/preparation-category-review.json` with status `reviewed-category-estimate` for the pasta ingredient only. The link from SR Legacy FDC 168927 (`Pasta, dry, unenriched`, 2018-04) to USDA retention food-group 20 / pasta is an explicit reviewer category inference; no USDA crosswalk to FDC 168927 was found or claimed.
+- USDA Release 6 PDF (December 2007) says categories have unique codes, methods depend on food type, and factors express nutrient amounts retained for a specified treatment. It describes true retention using pre/post food weights and nutrient amounts and says reported factors are rounded to 5 percent. The six factors already extracted to the existing candidates file match the archived ASCII source rows and PDF pasta table.
+- Values preserved as source percentages and fractions: code 0381 pasta boiled/drained — vitamin C 70%, thiamin 65%, riboflavin 75%; code 0382 pasta boiled/drained/baked — vitamin C 60%, thiamin 55%, riboflavin 75%. Source rows last updated 09/1975.
+- 0381 and 0382 are alternate complete method categories. Select no more than one. 0382 already describes boil/drain/bake and is not multiplied by 0381. Apply only with explicit matching actual pasta method; a dry input is assumed, and starting from already cooked data is excluded.
+- The retention table does not distinguish enriched status, shape, brand, or formulation. “Unenriched” matches the FDC input label but the generic category link remains approximate. Mass yield and edible fraction remain unknown; the other 46 nutrient fields and all nonlisted nutrient factors remain unknown.
+- License remains unknown for the retention source; FDC CC0 does not extend to it. The ASCII data archive has source SHA recorded; official PDF is not archived and has no verified document SHA. No legal reuse approval is claimed.
+- Explicit exclusions: exact-product truth, finished bechamel or other mixed recipes, sauce/meat/cheese, cuisine proxies, automatic runtime application, and any clinical rule.
+- Verification: inspected bounded JSON records, archived source rows and hashes; reviewed the official USDA Release 6 PDF and source landing page. JSON syntax, schema, required fields, unique factor IDs, and numeric factor consistency validated. No app behavior, queue, shared docs, or tests changed.
+- Exact next action: root may use these six factors as candidates for its separately implemented explicit method-acceptance flow; keep source category inference visible and require exact method/user selection before applying. Do not infer a finished-dish estimate from this review.
+- No commit/push by this subtask. Preview server was not inspected or changed.

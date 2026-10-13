@@ -45,3 +45,8 @@ Actual verification:4targeted Flutter tests passed; analyze clean. MissingAPIred
 ## Concrete research shortlist
 
 preparation-match-shortlist.json now records2proposals for exact USDA168927 “Pasta, dry, unenriched”/asSold/version/sourcehash, with0381(boil/drain) and0382(boil/drain then bake). Each cites3existing retention candidate IDs/archivehash and keeps canApply=false/foodMatchVerified=false/approvedMatches=0. Generic-category suitability is explicitly an inference for review, not USDA certification of a particular recipe. Scope is the pasta ingredient only; sauce/meat/cheese and a finished bechamel tray are excluded. No ratios or new nutrient values added. JSON/identity/hash/candidate/status validation ran; no behavior change or extra Flutter tests.
+
+
+## Conditional category review —13 October
+
+data/nutrition/preparation-category-review.json records two method options for exact FDC168927/version:0381 boil/drain or0382 boil/drain/bake. Link is reviewer category inference, not a direct USDA FDC crosswalk or exact-product result. Six existing vitamin factors matched source IDs/rows/hashes; do not multiply the two methods. Other nutrients/yield/edible fraction remain unknown. Review approves no runtime transform and no finished bechamel recipe; explicit acceptance/confidence propagation remains next implementation.

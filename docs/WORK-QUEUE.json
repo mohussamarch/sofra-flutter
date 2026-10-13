@@ -2,13 +2,15 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T10:53:37.868553+00:00",
-    "taskId": "preparation-evidence",
-    "summary": "2source-specific research proposals persisted with exact foodversion/form/sourcehash and method/candidate identities;0approvals.1OFFfetchfailed/backoffsaved, bank1793unchanged.",
+    "at": "2026-10-13T11:22:00.588690+00:00",
+    "taskId": "recipe-bank",
+    "summary": "6research candidates/61ingredient rows/46steps; offline schema validator and consolidated implemented data map.0runtime imports or fullnutrition bindings.",
     "evidence": [
-      "data/nutrition/preparation-match-shortlist.json",
-      "work/agent-handoffs/bank-heartbeat-1048.md",
-      "docs/HANDOFF.md#35"
+      "data/recipes/research-candidates.json",
+      "tool/recipes/validate-research.mjs",
+      "tool/recipes/validate-research.test.mjs",
+      "docs/RECIPE-BANK.md",
+      "docs/DATA-MAP.md"
     ]
   },
   "tasks": [
@@ -76,11 +78,12 @@
       "priority": 30,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Review the2unenriched dry pasta168927 proposals for0381and0382, enrichment/composition/draining/baking scope and source reuse; obtain separate massYield/edibleFraction. No fullbechamel or automatic match approval.",
-      "stage": "2exact generic-food/method research proposals saved;not approved",
+      "nextAction": "Implement explicit source/method/category-estimate acceptance with frozen evidence and propagated uncertainty; keep all other nutrient factors/yield unknown and review source reuse. User requested recipe collection/map detour; no approval implementation started.",
+      "stage": "2conditional generic-category pasta estimates reviewed;0runtime approvals",
       "evidence": [
         "data/nutrition/preparation-match-shortlist.json",
-        "docs/HANDOFF.md#35"
+        "docs/HANDOFF.md#35",
+        "data/nutrition/preparation-category-review.json"
       ],
       "lastAttemptAt": "2026-10-13T10:22:41.149525+00:00"
     },
@@ -100,6 +103,43 @@
       ],
       "status": "ready",
       "nextAction": "Review priority recipe variants and quantity/identity coverage, then broaden independent families"
+    },
+    {
+      "id": "recipe-bank",
+      "priority": 55,
+      "dependsOn": [],
+      "status": "ready",
+      "nextAction": "Review original source/licence of4archive candidates, freeze Shitha source revision, resolve family overlaps/units/choices/timing and extend a small regional batch. Keep research-only; do not treat6 as a final recipe count.",
+      "lastAttemptAt": "2026-10-13T11:22:00.588690+00:00",
+      "lastProgressAt": "2026-10-13T11:22:00.588690+00:00",
+      "owner": null,
+      "completedUnit": {
+        "recipeCandidates": 6,
+        "ingredientRows": 61,
+        "steps": 46,
+        "sources": 2,
+        "runtimeReady": 0
+      },
+      "evidence": [
+        "data/recipes/research-candidates.json",
+        "tool/recipes/validate-research.mjs",
+        "tool/recipes/validate-research.test.mjs",
+        "docs/RECIPE-BANK.md",
+        "docs/DATA-MAP.md"
+      ]
+    },
+    {
+      "id": "recipe-import",
+      "priority": 56,
+      "dependsOn": [
+        "measure-integration",
+        "compound-revisions"
+      ],
+      "status": "ready",
+      "nextAction": "Build reviewed candidate-to-full-revision import with immutable candidate fingerprint/provenance, canonical ingredient choices and explicit unresolved timing support. Reject incomplete/unknown times rather than substituting0. Preserve all existing recipes/history; bind nutrition afresh per revision/line.",
+      "evidence": [
+        "docs/RECIPE-BANK.md"
+      ]
     },
     {
       "id": "prices",

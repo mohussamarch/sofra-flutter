@@ -66,3 +66,8 @@
 
 
 تحديث13أكتوبر:أرشيف retention الأصلي7018صفًا،9مرشحات مستخرجة ومراجعة حسابيًا،24خانة مجهولة،0تحويلات غذاء/طريقة معتمدة. بنكOFFزاد103إلى1793منتجًا عبر3صفحات سعودية؛كل الأسس غير مراجعة. التالي مطابقة وقبول طريقة التحضير،مع استمرار الصفحات المستحقة بعد تسليمGit.
+
+
+## User-requested recipe research lane and data map —13 October
+
+User explicitly requested an additional independent economical recipe agent. First bounded batch6research candidates/61ingredients/46steps with source groups/licences kept separate, research-only validation and DATA-MAP.md. Recipes are not automatically admitted into runtime. recipe-bank(priority55) continues source/version/units/family review and small regional batches without a final count; recipe-import(priority56) is the separate reviewed-to-revision/provenance/unknown-timing unit. No new automation/writer was created; existing monitor reads these tasks. Preparation evidence remains priority30; its completed category review is conditional,0runtime approvals. The direct user recipe/map request steered this unit; it did not cancel preparation work.

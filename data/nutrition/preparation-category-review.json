@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "reviewedDate": "2026-10-13",
+  "reviewStatus": "reviewed-category-estimate",
+  "decision": "The USDA factors are suitable as generic pasta-category estimates for USDA SR Legacy FDC 168927 only when the actual preparation matches the selected category. This is a category inference, not a USDA-certified crosswalk to FDC 168927 or an exact-product measured result.",
+  "foodRecord": {
+    "foodId": "usda:168927",
+    "fdcId": 168927,
+    "version": "2018-04",
+    "publicationDate": "2019-04-01",
+    "name": "Pasta, dry, unenriched",
+    "dataType": "SR Legacy",
+    "sourceForm": "asSold",
+    "basis": "100 g edible portion, dry source record",
+    "sourceUrl": "https://fdc.nal.usda.gov/food-details/168927/nutrients",
+    "sourceFile": "data/usda/shards/31.json",
+    "sourceSha256": "7c425a180d54ba1a2d999f382823697cfc40d7d823c3f20689a0add494b9f81d"
+  },
+  "retentionSource": {
+    "title": "USDA Table of Nutrient Retention Factors, Release 6",
+    "authority": "USDA Agricultural Research Service, Nutrient Data Laboratory",
+    "publicationDate": "2007-12",
+    "documentUrl": "https://www.ars.usda.gov/ARSUserFiles/80400525/Data/retn/retn06.pdf",
+    "dataUrl": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/retn/retn06.txt",
+    "archivedDataFile": "research/nutrition/usda/retn06.txt",
+    "archivedDataSha256": "5b71867f6649e801db3bf88c6cd1887b0673e853d4ba94aa0af2b3c091e983f9",
+    "documentArchived": false,
+    "documentSha256": null,
+    "license": "unknown; no source-specific reuse license verified. FDC data CC0 does not apply to this separate retention source.",
+    "methodEvidence": "The USDA PDF defines retention factors as amounts retained during a specified treatment and assigns a unique code to each preparation/processing category. It says methods are based on food type, defines true retention using pre/post food weights and nutrient amounts, and states tabulated factors are rounded to the nearest 5 percent. PDF pages 2-4 and 7-8; pasta category table page 17.",
+    "methodEvidenceUrl": "https://www.ars.usda.gov/ARSUserFiles/80400525/Data/retn/retn06.pdf"
+  },
+  "categoryAssessment": {
+    "foodGroupCode": "20",
+    "foodGroupDescription": "Pasta",
+    "linkType": "reviewer category inference from the FDC name/category and retention food-group category; USDA does not explicitly crosswalk FDC 168927 to these codes",
+    "inputAssumption": "Use the dry, unenriched, as-sold 168927 profile as the uncooked input. The source identity is unenriched; the retention table's pasta categories do not distinguish enrichment, shape, brand, or formulation. Applying the category to 168927 remains an estimate.",
+    "rawCookedAssumption": "The nutrient profile starts from dry uncooked pasta and targets the result after the full listed preparation. Do not select these factors when the starting profile already describes cooked pasta.",
+    "supportedUse": "Generic-category estimate for the pasta ingredient only, conditional on matching actual method and explicit selection of this exact source/version. A method mismatch or enriched/otherwise materially different pasta is unsupported by this review.",
+    "notSupported": [
+      "Exact product or brand truth, laboratory-verified FDC-specific retention, or a source-certified FDC-ID mapping.",
+      "Mass yield, edible fraction, cooked weight, or conversions between dry and cooked pasta.",
+      "Nutrients other than the three factors listed for each method; all other factors remain unknown for this review.",
+      "A finished bechamel dish, sauce, meat, cheese, oil, added water, composite-recipe result, or cuisine proxy.",
+      "Reuse or redistribution permission for the USDA retention table; source-specific license remains unknown."
+    ]
+  },
+  "methodOptions": [
+    {
+      "retentionCode": "0381",
+      "description": "PASTA,BOILED,DRAINED",
+      "requiredActualMethod": "Pasta is boiled and drained; no subsequent baking step is part of this category.",
+      "sourceUpdated": "09/1975",
+      "factors": [
+        {"candidateId": "usda-retention6:0381:401", "sourceLine": 6819, "sourceLineSha256": "62822609e2d02fbf448867872de3f108416e00063bbcd928658e0affb88d53b2", "nutrientNumber": "401", "nutrient": "Vitamin C, total ascorbic acid", "factorPercent": 70, "fraction": 0.7},
+        {"candidateId": "usda-retention6:0381:404", "sourceLine": 6820, "sourceLineSha256": "e4b42a543176b27c74da72e113063e37ee7481014823769662e1dd26024ab123", "nutrientNumber": "404", "nutrient": "Thiamin", "factorPercent": 65, "fraction": 0.65},
+        {"candidateId": "usda-retention6:0381:405", "sourceLine": 6821, "sourceLineSha256": "199f3c9fc0dd9563885ae4c023ce8c788d1d3d186251c0d004be0ff0c315a841", "nutrientNumber": "405", "nutrient": "Riboflavin", "factorPercent": 75, "fraction": 0.75}
+      ],
+      "status": "reviewed-category-estimate"
+    },
+    {
+      "retentionCode": "0382",
+      "description": "PASTA,BOILED,DRAINED,BAKED",
+      "requiredActualMethod": "Pasta is boiled, drained, and then baked as part of the pasta preparation. This is a combined category, not an extra factor to layer on top of code 0381.",
+      "sourceUpdated": "09/1975",
+      "factors": [
+        {"candidateId": "usda-retention6:0382:401", "sourceLine": 6845, "sourceLineSha256": "b092579198f448cce86d249b69a8a4f88a5e09345b117cccb0afabe419a149af", "nutrientNumber": "401", "nutrient": "Vitamin C, total ascorbic acid", "factorPercent": 60, "fraction": 0.6},
+        {"candidateId": "usda-retention6:0382:404", "sourceLine": 6846, "sourceLineSha256": "792765e9f27feba9287640f15e7aeda3f03eaf6d19911806bf01891e77b1aae9", "nutrientNumber": "404", "nutrient": "Thiamin", "factorPercent": 55, "fraction": 0.55},
+        {"candidateId": "usda-retention6:0382:405", "sourceLine": 6847, "sourceLineSha256": "7c36439580a652e4554429f19ec769810e8d8613e0f58912405d95ef3528f7f1", "nutrientNumber": "405", "nutrient": "Riboflavin", "factorPercent": 75, "fraction": 0.75}
+      ],
+      "status": "reviewed-category-estimate"
+    }
+  ],
+  "factorSelectionRule": "Choose at most one category matching the actual pasta preparation. Code 0382 already names the boiled/drained/baked sequence, so never multiply 0381 by 0382. Use 0381 only when the pasta is boiled and drained without the subsequent baking step. If the actual pasta preparation is unknown or differs, leave retention unknown.",
+  "quantitySeparation": {
+    "nutrientRetention": "Only the six listed nutrient/method values are source-backed candidate category estimates; no automatic application is authorized by this review.",
+    "massYield": "unknown; not present in this retention table and not inferred",
+    "edibleFraction": "unknown; dry pasta has no reviewed refuse factor here and none is inferred"
+  },
+  "approval": {
+    "runtimeTransformApproved": false,
+    "exactFoodMatchVerified": false,
+    "userSelection": "required before any application",
+    "sourceSpecificLegalApproval": false,
+    "supportsFinishedRecipe": false
+  }
+}
