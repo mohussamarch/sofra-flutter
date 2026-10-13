@@ -93,3 +93,9 @@ Usage became available again:0%/29% initially,21%/32% later; no reset or credit 
 ## Heartbeat16:56 — independent French source
 
 recipe-bank28 now has French Wikibooks namespace0/prefix discovery, verified site policy and separate collection/parser/index/checkpoint. Continue due short batches; do not reset exhausted English cursor. Prefix pages are not all recipes; no unique-dish total across languages. During source backoff recipe-quantities29 remains independent. See RECIPE-FRENCH-SOURCE.md and HANDOFF§42. No new schedule or runtime/clinical assumptions.
+
+## Local continuation after source delivery
+
+recipe-quantities29added8cinnamon/leavening proposals;combined16/16/22/5,0runtime. Soaking/discard cases identify ingredient-fate evidence needed before nutritional admission. Source backoff did not stop local work. Continue source gates and explicit identity/alternative review;no automaticretention/clinicalrules.
+
+Continuationafterlocalidentity:French450/625,429gate2026-10-13T17:49:47.599Z;source503/429doesnotblockrecipe-quantities29.16guardedproposalsavailable,noapprovals. Existingautomationwillreadactualcursorsandusage.

@@ -39,3 +39,7 @@ Next: continue due prefix batches without resetting the cursor; inspect a bounde
 ## First live batch
 
 139sourcepages/112parsed/637ingredientlines/567steps;12rootrequests including2local/source failures. Initial API continuation uses underscores; preserve it verbatim, normalize only for validation. Archived listing was recovered offline after the old guard failure,without clearing its gate. Last429gate17:35:52.878Z;9pendingIDs remain.16French tests/101related tests passed. Source requests/derived hashes and English preservation verified; no runtime/nutrition approvals.
+
+## Due collection continuation
+
+After the independent local identity unit,source resumed only at its next gate. Current:625sourcepages/450parsed/2862ingredientlines/2591steps,53rootAPIrequests/archives. Latest429gate2026-10-13T17:49:47.599Z;9pendingIDs remain,sourcepoolnotexhausted. OriginalEnglish untouched;no cross-languageunique-dishsum,0runtime/nutrition approvals. Actualcurrentraw/derived/requesthashes and deterministicre-extraction verified;collector/parser codeunchanged.

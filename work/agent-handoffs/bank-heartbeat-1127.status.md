@@ -59,3 +59,10 @@
 - No bank data change: 2,266 products / 63 archives; hashes unchanged. Tests not rerun.
 - Collector exited0, lock cleared. Quota46% primary/36% weekly, ordinary allowed.
 - No retries before source gates.
+
+## Saudi due-page check — 13 Oct, 17:38 UTC
+
+- Saudi global p10 returned HTTP503; backoff until18:08:08.445Z. Egypt p8 remains deferred until17:58:40.154Z and was not touched.
+- Bank unchanged at2,266 products/63 archives; hashes same, tests not rerun.
+- Collector exit0, lock cleared. Quota after progress56% primary/37% weekly ordinary allowed.
+- Stop until saved deadlines.

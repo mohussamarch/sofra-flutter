@@ -61,7 +61,7 @@ flowchart TD
 |---|---|---|
 | الوصفات المستخدمة حاليًا | [recipes/data/index.json](../recipes/data/index.json) وملفات المطابخ الأربعة | 54 وصفة أصلية محفوظة؛ 605 أسطر مكونات. ليست كلها ذات تغذية مكتملة |
 | وصفات جديدة من مصادر | [data/recipes/research-candidates.json](../data/recipes/research-candidates.json) | 6 مرشحات/61 سطرًا/46 خطوة من مجموعتي مصدر؛ بنك بحث منفصل،0 جاهزة لـruntime؛ صيغة وفحوص في [RECIPE-BANK.md](RECIPE-BANK.md) |
-| الوصفات بالجملة | [الفهرس](../data/recipes/bulk/wikibooks-cookbook/index.json)،[مراجعة الهوية](RECIPE-IDENTITY-REVIEW.md) | 3640وصفة/3796صفحة/53تصنيف؛8اقتراحات/14مرشحًا/3أغذية؛0runtime؛المصدر الحالي انتهى والتوسيع مستمر |
+| الوصفات بالجملة | [الفهرس](../data/recipes/bulk/wikibooks-cookbook/index.json)،[مراجعة الهوية](RECIPE-IDENTITY-REVIEW.md) | 3640وصفة/3796صفحة/53تصنيف؛16اقتراحًا/22مرشحًا/5أغذية؛0runtime؛المصدر الحالي انتهى والتوسيع مستمر |
 | USDA | [manifest](../data/usda/manifest.json) و32 ملفًا في `data/usda/shards` | 8156 مرجعًا عامًا؛ CC0، لا يمثل توافر المنتج في سوق معين |
 | منتجات Open Food Facts | `data/food/openfoodfacts/`، [PRODUCT-DATA.md](PRODUCT-DATA.md) | 2266 منتجًا/63 أرشيفًا في آخر نقطة موثقة؛ مجتمع وغير مراجع، أساس القياس مجهول؛ ODbL/DbCL منفصل |
 | تغطية ومقترحات هوية الوصفات | [recipe-coverage.json](../data/usda/recipe-coverage.json)، [RECIPE-REFERENCES.md](RECIPE-REFERENCES.md) | 197 مقترح هوية عبر53 وصفة؛ **0 ربط تغذية كامل معتمد**. قبول الهوية وحده لا يحل الوزن والتحضير |
@@ -85,6 +85,14 @@ flowchart TD
 
 | Source bank | Path | Coverage |
 | --- | --- | --- |
-| French Wikibooks research | [index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json), [source contract](RECIPE-FRENCH-SOURCE.md) | 139source pages/112parsed recipes/637ingredient lines/567steps; CC BY-SA4.0 policy, exceptions unreviewed;0runtime/nutrition approvals |
+| French Wikibooks research | [index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json), [source contract](RECIPE-FRENCH-SOURCE.md) | 625 source pages/450 parsed recipes/2862 ingredient lines/2591 steps; CC BY-SA4.0 policy, exceptions unreviewed;0runtime/nutrition approvals |
 
 French language is not a cuisine tag. Source IDs/cursors remain separate; duplicates between English/French or dish families are not resolved. Personal recipe calculation still needs explicit food/quantity/form inputs; this research source does not automatically fill them.
+
+## Additional identity curation
+
+[first-review.json](../data/recipes/identity-proposals/first-review.json) plus [spices-leavening-review.json](../data/recipes/identity-proposals/spices-leavening-review.json):16distinctproposals/16recipes/22candidate references/5rawUSDAfoods,0accepted or runtime-ready. Cinnamon/baking-soda records preserve source/food hashes and soaking/draining unknowns. Both banks are research-only;French still has no identity proposals.
+
+## Latest source snapshot
+
+French450parsed/625pages/2862ingredientlines/2591steps;English3640/3796/53tagsunchanged. SourceIDs/licences/cursorsseparate;cross-languageduplicatesunresolved. Identitybanks16proposals/16recipes/22references/5foods,0accepted/runtime;OFF2266/63. LatestFrenchgate2026-10-13T17:49:47.599Z;readactualcheckpoints. SeeHANDOFF§43–44.

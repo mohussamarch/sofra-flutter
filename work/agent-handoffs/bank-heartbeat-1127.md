@@ -101,3 +101,11 @@
 - Saudi global p10 returned HTTP 503. Saved next attempt: `2026-10-13T17:37:15.832Z`; no retry was made. Collector summary: one request, `fetched=false`; actual process exit 0 after handling the error. Lock absent after exit and no Node collector remained.
 - No archive or product data changed: 2,266 products, 335 quarantined, 693 duplicate occurrences, 63 archives; EG 736 / SA 1,541. Product/index hashes remain `7e634d23516e4bca3884c6b6a8b1cc94591ba219deb9cd74dd69bcb51fb345fc` and `274f788720b06dd4a8d50d6df99037ccf6d0f5f48e039fee685144ab5f85525e`. Five bank tests were not rerun because the bank contents did not change.
 - Next source deadlines: Saudi global p10 at `2026-10-13T17:37:15.832Z`; Egypt global p8 at `2026-10-13T17:58:40.154Z`. Stop until due; recheck quota and lock before a later collection.
+
+## Follow-on Saudi due-page check — 13 October 2026, 17:38 UTC
+
+- Fresh pre-run quota 55% primary / 37% weekly used, ordinary allowed. Saved cursor showed Saudi global p10 due and Egypt global p8 still deferred until `2026-10-13T17:58:40.154Z`; no lock or active Node collector existed.
+- Saudi global p10 returned HTTP 503. Backoff checkpointed until `2026-10-13T18:08:08.445Z`; stopped after this failure without retrying or requesting Egypt.
+- Collector reported one request and `fetched=false`; actual process exit code 0 after handling the 503. Post-run usage 56% primary / 37% weekly, ordinary allowed. Lock absent after exit and no Node collector remained.
+- Bank unchanged at 2,266 products, 335 quarantined, 693 duplicate occurrences, 63 archives; EG 736 / SA 1,541. Product and index SHA-256 remain `7e634d23516e4bca3884c6b6a8b1cc94591ba219deb9cd74dd69bcb51fb345fc` and `274f788720b06dd4a8d50d6df99037ccf6d0f5f48e039fee685144ab5f85525e`. No bank tests rerun because archive/product data did not change.
+- Next Saudi p10 gate: `2026-10-13T18:08:08.445Z`; Egypt p8 gate: `2026-10-13T17:58:40.154Z`. No retries before the saved deadlines.

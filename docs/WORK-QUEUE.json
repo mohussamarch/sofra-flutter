@@ -2,14 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T17:26:34.803483+00:00",
+    "at": "2026-10-13T17:42:18.742170+00:00",
     "taskId": "recipe-bank",
-    "summary": "Independent licensed French lane 139pages/112parsed; conservative parser/backoff/persistence tests,0runtime approvals; English unchanged",
+    "summary": "French625/450research/unknownnutrition,source checkpointed429;localidentity16/16/22/5completed meanwhile,0runtime",
     "evidence": [
-      "tool/recipes/collect-wikibooks-fr.mjs",
-      "tool/recipes/collect-wikibooks-fr.test.mjs",
       "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
-      "docs/RECIPE-FRENCH-SOURCE.md"
+      "data/recipes/identity-proposals/spices-leavening-review.json"
     ]
   },
   "tasks": [
@@ -78,17 +76,17 @@
       "dependsOn": [],
       "status": "waiting",
       "nextAction": "Continue French prefix cursor with bounded due requests; during backoff extend source quantity/food identity review. Inspect bounded unparsed structures before parser changes. Keep languages separate; no unique-dish total or runtime nutrition claim.",
-      "lastAttemptAt": "2026-10-13T17:25:52.469Z",
-      "lastProgressAt": "2026-10-13T17:26:34.803483+00:00",
+      "lastAttemptAt": "2026-10-13T17:39:47.197Z",
+      "lastProgressAt": "2026-10-13T17:42:18.742170+00:00",
       "owner": null,
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
         "englishCuisineTags": 53,
-        "frenchSourcePages": 139,
-        "frenchParsedRecipes": 112,
-        "frenchIngredientLines": 637,
-        "frenchSteps": 567,
+        "frenchSourcePages": 625,
+        "frenchParsedRecipes": 450,
+        "frenchIngredientLines": 2862,
+        "frenchSteps": 2591,
         "runtimeReady": 0
       },
       "evidence": [
@@ -102,8 +100,8 @@
         "docs/RECIPE-FRENCH-SOURCE.md"
       ],
       "stage": "Independent French source collection and conservative parser implemented; English source remains exhausted",
-      "blockedUntil": "2026-10-13T17:35:52.878Z",
-      "blockedReason": "French source cooldown; independent quantity/identity work remains ready"
+      "blockedUntil": "2026-10-13T17:49:47.599Z",
+      "blockedReason": "French429backoff; independent ingredient identity/fate work remains ready"
     },
     {
       "id": "recipe-quantities",
@@ -122,12 +120,12 @@
           "rowsWithAlternativeCue": 2598,
           "rowsWithQuantityQualifier": 1165
         },
-        "identityProposals": 8,
-        "candidateReferences": 14,
-        "foodSourceRecords": 3,
+        "identityProposals": 16,
+        "candidateReferences": 22,
+        "foodSourceRecords": 5,
         "runtimeReady": 0
       },
-      "nextAction": "Extend explicit reviewed identity proposals to more ingredients/alternatives with source and food snapshot guards; distinguish raw research snapshots from converted runtime FoodRecord. Acceptance, quantity/form/preparation and runtime admission remain separate.",
+      "nextAction": "Extend explicit identity and alternatives with exact source/food guards; review ingredient fate where soaking liquids are discarded, without all-or-none retained amounts. Runtime identity/form/quantity/preparation admission remains separate.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -140,11 +138,12 @@
         "tool/recipes/usda-review-reader.mjs",
         "tool/recipes/recipe-review-reader.mjs",
         "tool/recipes/validate-identity-bank.test.mjs",
-        "data/recipes/identity-proposals/first-review.json"
+        "data/recipes/identity-proposals/first-review.json",
+        "data/recipes/identity-proposals/spices-leavening-review.json"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T16:49:41.944335+00:00",
-      "stage": "Authoritative local food/source readers and first8identity proposals implemented; research only"
+      "lastProgressAt": "2026-10-13T17:36:01.788758+00:00",
+      "stage": "Two explicit identity research batches with16proposals; source-specific discarded-liquid fate remains unknown"
     },
     {
       "id": "preparation-evidence",
@@ -226,9 +225,9 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Read actual source cursors:Saudi globalp10 after17:37:15.832Z,Egyptglobalp8 after17:58:40.154Z.2266/63,currentunit+280net. Onecheapcollector, no earlyretry.",
+      "nextAction": "Readactualcursors:Egyptglobalp8after17:58:40.154Z,Saudiglobalp10after18:08:08.445Z;2266/63contentsunchangedaftersource503. Onecheapcollector,noearlyretry.",
       "owner": null,
-      "blockedUntil": "2026-10-13T17:37:15.832Z",
+      "blockedUntil": "2026-10-13T17:58:40.154Z",
       "blockedReason": "OFF503backoff:Saudi p10 andEgyptp8; independent quantity/identity work remains ready",
       "lastProgressAt": "2026-10-13T17:28:59.195280+00:00",
       "completedUnit": {
@@ -295,10 +294,10 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-13T17:28:59.195280+00:00",
-    "primaryUsedPercent": 49,
-    "weeklyUsedPercent": 36,
+    "at": "2026-10-13T17:42:18.742170+00:00",
+    "primaryUsedPercent": 58,
+    "weeklyUsedPercent": 37,
     "ordinaryUsageAllowed": true,
-    "action": "Capacity available; source backoff only, quantity/identity work independent; no credits/reset."
+    "action": "Multiple useful units completed; source backoff checkpointed, independent identity/fate work remains ready; no credits/reset."
   }
 }

@@ -26,3 +26,7 @@ The proposed food fingerprint is of the raw USDA research row, not the transform
 75relatedNode tests passed, including7USDA reader,6bank validator,5recipe-source reader and3pending-request regressions. Initial new-module tests failed for missing modules; one fixture syntax error and shared-object alias were corrected. Three collector behavioral regressions failed before the pending-cursor implementation, then passed. Live collector recovery fetched30pending pages and exhausted this source category in3requests.
 
 Next: extend explicit ingredient/alternative proposals, retain unknown measurements and provenance, then implement separate runtime acceptance/import and private drafts from scratch. Curation is not automatic nutrition readiness.
+
+## Second actual research batch
+
+[spices-leavening-review.json](../data/recipes/identity-proposals/spices-leavening-review.json) adds8explicit interpretations/8recipes/8candidate references/2rawUSDA records. Combined16targets/16recipes/22references/5foods,all unreviewed;firstbank remains unchanged. Source-specific soaking/rinsing/draining evidence identifies unknown retained baking-soda amount/sodium; no all-or-zero assumption or automatic clinical/retention rule. Existing validator actual8/8/2/8/0passed;source/fullsnapshot guards preserve method evidence. See identity-proposals/README.md for command and limitations.

@@ -81,3 +81,5 @@ The collector now separates generator continuation from `pendingRequest` page ID
 ## Independent French lane
 
 [RECIPE-FRENCH-SOURCE.md](RECIPE-FRENCH-SOURCE.md) documents the second licensed source. [French index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json):112conservatively parsed recipes/139prefix pages, separate French IDs, original revisions/licence and unknown quantities/nutrition. English3796/3640/53 unchanged. Cross-language duplicate dishes remain unresolved; counts must stay separate. Continue the French checkpoint, never restart exhausted English category.
+
+LatestindependentFrenchsnapshot:450parsed/625sourcepages,gate2026-10-13T17:49:47.599Z;seeRECIPE-FRENCH-SOURCE/HANDOFF§44. Englishsourcepoolremainsexhausted;neitherbankcomplete norunique-dishsum.
