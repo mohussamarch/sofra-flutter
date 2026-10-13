@@ -6,7 +6,7 @@ Canonical checkout: `E:\work\SOFRA\app`. This bank is a source-separated, unrevi
 
 1690 named GTIN-valid records; Egypt686, Saudi1015, overlap11. 1239have nutrition,1131core macros,680ingredient text,352declared allergens,1277brands. All1690bases unreviewed; none approved for exact calculation by this bank alone.
 
-52archives,247quarantined occurrences,302audited duplicates. Latest hourly batch:3requests/0success/3failures, unique product delta+0. Checkpoint/backoff preserved; manifest authoritative. Next:2026-10-13T04:20:05.291Z / egypt/global / 7.
+52archives,247quarantined occurrences,302audited duplicates. Latest hourly batch:2requests/0success/2failures, unique product delta+0. Checkpoint/backoff preserved; manifest authoritative. Next:2026-10-13T05:50:13.663Z / saudi-arabia/global / 1.
 
 | Category | Records |
 | --- | ---: |
