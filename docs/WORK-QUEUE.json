@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T21:45:25.728505+00:00",
-    "taskId": "recipe-quantities",
-    "summary": "Ingredient-fate guard plus2source observations/6method anchors verified with18tests;French+173parsed,source inventory exhausted;no runtime approvals.",
+    "at": "2026-10-13T21:47:59.725Z",
+    "taskId": "recipe-bank",
+    "summary": "Spanish source policy/prefix discovery verified:3officialarchives/49firstlisting entries,0recipe records; nextisolatedcollector must consume saved entries before continuation.",
     "evidence": [
-      "tool/recipes/validate-ingredient-fate.mjs",
-      "tool/recipes/validate-ingredient-fate.test.mjs",
-      "data/recipes/ingredient-fate/soaking-review.json",
-      "data/recipes/bulk/fr-wikibooks-cuisine/index.json"
+      "data/recipes/source-discovery/es-wikibooks/status.json",
+      "data/recipes/source-discovery/es-wikibooks/01-siteinfo.json",
+      "data/recipes/source-discovery/es-wikibooks/02-first-prefix.json",
+      "docs/RECIPE-SPANISH-SOURCE.md"
     ]
   },
   "tasks": [
@@ -77,9 +77,9 @@
       "priority": 28,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Discover another licensed source/category/language after actual quota checks. English and French current pools exhausted; preserve both cursors,never reset. Review source policy/discovery with bounded archived requests; no combined unique-dish sum.",
-      "lastAttemptAt": "2026-10-13T21:42:42.413Z",
-      "lastProgressAt": "2026-10-13T21:45:25.728505+00:00",
+      "nextAction": "Implement isolated Spanish bounded collector/parser and source fixtures. Policy/prefix/first49listing archived;consume those IDs before advancing saved continuation. Preserve source licence,ownlocks/backoff,null quantities/nutrition. NoEnglish/French reset.",
+      "lastAttemptAt": "2026-10-13T21:47:52.559Z",
+      "lastProgressAt": "2026-10-13T21:47:59.725Z",
       "owner": null,
       "completedUnit": {
         "englishSourcePages": 3796,
@@ -90,7 +90,10 @@
         "frenchIngredientLines": 7128,
         "frenchSteps": 6408,
         "runtimeReady": 0,
-        "frenchSourceExhausted": true
+        "frenchSourceExhausted": true,
+        "spanishDiscoveryRequests": 3,
+        "spanishFirstListingEntries": 49,
+        "spanishParsedRecipes": 0
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
@@ -100,9 +103,11 @@
         "tool/recipes/collect-wikibooks-fr.mjs",
         "tool/recipes/collect-wikibooks-fr.test.mjs",
         "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
-        "docs/RECIPE-FRENCH-SOURCE.md"
+        "docs/RECIPE-FRENCH-SOURCE.md",
+        "data/recipes/source-discovery/es-wikibooks/status.json",
+        "docs/RECIPE-SPANISH-SOURCE.md"
       ],
-      "stage": "English and French current inventories exhausted; continuous licensed source discovery remains open."
+      "stage": "Spanish discovery completed,collector/parser notimplemented;English/French current inventories exhausted."
     },
     {
       "id": "recipe-quantities",
@@ -318,5 +323,5 @@
     "ordinaryUsageAllowed": true,
     "action": "Reserve reached after completed bounded unit;no further research/agents/sourcecalls. Recheck later;no credits/reset."
   },
-  "updatedAt": "2026-10-13T21:45:25.728505+00:00"
+  "updatedAt": "2026-10-13T21:49:36.787234+00:00"
 }
