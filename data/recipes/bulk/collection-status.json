@@ -48,19 +48,26 @@
     "sourceExhausted": false,
     "nextAttemptAt": "2026-10-13T12:11:43Z"
   },
-  "nextAction": "Honor checkpoint nextAttemptAt/Retry-After then same-endpoint paced resume; work on source quantity/unit parsing meanwhile. No arbitrary final recipe count.",
-  "updatedAt": "2026-10-13T13:10:42.858430+00:00",
+  "nextAction": "Resume only when source checkpoint permits; continue explicit alternative/ingredient identity review locally. No final bank count cap.",
+  "updatedAt": "2026-10-13T13:27:07.640337+00:00",
   "collection": {
-    "sourcePages": 2428,
-    "parsedRecipes": 2312,
+    "sourcePages": 2676,
+    "parsedRecipes": 2554,
     "cuisineTags": 52,
-    "ingredientRows": 20277,
-    "steps": 15942,
-    "runtimeReady": 0
+    "ingredientRows": 22394,
+    "steps": 17697,
+    "runtimeReady": 0,
+    "sourceStructure": {
+      "parserVersion": "source-structure-v1",
+      "rowsWithGroup": 4173,
+      "rowsWithOptionalityCue": 737,
+      "rowsWithAlternativeCue": 1806,
+      "rowsWithQuantityQualifier": 838
+    }
   },
-  "nextAttemptAt": "2026-10-13T13:19:44.428Z",
+  "nextAttemptAt": "2026-10-13T13:30:30.706Z",
   "lastError": {
-    "at": "2026-10-13T13:09:44.428Z",
+    "at": "2026-10-13T13:20:30.706Z",
     "message": "MediaWiki API HTTP 429; stop and respect source backoff."
   }
 }

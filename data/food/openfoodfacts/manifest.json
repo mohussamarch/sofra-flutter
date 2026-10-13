@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "dataset": "Sofra packaged food bank / Open Food Facts",
-  "builtAt": "2026-10-13T12:06:06.206Z",
+  "builtAt": "2026-10-13T13:17:10.522Z",
   "source": "https://world.openfoodfacts.org",
   "databaseLicense": "ODbL-1.0",
   "contentsLicense": "DbCL-1.0",
-  "productCount": 1936,
-  "quarantinedCount": 274,
-  "duplicateOccurrences": 584,
-  "productsSha256": "48eb821899985f637f80ee63b4e6092353e644c68a189ad1312d997a7733b99f",
-  "indexSha256": "531f23cff723e158b5adbaff7656c5722a8264ad4713c301ecd9645815a0fa70",
+  "productCount": 1986,
+  "quarantinedCount": 302,
+  "duplicateOccurrences": 606,
+  "productsSha256": "3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95",
+  "indexSha256": "a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6",
   "marketCounts": {
-    "EG": 686,
+    "EG": 736,
     "SA": 1261
   },
   "categoryCounts": {
@@ -36,12 +36,12 @@
     "bakery": 42,
     "baby": 9
   },
-  "withNutrition": 1400,
-  "withCoreMacros": 1282,
-  "withIngredients": 764,
-  "withBrand": 1427,
+  "withNutrition": 1419,
+  "withCoreMacros": 1298,
+  "withIngredients": 771,
+  "withBrand": 1458,
   "withDeclaredAllergens": 398,
-  "unreviewedBasisCount": 1936,
+  "unreviewedBasisCount": 1986,
   "archives": [
     {
       "file": "raw/egypt-baby-p1.json",
@@ -189,6 +189,13 @@
       "records": 100,
       "retrievedAt": "2026-10-13T02:44:18.188Z",
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=6&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt"
+    },
+    {
+      "file": "raw/egypt-p7.json",
+      "sha256": "63186eb4fc2febb701ff4568551f99722b630fb184ec0ba012895e7d2800754c",
+      "records": 100,
+      "retrievedAt": "2026-10-13T13:17:01.811Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=7&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt"
     },
     {
       "file": "raw/egypt-pasta-p1.json",

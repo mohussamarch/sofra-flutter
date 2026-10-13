@@ -92,3 +92,26 @@ test('spoon volume systems also remain unspecified', () => {
     assert.equal(result.canonicalAmount,null);
   }
 });
+
+test('reads adjacent explicit units and leading decimal quantities without guessed identities', () => {
+  for(const [text,amount,unit] of [['200g flour',200,'g'],['1.5kg potatoes',1.5,'kg'],['250ml milk',250,'ml'],['.5 cup flour',.5,'cup'],['.5cup flour',.5,'cup'],['½tsp salt',.5,'tsp']]) {
+    const result=parseIngredientQuantity(text);
+    assert.equal(result.status,'parsed-source-candidate',text);
+    assert.equal(result.amount,amount,text);
+    assert.equal(result.unit,unit,text);
+    assert.equal(result.canonicalAmount,null);
+    assert.equal(result.foodBinding,null);
+    assert.equal(result.sourceText,text);
+    assert.equal(result.parserVersion,'source-prefix-v2');
+  }
+});
+
+test('adjacent token support does not turn foods, ranges or malformed decimals into units', () => {
+  for(const text of ['1g3 apples','1 g3 flour','200g/100g sauce','200garlic cloves','1cupful rice','.5cucumber','1.2.3kg flour','.5-1 cup water','.5 to 1 cup water','1e3 g flour','0g flour','-0.5cup milk','1/0tsp salt']) {
+    const result=parseIngredientQuantity(text);
+    assert.equal(result.status,'unresolved',text);
+    assert.equal(result.amount,null,text);
+    assert.equal(result.unit,null,text);
+    assert.equal(result.parserVersion,'source-prefix-v2');
+  }
+});

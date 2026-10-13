@@ -53,3 +53,20 @@ Positive decimals, simple/mixed/common Unicode fractions and explicit g/kg/ml/l/
 Each result preserves original text, remaining text, parser version, unreviewed status and source revision/hash through its recipe. Future user input may bypass source parsing and provide explicit reviewed food and quantity inputs to the calculator. The corpus itself is still outside the shipping catalogue; no automatic nutrient estimates from recipe names.
 
 Actual checks: 7 quantity tests and 7 index tests passed within 41 recipe Node tests. Added spoon-system regression failed first, then passed after preserving ambiguity. Integration test proves parsed `1 cup` does not overwrite canonical amount or create a food binding. Raw source files remain immutable.
+
+## Source section and review cues
+
+`wikibooks-sections-v3` preserves nested ingredient headings as `ingredientRows[].sourceGroupPath`: original heading, cleaned title, depth and original extracted line index. Sibling/repeated root sections reset their scope. Derived recipes retain this path per ingredient via `sourceStructure`.
+
+`source-structure-v1` records first lexical `or`, `optional/optionally`, and `to taste/as needed/as required` cues with source text offsets. These are review cues only, not asserted substitutes, selections or clinical exclusions. `or more` may be a quantity phrase: no automatic split. `alternatives/selectedAlternative/optional` stay null; absent cues do not mean required or safe. Group path null means unavailable extraction; [] means no nested heading observed. Original source revision/hash remains attached.
+
+Actual current coverage: 4173 rows with source headings, 1806 with or cues, 737 optional cues, 838 quantity qualifiers. 11194/22394 quantity prefixes remain unreviewed candidates. Corpus 2554/2676/52;0runtime imports/nutrition approvals.48 recipe Node tests passed;7 new behavioral tests failed before implementation then passed. Source hashes and original raw prefix checked. No runtime/Flutter/UI changes.
+
+Next: explicit review tied to recipe revision/line and ingredient identity, then choice application and unknown-aware import. Source cues never automatically exclude ingredients from nutrition or sum every alternative. Recipe-source collection continues only after its own checkpoint gate.
+
+
+## Quantity parser v2 checkpoint
+
+Current `source-prefix-v2` supports adjacent explicit units (`200g`, `250ml`) and leading decimals (`.5 cup`), with an explicit token boundary: `garlic`, `cupful`, `g3` and ratios such as `g/100g` are not accepted units. Fractions/known aliases remain supported. Every parsed/unresolved candidate now carries its parser version. No count/package inference, canonical mass, food identity or cup/spoon-system conversion is added.
+
+On the same2676-page/2554-recipe corpus (22394 ingredient rows), v1 produced11189 candidates; v2 produces11194:7 newly parsed and2 no longer parsed under stricter token boundaries. This is transcription coverage, not nutrient coverage.48recipe tests passed:19collector/10index/9quantity/10research contract;2additional quantity tests first failed then passed. Older v1 limitation notes above are historical. No runtime/Flutter/UI changes.

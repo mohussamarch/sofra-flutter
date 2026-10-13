@@ -87,3 +87,7 @@ Network refresh is explicit (`fetch` for3bounded pages per market; `fetch-catego
 ## لقطة جمع13أكتوبر —مسار الوصفات والمحرك
 
 3صفحات سعودية ناجحة (dairyp3/globalp4/globalp5)،255صف مصدر،+143صافي إلى1936منتجًا/58أرشيفًا. جودة المصدر:274عزل/584تكرار،كل الأسس غيرمراجعة؛5اختبارات البنك الفعلي مرت. الجامع خرج0وأزال القفل. التاليةSAglobalp6وEGglobalp7بعد12:54:39.414Z. ODbL/DbCLمحفوظان،ولاصور/أسعاراختُلقت.
+
+## Heartbeat13:14 — ingredient structure and OFF
+
+Egypt globalp7 succeeded100rows,+50net to1986/59archives. Saudi globalp6HTTP503,backoff13:32:10.213Z. CLIactualexit0/lockabsent;5realbanktests passed. 302quarantine/606duplicates. Allbasesunreviewed,ODbL/DbCL/provenancepreserved. NextEGp8/SAp6wheneligible.

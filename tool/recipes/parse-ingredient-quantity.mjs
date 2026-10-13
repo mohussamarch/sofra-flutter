@@ -1,3 +1,5 @@
+export const QUANTITY_PARSER_VERSION = 'source-prefix-v2';
+
 const FRACTIONS = Object.freeze({
   '½': [1, 2], '⅓': [1, 3], '⅔': [2, 3],
   '¼': [1, 4], '¾': [3, 4],
@@ -18,6 +20,7 @@ for (const alias of ['tsp', 'teaspoon', 'teaspoons']) UNIT_ALIASES.set(alias, 't
 function unresolved(sourceText, reason, quantityText = null, unitText = null, remainingText = null) {
   return {
     sourceText,
+    parserVersion: QUANTITY_PARSER_VERSION,
     status: 'unresolved',
     amount: null,
     unit: null,
@@ -32,7 +35,7 @@ function unresolved(sourceText, reason, quantityText = null, unitText = null, re
 function readLeadingQuantity(sourceText) {
   const fractionChars = Object.keys(FRACTIONS).join('');
   const pattern = new RegExp(
-    `^\\s*([+-]?)(?:(\\d+)\\s+(\\d+)\\s*\\/\\s*(\\d+)|(\\d+)\\s*\\/\\s*(\\d+)|(\\d+)\\s+([${fractionChars}])|(\\d+)?([${fractionChars}])|(\\d+(?:\\.\\d+)?))`,
+    `^\\s*([+-]?)(?:(\\d+)\\s+(\\d+)\\s*\\/\\s*(\\d+)|(\\d+)\\s*\\/\\s*(\\d+)|(\\d+)\\s+([${fractionChars}])|(\\d+)?([${fractionChars}])|((?:\\d+(?:\\.\\d+)?|\\.\\d+)))`,
   );
   const match = sourceText.match(pattern);
   if (!match) return null;
@@ -74,14 +77,14 @@ export function parseIngredientQuantity(sourceText) {
   const quantityText = match[0].trim();
   const rawRemaining = sourceText.slice(match[0].length);
   const remainingAfterSpace = rawRemaining.trimStart();
-  const unitMatch = remainingAfterSpace.match(/^([A-Za-z]+\.?)/);
+  const unitMatch = remainingAfterSpace.match(/^([A-Za-z]+\.?)(?=\s|$|[,(])/);
   const unitText = unitMatch?.[1] ?? null;
   const remainingText = unitMatch ? remainingAfterSpace.slice(unitMatch[0].length).trimStart() : remainingAfterSpace || null;
 
   if (!Number.isFinite(value) || value <= 0) {
     return unresolved(sourceText, 'quantity-must-be-positive-and-finite', quantityText, unitText, remainingText);
   }
-  if (!rawRemaining || !/^\s/.test(rawRemaining)) {
+  if (!rawRemaining) {
     return unresolved(sourceText, 'explicit-unit-required', quantityText, unitText, remainingText);
   }
   if (!unitText) return unresolved(sourceText, 'explicit-unit-required', quantityText, null, remainingText);
@@ -90,6 +93,7 @@ export function parseIngredientQuantity(sourceText) {
 
   return {
     sourceText,
+    parserVersion: QUANTITY_PARSER_VERSION,
     status: 'parsed-source-candidate',
     amount: value,
     unit: normalizedUnit,

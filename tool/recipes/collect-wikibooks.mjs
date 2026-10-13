@@ -50,22 +50,34 @@ function stripMarkup(line) {
     .trim();
 }
 
-function sectionLines(wikitext, headingNames) {
+function sectionLines(wikitext, headingNames, { trackGroups = false } = {}) {
   const names = new Set(headingNames.map((name) => name.toLowerCase()));
   const collected = [];
   let rootLevel = null;
+  let groupPath = [];
   for (const line of wikitext.split(/\r?\n/)) {
     const heading = line.match(/^\s*(={2,6})\s*(.*?)\s*\1\s*$/);
     if (heading) {
       const title = stripMarkup(heading[2]).toLowerCase();
       const level = heading[1].length;
-      if (rootLevel !== null && level <= rootLevel) rootLevel = null;
-      if (rootLevel === null && names.has(title)) rootLevel = level;
+      if (rootLevel !== null && level <= rootLevel) {
+        rootLevel = null;
+        groupPath = [];
+      }
+      if (rootLevel === null && names.has(title)) {
+        rootLevel = level;
+        groupPath = [];
+      } else if (rootLevel !== null && trackGroups) {
+        groupPath = groupPath.filter(h => h.level < level);
+        groupPath.push({ level, title: stripMarkup(heading[2]), sourceHeading: line });
+      }
       continue;
     }
     if (rootLevel === null || !/^\s*[*#]+\s*/.test(line)) continue;
     const clean = stripMarkup(line);
-    if (clean) collected.push(clean);
+    if (clean) collected.push(trackGroups
+      ? { lineIndex: collected.length, sourceText: clean, sourceGroupPath: groupPath.map(h => ({ ...h })) }
+      : clean);
   }
   return collected;
 }
@@ -75,10 +87,11 @@ export function parseRecipePage(wikitext) {
     .replace(/<!--([\s\S]*?)-->/g, '')
     .replace(/<nowiki\b[^>]*>[\s\S]*?<\/nowiki\s*>/gi, '')
     .replace(/<nowiki\b[^>]*\/\s*>/gi, '');
-  const ingredients = sectionLines(parseableWikitext, ['ingredients', 'what you need']);
+  const ingredientRows = sectionLines(parseableWikitext, ['ingredients', 'what you need'], { trackGroups: true });
+  const ingredients = ingredientRows.map(row => row.sourceText);
   const steps = sectionLines(parseableWikitext, ['procedure', 'directions', 'method', 'instructions', 'preparation', 'cooking']);
   const servingsText = parseableWikitext.match(/^\s*\|\s*servings\s*=\s*([^\n|]+)/im)?.[1]?.trim() ?? null;
-  return { ingredients, steps, servingsText };
+  return { ingredients, ingredientRows, steps, servingsText };
 }
 
 function sourceWikitext(page) {

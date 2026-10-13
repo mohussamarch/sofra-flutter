@@ -75,3 +75,7 @@ User explicitly requested an additional independent economical recipe agent. Fir
 ## تعديل أولوية المستخدم —بنك كبير ومحرك وصفات شخصية
 
 المستخدم طلب الآن أكبر كمية عملية وتوسيع المطابخ:recipe-bank28 (2312/2428/52)،ثمrecipe-quantities29 أثناءbackoff،preparation30،recipe-import32،recipe-authoring34. لا اكتمال عددي للبنك،ولا متطلبات واجهة جديدة. مصدر429ينتظرموعده؛العمل المحلي على الوحدات/الربط يستمر. النواة اكتسبت حفظ/نقل الثقة؛مسودة من الصفر ما زالت مرحلة مستقلة. اقرأRECIPE-ENGINE.md وRECIPE-BULK.md.لا مؤقت جديد؛automation-2يقرأالقائمةالمحدثة.
+
+## Heartbeat13:14 — completed source structure unit
+
+Source ingredient sections and review cues are implemented/validated in research data. recipe-quantities29 continues exact line identity/explicit alternative review; recipe-bank28 respects source checkpoint. No source failure blocks independent local logic. Preparation30 and import32 remain available after this priority. No new scheduler or clinical rules.

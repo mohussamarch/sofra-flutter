@@ -2,14 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T13:10:42.858430+00:00",
-    "taskId": "recipe-bank",
-    "summary": "2428sourcepages/2312parsedrecipes/52sourcecuisine tags, source/parsed hashes checked;100Fluttertests/analyzeclean;OFF+143to1936.0runtime recipe imports;quantity candidates10227/20277.",
+    "at": "2026-10-13T13:27:07.640337+00:00",
+    "taskId": "recipe-quantities",
+    "summary": "Section/cue extraction v1 validated and integrated: {'parserVersion': 'source-structure-v1', 'rowsWithGroup': 4173, 'rowsWithOptionalityCue': 737, 'rowsWithAlternativeCue': 1806, 'rowsWithQuantityQualifier': 838}; corpus 2554/2676/52,OFF 1986.48recipe Node tests; no runtime bindings.",
     "evidence": [
-      "data/recipes/bulk/wikibooks-cookbook/index.json",
-      "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl",
-      "tool/recipes/build-bulk-index.mjs",
-      "docs/RECIPE-BULK.md"
+      "tool/recipes/collect-wikibooks.mjs",
+      "tool/recipes/build-bulk-index.test.mjs",
+      "data/recipes/bulk/wikibooks-cookbook/index.json"
     ]
   },
   "tasks": [
@@ -78,12 +77,12 @@
       "dependsOn": [],
       "status": "waiting",
       "nextAction": "Check actual usage/lock and due time; resume Wikibooks with 2s minimum pacing and Retry-After. Extend regional coverage without an all-time count cap; source failure must not block local quantity parser.",
-      "lastAttemptAt": "2026-10-13T13:10:42.858430+00:00",
-      "lastProgressAt": "2026-10-13T11:22:00.588690+00:00",
+      "lastAttemptAt": "2026-10-13T13:20:30.706Z",
+      "lastProgressAt": "2026-10-13T13:27:07.640337+00:00",
       "owner": null,
       "completedUnit": {
-        "sourcePages": 2428,
-        "parsedRecipes": 2312,
+        "sourcePages": 2676,
+        "parsedRecipes": 2554,
         "cuisineTags": 52,
         "runtimeReady": 0
       },
@@ -93,7 +92,7 @@
         "tool/recipes/build-bulk-index.mjs",
         "docs/RECIPE-BULK.md"
       ],
-      "blockedUntil": "2026-10-13T13:19:44.428Z",
+      "blockedUntil": "2026-10-13T13:30:30.706Z",
       "blockedReason": "Wikimedia HTTP429; checkpointed backoff, no early retry"
     },
     {
@@ -102,18 +101,30 @@
       "dependsOn": [],
       "status": "ready",
       "completedUnit": {
-        "parserVersion": "source-prefix-v1",
-        "parsedCandidates": 10227,
-        "ingredientRows": 20277,
-        "tests": 14
+        "quantityParser": "source-prefix-v2",
+        "structureParser": "source-structure-v1",
+        "parsedCandidates": 11194,
+        "ingredientRows": 22394,
+        "sourceStructure": {
+          "parserVersion": "source-structure-v1",
+          "rowsWithGroup": 4173,
+          "rowsWithOptionalityCue": 737,
+          "rowsWithAlternativeCue": 1806,
+          "rowsWithQuantityQualifier": 838
+        }
       },
-      "nextAction": "Quantity prefix candidate parser complete and integrated into derived bank. Next: explicit alternatives/groups and ingredient identity review; no canonical mass or food binding from parsing alone. Adjacent 200g and leading .5 remain unresolved in v1.",
+      "nextAction": "Build reviewed ingredient/alternative identity proposals tied to exact revision/line and source text. Source or/optional/to taste cues are not approved choices. Never sum all alternatives or convert source cues into exclusions automatically.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
         "data/recipes/bulk/wikibooks-cookbook/index.json",
-        "docs/RECIPE-BULK.md"
-      ]
+        "docs/RECIPE-BULK.md",
+        "tool/recipes/collect-wikibooks.test.mjs",
+        "docs/RECIPE-BULK.md#source-section-and-review-cues"
+      ],
+      "owner": null,
+      "lastProgressAt": "2026-10-13T13:27:07.640337+00:00",
+      "stage": "Source prefix and section/cue extraction complete; reviewed identity and explicit choice application still pending"
     },
     {
       "id": "preparation-evidence",
@@ -195,7 +206,8 @@
       "priority": 80,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Fresh usage/lock before bounded helper; SAglobalp6 due, Egyptglobalp7 only after2026-10-13T12:54:39.414Z. Last3Saudiarchives yielded143netnewproducts; source-specific retry state remains authoritative."
+      "nextAction": "Egypt global p8 next bounded cycle; Saudi global p6 only after2026-10-13T13:32:10.213Z. Read actual cursor/usage/lock first. Latest Egypt p7 +50net; Saudi503 backoff recorded.",
+      "owner": null
     },
     {
       "id": "budget-planner",

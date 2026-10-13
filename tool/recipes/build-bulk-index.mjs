@@ -3,7 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseRecipePage } from './collect-wikibooks.mjs';
-import { parseIngredientQuantity } from './parse-ingredient-quantity.mjs';
+import { parseIngredientQuantity, QUANTITY_PARSER_VERSION } from './parse-ingredient-quantity.mjs';
 
 const sourceId='wikibooks-cookbook-cc-by-sa';
 const hash=value=>createHash('sha256').update(value,'utf8').digest('hex');
@@ -36,6 +36,19 @@ function literalCategories(raw){
   const text=raw.replace(/<!--[\s\S]*?-->/g,'').replace(/<(nowiki|pre|source|syntaxhighlight|code)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,'');
   return [...new Set([...text.matchAll(/\[\[\s*Category:([^\]|\n]+)(?:\|[^\]]*)?\]\]/g)]
     .map(m=>`Category:${m[1].trim().replaceAll('_',' ')}`))].sort();
+}
+
+// Cues are source transcription only: never validated choices or optionality rules.
+function sourceStructure(sourceText, row) {
+  const cue = pattern => {
+    const match=sourceText.match(pattern);
+    return match ? {text:match[0],offset:match.index} : null;
+  };
+  return {parserVersion:'source-structure-v1',reviewStatus:'source-cues-unreviewed',
+    sourceGroupPath:row?.sourceGroupPath??null,
+    optionalityCue:cue(/\boptional(?:ly)?\b/i),alternativeCue:cue(/\bor\b/i),
+    quantityQualifier:cue(/\b(?:to taste|as needed|as required)\b/i),
+    alternatives:null,selectedAlternative:null,optional:null};
 }
 
 export function buildBulkIndex(records,{categoryObservations=[],parseSource}={}){
@@ -77,15 +90,20 @@ export function buildBulkIndex(records,{categoryObservations=[],parseSource}={})
     const parsed=parseSource?.(r.sourceWikitext);
     const ingredientTexts=parsed?.ingredients??r.recipe.ingredients.map(v=>v.sourceText);
     const stepTexts=parsed?.steps??r.recipe.steps.map(v=>v.text);
+    if(parsed?.ingredientRows!==undefined){
+      need(Array.isArray(parsed.ingredientRows)&&parsed.ingredientRows.length===ingredientTexts.length,'Ingredient structure length mismatch');
+      need(parsed.ingredientRows.every((row,i)=>row.lineIndex===i&&row.sourceText===ingredientTexts[i]&&
+        Array.isArray(row.sourceGroupPath)&&row.sourceGroupPath.every(h=>Number.isInteger(h.level)&&h.level>=3&&h.level<=6&&typeof h.title==='string'&&typeof h.sourceHeading==='string')),'Ingredient structure/source mismatch');
+    }
     const isRecipe=ingredientTexts.length>0&&stepTexts.length>0;
     if(isRecipe)parsedRecipes.push({
       schemaVersion:1,id:`wikibooks:${r.sourcePageId}`,recordId:r.recordId,sourceId,
       sourceRevision:r.sourceRevision,sourceUrl:r.sourceUrl,sourceSha256:r.sourceSha256,
-      parserVersion:parsed?'wikibooks-sections-v2':'original-record-extraction',quantityParserVersion:'source-prefix-v1',license:r.license,
+      parserVersion:parsed?'wikibooks-sections-v3':'original-record-extraction',quantityParserVersion:QUANTITY_PARSER_VERSION,license:r.license,
       reviewStatus:'source-extracted-unreviewed',changeNotice:'Source-language section extraction; markup removed. Not culinarily reviewed, translated or runtime-approved.',
       recipe:{name:r.recipe.name,nameAr:r.recipe.nameAr??null,servings:null,
         servingsSourceText:parsed?.servingsText??r.recipe.servingsSourceText??null,
-        ingredients:ingredientTexts.map((sourceText,i)=>({id:`source-line-${i+1}`,name:sourceText,sourceText,amount:null,unit:null,foodBinding:null,quantityCandidate:parseIngredientQuantity(sourceText)})),
+        ingredients:ingredientTexts.map((sourceText,i)=>({id:`source-line-${i+1}`,name:sourceText,sourceText,amount:null,unit:null,foodBinding:null,quantityCandidate:parseIngredientQuantity(sourceText),sourceStructure:sourceStructure(sourceText,parsed?.ingredientRows?.[i])})),
         steps:stepTexts.map((text,i)=>({n:i+1,text,durationMinutes:null})),nutrition:null},
     });
     const api=[...new Set([...r.sourceCategories,...(observed.get(r.recordId)??[])])].sort();
@@ -105,7 +123,8 @@ export function buildBulkIndex(records,{categoryObservations=[],parseSource}={})
   }
   const ingredientRows=parsedRecipes.flatMap(r=>r.recipe.ingredients);
   const candidateCount=ingredientRows.filter(i=>i.quantityCandidate.status==='parsed-source-candidate').length;
-  return {quantityCandidates:{parserVersion:'source-prefix-v1',parsed:candidateCount,unresolved:ingredientRows.length-candidateCount,total:ingredientRows.length},schemaVersion:1,sourceId,status:'research-only',sourceRevisionRecords:revisions.size,
+  const structure={parserVersion:'source-structure-v1',rowsWithGroup:ingredientRows.filter(i=>i.sourceStructure.sourceGroupPath?.length).length,rowsWithOptionalityCue:ingredientRows.filter(i=>i.sourceStructure.optionalityCue!==null).length,rowsWithAlternativeCue:ingredientRows.filter(i=>i.sourceStructure.alternativeCue!==null).length,rowsWithQuantityQualifier:ingredientRows.filter(i=>i.sourceStructure.quantityQualifier!==null).length};
+  return {sourceStructure:structure,quantityCandidates:{parserVersion:QUANTITY_PARSER_VERSION,parsed:candidateCount,unresolved:ingredientRows.length-candidateCount,total:ingredientRows.length},schemaVersion:1,sourceId,status:'research-only',sourceRevisionRecords:revisions.size,
     distinctSourcePages:entries.length,parseableRecipePages:entries.filter(e=>e.isParseableRecipe).length,
     runtimeReadyCount:0,entries,parsedRecipes,cuisines:[...cuisineCounts.values()].sort((a,b)=>a.id.localeCompare(b.id)),
     classificationNote:'Exact recognised category labels reported by source/API or literal source wikitext; not a verified origin or suitability claim. Untagged pages remain unclassified. Source licences/unknown quantities and nutrition remain unchanged.'};
@@ -123,7 +142,7 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
     const parsedText=parsedRecipes.map(r=>JSON.stringify(r)).join('\n')+(parsedRecipes.length?'\n':'');
     await writeFile(`${folder}/parsed-recipes.jsonl`,parsedText,'utf8');
     const result={...index,generatedAt:new Date().toISOString(),records:'source-pages.jsonl',
-      parsedRecipes:'parsed-recipes.jsonl',parserVersion:'wikibooks-sections-v2',parsedRecipesSha256:hash(parsedText),
+      parsedRecipes:'parsed-recipes.jsonl',parserVersion:'wikibooks-sections-v3',parsedRecipesSha256:hash(parsedText),
       sourceFileSha256:hash(raw),categoryObservationsSha256:observations?hash(observations):null};
     await writeFile(`${folder}/index.json`,JSON.stringify(result,null,2)+'\n','utf8');
     console.log(JSON.stringify({sourceRevisionRecords:index.sourceRevisionRecords,distinctSourcePages:index.distinctSourcePages,

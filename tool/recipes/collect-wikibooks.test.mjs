@@ -310,3 +310,17 @@ test('stores complete licensed source pages even when parser finds no recipe sec
   assert.equal(record.sourceWikitext, '== Overview ==\nA source page with no recipe sections.');
   assert.match(record.sourceSha256, /^[a-f0-9]{64}$/);
 });
+
+test('preserves nested ingredient headings with source order and resets sibling scopes', () => {
+  const parsed=parseRecipePage('== Ingredients ==\n* 1 cup flour\n=== Dough ===\n* water\n==== Topping ====\n* seeds\n=== Filling ===\n* dates\n== Procedure ==\n# Cook.');
+  assert.deepEqual(parsed.ingredientRows.map(r=>r.sourceGroupPath.map(h=>h.title)),[[],['Dough'],['Dough','Topping'],['Filling']]);
+  assert.deepEqual(parsed.ingredientRows.map(r=>r.sourceText),parsed.ingredients);
+  assert.deepEqual(parsed.ingredientRows.map(r=>r.lineIndex),[0,1,2,3]);
+  assert.equal(parsed.ingredientRows[1].sourceGroupPath[0].sourceHeading,'=== Dough ===');
+});
+
+test('separate ingredient roots do not inherit previous section groups', () => {
+  const parsed=parseRecipePage('== Ingredients ==\n=== Dough ===\n* flour\n== Notes ==\n* Ignore\n== What you need ==\n* dates\n== Method ==\n# Mix.');
+  assert.deepEqual(parsed.ingredients,['flour','dates']);
+  assert.deepEqual(parsed.ingredientRows.map(r=>r.sourceGroupPath.map(h=>h.title)),[['Dough'],[]]);
+});

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { buildBulkIndex } from './build-bulk-index.mjs';
+import { parseRecipePage } from './collect-wikibooks.mjs';
 
 function row({page=1,revision=11,title='Cookbook:Example',categories=[],raw='== Ingredients ==\n* Lentils\n== Procedure ==\n# Cook.',isRecipe=true}={}) {
   return {recordId:`wikibooks-${page}-r${revision}`,sourceId:'wikibooks-cookbook-cc-by-sa',
@@ -65,7 +66,7 @@ test('reparses immutable source into separately versioned unknown-preserving rec
   const result=buildBulkIndex([r],{parseSource:()=>({ingredients:['1 cup flour'],steps:['Mix.'],servingsText:'4'})});
   assert.equal(result.parseableRecipePages,1);
   assert.deepEqual(r,before);
-  assert.equal(result.parsedRecipes[0].parserVersion,'wikibooks-sections-v2');
+  assert.equal(result.parsedRecipes[0].parserVersion,'wikibooks-sections-v3');
   assert.equal(result.parsedRecipes[0].recipe.ingredients[0].amount,null);
   assert.equal(result.parsedRecipes[0].recipe.servings,null);
   assert.equal(result.parsedRecipes[0].sourceSha256,r.sourceSha256);
@@ -84,4 +85,37 @@ test('quantity candidates remain separate from canonical calculation inputs', ()
   assert.equal(result.quantityCandidates.parsed,1);
   assert.equal(result.quantityCandidates.unresolved,1);
   assert.equal(result.parsedRecipes[0].sourceSha256,r.sourceSha256);
+});
+
+test('retains source groups and review cues without splitting choices or marking absent cues false', () => {
+  const r=row({raw:'== Ingredients ==\n=== Filling ===\n* 1 cup milk or cream (optional)\n* salt to taste\n* 1 tbsp oil\n== Procedure ==\n# Mix.'});
+  const result=buildBulkIndex([r],{parseSource:parseRecipePage});
+  const [choice,salt,oil]=result.parsedRecipes[0].recipe.ingredients;
+  assert.equal(choice.sourceStructure.sourceGroupPath[0].title,'Filling');
+  assert.equal(choice.sourceStructure.optionalityCue.text,'optional');
+  assert.equal(choice.sourceStructure.alternativeCue.text,'or');
+  assert.equal(choice.sourceStructure.alternatives,null);
+  assert.equal(choice.amount,null);
+  assert.equal(choice.foodBinding,null);
+  assert.equal(salt.sourceStructure.quantityQualifier.text,'to taste');
+  assert.equal(salt.sourceStructure.optionalityCue,null);
+  assert.equal(oil.sourceStructure.optionalityCue,null);
+  assert.equal(result.sourceStructure.rowsWithGroup,3);
+  assert.equal(result.sourceStructure.rowsWithAlternativeCue,1);
+});
+
+test('or more is a review cue, never inferred substitute identities or a selected amount', () => {
+  const r=row();
+  const result=buildBulkIndex([r],{parseSource:()=>({ingredients:['1 cup water or more'],steps:['Mix.']})});
+  const line=result.parsedRecipes[0].recipe.ingredients[0];
+  assert.equal(line.sourceStructure.alternativeCue.text,'or');
+  assert.equal(line.sourceStructure.alternatives,null);
+  assert.equal(line.sourceStructure.reviewStatus,'source-cues-unreviewed');
+  assert.equal(line.sourceStructure.sourceGroupPath,null);
+  assert.equal(line.amount,null);
+});
+
+test('rejects mismatched group extraction instead of attaching evidence to wrong source lines', () => {
+  const r=row();
+  assert.throws(()=>buildBulkIndex([r],{parseSource:()=>({ingredients:['flour'],steps:['Mix.'],ingredientRows:[{lineIndex:0,sourceText:'milk',sourceGroupPath:[]}]})}),/Ingredient structure/);
 });

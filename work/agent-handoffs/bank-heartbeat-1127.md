@@ -37,3 +37,14 @@
 - Bank moved from 1,888 to 1,936 products (+48 net from 100 rows); quarantine 273→274; duplicate occurrences 533→584; archives 57→58. Manifest market counts EG 686 / SA 1,261; nutrition 1,400, core macros 1,282, ingredients 764, brands 1,427, declared allergens 398; all 1,936 remain unreviewed for nutrition basis. Database license ODbL-1.0; contents license DbCL-1.0.
 - Bank-only verification rerun: 5 tests passed, 0 failed. Product SHA-256 `48eb821899985f637f80ee63b4e6092353e644c68a189ad1312d997a7733b99f`; index SHA-256 `531f23cff723e158b5adbaff7656c5722a8264ad4713c301ecd9645815a0fa70`.
 - Next eligible Saudi global page is p6 at the next cycle. Egypt global p7 remains deferred until `2026-10-13T12:54:39.414Z`; no early retry. Check quota and lock again before collecting.
+
+## Follow-up bounded run — 13 October 2026, 13:17 UTC
+
+- Fresh usage before the run: 75% primary / 25% weekly used; ordinary usage allowed. It remained 75% / 25% after progress. The 90% stop threshold was not reached.
+- Lock/process check before launch: no bank lock and no Node collector process. Two requests were issued sequentially from existing due cursors.
+- Egypt global p7 succeeded: 100 rows, source count 4,447. Archive `raw/egypt-p7.json`, retrieved `2026-10-13T13:17:01.811Z`, SHA-256 `63186eb4fc2febb701ff4568551f99722b630fb184ec0ba012895e7d2800754c`.
+- Saudi global p6 failed with HTTP 503. The checkpoint records `nextAttemptAt=2026-10-13T13:32:10.213Z`; no retry was made. This was the only failed source request in this batch.
+- Collector summary reported 2 requests, at least one fetch, then the actual process exited with code 0. Lock was absent after exit and no Node process remained.
+- Bank before/after: products 1,936→1,986 (+50 net from 100 returned rows); quarantined 274→302 (+28); duplicate occurrences 584→606 (+22); archives 58→59. Manifest market counts EG 736 / SA 1,261; nutrition 1,419; core macros 1,298; ingredients 771; brands 1,458; declared allergens 398; unreviewed nutrition basis 1,986. Source `https://world.openfoodfacts.org`; database license ODbL-1.0; contents license DbCL-1.0.
+- Required real-bank validation: 5 tests passed, 0 failed. Product SHA-256 `3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95`; index SHA-256 `a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6`.
+- Next eligible page: Egypt global p8, due on the next cycle. Saudi global p6 is due again only after `2026-10-13T13:32:10.213Z`. Recheck quota and lock before the next maximum-two run.

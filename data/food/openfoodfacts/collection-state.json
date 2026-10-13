@@ -242,27 +242,27 @@
       "nextAttemptAt": null
     },
     "egypt/global": {
-      "page": 7,
+      "page": 8,
       "done": false,
-      "failures": 5,
-      "nextAttemptAt": "2026-10-13T12:54:39.414Z"
+      "failures": 0,
+      "nextAttemptAt": null
     },
     "saudi-arabia/global": {
       "page": 6,
       "done": false,
-      "failures": 0,
-      "nextAttemptAt": null
+      "failures": 1,
+      "nextAttemptAt": "2026-10-13T13:32:10.213Z"
     }
   },
   "failures": [
     {
-      "key": "egypt/global",
-      "page": 7,
-      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=7&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt",
-      "at": "2026-10-13T08:54:39.414Z",
-      "nextAttemptAt": "2026-10-13T12:54:39.414Z"
+      "key": "saudi-arabia/global",
+      "page": 6,
+      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=6&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia",
+      "at": "2026-10-13T13:17:10.213Z",
+      "nextAttemptAt": "2026-10-13T13:32:10.213Z"
     }
   ],
-  "lastRequestAt": "2026-10-13T12:06:05.900Z",
+  "lastRequestAt": "2026-10-13T13:17:10.213Z",
   "nextJobIndex": 0
 }
