@@ -2,14 +2,15 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T23:18:09.191814+00:00",
+    "at": "2026-10-13T23:39:34.389189+00:00",
     "taskId": "recipe-quantities",
-    "summary": "Second completed local unit: explicit persisted source draft registry with byte/provenance guards,7newtests/36linkedpassed;actual1blankdraft/9lines/50issues/0complete/0runtime.",
+    "summary": "Structural source adapter+transportguard completed:44linkedNode/1Flutterinterop/analyzeclean;OFF+21net/1archive,5actualbanktests then503checkpoint.0runtimeimports.",
     "evidence": [
-      "tool/recipes/import-draft-registry.mjs",
-      "tool/recipes/import-draft-registry.test.mjs",
-      "data/recipes/import-review/registry.json",
-      "data/recipes/import-review/drafts/hummus-source.json"
+      "tool/recipes/runtime-adapter.mjs",
+      "tool/recipes/runtime-adapter.test.mjs",
+      "test/runtime_adapter_contract_test.dart",
+      "docs/RECIPE-RUNTIME-ADAPTER.md",
+      "docs/agents/off-2329.md"
     ]
   },
   "tasks": [
@@ -160,15 +161,20 @@
         "analyzeClean": true,
         "importDraftPreflight": true,
         "preflightTests": 11,
-        "linkedNodeTests": 36,
+        "linkedNodeTests": 44,
         "blankEnglishDraftsAudited": 3640,
         "preflightRuntimeReady": 0,
         "importDraftRegistry": true,
         "registryTests": 7,
         "registeredDraftCount": 1,
-        "registeredCompleteDraftCount": 0
+        "registeredCompleteDraftCount": 0,
+        "structuralRuntimeAdapter": true,
+        "transportCandidateGuard": true,
+        "adapterTests": 8,
+        "flutterInteropTests": 1,
+        "actualRuntimeImports": 0
       },
-      "nextAction": "Implement explicit source-to-runtime adapter with required CatalogRecipe metadata and pinned source provenance; reject missing timings/servings rather than zero. Keep runtime food form/basis/measurement/retention/nutrition gates separate; no automatic bindings.",
+      "nextAction": "Implement native imported candidate/provenance reader and explicit immutable recipe registration via KitchenService; preserve source/licence/full envelope and remaining nutrition/form/basis/measurement/retention gates. Verify atomic rollback/reload/retry/history;never persist naked recipe JSON.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -202,10 +208,14 @@
         "tool/recipes/import-draft-registry.mjs",
         "tool/recipes/import-draft-registry.test.mjs",
         "data/recipes/import-review/registry.json",
-        "data/recipes/import-review/drafts/hummus-source.json"
+        "data/recipes/import-review/drafts/hummus-source.json",
+        "tool/recipes/runtime-adapter.mjs",
+        "tool/recipes/runtime-adapter.test.mjs",
+        "test/runtime_adapter_contract_test.dart",
+        "docs/RECIPE-RUNTIME-ADAPTER.md"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T23:18:09.191814+00:00",
+      "lastProgressAt": "2026-10-13T23:39:34.389189+00:00",
       "stage": "Source quantity/identity/fate guards plus explicit single-choice runtime revision API implemented;bulk import preflight and review coverage remain open."
     },
     {
@@ -288,20 +298,21 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "2266products/63archivesunchanged. Readactualquotas/locks/checkpoint;Saudi p10after2026-10-13T23:31:01.818Z,Egypt p8after2026-10-14T01:30:53.428Z. No retry before gates or no-eligible loops.",
+      "nextAction": "2287products/64archives;Saudi/globalp11after2026-10-13T23:49:13.371Z,Egyptp8after2026-10-14T01:30:53.428Z. Freshactualquotas/onecheapcollector/locks/boundedrequests;no earlyretry.",
       "owner": null,
-      "blockedUntil": "2026-10-13T19:09:27.872Z",
+      "blockedUntil": "2026-10-13T23:49:13.371Z",
       "blockedReason": "OFF503backoff; independentrecipe/identitywork remains available",
-      "lastProgressAt": "2026-10-13T17:28:59.195280+00:00",
+      "lastProgressAt": "2026-10-13T23:33:13.137Z",
       "completedUnit": {
-        "products": 2266,
-        "archives": 63,
-        "newProductsThisUnit": 280,
-        "quarantine": 335,
-        "duplicateOccurrences": 693,
-        "runtimeNutritionBasisApprovals": 0
+        "products": 2287,
+        "archives": 64,
+        "newProductsThisUnit": 21,
+        "quarantine": 344,
+        "duplicateOccurrences": 763,
+        "runtimeNutritionBasisApprovals": 0,
+        "actualBankTests": 5
       },
-      "lastAttemptAt": "2026-10-13T21:31:01.818Z"
+      "lastAttemptAt": "2026-10-13T23:34:13.371Z"
     },
     {
       "id": "budget-planner",

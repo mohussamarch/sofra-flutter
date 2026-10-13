@@ -1,0 +1,3 @@
+# Independent structural adapter review
+
+Agent /root/adapter_review_2329;freshshortcontext. Read only adapter/test/fixture/Flutter contract and relevant preflight. No concrete must-fix within structural scope:exactsource/draft/metadata anchors,explicit splits/exclusions/instructions,copiedprovenance and remaininggates. Repeated ingredient IDs not asserted to be a runtime defect; canonical compatibility remains separate review. Finalfocused validator/testcheck:rebuild through allcurrentinputs thenfullcandidate fingerprint,checkedscalar result/runtimeReadyfalse;tamper/staleness coverage matchescontract. No edits/network/bankreads/tests rerun. Root44linkedNode+1interop/analyzeclean;not reviewer suite evidence.

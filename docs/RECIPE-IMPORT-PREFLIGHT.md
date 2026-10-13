@@ -54,3 +54,7 @@ CLI exit0 means registry is valid even when drafts are incomplete; inspect `comp
 Actual persisted example: hummus-source.json from wikibooks:6737,1draft/9lines/50unresolvedissues/0complete/0foodreferences/0runtime. Source quantities/times/choices/servings remain null. A valid registry is not accepted culinary review or from-scratch personal authoring. The draft is source-derived CC BY-SA text/anchors with attribution/licence in registry; individual page exceptions remain unreviewed. No user/cloud state written.
 
 Verification:7new registry tests; final36linked Node tests passed. Actual registryCLI exited0 and retained incomplete result; source/fullrecipe/target hashes reverified. Previous107Flutter/analyze are historical. Next explicit source-to-runtime adapter requires catalog metadata/provenance and must preserve remaining form/basis/measurement/retention/nutrition gates.
+
+## Structural adapter checkpoint
+
+[Runtime candidate contract](RECIPE-RUNTIME-ADAPTER.md): explicit complete source drafts/metadata become CatalogRecipe-shaped candidates with full source/licence/line maps and remaining gates.44linkedNode+1actualFlutterreader/scalingpassed;analyzeclean. Transport validation rebuilds against currentauthoritativeinputs. No KitchenService import/nutritionapproval yet;next native provenance reader/immutable registration. OFF2287/64(+21/1),5banktestspassed;Saudi503gate23:49:13.371Z. HANDOFF§56.
