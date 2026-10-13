@@ -83,3 +83,7 @@
 - User explicitly requested an additional independent recipe collection agent. Use a bounded economical batch and its own handoff/status; coordinator owns shared files.
 - data/recipes/research-candidates.json is research-only, outside shipping recipes and Flutter assets; validate with node tool/recipes/validate-research.mjs. Docs/RECIPE-BANK.md defines provenance, licences, versioning and runtime promotion gaps.
 - Keep source licences/attribution separate, unknown times/amounts null, and0unreviewed food/nutrition bindings. Original54recipes unchanged; no guessed timing0 or gram conversions to fit CatalogRecipe.
+
+## Bulk recipes and personal calculation engine —13 October2026
+
+User prioritizes largest practical recipe quantity/cuisine expansion now; continuous bounded source acquisition without a final count cap. See RECIPE-BULK.md/RECIPE-ENGINE.md. One recipe collector lock; Retry-After/max10minminimum and2s pacing, no immediate retry or alternate route around review. Keep original revisions immutable, category observations separate, latest index and parsed recipes derived with provenance/hashes. Source/cuisine metadata is unreviewed, no runtime nutrition or ready recipe claim. During backoff execute recipe-quantities before preparation. Preserve person estimated=true/false/legacy-null; false is not laboratory certainty. Source-from-scratch draft persistence is not implemented; personal revisions still require parents. No UI/Firebase/billing/audio/images changes.

@@ -71,3 +71,7 @@
 ## User-requested recipe research lane and data map —13 October
 
 User explicitly requested an additional independent economical recipe agent. First bounded batch6research candidates/61ingredients/46steps with source groups/licences kept separate, research-only validation and DATA-MAP.md. Recipes are not automatically admitted into runtime. recipe-bank(priority55) continues source/version/units/family review and small regional batches without a final count; recipe-import(priority56) is the separate reviewed-to-revision/provenance/unknown-timing unit. No new automation/writer was created; existing monitor reads these tasks. Preparation evidence remains priority30; its completed category review is conditional,0runtime approvals. The direct user recipe/map request steered this unit; it did not cancel preparation work.
+
+## تعديل أولوية المستخدم —بنك كبير ومحرك وصفات شخصية
+
+المستخدم طلب الآن أكبر كمية عملية وتوسيع المطابخ:recipe-bank28 (2312/2428/52)،ثمrecipe-quantities29 أثناءbackoff،preparation30،recipe-import32،recipe-authoring34. لا اكتمال عددي للبنك،ولا متطلبات واجهة جديدة. مصدر429ينتظرموعده؛العمل المحلي على الوحدات/الربط يستمر. النواة اكتسبت حفظ/نقل الثقة؛مسودة من الصفر ما زالت مرحلة مستقلة. اقرأRECIPE-ENGINE.md وRECIPE-BULK.md.لا مؤقت جديد؛automation-2يقرأالقائمةالمحدثة.

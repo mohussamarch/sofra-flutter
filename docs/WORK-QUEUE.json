@@ -2,15 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T11:22:00.588690+00:00",
+    "at": "2026-10-13T13:10:42.858430+00:00",
     "taskId": "recipe-bank",
-    "summary": "6research candidates/61ingredient rows/46steps; offline schema validator and consolidated implemented data map.0runtime imports or fullnutrition bindings.",
+    "summary": "2428sourcepages/2312parsedrecipes/52sourcecuisine tags, source/parsed hashes checked;100Fluttertests/analyzeclean;OFF+143to1936.0runtime recipe imports;quantity candidates10227/20277.",
     "evidence": [
-      "data/recipes/research-candidates.json",
-      "tool/recipes/validate-research.mjs",
-      "tool/recipes/validate-research.test.mjs",
-      "docs/RECIPE-BANK.md",
-      "docs/DATA-MAP.md"
+      "data/recipes/bulk/wikibooks-cookbook/index.json",
+      "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl",
+      "tool/recipes/build-bulk-index.mjs",
+      "docs/RECIPE-BULK.md"
     ]
   },
   "tasks": [
@@ -74,18 +73,89 @@
       ]
     },
     {
+      "id": "recipe-bank",
+      "priority": 28,
+      "dependsOn": [],
+      "status": "waiting",
+      "nextAction": "Check actual usage/lock and due time; resume Wikibooks with 2s minimum pacing and Retry-After. Extend regional coverage without an all-time count cap; source failure must not block local quantity parser.",
+      "lastAttemptAt": "2026-10-13T13:10:42.858430+00:00",
+      "lastProgressAt": "2026-10-13T11:22:00.588690+00:00",
+      "owner": null,
+      "completedUnit": {
+        "sourcePages": 2428,
+        "parsedRecipes": 2312,
+        "cuisineTags": 52,
+        "runtimeReady": 0
+      },
+      "evidence": [
+        "data/recipes/bulk/wikibooks-cookbook/index.json",
+        "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl",
+        "tool/recipes/build-bulk-index.mjs",
+        "docs/RECIPE-BULK.md"
+      ],
+      "blockedUntil": "2026-10-13T13:19:44.428Z",
+      "blockedReason": "Wikimedia HTTP429; checkpointed backoff, no early retry"
+    },
+    {
+      "id": "recipe-quantities",
+      "priority": 29,
+      "dependsOn": [],
+      "status": "ready",
+      "completedUnit": {
+        "parserVersion": "source-prefix-v1",
+        "parsedCandidates": 10227,
+        "ingredientRows": 20277,
+        "tests": 14
+      },
+      "nextAction": "Quantity prefix candidate parser complete and integrated into derived bank. Next: explicit alternatives/groups and ingredient identity review; no canonical mass or food binding from parsing alone. Adjacent 200g and leading .5 remain unresolved in v1.",
+      "evidence": [
+        "tool/recipes/parse-ingredient-quantity.mjs",
+        "tool/recipes/build-bulk-index.test.mjs",
+        "data/recipes/bulk/wikibooks-cookbook/index.json",
+        "docs/RECIPE-BULK.md"
+      ]
+    },
+    {
       "id": "preparation-evidence",
       "priority": 30,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Implement explicit source/method/category-estimate acceptance with frozen evidence and propagated uncertainty; keep all other nutrient factors/yield unknown and review source reuse. User requested recipe collection/map detour; no approval implementation started.",
-      "stage": "2conditional generic-category pasta estimates reviewed;0runtime approvals",
+      "nextAction": "Resume explicit exact-food/category/method acceptance with frozen evidence and acknowledgement, after user-prioritized recipe quantities. Preserve missing retention/yield and propagate estimated flags; no source transform auto-approved.",
+      "stage": "Confidence foundation implemented/100Fluttertests/analyzeclean; explicit category-estimate acceptance and cooking acknowledgement remain unimplemented",
       "evidence": [
         "data/nutrition/preparation-match-shortlist.json",
         "docs/HANDOFF.md#35",
-        "data/nutrition/preparation-category-review.json"
+        "data/nutrition/preparation-category-review.json",
+        "test/preparation_estimate_test.dart",
+        "lib/domain/person_nutrition.dart"
       ],
-      "lastAttemptAt": "2026-10-13T10:22:41.149525+00:00"
+      "lastAttemptAt": "2026-10-13T10:22:41.149525+00:00",
+      "owner": null
+    },
+    {
+      "id": "recipe-import",
+      "priority": 32,
+      "dependsOn": [
+        "measure-integration",
+        "compound-revisions"
+      ],
+      "status": "ready",
+      "nextAction": "Reviewed import must retain sourceId/pageId/revision/SHA/parserVersion and full revision/line bindings, unknown timings, cuisine tags and licence attribution. Research source/parsed files are not runtime imports.",
+      "evidence": [
+        "docs/RECIPE-BANK.md"
+      ]
+    },
+    {
+      "id": "recipe-authoring",
+      "priority": 34,
+      "dependsOn": [
+        "recipe-import"
+      ],
+      "status": "ready",
+      "nextAction": "Implement user-owned drafts created from scratch with optional timing/cuisine and explicit food inputs; preview via existing calculator then persist immutable reviewed revisions without fake parents. Current personal revision requires a parent; do not claim new-from-scratch persistence implemented.",
+      "evidence": [
+        "docs/RECIPE-ENGINE.md"
+      ]
     },
     {
       "id": "allergen-evidence",
@@ -105,43 +175,6 @@
       "nextAction": "Review priority recipe variants and quantity/identity coverage, then broaden independent families"
     },
     {
-      "id": "recipe-bank",
-      "priority": 55,
-      "dependsOn": [],
-      "status": "ready",
-      "nextAction": "Review original source/licence of4archive candidates, freeze Shitha source revision, resolve family overlaps/units/choices/timing and extend a small regional batch. Keep research-only; do not treat6 as a final recipe count.",
-      "lastAttemptAt": "2026-10-13T11:22:00.588690+00:00",
-      "lastProgressAt": "2026-10-13T11:22:00.588690+00:00",
-      "owner": null,
-      "completedUnit": {
-        "recipeCandidates": 6,
-        "ingredientRows": 61,
-        "steps": 46,
-        "sources": 2,
-        "runtimeReady": 0
-      },
-      "evidence": [
-        "data/recipes/research-candidates.json",
-        "tool/recipes/validate-research.mjs",
-        "tool/recipes/validate-research.test.mjs",
-        "docs/RECIPE-BANK.md",
-        "docs/DATA-MAP.md"
-      ]
-    },
-    {
-      "id": "recipe-import",
-      "priority": 56,
-      "dependsOn": [
-        "measure-integration",
-        "compound-revisions"
-      ],
-      "status": "ready",
-      "nextAction": "Build reviewed candidate-to-full-revision import with immutable candidate fingerprint/provenance, canonical ingredient choices and explicit unresolved timing support. Reject incomplete/unknown times rather than substituting0. Preserve all existing recipes/history; bind nutrition afresh per revision/line.",
-      "evidence": [
-        "docs/RECIPE-BANK.md"
-      ]
-    },
-    {
       "id": "prices",
       "priority": 60,
       "dependsOn": [],
@@ -155,16 +188,14 @@
         "allergen-evidence"
       ],
       "status": "ready",
-      "nextAction": "Source official guidance and support explicit personal targets without inferring clinical rules from free text; carry quantity-estimate confidence from recipe nutrition into person ledger aggregates before relying on them"
+      "nextAction": "Source official explicit personal targets/guidance. Recipe confidence now survives person adapter/report (true/false/legacy null); consuming/rendering interactions must retain it. No clinical rules inferred from health notes."
     },
     {
       "id": "product-bank",
       "priority": 80,
       "dependsOn": [],
-      "status": "waiting",
-      "nextAction": "Freshquota/lock: dairy3due10:53:29.506Z; global4after11:01:09.668Z; EG7after12:54:39.414Z. No repeat duringbackoff.",
-      "blockedUntil": "2026-10-13T11:01:09.668Z",
-      "blockedReason": "network_fetch_backoff"
+      "status": "ready",
+      "nextAction": "Fresh usage/lock before bounded helper; SAglobalp6 due, Egyptglobalp7 only after2026-10-13T12:54:39.414Z. Last3Saudiarchives yielded143netnewproducts; source-specific retry state remains authoritative."
     },
     {
       "id": "budget-planner",

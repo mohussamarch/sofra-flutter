@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
   "dataset": "Sofra packaged food bank / Open Food Facts",
-  "builtAt": "2026-10-13T09:59:24.205Z",
+  "builtAt": "2026-10-13T12:06:06.206Z",
   "source": "https://world.openfoodfacts.org",
   "databaseLicense": "ODbL-1.0",
   "contentsLicense": "DbCL-1.0",
-  "productCount": 1793,
-  "quarantinedCount": 261,
-  "duplicateOccurrences": 485,
-  "productsSha256": "79c43b033c553f6b7586ce299ab759e3063cbb8a97a014e85cd2dfceab6547b9",
-  "indexSha256": "5768149a838ee42446570750b982c1b247b7f95fc2bfdf82beb5f2f6679bd045",
+  "productCount": 1936,
+  "quarantinedCount": 274,
+  "duplicateOccurrences": 584,
+  "productsSha256": "48eb821899985f637f80ee63b4e6092353e644c68a189ad1312d997a7733b99f",
+  "indexSha256": "531f23cff723e158b5adbaff7656c5722a8264ad4713c301ecd9645815a0fa70",
   "marketCounts": {
     "EG": 686,
-    "SA": 1118
+    "SA": 1261
   },
   "categoryCounts": {
     "sweets": 107,
     "chocolate": 65,
     "biscuits": 119,
     "snacks": 92,
-    "dairy": 273,
+    "dairy": 320,
     "oils": 35,
     "ghee": 2,
     "rice": 4,
@@ -36,12 +36,12 @@
     "bakery": 42,
     "baby": 9
   },
-  "withNutrition": 1305,
-  "withCoreMacros": 1194,
-  "withIngredients": 733,
-  "withBrand": 1349,
-  "withDeclaredAllergens": 381,
-  "unreviewedBasisCount": 1793,
+  "withNutrition": 1400,
+  "withCoreMacros": 1282,
+  "withIngredients": 764,
+  "withBrand": 1427,
+  "withDeclaredAllergens": 398,
+  "unreviewedBasisCount": 1936,
   "archives": [
     {
       "file": "raw/egypt-baby-p1.json",
@@ -324,6 +324,13 @@
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=2&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Adairies"
     },
     {
+      "file": "raw/saudi-arabia-dairy-p3.json",
+      "sha256": "4ae0ba53b18c75cb6a0fcd35e27add3ced7c632a61e70c3e4f7eaca5f296b977",
+      "records": 55,
+      "retrievedAt": "2026-10-13T11:31:02.970Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=3&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Adairies"
+    },
+    {
       "file": "raw/saudi-arabia-dairy.json",
       "sha256": "eb948a7ddf93adec14976c4ab5c2e6fd5dd5fe1eaec73bc1168f2a3cadfd422c",
       "records": 100,
@@ -385,6 +392,20 @@
       "records": 100,
       "retrievedAt": "2026-10-13T09:59:23.909Z",
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=3&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia"
+    },
+    {
+      "file": "raw/saudi-arabia-p4.json",
+      "sha256": "0adfd83eca2a0cd688a560465352a31c2d99109358d860f5f41e5dc26dd84cf2",
+      "records": 100,
+      "retrievedAt": "2026-10-13T11:31:15.079Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=4&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia"
+    },
+    {
+      "file": "raw/saudi-arabia-p5.json",
+      "sha256": "131e83cd69b8445bad3526a5df06c9dc72c9679194f241c56b8b6f647f18fbf2",
+      "records": 100,
+      "retrievedAt": "2026-10-13T12:06:05.877Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=5&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia"
     },
     {
       "file": "raw/saudi-arabia-pasta-p1.json",

@@ -83,3 +83,7 @@ Network refresh is explicit (`fetch` for3bounded pages per market; `fetch-catego
 ## Incremental collector
 
 `tool/food/collect-incremental.mjs` rotates through all20categories in both markets and global market pagination. It processes at most six due requests per invocation. The `data/food/openfoodfacts/collection-state.json` checkpoint keeps each market/category/page cursor, global page progression, last-request time, failures and next eligible retry. Existing immutable raw archives are reused and their source counts/page lengths determine whether another page exists. An exclusive lock prevents overlapping runs; requests are spaced by at least8seconds. OFF429/503 responses are recorded and receive exponential persisted backoff (15minutes initially, capped at24hours); no same failed query is repeated during backoff. A run rebuilds derived files only when at least one new response is archived. Resume with `node tool/food/collect-incremental.mjs`. Checkpoint is data state and must be retained with the source archive set.
+
+## لقطة جمع13أكتوبر —مسار الوصفات والمحرك
+
+3صفحات سعودية ناجحة (dairyp3/globalp4/globalp5)،255صف مصدر،+143صافي إلى1936منتجًا/58أرشيفًا. جودة المصدر:274عزل/584تكرار،كل الأسس غيرمراجعة؛5اختبارات البنك الفعلي مرت. الجامع خرج0وأزال القفل. التاليةSAglobalp6وEGglobalp7بعد12:54:39.414Z. ODbL/DbCLمحفوظان،ولاصور/أسعاراختُلقت.

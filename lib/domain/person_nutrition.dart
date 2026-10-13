@@ -231,22 +231,28 @@ class PersonNutrientValue {
     required this.knownSubtotal,
     required this.complete,
     required this.unit,
+    this.estimated,
   }) {
     _number(knownSubtotal);
     _id(unit);
   }
   final double knownSubtotal;
   final bool complete;
+
+  /// null means legacy/unknown confidence; completeness is a separate axis.
+  final bool? estimated;
   final String unit;
   double? get value => complete ? knownSubtotal : null;
   Map<String, dynamic> toJson() => {
     'knownSubtotal': knownSubtotal,
+    'estimated': estimated,
     'complete': complete,
     'unit': unit,
   };
   factory PersonNutrientValue.fromJson(Map<String, dynamic> v) =>
       PersonNutrientValue(
         knownSubtotal: (v['knownSubtotal'] as num).toDouble(),
+        estimated: v['estimated'] as bool?,
         complete: v['complete'] as bool,
         unit: v['unit'] as String,
       );
@@ -527,23 +533,31 @@ class NutritionLedger {
     final values = <String, PersonNutrientValue>{};
     for (final id in ids) {
       var subtotal = 0.0, complete = selected.isNotEmpty;
+      bool? estimated = false;
       String? unit;
       for (final event in selected) {
         final batch = batches[event.batchId]!, value = batch.nutrients[id];
         if (value == null) {
           complete = false;
+          if (estimated != true) estimated = null;
           continue;
         }
         if (unit != null && unit != value.unit) {
           throw StateError('Conflicting nutrient units');
         }
         unit = value.unit;
+        if (value.estimated == true) {
+          estimated = true;
+        } else if (value.estimated == null && estimated != true) {
+          estimated = null;
+        }
         subtotal += value.knownSubtotal * event.portion.fractionOf(batch);
         complete = complete && value.complete;
       }
       if (unit != null) {
         values[id] = PersonNutrientValue(
           knownSubtotal: subtotal,
+          estimated: estimated,
           complete: complete,
           unit: unit,
         );

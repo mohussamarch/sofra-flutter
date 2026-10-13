@@ -267,6 +267,7 @@ MealBatch nutritionMealBatch(
     for (final e in result.whole.entries)
       e.key.name: PersonNutrientValue(
         knownSubtotal: e.value.knownSubtotal,
+        estimated: e.value.estimated,
         complete: e.value.complete,
         unit: e.key.unit.name,
       ),

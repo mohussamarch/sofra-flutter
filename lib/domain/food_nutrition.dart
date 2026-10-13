@@ -1,6 +1,8 @@
 /// Food facts and arithmetic. No dietary targets, medical rules or guessed data.
 library;
 
+import 'dart:convert';
+
 enum NutrientUnit { kcal, kJ, g, mg, ug }
 
 enum NutrientId {
@@ -550,8 +552,17 @@ class PreparationTransform {
     required this.source,
     this.massYield,
     required Map<NutrientId, double> retention,
+    this.estimated = false,
+    this.evidence,
   }) : retention = Map.unmodifiable(retention) {
     _required(id, 'preparation id');
+    if (evidence != null &&
+        (jsonDecode(evidence!) is! Map ||
+            (jsonDecode(evidence!) as Map).isEmpty)) {
+      throw ArgumentError(
+        'Preparation evidence must be a nonempty JSON object',
+      );
+    }
     if (sourceForm == targetForm) {
       throw ArgumentError('Preparation forms must differ');
     }
@@ -567,6 +578,8 @@ class PreparationTransform {
   final FoodSource source;
   final double? massYield;
   final Map<NutrientId, double> retention;
+  final bool estimated;
+  final String? evidence;
   Map<String, dynamic> toJson() => {
     'id': id,
     'sourceForm': sourceForm.name,
@@ -574,6 +587,8 @@ class PreparationTransform {
     'source': source.toJson(),
     'massYield': massYield,
     'retention': {for (final e in retention.entries) e.key.name: e.value},
+    'estimated': estimated,
+    'evidence': evidence,
   };
   factory PreparationTransform.fromJson(Map<String, dynamic> j) =>
       PreparationTransform(
@@ -582,6 +597,8 @@ class PreparationTransform {
         targetForm: _enum(FoodForm.values, j['targetForm']),
         source: FoodSource.fromJson(_map(j['source'])),
         massYield: (j['massYield'] as num?)?.toDouble(),
+        estimated: (j['estimated'] as bool?) ?? false,
+        evidence: j['evidence'] as String?,
         retention: _map(j['retention']).map(
           (k, v) =>
               MapEntry(_enum(NutrientId.values, k), (v as num).toDouble()),
@@ -909,6 +926,7 @@ RecipeNutritionResult calculateRecipeNutrition({
           estimated =
               estimated ||
               input.quantityEstimated ||
+              input.preparation?.estimated == true ||
               value.method == NutrientMethod.estimated;
         }
       }

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "source-backoff-checkpointed",
+  "sourceId": "wikibooks-cookbook-cc-by-sa",
+  "sourceUrl": "https://en.wikibooks.org/wiki/Cookbook:Recipes",
+  "sourceApi": "https://en.wikibooks.org/w/api.php",
+  "sourceCategory": "Category:Recipes",
+  "sourceNamespace": 102,
+  "license": "CC BY-SA 4.0 International; Wikibooks text generally dual licensed with GFDL unless otherwise noted.",
+  "licenseEvidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+  "licenseStatus": "verified-license",
+  "observedAt": "2026-10-13T12:01:43Z",
+  "offlineCollectorRevisedAt": "2026-10-13T12:13:18Z",
+  "probe": {
+    "kind": "category-membership metadata only; no source page content or revisions fetched",
+    "apiRequestsSucceeded": 1,
+    "returnedTitles": [
+      "Cookbook:'Out of Salad Dressing' Salad Dressing",
+      "Cookbook:1-2-3-4 Cake",
+      "Cookbook:20-Ingredient Brownies",
+      "Cookbook:20-Minute Beef Stroganoff",
+      "Cookbook:40 Cloves in a Roast Chicken",
+      "Cookbook:8 Desserts in 1 Pan",
+      "Cookbook:A Nice Cup of Tea",
+      "Cookbook:Aadun (Nigerian Corn Flour with Palm Oil)",
+      "Cookbook:Abacha",
+      "Cookbook:Abacha Mmiri (Soaked Cassava Flakes)"
+    ],
+    "recipesCollected": 0,
+    "cuisineLabelsAssigned": 0
+  },
+  "contentRequest": {
+    "apiRequestsAttempted": 1,
+    "error": "MediaWiki API invalidparammix: rvlimit cannot be combined with a generator supplying multiple pages.",
+    "correctiveChange": "Removed rvlimit from the collector request; MediaWiki defaults to a single latest revision per generated page.",
+    "retry": "Immediate retry was auto-review rejected. After recorded cooldown expired, direct same-endpoint corrected execution was approved and downloaded real source content; later429saved a fresh cooldown, no bypass."
+  },
+  "collector": {
+    "requestPageLimit": 50,
+    "apiRequestsPerInvocation": 10,
+    "maximumNewPagesPerInvocation": 500,
+    "allTimePageCap": null,
+    "checkpointPath": "data/recipes/bulk/wikibooks-cookbook/checkpoint.json",
+    "revisionRecordsPath": "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl",
+    "revisionRecordCount": 0,
+    "distinctSourcePages": 0,
+    "parseableRecipePages": 0,
+    "sourceExhausted": false,
+    "nextAttemptAt": "2026-10-13T12:11:43Z"
+  },
+  "nextAction": "Honor checkpoint nextAttemptAt/Retry-After then same-endpoint paced resume; work on source quantity/unit parsing meanwhile. No arbitrary final recipe count.",
+  "updatedAt": "2026-10-13T13:10:42.858430+00:00",
+  "collection": {
+    "sourcePages": 2428,
+    "parsedRecipes": 2312,
+    "cuisineTags": 52,
+    "ingredientRows": 20277,
+    "steps": 15942,
+    "runtimeReady": 0
+  },
+  "nextAttemptAt": "2026-10-13T13:19:44.428Z",
+  "lastError": {
+    "at": "2026-10-13T13:09:44.428Z",
+    "message": "MediaWiki API HTTP 429; stop and respect source backoff."
+  }
+}
