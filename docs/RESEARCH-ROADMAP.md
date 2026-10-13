@@ -105,3 +105,5 @@ Heartbeat17:47 completed validated identity catalog with30related tests and actu
 Local continuation:registered alternativebank3/24/22/9/50/1/0runtime;explicitveganunknown preserved. French621/874,gate2026-10-13T18:14:40.525Z;sourcefailures didnotstoplocalunits. Nextingredient-fate andexplicitchoice/quantity/form review,not automaticapprovals.
 
 Completedtwoindependentlocalunits (catalogguards,explicit source alternatives),plusFrenchgrowth450→804parsedthisturn. Sourceavailablecursor,actualquota84/42beforelastguardedrequest;reserve90/recheckbeforeeachbatch. OFF503onlydelaysOFF. No task declaredgloballycomplete fromcount.
+
+Heartbeat18:29:onebounded4requestbatch+34parsed toFrench838/1218,thenactualquota90/42ordinarytrue stopped furthercostlywork. Freshlimitrecheckbeforeanynextunit,no credits/reset;sourcecursoravailableandpreserved.

@@ -49,3 +49,5 @@ Heartbeat17:47 actual:752pages/540parsed/3557ingredientlines/3210steps,65rootreq
 Later dueunit:874pages/621parsed/4090ingredientlines/3794steps;gate2026-10-13T18:14:40.525Z,49pendingIDs. All540prior recipes at5a60180 unchangedbyrecordId;rawprefix preserved. Derivedsortedfile isnot append-only,so byteprefixchanges arenot rowdrift. Corrected category/arraymetric error inHANDOFF§46;no sourcecontentchanged.
 
 Final17:47turnsnapshot:1169pages/804parsed/5554ingredientlines/5133steps,100requests,pending0,sourceExhausted=False,gateNone. Sourcecurrentlyavailable;nextbatchrequiresfreshquota. Approval/fail-closedUTCguardincident documentedHANDOFF§47;no source requestonrejections/guardfailure. Originaldata/choices/nutritionstillunapproved.
+
+Heartbeat18:29:4requests,+49pages/+34parsed,current1218/838/5849lines/5319steps,104archives.104bodyhashes/currentraw+parsedhash/re-extractionpassed;old804recordsunchangedbyID. Sourceavailable,pending0;actualquota90reserve meanswaitforfreshcapacity,not reset/purchase. SeeHANDOFF§48.

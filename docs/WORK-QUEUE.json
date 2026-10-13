@@ -2,13 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T18:25:42.014918+00:00",
+    "at": "2026-10-13T18:34:04.612586+00:00",
     "taskId": "recipe-bank",
-    "summary": "French804/1169;turn+354parsed. Catalog3/24/22/9/50/1/0runtime;twoindependentlocalunitscompleted,sourcescheckpointed",
+    "summary": "Four-requestbatchadded34parsed/49sourcepages;French838/1218,old804recipesunchanged,currenthashes/re-extractionverified. Subsequentactualquota90reserve,no furtherresearch.",
     "evidence": [
       "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
-      "data/recipes/identity-proposals/alternatives-review.json",
-      "tool/recipes/validate-identity-catalog.test.mjs"
+      "data/recipes/bulk/fr-wikibooks-cuisine/checkpoint.json"
     ]
   },
   "tasks": [
@@ -76,18 +75,18 @@
       "priority": 28,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Read actual quota then continue saved French prefix cursor in short bounded batches. Recheck before every batch; use fresh fail-closed evidence if command approval requires it. No English reset; no unique-dish sum. During source backoff continue local identity/fate review.",
-      "lastAttemptAt": "2026-10-13T18:22:26.815Z",
-      "lastProgressAt": "2026-10-13T18:25:42.014918+00:00",
+      "nextAction": "Readactualquota first;afterallwindows<90andordinarytrue continue saved French cursor in bounded batches with fresh fail-closed evidence. Sourceavailable/notexhausted;no Englishreset or unique-dishsum.",
+      "lastAttemptAt": "2026-10-13T18:31:15.686Z",
+      "lastProgressAt": "2026-10-13T18:34:04.612586+00:00",
       "owner": null,
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
         "englishCuisineTags": 53,
-        "frenchSourcePages": 1169,
-        "frenchParsedRecipes": 804,
-        "frenchIngredientLines": 5554,
-        "frenchSteps": 5133,
+        "frenchSourcePages": 1218,
+        "frenchParsedRecipes": 838,
+        "frenchIngredientLines": 5849,
+        "frenchSteps": 5319,
         "runtimeReady": 0
       },
       "evidence": [
@@ -301,10 +300,10 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-13T18:25:42.014918+00:00",
-    "primaryUsedPercent": 84,
+    "at": "2026-10-13T18:34:04.612586+00:00",
+    "primaryUsedPercent": 90,
     "weeklyUsedPercent": 42,
     "ordinaryUsageAllowed": true,
-    "action": "Completedunitsdelivery;recheckfreshactualbeforeeverynewbatch,noreset/purchase. Lastguardedactualsourcecallbelow90."
+    "action": "Reserve reached after completed bounded unit;no further research/agents/sourcecalls. Recheck later;no credits/reset."
   }
 }

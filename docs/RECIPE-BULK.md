@@ -89,3 +89,5 @@ LatestFrench snapshot:540parsed/752pages;gate2026-10-13T18:01:42.279Z. Current i
 CurrentFrench621/874,gate2026-10-13T18:14:40.525Z;catalog3registeredEnglishbanks/24targets/22recipes/9foods/50refs/1withoutcandidates,0runtime. Derivedordering differs from immutable raw append history;seeHANDOFF§46.
 
 FinalsnapshotFrench804/1169,sourcecursoravailable/nonexhausted;freshquotaeachbatch. Threeidentitybanks24targets/22recipes/9foods/50refs/1withoutcandidate,0runtime. SeeHANDOFF§45–47.
+
+LatestFrench838/1218;sourceavailable/nonexhausted. Currentquota90reserve,not numericalbankcompletion. Priorraw/derivedrecords preserved;seeHANDOFF§48.

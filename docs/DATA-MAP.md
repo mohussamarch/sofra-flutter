@@ -85,7 +85,7 @@ flowchart TD
 
 | Source bank | Path | Coverage |
 | --- | --- | --- |
-| French Wikibooks research | [index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json), [source contract](RECIPE-FRENCH-SOURCE.md) | 1169 source pages/804 parsed recipes/5554 ingredient lines/5133 steps; CC BY-SA4.0 policy, exceptions unreviewed;0runtime/nutrition approvals |
+| French Wikibooks research | [index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json), [source contract](RECIPE-FRENCH-SOURCE.md) | 1218 source pages/838 parsed recipes/5849 ingredient lines/5319 steps; CC BY-SA4.0 policy, exceptions unreviewed;0runtime/nutrition approvals |
 
 French language is not a cuisine tag. Source IDs/cursors remain separate; duplicates between English/French or dish families are not resolved. Personal recipe calculation still needs explicit food/quantity/form inputs; this research source does not automatically fill them.
 
@@ -106,3 +106,5 @@ French450parsed/625pages/2862ingredientlines/2591steps;English3640/3796/53tagsun
 [alternatives-review.json](../data/recipes/identity-proposals/alternatives-review.json) adds8lines to [catalog.json](../data/recipes/identity-proposals/catalog.json);qualifiedvegan identity unresolved,no automatic substitution or nutrient sum. Actualaggregate3/24/22/9/50/1/0runtime. Frenchliteralcategorylabels have explicitraw-vs-parsed denominators inHANDOFF§46;not cuisineclaims.
 
 CurrentFrenchsnapshot:804/1169,allcanonicalquantities/nutritionunreviewed. English3640/3796unchanged;catalog3/24/22/9/50/1/0runtime. No combinedunique-dishcount;source continuation/quotachecks inHANDOFF§47.
+
+Heartbeat18:29 snapshot:French838/1218,English3640/3796/catalog3/24/22/9/50/1/0runtimeunchanged. Sourceavailable;actualquota90reserve delays research,not a sourcefailure. SeeHANDOFF§48.
