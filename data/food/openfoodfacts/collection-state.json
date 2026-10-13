@@ -16,8 +16,8 @@
     "saudi-arabia/sweets": {
       "page": 1,
       "done": false,
-      "failures": 2,
-      "nextAttemptAt": "2026-10-13T01:43:39.331Z"
+      "failures": 3,
+      "nextAttemptAt": "2026-10-13T02:46:06.961Z"
     },
     "egypt/chocolate": {
       "page": 1,
@@ -51,9 +51,9 @@
     },
     "saudi-arabia/snacks": {
       "page": 1,
-      "done": false,
-      "failures": 2,
-      "nextAttemptAt": "2026-10-13T01:44:02.760Z"
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
     },
     "egypt/dairy": {
       "page": 1,
@@ -62,10 +62,10 @@
       "nextAttemptAt": null
     },
     "saudi-arabia/dairy": {
-      "page": 2,
+      "page": 3,
       "done": false,
-      "failures": 2,
-      "nextAttemptAt": "2026-10-13T01:44:11.138Z"
+      "failures": 1,
+      "nextAttemptAt": "2026-10-13T02:01:53.633Z"
     },
     "egypt/oils": {
       "page": 1,
@@ -117,9 +117,9 @@
     },
     "saudi-arabia/flour": {
       "page": 1,
-      "done": false,
-      "failures": 2,
-      "nextAttemptAt": "2026-10-13T01:44:28.266Z"
+      "done": true,
+      "failures": 0,
+      "nextAttemptAt": null
     },
     "egypt/pulses": {
       "page": 1,
@@ -130,8 +130,8 @@
     "saudi-arabia/pulses": {
       "page": 1,
       "done": false,
-      "failures": 2,
-      "nextAttemptAt": "2026-10-13T01:44:36.634Z"
+      "failures": 3,
+      "nextAttemptAt": "2026-10-13T02:46:44.472Z"
     },
     "egypt/canned-fish": {
       "page": 1,
@@ -256,41 +256,6 @@
   },
   "failures": [
     {
-      "key": "saudi-arabia/sweets",
-      "page": 1,
-      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Aconfectioneries",
-      "at": "2026-10-13T01:13:39.331Z",
-      "nextAttemptAt": "2026-10-13T01:43:39.331Z"
-    },
-    {
-      "key": "saudi-arabia/snacks",
-      "page": 1,
-      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Asalty-snacks",
-      "at": "2026-10-13T01:14:02.761Z",
-      "nextAttemptAt": "2026-10-13T01:44:02.760Z"
-    },
-    {
-      "key": "saudi-arabia/dairy",
-      "page": 2,
-      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=2&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Adairies",
-      "at": "2026-10-13T01:14:11.138Z",
-      "nextAttemptAt": "2026-10-13T01:44:11.138Z"
-    },
-    {
-      "key": "saudi-arabia/flour",
-      "page": 1,
-      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Aflours",
-      "at": "2026-10-13T01:14:28.266Z",
-      "nextAttemptAt": "2026-10-13T01:44:28.266Z"
-    },
-    {
-      "key": "saudi-arabia/pulses",
-      "page": 1,
-      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Alegumes",
-      "at": "2026-10-13T01:14:36.634Z",
-      "nextAttemptAt": "2026-10-13T01:44:36.634Z"
-    },
-    {
       "key": "saudi-arabia/global",
       "page": 1,
       "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia",
@@ -324,8 +289,29 @@
       "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=6&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=egypt",
       "at": "2026-10-13T01:37:27.153Z",
       "nextAttemptAt": "2026-10-13T01:52:27.153Z"
+    },
+    {
+      "key": "saudi-arabia/sweets",
+      "page": 1,
+      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Aconfectioneries",
+      "at": "2026-10-13T01:46:06.961Z",
+      "nextAttemptAt": "2026-10-13T02:46:06.961Z"
+    },
+    {
+      "key": "saudi-arabia/pulses",
+      "page": 1,
+      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=1&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Alegumes",
+      "at": "2026-10-13T01:46:44.472Z",
+      "nextAttemptAt": "2026-10-13T02:46:44.472Z"
+    },
+    {
+      "key": "saudi-arabia/dairy",
+      "page": 3,
+      "error": "Error: OFF 503: https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=3&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia&tagtype_1=categories&tag_contains_1=contains&tag_1=en%3Adairies",
+      "at": "2026-10-13T01:46:53.633Z",
+      "nextAttemptAt": "2026-10-13T02:01:53.633Z"
     }
   ],
-  "lastRequestAt": "2026-10-13T01:37:27.152Z",
-  "nextJobIndex": 41
+  "lastRequestAt": "2026-10-13T01:46:53.632Z",
+  "nextJobIndex": 10
 }

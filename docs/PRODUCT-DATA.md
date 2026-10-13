@@ -4,20 +4,20 @@ Canonical checkout: `E:\work\SOFRA\app`. This bank is a source-separated, unrevi
 
 ## Current collected snapshot —13October2026
 
-1344 named GTIN-valid records; Egypt624, Saudi731, overlap11. All20category groups have records.981have nutrition,887core macros,551ingredient text,273declared allergen tags,1036brands. All1344bases remain unreviewed; none is approved for exact calculation by this bank alone.
+1483 named GTIN-valid records; Egypt624, Saudi870, overlap11. 1084have nutrition,983core macros,627ingredient text,324declared allergens,1144brands. All1483bases unreviewed; none approved for exact calculation by this bank alone.
 
-43source archives,184quarantined occurrences and248audited duplicates. Since1035snapshot:309unique products;24requests,8success/16HTTP503failures with saved backoff. Collection continued until no job due; next retry Saudi sweets p1 at01:43:39.331Z. Not a complete bank; manifest/checkpoint remain authoritative.
+46archives,189quarantined occurrences,276audited duplicates. Latest hourly batch:6requests/3success/3failures, unique product delta+139. Checkpoint/backoff preserved; manifest authoritative. Next:2026-10-13T01:52:17.253Z / saudi-arabia/beverages / 4.
 
 | Category | Records |
 | --- | ---: |
-| Sweets / chocolate / biscuits / salty snacks | 52 / 65 / 119 / 42 |
-| Dairy / oils / ghee | 193 / 35 / 2 |
-| Rice / pasta / flour / pulses | 4 / 61 / 4 / 6 |
+| Sweets / chocolate / biscuits / salty snacks | 52 / 65 / 119 / 92 |
+| Dairy / oils / ghee | 270 / 35 / 2 |
+| Rice / pasta / flour / pulses | 4 / 61 / 16 / 7 |
 | Canned fish / meat / canned vegetables | 15 / 14 / 9 |
 | Condiments / spices | 145 / 25 |
 | Beverages / frozen / bakery / baby | 371 / 13 / 42 / 9 |
 
-Groups overlap. Cooking categories need sourced expansion; market availability and popularity were not independently verified. Generic recipe source proposals are a separate CC0artifact described in RECIPE-REFERENCES.md.
+Groups overlap; no verified market popularity/availability claim. Recipe identity proposals are a separate CC0artifact described in RECIPE-REFERENCES.md.
 
 ## Files
 
