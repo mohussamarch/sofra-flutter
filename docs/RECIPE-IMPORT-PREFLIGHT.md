@@ -44,3 +44,13 @@ data/recipes/import-review/english-baseline.json pins current source/index/categ
 11new tests plus18linked source/target/USDA reader tests passed (29total). Before fixes, regressions failed for sparse time slots, invalid calendar evidence and all ingredients excluded; all now pass. Previous107Flutter tests/analyze remain historical because no Dart code changed in this unit.
 
 Next: persist explicitly registered draft files with byte hashes/source guards and review provenance, then design the runtime adapter without dropping unknown metadata/form/retention gates. No reviewed source draft or bulk runtime import has been accepted yet.
+
+## Explicit persisted draft registry
+
+`data/recipes/import-review/registry.json` registers exact draft filenames and SHA256 with source recipeId/recordId/version URL/sourceSHA/licence/change notice. Files live only under `data/recipes/import-review/drafts/`. `node tool/recipes/import-draft-registry.mjs` verifies all paths/IDs/provenance before reading, raw bytes before JSON, exact full source/line targets via preflight, then requested current USDA snapshots/evidence once. Duplicate IDs/files or automatic discovery are forbidden. A source recipe can have multiple explicitly named drafts; they are not merged. Changed bytes need explicit registration and re-review, never silent rehash.
+
+CLI exit0 means registry is valid even when drafts are incomplete; inspect `completeDraftCount`, per-draft issues and `runtimeReadyCount` (always0). Invalid registry/source/file/evidence exits1. This differs intentionally from the individual preflight CLI's exit2 for unresolved draft. Programmatic API: `validateImportDraftRegistry(registry, {recipes, readDraft, loadFoods})`. Injected readers must be authoritative; fingerprints are local consistency, not independent security signatures.
+
+Actual persisted example: hummus-source.json from wikibooks:6737,1draft/9lines/50unresolvedissues/0complete/0foodreferences/0runtime. Source quantities/times/choices/servings remain null. A valid registry is not accepted culinary review or from-scratch personal authoring. The draft is source-derived CC BY-SA text/anchors with attribution/licence in registry; individual page exceptions remain unreviewed. No user/cloud state written.
+
+Verification:7new registry tests; final36linked Node tests passed. Actual registryCLI exited0 and retained incomplete result; source/fullrecipe/target hashes reverified. Previous107Flutter/analyze are historical. Next explicit source-to-runtime adapter requires catalog metadata/provenance and must preserve remaining form/basis/measurement/retention/nutrition gates.

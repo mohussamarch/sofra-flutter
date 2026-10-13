@@ -1,0 +1,1 @@
+Registered raw-byte/source/licence draft guards complete,7new/36linkedtests passed.1blankHummusdraft/9lines/50issues/0complete/0runtime. Next explicit runtime adapter. Full:registry-implementation-2259.md.

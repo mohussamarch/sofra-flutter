@@ -123,3 +123,5 @@ Use RECIPE-INGREDIENT-CHOICES.md:chooseRecipeIngredient stores one quantified re
 ## Import-draft preflight
 
 Use docs/RECIPE-IMPORT-PREFLIGHT.md and tool/recipes/import-preflight.mjs for source draft audits. Current authoritative English reader only. All quantities/optional/choice/form/scaling/times and raw-food references explicit; no source candidates autoaccepted. draftComplete is not runtimeReady (alwaysfalse); retain separate adapter/licence/instruction/runtime form-basis/retention gates.29linked tests/blankbaseline3640recipes verified; no reviewed draft imported. Next registered draft persistence; no unknown-to-zero or concurrent source writers.
+
+Registry follow-up: data/recipes/import-review/registry.json explicitly pins draft raw-byte hashes and exact source attribution/licence. import-draft-registry.mjs exit0 only validates registry consistency; drafts may still be incomplete/runtime0. Current1blankdraft/9lines/50issues,36linkedtests passed. Never silently refresh changed SHA or accept raw USDA ref as runtime binding. Next adapter retains all remaining gates; HANDOFF§55.
