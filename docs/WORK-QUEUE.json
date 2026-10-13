@@ -2,12 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T17:42:18.742170+00:00",
-    "taskId": "recipe-bank",
-    "summary": "French625/450research/unknownnutrition,source checkpointed429;localidentity16/16/22/5completed meanwhile,0runtime",
+    "at": "2026-10-13T17:57:09.941613+00:00",
+    "taskId": "recipe-quantities",
+    "summary": "Guarded identity catalog2/16/16/5/22/0runtime,30tests;French540/752,source checkpointed429",
     "evidence": [
-      "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
-      "data/recipes/identity-proposals/spices-leavening-review.json"
+      "tool/recipes/validate-identity-catalog.test.mjs",
+      "data/recipes/identity-proposals/catalog.json",
+      "data/recipes/bulk/fr-wikibooks-cuisine/index.json"
     ]
   },
   "tasks": [
@@ -76,17 +77,17 @@
       "dependsOn": [],
       "status": "waiting",
       "nextAction": "Continue French prefix cursor with bounded due requests; during backoff extend source quantity/food identity review. Inspect bounded unparsed structures before parser changes. Keep languages separate; no unique-dish total or runtime nutrition claim.",
-      "lastAttemptAt": "2026-10-13T17:39:47.197Z",
-      "lastProgressAt": "2026-10-13T17:42:18.742170+00:00",
+      "lastAttemptAt": "2026-10-13T17:51:42.094Z",
+      "lastProgressAt": "2026-10-13T17:57:09.941613+00:00",
       "owner": null,
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
         "englishCuisineTags": 53,
-        "frenchSourcePages": 625,
-        "frenchParsedRecipes": 450,
-        "frenchIngredientLines": 2862,
-        "frenchSteps": 2591,
+        "frenchSourcePages": 752,
+        "frenchParsedRecipes": 540,
+        "frenchIngredientLines": 3557,
+        "frenchSteps": 3210,
         "runtimeReady": 0
       },
       "evidence": [
@@ -100,8 +101,8 @@
         "docs/RECIPE-FRENCH-SOURCE.md"
       ],
       "stage": "Independent French source collection and conservative parser implemented; English source remains exhausted",
-      "blockedUntil": "2026-10-13T17:49:47.599Z",
-      "blockedReason": "French429backoff; independent ingredient identity/fate work remains ready"
+      "blockedUntil": "2026-10-13T18:01:42.279Z",
+      "blockedReason": "French429backoff; independent identity/fate work remains ready"
     },
     {
       "id": "recipe-quantities",
@@ -123,9 +124,11 @@
         "identityProposals": 16,
         "candidateReferences": 22,
         "foodSourceRecords": 5,
-        "runtimeReady": 0
+        "runtimeReady": 0,
+        "identityCatalog": true,
+        "registeredBanks": 2
       },
-      "nextAction": "Extend explicit identity and alternatives with exact source/food guards; review ingredient fate where soaking liquids are discarded, without all-or-none retained amounts. Runtime identity/form/quantity/preparation admission remains separate.",
+      "nextAction": "Extend explicit ingredient/alternative and fate review; register new banks only after source validation and update exact catalog counts/hash. French proposals need separate source-reader integration; runtime acceptance remains distinct.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -139,11 +142,14 @@
         "tool/recipes/recipe-review-reader.mjs",
         "tool/recipes/validate-identity-bank.test.mjs",
         "data/recipes/identity-proposals/first-review.json",
-        "data/recipes/identity-proposals/spices-leavening-review.json"
+        "data/recipes/identity-proposals/spices-leavening-review.json",
+        "tool/recipes/validate-identity-catalog.mjs",
+        "tool/recipes/validate-identity-catalog.test.mjs",
+        "data/recipes/identity-proposals/catalog.json"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T17:36:01.788758+00:00",
-      "stage": "Two explicit identity research batches with16proposals; source-specific discarded-liquid fate remains unknown"
+      "lastProgressAt": "2026-10-13T17:57:09.941613+00:00",
+      "stage": "Explicit identity catalog guards implemented; registered banks remain unreviewed"
     },
     {
       "id": "preparation-evidence",
@@ -294,10 +300,10 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-13T17:42:18.742170+00:00",
-    "primaryUsedPercent": 58,
-    "weeklyUsedPercent": 37,
+    "at": "2026-10-13T17:57:09.941613+00:00",
+    "primaryUsedPercent": 61,
+    "weeklyUsedPercent": 38,
     "ordinaryUsageAllowed": true,
-    "action": "Multiple useful units completed; source backoff checkpointed, independent identity/fate work remains ready; no credits/reset."
+    "action": "Capacity available; source backoff does not block local units. No credits/reset."
   }
 }

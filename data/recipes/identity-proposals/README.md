@@ -15,3 +15,7 @@ node tool/recipes/validate-identity-bank.mjs data/recipes/identity-proposals/spi
 ```
 
 Source methods for HummusI and MushyPeas soak with baking soda then rinse/drain. Retained amount and sodium remain unknown; no all-or-none consumption/retention assumption. Cinnamon species/brand remains unreviewed. Even explicit source grams need separate edible-quantity/preparation acceptance. These are research issues only,not automatic nutrition or changed cooking behavior.
+
+## Catalog inventory
+
+`catalog.json` explicitly registers the two research banks with raw byte hashes and guarded aggregate counts. Run `node tool/recipes/validate-identity-catalog.mjs` after English collection/indexing stops. It validates current source/food evidence and rejects repeated recipe-line targets across banks. Shared foods are loaded once, not merged. Only listed files are included; new bank registration is explicit. Report2/16/16/5/22/0runtime does not approve any identity or nutrition.

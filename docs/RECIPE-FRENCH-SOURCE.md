@@ -43,3 +43,5 @@ Next: continue due prefix batches without resetting the cursor; inspect a bounde
 ## Due collection continuation
 
 After the independent local identity unit,source resumed only at its next gate. Current:625sourcepages/450parsed/2862ingredientlines/2591steps,53rootAPIrequests/archives. Latest429gate2026-10-13T17:49:47.599Z;9pendingIDs remain,sourcepoolnotexhausted. OriginalEnglish untouched;no cross-languageunique-dishsum,0runtime/nutrition approvals. Actualcurrentraw/derived/requesthashes and deterministicre-extraction verified;collector/parser codeunchanged.
+
+Heartbeat17:47 actual:752pages/540parsed/3557ingredientlines/3210steps,65rootrequests.2boundedbatches+90parsed,then429gate2026-10-13T18:01:42.279Z;28pendingIDs. Raw/derived/currentrequesthashes/re-extraction verified;all canonical amounts/units/nutritionnull,0runtime. Fullhelperhandoff:french-heartbeat-1747.md.

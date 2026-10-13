@@ -85,7 +85,7 @@ flowchart TD
 
 | Source bank | Path | Coverage |
 | --- | --- | --- |
-| French Wikibooks research | [index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json), [source contract](RECIPE-FRENCH-SOURCE.md) | 625 source pages/450 parsed recipes/2862 ingredient lines/2591 steps; CC BY-SA4.0 policy, exceptions unreviewed;0runtime/nutrition approvals |
+| French Wikibooks research | [index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json), [source contract](RECIPE-FRENCH-SOURCE.md) | 752 source pages/540 parsed recipes/3557 ingredient lines/3210 steps; CC BY-SA4.0 policy, exceptions unreviewed;0runtime/nutrition approvals |
 
 French language is not a cuisine tag. Source IDs/cursors remain separate; duplicates between English/French or dish families are not resolved. Personal recipe calculation still needs explicit food/quantity/form inputs; this research source does not automatically fill them.
 
@@ -96,3 +96,7 @@ French language is not a cuisine tag. Source IDs/cursors remain separate; duplic
 ## Latest source snapshot
 
 French450parsed/625pages/2862ingredientlines/2591steps;English3640/3796/53tagsunchanged. SourceIDs/licences/cursorsseparate;cross-languageduplicatesunresolved. Identitybanks16proposals/16recipes/22references/5foods,0accepted/runtime;OFF2266/63. LatestFrenchgate2026-10-13T17:49:47.599Z;readactualcheckpoints. SeeHANDOFF§43–44.
+
+## Validated catalog entry point
+
+[identity catalog](../data/recipes/identity-proposals/catalog.json) + `tool/recipes/validate-identity-catalog.mjs`: explicit two-bank inventory, exact bytes/current source-food checks, cross-bank target dedup,16/16/5/22/0runtime. Only registered English-source banks are included; French source counts remain separate.

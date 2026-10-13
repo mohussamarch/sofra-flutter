@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "identity-catalog-unreviewed",
+  "banks": [
+    {
+      "id": "first-review",
+      "file": "first-review.json",
+      "sha256": "1a3e303707df0bf85ae47fc7b78f870f1fe97650fdb9b67b752654efe0afa6af"
+    },
+    {
+      "id": "spices-leavening-review",
+      "file": "spices-leavening-review.json",
+      "sha256": "383b25f903a2e16677ae10926eb4af318390ca73ab7954646ce063aeefe823fb"
+    }
+  ],
+  "expected": {
+    "proposalCount": 16,
+    "recipeCount": 16,
+    "foodCount": 5,
+    "candidateCount": 22,
+    "unresolvedCount": 0
+  },
+  "limitations": [
+    "Research-only catalog; no accepted identities, food selection, quantity or nutritional approval.",
+    "Expected counts and bank byte hashes are explicit inventory guards, not authority to rewrite stale source targets.",
+    "Current recipe/food snapshot provenance is validated separately; local consistency does not independently authenticate upstream sources.",
+    "English-source proposals only at this stage. French-source recipes require their own reviewed source reader/identity workflow before registration."
+  ]
+}

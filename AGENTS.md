@@ -96,3 +96,7 @@ Use RECIPE-IDENTITY-REVIEW.md for current research contracts. Raw USDA snapshot 
 ## Independent French source
 
 Follow docs/RECIPE-FRENCH-SOURCE.md and its own checkpoint. French prefix pages include nonrecipes; keep source/parsed counts separate and never sum languages as unique dishes. Source language is not cuisine. Preserve root-based discovery cooldown, underscore cursor verbatim, pending/listing isolation, raw request/revision provenance and null nutrition/amounts. Offline archived listing recovery retains the original gate. No English/runtime/UI changes implied.
+
+## Research identity catalog
+
+Use `node tool/recipes/validate-identity-catalog.mjs` for registered banks. Preserve exact bank SHA/expected counts/current source and food guards; duplicate targets across banks fail. New banks need explicit registration, no auto-discovery. Catalog counts remain research-only/zero runtime approval. English source reader currently excludes French proposals. Never refresh stale targets to hide drift; keep raw USDA and runtime FoodRecord snapshots distinct.

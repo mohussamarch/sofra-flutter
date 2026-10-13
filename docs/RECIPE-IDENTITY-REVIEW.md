@@ -30,3 +30,14 @@ Next: extend explicit ingredient/alternative proposals, retain unknown measureme
 ## Second actual research batch
 
 [spices-leavening-review.json](../data/recipes/identity-proposals/spices-leavening-review.json) adds8explicit interpretations/8recipes/8candidate references/2rawUSDA records. Combined16targets/16recipes/22references/5foods,all unreviewed;firstbank remains unchanged. Source-specific soaking/rinsing/draining evidence identifies unknown retained baking-soda amount/sodium; no all-or-zero assumption or automatic clinical/retention rule. Existing validator actual8/8/2/8/0passed;source/fullsnapshot guards preserve method evidence. See identity-proposals/README.md for command and limitations.
+
+## Registered identity catalog
+
+[catalog.json](../data/recipes/identity-proposals/catalog.json) pins each registered bank's raw byte SHA256 and expected aggregate counts. Validate all registered banks with:
+
+```powershell
+node tool/recipes/validate-identity-catalog.mjs
+node --test tool/recipes/validate-identity-catalog.test.mjs
+```
+
+The CLI reads the current English source once, loads the union of authoritative raw USDA snapshots once, reuses each bank's complete validation, rejects duplicate recipe-line targets across banks, and deduplicates recipe/food counts. Current report:2banks/16proposals/16recipes/5foods/22references/0runtime. All remain unreviewed; unresolvedCount counts absent candidates, not rejected or approved identities. Only registered files are included; no directory auto-discovery or runtime writer. Register new banks deliberately and update expected counts/hash only after source validation. Never regenerate stale targets just to pass. French recipes require a separate reviewed source-reader integration. Stop English collection/indexing first; local hashes and a point-in-time lock check do not independently authenticate sources or create an atomic transaction.
