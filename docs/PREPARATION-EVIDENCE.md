@@ -29,3 +29,14 @@ Unknown source-specific license staysunknown, notFDC CC0. Raw scientific-data ar
 Candidates remain source-extracted-unmapped, foodIds=[],massYield=null,edibleFraction=null,approvedTransformCount=0. Primary5nutrients still lack approved retention evidence. Next unit: exact food/preparation matching and explicit acceptance, source reuse review, separate mass-yield/edible-fraction evidence. Do not treat this as full cooked recipe nutrition.
 
 Actual gate:5new retention parser/hash/unknown/regeneration tests,39combinedNode passed/0skip. Initial missingmodule red; published blank-factor parser regression red→green. No Dart/UI/API code changed, so92Flutter/analyzeclean frome023260 remain historical rather than rerun.
+
+
+## Typed review request API — not approval
+
+`RetentionCandidateRepository` loads the small candidate JSON, validates schema/status/IDs/source SHA formats/percentage-to-fraction arithmetic/unit/duplicates, and retries failed reads. `codes()` lists3source processes. `proposeMatch(food, retentionCode: ..., targetForm: FoodForm.cooked, reviewNote: ..., acknowledgeNotApproved: true)` returns immutable `PreparationMatchProposal` with exact FoodRecord/version/input form, target, source candidates/evidence,3factors and46missing nutrients. Generic USDA raw/asSold input only; already cooked/branded input rejects. Note and explicit acknowledgement required.
+
+This is a submission for data review, not a certified category or cooking match. Even a deliberately mismatched onion/pasta-code request is marked foodMatchVerified=false/canApply=false; it cannot create a PreparationTransform or write KitchenService state. `toJson()` is a clone, not a mutable reference. Unknown license/yield/edible fraction remain unknown; missing factors are not1. No automatic name/category inference or user nutrition update. The internal review API is not a new product UI.
+
+Runtime SHA checks validate formats only; exact source bytes and source-line hashes are verified by the offline Node gate, not recomputed from an unbundled archive on the device. Do not treat this reader as a cryptographic integrity attestation. Separate curated approval and exact food/method/source review remain next.
+
+Actual verification:4targeted Flutter tests passed; analyze clean. MissingAPIred→green, factorUnit=grams regression red→green. Focused cheap read-only review found no must-fix issue and documented the SHA limitation; no tests rerun by reviewer. Historical full92Flutter/e023260 and39Node/f936109 remain historical, not claimed as rerun.
