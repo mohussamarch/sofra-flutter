@@ -66,3 +66,12 @@
 
 - Follow docs/RECIPE-VARIANTS.md. Preserve full immutable snapshots and revision-specific nutrition bindings. Prefer line indices for repeated ingredient choices/measurements. Unknown legacy bindings require explicit re-review.
 - Only checkout E:\work\SOFRA\app is active. Its ignored `.dart_tool` and `build` are junctions to C:\Users\atgs0\Documents\Codex\2026-10-09\cooking-app-flutter\work\sofra-generated-cache. These are generated caches, not a second project. Inspect junction targets before cleanup; never recursively remove a computed target without validating its scope.
+
+
+## Priorities and pause diagnosis — 13 October 2026
+
+- User explicitly asks to prioritize all research/logic/banks and execute in order. Read docs/RESEARCH-ROADMAP.md and docs/WORK-QUEUE.json after STATUS; the older bank-only schedule no longer describes the whole scope.
+- automation-2 is one combined monitor/worker every30minutes. Check actual usage then run tool/work/watchdog.mjs with actual --primary/--weekly/--ordinary. Missing/false/90% prevents costly work. A source backoff delays that source, not independent local implementation.
+- One checkout/one owner. Diagnose active task progress with its own lastProgress taskId or lastAttemptAt fallback; after60minutes inspect owner/process/evidence before resuming or releasing it. Do not start a second writer or refresh timestamps as fake progress.
+- Current completed units: monitor and source measure catalogue. Next measure-integration must preserve exact revision/line evidence, source estimate versus actual weight, atomic once-only stock/cost/nutrition consistency. See docs/HOUSEHOLD-MEASURES.md; read-only proposals are not persisted cooking selections.
+- Close a proven unit with relevant tests/queue evidence/commit/push, then take the next available unit while capacity permits. Product collection remains a helper lane with one cheap gpt-6-luna/medium collector and short context; preserve lock/backoff and its handoff/status. No automatic clinical rules, invented prices or conversions.

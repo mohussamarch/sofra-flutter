@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "stallMinutes": 60,
+  "lastProgress": {
+    "at": "2026-10-13T08:25:16.065526+00:00",
+    "taskId": "measure-catalog",
+    "summary": "Source measure catalogue and read-only preview verified; monitor reviewer fix verified. 75 Flutter tests, clean analyze and31 Node tests passed. Persistent measure integration remains next.",
+    "evidence": [
+      "lib/data/household_measure_repository.dart",
+      "data/nutrition/household-measures-review.json",
+      "test/household_measures_test.dart",
+      "tool/work/watchdog.test.mjs",
+      "docs/HANDOFF.md#30"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "work-monitor",
+      "priority": 0,
+      "dependsOn": [],
+      "status": "done",
+      "nextAction": "Implement and test read-only work audit and update existing schedule",
+      "lastAttemptAt": "2026-10-13T07:35:29Z",
+      "completedAt": "2026-10-13T07:46:20.709536+00:00",
+      "evidence": [
+        "tool/work/watchdog.test.mjs"
+      ]
+    },
+    {
+      "id": "measure-catalog",
+      "priority": 10,
+      "dependsOn": [
+        "work-monitor"
+      ],
+      "status": "done",
+      "nextAction": "Load curated exact USDA portions, explicit acceptance, identity/form checks and arithmetic tests",
+      "completedAt": "2026-10-13T07:46:20.709536+00:00",
+      "evidence": [
+        "test/household_measures_test.dart",
+        "data/nutrition/household-measures-review.json"
+      ]
+    },
+    {
+      "id": "measure-integration",
+      "priority": 20,
+      "dependsOn": [
+        "measure-catalog"
+      ],
+      "status": "ready",
+      "nextAction": "Persist explicit measure acceptance per recipe revision/line; align confirmed stock/cost/nutrition without relabelling estimates as actual measurements"
+    },
+    {
+      "id": "preparation-evidence",
+      "priority": 30,
+      "dependsOn": [],
+      "status": "ready",
+      "nextAction": "Research exact cooked forms, edible yield and nutrient retention for priority recipes with authoritative sources; retain gaps"
+    },
+    {
+      "id": "allergen-evidence",
+      "priority": 40,
+      "dependsOn": [],
+      "status": "ready",
+      "nextAction": "Source ingredient/allergen declarations and compound expansion; preserve unknown and traces separately"
+    },
+    {
+      "id": "recipe-coverage",
+      "priority": 50,
+      "dependsOn": [
+        "measure-integration"
+      ],
+      "status": "ready",
+      "nextAction": "Review priority recipe variants and quantity/identity coverage, then broaden independent families"
+    },
+    {
+      "id": "prices",
+      "priority": 60,
+      "dependsOn": [],
+      "status": "ready",
+      "nextAction": "Define sourced price observations and user overrides, package/unit/country/date uncertainty; no fabricated price feed"
+    },
+    {
+      "id": "people-targets",
+      "priority": 70,
+      "dependsOn": [
+        "allergen-evidence"
+      ],
+      "status": "ready",
+      "nextAction": "Source official guidance and support explicit personal targets without inferring clinical rules from free text"
+    },
+    {
+      "id": "product-bank",
+      "priority": 80,
+      "dependsOn": [],
+      "status": "waiting",
+      "nextAction": "Collect due OFF pages using persisted backoff; keep generic and packaged licenses distinct",
+      "blockedUntil": "2026-10-13T07:53:02.204Z",
+      "blockedReason": "OFF retries persisted; other tasks can continue"
+    },
+    {
+      "id": "budget-planner",
+      "priority": 90,
+      "dependsOn": [
+        "prices",
+        "measure-integration",
+        "people-targets"
+      ],
+      "status": "ready",
+      "nextAction": "Build missing-purchase costing and constrained alternatives with incomplete-data coverage"
+    },
+    {
+      "id": "scan-ocr",
+      "priority": 100,
+      "dependsOn": [
+        "measure-integration"
+      ],
+      "status": "ready",
+      "nextAction": "Resolve barcode identity and build reviewed receipt candidates before writes"
+    },
+    {
+      "id": "leftover-safety",
+      "priority": 110,
+      "dependsOn": [],
+      "status": "ready",
+      "nextAction": "Review storage/expiry evidence and batch leftovers separately from purchase/deduction"
+    },
+    {
+      "id": "storage-release",
+      "priority": 120,
+      "dependsOn": [],
+      "status": "ready",
+      "nextAction": "Test persistence/isolation/conflicts, archive history and selective source delivery before production growth"
+    },
+    {
+      "id": "ui-asset-contract",
+      "priority": 130,
+      "dependsOn": [
+        "measure-integration"
+      ],
+      "status": "ready",
+      "nextAction": "Document renderer/API interactions and external UI integration; no visual redesign or model generation"
+    },
+    {
+      "id": "android-release",
+      "priority": 140,
+      "dependsOn": [
+        "storage-release",
+        "ui-asset-contract"
+      ],
+      "status": "ready",
+      "nextAction": "Build documented APK after integration; record actual S24Ultra and Drive status"
+    }
+  ]
+}
