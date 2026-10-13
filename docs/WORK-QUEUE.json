@@ -2,14 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T10:29:18.256777+00:00",
+    "at": "2026-10-13T10:53:37.868553+00:00",
     "taskId": "preparation-evidence",
-    "summary": "Read-only exact-food/version/form preparation matching request preserves source evidence/46missing nutrients and staysunapproved/canApplyfalse.4targetedFlutterpass/analyzeclean; sourcebatch1networkfailure/0growth savedbackoff.",
+    "summary": "2source-specific research proposals persisted with exact foodversion/form/sourcehash and method/candidate identities;0approvals.1OFFfetchfailed/backoffsaved, bank1793unchanged.",
     "evidence": [
-      "lib/data/retention_candidate_repository.dart",
-      "test/retention_review_test.dart",
-      "work/agent-handoffs/bank-heartbeat-1018.md",
-      "docs/HANDOFF.md#34"
+      "data/nutrition/preparation-match-shortlist.json",
+      "work/agent-handoffs/bank-heartbeat-1048.md",
+      "docs/HANDOFF.md#35"
     ]
   },
   "tasks": [
@@ -77,11 +76,11 @@
       "priority": 30,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Curate exact generic food/category/method matches with authoritative evidence and reuse review, then implement reviewed approval separately from requests. Retain unknown massYield/edibleFraction and missing46nutrients; no automatic transform from an unverified request.",
-      "stage": "read-only matching review request implemented;no approved food matches",
+      "nextAction": "Review the2unenriched dry pasta168927 proposals for0381and0382, enrichment/composition/draining/baking scope and source reuse; obtain separate massYield/edibleFraction. No fullbechamel or automatic match approval.",
+      "stage": "2exact generic-food/method research proposals saved;not approved",
       "evidence": [
-        "lib/data/retention_candidate_repository.dart",
-        "test/retention_review_test.dart"
+        "data/nutrition/preparation-match-shortlist.json",
+        "docs/HANDOFF.md#35"
       ],
       "lastAttemptAt": "2026-10-13T10:22:41.149525+00:00"
     },
@@ -123,8 +122,8 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Recheck actual quota/lock and due SA global page4 after10:28:14.431Z; network error had no HTTPstatus; respect independent dairy/EGbackoff",
-      "blockedUntil": "2026-10-13T10:28:14.431Z",
+      "nextAction": "Freshquota/lock: dairy3due10:53:29.506Z; global4after11:01:09.668Z; EG7after12:54:39.414Z. No repeat duringbackoff.",
+      "blockedUntil": "2026-10-13T11:01:09.668Z",
       "blockedReason": "network_fetch_backoff"
     },
     {

@@ -40,3 +40,8 @@ This is a submission for data review, not a certified category or cooking match.
 Runtime SHA checks validate formats only; exact source bytes and source-line hashes are verified by the offline Node gate, not recomputed from an unbundled archive on the device. Do not treat this reader as a cryptographic integrity attestation. Separate curated approval and exact food/method/source review remain next.
 
 Actual verification:4targeted Flutter tests passed; analyze clean. MissingAPIred→green, factorUnit=grams regression red→green. Focused cheap read-only review found no must-fix issue and documented the SHA limitation; no tests rerun by reviewer. Historical full92Flutter/e023260 and39Node/f936109 remain historical, not claimed as rerun.
+
+
+## Concrete research shortlist
+
+preparation-match-shortlist.json now records2proposals for exact USDA168927 “Pasta, dry, unenriched”/asSold/version/sourcehash, with0381(boil/drain) and0382(boil/drain then bake). Each cites3existing retention candidate IDs/archivehash and keeps canApply=false/foodMatchVerified=false/approvedMatches=0. Generic-category suitability is explicitly an inference for review, not USDA certification of a particular recipe. Scope is the pasta ingredient only; sauce/meat/cheese and a finished bechamel tray are excluded. No ratios or new nutrient values added. JSON/identity/hash/candidate/status validation ran; no behavior change or extra Flutter tests.

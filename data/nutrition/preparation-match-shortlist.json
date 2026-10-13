@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-13T10:51:37.527561+00:00",
+  "source": "Existing USDA food/reference and retention archives; no additional HTTPrequest",
+  "reviewKind": "automated research shortlist, not approval",
+  "approvedMatches": 0,
+  "entries": [
+    {
+      "id": "proposed:usda:168927:0381",
+      "status": "research-proposed-unverified",
+      "foodMatchVerified": false,
+      "canApply": false,
+      "foodId": "usda:168927",
+      "foodVersion": "2018-04",
+      "sourceForm": "asSold",
+      "targetForm": "cooked",
+      "sourceFoodEvidence": {
+        "sourceDescription": "Pasta, dry, unenriched",
+        "sourceFile": "data/usda/shards/31.json",
+        "sourceSha256": "7c425a180d54ba1a2d999f382823697cfc40d7d823c3f20689a0add494b9f81d",
+        "sourceUrl": "https://fdc.nal.usda.gov/food-details/168927/nutrients"
+      },
+      "retentionCode": "0381",
+      "methodDescription": "PASTA,BOILED,DRAINED",
+      "sourceRetentionArchiveSha256": "5b71867f6649e801db3bf88c6cd1887b0673e853d4ba94aa0af2b3c091e983f9",
+      "retentionCandidateIds": [
+        "usda-retention6:0381:401",
+        "usda-retention6:0381:404",
+        "usda-retention6:0381:405"
+      ],
+      "inference": "Generic dry unenriched pasta may fit the generic pasta category. This is a research inference, not an exact food/preparation match certified by USDA or an accepted user selection.",
+      "reviewQuestions": [
+        "Confirm exact source food composition/enrichment and whether generic pasta category is appropriate",
+        "Confirm actual boiling/draining steps; use combined code0382 only if pasta itself also undergoes baking, never multiply0381and0382",
+        "Verify source-specific reuse status and nutrient-specific applicability",
+        "Obtain separate massYield and edibleFraction where required; other46nutrients remain unknown"
+      ],
+      "scope": "Pasta ingredient only; not sauce, meat, cheese, or a complete bechamel tray",
+      "supportsFinishedRecipe": false,
+      "massYield": null,
+      "edibleFraction": null
+    },
+    {
+      "id": "proposed:usda:168927:0382",
+      "status": "research-proposed-unverified",
+      "foodMatchVerified": false,
+      "canApply": false,
+      "foodId": "usda:168927",
+      "foodVersion": "2018-04",
+      "sourceForm": "asSold",
+      "targetForm": "cooked",
+      "sourceFoodEvidence": {
+        "sourceDescription": "Pasta, dry, unenriched",
+        "sourceFile": "data/usda/shards/31.json",
+        "sourceSha256": "7c425a180d54ba1a2d999f382823697cfc40d7d823c3f20689a0add494b9f81d",
+        "sourceUrl": "https://fdc.nal.usda.gov/food-details/168927/nutrients"
+      },
+      "retentionCode": "0382",
+      "methodDescription": "PASTA,BOILED,DRAINED,BAKED",
+      "sourceRetentionArchiveSha256": "5b71867f6649e801db3bf88c6cd1887b0673e853d4ba94aa0af2b3c091e983f9",
+      "retentionCandidateIds": [
+        "usda-retention6:0382:401",
+        "usda-retention6:0382:404",
+        "usda-retention6:0382:405"
+      ],
+      "inference": "Generic dry unenriched pasta may fit the generic pasta category. This is a research inference, not an exact food/preparation match certified by USDA or an accepted user selection.",
+      "reviewQuestions": [
+        "Confirm exact source food composition/enrichment and whether generic pasta category is appropriate",
+        "Confirm actual boiling/draining steps; use combined code0382 only if pasta itself also undergoes baking, never multiply0381and0382",
+        "Verify source-specific reuse status and nutrient-specific applicability",
+        "Obtain separate massYield and edibleFraction where required; other46nutrients remain unknown"
+      ],
+      "scope": "Pasta ingredient only; not sauce, meat, cheese, or a complete bechamel tray",
+      "supportsFinishedRecipe": false,
+      "massYield": null,
+      "edibleFraction": null
+    }
+  ]
+}
