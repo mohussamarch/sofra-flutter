@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T22:54:12.792251+00:00",
+    "at": "2026-10-13T23:12:15.347978+00:00",
     "taskId": "recipe-quantities",
-    "summary": "Explicitsingleingredientchoice revisions/model/bookguard/service persisted;7newtests,full107Fluttertests/analyzeclean. Singularsource1candidate/2archives reviewed,0runtime imports.",
+    "summary": "Offline exact source import-draft audit implemented;29linked tests/11new;3640blank English drafts audited,0runtime. No source request/Flutter changes.",
     "evidence": [
-      "lib/domain/recipe_variants.dart",
-      "lib/data/kitchen_service.dart",
-      "test/ingredient_choice_revisions_test.dart",
-      "docs/RECIPE-INGREDIENT-CHOICES.md"
+      "tool/recipes/import-preflight.mjs",
+      "tool/recipes/import-preflight.test.mjs",
+      "data/recipes/import-review/english-baseline.json",
+      "docs/RECIPE-IMPORT-PREFLIGHT.md"
     ]
   },
   "tasks": [
@@ -157,9 +157,14 @@
         "singleIngredientChoiceRevision": true,
         "choiceTests": 7,
         "fullFlutterTests": 107,
-        "analyzeClean": true
+        "analyzeClean": true,
+        "importDraftPreflight": true,
+        "preflightTests": 11,
+        "linkedNodeTests": 29,
+        "blankEnglishDraftsAudited": 3640,
+        "preflightRuntimeReady": 0
       },
-      "nextAction": "Implement reviewed source-to-runtime import preflight: exact revision/line identity,quantity/form/optional/choice decisions and unknown timing/servings reported separately;never fillzero or apply unreviewedbindings.",
+      "nextAction": "Persist explicitly registered reviewed source draft files with byte/source/provenance guards;then runtime adapter preserving unknown metadata/form/basis/retention gates. No automatic binding/import.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -185,10 +190,14 @@
         "lib/domain/recipe_variants.dart",
         "lib/data/kitchen_service.dart",
         "test/ingredient_choice_revisions_test.dart",
-        "docs/RECIPE-INGREDIENT-CHOICES.md"
+        "docs/RECIPE-INGREDIENT-CHOICES.md",
+        "tool/recipes/import-preflight.mjs",
+        "tool/recipes/import-preflight.test.mjs",
+        "data/recipes/import-review/english-baseline.json",
+        "docs/RECIPE-IMPORT-PREFLIGHT.md"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T22:54:12.792251+00:00",
+      "lastProgressAt": "2026-10-13T23:12:15.347978+00:00",
       "stage": "Source quantity/identity/fate guards plus explicit single-choice runtime revision API implemented;bulk import preflight and review coverage remain open."
     },
     {

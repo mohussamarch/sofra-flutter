@@ -119,3 +119,7 @@ Use docs/RECIPE-SPANISH-SOURCE.md and collect-wikibooks-es.mjs --resume for exis
 ## Explicit single choice and operational ordering
 
 Use RECIPE-INGREDIENT-CHOICES.md:chooseRecipeIngredient stores one quantified replacement/newpersonalrevision,fullparent/region/method guards,no inherited foodbindings,history frozen. Calleracknowledgesinstructions;no culinaryequivalence/medicalapproval implied. Sourcebankexpansion nowpriority35/openaftercurrentinventories archived;readyquantity/preparation/import/authoring foundations advance. Preserve continuouseconomicalsource research/no countcap and actualquotas/backoff.
+
+## Import-draft preflight
+
+Use docs/RECIPE-IMPORT-PREFLIGHT.md and tool/recipes/import-preflight.mjs for source draft audits. Current authoritative English reader only. All quantities/optional/choice/form/scaling/times and raw-food references explicit; no source candidates autoaccepted. draftComplete is not runtimeReady (alwaysfalse); retain separate adapter/licence/instruction/runtime form-basis/retention gates.29linked tests/blankbaseline3640recipes verified; no reviewed draft imported. Next registered draft persistence; no unknown-to-zero or concurrent source writers.

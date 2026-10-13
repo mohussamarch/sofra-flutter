@@ -127,3 +127,7 @@ Spanish discovery now archived:3official API responses,CC BY-SA4.0 site policy,4
 ## Source expansion and calculation foundation — heartbeat22:29
 
 Current English/French/Spanishplural inventories archived,Spanishsingular1candidate verified with source-quality gaps. Ongoing recipe-bank task moves operationalpriority28→35,remainsready/open without a final record cap. Quantity29/preparation30/import32/authoring34 foundations can advance;source research continues as an economical independent lane. This prevents unrestricted discovery from permanently starving calculation/import work. Product/user decisions unchanged. Explicitone-choice backendrevisionAPI is implemented;bulk preflight/review/unknown timing and from-scratch persistence remain open. SeeHANDOFF§52–53.
+
+## Import-draft audit checkpoint
+
+[Source import-draft preflight](RECIPE-IMPORT-PREFLIGHT.md) now reports explicit exact-line quantity/form/choice/optional/reference/time review.29linked tests passed; English blank-template baseline3640/31774/24964,0runtime. A complete draft is not a nutrition or runtime approval. Next registered reviewed draft persistence and adapter gates; no UI/state/import changes. HANDOFF§54.
