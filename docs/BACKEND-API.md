@@ -98,3 +98,8 @@ final week = kitchen.calendar(DateTime(2026, 10, 12), CalendarMode.week);
 ## Recipe source proposals —13October2026
 
 See RECIPE-REFERENCES.md for the implemented `RecipeReferenceRepository`, explicit generic acceptance/choices, atomic `KitchenService.applyRecipeReferences`, source freshness guards and `previewIngredientNutrition`. Ingredient-input estimates remain separate from conservative cooked nutrition and person intake.197 identity proposals/53 recipes are not197 verified nutrition bindings. Legacy UI and previous APK do not consume these APIs automatically. The older23-test/build statement above is historical; latest actual gates are recorded in STATUS/HANDOFF§22.
+
+
+## Accepted source measures and actual cooking quantities
+
+See docs/HOUSEHOLD-MEASURES.md. KitchenService.acceptRecipeHouseholdMeasure saves explicit exact-revision/line source estimates with immutable evidence after async race checks. confirmCooking(actualUsesByLine: ...) accepts actual amounts for numeric/count lines as well; acknowledgeSourceMeasureEstimates is required only for source estimates actually used. The same resolved amount drives stock/cost/nutrition. History freezes quantity evidence/confidence and once-only deduction. Source measures do not make prepared nutrition complete; no UI/Firebase migration/APK integration in this unit.

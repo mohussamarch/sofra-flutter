@@ -596,6 +596,7 @@ class RecipeFoodInput {
     required this.amount,
     required this.amountForm,
     required this.preparedForm,
+    this.quantityEstimated = false,
     this.optional = false,
     this.selected = true,
     this.asPurchased = false,
@@ -611,11 +612,13 @@ class RecipeFoodInput {
   final FoodAmount? amount;
   final FoodForm amountForm, preparedForm;
   final bool optional, selected, asPurchased;
+  final bool quantityEstimated;
   final PreparationTransform? preparation;
   Map<String, dynamic> toJson() => {
     'ingredientId': ingredientId,
     'food': food?.toJson(),
     'amount': amount?.toJson(),
+    'quantityEstimated': quantityEstimated,
     'amountForm': amountForm.name,
     'preparedForm': preparedForm.name,
     'optional': optional,
@@ -627,6 +630,7 @@ class RecipeFoodInput {
     ingredientId: j['ingredientId'] as String,
     food: j['food'] == null ? null : FoodRecord.fromJson(_map(j['food'])),
     amount: j['amount'] == null ? null : FoodAmount.fromJson(_map(j['amount'])),
+    quantityEstimated: j['quantityEstimated'] == true,
     amountForm: _enum(FoodForm.values, j['amountForm']),
     preparedForm: _enum(FoodForm.values, j['preparedForm']),
     optional: j['optional'] == true,
@@ -902,7 +906,10 @@ RecipeNutritionResult calculateRecipeNutrition({
               food.nutrition.basis.amount *
               retention;
           subtotal += contribution;
-          estimated = estimated || value.method == NutrientMethod.estimated;
+          estimated =
+              estimated ||
+              input.quantityEstimated ||
+              value.method == NutrientMethod.estimated;
         }
       }
       if (gap != null) missing.add(NutrientGap(input.ingredientId, gap));

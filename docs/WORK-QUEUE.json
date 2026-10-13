@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T08:25:16.065526+00:00",
-    "taskId": "measure-catalog",
-    "summary": "Source measure catalogue and read-only preview verified; monitor reviewer fix verified. 75 Flutter tests, clean analyze and31 Node tests passed. Persistent measure integration remains next.",
+    "at": "2026-10-13T09:10:13.357714+00:00",
+    "taskId": "measure-integration",
+    "summary": "Explicit per-revision measure acceptance persisted; actual/estimated quantities use consistent stock/cost/nutrition and freeze evidence.86Flutter/clean analyze/33Node passed. Compound revisions next.",
     "evidence": [
-      "lib/data/household_measure_repository.dart",
-      "data/nutrition/household-measures-review.json",
-      "test/household_measures_test.dart",
-      "tool/work/watchdog.test.mjs",
-      "docs/HANDOFF.md#30"
+      "test/household_measure_integration_test.dart",
+      "lib/data/kitchen_service.dart",
+      "lib/domain/food_nutrition.dart",
+      "tool/food/collector-cli.test.mjs",
+      "docs/HANDOFF.md#31"
     ]
   },
   "tasks": [
@@ -46,8 +46,25 @@
       "dependsOn": [
         "measure-catalog"
       ],
+      "status": "done",
+      "nextAction": "Persist explicit measure acceptance per recipe revision/line; align confirmed stock/cost/nutrition without relabelling estimates as actual measurements",
+      "lastAttemptAt": "2026-10-13T08:54:14.559940+00:00",
+      "completedAt": "2026-10-13T09:10:13.357714+00:00",
+      "evidence": [
+        "test/household_measure_integration_test.dart",
+        "lib/data/kitchen_service.dart",
+        "lib/domain/recipe_nutrition.dart",
+        "lib/domain/food_nutrition.dart"
+      ]
+    },
+    {
+      "id": "compound-revisions",
+      "priority": 25,
       "status": "ready",
-      "nextAction": "Persist explicit measure acceptance per recipe revision/line; align confirmed stock/cost/nutrition without relabelling estimates as actual measurements"
+      "dependsOn": [
+        "measure-integration"
+      ],
+      "nextAction": "Split compound recipe lines only through a new explicit reviewed revision with separate user-confirmed quantities and food identities; never map salt+pepper to salt alone. Preserve old plans/history and require fresh line bindings."
     },
     {
       "id": "preparation-evidence",
@@ -67,7 +84,8 @@
       "id": "recipe-coverage",
       "priority": 50,
       "dependsOn": [
-        "measure-integration"
+        "measure-integration",
+        "compound-revisions"
       ],
       "status": "ready",
       "nextAction": "Review priority recipe variants and quantity/identity coverage, then broaden independent families"
@@ -86,7 +104,7 @@
         "allergen-evidence"
       ],
       "status": "ready",
-      "nextAction": "Source official guidance and support explicit personal targets without inferring clinical rules from free text"
+      "nextAction": "Source official guidance and support explicit personal targets without inferring clinical rules from free text; carry quantity-estimate confidence from recipe nutrition into person ledger aggregates before relying on them"
     },
     {
       "id": "product-bank",
@@ -94,8 +112,8 @@
       "dependsOn": [],
       "status": "waiting",
       "nextAction": "Collect due OFF pages using persisted backoff; keep generic and packaged licenses distinct",
-      "blockedUntil": "2026-10-13T07:53:02.204Z",
-      "blockedReason": "OFF retries persisted; other tasks can continue"
+      "blockedUntil": "2026-10-13T09:52:53.633Z",
+      "blockedReason": "source_backoff"
     },
     {
       "id": "budget-planner",

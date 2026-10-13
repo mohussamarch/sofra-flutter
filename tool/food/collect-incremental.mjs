@@ -154,10 +154,19 @@ export async function withCollectorLock(out, fn, { nowMs = () => Date.now() } = 
   finally { await lock.close(); await unlink(lockPath).catch(() => {}); }
 }
 
+const collectorUsage='Usage: node tool/food/collect-incremental.mjs [output-directory] | --help';
+export function parseCollectorArgs(args){
+  if(args.length===1 && ['--help','-h'].includes(args[0]))return {help:true};
+  if(args.length>1 || (args[0] && args[0].startsWith('-')))throw new Error(collectorUsage);
+  return {help:false,out:path.resolve(args[0] ?? path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../data/food/openfoodfacts'))};
+}
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const out = path.resolve(process.argv[2] ?? path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../data/food/openfoodfacts'));
-  await withCollectorLock(out, async () => {
-    const result = await runBatch({ out, onProgress: item => console.log(JSON.stringify(item)) });
-    console.log(JSON.stringify({ requests: result.results.length, fetched: result.fetched, nextJobIndex: result.state.nextJobIndex }));
-  });
+  const args=parseCollectorArgs(process.argv.slice(2));
+  if(args.help){console.log(collectorUsage);}else{
+    const out=args.out;
+    await withCollectorLock(out, async () => {
+      const result = await runBatch({ out, onProgress: item => console.log(JSON.stringify(item)) });
+      console.log(JSON.stringify({ requests: result.results.length, fetched: result.fetched, nextJobIndex: result.state.nextJobIndex }));
+    });
+  }
 }

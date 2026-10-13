@@ -21,6 +21,7 @@ class RecipeFoodSelection {
     this.recipeRevisionKey,
     this.referenceReviewId,
     this.referenceEvidence,
+    this.householdMeasureEvidence,
   }) {
     if (recipeId.trim().isEmpty ||
         line < 0 ||
@@ -39,10 +40,53 @@ class RecipeFoodSelection {
         (exclusionReason == null || exclusionReason!.trim().isEmpty)) {
       throw ArgumentError('Excluded nonconsumed material requires a reason');
     }
+    if (householdMeasureEvidence != null) {
+      final j = jsonDecode(householdMeasureEvidence!) as Map;
+      final amount = FoodAmount.fromJson(
+        Map<String, dynamic>.from(j['amount'] as Map),
+      );
+      final source = j['sourceEvidence'] as Map;
+      final count = j['measureQuantity'],
+          base = source['sourceAmount'],
+          grams = source['sourceGramWeight'];
+      if (j['schemaVersion'] != 1 ||
+          j['estimated'] != true ||
+          j['basis'] != 'edibleInput' ||
+          j['foodId'] != food.id ||
+          j['foodVersion'] != food.version ||
+          j['form'] != food.form.name ||
+          amountForm != food.form ||
+          asPurchased ||
+          notConsumed ||
+          measuredAmount != null ||
+          recipeRevisionKey == null ||
+          j['recipeRevisionKey'] != recipeRevisionKey ||
+          j['line'] != line ||
+          amount.unit != FoodQuantityUnit.g ||
+          [count, base, grams].any((v) => v is! num || !v.isFinite || v <= 0) ||
+          amount.value != grams * count / base ||
+          j['optionId'] is! String ||
+          (j['optionId'] as String).trim().isEmpty ||
+          source['sha256'] is! String ||
+          !RegExp(r'^[a-f0-9]{64}$').hasMatch(source['sha256'] as String) ||
+          DateTime.tryParse(j['acceptedAt'] as String? ?? '') == null) {
+        throw const FormatException('Invalid accepted source measure evidence');
+      }
+    }
   }
   final String recipeId;
   final String? recipeRevisionKey;
   final String? referenceReviewId, referenceEvidence;
+
+  /// Immutable serialized acceptance, distinct from an actual measuredAmount.
+  final String? householdMeasureEvidence;
+  FoodAmount? get householdMeasureAmount => householdMeasureEvidence == null
+      ? null
+      : FoodAmount.fromJson(
+          Map<String, dynamic>.from(
+            (jsonDecode(householdMeasureEvidence!) as Map)['amount'] as Map,
+          ),
+        );
   final int line;
   final FoodRecord food;
   final FoodForm amountForm, preparedForm;
@@ -59,6 +103,7 @@ class RecipeFoodSelection {
     'recipeRevisionKey': recipeRevisionKey,
     'referenceReviewId': referenceReviewId,
     'referenceEvidence': referenceEvidence,
+    'householdMeasureEvidence': householdMeasureEvidence,
     'line': line,
     'food': food.toJson(),
     'amountForm': amountForm.name,
@@ -78,6 +123,7 @@ class RecipeFoodSelection {
       recipeRevisionKey: j['recipeRevisionKey'] as String?,
       referenceReviewId: j['referenceReviewId'] as String?,
       referenceEvidence: j['referenceEvidence'] as String?,
+      householdMeasureEvidence: j['householdMeasureEvidence'] as String?,
       line: j['line'] as int,
       food: FoodRecord.fromJson(Map<String, dynamic>.from(j['food'] as Map)),
       amountForm: FoodForm.values.byName(j['amountForm'] as String),
@@ -155,10 +201,16 @@ RecipeNutritionResult assessRecipeNutrition({
   for (var i = 0; i < recipe.ingredients.length; i++) {
     final row = recipe.ingredients[i], binding = byLine[i];
     final unit = nutritionUnit(row.unit), quantity = scaled.quantity(row);
+    final sourceEstimate = binding?.householdMeasureAmount;
     final explicit = binding?.measuredAmount;
     final amount =
         measuredLines[i] ??
-        (explicit != null && (quantity == null || unit == null)
+        (sourceEstimate != null
+            ? FoodAmount(
+                value: sourceEstimate.value * (row.scales ? scaled.factor : 1),
+                unit: sourceEstimate.unit,
+              )
+            : explicit != null && (quantity == null || unit == null)
             ? FoodAmount(
                 value: explicit.value * (row.scales ? scaled.factor : 1),
                 unit: explicit.unit,
@@ -173,6 +225,8 @@ RecipeNutritionResult assessRecipeNutrition({
         ingredientId: '${recipe.id}:$i:${row.id}',
         food: binding?.food,
         amount: amount,
+        quantityEstimated:
+            sourceEstimate != null && !measuredLines.containsKey(i),
         amountForm: binding?.amountForm ?? FoodForm.raw,
         preparedForm: binding?.preparedForm ?? FoodForm.cooked,
         optional:

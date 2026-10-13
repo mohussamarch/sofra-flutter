@@ -48,3 +48,9 @@
 - بعد60دقيقة بلا تقدم موثق لمهمةنشطة،شخّص مالكها والعملية. لا تبدأ كاتبًا ثانيًا،ولا تنسب تقدممهمةأخرىإليها. مصدرخالي/مشوه يحتاج تشخيصًا قبلالجمع؛انتهاءصفحاتمعروفةيعني مراجعةتوسع،لا اكتمالالبنك.
 - المقاييس/التحضير/الحساسية/الأسعار/الأشخاص عملمحلي مستقل عنOFF؛HTTP503يؤجل طلبالمصدر فقط. لا تكررنفسالطلبأثناءbackoff. وحدةالمقاييس الجديدة وAPIفيHOUSEHOLD-MEASURES.md.
 - إشعار عند تقدممهم/عائقجديديحتاجالمستخدم/توقفعليغيرمفسر/اقترابحد،وهدوءعندعدمتغيرمفيد. الجهازوCodexيلزمهماشغالين للعملالمحلي؛لا وعدباستمرارأثناءإغلاقهما.
+
+
+## Safe collector CLI
+
+- Supported: node tool/food/collect-incremental.mjs [output-directory], --help or -h. Help exits before lock/network; unknown flags/extra arguments reject before side effects. New tool/food/collector-cli.test.mjs runs real child help/invalid-flag cases in an empty temporary directory and verifies natural exit/no files. Include this test when the tool changes.
+- Incident13Oct08:54Z: cheap helper's formerly unsupported --help accidentally created a separate --help bank and fetched2pages; only its newly created directory was removed, primary bank unchanged. Root added argument validation/help and tests; do not repeat the old unsupported probe. Real primary run then made1request/HTTP503/exit0; checkpoint backoff saved. Record total3requests including the mistaken2successes; do not call them primary-bank growth.

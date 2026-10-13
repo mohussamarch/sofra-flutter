@@ -11,6 +11,7 @@ import '../domain/market_profile.dart';
 import '../domain/models.dart';
 import 'recipe_repository.dart';
 import 'recipe_reference_repository.dart';
+import 'household_measure_repository.dart';
 import 'state_store.dart';
 
 Map<String, dynamic> _clone(Map<String, dynamic> value) =>
@@ -270,6 +271,91 @@ class KitchenService {
         k['recipeBook'] = _registerCatalog(_recipeBook(k), revision).toJson();
       }
       (_nutrition(k)['selections'] as Map)[scoped.key] = scoped.toJson();
+    });
+  }
+
+  /// Accepts an equivalent BASE recipe portion, never a weighed actual use.
+  /// Source estimates need a separate acknowledgement at cooking confirmation.
+  Future<void> acceptRecipeHouseholdMeasure(
+    String planId,
+    HouseholdMeasureRepository measures, {
+    required int line,
+    required String optionId,
+    required double measureQuantity,
+    required bool acknowledgeExactSourcePortion,
+    bool replaceExisting = false,
+  }) async {
+    final meal = plans.where((v) => v.id == planId).single;
+    if (meal.completed) throw StateError('Cannot change a cooked meal measure');
+    final revision = await _resolveMeal(meal);
+    if (line < 0 || line >= revision.recipe.ingredients.length) {
+      throw RangeError('Recipe line');
+    }
+    final selected = _foodSelections(
+      snapshot,
+      revision,
+    ).where((v) => v.line == line).single;
+    if (selected.asPurchased ||
+        selected.notConsumed ||
+        selected.amountForm != selected.food.form) {
+      throw StateError(
+        'Review exact edible food form before source measure acceptance',
+      );
+    }
+    final unit = nutritionUnit(revision.recipe.ingredients[line].unit);
+    if ([
+      FoodQuantityUnit.g,
+      FoodQuantityUnit.kg,
+      FoodQuantityUnit.ml,
+      FoodQuantityUnit.l,
+    ].contains(unit)) {
+      throw StateError(
+        'Mass/volume line already quantified; review a new recipe revision',
+      );
+    }
+    if (!replaceExisting &&
+        (selected.householdMeasureEvidence != null ||
+            selected.measuredAmount != null)) {
+      throw StateError('Explicit replacement of an accepted quantity required');
+    }
+    final before = jsonEncode(selected.toJson());
+    final proposal = await measures.resolve(
+      selected.food,
+      optionId: optionId,
+      measureQuantity: measureQuantity,
+      acknowledgeExactSourcePortion: acknowledgeExactSourcePortion,
+    );
+    final accepted = RecipeFoodSelection.fromJson({
+      ...selected.toJson(),
+      'measuredAmount': null,
+      'householdMeasureEvidence': jsonEncode({
+        ...proposal.toJson(),
+        'recipeRevisionKey': revision.key,
+        'line': line,
+        'acceptedAt': DateTime.now().toUtc().toIso8601String(),
+      }),
+    });
+    await _write((k) {
+      final current = (k['plans'] as List)
+          .where((v) => v['id'] == planId)
+          .single;
+      final choices = _nutrition(k)['selections'] as Map;
+      if (current['completed'] == true ||
+          current['recipeRevisionKey'] != revision.key ||
+          current['servings'] != meal.servings ||
+          jsonEncode(
+                choices[selected.key] == null
+                    ? null
+                    : RecipeFoodSelection.fromJson(
+                        Map<String, dynamic>.from(choices[selected.key] as Map),
+                      ).toJson(),
+              ) !=
+              before) {
+        throw StateError(
+          'Plan or food binding changed during source measure review',
+        );
+      }
+      choices[accepted.key] = accepted.toJson();
     });
   }
 
@@ -644,6 +730,8 @@ class KitchenService {
     Set<String> optionalIds = const {},
     Set<int>? optionalLines,
     Map<int, IngredientUse> measuredUsesByLine = const {},
+    Map<int, IngredientUse> actualUsesByLine = const {},
+    bool acknowledgeSourceMeasureEstimates = false,
     Set<int> omitUnmeasuredLines = const {},
     Map<String, IngredientUse> measuredUses = const {},
     Set<String> omitUnmeasured = const {},
@@ -651,6 +739,7 @@ class KitchenService {
     DateTime? cookedAt,
     double? cookedYieldGrams,
   }) async {
+    final submittedActual = Map<int, IngredientUse>.from(actualUsesByLine);
     if (operationId.trim().isEmpty) throw ArgumentError('Missing operation ID');
     final old = (snapshot['history'] as List).where(
       (v) => v['operationId'] == operationId,
@@ -665,6 +754,11 @@ class KitchenService {
     final revision = await _resolveMeal(meal);
     final scaled = revision.recipe.forServings(meal.servings);
     final rows = scaled.recipe.ingredients;
+    final bindings = _foodSelections(snapshot, revision);
+    final bindingSnapshot = jsonEncode(
+      bindings.map((v) => v.toJson()).toList(),
+    );
+    final bindingByLine = {for (final v in bindings) v.line: v};
     bool validLine(int i) => i >= 0 && i < rows.length;
     if (optionalLines != null && optionalIds.isNotEmpty) {
       throw ArgumentError(
@@ -683,7 +777,19 @@ class KitchenService {
         )) {
       throw ArgumentError('Invalid optional/measured/omitted recipe line');
     }
+    if (submittedActual.entries.any(
+      (e) =>
+          !validLine(e.key) ||
+          e.value.ingredientId != rows[e.key].id ||
+          measuredUsesByLine.containsKey(e.key) ||
+          measuredUses.containsKey(e.value.ingredientId) ||
+          omitUnmeasuredLines.contains(e.key) ||
+          omitUnmeasured.contains(e.value.ingredientId),
+    )) {
+      throw ArgumentError('Invalid or conflicting actual cooking line');
+    }
     final uses = <IngredientUse>[];
+    final sourceEstimates = <int, RecipeFoodSelection>{};
     final actualMeasured = <int, IngredientUse>{};
     final omittedLines = <int>{};
     final selectedOptionalLines = <int>{};
@@ -697,18 +803,24 @@ class KitchenService {
         selectedOptionalLines.add(i);
       }
       final quantity = scaled.quantity(ingredient);
-      if (quantity == null) {
-        if (omitUnmeasuredLines.contains(i) ||
-            omitUnmeasured.contains(ingredient.id)) {
-          if (measuredUsesByLine.containsKey(i) ||
-              measuredUses.containsKey(ingredient.id)) {
-            throw ArgumentError('Cannot both measure and omit a recipe line');
-          }
-          omittedLines.add(i);
-          continue;
+      if (quantity == null &&
+          (omitUnmeasuredLines.contains(i) ||
+              omitUnmeasured.contains(ingredient.id))) {
+        if (measuredUsesByLine.containsKey(i) ||
+            measuredUses.containsKey(ingredient.id)) {
+          throw ArgumentError('Cannot both measure and omit a recipe line');
         }
-        final explicit = measuredUsesByLine[i] ?? measuredUses[ingredient.id];
-        if (!measuredUsesByLine.containsKey(i) &&
+        omittedLines.add(i);
+        continue;
+      }
+      final explicit =
+          submittedActual[i] ??
+          (quantity == null
+              ? measuredUsesByLine[i] ?? measuredUses[ingredient.id]
+              : null);
+      if (explicit != null) {
+        if (!submittedActual.containsKey(i) &&
+            !measuredUsesByLine.containsKey(i) &&
             measuredUses.containsKey(ingredient.id) &&
             rows
                     .where(
@@ -721,15 +833,34 @@ class KitchenService {
             'Repeated unmeasured ingredient requires line-specific measurements',
           );
         }
-        if (explicit == null || explicit.ingredientId != ingredient.id) {
-          throw StateError(
-            'Review unmeasured recipe line $i: ${ingredient.id}',
-          );
+        if (explicit.ingredientId != ingredient.id) {
+          throw ArgumentError('Actual ingredient mismatch');
         }
         uses.add(explicit);
         actualMeasured[i] = explicit;
       } else {
-        uses.add(IngredientUse(ingredient.id, quantity, ingredient.unit!));
+        final binding = bindingByLine[i],
+            estimate = bindingByLine[i]?.householdMeasureAmount;
+        if (estimate != null) {
+          if (!acknowledgeSourceMeasureEstimates) {
+            throw StateError(
+              'Acknowledge source estimates or enter actual cooking quantities',
+            );
+          }
+          final use = IngredientUse(
+            ingredient.id,
+            estimate.value * (ingredient.scales ? scaled.factor : 1),
+            'g',
+          );
+          uses.add(use);
+          sourceEstimates[i] = binding!;
+        } else if (quantity == null) {
+          throw StateError(
+            'Review unmeasured recipe line $i: ${ingredient.id}',
+          );
+        } else {
+          uses.add(IngredientUse(ingredient.id, quantity, ingredient.unit!));
+        }
       }
     }
     await _write((k) {
@@ -753,6 +884,14 @@ class KitchenService {
           current.recipeId != meal.recipeId ||
           current.servings != meal.servings) {
         throw StateError('Meal changed; review again');
+      }
+      if (jsonEncode(
+            _foodSelections(k, revision).map((v) => v.toJson()).toList(),
+          ) !=
+          bindingSnapshot) {
+        throw StateError(
+          'Food quantity bindings changed; review cooking again',
+        );
       }
       final stock = (k['inventory'] as List)
           .map(
@@ -780,8 +919,8 @@ class KitchenService {
       list[index] = current.withRecipeRevision(revision.key).done().toJson();
       final measuredLines = <int, FoodAmount>{};
       for (var i = 0; i < scaled.recipe.ingredients.length; i++) {
-        final row = scaled.recipe.ingredients[i], explicit = actualMeasured[i];
-        if (scaled.quantity(row) == null && explicit != null) {
+        final explicit = actualMeasured[i];
+        if (explicit != null) {
           final unit = nutritionUnit(explicit.unit);
           if (unit == null) {
             throw StateError(
@@ -832,6 +971,12 @@ class KitchenService {
         'selectedOptional': optionalIds.toList(),
         'selectedOptionalLines': selectedOptionalLines.toList(),
         'omittedUnmeasuredLines': omittedLines.toList(),
+        'estimatedSourceMeasureLines': sourceEstimates.keys.toList(),
+        'actualMeasuredLines': actualMeasured.keys.toList(),
+        'sourceMeasureEvidence': {
+          for (final e in sourceEstimates.entries)
+            e.key.toString(): jsonDecode(e.value.householdMeasureEvidence!),
+        },
         'nutrition': nutrition.toJson(),
         'nutritionBatchId': batch.id,
         'cost': unknown.isEmpty ? total : null,
