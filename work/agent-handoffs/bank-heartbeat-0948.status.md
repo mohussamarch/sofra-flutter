@@ -1,0 +1,3 @@
+# 09:59Z cumulative food bank status
+
+Three Saudi Arabia global pages succeeded across the collection run (p1-p3, 100 source records each), each followed by a rebuild. Five actual-bank tests passed after each rebuild. Final: 1,793 products (+103), 55 archives (+3), 261 quarantined, 485 duplicate occurrences. Current next cursor is SA global p4, due now; recheck quota/lock after the coordinator's import transaction is committed. Existing 503 backoffs: SA dairy p3 after 10:53:29Z; Egypt global p7 after 12:54:39Z. Lock clear, process exited 0, ownership released. Full deltas/hashes/requests: `bank-heartbeat-0948.md`.

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedDate": "2026-10-13",
-  "reviewStatus": "source-index-reviewed; no coefficients extracted or approved",
+  "reviewStatus": "source-index-reviewed;9source retention candidates extracted separately,0approved transforms",
   "scope": "Authoritative starting documents for food-form distinctions, edible fraction/yields, and nutrient retention. This index does not establish recipe-specific transformations or finished mixed-recipe nutrition.",
   "quantityConcepts": {
     "massYield": {
@@ -14,7 +14,7 @@
     },
     "nutrientRetention": {
       "definition": "Nutrient amount retained after a matching preparation, distinct from mass yield and edible fraction.",
-      "status": "unknown; no numeric factors extracted"
+      "status": "unknown exact-food matching;9source percentages extracted as unapproved candidates"
     }
   },
   "sources": [
@@ -56,13 +56,20 @@
         "Its true-retention method uses nutrient concentrations and food weights before and after cooking; the document notes factors can be imputed where data are limited."
       ],
       "applicability": "Potential reference for a nutrient-retention transform only where the exact food group, nutrient, and preparation category match after row-level review.",
-      "limitations": "Factors are not mass yields, edible fractions, clinical rules, or universal recipe multipliers. Release is dated and may include imputed factors; no row-level factor was extracted here.",
-      "reviewStatus": "official page and 18-page PDF content/metadata reviewed; no factor approved",
+      "limitations": "Percent retention differs from mass yield/edible fraction. No exact food/preparation mapping approved; candidate percentages do not cover all49nutrients or finished mixed recipes.",
+      "reviewStatus": "official PDF format/method and linked ASCII source reviewed;9unmapped candidate factors extracted;0approved transforms",
       "sourceBytesArchived": false,
       "sourceSha256": null,
       "dataLicense": "unknown",
       "dataLicenseEvidenceUrl": null,
-      "documentLicense": "unknown"
+      "documentLicense": "unknown",
+      "dataUrl": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/retn/retn06.txt",
+      "dataArchive": {
+        "file": "research/nutrition/usda/retn06.txt",
+        "sha256": "5b71867f6649e801db3bf88c6cd1887b0673e853d4ba94aa0af2b3c091e983f9",
+        "bytes": 557859,
+        "retrievedAt": "2026-10-13T09:55:14.146855+00:00"
+      }
     },
     {
       "id": "usda-food-buying-guide-yields",
@@ -110,7 +117,7 @@
     }
   ],
   "explicitUnknowns": [
-    "No preparation coefficient, recipe yield, edible fraction, or nutrient-retention factor was extracted.",
+    "No mass-yield or edible-fraction coefficient extracted;9retention candidate percentages exist separately with0approved food/preparation transforms.",
     "No source in this index establishes a transformation for finished bechamel pasta or another mixed dish.",
     "No proxy cuisine or clinical rule is approved.",
     "USDA Food Buying Guide applicability to consumer recipes outside its institutional planning context requires row-level review."
