@@ -233,6 +233,35 @@ class KitchenService {
     });
   }
 
+  /// New personal revision only: no implicit food bindings, replanning or ratios.
+  Future<RecipeRevision> splitRecipeIngredient({
+    required String sourceRevisionKey,
+    required int line,
+    required List<CatalogIngredient> components,
+    required String variantId,
+    required String revision,
+    required String reviewNote,
+    required DateTime reviewedAt,
+    required bool acknowledgeCompleteReplacement,
+  }) async {
+    final source = recipeBook.revisions[sourceRevisionKey];
+    if (source == null) {
+      throw StateError('Register and review exact source revision first');
+    }
+    final draft = buildIngredientSplitRevision(
+      source: source,
+      line: line,
+      components: components,
+      variantId: variantId,
+      revision: revision,
+      reviewNote: reviewNote,
+      reviewedAt: reviewedAt,
+      acknowledgeCompleteReplacement: acknowledgeCompleteReplacement,
+    );
+    await saveRecipeRevision(draft);
+    return draft;
+  }
+
   Future<RecipeRevision> _resolveMeal(PlannedMeal meal) async {
     final book = recipeBook;
     if (meal.recipeRevisionKey != null) {

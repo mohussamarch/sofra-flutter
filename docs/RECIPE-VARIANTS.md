@@ -44,3 +44,8 @@ Use `saveRecipeFamily` for another dish, then `saveRecipeRevision` for full vari
 ## Current limits / next task
 
 54 original recipes preserved;605 review lines and0 verified nutrition bindings. This delivers the mechanism, not populated regional variants or complete recipe nutrition. Source identity proposals and atomic acceptance are now implemented in RECIPE-REFERENCES.md (197 lines/53 recipes, not complete nutrition bindings). Next: resolve measured units/compound lines and preparation evidence, then connect the external UI to this API. No pricing feed, medical targets, Blender models or interface changes were added.
+
+
+## Explicit compound splits
+
+Implemented splitRecipeIngredient/buildIngredientSplitRevision with typed immutable source review, new personal revision and exact parent/full-content guard. See COMPOUND-REVISIONS.md. No automatic recipe ratios, binding inheritance, replanning or published recipe facts.

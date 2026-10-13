@@ -103,3 +103,8 @@ See RECIPE-REFERENCES.md for the implemented `RecipeReferenceRepository`, explic
 ## Accepted source measures and actual cooking quantities
 
 See docs/HOUSEHOLD-MEASURES.md. KitchenService.acceptRecipeHouseholdMeasure saves explicit exact-revision/line source estimates with immutable evidence after async race checks. confirmCooking(actualUsesByLine: ...) accepts actual amounts for numeric/count lines as well; acknowledgeSourceMeasureEstimates is required only for source estimates actually used. The same resolved amount drives stock/cost/nutrition. History freezes quantity evidence/confidence and once-only deduction. Source measures do not make prepared nutrition complete; no UI/Firebase migration/APK integration in this unit.
+
+
+## Compound line revision API
+
+KitchenService.splitRecipeIngredient creates a new reviewed personal revision with2+explicit quantified components, exact parent stamp and no inherited food selections. See COMPOUND-REVISIONS.md for contract and retry semantics. Preparation evidence index is separate in PREPARATION-EVIDENCE.md; no approved transforms yet.

@@ -2,15 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T09:10:13.357714+00:00",
-    "taskId": "measure-integration",
-    "summary": "Explicit per-revision measure acceptance persisted; actual/estimated quantities use consistent stock/cost/nutrition and freeze evidence.86Flutter/clean analyze/33Node passed. Compound revisions next.",
+    "at": "2026-10-13T09:33:48.842427+00:00",
+    "taskId": "preparation-evidence",
+    "summary": "Compound split mechanism verified6new/92fullFlutter/cleanAnalyze; continued next unit with4official USDA source records, document/data licenses separated,0approved factors/transforms;34Nodepassed.",
     "evidence": [
-      "test/household_measure_integration_test.dart",
-      "lib/data/kitchen_service.dart",
-      "lib/domain/food_nutrition.dart",
-      "tool/food/collector-cli.test.mjs",
-      "docs/HANDOFF.md#31"
+      "test/compound_revisions_test.dart",
+      "data/nutrition/preparation-sources-review.json",
+      "tool/nutrition/preparation-sources.test.mjs",
+      "docs/HANDOFF.md#32"
     ]
   },
   "tasks": [
@@ -60,18 +59,30 @@
     {
       "id": "compound-revisions",
       "priority": 25,
-      "status": "ready",
+      "status": "done",
       "dependsOn": [
         "measure-integration"
       ],
-      "nextAction": "Split compound recipe lines only through a new explicit reviewed revision with separate user-confirmed quantities and food identities; never map salt+pepper to salt alone. Preserve old plans/history and require fresh line bindings."
+      "nextAction": "Split compound recipe lines only through a new explicit reviewed revision with separate user-confirmed quantities and food identities; never map salt+pepper to salt alone. Preserve old plans/history and require fresh line bindings.",
+      "lastAttemptAt": "2026-10-13T09:22:28.173626+00:00",
+      "completedAt": "2026-10-13T09:33:48.842427+00:00",
+      "evidence": [
+        "lib/domain/recipe_variants.dart",
+        "lib/data/kitchen_service.dart",
+        "test/compound_revisions_test.dart"
+      ]
     },
     {
       "id": "preparation-evidence",
       "priority": 30,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Research exact cooked forms, edible yield and nutrient retention for priority recipes with authoritative sources; retain gaps"
+      "nextAction": "Review explicit reuse license and extract a first exact food/preparation/nutrient row with archived source provenance; keep edible fraction/mass yield/retention separate. Retention Release6 covers selected vitamins/minerals/alcohol, not universal protein/fat/sugar/fibre factors. No approved transforms yet.",
+      "stage": "official-source-index-reviewed; factors-unextracted",
+      "evidence": [
+        "data/nutrition/preparation-sources-review.json",
+        "tool/nutrition/preparation-sources.test.mjs"
+      ]
     },
     {
       "id": "allergen-evidence",

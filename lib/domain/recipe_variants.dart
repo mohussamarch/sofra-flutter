@@ -20,6 +20,119 @@ class RecipeFamily {
       RecipeFamily(id: j['id'] as String, name: j['name'] as String);
 }
 
+/// User review evidence, not source-authored recipe facts or inferred split ratios.
+class IngredientSplitReview {
+  IngredientSplitReview({
+    required this.sourceRevisionKey,
+    required this.sourceSnapshotVersion,
+    required this.line,
+    required List<CatalogIngredient> components,
+    required this.note,
+    required DateTime reviewedAt,
+  }) : components = List.unmodifiable(
+         components.map((v) => CatalogIngredient.fromJson(v.toJson())),
+       ),
+       reviewedAt = reviewedAt.toUtc() {
+    _requiredText(sourceRevisionKey);
+    _requiredText(sourceSnapshotVersion);
+    _requiredText(note);
+    if (line < 0 ||
+        this.components.length < 2 ||
+        this.components.any((v) => v.amount == null) ||
+        this.components.map((v) => v.id).toSet().length !=
+            this.components.length) {
+      throw ArgumentError(
+        'Complete split requires2+distinct quantified components',
+      );
+    }
+  }
+  final String sourceRevisionKey, sourceSnapshotVersion, note;
+  final int line;
+  final List<CatalogIngredient> components;
+  final DateTime reviewedAt;
+  Map<String, dynamic> toJson() => {
+    'version': 1,
+    'sourceRevisionKey': sourceRevisionKey,
+    'sourceSnapshotVersion': sourceSnapshotVersion,
+    'line': line,
+    'components': components.map((v) => v.toJson()).toList(),
+    'note': note,
+    'reviewedAt': reviewedAt.toIso8601String(),
+  };
+  factory IngredientSplitReview.fromJson(Map<String, dynamic> j) {
+    if (j['version'] != 1) {
+      throw const FormatException('Ingredient split review version');
+    }
+    return IngredientSplitReview(
+      sourceRevisionKey: j['sourceRevisionKey'] as String,
+      sourceSnapshotVersion: j['sourceSnapshotVersion'] as String,
+      line: j['line'] as int,
+      components: (j['components'] as List)
+          .map(
+            (v) =>
+                CatalogIngredient.fromJson(Map<String, dynamic>.from(v as Map)),
+          )
+          .toList(),
+      note: j['note'] as String,
+      reviewedAt: DateTime.parse(j['reviewedAt'] as String),
+    );
+  }
+}
+
+RecipeRevision buildIngredientSplitRevision({
+  required RecipeRevision source,
+  required int line,
+  required List<CatalogIngredient> components,
+  required String variantId,
+  required String revision,
+  required String reviewNote,
+  required DateTime reviewedAt,
+  required bool acknowledgeCompleteReplacement,
+}) {
+  if (!acknowledgeCompleteReplacement) {
+    throw ArgumentError(
+      'Explicit complete replacement/instruction review required',
+    );
+  }
+  if (line < 0 || line >= source.recipe.ingredients.length) {
+    throw RangeError('Source ingredient line');
+  }
+  final review = IngredientSplitReview(
+    sourceRevisionKey: source.key,
+    sourceSnapshotVersion: recipeSnapshotVersion(source.recipe),
+    line: line,
+    components: components,
+    note: reviewNote,
+    reviewedAt: reviewedAt,
+  );
+  if (review.components.any(
+    (v) => v.id == source.recipe.ingredients[line].id,
+  )) {
+    throw ArgumentError(
+      'Split components cannot retain the replaced compound identity',
+    );
+  }
+  final recipe = CatalogRecipe.fromJson({
+    ...source.recipe.toJson(),
+    'id': variantId,
+    'ingredients': [
+      ...source.recipe.ingredients.take(line).map((v) => v.toJson()),
+      ...review.components.map((v) => v.toJson()),
+      ...source.recipe.ingredients.skip(line + 1).map((v) => v.toJson()),
+    ],
+  });
+  return RecipeRevision(
+    familyId: source.familyId,
+    revision: revision,
+    kind: RecipeRevisionKind.personal,
+    parentKey: source.key,
+    region: source.region,
+    method: source.method,
+    recipe: recipe,
+    ingredientSplitReview: review,
+  );
+}
+
 /// A complete immutable revision: no live inheritance of ingredients or steps.
 class RecipeRevision {
   RecipeRevision({
@@ -30,12 +143,20 @@ class RecipeRevision {
     this.parentKey,
     this.region,
     this.method,
+    this.ingredientSplitReview,
   }) : recipe = CatalogRecipe.fromJson(recipe.toJson()) {
     _requiredText(familyId);
     _requiredText(revision);
     if (parentKey != null) _requiredText(parentKey!);
     if (kind == RecipeRevisionKind.personal && parentKey == null) {
       throw ArgumentError('Personal recipes require a source revision');
+    }
+    if (ingredientSplitReview != null &&
+        (kind != RecipeRevisionKind.personal ||
+            parentKey != ingredientSplitReview!.sourceRevisionKey)) {
+      throw ArgumentError(
+        'Split review must reference its personal revision parent',
+      );
     }
     if (region != null) _requiredText(region!);
     if (method != null) _requiredText(method!);
@@ -44,6 +165,7 @@ class RecipeRevision {
   final RecipeRevisionKind kind;
   final CatalogRecipe recipe;
   final String? parentKey, region, method;
+  final IngredientSplitReview? ingredientSplitReview;
   String get variantId => recipe.id;
   String get key => jsonEncode([variantId, revision]);
   Map<String, dynamic> toJson() => {
@@ -53,6 +175,7 @@ class RecipeRevision {
     'kind': kind.name,
     'recipe': recipe.toJson(),
     'parentKey': parentKey,
+    'ingredientSplitReview': ingredientSplitReview?.toJson(),
     'region': region,
     'method': method,
   };
@@ -68,6 +191,11 @@ class RecipeRevision {
         Map<String, dynamic>.from(j['recipe'] as Map),
       ),
       parentKey: j['parentKey'] as String?,
+      ingredientSplitReview: j['ingredientSplitReview'] == null
+          ? null
+          : IngredientSplitReview.fromJson(
+              Map<String, dynamic>.from(j['ingredientSplitReview'] as Map),
+            ),
       region: j['region'] as String?,
       method: j['method'] as String?,
     );
@@ -99,6 +227,36 @@ class RecipeBook {
           throw const FormatException('Missing, cyclic or cross-family source');
         }
         parent = source.parentKey;
+      }
+    }
+    for (final revision in this.revisions.values) {
+      final review = revision.ingredientSplitReview;
+      if (review == null) continue;
+      final source = this.revisions[review.sourceRevisionKey]!;
+      if (review.sourceSnapshotVersion !=
+              recipeSnapshotVersion(source.recipe) ||
+          review.line >= source.recipe.ingredients.length ||
+          review.components.any(
+            (v) => v.id == source.recipe.ingredients[review.line].id,
+          )) {
+        throw const FormatException('Stale or invalid compound split source');
+      }
+      final expected = CatalogRecipe.fromJson({
+        ...source.recipe.toJson(),
+        'id': revision.variantId,
+        'ingredients': [
+          ...source.recipe.ingredients.take(review.line).map((v) => v.toJson()),
+          ...review.components.map((v) => v.toJson()),
+          ...source.recipe.ingredients
+              .skip(review.line + 1)
+              .map((v) => v.toJson()),
+        ],
+      });
+      if (jsonEncode(expected.toJson()) !=
+          jsonEncode(revision.recipe.toJson())) {
+        throw const FormatException(
+          'Unreviewed changes outside ingredient split',
+        );
       }
     }
     for (final e in this.active.entries) {

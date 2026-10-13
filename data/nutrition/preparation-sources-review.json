@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "reviewedDate": "2026-10-13",
+  "reviewStatus": "source-index-reviewed; no coefficients extracted or approved",
+  "scope": "Authoritative starting documents for food-form distinctions, edible fraction/yields, and nutrient retention. This index does not establish recipe-specific transformations or finished mixed-recipe nutrition.",
+  "quantityConcepts": {
+    "massYield": {
+      "definition": "Prepared mass divided by input mass for an expressly matching food and preparation.",
+      "status": "unknown; no numeric factors extracted"
+    },
+    "edibleFraction": {
+      "definition": "Edible portion divided by as-acquired mass, with refuse/form basis stated.",
+      "status": "unknown; no numeric factors extracted"
+    },
+    "nutrientRetention": {
+      "definition": "Nutrient amount retained after a matching preparation, distinct from mass yield and edible fraction.",
+      "status": "unknown; no numeric factors extracted"
+    }
+  },
+  "sources": [
+    {
+      "id": "usda-fdc-foundation-documentation",
+      "title": "Foundation Foods Documentation",
+      "authority": "USDA Agricultural Research Service, FoodData Central",
+      "url": "https://fdc.nal.usda.gov/Foundation_Foods_Documentation/",
+      "documentUrl": "https://fdc.nal.usda.gov/docs/Foundation_Foods_Documentation_Apr2024.pdf",
+      "publicationDate": "2024-04 (document filename/release; page publication date not stated)",
+      "retrievedDate": "2026-10-13",
+      "license": "Document/page reuse license unknown; any stated FDC data license applies to datasets, not automatically to documentation PDFs or site text.",
+      "verifiedFindings": [
+        "Foundation food descriptions characterize forms such as raw or cooked.",
+        "Refuse descriptions can express inedible material as a percentage of as-acquired weight and are used to compute edible portion.",
+        "Foundation nutrient values may be incomplete; some agriculture data are on atypical moisture bases."
+      ],
+      "applicability": "Useful to distinguish raw/cooked records and identify documented refuse/weight fields when selecting an exact food record; analytical Foundation data may support ingredient inputs after explicit review.",
+      "limitations": "Does not supply a universal cooking yield or prove an entry matches a specific product, cuisine, recipe, or preparation. Missing values and bases stay unknown.",
+      "reviewStatus": "page and linked April 2024 PDF metadata/content reviewed; source guidance only",
+      "sourceBytesArchived": false,
+      "sourceSha256": null,
+      "dataLicense": "CC0-1.0 (FDC data only)",
+      "dataLicenseEvidenceUrl": "https://fdc.nal.usda.gov/api-guide/",
+      "documentLicense": "unknown"
+    },
+    {
+      "id": "usda-nutrient-retention-release-6",
+      "title": "USDA Table of Nutrient Retention Factors, Release 6",
+      "authority": "USDA Agricultural Research Service, Nutrient Data Laboratory",
+      "url": "https://www.ars.usda.gov/northeast-area/beltsville-md-bhnrc/beltsville-human-nutrition-research-center/methods-and-application-of-food-composition-laboratory/mafcl-site-pages/nutrient-retention-factors/",
+      "documentUrl": "https://www.ars.usda.gov/ARSUserFiles/80400525/Data/retn/retn06.pdf",
+      "publicationDate": "2007-12",
+      "retrievedDate": "2026-10-13",
+      "license": "Document/page reuse license unknown; any stated FDC data license applies to datasets, not automatically to documentation PDFs or site text.",
+      "verifiedFindings": [
+        "The PDF identifies itself as Release 6, prepared by USDA ARS Nutrient Data Laboratory, dated December 2007.",
+        "The document describes nutrient-specific retention factors for selected vitamins, minerals, and alcohol across food/preparation categories.",
+        "Its true-retention method uses nutrient concentrations and food weights before and after cooking; the document notes factors can be imputed where data are limited."
+      ],
+      "applicability": "Potential reference for a nutrient-retention transform only where the exact food group, nutrient, and preparation category match after row-level review.",
+      "limitations": "Factors are not mass yields, edible fractions, clinical rules, or universal recipe multipliers. Release is dated and may include imputed factors; no row-level factor was extracted here.",
+      "reviewStatus": "official page and 18-page PDF content/metadata reviewed; no factor approved",
+      "sourceBytesArchived": false,
+      "sourceSha256": null,
+      "dataLicense": "unknown",
+      "dataLicenseEvidenceUrl": null,
+      "documentLicense": "unknown"
+    },
+    {
+      "id": "usda-food-buying-guide-yields",
+      "title": "USDA Food Buying Guide for Child Nutrition Programs — Yield Tables and Methods",
+      "authority": "USDA Food and Nutrition Service",
+      "url": "https://foodbuyingguide.fns.usda.gov/Home/About",
+      "downloadIndexUrl": "https://foodbuyingguide.fns.usda.gov/Appendix/DownLoadFBG",
+      "publicationDate": "Dynamic guide; consulted page lists dated table updates. Grains yield table last updated 2026-03-25; meats/meat-alternates 2026-09-02.",
+      "retrievedDate": "2026-10-13",
+      "license": "Document/page reuse license unknown; any stated FDC data license applies to datasets, not automatically to documentation PDFs or site text.",
+      "verifiedFindings": [
+        "USDA describes yields as average yields based on its research and as planning/production guidance.",
+        "Tables distinguish food as purchased, purchase unit, edible-portion servings, serving form, and additional cooked/ready-to-use quantities.",
+        "The download index exposes separate grains and meats yield tables with stated update dates; its methods page gives examples for raw-to-cooked ground beef and cooked grains/rice."
+      ],
+      "applicability": "A possible exact-form yield starting point for listed institutional foods such as grains/rice and meats, after checking the actual table row and purchase/preparation assumptions.",
+      "limitations": "Designed for U.S. child-nutrition purchasing and serving. Average planning yields are not interchangeable with ingredient mass yield, refuse fraction, or nutrient retention. No factors extracted. It does not establish bechamel, pasta, or any finished mixed recipe yield; proxy cuisine is not claimed.",
+      "reviewStatus": "official methods page and downloadable-table index reviewed; individual yield rows not extracted",
+      "sourceBytesArchived": false,
+      "sourceSha256": null,
+      "dataLicense": "unknown",
+      "dataLicenseEvidenceUrl": null,
+      "documentLicense": "unknown"
+    },
+    {
+      "id": "usda-fdc-downloadable-datasets",
+      "title": "FoodData Central Downloadable Data and Field Descriptions",
+      "authority": "USDA Agricultural Research Service, FoodData Central",
+      "url": "https://fdc.nal.usda.gov/download-datasets/",
+      "publicationDate": "Dynamic page; no single publication date stated.",
+      "retrievedDate": "2026-10-13",
+      "license": "Document/page reuse license unknown; any stated FDC data license applies to datasets, not automatically to documentation PDFs or site text.",
+      "verifiedFindings": [
+        "USDA provides downloadable records in CSV and JSON and links field descriptions.",
+        "The page lists dataset types and releases; Foundation Foods and SR Legacy have release dates, while FNDDS follows survey cycles."
+      ],
+      "applicability": "Useful for locating versioned source records and field semantics after an exact raw/cooked identity has been chosen.",
+      "limitations": "A release listing does not itself provide a food-specific yield or retention factor. Data types and record bases must not be conflated; no dataset was downloaded or parsed for this review.",
+      "reviewStatus": "official page reviewed; no data files downloaded",
+      "sourceBytesArchived": false,
+      "sourceSha256": null,
+      "dataLicense": "CC0-1.0 (FDC data only)",
+      "dataLicenseEvidenceUrl": "https://fdc.nal.usda.gov/api-guide/",
+      "documentLicense": "unknown"
+    }
+  ],
+  "explicitUnknowns": [
+    "No preparation coefficient, recipe yield, edible fraction, or nutrient-retention factor was extracted.",
+    "No source in this index establishes a transformation for finished bechamel pasta or another mixed dish.",
+    "No proxy cuisine or clinical rule is approved.",
+    "USDA Food Buying Guide applicability to consumer recipes outside its institutional planning context requires row-level review."
+  ],
+  "approvedFactors": [],
+  "approvedTransforms": []
+}
