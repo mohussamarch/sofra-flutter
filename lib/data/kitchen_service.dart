@@ -10,6 +10,7 @@ import '../domain/cooking_timer.dart';
 import '../domain/market_profile.dart';
 import '../domain/models.dart';
 import 'recipe_repository.dart';
+import 'recipe_reference_repository.dart';
 import 'state_store.dart';
 
 Map<String, dynamic> _clone(Map<String, dynamic> value) =>
@@ -272,6 +273,54 @@ class KitchenService {
     });
   }
 
+  /// Resolve outside the transaction, then atomically save exact revision bindings.
+  /// Existing user-reviewed selections are preserved unless replacement is explicit.
+  Future<RecipeReferenceApplication> applyRecipeReferences(
+    String planId,
+    RecipeReferenceRepository references, {
+    required bool acknowledgeGenericReferences,
+    Map<int, String> choices = const {},
+    bool replaceExisting = false,
+  }) async {
+    final submittedChoices = Map<int, String>.from(choices);
+    final meal = plans.where((v) => v.id == planId).single;
+    if (meal.completed) {
+      throw StateError('Cannot change a cooked meal reference review');
+    }
+    final revision = await _resolveMeal(meal);
+    final resolution = await references.resolve(
+      revision,
+      acknowledgeGenericReferences: acknowledgeGenericReferences,
+      choices: submittedChoices,
+    );
+    final applied = <int>[], preserved = <int>[];
+    if (resolution.selections.isNotEmpty) {
+      await _write((k) {
+        final current = (k['plans'] as List)
+            .where((v) => v['id'] == planId)
+            .single;
+        if (current['completed'] == true ||
+            current['recipeRevisionKey'] != revision.key) {
+          throw StateError('Plan changed during reference review');
+        }
+        final selections = _nutrition(k)['selections'] as Map;
+        for (final selection in resolution.selections) {
+          if (selections.containsKey(selection.key) && !replaceExisting) {
+            preserved.add(selection.line);
+          } else {
+            selections[selection.key] = selection.toJson();
+            applied.add(selection.line);
+          }
+        }
+      });
+    }
+    return RecipeReferenceApplication(
+      resolution: resolution,
+      appliedLines: applied,
+      preservedLines: preserved,
+    );
+  }
+
   List<RecipeFoodSelection> _foodSelections(
     Map<String, dynamic> k,
     RecipeRevision revision,
@@ -309,6 +358,39 @@ class KitchenService {
       excludedLines: excludedLines,
       measuredLines: measuredLines,
       cookedYieldGrams: cookedYieldGrams,
+    );
+  }
+
+  /// A separate input-only estimate; never used for cooked history or intake.
+  /// Quantity form is preserved: cooked weights cannot be reinterpreted as raw.
+  Future<IngredientNutritionEstimate> previewIngredientNutrition(
+    String planId, {
+    Set<String> optionalIds = const {},
+    Set<int>? optionalLines,
+    Set<int> excludedLines = const {},
+    Map<int, FoodAmount> measuredLines = const {},
+  }) async {
+    final meal = plans.where((v) => v.id == planId).single;
+    final revision = await _resolveMeal(meal);
+    final inputs = _foodSelections(snapshot, revision)
+        .map(
+          (v) => RecipeFoodSelection.fromJson({
+            ...v.toJson(),
+            'preparedForm': v.food.form.name,
+            'preparation': null,
+          }),
+        )
+        .toList();
+    return IngredientNutritionEstimate(
+      assessRecipeNutrition(
+        scaled: revision.recipe.forServings(meal.servings),
+        selections: inputs,
+        recipeRevisionKey: revision.key,
+        optionalIds: optionalIds,
+        optionalLines: optionalLines,
+        excludedLines: excludedLines,
+        measuredLines: measuredLines,
+      ),
     );
   }
 

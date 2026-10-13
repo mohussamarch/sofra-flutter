@@ -93,3 +93,8 @@ final week = kitchen.calendar(DateTime(2026, 10, 12), CalendarMode.week);
 نجح Flutter analyze، و23 اختبارًا، وبناء الويب بالإعدادات الحالية. مرجع TypeScript/Dart يفحص المقادير ونصوصها ومدد الخطوات في 216 حالة. اختبارات المتصفح الحالية والسابقة نجحت على 412 و360 بلا أخطاء JS.
 
 لم يُبن APK أو يُنشر Hosting أو تُعدّل خدمات Firebase بهذه الدفعة. مصادر الأسعار الفعلية وتوليد خطة شهر والبدائل وسكان الكاميرا والفواتير مؤجلة. نواة التغذية والبنك الحقيقي متاحان الآن بدليلFOOD-DATA-ARCHITECTURE؛ ربط الوصفات والملصقات المعتمد يحتاج مراجعة، ولا قيم مفترضة.
+
+
+## Recipe source proposals —13October2026
+
+See RECIPE-REFERENCES.md for the implemented `RecipeReferenceRepository`, explicit generic acceptance/choices, atomic `KitchenService.applyRecipeReferences`, source freshness guards and `previewIngredientNutrition`. Ingredient-input estimates remain separate from conservative cooked nutrition and person intake.197 identity proposals/53 recipes are not197 verified nutrition bindings. Legacy UI and previous APK do not consume these APIs automatically. The older23-test/build statement above is historical; latest actual gates are recorded in STATUS/HANDOFF§22.

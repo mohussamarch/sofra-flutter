@@ -2,22 +2,22 @@
 
 Canonical checkout: `E:\work\SOFRA\app`. This bank is a source-separated, unreviewed seed of real packaged product records, not a complete food market catalogue or a verified ranking of popular products. Product names, market tags and nutrient values are community supplied by Open Food Facts (OFF). No source values were invented. No current prices, photos, medical recommendations or baby-feeding recommendations were collected.
 
-## Current bounded collection —12October2026
+## Current collected snapshot —13October2026
 
-1035 named GTIN-valid records; Egypt453, Saudi593, overlap11. All20category groups have records.757have nutrition,685core macros,484ingredient text,244declared allergen tags,844brands. All1035bases remain unreviewed; none is approved for exact calculation by this bank alone.
+1344 named GTIN-valid records; Egypt624, Saudi731, overlap11. All20category groups have records.981have nutrition,887core macros,551ingredient text,273declared allergen tags,1036brands. All1344bases remain unreviewed; none is approved for exact calculation by this bank alone.
 
-35source archives,106quarantined occurrences and167audited duplicates. Latest3request batch succeeded (Saudi condiments p1, Egypt beverages p1, Saudi beverages p2), adding233unique products;0new failures, existing backoff retained. Manifest remains authoritative for counts/hashes.
+43source archives,184quarantined occurrences and248audited duplicates. Since1035snapshot:309unique products;24requests,8success/16HTTP503failures with saved backoff. Collection continued until no job due; next retry Saudi sweets p1 at01:43:39.331Z. Not a complete bank; manifest/checkpoint remain authoritative.
 
 | Category | Records |
 | --- | ---: |
-| Sweets / chocolate / biscuits / salty snacks | 48 / 24 / 119 / 42 |
-| Dairy / oils / ghee | 183 / 31 / 2 |
+| Sweets / chocolate / biscuits / salty snacks | 52 / 65 / 119 / 42 |
+| Dairy / oils / ghee | 193 / 35 / 2 |
 | Rice / pasta / flour / pulses | 4 / 61 / 4 / 6 |
 | Canned fish / meat / canned vegetables | 15 / 14 / 9 |
-| Condiments / spices | 140 / 25 |
-| Beverages / frozen / bakery / baby | 278 / 13 / 42 / 9 |
+| Condiments / spices | 145 / 25 |
+| Beverages / frozen / bakery / baby | 371 / 13 / 42 / 9 |
 
-Groups overlap. Cooking categories still need sourced expansion; market availability and popularity were not independently verified.
+Groups overlap. Cooking categories need sourced expansion; market availability and popularity were not independently verified. Generic recipe source proposals are a separate CC0artifact described in RECIPE-REFERENCES.md.
 
 ## Files
 

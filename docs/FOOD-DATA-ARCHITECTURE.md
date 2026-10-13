@@ -2,7 +2,7 @@
 
 12 أكتوبر 2026. نسخة العمل الوحيدة `E:\work\SOFRA\app`. هذا وصف للكود والبيانات الحالية مع حدودها، وليس ضمان اكتمال بيانات السوق أو دقة توصية طبية. الواجهات لم تُعدّل.
 
-> تحديث: نسخ الوصفات المثبتة وربط التغذية حسب الإصدار موضحة في RECIPE-VARIANTS.md. أعداد قسم البنك أدناه لقطة البداية التاريخية؛ manifest.json وPRODUCT-DATA.md مرجع أحدث1035منتج.
+> تحديث: نسخ الوصفات المثبتة وربط التغذية حسب الإصدار موضحة في RECIPE-VARIANTS.md. أعداد قسم البنك أدناه لقطة البداية التاريخية؛ manifest.json وPRODUCT-DATA.md مرجع أحدث1344منتج.
 
 ## 1. العلاقات الأساسية
 
@@ -140,3 +140,8 @@ await kitchen.recordNutritionEvents(events: [explicitPortionEvent]);
 - [USDA التحميل والإصدارات](https://fdc.nal.usda.gov/download-datasets/) و[APIوالرخصة](https://fdc.nal.usda.gov/api-guide/).
 - [FDA الحساسية والتلوث المتبادل](https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies): مرجع لفصلContains/MayContain، وليس تطبيق قواعد تنظيمية أمريكية على كل بلد.
 - مصادرOFFوتراخيصها وقيودها في `docs/PRODUCT-DATA.md`؛ لا نصوص علمية منسوخة ولا قيم غذائية مختلقة.
+
+
+## تحديث ربط المراجع —13October2026
+
+RECIPE-REFERENCES.md يشرح197مقترح هوية/53وصفة، القبول الصريح والحفظ الذري، حماية الإصدار/المصدر وتقدير المكونات المنفصل عن المطبوخ. ليست تغذية وصفات مكتملة؛ القيم غير المعروفة تبقى مجهولة.

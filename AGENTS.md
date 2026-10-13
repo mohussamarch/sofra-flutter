@@ -50,7 +50,7 @@
 ## Nutrition and external Blender design
 
 - Food API: docs/FOOD-DATA-ARCHITECTURE.md. Keep USDA CC0 and OFF ODbL/DbCL banks separate; preserve provenance, unknowns, exact form/basis and distinct nutrient definitions.
-- Recipe selections are explicit per line.54recipes have605review lines and0verified bindings. Legacy/demo UI does not gain nutrition automatically.
+- Recipe selections are explicit per revision and line.54recipes have605review lines and0fully verified bindings.197 generic identity proposals across53recipes now load through RecipeReferenceRepository; see docs/RECIPE-REFERENCES.md. Explicit acceptance/choices, blocked compounds, exact snapshot/source guards and separate ingredient-input estimates are mandatory. Legacy/demo UI does not gain nutrition automatically.
 - KitchenService remains the only state owner; cooking freezes nutrition without automatic intake. Preserve append-only corrections and850KBguard. No Firebase migration/billing occurred.
 - Blender brief: docs/BLENDER-DESIGN-BRIEF.md. No models/renderer built or thread created. Renderer requires a small asset test onS24Ultra. No UI redesign/audio/image generation authorized by this brief.
 

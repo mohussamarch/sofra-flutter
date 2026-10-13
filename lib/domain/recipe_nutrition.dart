@@ -19,11 +19,21 @@ class RecipeFoodSelection {
     this.notConsumed = false,
     this.exclusionReason,
     this.recipeRevisionKey,
+    this.referenceReviewId,
+    this.referenceEvidence,
   }) {
     if (recipeId.trim().isEmpty ||
         line < 0 ||
         (recipeRevisionKey != null && recipeRevisionKey!.trim().isEmpty)) {
       throw ArgumentError('Invalid recipe line');
+    }
+    if ((referenceReviewId == null) != (referenceEvidence == null) ||
+        (referenceReviewId != null &&
+            (referenceReviewId!.trim().isEmpty ||
+                referenceEvidence!.trim().isEmpty))) {
+      throw ArgumentError(
+        'Reference acceptance requires identity and evidence',
+      );
     }
     if (notConsumed &&
         (exclusionReason == null || exclusionReason!.trim().isEmpty)) {
@@ -32,6 +42,7 @@ class RecipeFoodSelection {
   }
   final String recipeId;
   final String? recipeRevisionKey;
+  final String? referenceReviewId, referenceEvidence;
   final int line;
   final FoodRecord food;
   final FoodForm amountForm, preparedForm;
@@ -46,6 +57,8 @@ class RecipeFoodSelection {
     'version': 1,
     'recipeId': recipeId,
     'recipeRevisionKey': recipeRevisionKey,
+    'referenceReviewId': referenceReviewId,
+    'referenceEvidence': referenceEvidence,
     'line': line,
     'food': food.toJson(),
     'amountForm': amountForm.name,
@@ -63,6 +76,8 @@ class RecipeFoodSelection {
     return RecipeFoodSelection(
       recipeId: j['recipeId'] as String,
       recipeRevisionKey: j['recipeRevisionKey'] as String?,
+      referenceReviewId: j['referenceReviewId'] as String?,
+      referenceEvidence: j['referenceEvidence'] as String?,
       line: j['line'] as int,
       food: FoodRecord.fromJson(Map<String, dynamic>.from(j['food'] as Map)),
       amountForm: FoodForm.values.byName(j['amountForm'] as String),
@@ -238,4 +253,18 @@ String recipeNutritionVersion(CatalogRecipe recipe) {
     hash = ((hash ^ BigInt.from(byte)) * prime) & mask;
   }
   return 'catalog-fnv1a64:${hash.toRadixString(16).padLeft(16, '0')}';
+}
+
+/// Inputs before cooking losses/absorption. Not a cooked MealBatch or intake.
+/// Complete values still describe generic input composition, never the meal.
+class IngredientNutritionEstimate {
+  IngredientNutritionEstimate(RecipeNutritionResult result)
+    : whole = Map.unmodifiable(result.whole),
+      perPortion = Map.unmodifiable(result.perPortion),
+      recipeId = result.recipeId,
+      recipeVersion = result.recipeVersion;
+  final String recipeId, recipeVersion;
+  final Map<NutrientId, NutrientTotal> whole, perPortion;
+  String get basis => 'ingredientInput';
+  bool get estimated => true;
 }

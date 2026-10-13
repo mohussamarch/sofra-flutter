@@ -43,4 +43,4 @@ Use `saveRecipeFamily` for another dish, then `saveRecipeRevision` for full vari
 
 ## Current limits / next task
 
-54 original recipes preserved;605 review lines and0 verified nutrition bindings. This delivers the mechanism, not populated regional variants or complete recipe nutrition. Next: source-review bechamel ingredients/forms/units and label basis, bind them to a pinned revision, then connect the external UI to this API. No pricing feed, medical targets, Blender models or interface changes were added.
+54 original recipes preserved;605 review lines and0 verified nutrition bindings. This delivers the mechanism, not populated regional variants or complete recipe nutrition. Source identity proposals and atomic acceptance are now implemented in RECIPE-REFERENCES.md (197 lines/53 recipes, not complete nutrition bindings). Next: resolve measured units/compound lines and preparation evidence, then connect the external UI to this API. No pricing feed, medical targets, Blender models or interface changes were added.
