@@ -45,3 +45,10 @@ The CLI reads the current English source once, loads the union of authoritative 
 ## Explicit textual alternatives
 
 [alternatives-review.json](../data/recipes/identity-proposals/alternatives-review.json) adds8source lines. Seven offer salted/unsalted butter and80%-fat stick margarine references as distinct unreviewed candidates,not a selected or complete list. The vegan-qualified line deliberately remains without candidates pending specific product/label identity. Optionality/ranges stay undecided. Never add every candidate to stock,cost or nutrition; source choices and exact quantities require explicit review. Actual third-bank8/8/4/28/1/0 and aggregate3/24/22/9/50/1/0passed. All24remain unreviewed; unresolvedCount1counts absent candidates only.
+
+
+## Current checkpoint — heartbeat21:29 UTC
+
+French inventory completed: 1489 source pages/1011 conservatively parsed recipes/7128 ingredient lines/6408 steps/128 request archives. SourceExhausted=true, no pending IDs, no listing continuation. English3796/3640 unchanged. Next licensed source discovery remains open; no source cursor reset or final bank count cap, no combined unique-dish sum.
+
+New [ingredient-fate research](RECIPE-INGREDIENT-FATE.md) pins2source ingredient lines and6method steps; retained amounts and nutrient factors remain null,0runtime approvals.18linked tests/current source validators passed. Existing identity catalog3/24/22/9/50/1/0 unchanged. OFF2266/63 unchanged,503 gates saved. See HANDOFF§49 for exact requests, verification and next actions.

@@ -91,3 +91,10 @@ CurrentFrench621/874,gate2026-10-13T18:14:40.525Z;catalog3registeredEnglishbanks
 FinalsnapshotFrench804/1169,sourcecursoravailable/nonexhausted;freshquotaeachbatch. Threeidentitybanks24targets/22recipes/9foods/50refs/1withoutcandidate,0runtime. SeeHANDOFF§45–47.
 
 LatestFrench838/1218;sourceavailable/nonexhausted. Currentquota90reserve,not numericalbankcompletion. Priorraw/derivedrecords preserved;seeHANDOFF§48.
+
+
+## Current checkpoint — heartbeat21:29 UTC
+
+French inventory completed: 1489 source pages/1011 conservatively parsed recipes/7128 ingredient lines/6408 steps/128 request archives. SourceExhausted=true, no pending IDs, no listing continuation. English3796/3640 unchanged. Next licensed source discovery remains open; no source cursor reset or final bank count cap, no combined unique-dish sum.
+
+New [ingredient-fate research](RECIPE-INGREDIENT-FATE.md) pins2source ingredient lines and6method steps; retained amounts and nutrient factors remain null,0runtime approvals.18linked tests/current source validators passed. Existing identity catalog3/24/22/9/50/1/0 unchanged. OFF2266/63 unchanged,503 gates saved. See HANDOFF§49 for exact requests, verification and next actions.

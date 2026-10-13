@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "status": "ingredient-fate-research-unreviewed",
+  "createdAt": "2026-10-13T21:40:25.419Z",
+  "recipeSources": [
+    {
+      "recipeId": "wikibooks:6737",
+      "recordId": "wikibooks-6737-r4515548",
+      "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Hummus%20I&oldid=4515548",
+      "sourceSha256": "e9d8312f42f381881c89fcdaa6033152244ed3dba7f6ff616bd3ca8df97adef0",
+      "license": {
+        "id": "wikibooks-cookbook-cc-by-sa-4.0",
+        "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+        "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+        "policyStatus": "verified-license",
+        "pageExceptionStatus": "not-reviewed-per-page",
+        "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+        "changeNoticeRequired": true,
+        "shareAlikeRequired": true
+      },
+      "changeNotice": "Unreviewed ingredient-fate annotations and exact method anchors extracted; no nutritional retention, ingredient selection or runtime approval."
+    },
+    {
+      "recipeId": "wikibooks:24885",
+      "recordId": "wikibooks-24885-r4512548",
+      "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Mushy%20Peas&oldid=4512548",
+      "sourceSha256": "25125e11fb34669223904dc48f87da2695a635d2632cf152f76688fe53ca63c4",
+      "license": {
+        "id": "wikibooks-cookbook-cc-by-sa-4.0",
+        "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+        "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+        "policyStatus": "verified-license",
+        "pageExceptionStatus": "not-reviewed-per-page",
+        "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+        "changeNoticeRequired": true,
+        "shareAlikeRequired": true
+      },
+      "changeNotice": "Unreviewed ingredient-fate annotations and exact method anchors extracted; no nutritional retention, ingredient selection or runtime approval."
+    }
+  ],
+  "observations": [
+    {
+      "schemaVersion": 1,
+      "status": "ingredient-fate-unreviewed",
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:6737",
+        "recordId": "wikibooks-6737-r4515548",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4515548",
+        "sourceSha256": "e9d8312f42f381881c89fcdaa6033152244ed3dba7f6ff616bd3ca8df97adef0",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 2,
+        "lineId": "source-line-3",
+        "sourceText": "1 teaspoon baking soda",
+        "derivedRecipeSha256": "0cd45f931f43aa2a350d81fb57fdee22df87e8d0d6d61b5a1fdea1d6f37fc878"
+      },
+      "methodSteps": [
+        {
+          "stepIndex": 0,
+          "stepNumber": 1,
+          "text": "The night before you plan to cook, combine the chickpeas, 2.5 cups of water, and baking soda. Leave to soak for 6–12 hours."
+        },
+        {
+          "stepIndex": 1,
+          "stepNumber": 2,
+          "text": "Rinse."
+        },
+        {
+          "stepIndex": 4,
+          "stepNumber": 5,
+          "text": "Pour out the water. If desired, some can be reserved to add later, for extra flavor."
+        }
+      ],
+      "interpretation": "Baking soda is added to soaking water, followed by rinsing and pouring out cooking water. The source also allows reserving some cooking water. These steps do not establish how much baking soda or sodium is retained.",
+      "retainedIngredientFraction": null,
+      "nutrientRetention": null,
+      "requiresReview": true
+    },
+    {
+      "schemaVersion": 1,
+      "status": "ingredient-fate-unreviewed",
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:24885",
+        "recordId": "wikibooks-24885-r4512548",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4512548",
+        "sourceSha256": "25125e11fb34669223904dc48f87da2695a635d2632cf152f76688fe53ca63c4",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 2,
+        "lineId": "source-line-3",
+        "sourceText": "2 tsp baking soda",
+        "derivedRecipeSha256": "1873a71bac9ce43bfc6b101ebda929035c08fa3f41e53dbdb964d6e4be592836"
+      },
+      "methodSteps": [
+        {
+          "stepIndex": 0,
+          "stepNumber": 1,
+          "text": "Place the peas in 2–3 times their volume of water, along with the baking soda, which speeds the soaking process."
+        },
+        {
+          "stepIndex": 1,
+          "stepNumber": 2,
+          "text": "Leave to soak overnight."
+        },
+        {
+          "stepIndex": 2,
+          "stepNumber": 3,
+          "text": "The next day, drain the peas, and place in a saucepan with enough water to just cover them."
+        }
+      ],
+      "interpretation": "Baking soda is added to the soaking water, left overnight, and peas are drained before fresh water is added. The retained amount is not stated; no all-or-none assumption.",
+      "retainedIngredientFraction": null,
+      "nutrientRetention": null,
+      "requiresReview": true
+    }
+  ],
+  "limitations": [
+    "Source stage observations only; no accepted food identity, quantity, grams, yield or nutrient transformation.",
+    "Source uses soaking/rinsing/draining; neither zero nor full ingredient/nutrient retention is established.",
+    "Ingredient retained fraction and nutrient-specific retention are distinct unknowns; no universal factor or amount is invented.",
+    "Added stock/cost and consumed nutrition need separately reviewed fate evidence before any future runtime change. Existing runtime behavior is unchanged.",
+    "Wikibooks CC BY-SA attribution/change notice retained; page exceptions and interpretation remain unreviewed. Local consistency does not independently authenticate upstream content."
+  ]
+}

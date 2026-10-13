@@ -2,12 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T18:34:04.612586+00:00",
-    "taskId": "recipe-bank",
-    "summary": "Four-requestbatchadded34parsed/49sourcepages;French838/1218,old804recipesunchanged,currenthashes/re-extractionverified. Subsequentactualquota90reserve,no furtherresearch.",
+    "at": "2026-10-13T21:45:25.728505+00:00",
+    "taskId": "recipe-quantities",
+    "summary": "Ingredient-fate guard plus2source observations/6method anchors verified with18tests;French+173parsed,source inventory exhausted;no runtime approvals.",
     "evidence": [
-      "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
-      "data/recipes/bulk/fr-wikibooks-cuisine/checkpoint.json"
+      "tool/recipes/validate-ingredient-fate.mjs",
+      "tool/recipes/validate-ingredient-fate.test.mjs",
+      "data/recipes/ingredient-fate/soaking-review.json",
+      "data/recipes/bulk/fr-wikibooks-cuisine/index.json"
     ]
   },
   "tasks": [
@@ -75,19 +77,20 @@
       "priority": 28,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Readactualquota first;afterallwindows<90andordinarytrue continue saved French cursor in bounded batches with fresh fail-closed evidence. Sourceavailable/notexhausted;no Englishreset or unique-dishsum.",
-      "lastAttemptAt": "2026-10-13T18:31:15.686Z",
-      "lastProgressAt": "2026-10-13T18:34:04.612586+00:00",
+      "nextAction": "Discover another licensed source/category/language after actual quota checks. English and French current pools exhausted; preserve both cursors,never reset. Review source policy/discovery with bounded archived requests; no combined unique-dish sum.",
+      "lastAttemptAt": "2026-10-13T21:42:42.413Z",
+      "lastProgressAt": "2026-10-13T21:45:25.728505+00:00",
       "owner": null,
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
         "englishCuisineTags": 53,
-        "frenchSourcePages": 1218,
-        "frenchParsedRecipes": 838,
-        "frenchIngredientLines": 5849,
-        "frenchSteps": 5319,
-        "runtimeReady": 0
+        "frenchSourcePages": 1489,
+        "frenchParsedRecipes": 1011,
+        "frenchIngredientLines": 7128,
+        "frenchSteps": 6408,
+        "runtimeReady": 0,
+        "frenchSourceExhausted": true
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
@@ -99,7 +102,7 @@
         "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
         "docs/RECIPE-FRENCH-SOURCE.md"
       ],
-      "stage": "Independent French source collection and conservative parser implemented; English source remains exhausted"
+      "stage": "English and French current inventories exhausted; continuous licensed source discovery remains open."
     },
     {
       "id": "recipe-quantities",
@@ -125,9 +128,13 @@
         "identityCatalog": true,
         "registeredBanks": 3,
         "withoutCandidates": 1,
-        "recipeTargets": 22
+        "recipeTargets": 22,
+        "ingredientFateObservations": 2,
+        "methodStepReferences": 6,
+        "unknownRetentionCount": 2,
+        "fateRuntimeReady": 0
       },
-      "nextAction": "Review ingredient fate and explicit choices/identity/quantity/form before runtime admission; curate registered source alternatives without assuming dietary suitability or summing candidates.",
+      "nextAction": "Review explicit alternative selection and quantity/form decisions; retained ingredient and nutrient amounts remain null until independently reviewed. Fate research anchors2recipes/6steps are guarded,not runtime accepted.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -145,10 +152,14 @@
         "tool/recipes/validate-identity-catalog.mjs",
         "tool/recipes/validate-identity-catalog.test.mjs",
         "data/recipes/identity-proposals/catalog.json",
-        "data/recipes/identity-proposals/alternatives-review.json"
+        "data/recipes/identity-proposals/alternatives-review.json",
+        "tool/recipes/validate-ingredient-fate.mjs",
+        "tool/recipes/validate-ingredient-fate.test.mjs",
+        "data/recipes/ingredient-fate/soaking-review.json",
+        "docs/RECIPE-INGREDIENT-FATE.md"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T18:13:30.749583+00:00",
+      "lastProgressAt": "2026-10-13T21:45:25.728505+00:00",
       "stage": "Three guarded identity banks; explicit source alternatives and vegan-qualified unresolved case"
     },
     {
@@ -231,7 +242,7 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Readactualcursors:Saudi globalp10after19:09:27.872Z,Egyptglobalp8after19:59:41.143Z.2266/63unchangedaftersource503;onecheapcollector,noearlyretry.",
+      "nextAction": "2266products/63archivesunchanged. Readactualquotas/locks/checkpoint;Saudi p10after2026-10-13T23:31:01.818Z,Egypt p8after2026-10-14T01:30:53.428Z. No retry before gates or no-eligible loops.",
       "owner": null,
       "blockedUntil": "2026-10-13T19:09:27.872Z",
       "blockedReason": "OFF503backoff; independentrecipe/identitywork remains available",
@@ -243,7 +254,8 @@
         "quarantine": 335,
         "duplicateOccurrences": 693,
         "runtimeNutritionBasisApprovals": 0
-      }
+      },
+      "lastAttemptAt": "2026-10-13T21:31:01.818Z"
     },
     {
       "id": "budget-planner",
@@ -305,5 +317,6 @@
     "weeklyUsedPercent": 42,
     "ordinaryUsageAllowed": true,
     "action": "Reserve reached after completed bounded unit;no further research/agents/sourcecalls. Recheck later;no credits/reset."
-  }
+  },
+  "updatedAt": "2026-10-13T21:45:25.728505+00:00"
 }

@@ -104,3 +104,8 @@ Use `node tool/recipes/validate-identity-catalog.mjs` for registered banks. Pres
 ## Fresh source quota evidence
 
 Read actual usage before every new source batch. If automatic command review requires an in-command guard, use a freshly tool-captured ordinary/limit/timestamp report and fail closed when absent,>=90 orolderthan30seconds. PowerShell ConvertFrom-Json may deserialize ISO timestamps to UTC DateTime: cast directly to DateTimeOffset,do not stringify/reparse as localtime. Evidence files expire and cannot be reused as current usage. Preserve source lock/backoff; no alternate route around rejected unchecked actions. See HANDOFF§47.
+
+
+## Ingredient fate research
+
+Use docs/RECIPE-INGREDIENT-FATE.md and validate-ingredient-fate.mjs before interpreting soaking/draining observations. Exact recipe/line/full-snapshot/method anchors and licences required; retained ingredient/nutrient amounts stay null,0runtime approval. No stock/cost/nutrition behavior changes implied. Current English and French inventories are exhausted; discover another licensed pool without resetting either cursor.

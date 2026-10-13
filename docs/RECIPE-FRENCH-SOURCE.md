@@ -51,3 +51,10 @@ Later dueunit:874pages/621parsed/4090ingredientlines/3794steps;gate2026-10-13T18
 Final17:47turnsnapshot:1169pages/804parsed/5554ingredientlines/5133steps,100requests,pending0,sourceExhausted=False,gateNone. Sourcecurrentlyavailable;nextbatchrequiresfreshquota. Approval/fail-closedUTCguardincident documentedHANDOFF§47;no source requestonrejections/guardfailure. Originaldata/choices/nutritionstillunapproved.
 
 Heartbeat18:29:4requests,+49pages/+34parsed,current1218/838/5849lines/5319steps,104archives.104bodyhashes/currentraw+parsedhash/re-extractionpassed;old804recordsunchangedbyID. Sourceavailable,pending0;actualquota90reserve meanswaitforfreshcapacity,not reset/purchase. SeeHANDOFF§48.
+
+
+## Current checkpoint — heartbeat21:29 UTC
+
+French inventory completed: 1489 source pages/1011 conservatively parsed recipes/7128 ingredient lines/6408 steps/128 request archives. SourceExhausted=true, no pending IDs, no listing continuation. English3796/3640 unchanged. Next licensed source discovery remains open; no source cursor reset or final bank count cap, no combined unique-dish sum.
+
+New [ingredient-fate research](RECIPE-INGREDIENT-FATE.md) pins2source ingredient lines and6method steps; retained amounts and nutrient factors remain null,0runtime approvals.18linked tests/current source validators passed. Existing identity catalog3/24/22/9/50/1/0 unchanged. OFF2266/63 unchanged,503 gates saved. See HANDOFF§49 for exact requests, verification and next actions.
