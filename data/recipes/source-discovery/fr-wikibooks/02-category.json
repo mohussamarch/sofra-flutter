@@ -1,0 +1,68 @@
+{
+  "requestUrl": "https://fr.wikibooks.org/w/api.php?action=query&list=categorymembers&cmtitle=Cat%C3%A9gorie%3ARecettes%20de%20cuisine&cmtype=page%7Csubcat&cmlimit=50&prop=categoryinfo&titles=Cat%C3%A9gorie%3ARecettes%20de%20cuisine&format=json&formatversion=2",
+  "requestedAt": "2026-10-13T17:03:38.489Z",
+  "retrievedAt": "2026-10-13T17:03:38.979Z",
+  "httpStatus": 200,
+  "responseSha256": "3dd2cf6207d21273c52227aeb8b9a746b4c267a9d6d088d5e9566d556b07cfb3",
+  "data": {
+    "batchcomplete": true,
+    "query": {
+      "pages": [
+        {
+          "pageid": 44165,
+          "ns": 14,
+          "title": "Catégorie:Recettes de cuisine",
+          "categoryinfo": {
+            "size": 8,
+            "pages": 1,
+            "files": 0,
+            "subcats": 7,
+            "hidden": false
+          }
+        }
+      ],
+      "categorymembers": [
+        {
+          "pageid": 46290,
+          "ns": 0,
+          "title": "Livre de cuisine/Intersection de recettes"
+        },
+        {
+          "pageid": 23422,
+          "ns": 14,
+          "title": "Catégorie:Cuisine historique"
+        },
+        {
+          "pageid": 44152,
+          "ns": 14,
+          "title": "Catégorie:Recettes de cuisine par ingrédient"
+        },
+        {
+          "pageid": 23151,
+          "ns": 14,
+          "title": "Catégorie:Recettes par occasion"
+        },
+        {
+          "pageid": 16243,
+          "ns": 14,
+          "title": "Catégorie:Recettes par origine"
+        },
+        {
+          "pageid": 16242,
+          "ns": 14,
+          "title": "Catégorie:Recettes par régime alimentaire"
+        },
+        {
+          "pageid": 18720,
+          "ns": 14,
+          "title": "Catégorie:Recettes par type de plat"
+        },
+        {
+          "pageid": 58614,
+          "ns": 14,
+          "title": "Catégorie:Recettes de villages qui bougent (livre)"
+        }
+      ]
+    }
+  }
+}

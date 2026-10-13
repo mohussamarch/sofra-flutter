@@ -66,3 +66,38 @@
 - CLI summary was `requests=2`, `fetched=false`; actual process exited 0 after handling both errors. Lock absent after exit and no Node collector remained.
 - No source archive was added and product bank is unchanged: 1,986 products, 302 quarantined, 606 duplicate occurrences, 59 archives; EG 736 / SA 1,261. Product SHA-256 remains `3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95`; index SHA-256 remains `a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6`. No bank tests rerun because product/archive data did not change.
 - Next due Egypt global p8 is `2026-10-13T16:46:55.583Z`; Saudi global p6 is `2026-10-13T17:17:03.973Z`. Recheck quota, lock and backoff before any later batch; no retries before those times.
+
+## Follow-up bounded run — 13 October 2026, 16:58 UTC
+
+- Fresh quota before request: 29% primary / 33% weekly used, ordinary allowed. After progress: 30% / 33%, ordinary allowed. Lock/process ownership was clear before launch.
+- Egypt global p8 was the only due page; Saudi global p6 was correctly left untouched until its existing `17:17:03.973Z` backoff ended. Egypt p8 returned HTTP 503 and checkpointed its next attempt at `2026-10-13T17:58:40.154Z`.
+- CLI summary: one request, `fetched=false`; actual process exit code 0. Lock absent after exit; no Node collector remains.
+- Bank contents unchanged: 1,986 products, 302 quarantined, 606 duplicate occurrences, 59 archives; EG 736 / SA 1,261. Product and index SHA-256 remain `3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95` and `a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6`. No archive/product data changed, so the five bank tests were not rerun.
+- Next due Saudi global p6: `2026-10-13T17:17:03.973Z`; Egypt global p8: `2026-10-13T17:58:40.154Z`. Recheck quota and lock, and do not retry before these deadlines.
+
+## Follow-on bounded run — 13 October 2026, 17:17–17:18 UTC
+
+- Fresh usage before the first request: 43% primary / 35% weekly used, ordinary allowed. Rechecked before the second bounded pass at 43% / 35%; after progress 44% / 35%, ordinary allowed.
+- Saudi global p6 became due at `2026-10-13T17:17:03.973Z` and succeeded: 100 rows, source count 16,859. Archive `raw/saudi-arabia-p6.json`, retrieved `2026-10-13T17:17:50.626Z`, SHA-256 `d24061686829acc237aba3cb11fb807f2496397b7e392bd35df12130382c0bdd`.
+- With success and a fresh quota/lock check, one further bounded pass ran. Saudi global p7 succeeded: 100 rows, source count 16,859. Archive `raw/saudi-arabia-p7.json`, retrieved `2026-10-13T17:18:16.516Z`, SHA-256 `7234b34e7622e894de11e4375b8346990884075ee33a4e467d99b19f57a1450f`. No source request failures in these two passes.
+- Actual collector exit was code 0 for both runs. Lock cleanup confirmed after each; no Node collector process remained.
+- Before/after combined: products 1,986→2,112 (+126 net from 200 rows); quarantined 302→327 (+25); duplicate occurrences 606→655 (+49); archives 59→61. Market counts EG 736 / SA 1,387. Manifest quality counts: nutrition 1,498; core macros 1,365; ingredients 804; brands 1,533; declared allergens 409; unreviewed nutrition basis 2,112. Source `https://world.openfoodfacts.org`; database license ODbL-1.0; contents license DbCL-1.0.
+- Real-bank verification after both successful archive changes: 5 tests passed, 0 failed. Product SHA-256 `75ab7df4a527d35055b0918ea958887b03997906ff196d2be356156ae6ad0f51`; index SHA-256 `d221fba58428d648e63b4aec00faec670dd5dbd1205ec471e4d943bbe3a203ba`.
+- Next due page: Saudi global p8 is eligible now. Egypt global p8 remains deferred until `2026-10-13T17:58:40.154Z`. Recheck usage and collector ownership before another batch.
+
+## Follow-on Saudi bounded unit — 13 October 2026, 17:20 UTC
+
+- Before each collector run, quota and cursor/lock were checked. Usage was 45% primary / 35% weekly before the first run, and 45% / 36% before the second; ordinary use allowed. Both pages were due; no lock or active Node collector existed before either request.
+- Saudi global p8 succeeded: 100 rows, reported count 16,859; archive `raw/saudi-arabia-p8.json`, retrieved `2026-10-13T17:20:32.543Z`, SHA-256 `258b5b3e87a54e2afbccb0263b75001799dbc9336460ec5e24746bd5ef7c1f75`.
+- After success, quota/checkpoint/lock were rechecked. Saudi global p9 also succeeded: 100 rows, reported count 16,859; archive `raw/saudi-arabia-p9.json`, retrieved `2026-10-13T17:20:46.276Z`, SHA-256 `208fce179e5b3388a2b21b4ed3ea83c7d4be1a65f8b442dd9f31e0de07b7c4d0`.
+- Both actual collector processes exited 0, each fetched one page, and each lock was cleaned up. No source failures in this unit.
+- Before/after combined: products 2,112→2,266 (+154 net from 200 rows); quarantined 327→335 (+8); duplicate occurrences 655→693 (+38); archives 61→63. Market counts EG 736 / SA 1,541. Manifest counts: nutrition 1,577; core macros 1,437; ingredients 826; brands 1,623; declared allergens 416; nutrition basis still unreviewed for all 2,266. Source `https://world.openfoodfacts.org`; database license ODbL-1.0; contents license DbCL-1.0.
+- Ran the real-bank verification once at unit end: 5 passed, 0 failed. Product SHA-256 `7e634d23516e4bca3884c6b6a8b1cc94591ba219deb9cd74dd69bcb51fb345fc`; index SHA-256 `274f788720b06dd4a8d50d6df99037ccf6d0f5f48e039fee685144ab5f85525e`.
+- Next eligible request is Saudi global p10 (due now at next scheduled collection). Egypt global p8 remains deferred until `2026-10-13T17:58:40.154Z`. Recheck quota and collector ownership before another unit.
+
+## Short Saudi run — 13 October 2026, 17:22 UTC
+
+- Fresh quota before request: 46% primary / 36% weekly used, ordinary allowed. Saudi global p10 was due; no lock or active collector existed. Egypt p8 remained deferred until its existing deadline and was not touched.
+- Saudi global p10 returned HTTP 503. Saved next attempt: `2026-10-13T17:37:15.832Z`; no retry was made. Collector summary: one request, `fetched=false`; actual process exit 0 after handling the error. Lock absent after exit and no Node collector remained.
+- No archive or product data changed: 2,266 products, 335 quarantined, 693 duplicate occurrences, 63 archives; EG 736 / SA 1,541. Product/index hashes remain `7e634d23516e4bca3884c6b6a8b1cc94591ba219deb9cd74dd69bcb51fb345fc` and `274f788720b06dd4a8d50d6df99037ccf6d0f5f48e039fee685144ab5f85525e`. Five bank tests were not rerun because the bank contents did not change.
+- Next source deadlines: Saudi global p10 at `2026-10-13T17:37:15.832Z`; Egypt global p8 at `2026-10-13T17:58:40.154Z`. Stop until due; recheck quota and lock before a later collection.

@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T16:49:41.944335+00:00",
-    "taskId": "recipe-quantities",
-    "summary": "Current source pool exhausted3796/3640/53;680newpages/659parsed sincebase. Authoritative readers+8guarded research identity proposals/14candidates/3foods,75Node tests passed;all8156USDA snapshots validated.0runtime approvals.",
+    "at": "2026-10-13T17:26:34.803483+00:00",
+    "taskId": "recipe-bank",
+    "summary": "Independent licensed French lane 139pages/112parsed; conservative parser/backoff/persistence tests,0runtime approvals; English unchanged",
     "evidence": [
-      "data/recipes/identity-proposals/first-review.json",
-      "tool/recipes/validate-identity-bank.mjs",
-      "tool/recipes/recipe-review-reader.test.mjs",
-      "data/recipes/bulk/wikibooks-cookbook/index.json"
+      "tool/recipes/collect-wikibooks-fr.mjs",
+      "tool/recipes/collect-wikibooks-fr.test.mjs",
+      "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
+      "docs/RECIPE-FRENCH-SOURCE.md"
     ]
   },
   "tasks": [
@@ -76,25 +76,34 @@
       "id": "recipe-bank",
       "priority": 28,
       "dependsOn": [],
-      "status": "ready",
-      "nextAction": "Discover and verify another licensed recipe category/language/source, with separate checkpoint/provenance/parser and primary licence evidence. Never reset the exhausted category cursor to refetch from the start; no final bank count cap.",
-      "lastAttemptAt": "2026-10-13T16:42:51.287Z",
-      "lastProgressAt": "2026-10-13T16:49:41.944335+00:00",
+      "status": "waiting",
+      "nextAction": "Continue French prefix cursor with bounded due requests; during backoff extend source quantity/food identity review. Inspect bounded unparsed structures before parser changes. Keep languages separate; no unique-dish total or runtime nutrition claim.",
+      "lastAttemptAt": "2026-10-13T17:25:52.469Z",
+      "lastProgressAt": "2026-10-13T17:26:34.803483+00:00",
       "owner": null,
       "completedUnit": {
-        "sourcePages": 3796,
-        "parsedRecipes": 3640,
-        "cuisineTags": 53,
-        "runtimeReady": 0,
-        "sourcePoolExhausted": true
+        "englishSourcePages": 3796,
+        "englishParsedRecipes": 3640,
+        "englishCuisineTags": 53,
+        "frenchSourcePages": 139,
+        "frenchParsedRecipes": 112,
+        "frenchIngredientLines": 637,
+        "frenchSteps": 567,
+        "runtimeReady": 0
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
         "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl",
         "tool/recipes/build-bulk-index.mjs",
-        "docs/RECIPE-BULK.md"
+        "docs/RECIPE-BULK.md",
+        "tool/recipes/collect-wikibooks-fr.mjs",
+        "tool/recipes/collect-wikibooks-fr.test.mjs",
+        "data/recipes/bulk/fr-wikibooks-cuisine/index.json",
+        "docs/RECIPE-FRENCH-SOURCE.md"
       ],
-      "stage": "Current English Recipes category exhausted; entire bank remains ongoing"
+      "stage": "Independent French source collection and conservative parser implemented; English source remains exhausted",
+      "blockedUntil": "2026-10-13T17:35:52.878Z",
+      "blockedReason": "French source cooldown; independent quantity/identity work remains ready"
     },
     {
       "id": "recipe-quantities",
@@ -217,10 +226,19 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Read actual cursors first:Egyptp8 after16:46:55.583Z,Saudip6 after17:17:03.973Z. Onecheapcollector, no earlyretry. Latest2failures changed source state only; bank1986/59 unchanged.",
+      "nextAction": "Read actual source cursors:Saudi globalp10 after17:37:15.832Z,Egyptglobalp8 after17:58:40.154Z.2266/63,currentunit+280net. Onecheapcollector, no earlyretry.",
       "owner": null,
-      "blockedUntil": "2026-10-13T16:46:55.583Z",
-      "blockedReason": "OFF source503 backoff, independent local work remains available"
+      "blockedUntil": "2026-10-13T17:37:15.832Z",
+      "blockedReason": "OFF503backoff:Saudi p10 andEgyptp8; independent quantity/identity work remains ready",
+      "lastProgressAt": "2026-10-13T17:28:59.195280+00:00",
+      "completedUnit": {
+        "products": 2266,
+        "archives": 63,
+        "newProductsThisUnit": 280,
+        "quarantine": 335,
+        "duplicateOccurrences": 693,
+        "runtimeNutritionBasisApprovals": 0
+      }
     },
     {
       "id": "budget-planner",
@@ -277,10 +295,10 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-13T16:49:41.944335+00:00",
-    "primaryUsedPercent": 21,
-    "weeklyUsedPercent": 32,
+    "at": "2026-10-13T17:28:59.195280+00:00",
+    "primaryUsedPercent": 49,
+    "weeklyUsedPercent": 36,
     "ordinaryUsageAllowed": true,
-    "action": "Usage available again; no credit/reset tool used. Continue bounded work with90%reserve."
+    "action": "Capacity available; source backoff only, quantity/identity work independent; no credits/reset."
   }
 }

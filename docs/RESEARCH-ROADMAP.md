@@ -89,3 +89,7 @@ Source batch240pages acquired;429checkpoint respected. Research identity proposa
 ## Heartbeat16:14: source readers, proposals and recovery
 
 Usage became available again:0%/29% initially,21%/32% later; no reset or credit purchase tool used. Current English source category is exhausted after3796pages/3640parsed recipes. recipe-bank28 now discovers another licensed source/category/language; no final count cap. recipe-quantities29 has authoritative raw/source readers and8unreviewed proposals. Next extend identity/alternative curation, then separate runtime admission. OFF source backoff does not stop local work.
+
+## Heartbeat16:56 — independent French source
+
+recipe-bank28 now has French Wikibooks namespace0/prefix discovery, verified site policy and separate collection/parser/index/checkpoint. Continue due short batches; do not reset exhausted English cursor. Prefix pages are not all recipes; no unique-dish total across languages. During source backoff recipe-quantities29 remains independent. See RECIPE-FRENCH-SOURCE.md and HANDOFF§42. No new schedule or runtime/clinical assumptions.

@@ -92,3 +92,7 @@ User prioritizes largest practical recipe quantity/cuisine expansion now; contin
 ## Identity research readers and pending request isolation
 
 Use RECIPE-IDENTITY-REVIEW.md for current research contracts. Raw USDA snapshot fingerprints differ from transformed Dart FoodRecord snapshots. Validate source text re-extraction and current food manifest/index/shard hashes before using proposals; these are local consistency checks, not upstream signatures or approval. Keep collector/indexer stopped while validating. Never pass generator continuation into a fresh pending page lookup or replace the generator cursor with its category continuation; preserve pendingRequest across runs. A source pool reaching sourceExhausted is discovery/expansion work, not bank completion.
+
+## Independent French source
+
+Follow docs/RECIPE-FRENCH-SOURCE.md and its own checkpoint. French prefix pages include nonrecipes; keep source/parsed counts separate and never sum languages as unique dishes. Source language is not cuisine. Preserve root-based discovery cooldown, underscore cursor verbatim, pending/listing isolation, raw request/revision provenance and null nutrition/amounts. Offline archived listing recovery retains the original gate. No English/runtime/UI changes implied.

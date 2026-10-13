@@ -158,3 +158,7 @@ OFFأحدث1936/58أرشيفًا،كل الأسس غيرمراجعة؛ الأع�
 ## Research identity reader checkpoint —13October
 
 3640source-extracted recipes/3796pages/53sourcecuisine tags,0runtime approvals.8identity proposals/14candidates/3USDA raw records have independent recipe/food provenance and full snapshot guards. See RECIPE-IDENTITY-REVIEW.md. Actual8156rawUSDA snapshots checked;75recipeNode tests passed. Do not treat raw snapshot hashes as transformed runtime FoodRecord hashes; no quantity/clinical facts inferred.
+
+## Current source-bank snapshot —13October17:26UTC
+
+OFF2266products/63archives,allbasisunreviewed; licence/provenance unchanged. Independent French recipe research112parsed/139pages,canonicalquantity/nutritionnull; English3640/3796 unchanged. These counts do not establish unique dishes or approved nutrition. See RECIPE-FRENCH-SOURCE.md and HANDOFF§42.

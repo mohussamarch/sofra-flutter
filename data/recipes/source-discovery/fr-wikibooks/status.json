@@ -1,0 +1,20 @@
+{
+  "source": "https://fr.wikibooks.org/w/api.php",
+  "status": "stopped-on-api-error",
+  "apiRequests": 3,
+  "successfulRequests": 2,
+  "failedRequests": 1,
+  "failure": {
+    "retrievedAt": "2026-10-13T17:03:55.179Z",
+    "httpStatus": 200,
+    "apiCode": "badvalue",
+    "parameter": "apfilterredir",
+    "value": "non",
+    "message": "Unrecognized value for parameter apfilterredir",
+    "archive": "03-prefix-candidates.json"
+  },
+  "nextAttemptAt": "2026-10-13T17:13:55.179Z",
+  "prefixCandidatesRetrieved": 0,
+  "sampleRetrieved": false,
+  "note": "Stopped on the first API error; no retry or sample request was made."
+}

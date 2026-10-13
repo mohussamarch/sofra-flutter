@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "current-source-pool-exhausted-expansion-required",
+  "status": "multiple-source-research-ongoing",
   "sourceId": "wikibooks-cookbook-cc-by-sa",
   "sourceUrl": "https://en.wikibooks.org/wiki/Cookbook:Recipes",
   "sourceApi": "https://en.wikibooks.org/w/api.php",
@@ -112,5 +112,18 @@
     "sourceFileHashMatchesIndex": true,
     "parsedFileHashMatchesIndex": true,
     "categoryObservationsHashMatchesIndex": true
-  }
+  },
+  "sourceScopeNote": "Existing top-level fields describe exhausted English source only. French is independent; no deduplicated dish sum.",
+  "additionalSources": [
+    {
+      "sourceId": "fr-wikibooks-cuisine-cc-by-sa",
+      "sourceLanguage": "fr",
+      "index": "fr-wikibooks-cuisine/index.json",
+      "sourcePages": 139,
+      "parsedRecipes": 112,
+      "sourceExhausted": false,
+      "nextAttemptAt": "2026-10-13T17:35:52.878Z",
+      "runtimeReady": 0
+    }
+  ]
 }

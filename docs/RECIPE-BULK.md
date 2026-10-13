@@ -77,3 +77,7 @@ On the same2676-page/2554-recipe corpus (22394 ingredient rows), v1 produced1118
 Current English Recipes category ended at3796sourcepages/3640parsedrecipes/53sourcecuisinetags,with no pending IDs/request/cursor. This ends one source pool,not the food/recipe bank. Discover additional licensed sources/categories/languages with separate checkpoints; never restart this exhausted cursor from the beginning.
 
 The collector now separates generator continuation from `pendingRequest` page IDs/continuation/verified revisions. Pending lookups start fresh; their category callbacks use a revision retrieved in that same pending query. Resume preserves both cursors across bounded runs. Real missing content still stops with backoff and is not counted as a source record.3behavioral regressions and a3request live recovery verified the fix.
+
+## Independent French lane
+
+[RECIPE-FRENCH-SOURCE.md](RECIPE-FRENCH-SOURCE.md) documents the second licensed source. [French index](../data/recipes/bulk/fr-wikibooks-cuisine/index.json):112conservatively parsed recipes/139prefix pages, separate French IDs, original revisions/licence and unknown quantities/nutrition. English3796/3640/53 unchanged. Cross-language duplicate dishes remain unresolved; counts must stay separate. Continue the French checkpoint, never restart exhausted English category.

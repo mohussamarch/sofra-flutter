@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "dataset": "Sofra packaged food bank / Open Food Facts",
-  "builtAt": "2026-10-13T13:17:10.522Z",
+  "builtAt": "2026-10-13T17:20:46.616Z",
   "source": "https://world.openfoodfacts.org",
   "databaseLicense": "ODbL-1.0",
   "contentsLicense": "DbCL-1.0",
-  "productCount": 1986,
-  "quarantinedCount": 302,
-  "duplicateOccurrences": 606,
-  "productsSha256": "3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95",
-  "indexSha256": "a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6",
+  "productCount": 2266,
+  "quarantinedCount": 335,
+  "duplicateOccurrences": 693,
+  "productsSha256": "7e634d23516e4bca3884c6b6a8b1cc94591ba219deb9cd74dd69bcb51fb345fc",
+  "indexSha256": "274f788720b06dd4a8d50d6df99037ccf6d0f5f48e039fee685144ab5f85525e",
   "marketCounts": {
     "EG": 736,
-    "SA": 1261
+    "SA": 1541
   },
   "categoryCounts": {
     "sweets": 107,
@@ -36,12 +36,12 @@
     "bakery": 42,
     "baby": 9
   },
-  "withNutrition": 1419,
-  "withCoreMacros": 1298,
-  "withIngredients": 771,
-  "withBrand": 1458,
-  "withDeclaredAllergens": 398,
-  "unreviewedBasisCount": 1986,
+  "withNutrition": 1577,
+  "withCoreMacros": 1437,
+  "withIngredients": 826,
+  "withBrand": 1623,
+  "withDeclaredAllergens": 416,
+  "unreviewedBasisCount": 2266,
   "archives": [
     {
       "file": "raw/egypt-baby-p1.json",
@@ -413,6 +413,34 @@
       "records": 100,
       "retrievedAt": "2026-10-13T12:06:05.877Z",
       "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=5&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia"
+    },
+    {
+      "file": "raw/saudi-arabia-p6.json",
+      "sha256": "d24061686829acc237aba3cb11fb807f2496397b7e392bd35df12130382c0bdd",
+      "records": 100,
+      "retrievedAt": "2026-10-13T17:17:50.626Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=6&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia"
+    },
+    {
+      "file": "raw/saudi-arabia-p7.json",
+      "sha256": "7234b34e7622e894de11e4375b8346990884075ee33a4e467d99b19f57a1450f",
+      "records": 100,
+      "retrievedAt": "2026-10-13T17:18:16.516Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=7&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia"
+    },
+    {
+      "file": "raw/saudi-arabia-p8.json",
+      "sha256": "258b5b3e87a54e2afbccb0263b75001799dbc9336460ec5e24746bd5ef7c1f75",
+      "records": 100,
+      "retrievedAt": "2026-10-13T17:20:32.543Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=8&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia"
+    },
+    {
+      "file": "raw/saudi-arabia-p9.json",
+      "sha256": "208fce179e5b3388a2b21b4ed3ea83c7d4be1a65f8b442dd9f31e0de07b7c4d0",
+      "records": 100,
+      "retrievedAt": "2026-10-13T17:20:46.276Z",
+      "url": "https://world.openfoodfacts.org/cgi/search.pl?action=process&json=1&page_size=100&page=9&sort_by=unique_scans_n&fields=code%2Cproduct_name%2Cproduct_name_ar%2Cproduct_name_en%2Cbrands%2Ccategories_tags%2Ccountries_tags%2Cquantity%2Cproduct_quantity%2Cproduct_quantity_unit%2Cserving_size%2Cserving_quantity%2Cserving_quantity_unit%2Cnutrition_data%2Cnutrition_data_per%2Cnutrition_data_prepared_per%2Cnutriments%2Callergens%2Callergens_tags%2Ctraces%2Ctraces_tags%2Cingredients_text%2Cingredients_text_ar%2Cingredients_text_en%2Clast_modified_t%2Cdata_quality_errors_tags%2Cdata_quality_warnings_tags%2Cstates_tags&tagtype_0=countries&tag_contains_0=contains&tag_0=saudi-arabia"
     },
     {
       "file": "raw/saudi-arabia-pasta-p1.json",

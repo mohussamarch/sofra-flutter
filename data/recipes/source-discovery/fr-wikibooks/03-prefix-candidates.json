@@ -1,0 +1,15 @@
+{
+  "requestUrl": "https://fr.wikibooks.org/w/api.php?action=query&list=allpages&apnamespace=0&apprefix=Livre%20de%20cuisine%2F&aplimit=5&apfilterredir=non&format=json&formatversion=2",
+  "requestedAt": "2026-10-13T17:03:54.706Z",
+  "retrievedAt": "2026-10-13T17:03:55.179Z",
+  "httpStatus": 200,
+  "responseSha256": "9e93b6bf7198da2ee47ed3e0caa14dc0bbdc68e55cef78a53c455cb18262ca7f",
+  "data": {
+    "error": {
+      "code": "badvalue",
+      "info": "Unrecognized value for parameter \"apfilterredir\": non.",
+      "docref": "See https://fr.wikibooks.org/w/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes."
+    },
+    "servedby": "mw-api-ext.eqiad.main-6957b5c47f-chv94"
+  }
+}
