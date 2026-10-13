@@ -91,3 +91,8 @@ Network refresh is explicit (`fetch` for3bounded pages per market; `fetch-catego
 ## Heartbeat13:14 — ingredient structure and OFF
 
 Egypt globalp7 succeeded100rows,+50net to1986/59archives. Saudi globalp6HTTP503,backoff13:32:10.213Z. CLIactualexit0/lockabsent;5realbanktests passed. 302quarantine/606duplicates. Allbasesunreviewed,ODbL/DbCL/provenancepreserved. NextEGp8/SAp6wheneligible.
+
+
+## Heartbeat16:14 OFF source state
+
+EGglobalp8 andSAglobalp6 each returnedHTTP503 once; actual handledCLI exit0,lockremoved,no activecollector. Next16:46:55.583Z/17:17:03.973Z. Product contents andhashes unchanged at1986/59archives,302quarantine/606duplicate occurrences; no bank test rerun forunchanged contents. Dedicated helper handoff records actualrequests andquota.

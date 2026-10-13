@@ -84,3 +84,8 @@ Source ingredient sections and review cues are implemented/validated in research
 ## Heartbeat13:44 identity guard
 
 Source batch240pages acquired;429checkpoint respected. Research identity proposal guard complete/6tests; nextcuration/authoritativefoodreader. OFF503 waits do not stop local logic. No source count completion cap.
+
+
+## Heartbeat16:14: source readers, proposals and recovery
+
+Usage became available again:0%/29% initially,21%/32% later; no reset or credit purchase tool used. Current English source category is exhausted after3796pages/3640parsed recipes. recipe-bank28 now discovers another licensed source/category/language; no final count cap. recipe-quantities29 has authoritative raw/source readers and8unreviewed proposals. Next extend identity/alternative curation, then separate runtime admission. OFF source backoff does not stop local work.

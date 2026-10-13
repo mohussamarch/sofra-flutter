@@ -58,3 +58,11 @@
 - Both attempts failed; no archive was added and no product bank rebuild ran (`fetched=false`). Collector process actually exited 0 after handling the failures. Lock was absent afterward and no Node process remained.
 - Bank contents stayed unchanged: 1,986 products; 302 quarantined; 606 duplicate occurrences; 59 archives; markets EG 736 / SA 1,261. Product SHA-256 remains `3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95`; index SHA-256 remains `a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6`. Since no archive/product bank data changed, the five real-bank tests were not rerun.
 - Next due source is Egypt global p8 at `2026-10-13T14:01:25.417Z`; Saudi global p6 follows at `2026-10-13T14:16:33.799Z`. Recheck quota and ownership/lock before a later batch; do not retry earlier.
+
+## Follow-up bounded run — 13 October 2026, 16:17 UTC
+
+- Fresh pre-run usage 2% primary / 29% weekly used, ordinary allowed; post-run 3% / 29%, ordinary allowed. Lock/process check was clear before launch.
+- Two due requests were attempted sequentially. Egypt global p8 returned HTTP 503; checkpoint next attempt `2026-10-13T16:46:55.583Z`. Saudi global p6 returned HTTP 503; checkpoint next attempt `2026-10-13T17:17:03.973Z`. No further retries were made.
+- CLI summary was `requests=2`, `fetched=false`; actual process exited 0 after handling both errors. Lock absent after exit and no Node collector remained.
+- No source archive was added and product bank is unchanged: 1,986 products, 302 quarantined, 606 duplicate occurrences, 59 archives; EG 736 / SA 1,261. Product SHA-256 remains `3a02e42a06aaf13a8b122cd7fbf1f712b823ec88e48483cc15888d8e6c660c95`; index SHA-256 remains `a1ee0a0bdb81a4788a5893768563a1318c732237e709e9f88f24e025f012c6c6`. No bank tests rerun because product/archive data did not change.
+- Next due Egypt global p8 is `2026-10-13T16:46:55.583Z`; Saudi global p6 is `2026-10-13T17:17:03.973Z`. Recheck quota, lock and backoff before any later batch; no retries before those times.

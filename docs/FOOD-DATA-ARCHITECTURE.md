@@ -153,3 +153,8 @@ RECIPE-REFERENCES.md يشرح197مقترح هوية/53وصفة، القبول ا
 PreparationTransform يحملestimatedودليلJSONاختياري؛ NutrientTotalينقل التقدير من التحضير/الكمية/طريقة المصدر إلىMealBatch ثمPersonNutrientValueوتقريرالشخص. trueلوجود مساهمة تقديرية،falseلعدم تعليمها كتقديرية وليس يقينًا معمليًا،nullلثقةlegacyغيرمسجلة.اكتمال التغطية محور مستقل. قبول تقدير التحضير المراجَع لم ينفذ، ولا مسودة from-scratch محفوظة.
 
 OFFأحدث1936/58أرشيفًا،كل الأسس غيرمراجعة؛ الأعداد القديمة أعلاه تاريخية.100Flutter/analyzeنجحا في هذه الوحدة،ولاواجهة/APK/Firebaseتغيرت.
+
+
+## Research identity reader checkpoint —13October
+
+3640source-extracted recipes/3796pages/53sourcecuisine tags,0runtime approvals.8identity proposals/14candidates/3USDA raw records have independent recipe/food provenance and full snapshot guards. See RECIPE-IDENTITY-REVIEW.md. Actual8156rawUSDA snapshots checked;75recipeNode tests passed. Do not treat raw snapshot hashes as transformed runtime FoodRecord hashes; no quantity/clinical facts inferred.

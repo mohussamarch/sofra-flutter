@@ -87,3 +87,8 @@
 ## Bulk recipes and personal calculation engine —13 October2026
 
 User prioritizes largest practical recipe quantity/cuisine expansion now; continuous bounded source acquisition without a final count cap. See RECIPE-BULK.md/RECIPE-ENGINE.md. One recipe collector lock; Retry-After/max10minminimum and2s pacing, no immediate retry or alternate route around review. Keep original revisions immutable, category observations separate, latest index and parsed recipes derived with provenance/hashes. Source/cuisine metadata is unreviewed, no runtime nutrition or ready recipe claim. During backoff execute recipe-quantities before preparation. Preserve person estimated=true/false/legacy-null; false is not laboratory certainty. Source-from-scratch draft persistence is not implemented; personal revisions still require parents. No UI/Firebase/billing/audio/images changes.
+
+
+## Identity research readers and pending request isolation
+
+Use RECIPE-IDENTITY-REVIEW.md for current research contracts. Raw USDA snapshot fingerprints differ from transformed Dart FoodRecord snapshots. Validate source text re-extraction and current food manifest/index/shard hashes before using proposals; these are local consistency checks, not upstream signatures or approval. Keep collector/indexer stopped while validating. Never pass generator continuation into a fresh pending page lookup or replace the generator cursor with its category continuation; preserve pendingRequest across runs. A source pool reaching sourceExhausted is discovery/expansion work, not bank completion.

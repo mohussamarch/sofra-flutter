@@ -2,12 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T14:18:07.898959+00:00",
-    "taskId": "recipe-bank",
-    "summary": "200new sourcepages;corpus2981/3116/53;actualindex/hash/prefix validation passed. Furtherwork stopped at quota90%/28%.",
+    "at": "2026-10-13T16:49:41.944335+00:00",
+    "taskId": "recipe-quantities",
+    "summary": "Current source pool exhausted3796/3640/53;680newpages/659parsed sincebase. Authoritative readers+8guarded research identity proposals/14candidates/3foods,75Node tests passed;all8156USDA snapshots validated.0runtime approvals.",
     "evidence": [
-      "data/recipes/bulk/wikibooks-cookbook/index.json",
-      "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl"
+      "data/recipes/identity-proposals/first-review.json",
+      "tool/recipes/validate-identity-bank.mjs",
+      "tool/recipes/recipe-review-reader.test.mjs",
+      "data/recipes/bulk/wikibooks-cookbook/index.json"
     ]
   },
   "tasks": [
@@ -75,22 +77,24 @@
       "priority": 28,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "First recheck actual quota below90%; then paced resume from checkpoint. Successful200-page unit saved; no source backoff currently. Do not infer bank completion.",
-      "lastAttemptAt": "2026-10-13T14:16:07.890Z",
-      "lastProgressAt": "2026-10-13T14:18:07.898959+00:00",
+      "nextAction": "Discover and verify another licensed recipe category/language/source, with separate checkpoint/provenance/parser and primary licence evidence. Never reset the exhausted category cursor to refetch from the start; no final bank count cap.",
+      "lastAttemptAt": "2026-10-13T16:42:51.287Z",
+      "lastProgressAt": "2026-10-13T16:49:41.944335+00:00",
       "owner": null,
       "completedUnit": {
-        "sourcePages": 3116,
-        "parsedRecipes": 2981,
+        "sourcePages": 3796,
+        "parsedRecipes": 3640,
         "cuisineTags": 53,
-        "runtimeReady": 0
+        "runtimeReady": 0,
+        "sourcePoolExhausted": true
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
         "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl",
         "tool/recipes/build-bulk-index.mjs",
         "docs/RECIPE-BULK.md"
-      ]
+      ],
+      "stage": "Current English Recipes category exhausted; entire bank remains ongoing"
     },
     {
       "id": "recipe-quantities",
@@ -100,18 +104,21 @@
       "completedUnit": {
         "quantityParser": "source-prefix-v2",
         "structureParser": "source-structure-v1",
-        "parsedCandidates": 11194,
-        "ingredientRows": 22394,
+        "parsedCandidates": 15873,
+        "ingredientRows": 31774,
         "sourceStructure": {
           "parserVersion": "source-structure-v1",
-          "rowsWithGroup": 4173,
-          "rowsWithOptionalityCue": 737,
-          "rowsWithAlternativeCue": 1806,
-          "rowsWithQuantityQualifier": 838
+          "rowsWithGroup": 5903,
+          "rowsWithOptionalityCue": 1052,
+          "rowsWithAlternativeCue": 2598,
+          "rowsWithQuantityQualifier": 1165
         },
-        "reviewContract": "review-target-v1"
+        "identityProposals": 8,
+        "candidateReferences": 14,
+        "foodSourceRecords": 3,
+        "runtimeReady": 0
       },
-      "nextAction": "Use review-target.mjs with authoritative current recipe and food snapshots to curate exact ingredient/alternative proposals; keep unresolved issues and separate explicit runtime acceptance.",
+      "nextAction": "Extend explicit reviewed identity proposals to more ingredients/alternatives with source and food snapshot guards; distinguish raw research snapshots from converted runtime FoodRecord. Acceptance, quantity/form/preparation and runtime admission remain separate.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -120,11 +127,15 @@
         "tool/recipes/collect-wikibooks.test.mjs",
         "docs/RECIPE-BULK.md#source-section-and-review-cues",
         "tool/recipes/review-target.mjs",
-        "tool/recipes/review-target.test.mjs"
+        "tool/recipes/review-target.test.mjs",
+        "tool/recipes/usda-review-reader.mjs",
+        "tool/recipes/recipe-review-reader.mjs",
+        "tool/recipes/validate-identity-bank.test.mjs",
+        "data/recipes/identity-proposals/first-review.json"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T13:51:34.530718+00:00",
-      "stage": "Review target/identity proposal validator implemented; no real bulk identity proposals or runtime bindings created"
+      "lastProgressAt": "2026-10-13T16:49:41.944335+00:00",
+      "stage": "Authoritative local food/source readers and first8identity proposals implemented; research only"
     },
     {
       "id": "preparation-evidence",
@@ -206,10 +217,10 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Egyptp8 only after14:01:25.417Z; Saudip6 after14:16:33.799Z. Noearlyretry; onecheapcollector. Last2failureschangedstateonly,notbank.",
+      "nextAction": "Read actual cursors first:Egyptp8 after16:46:55.583Z,Saudip6 after17:17:03.973Z. Onecheapcollector, no earlyretry. Latest2failures changed source state only; bank1986/59 unchanged.",
       "owner": null,
-      "blockedUntil": "2026-10-13T14:01:25.417Z",
-      "blockedReason": "Both due OFF requests returned503; per-source checkpoints authoritative"
+      "blockedUntil": "2026-10-13T16:46:55.583Z",
+      "blockedReason": "OFF source503 backoff, independent local work remains available"
     },
     {
       "id": "budget-planner",
@@ -266,10 +277,10 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-13T14:18:07.898959+00:00",
-    "primaryUsedPercent": 90,
-    "weeklyUsedPercent": 28,
+    "at": "2026-10-13T16:49:41.944335+00:00",
+    "primaryUsedPercent": 21,
+    "weeklyUsedPercent": 32,
     "ordinaryUsageAllowed": true,
-    "action": "No further costly research or agents; recheck later without buying/resetting credits"
+    "action": "Usage available again; no credit/reset tool used. Continue bounded work with90%reserve."
   }
 }

@@ -397,10 +397,16 @@ export async function collect(options, dependencies = {}) {
         checkpoint.cumulativeApiRequests++;
         checkpoint.lastRequestStartedAt = now().toISOString();
         await atomicJson(checkpointPath, checkpoint);
+        if (!checkpoint.pendingRequest && checkpoint.pendingPageIds?.length) {
+          checkpoint.pendingRequest = { pageIds: checkpoint.pendingPageIds.slice(0, Math.min(MAX_PAGES_PER_REQUEST, remaining)), continuation: null, verifiedRevisions: {} };
+        }
+        const pendingRequest = checkpoint.pendingRequest;
+        const wasPendingRequest = !!pendingRequest;
+        await atomicJson(checkpointPath, checkpoint);
         const batch = await fetchApiPage({
-          continuation: checkpoint.continuation,
+          continuation: pendingRequest ? pendingRequest.continuation : checkpoint.continuation,
           limit: Math.min(MAX_PAGES_PER_REQUEST, remaining),
-          pendingPageIds: checkpoint.pendingPageIds,
+          pendingPageIds: pendingRequest?.pageIds ?? [],
         }, fetchImpl);
         const pages = Object.values(batch.query?.pages ?? {}).sort((a, b) => a.pageid - b.pageid);
         if (!batch.query || !Array.isArray(batch.query.pages) && typeof batch.query.pages !== 'object') {
@@ -412,16 +418,24 @@ export async function collect(options, dependencies = {}) {
         const fetchedRecords = [];
         const fetchedCategoryObservations = [];
         const missingPageIds = [];
-        const wasPendingRequest = (checkpoint.pendingPageIds?.length ?? 0) > 0;
+        const verifiedPageIds = new Set();
         for (const page of pages) {
           if (page.ns !== PAGE_NAMESPACE) throw new Error(`Unexpected page namespace for ${page.title}; stopping.`);
           const raw = sourceWikitext(page);
+          const pageId = String(page.pageid);
+          if (wasPendingRequest && !pendingRequest.pageIds.includes(pageId)) throw new Error('Pending response contained an unrequested page ID.');
           if (!page.revisions?.[0]?.revid || typeof raw !== 'string' || raw.length === 0) {
-            missingPageIds.push(String(page.pageid));
+            const knownRevision = pendingRequest?.verifiedRevisions?.[pageId];
+            if (pendingRequest?.continuation && knownRevision && records.some(r => r.recordId === `wikibooks-${pageId}-r${knownRevision}`)) {
+              fetchedCategoryObservations.push(categoryObservation({ ...page, revisions: [{ revid: Number(knownRevision) }] }, successfulRetrievalAt));
+              verifiedPageIds.add(pageId);
+            } else missingPageIds.push(pageId);
             continue;
           }
           fetchedRecords.push(pageRecord(page, successfulRetrievalAt));
           fetchedCategoryObservations.push(categoryObservation(page, successfulRetrievalAt));
+          verifiedPageIds.add(pageId);
+          if (pendingRequest) pendingRequest.verifiedRevisions[pageId] = String(page.revisions[0].revid);
         }
         const appended = await appendUnique(recordsPath, records, fetchedRecords);
         await appendCategoryObservations(categoryObservationsPath, categoryObservations, fetchedCategoryObservations);
@@ -434,24 +448,25 @@ export async function collect(options, dependencies = {}) {
         checkpoint.sourcePagesProcessed = recordIds.size;
         checkpoint.recipeRecordCount = records.filter((record) => record.isRecipe).length;
         Object.assign(checkpoint, sourceCounts(records));
-        if (missingPageIds.length) {
-          checkpoint.pendingPageIds = [...new Set([...(checkpoint.pendingPageIds ?? []), ...missingPageIds])];
-          checkpoint.continuation = batch.continue ?? checkpoint.continuation;
-          if (wasPendingRequest) throw new Error(`Source revisions/content still missing for page IDs ${missingPageIds.join(',')}; preserving checkpoint and stopping.`);
-        } else if (checkpoint.pendingPageIds?.length) {
-          const returnedIds = new Set(pages.map((page) => String(page.pageid)));
-          checkpoint.pendingPageIds = checkpoint.pendingPageIds.filter((id) => !returnedIds.has(id));
-          if (!checkpoint.pendingPageIds.length && batch.continue) checkpoint.continuation = batch.continue;
+        if (wasPendingRequest) {
+          checkpoint.pendingPageIds = (checkpoint.pendingPageIds ?? []).filter(id => !verifiedPageIds.has(id));
+          pendingRequest.continuation = batch.continue ?? null;
+          if (!pendingRequest.continuation) {
+            const unresolved = pendingRequest.pageIds.filter(id => checkpoint.pendingPageIds.includes(id));
+            checkpoint.pendingRequest = null;
+            if (unresolved.length) throw new Error(`Source revisions/content still missing for page IDs ${unresolved.join(',')}; preserving checkpoint and stopping.`);
+          }
         } else {
+          checkpoint.pendingPageIds = [...new Set([...(checkpoint.pendingPageIds ?? []), ...missingPageIds])];
           checkpoint.continuation = batch.continue ?? null;
         }
-        checkpoint.sourceExhausted = !checkpoint.pendingPageIds.length && !checkpoint.continuation;
+        checkpoint.sourceExhausted = !checkpoint.pendingPageIds.length && !checkpoint.pendingRequest && !checkpoint.continuation;
         checkpoint.nextAttemptAt = null;
         checkpoint.lastError = null;
         checkpoint.updatedAt = now().toISOString();
         await atomicJson(checkpointPath, checkpoint);
         if (missingPageIds.length && !pages.length) throw new Error('Incomplete page payload; no pages could be verified.');
-        if (checkpoint.pendingPageIds.length && runRequests < perRunLimit) {
+        if ((checkpoint.pendingPageIds.length || checkpoint.pendingRequest) && runRequests < perRunLimit) {
           await wait(250);
           continue;
         }
@@ -459,7 +474,7 @@ export async function collect(options, dependencies = {}) {
           await wait(250);
           continue;
         }
-        if (appended === 0 && !checkpoint.pendingPageIds.length && !checkpoint.continuation) break;
+        if (appended === 0 && !checkpoint.pendingPageIds.length && !checkpoint.pendingRequest && !checkpoint.continuation) break;
       } catch (error) {
         await saveFailure(checkpointPath, checkpoint, error, now);
         throw error;

@@ -1,8 +1,7 @@
-# Bulk recipe status
+# Current source pool status
 
-- 2428sourcepages/2312parsedrecipes/52sourcecuisine tags,0runtime approvals.
-- Corpus/parsed/index/sourceSHAverified,original54recipes preserved.
--17collector/7index/7quantity/10contracttests passed; no live request duringbackoff.
-- Source gate:2026-10-13T13:19:44.428Z; lastError:{'at': '2026-10-13T13:09:44.428Z', 'message': 'MediaWiki API HTTP 429; stop and respect source backoff.'}.
-- Next:duepacedresume,thenquantity/unitreview locally.
-- Root ownsGit/finalreceipt;agentreleased.
+- 3796sourcepages/3640parsed/53tags,0runtime approvals.
+- English Recipes category exhausted;pendingempty/cursorsnull.
+- Pending recovery fixed andverified;22collector/75relatedNode tests passed.
+- Next discoverseparatelicensedpool;neverrestartthiscursorfrombeginning.
+- RootownsGit/finalreceipt;agentreleased.

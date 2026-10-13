@@ -1,11 +1,28 @@
-# Bulk recipe identity review contract
+# Recipe identity proposals and authoritative research snapshots
 
-`tool/recipes/review-target.mjs` is an offline research boundary. `reviewTarget(recipe,lineIndex)` pins current source record/revision/SHA, parser versions, exact line ID/text/index and a canonical SHA of the entire derived recipe. Changing any recipe metadata invalidates its target. `snapshotFingerprint` accepts finite JSON values and ignores object key order.
+This is an offline research pipeline. Eight source lines in eight recipes now have14 identity candidates from3USDA records. Every proposal is unreviewed. Candidate presence is not accepted identity, exact retail product, food form, measured quantity, clinical suitability or complete nutrition. Runtime approval count remains zero.
 
-`validateIdentityProposal(proposal,currentRecipe,foodSnapshots)` requires schemaVersion1/status `identity-proposal-unreviewed`, target, candidates and issues. Each candidate has foodId, foodVersion, foodSnapshotSha256 and rationale. The caller must load authoritative current food snapshots in a Map; IDs, versions and canonical full-snapshot hashes must match. Unknown/duplicate identities, stale recipes, changed foods, extra selection/quantity/nutrition/approval fields fail. Empty candidate lists require recorded issues. Candidate and recipe inputs are not mutated.
+## Files and flow
 
-This validates snapshot consistency, not evidence truth, food equivalence, clinical safety, portions, approval or nutritional basis. No real bulk food proposals have been curated, persisted or applied. No runtime importer or automatic calculation is added. Exact IDs/provenance and separate user acceptance remain required; source or/optional cues never auto-select/exclude. Existing54 recipe review flow remains separate.
+1. `usda-review-reader.mjs`: loads requested raw USDA snapshots only, checks manifest/index/shard byte hashes, sourceCC0licence, ID/FDC ID/version/name/dataset consistency. Archive and local-file evidence remain separate. The actual reader was validated across all8156source records/32shards. Unknown fields and raw nutrient rows are not transformed.
+2. `recipe-review-reader.mjs`: verifies original-source/parsed/category-observation hashes, invokes the existing raw-source validator and deterministic parser, then compares the entire index core and re-extracted recipes. Changing the parsed file and its outer hash alone fails.
+3. `review-target.mjs`: pins exact recipe source/revision/parser/line/full-derived snapshot and food source version/hash. Strict proposal fields prohibit embedded selection, quantity or nutrition approval.
+4. `validate-identity-bank.mjs`: validates recipe attribution/licence and food evidence against freshly loaded sources. The CLI checks the collector lock before reading the current bank. It reads sources only; no bindings are applied.
 
-6 new tests passed within54 related recipe tests. Initial test run failed because the module did not yet exist; no claim of a prior behavioral-stub regression. Fixtures are synthetic and contain no asserted nutritional facts. Next: authoritative food reader + curated explicit identity/alternative proposals, then runtime acceptance/import.
+Current data: [first-review.json](../data/recipes/identity-proposals/first-review.json). Six explicit granulated/white-sugar lines propose separate Foundation and SR Legacy references; two explicit table-salt lines propose a generic reference. These are recorded interpretations with unresolved issues, not factual local-brand equivalence. The report field `unresolvedCount` means no candidates, not approved identities; all8remain unreviewed.
 
-Actual integration check: unresolved review targets validated against all2788current source recipes; no food bindings/proposals were written. Latest quota87%/27%ordinary=true. Both collector locks absent and original runtime/UI/catalogue unchanged.
+```powershell
+node tool/recipes/validate-identity-bank.mjs
+```
+
+## Trust and integration limits
+
+Hashes establish local consistency against the trusted checkout. Manifests and source archives are not independently signed/authenticated by this tooling. A coordinated replacement of every source and hash could still pass. Source-page licence exceptions remain unreviewed. Readers are not atomic with a concurrent indexer: stop collection/indexing first; mixed data should fail hashes/re-extraction.
+
+The proposed food fingerprint is of the raw USDA research row, not the transformed Dart `FoodRecord`. Future runtime admission must separately accept identity/form/quantity/preparation, preserve raw-source evidence and produce the runtime snapshot. No source estimates, volume conversions, target choices or clinical rules are silently applied. Original54recipes and existing runtime review flow remain unchanged.
+
+## Verification and next step
+
+75relatedNode tests passed, including7USDA reader,6bank validator,5recipe-source reader and3pending-request regressions. Initial new-module tests failed for missing modules; one fixture syntax error and shared-object alias were corrected. Three collector behavioral regressions failed before the pending-cursor implementation, then passed. Live collector recovery fetched30pending pages and exhausted this source category in3requests.
+
+Next: extend explicit ingredient/alternative proposals, retain unknown measurements and provenance, then implement separate runtime acceptance/import and private drafts from scratch. Curation is not automatic nutrition readiness.

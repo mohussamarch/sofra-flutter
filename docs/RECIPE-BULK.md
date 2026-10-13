@@ -70,3 +70,10 @@ Next: explicit review tied to recipe revision/line and ingredient identity, then
 Current `source-prefix-v2` supports adjacent explicit units (`200g`, `250ml`) and leading decimals (`.5 cup`), with an explicit token boundary: `garlic`, `cupful`, `g3` and ratios such as `g/100g` are not accepted units. Fractions/known aliases remain supported. Every parsed/unresolved candidate now carries its parser version. No count/package inference, canonical mass, food identity or cup/spoon-system conversion is added.
 
 On the same2676-page/2554-recipe corpus (22394 ingredient rows), v1 produced11189 candidates; v2 produces11194:7 newly parsed and2 no longer parsed under stricter token boundaries. This is transcription coverage, not nutrient coverage.48recipe tests passed:19collector/10index/9quantity/10research contract;2additional quantity tests first failed then passed. Older v1 limitation notes above are historical. No runtime/Flutter/UI changes.
+
+
+## Pending request recovery and current source exhaustion
+
+Current English Recipes category ended at3796sourcepages/3640parsedrecipes/53sourcecuisinetags,with no pending IDs/request/cursor. This ends one source pool,not the food/recipe bank. Discover additional licensed sources/categories/languages with separate checkpoints; never restart this exhausted cursor from the beginning.
+
+The collector now separates generator continuation from `pendingRequest` page IDs/continuation/verified revisions. Pending lookups start fresh; their category callbacks use a revision retrieved in that same pending query. Resume preserves both cursors across bounded runs. Real missing content still stops with backoff and is not counted as a source record.3behavioral regressions and a3request live recovery verified the fix.

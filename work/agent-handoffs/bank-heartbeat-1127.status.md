@@ -26,3 +26,10 @@
 - No bank archives/products changed: 1,986 products / 59 archives; hashes unchanged. Tests were not rerun.
 - Collector exit 0 after handling errors; lock cleared. Usage 84% primary / 27% weekly, ordinary allowed.
 - Next: Egypt p8 at 14:01:25.417Z, then Saudi p6 at 14:16:33.799Z. No earlier retries.
+
+## Follow-up — 13 Oct, 16:17 UTC
+
+- Egypt global p8 and Saudi global p6 both returned HTTP 503. Backoffs: 16:46:55.583Z and 17:17:03.973Z.
+- No bank data changed: 1,986 products, 59 archives; hashes unchanged. Tests not rerun.
+- Collector exited 0 after handling errors; lock cleared. Quota after progress 3% primary / 29% weekly, ordinary allowed.
+- Next: Egypt p8 16:46:55.583Z; Saudi p6 17:17:03.973Z. No early retries.

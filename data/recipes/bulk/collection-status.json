@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "quota-reserve-checkpointed",
+  "status": "current-source-pool-exhausted-expansion-required",
   "sourceId": "wikibooks-cookbook-cc-by-sa",
   "sourceUrl": "https://en.wikibooks.org/wiki/Cookbook:Recipes",
   "sourceApi": "https://en.wikibooks.org/w/api.php",
@@ -42,29 +42,75 @@
     "allTimePageCap": null,
     "checkpointPath": "data/recipes/bulk/wikibooks-cookbook/checkpoint.json",
     "revisionRecordsPath": "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl",
-    "revisionRecordCount": 0,
-    "distinctSourcePages": 0,
-    "parseableRecipePages": 0,
+    "revisionRecordCount": 3766,
+    "distinctSourcePages": 3766,
+    "parseableRecipePages": 3610,
+    "sourceRecordRecipeFlags": 3522,
     "sourceExhausted": false,
-    "nextAttemptAt": "2026-10-13T12:11:43Z"
+    "nextAttemptAt": "2026-10-13T16:39:31Z",
+    "lastSuccessfulRetrievalAt": "2026-10-13T16:29:31Z",
+    "lastError": "Source revisions/content still missing for 30 pending page IDs; preserving checkpoint and stopping.",
+    "retryAfterMs": null,
+    "pendingPageIds": 30,
+    "completedBatchesThisTurn": 0,
+    "apiRequestsBeforeStopThisTurn": 7,
+    "addedRevisionRecordsThisTurn": 150
   },
-  "nextAction": "Recheck quota below90% before resuming same source checkpoint; no credit purchase/reset.",
-  "updatedAt": "2026-10-13T14:18:07.898959+00:00",
+  "nextAction": "Discover and verify another licensed recipe category/language/source, with separate checkpoint/provenance/parser and primary licence evidence. Never reset the exhausted category cursor to refetch from the start; no final bank count cap.",
+  "updatedAt": "2026-10-13T16:49:41.944335+00:00",
   "collection": {
-    "sourcePages": 3116,
-    "parsedRecipes": 2981,
+    "sourcePages": 3796,
+    "parsedRecipes": 3640,
     "cuisineTags": 53,
-    "ingredientRows": 25936,
-    "steps": 17697,
+    "ingredientRows": 31774,
+    "quantityCandidates": {
+      "parsed": 15725,
+      "unresolved": 15750,
+      "total": 31475
+    },
+    "steps": 24964,
     "runtimeReady": 0,
+    "beforeThisTurn": {
+      "sourcePages": 3616,
+      "parsedRecipes": 3470,
+      "cuisineTags": 53,
+      "quantityCandidates": {
+        "parsed": 15066,
+        "unresolved": 15128,
+        "total": 30194
+      }
+    },
+    "growthThisTurn": {
+      "sourcePages": 150,
+      "parsedRecipes": 140,
+      "cuisineTags": 0,
+      "quantityCandidates": {
+        "parsed": 659,
+        "unresolved": 622,
+        "total": 1281
+      }
+    },
+    "cuisineCategoryPageSamples": {
+      "Egyptian": 27,
+      "Indian": 152,
+      "Nigerian": 58
+    },
     "sourceStructure": {
       "parserVersion": "source-structure-v1",
-      "rowsWithGroup": 4797,
-      "rowsWithOptionalityCue": 861,
-      "rowsWithAlternativeCue": 2102,
-      "rowsWithQuantityQualifier": 948
+      "rowsWithGroup": 5903,
+      "rowsWithOptionalityCue": 1052,
+      "rowsWithAlternativeCue": 2598,
+      "rowsWithQuantityQualifier": 1165
     }
   },
   "nextAttemptAt": null,
-  "lastError": null
+  "lastError": null,
+  "sourceExhausted": true,
+  "indexVerifiedAt": "2026-10-13T16:31:22Z",
+  "hashChecks": {
+    "rawSourcePageHashesFailed": 0,
+    "sourceFileHashMatchesIndex": true,
+    "parsedFileHashMatchesIndex": true,
+    "categoryObservationsHashMatchesIndex": true
+  }
 }

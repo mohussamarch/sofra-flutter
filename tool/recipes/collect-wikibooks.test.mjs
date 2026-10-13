@@ -324,3 +324,28 @@ test('separate ingredient roots do not inherit previous section groups', () => {
   assert.deepEqual(parsed.ingredients,['flour','dates']);
   assert.deepEqual(parsed.ingredientRows.map(r=>r.sourceGroupPath.map(h=>h.title)),[['Dough'],[]]);
 });
+
+test('pending page lookup starts fresh and cannot inherit generator continuation',async(t)=>{
+ const out=await tempOutput(t),missing=makePage(502,'Pending','Egyptian recipes');delete missing.revisions;
+ const bodies=[response([makePage(501,'First','Egyptian recipes'),missing],{continue:'gcmcontinue||revisions',gcmcontinue:'generator-cursor',clcontinue:'generator-categories'}),response([makePage(502,'Pending','Egyptian recipes')]),response([makePage(503,'Next','Japanese recipes')])];
+ const urls=[];await collect({out,limit:3},{fetch:async url=>{urls.push(new URL(url));return{ok:true,json:async()=>bodies.shift()};},wait:async()=>{}});
+ assert.equal(urls[1].searchParams.get('pageids'),'502');assert.equal(urls[1].searchParams.has('gcmcontinue'),false);assert.equal(urls[1].searchParams.has('continue'),false);assert.equal(urls[1].searchParams.has('clcontinue'),false);assert.equal(urls[2].searchParams.get('gcmcontinue'),'generator-cursor');
+});
+
+test('pending category pagination uses its own cursor and verified revision, then restores generator',async(t)=>{
+ const out=await tempOutput(t),missing=makePage(512,'Pending','Egyptian recipes');delete missing.revisions;
+ const categoryOnly={pageid:512,ns:102,title:'Cookbook:Pending',categories:[{title:'Category:Nigerian recipes'}]};
+ const bodies=[response([makePage(511,'First','Egyptian recipes'),missing],{continue:'gcmcontinue||revisions',gcmcontinue:'generator-cursor'}),response([makePage(512,'Pending','Egyptian recipes')],{continue:'-||',clcontinue:'pending-categories'}),response([categoryOnly]),response([makePage(513,'Next','Japanese recipes')])];
+ const urls=[];await collect({out,limit:3},{fetch:async url=>{urls.push(new URL(url));return{ok:true,json:async()=>bodies.shift()};},wait:async()=>{}});
+ assert.equal(urls[2].searchParams.get('pageids'),'512');assert.equal(urls[2].searchParams.get('clcontinue'),'pending-categories');assert.equal(urls[2].searchParams.has('gcmcontinue'),false);assert.equal(urls[3].searchParams.get('gcmcontinue'),'generator-cursor');
+ const observations=(await readFile(resolve(out,'category-observations.jsonl'),'utf8')).trim().split('\n').map(JSON.parse);assert.ok(observations.some(o=>o.sourcePageId==='512'&&o.categories.includes('Category:Nigerian recipes')));
+});
+
+test('pending request cursor survives a bounded run and is resumed independently',async(t)=>{
+ const out=await tempOutput(t),missing=makePage(522,'Pending','Egyptian recipes');delete missing.revisions;
+ const first=fakeFetch([response([makePage(521,'First','Egyptian recipes'),missing],{continue:'gcmcontinue||revisions',gcmcontinue:'generator-cursor'}),response([makePage(522,'Pending','Egyptian recipes')],{continue:'-||',clcontinue:'pending-categories'})]);
+ await collect({out,limit:10,maxApiRequests:2},{fetch:first.fetch,wait:async()=>{}});
+ const checkpoint=JSON.parse(await readFile(resolve(out,'checkpoint.json'),'utf8'));assert.equal(checkpoint.pendingRequest.continuation.clcontinue,'pending-categories');assert.equal(checkpoint.continuation.gcmcontinue,'generator-cursor');
+ const bodies=[response([{pageid:522,ns:102,title:'Cookbook:Pending',categories:[{title:'Category:Greek recipes'}]}]),response([makePage(523,'Next','Japanese recipes')])];const urls=[];
+ const result=await collect({out,limit:10,resume:true},{fetch:async url=>{urls.push(new URL(url));return{ok:true,json:async()=>bodies.shift()};},wait:async()=>{}});assert.equal(result.sourceExhausted,true);assert.equal(urls[0].searchParams.get('clcontinue'),'pending-categories');assert.equal(urls[1].searchParams.get('gcmcontinue'),'generator-cursor');
+});
