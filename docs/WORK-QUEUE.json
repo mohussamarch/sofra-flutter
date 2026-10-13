@@ -2,13 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T13:51:34.530718+00:00",
-    "taskId": "recipe-quantities",
-    "summary": "Review-target guard implemented/6tests;54relatedNode tests. Corpus2788/2916/53;OFF unchanged1986. No nutrition approval.",
+    "at": "2026-10-13T14:18:07.898959+00:00",
+    "taskId": "recipe-bank",
+    "summary": "200new sourcepages;corpus2981/3116/53;actualindex/hash/prefix validation passed. Furtherwork stopped at quota90%/28%.",
     "evidence": [
-      "tool/recipes/review-target.mjs",
-      "tool/recipes/review-target.test.mjs",
-      "data/recipes/bulk/wikibooks-cookbook/index.json"
+      "data/recipes/bulk/wikibooks-cookbook/index.json",
+      "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl"
     ]
   },
   "tasks": [
@@ -75,14 +74,14 @@
       "id": "recipe-bank",
       "priority": 28,
       "dependsOn": [],
-      "status": "waiting",
-      "nextAction": "Check actual usage/lock and due time; resume Wikibooks with 2s minimum pacing and Retry-After. Extend regional coverage without an all-time count cap; source failure must not block local quantity parser.",
-      "lastAttemptAt": "2026-10-13T13:46:30.700Z",
-      "lastProgressAt": "2026-10-13T13:51:34.530718+00:00",
+      "status": "ready",
+      "nextAction": "First recheck actual quota below90%; then paced resume from checkpoint. Successful200-page unit saved; no source backoff currently. Do not infer bank completion.",
+      "lastAttemptAt": "2026-10-13T14:16:07.890Z",
+      "lastProgressAt": "2026-10-13T14:18:07.898959+00:00",
       "owner": null,
       "completedUnit": {
-        "sourcePages": 2916,
-        "parsedRecipes": 2788,
+        "sourcePages": 3116,
+        "parsedRecipes": 2981,
         "cuisineTags": 53,
         "runtimeReady": 0
       },
@@ -91,9 +90,7 @@
         "data/recipes/bulk/wikibooks-cookbook/source-pages.jsonl",
         "tool/recipes/build-bulk-index.mjs",
         "docs/RECIPE-BULK.md"
-      ],
-      "blockedUntil": "2026-10-13T13:56:30.700Z",
-      "blockedReason": "Wikimedia HTTP429; checkpointed backoff, no early retry"
+      ]
     },
     {
       "id": "recipe-quantities",
@@ -267,5 +264,12 @@
       "status": "ready",
       "nextAction": "Build documented APK after integration; record actual S24Ultra and Drive status"
     }
-  ]
+  ],
+  "quotaCheckpoint": {
+    "at": "2026-10-13T14:18:07.898959+00:00",
+    "primaryUsedPercent": 90,
+    "weeklyUsedPercent": 28,
+    "ordinaryUsageAllowed": true,
+    "action": "No further costly research or agents; recheck later without buying/resetting credits"
+  }
 }
