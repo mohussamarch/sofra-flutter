@@ -7,6 +7,7 @@ import '../domain/recipe_nutrition.dart';
 import '../domain/recipe_catalog.dart';
 import '../domain/recipe_variants.dart';
 import '../domain/imported_recipe_candidate.dart';
+import '../domain/personal_recipe_draft.dart';
 import '../domain/cooking_timer.dart';
 import '../domain/market_profile.dart';
 import '../domain/models.dart';
@@ -118,6 +119,7 @@ class KitchenService {
       }
       NutritionLedger.fromJson(Map<String, dynamic>.from(n['ledger'] as Map));
     }
+    _personalDraftBook(kitchen);
     final book = _recipeBook(kitchen);
     for (final raw in kitchen['plans'] as List) {
       final meal = PlannedMeal.fromJson(Map<String, dynamic>.from(raw as Map));
@@ -190,6 +192,159 @@ class KitchenService {
     }
     (_nutrition(k)['profiles'] as Map)[profile.memberId] = profile.toJson();
   });
+
+  static void _validatePersonalDraft(PersonalRecipeDraft draft) {
+    for (final line in draft.lines) {
+      final preparation = line.input.preparation;
+      if (preparation != null &&
+          PreparationCategoryRepository.isCategoryEstimate(preparation)) {
+        throw StateError(
+          'Review preparation for this new draft separately; '
+          'a category acceptance scoped to a recipe cannot be copied',
+        );
+      }
+    }
+  }
+
+  Map<String, dynamic> _personalDraftBook(Map<String, dynamic> k) {
+    if (k['personalRecipeDrafts'] == null) {
+      return {
+        'version': 1,
+        'revisions': <String, dynamic>{},
+        'active': <String, dynamic>{},
+      };
+    }
+    final book = Map<String, dynamic>.from(k['personalRecipeDrafts'] as Map);
+    if (book['version'] != 1 ||
+        book['revisions'] is! Map ||
+        book['active'] is! Map) {
+      throw const FormatException('Personal recipe draft book version');
+    }
+    final drafts = <String, PersonalRecipeDraft>{};
+    for (final entry in (book['revisions'] as Map).entries) {
+      final record = entry.value as Map;
+      final draft = PersonalRecipeDraft.fromJson(
+        Map<String, dynamic>.from(record['draft'] as Map),
+      );
+      _validatePersonalDraft(draft);
+      final at = DateTime.tryParse(record['reviewedAt'] as String? ?? '');
+      if (entry.key != draft.key ||
+          record['acknowledgeInputsReviewed'] != true ||
+          record['reviewNote'] is! String ||
+          (record['reviewNote'] as String).trim().isEmpty ||
+          at == null ||
+          !at.isUtc ||
+          at.toIso8601String() != record['reviewedAt']) {
+        throw const FormatException('Invalid personal draft review');
+      }
+      drafts[entry.key as String] = draft;
+    }
+    final active = book['active'] as Map;
+    for (final entry in active.entries) {
+      if (drafts[entry.value]?.id != entry.key) {
+        throw const FormatException(
+          'Missing or mismatched active personal draft',
+        );
+      }
+    }
+    if (drafts.values.any((v) => !active.containsKey(v.id))) {
+      throw const FormatException('Personal draft active version missing');
+    }
+    return book;
+  }
+
+  List<PersonalRecipeDraft> get personalRecipeDrafts => List.unmodifiable(
+    (_personalDraftBook(snapshot)['revisions'] as Map).values.map(
+      (v) => PersonalRecipeDraft.fromJson(
+        Map<String, dynamic>.from(v['draft'] as Map),
+      ),
+    ),
+  );
+
+  PersonalRecipeDraft? personalRecipeDraft(String id, {String? revisionKey}) {
+    final book = _personalDraftBook(snapshot);
+    final key = revisionKey ?? (book['active'] as Map)[id];
+    final raw = (book['revisions'] as Map)[key];
+    if (raw == null) return null;
+    final result = PersonalRecipeDraft.fromJson(
+      Map<String, dynamic>.from(raw['draft'] as Map),
+    );
+    if (result.id != id) throw StateError('Personal draft identity mismatch');
+    return result;
+  }
+
+  /// User-owned drafts created from scratch. No catalog parent, guessed timing,
+  /// scientific approval, planning, stock write or person consumption implied.
+  Future<void> savePersonalRecipeDraft(
+    PersonalRecipeDraft submitted, {
+    required bool acknowledgeInputsReviewed,
+    required String reviewNote,
+    required DateTime reviewedAt,
+    String? expectedActiveKey,
+  }) async {
+    if (!acknowledgeInputsReviewed ||
+        reviewNote.trim().isEmpty ||
+        (expectedActiveKey != null && expectedActiveKey.trim().isEmpty)) {
+      throw ArgumentError('Explicit personal ingredient review required');
+    }
+    final draft = PersonalRecipeDraft.fromJson(submitted.toJson());
+    _validatePersonalDraft(draft);
+    final record = {
+      'draft': draft.toJson(),
+      'acknowledgeInputsReviewed': true,
+      'reviewNote': reviewNote.trim(),
+      'reviewedAt': reviewedAt.toUtc().toIso8601String(),
+    };
+    await _write((k) {
+      final book = _personalDraftBook(k);
+      final revisions = book['revisions'] as Map,
+          active = book['active'] as Map;
+      final existing = revisions[draft.key];
+      if (existing != null) {
+        final prior = PersonalRecipeDraft.fromJson(
+          Map<String, dynamic>.from(existing['draft'] as Map),
+        );
+        if (prior.fingerprint != draft.fingerprint ||
+            existing['acknowledgeInputsReviewed'] != true ||
+            existing['reviewNote'] != record['reviewNote'] ||
+            existing['reviewedAt'] != record['reviewedAt']) {
+          throw StateError('Personal draft revision is immutable');
+        }
+        // An old identical retry must never reactivate an earlier version.
+        return;
+      }
+      if (active[draft.id] != expectedActiveKey) {
+        throw StateError('Personal draft active revision changed;review again');
+      }
+      revisions[draft.key] = record;
+      active[draft.id] = draft.key;
+      k['personalRecipeDrafts'] = book;
+    });
+  }
+
+  RecipeNutritionResult previewPersonalRecipeIngredients(
+    String id, {
+    String? revisionKey,
+    double? servings,
+  }) {
+    final draft = personalRecipeDraft(id, revisionKey: revisionKey);
+    if (draft == null) throw StateError('Personal recipe draft missing');
+    return draft.previewIngredients(servings: servings);
+  }
+
+  RecipeNutritionResult previewPersonalRecipeCooked(
+    String id, {
+    String? revisionKey,
+    double? servings,
+    double? cookedYieldGrams,
+  }) {
+    final draft = personalRecipeDraft(id, revisionKey: revisionKey);
+    if (draft == null) throw StateError('Personal recipe draft missing');
+    return draft.previewCooked(
+      servings: servings,
+      cookedYieldGrams: cookedYieldGrams,
+    );
+  }
 
   RecipeBook _recipeBook(Map<String, dynamic> k) => k['recipeBook'] == null
       ? RecipeBook.empty()

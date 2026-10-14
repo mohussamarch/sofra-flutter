@@ -146,3 +146,8 @@ Registered source-draft continuation: [preflight/registry contract](RECIPE-IMPOR
 ## Preparation implementation checkpoint —14October
 
 Bounded category acceptance infrastructure30 complete: explicit one-method/exact-food/revision/line review and cooking acknowledgement, conservative missing data/frozen confidence. PREPARATION-ACCEPTANCE.md;full155Flutter+6sourceNode/analyzeclean. This does not close scientific factor coverage or source reuse review. Those continue under preparation-coverage51, leaving private from-scratch authoring34 as next independent core unit.
+
+
+## Personal from-scratch drafts —14October2026
+
+[PERSONAL-RECIPE-DRAFTS.md](PERSONAL-RECIPE-DRAFTS.md): owned explicit food/quantity/form/optional/scaling/estimate inputs with unknown cuisine/time/food/amount. KitchenService saves immutable reviewed versions/active pointers without a CatalogRecipe parent, exact expectedActiveKey, same-key collision protection, idempotent older retries and failed-save/850KB rollback. Typed sorted-object fingerprint survives storage map reordering. Separate ingredient/cooked previews use existing calculator. No automatic planning, stock or intake; accepted preparation scoped to another recipe cannot be copied. Full171Flutter/analyzeclean,8domain+8persistence cases. Finalization into a plannable recipe remains next under authoring34; do not invent metadata zeros or a parent. HANDOFF§60.

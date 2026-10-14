@@ -138,3 +138,8 @@ Use docs/NATIVE-RECIPE-IMPORT.md. TrustedartifactexpectedSHA+exactUTF8pack,crypt
 ## Category preparation estimates
 
 PREPARATION-ACCEPTANCE.md describes explicit scoped acceptance for USDA168927/asSold only,0381 or0382 as alternatives. Source/review/FoodRecord fingerprints are consistency pins, not upstream approval. Three vitamin factors only; other46/yield/edibleFraction/licence remain unknown. Preserve frozen confidence/source/scope and separate cooking acknowledgement even with actual grams; no automatic name/cuisine matching or scientific/legal/finished-recipe approval. From-scratch authoring34 next; broader preparation scientific coverage continues separately.
+
+
+## From-scratch draft calculator
+
+PERSONAL-RECIPE-DRAFTS.md: immutable user drafts in a separate namespace, not plannable CatalogRecipe roots. Preserve unknowns, owned snapshots, sorted-object fingerprint, exact active guard and old retry semantics. Existing input/cooked calculator; no automatic stock/intake. Finalization/planning remains authoring34; no inherited category acceptance from another recipe. No usercloud/UI/APK migration.
