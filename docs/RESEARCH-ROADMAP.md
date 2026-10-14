@@ -166,3 +166,7 @@ Follow-up: historical36officialEGretailintervals/June2025importedforcontracttest
 ## Current recipe source correction —14October2026
 
 The latest user request replaces the previous source expansion direction: modern Arabic YouTube cooking personalities first; no further collection from recipe books/historical references/Wikibooks now. Preserve prior banks. Follow RECIPE-ACQUISITION-ARABIC-YOUTUBE.md for official source discovery, recipe/variant grouping, provenance and nutrition review. Prices remain an independent task; their sources and USDA/OFF nutrition bank scope are unchanged. Quota90/89 currently prevents new costly acquisition.
+
+##14October — closed units and next order
+
+Completed a bounded local curation unit(16Arabic records/4explicit preflightdrafts), modern Arabic creator unit(6website recipes/14videodiscoveries), pinned Flutter readable library(22records), and stock-aware planned purchase forecast(18tests). Source acquisition remains ongoing; no final bank completion claim. Current status is FEATURE-STATUS.md; detailed APIs RECIPE-LIBRARY.md/BACKEND-API.md. Next prioritize resolving curated recipe metadata/rights/quantity gaps and source-supported modern creator recipes; monthly budget optimizer still needs reviewed prices/people constraints. No booknetwork resurrection, UI activation or fake nutrition.

@@ -1,0 +1,2284 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-14T10:04:35.323Z",
+  "reviewer": "Codex manual local source curation; not independent kitchen testing",
+  "changeNotice": "Arabic names and method summaries newly written. Quantities manually transcribed from fixed Wikibooks sources; explicit ingredient alternatives selected. Attribution to Wikibooks contributors via fixed revision URLs; adaptations CC BY-SA 4.0. Per-page exceptions remain unapproved.",
+  "recipes": [
+    {
+      "sourcePageId": 141667,
+      "nameAr": "سموذي الخوخ والفراولة والآيس كريم",
+      "status": "fully-specified",
+      "family": "peach-strawberry-icecream-smoothie",
+      "method": "cold-blending",
+      "cuisines": [],
+      "yield": {
+        "amount": 4,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "4"
+      },
+      "time": {
+        "declaredTotalMinutes": 5,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "5 minutes"
+      },
+      "ingredients": [
+        [
+          0,
+          "زبادي سادة",
+          "plain yogurt",
+          150,
+          "g",
+          false,
+          "explicit source metric quantity; no density conversion"
+        ],
+        [
+          1,
+          "آيس كريم فانيليا",
+          "vanilla ice cream",
+          125,
+          "ml",
+          false,
+          "explicit source volume"
+        ],
+        [
+          2,
+          "خوخ مقطع",
+          "sliced peaches",
+          40,
+          "g",
+          false,
+          "explicit source mass"
+        ],
+        [
+          3,
+          "فراولة مقطعة",
+          "sliced strawberries",
+          40,
+          "g",
+          false,
+          "explicit source mass"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "اخلط الخوخ والفراولة والزبادي وآيس كريم الفانيليا في الخلاط حتى يصبح القوام ناعمًا.",
+          null
+        ]
+      ],
+      "notes": [
+        "اختيرت القيم المترية المطبوعة بالمصدر؛ لم تستنتج كثافات أو أوزان من الأكواب. لا دليل مستقل على مطبخ بلد محدد."
+      ],
+      "blockers": [
+        "زمن التحضير والطهي منفصلين وزمن الخطوة غير منشور",
+        "تصنيف المطبخ ومعرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "sourceRecordId": "wikibooks-141667-r4517159",
+      "sourceSha256": "3404a11679ac05e8907c438c47a0498aeaecf0d9d77e0781cd3acaa70a8467fd",
+      "derivedRecipeSha256": "d7057716b6cf807228ab29c83c758fbc26464856a3250323708b73831fda2915"
+    },
+    {
+      "sourcePageId": 264763,
+      "nameAr": "كولفي بالهيل والفستق",
+      "status": "fully-specified",
+      "family": "kulfi",
+      "method": "milk-reduction-and-freezing",
+      "cuisines": [
+        [
+          "indian",
+          "هندي",
+          "Indian recipes"
+        ]
+      ],
+      "yield": {
+        "amount": null,
+        "min": 4,
+        "max": 6,
+        "unit": "source-servings",
+        "sourceText": "4–6"
+      },
+      "time": {
+        "declaredTotalMinutes": 420,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "7 hours"
+      },
+      "ingredients": [
+        [
+          0,
+          "حليب",
+          "milk",
+          4,
+          "cup",
+          false,
+          "source cup; volume system unspecified"
+        ],
+        [
+          1,
+          "سكر",
+          "sugar",
+          8,
+          "tsp",
+          false,
+          "source teaspoon retained"
+        ],
+        [
+          2,
+          "بذور هيل أخضر مطحونة",
+          "ground green cardamom",
+          0.5,
+          "tsp",
+          false,
+          "source teaspoon retained"
+        ],
+        [
+          3,
+          "فستق مقطع رفيعًا",
+          "thinly sliced pistachios",
+          1,
+          "tbsp",
+          false,
+          "source tablespoon retained"
+        ],
+        [
+          4,
+          "لوز مقطع رفيعًا",
+          "thinly sliced almonds",
+          1,
+          "tbsp",
+          true,
+          "explicit source optional ingredient included in this variant"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "ارفع الحليب إلى الغليان في قدر عريض ثقيل مع التقليب المستمر.",
+          null
+        ],
+        [
+          [
+            1
+          ],
+          "خفف الحرارة وواصل التقليب نحو 40–45 دقيقة حتى يتبقى ثلاثة أرباع كوب من الحليب، مع تحريك الجوانب لمنع الاحتراق.",
+          {
+            "min": 40,
+            "max": 45,
+            "scope": "simmering"
+          }
+        ],
+        [
+          [
+            2
+          ],
+          "أضف السكر والفستق واللوز الاختياري والهيل، واترك الخليط ليبرد.",
+          null
+        ],
+        [
+          [
+            3
+          ],
+          "وزع الخليط في قوالب وغطه وجمده نحو ست ساعات حتى يتماسك.",
+          {
+            "min": 360,
+            "max": 360,
+            "scope": "freezing",
+            "approximate": true
+          }
+        ],
+        [
+          [
+            4
+          ],
+          "مرر سكينًا مغموسًا في ماء ساخن عند الحواف ثم اقلب القوالب للتقديم.",
+          null
+        ]
+      ],
+      "notes": [
+        "الناتج المنشور نطاق 4–6 حصص؛ لم يحول إلى عدد حصص ثابت. تقليل الحليب إلى ثلاثة أرباع كوب نقطة نهاية من المصدر وليست معامل احتفاظ غذائي."
+      ],
+      "blockers": [
+        "العدد الصحيح الثابت للحصص غير معلوم",
+        "فصل التحضير والطهي وزمن التبريد وبعض الخطوات غير منشور",
+        "معرفات المخزون وأساس الأكواب وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "sourceRecordId": "wikibooks-264763-r4639854",
+      "sourceSha256": "65263074d61857563e00542c5ac54160dacf54a289f2d72493a9f87231c88cdc",
+      "derivedRecipeSha256": "f8fb843a29376f77acd189582c1b65d006f34c9e3ff9f386c2326c72ba2b4093"
+    },
+    {
+      "sourcePageId": 303834,
+      "nameAr": "صلصة الغمس الفيتنامية بصلصة السمك",
+      "status": "fully-specified",
+      "family": "nuoc-mam-pha",
+      "method": "mixed-and-refrigerated-no-optional-boil",
+      "cuisines": [
+        [
+          "vietnamese",
+          "فيتنامي",
+          "Vietnamese recipes"
+        ]
+      ],
+      "yield": {
+        "amount": 2,
+        "min": null,
+        "max": null,
+        "unit": "cup-yield",
+        "sourceText": "2 cups"
+      },
+      "time": {
+        "declaredTotalMinutes": 10,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "10 minutes"
+      },
+      "ingredients": [
+        [
+          0,
+          "صلصة سمك مركزة",
+          "concentrated fish sauce",
+          0.25,
+          "cup",
+          false,
+          "source cup retained"
+        ],
+        [
+          1,
+          "ماء",
+          "water",
+          1.5,
+          "cup",
+          false,
+          "source cup retained"
+        ],
+        [
+          2,
+          "عصير ليمون",
+          "lemon juice",
+          1,
+          "tbsp",
+          false,
+          "source tablespoon retained"
+        ],
+        [
+          3,
+          "سكر",
+          "sugar",
+          1,
+          "tbsp",
+          false,
+          "source tablespoon retained"
+        ],
+        [
+          4,
+          "ثوم مفروم",
+          "minced garlic",
+          1,
+          "tsp",
+          false,
+          "selected source teaspoon option; about 2 cloves alternative not added or converted"
+        ],
+        [
+          5,
+          "معجون سامبال أوليك الحار",
+          "sambal oelek",
+          0.5,
+          "tsp",
+          false,
+          "source teaspoon retained"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "امزج صلصة السمك والماء وعصير الليمون والسكر والثوم والسامبال جيدًا.",
+          null
+        ],
+        [
+          [
+            2
+          ],
+          "غط الصلصة وضعها في الثلاجة.",
+          null
+        ]
+      ],
+      "notes": [
+        "اختيرت طريقة المزج البارد؛ الغلي اختياري في المصدر ومستبعد صراحة. ناتج كوبين محفوظ كما نشره المصدر، وليس مجموعًا محسوبًا من أحجام المكونات."
+      ],
+      "blockers": [
+        "الناتج حجم وليس عدد حصص",
+        "فصل التحضير والطهي ومدد الخطوات والتبريد غير منشور",
+        "معرفات المخزون وأساس القياس وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "excludedSourceSteps": [
+        {
+          "sourceStepIndex": 1,
+          "reason": "Source boiling is optional; selected unboiled method explicitly excludes it."
+        }
+      ],
+      "sourceRecordId": "wikibooks-303834-r4519041",
+      "sourceSha256": "6ed3e89eefa1c09eed86ecf02d4cd234016e7cf92de8dfda7cf6a5d7c310bf3a",
+      "derivedRecipeSha256": "3a650cff9ef696bdfff215c9afede15cf82097f45ead46c0fc8e7a5f8c550a3d"
+    },
+    {
+      "sourcePageId": 17844,
+      "nameAr": "عصيدة رقائق الشوفان بالحليب",
+      "status": "fully-specified",
+      "family": "oat-porridge",
+      "method": "rolled-oats-water-then-milk",
+      "cuisines": [],
+      "yield": {
+        "amount": 1,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "1"
+      },
+      "time": {
+        "declaredTotalMinutes": 15,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "15 minutes"
+      },
+      "ingredients": [
+        [
+          0,
+          "رقائق شوفان",
+          "rolled oats",
+          45,
+          "g",
+          false,
+          "selected rolled oats and explicit 45 g; other grain option not selected"
+        ],
+        [
+          1,
+          "ماء",
+          "water",
+          180,
+          "ml",
+          false,
+          "explicit source metric volume"
+        ],
+        [
+          2,
+          "حليب",
+          "milk",
+          180,
+          "ml",
+          false,
+          "explicit source metric volume"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "امزج الشوفان والماء في قدر مغطى وارفعه حتى يغلي.",
+          null
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          "قلب عند ظهور الفقاعات وخفف الحرارة لأقل غليان هادئ. غط القدر وراقبه مع التقليب كل دقيقة تقريبًا؛ بعد خمس دقائق أضف الحليب.",
+          {
+            "min": 5,
+            "max": 5,
+            "scope": "covered-simmer"
+          }
+        ],
+        [
+          [
+            3,
+            4
+          ],
+          "قلب حتى يندمج الحليب ثم قدم العصيدة سادة.",
+          null
+        ]
+      ],
+      "notes": [
+        "اختير التقديم السادة صراحة؛ إضافات السكر والفواكه وغيرها المقترحة في خطوة التقديم مستبعدة. لا ينسب الشوفان لمطبخ بلد بالاستنتاج."
+      ],
+      "blockers": [
+        "فصل التحضير والطهي وبعض مدد الخطوات غير منشور",
+        "تصنيف المطبخ ومعرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "sourceRecordId": "wikibooks-17844-r4606890",
+      "sourceSha256": "c742d8ca191ecfd7618e0706350781261e36f8dcc2bd7216aea1e4dd5ce42b04",
+      "derivedRecipeSha256": "c25ba052aca1b7700a599b3373e6e4b2a9ab36d7e2d0d4c15b36d1ceb09522d3"
+    },
+    {
+      "sourcePageId": 455788,
+      "nameAr": "لاسي المانجو الحلو",
+      "status": "needs-review",
+      "family": "mango-lassi",
+      "method": "cold-mixing",
+      "cuisines": [
+        [
+          "indian",
+          "هندي",
+          "Category:Indian recipes"
+        ]
+      ],
+      "yield": {
+        "amount": 6,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "6"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "ingredients": [
+        [
+          0,
+          "نكتار مانجو مصفى",
+          "strained mango nectar",
+          1,
+          "L",
+          false,
+          "source litre retained"
+        ],
+        [
+          1,
+          "زبادي كامل الدسم",
+          "full-fat yogurt",
+          500,
+          "ml",
+          false,
+          "explicit source volume"
+        ],
+        [
+          2,
+          "حليب بارد",
+          "chilled milk",
+          500,
+          "ml",
+          false,
+          "explicit source volume"
+        ],
+        [
+          3,
+          "سكر مقاس بالحجم",
+          "sugar",
+          250,
+          "ml",
+          false,
+          "source volume, not 250 g; no density conversion"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "أذب السكر في نكتار المانجو.",
+          null
+        ],
+        [
+          [
+            1
+          ],
+          "أضف الحليب إلى الزبادي تدريجيًا وامزج.",
+          null
+        ],
+        [
+          [
+            2
+          ],
+          "اجمع خليط المانجو مع خليط الزبادي وقلب حتى يتجانسا.",
+          null
+        ]
+      ],
+      "notes": [
+        "الطريقة ومقادير المكونات صريحة؛ زمن التنفيذ غير منشور. السكر مقاس بالملليلتر كما في المصدر."
+      ],
+      "blockers": [
+        "أزمنة التحضير والطهي والإجمالي والخطوات غير منشورة",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "sourceRecordId": "wikibooks-455788-r4511034",
+      "sourceSha256": "04b4544d9a4b56b56d997b8d58b130afcbc52d161b009d9cc20bdab17334c129",
+      "derivedRecipeSha256": "9b597ca3378c68652f2b0127943f2fa2376817f2ebfefed6f482cfb3006bdc2e"
+    },
+    {
+      "sourcePageId": 80271,
+      "nameAr": "بايكليت بالخميرة",
+      "status": "needs-review",
+      "family": "pikelet",
+      "method": "yeast-batter-griddle",
+      "cuisines": [
+        [
+          "new-zealand",
+          "نيوزيلندي",
+          "New Zealand recipes"
+        ],
+        [
+          "australian",
+          "أسترالي",
+          "Cuisine of Australia"
+        ]
+      ],
+      "yield": {
+        "amount": 15,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "15"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "ingredients": [
+        [
+          0,
+          "دقيق خبز قوي",
+          "strong bread flour",
+          125,
+          "g",
+          false,
+          "exact source mass"
+        ],
+        [
+          1,
+          "دقيق عادي",
+          "plain flour",
+          125,
+          "g",
+          false,
+          "exact source mass"
+        ],
+        [
+          2,
+          "بيكربونات الصوديوم",
+          "bicarbonate of soda",
+          1.5,
+          "tsp",
+          false,
+          "0.5 tsp initially; remaining 1 tsp in milk, according to source"
+        ],
+        [
+          3,
+          "خميرة طازجة",
+          "fresh yeast",
+          8,
+          "g",
+          false,
+          "source mass"
+        ],
+        [
+          4,
+          "حليب كامل الدسم فاتر",
+          "lukewarm whole milk",
+          75,
+          "ml",
+          false,
+          "source volume"
+        ],
+        [
+          5,
+          "ملح",
+          "salt",
+          0.5,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          6,
+          "ماء فاتر",
+          "lukewarm water",
+          250,
+          "ml",
+          false,
+          "source volume"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "انخل نوعي الدقيق مع الملح ونصف ملعقة صغيرة من البيكربونات.",
+          null
+        ],
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          "فتت الخميرة وأضف الماء تدريجيًا، ثم اخلطها بالدقيق حتى تحصل على خليط شديد السماكة.",
+          null
+        ],
+        [
+          [
+            4
+          ],
+          "غط الخليط بفوطة دافئة رطبة واتركه في مكان دافئ ساعتين.",
+          {
+            "min": 120,
+            "max": 120,
+            "scope": "fermentation"
+          }
+        ],
+        [
+          [
+            5
+          ],
+          "أذب باقي البيكربونات في الحليب الفاتر وأضفه تدريجيًا للخليط.",
+          null
+        ],
+        [
+          [
+            6
+          ],
+          "سخن صاجًا أو مقلاة مدهونة بخفة. ضع ملعقة من الخليط في كل مرة واطه نحو دقيقتين لكل جانب؛ اقلب عندما تجف الفقاعات.",
+          {
+            "min": 2,
+            "max": 2,
+            "scope": "per-side",
+            "approximate": true
+          }
+        ]
+      ],
+      "notes": [
+        "يحفظ المصدر الناتج 15 كحصص منشورة؛ لا يستنتج وزن موحد للقطعة."
+      ],
+      "blockers": [
+        "دهن المقلاة غير محدد النوع أو الكمية",
+        "لا زمن إجمالي أو فصل تحضير وطهي؛ زمن الجانب لا يضرب دون عدد دفعات",
+        "معرفات المخزون وروابط القياس والغذاء والتغذية غير معتمدة"
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "pan grease",
+          "nameAr": "دهن للمقلاة",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 6,
+          "sourceText": "lightly greased griddle",
+          "reason": "fat identity and quantity absent"
+        }
+      ],
+      "sourceRecordId": "wikibooks-80271-r4522725",
+      "sourceSha256": "06cb50eb7f46a8c5d02cb3f8fd09c5dc81a84f046d9c8f2f9ac6cee3f6975b89",
+      "derivedRecipeSha256": "8e3d0dfb39504cb2a0f8b42fe45c0f912cf5d47b04bd814e5c2cbf29d4e5cc96"
+    },
+    {
+      "sourcePageId": 456807,
+      "nameAr": "ألكبوس — خبز نيجيري بالبخار",
+      "status": "needs-review",
+      "family": "alkubus",
+      "method": "yeast-dough-steaming",
+      "cuisines": [
+        [
+          "hausa",
+          "هوسا",
+          "Category:Hausa recipes"
+        ],
+        [
+          "nigerian",
+          "نيجيري",
+          "northern Nigeria"
+        ]
+      ],
+      "yield": {
+        "amount": 4,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "4"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "ingredients": [
+        [
+          0,
+          "دقيق قمح",
+          "wheat flour",
+          2,
+          "cup",
+          false,
+          "source cup retained"
+        ],
+        [
+          1,
+          "خميرة فورية",
+          "instant yeast",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          2,
+          "ملح",
+          "salt",
+          0.5,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          3,
+          "بيكنج باودر",
+          "baking powder",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          4,
+          "ماء",
+          "water",
+          0.5,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          5,
+          "زيت نباتي",
+          "vegetable oil",
+          2,
+          "tsp",
+          false,
+          "listed oil retained; allocation between dough and mold unspecified"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1
+          ],
+          "انخل الدقيق واخلطه بالخميرة والملح والبيكنج باودر، ثم أضف الماء واعجن حتى تتماسك العجينة.",
+          null
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          "غط العجينة واتركها ساعة لتختمر ثم فرغ الهواء منها برفق.",
+          {
+            "min": 60,
+            "max": 60,
+            "scope": "fermentation"
+          }
+        ],
+        [
+          [
+            4,
+            5
+          ],
+          "ادهن قالب الطهي وضع العجين فيه، ثم غطه واطهه بالبخار حتى يخرج عود الاختبار نظيفًا.",
+          null
+        ],
+        [
+          [
+            6,
+            7
+          ],
+          "اترك الخبز يبرد ثم أخرجه من القالب وقدمه.",
+          null
+        ]
+      ],
+      "notes": [
+        "لم يخمن توزيع ملعقتي الزيت بين العجين ودهن القالب."
+      ],
+      "blockers": [
+        "توزيع الزيت يحتاج حسمًا",
+        "زمن التبخير والتبريد والإجمالي غير منشور",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "sourceRecordId": "wikibooks-456807-r4526469",
+      "sourceSha256": "87318f22057e91f9eb22ba6610d16753f3dae2d2da07ef0689f8048a716d2e98",
+      "derivedRecipeSha256": "07d2700d929a604c1b875c4d8105a2be60f5053bbe12b3befa8f03c02fcb0de2"
+    },
+    {
+      "sourcePageId": 33064,
+      "nameAr": "نان بالزبادي وبيكربونات الصوديوم",
+      "status": "needs-review",
+      "family": "naan",
+      "method": "yogurt-baking-soda-hot-oven",
+      "cuisines": [
+        [
+          "indian",
+          "هندي",
+          "Indian Cuisine"
+        ],
+        [
+          "pakistani",
+          "باكستاني",
+          "Pakistani Cuisine"
+        ]
+      ],
+      "yield": {
+        "amount": 4,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "4"
+      },
+      "time": {
+        "declaredTotalMinutes": 120,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "2 hours",
+        "conflict": "Declared two-hour total is shorter than 2–3-hour rest plus 4–5-minute baking."
+      },
+      "ingredients": [
+        [
+          0,
+          "دقيق عادي",
+          "plain flour",
+          450,
+          "g",
+          false,
+          "source explicitly prints 450 g; no inferred conversion"
+        ],
+        [
+          1,
+          "زبادي",
+          "yogurt",
+          240,
+          "ml",
+          false,
+          "source explicitly prints 240 ml"
+        ],
+        [
+          2,
+          "بيكربونات الصوديوم",
+          "baking soda",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          3,
+          "ملح",
+          "salt",
+          2,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          4,
+          "ماء",
+          "water",
+          180,
+          "ml",
+          false,
+          "source explicitly prints 180 ml but method calls hydration approximate; adjustment unknown"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "اعجن الدقيق والزبادي والبيكربونات والملح مع الماء؛ المصدر يذكر نحو 180 مل ويطلب ضبط الماء بحسب العجين.",
+          null
+        ],
+        [
+          [
+            1
+          ],
+          "لف العجين بقماش رطب واتركه ساعتين إلى ثلاث ساعات.",
+          {
+            "min": 120,
+            "max": 180,
+            "scope": "resting"
+          }
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          "قسم العجين كرات صغيرة وافردها بيضاوية أو دائرية.",
+          null
+        ],
+        [
+          [
+            4,
+            5
+          ],
+          "رطب سطح العجين بالماء واخبز في تنور أو فرن مسخن لأعلى حرارة متاحة نحو 4–5 دقائق حتى ينتفخ قليلًا.",
+          {
+            "min": 4,
+            "max": 5,
+            "scope": "baking"
+          }
+        ],
+        [
+          [
+            6
+          ],
+          "ادهن الوجه بالزبدة وقدمه ساخنًا.",
+          null
+        ]
+      ],
+      "notes": [
+        "طريقة نان مستقلة فعلًا: زبادي وبيكربونات دون خميرة في القائمة. الحرارة النوعية العالية محفوظة دون درجة مخترعة."
+      ],
+      "blockers": [
+        "زبدة الوجه وماء السطح وضبط ماء العجين غير مقادير مكتملة",
+        "الإجمالي المنشور يناقض أزمنة الخطوات",
+        "درجة الفرن عددًا غير منشورة",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "butter for brushing",
+          "nameAr": "زبدة لدهن الوجه",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 6,
+          "sourceText": "Brush the naan with butter.",
+          "reason": "ingredient absent from list; quantity absent"
+        },
+        {
+          "name": "surface water",
+          "nameAr": "ماء لترطيب السطح",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 4,
+          "sourceText": "Smear the surface with water",
+          "reason": "additional surface quantity unknown"
+        }
+      ],
+      "sourceRecordId": "wikibooks-33064-r4512549",
+      "sourceSha256": "3c978e5531e6dfbe205de72237c010c54bec6fa31c51ef13d72451f11442db39",
+      "derivedRecipeSha256": "ea0f0e319a0e12214625d1be83df07224d8187ffc976aaaadd46a29871eb0541"
+    },
+    {
+      "sourcePageId": 456620,
+      "nameAr": "نان بالخميرة الجافة",
+      "status": "needs-review",
+      "family": "naan",
+      "method": "active-yeast-proofing-140c-oven",
+      "cuisines": [],
+      "yield": {
+        "amount": 4,
+        "min": null,
+        "max": null,
+        "unit": "dough-balls",
+        "sourceText": "Divide the dough into four balls"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "ingredients": [
+        [
+          0,
+          "خميرة جافة نشطة",
+          "dried active yeast",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          1,
+          "سكر أبيض",
+          "white granulated sugar",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          2,
+          "دقيق خبز أبيض",
+          "white bread flour",
+          200,
+          "g",
+          false,
+          "explicit source mass"
+        ],
+        [
+          3,
+          "حبة البركة",
+          "nigella seeds",
+          1,
+          "pinch",
+          false,
+          "source pinch retained; no gram conversion"
+        ],
+        [
+          4,
+          "ملح",
+          "salt",
+          0.25,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          5,
+          "بيكنج باودر",
+          "baking powder",
+          0.5,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          6,
+          "زيت نباتي",
+          "vegetable oil",
+          1,
+          "tbsp",
+          false,
+          "source tablespoon"
+        ],
+        [
+          7,
+          "زبادي سادة",
+          "plain yogurt",
+          2,
+          "tbsp",
+          false,
+          "source tablespoon"
+        ],
+        [
+          8,
+          "حليب",
+          "milk",
+          2,
+          "tbsp",
+          false,
+          "source tablespoon"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1
+          ],
+          "سخن الفرن إلى 140°م كما في المصدر. امزج الخميرة بملعقة كبيرة ماء دافئ والسكر، واتركها خمس دقائق حتى تظهر الرغوة.",
+          {
+            "min": 5,
+            "max": 5,
+            "scope": "yeast-activation"
+          }
+        ],
+        [
+          [
+            2
+          ],
+          "اخلط الدقيق وحبة البركة والملح والبيكنج باودر، ثم أضف الزيت والزبادي والحليب والخميرة المنشطة.",
+          null
+        ],
+        [
+          [
+            3
+          ],
+          "اعجن نحو عشر دقائق بيد مرطبة بالماء، وأرحه عشر دقائق ثم اعجن خمس دقائق أخرى.",
+          null
+        ],
+        [
+          [
+            4
+          ],
+          "غط العجين واتركه في مكان دافئ 20–30 دقيقة.",
+          {
+            "min": 20,
+            "max": 30,
+            "scope": "proofing"
+          }
+        ],
+        [
+          [
+            5,
+            6
+          ],
+          "قسم العجين أربع كرات وافردها بيضاوية بسمك نصف سم تقريبًا. ضعها بصينية مدهونة واخبز 10–15 دقيقة حتى تنتفخ قليلًا.",
+          {
+            "min": 10,
+            "max": 15,
+            "scope": "baking"
+          }
+        ]
+      ],
+      "notes": [
+        "أربع كرات دليل على عدد قطع، ولا يساوي أربع حصص. لا تنسب هذه الصفحة لمطبخ لم تصرح به ولا ترث مطبخ الوصفة القريبة.",
+        "درجة 140°م محفوظة كما نشرها المصدر رغم احتياجها مراجعة طبخ."
+      ],
+      "blockers": [
+        "الحصص غير منشورة",
+        "ماء ترطيب اليد ودقيق السطح ودهن الصينية غير مقادير مكتملة",
+        "درجة الفرن المنخفضة تحتاج مراجعة",
+        "لا أزمنة إجمالية أو فصل تحضير وطهي وبعض الخطوات",
+        "مطبخ runtime ومعرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "warm water for yeast",
+          "nameAr": "ماء دافئ لتنشيط الخميرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceStepIndex": 1,
+          "sourceText": "1 tablespoon of warm water",
+          "reason": "explicit in method; missing from ingredient list"
+        },
+        {
+          "name": "water for hands",
+          "nameAr": "ماء لترطيب اليد",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 3,
+          "sourceText": "wet your knuckles with a little water",
+          "reason": "quantity unknown"
+        },
+        {
+          "name": "board flour",
+          "nameAr": "دقيق للسطح",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 5,
+          "sourceText": "floured surface or board",
+          "reason": "quantity unknown"
+        },
+        {
+          "name": "tray grease",
+          "nameAr": "دهن للصينية",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 6,
+          "sourceText": "greased baking tray",
+          "reason": "identity and quantity unknown"
+        }
+      ],
+      "sourceRecordId": "wikibooks-456620-r4522853",
+      "sourceSha256": "4ecd72e3192c1e81a5f88284b37313cd0da68302c30faad8434d58bd46543e4b",
+      "derivedRecipeSha256": "e79a4fb6f203a33319debd8fe62b0e9bcb08ee41d6f1213879bd32be7dc3604f"
+    },
+    {
+      "sourcePageId": 96175,
+      "nameAr": "خبز الصودا الأيرلندي بالبيض والزبدة",
+      "status": "needs-review",
+      "family": "irish-soda-bread",
+      "method": "egg-butter-buttermilk-loaf-baking",
+      "cuisines": [
+        [
+          "irish",
+          "أيرلندي",
+          "Irish cuisine"
+        ]
+      ],
+      "yield": {
+        "amount": 8,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "8"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": 15,
+        "cookMinutes": null,
+        "sourceText": "Prep: 15 minutes<br>Baking: 50-70 minutes",
+        "conflict": "Header baking 50–70 minutes; main procedure 65–70 minutes. Overnight rest/cooling unspecified."
+      },
+      "ingredients": [
+        [
+          0,
+          "دقيق متعدد الاستعمالات",
+          "all-purpose flour",
+          3,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          1,
+          "بيكنج باودر",
+          "baking powder",
+          1,
+          "tbsp",
+          false,
+          "source tablespoon"
+        ],
+        [
+          2,
+          "بيكربونات الصوديوم",
+          "baking soda",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          3,
+          "سكر أبيض",
+          "white sugar",
+          0.125,
+          "cup",
+          false,
+          "source 1/8 cup"
+        ],
+        [
+          4,
+          "ملح",
+          "salt",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          5,
+          "بيضة مخفوقة قليلًا",
+          "lightly beaten egg",
+          1,
+          "count",
+          false,
+          "source count; no egg mass inferred"
+        ],
+        [
+          6,
+          "لبن مخيض",
+          "buttermilk",
+          2,
+          "cup",
+          false,
+          "listed ingredient selected; note milk/vinegar substitute not selected"
+        ],
+        [
+          7,
+          "زبدة مذابة",
+          "melted butter",
+          0.25,
+          "cup",
+          false,
+          "source cup"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1
+          ],
+          "سخن الفرن إلى 160°م بحسب الإجراء الرئيسي، وادهن قالبًا 9×5 بوصة ورشه بالدقيق.",
+          null
+        ],
+        [
+          [
+            2,
+            3,
+            4
+          ],
+          "اخلط المكونات الجافة. امزج البيضة واللبن المخيض وأضفهما دفعة واحدة وقلب حتى يبتل الدقيق فقط.",
+          null
+        ],
+        [
+          [
+            5
+          ],
+          "أضف الزبدة المذابة وصب الخليط في القالب.",
+          null
+        ],
+        [
+          [
+            6
+          ],
+          "اخبز 65–70 دقيقة حتى يخرج عود الاختبار نظيفًا ويصبح صوت القاعدة أجوف.",
+          {
+            "min": 65,
+            "max": 70,
+            "scope": "baking"
+          }
+        ],
+        [
+          [
+            7,
+            8
+          ],
+          "برد على شبكة ثم لف الخبز بفوطة أو ألومنيوم ساعات أو ليلة بحسب المصدر.",
+          null
+        ]
+      ],
+      "notes": [
+        "استرجعت ثماني حصص وتحضير 15 دقيقة من عنوان recipesummary الأصلي الذي لم يلتقطه المحلل.",
+        "هذه وصيغة القمح الكامل بديلان بالمكونات؛ لا تعدان طريقتي طهي مختلفتين جذريًا."
+      ],
+      "blockers": [
+        "مقادير تحضير القالب ونوع دهنه غير معروفة",
+        "اختلاف مدة الخبز بين العنوان والإجراء",
+        "زمن التبريد والراحة وعدة خطوات غير منشور",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "pan grease and flour",
+          "nameAr": "دهن ودقيق للقالب",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 1,
+          "sourceText": "Grease and flour a 9x5-inch loaf pan.",
+          "reason": "amounts and grease identity absent"
+        }
+      ],
+      "sourceRecordId": "wikibooks-96175-r4541030",
+      "sourceSha256": "9e6abfb17f0982d1eb3ad03690e8f1a2e07434bb2a381f9a9d0981a482005fd0",
+      "derivedRecipeSha256": "c7cc21b43b43bcdf475af33661eac7613998d0a58bfd21fd65c04f7595fa5eee"
+    },
+    {
+      "sourcePageId": 164154,
+      "nameAr": "خبز الصودا الأيرلندي بالقمح الكامل",
+      "status": "needs-review",
+      "family": "irish-soda-bread",
+      "method": "whole-wheat-buttermilk-scored-loaf-baking",
+      "cuisines": [
+        [
+          "irish",
+          "أيرلندي",
+          "Irish cuisine"
+        ]
+      ],
+      "yield": {
+        "amount": 12,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "12"
+      },
+      "time": {
+        "declaredTotalMinutes": 60,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "1 hour",
+        "conflict": "Main baking alone is 65–70 minutes, exceeding declared total."
+      },
+      "ingredients": [
+        [
+          0,
+          "دقيق قمح كامل",
+          "whole-wheat flour",
+          2,
+          "cup",
+          false,
+          "source calls it whole-wheat, flour context in step 3; specification needs review"
+        ],
+        [
+          1,
+          "دقيق",
+          "flour",
+          2,
+          "cup",
+          false,
+          "source does not specify flour type"
+        ],
+        [
+          2,
+          "بيكربونات الصوديوم",
+          "baking soda",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          3,
+          "ملح",
+          "salt",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          4,
+          "لبن مخيض",
+          "buttermilk",
+          2,
+          "cup",
+          false,
+          "listed buttermilk selected; note substitute not selected"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1
+          ],
+          "سخن الفرن إلى 165°م المطبوعة بالمصدر؛ يذكر المصدر أيضًا 325°F. ادهن قالب 9×5×3 بوصة ورشه بالدقيق.",
+          null
+        ],
+        [
+          [
+            2,
+            3,
+            4,
+            5
+          ],
+          "اخلط الدقيق والبيكربونات والملح، واعمل فجوة وأضف اللبن المخيض ثم قلب حتى يبتل الدقيق فقط.",
+          null
+        ],
+        [
+          [
+            6,
+            7
+          ],
+          "شكل العجين ليناسب القالب واشق سطحه ثلاث مرات على الأقل.",
+          null
+        ],
+        [
+          [
+            8
+          ],
+          "اخبز 65–70 دقيقة أو حتى يخرج عود الاختبار نظيفًا.",
+          {
+            "min": 65,
+            "max": 70,
+            "scope": "baking"
+          }
+        ],
+        [
+          [
+            9,
+            10
+          ],
+          "برده على شبكة ولفه ساعات أو ليلة بحسب المصدر.",
+          null
+        ]
+      ],
+      "notes": [
+        "استرجعت 12 حصة من العنوان الأصلي. الدرجتان 325°F و165°م محفوظتان كقيم مطبوعة، ولا يدعى تطابقهما."
+      ],
+      "blockers": [
+        "نوع الدقيق الثاني ودهن القالب غير محددين",
+        "الإجمالي المطبوع أقصر من الخبز وحده",
+        "اختلاف تحويل درجة الحرارة في المصدر",
+        "معرفات المخزون ومدد الخطوات وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "pan grease and flour",
+          "nameAr": "دهن ودقيق للقالب",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 1,
+          "sourceText": "Use cooking spray or grease and then lightly flour",
+          "reason": "quantities absent; grease alternative unresolved"
+        }
+      ],
+      "sourceRecordId": "wikibooks-164154-r4512592",
+      "sourceSha256": "86ef69217714bb0ba29d4a2e89e9783e26d6923fdf96265cb5897b6718a972b3",
+      "derivedRecipeSha256": "4477a35bd7554b09769fc641b41a9f911da3bc9abbd23d0f237b5fbd6a3b316d"
+    },
+    {
+      "sourcePageId": 483763,
+      "nameAr": "مسمن بطبقات الزبدة والزيت",
+      "status": "needs-review",
+      "family": "msemmen",
+      "method": "folded-laminated-griddle-bread",
+      "cuisines": [
+        [
+          "algerian",
+          "جزائري",
+          "Algeria and Morocco"
+        ],
+        [
+          "moroccan",
+          "مغربي",
+          "Algeria and Morocco"
+        ]
+      ],
+      "yield": {
+        "amount": 8,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "8"
+      },
+      "time": {
+        "declaredTotalMinutes": 90,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "90 minutes"
+      },
+      "ingredients": [
+        [
+          0,
+          "دقيق متعدد الاستعمالات",
+          "all-purpose flour",
+          2,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          1,
+          "سميد ناعم",
+          "fine semolina",
+          1,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          2,
+          "ملح",
+          "salt",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          3,
+          "سكر",
+          "sugar",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          4,
+          "خميرة فورية",
+          "instant yeast",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          5,
+          "ماء دافئ",
+          "warm water",
+          1.25,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          6,
+          "زيت نباتي",
+          "vegetable oil",
+          0.25,
+          "cup",
+          false,
+          "source cup, used for brushing"
+        ],
+        [
+          7,
+          "زبدة مذابة",
+          "melted butter",
+          0.25,
+          "cup",
+          false,
+          "source cup, used for brushing"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1
+          ],
+          "اخلط الدقيق والسميد والملح والسكر والخميرة. أضف الماء تدريجيًا واعجن حتى يتكون عجين ناعم.",
+          null
+        ],
+        [
+          [
+            2
+          ],
+          "قسمه كرات صغيرة وأرحه 30 دقيقة.",
+          {
+            "min": 30,
+            "max": 30,
+            "scope": "resting"
+          }
+        ],
+        [
+          [
+            3,
+            4
+          ],
+          "افرد كل كرة رقيقة، وادهنها بالزيت والزبدة ثم اطوها مربعًا.",
+          null
+        ],
+        [
+          [
+            5
+          ],
+          "أرح المربعات 15 دقيقة.",
+          {
+            "min": 15,
+            "max": 15,
+            "scope": "resting"
+          }
+        ],
+        [
+          [
+            6,
+            7
+          ],
+          "افردها برفق واطه على صاج ساخن حتى تحمر من الجانبين، ثم قدمها سادة.",
+          null
+        ]
+      ],
+      "notes": [
+        "إضافات التقديم كالعسل والمربى مستبعدة من هذه الصيغة الأساسية.",
+        "الصفحة المؤرشفة موسومة Incomplete recipe لأسباب ربط وتصنيف وتحرير؛ حفظ الوسم ولم يحذف."
+      ],
+      "blockers": [
+        "المصدر نفسه يطلب مراجعة تحريرية",
+        "فصل التحضير والطهي ومدة الصاج غير منشورة",
+        "معرفات المخزون وأساس الأكواب وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "sourceRecordId": "wikibooks-483763-r4638942",
+      "sourceSha256": "8a8acfaff31031a3872a9d555698c05491ba7b47a2cec826497f8eef5a5520d6",
+      "derivedRecipeSha256": "e4fe134b85f40fc431e1e3f160645a4a6b1fd9d1e1fa0a71fea314f93c767992"
+    },
+    {
+      "sourcePageId": 483733,
+      "nameAr": "والي وا نازي — أرز بحليب جوز الهند",
+      "status": "needs-review",
+      "family": "wali-wa-nazi",
+      "method": "soaked-rice-coconut-absorption",
+      "cuisines": [
+        [
+          "swahili",
+          "سواحلي",
+          "Swahili Coast of Tanzania and Kenya"
+        ]
+      ],
+      "yield": {
+        "amount": null,
+        "min": 4,
+        "max": 6,
+        "unit": "source-servings",
+        "sourceText": "4–6"
+      },
+      "time": {
+        "declaredTotalMinutes": 25,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "25 minutes",
+        "conflict": "20-minute soak + 20–25-minute cook + 5–10-minute rest exceeds published total."
+      },
+      "ingredients": [
+        [
+          0,
+          "أرز بسمتي",
+          "basmati rice",
+          2,
+          "cup",
+          false,
+          "selected source basmati option; long-grain alternative not combined"
+        ],
+        [
+          1,
+          "حليب جوز هند كثيف",
+          "thick coconut milk",
+          2,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          2,
+          "ماء للطهي",
+          "water",
+          2,
+          "cup",
+          false,
+          "source cup, separate from soaking water"
+        ],
+        [
+          3,
+          "ملح",
+          "salt",
+          1,
+          "tsp",
+          false,
+          "source teaspoon"
+        ],
+        [
+          4,
+          "زيت نباتي — مستبعد",
+          "vegetable oil",
+          1,
+          "tbsp",
+          true,
+          "source optional oil explicitly excluded; procedure contains no oil instruction"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1
+          ],
+          "اغسل الأرز حتى يصفو الماء وانقعه 20 دقيقة ثم صفه.",
+          {
+            "min": 20,
+            "max": 20,
+            "scope": "soaking"
+          }
+        ],
+        [
+          [
+            2,
+            3,
+            4
+          ],
+          "سخن حليب جوز الهند مع ماء الطهي والملح حتى يغلي برفق، ثم أضف الأرز وقلب مرة واحدة.",
+          null
+        ],
+        [
+          [
+            5,
+            6
+          ],
+          "غط القدر بإحكام وخفف الحرارة واطه 20–25 دقيقة حتى يمتص السائل وينضج الأرز.",
+          {
+            "min": 20,
+            "max": 25,
+            "scope": "cooking"
+          }
+        ],
+        [
+          [
+            7,
+            8
+          ],
+          "ارفعه عن الحرارة وأرحه 5–10 دقائق ثم فكك الأرز بالشوكة.",
+          {
+            "min": 5,
+            "max": 10,
+            "scope": "resting"
+          }
+        ]
+      ],
+      "notes": [
+        "التصنيف السواحلي من نص صريح، ولم تقبل تصنيفات المصدر المتناقضة التي تذكر حساء سنغاليًا ولحومًا غير موجودة.",
+        "وسم Incomplete recipe التحريري بالمصدر محفوظ."
+      ],
+      "blockers": [
+        "الزمن الإجمالي يناقض أزمنة الخطوات",
+        "تصنيف المصدر المتناقض ووسم النقص يحتاجان مراجعة",
+        "عدد الحصص الثابت وماء النقع غير معلومين",
+        "معرفات المخزون وروابط القياس والغذاء والتغذية غير معتمدة"
+      ],
+      "excludedIngredients": [
+        4
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "washing and soaking water",
+          "nameAr": "ماء للغسل والنقع",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 1,
+          "sourceText": "Soak the rice in water",
+          "reason": "processing water amount absent; not the two cups of cooking water"
+        }
+      ],
+      "sourceRecordId": "wikibooks-483733-r4638517",
+      "sourceSha256": "d0bb43997597ec8eacc9d653a45b09c35c68c2cea96802b8842b080a5415f0ce",
+      "derivedRecipeSha256": "e51f4e75cb224eea9b3556dfce742d9454bfc041331d39762f7ddd75c47cc6fb"
+    },
+    {
+      "sourcePageId": 7299,
+      "nameAr": "شير خرما بالشعيرية والتمر",
+      "status": "needs-review",
+      "family": "sheer-khurma",
+      "method": "ghee-toasted-vermicelli-milk-soup",
+      "cuisines": [
+        [
+          "indian",
+          "هندي",
+          "Indian Cuisine"
+        ]
+      ],
+      "yield": {
+        "amount": 12,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "12"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "ingredients": [
+        [
+          0,
+          "شعيرية جافة",
+          "dry vermicelli",
+          200,
+          "g",
+          false,
+          "source mass"
+        ],
+        [
+          1,
+          "سمن",
+          "ghee",
+          1.25,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          2,
+          "تمر جاف منقوع ليلة ومنزوع النوى ومقطع",
+          "soaked pitted chopped dried dates",
+          100,
+          "g",
+          false,
+          "source grams; before/after soaking/pitting basis unspecified"
+        ],
+        [
+          3,
+          "لوز مسلوق ومقطع شرائح",
+          "blanched slivered almonds",
+          100,
+          "g",
+          false,
+          "source mass"
+        ],
+        [
+          4,
+          "زبيب أبيض",
+          "white raisins",
+          100,
+          "g",
+          false,
+          "source mass"
+        ],
+        [
+          5,
+          "كاجو أنصاف",
+          "halved cashews",
+          100,
+          "g",
+          false,
+          "source mass"
+        ],
+        [
+          6,
+          "حليب",
+          "milk",
+          12,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          7,
+          "كريمة",
+          "cream",
+          2,
+          "cup",
+          false,
+          "source cup; fat type unspecified"
+        ],
+        [
+          8,
+          "ماء",
+          "water",
+          4,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          9,
+          "سكر أبيض",
+          "white granulated sugar",
+          3,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          10,
+          "هيل مطحون",
+          "cardamom powder",
+          2,
+          "tbsp",
+          false,
+          "source tablespoon"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          "سخن السمن على نار هادئة وحمر الكاجو. أطفئ النار وأضف الزبيب؛ بعد انتفاخه ارفع الكاجو والزبيب واحتفظ بهما.",
+          null
+        ],
+        [
+          [
+            3
+          ],
+          "أعد تسخين السمن وحمر الشعيرية مع التقليب حتى تصبح ذهبية دون أن تحترق.",
+          null
+        ],
+        [
+          [
+            4,
+            5
+          ],
+          "أضف الحليب والماء والكاجو والزبيب والتمر واللوز. اطه نحو دقيقتين حتى تبدأ الشعيرية بالليونة، ثم أضف السكر.",
+          {
+            "min": 2,
+            "max": 2,
+            "scope": "initial-simmer",
+            "approximate": true
+          }
+        ],
+        [
+          [
+            6,
+            7,
+            8
+          ],
+          "اطه دقيقتين إضافيتين على نار هادئة، وأضف الكريمة والهيل وسخن قليلًا مع التقليب ثم قدم ساخنًا.",
+          null
+        ]
+      ],
+      "notes": [
+        "الدفعة الأصلية 12 حصة ومقاديرها كبيرة؛ لا استنتاج تلقائيًا لملاءمة صحية أو حجم الحصة."
+      ],
+      "blockers": [
+        "الإجمالي وفصل التحضير والطهي غير منشور",
+        "أساس وزن التمر ونوع الكريمة غير محددين للتغذية",
+        "ماء نقع التمر غير معلوم الكمية",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "date-soaking water",
+          "nameAr": "ماء نقع التمر",
+          "amount": null,
+          "unit": null,
+          "sourceIngredientIndex": 2,
+          "sourceText": "soaked overnight",
+          "reason": "processing water amount absent"
+        }
+      ],
+      "sourceRecordId": "wikibooks-7299-r4587249",
+      "sourceSha256": "c846f62a41ecd72e3c57381b710715921761ecab13b1b57a4a68b13edbe8afb2",
+      "derivedRecipeSha256": "72a2c99227bb5c34b214b03e0335c86006c6ad505b2f6fc13933c0fe6c6e0933"
+    },
+    {
+      "sourcePageId": 7290,
+      "nameAr": "شاكاراي بونغال — أرز وعدس مونغ حلو",
+      "status": "not-cookable",
+      "family": "chakarai-pongal",
+      "method": "rice-mung-jaggery-porridge",
+      "cuisines": [
+        [
+          "indian",
+          "هندي",
+          "Indian Cuisine"
+        ]
+      ],
+      "yield": {
+        "amount": 8,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "8"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "ingredients": [
+        [
+          0,
+          "أرز أبيض",
+          "white rice",
+          0.5,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          1,
+          "عدس مونغ",
+          "moong dhal",
+          0.5,
+          "cup",
+          false,
+          "source explicitly moong; misleading black gram title not adopted"
+        ],
+        [
+          2,
+          "ماء",
+          "water",
+          4,
+          "cup",
+          false,
+          "listed total; allocation unclear"
+        ],
+        [
+          3,
+          "كاجو مجروش",
+          "chopped cashews",
+          0.25,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          4,
+          "زبيب أبيض",
+          "white raisins",
+          0.25,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          5,
+          "هيل مطحون",
+          "cardamom powder",
+          1,
+          "tbsp",
+          false,
+          "source tablespoon"
+        ],
+        [
+          6,
+          "سمن",
+          "ghee",
+          1,
+          "cup",
+          false,
+          "selected source ghee option; butter alternative not added"
+        ],
+        [
+          7,
+          "جاغري",
+          "jaggery",
+          0.75,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          8,
+          "حليب",
+          "milk",
+          0.25,
+          "cup",
+          false,
+          "listed but absent from source method"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "يطهى الأرز وعدس المونغ مع الماء حتى يصبحا لينين جدًا؛ مقدار ماء هذه الخطوة ناقص في المصدر.",
+          null
+        ],
+        [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          "يذاب الجاغري بكوب ماء مع الهيل، ثم يضاف الأرز والعدس المهروسان ويقلب على نار هادئة.",
+          null
+        ],
+        [
+          [
+            5,
+            6,
+            7,
+            8
+          ],
+          "تحمر المكسرات بأربع ملاعق كبيرة سمن، ثم يضاف الزبيب حتى ينتفخ ويخلطان بالعصيدة. يقدم ساخنًا مع سمن إضافي كما يقول المصدر.",
+          null
+        ]
+      ],
+      "notes": [
+        "لا تقدم هذه كطريقة مكتملة: الخطوة الأولى تقول فقط with cups of water؛ الحليب وبقية السمن بلا إجراء.",
+        "لم يستكمل الماء أو استخدام الحليب أو السمن بالتخمين."
+      ],
+      "blockers": [
+        "مقدار ماء طهي الأرز والعدس ناقص وعلاقته بأربعة أكواب وكوب إذابة الجاغري مجهولة",
+        "الحليب بلا خطوة؛ توزيع باقي السمن غير معلوم",
+        "سمن التقديم غير معلوم الكمية",
+        "كل بيانات الزمن غير منشورة",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "sourceRecordId": "wikibooks-7290-r4629681",
+      "sourceSha256": "9727175bb2f5cb4a64b3b376d0bcc15744f5a3c5f60a9c7c6c00d46052013afb",
+      "derivedRecipeSha256": "76bd0299331eb34e9d1dc8b962a81427cc7601eb3d725808f8db8e8ee0de29e6"
+    },
+    {
+      "sourcePageId": 457013,
+      "nameAr": "كونون غيادا — عصيدة الفول السوداني والأرز",
+      "status": "not-cookable",
+      "family": "kunun-gyada",
+      "method": "groundnut-milk-ground-rice",
+      "cuisines": [
+        [
+          "nigerian",
+          "نيجيري",
+          "northern part of Nigeria"
+        ]
+      ],
+      "yield": {
+        "amount": 3,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "3 servings"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "ingredients": [
+        [
+          0,
+          "فول سوداني نيئ",
+          "raw groundnuts",
+          1,
+          "cup",
+          false,
+          "source cup"
+        ],
+        [
+          1,
+          "أرز طري",
+          "soft rice",
+          0.5,
+          "cup",
+          false,
+          "rice variety unspecified beyond source soft rice"
+        ],
+        [
+          2,
+          "ماء بارد",
+          "cool water",
+          0.3333333333333333,
+          "cup",
+          false,
+          "source 1/3 cup; allocation among soaking and blending unknown"
+        ],
+        [
+          3,
+          "تمر هندي",
+          "tamarind",
+          0.25,
+          "tsp",
+          false,
+          "source teaspoon; physical form unspecified"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "ينقع التمر الهندي ثلاث ساعات ويستخلص ماؤه. ينقع الأرز والفول السوداني كل منهما منفصلًا ساعات غير محددة.",
+          {
+            "min": 180,
+            "max": 180,
+            "scope": "tamarind-soaking"
+          }
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          "يصفى الفول السوداني ويطحن بالماء ثم يصفى حليبه. يصفى الأرز ويطحن بقليل ماء؛ المقادير المائية غير مكتملة.",
+          null
+        ],
+        [
+          [
+            3,
+            4
+          ],
+          "يغلى حليب الفول السوداني مع التقليب، ويضاف الأرز المطحون تدريجيًا ثم ماء التمر الهندي.",
+          null
+        ]
+      ],
+      "notes": [
+        "طريقة تحت المراجعة؛ كميات ماء المعالجة المفقودة تمنع إعادة تنفيذ مضبوطة المقادير.",
+        "تصفية بقايا الفول السوداني مصير مذكور بالمصدر؛ لا يفترض احتفاظ غذائي كامل."
+      ],
+      "blockers": [
+        "ماء النقع والطحن والتوزيع بينهما غير مكتمل",
+        "نوع الأرز وشكل التمر الهندي غير محددين",
+        "زمن الطبخ وعلامة نضج الأرز غير منشورين",
+        "بعض أزمنة النقع مجهولة",
+        "معرفات المخزون والاحتفاظ وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "soaking/blending water",
+          "nameAr": "ماء للنقع والطحن",
+          "amount": null,
+          "unit": null,
+          "sourceStepIndex": 0,
+          "sourceText": "some water; a little water",
+          "reason": "listed 1/3 cup cannot be assigned to every soaking/grinding operation"
+        }
+      ],
+      "sourceRecordId": "wikibooks-457013-r4524340",
+      "sourceSha256": "cb350d98e120a5b233a077abe915260e0794a2f98595ee43a0246c74ecf53230",
+      "derivedRecipeSha256": "224dcf2e6502f76f3872031cf1c3ae2966f89d4fd65e8dd6a375ff6f4776b662"
+    }
+  ]
+}

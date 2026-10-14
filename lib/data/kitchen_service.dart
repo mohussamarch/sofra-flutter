@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import '../domain/kitchen_core.dart';
+import '../domain/purchase_forecast.dart';
 import '../domain/food_nutrition.dart';
 import '../domain/person_nutrition.dart';
 import '../domain/recipe_nutrition.dart';
@@ -1123,6 +1124,96 @@ class KitchenService {
 
   double? estimatedCost(IngredientUse use, {List<UnitRule> rules = const []}) =>
       _cost(snapshot, use, rules);
+
+  Future<PurchaseForecast> previewPurchases(
+    Iterable<String> planIds, {
+    List<UnitRule> rules = const [],
+    Map<String, Set<int>> optionalLinesByPlan = const {},
+    Map<String, Map<int, IngredientUse>> measuredByPlan = const {},
+  }) async {
+    final ids = List<String>.of(planIds);
+    final ownedRules = List<UnitRule>.of(rules);
+    final optionals = {
+      for (final entry in optionalLinesByPlan.entries)
+        entry.key: Set<int>.of(entry.value),
+    };
+    final measured = {
+      for (final entry in measuredByPlan.entries)
+        entry.key: Map<int, IngredientUse>.of(entry.value),
+    };
+    if (ids.toSet().length != ids.length ||
+        optionals.keys.any((id) => !ids.contains(id)) ||
+        measured.keys.any((id) => !ids.contains(id))) {
+      throw ArgumentError('Duplicate plans or decisions for unselected plans');
+    }
+    await _tail;
+    final k = snapshot;
+    final guard = jsonEncode(k);
+    final allPlans = (k['plans'] as List)
+        .map(
+          (row) => PlannedMeal.fromJson(Map<String, dynamic>.from(row as Map)),
+        )
+        .toList();
+    final selected = <PlannedMeal>[];
+    for (final id in ids) {
+      final matches = allPlans.where((meal) => meal.id == id).toList();
+      if (matches.length != 1) {
+        throw ArgumentError('Unknown or ambiguous plan: $id');
+      }
+      if (matches.single.completed) {
+        throw StateError('Cannot forecast a completed plan');
+      }
+      selected.add(matches.single);
+    }
+    final uses = <IngredientUse>[], unresolved = <String>{};
+    for (final meal in selected) {
+      final revision = await _resolveMeal(meal);
+      final scaled = revision.recipe.forServings(meal.servings);
+      final rows = scaled.recipe.ingredients;
+      final optional = optionals[meal.id] ?? <int>{};
+      final measuredLines = measured[meal.id] ?? <int, IngredientUse>{};
+      bool validLine(int line) => line >= 0 && line < rows.length;
+      if (optional.any((line) => !validLine(line) || !rows[line].optional) ||
+          measuredLines.entries.any(
+            (entry) =>
+                !validLine(entry.key) ||
+                scaled.quantity(rows[entry.key]) != null ||
+                entry.value.ingredientId != rows[entry.key].id ||
+                (rows[entry.key].optional && !optional.contains(entry.key)),
+          )) {
+        throw ArgumentError('Invalid or ignored forecast line decision');
+      }
+      for (var line = 0; line < rows.length; line++) {
+        final ingredient = rows[line];
+        if (ingredient.optional && !optional.contains(line)) continue;
+        final quantity = scaled.quantity(ingredient);
+        final explicit = measuredLines[line];
+        if (explicit != null) {
+          uses.add(explicit);
+        } else if (quantity == null) {
+          unresolved.add('${meal.id}:$line:${ingredient.id}');
+        } else {
+          uses.add(IngredientUse(ingredient.id, quantity, ingredient.unit!));
+        }
+      }
+    }
+    await _tail;
+    if (jsonEncode(snapshot) != guard) {
+      throw StateError('Kitchen changed; review purchase forecast again');
+    }
+    return forecastPurchases(
+      uses,
+      (k['inventory'] as List)
+          .map(
+            (row) =>
+                InventoryLot.fromJson(Map<String, dynamic>.from(row as Map)),
+          )
+          .toList(),
+      rules: ownedRules,
+      estimateCost: (use) => _cost(k, use, ownedRules),
+      unresolvedRequirements: unresolved,
+    );
+  }
 
   Future<void> saveBudget(BudgetPeriod budget) => _write((k) {
     final list = k['budgets'] as List,

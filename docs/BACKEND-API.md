@@ -142,3 +142,9 @@ KitchenService.acceptRecipePreparationEstimate freezes exact recipe/revision/lin
 ## Price research boundary
 
 tool/prices/price-observations.mjs is an offline research calculator, not a production KitchenService price provider.34observations retain source/kind/date/pack/uncertainty but0runtime-approved prices. PRICE-SOURCES-EG-SA.md defines required source permission, exact item/city/store and freshness before integration. User overrides and frozen purchase/cooking history remain unchanged. AR/DE source candidates likewise require registered reader/review/import, not direct runtime JSON.
+
+## Purchase forecast and readable Arabic recipe library —14October2026
+
+`KitchenService.previewPurchases(planIds, rules:, optionalLinesByPlan:, measuredByPlan:)` computes unfinished pinned/scaled plans against one shared inventory snapshot. Returns `PurchaseForecast`: purchaseTotal versus consumptionTotal, known subtotals and unresolved/unpriced sets. User prices outrank country averages; unknown quantities/incompatible relevant stock block complete totals. Explicit optional/measured line decisions; stale state rejects. No writes/reservations/history changes. Example400gneeded/250gstock/60perkg =>9purchase,24consumption.18focused tests plus full integration gate. No package rounding/monthly solver/current price feed inferred.
+
+`bundledRecipeLibrary()` and `RecipeLibraryRepository` expose22Arabic readable source records with nullable amounts, preserved raw status/time/yield/licence and pinned source envelopes. `all/search/filterByCuisine/familyCandidates` are read-only; no CatalogRecipe planning or nutrient promotion. See RECIPE-LIBRARY.md for fields/assets/remaining gates. FEATURE-STATUS.md separates backend work from mobile UI availability.

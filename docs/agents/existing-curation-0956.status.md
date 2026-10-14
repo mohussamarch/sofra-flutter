@@ -1,0 +1,12 @@
+# Existing local curation status
+- Checkout E:\work\SOFRA\app main; base33da2ff216c122949469451db63b36464e956aab.
+- Complete assigned data unit:16actual curated records /99ingredient lines /62Arabic steps /14selected families.
+- Culinary completeness:4fully specified /10needs review /2withheld incomplete;0native runtime ready.
+- One naan family has2source-supported distinct methods; soda-bread pair remains ingredient variants.
+- Eleven source-supported cuisine labels including regional labels, not11approved national/runtime cuisines.
+- Outputs:data/recipes/curated-local/first-reviewed-20261014/{normalized-recipes.json,COOKBOOK.ar.md,review-decisions.json,source-snapshots/,preflight-drafts/,preflight-reports.json}.
+- Four populated existing-pipeline native drafts retain real quantities with exact timing/scaling/food blockers.
+- Verified offline authoritative rebuild +9Node tests passed. PackSHA2e8b81cba110ea979f6199dd0a7e8e67c9626e3081c98491897b83664d032946.
+- No network/book acquisition, bank overwrite, runtime state, UI/Firebase/billing/APK/Drive changes.
+- Next:coordinator pin/read-only library integration, Flutter gate, shared docs/commit/push/receipt.
+- Full evidence:existing-curation-0956.md. Helper made no Git or preview-process changes.

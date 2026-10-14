@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "recipeSha256": "d7057716b6cf807228ab29c83c758fbc26464856a3250323708b73831fda2915",
+  "note": "Manual source quantities/choices only. Missing timing/scaling/food identity remain unresolved; not registered or imported.",
+  "reviewedAt": "2026-10-14T10:04:35.323Z",
+  "servings": 4,
+  "prepMinutes": null,
+  "cookMinutes": null,
+  "stepMinutes": [
+    null
+  ],
+  "lines": [
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:141667",
+        "recordId": "wikibooks-141667-r4517159",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4517159",
+        "sourceSha256": "3404a11679ac05e8907c438c47a0498aeaecf0d9d77e0781cd3acaa70a8467fd",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 0,
+        "lineId": "source-line-1",
+        "sourceText": "½ cup (150 g or 5.3 oz) plain yogurt",
+        "derivedRecipeSha256": "d7057716b6cf807228ab29c83c758fbc26464856a3250323708b73831fda2915"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "explicit source metric quantity; no density conversion",
+      "components": [
+        {
+          "name": "plain yogurt",
+          "amount": 150,
+          "unit": "g",
+          "form": "plain yogurt",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:141667",
+        "recordId": "wikibooks-141667-r4517159",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4517159",
+        "sourceSha256": "3404a11679ac05e8907c438c47a0498aeaecf0d9d77e0781cd3acaa70a8467fd",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 1,
+        "lineId": "source-line-2",
+        "sourceText": "½ cup (125 ml or 4.2 oz) vanilla ice cream",
+        "derivedRecipeSha256": "d7057716b6cf807228ab29c83c758fbc26464856a3250323708b73831fda2915"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "explicit source volume",
+      "components": [
+        {
+          "name": "vanilla ice cream",
+          "amount": 125,
+          "unit": "ml",
+          "form": "vanilla ice cream",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:141667",
+        "recordId": "wikibooks-141667-r4517159",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4517159",
+        "sourceSha256": "3404a11679ac05e8907c438c47a0498aeaecf0d9d77e0781cd3acaa70a8467fd",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 2,
+        "lineId": "source-line-3",
+        "sourceText": "½ cup (40 g or 1.4 oz) sliced peaches",
+        "derivedRecipeSha256": "d7057716b6cf807228ab29c83c758fbc26464856a3250323708b73831fda2915"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "explicit source mass",
+      "components": [
+        {
+          "name": "sliced peaches",
+          "amount": 40,
+          "unit": "g",
+          "form": "sliced peaches",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:141667",
+        "recordId": "wikibooks-141667-r4517159",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4517159",
+        "sourceSha256": "3404a11679ac05e8907c438c47a0498aeaecf0d9d77e0781cd3acaa70a8467fd",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 3,
+        "lineId": "source-line-4",
+        "sourceText": "½ cup (40 g or 1.4 oz) sliced strawberries",
+        "derivedRecipeSha256": "d7057716b6cf807228ab29c83c758fbc26464856a3250323708b73831fda2915"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "explicit source mass",
+      "components": [
+        {
+          "name": "sliced strawberries",
+          "amount": 40,
+          "unit": "g",
+          "form": "sliced strawberries",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    }
+  ]
+}

@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T09:19:27.742594+00:00",
-    "taskId": "recipe-bank",
-    "summary": "850 fixed source pages / 544 records under review / 4635 ingredient lines / 3136 preparation lines; deterministic root verification;0runtime.",
+    "at": "2026-10-14T10:15:57.137053+00:00",
+    "taskId": "recipe-library",
+    "summary": "16curated+6creator records readable via Flutter pinned assets; full210Flutter and13Node passed; stock-aware planned purchase preview complete.",
     "evidence": [
-      "data/recipes/source-discovery/de-wikibooks/index.json",
-      "data/recipes/source-discovery/de-wikibooks/checkpoint.json",
-      "docs/agents/recipe-expansion-de.md"
+      "docs/RECIPE-LIBRARY.md",
+      "test/recipe_library_assets_test.dart",
+      "test/purchase_forecast_integration_test.dart"
     ]
   },
   "tasks": [
@@ -76,9 +76,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Afterfreshactualquota<90 verify officialArabYouTubecookingchannels andmodernrecipevideos;collectboundedprovenance/quantities/steps,reviewdishfamily/methodlinks;doNOTresumeWikibooks/bookcursors.",
-      "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
-      "lastProgressAt": "2026-10-14T09:19:27.742594+00:00",
+      "nextAction": "Modern official Arab creator recipes: complete explicit source quantities/methods; review6website records and4partial video descriptions; no new book collection.",
+      "lastAttemptAt": "2026-10-14T10:04:23.521510+00:00",
+      "lastProgressAt": "2026-10-14T10:15:57.137053+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -134,15 +134,26 @@
         "data/recipes/source-discovery/de-wikibooks/index.json",
         "data/recipes/source-discovery/ar-wikibooks/extract-summary.json",
         "tool/recipes/test-de-wikibooks-archive-safety.ps1",
-        "docs/RECIPE-ACQUISITION-ARABIC-YOUTUBE.md"
+        "docs/RECIPE-ACQUISITION-ARABIC-YOUTUBE.md",
+        "data/recipes/arabic-youtube/2026-10-first-batch.json",
+        "data/recipes/arabic-youtube/COOKBOOK.ar.md",
+        "docs/RECIPE-LIBRARY.md"
       ],
-      "stage": "User redirected recipe sources to modernArabicYouTube;bookcollection stopped;quota90reserve",
+      "stage": "OfficialmodernArabiccreatorYouTubeandownwebsiteacquisition",
       "sourcePolicy": {
         "priority": "modern-Arabic-YouTube-cooking-personalities",
         "bookRecipeCollectionAllowedNow": false,
         "historicalBankPreserved": true,
         "policyDate": "2026-10-14",
-        "youTubeCandidatesCollected": 0
+        "youTubeCandidatesCollected": 14
+      },
+      "completedModernUnit": {
+        "officialChannels": 4,
+        "videoDiscoveries": 14,
+        "partialVideoRecipes": 4,
+        "completeVideoRecipes": 0,
+        "creatorWebsiteRecords": 6,
+        "runtimeApprovals": 0
       }
     },
     {
@@ -452,7 +463,7 @@
         "people-targets"
       ],
       "status": "ready",
-      "nextAction": "Build missing-purchase costing and constrained alternatives with incomplete-data coverage"
+      "nextAction": "Build explicit constrained monthly alternatives using completed stock-aware previewPurchases; reviewed prices/people targets still required, no automatic edits or carryover."
     },
     {
       "id": "scan-ocr",
@@ -509,14 +520,70 @@
         "docs/PREPARATION-ACCEPTANCE.md"
       ],
       "scientificApprovalCount": 0
+    },
+    {
+      "id": "recipe-local-curation",
+      "priority": 34,
+      "status": "ready",
+      "dependsOn": [],
+      "lastAttemptAt": "2026-10-14T10:04:23.521510+00:00",
+      "nextAction": "Resolve declared gaps in16curated rows/4preflight drafts before next small archived batch; no newbooknetwork, no guessed yield/times/scaling/food/rights.",
+      "lastProgressAt": "2026-10-14T10:15:57.137053+00:00",
+      "completedUnit": {
+        "records": 16,
+        "fullySpecified": 4,
+        "needsReview": 10,
+        "notCookable": 2,
+        "sourceCuisineLabels": 11,
+        "distinctMethodFamilies": 1,
+        "preflightDrafts": 4,
+        "runtimeApprovals": 0
+      },
+      "evidence": [
+        "data/recipes/curated-local/first-reviewed-20261014/normalized-recipes.json",
+        "tool/recipes/curated-local-build.test.mjs",
+        "docs/RECIPE-LIBRARY.md"
+      ]
+    },
+    {
+      "id": "purchase-forecast",
+      "priority": 36,
+      "status": "done",
+      "dependsOn": [
+        "measure-integration"
+      ],
+      "lastAttemptAt": "2026-10-14T10:04:23.521510+00:00",
+      "nextAction": "Use previewPurchases API; monthly constrained budget generator and approved price feed remain separate tasks.",
+      "lastProgressAt": "2026-10-14T10:15:57.137053+00:00",
+      "completedAt": "2026-10-14T10:15:57.137053+00:00",
+      "evidence": [
+        "lib/domain/purchase_forecast.dart",
+        "lib/data/kitchen_service.dart",
+        "test/purchase_forecast_test.dart",
+        "test/purchase_forecast_integration_test.dart"
+      ]
+    },
+    {
+      "id": "recipe-library",
+      "priority": 34,
+      "dependsOn": [],
+      "status": "done",
+      "completedAt": "2026-10-14T10:15:57.137053+00:00",
+      "nextAction": "External UI can consume pinned readable22record library; review import/rights/nutrition separately.",
+      "evidence": [
+        "lib/data/recipe_library_repository.dart",
+        "lib/data/recipe_library_assets.dart",
+        "test/recipe_library_assets_test.dart",
+        "docs/RECIPE-LIBRARY.md"
+      ]
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T09:43:01.131468+00:00",
-    "primaryUsedPercent": 90,
-    "weeklyUsedPercent": 89,
+    "at": "2026-10-14T10:17:44.074021+00:00",
+    "primaryUsedPercent": 61,
+    "weeklyUsedPercent": 10,
     "ordinaryUsageAllowed": true,
-    "action": "Reserve reached; no costly research or agents;user source-policy correction/count audit saved. Recheck later,no credits/reset."
+    "action": "Finished bounded verified units; owners released; no purchase/reset; fresh limits before next costly source batch."
   },
-  "updatedAt": "2026-10-14T09:43:01.131468+00:00"
+  "updatedAt": "2026-10-14T10:15:57.137053+00:00"
 }

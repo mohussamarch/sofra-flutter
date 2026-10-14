@@ -177,3 +177,9 @@ Latest source-language acquisition: 700 source revisions / 481 records under rev
 Heartbeat09:16: 850 fixed source pages / 544 records under review / 4635 ingredient lines / 3136 preparation lines; German source lane/index and agent handoffs authoritative.0runtime. GASTAT use-policy direct retry still502; no new licence or prices inferred. HANDOFF§65.
 
 Current recipe acquisition policy: RECIPE-ACQUISITION-ARABIC-YOUTUBE.md (official modern Arabic YouTube sources, explicit dish-family/method grouping, provenance and nutrition review). Further book-source acquisition stopped by user. Catalogue54/4cuisines;research6056beforededup;verifiedmulti-methodgroups0. Historical source banks remain separate and unapproved.
+
+##14أكتوبر — نتيجة المعالجة بدل عدد سجلات البحث
+
+RECIPE-LIBRARY.md:6056بحث قديم →16مراجعة عربية محلية +6من مواقع طهاة رسميين →قارئ Flutter مثبت بالبصمات للعرض والبحث(22سجلًا)، مع حفظ حالات4مكتملة/10مراجعة/2ناقصة محليًا.11وسم منطقة/مطبخ مصدر، عائلة نان بطريقتين؛ لا زيادة تلقائية إلى54وصفة التخطيط أو ربط غذائي. ملفات المصدر ودفتران عربيان وأربع مسودات preflight وروابط كل سجل محفوظة. منيوتيوب14فيديو/4ناقص/0كامل. FEATURE-STATUS.md يوضح المبني والجزئي والمتبقي.
+
+من خطط الوجبات إلى المال:KitchenService.previewPurchases →تجميع مطلوب الوصفات→توزيع المخزون مرة واحدة→شراء النواقص منفصلًا عن قيمة الاستهلاك؛ بيانات ناقصة تمنع الإجمالي المكتمل، لا تعديل مخزون أو تاريخ.

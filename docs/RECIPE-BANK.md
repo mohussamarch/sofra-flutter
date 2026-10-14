@@ -67,3 +67,7 @@ Latest German-language inventory: 850 fixed source pages / 544 records under rev
 ## Current source policy supersedes older continuation instructions
 
 Use RECIPE-ACQUISITION-ARABIC-YOUTUBE.md. User stopped further recipe-book/reference collection and prioritizes modern Arab cooking personalities on YouTube. Old DE/EN/FR/ES cursors retained as historical checkpoints; do not resume them now.54catalogue recipes/4cuisines;6056researchrecords beforededup,0shared verifiedmulti-methoddishgroups,0YouTubesource candidates sofar. No new acquisition at90primary/89weekly.
+
+## Current reviewed output —14October2026
+
+RECIPE-LIBRARY.md supersedes old zero-output counts:16locally curated Arabic records fromexisting6056,6official creator-website records,22readable bundled library entries,0automatic planning/nutrition approvals. Local4fullyspecified/10needsreview/2notcookable,11source-supported geographic/cuisine labels,1reviewed distinct-method naan family.14video discoveries/4partialvideo recipes/0completeYouTube-derived. Full/small handoffs for all3workers underdocs/agents. No newbookcollection; original54/4planning unchanged.
