@@ -45,3 +45,7 @@ ManifestSHA352c88ede972629a0526e9ec2d03380858178ce631c2b91158e4dcb6c6ff8a1d. Pub
 ## Import manifest guard — §73
 
 The build tool now rejects duplicate recipe IDs across all selected packs (not only within one pack), empty/whitespace-only IDs and malformed UTF8 before generating trusted pins. It decodes original bytes strictly and continues hashing the original bytes; no reserialization or silent replacement. These are pre-build consistency guards, not source authenticity/rights checks. All7 focused Node tests and actual manifest --check passed. The existing44 records/7packs/28snapshots and manifest SHA are unchanged. Full225Flutter/analyze at361e04a are historical; no Dart, pubspec or source-data change in this unit.
+
+## Source snapshot readability — §74
+
+Before pinning a curated source snapshot, the generator now checks fatal UTF8 decoding, valid JSON and an object root after comparing its exact original-byte hash. A matching hash alone does not prove a file is readable. The same parser handles selected pack roots. No snapshot content/schema facts are approved by this syntactic check. Ten focused Node tests pass, including malformed snapshots with matching expected hashes; actual manifest --check remains unchanged at44records/7packs/28snapshots. No Dart/assets changed; the225Flutter gate at361e04a remains historical.

@@ -22,10 +22,15 @@ export function safePath(file){
  need(typeof file==='string'&&/^(data\/recipes\/(curated-local|arabic-youtube)\/)([a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.json$/.test(file)&&!file.includes('..'),'Unsafe recipe library path');
  return file;
 }
+function parseObject(raw){
+ const value=JSON.parse(new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(raw));
+ need(value!==null&&typeof value==='object'&&!Array.isArray(value),'Expected JSON object');
+ return value;
+}
 export async function buildManifest(read){
  const packs=[],ids=new Set();
  for(const [kind,file] of files){
-  const raw=await read(file),data=JSON.parse(new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(raw));
+  const raw=await read(file),data=parseObject(raw);
   need(Array.isArray(data.recipes)&&data.recipes.length>0,'Missing recipe rows');
   const snapshots=new Map();
   for(const row of data.recipes){
@@ -36,6 +41,7 @@ export async function buildManifest(read){
     const p=row.provenance,path=safePath(p.sourceSnapshotFile);
     const source=await read(path),hash=sha(source);
     need(hash===p.sourceSnapshotSha256,'Source snapshot drift: '+path);
+    parseObject(source);
     snapshots.set(path,{file:path,sha256:hash});
    }else need(row.sourceKind==='creator-website'&&row.youtubeDerived===false,'Creator source kind mismatch');
   }

@@ -2,12 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T16:04:03.054313+00:00",
+    "at": "2026-10-14T16:32:33.257130+00:00",
     "taskId": "recipe-library-import-guards",
-    "summary": "Three invalid manifest inputs reproduced and rejected;7Nodepassed,actual44record manifest unchanged.",
+    "summary": "Matching-hash malformed source snapshots now reject;10Nodepassed,44recipe manifest unchanged.",
     "evidence": [
+      "tool/recipes/build-recipe-library.mjs",
       "tool/recipes/build-recipe-library.test.mjs",
-      "tool/recipes/build-recipe-library.mjs"
+      "docs/RECIPE-LIBRARY.md"
     ]
   },
   "tasks": [
@@ -651,8 +652,8 @@
         "recipe-library"
       ],
       "completedAt": "2026-10-14T16:04:03.054313+00:00",
-      "lastProgressAt": "2026-10-14T16:04:03.054313+00:00",
-      "nextAction": "Use strict UTF8/nonblank globally unique recipe IDs before manifest generation; continue source review separately.",
+      "lastProgressAt": "2026-10-14T16:32:33.257130+00:00",
+      "nextAction": "Strict pack and snapshot UTF8/JSON-object readability plus nonblank globally unique IDs; continue actual quantity/identity/source coverage separately.",
       "evidence": [
         "tool/recipes/build-recipe-library.mjs",
         "tool/recipes/build-recipe-library.test.mjs",
@@ -661,12 +662,12 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T16:04:03.054313+00:00",
-    "primaryUsedPercent": 83,
+    "at": "2026-10-14T16:32:33.257130+00:00",
+    "primaryUsedPercent": 87,
     "weeklyUsedPercent": 29,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Bounded local guard completed;no source calls or credits/reset;fresh check before next costly unit."
+    "action": "Near reserve; completed local guard. Fresh actual limits before another costly batch; no source calls or credits/reset."
   },
-  "updatedAt": "2026-10-14T16:04:03.054313+00:00"
+  "updatedAt": "2026-10-14T16:32:33.257130+00:00"
 }

@@ -19,8 +19,8 @@ test('paths cannot escape selected source folders',()=>{
  assert.equal(safePath('data/recipes/curated-local/a/123.json'),'data/recipes/curated-local/a/123.json');
 });
 
-function syntheticRead({duplicate=false,blankId,invalidUtf8=false}={}){
- const source=Buffer.from('{}\n'),hash=createHash('sha256').update(source).digest('hex');
+function syntheticRead({duplicate=false,blankId,invalidUtf8=false,snapshot}={}){
+ const source=snapshot??Buffer.from('{}\n'),hash=createHash('sha256').update(source).digest('hex');
  let n=0;
  return async file=>{
   if(file.endsWith('/snapshot.json'))return source;
@@ -44,4 +44,14 @@ test('empty and whitespace-only recipe identities cannot be pinned',async()=>{
 });
 test('malformed UTF8 cannot be silently replaced and pinned as readable JSON',async()=>{
  await assert.rejects(buildManifest(syntheticRead({invalidUtf8:true})),/encoded|UTF-8|encoding/i);
+});
+
+test('matching hash does not make malformed UTF8 source snapshots readable',async()=>{
+ await assert.rejects(buildManifest(syntheticRead({snapshot:Buffer.from([255])})),/encoded|encoding/i);
+});
+test('matching hash does not permit invalid source snapshot JSON',async()=>{
+ await assert.rejects(buildManifest(syntheticRead({snapshot:Buffer.from('{')})),SyntaxError);
+});
+test('source snapshots must be JSON objects rather than array/scalar/null',async()=>{
+ for(const text of ['[]','null','3','"text"'])await assert.rejects(buildManifest(syntheticRead({snapshot:Buffer.from(text)})),/JSON object/);
 });
