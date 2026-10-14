@@ -1,0 +1,1708 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-14T15:38:28.000Z",
+  "networkRequests": 0,
+  "frozenPacks": [
+    {
+      "file": "data/recipes/curated-local/first-reviewed-20261014/normalized-recipes.json",
+      "sha256": "2e8b81cba110ea979f6199dd0a7e8e67c9626e3081c98491897b83664d032946"
+    },
+    {
+      "file": "data/recipes/curated-local/gap-review-20261014/normalized-recipes.json",
+      "sha256": "9b4e2d203b80dd25c9c1392ef7b35d3dab097e0fc5e67cbee5a43908851aa4e5"
+    }
+  ],
+  "oldSourceRecordsInspected": 20,
+  "newNativeGapResolutions": 0,
+  "existingGapAudit": [
+    {
+      "curatedRecipeId": "curated-local:141667",
+      "recordContentSha256": "beb7ac106b4510a033005e72f7b0d64ab323972b651e33d5c03216e53dc925cb",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/141667.json",
+      "sourceSnapshotSha256": "7e650ed13b77dcf941278c84f00c3ec1f76fad4ae3a10dabfc19eec09c359759",
+      "sourceTime": {
+        "declaredTotalMinutes": 5,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "5 minutes"
+      },
+      "unresolvedBlockers": [
+        "زمن التحضير والطهي منفصلين وزمن الخطوة غير منشور",
+        "تصنيف المطبخ ومعرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:264763",
+      "recordContentSha256": "d18cdfc2523fcdc15f11efa2062b5f444950c7eb3741640b2f5f4bd4f8eafa61",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/264763.json",
+      "sourceSnapshotSha256": "90278108a9ca2a65de062fdacf37d64c29c4f6b433ac25e12bb0486112ce8d94",
+      "sourceTime": {
+        "declaredTotalMinutes": 420,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "7 hours"
+      },
+      "unresolvedBlockers": [
+        "العدد الصحيح الثابت للحصص غير معلوم",
+        "فصل التحضير والطهي وزمن التبريد وبعض الخطوات غير منشور",
+        "معرفات المخزون وأساس الأكواب وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 1,
+          "sourceStepText": "Lower the heat and cook the milk, stirring constantly until it has thickened and reduced to ¾ cup—this will take about 40–45 minutes. Stir the sides of the pan constantly to avoid scorching."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceStepText": "Pour the mixture evenly into kulfi moulds or small ramekins. Cover with plastic wrap or foil, and freeze for about 6 hours until set."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:303834",
+      "recordContentSha256": "580a15ebc9c0d791ba66214917fd0eb7ff0bb272af28d759969c5b88abc4aa88",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/303834.json",
+      "sourceSnapshotSha256": "f6081e88bd0b82db63773615dfc8f9ba2b668bb05efc5ec6a08180cd27f988c4",
+      "sourceTime": {
+        "declaredTotalMinutes": 10,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "10 minutes"
+      },
+      "unresolvedBlockers": [
+        "الناتج حجم وليس عدد حصص",
+        "فصل التحضير والطهي ومدد الخطوات والتبريد غير منشور",
+        "معرفات المخزون وأساس القياس وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:17844",
+      "recordContentSha256": "a1e12b8db8e2e0b0d218751087ff03893954f076dfd69aef04dad69d54ab7c7d",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/17844.json",
+      "sourceSnapshotSha256": "f09e66617f742ae8ac003eadd5b87034edd5cf216261e2f57442b9c51f23ae38",
+      "sourceTime": {
+        "declaredTotalMinutes": 15,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "15 minutes"
+      },
+      "unresolvedBlockers": [
+        "فصل التحضير والطهي وبعض مدد الخطوات غير منشور",
+        "تصنيف المطبخ ومعرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 2,
+          "sourceStepText": "Stir every minute or so. After five minutes, remove lid, stir thoroughly and add milk."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:455788",
+      "recordContentSha256": "144f17b5fc8b3ccd30ea9379e08e68bd3e488b244b2dfe08275e81638a339cb1",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/455788.json",
+      "sourceSnapshotSha256": "48515363e917e786a5af52a135dd95bed16c0e1d8c0c2014e22134eafac794f6",
+      "sourceTime": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "unresolvedBlockers": [
+        "أزمنة التحضير والطهي والإجمالي والخطوات غير منشورة",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:80271",
+      "recordContentSha256": "e2d69e81f4dc57c2f94210868d56dc8ba8153081c034e6ac043323e02b237051",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/80271.json",
+      "sourceSnapshotSha256": "f3c7c3e73c581c50be61d3864c7e54ce1cb93f9f1e41d9f984fdd94ac16c0317",
+      "sourceTime": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "unresolvedBlockers": [
+        "دهن المقلاة غير محدد النوع أو الكمية",
+        "لا زمن إجمالي أو فصل تحضير وطهي؛ زمن الجانب لا يضرب دون عدد دفعات",
+        "معرفات المخزون وروابط القياس والغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 4,
+          "sourceStepText": "Cover the bowl with a warm and damp cloth and leave in a warm place for 2 hours."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceStepText": "Heat a lightly greased griddle or ordinary frying pan until very hot. Now, using one spoonful at a time, cook the mixture for about 2 minutes on each side. The indication to turn should be when the bubbles that will form dry out."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:456807",
+      "recordContentSha256": "ec9ba408b173a7ce5c5f6efc3e6df88c93040902c25526aa015c9e9a1e782c81",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/456807.json",
+      "sourceSnapshotSha256": "9a194d2de8aee18f37d2246828aa264db83ba18401d9cf3d59c6ad5a7fbef124",
+      "sourceTime": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "unresolvedBlockers": [
+        "توزيع الزيت يحتاج حسمًا",
+        "زمن التبخير والتبريد والإجمالي غير منشور",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 2,
+          "sourceStepText": "Cover the dough and let rise for 1 hour."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:33064",
+      "recordContentSha256": "b9638d90bb4a55f65651f91ea1fe3b5fb337b6c80bf90271888812117d33a619",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/33064.json",
+      "sourceSnapshotSha256": "439889fe786d459ab117fc3b19e04b24a858b8fec6afa2df80d388b95b0eb813",
+      "sourceTime": {
+        "declaredTotalMinutes": 120,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "2 hours",
+        "conflict": "Declared two-hour total is shorter than 2–3-hour rest plus 4–5-minute baking."
+      },
+      "unresolvedBlockers": [
+        "زبدة الوجه وماء السطح وضبط ماء العجين غير مقادير مكتملة",
+        "الإجمالي المنشور يناقض أزمنة الخطوات",
+        "درجة الفرن عددًا غير منشورة",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 1,
+          "sourceStepText": "Wrap the dough in a damp muslin cloth and leave it to rise for 2–3 hours."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceStepText": "The naans should puff up a little, and be ready to remove from the oven in 4–5 minutes."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:456620",
+      "recordContentSha256": "eaf86f2188e3db89118c1fd77b074f065e75638b4cbde7c1e83c2f434cd52712",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/456620.json",
+      "sourceSnapshotSha256": "8a033cef8d8477063123845247f23a9e10559c34794698165829d5a0ddbaff6d",
+      "sourceTime": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "unresolvedBlockers": [
+        "الحصص غير منشورة",
+        "ماء ترطيب اليد ودقيق السطح ودهن الصينية غير مقادير مكتملة",
+        "درجة الفرن المنخفضة تحتاج مراجعة",
+        "لا أزمنة إجمالية أو فصل تحضير وطهي وبعض الخطوات",
+        "مطبخ runtime ومعرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 1,
+          "sourceStepText": "In a small bowl, mix the yeast with 1 tablespoon of warm water. Stir in the sugar and leave it in a warm place for 5 minutes until the yeast is covered with froth. This will show that the yeast is ready to use."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceStepText": "To knead the dough, clench your hand into a fist, wet your knuckles with a little water, then press them repeatedly into the dough. Continue pressing and kneading until you have a soft, pliable dough. It should take about 10 minutes. Leave to rest for 10 minutes and then knead again for another 5 minutes."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceStepText": "Place the dough in a mixing bowl, cover it with cling film and leave it in a warm place to rise for 20–30 minutes."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceStepText": "Place them on a greased baking tray and put them in the centre of the oven for 10–15 minutes. They are ready when they have puffed up a little. Serve fresh from the oven."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:96175",
+      "recordContentSha256": "6540c879b9fbe6a88797e8af0e0be6cd296074c7545f839bb2ac80bf8e474857",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/96175.json",
+      "sourceSnapshotSha256": "870ba6ee23aa3e4a1c0584ac73c7b1bf7827bf0f1bbcfa7338fb13081b11ad95",
+      "sourceTime": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": 15,
+        "cookMinutes": null,
+        "sourceText": "Prep: 15 minutes<br>Baking: 50-70 minutes",
+        "conflict": "Header baking 50–70 minutes; main procedure 65–70 minutes. Overnight rest/cooling unspecified."
+      },
+      "unresolvedBlockers": [
+        "مقادير تحضير القالب ونوع دهنه غير معروفة",
+        "اختلاف مدة الخبز بين العنوان والإجراء",
+        "زمن التبريد والراحة وعدة خطوات غير منشور",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 6,
+          "sourceStepText": "Bake for 65–70 minutes, or until a toothpick inserted in the bread comes out clean. The loaf should sound hollow if you tap the base."
+        },
+        {
+          "sourceStepIndex": 8,
+          "sourceStepText": "Wrap in tea-towel or foil several hours or overnight for best flavor."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:164154",
+      "recordContentSha256": "2ad7c3605412bc6d852942d5b6d359e77e8ea0d31ca40fa132728c4c12825155",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/164154.json",
+      "sourceSnapshotSha256": "04de8e6a0a8d64fdd6ec55693bf4cf792bb36ba21619f89b5e991c70d7a6e5db",
+      "sourceTime": {
+        "declaredTotalMinutes": 60,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "1 hour",
+        "conflict": "Main baking alone is 65–70 minutes, exceeding declared total."
+      },
+      "unresolvedBlockers": [
+        "نوع الدقيق الثاني ودهن القالب غير محددين",
+        "الإجمالي المطبوع أقصر من الخبز وحده",
+        "اختلاف تحويل درجة الحرارة في المصدر",
+        "معرفات المخزون ومدد الخطوات وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 8,
+          "sourceStepText": "Bake for 65–70 minutes, or until a toothpick inserted in the bread comes out clean."
+        },
+        {
+          "sourceStepIndex": 10,
+          "sourceStepText": "Wrap in tea-towel or foil several hours or overnight for best flavor."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:483763",
+      "recordContentSha256": "1057bc98c923bf766c862d52c489108cde3986a563964b5ada0b98f15376494d",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/483763.json",
+      "sourceSnapshotSha256": "e9d16d2835f731f00bfd6b23f54f4548bb3c5d79ea364a660b299750f1f86548",
+      "sourceTime": {
+        "declaredTotalMinutes": 90,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "90 minutes"
+      },
+      "unresolvedBlockers": [
+        "المصدر نفسه يطلب مراجعة تحريرية",
+        "فصل التحضير والطهي ومدة الصاج غير منشورة",
+        "معرفات المخزون وأساس الأكواب وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 2,
+          "sourceStepText": "Divide the dough into small balls and let rest for 30 minutes."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceStepText": "Let the folded squares rest for 15 minutes."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:483733",
+      "recordContentSha256": "1537d6b0468932f57b8dfc41c67deb54ac67c60091b5adeae62f56d0a9dc89cb",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/483733.json",
+      "sourceSnapshotSha256": "06772a24b1eec0e4bc03cb66ec68cfa7221f04d4a876d9f6321050e68bc3a8a1",
+      "sourceTime": {
+        "declaredTotalMinutes": 25,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "25 minutes",
+        "conflict": "20-minute soak + 20–25-minute cook + 5–10-minute rest exceeds published total."
+      },
+      "unresolvedBlockers": [
+        "الزمن الإجمالي يناقض أزمنة الخطوات",
+        "تصنيف المصدر المتناقض ووسم النقص يحتاجان مراجعة",
+        "عدد الحصص الثابت وماء النقع غير معلومين",
+        "معرفات المخزون وروابط القياس والغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 1,
+          "sourceStepText": "Soak the rice in water for 20 minutes, then drain."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceStepText": "Cook for 20–25 minutes, or until the liquid is absorbed and the rice is tender."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceStepText": "Remove the pot from the heat and allow it to rest for 5–10 minutes."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:7299",
+      "recordContentSha256": "ca7bae2f73ea69639c70e87a7bd5734ec47113f7a142c79d8d37a26df8c68b23",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/7299.json",
+      "sourceSnapshotSha256": "5c6af088f3b2b7bacba2bd9cdb9c48dae7e545be54d0536af2b5e67a96359cb0",
+      "sourceTime": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "unresolvedBlockers": [
+        "الإجمالي وفصل التحضير والطهي غير منشور",
+        "أساس وزن التمر ونوع الكريمة غير محددين للتغذية",
+        "ماء نقع التمر غير معلوم الكمية",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 5,
+          "sourceStepText": "Add the sliced dates and almonds. Cook for about 2 minutes, or until the vermicelli starts to get flexible; then add sugar."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceStepText": "Keep on the low flame for another 2 minutes, then add cream and cardamom powder."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:7290",
+      "recordContentSha256": "275897b0c67b5bd98e1b623617ab6a207143aad4db745dd0f6401ef315982541",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/7290.json",
+      "sourceSnapshotSha256": "3e78aa75f6204d1732758dcc14c392aa2f7be8b92f4b4d6ab812c22cb7ee7da9",
+      "sourceTime": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "unresolvedBlockers": [
+        "مقدار ماء طهي الأرز والعدس ناقص وعلاقته بأربعة أكواب وكوب إذابة الجاغري مجهولة",
+        "الحليب بلا خطوة؛ توزيع باقي السمن غير معلوم",
+        "سمن التقديم غير معلوم الكمية",
+        "كل بيانات الزمن غير منشورة",
+        "معرفات المخزون وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 6,
+          "sourceStepText": "Add raisins and fry for a few more seconds or until they swell up."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:457013",
+      "recordContentSha256": "fc1e7affe66f1c34d33b662e9ec61066143044e7902f916c588ad11b5cf65da0",
+      "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/457013.json",
+      "sourceSnapshotSha256": "0a5006e585ff5836d64bc88f6a01a45a2f3005751c2d40e29394789354451806",
+      "sourceTime": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": null
+      },
+      "unresolvedBlockers": [
+        "ماء النقع والطحن والتوزيع بينهما غير مكتمل",
+        "نوع الأرز وشكل التمر الهندي غير محددين",
+        "زمن الطبخ وعلامة نضج الأرز غير منشورين",
+        "بعض أزمنة النقع مجهولة",
+        "معرفات المخزون والاحتفاظ وروابط الغذاء والتغذية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 0,
+          "sourceStepText": "Soak the tamarind for 3 hours and extract the juice. Also, soak the rice and raw groundnut in separate bowls for a few hours."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:11375",
+      "recordContentSha256": "7d99d2dff7fd9e68c83e3cb43ccaf27cfc8e7ef50638332ff2b35ff6d20117dd",
+      "sourceSnapshotFile": "data/recipes/curated-local/gap-review-20261014/source-snapshots/11375.json",
+      "sourceSnapshotSha256": "8a85811c0cd67ebdf6cc8b03635512c98881bc9037609fc4530d931c7d22dd26",
+      "sourceTime": {
+        "declaredTotalMinutes": 30,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "30 minutes"
+      },
+      "unresolvedBlockers": [
+        "فصل التحضير والطهي وبعض مدد الخطوات غير منشور",
+        "أصل المكونات وأساس الأكواب وروابط الغذاء والتغذية والحقوق الفردية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 4,
+          "sourceStepText": "Cook for 20 minutes, or until the water is absorbed."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:205147",
+      "recordContentSha256": "0f9fd3579139627690ddf396a8a40de80b4f39a670dec7c4ad542b971cff6235",
+      "sourceSnapshotFile": "data/recipes/curated-local/gap-review-20261014/source-snapshots/205147.json",
+      "sourceSnapshotSha256": "7958168914ae92515ca712361005e9391d07ba3b878bec09452179217aab98a4",
+      "sourceTime": {
+        "declaredTotalMinutes": 5,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "5 minutes"
+      },
+      "unresolvedBlockers": [
+        "عدد الحصص تقريبي؛ لا عدد صحيح ثابت معتمد",
+        "فصل التحضير والطهي ومدد الخطوات غير منشور",
+        "قياس الملعقة الممتلئة غير وزني؛ روابط المكونات والغذاء والتغذية والحقوق غير معتمدة"
+      ],
+      "timingEvidence": [],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:108458",
+      "recordContentSha256": "5d5ddb5cafec50bf6d04798c822c0b61131c9b40781eb34b06659521633e7ecb",
+      "sourceSnapshotFile": "data/recipes/curated-local/gap-review-20261014/source-snapshots/108458.json",
+      "sourceSnapshotSha256": "951a07d3d4269e25f2c4a31c4a2c1f62631f5d85ffe633506fd7e81f259b6282",
+      "sourceTime": {
+        "declaredTotalMinutes": 60,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "1 hour"
+      },
+      "unresolvedBlockers": [
+        "فصل التحضير والطهي وعدة مدد خطوات غير منشور",
+        "طماطم طازجة/معلبة وأساس الكريمة وقياسات الأكواب تحتاج ربطًا صريحًا قبل التغذية",
+        "معرفات المخزون وروابط الغذاء والحقوق الفردية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 2,
+          "sourceStepText": "Reduce heat and simmer, stirring occasionally, until soup thickens, 20–30 minutes."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    },
+    {
+      "curatedRecipeId": "curated-local:130025",
+      "recordContentSha256": "f92cb4cfd15f739d9f42882118cf98c1064bc4fbe9616cb823f3eca5a88d4b88",
+      "sourceSnapshotFile": "data/recipes/curated-local/gap-review-20261014/source-snapshots/130025.json",
+      "sourceSnapshotSha256": "fc3ea377d555087b6fc8deb3ca22d3bece49631eec738bfa7583647ab5131284",
+      "sourceTime": {
+        "declaredTotalMinutes": 15,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "15 minutes"
+      },
+      "unresolvedBlockers": [
+        "فصل التحضير والطهي وبعض مدد الخطوات غير منشور",
+        "صيغة العصير وحالة القرنفل والبهار الحلو وأساس الأكواب تحتاج مراجعة غذائية",
+        "معرفات المخزون وروابط الغذاء والتغذية والحقوق الفردية غير معتمدة"
+      ],
+      "timingEvidence": [
+        {
+          "sourceStepIndex": 2,
+          "sourceStepText": "Heat for 10 minutes."
+        }
+      ],
+      "decision": "No new native gap resolved. Existing published phase timers/ranges are already retained in source records or prior timing proposals. Do not infer total/prep/cook, fixed range choice, missing amounts, scaling, food, retention or rights."
+    }
+  ],
+  "counts": {
+    "recipes": 8,
+    "ingredientLines": 44,
+    "supplementalIngredients": 3,
+    "steps": 38,
+    "fullySpecified": 2,
+    "needsReview": 6,
+    "notCookable": 0,
+    "sourceSupportedCuisineLabels": 9,
+    "runtimeReady": 0
+  },
+  "draftComplete": 0,
+  "runtimeReady": 0,
+  "newDraftReports": [
+    {
+      "curatedRecipeId": "curated-local:141020",
+      "draftFile": "data/recipes/curated-local/third-reviewed-20261014/preflight-drafts/141020.json",
+      "draftSha256": "ee9371b7de8f73dbb8ee574b973071c3dbd30f87bed23dbe717d70d41e471543",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:141020",
+      "recipeSha256": "534c2706e24c0e538dbb0bbe9959b5f5ee09a274f394d07134f6e0029bb0dbe5",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 2
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:245915",
+      "draftFile": "data/recipes/curated-local/third-reviewed-20261014/preflight-drafts/245915.json",
+      "draftSha256": "8e3d12a6db8c2999fb6b4eb491f1a42b792a2ad286bc13bf59a16bf8549515bf",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:245915",
+      "recipeSha256": "d95215fc5284101aaeb3026e78b1a02ae3316f52e7c20bbda0d66d84033e06d1",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:123453",
+      "draftFile": "data/recipes/curated-local/third-reviewed-20261014/preflight-drafts/123453.json",
+      "draftSha256": "bbfb9a65f46b823f47ea41d3f188ecc63c1903ea1ef5ee4313ee86a92593d339",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:123453",
+      "recipeSha256": "095565f0fa9954dae532c9fd2d9bf09c024a67fdfb8b2c0e1ebdc3bef4c21ed2",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 5
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 2
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:134187",
+      "draftFile": "data/recipes/curated-local/third-reviewed-20261014/preflight-drafts/134187.json",
+      "draftSha256": "23419bb72b6b7606a58eff279a91688565a018e767eabefb1d5961b0e94953e9",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:134187",
+      "recipeSha256": "e2db34268c307c97f0f4d7d9004cabed050ef14366848cc34450859a2bc4fd57",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 9,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 9,
+          "lineId": "source-line-10",
+          "complete": false,
+          "issueCount": 4
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:98250",
+      "draftFile": "data/recipes/curated-local/third-reviewed-20261014/preflight-drafts/98250.json",
+      "draftSha256": "25f63f32da9924ac3544b31b6e8510594d830b1e473d2bf77f6351d3ee1d7036",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:98250",
+      "recipeSha256": "0f65fe43cdf6fffe1a9282a0b39a260cfa625355d3da425a224dcbcb5b9f3ab2",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "servings",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:385022",
+      "draftFile": "data/recipes/curated-local/third-reviewed-20261014/preflight-drafts/385022.json",
+      "draftSha256": "2f6e6a57bdc4738f7100224c908ed7e06e027da48d87b39e899c96f8876eed45",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:385022",
+      "recipeSha256": "a68413a848b5748836b3f522ff8ae10af04cfd61985e303afd7ba5489479e0a4",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 5
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 6
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 7
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:107543",
+      "draftFile": "data/recipes/curated-local/third-reviewed-20261014/preflight-drafts/107543.json",
+      "draftSha256": "eff5fcfa155899eb574b3a68f82dde8a8bdde8387e8776c7f3a26c491c9ea82c",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:107543",
+      "recipeSha256": "9a5284d4dc5629d23ccfcea99907d79af657f51d6e443538aecec364c3974c35",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "servings",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 4
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:99896",
+      "draftFile": "data/recipes/curated-local/third-reviewed-20261014/preflight-drafts/99896.json",
+      "draftSha256": "1dbcae95bbfeacc0c9e267da16ba12d4e8e0de19049c9fbe1424fffcfd0c9495",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:99896",
+      "recipeSha256": "3799d004bfce2d0602a49392a05411f5489b5714c2d4c6b8af4c989c4af0d721",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": true,
+          "issueCount": 0
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    }
+  ],
+  "remainingGates": [
+    "unquantified ingredients and procedural media remain null",
+    "ranges not silently fixed",
+    "approximate/conditional step timers not exact scalars",
+    "source yield ambiguity and timing conflict remain visible",
+    "no automatic scaling/food/rights/nutrition/retention approval"
+  ]
+}

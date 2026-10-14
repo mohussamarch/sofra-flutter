@@ -221,12 +221,35 @@ void main() {
     expect(review.sourceSnapshot['sourceRecord']['yield'], isNull);
     review.assertSource(entry);
   });
+  test('single-creator pack attribution survives source review without unrelated identity', () async {
+    final fixture = fixtures.LibraryFixture();
+    fixture.creator.remove('creators');
+    fixture.creator['creator'] = {
+      'creatorId': 'chef',
+      'name': 'Single creator',
+      'identityEvidence': 'https://example.org/official',
+    };
+    fixture.rebuild();
+    final review = makeReview((await fixture.repository().all()).last);
+    final creators = review.sourceSnapshot['packMetadata']['creators'] as List?;
+    expect(creators, isNotNull);
+    expect(
+      creators!.single['identityEvidence'],
+      'https://example.org/official',
+    );
+    final decoded = RecipeLibraryDraftReview.fromJson(review.toJson());
+    expect(decoded.sourceSnapshot['packMetadata']['creators'], creators);
+    (fixture.creator['creator'] as Map)['creatorId'] = 'unrelated';
+    fixture.rebuild();
+    final unrelated = makeReview((await fixture.repository().all()).last);
+    expect(unrelated.sourceSnapshot['packMetadata']['creators'], isNull);
+  });
   test('actual pinned cookbook unknowns stay source evidence instead of automatic calorie inputs', () async {
     final entries = await RecipeLibraryRepository(
       expectedManifestSha256: recipeLibraryManifestSha256,
       read: (path) => File(path).readAsString(),
     ).all();
-    expect(entries.length, 31);
+    expect(entries.length, 44);
     final entry = entries.firstWhere(
       (value) => value.id == 'manal-website-chicken-eggplant-maqluba',
     );
@@ -236,6 +259,12 @@ void main() {
     expect(review.sourceSnapshot['sourceRecord']['yield'], isNull);
     expect(review.sourceSnapshot['sourceRecord']['cookTime'], isNull);
     expect(review.sourceSnapshot['sourceRecord']['reuseRights'], isNull);
+    final creatorEntry = entries.firstWhere(
+      (value) => value.id == 'manal-website-grilled-salmon',
+    );
+    final origin = makeReview(creatorEntry).sourceSnapshot['packMetadata'];
+    expect((origin['creators'] as List).single['name'], 'منال العالم');
+
     expect(
       review.draft.lines.every(
         (line) => line.input.food == null && line.input.amount == null,

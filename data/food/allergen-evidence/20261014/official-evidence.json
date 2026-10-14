@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "id": "sofra-allergen-evidence-20261014",
+  "createdAt": "2026-10-14T15:42:37Z",
+  "purpose": "Research-only official source evidence and exact vocabulary proposals; no product classification.",
+  "sources": [
+    {
+      "id": "sfda-menu-2019",
+      "authority": "SFDA",
+      "jurisdiction": "SA",
+      "url": "https://www.sfda.gov.sa/ar/news/الإفصاح-عن-مسببات-حساسية-الطعام-اعتباراً-من-1-أكتوبر-2019",
+      "title": "Saudi notice about menu allergen disclosure",
+      "publishedDate": "2019-09-01",
+      "publishedDateBasis": "Displayed page date; body dateline differs (2019-09-03).",
+      "retrievedAt": "2026-10-14T15:42:37Z",
+      "scope": "Food establishments serving food outside the home; historical announcement.",
+      "retrievalStatus": "retrieved",
+      "failure": null,
+      "license": "unknown",
+      "archived": false,
+      "bodySha256": null,
+      "anchors": [
+        {
+          "id": "groups",
+          "locator": "HTML body allergen list (web extract line 83)"
+        },
+        {
+          "id": "scope",
+          "locator": "HTML body paragraphs 1-4 (web extract lines 78-81)"
+        }
+      ]
+    },
+    {
+      "id": "sfda-menu-guide",
+      "authority": "SFDA",
+      "jurisdiction": "SA",
+      "url": "https://sfda.gov.sa/sites/default/files/2019-11/دليل%20مسببات%20الحساسية.pdf",
+      "title": "Saudi guidance on disclosing allergens in menus",
+      "publishedDate": null,
+      "publishedDateBasis": "No publication date verified; URL directory is not publication evidence.",
+      "retrievedAt": "2026-10-14T15:42:37Z",
+      "scope": "SFDA.FD 56 menu guidance; no assertion of current consolidated legislation.",
+      "retrievalStatus": "retrieved",
+      "failure": null,
+      "license": "unknown",
+      "archived": false,
+      "bodySha256": null,
+      "anchors": [
+        {
+          "id": "wheat",
+          "locator": "PDF page 8 (printed 6), gluten-containing cereals examples"
+        },
+        {
+          "id": "declarations",
+          "locator": "PDF page 10 (printed 8), declaration forms and precautionary disclosure"
+        },
+        {
+          "id": "packaged",
+          "locator": "PDF page 12 (printed 10), packaged foods ingredient-list paragraph"
+        }
+      ]
+    },
+    {
+      "id": "nfsa-access-attempt",
+      "authority": "NFSA",
+      "jurisdiction": "EG",
+      "url": "https://www.nfsa.gov.eg/",
+      "title": "Egypt NFSA official entry point access attempt",
+      "publishedDate": null,
+      "publishedDateBasis": "Not retrieved.",
+      "retrievedAt": "2026-10-14T15:42:37Z",
+      "scope": "Access attempt only; no Egyptian allergen rule extracted.",
+      "retrievalStatus": "unavailable",
+      "failure": "Web fetch reported 404; domain-restricted allergen search returned no specific accessible evidence.",
+      "license": "unknown",
+      "archived": false,
+      "bodySha256": null,
+      "anchors": []
+    },
+    {
+      "id": "sfda-label-faq-attempt",
+      "authority": "SFDA",
+      "jurisdiction": "SA",
+      "url": "https://www.sfda.gov.sa/en/faq/what-are-requirements-food-labeling",
+      "title": "Saudi food labelling FAQ access attempt",
+      "publishedDate": null,
+      "publishedDateBasis": "Not retrieved.",
+      "retrievedAt": "2026-10-14T15:42:37Z",
+      "scope": "Access attempt only; no packaged-label regulation text extracted.",
+      "retrievalStatus": "unavailable",
+      "failure": "Web fetch timed out; no retry.",
+      "license": "unknown",
+      "archived": false,
+      "bodySha256": null,
+      "anchors": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "sa-menu-groups",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "kind": "vocabulary",
+      "statement": "The notice lists fourteen allergen groups for disclosure when present in meals.",
+      "status": "sourceParaphrase",
+      "currentLegalApplicability": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "sa-menu-scope",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "scope",
+      "jurisdiction": "SA",
+      "kind": "disclosureScope",
+      "statement": "It announced disclosure from 2019-10-01 for establishments serving food outside the home.",
+      "status": "sourceParaphrase",
+      "currentLegalApplicability": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "sa-contains",
+      "sourceId": "sfda-menu-guide",
+      "anchorId": "declarations",
+      "jurisdiction": "SA",
+      "kind": "containsMeaning",
+      "statement": "The contains wording identifies allergen presence.",
+      "status": "sourceParaphrase",
+      "currentLegalApplicability": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "sa-may-contain",
+      "sourceId": "sfda-menu-guide",
+      "anchorId": "declarations",
+      "jurisdiction": "SA",
+      "kind": "mayContainMeaning",
+      "statement": "The precautionary wording communicates possible cross-contact.",
+      "status": "sourceParaphrase",
+      "currentLegalApplicability": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "sa-precaution",
+      "sourceId": "sfda-menu-guide",
+      "anchorId": "declarations",
+      "jurisdiction": "SA",
+      "kind": "precautionaryBoundary",
+      "statement": "Precautionary warnings do not replace ingredient allergen disclosure.",
+      "status": "sourceParaphrase",
+      "currentLegalApplicability": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "sa-packaged",
+      "sourceId": "sfda-menu-guide",
+      "anchorId": "packaged",
+      "jurisdiction": "SA",
+      "kind": "packagedContext",
+      "statement": "The guide places packaged-food allergens within the ingredient list.",
+      "status": "sourceParaphrase",
+      "currentLegalApplicability": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "sa-wheat",
+      "sourceId": "sfda-menu-guide",
+      "anchorId": "wheat",
+      "jurisdiction": "SA",
+      "kind": "specificVocabulary",
+      "statement": "Wheat appears among gluten-containing cereal examples.",
+      "status": "sourceParaphrase",
+      "currentLegalApplicability": "unknown",
+      "runtimeApproved": false
+    }
+  ],
+  "vocabularyMappings": [
+    {
+      "id": "map-01",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الحبوب التي تحتوي على الجلوتين",
+      "canonicalId": "gluten",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [
+        "wheat"
+      ],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-02",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "القشريات",
+      "canonicalId": "crustaceans",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [
+        "molluscs"
+      ],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-03",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الأسماك",
+      "canonicalId": "fish",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-04",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "البيض",
+      "canonicalId": "egg",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-05",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الفول السوداني",
+      "canonicalId": "peanut",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [
+        "treeNuts"
+      ],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-06",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الخردل",
+      "canonicalId": "mustard",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-07",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "المكسرات",
+      "canonicalId": "treeNuts",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [
+        "peanut"
+      ],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-08",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "بذور السمسم",
+      "canonicalId": "sesame",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-09",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الحليب",
+      "canonicalId": "milk",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-10",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الرخويات",
+      "canonicalId": "molluscs",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [
+        "crustaceans"
+      ],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-11",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الكبريتيت",
+      "canonicalId": "sulphites",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-12",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الترمس",
+      "canonicalId": "lupin",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-13",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "الكرفس",
+      "canonicalId": "celery",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-14",
+      "sourceId": "sfda-menu-2019",
+      "anchorId": "groups",
+      "jurisdiction": "SA",
+      "sourceTerm": "فول الصويا",
+      "canonicalId": "soy",
+      "termKind": "group",
+      "status": "proposed",
+      "rationale": "Group vocabulary only; product status unassigned.",
+      "notImpliedCanonicalIds": [],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    },
+    {
+      "id": "map-15",
+      "sourceId": "sfda-menu-guide",
+      "anchorId": "wheat",
+      "jurisdiction": "SA",
+      "sourceTerm": "القمح",
+      "canonicalId": "wheat",
+      "termKind": "specificIngredient",
+      "status": "proposed",
+      "rationale": "Exact wheat vocabulary; no automatic gluten declaration.",
+      "notImpliedCanonicalIds": [
+        "gluten"
+      ],
+      "productStatus": "unknown",
+      "runtimeApproved": false
+    }
+  ],
+  "semantics": [
+    {
+      "status": "contains",
+      "evidenceClaimId": "sa-contains",
+      "sourceTerm": "يحتوي على",
+      "jurisdiction": "SA",
+      "scope": "Interpret an explicit declaration; never infer presence from a food name.",
+      "runtimeApproved": false
+    },
+    {
+      "status": "mayContain",
+      "evidenceClaimId": "sa-may-contain",
+      "sourceTerm": "قد يحتوي على",
+      "jurisdiction": "SA",
+      "scope": "Interpret an explicit possible cross-contact warning, not confirmed presence.",
+      "runtimeApproved": false
+    },
+    {
+      "status": "freeFrom",
+      "evidenceClaimId": null,
+      "sourceTerm": null,
+      "jurisdiction": null,
+      "scope": "No free-from threshold or legal claim validated. Require explicit product/version/market evidence and review.",
+      "runtimeApproved": false
+    },
+    {
+      "status": "unknown",
+      "evidenceClaimId": null,
+      "sourceTerm": null,
+      "jurisdiction": null,
+      "scope": "Missing declaration, unavailable guidance, absent warnings or unknown product scope remain unknown.",
+      "runtimeApproved": false
+    }
+  ],
+  "jurisdictionCoverage": [
+    {
+      "jurisdiction": "SA",
+      "vocabulary": "sourceBackedProposals",
+      "declarationSemantics": "sourceBackedResearch",
+      "currentLegalApplicability": "unknown",
+      "freeFromRequirements": "unknown",
+      "limitations": "Historical menu guidance; no current packaged-label standard or threshold validation."
+    },
+    {
+      "jurisdiction": "EG",
+      "vocabulary": "unknown",
+      "declarationSemantics": "unknown",
+      "currentLegalApplicability": "unknown",
+      "freeFromRequirements": "unknown",
+      "limitations": "NFSA content unavailable. Saudi, EU and US requirements must not be applied to Egypt."
+    }
+  ],
+  "approvals": {
+    "runtimeReady": false,
+    "clinicalApproved": false,
+    "legalCurrentnessVerified": false,
+    "productDeclarations": 0,
+    "runtimeAliasChanges": 0
+  }
+}

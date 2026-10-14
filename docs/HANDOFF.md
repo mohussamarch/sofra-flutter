@@ -874,3 +874,58 @@ Independent offline review found2gaps (endpoint omitted from metric check and no
 - Shared STATUS/HANDOFF/WORK-QUEUE/BACKEND-API/DATA-MAP/RECIPE-LIBRARY/RECIPE-BANK/FEATURE-STATUS/ROADMAP/AGENTS consolidated; eachhelperfull/smallhandoff in docs/agents/*1500*. Ongoingbanks stayready/waiting,notdone bycount. Next bounded moderncreatorrecord/explicitlocalgaps andrealfoodquantityreview; marketpricepilotstillneedspermitted20–50itemmerchantbranchsample,notgovernmentdependency. Source-backedplanning/rightsapproval remains separate. No claim allrecipesnutritionallylinked.
 - Userdecisions unchanged. No UI/audio/music/images/Firebase/Auth/rules/Hosting/billing/APK/Drive/S24/usercloud change. sofra-c03a1 remainssoleauthorizedproject,no billing. No secrets. OutsideGit STATUS/HANDOFF/WORK-QUEUE mirrored and DELIVERY.json records finalcommithash/tests/cleanremoteverification.
 - Commit:base0fcfffd27ab3f5d73c94c306d5a20cf0043ad804; finalpushedhash/cleanHEAD=origin/main=liveGitHubmain in E:\work\SOFRA\DELIVERY.json andexternalHANDOFF (avoidsself-reference). Preview retained127.0.0.1:8766/PID31004/node.exe E:\work\SOFRA\app\design-preview\serve.cjs;restart node design-preview/serve.cjs fromsolecheckout. Finaldeliveryrecordsactualsocket/processrecheck.
+
+## 72. Recipe expansion, creator provenance and official allergen evidence — 14 October 2026
+
+### Checkout, ownership and scope
+
+- Sole checkout `E:\work\SOFRA\app`, branch `main`, reference `origin/main`; base `a9a4ccc7d8f478e1047fbce9df0f36cda3c0a9fb`, initially clean.
+- Actual usage started at48% primary/23% weekly, ordinary allowed; last shared checkpoint74%/27%. Current heartbeat uses the default90% ceiling. No purchased/reset credits.
+- Watchdog selected local curation. An archive helper owned only its new pack/tool/handoffs; a second independent helper then owned official allergen evidence. Root owned the creator batch, source fix, assets, shared docs and Git. All helpers returned ownership before delivery; no unfinished branch or second writer.
+- OFF shared access gate remains until `2026-10-14T16:33:18.596Z`; no OFF request this unit. Bank stays2378 products/67 archives. Source backoff did not stop local work. After the bounded recipe batch, work continued on allergen evidence40.
+
+### Eight archived recipes and cuisine coverage
+
+- New folder `data/recipes/curated-local/third-reviewed-20261014/`, with decisions, source snapshots, Arabic cookbook, normalized pack, preflight drafts and gap report. Reproducible builder/tests: `tool/recipes/curated-third-build.mjs` and `.test.mjs`.
+- Added Eton mess, Eargon salsa, miso aubergine, Tom Yum Gai, Polish cauliflower, Spanish potato tortilla, socca and ayran:44 source ingredient lines,3 supplemental lines,38 Arabic steps. Two culinary fully specified, six needing review; zero native-ready drafts and152 preflight issues. These statuses do not approve nutrition, rights or planning.
+- Nine exact archived category labels: English, Mexican, Japanese, Thai, Polish, Spanish, French, Italian and Turkish. Socca is one recipe with two labels. Combined local collection:28 records,22 source cuisine/region labels,10 culinary fully specified/16 needing review/2 not cookable,166 source lines/15 supplemental/113 steps. These are not22 approved national cuisines or globally deduplicated dishes.
+- Existing20 records were inspected for resolvable source gaps: zero additional native gaps resolved; prior packs unchanged. Preserve oil retention, ranges, conditional oven temperatures, ambiguous yield, chilling, ice, salt and excluded mint. A500ml frying-oil input is not500ml consumed.
+- New pack SHA256: `bef4b419623fd9a981d131232d04b5aa52e1d9e2fab50a0f57b5a313fe821d21`. No new book network requests. Full/small handoffs: `docs/agents/curated-third-1530.md` and `.status.md`.
+
+### Five official creator website recipes
+
+- New `data/recipes/arabic-youtube/fourth-batch-20261014/`: Manal Alalem grilled salmon, apple cake, chicken bechamel pasta, quick chicken kabsa and kofta with tahini. Each record links its exact official `manalonline.com` page, with81 ingredient lines including4 procedural extras and15 concise rewritten Arabic steps. Source step indices cover the original method once in order. The compact cookbook indexes the JSON and originals rather than copying full site prose.
+- All five source yields and country/cuisine labels remain unknown. Preserve ambiguous RTL cake fractions and ingredient ranges as raw text/null; bags, cheese pieces and herb bunches are not gram conversions. Explicit1kg mass becomes1000g, while cooked chicken remains identified as cooked. Pasta boiling water/salt/oil are separate; kabsa's5cups water is retained.
+- Phase timers do not become total/prep/cook durations. Source50-minute rice timing is retained without correction or kitchen validation. Salmon's oven220 lacks an explicitly verified scale. Kofta pepper placement remains unresolved. Published2022-07-24 was verified only for cake/kabsa; other publication dates remain null. HTTP body hashes, reuse rights and source approval remain null.
+- Website provenance is explicit, including when the page has a video area. Two YouTube pages (`A6cqoSYAE10`, `usQorX1QCwc`) failed once and were not retried or promoted into verified recipe counts. The inspected koshk page was not imported because its fermentation process was not reviewed. Creator totals:16 website records/68 steps; existing14 video discoveries/4 partial descriptions/0 complete YouTube-derived recipes remain separate.
+- New source-specific validator `tool/recipes/creator-fourth-validation.mjs` and `.test.mjs` check official origin, unique IDs, source links, ordered method coverage, phase indices, unknowns, no approvals and canonical content pins. Pins establish local consistency, not upstream authenticity or permission.
+
+### Creator attribution bug and library integration
+
+- In `lib/domain/recipe_library_draft.dart`, `_source` handled `creators` lists but omitted singular `creator` metadata used by real packs. A regression test failed with expected non-null/actual null before the fix.
+- The fix collects both forms, filters the exact selected creatorId, deduplicates identical canonical objects and retains distinct matching evidence. Deep ownership and all publication/origin guards remain intact. Tests check singular identity evidence, roundtrip, unrelated exclusion and actual Manal attribution.
+- Old stored envelopes still decode unchanged. An enriched current source fingerprint may require fresh review before `assertSource`/save; historical evidence is not rewritten. Independent read-only review found no concrete must-fix and ran no tests.
+- Selected library now44 records from7 pinned packs and28 upstream snapshots. Updated build tool, manifest, generated Dart pin, pubspec and actual asset tests. The6056 raw research records are not bundled; original54 planning recipes/4 cuisines remain unchanged.
+- Manifest SHA256: `352c88ede972629a0526e9ec2d03380858178ce631c2b91158e4dcb6c6ff8a1d`.
+
+### Official allergen evidence unit and limits
+
+- Bank/README: `data/food/allergen-evidence/20261014/`; validator/tests: `tool/food/validate-allergen-evidence.mjs` and `.test.mjs`. Full/small helper handoffs: `docs/agents/allergen-evidence-1540.md` and `.status.md`.
+- Four official access records: two retrieved SFDA sources (historical2019 menu notice and16-page Arabic guide), NFSA404 and Saudi packaged-label FAQ timeout. Failed sources support no claims; no repeated requests.
+- Seven anchored research claims,15 vocabulary mapping proposals (14 groups plus wheat separately), four declaration semantics and separate SA/EG coverage. Wheat is not gluten; milk is not lactose. Contains/mayContain/freeFrom/unknown remain distinct. No product declarations, runtime alias changes, clinical approval or verified current-law applicability.
+- Notice display date2019-09-01 conflicts with body2019-09-03; announced2019-10-01 is not asserted as current law. Guide URL directory is not a verified publication date. Egypt coverage, current Saudi packaged-label rules and free-from thresholds remain unknown. Unarchived body hashes are null; reuse licences unknown. Offline checks do not authenticate upstream legal correctness.
+- Next: specific accessible NFSA content, current applicable Saudi packaged-label evidence and real product/version/market label declarations with reviewed compound links. This evidence unit does not complete allergen coverage or change runtime FoodRecord logic/user health state.
+
+### Verification actually run
+
+- Final full Flutter suite:225 passed on the44-record assets. Full `flutter analyze --no-pub`: no issues,7.2seconds. Fifteen bridge/persistence cases passed before asset integration and are included in the final suite.
+- Recipe Node tests:17 passed (7 archive builder,6 creator batch,4 manifest). Allergen Node tests:12 passed, independently rerun by root; CLI exit0 with4 sources/2 retrieved/7 claims/15 proposals/0 runtime approvals. Manifest `--check` passed.
+- First integration helper attempt stopped on Windows cp1252 decoding pubspec; only build list/test expectations had changed. The manifest test correctly reported stale output; that early225-test Flutter pass still used31 assets and was not final proof. Explicit UTF8/idempotent selection fixed the helper; manifest generation,17 Node tests and full225 Flutter were rerun successfully on44 assets.
+- JSON/dependency/control-character/credential-pattern checks and staged diff check are recorded in the final receipt. No optional broad gates after successful final integration.
+
+### Shared handoff and delivery
+
+- Updated STATUS/HANDOFF/WORK-QUEUE, API/map/library/bank/feature/roadmap/AGENTS and calculator contract; mirrored STATUS/HANDOFF/WORK-QUEUE outside Git. Continuous banks stay open. One bounded recipe lane must not starve the next independent core unit.
+- User decisions unchanged. No UI, audio, images, Firebase/Auth/rules/Hosting, billing, APK, Drive, S24 Ultra or user-cloud changes. Only `sofra-c03a1` is authorized, without billing. No secrets.
+- Base commit above; final pushed hash, clean `HEAD=origin/main=live GitHub main` and checks are in `E:\work\SOFRA\DELIVERY.json` and final external HANDOFF, avoiding a self-referential tracked hash.
+- Preview retained and rechecked: `127.0.0.1:8766`, PID31004, `node.exe`, source `E:\work\SOFRA\app\design-preview\serve.cjs`. Restart with `node design-preview/serve.cjs` from the sole checkout. No unfinished branch or active file owners at delivery.

@@ -225,10 +225,18 @@ Map<String, dynamic> _source(RecipeLibraryEntry entry) {
       if (metadata.containsKey(key)) key: metadata[key],
   };
   final creatorId = entry.sourceRecord['creatorId'];
-  if (creatorId != null && metadata['creators'] is List) {
-    context['creators'] = (metadata['creators'] as List)
-        .where((creator) => creator is Map && creator['creatorId'] == creatorId)
-        .toList();
+  if (creatorId != null) {
+    final candidates = [
+      if (metadata['creators'] is List) ...metadata['creators'] as List,
+      if (metadata['creator'] is Map) metadata['creator'],
+    ];
+    final matching = <String, Map>{};
+    for (final creator in candidates) {
+      if (creator is Map && creator['creatorId'] == creatorId) {
+        matching[_fingerprint(creator)] = creator;
+      }
+    }
+    if (matching.isNotEmpty) context['creators'] = matching.values.toList();
   }
   source['packMetadata'] = context;
   return _owned(source);

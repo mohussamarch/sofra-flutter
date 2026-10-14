@@ -1,12 +1,12 @@
 # Library recipes → private calculation drafts
 
-Sole checkout: `E:\work\SOFRA\app`. Current implementation: HANDOFF §71. This bridge makes a readable source recipe usable by the existing calculation engine after explicit review. It does not declare the recipe nutritionally complete or approved for publication.
+Sole checkout: `E:\work\SOFRA\app`. Current implementation: HANDOFF §72. This bridge makes a readable source recipe usable by the existing calculation engine after explicit review. It does not declare the recipe nutritionally complete or approved for publication.
 
 ## Data flow and ownership
 
 `RecipeLibraryRepository` → exact `RecipeLibraryEntry` → `RecipeLibraryDraftReview` → atomic `KitchenService.saveLibraryRecipeDraft` → `PersonalRecipeDraft.previewIngredients/previewCooked`.
 
-The selected library now contains31 records from5 byte-pinned packs and20 upstream snapshots. Keep the full review envelope, not only its `.draft`. It contains schemaVersion, source, sourceFingerprint, draft, decisions and fingerprint. The source includes the complete selected source record, upstream snapshot where present, evidence URLs and relevant pack policy/creator attribution; unrelated recipes/videos/creators are excluded.
+The selected library now contains44 records from7 byte-pinned packs and28 upstream snapshots. Keep the full review envelope, not only its `.draft`. It contains schemaVersion, source, sourceFingerprint, draft, decisions and fingerprint. The source includes the complete selected source record, upstream snapshot where present, evidence URLs and relevant pack policy/creator attribution; unrelated recipes/videos/creators are excluded.
 
 ## Explicit decisions
 
@@ -51,6 +51,10 @@ KitchenService clones the submitted review before awaiting, resolves its current
 
 ## Actual verification and next work
 
-7 domain bridge tests and7 persistence/integration tests cover all-line decisions, excluded choices, source drift, owned snapshots, canonical roundtrip, malformed/tampered provenance, calculator use, stale retry, rollback and publication/origin guards. They are included in the full224 passing Flutter tests; full analyze clean10.6s. Synthetic food/protein values in tests are not approved real recipe bindings. Independent read-only review found no concrete must-fix.
+8 domain bridge tests and7 persistence/integration tests cover all-line decisions, excluded choices, source drift, owned snapshots, canonical roundtrip, malformed/tampered provenance, calculator use, stale retry, rollback and publication/origin guards. They are included in the full225 passing Flutter tests; full analyze clean7.2s. Synthetic food/protein values in tests are not approved real recipe bindings. Independent read-only review found no concrete must-fix.
 
 Next: the external interface can consume these APIs and show review/status/coverage explicitly. Review real food identity/amount/form, source omissions and rights before promoting any library recipe into planning. UI activation and actual user/cloud state were not changed.
+
+## Singular creator provenance fix — §72
+
+Pack attribution can use either `creator` or `creators`. The bridge now collects only entries whose creatorId exactly matches the selected recipe and preserves them in the scoped creators list, removing exact canonical duplicates while retaining different evidence. Regression reproduced missing metadata before the fix and passed afterward. Old serialized envelopes are still decoded as stored; newly enriched source fingerprints can require review before assertSource/save against the current entry. No historical envelope is rewritten and no source/rights approval is implied.

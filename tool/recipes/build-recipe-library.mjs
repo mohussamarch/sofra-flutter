@@ -12,6 +12,8 @@ const files=[
  ['creator-website','data/recipes/arabic-youtube/second-batch-20261014/recipes.json'],
  ['creator-website','data/recipes/arabic-youtube/third-batch-20261014/recipes.json'],
  ['curated-local','data/recipes/curated-local/gap-review-20261014/normalized-recipes.json'],
+ ['creator-website','data/recipes/arabic-youtube/fourth-batch-20261014/recipes.json'],
+ ['curated-local','data/recipes/curated-local/third-reviewed-20261014/normalized-recipes.json'],
 ];
 const sha=v=>createHash('sha256').update(v).digest('hex');
 const need=(v,m)=>{if(!v)throw Error(m);};

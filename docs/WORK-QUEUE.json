@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T15:21:43.363476+00:00",
-    "taskId": "library-draft-calculator",
-    "summary": "31actual readable records; explicit library-to-private-calculator review+atomic source persistence;4local+3creator records,2timer proposals.224Flutter/12Node/creator validator/analyze clean.",
+    "at": "2026-10-14T15:47:21.012150+00:00",
+    "taskId": "allergen-evidence",
+    "summary": "Official evidence bank:2SFDA sources/7claims/15vocabularyproposals,EGunknown and0runtimeapprovals; also44pinnedreadable recipes/225Flutter/17recipeNode/analyzeclean.",
     "evidence": [
-      "test/library_recipe_persistence_test.dart",
-      "test/recipe_library_assets_test.dart",
-      "data/recipes/curated-local/gap-review-20261014/gap-review-report.json"
+      "data/food/allergen-evidence/20261014/official-evidence.json",
+      "test/recipe_library_draft_test.dart",
+      "test/recipe_library_assets_test.dart"
     ]
   },
   "tasks": [
@@ -76,9 +76,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Continue bounded modern official Arab creator recipes with actual quantities/steps and honest website/YouTube distinction;11website nowbundled,0completeYT. Review omissions/rights before runtime promotion.",
-      "lastAttemptAt": "2026-10-14T10:04:23.521510+00:00",
-      "lastProgressAt": "2026-10-14T15:21:43.363476+00:00",
+      "nextAction": "Continue bounded moderncreator source recipes, sourceomissions/rights/explicitfoodreview;16website nowbundled,0completeYouTube-derived. Do not starve independent core work.",
+      "lastAttemptAt": "2026-10-14T15:47:21.012150+00:00",
+      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -140,7 +140,9 @@
         "docs/RECIPE-LIBRARY.md",
         "data/recipes/arabic-youtube/second-batch-20261014/recipes.json",
         "data/recipes/arabic-youtube/third-batch-20261014/recipes.json",
-        "docs/agents/arabic-youtube-1500.md"
+        "docs/agents/arabic-youtube-1500.md",
+        "data/recipes/arabic-youtube/fourth-batch-20261014/recipes.json",
+        "tool/recipes/creator-fourth-validation.test.mjs"
       ],
       "stage": "OfficialmodernArabiccreatorYouTubeandownwebsiteacquisition",
       "sourcePolicy": {
@@ -367,7 +369,26 @@
       "priority": 40,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Source ingredient/allergen declarations and compound expansion; preserve unknown and traces separately"
+      "nextAction": "Next bounded unit: real productlabel source/version evidence and compound links; seek accessible Egyptofficial content. Keep SA historical menu scope separate from current packaged law; do not autoapply proposals.",
+      "lastAttemptAt": "2026-10-14T15:47:21.012150+00:00",
+      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
+      "completedUnit": {
+        "retrievedOfficialSources": 2,
+        "failedOfficialAccessAttempts": 2,
+        "anchoredClaims": 7,
+        "vocabularyProposals": 15,
+        "validatorTests": 12,
+        "productDeclarations": 0,
+        "runtimeAliasChanges": 0,
+        "egyptCoverage": "unknown",
+        "currentLegalApplicability": "unknown"
+      },
+      "evidence": [
+        "data/food/allergen-evidence/20261014/official-evidence.json",
+        "tool/food/validate-allergen-evidence.mjs",
+        "tool/food/validate-allergen-evidence.test.mjs",
+        "docs/agents/allergen-evidence-1540.md"
+      ]
     },
     {
       "id": "recipe-coverage",
@@ -539,19 +560,19 @@
       "priority": 34,
       "status": "ready",
       "dependsOn": [],
-      "lastAttemptAt": "2026-10-14T15:21:43.363476+00:00",
-      "nextAction": "Resolve explicit remaining timing/yield/scaling/food/rights gaps using gap-review report, then next bounded archived batch; no new book network.",
-      "lastProgressAt": "2026-10-14T15:21:43.363476+00:00",
+      "lastAttemptAt": "2026-10-14T15:47:21.012150+00:00",
+      "nextAction": "Review source-supported real food/quantity gaps or next bounded archived cuisine batch; no new book network. After one batch advance independent core lane.",
+      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
       "completedUnit": {
-        "records": 20,
-        "fullySpecified": 8,
-        "needsReview": 10,
+        "records": 28,
+        "fullySpecified": 10,
+        "needsReview": 16,
         "notCookable": 2,
-        "sourceCuisineLabels": 13,
+        "sourceCuisineLabels": 22,
         "distinctMethodFamilies": 1,
-        "sourceTimerProposals": 2,
-        "originalPreflightIssuesBefore": 60,
-        "originalPreflightIssuesAfter": 58,
+        "newBatchRecipes": 8,
+        "newBatchSourceLabels": 9,
+        "newNativeGapResolutions": 0,
         "runtimeApprovals": 0
       },
       "evidence": [
@@ -559,7 +580,10 @@
         "tool/recipes/curated-local-build.test.mjs",
         "docs/RECIPE-LIBRARY.md",
         "data/recipes/curated-local/gap-review-20261014/gap-review-report.json",
-        "tool/recipes/curated-gap-build.test.mjs"
+        "tool/recipes/curated-gap-build.test.mjs",
+        "data/recipes/curated-local/third-reviewed-20261014/normalized-recipes.json",
+        "tool/recipes/curated-third-build.test.mjs",
+        "docs/agents/curated-third-1530.md"
       ]
     },
     {
@@ -586,18 +610,18 @@
       "dependsOn": [],
       "status": "done",
       "completedAt": "2026-10-14T10:15:57.137053+00:00",
-      "nextAction": "Use31entry/5pack/20snapshot pinnedlibrary and reviewed private-calculator bridge; rights/source planning approval remains separate.",
+      "nextAction": "Use44entry pinnedlibrary with source-preserving privatecalculator; source-based planning/rights and realnutritioncoverage remain separate.",
       "evidence": [
         "lib/data/recipe_library_repository.dart",
         "lib/data/recipe_library_assets.dart",
         "test/recipe_library_assets_test.dart",
         "docs/RECIPE-LIBRARY.md"
       ],
-      "lastProgressAt": "2026-10-14T15:21:43.363476+00:00",
+      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
       "completedUnit": {
-        "records": 31,
-        "packs": 5,
-        "sourceSnapshots": 20,
+        "records": 44,
+        "packs": 7,
+        "sourceSnapshots": 28,
         "runtimeApprovals": 0
       }
     },
@@ -610,8 +634,8 @@
         "recipe-authoring"
       ],
       "completedAt": "2026-10-14T15:21:43.363476+00:00",
-      "lastProgressAt": "2026-10-14T15:21:43.363476+00:00",
-      "nextAction": "Use explicit source-preserving private calculator bridge; review real food amounts/forms and separate source rights/import approval before publication.",
+      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
+      "nextAction": "Singular/listcreator attribution retained; oldstoredreviews readable, enrichedsource needs freshreview. Preserve explicitline and origin/publication guards.",
       "evidence": [
         "lib/domain/recipe_library_draft.dart",
         "lib/data/kitchen_service.dart",
@@ -622,12 +646,12 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T15:21:43.363476+00:00",
-    "primaryUsedPercent": 43,
-    "weeklyUsedPercent": 22,
+    "at": "2026-10-14T15:47:21.012150+00:00",
+    "primaryUsedPercent": 74,
+    "weeklyUsedPercent": 27,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Fresh actual usage; no purchase/reset; default90 for currentheartbeat. Previous99override only prior continuation."
+    "action": "No purchase/reset; boundedunits completed, next batch needs fresh actual limits."
   },
-  "updatedAt": "2026-10-14T15:21:43.363476+00:00"
+  "updatedAt": "2026-10-14T15:47:21.012150+00:00"
 }

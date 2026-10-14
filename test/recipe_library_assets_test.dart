@@ -10,7 +10,7 @@ void main() {
     () async {
       final repository = bundledRecipeLibrary();
       final entries = await repository.all();
-      expect(entries, hasLength(31));
+      expect(entries, hasLength(44));
       expect(entries.where((entry) => entry.runtimeReady), isEmpty);
       expect(entries.every((entry) => entry.nutrition == null), isTrue);
       expect(await repository.search('مقلوبة'), hasLength(2));
@@ -20,9 +20,21 @@ void main() {
       expect((await RecipeRepository().index), hasLength(54));
       expect(
         entries.where((entry) => entry.sourceSnapshot != null),
-        hasLength(20),
+        hasLength(28),
       );
       expect(entries.every((entry) => entry.stepsArabic.isNotEmpty), isTrue);
+      final pasta = entries.firstWhere(
+        (e) => e.id == 'manal-website-chicken-bechamel-pasta',
+      );
+      expect(pasta.ingredients.where((i) => i.supplemental), hasLength(3));
+      expect(pasta.sourceRecord['yield']['amount'], isNull);
+      final cake = entries.firstWhere(
+        (e) => e.id == 'manal-website-apple-cake',
+      );
+      expect(cake.ingredients.first.amount, isNull);
+      expect(cake.ingredients.first.sourceQuantityText, '5-4');
+      expect(await repository.filterByCuisine('japanese'), hasLength(1));
+      expect(await repository.filterByCuisine('thai'), hasLength(1));
     },
   );
 }

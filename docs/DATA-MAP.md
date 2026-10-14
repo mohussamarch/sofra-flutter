@@ -191,3 +191,7 @@ Latest user priority: real retailer and delivery-app prices first; government so
 ## Current library/private-calculator map — §71
 
 5selected recipe packs → flutter-manifest.json +trusted Dart SHA → RecipeLibraryRepository (31readable entries/20upstream snapshots) → RecipeLibraryDraftReview (full dedicated source envelope +explicit every-line decisions) → KitchenService atomic librarySource/draft persistence → existing PersonalRecipeDraft calculator. Source-backed publication is separately gated. Contract: LIBRARY-RECIPE-CALCULATOR.md; source status/counts: RECIPE-LIBRARY.md. Existing54planning recipes/4cuisines and food banks are separate. No automatic food, rights or nutrient acceptance follows from reading an entry.
+
+## Current §72 banks
+
+44readable library records=28local+16creatorwebsite;7pinnedpacks/28upstream snapshots. _source in recipe_library_draft.dart now keeps exactmatching creator/list attribution in persisted evidence. New allergen research bank data/food/allergen-evidence/20261014/official-evidence.json links source→anchored claim→exact vocabulary mapping proposal;7claims/15proposals,2retrievedSFDA sources and2failedaccess checkpoints. SA historical menu scope only,EG unknown;0runtime product/alias/clinical/current-law approval. Existing FoodRecord declarations remain separately evidenced perrecord/source/version.

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "recipeSha256": "0f65fe43cdf6fffe1a9282a0b39a260cfa625355d3da425a224dcbcb5b9f3ab2",
+  "note": "Manual archived-source transcription only. Unknown/ranged amounts, untimed actions, scaling, food, rights and retention remain unresolved. Approximate phase durations are not exact scalar timers.",
+  "reviewedAt": "2026-10-14T15:38:28.000Z",
+  "servings": null,
+  "prepMinutes": null,
+  "cookMinutes": null,
+  "stepMinutes": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "lines": [
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:98250",
+        "recordId": "wikibooks-98250-r4513535",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4513535",
+        "sourceSha256": "cde1685fcd009c8484dad358b48ba16d4e7a0954fa52a2a89f81c5d335d59292",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 0,
+        "lineId": "source-line-1",
+        "sourceText": "1 head of cauliflower",
+        "derivedRecipeSha256": "0f65fe43cdf6fffe1a9282a0b39a260cfa625355d3da425a224dcbcb5b9f3ab2"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published quantity retained without gram/volume conversion",
+      "components": [
+        {
+          "name": "cauliflower head",
+          "amount": 1,
+          "unit": "head",
+          "form": "cauliflower head",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:98250",
+        "recordId": "wikibooks-98250-r4513535",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4513535",
+        "sourceSha256": "cde1685fcd009c8484dad358b48ba16d4e7a0954fa52a2a89f81c5d335d59292",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 1,
+        "lineId": "source-line-2",
+        "sourceText": "50 ml butter",
+        "derivedRecipeSha256": "0f65fe43cdf6fffe1a9282a0b39a260cfa625355d3da425a224dcbcb5b9f3ab2"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "source butter volume retained; no gram conversion",
+      "components": [
+        {
+          "name": "butter",
+          "amount": 50,
+          "unit": "ml",
+          "form": "butter",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:98250",
+        "recordId": "wikibooks-98250-r4513535",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4513535",
+        "sourceSha256": "cde1685fcd009c8484dad358b48ba16d4e7a0954fa52a2a89f81c5d335d59292",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 2,
+        "lineId": "source-line-3",
+        "sourceText": "2–3 tablespoons breadcrumbs",
+        "derivedRecipeSha256": "0f65fe43cdf6fffe1a9282a0b39a260cfa625355d3da425a224dcbcb5b9f3ab2"
+      },
+      "resolution": "choice",
+      "disposition": "required",
+      "note": "published range2–3tablespoons; no fixed amount selected",
+      "components": [
+        {
+          "name": "breadcrumbs",
+          "amount": null,
+          "unit": null,
+          "form": "breadcrumbs",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:98250",
+        "recordId": "wikibooks-98250-r4513535",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4513535",
+        "sourceSha256": "cde1685fcd009c8484dad358b48ba16d4e7a0954fa52a2a89f81c5d335d59292",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 3,
+        "lineId": "source-line-4",
+        "sourceText": "½ teaspoon fresh dill (optional)",
+        "derivedRecipeSha256": "0f65fe43cdf6fffe1a9282a0b39a260cfa625355d3da425a224dcbcb5b9f3ab2"
+      },
+      "resolution": "choice",
+      "disposition": "included-optional",
+      "note": "explicit optional half-teaspoon included",
+      "components": [
+        {
+          "name": "fresh dill",
+          "amount": 0.5,
+          "unit": "tsp",
+          "form": "fresh dill",
+          "optional": true,
+          "scales": null,
+          "food": null
+        }
+      ]
+    }
+  ]
+}
