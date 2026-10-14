@@ -36,3 +36,5 @@ tool/recipes/build-recipe-library.mjs يبني الفهرس والثابت؛ --c
 4. التالي في البنك المحلي إكمال فجوات أعلى الوصفات جودة، ثم دفعة مراجعة صغيرة جديدة؛ المسار الحديث يجلب وصفات طهاة عرب بمصدر صريح بدل أرقام فيديو فقط.
 
 الفحوص الفعلية:13Node(9تنظيم مصدر+4فهرس)،210Flutter بما فيها أصول22سجلًا فعلية و8حالات قارئ و18حالة تكلفة؛ نتيجة analyze في HANDOFF§67. لاAPK/تفعيلUI/سحابة/تعديلFirebase.
+
+14October follow-up: second creator-site batch is now bundled,24readable records/3packs/16source snapshots. Added normalized cuisine evidence from existing sourceLabel/evidenceUrl, without changing source facts, declared omissions or pending approvals. Actual assets test verifies harira search and7Moroccan-tagged records (1local+6creator); original54planning catalogue unchanged.9focusedFlutter and15Node watchdog/build tests passed. ManifestSHA3ac598bb5a1ad210f3eea331a57536d6662152b8faa297639e26c32952ae6f03.

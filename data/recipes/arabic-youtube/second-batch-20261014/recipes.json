@@ -2,74 +2,439 @@
   "schemaVersion": 1,
   "batchId": "arabic-creator-second-batch-20261014",
   "retrievedAt": "2026-10-14",
-  "sourcePolicy": {"sourceKind":"creator-website","youtubeDerived":false,"sourceApproval":null,"reuseRights":null,"mediaDownloaded":false,"transcriptExtraction":false,"httpBodyHash":null},
-  "creator": {"creatorId":"choumicha-chafay","name":"شميشة شافعي","officialSite":"https://www.choumicha.ma/","youtubeChannel":"https://www.youtube.com/user/tvchoumicha","channelIdentityEvidence":"https://www.choumicha.ma/ar/actualites/سلسلة-دار-شميشة-على-اليوتيوب.html","identityConfidence":"high"},
+  "sourcePolicy": {
+    "sourceKind": "creator-website",
+    "youtubeDerived": false,
+    "sourceApproval": null,
+    "reuseRights": null,
+    "mediaDownloaded": false,
+    "transcriptExtraction": false,
+    "httpBodyHash": null
+  },
+  "creator": {
+    "creatorId": "choumicha-chafay",
+    "name": "شميشة شافعي",
+    "officialSite": "https://www.choumicha.ma/",
+    "youtubeChannel": "https://www.youtube.com/user/tvchoumicha",
+    "channelIdentityEvidence": "https://www.choumicha.ma/ar/actualites/سلسلة-دار-شميشة-على-اليوتيوب.html",
+    "identityConfidence": "high"
+  },
   "recipes": [
     {
-      "recipeId":"choumicha-website-chicken-carrot-harira","sourceKind":"creator-website","sourceVideoId":null,"youtubeDerived":false,"creatorId":"choumicha-chafay","title":"حريرة (حساء) بالدجاج والجزر","sourceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html","retrievedAt":"2026-10-14","publishedAt":null,"sourceAttribution":"By Choumicha Chafay","confidence":"high",
-      "cuisine":{"value":"Moroccan","sourceLabel":"أطباق مغربية","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html","status":"source-declared-pending-human-review"},"sourceApproval":null,"reuseRights":null,
-      "yield":{"sourceText":"8","amount":8,"unit":"servings"},"time":{"cookTimeSourceText":"1س","cookTimeMinutes":60,"totalTimeSourceText":"1س 30د","totalTimeMinutes":90},
-      "ingredients":[
-        {"label":"chicken wings and gizzards","labelAr":"أجنحة وحويصلات الدجاج","sourceQuantityText":"200 غ","amount":200,"unit":"g","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"carrots, diced","labelAr":"حبتا جزر مقطعتان مكعبات","sourceQuantityText":"2 حبات","amount":2,"unit":"piece","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"lentils","labelAr":"عدس","sourceQuantityText":"50 غ","amount":50,"unit":"g","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"onion, chopped","labelAr":"بصل مفروم","sourceQuantityText":"1 بصل","amount":1,"unit":"piece","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"tomatoes, chopped","labelAr":"طماطم مفرومة","sourceQuantityText":"4 حبات","amount":4,"unit":"piece","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"chopped coriander","labelAr":"باقة قزبر مفروم","sourceQuantityText":"1 باقة","amount":1,"unit":"bunch","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"chopped celery stalks","labelAr":"عروش كرفس مفرومة","sourceQuantityText":"3 عروش","amount":3,"unit":"stalk","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"black pepper","labelAr":"فلفل أسود","sourceQuantityText":"1/2 ملعقة صغيرة","amount":0.5,"unit":"tsp","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"ginger","labelAr":"زنجبيل","sourceQuantityText":"1 ملعقة صغيرة","amount":1,"unit":"tsp","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"salt","labelAr":"ملح","sourceQuantityText":"1 ملعقة صغيرة","amount":1,"unit":"tsp","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"smen","labelAr":"سمن","sourceQuantityText":"1 ملعقة صغيرة","amount":1,"unit":"tsp","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"cinnamon sticks","labelAr":"عودا قرفة","sourceQuantityText":"2 أعواد","amount":2,"unit":"stick","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"turmeric","labelAr":"كركم","sourceQuantityText":"1 ملعقة صغيرة","amount":1,"unit":"tsp","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"water for soup","labelAr":"ماء","sourceQuantityText":"3 لتر","amount":3,"unit":"L","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"tomato paste for soup","labelAr":"مركز الطماطم","sourceQuantityText":"2 ملاعق كبيرة","amount":2,"unit":"tbsp","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"rice","labelAr":"أرز","sourceQuantityText":"50 غ","amount":50,"unit":"g","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"chopped coriander and celery for serving","labelAr":"قزبر وكرفس مفرومان للتقديم","sourceQuantityText":"1 ملعقة كبيرة","amount":1,"unit":"tbsp","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"lemon pieces","labelAr":"قطع ليمون حامض","sourceQuantityText":"قطع ليمون حامض، دون تحديد عدد أو كمية","amount":null,"unit":null,"evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"flour for thickener","labelAr":"دقيق للتدويرة","sourceQuantityText":"100 غ","amount":100,"unit":"g","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"tomato paste for thickener","labelAr":"مركز الطماطم للتدويرة","sourceQuantityText":"1 ملعقة كبيرة","amount":1,"unit":"tbsp","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"label":"water for thickener","labelAr":"ماء للتدويرة","sourceQuantityText":"20 سل","amount":20,"unit":"cl","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"}
+      "recipeId": "choumicha-website-chicken-carrot-harira",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "creatorId": "choumicha-chafay",
+      "title": "حريرة (حساء) بالدجاج والجزر",
+      "sourceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html",
+      "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html",
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceAttribution": "By Choumicha Chafay",
+      "confidence": "high",
+      "cuisine": {
+        "value": "Moroccan",
+        "sourceLabel": "أطباق مغربية",
+        "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html",
+        "status": "source-declared-pending-human-review",
+        "evidence": "أطباق مغربية — https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+      },
+      "sourceApproval": null,
+      "reuseRights": null,
+      "yield": {
+        "sourceText": "8",
+        "amount": 8,
+        "unit": "servings"
+      },
+      "time": {
+        "cookTimeSourceText": "1س",
+        "cookTimeMinutes": 60,
+        "totalTimeSourceText": "1س 30د",
+        "totalTimeMinutes": 90
+      },
+      "ingredients": [
+        {
+          "label": "chicken wings and gizzards",
+          "labelAr": "أجنحة وحويصلات الدجاج",
+          "sourceQuantityText": "200 غ",
+          "amount": 200,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "carrots, diced",
+          "labelAr": "حبتا جزر مقطعتان مكعبات",
+          "sourceQuantityText": "2 حبات",
+          "amount": 2,
+          "unit": "piece",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "lentils",
+          "labelAr": "عدس",
+          "sourceQuantityText": "50 غ",
+          "amount": 50,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "onion, chopped",
+          "labelAr": "بصل مفروم",
+          "sourceQuantityText": "1 بصل",
+          "amount": 1,
+          "unit": "piece",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "tomatoes, chopped",
+          "labelAr": "طماطم مفرومة",
+          "sourceQuantityText": "4 حبات",
+          "amount": 4,
+          "unit": "piece",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "chopped coriander",
+          "labelAr": "باقة قزبر مفروم",
+          "sourceQuantityText": "1 باقة",
+          "amount": 1,
+          "unit": "bunch",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "chopped celery stalks",
+          "labelAr": "عروش كرفس مفرومة",
+          "sourceQuantityText": "3 عروش",
+          "amount": 3,
+          "unit": "stalk",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "black pepper",
+          "labelAr": "فلفل أسود",
+          "sourceQuantityText": "1/2 ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "ginger",
+          "labelAr": "زنجبيل",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "salt",
+          "labelAr": "ملح",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "smen",
+          "labelAr": "سمن",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "cinnamon sticks",
+          "labelAr": "عودا قرفة",
+          "sourceQuantityText": "2 أعواد",
+          "amount": 2,
+          "unit": "stick",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "turmeric",
+          "labelAr": "كركم",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "water for soup",
+          "labelAr": "ماء",
+          "sourceQuantityText": "3 لتر",
+          "amount": 3,
+          "unit": "L",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "tomato paste for soup",
+          "labelAr": "مركز الطماطم",
+          "sourceQuantityText": "2 ملاعق كبيرة",
+          "amount": 2,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "rice",
+          "labelAr": "أرز",
+          "sourceQuantityText": "50 غ",
+          "amount": 50,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "chopped coriander and celery for serving",
+          "labelAr": "قزبر وكرفس مفرومان للتقديم",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "lemon pieces",
+          "labelAr": "قطع ليمون حامض",
+          "sourceQuantityText": "قطع ليمون حامض، دون تحديد عدد أو كمية",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "flour for thickener",
+          "labelAr": "دقيق للتدويرة",
+          "sourceQuantityText": "100 غ",
+          "amount": 100,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "tomato paste for thickener",
+          "labelAr": "مركز الطماطم للتدويرة",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "label": "water for thickener",
+          "labelAr": "ماء للتدويرة",
+          "sourceQuantityText": "20 سل",
+          "amount": 20,
+          "unit": "cl",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        }
       ],
-      "steps":[
-        {"text":"Blend the flour, water, and tomato paste for the thickener into a light, pourable mixture.","textAr":"يُمزج الدقيق والماء ومركز الطماطم في الخلاط للحصول على خليط سائل خفيف.","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"text":"Put the chicken wings and gizzards, carrots, onion, tomatoes, herbs, ginger, turmeric, smen, and water in a pot over low heat.","textAr":"توضع أجنحة وحويصلات الدجاج والجزر والبصل والطماطم والأعشاب المنسمة والزنجبيل والكركم والسمن والماء في قدر على نار هادئة.","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"text":"When it boils, cover the pot and cook for 25 minutes.","textAr":"عند الغليان يُغطّى القدر ويُترك الخليط لينضج 25 دقيقة.","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"text":"Add the rice and the soup's tomato paste, then simmer for 10 minutes.","textAr":"يُضاف الأرز ومركز الطماطم وتُترك الطنجرة على نار هادئة 10 دقائق.","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"text":"Stir in enough thickener to make the soup smooth; keep stirring over low heat until the foam on top disappears.","textAr":"تُضاف كمية مناسبة من التدويرة مع التحريك للحصول على حريرة ناعمة، وتُترك على نار هادئة مع التحريك حتى تختفي الرغوة على السطح.","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"},
-        {"text":"Five minutes before removing the soup from the heat, season with black pepper, coriander, and celery; add thickener gradually, and thin with boiling water if it becomes too thick.","textAr":"قبل رفع الحريرة عن النار بخمس دقائق تُنكّه بالفلفل الأسود والقزبر والكرفس. تُضاف التدويرة تدريجيًا، ويمكن إضافة ماء مغلي إذا زاد قوامها كثافة.","evidenceUrl":"https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"}
+      "steps": [
+        {
+          "text": "Blend the flour, water, and tomato paste for the thickener into a light, pourable mixture.",
+          "textAr": "يُمزج الدقيق والماء ومركز الطماطم في الخلاط للحصول على خليط سائل خفيف.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "text": "Put the chicken wings and gizzards, carrots, onion, tomatoes, herbs, ginger, turmeric, smen, and water in a pot over low heat.",
+          "textAr": "توضع أجنحة وحويصلات الدجاج والجزر والبصل والطماطم والأعشاب المنسمة والزنجبيل والكركم والسمن والماء في قدر على نار هادئة.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "text": "When it boils, cover the pot and cook for 25 minutes.",
+          "textAr": "عند الغليان يُغطّى القدر ويُترك الخليط لينضج 25 دقيقة.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "text": "Add the rice and the soup's tomato paste, then simmer for 10 minutes.",
+          "textAr": "يُضاف الأرز ومركز الطماطم وتُترك الطنجرة على نار هادئة 10 دقائق.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "text": "Stir in enough thickener to make the soup smooth; keep stirring over low heat until the foam on top disappears.",
+          "textAr": "تُضاف كمية مناسبة من التدويرة مع التحريك للحصول على حريرة ناعمة، وتُترك على نار هادئة مع التحريك حتى تختفي الرغوة على السطح.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        },
+        {
+          "text": "Five minutes before removing the soup from the heat, season with black pepper, coriander, and celery; add thickener gradually, and thin with boiling water if it becomes too thick.",
+          "textAr": "قبل رفع الحريرة عن النار بخمس دقائق تُنكّه بالفلفل الأسود والقزبر والكرفس. تُضاف التدويرة تدريجيًا، ويمكن إضافة ماء مغلي إذا زاد قوامها كثافة.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/138-حريرة-حساء-الدجاج-الجزر.html"
+        }
       ],
-      "unknowns":["The ingredient list includes 50 g lentils, but the method does not specify when to add them.","The amount of lemon pieces is not specified.","No publication date or associated YouTube video ID was verified."]
+      "unknowns": [
+        "The ingredient list includes 50 g lentils, but the method does not specify when to add them.",
+        "The amount of lemon pieces is not specified.",
+        "No publication date or associated YouTube video ID was verified."
+      ]
     },
     {
-      "recipeId":"choumicha-website-anchovy-taqra","sourceKind":"creator-website","sourceVideoId":null,"youtubeDerived":false,"creatorId":"choumicha-chafay","title":"تاكرة بالأنشوفة (لانشوبة، بلم)","sourceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html","retrievedAt":"2026-10-14","publishedAt":null,"sourceAttribution":"By Choumicha Chafay","confidence":"high",
-      "cuisine":{"value":"Moroccan","sourceLabel":"أطباق مغربية؛ الصفحة تذكر أن التاكرة تستعمل كثيرًا في المطبخ الشمالي المغربي","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html","status":"source-declared-pending-human-review"},"sourceApproval":null,"reuseRights":null,
-      "yield":{"sourceText":"4","amount":4,"unit":"servings"},"time":{"cookTimeSourceText":"30د","cookTimeMinutes":30,"totalTimeSourceText":"1س","totalTimeMinutes":60},
-      "ingredients":[
-        {"label":"anchovy fillets","labelAr":"شرائح سمكة الأنشوفة (لانشوبة، بلم)","sourceQuantityText":"500 غ","amount":500,"unit":"g","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"chopped parsley and coriander","labelAr":"بقدونس وقزبر مفرمان","sourceQuantityText":"5 ملاعق كبيرة","amount":5,"unit":"tbsp","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"minced garlic","labelAr":"ثوم مفروم","sourceQuantityText":"3 فصوص","amount":3,"unit":"clove","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"cumin","labelAr":"كمون","sourceQuantityText":"3 ملاعق صغيرة","amount":3,"unit":"tsp","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"sweet paprika","labelAr":"فلفل حلو","sourceQuantityText":"3 ملاعق صغيرة","amount":3,"unit":"tsp","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"harissa","labelAr":"عجين الفلفل الحار «هريسة»","sourceQuantityText":"1/2 ملعقة صغيرة","amount":0.5,"unit":"tsp","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"salt","labelAr":"ملح","sourceQuantityText":"1 ملعقة صغيرة","amount":1,"unit":"tsp","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"olive oil","labelAr":"زيت الزيتون","sourceQuantityText":"8 سل","amount":8,"unit":"cl","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"vinegar","labelAr":"خل","sourceQuantityText":"2 ملاعق كبيرة","amount":2,"unit":"tbsp","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"water","labelAr":"ماء","sourceQuantityText":"4 ملاعق كبيرة","amount":4,"unit":"tbsp","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"coriander stems for lining","labelAr":"عروش قزبر لفرش قاع الإناء","sourceQuantityText":"عروش قزبر، دون تحديد الكمية","amount":null,"unit":null,"evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"label":"green olives for garnish","labelAr":"زيتون أخضر للتزيين","sourceQuantityText":"50 غ","amount":50,"unit":"g","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"}
+      "recipeId": "choumicha-website-anchovy-taqra",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "creatorId": "choumicha-chafay",
+      "title": "تاكرة بالأنشوفة (لانشوبة، بلم)",
+      "sourceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html",
+      "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html",
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceAttribution": "By Choumicha Chafay",
+      "confidence": "high",
+      "cuisine": {
+        "value": "Moroccan",
+        "sourceLabel": "أطباق مغربية؛ الصفحة تذكر أن التاكرة تستعمل كثيرًا في المطبخ الشمالي المغربي",
+        "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html",
+        "status": "source-declared-pending-human-review",
+        "evidence": "أطباق مغربية؛ الصفحة تذكر أن التاكرة تستعمل كثيرًا في المطبخ الشمالي المغربي — https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+      },
+      "sourceApproval": null,
+      "reuseRights": null,
+      "yield": {
+        "sourceText": "4",
+        "amount": 4,
+        "unit": "servings"
+      },
+      "time": {
+        "cookTimeSourceText": "30د",
+        "cookTimeMinutes": 30,
+        "totalTimeSourceText": "1س",
+        "totalTimeMinutes": 60
+      },
+      "ingredients": [
+        {
+          "label": "anchovy fillets",
+          "labelAr": "شرائح سمكة الأنشوفة (لانشوبة، بلم)",
+          "sourceQuantityText": "500 غ",
+          "amount": 500,
+          "unit": "g",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "chopped parsley and coriander",
+          "labelAr": "بقدونس وقزبر مفرمان",
+          "sourceQuantityText": "5 ملاعق كبيرة",
+          "amount": 5,
+          "unit": "tbsp",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "minced garlic",
+          "labelAr": "ثوم مفروم",
+          "sourceQuantityText": "3 فصوص",
+          "amount": 3,
+          "unit": "clove",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "cumin",
+          "labelAr": "كمون",
+          "sourceQuantityText": "3 ملاعق صغيرة",
+          "amount": 3,
+          "unit": "tsp",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "sweet paprika",
+          "labelAr": "فلفل حلو",
+          "sourceQuantityText": "3 ملاعق صغيرة",
+          "amount": 3,
+          "unit": "tsp",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "harissa",
+          "labelAr": "عجين الفلفل الحار «هريسة»",
+          "sourceQuantityText": "1/2 ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "tsp",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "salt",
+          "labelAr": "ملح",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "olive oil",
+          "labelAr": "زيت الزيتون",
+          "sourceQuantityText": "8 سل",
+          "amount": 8,
+          "unit": "cl",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "vinegar",
+          "labelAr": "خل",
+          "sourceQuantityText": "2 ملاعق كبيرة",
+          "amount": 2,
+          "unit": "tbsp",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "water",
+          "labelAr": "ماء",
+          "sourceQuantityText": "4 ملاعق كبيرة",
+          "amount": 4,
+          "unit": "tbsp",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "coriander stems for lining",
+          "labelAr": "عروش قزبر لفرش قاع الإناء",
+          "sourceQuantityText": "عروش قزبر، دون تحديد الكمية",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "label": "green olives for garnish",
+          "labelAr": "زيتون أخضر للتزيين",
+          "sourceQuantityText": "50 غ",
+          "amount": 50,
+          "unit": "g",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        }
       ],
-      "steps":[
-        {"text":"Mix the herbs, spices, minced garlic, olive oil, and vinegar to make chermoula.","textAr":"تُحضّر شرمولة بمزج الأعشاب والتوابل والثوم المفروم وزيت الزيتون والخل.","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"text":"Spread a little chermoula on one anchovy fillet and cover it with a second fillet; repeat with the remaining fish, reserving some chermoula.","textAr":"تُفرد كمية قليلة من الشرمولة على شريحة أنشوفة وتُغطّى بشريحة ثانية. تُكرّر العملية مع بقية الشرائح مع الاحتفاظ بقليل من الشرمولة.","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"text":"Mix the reserved chermoula with the water.","textAr":"تُمزج بقية الشرمولة بالماء.","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"text":"Arrange coriander stems in a lattice at the bottom of the taqra to keep the fish from sticking.","textAr":"تُرتّب عروش القزبر في قاع التاكرة على شكل شبكة حتى لا تلتصق شرائح السمك أثناء الطهي.","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"text":"Add the stuffed anchovy fillets and pour over the remaining chermoula mixture.","textAr":"تُضاف شرائح الأنشوفة المحشوة ويُسكب فوقها ما تبقى من خليط الشرمولة.","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"},
-        {"text":"Garnish with olives and cook over charcoal for 25 to 30 minutes.","textAr":"تُزيّن بالزيتون وتُطهى على الفحم من 25 إلى 30 دقيقة.","evidenceUrl":"https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"}
+      "steps": [
+        {
+          "text": "Mix the herbs, spices, minced garlic, olive oil, and vinegar to make chermoula.",
+          "textAr": "تُحضّر شرمولة بمزج الأعشاب والتوابل والثوم المفروم وزيت الزيتون والخل.",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "text": "Spread a little chermoula on one anchovy fillet and cover it with a second fillet; repeat with the remaining fish, reserving some chermoula.",
+          "textAr": "تُفرد كمية قليلة من الشرمولة على شريحة أنشوفة وتُغطّى بشريحة ثانية. تُكرّر العملية مع بقية الشرائح مع الاحتفاظ بقليل من الشرمولة.",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "text": "Mix the reserved chermoula with the water.",
+          "textAr": "تُمزج بقية الشرمولة بالماء.",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "text": "Arrange coriander stems in a lattice at the bottom of the taqra to keep the fish from sticking.",
+          "textAr": "تُرتّب عروش القزبر في قاع التاكرة على شكل شبكة حتى لا تلتصق شرائح السمك أثناء الطهي.",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "text": "Add the stuffed anchovy fillets and pour over the remaining chermoula mixture.",
+          "textAr": "تُضاف شرائح الأنشوفة المحشوة ويُسكب فوقها ما تبقى من خليط الشرمولة.",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        },
+        {
+          "text": "Garnish with olives and cook over charcoal for 25 to 30 minutes.",
+          "textAr": "تُزيّن بالزيتون وتُطهى على الفحم من 25 إلى 30 دقيقة.",
+          "evidenceUrl": "https://www.choumicha.ma/ar/recette/700-تاكرة-بالأنشوفة-لانشوبة-بلم.html"
+        }
       ],
-      "unknowns":["The amount of coriander stems is not specified.","No publication date or associated YouTube video ID was verified."]
+      "unknowns": [
+        "The amount of coriander stems is not specified.",
+        "No publication date or associated YouTube video ID was verified."
+      ]
     }
   ],
-  "limitations":["Both records are complete creator-site recipes, not recipes sourced from YouTube videos.","Moroccan category is explicitly declared by the official pages; cuisine review/approval remains pending.","Reuse rights and publication approval are unverified and remain null.","No video/audio/image was downloaded and no transcript was used.","No page body was archived; no content hash is supplied."]
+  "limitations": [
+    "Both records are complete creator-site recipes, not recipes sourced from YouTube videos.",
+    "Moroccan category is explicitly declared by the official pages; cuisine review/approval remains pending.",
+    "Reuse rights and publication approval are unverified and remain null.",
+    "No video/audio/image was downloaded and no transcript was used.",
+    "No page body was archived; no content hash is supplied."
+  ]
 }

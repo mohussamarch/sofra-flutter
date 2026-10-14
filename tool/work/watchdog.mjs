@@ -28,12 +28,13 @@ function validate(q){
 }
 
 /** Read-only audit. Chooses work, never starts/kills a process or changes a queue. */
-export function auditWork(queue,{now=new Date().toISOString(),usage,sourceState}={}){
+export function auditWork(queue,{now=new Date().toISOString(),usage,sourceState,quotaLimit=90}={}){
+ assert.ok(Number.isInteger(quotaLimit)&&quotaLimit>=90&&quotaLimit<=99,'Invalid quota limit');
  const byId=validate(queue),nowMs=time(now),deferredTasks=[];
  const answer=(reason,nextTask=null,action='',extra={})=>({reason,nextTask:nextTask?{id:nextTask.id,nextAction:nextTask.nextAction}:null,action,deferredTasks,...extra});
  if(!usage||typeof usage.ordinaryUsageAllowed!=='boolean'||
    ![usage.primaryUsedPercent,usage.weeklyUsedPercent].every(v=>Number.isFinite(v)&&v>=0&&v<=100))return answer('usage_unknown',null,'Read current account limits before costly work');
- if(!usage.ordinaryUsageAllowed||usage.primaryUsedPercent>=90||usage.weeklyUsedPercent>=90)return answer('quota_reserve',null,'Save continuation and recheck later; do not buy/reset credits');
+ if(!usage.ordinaryUsageAllowed||usage.primaryUsedPercent>=quotaLimit||usage.weeklyUsedPercent>=quotaLimit)return answer('quota_reserve',null,'Save continuation and recheck later; do not buy/reset credits');
  const active=queue.tasks.filter(t=>t.status==='active');
  if(active.length){
   const stalled=active.filter(t=>{
@@ -81,5 +82,5 @@ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.ur
  let sourceState;try{sourceState=JSON.parse(await readFile('data/food/openfoodfacts/collection-state.json','utf8'));}catch{}
  const ordinary=args.get('--ordinary');
  const usage={ordinaryUsageAllowed:ordinary==='true'?true:ordinary==='false'?false:undefined,primaryUsedPercent:args.has('--primary')?Number(args.get('--primary')):NaN,weeklyUsedPercent:args.has('--weekly')?Number(args.get('--weekly')):NaN};
- console.log(JSON.stringify(auditWork(q,{now:args.get('--now')??new Date().toISOString(),usage,sourceState}),null,2));
+ console.log(JSON.stringify(auditWork(q,{now:args.get('--now')??new Date().toISOString(),usage,sourceState,quotaLimit:args.has('--quota-limit')?Number(args.get('--quota-limit')):90}),null,2));
 }

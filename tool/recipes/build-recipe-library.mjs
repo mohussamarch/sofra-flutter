@@ -9,6 +9,7 @@ export const pinsFile='lib/data/recipe_library_assets.dart';
 const files=[
  ['curated-local','data/recipes/curated-local/first-reviewed-20261014/normalized-recipes.json'],
  ['creator-website','data/recipes/arabic-youtube/2026-10-first-batch.json'],
+ ['creator-website','data/recipes/arabic-youtube/second-batch-20261014/recipes.json'],
 ];
 const sha=v=>createHash('sha256').update(v).digest('hex');
 const need=(v,m)=>{if(!v)throw Error(m);};

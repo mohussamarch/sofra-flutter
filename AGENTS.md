@@ -184,3 +184,5 @@ Read FEATURE-STATUS.md/RECIPE-LIBRARY.md for actual built versus UI/source cover
 ## User price-source correction —14October2026
 
 Market retailer/delivery catalog feeds are now primary. Government statistical tables are secondary helpers and must not block implementation. MARKET-PRICE-INTEGRATIONS.md and retailer-integrations EG/SA dossiers distinguish partner own-vendor APIs from public all-store price access. Prefer cooperating merchant read-only POS/CSV or authorized Salla/Zid/catalog feed; don't claim a live relationship or reuse permission. No contacting/onboarding/credentials without direct user authorization. Offline Talabat candidate adapter is implemented; no live source connected. Keep delivery fees/pack basis/branch/observed versus effective date distinct; CPI percentage APIs cannot become currency price feeds.
+
+User explicitly authorized continuing up to99% in this continuation. Watchdog supports --quota-limit99 only when human-authorized; default90 remains. Unknownusage/ordinaryfalse alwaysblock. No credit purchase/reset. Current readable library24records/3packs; source/rights/nutrition gates remain unchanged.

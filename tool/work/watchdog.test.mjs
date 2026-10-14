@@ -63,3 +63,12 @@ test('empty or malformed source cursors require diagnosis before collection',()=
   assert.equal(a.deferredTasks[0].reason,'source_state_unavailable');
  }
 });
+
+test('explicit99 limit preserves default90 and all hard stops',()=>{
+ const q=queue([task('x',1)]),u={...usage,primaryUsedPercent:94};
+ assert.equal(auditWork(q,{now,usage:u}).reason,'quota_reserve');
+ assert.equal(auditWork(q,{now,usage:u,quotaLimit:99}).reason,'ready_work_available');
+ for(const v of [{...u,primaryUsedPercent:99},{...u,weeklyUsedPercent:99},{...u,ordinaryUsageAllowed:false}])assert.equal(auditWork(q,{now,usage:v,quotaLimit:99}).reason,'quota_reserve');
+ assert.equal(auditWork(q,{now,quotaLimit:99}).reason,'usage_unknown');
+ for(const n of [89,100,NaN])assert.throws(()=>auditWork(q,{now,usage:u,quotaLimit:n}));
+});
