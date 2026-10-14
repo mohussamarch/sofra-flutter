@@ -187,3 +187,7 @@ RECIPE-LIBRARY.md:6056بحث قديم →16مراجعة عربية محلية +6
 ##14October — market-first source correction
 
 Latest user priority: real retailer and delivery-app prices first; government sources are secondary, no waiting for government exports. See MARKET-PRICE-INTEGRATIONS.md, new official-source EG/SA dossiers, and offline partner-catalog-candidates.mjs (8tests). Talabat/HungerStation partner scope is own chain/vendor; Salla/Zid can read consenting merchant catalogs. No live feed or reuse permission acquired. GASTATJuly2026 workbook/100food rows saved as raw source checkpoint only; no normalized/livepricebank/currency approval. Arabiccreatorsecondbatch adds2website recipes with explicit source omissions;22bundled readable entries unchanged, nextassetintegration separate.
+
+## Current library/private-calculator map — §71
+
+5selected recipe packs → flutter-manifest.json +trusted Dart SHA → RecipeLibraryRepository (31readable entries/20upstream snapshots) → RecipeLibraryDraftReview (full dedicated source envelope +explicit every-line decisions) → KitchenService atomic librarySource/draft persistence → existing PersonalRecipeDraft calculator. Source-backed publication is separately gated. Contract: LIBRARY-RECIPE-CALCULATOR.md; source status/counts: RECIPE-LIBRARY.md. Existing54planning recipes/4cuisines and food banks are separate. No automatic food, rights or nutrient acceptance follows from reading an entry.

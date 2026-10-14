@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 1,
+  "batchId": "arabic-creator-third-batch-20261014",
+  "retrievedAt": "2026-10-14",
+  "sourcePolicy": {
+    "sourceKind": "creator-website",
+    "youtubeDerived": false,
+    "sourceApproval": null,
+    "reuseRights": null,
+    "mediaDownloaded": false,
+    "transcriptExtraction": false,
+    "httpBodyHash": null
+  },
+  "creator": {
+    "creatorId": "choumicha-chafay",
+    "name": "شميشة شافعي",
+    "officialSite": "https://www.choumicha.ma/",
+    "youtubeChannel": "https://www.youtube.com/user/tvchoumicha",
+    "channelIdentityEvidence": "https://www.choumicha.ma/ar/actualites/سلسلة-دار-شميشة-على-اليوتيوب.html",
+    "identityConfidence": "high"
+  },
+  "recipes": [
+    {
+      "recipeId": "choumicha-website-milk-harsha",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "creatorId": "choumicha-chafay",
+      "title": "حرشة بالحليب / خبيزات السميد بالحليب",
+      "sourceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html",
+      "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html",
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceAttribution": "By Choumicha Chafay",
+      "confidence": "high",
+      "cuisine": {
+        "value": "Moroccan",
+        "sourceLabel": "أطباق مغربية",
+        "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D8%A8.html",
+        "status": "source-declared-pending-human-review",
+        "evidence": "أطباق مغربية — صفحة الوصفة الرسمية"
+      },
+      "sourceApproval": null,
+      "reuseRights": null,
+      "yield": {
+        "sourceText": "6",
+        "amount": 6,
+        "unit": "servings"
+      },
+      "time": {
+        "cookTimeSourceText": "10د",
+        "cookTimeMinutes": 10,
+        "totalTimeSourceText": "30د",
+        "totalTimeMinutes": 30
+      },
+      "ingredients": [
+        {
+          "label": "fine durum-wheat semolina",
+          "labelAr": "سميد رفيع من القمح الصلب",
+          "sourceQuantityText": "250 غ",
+          "amount": 250,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "label": "oil and melted butter mixture",
+          "labelAr": "مزيج الزيت والزبدة المذابة",
+          "sourceQuantityText": "8 سل",
+          "amount": 80,
+          "unit": "ml",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "label": "baking powder",
+          "labelAr": "خميرة كيميائية",
+          "sourceQuantityText": "7 غ",
+          "amount": 7,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "label": "fresh yeast",
+          "labelAr": "خميرة طرية",
+          "sourceQuantityText": "1 قبصة",
+          "amount": 1,
+          "unit": "pinch",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "label": "salt",
+          "labelAr": "ملح",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "label": "coarse sugar",
+          "labelAr": "سكر خشن",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "label": "milk",
+          "labelAr": "حليب",
+          "sourceQuantityText": "20 سل",
+          "amount": 200,
+          "unit": "ml",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "label": "fine semolina for the pan",
+          "labelAr": "سميد رفيع للطهي",
+          "sourceQuantityText": "2 ملاعق كبيرة",
+          "amount": 2,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "label": "honey for serving",
+          "labelAr": "عسل للتقديم",
+          "sourceQuantityText": "يقدم معها؛ الكمية غير محددة",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Coat the semolina evenly with the oil and melted butter.",
+          "textAr": "امزجي السميد مع الزيت والزبدة المذابة حتى تتغطى حباته بالمادة الدهنية.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "text": "Dissolve fresh yeast in milk; add the ingredients and mix quickly without kneading.",
+          "textAr": "أذيبي الخميرة الطرية في الحليب، ثم أضيفي المكونات واخلطي بسرعة من دون عجن.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "text": "Rest 20–30 minutes until the semolina absorbs the milk; source says time depends on semolina.",
+          "textAr": "اتركي الخليط يرتاح 20 إلى 30 دقيقة حتى يتشرب السميد الحليب؛ فالمدة بحسب نوعية السميد.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "text": "Heat a thick-based pan, dust it with semolina, place a ball of batter in it, and flatten there.",
+          "textAr": "سخني مقلاة ثقيلة القاع ورشي عليها السميد، ثم ضعي كرة من الخليط وافرديها في المقلاة.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "text": "Cook each cake for 2 minutes before turning; brown the other side. Wipe the pan and repeat.",
+          "textAr": "اطهي كل خبيزة دقيقتين قبل قلبها، وحمّري الجهة الأخرى. امسحي المقلاة وكرري العملية.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        },
+        {
+          "text": "Serve with honey.",
+          "textAr": "قدمي الحرشة مع العسل.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/834-%D8%AD%D8%B1%D8%B4%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B2%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%85%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8.html"
+        }
+      ],
+      "unknowns": [
+        "مقدار العسل غير محدد.",
+        "المصدر يذكر مزيج الزيت والزبدة دون تفصيل مقدار كل منهما.",
+        "عدد الأقراص الناتج غير مذكور."
+      ]
+    },
+    {
+      "recipeId": "choumicha-website-swordfish-vegetable-tajine",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "creatorId": "choumicha-chafay",
+      "title": "طاجين سمك أبو سيف بالخضر",
+      "sourceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html",
+      "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html",
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceAttribution": "By Choumicha Chafay",
+      "confidence": "high",
+      "cuisine": {
+        "value": "Moroccan",
+        "sourceLabel": "أطباق مغربية",
+        "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html",
+        "status": "source-declared-pending-human-review",
+        "evidence": "أطباق مغربية — صفحة الوصفة الرسمية"
+      },
+      "sourceApproval": null,
+      "reuseRights": null,
+      "yield": {
+        "sourceText": "4",
+        "amount": 4,
+        "unit": "servings"
+      },
+      "time": {
+        "cookTimeSourceText": "20د",
+        "cookTimeMinutes": 20,
+        "totalTimeSourceText": "50د",
+        "totalTimeMinutes": 50
+      },
+      "ingredients": [
+        {
+          "label": "swordfish, cubed",
+          "labelAr": "سمك أبو سيف مكعبات",
+          "sourceQuantityText": "500 غ",
+          "amount": 500,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "garlic, minced",
+          "labelAr": "ثوم مفروم",
+          "sourceQuantityText": "2 فصوص",
+          "amount": 2,
+          "unit": "clove",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "chopped parsley and cilantro",
+          "labelAr": "بقدونس وقزبر مفرومان",
+          "sourceQuantityText": "2 ملاعق كبيرة",
+          "amount": 2,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "sweet harissa / sweet pepper paste",
+          "labelAr": "هريسة حلوة (عجين فلفل حلو)",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "cumin",
+          "labelAr": "كمون",
+          "sourceQuantityText": "4 قبصات",
+          "amount": 4,
+          "unit": "pinch",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "chili powder",
+          "labelAr": "مسحوق الفلفل الحار",
+          "sourceQuantityText": "1/4 ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "olive oil",
+          "labelAr": "زيت الزيتون",
+          "sourceQuantityText": "5 ملاعق كبيرة",
+          "amount": 5,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "vinegar",
+          "labelAr": "خل",
+          "sourceQuantityText": "2 ملاعق كبيرة",
+          "amount": 2,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "water",
+          "labelAr": "ماء",
+          "sourceQuantityText": "3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "salt",
+          "labelAr": "ملح",
+          "sourceQuantityText": "ملح (الكمية غير محددة)",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "carrots, thin julienne",
+          "labelAr": "جزر عيدان رفيعة",
+          "sourceQuantityText": "2 حبات",
+          "amount": 2,
+          "unit": "piece",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "cabbage, thin julienne",
+          "labelAr": "ملفوف عيدان رفيعة",
+          "sourceQuantityText": "100 غ",
+          "amount": 100,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "small potatoes, boiled",
+          "labelAr": "بطاطس صغيرة مسلوقة",
+          "sourceQuantityText": "100 غ",
+          "amount": 100,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "pitted green olives",
+          "labelAr": "زيتون أخضر منزوع النوى",
+          "sourceQuantityText": "50 غ",
+          "amount": 50,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "label": "cilantro leaves or wooden skewers to line the tagine",
+          "labelAr": "أوراق قزبر أو أسياخ خشبية لقعر الطاجين",
+          "sourceQuantityText": "حسب الحاجة؛ لا كمية محددة",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Mix the chermoula ingredients. Marinate the fish in half and coat each vegetable separately with the rest.",
+          "textAr": "امزجي مكونات الشرمولة. انقعي السمك في نصفها وادهني كل نوع من الخضر على حدة بالباقي.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "text": "Line the tagine base with cilantro leaves or wooden skewers and arrange the fish and vegetables.",
+          "textAr": "غطّي قعر الطاجين بأوراق القزبر أو الأسياخ الخشبية، ثم رتبي السمك والخضر فيه.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        },
+        {
+          "text": "Cook over very low heat for 20–25 minutes; serve hot.",
+          "textAr": "اطهيه على نار هادئة جداً من 20 إلى 25 دقيقة، وقدميه ساخناً.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/540-%D8%B7%D8%A7%D8%AC%D9%8A%D9%86-%D8%B3%D9%85%D9%83-%D8%A8%D9%88-%D8%B3%D9%8A%D9%81-%D8%A8%D8%A7%D9%84%D8%AE%D8%B6%D8%B1.html"
+        }
+      ],
+      "unknowns": [
+        "مقدار الملح غير محدد.",
+        "كمية أوراق القزبر أو الأسياخ غير محددة.",
+        "وزن حبتي الجزر وزمن التتبيل غير مذكورين."
+      ]
+    },
+    {
+      "recipeId": "choumicha-website-chicken-almond-bastilla",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "creatorId": "choumicha-chafay",
+      "title": "بسطيلة بالدجاج واللوز",
+      "sourceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html",
+      "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html",
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceAttribution": "By Choumicha Chafay",
+      "confidence": "high",
+      "cuisine": {
+        "value": "Moroccan",
+        "sourceLabel": "أطباق مغربية",
+        "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D9%86-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html",
+        "status": "source-declared-pending-human-review",
+        "evidence": "أطباق مغربية — صفحة الوصفة الرسمية"
+      },
+      "sourceApproval": null,
+      "reuseRights": null,
+      "yield": {
+        "sourceText": "6",
+        "amount": 6,
+        "unit": "servings"
+      },
+      "time": {
+        "cookTimeSourceText": "0د",
+        "cookTimeMinutes": 0,
+        "totalTimeSourceText": "2س 30د",
+        "totalTimeMinutes": 150
+      },
+      "ingredients": [
+        {
+          "label": "chicken, quartered and skinned",
+          "labelAr": "دجاجة مقطعة أربع قطع ومنزوعة الجلد",
+          "sourceQuantityText": "1 دجاجة بوزن 1،75 كلغ",
+          "amount": 1.75,
+          "unit": "kg (1 chicken)",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "finely minced onions",
+          "labelAr": "بصل مفروم رفيع",
+          "sourceQuantityText": "2 كلغ",
+          "amount": 2,
+          "unit": "kg",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "chopped parsley",
+          "labelAr": "باقة بقدونس مفرومة",
+          "sourceQuantityText": "1 باقة",
+          "amount": 1,
+          "unit": "bunch",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "chopped cilantro",
+          "labelAr": "نصف باقة قزبر مفرومة",
+          "sourceQuantityText": "نصف باقة",
+          "amount": 0.5,
+          "unit": "bunch",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "cinnamon sticks",
+          "labelAr": "أعواد قرفة",
+          "sourceQuantityText": "3 أعواد",
+          "amount": 3,
+          "unit": "stick",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "saffron threads",
+          "labelAr": "شعيرات زعفران",
+          "sourceQuantityText": "10 شعيرات",
+          "amount": 10,
+          "unit": "thread",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "ginger",
+          "labelAr": "زنجبيل",
+          "sourceQuantityText": "2 ملاعق صغيرة",
+          "amount": 2,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "black pepper",
+          "labelAr": "فلفل أسود",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "ras el hanout (optional)",
+          "labelAr": "رأس الحانوت (اختياري)",
+          "sourceQuantityText": "3 قبصات",
+          "amount": 3,
+          "unit": "pinch",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "smen",
+          "labelAr": "سمن",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "oil",
+          "labelAr": "زيت",
+          "sourceQuantityText": "8 سل",
+          "amount": 80,
+          "unit": "ml",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "salt",
+          "labelAr": "ملح",
+          "sourceQuantityText": "ملح (الكمية غير محددة)",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "honey",
+          "labelAr": "عسل",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "eggs",
+          "labelAr": "بيضات",
+          "sourceQuantityText": "4 بيضات",
+          "amount": 4,
+          "unit": "piece",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "peeled almonds",
+          "labelAr": "لوز مقشر",
+          "sourceQuantityText": "650 غ",
+          "amount": 650,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "powdered sugar, or to taste",
+          "labelAr": "سكر ناعم أو حسب الذوق",
+          "sourceQuantityText": "100 غ (أو حسب الذوق)",
+          "amount": 100,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "ground cinnamon",
+          "labelAr": "قرفة مدقوقة",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "bastilla pastry sheets",
+          "labelAr": "أوراق البسطيلة",
+          "sourceQuantityText": "400 غ",
+          "amount": 400,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "butter",
+          "labelAr": "زبدة",
+          "sourceQuantityText": "80 غ",
+          "amount": 80,
+          "unit": "g",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "frying oil",
+          "labelAr": "زيت للطهي",
+          "sourceQuantityText": "زيت للطهي (الكمية غير محددة)",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "egg yolk",
+          "labelAr": "أصفر بيضة",
+          "sourceQuantityText": "1",
+          "amount": 1,
+          "unit": "piece",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "powdered sugar for garnish",
+          "labelAr": "سكر ناعم للتزيين",
+          "sourceQuantityText": "للتزيين (الكمية غير محددة)",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "label": "ground cinnamon for garnish",
+          "labelAr": "قرفة مدقوقة للتزيين",
+          "sourceQuantityText": "للتزيين (الكمية غير محددة)",
+          "amount": null,
+          "unit": null,
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Put onion, chicken, spices, smen, oil, parsley, and cilantro in a thick-based pot. Cover and cook gently, turning occasionally, until the chicken cooks in the onions' released liquid.",
+          "textAr": "ضعي البصل والدجاج والتوابل والسمن والزيت والبقدونس والقزبر في طنجرة ثقيلة القاع. غطيها واطهي على نار هادئة مع التقليب أحياناً حتى ينضج الدجاج في ماء البصل.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "text": "Remove the cooked chicken, debone and cut it. Add honey to the onion sauce and simmer, stirring, until it thickens; remove excess oil and reserve it for folding.",
+          "textAr": "أخرجي الدجاج بعد نضجه وانزعي عظامه وقطعيه. أضيفي العسل إلى مرق البصل واتركيه يتعسل مع التحريك؛ أزيلي فائض الزيت واحتفظي به للطي.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "text": "Return chicken to the onion sauce, add eggs, and stir gently over low heat for 2–3 minutes. Remove from heat and cool slightly.",
+          "textAr": "أعيدي قطع الدجاج إلى مرق البصل وأضيفي البيض. حركي برفق على نار هادئة من دقيقتين إلى ثلاث، ثم ارفعي الحشوة لتبرد قليلاً.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "text": "Fry or oven-toast almonds until golden; coarsely chop and mix with powdered sugar and cinnamon.",
+          "textAr": "اقلي اللوز أو حمصيه في الفرن حتى يذهب لونه إلى الذهبي؛ جرشيه واخلطيه بالسكر الناعم والقرفة.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "text": "Mix reserved onion oil with melted butter to brush the pastry while folding one large bastilla or smaller ones.",
+          "textAr": "اخلطي زيت مرق البصل بالزبدة المذابة لدهان الأوراق أثناء طي بسطيلة كبيرة أو بسطيلات صغيرة.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        },
+        {
+          "text": "Cook in hot oil or an oven preheated to 180°C until golden; serve hot with powdered sugar and cinnamon.",
+          "textAr": "اطهيها في زيت ساخن أو فرن مسخن إلى 180 درجة مئوية حتى تحمر، ثم قدميها ساخنة مزينة بالسكر الناعم والقرفة.",
+          "evidenceUrl": "https://choumicha.ma/ar/recette/1495-%D8%A8%D8%B3%D8%B7%D9%8A%D9%84%D8%A9-%D8%A8%D8%A7%D9%84%D8%AF%D8%AC%D8%A7%D8%AC-%D9%88%D8%A7%D9%84%D9%84%D9%88%D8%B2.html"
+        }
+      ],
+      "unknowns": [
+        "كمية الملح وزيت القلي والتزيين غير محددة.",
+        "زمن الطهي في بيانات المصدر 0د رغم وجود مراحل طهي؛ حُفظ كما هو ولا يمثل مدة متحققة.",
+        "مدة القلي أو الخَبز غير مذكورة.",
+        "قائمة المقادير تذكر صفار بيضة بلا توضيح موضع استعماله."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "recipeSha256": "f1340bb28352c1e2cb463d969cf2594a8093e4c03c93ad7a6e228c71742c66bb",
+  "note": "Manual source quantities/choices. Timing only where expressly stated. Unknown scaling/food/rights remain unresolved.",
+  "reviewedAt": "2026-10-14T15:06:00.700Z",
+  "servings": 8,
+  "prepMinutes": null,
+  "cookMinutes": null,
+  "stepMinutes": [
+    null,
+    null,
+    null,
+    null,
+    20,
+    null,
+    null
+  ],
+  "lines": [
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:11375",
+        "recordId": "wikibooks-11375-r4504744",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4504744",
+        "sourceSha256": "6a08e29d9ab5ba14357785cc89a1a2f6005783dcbf85cf24158ddda8579ed024",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 0,
+        "lineId": "source-line-1",
+        "sourceText": "5 cups water",
+        "derivedRecipeSha256": "f1340bb28352c1e2cb463d969cf2594a8093e4c03c93ad7a6e228c71742c66bb"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published cups retained; no inferred volume system",
+      "components": [
+        {
+          "name": "water",
+          "amount": 5,
+          "unit": "cup",
+          "form": "water",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:11375",
+        "recordId": "wikibooks-11375-r4504744",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4504744",
+        "sourceSha256": "6a08e29d9ab5ba14357785cc89a1a2f6005783dcbf85cf24158ddda8579ed024",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 1,
+        "lineId": "source-line-2",
+        "sourceText": "1 cup hominy grits",
+        "derivedRecipeSha256": "f1340bb28352c1e2cb463d969cf2594a8093e4c03c93ad7a6e228c71742c66bb"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "source hominy grits; not generic corn flour",
+      "components": [
+        {
+          "name": "hominy grits",
+          "amount": 1,
+          "unit": "cup",
+          "form": "hominy grits",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:11375",
+        "recordId": "wikibooks-11375-r4504744",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4504744",
+        "sourceSha256": "6a08e29d9ab5ba14357785cc89a1a2f6005783dcbf85cf24158ddda8579ed024",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 2,
+        "lineId": "source-line-3",
+        "sourceText": "1 tablespoon butter",
+        "derivedRecipeSha256": "f1340bb28352c1e2cb463d969cf2594a8093e4c03c93ad7a6e228c71742c66bb"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published tablespoon retained",
+      "components": [
+        {
+          "name": "butter",
+          "amount": 1,
+          "unit": "tbsp",
+          "form": "butter",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:11375",
+        "recordId": "wikibooks-11375-r4504744",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4504744",
+        "sourceSha256": "6a08e29d9ab5ba14357785cc89a1a2f6005783dcbf85cf24158ddda8579ed024",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 3,
+        "lineId": "source-line-4",
+        "sourceText": "1 tablespoon honey, brown sugar, or maple syrup (optional)",
+        "derivedRecipeSha256": "f1340bb28352c1e2cb463d969cf2594a8093e4c03c93ad7a6e228c71742c66bb"
+      },
+      "resolution": "choice",
+      "disposition": "excluded-optional",
+      "note": "optional source sweetening explicitly excluded; brown sugar/maple syrup alternatives not added",
+      "components": []
+    }
+  ]
+}

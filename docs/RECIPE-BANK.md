@@ -71,3 +71,7 @@ Use RECIPE-ACQUISITION-ARABIC-YOUTUBE.md. User stopped further recipe-book/refer
 ## Current reviewed output —14October2026
 
 RECIPE-LIBRARY.md supersedes old zero-output counts:16locally curated Arabic records fromexisting6056,6official creator-website records,22readable bundled library entries,0automatic planning/nutrition approvals. Local4fullyspecified/10needsreview/2notcookable,11source-supported geographic/cuisine labels,1reviewed distinct-method naan family.14video discoveries/4partialvideo recipes/0completeYouTube-derived. Full/small handoffs for all3workers underdocs/agents. No newbookcollection; original54/4planning unchanged.
+
+## Current output supersedes earlier counts — §71
+
+31readable Flutter records/5packs/20snapshots:20local Arabic curations (8fullyspecified culinary/10needsreview/2notcookable) and11official creator-website recipes.13local source cuisine/region labels, not13approved national cuisines;1reviewed distinct-method naan family.14videos/4partialvideo descriptions/0completeYouTube-derived. Added4existing-archive records and3Choumicha website records; no newbook acquisition. Source rights/food/nutrition/planning approvals remain0. Library-to-private-calculator review/persistence now implemented, not automatic nutritional coverage: LIBRARY-RECIPE-CALCULATOR.md. Local source-supported timer proposals reduce4older preflight drafts60→58issues; do not call native-ready. Full/small owned handoffs underdocs/agents/*1500*; coordinator consolidated§71.

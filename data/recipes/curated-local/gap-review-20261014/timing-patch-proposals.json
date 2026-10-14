@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "basePackFile": "data/recipes/curated-local/first-reviewed-20261014/normalized-recipes.json",
+  "basePackSha256": "2e8b81cba110ea979f6199dd0a7e8e67c9626e3081c98491897b83664d032946",
+  "proposals": [
+    {
+      "schemaVersion": 1,
+      "id": "curated-gap:264763:step-3",
+      "reviewedAt": "2026-10-14T15:06:00.700Z",
+      "changeType": "source-supported-step-timer",
+      "runtimeReady": false,
+      "base": {
+        "curatedRecordId": "curated-local:264763",
+        "curatedRecordContentSha256": "d18cdfc2523fcdc15f11efa2062b5f444950c7eb3741640b2f5f4bd4f8eafa61",
+        "recipeId": "wikibooks:264763",
+        "recordId": "wikibooks-264763-r4639854",
+        "sourceRevision": "4639854",
+        "sourceSha256": "65263074d61857563e00542c5ac54160dacf54a289f2d72493a9f87231c88cdc",
+        "derivedRecipeSha256": "f8fb843a29376f77acd189582c1b65d006f34c9e3ff9f386c2326c72ba2b4093",
+        "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/264763.json",
+        "sourceSnapshotSha256": "90278108a9ca2a65de062fdacf37d64c29c4f6b433ac25e12bb0486112ce8d94",
+        "draftFile": "data/recipes/curated-local/first-reviewed-20261014/preflight-drafts/264763.json",
+        "draftSha256": "6bacd4ab95cc5bc40363fe8be9b29d48cdde278bae8cf6f3a1597c35f741e563"
+      },
+      "target": {
+        "field": "stepMinutes",
+        "stepIndex": 3,
+        "sourceStepText": "Pour the mixture evenly into kulfi moulds or small ramekins. Cover with plastic wrap or foil, and freeze for about 6 hours until set.",
+        "sourceStepTextSha256": "b04518419b02870ca55a55ede3302cfabea276b0c89247b0d4c583bf235263bd"
+      },
+      "evidence": {
+        "exactPhrase": "freeze for about 6 hours until set",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Kulfi%20(South%20Asian%20Frozen%20Custard)&oldid=4639854",
+        "scope": "freezing-phase-until-set",
+        "approximate": true,
+        "remainingActionsDuration": null,
+        "note": "Published approximate freezing timer; loading/covering actions are not separately timed."
+      },
+      "operation": {
+        "before": null,
+        "afterMinutes": 360
+      },
+      "unchangedUnknowns": [
+        "prepMinutes",
+        "cookMinutes",
+        "unmentioned step timers",
+        "scaling",
+        "food identities",
+        "rights/retention/nutrition"
+      ],
+      "result": {
+        "draftFile": "data/recipes/curated-local/gap-review-20261014/revised-preflight-drafts/264763.json",
+        "draftSha256": "3ade369f1357ce000e831efdf9fb5234215f4a4b19ddce04fd80b77b1e285dac"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "id": "curated-gap:17844:step-2",
+      "reviewedAt": "2026-10-14T15:06:00.700Z",
+      "changeType": "source-supported-step-timer",
+      "runtimeReady": false,
+      "base": {
+        "curatedRecordId": "curated-local:17844",
+        "curatedRecordContentSha256": "a1e12b8db8e2e0b0d218751087ff03893954f076dfd69aef04dad69d54ab7c7d",
+        "recipeId": "wikibooks:17844",
+        "recordId": "wikibooks-17844-r4606890",
+        "sourceRevision": "4606890",
+        "sourceSha256": "c742d8ca191ecfd7618e0706350781261e36f8dcc2bd7216aea1e4dd5ce42b04",
+        "derivedRecipeSha256": "c25ba052aca1b7700a599b3373e6e4b2a9ab36d7e2d0d4c15b36d1ceb09522d3",
+        "sourceSnapshotFile": "data/recipes/curated-local/first-reviewed-20261014/source-snapshots/17844.json",
+        "sourceSnapshotSha256": "f09e66617f742ae8ac003eadd5b87034edd5cf216261e2f57442b9c51f23ae38",
+        "draftFile": "data/recipes/curated-local/first-reviewed-20261014/preflight-drafts/17844.json",
+        "draftSha256": "9d0f275a0ae1f35823e8cf0ae20e9d8913fad8857ac9da8f00a11821bea5b015"
+      },
+      "target": {
+        "field": "stepMinutes",
+        "stepIndex": 2,
+        "sourceStepText": "Stir every minute or so. After five minutes, remove lid, stir thoroughly and add milk.",
+        "sourceStepTextSha256": "7563036162ecdee33c4f1c521643a12f2f2fe42cdef9d1c34c785a9dd9aeec55"
+      },
+      "evidence": {
+        "exactPhrase": "After five minutes",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Oat%20Porridge&oldid=4606890",
+        "scope": "monitoring-stirring-before-milk",
+        "approximate": false,
+        "remainingActionsDuration": null,
+        "note": "Published five-minute stirring interval before adding milk."
+      },
+      "operation": {
+        "before": null,
+        "afterMinutes": 5
+      },
+      "unchangedUnknowns": [
+        "prepMinutes",
+        "cookMinutes",
+        "unmentioned step timers",
+        "scaling",
+        "food identities",
+        "rights/retention/nutrition"
+      ],
+      "result": {
+        "draftFile": "data/recipes/curated-local/gap-review-20261014/revised-preflight-drafts/17844.json",
+        "draftSha256": "b87ab41cc74cd11049ee32e654b29bd54976d57f9d0af1e243c525e6dabcd4cd"
+      }
+    }
+  ]
+}

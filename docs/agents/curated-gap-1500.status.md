@@ -1,0 +1,12 @@
+# Curated gap review status
+- SoleE:\work\SOFRA\app/main; base0fcfffd27ab3f5d73c94c306d5a20cf0043ad804.
+- Localonly/no network. Actualquota beforebatch5primary/16weekly ordinarytrue; noreset.
+- Two guarded source timer proposals applied onlytoowned copies:porridge5min;kulfiabout6h/360min freezing scope.
+- Existing4native drafts60→58issues;0complete/0runtime. Allunsourcedtime/scaling/food/rights remainunknown.
+- Added4useful Arabic recipes/23ingredientlines/13steps:hominygrits,drycocoamix,spicytomatosoup,warmpercolatorpunch.
+- Newpack:data/recipes/curated-local/gap-review-20261014/normalized-recipes.json.
+- PackSHA9b4e2d203b80dd25c9c1392ef7b35d3dab097e0fc5e67cbee5a43908851aa4e5.
+- Sourcefullsnapshots,ArabicCOOKBOOK,typedserving/equipmentfacts,2reviseddrafts,4newpopulateddrafts+beforeafterreport saved.
+- Authoritativeofflinebuild+8focusedNode tests passed; frozenfirstpackunchanged.
+- Next:coordinatorreviewprecision/patches,optionalread-onlylibrarymanifestbridge,sharedhandoff/Git/delivery.
+- Full:curated-gap-1500.md. NohelperDart/pubspec/registry/Git/previewprocesschanges.

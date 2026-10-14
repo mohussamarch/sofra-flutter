@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "recipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070",
+  "note": "Manual source quantities/choices. Timing only where expressly stated. Unknown scaling/food/rights remain unresolved.",
+  "reviewedAt": "2026-10-14T15:06:00.700Z",
+  "servings": 4,
+  "prepMinutes": null,
+  "cookMinutes": null,
+  "stepMinutes": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "lines": [
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:108458",
+        "recordId": "wikibooks-108458-r4525247",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4525247",
+        "sourceSha256": "943a5eab0907dac74d1482896dcf4c2668711dd453cf9f9468ace116ef469f14",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 0,
+        "lineId": "source-line-1",
+        "sourceText": "4 cups diced tomatoes (canned is fine)",
+        "derivedRecipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070"
+      },
+      "resolution": "choice",
+      "disposition": "required",
+      "note": "published cups; source permits canned tomatoes, no canned/fresh nutrition binding selected",
+      "components": [
+        {
+          "name": "diced tomatoes",
+          "amount": 4,
+          "unit": "cup",
+          "form": "diced tomatoes",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:108458",
+        "recordId": "wikibooks-108458-r4525247",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4525247",
+        "sourceSha256": "943a5eab0907dac74d1482896dcf4c2668711dd453cf9f9468ace116ef469f14",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 1,
+        "lineId": "source-line-2",
+        "sourceText": "4 cups heavy cream",
+        "derivedRecipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "source heavy cream, fat percentage unspecified",
+      "components": [
+        {
+          "name": "heavy cream",
+          "amount": 4,
+          "unit": "cup",
+          "form": "heavy cream",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:108458",
+        "recordId": "wikibooks-108458-r4525247",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4525247",
+        "sourceSha256": "943a5eab0907dac74d1482896dcf4c2668711dd453cf9f9468ace116ef469f14",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 2,
+        "lineId": "source-line-3",
+        "sourceText": "1 tsp sugar",
+        "derivedRecipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published source teaspoon",
+      "components": [
+        {
+          "name": "sugar",
+          "amount": 1,
+          "unit": "tsp",
+          "form": "sugar",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:108458",
+        "recordId": "wikibooks-108458-r4525247",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4525247",
+        "sourceSha256": "943a5eab0907dac74d1482896dcf4c2668711dd453cf9f9468ace116ef469f14",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 3,
+        "lineId": "source-line-4",
+        "sourceText": "½ tsp ground white pepper",
+        "derivedRecipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published source teaspoon",
+      "components": [
+        {
+          "name": "ground white pepper",
+          "amount": 0.5,
+          "unit": "tsp",
+          "form": "ground white pepper",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:108458",
+        "recordId": "wikibooks-108458-r4525247",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4525247",
+        "sourceSha256": "943a5eab0907dac74d1482896dcf4c2668711dd453cf9f9468ace116ef469f14",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 4,
+        "lineId": "source-line-5",
+        "sourceText": "¼ tsp salt",
+        "derivedRecipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published source teaspoon",
+      "components": [
+        {
+          "name": "salt",
+          "amount": 0.25,
+          "unit": "tsp",
+          "form": "salt",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:108458",
+        "recordId": "wikibooks-108458-r4525247",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4525247",
+        "sourceSha256": "943a5eab0907dac74d1482896dcf4c2668711dd453cf9f9468ace116ef469f14",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 5,
+        "lineId": "source-line-6",
+        "sourceText": "¼ tsp granulated garlic",
+        "derivedRecipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published source ingredient form retained",
+      "components": [
+        {
+          "name": "granulated garlic",
+          "amount": 0.25,
+          "unit": "tsp",
+          "form": "granulated garlic",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:108458",
+        "recordId": "wikibooks-108458-r4525247",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4525247",
+        "sourceSha256": "943a5eab0907dac74d1482896dcf4c2668711dd453cf9f9468ace116ef469f14",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 6,
+        "lineId": "source-line-7",
+        "sourceText": "⅛ tsp cayenne",
+        "derivedRecipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published 1/8 teaspoon retained",
+      "components": [
+        {
+          "name": "cayenne",
+          "amount": 0.125,
+          "unit": "tsp",
+          "form": "cayenne",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    }
+  ]
+}

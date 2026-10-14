@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "recipeSha256": "c25ba052aca1b7700a599b3373e6e4b2a9ab36d7e2d0d4c15b36d1ceb09522d3",
+  "note": "Manual source quantities/choices only. Missing timing/scaling/food identity remain unresolved; not registered or imported. Timing review curated-gap:17844:step-2: After five minutes; scope=monitoring-stirring-before-milk; approximate=false. Other actions/unknown timing, scaling, food and rights remain unresolved.",
+  "reviewedAt": "2026-10-14T15:06:00.700Z",
+  "servings": 1,
+  "prepMinutes": null,
+  "cookMinutes": null,
+  "stepMinutes": [
+    null,
+    null,
+    5,
+    null,
+    null
+  ],
+  "lines": [
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:17844",
+        "recordId": "wikibooks-17844-r4606890",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4606890",
+        "sourceSha256": "c742d8ca191ecfd7618e0706350781261e36f8dcc2bd7216aea1e4dd5ce42b04",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 0,
+        "lineId": "source-line-1",
+        "sourceText": "½ cup (45 g) rolled oats or other grain",
+        "derivedRecipeSha256": "c25ba052aca1b7700a599b3373e6e4b2a9ab36d7e2d0d4c15b36d1ceb09522d3"
+      },
+      "resolution": "choice",
+      "disposition": "required",
+      "note": "selected rolled oats and explicit 45 g; other grain option not selected",
+      "components": [
+        {
+          "name": "rolled oats",
+          "amount": 45,
+          "unit": "g",
+          "form": "rolled oats",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:17844",
+        "recordId": "wikibooks-17844-r4606890",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4606890",
+        "sourceSha256": "c742d8ca191ecfd7618e0706350781261e36f8dcc2bd7216aea1e4dd5ce42b04",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 1,
+        "lineId": "source-line-2",
+        "sourceText": "¾ cup (180 ml) water",
+        "derivedRecipeSha256": "c25ba052aca1b7700a599b3373e6e4b2a9ab36d7e2d0d4c15b36d1ceb09522d3"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "explicit source metric volume",
+      "components": [
+        {
+          "name": "water",
+          "amount": 180,
+          "unit": "ml",
+          "form": "water",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:17844",
+        "recordId": "wikibooks-17844-r4606890",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4606890",
+        "sourceSha256": "c742d8ca191ecfd7618e0706350781261e36f8dcc2bd7216aea1e4dd5ce42b04",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 2,
+        "lineId": "source-line-3",
+        "sourceText": "¾ cup (180 ml) milk",
+        "derivedRecipeSha256": "c25ba052aca1b7700a599b3373e6e4b2a9ab36d7e2d0d4c15b36d1ceb09522d3"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "explicit source metric volume",
+      "components": [
+        {
+          "name": "milk",
+          "amount": 180,
+          "unit": "ml",
+          "form": "milk",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    }
+  ]
+}

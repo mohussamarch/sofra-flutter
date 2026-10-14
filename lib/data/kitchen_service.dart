@@ -9,6 +9,8 @@ import '../domain/recipe_catalog.dart';
 import '../domain/recipe_variants.dart';
 import '../domain/imported_recipe_candidate.dart';
 import '../domain/personal_recipe_draft.dart';
+import '../domain/recipe_library_draft.dart';
+import 'recipe_library_repository.dart';
 import '../domain/personal_recipe_finalization.dart';
 import '../domain/cooking_timer.dart';
 import '../domain/market_profile.dart';
@@ -239,6 +241,14 @@ class KitchenService {
           at.toIso8601String() != record['reviewedAt']) {
         throw const FormatException('Invalid personal draft review');
       }
+      if (record['librarySource'] != null) {
+        final origin = RecipeLibraryDraftReview.fromJson(
+          Map<String, dynamic>.from(record['librarySource'] as Map),
+        );
+        if (origin.draft.fingerprint != draft.fingerprint) {
+          throw const FormatException('Library source and draft differ');
+        }
+      }
       drafts[entry.key as String] = draft;
     }
     final active = book['active'] as Map;
@@ -283,6 +293,60 @@ class KitchenService {
     required String reviewNote,
     required DateTime reviewedAt,
     String? expectedActiveKey,
+  }) => _saveReviewedPersonalDraft(
+    submitted,
+    acknowledgeInputsReviewed: acknowledgeInputsReviewed,
+    reviewNote: reviewNote,
+    reviewedAt: reviewedAt,
+    expectedActiveKey: expectedActiveKey,
+  );
+
+  /// Private calculator only. Source rights and planning approval stay pending.
+  Future<void> saveLibraryRecipeDraft(
+    RecipeLibraryDraftReview submitted, {
+    required RecipeLibraryRepository library,
+    required bool acknowledgeInputsReviewed,
+    required String reviewNote,
+    required DateTime reviewedAt,
+    String? expectedActiveKey,
+  }) async {
+    final review = RecipeLibraryDraftReview.fromJson(submitted.toJson());
+    final entries = (await library.all())
+        .where((e) => e.id == review.libraryEntryId)
+        .toList();
+    if (entries.length != 1) throw StateError('Current library source missing');
+    review.assertSource(entries.single);
+    await _saveReviewedPersonalDraft(
+      review.draft,
+      acknowledgeInputsReviewed: acknowledgeInputsReviewed,
+      reviewNote: reviewNote,
+      reviewedAt: reviewedAt,
+      expectedActiveKey: expectedActiveKey,
+      sourceReview: review,
+    );
+  }
+
+  RecipeLibraryDraftReview? libraryRecipeDraftReview(
+    String id, {
+    String? revisionKey,
+  }) {
+    final draft = personalRecipeDraft(id, revisionKey: revisionKey);
+    if (draft == null) return null;
+    final record =
+        (_personalDraftBook(snapshot)['revisions'] as Map)[draft.key];
+    if (record['librarySource'] == null) return null;
+    return RecipeLibraryDraftReview.fromJson(
+      Map<String, dynamic>.from(record['librarySource'] as Map),
+    );
+  }
+
+  Future<void> _saveReviewedPersonalDraft(
+    PersonalRecipeDraft submitted, {
+    required bool acknowledgeInputsReviewed,
+    required String reviewNote,
+    required DateTime reviewedAt,
+    String? expectedActiveKey,
+    RecipeLibraryDraftReview? sourceReview,
   }) async {
     if (!acknowledgeInputsReviewed ||
         reviewNote.trim().isEmpty ||
@@ -293,6 +357,7 @@ class KitchenService {
     _validatePersonalDraft(draft);
     final record = {
       'draft': draft.toJson(),
+      if (sourceReview != null) 'librarySource': sourceReview.toJson(),
       'acknowledgeInputsReviewed': true,
       'reviewNote': reviewNote.trim(),
       'reviewedAt': reviewedAt.toUtc().toIso8601String(),
@@ -309,7 +374,15 @@ class KitchenService {
         if (prior.fingerprint != draft.fingerprint ||
             existing['acknowledgeInputsReviewed'] != true ||
             existing['reviewNote'] != record['reviewNote'] ||
-            existing['reviewedAt'] != record['reviewedAt']) {
+            existing['reviewedAt'] != record['reviewedAt'] ||
+            (existing['librarySource'] == null
+                    ? null
+                    : RecipeLibraryDraftReview.fromJson(
+                        Map<String, dynamic>.from(
+                          existing['librarySource'] as Map,
+                        ),
+                      ).fingerprint) !=
+                sourceReview?.fingerprint) {
           throw StateError('Personal draft revision is immutable');
         }
         // An old identical retry must never reactivate an earlier version.
@@ -317,6 +390,11 @@ class KitchenService {
       }
       if (active[draft.id] != expectedActiveKey) {
         throw StateError('Personal draft active revision changed;review again');
+      }
+      if (sourceReview == null &&
+          active[draft.id] != null &&
+          revisions[active[draft.id]]['librarySource'] != null) {
+        throw StateError('Retain library provenance when revising this draft');
       }
       revisions[draft.key] = record;
       active[draft.id] = draft.key;
@@ -458,6 +536,11 @@ class KitchenService {
           book.active[revision.variantId] != expectedActiveRecipeKey) {
         throw StateError(
           'Draft or active recipe changed;review finalization again',
+        );
+      }
+      if (stored['librarySource'] != null) {
+        throw StateError(
+          'Review source import and rights before planning this library recipe',
         );
       }
       if (!book.families.containsKey(revision.familyId)) {

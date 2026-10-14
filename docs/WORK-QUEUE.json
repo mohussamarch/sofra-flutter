@@ -2,12 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T12:40:48.417517+00:00",
-    "taskId": "recipe-library",
-    "summary": "24actualFlutterlibraryentries/3pinnedpacks;9Flutter+15Nodepassed,explicit99watchdog override tested.",
+    "at": "2026-10-14T15:21:43.363476+00:00",
+    "taskId": "library-draft-calculator",
+    "summary": "31actual readable records; explicit library-to-private-calculator review+atomic source persistence;4local+3creator records,2timer proposals.224Flutter/12Node/creator validator/analyze clean.",
     "evidence": [
+      "test/library_recipe_persistence_test.dart",
       "test/recipe_library_assets_test.dart",
-      "tool/work/watchdog.test.mjs"
+      "data/recipes/curated-local/gap-review-20261014/gap-review-report.json"
     ]
   },
   "tasks": [
@@ -75,9 +76,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Secondcreator batch nowintegrated in24entrypinnedlibrary; continue source omissions/rights/quantity review andsmallmodernArabcreator batches.",
+      "nextAction": "Continue bounded modern official Arab creator recipes with actual quantities/steps and honest website/YouTube distinction;11website nowbundled,0completeYT. Review omissions/rights before runtime promotion.",
       "lastAttemptAt": "2026-10-14T10:04:23.521510+00:00",
-      "lastProgressAt": "2026-10-14T10:15:57.137053+00:00",
+      "lastProgressAt": "2026-10-14T15:21:43.363476+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -137,7 +138,9 @@
         "data/recipes/arabic-youtube/2026-10-first-batch.json",
         "data/recipes/arabic-youtube/COOKBOOK.ar.md",
         "docs/RECIPE-LIBRARY.md",
-        "data/recipes/arabic-youtube/second-batch-20261014/recipes.json"
+        "data/recipes/arabic-youtube/second-batch-20261014/recipes.json",
+        "data/recipes/arabic-youtube/third-batch-20261014/recipes.json",
+        "docs/agents/arabic-youtube-1500.md"
       ],
       "stage": "OfficialmodernArabiccreatorYouTubeandownwebsiteacquisition",
       "sourcePolicy": {
@@ -436,7 +439,7 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "After shared sourceAccessUntil gate, verify officialpublicaccess before boundedlockedfreshquota collection; no alternatecountry/authbypass. Keep independentwork progressing.",
+      "nextAction": "Shared401source gate until2026-10-14T16:33:18.596Z; review officialpublic access/source resolution before any nextrequest, no route/country/auth bypass.2378products/67archivesunchanged.",
       "blockedUntil": "2026-10-14T05:32:30.374Z",
       "blockedReason": "OFF503backoff;independentauthoringcontinued",
       "lastProgressAt": "2026-10-14T02:35:01.478Z",
@@ -449,7 +452,7 @@
         "runtimeNutritionBasisApprovals": 0,
         "actualBankTests": 5
       },
-      "lastAttemptAt": "2026-10-14T08:29:45.471Z",
+      "lastAttemptAt": "2026-10-14T15:13:18.596Z",
       "lastFailure": {
         "status": 401,
         "job": "saudi-arabia/global",
@@ -459,7 +462,10 @@
         "requests": 1,
         "growth": 0
       },
-      "stage": "Shared401/403 access gate implemented; no network thisunit; until09:49:45.471Z, contents2378/67 unchanged"
+      "stage": "Shared401/403 access gate implemented; no network thisunit; until09:49:45.471Z, contents2378/67 unchanged",
+      "evidence": [
+        "docs/agents/food-bank-1500.md"
+      ]
     },
     {
       "id": "budget-planner",
@@ -533,23 +539,27 @@
       "priority": 34,
       "status": "ready",
       "dependsOn": [],
-      "lastAttemptAt": "2026-10-14T10:04:23.521510+00:00",
-      "nextAction": "Resolve declared gaps in16curated rows/4preflight drafts before next small archived batch; no newbooknetwork, no guessed yield/times/scaling/food/rights.",
-      "lastProgressAt": "2026-10-14T10:15:57.137053+00:00",
+      "lastAttemptAt": "2026-10-14T15:21:43.363476+00:00",
+      "nextAction": "Resolve explicit remaining timing/yield/scaling/food/rights gaps using gap-review report, then next bounded archived batch; no new book network.",
+      "lastProgressAt": "2026-10-14T15:21:43.363476+00:00",
       "completedUnit": {
-        "records": 16,
-        "fullySpecified": 4,
+        "records": 20,
+        "fullySpecified": 8,
         "needsReview": 10,
         "notCookable": 2,
-        "sourceCuisineLabels": 11,
+        "sourceCuisineLabels": 13,
         "distinctMethodFamilies": 1,
-        "preflightDrafts": 4,
+        "sourceTimerProposals": 2,
+        "originalPreflightIssuesBefore": 60,
+        "originalPreflightIssuesAfter": 58,
         "runtimeApprovals": 0
       },
       "evidence": [
         "data/recipes/curated-local/first-reviewed-20261014/normalized-recipes.json",
         "tool/recipes/curated-local-build.test.mjs",
-        "docs/RECIPE-LIBRARY.md"
+        "docs/RECIPE-LIBRARY.md",
+        "data/recipes/curated-local/gap-review-20261014/gap-review-report.json",
+        "tool/recipes/curated-gap-build.test.mjs"
       ]
     },
     {
@@ -576,22 +586,48 @@
       "dependsOn": [],
       "status": "done",
       "completedAt": "2026-10-14T10:15:57.137053+00:00",
-      "nextAction": "External UI can consume pinned readable22record library; review import/rights/nutrition separately.",
+      "nextAction": "Use31entry/5pack/20snapshot pinnedlibrary and reviewed private-calculator bridge; rights/source planning approval remains separate.",
       "evidence": [
         "lib/data/recipe_library_repository.dart",
         "lib/data/recipe_library_assets.dart",
         "test/recipe_library_assets_test.dart",
         "docs/RECIPE-LIBRARY.md"
+      ],
+      "lastProgressAt": "2026-10-14T15:21:43.363476+00:00",
+      "completedUnit": {
+        "records": 31,
+        "packs": 5,
+        "sourceSnapshots": 20,
+        "runtimeApprovals": 0
+      }
+    },
+    {
+      "id": "library-draft-calculator",
+      "priority": 34,
+      "status": "done",
+      "dependsOn": [
+        "recipe-library",
+        "recipe-authoring"
+      ],
+      "completedAt": "2026-10-14T15:21:43.363476+00:00",
+      "lastProgressAt": "2026-10-14T15:21:43.363476+00:00",
+      "nextAction": "Use explicit source-preserving private calculator bridge; review real food amounts/forms and separate source rights/import approval before publication.",
+      "evidence": [
+        "lib/domain/recipe_library_draft.dart",
+        "lib/data/kitchen_service.dart",
+        "test/recipe_library_draft_test.dart",
+        "test/library_recipe_persistence_test.dart",
+        "docs/LIBRARY-RECIPE-CALCULATOR.md"
       ]
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T12:40:48.417517+00:00",
-    "primaryUsedPercent": 96,
-    "weeklyUsedPercent": 15,
+    "at": "2026-10-14T15:21:43.363476+00:00",
+    "primaryUsedPercent": 43,
+    "weeklyUsedPercent": 22,
     "ordinaryUsageAllowed": true,
-    "userAuthorizedLimit": 99,
-    "action": "Human99override;no purchase/reset;freshlimit before nextunit."
+    "operationalLimit": 90,
+    "action": "Fresh actual usage; no purchase/reset; default90 for currentheartbeat. Previous99override only prior continuation."
   },
-  "updatedAt": "2026-10-14T11:32:05.326292+00:00"
+  "updatedAt": "2026-10-14T15:21:43.363476+00:00"
 }

@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-14T15:06:00.700Z",
+  "reviewer": "Codex focused local source curation; no kitchen testing",
+  "changeNotice": "Four additional Arabic recipe adaptations from already archived Wikibooks revisions. Amounts manually transcribed; optional alternatives explicitly excluded or selected. Wikibooks contributors credited through fixed revision URLs; adaptations CC BY-SA 4.0. Per-page rights unapproved.",
+  "recipes": [
+    {
+      "sourcePageId": 11375,
+      "sourceRecordId": "wikibooks-11375-r4504744",
+      "sourceSha256": "6a08e29d9ab5ba14357785cc89a1a2f6005783dcbf85cf24158ddda8579ed024",
+      "derivedRecipeSha256": "f1340bb28352c1e2cb463d969cf2594a8093e4c03c93ad7a6e228c71742c66bb",
+      "nameAr": "عصيدة هوميني من الذرة",
+      "status": "fully-specified",
+      "family": "hominy-grits",
+      "method": "water-simmering",
+      "cuisines": [
+        [
+          "native-american",
+          "مطبخ الشعوب الأصلية بأمريكا",
+          "Native American cuisine"
+        ]
+      ],
+      "yield": {
+        "amount": 8,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "8"
+      },
+      "time": {
+        "declaredTotalMinutes": 30,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "30 minutes"
+      },
+      "ingredients": [
+        [
+          0,
+          "ماء",
+          "water",
+          5,
+          "cup",
+          false,
+          "published cups retained; no inferred volume system"
+        ],
+        [
+          1,
+          "جريش هوميني من الذرة",
+          "hominy grits",
+          1,
+          "cup",
+          false,
+          "source hominy grits; not generic corn flour"
+        ],
+        [
+          2,
+          "زبدة",
+          "butter",
+          1,
+          "tbsp",
+          false,
+          "published tablespoon retained"
+        ],
+        [
+          3,
+          "عسل اختياري — مستبعد",
+          "honey",
+          1,
+          "tbsp",
+          true,
+          "optional source sweetening explicitly excluded; brown sugar/maple syrup alternatives not added"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          "اغل الماء بقوة، ثم أضف جريش الهوميني تدريجيًا مع التقليب. خفف النار وأضف الزبدة.",
+          null
+        ],
+        [
+          [
+            4
+          ],
+          "اطه 20 دقيقة أو حتى يمتص الجريش الماء.",
+          {
+            "min": 20,
+            "max": 20,
+            "scope": "cooking"
+          }
+        ],
+        [
+          [
+            6
+          ],
+          "قدم العصيدة ساخنة وسادة دون تحلية.",
+          null
+        ]
+      ],
+      "notes": [
+        "اختير التقديم السادة؛ العسل والسكر البني وشراب القيقب والجيلي وإضافات التقديم الأخرى مستبعدة صراحة.",
+        "ثماني حصص محفوظة كما نشرت؛ عبارة المصدر الإضافية 2 quarts (liters) ليست تحويلًا معتمدًا للحجم."
+      ],
+      "blockers": [
+        "فصل التحضير والطهي وبعض مدد الخطوات غير منشور",
+        "أصل المكونات وأساس الأكواب وروابط الغذاء والتغذية والحقوق الفردية غير معتمدة"
+      ],
+      "excludedIngredients": [
+        3
+      ],
+      "excludedSourceSteps": [
+        {
+          "sourceStepIndex": 5,
+          "reason": "Optional source sweetening omitted in plain variant."
+        }
+      ]
+    },
+    {
+      "sourcePageId": 205147,
+      "sourceRecordId": "wikibooks-205147-r4523307",
+      "sourceSha256": "b855e35492c1e100b6190e432e79c89f9a330e620facb23d54600f42967f24a7",
+      "derivedRecipeSha256": "96c3226a0a0f2a0aa585f531a591b898f79d3856a0380094fbdcfc66bb703a4f",
+      "nameAr": "خليط كاكاو جاف بالحليب المجفف",
+      "status": "fully-specified",
+      "family": "dry-cocoa-mix",
+      "method": "dry-mixing",
+      "cuisines": [],
+      "yield": {
+        "amount": null,
+        "min": null,
+        "max": null,
+        "unit": "source-servings-approximate",
+        "sourceText": "approximately 48",
+        "additionalYield": {
+          "amount": 6,
+          "unit": "cup",
+          "sourceText": "6 cups"
+        }
+      },
+      "time": {
+        "declaredTotalMinutes": 5,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "5 minutes"
+      },
+      "ingredients": [
+        [
+          0,
+          "حليب مجفف منزوع الدسم",
+          "nonfat dry milk powder",
+          4,
+          "cup",
+          false,
+          "published source cups, no density conversion"
+        ],
+        [
+          1,
+          "كاكاو بودرة",
+          "cocoa powder",
+          1,
+          "cup",
+          false,
+          "published source cup"
+        ],
+        [
+          2,
+          "سكر أبيض",
+          "white sugar",
+          1,
+          "cup",
+          false,
+          "published source cup"
+        ],
+        [
+          3,
+          "ملح",
+          "salt",
+          0.5,
+          "tsp",
+          false,
+          "published source teaspoon"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0,
+            1
+          ],
+          "اجمع الحليب المجفف والكاكاو والسكر والملح وامزج جيدًا.",
+          null
+        ],
+        [
+          [
+            2
+          ],
+          "احفظ الخليط الجاف في وعاء محكم الإغلاق.",
+          null
+        ]
+      ],
+      "notes": [
+        "الوصفة الأساسية خليط جاف، وليست مشروبًا جاهزًا. الناتج المنشور ستة أكواب ونحو 48 حصة؛ العدد تقريبي وغير محول إلى عدد ثابت.",
+        "لإعداد حصة كما في قسم الاستخدام: قلب ملعقتين صغيرتين ممتلئتين من الخليط في كوب ماء ساخن. الامتلاء محفوظ وصفًا ولا يحول إلى جرامات.",
+        "لا ينسب لمطبخ بلد؛ لا دليل مطبخ مستقل في الصفحة."
+      ],
+      "blockers": [
+        "عدد الحصص تقريبي؛ لا عدد صحيح ثابت معتمد",
+        "فصل التحضير والطهي ومدد الخطوات غير منشور",
+        "قياس الملعقة الممتلئة غير وزني؛ روابط المكونات والغذاء والتغذية والحقوق غير معتمدة"
+      ],
+      "servingDirections": {
+        "sourceHeading": "Use",
+        "sourceText": "For each serving of hot cocoa, add 2 heaping teaspoons of cocoa mix to 1 cup of hot water, and stir until smooth.",
+        "mix": {
+          "amount": 2,
+          "unit": "tsp",
+          "qualifier": "heaping"
+        },
+        "water": {
+          "amount": 1,
+          "unit": "cup",
+          "form": "hot"
+        },
+        "nutrition": null
+      }
+    },
+    {
+      "sourcePageId": 108458,
+      "sourceRecordId": "wikibooks-108458-r4525247",
+      "sourceSha256": "943a5eab0907dac74d1482896dcf4c2668711dd453cf9f9468ace116ef469f14",
+      "derivedRecipeSha256": "8e274b857ce632809f14949b21ccda1563570abe7ec13095d21a4a2f0554b070",
+      "nameAr": "شوربة طماطم بالكريمة والتوابل",
+      "status": "fully-specified",
+      "family": "spicy-tomato-cream-soup",
+      "method": "blended-then-simmered",
+      "cuisines": [
+        [
+          "american",
+          "أمريكي",
+          "American cuisine"
+        ]
+      ],
+      "yield": {
+        "amount": 4,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "4"
+      },
+      "time": {
+        "declaredTotalMinutes": 60,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "1 hour"
+      },
+      "ingredients": [
+        [
+          0,
+          "طماطم مكعبة",
+          "diced tomatoes",
+          4,
+          "cup",
+          false,
+          "published cups; source permits canned tomatoes, no canned/fresh nutrition binding selected"
+        ],
+        [
+          1,
+          "كريمة ثقيلة",
+          "heavy cream",
+          4,
+          "cup",
+          false,
+          "source heavy cream, fat percentage unspecified"
+        ],
+        [
+          2,
+          "سكر",
+          "sugar",
+          1,
+          "tsp",
+          false,
+          "published source teaspoon"
+        ],
+        [
+          3,
+          "فلفل أبيض مطحون",
+          "ground white pepper",
+          0.5,
+          "tsp",
+          false,
+          "published source teaspoon"
+        ],
+        [
+          4,
+          "ملح",
+          "salt",
+          0.25,
+          "tsp",
+          false,
+          "published source teaspoon"
+        ],
+        [
+          5,
+          "ثوم حبيبات",
+          "granulated garlic",
+          0.25,
+          "tsp",
+          false,
+          "published source ingredient form retained"
+        ],
+        [
+          6,
+          "فلفل كايين",
+          "cayenne",
+          0.125,
+          "tsp",
+          false,
+          "published 1/8 teaspoon retained"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "اخلط الطماطم والكريمة والسكر والفلفل الأبيض والملح والثوم والكايين في الخلاط حتى تنعم؛ اعمل على دفعات عند الحاجة.",
+          null
+        ],
+        [
+          [
+            1
+          ],
+          "انقل الخليط إلى قدر وارفعه إلى الغليان على نار عالية.",
+          null
+        ],
+        [
+          [
+            2
+          ],
+          "خفف الحرارة واترك الشوربة تغلي بهدوء 20–30 دقيقة مع التقليب أحيانًا حتى تثخن.",
+          {
+            "min": 20,
+            "max": 30,
+            "scope": "simmering"
+          }
+        ],
+        [
+          [
+            3
+          ],
+          "قدمها ساخنة دون إضافات التزيين المقترحة.",
+          null
+        ]
+      ],
+      "notes": [
+        "الروبيان والسجق المقترحان للتزيين مستبعدان من هذه الصيغة.",
+        "الساعة هي الزمن الإجمالي المنشور؛ لا تخمن مدة التحضير من طرح نطاق الغليان. لا تدعي ملاءمة صحية من اسم الوصفة."
+      ],
+      "blockers": [
+        "فصل التحضير والطهي وعدة مدد خطوات غير منشور",
+        "طماطم طازجة/معلبة وأساس الكريمة وقياسات الأكواب تحتاج ربطًا صريحًا قبل التغذية",
+        "معرفات المخزون وروابط الغذاء والحقوق الفردية غير معتمدة"
+      ]
+    },
+    {
+      "sourcePageId": 130025,
+      "sourceRecordId": "wikibooks-130025-r4510858",
+      "sourceSha256": "befe9170260bdd3dc5da82b779a632a2bfe11dbeb5be1e7d2de08e6ba23012e0",
+      "derivedRecipeSha256": "4f92436421a71a5a1fe207af20ee2ea4bce71fd8e9c4c8e74adcdbe8c579ca44",
+      "nameAr": "مشروب أناناس وتوت بري ساخن بالتوابل",
+      "status": "fully-specified",
+      "family": "percolator-fruit-punch",
+      "method": "percolator-heating",
+      "cuisines": [
+        [
+          "american",
+          "أمريكي",
+          "American cuisine"
+        ]
+      ],
+      "yield": {
+        "amount": 10,
+        "min": null,
+        "max": null,
+        "unit": "source-servings",
+        "sourceText": "10"
+      },
+      "time": {
+        "declaredTotalMinutes": 15,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "15 minutes"
+      },
+      "ingredients": [
+        [
+          0,
+          "عصير أناناس",
+          "pineapple juice",
+          2.25,
+          "cup",
+          false,
+          "published source cups"
+        ],
+        [
+          1,
+          "عصير توت بري",
+          "cranberry juice",
+          2,
+          "cup",
+          false,
+          "published source cups; sweetened/unsweetened not specified"
+        ],
+        [
+          2,
+          "ماء",
+          "water",
+          1.75,
+          "cup",
+          false,
+          "published source cups"
+        ],
+        [
+          3,
+          "ملح",
+          "salt",
+          0.25,
+          "tsp",
+          false,
+          "published source teaspoon"
+        ],
+        [
+          4,
+          "سكر بني",
+          "brown sugar",
+          0.5,
+          "cup",
+          false,
+          "published source cup"
+        ],
+        [
+          5,
+          "قرنفل",
+          "cloves",
+          1,
+          "tbsp",
+          false,
+          "published source tablespoon; whole/ground form not separately specified"
+        ],
+        [
+          6,
+          "بهار حلو",
+          "allspice",
+          1,
+          "tbsp",
+          false,
+          "published source tablespoon; whole/ground form not separately specified"
+        ],
+        [
+          7,
+          "قرفة أعواد",
+          "cinnamon sticks",
+          3,
+          "stick",
+          false,
+          "published count of sticks; no stick mass invented"
+        ]
+      ],
+      "steps": [
+        [
+          [
+            0
+          ],
+          "ضع عصير الأناناس وعصير التوت البري والماء والملح في الخزان السفلي لإبريق الترشيح الحراري.",
+          null
+        ],
+        [
+          [
+            1
+          ],
+          "ضع السكر البني والقرنفل والبهار الحلو وأعواد القرفة في الحجرة العلوية.",
+          null
+        ],
+        [
+          [
+            2
+          ],
+          "سخن في الإبريق عشر دقائق.",
+          {
+            "min": 10,
+            "max": 10,
+            "scope": "percolator-heating"
+          }
+        ],
+        [
+          [
+            3
+          ],
+          "قدم المشروب ساخنًا.",
+          null
+        ]
+      ],
+      "notes": [
+        "المصدر يشترط إبريق قهوة من نوع percolator بحجرتين؛ لا تستبدل طريقته بقدر عادي تلقائيًا.",
+        "عشر حصص و15 دقيقة إجمالي محفوظتان من المصدر؛ لا وزن حصة ولا تحلية بديلة مخترعة."
+      ],
+      "blockers": [
+        "فصل التحضير والطهي وبعض مدد الخطوات غير منشور",
+        "صيغة العصير وحالة القرنفل والبهار الحلو وأساس الأكواب تحتاج مراجعة غذائية",
+        "معرفات المخزون وروابط الغذاء والتغذية والحقوق الفردية غير معتمدة"
+      ],
+      "equipment": [
+        {
+          "name": "percolator-style coffee pot",
+          "nameAr": "إبريق قهوة ترشيح حراري من نوع percolator",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,40 +1,33 @@
-# مكتبة وصفات عربية قابلة للقراءة والبحث
+# مكتبة الوصفات المقروءة — الحالة الحالية
 
-نسخة العمل الوحيدة E:\work\SOFRA\app. تنفيذ14أكتوبر2026؛ لا تعديل واجهات.
+راجع HANDOFF§71 وLIBRARY-RECIPE-CALCULATOR.md. المكتبة31 سجلًا عربيًا،5 حزم مثبتة و20 لقطة مصدر. أضيفت7 في هذه الدفعة:4 من الأرشيف الموجود و3 من موقع شميشة الرسمي. لم يتغير كتالوج التخطيط54وصفة/4مطابخ.
 
-## ما تحول إلى نتيجة قابلة للاستخدام
+## ما تحتويه
 
-- البنك السابق6056سجل بحث قبل إزالة التكرار؛ لم نجمع كتبًا جديدة. عولجت16وصفة محليًا:99سطر مكون مصدر +12مكونًا إجرائيًا +62خطوة عربية،14عائلة ضمن المجموعة فقط.
--4محددة المقادير والطريقة والناتج والزمن،10تحتاج مراجعة معلنة،2غير مكتملتين لا تعرضان كوصفتين جاهزتين. الحالة والتعارض والمجهول محفوظة في sourceRecord؛ لم تجر تجربة مطبخ.
--11وسم مطبخ/منطقة مسند للنص (هندي/باكستاني/فيتنامي/أيرلندي/أسترالي/نيوزيلندي/نيجيري/هوسا/سواحلي/جزائري/مغربي)، وليست11مطابخ وطنية معتمدة للتخطيط.
-- طريقتان موثقتان للنان: زبادي/بيكربونات مقابل خميرة وتخمير؛ عائلة واحدة متعددة الطرق. خبزا الصودا اختلاف مكونات، لا يحسبان تقنيتين. المقارنات ليست اختبار مطبخ أو اعتمادًا غذائيًا.
-- المسار الحديث:4قنوات رسمية/14اكتشاف فيديو/4سجلات أوصاف فيديو ناقصة،0وصفات كاملة مستخرجة منيوتيوب. أضيفت6وصفات من مواقع منال العالم وشميشة الرسمية بصياغة عربية،72مكونًا و26خطوة. المصدر website صريح؛ الناتج/الأزمنة غير المتاحة null. حقوق إعادة الاستخدام والموافقة غير محددة، ومقارنات الطنجية3والمقلوبة2مقترحات معلنة.
-- توجد نسختان مقروءتان: data/recipes/curated-local/first-reviewed-20261014/COOKBOOK.ar.md وdata/recipes/arabic-youtube/COOKBOOK.ar.md.
+- محليًا20 سجلًا:8مكتملة بيانات المقادير والطريقة والناتج والزمن (المغذيات ليست مكتملة)،10تحتاج مراجعة و2غير مكتملتين.13وسم مطبخ/منطقة من المصدر، لا13مطبخًا وطنيًا معتمدًا. عائلة نان واحدة بطريقتين؛ خبزا الصودا اختلاف مكونات.
+-11 وصفة من مواقع منال العالم وشميشة الرسمية؛ المصدر website وليس YouTube.14اكتشاف فيديو/4أوصاف فيديو ناقصة/0وصفات كاملة مستخرجة من يوتيوب. حقوق الموقع والموافقات لم تتحول إلى قبول تلقائي.
+- الدفعة المحلية الجديدة:جريش الذرة، خليط كاكاو جاف، شوربة طماطم حارة بالقشدة، مشروب فاكهة دافئ بجهاز percolator.23سطر مكون و13خطوة. مردود الكاكاو6أكواب/نحو48حصة لا48بالضبط.
+- الدفعة الحديثة الثالثة:حرشة بالحليب، طاجين سمك أبو سيف بالخضار، بسطيلة دجاج ولوز؛47مكونًا و15خطوة. بسطيلة المصدر cookTime=0متعارض مع الخطوات ومحفوظ كتحذير لا زمن فعلي صفر.
+- توقيتا العصيدة5دقائق والكولفي تجميد نحو360دقيقة مقترحان منفصلان مثبتان؛ الأصل16سجلًا لم يتغير.4مسودات سابقة60→58مشكلة فقط،0جاهزة للنشر.
 
-## واجهة الكود
+## API والحفظ
 
 ```dart
-import 'package:tabkha_demo/data/recipe_library_assets.dart';
 final library = bundledRecipeLibrary();
-final entries = await library.all(); //22سجلًا، بما فيها حالات المراجعة والنقص
+final entries = await library.all(); //31،بما فيها حالات النقص
 final maqluba = await library.search('مقلوبة');
 final naan = await library.familyCandidates('curated-local:naan');
 final vietnamese = await library.filterByCuisine('فيتنامي');
 ```
 
-RecipeLibraryEntry يحمل titleAr، ingredients بمقادير/وحدات nullable ونص المصدر، stepsArabic، sourceUrls، cuisineLabels بالدليل، familyId/methodId، ونسخًا مملوكة مستقلة من sourceRecord/sourceSnapshot/packMetadata. المقادير الإجرائية included/optional/supplemental محفوظة. yield/time/ranges/status/rights/guest attribution محفوظة في السجل الأصلي الكامل؛ المجهول لا يصير صفرًا. runtimeReady=false وnutrition=null دائمًا. القارئ لا يسجل مخزونًا ولا ينشر CatalogRecipe.
+RecipeLibraryEntry يحمل عنوانًا ومكونات/مقادير/وحدات nullable وخطوات عربية وURLs ووسم مطبخ بدليله، ونسخًا مستقلة من sourceRecord/sourceSnapshot/packMetadata. حالات included/optional/supplemental والمجهول والمدى والتعارض والحقوق تبقى محفوظة. runtimeReady=false وnutrition=null في المكتبة؛ لا نشر أو خصم مخزون عند القراءة.
 
-الفهرس data/recipes/curated-local/flutter-manifest.json يثبت ملفين و16لقطة مصدر؛ SHA256 الفهرس مثبت داخل lib/data/recipe_library_assets.dart. كل ملف يفحص قبل parsing، مسارات traversal مرفوضة، مصدر/إصدار/رخصة السجل المحلي مطابق للقطة، معرفات مكررة/لقطة زائدة أو مفقودة ترفض. بصمة محلية تعني ثبات البيانات، لا مصادقة المصدر أو موافقة حقوق.
+RecipeLibraryDraftReview مع KitchenService.saveLibraryRecipeDraft يربطان السجل بمحرك حساب مسودة شخصية بعد مراجعة صريحة لكل سطر. التفاصيل LIBRARY-RECIPE-CALCULATOR.md؛ لا إسقاط للمصدر ولا تجاوز لمسار استيراد الحقوق عند النشر.
 
-tool/recipes/build-recipe-library.mjs يبني الفهرس والثابت؛ --check يرفض الانحراف دون تعديل. لا تجر إعادة توليد لإخفاء تغير المصدر: راجع قرار المصدر أولًا. pubspec يحمل الملفات المختارة فقط، لا6056سجلًا خامًا. لم تتغير54وصفة/4مطابخ التخطيط.
+## الأصول والفحوص
 
-## بوابات الاستخدام التالي
+data/recipes/curated-local/flutter-manifest.json يثبت5حزم/20لقطة؛ SHA256=950178af3084996a16ed1c9bdea9170aea309e63ee7c0fd38e2277faf05d85ed مثبت في lib/data/recipe_library_assets.dart. pubspec يحمل المختار فقط،لا6056سجلًا خامًا. build-recipe-library.mjs --check يرفض الانحراف؛ لا يعاد توليده لإخفاء تغير غير مراجع. البصمات ثبات محلي وليست موافقة مصدر أو حقوق.
 
-1. الواجهة الخارجية تستخدم القارئ للعرض/البحث وتعرض status/blockers/rights صراحة. لا تحول not-cookable إلى مكتملة.
-2. التخطيط يستخدم العقد NATIVE-RECIPE-IMPORT.md بعد مراجعة البيانات الناقصة والحقوق.4مسودات preflight مملوءة فعليًا موجودة في المجموعة المحلية؛ تقاريرها توضح نقص prep/cook/step timing/scaling/food IDs. لا اختلاق metadata0.
-3. التغذية تربط كل مكون بمرجع غذائي وشكل وكمية مدعومة، وتحفظ نسبة التغطية والمجهول. لا حساب غذائي مؤكد لمجرد النص العربي.
-4. التالي في البنك المحلي إكمال فجوات أعلى الوصفات جودة، ثم دفعة مراجعة صغيرة جديدة؛ المسار الحديث يجلب وصفات طهاة عرب بمصدر صريح بدل أرقام فيديو فقط.
+الكتب العربية المقروءة COOKBOOK.ar.md داخل first-reviewed-20261014 وgap-review-20261014 وحزم مواقع الطهاة. لا جمع كتب جديدة؛ المعالجة المحلية للأرشيف السابق بتفويض المستخدم.
 
-الفحوص الفعلية:13Node(9تنظيم مصدر+4فهرس)،210Flutter بما فيها أصول22سجلًا فعلية و8حالات قارئ و18حالة تكلفة؛ نتيجة analyze في HANDOFF§67. لاAPK/تفعيلUI/سحابة/تعديلFirebase.
-
-14October follow-up: second creator-site batch is now bundled,24readable records/3packs/16source snapshots. Added normalized cuisine evidence from existing sourceLabel/evidenceUrl, without changing source facts, declared omissions or pending approvals. Actual assets test verifies harira search and7Moroccan-tagged records (1local+6creator); original54planning catalogue unchanged.9focusedFlutter and15Node watchdog/build tests passed. ManifestSHA3ac598bb5a1ad210f3eea331a57536d6662152b8faa297639e26c32952ae6f03.
+الفحوص الحالية:224Flutter كاملة،analyze بلا مشاكل10.6ثانية،12Node (8gap و4manifest)،validator للدفعة الحديثة الثالثة. أصول فعلية31سجلًا/20لقطة و10وسوم مغربية (1محلي+9مواقع). لاAPK/UI/سحابة في هذه الدفعة.
