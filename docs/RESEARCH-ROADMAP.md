@@ -160,3 +160,5 @@ Bounded category acceptance infrastructure30 complete: explicit one-method/exact
 ## Latest user-directed order —14October2026
 
 Price acquisition research nowpriority30 and recipes35 continue in parallel (one bounded economical source helper). Price research contract/tools/34observations complete; next verify a current licensed official export and fresh produce/meat coverage before provider integration. PRICE-SOURCES-EG-SA.md lists evidence and gaps. Arabic1/German177candidates from250Germanpages acquired; exact cursor and no-clobber/quota gates in RECIPE-EXPANSION-AR-DE.md. Other foundations and source banks remain as documented; no bank completed by reaching a count.
+
+Follow-up: historical36officialEGretailintervals/June2025importedforcontracttesting,0current/liveapproval;12Nodepassed. DEcontinuedto550/375;formatbugfixedbyactualformatregression. Currentofficialfreshfeedstillonprices30;independentlicensedrecipes35continueatKochbuch/_Pesto.

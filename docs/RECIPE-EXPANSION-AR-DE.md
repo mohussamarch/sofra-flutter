@@ -25,3 +25,9 @@ pwsh -NoProfile -File tool/recipes/fetch-de-wikibooks-next-batch.ps1 -UsageGateP
 التالي: gapcontinue=Kochbuch/_Gnocchi_mit_Lauch_und_Schinken، continue=gapcontinue||. اقرأ checkpoint والقفل وافحص الحدود أولًا؛لا تعيد بداية الفهرس. حتى3طلبات متتابعة/2ثوان pacing؛قد تنتهي صلاحية دليل الحدود أثناء الدفعة فيقف دون HTTP أو backoff زائف. أسماء أجسام الردود وأرشيفات الفشل محجوزة أيضًا في التسلسل؛ يتجاوزها رقم الأرشيف التالي مع الاحتفاظ بالمؤشر وبوابة الانتظار، ولا يحذفها.
 
 الفحوص: إعادة استخراج عربية وألمانية تطابق البصمات دون اختلاف. فحص PS محلي نجح لمنع استبدال بايتات قائمة والتسلسل101 و8أدلة حدود غير صالحة؛ لا شبكة أثناء الفحص. العربي01-siteinfo احتفظ JSON محللًا وبصمة الجسم دون الجسم نفسه؛02–05 أجسام محفوظة. لا ندّعي إثبات جسم غير موجود.
+
+## Continued acquisition and actual sequence-format fix
+
+A real collector invocation failed before HTTP: Measure-Object.Maximum producedDouble; D2integerformat refusedit. Numericcomparison-only earlier tests missedthetype. Root added actual '{0:D2}-pages' regression:RED withsameerror; integer(long)output fixedit/GREEN. Outer local errors now local-error-stop rather than misleadingrunning, withnullHTTPstatus andnobackoff;sourcecursorpreserved. ScopedCIM requires approvedescalatedshell inthisenvironment; sandboxdenial was not bypassed.
+
+Subsequent successful boundedbatches retained existingarchives andnowgive550fixedpages/375candidates/3287ingredients/2146steps;175unparsed,12retainedwrappers. Previous250/177countsabove are historical checkpoints. Currentcursor:Kochbuch/_Pesto,continue=gapcontinue||. Actualrequestcounts/exacttimestamps/hashes andzero-requestlocalfailure in docs/agents/recipe-expansion-de.md/.status.md. Allcanonicalquantities/time/food/nutrition/cuisineunreviewed,0runtime. Root independent deterministicregeneration andPSsafety/format checks passed. Nooverwrite/reset/backoffbypass.

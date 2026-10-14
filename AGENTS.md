@@ -154,3 +154,9 @@ PERSONAL-RECIPE-PUBLICATION.md: authored root now retains full draft/finalizatio
 Latest explicit user priority: source real EG/SA grocery/produce/meat prices while an economical independent recipe helper continues bounded licensed expansion. Prices priority30, recipe-bank35 helper; neither ongoing bank has a final record cap. Read PRICE-SOURCES-EG-SA.md and RECIPE-EXPANSION-AR-DE.md. Raw retailer/government/community observations are research-only,0runtime acceptance; public pages do not establish reuse rights or national/current prices. Keep initiative/wholesale/statistical/retail separate and preserve user-price priority/frozen history.
 
 German collector requires actual fresh quota JSON before each request, lane lock/backoff/no-clobber archive writes and unique sequence including100+. Never reuse expired usage evidence or test quota values. Read exact saved cursor; do not reset acquisition. The overwritten original2German response bodies remain lost; current100prefix pages are explicitly new retrievals. Root coordinates shared files/Git; each helper full/small handoff. No UI/Firebase/audio/image changes.
+
+## Historical intervals and real collector formatting
+
+Keep official/msit-2025-06-ranges.json separate from pointquotes; these36EGP/kg ranges areJune2025,nevercurrent or midpointestimates. official-price-ranges.mjs requires explicitperiod/EG/EGP;0runtime/rightsapproval. RawPDFexternal source-cache only, notGit; see sourceSHA/page in PRICE-SOURCES-EG-SA.md.
+
+German archive sequence must return an integer for D2format; numericcomparison alone missed a Double fromMeasure-Object. Actualformatter regression nowmandatory withcollision/quota/failure-reservation checks. Local preHTTP failures must recordlocal-error-stop, preserve continuation andnot createHTTPbackoff. Use approvedscopedescalation forCIM/E/network;do not bypass processchecks on sandboxdenial.

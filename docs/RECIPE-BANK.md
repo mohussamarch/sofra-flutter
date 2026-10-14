@@ -57,3 +57,5 @@ node --test tool/recipes/validate-research.test.mjs
 ## Arabic and German expansion —14October2026
 
 Independent research lanes added: AR1candidate/8lines/6steps; DE250sourcepages/177candidates/1493lines/998steps. No accepted quantities/nutrition/runtime/cuisines. See RECIPE-EXPANSION-AR-DE.md for exact cursor, raw response loss/recovery truth, licence exceptions and offline checks. Existing EN/FR/ES banks unchanged; do not sum as distinct dishes.
+
+ContinuedDEsource:550fixedpages/375candidates/3287ingredientlines/2146steps;0runtime. Exactcursor/checks/provenance in RECIPE-EXPANSION-AR-DE.md; old250/177 checkpointabovehistorical.

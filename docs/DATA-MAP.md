@@ -165,3 +165,9 @@ KitchenService.acceptRecipePreparationEstimate freezes exact recipe/revision/lin
 [PRICE-SOURCES-EG-SA.md](PRICE-SOURCES-EG-SA.md): 34research observations (EG30/SA4), source partitions/licences, declared-unit calculator and explicit comparability/evidence gates;0runtime prices. Source dossiers in data/prices/research/{egypt,saudi}-sources.json; deterministic observations.json; Open Prices ODbL raw/probe separate. No KitchenService integration yet.
 
 [RECIPE-EXPANSION-AR-DE.md](RECIPE-EXPANSION-AR-DE.md): Arabic1candidate/8lines/6steps; German250fixed source revisions/177candidates/1493lines/998steps. Own archived lanes/indexes,0runtime/nutrition/cuisine approvals; exact cursors/incident/guards documented. No cross-language unique-dish count.
+
+## Historical ranges and ongoing recipe delta
+
+Priceintervals are a separatekind: official/msit-2025-06-ranges.json has36June2025retailranges, not34currentquotes or an average. official-price-ranges.mjs requires explicitperiod/country/unit and retains0runtime. SourcePDFexternalcache/SHA/page/rightsunknown documented in PRICE-SOURCES-EG-SA.md. Existing34pointresearch observations unchanged.
+
+DEsource now550pages/375candidates/3287lines/2146steps; cursorKochbuch/_Pesto. See RECIPE-EXPANSION-AR-DE.md for formatbugred/green and actualbatchprovenance. Language/sourcecounts not uniquedishes.

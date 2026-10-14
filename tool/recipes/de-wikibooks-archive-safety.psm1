@@ -6,7 +6,7 @@ function Get-DeWikibooksNextArchiveSequence {
         $_.Name -match '^(\d{2,})-(?:pages|prefix-recovery-new)(?:-failure)?\.(?:json|body)$'
     } | ForEach-Object { [int]$Matches[1] })
     if ($numbers.Count -eq 0) { return 1 }
-    return (($numbers | Measure-Object -Maximum).Maximum + 1)
+    return ([long]($numbers | Measure-Object -Maximum).Maximum + 1)
 }
 
 function Write-DeWikibooksArchiveNoClobber {

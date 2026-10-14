@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-14T08:24:50Z",
+  "researchOnly": true,
+  "runtimeApprovals": 0,
+  "checks": [
+    {
+      "source": "GASTAT",
+      "url": "https://www.stats.gov.sa/en/search?q=APGSTables-Jul2026&delta=10",
+      "result": "web-tool inaccessible",
+      "directExportVerified": false,
+      "priceRowsImported": 0
+    },
+    {
+      "source": "GASTAT",
+      "url": "https://www.stats.gov.sa/en/search-publication",
+      "result": "HTTP502 via web tool",
+      "directExportVerified": false,
+      "priceRowsImported": 0,
+      "retryPolicy": "No immediate repeat of failedURL; use later independent run"
+    },
+    {
+      "source": "EgyptAgricultureEconomicSector",
+      "url": "https://agri.gov.eg/databases/83",
+      "result": "full parsed page, no numeric rows",
+      "verifiedHeaders": [
+        "سعر الجملة (سوق العبور)",
+        "سعر التجزئة (عينة ممثله للجمهورية)",
+        "التاريخ",
+        "أدنى سعر",
+        "أعلى سعر",
+        "المتوسط"
+      ],
+      "numericRows": 0,
+      "sourcePageLines": "48–63",
+      "fullHttpBodyArchived": false,
+      "license": null,
+      "copyrightNotice": "all rights reserved2026",
+      "apiVerified": false,
+      "note": "No privateendpointdiscovery/login/accessbypass; headersareevidenceofstructure,notretrievedprices"
+    },
+    {
+      "source": "MSIT",
+      "url": "https://msit.gov.eg/wp-content/uploads/2025/07/%D9%86%D8%B4%D8%B1%D8%A9-%D9%8A%D9%88%D9%86%D9%8A%D9%88-2025-1.pdf",
+      "result": "web reader rejected contentlength26,752,665; one ordinarypublicHTTP download succeeded to external sourcecache",
+      "period": "2025-06",
+      "sha256": "069f385c424dcf2d6595064b3b0300d57c3ad9e289bd10f46ded0e040bbee209",
+      "priceRowsImportedAsResearchRanges": 36,
+      "sourcePDFRedistributed": false,
+      "license": null,
+      "currentPriceEvidence": false
+    }
+  ]
+}

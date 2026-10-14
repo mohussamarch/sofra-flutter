@@ -9,6 +9,7 @@ $indexPath = Join-Path $lane 'index.json'
 $lock = $null
 $errors = @()
 $completed = 0
+$checkpoint = $null
 
 if (Test-Path -LiteralPath $lockPath) { throw 'German Wikibooks lane lock already exists; inspect its owner before continuing.' }
 Assert-DeWikibooksQuota -UsageGatePath $UsageGatePath
@@ -133,6 +134,13 @@ try {
         }
     }
     Write-Output "batchSuccesses=$completed nextCursor=$($null -ne $continuation)"
+ } catch {
+    if ($null -ne $checkpoint -and $checkpoint.state -eq 'running') {
+        $checkpoint.state = 'local-error-stop'
+        $checkpoint.errors = @([ordered]@{ occurredAt=[DateTimeOffset]::UtcNow.ToString('o'); httpStatus=$null; message=$_.Exception.Message })
+        $checkpoint | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $checkpointPath -Encoding utf8
+    }
+    throw
 } finally {
     if ($lock) { $lock.Dispose() }
     if (Test-Path -LiteralPath $lockPath) { Remove-Item -LiteralPath $lockPath -Force }

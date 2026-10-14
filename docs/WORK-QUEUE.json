@@ -2,18 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T08:12:30.016753+00:00",
+    "at": "2026-10-14T08:29:40.119819+00:00",
     "taskId": "prices",
-    "summary": "34sourced EG/SA research prices + declared-unit/comparability calculator,9Nodepassed; parallelAR1/DE177candidates from250fixedpages; archive/quota regression passed. Runtime approvals0.",
+    "summary": "36historicalEGofficialrangefacts+scopedreader;12Nodepassed;D2formatred/green;DE550/375/3287/2146continued,0runtime. Currentexportstillunavailable.",
     "evidence": [
       "docs/PRICE-SOURCES-EG-SA.md",
-      "data/prices/research/observations.json",
-      "tool/prices/price-observations.mjs",
-      "tool/prices/price-observations.test.mjs",
-      "tool/prices/research-index.test.mjs",
-      "docs/RECIPE-EXPANSION-AR-DE.md",
+      "data/prices/research/official/msit-2025-06-ranges.json",
+      "tool/prices/official-price-ranges.test.mjs",
       "data/recipes/source-discovery/de-wikibooks/index.json",
-      "data/recipes/source-discovery/ar-wikibooks/extract-summary.json",
       "tool/recipes/test-de-wikibooks-archive-safety.ps1"
     ]
   },
@@ -82,9 +78,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Fresh actual quota/lock/backoff check; resume German Kochbuch/_Gnocchi_mit_Lauch_und_Schinken with hardened collector and expiring evidence; derive after exit. Continue licensed cuisines expansion without resetting other lanes or auto-accepting quantities.",
+      "nextAction": "Freshactualquota/lock/backoff;resumeKochbuch/_Pesto with hardenedcollector,deriveafterexit;noreset/guessedquantities/runtimepromotion.",
       "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
-      "lastProgressAt": "2026-10-14T08:12:30.016753+00:00",
+      "lastProgressAt": "2026-10-14T08:29:40.119819+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -112,13 +108,13 @@
         "arabicCandidates": 1,
         "arabicIngredientLines": 8,
         "arabicSteps": 6,
-        "germanSourcePages": 250,
-        "germanCandidates": 177,
-        "germanIngredientLines": 1493,
-        "germanSteps": 998,
+        "germanSourcePages": 550,
+        "germanCandidates": 375,
+        "germanIngredientLines": 3287,
+        "germanSteps": 2146,
         "germanRuntimeApprovals": 0,
-        "germanActualRequests": 8,
-        "germanRetainedResponseArchives": 6
+        "germanActualRequests": 14,
+        "germanRetainedResponseArchives": 12
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
@@ -141,7 +137,7 @@
         "data/recipes/source-discovery/ar-wikibooks/extract-summary.json",
         "tool/recipes/test-de-wikibooks-archive-safety.ps1"
       ],
-      "stage": "Arabic and German bounded expansion verified; source continuation available; no active owner"
+      "stage": "ContinuedDEsourcebatches verified;integerformatfix tested;noactiveowner"
     },
     {
       "id": "recipe-quantities",
@@ -239,7 +235,6 @@
         "test/source_recipe_import_test.dart",
         "docs/NATIVE-RECIPE-IMPORT.md"
       ],
-      "owner": null,
       "lastProgressAt": "2026-10-14T03:00:31.205535+00:00",
       "stage": "Source quantity/identity/fate guards plus explicit single-choice runtime revision API implemented;bulk import preflight and review coverage remain open.",
       "completedAt": "2026-10-14T03:00:31.205535+00:00",
@@ -265,7 +260,6 @@
         "docs/PREPARATION-ACCEPTANCE.md"
       ],
       "lastAttemptAt": "2026-10-14T03:21:52.330213+00:00",
-      "owner": null,
       "completedAt": "2026-10-14T03:29:10.326193+00:00",
       "lastProgressAt": "2026-10-14T03:29:10.326193+00:00",
       "scope": "Infrastructure only;exact reviewed USDA168927 twoalternative methods/3vitamins,0scientific/legal/finishedrecipeapprovals",
@@ -328,7 +322,6 @@
         "test/personal_recipe_publication_test.dart",
         "docs/PERSONAL-RECIPE-PUBLICATION.md"
       ],
-      "owner": null,
       "lastAttemptAt": "2026-10-14T03:56:00.959222+00:00",
       "stage": "Explicit reviewed authoredroot publication/planning/cooking implemented;UI/data/scientificcoverage remainsseparate",
       "lastProgressAt": "2026-10-14T04:06:05.515406+00:00",
@@ -374,21 +367,27 @@
       "status": "ready",
       "nextAction": "Verify latest reusable official exports for EG/SA and fresh meat/produce/city/pack coverage; seek permitted retailer feed. Bind exact items/stores and review freshness before runtime provider; keep recipe helper progressing.",
       "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
-      "stage": "Research index/unit calculator complete; current licensed live sources and runtime provider remain open",
-      "lastProgressAt": "2026-10-14T08:12:30.016753+00:00",
+      "stage": "Historical officialintervalcontract verified;currentlicensedexportsstillunavailable",
+      "lastProgressAt": "2026-10-14T08:29:40.119819+00:00",
       "completedUnit": {
         "researchObservations": 34,
         "egypt": 30,
         "saudi": 4,
         "runtimeApprovals": 0,
-        "nodeTestsPassed": 9
+        "nodeTestsPassed": 12,
+        "historicalIntervals": 36,
+        "historicalPeriod": "2025-06",
+        "currentOfficialExportsImported": 0
       },
       "evidence": [
         "docs/PRICE-SOURCES-EG-SA.md",
         "data/prices/research/observations.json",
         "tool/prices/price-observations.mjs",
         "tool/prices/price-observations.test.mjs",
-        "tool/prices/research-index.test.mjs"
+        "tool/prices/research-index.test.mjs",
+        "data/prices/research/official/msit-2025-06-ranges.json",
+        "tool/prices/official-price-ranges.mjs",
+        "tool/prices/official-price-ranges.test.mjs"
       ]
     },
     {
@@ -406,7 +405,6 @@
       "dependsOn": [],
       "status": "waiting",
       "nextAction": "Saudi/globalp11after05:32:30.374Z,Egyptp11after05:56:53.792Z;2378/67unchanged. Actualquota>=90preventsnewrequests;respectfreshquota/onecheapworker/ageguard/backoff.",
-      "owner": null,
       "blockedUntil": "2026-10-14T05:32:30.374Z",
       "blockedReason": "OFF503backoff;independentauthoringcontinued",
       "lastProgressAt": "2026-10-14T02:35:01.478Z",
@@ -419,7 +417,17 @@
         "runtimeNutritionBasisApprovals": 0,
         "actualBankTests": 5
       },
-      "lastAttemptAt": "2026-10-14T03:56:53.792Z"
+      "lastAttemptAt": "2026-10-14T08:29:45.471Z",
+      "lastFailure": {
+        "status": 401,
+        "job": "saudi-arabia/global",
+        "page": 11,
+        "at": "2026-10-14T08:29:45.471Z",
+        "retryAfter": "2026-10-14T09:49:45.471Z",
+        "requests": 1,
+        "growth": 0
+      },
+      "stage": "Checkpoint-onlyHTTP401;contentsunchanged;sourcegatespercollectionstate;noactiveowner"
     },
     {
       "id": "budget-planner",
@@ -490,11 +498,11 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-13T18:34:04.612586+00:00",
-    "primaryUsedPercent": 90,
-    "weeklyUsedPercent": 42,
+    "at": "2026-10-14T08:30:15.384Z",
+    "primaryUsedPercent": 73,
+    "weeklyUsedPercent": 86,
     "ordinaryUsageAllowed": true,
-    "action": "Reserve reached after completed bounded unit;no further research/agents/sourcecalls. Recheck later;no credits/reset."
+    "action": "Withinreserve;completedprice/recipeunitsandboundedproductattempt;freshcheckrequirednextbatch,no credits/reset."
   },
-  "updatedAt": "2026-10-13T22:54:12.792251+00:00"
+  "updatedAt": "2026-10-14T08:31:45.946464+00:00"
 }

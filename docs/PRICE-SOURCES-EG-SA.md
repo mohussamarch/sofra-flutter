@@ -61,3 +61,15 @@ tool/prices/price-observations.mjs وbuild-research-index.mjs، بحث فقط، 
 اقتراح تشغيل بعد الحصول على الإذن: تجزئة يومية، طازج حسب المتاح اليومي، إحصاءات شهرية عند الإصدار. هذه سياسة مقترحة وليست API أو خدمة مجدولة مفعّلة.
 
 قرارات المال ثابتة: الميزانية للمشتريات الجديدة فقط، اختيار شراء جديد صريح، الاستهلاك منفصل، سعر المستخدم قبل المتوسط، تنبيه تجاوز مع بدائل دون تبديل تلقائي، الماضي المؤكد ثابت، لا ترحيل شهري تلقائي.
+
+## Official historical table import —14October2026 follow-up
+
+A separate36-row interval bank is now saved in data/prices/research/official/msit-2025-06-ranges.json, from page15 of the official MSIT June2025 bulletin. Includes4pulses/3poultry/6meat/4fish/9source-vegetable/10fruit rows, all explicitly EGP/kg. It retains minima/maxima and month2025-06; no invented midpoint, day price, store, food identity, current availability or nationwide average. These36 do not join the34point-quote/initiative research index.
+
+Source PDF: https://msit.gov.eg/wp-content/uploads/2025/07/%D9%86%D8%B4%D8%B1%D8%A9-%D9%8A%D9%88%D9%86%D9%8A%D9%88-2025-1.pdf . Webreader contentlimit blocked26,752,665bytes; one normal publicHTTP download succeeded. Raw PDF retained only at E:\work\SOFRA\source-cache\prices\msit-june-2025.pdf (outsideGit; rights unknown), SHA256069f385c424dcf2d6595064b3b0300d57c3ad9e289bd10f46ded0e040bbee209. Metadata in samecache; source metadata/page/hash also in trackedbank. Clone alone has extractedfacts, not the copyrightedPDF. PDF rendering available via bundledpypdfium2; pypdf text had corruptfontmapping and was not trusted for numbers.
+
+Second independent visual review compared all36rows and corrected2transcriptions: source abbreviation «ف. رومى» remains unresolved (not strawberries/canonicalpepper); fig range35–45 not30–45. Mackerel160–200 and lemon15–40 verified against image, not conflicting old search snippets. Transcription check does not approve rights/freshness/foodbinding.
+
+tool/prices/official-price-ranges.mjs validates this exact scoped table and preserves owned copies; selection requires an explicit historical month and matching EG/EGP. Rejects reverse/zero/unknown bounds, wrongunit/source/month, invented midpoint/date or runtimeflag.3newNodecases plusprior9 all12passed. No XLSX/currentliveprovider implemented; runtime0/reuseapprovalfalse.
+
+Follow-up sourceaccess evidence: official/source-followup-2026-10-14.json. GASTAT publicsearch/export discovery returnedinaccessible/502, noexportvalues. Egyptagriculture https://agri.gov.eg/databases/83 opened with separatewholesale(Obour)/representativeretail/min/max/mean/dateheaders but no numericrows. No privateendpoint/login/termsbypass or guessed currentprices. Next still current reusable official export +permitted fresh retailerfeed, supported by the tested historicalrange contract.

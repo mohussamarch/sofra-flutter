@@ -8,6 +8,7 @@ try {
     [IO.File]::WriteAllText((Join-Path $sandbox '08-prefix-recovery-new.json'), '{}')
     if ((Get-DeWikibooksNextArchiveSequence -LanePath $sandbox) -ne 9) { throw 'Sequence selection did not include every approved archive filename.' }
 
+    if (('{0:D2}-pages' -f (Get-DeWikibooksNextArchiveSequence -LanePath $sandbox)) -ne '09-pages') { throw 'Actual collector format failed.' }
     [IO.File]::WriteAllText((Join-Path $sandbox '100-pages.json'), '{}')
     if ((Get-DeWikibooksNextArchiveSequence -LanePath $sandbox) -ne 101) { throw 'Archive sequence failed above 99.' }
     [IO.File]::WriteAllText((Join-Path $sandbox '102-pages.body'), 'failed-response')
