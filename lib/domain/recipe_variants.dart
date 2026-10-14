@@ -1,13 +1,87 @@
 import 'dart:convert';
 
 import 'recipe_catalog.dart';
+import 'imported_recipe_candidate.dart';
 
 String _requiredText(String value) {
   if (value.trim().isEmpty) throw ArgumentError('Missing recipe identity');
   return value;
 }
 
-enum RecipeRevisionKind { catalog, variant, personal }
+enum RecipeRevisionKind { catalog, variant, personal, imported }
+
+String sourceImportFamilyId(ImportedRecipeCandidate candidate) =>
+    'source:${jsonEncode([candidate.sourceId, candidate.sourceRecipeId])}';
+String sourceImportRevisionId(ImportedRecipeCandidate candidate) =>
+    'transport-sha256:${candidate.transportSha256}';
+
+/// Caller review evidence. Nutrition/measurement/retention remain unapproved.
+class SourceRecipeImportReview {
+  SourceRecipeImportReview({
+    required ImportedRecipeCandidate candidate,
+    required this.note,
+    required DateTime reviewedAt,
+    required this.acknowledgeSourceLicenseAndInstructions,
+    required this.acknowledgeNutritionUnreviewed,
+  }) : candidate = ImportedRecipeCandidate.fromJson(candidate.toJson()),
+       reviewedAt = reviewedAt.toUtc() {
+    _requiredText(note);
+    if (!acknowledgeSourceLicenseAndInstructions ||
+        !acknowledgeNutritionUnreviewed) {
+      throw ArgumentError(
+        'Explicit source/license/instructions and unknown nutrition review required',
+      );
+    }
+  }
+  final ImportedRecipeCandidate candidate;
+  final String note;
+  final DateTime reviewedAt;
+  final bool acknowledgeSourceLicenseAndInstructions,
+      acknowledgeNutritionUnreviewed;
+  Map<String, dynamic> toJson() => {
+    'version': 1,
+    'candidate': candidate.toJson(),
+    'note': note,
+    'reviewedAt': reviewedAt.toIso8601String(),
+    'acknowledgeSourceLicenseAndInstructions':
+        acknowledgeSourceLicenseAndInstructions,
+    'acknowledgeNutritionUnreviewed': acknowledgeNutritionUnreviewed,
+  };
+  factory SourceRecipeImportReview.fromJson(Map<String, dynamic> j) {
+    const fields = [
+      'version',
+      'candidate',
+      'note',
+      'reviewedAt',
+      'acknowledgeSourceLicenseAndInstructions',
+      'acknowledgeNutritionUnreviewed',
+    ];
+    if (j['version'] != 1 ||
+        j.length != fields.length ||
+        !fields.every(j.containsKey)) {
+      throw const FormatException('Source import review schema');
+    }
+    final stamp = j['reviewedAt'] as String;
+    final date = DateTime.parse(stamp);
+    if (!stamp.endsWith('Z') ||
+        stamp.length < 20 ||
+        date.toUtc().toIso8601String().substring(0, 19) !=
+            stamp.substring(0, 19)) {
+      throw const FormatException('Invalid source review UTC date');
+    }
+    return SourceRecipeImportReview(
+      candidate: ImportedRecipeCandidate.fromJson(
+        Map<String, dynamic>.from(j['candidate'] as Map),
+      ),
+      note: j['note'] as String,
+      reviewedAt: date,
+      acknowledgeSourceLicenseAndInstructions:
+          j['acknowledgeSourceLicenseAndInstructions'] as bool,
+      acknowledgeNutritionUnreviewed:
+          j['acknowledgeNutritionUnreviewed'] as bool,
+    );
+  }
+}
 
 class RecipeFamily {
   RecipeFamily({required this.id, required this.name}) {
@@ -243,6 +317,7 @@ class RecipeRevision {
     this.method,
     this.ingredientSplitReview,
     this.ingredientChoiceReview,
+    this.sourceImportReview,
   }) : recipe = CatalogRecipe.fromJson(recipe.toJson()) {
     _requiredText(familyId);
     _requiredText(revision);
@@ -265,6 +340,27 @@ class RecipeRevision {
         'Choice review must reference its personal revision parent and cannot also split',
       );
     }
+    if (kind == RecipeRevisionKind.imported) {
+      final review = sourceImportReview;
+      if (review == null ||
+          parentKey != null ||
+          ingredientSplitReview != null ||
+          ingredientChoiceReview != null ||
+          region != null ||
+          method != null ||
+          familyId != sourceImportFamilyId(review.candidate) ||
+          revision != sourceImportRevisionId(review.candidate) ||
+          jsonEncode(this.recipe.toJson()) !=
+              jsonEncode(review.candidate.recipe.toJson())) {
+        throw ArgumentError(
+          'Imported root must preserve exact source candidate, lineage and transport revision',
+        );
+      }
+    } else if (sourceImportReview != null) {
+      throw ArgumentError(
+        'Source import evidence belongs only to an imported root',
+      );
+    }
     if (region != null) _requiredText(region!);
     if (method != null) _requiredText(method!);
   }
@@ -274,6 +370,7 @@ class RecipeRevision {
   final String? parentKey, region, method;
   final IngredientSplitReview? ingredientSplitReview;
   final IngredientChoiceReview? ingredientChoiceReview;
+  final SourceRecipeImportReview? sourceImportReview;
   String get variantId => recipe.id;
   String get key => jsonEncode([variantId, revision]);
   Map<String, dynamic> toJson() => {
@@ -285,6 +382,7 @@ class RecipeRevision {
     'parentKey': parentKey,
     'ingredientSplitReview': ingredientSplitReview?.toJson(),
     'ingredientChoiceReview': ingredientChoiceReview?.toJson(),
+    'sourceImportReview': sourceImportReview?.toJson(),
     'region': region,
     'method': method,
   };
@@ -309,6 +407,11 @@ class RecipeRevision {
           ? null
           : IngredientChoiceReview.fromJson(
               Map<String, dynamic>.from(j['ingredientChoiceReview'] as Map),
+            ),
+      sourceImportReview: j['sourceImportReview'] == null
+          ? null
+          : SourceRecipeImportReview.fromJson(
+              Map<String, dynamic>.from(j['sourceImportReview'] as Map),
             ),
       region: j['region'] as String?,
       method: j['method'] as String?,

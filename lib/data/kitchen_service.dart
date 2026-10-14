@@ -6,6 +6,7 @@ import '../domain/person_nutrition.dart';
 import '../domain/recipe_nutrition.dart';
 import '../domain/recipe_catalog.dart';
 import '../domain/recipe_variants.dart';
+import '../domain/imported_recipe_candidate.dart';
 import '../domain/cooking_timer.dart';
 import '../domain/market_profile.dart';
 import '../domain/models.dart';
@@ -223,7 +224,52 @@ class KitchenService {
     k['recipeBook'] = _recipeBook(k).addFamily(family).toJson();
   });
 
+  /// Explicit selected import only: source envelope retained, no inherited food bindings.
+  Future<RecipeRevision> importSourceRecipe({
+    required ImportedRecipeCandidate candidate,
+    required String reviewNote,
+    required DateTime reviewedAt,
+    required bool acknowledgeSourceLicenseAndInstructions,
+    required bool acknowledgeNutritionUnreviewed,
+  }) async {
+    final review = SourceRecipeImportReview(
+      candidate: candidate,
+      note: reviewNote,
+      reviewedAt: reviewedAt,
+      acknowledgeSourceLicenseAndInstructions:
+          acknowledgeSourceLicenseAndInstructions,
+      acknowledgeNutritionUnreviewed: acknowledgeNutritionUnreviewed,
+    );
+    final draft = RecipeRevision(
+      familyId: sourceImportFamilyId(review.candidate),
+      revision: sourceImportRevisionId(review.candidate),
+      kind: RecipeRevisionKind.imported,
+      recipe: review.candidate.recipe,
+      sourceImportReview: review,
+    );
+    if ((await recipes.index).any((v) => v['id'] == draft.variantId)) {
+      throw StateError(
+        'Source import cannot overwrite a shipping catalog identity',
+      );
+    }
+    await _write((k) {
+      var book = _recipeBook(k);
+      if (!book.families.containsKey(draft.familyId)) {
+        book = book.addFamily(
+          RecipeFamily(id: draft.familyId, name: draft.recipe.name),
+        );
+      }
+      k['recipeBook'] = book.addRevision(draft).toJson();
+    });
+    return draft;
+  }
+
   Future<void> saveRecipeRevision(RecipeRevision revision) async {
+    if (revision.kind == RecipeRevisionKind.imported) {
+      throw StateError(
+        'Use explicit importSourceRecipe for source import review',
+      );
+    }
     if (revision.kind == RecipeRevisionKind.catalog ||
         (await recipes.index).any((v) => v['id'] == revision.variantId)) {
       throw StateError('Custom recipes cannot overwrite catalog identities');

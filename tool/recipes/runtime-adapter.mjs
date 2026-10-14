@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import {auditRecipeImportDraft} from './import-preflight.mjs';
 import {snapshotFingerprint} from './review-target.mjs';
 const need=(ok,message)=>{if(!ok)throw Error(message);};
@@ -14,6 +15,7 @@ export function buildRuntimeRecipeCandidate(source,draft,metadata,{foods=new Map
  need(metadata.schemaVersion===1&&metadata.draftSha256===snapshotFingerprint(draft),'Stale or unsupported adapter draft review');
  need(typeof metadata.id==='string'&&/^import:[a-z0-9]+(?:-[a-z0-9]+)*$/.test(metadata.id),'Explicit import namespaced recipe identity required');
  for(const field of ['name','cuisine','category','description','difficulty','reviewNote'])need(text(metadata[field]),`Explicit ${field} required`);
+ for(const field of ['name','cuisine','category','description','difficulty'])need(metadata[field]===metadata[field].trim(),`Catalog ${field} must be normalized`);
  need(stamp(metadata.reviewedAt)&&metadata.acknowledgeSourceAndInstructions===true&&metadata.acknowledgeRemainingNutritionGates===true,'Explicit source/instruction and remaining nutrition review acknowledgement required');
  need(Array.isArray(metadata.tags),'Explicit tags required');
  for(const tag of metadata.tags)need(text(tag),'Invalid tag');
@@ -26,7 +28,8 @@ export function buildRuntimeRecipeCandidate(source,draft,metadata,{foods=new Map
   const ids=metadata.ingredientIds[i];need(Array.isArray(ids)&&ids.length===line.components.length,'Runtime ingredient IDs must cover only included components');
   const runtimeLineIndices=[];
   for(const [j,c] of line.components.entries()){
-   need(text(ids[j]),'Explicit runtime ingredient identity required');
+   need(text(ids[j])&&ids[j]===ids[j].trim(),'Explicit normalized runtime ingredient identity required');
+   need(c.name===c.name.trim(),'Catalog ingredient name must be normalized');
    runtimeLineIndices.push(ingredients.length);
    ingredients.push({id:ids[j],name:c.name,amount:c.amount,unit:c.unit,scale:c.scales,optional:c.optional,label:null,display:null,note:c.form});
   }
@@ -36,6 +39,7 @@ export function buildRuntimeRecipeCandidate(source,draft,metadata,{foods=new Map
  const steps=[];
  for(const [i,step] of metadata.steps.entries()){
   keys(step,['text','passive','tip']);need(text(step.text)&&typeof step.passive==='boolean'&&(step.tip===null||text(step.tip)),'Explicit instruction/passive/tip decisions required');
+  need(step.text===step.text.trim(),'Catalog instruction text must be normalized');
   steps.push({n:i+1,text:step.text,duration:draft.stepMinutes[i],passive:step.passive,tip:step.tip});
  }
  const totalTime=draft.prepMinutes+draft.cookMinutes;need(Number.isFinite(totalTime),'Total time overflow');
@@ -55,4 +59,11 @@ export function validateRuntimeRecipeCandidate(candidate,source,draft,metadata,o
  need(snapshotFingerprint(candidate)===snapshotFingerprint(expected),'Runtime candidate differs from reviewed source/draft/metadata or remaining gates');
  return {recipeId:expected.recipe.id,candidateSha256:snapshotFingerprint(expected),runtimeReady:false,
   sourceRecipeSha256:expected.provenance.sourceRecipeSha256,draftSha256:expected.provenance.draftSha256,metadataSha256:expected.provenance.metadataSha256};
+}
+
+/** Exact UTF8 transport after authoritative rebuild; expected SHA must travel via a trusted registry. */
+export function packRuntimeRecipeCandidate(candidate,source,draft,metadata,options={}){
+ validateRuntimeRecipeCandidate(candidate,source,draft,metadata,options);
+ const payload=JSON.stringify(candidate);
+ return {schemaVersion:1,encoding:'utf8-json',payload,sha256:createHash('sha256').update(payload,'utf8').digest('hex')};
 }

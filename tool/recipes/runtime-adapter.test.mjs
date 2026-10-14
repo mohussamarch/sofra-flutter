@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {buildRuntimeRecipeCandidate,validateRuntimeRecipeCandidate} from './runtime-adapter.mjs';
+import {buildRuntimeRecipeCandidate,validateRuntimeRecipeCandidate,packRuntimeRecipeCandidate} from './runtime-adapter.mjs';
+import {createHash} from 'node:crypto';
 import {fixture} from './runtime-adapter.fixture.mjs';
 import {snapshotFingerprint} from './review-target.mjs';
 test('builds explicit catalog shape with split/order/exclusions and source/raw-reference mapping',()=>{
@@ -53,5 +54,17 @@ test('candidate validator uses current source/draft/metadata/food snapshots, nev
  for(const edit of [f=>f.source.sourceRevision='13',f=>f.draft.stepMinutes[0]=3,f=>f.metadata.name='Changed',f=>f.foods.clear()]){
   const f=fixture(),candidate=buildRuntimeRecipeCandidate(f.source,f.draft,f.metadata,{foods:f.foods});edit(f);
   assert.throws(()=>validateRuntimeRecipeCandidate(candidate,f.source,f.draft,f.metadata,{foods:f.foods}));
+ }
+});
+test('transport packs exact UTF8 JSON bytes only after current source validation',()=>{
+ const f=fixture(),candidate=buildRuntimeRecipeCandidate(f.source,f.draft,f.metadata,{foods:f.foods});
+ const transport=packRuntimeRecipeCandidate(candidate,f.source,f.draft,f.metadata,{foods:f.foods});
+ assert.equal(transport.encoding,'utf8-json');assert.equal(transport.sha256,createHash('sha256').update(transport.payload,'utf8').digest('hex'));assert.deepEqual(JSON.parse(transport.payload),candidate);
+ const changed=structuredClone(candidate);changed.provenance.source.license.id='other';assert.throws(()=>packRuntimeRecipeCandidate(changed,f.source,f.draft,f.metadata,{foods:f.foods}));
+ f.source.sourceRevision='13';assert.throws(()=>packRuntimeRecipeCandidate(candidate,f.source,f.draft,f.metadata,{foods:f.foods}));
+});
+test('catalog text is already normalized so native parsing cannot change reviewed identities',()=>{
+ for(const edit of [f=>f.metadata.ingredientIds[0][0]=' flour ',f=>f.metadata.name=' Recipe ',f=>f.metadata.steps[0].text=' Mix ',f=>{f.draft.lines[0].components[0].name=' Flour ';f.metadata.draftSha256=snapshotFingerprint(f.draft);}]){
+  const f=fixture();edit(f);assert.throws(()=>buildRuntimeRecipeCandidate(f.source,f.draft,f.metadata,{foods:f.foods}),/normalized/i);
  }
 });

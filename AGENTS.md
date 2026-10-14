@@ -129,3 +129,7 @@ Registry follow-up: data/recipes/import-review/registry.json explicitly pins dra
 ## Structural source runtime candidate
 
 Follow docs/RECIPE-RUNTIME-ADAPTER.md. Candidate preserves source/licence/review/full hashes and line maps;requires explicit runtimeingredientIDs/steps/cuisine,never inferred from language/rawfood. validateRuntimeRecipeCandidate rebuilds from currentauthoritativeinputs beforetransportacceptance. runtimeReadyfalse,0foodbindings/actualimports;next native reader/immutable registration must retainfullprovenance envelope,atomic historyguard and allremaining nutrition/form/basis/retention gates.44linkedNode+1Flutterinterop/analyzeclean;full107historical. OFF2287/64,Saudi/globalp11actual503gate23:49:13.371Z;Egyptp8gate01:30:53.428Z. No costlynewunitat/above90 orunknownquota.
+
+## Native reviewed source imports
+
+Use docs/NATIVE-RECIPE-IMPORT.md. TrustedartifactexpectedSHA+exactUTF8pack,crypto3.0.7cachedoffline,strictsource/maps/normalizedcatalogtext;preservefullenvelope. KitchenService.importSourceRecipe mandatorysource/license/instruction+unknownnutrition acknowledgements,importedrootderivedfamily/revision,atomicguard/history. No rawfood-to-runtimebinding/clinicalapproval. Oldbooksreadable;oldclientsdoNOTsupportnewkind,do notenableUI/sharedwritesbeforecompatibleclient. Full142Flutter+1supplementalbinding/46Node/analyzeclean;0actualbankpromotion. Quantity/importinfrastructuredone,datacoverageopen;nextpreparation30thenprivateauthoring34. OFF2378/67,Saudi03:31:56.646Z/Egypt03:56:26.889Z;onecheaphelper/actualquotas/gates.

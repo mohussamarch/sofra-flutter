@@ -2,15 +2,17 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-13T23:39:34.389189+00:00",
+    "at": "2026-10-14T03:00:31.205535+00:00",
     "taskId": "recipe-quantities",
-    "summary": "Structural source adapter+transportguard completed:44linkedNode/1Flutterinterop/analyzeclean;OFF+21net/1archive,5actualbanktests then503checkpoint.0runtimeimports.",
+    "summary": "Native fullsource import persistence/reader/transport completed;full142Flutter+1additionalnutritionbinding/46Node/analyzeclean;OFF+91net/3archives5banktests.0actualbankpromotion.",
     "evidence": [
-      "tool/recipes/runtime-adapter.mjs",
-      "tool/recipes/runtime-adapter.test.mjs",
-      "test/runtime_adapter_contract_test.dart",
-      "docs/RECIPE-RUNTIME-ADAPTER.md",
-      "docs/agents/off-2329.md"
+      "lib/domain/imported_recipe_candidate.dart",
+      "lib/domain/recipe_variants.dart",
+      "lib/data/kitchen_service.dart",
+      "test/imported_recipe_candidate_test.dart",
+      "test/source_recipe_import_test.dart",
+      "docs/NATIVE-RECIPE-IMPORT.md",
+      "docs/agents/off-0229.md"
     ]
   },
   "tasks": [
@@ -130,7 +132,7 @@
       "id": "recipe-quantities",
       "priority": 29,
       "dependsOn": [],
-      "status": "ready",
+      "status": "done",
       "completedUnit": {
         "quantityParser": "source-prefix-v2",
         "structureParser": "source-structure-v1",
@@ -157,11 +159,11 @@
         "fateRuntimeReady": 0,
         "singleIngredientChoiceRevision": true,
         "choiceTests": 7,
-        "fullFlutterTests": 107,
+        "fullFlutterTests": 142,
         "analyzeClean": true,
         "importDraftPreflight": true,
         "preflightTests": 11,
-        "linkedNodeTests": 44,
+        "linkedNodeTests": 46,
         "blankEnglishDraftsAudited": 3640,
         "preflightRuntimeReady": 0,
         "importDraftRegistry": true,
@@ -170,11 +172,15 @@
         "registeredCompleteDraftCount": 0,
         "structuralRuntimeAdapter": true,
         "transportCandidateGuard": true,
-        "adapterTests": 8,
+        "adapterTests": 10,
         "flutterInteropTests": 1,
-        "actualRuntimeImports": 0
+        "actualRuntimeImports": 0,
+        "nativeSourceImport": true,
+        "readerTests": 28,
+        "importIntegrationCases": 7,
+        "supplementalNutritionBindingTest": 1
       },
-      "nextAction": "Implement native imported candidate/provenance reader and explicit immutable recipe registration via KitchenService; preserve source/licence/full envelope and remaining nutrition/form/basis/measurement/retention gates. Verify atomic rollback/reload/retry/history;never persist naked recipe JSON.",
+      "nextAction": "Quantity/choice/import infrastructure complete. Unreviewed source measurements/identity/scientific coverage stays open under recipe-coverage/preparation/source-bank;do not auto-approve records.",
       "evidence": [
         "tool/recipes/parse-ingredient-quantity.mjs",
         "tool/recipes/build-bulk-index.test.mjs",
@@ -212,11 +218,17 @@
         "tool/recipes/runtime-adapter.mjs",
         "tool/recipes/runtime-adapter.test.mjs",
         "test/runtime_adapter_contract_test.dart",
-        "docs/RECIPE-RUNTIME-ADAPTER.md"
+        "docs/RECIPE-RUNTIME-ADAPTER.md",
+        "lib/domain/imported_recipe_candidate.dart",
+        "test/imported_recipe_candidate_test.dart",
+        "test/source_recipe_import_test.dart",
+        "docs/NATIVE-RECIPE-IMPORT.md"
       ],
       "owner": null,
-      "lastProgressAt": "2026-10-13T23:39:34.389189+00:00",
-      "stage": "Source quantity/identity/fate guards plus explicit single-choice runtime revision API implemented;bulk import preflight and review coverage remain open."
+      "lastProgressAt": "2026-10-14T03:00:31.205535+00:00",
+      "stage": "Source quantity/identity/fate guards plus explicit single-choice runtime revision API implemented;bulk import preflight and review coverage remain open.",
+      "completedAt": "2026-10-14T03:00:31.205535+00:00",
+      "scope": "Implementation foundation only;0actualsourcebankpromotion/automaticnutritionapproval"
     },
     {
       "id": "preparation-evidence",
@@ -242,11 +254,18 @@
         "measure-integration",
         "compound-revisions"
       ],
-      "status": "ready",
-      "nextAction": "Reviewed import must retain sourceId/pageId/revision/SHA/parserVersion and full revision/line bindings, unknown timings, cuisine tags and licence attribution. Research source/parsed files are not runtime imports.",
+      "status": "done",
+      "nextAction": "Use NATIVE-RECIPE-IMPORT contract and compatible client; source bank review/nutrition/form/retention coverage remains separate and open.",
       "evidence": [
-        "docs/RECIPE-BANK.md"
-      ]
+        "lib/domain/imported_recipe_candidate.dart",
+        "lib/domain/recipe_variants.dart",
+        "lib/data/kitchen_service.dart",
+        "test/imported_recipe_candidate_test.dart",
+        "test/source_recipe_import_test.dart",
+        "docs/NATIVE-RECIPE-IMPORT.md"
+      ],
+      "completedAt": "2026-10-14T03:00:31.205535+00:00",
+      "scope": "Reviewed import infrastructure only;selectedverifiedcandidatescanpersist,0actualbulkpromotion"
     },
     {
       "id": "recipe-authoring",
@@ -275,7 +294,8 @@
         "compound-revisions"
       ],
       "status": "ready",
-      "nextAction": "Review priority recipe variants and quantity/identity coverage, then broaden independent families"
+      "nextAction": "Review priority recipe variants and quantity/identity coverage, then broaden independent families",
+      "infrastructureDoesNotApproveData": true
     },
     {
       "id": "prices",
@@ -298,21 +318,21 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Quota90/58reserve:recheckactualusagebeforeanynewbatch;2287/64unchanged. Saudi/globalp11after2026-10-14T00:30:35.556Z,Egyptp8after01:30:53.428Z;no earlyretry or credits/reset.",
+      "nextAction": "2378/67;Saudi/globalp11after03:31:56.646Z,Egypt/globalp11after03:56:26.889Z. Freshactualquota/onecheapworker/ageguard/locks;sourcefailuresdonotblockcore.",
       "owner": null,
-      "blockedUntil": "2026-10-14T00:30:35.556Z",
+      "blockedUntil": "2026-10-14T03:31:56.646Z",
       "blockedReason": "OFF503backoff; independentrecipe/identitywork remains available",
-      "lastProgressAt": "2026-10-13T23:33:13.137Z",
+      "lastProgressAt": "2026-10-14T02:35:01.478Z",
       "completedUnit": {
-        "products": 2287,
-        "archives": 64,
-        "newProductsThisUnit": 21,
-        "quarantine": 344,
-        "duplicateOccurrences": 763,
+        "products": 2378,
+        "archives": 67,
+        "newProductsThisUnit": 91,
+        "quarantine": 414,
+        "duplicateOccurrences": 902,
         "runtimeNutritionBasisApprovals": 0,
         "actualBankTests": 5
       },
-      "lastAttemptAt": "2026-10-14T00:00:35.556Z"
+      "lastAttemptAt": "2026-10-14T02:56:26.889Z"
     },
     {
       "id": "budget-planner",
