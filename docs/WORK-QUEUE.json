@@ -2,13 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T15:47:21.012150+00:00",
-    "taskId": "allergen-evidence",
-    "summary": "Official evidence bank:2SFDA sources/7claims/15vocabularyproposals,EGunknown and0runtimeapprovals; also44pinnedreadable recipes/225Flutter/17recipeNode/analyzeclean.",
+    "at": "2026-10-14T16:04:03.054313+00:00",
+    "taskId": "recipe-library-import-guards",
+    "summary": "Three invalid manifest inputs reproduced and rejected;7Nodepassed,actual44record manifest unchanged.",
     "evidence": [
-      "data/food/allergen-evidence/20261014/official-evidence.json",
-      "test/recipe_library_draft_test.dart",
-      "test/recipe_library_assets_test.dart"
+      "tool/recipes/build-recipe-library.test.mjs",
+      "tool/recipes/build-recipe-library.mjs"
     ]
   },
   "tasks": [
@@ -643,15 +642,31 @@
         "test/library_recipe_persistence_test.dart",
         "docs/LIBRARY-RECIPE-CALCULATOR.md"
       ]
+    },
+    {
+      "id": "recipe-library-import-guards",
+      "priority": 34,
+      "status": "done",
+      "dependsOn": [
+        "recipe-library"
+      ],
+      "completedAt": "2026-10-14T16:04:03.054313+00:00",
+      "lastProgressAt": "2026-10-14T16:04:03.054313+00:00",
+      "nextAction": "Use strict UTF8/nonblank globally unique recipe IDs before manifest generation; continue source review separately.",
+      "evidence": [
+        "tool/recipes/build-recipe-library.mjs",
+        "tool/recipes/build-recipe-library.test.mjs",
+        "docs/RECIPE-LIBRARY.md"
+      ]
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T15:47:21.012150+00:00",
-    "primaryUsedPercent": 74,
-    "weeklyUsedPercent": 27,
+    "at": "2026-10-14T16:04:03.054313+00:00",
+    "primaryUsedPercent": 83,
+    "weeklyUsedPercent": 29,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "No purchase/reset; boundedunits completed, next batch needs fresh actual limits."
+    "action": "Bounded local guard completed;no source calls or credits/reset;fresh check before next costly unit."
   },
-  "updatedAt": "2026-10-14T15:47:21.012150+00:00"
+  "updatedAt": "2026-10-14T16:04:03.054313+00:00"
 }

@@ -2,6 +2,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {TextDecoder} from 'node:util';
 
 const root=fileURLToPath(new URL('../../',import.meta.url));
 export const manifestFile='data/recipes/curated-local/flutter-manifest.json';
@@ -22,14 +23,14 @@ export function safePath(file){
  return file;
 }
 export async function buildManifest(read){
- const packs=[];
+ const packs=[],ids=new Set();
  for(const [kind,file] of files){
-  const raw=await read(file),data=JSON.parse(raw.toString('utf8'));
+  const raw=await read(file),data=JSON.parse(new TextDecoder('utf-8',{fatal:true,ignoreBOM:true}).decode(raw));
   need(Array.isArray(data.recipes)&&data.recipes.length>0,'Missing recipe rows');
-  const snapshots=new Map(),ids=new Set();
+  const snapshots=new Map();
   for(const row of data.recipes){
    const id=kind==='curated-local'?row.id:row.recipeId;
-   need(typeof id==='string'&&!ids.has(id),'Duplicate recipe identity');ids.add(id);
+   need(typeof id==='string'&&id.trim().length>0&&!ids.has(id),'Duplicate recipe identity');ids.add(id);
    need(row.nutrition==null&&row.runtimeReady!==true,'Research cannot enable runtime/nutrition');
    if(kind==='curated-local'){
     const p=row.provenance,path=safePath(p.sourceSnapshotFile);

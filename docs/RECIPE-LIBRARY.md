@@ -41,3 +41,7 @@ data/recipes/curated-local/flutter-manifest.json يثبت5حزم/20لقطة؛ SH
 إصلاح حفظ المصدر يشمل creatorالمفرد وcreatorsالقائمة،مطابقةcreatorIdفقط وإزالة التكرار المتطابق دون دمج أدلة مختلفة. المصدر الكامل للمسودة يحتفظ بالهوية؛السجلات القديمة تظل مفكوكة،والبصمة المحسنة تتطلب مراجعة قبل إعادة حفظها على المصدر الحالي. عقد LIBRARY-RECIPE-CALCULATOR.md.
 
 ManifestSHA352c88ede972629a0526e9ec2d03380858178ce631c2b91158e4dcb6c6ff8a1d. Pubspecيشحن المختار فقط،لا6056سجلًا خامًا. 17Nodeو225Flutterكاملة نجحت؛analyzeنظيف7.2ثانية. كتالوج54/4لم يتغير. الأعداد السابقة أعلاه نقاط تاريخية؛هذه الحالية.
+
+## Import manifest guard — §73
+
+The build tool now rejects duplicate recipe IDs across all selected packs (not only within one pack), empty/whitespace-only IDs and malformed UTF8 before generating trusted pins. It decodes original bytes strictly and continues hashing the original bytes; no reserialization or silent replacement. These are pre-build consistency guards, not source authenticity/rights checks. All7 focused Node tests and actual manifest --check passed. The existing44 records/7packs/28snapshots and manifest SHA are unchanged. Full225Flutter/analyze at361e04a are historical; no Dart, pubspec or source-data change in this unit.

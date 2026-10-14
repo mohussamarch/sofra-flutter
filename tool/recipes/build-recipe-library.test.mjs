@@ -18,3 +18,30 @@ test('paths cannot escape selected source folders',()=>{
  for(const path of ['../x.json','data/recipes/curated-local/../x.json','data/recipes/arabic-youtube/x.json?x','C:/x.json','data/food/x.json'])assert.throws(()=>safePath(path));
  assert.equal(safePath('data/recipes/curated-local/a/123.json'),'data/recipes/curated-local/a/123.json');
 });
+
+function syntheticRead({duplicate=false,blankId,invalidUtf8=false}={}){
+ const source=Buffer.from('{}\n'),hash=createHash('sha256').update(source).digest('hex');
+ let n=0;
+ return async file=>{
+  if(file.endsWith('/snapshot.json'))return source;
+  const position=n++,local=file.endsWith('/normalized-recipes.json');
+  const id=position===0&&blankId!==undefined?blankId:duplicate&&position<2?'same-id':'row-'+position;
+  const row=local?{id,provenance:{sourceSnapshotFile:'data/recipes/curated-local/snapshot.json',sourceSnapshotSha256:hash}}:{recipeId:id,sourceKind:'creator-website',youtubeDerived:false};
+  row.note='VALID';
+  const text=JSON.stringify({recipes:[row]});
+  if(invalidUtf8&&position===0){
+   const at=text.indexOf('VALID');
+   return Buffer.concat([Buffer.from(text.slice(0,at)),Buffer.from([255]),Buffer.from(text.slice(at+5))]);
+  }
+  return Buffer.from(text);
+ };
+}
+test('duplicate identities across selected packs reject before generating trusted pins',async()=>{
+ await assert.rejects(buildManifest(syntheticRead({duplicate:true})),/Duplicate recipe identity/);
+});
+test('empty and whitespace-only recipe identities cannot be pinned',async()=>{
+ for(const blankId of ['', '   '])await assert.rejects(buildManifest(syntheticRead({blankId})),/recipe identity/);
+});
+test('malformed UTF8 cannot be silently replaced and pinned as readable JSON',async()=>{
+ await assert.rejects(buildManifest(syntheticRead({invalidUtf8:true})),/encoded|UTF-8|encoding/i);
+});
