@@ -76,6 +76,8 @@ void main() {
     final report = RecipeLibraryCoverageReport.fromEntries(entries);
     expect(report.recipeCount, 1);
     expect(report.ingredientCount, 5);
+    expect(report.quantityReviewLineCount, 4);
+    expect(report.toJson()['quantityReviewLineCount'], 4);
     expect(report.missingAmountCount, 2);
     expect(report.missingUnitCount, 2);
     expect(report.nonPositiveAmountCount, 1);
@@ -133,6 +135,10 @@ void main() {
       throwsArgumentError,
     );
     expect(RecipeLibraryCoverageReport.fromEntries([]).ingredientCount, 0);
+    expect(
+      RecipeLibraryCoverageReport.fromEntries([]).quantityReviewLineCount,
+      0,
+    );
   });
   test('actual selected cookbook reports all source lines with calculator-compatible pins', () async {
     final entries = await bundledRecipeLibrary().all();

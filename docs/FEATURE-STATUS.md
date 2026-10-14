@@ -27,3 +27,7 @@ Built: immutable source-only library audit with exact line indices/statuses and 
 ## Modern source continuation and monitor repair — §77
 
 Built:65readable source records and recipe-scoped request provenance in private review; read-only quantity audit669lines. Work monitor now honours latest recorded task/global-matching progress, with attempts only a fallback, preventing both false stalls and attempt timestamps hiding real stalls.30Node/239fullFlutter/analyze clean5.2sec. New modern website outputs2;0completeYT/liveprices/automaticnutrition/productapproval. Pan/oven source options preserved but not reviewed native variants.
+
+## Quantity review workload count — §78
+
+Added unique quantityReviewLineCount to existing read-only source audit:592 distinct pending quantity lines/669, not the sum of overlapping flags.65recipes and38local source labels unchanged,0newrecipes or food approvals.4focusedFlutter passed; analyze clean5.0sec. Full239Flutter/30Node atd7e444c historical.

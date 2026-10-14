@@ -172,3 +172,7 @@ ProductLabelEvidenceRepository exposes all/search/byProposedAllergen; Manufactur
 ## Source request context compatibility — §77
 
 RecipeLibraryDraftReview includes recipe-scoped sourceIndex request evidence when supplied by the pinned pack; original request indexes/outcomes are retained, unrelated URLs excluded, explicit missing/duplicate references rejected. Existing source fingerprints cover the subset. Old reviews remain readable; assertSource rejects reusing them against newly enriched evidence. This is consistency/provenance, not food/medical/rights approval. Library65/11packs/44snapshots; contracts LIBRARY-RECIPE-CALCULATOR.md and RECIPE-LIBRARY-COVERAGE.md.
+
+## Unique quantity review count — §78
+
+RecipeLibraryCoverageReport.quantityReviewLineCount and its additive JSON field count each indexed source line needing quantity review once, despite overlapping missing-amount/unit flags. Current592of669 lines; not nutrition/identity completion, and saved user reviews remain outside scope. No state writer or asset/source pin change.

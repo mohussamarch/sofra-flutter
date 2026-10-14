@@ -206,3 +206,7 @@ Library63 records/10 packs/44 snapshots;44 local (10 culinary fully specified/32
 ## Current §77 — progress and source request scope
 
 Library65 records/11packs/44snapshots=44archive+21creatorwebsite;38local source labels,0newcompleteYT. Preserve recipe-scoped sourceIndex request indexes/outcomes in private reviews; lookup by original index, not subset position. No direct-body/video/date/rights/food approval from indexed extracts. Old envelopes decode; enriched current pins require re-review. Watchdog uses latest actual task.lastProgressAt/global matching taskId, attempts only fallback. No false progress via refreshed attempts or unrelated work. See HANDOFF§77/LIBRARY-RECIPE-CALCULATOR.md; all unchanged scope decisions apply.
+
+## Current §78 — source quantity counts
+
+Use quantityReviewLineCount for unique pending quantity lines; missing-amount/unit/unit-review counts overlap.592of669 current source lines need quantity review. Other77 still require explicit food/form/inclusion/scaling/source acceptance.65library/38local source labels and all source/rights/runtime approvals unchanged. No saved personal-review inspection or completion percentage inferred.4focusedFlutter/analyze clean;239full atd7e444c historical.

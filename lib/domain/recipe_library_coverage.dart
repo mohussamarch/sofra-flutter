@@ -90,6 +90,10 @@ class RecipeLibraryCoverageReport {
       recipes.expand((r) => r.lines);
   int get recipeCount => recipes.length;
   int get ingredientCount => _lines.length;
+
+  /// Counts each source line once, even if several quantity gaps overlap.
+  int get quantityReviewLineCount =>
+      _lines.where((line) => line.needsQuantityReview).length;
   int get missingAmountCount => _lines.where((l) => l.missingAmount).length;
   int get missingUnitCount => _lines.where((l) => l.missingUnit).length;
   int get nonPositiveAmountCount =>
@@ -105,6 +109,7 @@ class RecipeLibraryCoverageReport {
     'scope': 'source-library-review-triage',
     'recipeCount': recipeCount,
     'ingredientCount': ingredientCount,
+    'quantityReviewLineCount': quantityReviewLineCount,
     'missingAmountCount': missingAmountCount,
     'missingUnitCount': missingUnitCount,
     'nonPositiveAmountCount': nonPositiveAmountCount,

@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T21:12:37.413045+00:00",
-    "taskId": "library-source-request-context",
-    "summary": "Two indexed official creator recipes added; scoped request evidence/private review and actual task-progress monitor fixed.239Flutter/30Nodepassed",
+    "at": "2026-10-14T21:23:42.430215+00:00",
+    "taskId": "quantity-review-unique-count",
+    "summary": "Unique source quantity workload counter added/tested;592lines instead of summing overlapping flags.65records unchanged",
     "evidence": [
-      "data/recipes/arabic-youtube/sixth-batch-20261014/recipes.json",
-      "lib/domain/recipe_library_draft.dart",
-      "tool/work/watchdog.test.mjs"
+      "lib/domain/recipe_library_coverage.dart",
+      "test/recipe_library_coverage_test.dart",
+      "docs/RECIPE-LIBRARY-COVERAGE.md"
     ]
   },
   "tasks": [
@@ -412,7 +412,7 @@
       "status": "ready",
       "nextAction": "Use RecipeLibraryCoverageReport to select source-pinned recipe/line quantity gaps; review actual food identities and conversions explicitly.63recipes/632lines remain source-only; no binding inferred.",
       "infrastructureDoesNotApproveData": true,
-      "lastProgressAt": "2026-10-14T20:46:04.701382+00:00",
+      "lastProgressAt": "2026-10-14T21:23:42.430215+00:00",
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
       "completedUnit": {
         "schemaVersion": 1,
@@ -428,7 +428,8 @@
         "recipesWithQuantityGaps": 65,
         "runtimeApprovedRecipes": 0,
         "flutterAuditTests": 4,
-        "sourceFingerprintSharedWithCalculator": true
+        "sourceFingerprintSharedWithCalculator": true,
+        "quantityReviewLineCount": 592
       },
       "evidence": [
         "lib/domain/recipe_library_coverage.dart",
@@ -740,7 +741,7 @@
       ],
       "status": "done",
       "completedAt": "2026-10-14T20:46:04.701382+00:00",
-      "lastProgressAt": "2026-10-14T20:46:04.701382+00:00",
+      "lastProgressAt": "2026-10-14T21:23:42.430215+00:00",
       "nextAction": "Use explicit source-pinned indices for review; current report does not inspect saved personal decisions or approve nutrition.",
       "evidence": [
         "lib/domain/recipe_library_coverage.dart",
@@ -759,7 +760,8 @@
         "supplementalCount": 38,
         "optionalCount": 7,
         "recipesWithQuantityGaps": 65,
-        "runtimeApprovedRecipes": 0
+        "runtimeApprovedRecipes": 0,
+        "quantityReviewLineCount": 592
       }
     },
     {
@@ -797,15 +799,37 @@
         "newRegressions": 4,
         "queueReadOnly": true
       }
+    },
+    {
+      "id": "quantity-review-unique-count",
+      "priority": 50,
+      "status": "done",
+      "dependsOn": [
+        "library-quantity-audit"
+      ],
+      "completedAt": "2026-10-14T21:23:42.430215+00:00",
+      "lastProgressAt": "2026-10-14T21:23:42.430215+00:00",
+      "nextAction": "Use592unique indexed quantity-gap rows for a bounded real source review; do not infer food/nutrition approval from remaining77.",
+      "evidence": [
+        "lib/domain/recipe_library_coverage.dart",
+        "test/recipe_library_coverage_test.dart",
+        "docs/RECIPE-LIBRARY-COVERAGE.md"
+      ],
+      "completedUnit": {
+        "uniqueQuantityReviewLines": 592,
+        "ingredientLines": 669,
+        "focusedFlutterTests": 4,
+        "sourceDataChanged": false
+      }
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T21:12:37.413045+00:00",
-    "primaryUsedPercent": 78,
-    "weeklyUsedPercent": 43,
+    "at": "2026-10-14T21:23:42.430215+00:00",
+    "primaryUsedPercent": 85,
+    "weeklyUsedPercent": 44,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Completed bounded continuation plus monitor/source-context fixes; no additional costly batch before fresh limits, no credits/reset."
+    "action": "Small local audit unit closed nearreserve. Fresh actual quota before any new costly source/implementation unit; no credits/reset."
   },
-  "updatedAt": "2026-10-14T21:12:37.413045+00:00"
+  "updatedAt": "2026-10-14T21:23:42.430215+00:00"
 }
