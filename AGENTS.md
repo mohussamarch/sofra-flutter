@@ -133,3 +133,8 @@ Follow docs/RECIPE-RUNTIME-ADAPTER.md. Candidate preserves source/licence/review
 ## Native reviewed source imports
 
 Use docs/NATIVE-RECIPE-IMPORT.md. TrustedartifactexpectedSHA+exactUTF8pack,crypto3.0.7cachedoffline,strictsource/maps/normalizedcatalogtext;preservefullenvelope. KitchenService.importSourceRecipe mandatorysource/license/instruction+unknownnutrition acknowledgements,importedrootderivedfamily/revision,atomicguard/history. No rawfood-to-runtimebinding/clinicalapproval. Oldbooksreadable;oldclientsdoNOTsupportnewkind,do notenableUI/sharedwritesbeforecompatibleclient. Full142Flutter+1supplementalbinding/46Node/analyzeclean;0actualbankpromotion. Quantity/importinfrastructuredone,datacoverageopen;nextpreparation30thenprivateauthoring34. OFF2378/67,Saudi03:31:56.646Z/Egypt03:56:26.889Z;onecheaphelper/actualquotas/gates.
+
+
+## Category preparation estimates
+
+PREPARATION-ACCEPTANCE.md describes explicit scoped acceptance for USDA168927/asSold only,0381 or0382 as alternatives. Source/review/FoodRecord fingerprints are consistency pins, not upstream approval. Three vitamin factors only; other46/yield/edibleFraction/licence remain unknown. Preserve frozen confidence/source/scope and separate cooking acknowledgement even with actual grams; no automatic name/cuisine matching or scientific/legal/finished-recipe approval. From-scratch authoring34 next; broader preparation scientific coverage continues separately.

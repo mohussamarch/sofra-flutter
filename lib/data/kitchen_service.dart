@@ -13,6 +13,7 @@ import '../domain/models.dart';
 import 'recipe_repository.dart';
 import 'recipe_reference_repository.dart';
 import 'household_measure_repository.dart';
+import 'preparation_category_repository.dart';
 import 'state_store.dart';
 
 Map<String, dynamic> _clone(Map<String, dynamic> value) =>
@@ -356,7 +357,108 @@ class KitchenService {
   Future<RecipeRevision> recipeForMeal(String planId) =>
       _resolveMeal(plans.where((v) => v.id == planId).single);
 
+  static void _validatePreparationSelection(RecipeFoodSelection selection) {
+    final preparation = selection.preparation;
+    if (preparation == null ||
+        !PreparationCategoryRepository.isCategoryEstimate(preparation)) {
+      return;
+    }
+    PreparationCategoryRepository.validateAccepted(selection.food, preparation);
+    final evidence = jsonDecode(preparation.evidence!) as Map;
+    if (selection.recipeRevisionKey == null ||
+        evidence['recipeRevisionKey'] != selection.recipeRevisionKey ||
+        evidence['recipeId'] != selection.recipeId ||
+        evidence['line'] != selection.line ||
+        selection.amountForm != selection.food.form ||
+        selection.preparedForm != FoodForm.cooked ||
+        selection.asPurchased ||
+        selection.notConsumed) {
+      throw const FormatException('Invalid recipe-scoped preparation estimate');
+    }
+  }
+
+  /// Frozen category inference, never an exact-food or finished-dish approval.
+  /// Changing method replaces the single transform; factors are never layered.
+  Future<void> acceptRecipePreparationEstimate(
+    String planId,
+    PreparationCategoryRepository preparations, {
+    required int line,
+    required String retentionCode,
+    required String reviewNote,
+    required DateTime acceptedAt,
+    required bool acknowledgeCategoryEstimate,
+    required bool acknowledgeUnknownLicense,
+    bool replaceExisting = false,
+  }) async {
+    final meal = plans.where((v) => v.id == planId).single;
+    if (meal.completed) throw StateError('Cannot change cooked preparation');
+    final revision = await _resolveMeal(meal);
+    if (line < 0 || line >= revision.recipe.ingredients.length) {
+      throw RangeError('Recipe line');
+    }
+    final selected = _foodSelections(
+      snapshot,
+      revision,
+    ).where((v) => v.line == line).single;
+    if (selected.asPurchased ||
+        selected.notConsumed ||
+        selected.amountForm != selected.food.form) {
+      throw StateError('Review edible input food form before preparation');
+    }
+    if (!replaceExisting && selected.preparation != null) {
+      throw StateError('Explicit replacement of preparation required');
+    }
+    final before = jsonEncode(selected.toJson());
+    final transform = await preparations.accept(
+      selected.food,
+      retentionCode: retentionCode,
+      reviewNote: reviewNote,
+      acceptedAt: acceptedAt,
+      acknowledgeCategoryEstimate: acknowledgeCategoryEstimate,
+      acknowledgeUnknownLicense: acknowledgeUnknownLicense,
+    );
+    final scoped = PreparationTransform.fromJson({
+      ...transform.toJson(),
+      'evidence': jsonEncode({
+        ...jsonDecode(transform.evidence!) as Map<String, dynamic>,
+        'recipeId': revision.variantId,
+        'recipeRevisionKey': revision.key,
+        'line': line,
+      }),
+    });
+    final accepted = RecipeFoodSelection.fromJson({
+      ...selected.toJson(),
+      'preparation': scoped.toJson(),
+      'preparedForm': FoodForm.cooked.name,
+    });
+    _validatePreparationSelection(accepted);
+    await _write((k) {
+      final current = (k['plans'] as List)
+          .where((v) => v['id'] == planId)
+          .single;
+      final choices = _nutrition(k)['selections'] as Map;
+      if (current['completed'] == true ||
+          current['recipeRevisionKey'] != revision.key ||
+          current['recipeId'] != meal.recipeId ||
+          current['servings'] != meal.servings ||
+          jsonEncode(
+                choices[selected.key] == null
+                    ? null
+                    : RecipeFoodSelection.fromJson(
+                        Map<String, dynamic>.from(choices[selected.key] as Map),
+                      ).toJson(),
+              ) !=
+              before) {
+        throw StateError(
+          'Plan or food binding changed during preparation review',
+        );
+      }
+      choices[accepted.key] = accepted.toJson();
+    });
+  }
+
   Future<void> saveRecipeFoodSelection(RecipeFoodSelection selection) async {
+    _validatePreparationSelection(selection);
     final revision = selection.recipeRevisionKey == null
         ? _catalogDraft(await recipes.get(selection.recipeId))
         : recipeBook.revisions[selection.recipeRevisionKey];
@@ -526,6 +628,10 @@ class KitchenService {
               v.recipeId == revision.variantId &&
               v.recipeRevisionKey == revision.key,
         )
+        .map((v) {
+          _validatePreparationSelection(v);
+          return v;
+        })
         .toList();
   }
 
@@ -836,6 +942,7 @@ class KitchenService {
     Map<int, IngredientUse> measuredUsesByLine = const {},
     Map<int, IngredientUse> actualUsesByLine = const {},
     bool acknowledgeSourceMeasureEstimates = false,
+    bool acknowledgePreparationEstimates = false,
     Set<int> omitUnmeasuredLines = const {},
     Map<String, IngredientUse> measuredUses = const {},
     Set<String> omitUnmeasured = const {},
@@ -894,6 +1001,7 @@ class KitchenService {
     }
     final uses = <IngredientUse>[];
     final sourceEstimates = <int, RecipeFoodSelection>{};
+    final preparationEstimates = <int, RecipeFoodSelection>{};
     final actualMeasured = <int, IngredientUse>{};
     final omittedLines = <int>{};
     final selectedOptionalLines = <int>{};
@@ -916,6 +1024,17 @@ class KitchenService {
         }
         omittedLines.add(i);
         continue;
+      }
+      final preparationBinding = bindingByLine[i];
+      final preparation = preparationBinding?.preparation;
+      if (preparation != null &&
+          PreparationCategoryRepository.isCategoryEstimate(preparation)) {
+        if (!acknowledgePreparationEstimates) {
+          throw StateError(
+            'Acknowledge category preparation estimates before cooking',
+          );
+        }
+        preparationEstimates[i] = preparationBinding!;
       }
       final explicit =
           submittedActual[i] ??
@@ -1077,6 +1196,11 @@ class KitchenService {
         'omittedUnmeasuredLines': omittedLines.toList(),
         'estimatedSourceMeasureLines': sourceEstimates.keys.toList(),
         'actualMeasuredLines': actualMeasured.keys.toList(),
+        'estimatedPreparationLines': preparationEstimates.keys.toList(),
+        'preparationEstimateEvidence': {
+          for (final e in preparationEstimates.entries)
+            e.key.toString(): jsonDecode(e.value.preparation!.evidence!),
+        },
         'sourceMeasureEvidence': {
           for (final e in sourceEstimates.entries)
             e.key.toString(): jsonDecode(e.value.householdMeasureEvidence!),

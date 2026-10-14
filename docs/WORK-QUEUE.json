@@ -2,17 +2,15 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T03:00:31.205535+00:00",
-    "taskId": "recipe-quantities",
-    "summary": "Native fullsource import persistence/reader/transport completed;full142Flutter+1additionalnutritionbinding/46Node/analyzeclean;OFF+91net/3archives5banktests.0actualbankpromotion.",
+    "at": "2026-10-14T03:29:10.326193+00:00",
+    "taskId": "preparation-evidence",
+    "summary": "Explicit recipe-scoped category preparation acceptance/cookingack implemented;155Flutter+6sourceNode/analyzeclean,0scientificapproval.",
     "evidence": [
-      "lib/domain/imported_recipe_candidate.dart",
-      "lib/domain/recipe_variants.dart",
+      "lib/data/preparation_category_repository.dart",
       "lib/data/kitchen_service.dart",
-      "test/imported_recipe_candidate_test.dart",
-      "test/source_recipe_import_test.dart",
-      "docs/NATIVE-RECIPE-IMPORT.md",
-      "docs/agents/off-0229.md"
+      "test/preparation_category_repository_test.dart",
+      "test/preparation_integration_test.dart",
+      "docs/PREPARATION-ACCEPTANCE.md"
     ]
   },
   "tasks": [
@@ -234,18 +232,43 @@
       "id": "preparation-evidence",
       "priority": 30,
       "dependsOn": [],
-      "status": "ready",
-      "nextAction": "Resume explicit exact-food/category/method acceptance with frozen evidence and acknowledgement, after user-prioritized recipe quantities. Preserve missing retention/yield and propagate estimated flags; no source transform auto-approved.",
-      "stage": "Confidence foundation implemented/100Fluttertests/analyzeclean; explicit category-estimate acceptance and cooking acknowledgement remain unimplemented",
+      "status": "done",
+      "nextAction": "Use explicit estimate contract;broader source/factor/yield/licence review continues under preparation-coverage. Next independentcore authoring34.",
+      "stage": "Explicit scoped category estimate acceptance and cooking acknowledgement implemented;scientific coverage remainsopen",
       "evidence": [
         "data/nutrition/preparation-match-shortlist.json",
         "docs/HANDOFF.md#35",
         "data/nutrition/preparation-category-review.json",
         "test/preparation_estimate_test.dart",
-        "lib/domain/person_nutrition.dart"
+        "lib/domain/person_nutrition.dart",
+        "lib/data/preparation_category_repository.dart",
+        "lib/data/kitchen_service.dart",
+        "test/preparation_category_repository_test.dart",
+        "test/preparation_integration_test.dart",
+        "docs/PREPARATION-ACCEPTANCE.md"
       ],
-      "lastAttemptAt": "2026-10-13T10:22:41.149525+00:00",
-      "owner": null
+      "lastAttemptAt": "2026-10-14T03:21:52.330213+00:00",
+      "owner": null,
+      "completedAt": "2026-10-14T03:29:10.326193+00:00",
+      "lastProgressAt": "2026-10-14T03:29:10.326193+00:00",
+      "scope": "Infrastructure only;exact reviewed USDA168927 twoalternative methods/3vitamins,0scientific/legal/finishedrecipeapprovals",
+      "completedUnit": {
+        "categoryFoodIds": [
+          "usda:168927"
+        ],
+        "methodCodes": [
+          "0381",
+          "0382"
+        ],
+        "nutrientFactorsPerMethod": 3,
+        "missingFactors": 46,
+        "readerTests": 6,
+        "integrationTests": 6,
+        "fullFlutterTests": 155,
+        "sourceNodeTests": 6,
+        "analyzeClean": true,
+        "scientificApprovalCount": 0
+      }
     },
     {
       "id": "recipe-import",
@@ -386,6 +409,20 @@
       ],
       "status": "ready",
       "nextAction": "Build documented APK after integration; record actual S24Ultra and Drive status"
+    },
+    {
+      "id": "preparation-coverage",
+      "priority": 51,
+      "dependsOn": [
+        "preparation-evidence"
+      ],
+      "status": "ready",
+      "nextAction": "Review exact additional food/method/source-specific reuse evidence and separate mass yield/edible fraction;expand only with sourced immutable rows,unknowns preserved. Never infer macro factors or finished-dish nutrition from method/name. Existing168927 review remainsestimated/not scientific approval.",
+      "evidence": [
+        "docs/PREPARATION-EVIDENCE.md",
+        "docs/PREPARATION-ACCEPTANCE.md"
+      ],
+      "scientificApprovalCount": 0
     }
   ],
   "quotaCheckpoint": {

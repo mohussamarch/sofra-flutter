@@ -50,3 +50,10 @@ preparation-match-shortlist.json now records2proposals for exact USDA168927 “P
 ## Conditional category review —13 October
 
 data/nutrition/preparation-category-review.json records two method options for exact FDC168927/version:0381 boil/drain or0382 boil/drain/bake. Link is reviewer category inference, not a direct USDA FDC crosswalk or exact-product result. Six existing vitamin factors matched source IDs/rows/hashes; do not multiply the two methods. Other nutrients/yield/edible fraction remain unknown. Review approves no runtime transform and no finished bechamel recipe; explicit acceptance/confidence propagation remains next implementation.
+
+
+## Explicit category preparation acceptance —14 October2026
+
+See [PREPARATION-ACCEPTANCE.md](PREPARATION-ACCEPTANCE.md). PreparationCategoryRepository verifies the exact generic USDA168927/asSold/version snapshot, LF-normalized whole-shard SHA, pinned review/source and selected candidate rows. Explicit actual method0381 or0382 acknowledgement creates an estimated transform with3vitamins only,46missing factors/nullmassYield/edibleFraction and unknown source-specific licence. It is a category inference, not exact-food/legal/finished-recipe approval.
+
+KitchenService.acceptRecipePreparationEstimate freezes exact recipe/revision/line scope, checks stale async plan/binding and atomic failure/retry, and requires explicit replacement rather than layering methods. confirmCooking(acknowledgePreparationEstimates:true) is required only for included accepted-estimate lines, even with actual weighed grams. History stores estimatedPreparationLines/preparationEstimateEvidence and confidence; stock deduction remains once-only, no person intake. Input-only preview remains before cooking. No UI/Firebase/APK integration. Full155Flutter+6sourceNodepassed,analyzeclean;scientificcoverage staysopen. HANDOFF§59.

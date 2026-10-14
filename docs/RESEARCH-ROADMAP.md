@@ -141,3 +141,8 @@ Registered source-draft continuation: [preflight/registry contract](RECIPE-IMPOR
 ## Native source import checkpoint
 
 [Native import API/compatibility](NATIVE-RECIPE-IMPORT.md) now verifies exactUTF8 transport/source envelope and persists selectedreviewed roots atomically through KitchenService.importSourceRecipe. Full142Flutter+1additionalnutritionbinding/46Node/analyzeclean;no actualsourcebankpromotion/UI/usercloudwrites/automaticnutritionbindings. Quantity/import infrastructuredone;scientificcoverage remainsopen,preparation30next,privateauthoring34unblocked. OFF2378/67(+91/3),5actualbanktests;sourcegates incheckpoint. HANDOFF§58.
+
+
+## Preparation implementation checkpoint —14October
+
+Bounded category acceptance infrastructure30 complete: explicit one-method/exact-food/revision/line review and cooking acknowledgement, conservative missing data/frozen confidence. PREPARATION-ACCEPTANCE.md;full155Flutter+6sourceNode/analyzeclean. This does not close scientific factor coverage or source reuse review. Those continue under preparation-coverage51, leaving private from-scratch authoring34 as next independent core unit.
