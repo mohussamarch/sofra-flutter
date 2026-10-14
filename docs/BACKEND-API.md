@@ -164,3 +164,7 @@ Readablelibrary44records/7packs/28snapshots. Library-source review now retains m
 ## Manufacturer label research API — §75
 
 ProductLabelEvidenceRepository exposes all/search/byProposedAllergen; ManufacturerLabelObservation holds copied product/source/batch context and immutable contains/mayContain lists. It checks raw byteSHA then strict schema/source/status linkage. This is a research reader, not a KitchenService writer or product allergy approval. Contract PRODUCT-LABEL-EVIDENCE.md. Selected recipe library now55records/9packs/36snapshots; explicit private-calculator source/quantity review still applies.
+
+## Read-only library quantity review — §76
+
+`RecipeLibraryCoverageReport.fromEntries(await library.all())` returns immutable per-recipe/per-line source triage, indexed optional/excluded/procedural lines, raw quantity/unit gaps and existing recipeLibrarySourceFingerprint. `toJson()` gives owned copies. Duplicate input recipes reject. No automatic conversion, food binding, saved-personal-review inspection, write or runtime approval. Contract RECIPE-LIBRARY-COVERAGE.md; selected library now63/10packs/44snapshots. Full237Flutter/analyze clean verified after integration.

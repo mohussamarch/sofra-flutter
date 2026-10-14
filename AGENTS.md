@@ -198,3 +198,7 @@ Library44/7packs/28snapshots; local28/22sourcecuisine-regionlabels,16creatorwebs
 ## Current §75 — research evidence and continuing work
 
 55library records/9packs/36snapshots,36archive+19creatorwebsite;30local source labels,0newcompleteYT/automaticnutrition approvals. PRODUCT-LABEL-EVIDENCE.md defines4manufacturer website observations:13contains/3mayContain, source vocabulary proposed, market/GTIN/pack/nutrition/localbinding unknown. Read-only repository preserves deep-owned context; no medical/product acceptance. OFF documented pre-use form has draft but needs user-approved contact/submission; timerexpiry alone does not resolve401. Use independentcore work while waiting. All helpers return ownership before sharedintegration/Git; final receipt outsideGit.
+
+## Current §76 — indexed source quantity triage
+
+Library63 records/10 packs/44 snapshots;44 local (10 culinary fully specified/32 review/2 not cookable)+19 creator websites.38 local source region/cuisine labels, not approved national cuisines. RecipeLibraryCoverageReport is source-only read-only triage of632 lines with shared calculator source pins, not saved personal decisions or nutrition approval. Preserve repeated/excluded/optional/procedural indices; missing remains null, source zero flagged, raw units other than g/kg require explicit review. Use RECIPE-LIBRARY-COVERAGE.md before consuming counters; they overlap. Original54 planning records and no-UI/cloud/billing/medical-inference constraints unchanged.

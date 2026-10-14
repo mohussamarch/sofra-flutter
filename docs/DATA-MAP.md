@@ -201,3 +201,7 @@ Latest user priority: real retailer and delivery-app prices first; government so
 9selected recipe packs +36source snapshots → original-byte manifest pins → RecipeLibraryRepository (55readable=36archive+19creatorwebsite) → explicit every-line RecipeLibraryDraftReview → atomic KitchenService private draft → existing nutrition calculator. Original54planning catalog and source-rights publication gate remain separate. RECIPE-LIBRARY.md has current counts; prior sections are historical.
 
 6manufacturer source attempts →4product observations →13contains/3mayContain statements → original-byte pinned ProductLabelEvidenceRepository → typed read-only research search/inspection. Proposed vocabulary and null local SKU/market/GTIN/nutrition are preserved. No automatic FoodRecord or clinical decision. PRODUCT-LABEL-EVIDENCE.md defines boundary. OFF access form draft is separate from product/recipe work.
+
+## Current source review branch — §76
+
+10 pinned recipe packs/44 source snapshots →63 RecipeLibraryEntry values → RecipeLibraryCoverageReport (632 indexed ingredient lines, source quantity gaps, shared calculator source fingerprints) → reviewer supplies every-line food/quantity/form/scaling/inclusion decisions → RecipeLibraryDraftReview → atomic KitchenService private draft/calculator. The audit is read-only and does not inspect saved user decisions or establish nutrient/rights approval. Source culinary completeness and accepted calculation inputs remain distinct. RECIPE-LIBRARY-COVERAGE.md and LIBRARY-RECIPE-CALCULATOR.md define the contracts.

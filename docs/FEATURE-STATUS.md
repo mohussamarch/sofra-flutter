@@ -19,3 +19,7 @@
 ## Current bounded units — §75
 
 Built: library55readable records (36archive+19website), source-backed private draft calculation; read-only manufacturer statement repository,4observations/13contains/3mayContain. Not built by this unit: physical SKU approval, automatic recipe food/nutrition binding, complete YouTube recipe extraction, live delivery price provider. Original54planning catalog unchanged. Moderncreator acquisition and core source coverage remain continuous; next exact source/quantity/product evidence after fresh quota. OFF API requires pre-use form; draft prepared, submission awaits authorized contact email.
+
+## Source quantity review delivered — §76
+
+Built: immutable source-only library audit with exact line indices/statuses and calculator-compatible source fingerprints; current632 lines/63 readable records. Added8 archived Arabic drafts/8 source labels (38 local labels total). Still missing: actual recipe food/form/quantity/preparation/rights coverage and complete YouTube extractions. No live price provider or new product approval. All sources with no amount/unit remain unknown; the audit never labels a recipe nutritionally complete. Actual237Flutter/16Node/analyze clean8.7sec.

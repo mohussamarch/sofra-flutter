@@ -1,0 +1,2089 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-14T20:34:36.000Z",
+  "networkRequests": 0,
+  "newBooks": 0,
+  "candidateSelection": "Programmatically filtered archived source categories not present in the previous36 local records, then selected only eight fixed source IDs and read their candidate texts.",
+  "selectedSourcePageIds": [
+    18875,
+    179898,
+    179962,
+    18333,
+    127705,
+    110217,
+    8658,
+    38143
+  ],
+  "frozenPacks": [
+    {
+      "file": "data/recipes/curated-local/first-reviewed-20261014/normalized-recipes.json",
+      "sha256": "2e8b81cba110ea979f6199dd0a7e8e67c9626e3081c98491897b83664d032946"
+    },
+    {
+      "file": "data/recipes/curated-local/gap-review-20261014/normalized-recipes.json",
+      "sha256": "9b4e2d203b80dd25c9c1392ef7b35d3dab097e0fc5e67cbee5a43908851aa4e5"
+    },
+    {
+      "file": "data/recipes/curated-local/third-reviewed-20261014/normalized-recipes.json",
+      "sha256": "bef4b419623fd9a981d131232d04b5aa52e1d9e2fab50a0f57b5a313fe821d21"
+    },
+    {
+      "file": "data/recipes/curated-local/fourth-reviewed-20261014/normalized-recipes.json",
+      "sha256": "a6d83f85b46fc25983145378445d8aac9e61f43618fc12d3ba70c93ac2da29e7"
+    }
+  ],
+  "frozenPreviousRecords": 36,
+  "creatorWebsiteRecords": 19,
+  "counts": {
+    "recipes": 8,
+    "ingredientLines": 84,
+    "supplementalIngredients": 1,
+    "steps": 59,
+    "fullySpecified": 0,
+    "needsReview": 8,
+    "notCookable": 0,
+    "sourceSupportedCuisineLabels": 8,
+    "runtimeReady": 0
+  },
+  "combinedLocal": {
+    "recipes": 44,
+    "fullySpecified": 10,
+    "needsReview": 32,
+    "notCookable": 2,
+    "ingredientLines": 302,
+    "supplementalIngredients": 20,
+    "steps": 220,
+    "sourceSupportedCuisineLabels": 38,
+    "runtimeReady": 0
+  },
+  "newLabels": [
+    "albanian",
+    "argentine",
+    "austrian",
+    "bulgarian",
+    "colombian",
+    "cuban",
+    "palestinian",
+    "malaysian"
+  ],
+  "draftComplete": 0,
+  "runtimeReady": 0,
+  "draftIssues": 278,
+  "newDraftReports": [
+    {
+      "curatedRecipeId": "curated-local:18875",
+      "draftFile": "data/recipes/curated-local/fifth-reviewed-20261014/preflight-drafts/18875.json",
+      "draftSha256": "3b1660d7fe9946c671d67173fa37b8a603265819912c2c125aa58e0fdfa03c15",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:18875",
+      "recipeSha256": "fbd0a7ae760384f940e87840926dccec30ab6ad7825d969c9f6f6525c6a398d2",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 4
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:179898",
+      "draftFile": "data/recipes/curated-local/fifth-reviewed-20261014/preflight-drafts/179898.json",
+      "draftSha256": "c75bdac8eb3c675ccad00752530a4697e4e711edf29b89daa21bc02acb3116fd",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:179898",
+      "recipeSha256": "996ec427760fcd83f6eca85ae5a28fbf6b19c1deeb5ed93047a0e68c20c666d3",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "servings",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 5
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 10,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 10,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 10,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 10,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 9,
+          "lineId": "source-line-10",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 10,
+          "lineId": "source-line-11",
+          "complete": false,
+          "issueCount": 4
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:179962",
+      "draftFile": "data/recipes/curated-local/fifth-reviewed-20261014/preflight-drafts/179962.json",
+      "draftSha256": "a88b97124854e055f244209c754cb0708c57655cb60d6d9dae7152f76e3b881f",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:179962",
+      "recipeSha256": "459098b91d53566665f2583d5076a1615aff28fb70e31f9116a9e5e3bd4a66be",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 5
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 6
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 9,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 9,
+          "lineId": "source-line-10",
+          "complete": false,
+          "issueCount": 4
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:18333",
+      "draftFile": "data/recipes/curated-local/fifth-reviewed-20261014/preflight-drafts/18333.json",
+      "draftSha256": "7acf4fd114ab20bd61d8254cc369df3d9f2d0ba3746f065458b02357118488c2",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:18333",
+      "recipeSha256": "86b909daf8e05707630ed9e1805be2dfab1e28d96a51290a2dcb1d5f9d6e5400",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "servings",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 5
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 9,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 9,
+          "lineId": "source-line-10",
+          "complete": false,
+          "issueCount": 4
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:127705",
+      "draftFile": "data/recipes/curated-local/fifth-reviewed-20261014/preflight-drafts/127705.json",
+      "draftSha256": "592dbab0b20016e6ebf51503390ae437aeee6de1866825ebb92a0036a8bef3d7",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:127705",
+      "recipeSha256": "326f61d3f55b3d47fd86058c54d0e51718a28b29c6ce2eda4ab4ec947cd5eeaf",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 5
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 7
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 9,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 9,
+          "lineId": "source-line-10",
+          "complete": false,
+          "issueCount": 2
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:110217",
+      "draftFile": "data/recipes/curated-local/fifth-reviewed-20261014/preflight-drafts/110217.json",
+      "draftSha256": "b3de0d4d22289fc31c42edd0bc953e49f6d08995662325dfdf6778b7790bfb06",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:110217",
+      "recipeSha256": "744eabd1cc38170dc9fdaa60660ad3151fdfecad18ad4820880a6c81aff6ae1e",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "servings",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 10,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 10,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 11,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 11,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 11,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 11,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 9,
+          "lineId": "source-line-10",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 10,
+          "lineId": "source-line-11",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 11,
+          "lineId": "source-line-12",
+          "complete": false,
+          "issueCount": 4
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:8658",
+      "draftFile": "data/recipes/curated-local/fifth-reviewed-20261014/preflight-drafts/8658.json",
+      "draftSha256": "da4b27ee795f22a92c528eebeda082096d398897f54e3160fffe6f0fbd3f700e",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:8658",
+      "recipeSha256": "c2567e565c045ecea48825c87f941b2ecec64677be2a26ffef994f6a8a72d2cd",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "servings",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 6
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 7
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 8
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 9,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 9,
+          "lineId": "source-line-10",
+          "complete": false,
+          "issueCount": 2
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    },
+    {
+      "curatedRecipeId": "curated-local:38143",
+      "draftFile": "data/recipes/curated-local/fifth-reviewed-20261014/preflight-drafts/38143.json",
+      "draftSha256": "419cfad1bd22a841fad0ec50f855b8360bb10cb4818d6ca09544bd5d2f9b8a5f",
+      "schemaVersion": 1,
+      "recipeId": "wikibooks:38143",
+      "recipeSha256": "215b79c3905ee180663a0207cbcd5c63a9625ddde89823f8bdc0304f23eecfbe",
+      "draftComplete": false,
+      "runtimeReady": false,
+      "issues": [
+        {
+          "code": "servings",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "prep-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "cook-time",
+          "lineIndex": null,
+          "componentIndex": null
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 0
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 1
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 2
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 3
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 4
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 5
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 6
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 7
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 8
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 9
+        },
+        {
+          "code": "step-time",
+          "stepIndex": 10
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 0,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 1,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 2,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 3,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 4,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 5,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 6,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 7,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 8,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 9,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 10,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 10,
+          "componentIndex": 0
+        },
+        {
+          "code": "quantity",
+          "lineIndex": 11,
+          "componentIndex": 0
+        },
+        {
+          "code": "unit",
+          "lineIndex": 11,
+          "componentIndex": 0
+        },
+        {
+          "code": "scaling",
+          "lineIndex": 11,
+          "componentIndex": 0
+        },
+        {
+          "code": "food-reference",
+          "lineIndex": 11,
+          "componentIndex": 0
+        }
+      ],
+      "lines": [
+        {
+          "lineIndex": 0,
+          "lineId": "source-line-1",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 1,
+          "lineId": "source-line-2",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 2,
+          "lineId": "source-line-3",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 3,
+          "lineId": "source-line-4",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 4,
+          "lineId": "source-line-5",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 5,
+          "lineId": "source-line-6",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 6,
+          "lineId": "source-line-7",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 7,
+          "lineId": "source-line-8",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 8,
+          "lineId": "source-line-9",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 9,
+          "lineId": "source-line-10",
+          "complete": false,
+          "issueCount": 4
+        },
+        {
+          "lineIndex": 10,
+          "lineId": "source-line-11",
+          "complete": false,
+          "issueCount": 2
+        },
+        {
+          "lineIndex": 11,
+          "lineId": "source-line-12",
+          "complete": false,
+          "issueCount": 4
+        }
+      ],
+      "remainingRuntimeGates": [
+        "runtime-adapter-and-required-catalog-metadata",
+        "per-page-license-attribution-and-instruction-review",
+        "runtime-food-form-basis-and-measurement-binding",
+        "retention-and-nutrition-review"
+      ]
+    }
+  ],
+  "sourceConflictReview": [
+    "Chanterelle goulash: source says usually under25 minutes and header25; scalar total null.",
+    "Frijoles: header total one day/cooking one hour with overnight soak; total null.",
+    "Mejadra: header30 minutes conflicts with method phase durations and unknown onion frying; total null.",
+    "Arisa: source chicken count and 1.2kg attribution ambiguous; water says12 glasses with no glass volume."
+  ],
+  "remainingGates": [
+    "no source times extrapolated or split into prep/cook durations",
+    "all ranges, alternatives, optional ingredients and missing amounts stay explicit",
+    "source category labels are not approved national cuisines",
+    "no food identities, scaling, nutrition, medical, rights, kitchen-test or runtime approvals"
+  ]
+}

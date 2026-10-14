@@ -58,3 +58,7 @@ Next: the external interface can consume these APIs and show review/status/cover
 ## Singular creator provenance fix — §72
 
 Pack attribution can use either `creator` or `creators`. The bridge now collects only entries whose creatorId exactly matches the selected recipe and preserves them in the scoped creators list, removing exact canonical duplicates while retaining different evidence. Regression reproduced missing metadata before the fix and passed afterward. Old serialized envelopes are still decoded as stored; newly enriched source fingerprints can require review before assertSource/save against the current entry. No historical envelope is rewritten and no source/rights approval is implied.
+
+## Current inputs and source triage — §76
+
+The earlier44-record/7-pack counts above are historical. Current selected library63 records/10 packs/44 source snapshots. `RecipeLibraryCoverageReport` offers source-only indexed triage with `recipeLibrarySourceFingerprint`, raw quantities and optional/excluded/procedural flags; it does not inspect saved decisions, supply a gram conversion, or accept a FoodRecord. Every-line explicit `RecipeLibraryLineDecision` and all source/publication guards above still apply. RECIPE-LIBRARY-COVERAGE.md explains the counters and limits.
