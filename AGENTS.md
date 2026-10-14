@@ -160,3 +160,9 @@ German collector requires actual fresh quota JSON before each request, lane lock
 Keep official/msit-2025-06-ranges.json separate from pointquotes; these36EGP/kg ranges areJune2025,nevercurrent or midpointestimates. official-price-ranges.mjs requires explicitperiod/EG/EGP;0runtime/rightsapproval. RawPDFexternal source-cache only, notGit; see sourceSHA/page in PRICE-SOURCES-EG-SA.md.
 
 German archive sequence must return an integer for D2format; numericcomparison alone missed a Double fromMeasure-Object. Actualformatter regression nowmandatory withcollision/quota/failure-reservation checks. Local preHTTP failures must recordlocal-error-stop, preserve continuation andnot createHTTPbackoff. Use approvedscopedescalation forCIM/E/network;do not bypass processchecks on sandboxdenial.
+
+## Source access scope and user-facing recipe terminology
+
+Use source-access.mjs for OFF401/403 backoff shared across markets; do not treat another country/category as a separate allowed source during an active refusal gate. Keep monitor and collector behavior aligned; invalid source failure dates block source work. No real OFF retry during the current09:49:45.471Z gate; source503 remains job-scoped.
+
+User clarified terminology: English/German/French/Spanish are source languages, not approved cuisines. Say «وصفات مجمعة تحت المراجعة» for parsed candidates; never present them as ready recipes or distinct dish totals. Source language cannot establish recipe cuisine/nutrition/readiness.

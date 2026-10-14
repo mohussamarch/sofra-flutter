@@ -1,3 +1,4 @@
+import { sourceAccessUntil } from './source-access.mjs';
 import { mkdir, readFile, writeFile, readdir, open, stat, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -61,6 +62,8 @@ export async function runBatch({ out, maxRequests = 6, fetchImpl = fetch, nowMs 
   Object.assign(state, { ...baseState(), ...state });
   state.cursors ??= {};
   state.failures ??= [];
+  const accessUntil = sourceAccessUntil(state, nowMs());
+  if (accessUntil) return { state, results: [], fetched: false, blockedReason: 'source_access_backoff', blockedUntil: accessUntil };
   const jobs = makeJobs();
   const start = state.nextJobIndex % jobs.length;
   const results = [];
@@ -85,6 +88,7 @@ export async function runBatch({ out, maxRequests = 6, fetchImpl = fetch, nowMs 
     const last = state.lastRequestAt ? Date.parse(state.lastRequestAt) : 0;
     const wait = Math.max(0, 8000 - (nowMs() - last));
     if (wait) await sleep(wait);
+    let accessRefused = false;
     try {
       const records = await fetchArchive(out, { country: job.country, category: job.category, page: cursor.page, id, fetchImpl, now: () => new Date(nowMs()).toISOString() });
       state.lastRequestAt = new Date(nowMs()).toISOString();
@@ -97,6 +101,7 @@ export async function runBatch({ out, maxRequests = 6, fetchImpl = fetch, nowMs 
       results.push(result);
       onProgress(result);
     } catch (error) {
+      accessRefused = /\bOFF (401|403)\b/.test(String(error));
       state.lastRequestAt = new Date(nowMs()).toISOString();
       const previous = cursor.failures ?? 0;
       const nextAttemptAt = new Date(nowMs() + backoffMs(error, previous)).toISOString();
@@ -108,6 +113,7 @@ export async function runBatch({ out, maxRequests = 6, fetchImpl = fetch, nowMs 
     }
     state.nextJobIndex = (index + 1) % jobs.length;
     await writeCheckpoint(statePath, state);
+    if (accessRefused) break;
   }
   if (results.length === 0) await writeCheckpoint(statePath, state);
   if (fetched && rebuild) await buildBank(out);

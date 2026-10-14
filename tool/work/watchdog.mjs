@@ -1,3 +1,4 @@
+import {sourceAccessUntil} from '../food/source-access.mjs';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
@@ -51,6 +52,9 @@ export function auditWork(queue,{now=new Date().toISOString(),usage,sourceState}
   if(task.dependsOn.some(id=>byId.get(id).status!=='done')){deferredTasks.push({id:task.id,reason:'dependency'});continue;}
   let until=task.blockedUntil??null;
   if(task.id==='product-bank'){
+   let accessUntil;
+   try{accessUntil=sourceAccessUntil(sourceState,nowMs);}catch{deferredTasks.push({id:task.id,reason:'source_state_unavailable'});continue;}
+   if(accessUntil){deferredTasks.push({id:task.id,reason:'source_access_backoff',until:accessUntil});if(!nextRetryAt||time(accessUntil)<time(nextRetryAt))nextRetryAt=accessUntil;continue;}
    const cursors=sourceState?.cursors;
    if(!cursors||typeof cursors!=='object'||Array.isArray(cursors)||!Object.keys(cursors).length||
      Object.values(cursors).some(c=>!c||typeof c!=='object'||typeof c.done!=='boolean')){deferredTasks.push({id:task.id,reason:'source_state_unavailable'});continue;}

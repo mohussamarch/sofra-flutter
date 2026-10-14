@@ -171,3 +171,5 @@ KitchenService.acceptRecipePreparationEstimate freezes exact recipe/revision/lin
 Priceintervals are a separatekind: official/msit-2025-06-ranges.json has36June2025retailranges, not34currentquotes or an average. official-price-ranges.mjs requires explicitperiod/country/unit and retains0runtime. SourcePDFexternalcache/SHA/page/rightsunknown documented in PRICE-SOURCES-EG-SA.md. Existing34pointresearch observations unchanged.
 
 DEsource now550pages/375candidates/3287lines/2146steps; cursorKochbuch/_Pesto. See RECIPE-EXPANSION-AR-DE.md for formatbugred/green and actualbatchprovenance. Language/sourcecounts not uniquedishes.
+
+Latest source-language acquisition: 700 source revisions / 481 records under review / 4121 ingredient lines / 2784 preparation lines; cursor Kochbuch/_Sexy_Cupcake;0runtime/nutrition/cuisine approvals. Source-wide OFF access scheduling shared by source-access.mjs/collector/watchdog; current401gate09:49:45.471Z, no new product/price data.

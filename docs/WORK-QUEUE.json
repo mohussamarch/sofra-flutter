@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T08:29:40.119819+00:00",
-    "taskId": "prices",
-    "summary": "36historicalEGofficialrangefacts+scopedreader;12Nodepassed;D2formatred/green;DE550/375/3287/2146continued,0runtime. Currentexportstillunavailable.",
+    "at": "2026-10-14T08:51:53.021387+00:00",
+    "taskId": "recipe-bank",
+    "summary": "Shared OFF401/403 collector+monitor guard,36Nodepassed;3officialrecipeAPIrequests/+150pages/+106recordsunderreview;0runtime.",
     "evidence": [
-      "docs/PRICE-SOURCES-EG-SA.md",
-      "data/prices/research/official/msit-2025-06-ranges.json",
-      "tool/prices/official-price-ranges.test.mjs",
-      "data/recipes/source-discovery/de-wikibooks/index.json",
-      "tool/recipes/test-de-wikibooks-archive-safety.ps1"
+      "tool/food/source-access.mjs",
+      "tool/food/source-access.test.mjs",
+      "tool/food/collect-incremental.mjs",
+      "tool/work/watchdog.mjs",
+      "data/recipes/source-discovery/de-wikibooks/index.json"
     ]
   },
   "tasks": [
@@ -78,9 +78,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Freshactualquota/lock/backoff;resumeKochbuch/_Pesto with hardenedcollector,deriveafterexit;noreset/guessedquantities/runtimepromotion.",
+      "nextAction": "Fresh actualquota/lock/backoff; resume Kochbuch/_Sexy_Cupcake; derive after collector exit; language is not cuisine; no automatic runtime promotion.",
       "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
-      "lastProgressAt": "2026-10-14T08:29:40.119819+00:00",
+      "lastProgressAt": "2026-10-14T08:51:53.021387+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -108,13 +108,13 @@
         "arabicCandidates": 1,
         "arabicIngredientLines": 8,
         "arabicSteps": 6,
-        "germanSourcePages": 550,
-        "germanCandidates": 375,
-        "germanIngredientLines": 3287,
-        "germanSteps": 2146,
+        "germanSourcePages": 700,
+        "germanCandidates": 481,
+        "germanIngredientLines": 4121,
+        "germanSteps": 2784,
         "germanRuntimeApprovals": 0,
-        "germanActualRequests": 14,
-        "germanRetainedResponseArchives": 12
+        "germanActualRequests": 17,
+        "germanRetainedResponseArchives": 15
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
@@ -404,7 +404,7 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Saudi/globalp11after05:32:30.374Z,Egyptp11after05:56:53.792Z;2378/67unchanged. Actualquota>=90preventsnewrequests;respectfreshquota/onecheapworker/ageguard/backoff.",
+      "nextAction": "After shared sourceAccessUntil gate, verify officialpublicaccess before boundedlockedfreshquota collection; no alternatecountry/authbypass. Keep independentwork progressing.",
       "blockedUntil": "2026-10-14T05:32:30.374Z",
       "blockedReason": "OFF503backoff;independentauthoringcontinued",
       "lastProgressAt": "2026-10-14T02:35:01.478Z",
@@ -427,7 +427,7 @@
         "requests": 1,
         "growth": 0
       },
-      "stage": "Checkpoint-onlyHTTP401;contentsunchanged;sourcegatespercollectionstate;noactiveowner"
+      "stage": "Shared401/403 access gate implemented; no network thisunit; until09:49:45.471Z, contents2378/67 unchanged"
     },
     {
       "id": "budget-planner",
@@ -498,11 +498,11 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T08:30:15.384Z",
-    "primaryUsedPercent": 73,
-    "weeklyUsedPercent": 86,
+    "at": "2026-10-14T08:50:17.208Z",
+    "primaryUsedPercent": 81,
+    "weeklyUsedPercent": 88,
     "ordinaryUsageAllowed": true,
-    "action": "Withinreserve;completedprice/recipeunitsandboundedproductattempt;freshcheckrequirednextbatch,no credits/reset."
+    "action": "Nearweeklyreserve; no new costlybatch withoutfreshactualcheck. Finishverifiedunitanddelivery;no credits/reset."
   },
-  "updatedAt": "2026-10-14T08:31:45.946464+00:00"
+  "updatedAt": "2026-10-14T08:51:53.021387+00:00"
 }

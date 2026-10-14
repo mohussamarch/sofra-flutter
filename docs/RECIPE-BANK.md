@@ -59,3 +59,5 @@ node --test tool/recipes/validate-research.test.mjs
 Independent research lanes added: AR1candidate/8lines/6steps; DE250sourcepages/177candidates/1493lines/998steps. No accepted quantities/nutrition/runtime/cuisines. See RECIPE-EXPANSION-AR-DE.md for exact cursor, raw response loss/recovery truth, licence exceptions and offline checks. Existing EN/FR/ES banks unchanged; do not sum as distinct dishes.
 
 ContinuedDEsource:550fixedpages/375candidates/3287ingredientlines/2146steps;0runtime. Exactcursor/checks/provenance in RECIPE-EXPANSION-AR-DE.md; old250/177 checkpointabovehistorical.
+
+Latest DE-language source snapshot: 700 source revisions / 481 records under review / 4121 ingredient lines / 2784 preparation lines. Source language ≠ cuisine, records under review ≠ ready unique dishes. Exact cursor and source evidence in DEindex/agenthandoff;0runtime approvals.
