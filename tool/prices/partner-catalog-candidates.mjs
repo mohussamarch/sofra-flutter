@@ -1,6 +1,15 @@
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 const currency={EG:'EGP',SA:'SAR'};
 const text=v=>typeof v==='string'&&v.trim().length>0;
+/** Verify exact archived response bytes before interpreting its product rows. */
+export function readTalabatCatalogSnapshot(body,context){
+ assert.ok(typeof body==='string'||body instanceof Uint8Array,'Raw UTF8 response required');
+ const bytes=typeof body==='string'?Buffer.from(body,'utf8'):Buffer.from(body);
+ assert.equal(createHash('sha256').update(bytes).digest('hex'),context.catalogSha256,'Archived catalog response hash mismatch');
+ const raw=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
+ return talabatCatalogCandidates(JSON.parse(raw),context);
+}
 export function assertCurrencyPriceMetric({metric,unit,endpoint=''}){
  assert.equal(metric,'currency-amount','Inflation rates and index points are not item prices');
  assert.ok(['EGP','SAR'].includes(unit),'Explicit supported currency required');

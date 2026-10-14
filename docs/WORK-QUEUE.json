@@ -2,13 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T11:24:17.252875Z",
+    "at": "2026-10-14T11:32:05.326292+00:00",
     "taskId": "prices",
-    "summary": "Marketfirst EG/SA integration routes documented; offline own-vendor price reader8tests;2additionalArabiccreator recipes; govsource secondary.",
+    "summary": "Exact archived retailer response bytes verified before UTF8/JSON/candidate interpretation;20relatedNodepassed;live pilot waiting on permitted sample, notgovernmenttables.",
     "evidence": [
-      "docs/MARKET-PRICE-INTEGRATIONS.md",
       "tool/prices/partner-catalog-candidates.test.mjs",
-      "data/recipes/arabic-youtube/second-batch-20261014/recipes.json"
+      "docs/MARKET-PRICE-INTEGRATIONS.md"
     ]
   },
   "tasks": [
@@ -382,11 +381,11 @@
       "id": "prices",
       "priority": 30,
       "dependsOn": [],
-      "status": "ready",
+      "status": "waiting",
       "nextAction": "Market-first: obtain permitted real merchant POS/CSV or authorized catalog read sample EG/SA,20–50products/branch; validate price basis/rights/time. Request aggregator catalog/data-licensing access, notjustorders API. Government secondary, no blocker.",
       "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
       "stage": "Official market integration routes documented; offline partner catalog candidate reader tested8; no liveconnection. GASTAT100food rows rawcheckpoint only.",
-      "lastProgressAt": "2026-10-14T11:24:17.252875Z",
+      "lastProgressAt": "2026-10-14T11:32:05.326292+00:00",
       "completedUnit": {
         "researchObservations": 34,
         "egypt": 30,
@@ -410,7 +409,8 @@
         "data/prices/research/retailer-integrations-eg-20261014.json",
         "data/prices/research/retailer-integrations-sa-20261014.json",
         "tool/prices/partner-catalog-candidates.test.mjs",
-        "data/prices/research/official/gastat-jul2026/provenance.json"
+        "data/prices/research/official/gastat-jul2026/provenance.json",
+        "tool/prices/partner-catalog-candidates.mjs"
       ],
       "lastSourceAccessCheck": {
         "url": "https://www.stats.gov.sa/en/use-policy",
@@ -419,7 +419,8 @@
         "licenseVerified": false,
         "priceRowsAdded": 0,
         "timePrecision": "day"
-      }
+      },
+      "waitingReason": "Live pilot requires merchant/platform permitted data sample or authorized catalog access not currently supplied; no external outreach authorized. Independent recipe work stays ready."
     },
     {
       "id": "people-targets",
@@ -585,11 +586,11 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T11:26:11.373315+00:00",
-    "primaryUsedPercent": 78,
-    "weeklyUsedPercent": 12,
+    "at": "2026-10-14T11:32:05.326292+00:00",
+    "primaryUsedPercent": 87,
+    "weeklyUsedPercent": 14,
     "ordinaryUsageAllowed": true,
-    "action": "Marketfirst boundedunit finished; no purchase/reset, freshquota before next costlybatch."
+    "action": "Bounded local unit finished; no sourcebatch/credit/reset, fresh check before nextcostlyunit."
   },
-  "updatedAt": "2026-10-14T11:24:17.252875Z"
+  "updatedAt": "2026-10-14T11:32:05.326292+00:00"
 }

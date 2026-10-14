@@ -1,12 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {talabatCatalogCandidates as read,assertCurrencyPriceMetric} from './partner-catalog-candidates.mjs';
+import {createHash} from 'node:crypto';
+import {talabatCatalogCandidates as read,assertCurrencyPriceMetric,readTalabatCatalogSnapshot} from './partner-catalog-candidates.mjs';
 const context=()=>({metric:'currency-amount',country:'EG',currency:'EGP',city:'synthetic-city',storeKey:'synthetic-store',chainId:'test-chain',vendorId:'test-vendor',evidenceId:'synthetic-response',catalogSha256:'a'.repeat(64),accessScope:'authorized-partner-vendor',observedAt:'2026-10-14T10:20:00Z'});
 test('official inflation APIs and percent/index values cannot masquerade as price feeds',()=>{
  for(const value of [{metric:'percent-change',unit:'SAR'},{metric:'currency-amount',unit:'%'},{metric:'currency-amount',unit:'SAR',endpoint:'/v1/stats/DPV_CLI_CHANGE_MONTH'}])assert.throws(()=>assertCurrencyPriceMetric(value));
  assert.doesNotThrow(()=>assertCurrencyPriceMetric({metric:'currency-amount',unit:'SAR'}));
 });
 const page=()=>({page_number:1,total_pages:2,products:[{sku:'test',title:'Synthetic milk 1L label',price:40,barcodes:['123'],active:true}]});
+test('archived raw response verifies its bytes before becoming candidates',()=>{
+ const body=JSON.stringify(page())+'\r\n';const ctx={...context(),catalogSha256:createHash('sha256').update(body).digest('hex')};
+ assert.equal(readTalabatCatalogSnapshot(Buffer.from(body),ctx).candidates[0].amount,40);
+ assert.throws(()=>readTalabatCatalogSnapshot(body.replace('40','41'),ctx),/hash mismatch/);
+ assert.throws(()=>readTalabatCatalogSnapshot(body.replace('\r\n','\n'),ctx),/hash mismatch/);
+});
+test('matching hash cannot turn invalid UTF8 or JSON into valid evidence',()=>{
+ for(const body of [Buffer.from([255]),Buffer.from('{bad')]){
+ const ctx={...context(),catalogSha256:createHash('sha256').update(body).digest('hex')};assert.throws(()=>readTalabatCatalogSnapshot(body,ctx));
+ }
+});
 test('adapter itself rejects a rate endpoint even when given a currency context',()=>{
  assert.throws(()=>read(page(),{...context(),endpoint:'/v1/stats/DPV_CLI_CHANGE_MONTH'}),/endpoint/);
 });
