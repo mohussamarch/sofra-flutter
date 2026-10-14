@@ -4,9 +4,9 @@ This isolated research lane uses the official German Wikibooks `Kochbuch/` names
 
 ## Current evidence — 2026-10-14
 
-- Seventeen successful official API requests occurred: the original siteinfo plus two initial pagesets, twelve continuation pagesets, and two prefix-recovery pagesets. Fifteen response wrappers are archived (siteinfo + twelve continuation + two recovery); the two original pageset bodies were overwritten and are unavailable. Each retained wrapper contains exact UTF-8 response bytes, base64, SHA256, request URL, retrieval time, and HTTP status. Recovery wrappers explicitly mark `retrievalKind: new-prefix-recovery`.
-- Current retrieval set contains 700 distinct fixed page revisions: 100 pages re-retrieved from the prefix start and 600 pages from the preserved continuation slices. The extractor rejects repeated page IDs/revisions across archives.
-- Offline extraction produced 481 research candidates, 4,121 literal ingredient lines, 2,784 preparation lines/paragraphs, and 219 source pages not parsed into candidates.
+- Twenty successful official API requests occurred: the original siteinfo plus two initial pagesets, fifteen continuation pagesets, and two prefix-recovery pagesets. Eighteen response wrappers are archived (siteinfo + fifteen continuation + two recovery); the two original pageset bodies were overwritten and are unavailable. Each retained wrapper contains exact UTF-8 response bytes, base64, SHA256, request URL, retrieval time, and HTTP status. Recovery wrappers explicitly mark `retrievalKind: new-prefix-recovery`.
+- Current retrieval set contains 850 distinct fixed page revisions: 100 pages re-retrieved from the prefix start and 750 pages from the preserved continuation slices. The extractor rejects repeated page IDs/revisions across archives.
+- Offline extraction produced 544 research candidates, 4,635 literal ingredient lines, 3,136 preparation lines/paragraphs, and 306 source pages not parsed into candidates.
 - Canonical amount/unit/food binding, step duration, serving count, cuisine, and nutrition remain unknown/null. There are zero runtime imports, nutrient bindings, and approved cuisines. Source categories remain unreviewed labels.
 
 ## Archive incident and repair
@@ -21,6 +21,8 @@ Page-response hashes `12`–`14`: `12` `46eeb4b7312fb0325e90537c587ca0737951f694
 
 Latest page-response hashes: `15` `d6e9461092cea4c424b65ffa73b0c5ab4f17e46605e2c1660244cbe85dedc66d`; `16` `0be1044233ae02e90afc525e64f84d7a55ede50027e95ba36abdfa85e09c3846`; `17` `12bcb46dfe7f87358995598557ad22cb426248a866996be70f8a03ec48c399eb`.
 
+Latest page-response hashes: `18` `3d953cc4770374936f41eede4ea857bc1a347eaf9f77d9d51b1c71cd32734df2`; `19` `669b70a777880b5db2ff7e296f310a7f16ec106c6abcec70a42a567263ac7eee`; `20` `1c97f66caa8d5b507eb1f3eea571184e258ca1a8cefd80c522bf0f15510bf8ca`.
+
 The collector now derives its next sequence from literal approved archive-name patterns, includes recovery archives in that selection, checks destination collisions, moves each completed temporary body without replacement, and uses `FileMode.CreateNew` for metadata and failure archives. A resumed invocation initially failed locally before any request because PowerShell returned a number type incompatible with `D2` formatting; it recorded zero successes, preserved the cursor, and set no backoff. Root corrected the sequence conversion and tests before this batch. `tool/recipes/test-de-wikibooks-archive-safety.ps1` verifies sequence selection, collision rejection, and preservation of existing bytes.
 
 ## Files and verification
@@ -30,6 +32,6 @@ The collector now derives its next sequence from literal approved archive-name p
 - `tool/recipes/fetch-de-wikibooks-next-batch.ps1`: bounded continuation collector; verifies local lock/process state and stops on the first error without retry or route change.
 - `tool/recipes/de-wikibooks-archive-safety.psm1` and `tool/recipes/test-de-wikibooks-archive-safety.ps1`: collision-safe archive sequencing/writes and regression check.
 
-Latest batch: three sequential official requests, all HTTP 200, after quota check at 78% primary / 87% weekly with ordinary use allowed. The earlier local-formatting failure made zero source requests and created no backoff. Verified with extraction (700 pages, 481 candidates, 4,121 ingredient lines, 2,784 steps), response and sidecar hash checks, 700 unique page IDs, and unknown/null invariants.
+Latest batch: three sequential official requests, all HTTP 200, after quota check at 86% primary / 88% weekly with ordinary use allowed. The earlier local-formatting failure made zero source requests and created no backoff. Verified with extraction (850 pages, 544 candidates, 4,635 ingredient lines, 3,136 steps), response and sidecar hash checks, 850 unique page IDs, and unknown/null invariants.
 
-Next continuation is `gapcontinue=Kochbuch/_Sexy_Cupcake`, `continue=gapcontinue||`. Before any further calls, refresh usage and inspect the source lock/backoff. The source prefix is not exhausted; no global completion cap is implied. Root owns shared status/handoff and Git integration.
+Next continuation is `gapcontinue=Kochbuch/_Vegetarisches_Schnitzel_Hawaii`, `continue=gapcontinue||`. Before any further calls, refresh usage and inspect the source lock/backoff. The source prefix is not exhausted; no global completion cap is implied. Root owns shared status/handoff and Git integration.

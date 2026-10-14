@@ -2,15 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T08:51:53.021387+00:00",
+    "at": "2026-10-14T09:19:27.742594+00:00",
     "taskId": "recipe-bank",
-    "summary": "Shared OFF401/403 collector+monitor guard,36Nodepassed;3officialrecipeAPIrequests/+150pages/+106recordsunderreview;0runtime.",
+    "summary": "850 fixed source pages / 544 records under review / 4635 ingredient lines / 3136 preparation lines; deterministic root verification;0runtime.",
     "evidence": [
-      "tool/food/source-access.mjs",
-      "tool/food/source-access.test.mjs",
-      "tool/food/collect-incremental.mjs",
-      "tool/work/watchdog.mjs",
-      "data/recipes/source-discovery/de-wikibooks/index.json"
+      "data/recipes/source-discovery/de-wikibooks/index.json",
+      "data/recipes/source-discovery/de-wikibooks/checkpoint.json",
+      "docs/agents/recipe-expansion-de.md"
     ]
   },
   "tasks": [
@@ -78,9 +76,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Fresh actualquota/lock/backoff; resume Kochbuch/_Sexy_Cupcake; derive after collector exit; language is not cuisine; no automatic runtime promotion.",
+      "nextAction": "Fresh actualquota before any batch; source continuation in DEindex/checkpoint. No reset or bank completion claim; source language is not cuisine.",
       "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
-      "lastProgressAt": "2026-10-14T08:51:53.021387+00:00",
+      "lastProgressAt": "2026-10-14T09:19:27.742594+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -108,13 +106,13 @@
         "arabicCandidates": 1,
         "arabicIngredientLines": 8,
         "arabicSteps": 6,
-        "germanSourcePages": 700,
-        "germanCandidates": 481,
-        "germanIngredientLines": 4121,
-        "germanSteps": 2784,
+        "germanSourcePages": 850,
+        "germanCandidates": 544,
+        "germanIngredientLines": 4635,
+        "germanSteps": 3136,
         "germanRuntimeApprovals": 0,
-        "germanActualRequests": 17,
-        "germanRetainedResponseArchives": 15
+        "germanActualRequests": 20,
+        "germanRetainedResponseArchives": 18
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
@@ -388,7 +386,15 @@
         "data/prices/research/official/msit-2025-06-ranges.json",
         "tool/prices/official-price-ranges.mjs",
         "tool/prices/official-price-ranges.test.mjs"
-      ]
+      ],
+      "lastSourceAccessCheck": {
+        "url": "https://www.stats.gov.sa/en/use-policy",
+        "at": "2026-10-14",
+        "result": "web HTTP502",
+        "licenseVerified": false,
+        "priceRowsAdded": 0,
+        "timePrecision": "day"
+      }
     },
     {
       "id": "people-targets",
@@ -498,11 +504,11 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T08:50:17.208Z",
-    "primaryUsedPercent": 81,
-    "weeklyUsedPercent": 88,
+    "at": "2026-10-14T09:19:24.298Z",
+    "primaryUsedPercent": 88,
+    "weeklyUsedPercent": 89,
     "ordinaryUsageAllowed": true,
-    "action": "Nearweeklyreserve; no new costlybatch withoutfreshactualcheck. Finishverifiedunitanddelivery;no credits/reset."
+    "action": "Near both reserves; no more costly source work this delivery. Fresh actualcheck before nextbatch;>=90/unknown/false stops. No credits/reset."
   },
-  "updatedAt": "2026-10-14T08:51:53.021387+00:00"
+  "updatedAt": "2026-10-14T09:19:27.742594+00:00"
 }
