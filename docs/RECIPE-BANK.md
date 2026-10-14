@@ -63,3 +63,7 @@ ContinuedDEsource:550fixedpages/375candidates/3287ingredientlines/2146steps;0run
 Latest DE-language source snapshot: 700 source revisions / 481 records under review / 4121 ingredient lines / 2784 preparation lines. Source language ≠ cuisine, records under review ≠ ready unique dishes. Exact cursor and source evidence in DEindex/agenthandoff;0runtime approvals.
 
 Latest German-language inventory: 850 fixed source pages / 544 records under review / 4635 ingredient lines / 3136 preparation lines; under review, not a distinct-dish total or ready recipes. Runtime approvals remain0. HANDOFF§65 and DEindex/checkpoint retain next cursor.
+
+## Current source policy supersedes older continuation instructions
+
+Use RECIPE-ACQUISITION-ARABIC-YOUTUBE.md. User stopped further recipe-book/reference collection and prioritizes modern Arab cooking personalities on YouTube. Old DE/EN/FR/ES cursors retained as historical checkpoints; do not resume them now.54catalogue recipes/4cuisines;6056researchrecords beforededup,0shared verifiedmulti-methoddishgroups,0YouTubesource candidates sofar. No new acquisition at90primary/89weekly.

@@ -175,3 +175,5 @@ DEsource now550pages/375candidates/3287lines/2146steps; cursorKochbuch/_Pesto. S
 Latest source-language acquisition: 700 source revisions / 481 records under review / 4121 ingredient lines / 2784 preparation lines; cursor Kochbuch/_Sexy_Cupcake;0runtime/nutrition/cuisine approvals. Source-wide OFF access scheduling shared by source-access.mjs/collector/watchdog; current401gate09:49:45.471Z, no new product/price data.
 
 Heartbeat09:16: 850 fixed source pages / 544 records under review / 4635 ingredient lines / 3136 preparation lines; German source lane/index and agent handoffs authoritative.0runtime. GASTAT use-policy direct retry still502; no new licence or prices inferred. HANDOFF§65.
+
+Current recipe acquisition policy: RECIPE-ACQUISITION-ARABIC-YOUTUBE.md (official modern Arabic YouTube sources, explicit dish-family/method grouping, provenance and nutrition review). Further book-source acquisition stopped by user. Catalogue54/4cuisines;research6056beforededup;verifiedmulti-methodgroups0. Historical source banks remain separate and unapproved.
