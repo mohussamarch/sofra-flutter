@@ -5,4 +5,3 @@
 - estimated=true, cooked target; 46nutrients/yield/ediblefraction unknown; no exact/finished/legal/runtime scientific approval.
 - Behavioral RED observed; implementation focused6/6passed exit0; two files formatted, brace-only cleanup. Root owns final analyze/integration/full gate and Git.
 - No network/bank/UI/Firebase/APK/device/process changes. Details: preparation-reader-0311.md.
-

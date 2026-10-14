@@ -35,4 +35,3 @@
 ## Next action
 
 Coordinator integrates exact revision/line evidence scope, validates recognized transforms on save/read/confirmation, adds separate cooking acknowledgement, runs required integration/full gates, consolidates shared handoff and commits/pushes. Research approval, broader food/method coverage, yield and reuse terms remain open. Agent edits complete; Git delivery is coordinator-owned.
-
