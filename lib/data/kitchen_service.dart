@@ -8,6 +8,7 @@ import '../domain/recipe_catalog.dart';
 import '../domain/recipe_variants.dart';
 import '../domain/imported_recipe_candidate.dart';
 import '../domain/personal_recipe_draft.dart';
+import '../domain/personal_recipe_finalization.dart';
 import '../domain/cooking_timer.dart';
 import '../domain/market_profile.dart';
 import '../domain/models.dart';
@@ -420,7 +421,66 @@ class KitchenService {
     return draft;
   }
 
+  /// Publish a persisted active draft and its explicit food snapshots atomically.
+  /// No parent, stock deduction, person intake or automatic health approval.
+  Future<RecipeRevision> finalizePersonalRecipe(
+    PersonalRecipeFinalization submitted, {
+    String? expectedActiveRecipeKey,
+  }) async {
+    final review = PersonalRecipeFinalization.fromJson(submitted.toJson());
+    final revision = RecipeRevision(
+      familyId: review.familyId,
+      revision: review.revisionId,
+      kind: RecipeRevisionKind.authored,
+      recipe: review.recipe,
+      authoredReview: review,
+    );
+    if ((await recipes.index).any((v) => v['id'] == revision.variantId)) {
+      throw StateError('Personal recipe cannot overwrite catalog identity');
+    }
+    await _write((k) {
+      var book = _recipeBook(k);
+      if (book.revisions.containsKey(revision.key)) {
+        book.addRevision(
+          revision,
+        ); // Validate exact retry, never reactivate/rebind.
+        return;
+      }
+      final drafts = _personalDraftBook(k);
+      final stored = (drafts['revisions'] as Map)[review.draft.key];
+      if (stored == null ||
+          PersonalRecipeDraft.fromJson(
+                Map<String, dynamic>.from(stored['draft'] as Map),
+              ).fingerprint !=
+              review.draft.fingerprint ||
+          (drafts['active'] as Map)[review.draft.id] != review.draft.key ||
+          book.active[revision.variantId] != expectedActiveRecipeKey) {
+        throw StateError(
+          'Draft or active recipe changed;review finalization again',
+        );
+      }
+      if (!book.families.containsKey(revision.familyId)) {
+        book = book.addFamily(
+          RecipeFamily(id: revision.familyId, name: review.recipe.name),
+        );
+      }
+      book = book.addRevision(revision);
+      final selections = _nutrition(k)['selections'] as Map;
+      for (final selection in review.selectionsFor(revision.key)) {
+        _validatePreparationSelection(selection);
+        selections[selection.key] = selection.toJson();
+      }
+      k['recipeBook'] = book.toJson();
+    });
+    return revision;
+  }
+
   Future<void> saveRecipeRevision(RecipeRevision revision) async {
+    if (revision.kind == RecipeRevisionKind.authored) {
+      throw StateError(
+        'Use explicit finalizePersonalRecipe for draft publication',
+      );
+    }
     if (revision.kind == RecipeRevisionKind.imported) {
       throw StateError(
         'Use explicit importSourceRecipe for source import review',

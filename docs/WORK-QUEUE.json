@@ -2,15 +2,16 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T03:47:38.174804+00:00",
+    "at": "2026-10-14T04:06:05.515406+00:00",
     "taskId": "recipe-authoring",
-    "summary": "Scratchdraft/immutablepersistence/calculatorunitcomplete;171Flutter/analyzeclean;finalizationbridge remainsnext.OFF1due503/0growth.",
+    "summary": "Authoredroot/fullreview/atomicfoodbindings/planning/cooking complete;183Flutter/analyzeclean;quota94/74reserve preventsnextunit.",
     "evidence": [
-      "lib/domain/personal_recipe_draft.dart",
+      "lib/domain/personal_recipe_finalization.dart",
+      "lib/domain/recipe_variants.dart",
       "lib/data/kitchen_service.dart",
-      "test/personal_recipe_draft_test.dart",
-      "test/personal_recipe_persistence_test.dart",
-      "docs/PERSONAL-RECIPE-DRAFTS.md"
+      "test/personal_recipe_finalization_test.dart",
+      "test/personal_recipe_publication_test.dart",
+      "docs/PERSONAL-RECIPE-PUBLICATION.md"
     ]
   },
   "tasks": [
@@ -296,20 +297,25 @@
       "dependsOn": [
         "recipe-import"
       ],
-      "status": "ready",
-      "nextAction": "Build explicit reviewed draft-to-plannable-recipe bridge with required catalog metadata, preserved food/source snapshots, new root without fake parent, scoped bindings and immutable retry/history. Reject incomplete timing/cuisine/steps rather than defaulting zero;draft calculator/persistence alreadyimplemented.",
+      "status": "done",
+      "nextAction": "Use reviewed publication contract;unsupportedgenericquantityestimates and additionalprecision/forms remain explicitdraft/review coverage,never silentdefaults. Nextready sourcebank35 afterquotareserve clears.",
       "evidence": [
         "docs/RECIPE-ENGINE.md",
         "lib/domain/personal_recipe_draft.dart",
         "lib/data/kitchen_service.dart",
         "test/personal_recipe_draft_test.dart",
         "test/personal_recipe_persistence_test.dart",
-        "docs/PERSONAL-RECIPE-DRAFTS.md"
+        "docs/PERSONAL-RECIPE-DRAFTS.md",
+        "lib/domain/personal_recipe_finalization.dart",
+        "lib/domain/recipe_variants.dart",
+        "test/personal_recipe_finalization_test.dart",
+        "test/personal_recipe_publication_test.dart",
+        "docs/PERSONAL-RECIPE-PUBLICATION.md"
       ],
       "owner": null,
-      "lastAttemptAt": "2026-10-14T03:36:20.505598+00:00",
-      "stage": "Scratchdraft/calculator/immutablepersistence unit complete;plannable recipe finalization remainsopen",
-      "lastProgressAt": "2026-10-14T03:47:38.174804+00:00",
+      "lastAttemptAt": "2026-10-14T03:56:00.959222+00:00",
+      "stage": "Explicit reviewed authoredroot publication/planning/cooking implemented;UI/data/scientificcoverage remainsseparate",
+      "lastProgressAt": "2026-10-14T04:06:05.515406+00:00",
       "completedUnit": {
         "draftFromScratch": true,
         "ownedFoodInputs": true,
@@ -318,11 +324,14 @@
         "inputAndCookedPreview": true,
         "domainTests": 8,
         "persistenceTests": 8,
-        "fullFlutterTests": 171,
+        "fullFlutterTests": 183,
         "analyzeClean": true,
-        "catalogFinalization": false,
-        "planningIntegration": false
-      }
+        "catalogFinalization": true,
+        "planningIntegration": true,
+        "publicationTests": 6,
+        "finalizationTests": 6
+      },
+      "completedAt": "2026-10-14T04:06:05.515406+00:00"
     },
     {
       "id": "allergen-evidence",
@@ -363,9 +372,9 @@
       "priority": 80,
       "dependsOn": [],
       "status": "waiting",
-      "nextAction": "Saudi/globalp11after05:32:30.374Z,Egyptp11after03:56:26.889Z;2378/67unchanged. Freshquota/onecheapworker/ageguard/locks;noearlyretry/sourcefailureblocks core.",
+      "nextAction": "Saudi/globalp11after05:32:30.374Z,Egyptp11after05:56:53.792Z;2378/67unchanged. Actualquota>=90preventsnewrequests;respectfreshquota/onecheapworker/ageguard/backoff.",
       "owner": null,
-      "blockedUntil": "2026-10-14T03:56:26.889Z",
+      "blockedUntil": "2026-10-14T05:32:30.374Z",
       "blockedReason": "OFF503backoff;independentauthoringcontinued",
       "lastProgressAt": "2026-10-14T02:35:01.478Z",
       "completedUnit": {
@@ -377,7 +386,7 @@
         "runtimeNutritionBasisApprovals": 0,
         "actualBankTests": 5
       },
-      "lastAttemptAt": "2026-10-14T03:32:30.374Z"
+      "lastAttemptAt": "2026-10-14T03:56:53.792Z"
     },
     {
       "id": "budget-planner",

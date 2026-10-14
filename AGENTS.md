@@ -143,3 +143,8 @@ PREPARATION-ACCEPTANCE.md describes explicit scoped acceptance for USDA168927/as
 ## From-scratch draft calculator
 
 PERSONAL-RECIPE-DRAFTS.md: immutable user drafts in a separate namespace, not plannable CatalogRecipe roots. Preserve unknowns, owned snapshots, sorted-object fingerprint, exact active guard and old retry semantics. Existing input/cooked calculator; no automatic stock/intake. Finalization/planning remains authoring34; no inherited category acceptance from another recipe. No usercloud/UI/APK migration.
+
+
+## Reviewed personal recipe publication
+
+PERSONAL-RECIPE-PUBLICATION.md: authored root now retains full draft/finalization evidence and exact revision/line food selections. Publish only saved unchanged active draft with explicit metadata/inventory IDs/steps/review and expected active recipe key. Generic save cannot bypass review; retries never reactivate/rebind. Reject unsupported estimated quantities, copied category scope and base precision loss; unknown food stays unknown. Existing meal optional choice remains explicit. Old clients cannot read authored kind; no UI/usercloud activation. Full183Flutter/analyzeclean;user decisions unchanged.

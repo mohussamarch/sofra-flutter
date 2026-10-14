@@ -2,13 +2,14 @@ import 'dart:convert';
 
 import 'recipe_catalog.dart';
 import 'imported_recipe_candidate.dart';
+import 'personal_recipe_finalization.dart';
 
 String _requiredText(String value) {
   if (value.trim().isEmpty) throw ArgumentError('Missing recipe identity');
   return value;
 }
 
-enum RecipeRevisionKind { catalog, variant, personal, imported }
+enum RecipeRevisionKind { catalog, variant, personal, imported, authored }
 
 String sourceImportFamilyId(ImportedRecipeCandidate candidate) =>
     'source:${jsonEncode([candidate.sourceId, candidate.sourceRecipeId])}';
@@ -318,6 +319,7 @@ class RecipeRevision {
     this.ingredientSplitReview,
     this.ingredientChoiceReview,
     this.sourceImportReview,
+    this.authoredReview,
   }) : recipe = CatalogRecipe.fromJson(recipe.toJson()) {
     _requiredText(familyId);
     _requiredText(revision);
@@ -361,6 +363,28 @@ class RecipeRevision {
         'Source import evidence belongs only to an imported root',
       );
     }
+    if (kind == RecipeRevisionKind.authored) {
+      final review = authoredReview;
+      if (review == null ||
+          parentKey != null ||
+          region != null ||
+          method != null ||
+          ingredientSplitReview != null ||
+          ingredientChoiceReview != null ||
+          sourceImportReview != null ||
+          familyId != review.familyId ||
+          revision != review.revisionId ||
+          jsonEncode(this.recipe.toJson()) !=
+              jsonEncode(review.recipe.toJson())) {
+        throw ArgumentError(
+          'Authored root must preserve its exact reviewed draft',
+        );
+      }
+    } else if (authoredReview != null) {
+      throw ArgumentError(
+        'Draft finalization belongs only to an authored root',
+      );
+    }
     if (region != null) _requiredText(region!);
     if (method != null) _requiredText(method!);
   }
@@ -371,6 +395,7 @@ class RecipeRevision {
   final IngredientSplitReview? ingredientSplitReview;
   final IngredientChoiceReview? ingredientChoiceReview;
   final SourceRecipeImportReview? sourceImportReview;
+  final PersonalRecipeFinalization? authoredReview;
   String get variantId => recipe.id;
   String get key => jsonEncode([variantId, revision]);
   Map<String, dynamic> toJson() => {
@@ -383,6 +408,7 @@ class RecipeRevision {
     'ingredientSplitReview': ingredientSplitReview?.toJson(),
     'ingredientChoiceReview': ingredientChoiceReview?.toJson(),
     'sourceImportReview': sourceImportReview?.toJson(),
+    'authoredReview': authoredReview?.toJson(),
     'region': region,
     'method': method,
   };
@@ -407,6 +433,11 @@ class RecipeRevision {
           ? null
           : IngredientChoiceReview.fromJson(
               Map<String, dynamic>.from(j['ingredientChoiceReview'] as Map),
+            ),
+      authoredReview: j['authoredReview'] == null
+          ? null
+          : PersonalRecipeFinalization.fromJson(
+              Map<String, dynamic>.from(j['authoredReview'] as Map),
             ),
       sourceImportReview: j['sourceImportReview'] == null
           ? null

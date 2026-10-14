@@ -75,3 +75,8 @@ CatalogRecipe times/cuisine/steps and carries its food bindings and provenance.
 Do not invent zeros or fake parents to cross that boundary. The original54recipes
 and research source banks are unchanged. UI design, Firebase, audio and APK
 integration remain outside this unit.
+
+
+## Reviewed draft publication —14October2026
+
+[PERSONAL-RECIPE-PUBLICATION.md](PERSONAL-RECIPE-PUBLICATION.md) supersedes the earlier unimplemented bridge checkpoint. PersonalRecipeFinalization owns the full draft, explicit metadata/durations/inventory IDs/review and canonical derived IDs. KitchenService.finalizePersonalRecipe publishes an authored root and exact food selections atomically from the saved active draft, with expected active recipe guard and immutable retries. Existing planning/cooking now works; no fake parent, stock/intake on publication, UI/cloud activation or automatic scientific approval. Missing metadata, unsupported estimated quantities and base precision loss reject; unknown food remains unknown. Full183Flutter/analyzeclean. Older clients do not support authored kind. HANDOFF§61.
