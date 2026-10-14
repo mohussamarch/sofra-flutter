@@ -1,0 +1,35 @@
+{
+  "status": "research-only-source-discovery-complete-for-this-bounded-batch",
+  "source": "Arabic Wikibooks",
+  "sourceLanguage": "ar",
+  "sitePolicy": "CC BY-SA 4.0 reported by the official siteinfo API; page exceptions remain unreviewed",
+  "requests": 5,
+  "successfulRequests": 5,
+  "failedRequests": 0,
+  "retrievalWindow": "2026-10-14T07:39Z onward",
+  "archives": [
+    { "file": "01-siteinfo.json", "httpStatus": 200, "bodySha256": "752973e61ec3278f3650d59bac00a0c25c8acba5d71185b3d4007f3735cbf93f", "rawBodyPreserved": false, "note": "Complete parsed JSON response retained; SHA is from original response bytes, which were not retained as a raw string." },
+    { "file": "02-categories.json", "httpStatus": 200, "bodySha256": "73451a21a39b28e2baa8374dd5c8c7bd2150c41541d569e6609c58538ce5df8c", "rawBodyPreserved": true },
+    { "file": "03-members.json", "httpStatus": 200, "bodySha256": "15936d7a6ee9c20b69d976532dd0fc2d5594d755bdb43212767f5b9719dd6f15", "rawBodyPreserved": true },
+    { "file": "04-categories-tabkh.json", "httpStatus": 200, "bodySha256": "3647bc754b82ff50844b64519bf840f6ab491e8422c1e2591d995174dbad62b9", "rawBodyPreserved": true },
+    { "file": "05-search.json", "httpStatus": 200, "bodySha256": "c9fa4169f236eb09fedbb20d3ec1aa2cc0a8a46bf6df2e69d2718eb56c895275", "rawBodyPreserved": true }
+  ],
+  "discovery": {
+    "categoryPrefixRecipes": ["وصفات مختارة"],
+    "categoryPrefixMembers": 0,
+    "categoryPrefixCooking": 0,
+    "candidateCount": 1,
+    "candidateIds": ["ar-wikibooks:12128"],
+    "candidateSourceRevision": "227030",
+    "candidateSha256": "72468a695af9c2949bf24463e63be67cf33fdeed13fdacdfdcaf07cdb36d1744",
+    "ingredientLines": 8,
+    "explicitQuantityTranscriptions": 8,
+    "canonicalQuantities": 0,
+    "conciseMethodSteps": 6,
+    "unknownStepDurations": 6,
+    "servings": null,
+    "nutrition": null,
+    "runtimeImports": 0
+  },
+  "nextAction": "If continuing this Arabic source lane, refresh usage and re-check source lock/backoff before a new request batch; inspect page-level exceptions and explicit quantity transcriptions before any normalization."
+}

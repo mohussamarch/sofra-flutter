@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "source": "Open Prices",
+  "documentation": "https://openfoodfacts.github.io/documentation/docs/Open-prices/prices/prices_list/",
+  "license": "ODbL",
+  "licenseEvidence": "https://github.com/openfoodfacts/open-prices/blob/main/docs/guides/data.md",
+  "scope": "Currency-filter probe only, not verified country coverage",
+  "requests": [
+    {
+      "url": "https://prices.openfoodfacts.org/api/v1/prices?currency=EGP&size=1&page=1",
+      "currency": "EGP",
+      "requestedAt": "2026-10-14T07:42:09.251827+00:00",
+      "countryCoverageVerified": false,
+      "httpStatus": 200,
+      "responseFile": "egp-response.json",
+      "sha256": "c6ac71ce3f534cd5d53085b88ece0795f720f0850c7df0daf36ab744f2223cae",
+      "bytes": 2929,
+      "totalCurrencyObservations": 4,
+      "returnedItems": 1,
+      "priceAsOfRange": null
+    },
+    {
+      "url": "https://prices.openfoodfacts.org/api/v1/prices?currency=SAR&size=1&page=1",
+      "currency": "SAR",
+      "requestedAt": "2026-10-14T07:42:12.050998+00:00",
+      "countryCoverageVerified": false,
+      "httpStatus": 200,
+      "responseFile": "sar-response.json",
+      "sha256": "947d5a86a9565a61b80df3486b544e11fb51124892716f7255cdb73985311a89",
+      "bytes": 3097,
+      "totalCurrencyObservations": 3,
+      "returnedItems": 1,
+      "priceAsOfRange": null
+    }
+  ],
+  "runtimePriceApprovals": 0,
+  "checkedAt": "2026-10-14T07:42:12.583119+00:00"
+}

@@ -2,16 +2,19 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T04:06:05.515406+00:00",
-    "taskId": "recipe-authoring",
-    "summary": "Authoredroot/fullreview/atomicfoodbindings/planning/cooking complete;183Flutter/analyzeclean;quota94/74reserve preventsnextunit.",
+    "at": "2026-10-14T08:12:30.016753+00:00",
+    "taskId": "prices",
+    "summary": "34sourced EG/SA research prices + declared-unit/comparability calculator,9Nodepassed; parallelAR1/DE177candidates from250fixedpages; archive/quota regression passed. Runtime approvals0.",
     "evidence": [
-      "lib/domain/personal_recipe_finalization.dart",
-      "lib/domain/recipe_variants.dart",
-      "lib/data/kitchen_service.dart",
-      "test/personal_recipe_finalization_test.dart",
-      "test/personal_recipe_publication_test.dart",
-      "docs/PERSONAL-RECIPE-PUBLICATION.md"
+      "docs/PRICE-SOURCES-EG-SA.md",
+      "data/prices/research/observations.json",
+      "tool/prices/price-observations.mjs",
+      "tool/prices/price-observations.test.mjs",
+      "tool/prices/research-index.test.mjs",
+      "docs/RECIPE-EXPANSION-AR-DE.md",
+      "data/recipes/source-discovery/de-wikibooks/index.json",
+      "data/recipes/source-discovery/ar-wikibooks/extract-summary.json",
+      "tool/recipes/test-de-wikibooks-archive-safety.ps1"
     ]
   },
   "tasks": [
@@ -79,10 +82,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Continue licensed source expansion after currentknownpools exhausted;review another official source/category/prefix with archivedpolicy and boundedrequests. Noreset/finalcountcap;useeconomical independenthelper while local foundations advance.",
-      "lastAttemptAt": "2026-10-13T22:33:40.345Z",
-      "lastProgressAt": "2026-10-13T22:33:40.866Z",
-      "owner": null,
+      "nextAction": "Fresh actual quota/lock/backoff check; resume German Kochbuch/_Gnocchi_mit_Lauch_und_Schinken with hardened collector and expiring evidence; derive after exit. Continue licensed cuisines expansion without resetting other lanes or auto-accepting quantities.",
+      "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
+      "lastProgressAt": "2026-10-14T08:12:30.016753+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -106,7 +108,17 @@
         "spanishSingularCandidates": 1,
         "spanishSingularSourceRequests": 2,
         "spanishSingularIngredientLines": 9,
-        "spanishSingularSteps": 6
+        "spanishSingularSteps": 6,
+        "arabicCandidates": 1,
+        "arabicIngredientLines": 8,
+        "arabicSteps": 6,
+        "germanSourcePages": 250,
+        "germanCandidates": 177,
+        "germanIngredientLines": 1493,
+        "germanSteps": 998,
+        "germanRuntimeApprovals": 0,
+        "germanActualRequests": 8,
+        "germanRetainedResponseArchives": 6
       },
       "evidence": [
         "data/recipes/bulk/wikibooks-cookbook/index.json",
@@ -123,9 +135,13 @@
         "tool/recipes/collect-wikibooks-es.test.mjs",
         "data/recipes/bulk/es-wikibooks-recipes/index.json",
         "data/recipes/source-discovery/es-wikibooks-singular/candidate.json",
-        "data/recipes/source-discovery/es-wikibooks-singular/review-notes.json"
+        "data/recipes/source-discovery/es-wikibooks-singular/review-notes.json",
+        "docs/RECIPE-EXPANSION-AR-DE.md",
+        "data/recipes/source-discovery/de-wikibooks/index.json",
+        "data/recipes/source-discovery/ar-wikibooks/extract-summary.json",
+        "tool/recipes/test-de-wikibooks-archive-safety.ps1"
       ],
-      "stage": "Spanish collector/parser implemented and verified;source checkpoints determine next batch."
+      "stage": "Arabic and German bounded expansion verified; source continuation available; no active owner"
     },
     {
       "id": "recipe-quantities",
@@ -353,10 +369,27 @@
     },
     {
       "id": "prices",
-      "priority": 60,
+      "priority": 30,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Define sourced price observations and user overrides, package/unit/country/date uncertainty; no fabricated price feed"
+      "nextAction": "Verify latest reusable official exports for EG/SA and fresh meat/produce/city/pack coverage; seek permitted retailer feed. Bind exact items/stores and review freshness before runtime provider; keep recipe helper progressing.",
+      "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
+      "stage": "Research index/unit calculator complete; current licensed live sources and runtime provider remain open",
+      "lastProgressAt": "2026-10-14T08:12:30.016753+00:00",
+      "completedUnit": {
+        "researchObservations": 34,
+        "egypt": 30,
+        "saudi": 4,
+        "runtimeApprovals": 0,
+        "nodeTestsPassed": 9
+      },
+      "evidence": [
+        "docs/PRICE-SOURCES-EG-SA.md",
+        "data/prices/research/observations.json",
+        "tool/prices/price-observations.mjs",
+        "tool/prices/price-observations.test.mjs",
+        "tool/prices/research-index.test.mjs"
+      ]
     },
     {
       "id": "people-targets",

@@ -138,3 +138,7 @@ KitchenService.acceptRecipePreparationEstimate freezes exact recipe/revision/lin
 ## Reviewed draft publication —14October2026
 
 [PERSONAL-RECIPE-PUBLICATION.md](PERSONAL-RECIPE-PUBLICATION.md) supersedes the earlier unimplemented bridge checkpoint. PersonalRecipeFinalization owns the full draft, explicit metadata/durations/inventory IDs/review and canonical derived IDs. KitchenService.finalizePersonalRecipe publishes an authored root and exact food selections atomically from the saved active draft, with expected active recipe guard and immutable retries. Existing planning/cooking now works; no fake parent, stock/intake on publication, UI/cloud activation or automatic scientific approval. Missing metadata, unsupported estimated quantities and base precision loss reject; unknown food remains unknown. Full183Flutter/analyzeclean. Older clients do not support authored kind. HANDOFF§61.
+
+## Price research boundary
+
+tool/prices/price-observations.mjs is an offline research calculator, not a production KitchenService price provider.34observations retain source/kind/date/pack/uncertainty but0runtime-approved prices. PRICE-SOURCES-EG-SA.md defines required source permission, exact item/city/store and freshness before integration. User overrides and frozen purchase/cooking history remain unchanged. AR/DE source candidates likewise require registered reader/review/import, not direct runtime JSON.

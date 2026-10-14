@@ -156,3 +156,7 @@ Bounded category acceptance infrastructure30 complete: explicit one-method/exact
 ## Reviewed draft publication —14October2026
 
 [PERSONAL-RECIPE-PUBLICATION.md](PERSONAL-RECIPE-PUBLICATION.md) supersedes the earlier unimplemented bridge checkpoint. PersonalRecipeFinalization owns the full draft, explicit metadata/durations/inventory IDs/review and canonical derived IDs. KitchenService.finalizePersonalRecipe publishes an authored root and exact food selections atomically from the saved active draft, with expected active recipe guard and immutable retries. Existing planning/cooking now works; no fake parent, stock/intake on publication, UI/cloud activation or automatic scientific approval. Missing metadata, unsupported estimated quantities and base precision loss reject; unknown food remains unknown. Full183Flutter/analyzeclean. Older clients do not support authored kind. HANDOFF§61.
+
+## Latest user-directed order —14October2026
+
+Price acquisition research nowpriority30 and recipes35 continue in parallel (one bounded economical source helper). Price research contract/tools/34observations complete; next verify a current licensed official export and fresh produce/meat coverage before provider integration. PRICE-SOURCES-EG-SA.md lists evidence and gaps. Arabic1/German177candidates from250Germanpages acquired; exact cursor and no-clobber/quota gates in RECIPE-EXPANSION-AR-DE.md. Other foundations and source banks remain as documented; no bank completed by reaching a count.

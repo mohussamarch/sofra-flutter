@@ -1,0 +1,2422 @@
+{
+  "schemaVersion": 1,
+  "researchOnly": true,
+  "runtimePriceApprovals": 0,
+  "priceDatePolicy": "retrieval date is not the price effective date; unknown stays null",
+  "quantityPolicy": "declared pack arithmetic only; cube/piece stay counts, never grams",
+  "sourcePartitions": [
+    {
+      "file": "data/prices/research/egypt-sources.json",
+      "sha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sources": 8,
+      "country": "EG"
+    },
+    {
+      "file": "data/prices/research/saudi-sources.json",
+      "sha256": "81a7867182b583ecc2151a1876cb02ad50ccbaec27521e7b70375b75cacd7eec",
+      "sources": 7,
+      "country": "SA"
+    }
+  ],
+  "observationCount": 34,
+  "normalizedObservationCount": 34,
+  "cohorts": [
+    {
+      "country": "EG",
+      "observations": 30,
+      "retail": 5,
+      "initiative": 25
+    },
+    {
+      "country": "SA",
+      "observations": 4,
+      "retail": 4,
+      "initiative": 0
+    }
+  ],
+  "excluded": [
+    {
+      "id": "sa-danube-sadia-thighs-snippet",
+      "reason": "unverified_snippet",
+      "sourceFile": "data/prices/research/saudi-sources.json"
+    }
+  ],
+  "entries": [
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-carrefour-rice-20261014",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "retail",
+        "label": "Al Mezag Egyptian white rice",
+        "amount": 23.99,
+        "pack": {
+          "value": 1,
+          "unit": "kg"
+        },
+        "sourceUrl": "https://www.carrefouregypt.com/mafegy/ar/c/FEGY1701240",
+        "observedAt": "2026-10-14",
+        "priceAsOf": null,
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Cairo",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "kg",
+        "unitPrice": 23.99
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-carrefour-rice-20261014",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 1,
+        "unit": "kg",
+        "basis": "product title"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page_retrieval",
+      "priceEvidence": {
+        "url": "https://www.carrefouregypt.com/mafegy/ar/c/FEGY1701240",
+        "checkedAt": "2026-10-14T07:41:36Z",
+        "access": "web_open",
+        "note": "Literal price fragment retained; fingerprint covers fragment only, not upstream page or independent verification.",
+        "literal": "EGP 23.99\n26.99",
+        "evidenceTextUtf8Sha256": "49bf4dd0c95ac5b4891b3333cae59ede6c53eb7e3608192af07d6c89cfc95067",
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "city": "Cairo",
+        "deliveryArea": "Maadi",
+        "store": null,
+        "storeId": null
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-carrefour-milk-20261014",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "retail",
+        "label": "Juhayna full cream milk",
+        "amount": 53.99,
+        "pack": {
+          "value": 1,
+          "unit": "l"
+        },
+        "sourceUrl": "https://www.carrefouregypt.com/mafegy/en/juhayna-full-cream-milk-1l/p/12721",
+        "observedAt": "2026-10-14",
+        "priceAsOf": null,
+        "availability": null,
+        "offer": {
+          "discounted": null,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Cairo",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "l",
+        "unitPrice": 53.99
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-carrefour-milk-20261014",
+      "sourceCategory": "dairy",
+      "sourcePack": {
+        "value": 1,
+        "unit": "L",
+        "basis": "product title"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page_retrieval",
+      "priceEvidence": {
+        "url": "https://www.carrefouregypt.com/mafegy/en/juhayna-full-cream-milk-1l/p/12721",
+        "checkedAt": "2026-10-14T07:41:36Z",
+        "access": "web_open",
+        "note": "Literal price fragment retained; fingerprint covers fragment only, not upstream page or independent verification.",
+        "literal": "EGP\n53\n.99",
+        "evidenceTextUtf8Sha256": "d2d8a68e410259795440f6112e9c3859a8703bf18772be8956963b66eaca3e13",
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": true,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "city": "Cairo",
+        "deliveryArea": "Maadi",
+        "store": null,
+        "storeId": null
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-carrefour-tomatoes-20261014",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "retail",
+        "label": "Balady tomatoes",
+        "amount": 13.25,
+        "pack": {
+          "value": 500,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.carrefouregypt.com/mafegy/en/c/FEGY1660502",
+        "observedAt": "2026-10-14",
+        "priceAsOf": null,
+        "availability": null,
+        "offer": {
+          "discounted": null,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Cairo",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.5,
+        "unit": "kg",
+        "unitPrice": 26.5
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-carrefour-tomatoes-20261014",
+      "sourceCategory": "produce",
+      "sourcePack": {
+        "value": 500,
+        "unit": "g",
+        "basis": "visible size"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page_retrieval",
+      "priceEvidence": {
+        "url": "https://www.carrefouregypt.com/mafegy/en/c/FEGY1660502",
+        "checkedAt": "2026-10-14T07:41:36Z",
+        "access": "web_open",
+        "note": "Literal price fragment retained; fingerprint covers fragment only, not upstream page or independent verification.",
+        "literal": "EGP 13.25\n500g",
+        "evidenceTextUtf8Sha256": "927bac5f4298e39270a277c2235fd6ff5930e25f1f96737ad0e8700adc78f9a8",
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "city": "Cairo",
+        "deliveryArea": "Maadi",
+        "store": null,
+        "storeId": null
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-carrefour-mince-20261014",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "retail",
+        "label": "Halwani minced meat",
+        "amount": 144.99,
+        "pack": {
+          "value": 350,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.carrefouregypt.com/mafegy/en/c/FEGY6050000",
+        "observedAt": "2026-10-14",
+        "priceAsOf": null,
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Cairo",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.35000000000000003,
+        "unit": "kg",
+        "unitPrice": 414.25714285714287
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-carrefour-mince-20261014",
+      "sourceCategory": "meat",
+      "sourcePack": {
+        "value": 350,
+        "unit": "g",
+        "basis": "product title; frozen category"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page_retrieval",
+      "priceEvidence": {
+        "url": "https://www.carrefouregypt.com/mafegy/en/c/FEGY6050000",
+        "checkedAt": "2026-10-14T07:41:36Z",
+        "access": "web_open",
+        "note": "Literal price fragment retained; fingerprint covers fragment only, not upstream page or independent verification.",
+        "literal": "144\n.99\nEGP\n189.99",
+        "evidenceTextUtf8Sha256": "02358c2c1af4f503af3e7281ca829c4d27f454c6003d01328f46c43b3bf59744",
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "city": "Cairo",
+        "deliveryArea": "Maadi",
+        "store": null,
+        "storeId": null
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-carrefour-chickenlegs-20261014",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "retail",
+        "label": "Al Watania frozen chicken legs",
+        "amount": 129.99,
+        "pack": {
+          "value": 1,
+          "unit": "kg"
+        },
+        "sourceUrl": "https://www.carrefouregypt.com/mafegy/en/c/FEGY6050000",
+        "observedAt": "2026-10-14",
+        "priceAsOf": null,
+        "availability": null,
+        "offer": {
+          "discounted": null,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Cairo",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "kg",
+        "unitPrice": 129.99
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-carrefour-chickenlegs-20261014",
+      "sourceCategory": "poultry",
+      "sourcePack": {
+        "value": 1,
+        "unit": "kg",
+        "basis": "title and visible size"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page_retrieval",
+      "priceEvidence": {
+        "url": "https://www.carrefouregypt.com/mafegy/en/c/FEGY6050000",
+        "checkedAt": "2026-10-14T07:41:36Z",
+        "access": "web_open",
+        "note": "Literal price fragment retained; fingerprint covers fragment only, not upstream page or independent verification.",
+        "literal": "1kg\n129\n.99\nEGP",
+        "evidenceTextUtf8Sha256": "0e89120c6d3d5dff04dae91a0d52fd84fed021f11936f8cf9f36a4df0481dbac",
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "city": "Cairo",
+        "deliveryArea": "Maadi",
+        "store": null,
+        "storeId": null
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-sugar-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Packaged sugar",
+        "amount": 25,
+        "pack": {
+          "value": 1,
+          "unit": "kg"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "kg",
+        "unitPrice": 25
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-sugar-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 1,
+        "unit": "kg",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-rice-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Packaged rice",
+        "amount": 25,
+        "pack": {
+          "value": 1,
+          "unit": "kg"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "kg",
+        "unitPrice": 25
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-rice-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 1,
+        "unit": "kg",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-flour-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Packaged flour",
+        "amount": 20,
+        "pack": {
+          "value": 1,
+          "unit": "kg"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "kg",
+        "unitPrice": 20
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-flour-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 1,
+        "unit": "kg",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-oil-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Blended oil",
+        "amount": 50,
+        "pack": {
+          "value": 700,
+          "unit": "ml"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.7000000000000001,
+        "unit": "l",
+        "unitPrice": 71.42857142857142
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-oil-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 700,
+        "unit": "mL",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-pasta-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Pasta",
+        "amount": 9,
+        "pack": {
+          "value": 350,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.35000000000000003,
+        "unit": "kg",
+        "unitPrice": 25.71428571428571
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-pasta-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 350,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-sauce-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Sauce",
+        "amount": 14,
+        "pack": {
+          "value": 300,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.3,
+        "unit": "kg",
+        "unitPrice": 46.66666666666667
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-sauce-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 300,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-tea-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Fine tea",
+        "amount": 5,
+        "pack": {
+          "value": 40,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.04,
+        "unit": "kg",
+        "unitPrice": 125
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-tea-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 40,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-cheese80-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "White triangular cheese",
+        "amount": 5,
+        "pack": {
+          "value": 80,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.08,
+        "unit": "kg",
+        "unitPrice": 62.5
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-cheese80-20260925",
+      "sourceCategory": "dairy",
+      "sourcePack": {
+        "value": 80,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-cheese125-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "White triangular cheese",
+        "amount": 7,
+        "pack": {
+          "value": 125,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.125,
+        "unit": "kg",
+        "unitPrice": 56
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-cheese125-20260925",
+      "sourceCategory": "dairy",
+      "sourcePack": {
+        "value": 125,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-cheese250-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "White triangular cheese",
+        "amount": 14,
+        "pack": {
+          "value": 250,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.25,
+        "unit": "kg",
+        "unitPrice": 56
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-cheese250-20260925",
+      "sourceCategory": "dairy",
+      "sourcePack": {
+        "value": 250,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-halva-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Plain tahini halva",
+        "amount": 4,
+        "pack": {
+          "value": 40,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.04,
+        "unit": "kg",
+        "unitPrice": 100
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-halva-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 40,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-jam-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Assorted jam",
+        "amount": 20,
+        "pack": {
+          "value": 300,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.3,
+        "unit": "kg",
+        "unitPrice": 66.66666666666667
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-jam-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 300,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-milk-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Full fat milk",
+        "amount": 44,
+        "pack": {
+          "value": 1,
+          "unit": "l"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "l",
+        "unitPrice": 44
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-milk-20260925",
+      "sourceCategory": "dairy",
+      "sourcePack": {
+        "value": 1,
+        "unit": "L",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-milkpowder-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Dry milk powder",
+        "amount": 25,
+        "pack": {
+          "value": 100,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.1,
+        "unit": "kg",
+        "unitPrice": 250
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-milkpowder-20260925",
+      "sourceCategory": "dairy",
+      "sourcePack": {
+        "value": 100,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-margarine350-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Industrial ghee sachet",
+        "amount": 40,
+        "pack": {
+          "value": 350,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.35000000000000003,
+        "unit": "kg",
+        "unitPrice": 114.28571428571428
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-margarine350-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 350,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-margarine700-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Industrial ghee jar",
+        "amount": 70,
+        "pack": {
+          "value": 700,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.7000000000000001,
+        "unit": "kg",
+        "unitPrice": 99.99999999999999
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-margarine700-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 700,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-salt-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Table salt",
+        "amount": 1.5,
+        "pack": {
+          "value": 300,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.3,
+        "unit": "kg",
+        "unitPrice": 5
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-salt-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 300,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-tuna-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Shredded tuna",
+        "amount": 24,
+        "pack": {
+          "value": 140,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.14,
+        "unit": "kg",
+        "unitPrice": 171.42857142857142
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-tuna-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 140,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-stock-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Chicken stock box",
+        "amount": 13,
+        "pack": {
+          "value": 8,
+          "unit": "count"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 8,
+        "unit": "count",
+        "unitPrice": 1.625
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-stock-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 8,
+        "unit": "cube",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-lentilsyellow-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Yellow lentils",
+        "amount": 22.5,
+        "pack": {
+          "value": 500,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.5,
+        "unit": "kg",
+        "unitPrice": 45
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-lentilsyellow-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 500,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-lentilswhole-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Whole lentils",
+        "amount": 20,
+        "pack": {
+          "value": 500,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.5,
+        "unit": "kg",
+        "unitPrice": 40
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-lentilswhole-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 500,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-cowpea-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Cowpeas",
+        "amount": 26.5,
+        "pack": {
+          "value": 500,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.5,
+        "unit": "kg",
+        "unitPrice": 53
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-cowpea-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 500,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-fava-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Fava beans",
+        "amount": 16.5,
+        "pack": {
+          "value": 500,
+          "unit": "g"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.5,
+        "unit": "kg",
+        "unitPrice": 33
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-fava-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 500,
+        "unit": "g",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-vinegar-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Vinegar 5%",
+        "amount": 10,
+        "pack": {
+          "value": 900,
+          "unit": "ml"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.9,
+        "unit": "l",
+        "unitPrice": 11.11111111111111
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-vinegar-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 900,
+        "unit": "mL",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "eg-msit-biscuits-20260925",
+        "country": "EG",
+        "currency": "EGP",
+        "kind": "initiative",
+        "label": "Plain or salted biscuit",
+        "amount": 2,
+        "pack": {
+          "value": 1,
+          "unit": "count"
+        },
+        "sourceUrl": "https://www.msit.gov.eg/?p=7509",
+        "observedAt": "2026-10-14",
+        "priceAsOf": "2026-09-25",
+        "availability": null,
+        "offer": {
+          "discounted": true,
+          "validFrom": "2026-09-25",
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": null,
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "count",
+        "unitPrice": 2
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/egypt-sources.json",
+      "sourceFileSha256": "e4fa4552dad14779573f63ddc3414f821ff2f61d26419ef37ce9429f7c0665d6",
+      "sourceObservationId": "eg-msit-biscuits-20260925",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 1,
+        "unit": "piece",
+        "basis": "explicit announcement; piece/cube mass unknown"
+      },
+      "sourceQuoteAsOfMeaning": "announced-effective-date",
+      "sourceVerification": "full_government_announcement",
+      "priceEvidence": {
+        "url": "https://www.msit.gov.eg/?p=7509",
+        "checkedAt": "2026-10-14T07:48:20Z",
+        "access": "web_open",
+        "note": "Translated product label and numerical pack/price facts from announcement paragraph48; announcement not store quote/current national average.",
+        "literal": null,
+        "evidenceTextUtf8Sha256": null,
+        "rawResponseArchive": null,
+        "rawResponseSha256": null
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": null,
+      "locationEvidence": {
+        "country": "EG",
+        "city": null,
+        "store": null,
+        "coverage": "participating initiative outlets; Carry On included"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "sa-danube-tomato-1kg",
+        "country": "SA",
+        "currency": "SAR",
+        "kind": "retail",
+        "label": "Tomato 1kg",
+        "amount": 6.95,
+        "pack": {
+          "value": 1,
+          "unit": "kg"
+        },
+        "sourceUrl": "https://danube.sa/en/products/tomato-kg-2",
+        "observedAt": "2026-10-14T07:41:41Z",
+        "priceAsOf": null,
+        "availability": null,
+        "offer": {
+          "discounted": false,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Jeddah",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "kg",
+        "unitPrice": 6.95
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/saudi-sources.json",
+      "sourceFileSha256": "81a7867182b583ecc2151a1876cb02ad50ccbaec27521e7b70375b75cacd7eec",
+      "sourceObservationId": "sa-danube-tomato-1kg",
+      "sourceCategory": "produce",
+      "sourcePack": {
+        "value": 1,
+        "unit": "kg"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page",
+      "priceEvidence": {
+        "level": "full_page",
+        "locator": "lines20-33",
+        "webToolReportedCrawl": "last week",
+        "cachedContentPossible": true,
+        "liveQuoteFreshnessVerified": false,
+        "exactDisplayedCurrencyGlyph": ""
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": {
+        "status": "add_to_cart_control",
+        "purchaseControlDisplayed": true,
+        "purchasableNowVerified": false
+      },
+      "locationEvidence": {
+        "city": "Jeddah",
+        "branch": "Al Shati"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "sa-danube-heinz-ketchup-342g",
+        "country": "SA",
+        "currency": "SAR",
+        "kind": "retail",
+        "label": "Heinz Tomato Ketchup 342g",
+        "amount": 14.99,
+        "pack": {
+          "value": 342,
+          "unit": "g"
+        },
+        "sourceUrl": "https://danube.sa/en/products/heinz-tomato-ketchup-squeez-342g",
+        "observedAt": "2026-10-14T07:41:41Z",
+        "priceAsOf": null,
+        "availability": false,
+        "offer": {
+          "discounted": false,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Jeddah",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.342,
+        "unit": "kg",
+        "unitPrice": 43.83040935672514
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/saudi-sources.json",
+      "sourceFileSha256": "81a7867182b583ecc2151a1876cb02ad50ccbaec27521e7b70375b75cacd7eec",
+      "sourceObservationId": "sa-danube-heinz-ketchup-342g",
+      "sourceCategory": "packaged_groceries",
+      "sourcePack": {
+        "value": 342,
+        "unit": "g"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page",
+      "priceEvidence": {
+        "level": "full_page",
+        "locator": "lines28-43",
+        "webToolReportedCrawl": "2 months ago",
+        "cachedContentPossible": true,
+        "liveQuoteFreshnessVerified": false,
+        "exactDisplayedCurrencyGlyph": ""
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": {
+        "status": "out_of_stock",
+        "purchaseControlDisplayed": false,
+        "purchasableNowVerified": false
+      },
+      "locationEvidence": {
+        "city": "Jeddah",
+        "branch": "Al Shati"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "sa-danube-almarai-fresh-milk-1l",
+        "country": "SA",
+        "currency": "SAR",
+        "kind": "retail",
+        "label": "Almarai Full Fat Fresh Milk 1L",
+        "amount": 7,
+        "pack": {
+          "value": 1,
+          "unit": "l"
+        },
+        "sourceUrl": "https://danube.sa/en/products/almarai-fresh-milk-full-fat-1ltr",
+        "observedAt": "2026-10-14T07:41:41Z",
+        "priceAsOf": null,
+        "availability": null,
+        "offer": {
+          "discounted": false,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Jeddah",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 1,
+        "unit": "l",
+        "unitPrice": 7
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/saudi-sources.json",
+      "sourceFileSha256": "81a7867182b583ecc2151a1876cb02ad50ccbaec27521e7b70375b75cacd7eec",
+      "sourceObservationId": "sa-danube-almarai-fresh-milk-1l",
+      "sourceCategory": "dairy",
+      "sourcePack": {
+        "value": 1,
+        "unit": "L"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page",
+      "priceEvidence": {
+        "level": "full_page",
+        "locator": "lines20-33",
+        "webToolReportedCrawl": "yesterday",
+        "cachedContentPossible": true,
+        "liveQuoteFreshnessVerified": false,
+        "exactDisplayedCurrencyGlyph": ""
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": {
+        "status": "add_to_cart_control",
+        "purchaseControlDisplayed": true,
+        "purchasableNowVerified": false
+      },
+      "locationEvidence": {
+        "city": "Jeddah",
+        "branch": "Al Shati"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    },
+    {
+      "quote": {
+        "schemaVersion": 1,
+        "id": "sa-danube-watania-frozen-chicken-800g",
+        "country": "SA",
+        "currency": "SAR",
+        "kind": "retail",
+        "label": "Al-Watania Poultry Frozen Chicken 800g",
+        "amount": 19.75,
+        "pack": {
+          "value": 800,
+          "unit": "g"
+        },
+        "sourceUrl": "https://danube.sa/en/products/al_watania_poultry_chicken_800g",
+        "observedAt": "2026-10-14T07:41:41Z",
+        "priceAsOf": null,
+        "availability": false,
+        "offer": {
+          "discounted": false,
+          "validFrom": null,
+          "validUntil": null
+        },
+        "reuseApproved": false,
+        "evidenceChecked": false,
+        "itemKey": null,
+        "city": "Jeddah",
+        "storeKey": null
+      },
+      "normalized": {
+        "quantity": 0.8,
+        "unit": "kg",
+        "unitPrice": 24.6875
+      },
+      "derived": true,
+      "runtimeReady": false,
+      "sourceFile": "data/prices/research/saudi-sources.json",
+      "sourceFileSha256": "81a7867182b583ecc2151a1876cb02ad50ccbaec27521e7b70375b75cacd7eec",
+      "sourceObservationId": "sa-danube-watania-frozen-chicken-800g",
+      "sourceCategory": "poultry",
+      "sourcePack": {
+        "value": 800,
+        "unit": "g"
+      },
+      "sourceQuoteAsOfMeaning": "retailer-price-date-unknown",
+      "sourceVerification": "full_page",
+      "priceEvidence": {
+        "level": "full_page",
+        "locator": "lines28-47",
+        "webToolReportedCrawl": "4 months ago",
+        "cachedContentPossible": true,
+        "liveQuoteFreshnessVerified": false,
+        "exactDisplayedCurrencyGlyph": ""
+      },
+      "barcode": null,
+      "taxIncluded": null,
+      "availabilityEvidence": {
+        "status": "unavailable",
+        "purchaseControlDisplayed": false,
+        "purchasableNowVerified": false
+      },
+      "locationEvidence": {
+        "city": "Jeddah",
+        "branch": "Al Shati"
+      },
+      "caveats": [
+        "Research transcription only; source availability/cache/date retained",
+        "Reuse/evidence/identity/store review required before averaging or runtime publication"
+      ]
+    }
+  ]
+}

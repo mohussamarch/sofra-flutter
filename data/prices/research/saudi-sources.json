@@ -1,0 +1,705 @@
+{
+  "schemaVersion": 1,
+  "country": "SA",
+  "researchOnly": true,
+  "selectedCheckout": "E:\\work\\SOFRA\\app",
+  "baseCommit": "c9b1f24c82be7a96065fe5c8f6b69cb474d63560",
+  "observedAt": "2026-10-14T07:41:41Z",
+  "acquisition": {
+    "method": "Small primary-source web search/open audit; no scraping, private endpoint discovery or purchases.",
+    "sourceOrganizations": 7,
+    "freshQuotaAt": "2026-10-14 07:41:41 UTC",
+    "shortUsedPercent": 13,
+    "weeklyUsedPercent": 77,
+    "ordinaryUsageAllowed": true,
+    "reserveStopAtUsedPercent": 90
+  },
+  "sources": [
+    {
+      "id": "sa-gastat-apgs",
+      "name": "GASTAT Average Prices of Goods and Services",
+      "kind": "statistical_monthly_aggregate",
+      "country": "SA",
+      "homepageUrl": "https://www.stats.gov.sa",
+      "currentExistenceVerified": true,
+      "latestReport": {
+        "latestSeenReportPeriod": "2026-07",
+        "displayedReleaseDate": "2026-08-13",
+        "listingArticleDate": "2026-08-12",
+        "latestLiveReleaseVerified": false,
+        "note": "Latest item on retrieved publication list; cached last month. A separate search result mentions September2026 without a verified release or report."
+      },
+      "export": {
+        "format": "xlsx",
+        "displayedFilename": "APGSTables-Jul2026-AR-EN (1).xlsx",
+        "landingUrl": "https://www.stats.gov.sa/en/w/average-prices-of-goods-and-services-july-2026-1",
+        "directUrl": null,
+        "downloadVerified": false
+      },
+      "apiDocumentationUrl": null,
+      "openReuseLicense": {
+        "name": null,
+        "url": "https://www.stats.gov.sa/en/use-policy",
+        "verification": "search_result_only_direct_open_502",
+        "summary": "Indexed official policy permits commercial reuse with GASTAT attribution and clear modification notices; trademarks, logos and identified third-party material excepted; indicator-specific terms can supersede.",
+        "applicabilityVerified": false
+      },
+      "bulkAcquisitionPermission": null,
+      "runtimeAccepted": false,
+      "coverage": {
+        "geography": "Saudi Arabia; thirteen administrative regions in methodology 4.0 search evidence",
+        "categories": [
+          "packaged_groceries",
+          "produce",
+          "meat_poultry_fish_dairy"
+        ],
+        "unitBasis": "Fixed survey item specification and unit; preserve item code, quantity and brand/form.",
+        "retailBranch": null,
+        "vatIncluded": null,
+        "currency": "SAR"
+      },
+      "evidence": [
+        {
+          "id": "g-list",
+          "url": "https://www.stats.gov.sa/en/search-publication?category=publication&delta=40&q=%D8%A7%D9%84%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1",
+          "method": "web_open_and_find",
+          "result": "full_page",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "July2026 title, release2026-08-13 and XLSX filename visible in lines136-140."
+        },
+        {
+          "id": "g-export",
+          "url": "https://www.stats.gov.sa/en/w/average-prices-of-goods-and-services-july-2026-1",
+          "method": "web_click_and_open",
+          "result": "502",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "No report or direct export inspected."
+        },
+        {
+          "id": "g-policy",
+          "url": "https://www.stats.gov.sa/en/use-policy",
+          "method": "web_search_and_open",
+          "result": "search_only_open_502",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Official reuse policy indexed; direct open failed."
+        },
+        {
+          "id": "g-method",
+          "url": "https://www.stats.gov.sa/en/w/methodology-and-quality-report-of-average-prices-of-goods-and-services-statistics-4.0",
+          "method": "web_search_and_open",
+          "result": "search_only_open_error",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Methodology last update12/02/2026; fixed specifications, region scope and point-of-sale statistical unit stated in official search result."
+        }
+      ],
+      "acquisitionRecommendation": "First choice for a separately labelled monthly reference bank: obtain official XLSX through the verified landing page after access recovers; confirm current report and applicable reuse terms before import. No values acquired."
+    },
+    {
+      "id": "sa-datasaudi",
+      "name": "DataSaudi",
+      "kind": "statistical_portal",
+      "country": "SA",
+      "homepageUrl": "https://datasaudi.sa/en",
+      "currentExistenceVerified": true,
+      "latestReport": {
+        "indicator": "CPI, not absolute commodity prices",
+        "period": "2026-08",
+        "displayedReleaseDate": null
+      },
+      "export": null,
+      "apiDocumentationUrl": null,
+      "openReuseLicense": null,
+      "bulkAcquisitionPermission": null,
+      "runtimeAccepted": false,
+      "coverage": {
+        "geography": "Saudi Arabia and regions",
+        "categories": [],
+        "currency": "SAR",
+        "vatIncluded": null
+      },
+      "evidence": [
+        {
+          "id": "d-home",
+          "url": "https://datasaudi.sa/en",
+          "method": "web_open",
+          "result": "full_page",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Official statistical portal opens. CPI August2026 visible; no absolute commodity price dataset/export/API identified. Download text search has no match."
+        }
+      ],
+      "acquisitionRecommendation": "Secondary discovery/reference portal; do not substitute CPI index/percentage for SAR food prices, or infer a commodity API/export from charts."
+    },
+    {
+      "id": "sa-lulu",
+      "name": "LuLu Hypermarket Saudi Arabia",
+      "kind": "retail_quote",
+      "country": "SA",
+      "homepageUrl": "https://gcc.luluhypermarket.com/en-sa/",
+      "currentExistenceVerified": true,
+      "latestReport": null,
+      "export": null,
+      "apiDocumentationUrl": null,
+      "openReuseLicense": {
+        "name": null,
+        "url": "https://gcc.luluhypermarket.com/en-sa/termsAndConditions-sa/",
+        "verification": "full_page",
+        "summary": "Personal noncommercial display/storage allowed under conditions; other copying/distribution or commercial use requires written permission.",
+        "displayedTermsDate": "2019-05-08"
+      },
+      "bulkAcquisitionPermission": false,
+      "runtimeAccepted": false,
+      "coverage": {
+        "geography": "Saudi locale",
+        "city": null,
+        "branch": null,
+        "currency": null,
+        "vatIncluded": null,
+        "deliveryFeesIncluded": false,
+        "offerRestrictions": null,
+        "membershipRestrictions": null,
+        "targetedCategories": [
+          "packaged_groceries",
+          "produce",
+          "meat_poultry_fish_dairy"
+        ],
+        "verifiedPriceCategories": []
+      },
+      "evidence": [
+        {
+          "id": "l-product",
+          "url": "https://gcc.luluhypermarket.com/en-sa/tomato-1-2-kg/p/623783",
+          "method": "web_open",
+          "result": "loading_shell",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Saudi locale and VAT registration visible, but no product amount/unit price in retrieved body. No observation counted."
+        },
+        {
+          "id": "l-terms",
+          "url": "https://gcc.luluhypermarket.com/en-sa/termsAndConditions-sa/",
+          "method": "web_click",
+          "result": "full_page",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Sections4 and10: permission restrictions, online/store price differences, delivery charge additional; old terms date limits confidence in current operational details."
+        }
+      ],
+      "acquisitionRecommendation": "Seek a retailer-approved data feed before automation. Personal page viewing provides no bulk rights."
+    },
+    {
+      "id": "sa-panda",
+      "name": "Panda Saudi Arabia / PandaClick",
+      "kind": "retail_quote",
+      "country": "SA",
+      "homepageUrl": "https://www.panda.sa/en",
+      "currentExistenceVerified": true,
+      "latestReport": null,
+      "export": null,
+      "apiDocumentationUrl": null,
+      "openReuseLicense": null,
+      "bulkAcquisitionPermission": null,
+      "runtimeAccepted": false,
+      "coverage": {
+        "geography": "Saudi Arabia",
+        "city": null,
+        "branch": null,
+        "currency": null,
+        "vatIncluded": true,
+        "vatScope": "Where applicable, per PandaClick terms2.3; rate not specified.",
+        "deliveryFeesIncluded": false,
+        "offerRestrictions": "Delivery-day store price and promotions apply; variable-weight totals may change.",
+        "membershipRestrictions": null,
+        "targetedCategories": [
+          "packaged_groceries",
+          "produce",
+          "meat_poultry_fish_dairy"
+        ],
+        "verifiedPriceCategories": []
+      },
+      "evidence": [
+        {
+          "id": "p-home",
+          "url": "https://www.panda.sa/en",
+          "method": "web_open",
+          "result": "minimal_shell",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Only3lines retrieved, no price."
+        },
+        {
+          "id": "p-company",
+          "url": "https://www.panda.sa/en/policies/company-info",
+          "method": "web_search",
+          "result": "search_page_content",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Official company identity and KSA location; headquarters is not the price branch."
+        },
+        {
+          "id": "p-terms",
+          "url": "https://s.panda.sa/app_terms/",
+          "method": "web_open_and_find",
+          "result": "full_page",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "2.1-2.3: guide prices, delivery-day source store, variable weight, VAT where applicable. 2.5 includes delivery/collection charge."
+        }
+      ],
+      "acquisitionRecommendation": "Request approved feed and explicit store/fulfilment context; no sampled product price or reuse permission verified."
+    },
+    {
+      "id": "sa-danube",
+      "name": "Danube Saudi Arabia",
+      "kind": "retail_quote",
+      "country": "SA",
+      "homepageUrl": "https://danube.sa/en/",
+      "currentExistenceVerified": true,
+      "latestReport": null,
+      "export": null,
+      "apiDocumentationUrl": null,
+      "openReuseLicense": {
+        "name": null,
+        "url": "https://api.danube.sa/en/pages/terms-and-conditions",
+        "verification": "full_page",
+        "summary": "Website/app content and data require explicit permission for use/sharing with third parties. No permission obtained."
+      },
+      "bulkAcquisitionPermission": false,
+      "runtimeAccepted": false,
+      "coverage": {
+        "categories": [
+          "packaged_groceries",
+          "produce",
+          "poultry",
+          "dairy"
+        ],
+        "geography": "Saudi Arabia",
+        "city": "Jeddah",
+        "branch": "Al Shati",
+        "branchContext": "Default branch displayed on retrieved product pages; no branch/address selection performed.",
+        "currency": "SAR",
+        "currencyEvidenceUrl": "https://api.danube.sa/en/pages/terms-and-conditions",
+        "vatIncluded": null,
+        "deliveryFeesIncluded": false,
+        "offerRestrictions": "No special offer badge in sampled full pages; displayed points do not establish a membership condition.",
+        "membershipRestrictions": null
+      },
+      "evidence": [
+        {
+          "id": "n-terms",
+          "url": "https://api.danube.sa/en/pages/terms-and-conditions",
+          "method": "web_open_and_find",
+          "result": "full_page",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "SAR-only transactions; online/physical-store prices may differ; fees additional; permission block verified."
+        },
+        {
+          "id": "n-products",
+          "url": "https://danube.sa/en/products/tomato-kg-2",
+          "method": "web_open_and_find",
+          "result": "full_page",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Four product pages inspected; exact observation URLs below. All research-only; no order price confirmation."
+        }
+      ],
+      "acquisitionRecommendation": "Full page visibility useful for a small provenance audit, but reuse/feed permission must precede ongoing bank acquisition. Availability and observation age are separate from price evidence."
+    },
+    {
+      "id": "sa-othaim",
+      "name": "Abdullah Al Othaim Markets Saudi Arabia",
+      "kind": "retail_offers",
+      "country": "SA",
+      "homepageUrl": "https://www.othaimmarkets.com/en/offers",
+      "currentExistenceVerified": true,
+      "latestReport": null,
+      "export": null,
+      "apiDocumentationUrl": null,
+      "openReuseLicense": null,
+      "bulkAcquisitionPermission": null,
+      "runtimeAccepted": false,
+      "coverage": {
+        "geography": "Saudi Arabia",
+        "city": null,
+        "branch": null,
+        "currency": null,
+        "vatIncluded": null,
+        "deliveryFeesIncluded": null,
+        "offerRestrictions": "Offer validity, branch, membership and pack context require the actual brochure.",
+        "membershipRestrictions": null,
+        "targetedCategories": [
+          "packaged_groceries",
+          "produce",
+          "meat_poultry_fish_dairy"
+        ],
+        "verifiedPriceCategories": []
+      },
+      "evidence": [
+        {
+          "id": "o-offers",
+          "url": "https://www.othaimmarkets.com/en/offers",
+          "method": "web_open",
+          "result": "full_page_redirect",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Redirect to/ar/offers; offers landing page exists, no dated brochure price verified."
+        },
+        {
+          "id": "o-privacy",
+          "url": "https://vendor.othaimmarkets.com/vendor/Policy/en.html",
+          "method": "web_search",
+          "result": "search_page_content",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Retailer describes Saudi operations; no price reuse licence. Vendor privacy is not an offers licence."
+        }
+      ],
+      "acquisitionRecommendation": "Retrieve an explicitly dated retailer-owned brochure only under verified rights; do not use third-party offer reposts or invent city/period."
+    },
+    {
+      "id": "sa-carrefour",
+      "name": "Carrefour Saudi Arabia",
+      "kind": "retail_quote",
+      "country": "SA",
+      "homepageUrl": "https://www.carrefourksa.com/mafsau/en/",
+      "currentExistenceVerified": true,
+      "latestReport": null,
+      "export": null,
+      "apiDocumentationUrl": null,
+      "openReuseLicense": null,
+      "bulkAcquisitionPermission": null,
+      "runtimeAccepted": false,
+      "coverage": {
+        "geography": "Saudi Arabia",
+        "city": null,
+        "branch": null,
+        "currency": null,
+        "vatIncluded": null,
+        "deliveryFeesIncluded": null,
+        "offerRestrictions": null,
+        "membershipRestrictions": "SHARE terms section exists; sampled product membership price not verified.",
+        "targetedCategories": [
+          "packaged_groceries",
+          "produce",
+          "meat_poultry_fish_dairy"
+        ],
+        "verifiedPriceCategories": []
+      },
+      "evidence": [
+        {
+          "id": "c-home",
+          "url": "https://carrefourksa.com",
+          "method": "web_open",
+          "result": "internal_error",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "No product price acquired."
+        },
+        {
+          "id": "c-terms",
+          "url": "https://www.carrefourksa.com/mafsau/en/helpcenter/topics/223-get-started?articleId=4385",
+          "method": "web_open",
+          "result": "full_page",
+          "observedAt": "2026-10-14T07:41:41Z",
+          "details": "Saudi Hypermarkets Co identity and KSA delivery jurisdiction verified. No VAT text match; no documented public product export/API or bulk reuse licence found in this scoped read."
+        }
+      ],
+      "acquisitionRecommendation": "Use verified retailer feed permission before collection; exact Saudi route is/mafsau/en, avoid assuming regional listings share prices."
+    }
+  ],
+  "observations": [
+    {
+      "id": "sa-danube-tomato-1kg",
+      "sourceId": "sa-danube",
+      "kind": "retail_quote",
+      "category": "produce",
+      "productName": "Tomato 1kg",
+      "brand": null,
+      "barcode": null,
+      "amount": 6.95,
+      "currency": "SAR",
+      "currencyEvidenceUrl": "https://api.danube.sa/en/pages/terms-and-conditions",
+      "quantity": 1,
+      "unit": "kg",
+      "packText": "1kg",
+      "packCount": null,
+      "packCountBasis": null,
+      "priceBasis": "displayed 1kg weight basis; final weight not verified",
+      "country": "SA",
+      "city": "Jeddah",
+      "branch": "Al Shati",
+      "vatIncluded": null,
+      "shippingAmount": null,
+      "shippingIncluded": false,
+      "offerDisplayed": false,
+      "offerValidFrom": null,
+      "offerValidTo": null,
+      "membershipRequired": null,
+      "membershipPrice": null,
+      "displayedPoints": 7,
+      "url": "https://danube.sa/en/products/tomato-kg-2",
+      "observedAt": "2026-10-14T07:41:41Z",
+      "observedAtBasis": "UTC tool retrieval batch start, not retailer publication date",
+      "displayedPriceDate": null,
+      "priceEffectiveDate": null,
+      "evidence": {
+        "level": "full_page",
+        "locator": "lines20-33",
+        "webToolReportedCrawl": "last week",
+        "cachedContentPossible": true,
+        "liveQuoteFreshnessVerified": false,
+        "exactDisplayedCurrencyGlyph": ""
+      },
+      "availability": {
+        "status": "add_to_cart_control",
+        "purchaseControlDisplayed": true,
+        "purchasableNowVerified": false
+      },
+      "verifiedPriceEvidence": true,
+      "usableForResearch": true,
+      "acceptedForRuntime": false,
+      "allowedForAutomatedReuse": false,
+      "normalizedPrice": null,
+      "note": "Observed display only; no cart interaction, order, city change, nutrition inference or purchase suggestion."
+    },
+    {
+      "id": "sa-danube-heinz-ketchup-342g",
+      "sourceId": "sa-danube",
+      "kind": "retail_quote",
+      "category": "packaged_groceries",
+      "productName": "Heinz Tomato Ketchup 342g",
+      "brand": "Heinz",
+      "barcode": null,
+      "amount": 14.99,
+      "currency": "SAR",
+      "currencyEvidenceUrl": "https://api.danube.sa/en/pages/terms-and-conditions",
+      "quantity": 342,
+      "unit": "g",
+      "packText": "342g",
+      "packCount": null,
+      "packCountBasis": null,
+      "priceBasis": "listed pack",
+      "country": "SA",
+      "city": "Jeddah",
+      "branch": "Al Shati",
+      "vatIncluded": null,
+      "shippingAmount": null,
+      "shippingIncluded": false,
+      "offerDisplayed": false,
+      "offerValidFrom": null,
+      "offerValidTo": null,
+      "membershipRequired": null,
+      "membershipPrice": null,
+      "displayedPoints": 15,
+      "url": "https://danube.sa/en/products/heinz-tomato-ketchup-squeez-342g",
+      "observedAt": "2026-10-14T07:41:41Z",
+      "observedAtBasis": "UTC tool retrieval batch start, not retailer publication date",
+      "displayedPriceDate": null,
+      "priceEffectiveDate": null,
+      "evidence": {
+        "level": "full_page",
+        "locator": "lines28-43",
+        "webToolReportedCrawl": "2 months ago",
+        "cachedContentPossible": true,
+        "liveQuoteFreshnessVerified": false,
+        "exactDisplayedCurrencyGlyph": ""
+      },
+      "availability": {
+        "status": "out_of_stock",
+        "purchaseControlDisplayed": false,
+        "purchasableNowVerified": false
+      },
+      "verifiedPriceEvidence": true,
+      "usableForResearch": true,
+      "acceptedForRuntime": false,
+      "allowedForAutomatedReuse": false,
+      "normalizedPrice": null,
+      "note": "Observed display only; no cart interaction, order, city change, nutrition inference or purchase suggestion."
+    },
+    {
+      "id": "sa-danube-almarai-fresh-milk-1l",
+      "sourceId": "sa-danube",
+      "kind": "retail_quote",
+      "category": "dairy",
+      "productName": "Almarai Full Fat Fresh Milk 1L",
+      "brand": "Almarai",
+      "barcode": null,
+      "amount": 7,
+      "currency": "SAR",
+      "currencyEvidenceUrl": "https://api.danube.sa/en/pages/terms-and-conditions",
+      "quantity": 1,
+      "unit": "L",
+      "packText": "1L",
+      "packCount": null,
+      "packCountBasis": null,
+      "priceBasis": "listed pack",
+      "country": "SA",
+      "city": "Jeddah",
+      "branch": "Al Shati",
+      "vatIncluded": null,
+      "shippingAmount": null,
+      "shippingIncluded": false,
+      "offerDisplayed": false,
+      "offerValidFrom": null,
+      "offerValidTo": null,
+      "membershipRequired": null,
+      "membershipPrice": null,
+      "displayedPoints": 7,
+      "url": "https://danube.sa/en/products/almarai-fresh-milk-full-fat-1ltr",
+      "observedAt": "2026-10-14T07:41:41Z",
+      "observedAtBasis": "UTC tool retrieval batch start, not retailer publication date",
+      "displayedPriceDate": null,
+      "priceEffectiveDate": null,
+      "evidence": {
+        "level": "full_page",
+        "locator": "lines20-33",
+        "webToolReportedCrawl": "yesterday",
+        "cachedContentPossible": true,
+        "liveQuoteFreshnessVerified": false,
+        "exactDisplayedCurrencyGlyph": ""
+      },
+      "availability": {
+        "status": "add_to_cart_control",
+        "purchaseControlDisplayed": true,
+        "purchasableNowVerified": false
+      },
+      "verifiedPriceEvidence": true,
+      "usableForResearch": true,
+      "acceptedForRuntime": false,
+      "allowedForAutomatedReuse": false,
+      "normalizedPrice": null,
+      "note": "Observed display only; no cart interaction, order, city change, nutrition inference or purchase suggestion."
+    },
+    {
+      "id": "sa-danube-watania-frozen-chicken-800g",
+      "sourceId": "sa-danube",
+      "kind": "retail_quote",
+      "category": "poultry",
+      "productName": "Al-Watania Poultry Frozen Chicken 800g",
+      "brand": "Al-Watania",
+      "barcode": null,
+      "amount": 19.75,
+      "currency": "SAR",
+      "currencyEvidenceUrl": "https://api.danube.sa/en/pages/terms-and-conditions",
+      "quantity": 800,
+      "unit": "g",
+      "packText": "800g",
+      "packCount": null,
+      "packCountBasis": null,
+      "priceBasis": "listed pack",
+      "country": "SA",
+      "city": "Jeddah",
+      "branch": "Al Shati",
+      "vatIncluded": null,
+      "shippingAmount": null,
+      "shippingIncluded": false,
+      "offerDisplayed": false,
+      "offerValidFrom": null,
+      "offerValidTo": null,
+      "membershipRequired": null,
+      "membershipPrice": null,
+      "displayedPoints": 20,
+      "url": "https://danube.sa/en/products/al_watania_poultry_chicken_800g",
+      "observedAt": "2026-10-14T07:41:41Z",
+      "observedAtBasis": "UTC tool retrieval batch start, not retailer publication date",
+      "displayedPriceDate": null,
+      "priceEffectiveDate": null,
+      "evidence": {
+        "level": "full_page",
+        "locator": "lines28-47",
+        "webToolReportedCrawl": "4 months ago",
+        "cachedContentPossible": true,
+        "liveQuoteFreshnessVerified": false,
+        "exactDisplayedCurrencyGlyph": ""
+      },
+      "availability": {
+        "status": "unavailable",
+        "purchaseControlDisplayed": false,
+        "purchasableNowVerified": false
+      },
+      "verifiedPriceEvidence": true,
+      "usableForResearch": true,
+      "acceptedForRuntime": false,
+      "allowedForAutomatedReuse": false,
+      "normalizedPrice": null,
+      "note": "Observed display only; no cart interaction, order, city change, nutrition inference or purchase suggestion."
+    },
+    {
+      "id": "sa-danube-sadia-thighs-snippet",
+      "sourceId": "sa-danube",
+      "kind": "retail_quote",
+      "category": "poultry",
+      "productName": "Sadia Frozen Chicken Thighs bone in skin in 2*900 g",
+      "brand": "Sadia",
+      "barcode": null,
+      "amount": 34,
+      "currency": "SAR",
+      "currencyEvidenceUrl": "https://api.danube.sa/en/pages/terms-and-conditions",
+      "quantity": 900,
+      "unit": "g",
+      "packText": "2*900 g",
+      "packCount": 2,
+      "url": "https://danube.sa/en/products/sadia-frozen-chicken-thighs-bone-in-skin-in-2-900-g",
+      "observedAt": "2026-10-14T07:41:41Z",
+      "displayedPriceDate": null,
+      "city": null,
+      "branch": null,
+      "vatIncluded": null,
+      "shippingAmount": null,
+      "membershipRequired": null,
+      "evidence": {
+        "level": "search_snippet_only",
+        "fullPageOpenResult": "internal_error",
+        "webToolReportedCrawl": "4 months ago",
+        "liveQuoteFreshnessVerified": false
+      },
+      "availability": {
+        "status": "unavailable_in_search_snippet",
+        "purchaseControlDisplayed": false,
+        "purchasableNowVerified": false
+      },
+      "verifiedPriceEvidence": false,
+      "usableForResearch": false,
+      "acceptedForRuntime": false,
+      "allowedForAutomatedReuse": false,
+      "normalizedPrice": null,
+      "note": "Unverified lead only; excluded from usable counts. No amount/pack promotion to runtime."
+    }
+  ],
+  "counts": {
+    "sources": 7,
+    "observations": 5,
+    "fullPageVerifiedPriceEvidence": 4,
+    "unverifiedSnippetLeads": 1,
+    "researchUsable": 4,
+    "displayedPurchaseControls": 2,
+    "outOfStockOrUnavailableVerified": 2,
+    "livePurchasableVerified": 0,
+    "statisticalValuesAcquired": 0,
+    "acceptedRuntimePrices": 0,
+    "bulkReuseAuthorizedRetailSources": 0
+  },
+  "bestAcquisitionRecommendation": {
+    "prioritySourceId": "sa-gastat-apgs",
+    "mode": "official_monthly_export_after_verification",
+    "reasons": [
+      "Official fixed-specification monthly aggregates and advertised XLSX release.",
+      "Official reuse policy found, but direct policy/report access needs verification."
+    ],
+    "nextActions": [
+      "Open GASTAT report/policy after its current502 condition clears; identify latest report and actual XLSX URL.",
+      "Preserve original bytes/hash, official commodity code/unit/specification/report period/currency/geography/VAT definition and licence notices.",
+      "Require explicit review before generic inventory mapping; keep a monthly aggregate distinct from a store quote.",
+      "Obtain retailer permission/feed documentation before retail automation; do not bypass loading/access errors."
+    ],
+    "fallback": "User-entered actual receipt/purchase price with explicit pack/date/context; no fabricated national average."
+  },
+  "comparisonRules": [
+    "Never average statistical monthly aggregates with live/store offers.",
+    "Compare only matching country/currency/unit/pack/form/product and time/geography/branch/VAT/fees/promotion/membership contexts.",
+    "No kg/L conversions or edible-yield assumptions; normalizedPrice stays null in this research bank.",
+    "Out-of-stock/unavailable records cannot support purchase suggestions; Add To Cart alone does not verify current availability.",
+    "Search snippets do not count as usable full-page price evidence.",
+    "Public visibility is not evidence of API, bulk extraction or reuse permission."
+  ],
+  "coverageGaps": [
+    "No licensed/import-ready absolute commodity price bank yet.",
+    "GASTAT latest live release and direct XLSX endpoint unavailable; no APGS numeric rows captured.",
+    "DataSaudi absolute commodity price export/API not identified; CPI is not a food price.",
+    "Lulu/Panda dynamic product pages incomplete; Carrefour home open failed; Othaim brochure validity/price not inspected.",
+    "Meat and fish full-page samples absent; poultry/dairy observations do not establish those prices.",
+    "Retail VAT treatment, latest price dates and membership conditions unknown for sampled Danube pages.",
+    "Observation pages may be cached from yesterday to4months ago; research retrieval time does not date prices.",
+    "All retailer bulk feed/export/API/licence permissions unknown or blocked by terms."
+  ]
+}

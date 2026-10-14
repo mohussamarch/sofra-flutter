@@ -53,3 +53,7 @@ node --test tool/recipes/validate-research.test.mjs
 - وصفتان من Wikibooks مع إسناد ورابط ترخيص CC BY-SA4.0 وإشعار صياغة عربية وتكييف. للكشري رابط إصدار ثابت؛ نسخة المصدر الدقيقة للشطة ما زالت مجهولة.
 - 6 كميات مجهولة،و46 مدة خطوة مجهولة في الحقل العددي،وعدد حصص وصفة واحدة مجهول. الأوقات المنشورة داخل النص/الملاحظة لا تتحول إلى مدة إجمالية بالتخمين.
 - 0 وصفات جاهزة للاستيراد و0 روابط غذاء مقبولة لهذه الدفعة. لم تُضف إلى `recipes/data/index.json` أو أصول Flutter أو واجهة الهاتف.
+
+## Arabic and German expansion —14October2026
+
+Independent research lanes added: AR1candidate/8lines/6steps; DE250sourcepages/177candidates/1493lines/998steps. No accepted quantities/nutrition/runtime/cuisines. See RECIPE-EXPANSION-AR-DE.md for exact cursor, raw response loss/recovery truth, licence exceptions and offline checks. Existing EN/FR/ES banks unchanged; do not sum as distinct dishes.

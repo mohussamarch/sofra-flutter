@@ -1,0 +1,29 @@
+{
+  "candidateId": "ar-wikibooks:12128",
+  "sourceTitle": "كتاب الطبخ/كعكة-1-2-3-4",
+  "revision": "227030",
+  "revisionTimestamp": "2026-08-23T13:02:09Z",
+  "contributor": "MenoBot",
+  "permalink": "https://ar.wikibooks.org/w/index.php?title=%D9%83%D8%AA%D8%A7%D8%A8%20%D8%A7%D9%84%D8%B7%D8%A8%D8%AE%2F%D9%83%D8%B9%D9%83%D8%A9-1-2-3-4&oldid=227030",
+  "sourceTextSha256": "72468a695af9c2949bf24463e63be67cf33fdeed13fdacdfdcaf07cdb36d1744",
+  "observations": [
+    "The API response includes the full Arabic wikitext at a fixed revision; the wikitext is preserved in candidate.json and in the archived search response.",
+    "The page labels the cake a traditional American recipe in its opening sentence. This is preserved as an unreviewed source observation; recipe.cuisine remains null.",
+    "The page contains eight ingredient lines and six numbered steps under the concise method. It also contains a separate detailed method in the preserved raw wikitext.",
+    "Eight explicit source quantity strings were transcribed to separate unreviewed candidates. Canonical amount/unit, ingredient identity, and food binding remain null.",
+    "No numerical preparation/cooking duration or servings count is stated. All step duration values and servings remain null.",
+    "The page includes file/image references. No media files were fetched or copied.",
+    "Siteinfo reports Arabic and CC BY-SA 4.0. This verifies the sitewide policy evidence only; page-level exceptions and third-party attributions remain unreviewed."
+  ],
+  "discoveryNotes": [
+    "The allcategories query found the category label وصفات مختارة; its members query returned no pages.",
+    "The allcategories prefix طبخ query returned no categories.",
+    "A bounded namespace-0 search for وصفة returned the candidate page and four unrelated language-learning pages; only the recipe-shaped candidate was extracted."
+  ],
+  "limitations": [
+    "01-siteinfo.json retains the complete parsed response and its original response-body SHA256, but not the exact raw response-body bytes.",
+    "Arabic recipe parser coverage has not been generalized beyond this fixed archived revision.",
+    "No deduplication against English/French/Spanish recipe pools was performed; the title is not claimed to be a globally unique dish."
+  ],
+  "reviewStatus": "research-only; no nutrition, food identity, quantity normalization, cuisine approval, or runtime import"
+}

@@ -148,3 +148,9 @@ PERSONAL-RECIPE-DRAFTS.md: immutable user drafts in a separate namespace, not pl
 ## Reviewed personal recipe publication
 
 PERSONAL-RECIPE-PUBLICATION.md: authored root now retains full draft/finalization evidence and exact revision/line food selections. Publish only saved unchanged active draft with explicit metadata/inventory IDs/steps/review and expected active recipe key. Generic save cannot bypass review; retries never reactivate/rebind. Reject unsupported estimated quantities, copied category scope and base precision loss; unknown food stays unknown. Existing meal optional choice remains explicit. Old clients cannot read authored kind; no UI/usercloud activation. Full183Flutter/analyzeclean;user decisions unchanged.
+
+## Egypt/Saudi price research alongside recipe expansion —14October2026
+
+Latest explicit user priority: source real EG/SA grocery/produce/meat prices while an economical independent recipe helper continues bounded licensed expansion. Prices priority30, recipe-bank35 helper; neither ongoing bank has a final record cap. Read PRICE-SOURCES-EG-SA.md and RECIPE-EXPANSION-AR-DE.md. Raw retailer/government/community observations are research-only,0runtime acceptance; public pages do not establish reuse rights or national/current prices. Keep initiative/wholesale/statistical/retail separate and preserve user-price priority/frozen history.
+
+German collector requires actual fresh quota JSON before each request, lane lock/backoff/no-clobber archive writes and unique sequence including100+. Never reuse expired usage evidence or test quota values. Read exact saved cursor; do not reset acquisition. The overwritten original2German response bodies remain lost; current100prefix pages are explicitly new retrievals. Root coordinates shared files/Git; each helper full/small handoff. No UI/Firebase/audio/image changes.
