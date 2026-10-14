@@ -194,3 +194,7 @@ Follow docs/LIBRARY-RECIPE-CALCULATOR.md.31readable records are separate from54p
 ## §72 attribution and core research lane
 
 Library44/7packs/28snapshots; local28/22sourcecuisine-regionlabels,16creatorwebsite/0completeYT. Preserve singularcreator andcreatorslist via exactcreatorId scopedsourcecontext; oldreview envelopes remain readable, enrichedcurrentpins require re-review. Officialallergen evidence atdata/food/allergen-evidence/20261014 is research-only historicalSFDAmenu scope,EGunknown; no runtimealias/product/medical/currentlaw acceptance. Validate with tool/food/validate-allergen-evidence.mjs. Keep every-sourcebank batch bounded, then advance an independentcore unit; endlessready recipecollection is not a reason to starve logic/health/price coverage. User decisions unchanged; no newbooknetwork or UI/cloud/billing.
+
+## Current §75 — research evidence and continuing work
+
+55library records/9packs/36snapshots,36archive+19creatorwebsite;30local source labels,0newcompleteYT/automaticnutrition approvals. PRODUCT-LABEL-EVIDENCE.md defines4manufacturer website observations:13contains/3mayContain, source vocabulary proposed, market/GTIN/pack/nutrition/localbinding unknown. Read-only repository preserves deep-owned context; no medical/product acceptance. OFF documented pre-use form has draft but needs user-approved contact/submission; timerexpiry alone does not resolve401. Use independentcore work while waiting. All helpers return ownership before sharedintegration/Git; final receipt outsideGit.

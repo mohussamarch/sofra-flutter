@@ -182,3 +182,7 @@ After actual quota reset, completed library-to-private-calculator review and ato
 ## §72 bounded banks and independent core unit
 
 Completed8archived+5modernwebsite records and creatorprovenancefix;44readable records,225Flutter/17recipeNode/analyze clean. Then continued independentallergen-evidence40 with a boundedofficialsource bank:2SFDA sources,7anchoredresearchclaims,15exactmappingproposals; noEG/currentlaw/product/clinicalapproval. This unit does not close remaining allergen coverage. Next real productlabel/source/version evidence, reviewed compoundlinks and EGofficial content. A continuouslyready recipebank must not consume every workunit: keep one boundedrecipeexpansion lane and advance the next independentcore unit with distinct ownership. OFFgate/sourcefailures still do not block localcorelogic. Currentactualquota74/27ordinarytrue,default90 ceiling,no credits/reset.
+
+## Progress and next independent units — §75
+
+Archived local8 and modernwebsite3 added,55selected library total; source category labels30local. Manufacturer label bank4observations +strict Flutter reader built in parallel; exact-market/GTIN/physical label approval0. After this bounded bank+core integration, prioritize actual food/quantity gaps or next modern Arabic creator batch and explicit label linking/price merchant sample; do not wait for OFF. OFF official pre-use usage form draft is reviewable but needs external-submission authorization/email. Unknown form/401cause is not resolved by an expired timer. No newbooknetwork or live price claim.

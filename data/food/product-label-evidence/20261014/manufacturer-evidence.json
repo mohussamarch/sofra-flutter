@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "batchId": "product-label-evidence-20261014",
+  "scope": "research-only-manufacturer-web-declarations",
+  "capturedAt": "2026-10-14T20:06:37Z",
+  "approvals": {
+    "runtime": false,
+    "clinical": false,
+    "currentLaw": false,
+    "redistribution": false
+  },
+  "sources": [
+    {
+      "id": "domty-bran",
+      "url": "https://domty.org/product/bran-toast/",
+      "authority": "Arabian Food Industries Company (Domty)",
+      "kind": "manufacturer-product-page",
+      "access": "retrieved",
+      "retrievedAt": "2026-10-14T20:06:37Z",
+      "publishedAt": null,
+      "publicationScope": "unknown",
+      "retrievalMethod": "web-opened-page",
+      "archived": false,
+      "bodySha256": null,
+      "rights": "unknown",
+      "sourceMarket": null,
+      "contactCountryContext": {
+        "country": "EG",
+        "basis": "contact-address-only",
+        "locator": "Contact Us footer, line 64; not a SKU market declaration"
+      },
+      "evidence": {
+        "id": "domty-bran-allergens",
+        "kind": "explicit-allergen-statement",
+        "locator": "Ingredients accordion, line 24; product heading line 21",
+        "excerpt": "Contains Gluten - Soy - Milk. The product may contain traces of Eggs."
+      },
+      "accessNote": null
+    },
+    {
+      "id": "domty-milk",
+      "url": "https://domty.org/product/milk-toast/",
+      "authority": "Arabian Food Industries Company (Domty)",
+      "kind": "manufacturer-product-page",
+      "access": "retrieved",
+      "retrievedAt": "2026-10-14T20:06:37Z",
+      "publishedAt": null,
+      "publicationScope": "unknown",
+      "retrievalMethod": "web-opened-page",
+      "archived": false,
+      "bodySha256": null,
+      "rights": "unknown",
+      "sourceMarket": null,
+      "contactCountryContext": {
+        "country": "EG",
+        "basis": "contact-address-only",
+        "locator": "Contact Us footer, line 64; not a SKU market declaration"
+      },
+      "evidence": {
+        "id": "domty-milk-allergens",
+        "kind": "explicit-allergen-statement",
+        "locator": "Ingredients accordion, line 24; product heading line 21",
+        "excerpt": "Contains Gluten - Soy - Milk. The product may contain traces of Eggs."
+      },
+      "accessNote": null
+    },
+    {
+      "id": "domty-brioche",
+      "url": "https://domty.org/product/brioche-toast/",
+      "authority": "Arabian Food Industries Company (Domty)",
+      "kind": "manufacturer-product-page",
+      "access": "retrieved",
+      "retrievedAt": "2026-10-14T20:06:37Z",
+      "publishedAt": null,
+      "publicationScope": "unknown",
+      "retrievalMethod": "web-opened-page",
+      "archived": false,
+      "bodySha256": null,
+      "rights": "unknown",
+      "sourceMarket": null,
+      "contactCountryContext": {
+        "country": "EG",
+        "basis": "contact-address-only",
+        "locator": "Contact Us footer, line 64; not a SKU market declaration"
+      },
+      "evidence": {
+        "id": "domty-brioche-allergens",
+        "kind": "explicit-allergen-statement",
+        "locator": "Ingredients accordion, line 24; product heading line 21",
+        "excerpt": "Contains Gluten - Soy - Milk and Milk Products - Eggs."
+      },
+      "accessNote": null
+    },
+    {
+      "id": "domty-high-protein",
+      "url": "https://domty.org/product/high-protein-toast-with-chia-seeds/",
+      "authority": "Arabian Food Industries Company (Domty)",
+      "kind": "manufacturer-product-page",
+      "access": "retrieved",
+      "retrievedAt": "2026-10-14T20:06:37Z",
+      "publishedAt": null,
+      "publicationScope": "unknown",
+      "retrievalMethod": "web-opened-page",
+      "archived": false,
+      "bodySha256": null,
+      "rights": "unknown",
+      "sourceMarket": null,
+      "contactCountryContext": {
+        "country": "EG",
+        "basis": "contact-address-only",
+        "locator": "Contact Us footer, line 64; not a SKU market declaration"
+      },
+      "evidence": {
+        "id": "domty-high-protein-allergens",
+        "kind": "explicit-allergen-statement",
+        "locator": "Ingredients accordion, line 24; product heading line 21",
+        "excerpt": "Contains Gluten - Soy - Milk and Milk Products. The product may contain traces of Eggs."
+      },
+      "accessNote": null
+    },
+    {
+      "id": "juhayna-dairy",
+      "url": "https://www.juhayna.com/brands-category/juhayna-dairy/",
+      "authority": "Juhayna",
+      "kind": "manufacturer-category-page",
+      "access": "retrieved",
+      "retrievedAt": "2026-10-14T20:06:37Z",
+      "publishedAt": null,
+      "publicationScope": "unknown",
+      "retrievalMethod": "web-opened-page",
+      "archived": false,
+      "bodySha256": null,
+      "rights": "unknown",
+      "sourceMarket": null,
+      "contactCountryContext": {
+        "country": "EG",
+        "basis": "contact-address-only",
+        "locator": "Headquarter footer, line 49; not a SKU market declaration"
+      },
+      "evidence": null,
+      "accessNote": "Readable category page; no explicit allergen declaration in retrieved text. Skimmed-milk basis contains ambiguous 200 m wording; no nutrition imported."
+    },
+    {
+      "id": "almarai-failed",
+      "url": "https://www.almarai.com/en/brands/almarai/fresh-dairy/fresh-milk/full-fat-fresh-milk",
+      "authority": "Almarai",
+      "kind": "manufacturer-product-page",
+      "access": "unavailable",
+      "retrievedAt": "2026-10-14T20:06:37Z",
+      "publishedAt": null,
+      "publicationScope": "unknown",
+      "retrievalMethod": "web-opened-page",
+      "archived": false,
+      "bodySha256": null,
+      "rights": "unknown",
+      "sourceMarket": null,
+      "contactCountryContext": null,
+      "evidence": null,
+      "accessNote": "Direct URL returned web tool internal error/inaccessible. URL not confirmed as an existing product page; no facts or declaration accepted; no retry."
+    }
+  ],
+  "products": [
+    {
+      "researchId": "domty-bran-web-observation",
+      "pageFacts": {
+        "brand": "Domty",
+        "exactProductName": "Bran Toast",
+        "variant": "Bran Toast",
+        "sourceId": "domty-bran",
+        "packQuantity": null,
+        "labelVersion": null,
+        "gtin": null,
+        "form": null,
+        "sourceMarket": null,
+        "sourceMarketEvidence": null,
+        "nutrition": null
+      },
+      "declarations": {
+        "basis": "explicit-manufacturer-allergen-statement",
+        "sourceId": "domty-bran",
+        "evidenceId": "domty-bran-allergens",
+        "contains": [
+          {
+            "sourceTerm": "Gluten",
+            "canonicalId": "gluten",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-bran-allergens"
+          },
+          {
+            "sourceTerm": "Soy",
+            "canonicalId": "soy",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-bran-allergens"
+          },
+          {
+            "sourceTerm": "Milk",
+            "canonicalId": "milk",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-bran-allergens"
+          }
+        ],
+        "mayContain": [
+          {
+            "sourceTerm": "Eggs",
+            "canonicalId": "egg",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-bran-allergens"
+          }
+        ],
+        "freeFrom": [],
+        "unlistedStatus": "unknown"
+      },
+      "pendingLocalProductMatch": {
+        "status": "pending",
+        "foodRecordId": null,
+        "foodRecordVersion": null,
+        "gtin": null,
+        "reviewed": false
+      },
+      "runtimeFoodRecordApproval": {
+        "approved": false,
+        "approvedAt": null,
+        "approvedBy": null
+      },
+      "unknowns": [
+        "No readable target-market declaration, pack size, GTIN or label revision in retrieved page text.",
+        "Web allergen statement is not an independently checked physical pack label.",
+        "Ingredient wheat is not copied into the dedicated allergen declaration; unlisted allergens remain unknown."
+      ]
+    },
+    {
+      "researchId": "domty-milk-web-observation",
+      "pageFacts": {
+        "brand": "Domty",
+        "exactProductName": "Milk Toast",
+        "variant": "Milk Toast",
+        "sourceId": "domty-milk",
+        "packQuantity": null,
+        "labelVersion": null,
+        "gtin": null,
+        "form": null,
+        "sourceMarket": null,
+        "sourceMarketEvidence": null,
+        "nutrition": null
+      },
+      "declarations": {
+        "basis": "explicit-manufacturer-allergen-statement",
+        "sourceId": "domty-milk",
+        "evidenceId": "domty-milk-allergens",
+        "contains": [
+          {
+            "sourceTerm": "Gluten",
+            "canonicalId": "gluten",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-milk-allergens"
+          },
+          {
+            "sourceTerm": "Soy",
+            "canonicalId": "soy",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-milk-allergens"
+          },
+          {
+            "sourceTerm": "Milk",
+            "canonicalId": "milk",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-milk-allergens"
+          }
+        ],
+        "mayContain": [
+          {
+            "sourceTerm": "Eggs",
+            "canonicalId": "egg",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-milk-allergens"
+          }
+        ],
+        "freeFrom": [],
+        "unlistedStatus": "unknown"
+      },
+      "pendingLocalProductMatch": {
+        "status": "pending",
+        "foodRecordId": null,
+        "foodRecordVersion": null,
+        "gtin": null,
+        "reviewed": false
+      },
+      "runtimeFoodRecordApproval": {
+        "approved": false,
+        "approvedAt": null,
+        "approvedBy": null
+      },
+      "unknowns": [
+        "No readable target-market declaration, pack size, GTIN or label revision in retrieved page text.",
+        "Web allergen statement is not an independently checked physical pack label.",
+        "Ingredient wheat is not copied into the dedicated allergen declaration; unlisted allergens remain unknown."
+      ]
+    },
+    {
+      "researchId": "domty-brioche-web-observation",
+      "pageFacts": {
+        "brand": "Domty",
+        "exactProductName": "Brioche Toast",
+        "variant": "Brioche Toast",
+        "sourceId": "domty-brioche",
+        "packQuantity": null,
+        "labelVersion": null,
+        "gtin": null,
+        "form": null,
+        "sourceMarket": null,
+        "sourceMarketEvidence": null,
+        "nutrition": null
+      },
+      "declarations": {
+        "basis": "explicit-manufacturer-allergen-statement",
+        "sourceId": "domty-brioche",
+        "evidenceId": "domty-brioche-allergens",
+        "contains": [
+          {
+            "sourceTerm": "Gluten",
+            "canonicalId": "gluten",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-brioche-allergens"
+          },
+          {
+            "sourceTerm": "Soy",
+            "canonicalId": "soy",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-brioche-allergens"
+          },
+          {
+            "sourceTerm": "Milk and Milk Products",
+            "canonicalId": "milk",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-brioche-allergens"
+          },
+          {
+            "sourceTerm": "Eggs",
+            "canonicalId": "egg",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-brioche-allergens"
+          }
+        ],
+        "mayContain": [],
+        "freeFrom": [],
+        "unlistedStatus": "unknown"
+      },
+      "pendingLocalProductMatch": {
+        "status": "pending",
+        "foodRecordId": null,
+        "foodRecordVersion": null,
+        "gtin": null,
+        "reviewed": false
+      },
+      "runtimeFoodRecordApproval": {
+        "approved": false,
+        "approvedAt": null,
+        "approvedBy": null
+      },
+      "unknowns": [
+        "No readable target-market declaration, pack size, GTIN or label revision in retrieved page text.",
+        "Web allergen statement is not an independently checked physical pack label.",
+        "Ingredient wheat is not copied into the dedicated allergen declaration; unlisted allergens remain unknown."
+      ]
+    },
+    {
+      "researchId": "domty-high-protein-web-observation",
+      "pageFacts": {
+        "brand": "Domty",
+        "exactProductName": "High Protein Toast with Chia Seeds",
+        "variant": "High Protein Toast with Chia Seeds",
+        "sourceId": "domty-high-protein",
+        "packQuantity": null,
+        "labelVersion": null,
+        "gtin": null,
+        "form": null,
+        "sourceMarket": null,
+        "sourceMarketEvidence": null,
+        "nutrition": null
+      },
+      "declarations": {
+        "basis": "explicit-manufacturer-allergen-statement",
+        "sourceId": "domty-high-protein",
+        "evidenceId": "domty-high-protein-allergens",
+        "contains": [
+          {
+            "sourceTerm": "Gluten",
+            "canonicalId": "gluten",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-high-protein-allergens"
+          },
+          {
+            "sourceTerm": "Soy",
+            "canonicalId": "soy",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-high-protein-allergens"
+          },
+          {
+            "sourceTerm": "Milk and Milk Products",
+            "canonicalId": "milk",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-high-protein-allergens"
+          }
+        ],
+        "mayContain": [
+          {
+            "sourceTerm": "Eggs",
+            "canonicalId": "egg",
+            "mappingStatus": "proposed",
+            "evidenceId": "domty-high-protein-allergens"
+          }
+        ],
+        "freeFrom": [],
+        "unlistedStatus": "unknown"
+      },
+      "pendingLocalProductMatch": {
+        "status": "pending",
+        "foodRecordId": null,
+        "foodRecordVersion": null,
+        "gtin": null,
+        "reviewed": false
+      },
+      "runtimeFoodRecordApproval": {
+        "approved": false,
+        "approvedAt": null,
+        "approvedBy": null
+      },
+      "unknowns": [
+        "No readable target-market declaration, pack size, GTIN or label revision in retrieved page text.",
+        "Web allergen statement is not an independently checked physical pack label.",
+        "Ingredient wheat is not copied into the dedicated allergen declaration; unlisted allergens remain unknown."
+      ]
+    }
+  ]
+}

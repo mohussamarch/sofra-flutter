@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "recipeSha256": "785b0468575cac7bcd7be1579ac6709e798d68df988727b1306e9e8625a0d8a9",
+  "note": "Manual archived-source transcription only. Unknown/ranged amounts, untimed actions, scaling, food, rights and retention remain unresolved. Approximate phase durations are not exact scalar timers.",
+  "reviewedAt": "2026-10-14T20:04:04.000Z",
+  "servings": null,
+  "prepMinutes": null,
+  "cookMinutes": null,
+  "stepMinutes": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "lines": [
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:457203",
+        "recordId": "wikibooks-457203-r4522196",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4522196",
+        "sourceSha256": "a03e18b088497143c2e7175b9cffbfff46894fc32b4da4dea27e7132bd71ccb7",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 0,
+        "lineId": "source-line-1",
+        "sourceText": "1 liter (4 cups) whole milk",
+        "derivedRecipeSha256": "785b0468575cac7bcd7be1579ac6709e798d68df988727b1306e9e8625a0d8a9"
+      },
+      "resolution": "choice",
+      "disposition": "required",
+      "note": "source metric1liter selected;4cups alternate not converted",
+      "components": [
+        {
+          "name": "whole milk",
+          "amount": 1,
+          "unit": "L",
+          "form": "whole milk",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:457203",
+        "recordId": "wikibooks-457203-r4522196",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4522196",
+        "sourceSha256": "a03e18b088497143c2e7175b9cffbfff46894fc32b4da4dea27e7132bd71ccb7",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 1,
+        "lineId": "source-line-2",
+        "sourceText": "¼ cup lemon juice or vinegar",
+        "derivedRecipeSha256": "785b0468575cac7bcd7be1579ac6709e798d68df988727b1306e9e8625a0d8a9"
+      },
+      "resolution": "choice",
+      "disposition": "required",
+      "note": "lemon juice selected from published lemon juice or vinegar alternative",
+      "components": [
+        {
+          "name": "lemon juice",
+          "amount": 0.25,
+          "unit": "cup",
+          "form": "lemon juice",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    },
+    {
+      "target": {
+        "schemaVersion": 1,
+        "recipeId": "wikibooks:457203",
+        "recordId": "wikibooks-457203-r4522196",
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "sourceRevision": "4522196",
+        "sourceSha256": "a03e18b088497143c2e7175b9cffbfff46894fc32b4da4dea27e7132bd71ccb7",
+        "parserVersion": "wikibooks-sections-v3",
+        "quantityParserVersion": "source-prefix-v2",
+        "lineIndex": 2,
+        "lineId": "source-line-3",
+        "sourceText": "¼ teaspoon salt",
+        "derivedRecipeSha256": "785b0468575cac7bcd7be1579ac6709e798d68df988727b1306e9e8625a0d8a9"
+      },
+      "resolution": "single",
+      "disposition": "required",
+      "note": "published quantity retained without gram/volume conversion",
+      "components": [
+        {
+          "name": "salt",
+          "amount": 0.25,
+          "unit": "tsp",
+          "form": "salt",
+          "optional": false,
+          "scales": null,
+          "food": null
+        }
+      ]
+    }
+  ]
+}

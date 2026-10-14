@@ -79,3 +79,13 @@ RECIPE-LIBRARY.md supersedes old zero-output counts:16locally curated Arabic rec
 ## §72 current totals
 
 44selectedreadable records,7packs/28snapshots:local28(10fullyspecifiedculinary/16needsreview/2notcookable) plus16creatorwebsite. New8local fromexistingarchive add9exactsourcecategorylabels;combinedlocal22cuisine/regionlabels,not22approvednationalcuisines. New5Manalwebsite recipes have81ingredientlines/15conciseArabicsteps; allsource-serving/cuisineunknowns preserved.14existingvideo discoveries/4partialdescriptions/0completeYouTube-derived;2newfailedvideo fetches notpromoted/disguised.1reviewed distinct-methodnaanfamily unchanged. No globaldedup/automaticnutrition/planning/rightsapproval or newbooknetwork. Full/small archivehandoffs underdocs/agents/curated-third-1530*.
+
+## Current selected library — §75
+
+55readable records/9pinned packs/36source snapshots =36local archived Arabic curations+19modern creator website recipes. Local10fullyspecified culinary/24needsreview/2notcookable;30exact source cuisine/region labels, not30approved national cuisines. New8labels: Chinese/Korean/Indonesian/Greek/Caribbean/Ethiopian/Brazilian/Swedish. Chinese Chews is a Caribbean source category, not a guessed Chinese cuisine.
+
+New archived8: Taro Fish, Korean Shortribs, Awug, Greek Yogurt Sauce, Chinese Chews, Ayib, Brigadeiro, Candied Almonds.52source ingredient lines+4procedural supplements/48Arabic steps;0newfullyspecified/native-ready. Existing archived title encoding artifacts remain source evidence, not repaired by invented spelling or lossy decoding.
+
+New Chef Omar website3: Turkish shish tawook with bulgur, meat shawarma, Syrian meat shawarma.67listed+10procedural ingredients/6mapped concise method parts. One directly opened page and two cached primary search extracts, not videos/full archived bodies. Channel identity pending; no unverified creator merge. Source50/60/90minute headers remain publishedTotalMinutes while total/actual null because optional overnight/refrigeration and conflicts remain explicit. Two shawarmas have a pending family proposal, not an approved second method family.14video discoveries/4partial/0completeYT remain unchanged.
+
+ManifestSHAfa2a3968ef46d070c4f532903bb5b68328ec9df2f0d8d6749391363278600c33. Original54planning recipes/4cuisines,1reviewed distinct-method naan family,0automatic food/nutrition/rights approvals unchanged. All selected records retain source and explicit private-calculator review paths; quantity and identity coverage still require work.

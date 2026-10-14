@@ -1,0 +1,1200 @@
+{
+  "schemaVersion": 1,
+  "batchId": "arabic-creator-fifth-batch-20261014",
+  "retrievedAt": "2026-10-14",
+  "sourcePolicy": {
+    "sourceKind": "creator-website",
+    "youtubeDerived": false,
+    "sourceApproval": null,
+    "reuseRights": null,
+    "mediaDownloaded": false,
+    "transcriptExtraction": false,
+    "httpBodyHash": null,
+    "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+    "limitations": "Source facts and concise paraphrase; site body not archived, source rights unknown, nutrition/food approval absent."
+  },
+  "creator": {
+    "creatorId": "chef-omar-official-website",
+    "name": "الشيف عمر — موقع chef-omar.com",
+    "officialSite": "https://www.chef-omar.com/",
+    "channelUrl": null,
+    "identityEvidence": "https://www.chef-omar.com/recipes/lunch",
+    "identityStatus": "website-name-established-channel-link-pending",
+    "identityNote": "Do not merge with other Omar or Shaheen creators; YouTube channel identity remains unverified."
+  },
+  "recipes": [
+    {
+      "recipeId": "chef-omar-website-turkish-shish-tawook-bulgur",
+      "creatorId": "chef-omar-official-website",
+      "title": "شيش طاووق تركي مع البرغل",
+      "sourceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+      "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceApproval": null,
+      "reuseRights": null,
+      "httpBodyHash": null,
+      "cuisine": {
+        "value": "تركي",
+        "evidence": "Recipe introduction declares Turkish; tag Turkish-cuisine.",
+        "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+        "reviewStatus": "pending",
+        "status": "source-declared-pending-human-review"
+      },
+      "yield": {
+        "amount": 6,
+        "unit": "serving",
+        "sourceText": "Serves 6"
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": 50,
+        "publishedTotalText": "50 mins",
+        "publishedTotalEvidence": "Total Time page heading",
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": 3,
+            "approximate": true,
+            "phase": "second-side-grilling",
+            "sourceStepIndices": [
+              1
+            ]
+          }
+        ],
+        "optionalWaits": [
+          {
+            "sourceText": "ليلة كاملة",
+            "phase": "marination",
+            "minutes": null,
+            "optional": true,
+            "sourceStepIndices": [
+              0
+            ]
+          }
+        ],
+        "conflicts": [
+          "Published50-minute total does not establish elapsed time including optional overnight marination."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "صدر دجاج",
+          "amount": 1,
+          "unit": "kg",
+          "sourceQuantityText": "One kilo",
+          "group": "chicken",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 0,
+          "optional": false
+        },
+        {
+          "labelAr": "لبن زبادي",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 1,
+          "optional": false
+        },
+        {
+          "labelAr": "ثوم",
+          "amount": 8,
+          "unit": "clove",
+          "sourceQuantityText": "8 cloves",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 2,
+          "optional": false
+        },
+        {
+          "labelAr": "دبس فليفلة",
+          "amount": 0.5,
+          "unit": null,
+          "sourceQuantityText": "Half a spoon",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 3,
+          "optional": false
+        },
+        {
+          "labelAr": "دبس بندورة",
+          "amount": 0.5,
+          "unit": null,
+          "sourceQuantityText": "Half a spoon",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 4,
+          "optional": false
+        },
+        {
+          "labelAr": "برش ليمون",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "A little",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 5,
+          "optional": false
+        },
+        {
+          "labelAr": "عصير ليمون",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 6,
+          "optional": false
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "A teaspoon",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 7,
+          "optional": false
+        },
+        {
+          "labelAr": "كزبرة",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "A teaspoon",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 8,
+          "optional": false
+        },
+        {
+          "labelAr": "هيل",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "Half a teaspoon",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 9,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أبيض",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "A quarter teaspoon",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 10,
+          "optional": false
+        },
+        {
+          "labelAr": "زنجبيل",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "Half a teaspoon",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 11,
+          "optional": false
+        },
+        {
+          "labelAr": "بابريكا",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "A teaspoon",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 12,
+          "optional": false
+        },
+        {
+          "labelAr": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "A little",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 13,
+          "optional": false
+        },
+        {
+          "labelAr": "سمن",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "grilling",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 14,
+          "optional": false
+        },
+        {
+          "labelAr": "بصل مفروم ناعم",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 15,
+          "optional": false
+        },
+        {
+          "labelAr": "فليفلة حمراء مفرومة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 16,
+          "optional": false
+        },
+        {
+          "labelAr": "فليفلة خضراء مفرومة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 17,
+          "optional": false
+        },
+        {
+          "labelAr": "بندورة مفرومة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 18,
+          "optional": false
+        },
+        {
+          "labelAr": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "A little",
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 19,
+          "optional": false
+        },
+        {
+          "labelAr": "زبدة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "A little",
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 20,
+          "optional": false
+        },
+        {
+          "labelAr": "ملح",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 21,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 22,
+          "optional": false
+        },
+        {
+          "labelAr": "قرفة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 23,
+          "optional": false
+        },
+        {
+          "labelAr": "برغل مغسول",
+          "amount": 2.5,
+          "unit": "cup",
+          "sourceQuantityText": "Two cups and a half",
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 24,
+          "optional": false
+        },
+        {
+          "labelAr": "دبس بندورة",
+          "amount": 1.5,
+          "unit": "tbsp",
+          "sourceQuantityText": "A tablespoon and a half",
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 25,
+          "optional": false
+        },
+        {
+          "labelAr": "ماء",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "immersion water",
+          "group": "bulgur",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceIngredientIndex": 26,
+          "optional": false
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "قطّع الدجاج؛ اخلط التتبيلة بالخلاط ووزعها عليه. ليلة التتبيل خيار؛ شكّه وبرّده مغطى. حمّر البصل بالزبدة والزيت والتوابل؛ أضف الفليفلة والبندورة والدبس، ثم البرغل وماء أعلى منه1سم. اغله ثم هدئه حتى ينضج.",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "سخّن السمن والمقلاة جدًا واشوِ الأسياخ؛ اقلبها نحو3دقائق للجهة الثانية، ثم قدمها فوق البرغل.",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Turkish-Shish-Tawook-with-Bulgur/",
+          "sourceStepIndices": [
+            1
+          ]
+        }
+      ],
+      "sourceStepCount": 2,
+      "sourceStepIndexBase": 0,
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceConflicts": [
+        {
+          "field": "ingredients.lemon-juice",
+          "sourceIngredientIndex": 6,
+          "sourceStepIndices": [
+            0
+          ],
+          "proceduralAmount": 1,
+          "proceduralUnit": "lemon",
+          "detail": "القائمة بلا كمية؛الطريقة عصير ليمونة."
+        },
+        {
+          "field": "ingredients.onion",
+          "sourceIngredientIndex": 15,
+          "sourceStepIndices": [
+            0
+          ],
+          "proceduralAmount": 1,
+          "proceduralUnit": "onion",
+          "detail": "القائمة بلا عدد؛الطريقة بصلة."
+        }
+      ],
+      "unknowns": [
+        "نوع وحجم نصف الملعقة للدبسين مجهولان؛ لم يحوّلا لكبيرة أو صغيرة.",
+        "قائمة المقادير لا تحدد كميات الخضار والسمن والزبدة والماء والزيت؛ البرش قليل.",
+        "الزمن الفعلي ووزن الحصة وقياس الكوب وتاريخ النشر وحقوق الاستخدام مجهولة.",
+        "كل هويات الطعام والتغذية وربط العائلة والاعتماد للمطبخ ما زالت تحت المراجعة."
+      ],
+      "familyProposal": null,
+      "foodBindings": [],
+      "acquisitionMethod": "directly-parsed-primary-page",
+      "contentSha256": "ef5b4d8abb9c07cb9406713b3212820acf85e8f1af2054f9227532d1d3af1c8c"
+    },
+    {
+      "recipeId": "chef-omar-website-meat-shawarma",
+      "creatorId": "chef-omar-official-website",
+      "title": "شاورما لحم",
+      "sourceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+      "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceApproval": null,
+      "reuseRights": null,
+      "httpBodyHash": null,
+      "acquisitionMethod": "root-primary-search-extract",
+      "sourceEvidence": {
+        "kind": "primary-website-search-extract-provided-by-coordinator",
+        "retrievedAt": "2026-10-14",
+        "fullPageRetrievedByWorker": false,
+        "rawBodyArchived": false,
+        "ingredientOrder": "normalized-marinade-then-tarator; second-source-group-order-reversed",
+        "sourceStepCount": 2,
+        "quantityRepresentation": "Coordinator-normalized primary-source facts; explicit raw ambiguities retained verbatim."
+      },
+      "cuisine": {
+        "value": "شامي",
+        "evidence": "Introduction explicitly mentions المطبخ الشامي.",
+        "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+        "reviewStatus": "pending",
+        "status": "source-declared-pending-human-review"
+      },
+      "yield": {
+        "amount": 12,
+        "unit": "serving",
+        "sourceText": "Serves 12"
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": 60,
+        "publishedTotalText": "60 mins",
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": 240,
+            "phase": "source-refrigeration-maximum",
+            "bound": "maximum",
+            "sourceStepIndices": [
+              0
+            ]
+          },
+          {
+            "minutes": 1440,
+            "phase": "conditional-tough-meat-refrigeration-minimum",
+            "bound": "minimum",
+            "conditional": true,
+            "sourceStepIndices": [
+              0
+            ]
+          }
+        ],
+        "conflicts": [
+          "60دقيقة منشورة؛حد4ساعات يتعارض مع يوم على الأقل للحم القاسي."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "لحم خروف",
+          "amount": 1,
+          "unit": "kg",
+          "sourceQuantityText": "1 kg",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 0,
+          "evidenceLocator": "marinade/لحم خروف"
+        },
+        {
+          "labelAr": "دهن خروف",
+          "amount": 300,
+          "unit": "g",
+          "sourceQuantityText": "300 g",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 1,
+          "evidenceLocator": "marinade/دهن خروف"
+        },
+        {
+          "labelAr": "عصير بصل",
+          "amount": 3,
+          "unit": "onion",
+          "sourceQuantityText": "3 onions",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 2,
+          "evidenceLocator": "marinade/عصير بصل"
+        },
+        {
+          "labelAr": "زيت زيتون",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 cup",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 3,
+          "evidenceLocator": "marinade/زيت زيتون"
+        },
+        {
+          "labelAr": "عصير ليمون",
+          "amount": 1,
+          "unit": "lemon",
+          "sourceQuantityText": "1 lemon",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 4,
+          "evidenceLocator": "marinade/عصير ليمون"
+        },
+        {
+          "labelAr": "لبن زبادي",
+          "amount": 4,
+          "unit": "tbsp",
+          "sourceQuantityText": "4 tbsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 5,
+          "evidenceLocator": "marinade/لبن زبادي"
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 1.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1.5 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 6,
+          "evidenceLocator": "marinade/ملح"
+        },
+        {
+          "labelAr": "فلفل أسود",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 7,
+          "evidenceLocator": "marinade/فلفل أسود"
+        },
+        {
+          "labelAr": "كزبرة جافة",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 8,
+          "evidenceLocator": "marinade/كزبرة جافة"
+        },
+        {
+          "labelAr": "زنجبيل",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "0.5 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 9,
+          "evidenceLocator": "marinade/زنجبيل"
+        },
+        {
+          "labelAr": "قرفة",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "0.5 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 10,
+          "evidenceLocator": "marinade/قرفة"
+        },
+        {
+          "labelAr": "هيل",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "0.5 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 11,
+          "evidenceLocator": "marinade/هيل"
+        },
+        {
+          "labelAr": "قرنفل",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "0.25 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 12,
+          "evidenceLocator": "marinade/قرنفل"
+        },
+        {
+          "labelAr": "جوزة الطيب",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "0.25 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 13,
+          "evidenceLocator": "marinade/جوزة الطيب"
+        },
+        {
+          "labelAr": "فلفل أحمر جاف",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 14,
+          "evidenceLocator": "marinade/فلفل أحمر جاف"
+        },
+        {
+          "labelAr": "طحينة",
+          "amount": 8,
+          "unit": "tbsp",
+          "sourceQuantityText": "8 tbsp",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 15,
+          "evidenceLocator": "tarator/طحينة"
+        },
+        {
+          "labelAr": "لبن زبادي",
+          "amount": 4,
+          "unit": "tbsp",
+          "sourceQuantityText": "4 tbsp",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 16,
+          "evidenceLocator": "tarator/لبن زبادي"
+        },
+        {
+          "labelAr": "ثوم",
+          "amount": 2,
+          "unit": "clove",
+          "sourceQuantityText": "2 large cloves",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 17,
+          "evidenceLocator": "tarator/ثوم"
+        },
+        {
+          "labelAr": "عصير ليمون",
+          "amount": 1,
+          "unit": "lemon",
+          "sourceQuantityText": "1 lemon",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 18,
+          "evidenceLocator": "tarator/عصير ليمون"
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "0.5 tsp",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 19,
+          "evidenceLocator": "tarator/ملح"
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "خبز",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        },
+        {
+          "labelAr": "مخلل لفت",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        },
+        {
+          "labelAr": "بقدونس",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        },
+        {
+          "labelAr": "دبس رمان",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        },
+        {
+          "labelAr": "بصل شرائح",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        },
+        {
+          "labelAr": "سمن",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "اخلط التتبيلة بالخلاط وغطّ اللحم والدهن بها؛المصدر يذكر حد4ساعات،ويذكر يومًا للحم القاسي.",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "اخلط الطرطور؛صفّ التتبيلة وذوّب الدهن وأزل البقايا. اقلِ اللحم بدفعات ساخنة ثم البصل قليلًا. احشِ الخبز بالطرطور والمخلل والبقدونس والبصل واللحم والدبس؛حمّصه بالسمن.",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Meat-Shawarma/",
+          "sourceStepIndices": [
+            1
+          ]
+        }
+      ],
+      "sourceStepCount": 2,
+      "sourceStepIndexBase": 0,
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceConflicts": [],
+      "unknowns": [
+        "كميات إضافات السندويتش ووزن الحصة وتاريخ النشر مجهولة.",
+        "هويات الطعام والتغذية والحقوق ومقدار الدهن المحتفظ به غير معتمدة."
+      ],
+      "familyProposal": {
+        "proposedFamilyId": "chef-omar-meat-shawarma",
+        "relatedRecipeIds": [
+          "chef-omar-website-meat-shawarma",
+          "chef-omar-website-syrian-meat-shawarma"
+        ],
+        "reviewStatus": "pending",
+        "differenceEvidence": "اختلاف مقدار اللبن والدهن وخيار اللحم والتبريد؛لم تعتمد هوية العائلة أو تعدد الطرق."
+      },
+      "foodBindings": [],
+      "contentSha256": "069f7ecad3960f4c0f6c43e0d0e55cba827227d62e14de27e35d54a29cb94a47"
+    },
+    {
+      "recipeId": "chef-omar-website-syrian-meat-shawarma",
+      "creatorId": "chef-omar-official-website",
+      "title": "شاورما لحم سورية",
+      "sourceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+      "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceApproval": null,
+      "reuseRights": null,
+      "httpBodyHash": null,
+      "acquisitionMethod": "root-primary-search-extract",
+      "sourceEvidence": {
+        "kind": "primary-website-search-extract-provided-by-coordinator",
+        "retrievedAt": "2026-10-14",
+        "fullPageRetrievedByWorker": false,
+        "rawBodyArchived": false,
+        "ingredientOrder": "normalized-marinade-then-tarator; second-source-group-order-reversed",
+        "sourceStepCount": 2,
+        "quantityRepresentation": "Coordinator-normalized primary-source facts; explicit raw ambiguities retained verbatim."
+      },
+      "cuisine": {
+        "value": "سوري",
+        "evidence": "Source title Syrian meat shawarma; introduction Levant/Middle East.",
+        "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+        "reviewStatus": "pending",
+        "status": "source-declared-pending-human-review"
+      },
+      "yield": {
+        "amount": 5,
+        "unit": "serving",
+        "sourceText": "Serves 5"
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": 90,
+        "publishedTotalText": "90 mins",
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": 1440,
+            "phase": "source-refrigeration-one-day",
+            "sourceStepIndices": [
+              0
+            ]
+          }
+        ],
+        "conflicts": [
+          "90دقيقة منشورة؛الطريقة تتطلب تبريد يوم."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "لحم",
+          "amount": 1,
+          "unit": "kg",
+          "sourceQuantityText": "1 kg",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "alternatives": [
+            "لحم خروف",
+            "لحم عجل"
+          ],
+          "choiceRequired": true,
+          "normalizedIngredientIndex": 0,
+          "evidenceLocator": "marinade/لحم"
+        },
+        {
+          "labelAr": "دهن أو سمن",
+          "amount": 200,
+          "unit": "g",
+          "sourceQuantityText": "200 g",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "alternatives": [
+            "دهن",
+            "سمن"
+          ],
+          "choiceRequired": true,
+          "normalizedIngredientIndex": 1,
+          "evidenceLocator": "marinade/دهن أو سمن"
+        },
+        {
+          "labelAr": "عصير بصل",
+          "amount": 3,
+          "unit": "onion",
+          "sourceQuantityText": "3 onions",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 2,
+          "evidenceLocator": "marinade/عصير بصل"
+        },
+        {
+          "labelAr": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "A cup of olive oil tea",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 3,
+          "evidenceLocator": "marinade/زيت زيتون"
+        },
+        {
+          "labelAr": "عصير ليمون",
+          "amount": 1,
+          "unit": "lemon",
+          "sourceQuantityText": "1 lemon",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 4,
+          "evidenceLocator": "marinade/عصير ليمون"
+        },
+        {
+          "labelAr": "لبن زبادي",
+          "amount": 200,
+          "unit": "g",
+          "sourceQuantityText": "200 g",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 5,
+          "evidenceLocator": "marinade/لبن زبادي"
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 1.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1.5 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 6,
+          "evidenceLocator": "marinade/ملح"
+        },
+        {
+          "labelAr": "فلفل أسود",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 7,
+          "evidenceLocator": "marinade/فلفل أسود"
+        },
+        {
+          "labelAr": "كزبرة جافة",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 8,
+          "evidenceLocator": "marinade/كزبرة جافة"
+        },
+        {
+          "labelAr": "زنجبيل",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "0.5 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 9,
+          "evidenceLocator": "marinade/زنجبيل"
+        },
+        {
+          "labelAr": "قرفة",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "0.5 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 10,
+          "evidenceLocator": "marinade/قرفة"
+        },
+        {
+          "labelAr": "هيل",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "Half teaspoon (Hill)",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 11,
+          "evidenceLocator": "marinade/هيل"
+        },
+        {
+          "labelAr": "قرنفل",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "0.25 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 12,
+          "evidenceLocator": "marinade/قرنفل"
+        },
+        {
+          "labelAr": "جوزة الطيب",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "0.25 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 13,
+          "evidenceLocator": "marinade/جوزة الطيب"
+        },
+        {
+          "labelAr": "فلفل أحمر جاف",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp",
+          "group": "marinade",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 14,
+          "evidenceLocator": "marinade/فلفل أحمر جاف"
+        },
+        {
+          "labelAr": "طحينة",
+          "amount": 8,
+          "unit": "tbsp",
+          "sourceQuantityText": "8 tbsp",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 15,
+          "evidenceLocator": "tarator/طحينة"
+        },
+        {
+          "labelAr": "لبن زبادي",
+          "amount": 4,
+          "unit": "tbsp",
+          "sourceQuantityText": "4 tbsp",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 16,
+          "evidenceLocator": "tarator/لبن زبادي"
+        },
+        {
+          "labelAr": "ثوم",
+          "amount": 2,
+          "unit": "clove",
+          "sourceQuantityText": "2 cloves",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 17,
+          "evidenceLocator": "tarator/ثوم"
+        },
+        {
+          "labelAr": "عصير ليمون",
+          "amount": 1,
+          "unit": "lemon",
+          "sourceQuantityText": "1 lemon",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 18,
+          "evidenceLocator": "tarator/عصير ليمون"
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "0.5 tsp",
+          "group": "tarator",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "optional": false,
+          "normalizedIngredientIndex": 19,
+          "evidenceLocator": "tarator/ملح"
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "خبز",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        },
+        {
+          "labelAr": "مخلل",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        },
+        {
+          "labelAr": "بقدونس",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        },
+        {
+          "labelAr": "دبس رمان",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "assembly",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "sourceStepIndices": [
+            1
+          ],
+          "optional": false
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "قطّع اللحم والدهن رفيعًا؛اخلط التتبيلة بالخلاط وغطّ اللحم بها ثم برّده يومًا.",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "اخلط الطرطور؛ذوّب الدهن بهدوء وأزل البقايا،واقلِ اللحم بحرارة عالية. لفّه بالخبز والصوص والمخلل والبقدونس والدبس.",
+          "evidenceUrl": "https://www.chef-omar.com/blog/post/Syrian_meat_shawarma/",
+          "sourceStepIndices": [
+            1
+          ]
+        }
+      ],
+      "sourceStepCount": 2,
+      "sourceStepIndexBase": 0,
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceConflicts": [
+        {
+          "field": "ingredients.olive-oil",
+          "sourceIngredientIndex": 3,
+          "detail": "نوع الكوب في النص tea ملتبس؛الكمية والوحدة القياسيتان مجهولتان."
+        },
+        {
+          "field": "ingredients.cardamom",
+          "sourceIngredientIndex": 11,
+          "detail": "Hill ترجمة ملتبسة؛هوية الهيل للمراجعة."
+        }
+      ],
+      "unknowns": [
+        "كميات إضافات السندويتش ووزن الحصة وتاريخ النشر مجهولة.",
+        "هويات الطعام والتغذية والحقوق ومقدار الدهن المحتفظ به غير معتمدة."
+      ],
+      "familyProposal": {
+        "proposedFamilyId": "chef-omar-meat-shawarma",
+        "relatedRecipeIds": [
+          "chef-omar-website-meat-shawarma",
+          "chef-omar-website-syrian-meat-shawarma"
+        ],
+        "reviewStatus": "pending",
+        "differenceEvidence": "اختلاف مقدار اللبن والدهن وخيار اللحم والتبريد؛لم تعتمد هوية العائلة أو تعدد الطرق."
+      },
+      "foodBindings": [],
+      "contentSha256": "d645c329a71d1f37f26a9146d9bb11eb2531eaee56746e4079b9d9bb304923d8"
+    }
+  ]
+}

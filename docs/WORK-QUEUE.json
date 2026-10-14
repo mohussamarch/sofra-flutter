@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T16:32:33.257130+00:00",
-    "taskId": "recipe-library-import-guards",
-    "summary": "Matching-hash malformed source snapshots now reject;10Nodepassed,44recipe manifest unchanged.",
+    "at": "2026-10-14T20:24:09.891300+00:00",
+    "taskId": "product-label-reader",
+    "summary": "11readable recipes added; strict manufacturer evidence reader4observations, original catalog unchanged",
     "evidence": [
-      "tool/recipes/build-recipe-library.mjs",
-      "tool/recipes/build-recipe-library.test.mjs",
-      "docs/RECIPE-LIBRARY.md"
+      "lib/data/product_label_evidence_repository.dart",
+      "test/product_label_evidence_repository_test.dart",
+      "data/recipes/curated-local/flutter-manifest.json"
     ]
   },
   "tasks": [
@@ -76,9 +76,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Continue bounded moderncreator source recipes, sourceomissions/rights/explicitfoodreview;16website nowbundled,0completeYouTube-derived. Do not starve independent core work.",
-      "lastAttemptAt": "2026-10-14T15:47:21.012150+00:00",
-      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
+      "nextAction": "Bounded modern Arabic creator acquisition with complete accessible ingredients/method;19website/0completeYT. Work on independent core after bounded batches.",
+      "lastAttemptAt": "2026-10-14T20:24:09.891300+00:00",
+      "lastProgressAt": "2026-10-14T20:24:09.891300+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -142,7 +142,9 @@
         "data/recipes/arabic-youtube/third-batch-20261014/recipes.json",
         "docs/agents/arabic-youtube-1500.md",
         "data/recipes/arabic-youtube/fourth-batch-20261014/recipes.json",
-        "tool/recipes/creator-fourth-validation.test.mjs"
+        "tool/recipes/creator-fourth-validation.test.mjs",
+        "data/recipes/arabic-youtube/fifth-batch-20261014/recipes.json",
+        "docs/agents/creator-fifth-2005.md"
       ],
       "stage": "OfficialmodernArabiccreatorYouTubeandownwebsiteacquisition",
       "sourcePolicy": {
@@ -157,7 +159,7 @@
         "videoDiscoveries": 14,
         "partialVideoRecipes": 4,
         "completeVideoRecipes": 0,
-        "creatorWebsiteRecords": 8,
+        "creatorWebsiteRecords": 19,
         "runtimeApprovals": 0
       }
     },
@@ -369,9 +371,9 @@
       "priority": 40,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Next bounded unit: real productlabel source/version evidence and compound links; seek accessible Egyptofficial content. Keep SA historical menu scope separate from current packaged law; do not autoapply proposals.",
-      "lastAttemptAt": "2026-10-14T15:47:21.012150+00:00",
-      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
+      "nextAction": "Exact target-market physical label/GTIN/version and explicit local match; manufacturer web statements remain research-only. Add accessible EG/SA evidence in bounded units.",
+      "lastAttemptAt": "2026-10-14T20:24:09.891300+00:00",
+      "lastProgressAt": "2026-10-14T20:24:09.891300+00:00",
       "completedUnit": {
         "retrievedOfficialSources": 2,
         "failedOfficialAccessAttempts": 2,
@@ -381,13 +383,19 @@
         "productDeclarations": 0,
         "runtimeAliasChanges": 0,
         "egyptCoverage": "unknown",
-        "currentLegalApplicability": "unknown"
+        "currentLegalApplicability": "unknown",
+        "manufacturerWebObservations": 4,
+        "manufacturerContainsDeclarations": 13,
+        "manufacturerMayContainDeclarations": 3
       },
       "evidence": [
         "data/food/allergen-evidence/20261014/official-evidence.json",
         "tool/food/validate-allergen-evidence.mjs",
         "tool/food/validate-allergen-evidence.test.mjs",
-        "docs/agents/allergen-evidence-1540.md"
+        "docs/agents/allergen-evidence-1540.md",
+        "data/food/product-label-evidence/20261014/manufacturer-evidence.json",
+        "tool/food/validate-product-label-evidence.test.mjs",
+        "docs/PRODUCT-LABEL-EVIDENCE.md"
       ]
     },
     {
@@ -459,10 +467,9 @@
       "id": "product-bank",
       "priority": 80,
       "dependsOn": [],
-      "status": "waiting",
-      "nextAction": "Shared401source gate until2026-10-14T16:33:18.596Z; review officialpublic access/source resolution before any nextrequest, no route/country/auth bypass.2378products/67archivesunchanged.",
-      "blockedUntil": "2026-10-14T05:32:30.374Z",
-      "blockedReason": "OFF503backoff;independentauthoringcontinued",
+      "status": "needs_user",
+      "nextAction": "Submit prepared draft only after explicit authorization/email; inspect remaining form facts. Review exports/API access before one fresh guarded collector batch.2378/67 unchanged.",
+      "blockedReason": "External API usage form requires user-authorized contact email/submission;401cause unresolved",
       "lastProgressAt": "2026-10-14T02:35:01.478Z",
       "completedUnit": {
         "products": 2378,
@@ -483,10 +490,20 @@
         "requests": 1,
         "growth": 0
       },
-      "stage": "Shared401/403 access gate implemented; no network thisunit; until09:49:45.471Z, contents2378/67 unchanged",
+      "stage": "Official pre-use API form prerequisite reviewed; no collection requests",
       "evidence": [
-        "docs/agents/food-bank-1500.md"
-      ]
+        "docs/agents/food-bank-1500.md",
+        "docs/OFF-ACCESS-REQUEST-DRAFT.md",
+        "docs/agents/food-bank-2000.md"
+      ],
+      "accessReview": {
+        "at": "2026-10-14T20:24:09.891300+00:00",
+        "officialDocumentation": "https://openfoodfacts.github.io/openfoodfacts-server/api/",
+        "formSubmitted": false,
+        "userAuthorizationPending": true,
+        "newSourceRequests": 0,
+        "backoffExpiredDoesNotResolveAccess": true
+      }
     },
     {
       "id": "budget-planner",
@@ -560,18 +577,18 @@
       "priority": 34,
       "status": "ready",
       "dependsOn": [],
-      "lastAttemptAt": "2026-10-14T15:47:21.012150+00:00",
+      "lastAttemptAt": "2026-10-14T20:24:09.891300+00:00",
       "nextAction": "Review source-supported real food/quantity gaps or next bounded archived cuisine batch; no new book network. After one batch advance independent core lane.",
-      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
+      "lastProgressAt": "2026-10-14T20:24:09.891300+00:00",
       "completedUnit": {
-        "records": 28,
+        "records": 36,
         "fullySpecified": 10,
-        "needsReview": 16,
+        "needsReview": 24,
         "notCookable": 2,
-        "sourceCuisineLabels": 22,
+        "sourceCuisineLabels": 30,
         "distinctMethodFamilies": 1,
         "newBatchRecipes": 8,
-        "newBatchSourceLabels": 9,
+        "newBatchSourceLabels": 8,
         "newNativeGapResolutions": 0,
         "runtimeApprovals": 0
       },
@@ -583,7 +600,10 @@
         "tool/recipes/curated-gap-build.test.mjs",
         "data/recipes/curated-local/third-reviewed-20261014/normalized-recipes.json",
         "tool/recipes/curated-third-build.test.mjs",
-        "docs/agents/curated-third-1530.md"
+        "docs/agents/curated-third-1530.md",
+        "data/recipes/curated-local/fourth-reviewed-20261014/normalized-recipes.json",
+        "tool/recipes/curated-fourth-build.test.mjs",
+        "docs/agents/curated-fourth-2000.md"
       ]
     },
     {
@@ -610,20 +630,21 @@
       "dependsOn": [],
       "status": "done",
       "completedAt": "2026-10-14T10:15:57.137053+00:00",
-      "nextAction": "Use44entry pinnedlibrary with source-preserving privatecalculator; source-based planning/rights and realnutritioncoverage remain separate.",
+      "nextAction": "Use55pinned entries with explicit every-line private calculator review; improve actual binding/source quantities, not automatic nutrition/rights.",
       "evidence": [
         "lib/data/recipe_library_repository.dart",
         "lib/data/recipe_library_assets.dart",
         "test/recipe_library_assets_test.dart",
         "docs/RECIPE-LIBRARY.md"
       ],
-      "lastProgressAt": "2026-10-14T15:47:21.012150+00:00",
+      "lastProgressAt": "2026-10-14T20:24:09.891300+00:00",
       "completedUnit": {
-        "records": 44,
-        "packs": 7,
-        "sourceSnapshots": 28,
+        "records": 55,
+        "packs": 9,
+        "sourceSnapshots": 36,
         "runtimeApprovals": 0
-      }
+      },
+      "lastAttemptAt": "2026-10-14T20:24:09.891300+00:00"
     },
     {
       "id": "library-draft-calculator",
@@ -659,15 +680,36 @@
         "tool/recipes/build-recipe-library.test.mjs",
         "docs/RECIPE-LIBRARY.md"
       ]
+    },
+    {
+      "id": "product-label-reader",
+      "priority": 40,
+      "status": "done",
+      "dependsOn": [],
+      "completedAt": "2026-10-14T20:24:09.891300+00:00",
+      "lastProgressAt": "2026-10-14T20:24:09.891300+00:00",
+      "completedUnit": {
+        "products": 4,
+        "contains": 13,
+        "mayContain": 3,
+        "flutterReaderTests": 8,
+        "runtimeApprovals": 0
+      },
+      "nextAction": "Read-only evidence inspection; explicit source/GTIN/market/version review before runtime acceptance.",
+      "evidence": [
+        "lib/data/product_label_evidence_repository.dart",
+        "test/product_label_evidence_repository_test.dart",
+        "docs/PRODUCT-LABEL-EVIDENCE.md"
+      ]
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T16:32:33.257130+00:00",
-    "primaryUsedPercent": 87,
-    "weeklyUsedPercent": 29,
+    "at": "2026-10-14T20:24:09.891300+00:00",
+    "primaryUsedPercent": 42,
+    "weeklyUsedPercent": 37,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Near reserve; completed local guard. Fresh actual limits before another costly batch; no source calls or credits/reset."
+    "action": "Fresh reset observed; bounded recipe and independent core completed. No credits/reset used. Fresh quota before next batch."
   },
-  "updatedAt": "2026-10-14T16:32:33.257130+00:00"
+  "updatedAt": "2026-10-14T20:24:09.891300+00:00"
 }

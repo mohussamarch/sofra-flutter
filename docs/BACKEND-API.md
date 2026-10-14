@@ -160,3 +160,7 @@ Readable library now31records/5pinnedpacks/20source snapshots. `RecipeLibraryDra
 ## Current §72 integration
 
 Readablelibrary44records/7packs/28snapshots. Library-source review now retains matching singularcreator metadata as well as scopedcreatorlists; canonicaldedup preserves distinct evidence. Storedold envelopes remain decodable; enrichedcurrentsourcefingerprint may require fresh review before save.225fullFlutter/analyze clean7.2s and17recipeNode verified. New data/food/allergen-evidence/20261014/official-evidence.json is research-only official vocabulary/semantics evidence:15proposals,0runtime aliases/product declarations/clinical or current-law approval. It is not a KitchenService allergen provider.
+
+## Manufacturer label research API — §75
+
+ProductLabelEvidenceRepository exposes all/search/byProposedAllergen; ManufacturerLabelObservation holds copied product/source/batch context and immutable contains/mayContain lists. It checks raw byteSHA then strict schema/source/status linkage. This is a research reader, not a KitchenService writer or product allergy approval. Contract PRODUCT-LABEL-EVIDENCE.md. Selected recipe library now55records/9packs/36snapshots; explicit private-calculator source/quantity review still applies.

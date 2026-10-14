@@ -1,0 +1,41 @@
+# Fourth archived recipe curation —14October2026 20:00 delegation
+
+## Scope / base / quota / ownership
+- Sole checkout E:\work\SOFRA\app, branch main; delegated base fc7912ef66a5bf133c355bbb1dceec315a6fa18b. Root owns integration/shared docs/Git/final receipt. No app\main subdirectory or C checkout used.
+- Fresh actual quota before work2%primary/31%weekly, ordinaryUsageAllowed=true. Final observed23%primary/35%weekly, ordinary=true. No credits/reset/purchase. Default90 ceiling preserved;0source/network requests.
+- Owned only data/recipes/curated-local/fourth-reviewed-20261014/**, tool/recipes/curated-fourth-build.mjs/.test.mjs and these full/small handoffs. Previous packs/sourcebanks/manifest/assets/Dart/pubspec/shared docs untouched by helper.
+- Actual clock review timestamp2026-10-14T20:04:04.000Z. One unpublished range field normalization changed declaredTotalMin/Max to existing min/max before final pack freeze; only three owned derived files regenerated with explicit absolute ownership checks. Final SHA below.
+
+## Bounded selected source review / outcome
+-8new source IDs,52source ingredient lines,4procedural supplements,48ordered Arabic steps;0fully-specified culinary/8needs-review/0not-cookable/0runtimeReady. All8are readable cooking drafts with explicit missing data, not8fullyspecified or approved planning recipes.8preflight copies have180unresolved issues and0draftComplete.
+-123460 Taro Fish:4source persons/20minute header,9ingredient lines/10steps.1small taro,2nori sheets,1tspblackbeans,one2-inchgingerpiece,1greenpepper,2springonions,1tspvegetablestockpowder,2tbspShaoxingricewine; vegetableoilunknown. Proceduralsoak/moisteningwaterunknown. Source wine retained without invented substitute or dietaryapproval. Category:Chinese recipes.
+-206996 Korean Shortribs:8ingredientlines/3steps.12English-cutbeefshortribs is meatcount, not12servings.1/3cupsoy floating representation disclosed; other published measures retained. Overnight refrigeration notconverted to8hours.5hours is a cookingphase qualified by tenderness endpoint, not fixed scalar drafttimer or total. Yield/totalunknown. Category:Korean recipes.
+-471850 Awug:250griceflour/250gcoconut/0.5tbspwhitesugar/0.5tspsalt/150gpalmsugar;7steps. Source20minute flourpresteam and25minute moldedcake steam remain separate exact drafttimers; not45minute total. Oilforgreasing andsteamingwater are two explicit unknown supplements. Cooling/yield/totalunknown. Category:Indonesian recipes.
+-204774 Greek Yogurt Sauce:10ingredientlines/2steps. Source stated cups/spoons/fractional onion retained; salt/pepperto taste null. Yield/timeunknown. Category:Greek recipes.
+-39454 Chinese Chews (Nut and Date Bars):4source servings/45minute header,9ingredientlines/6steps.2/3cup and1/3tsp numeric representations disclosed; icing sugar andpangreasing medium unknown. About30–35minute baking remains approximate range/nullscalar. Title Chinese does not establish cuisine: only Category:Caribbean recipes selected, no Chinese label inferred.
+-457203 Ayib (Ethiopian Fresh Cheese):3ingredientlines/11steps.1Lmilk selected from source1liter(4cups);0.25cuplemonjuice selected from published lemonjuice/vinegar choice;0.25tspsalt. About1hourdraining is approximate andatleast2hourrefrigeration minimumonly; both nullscalar. No inferred yield/wheyretention/foodstorage approval. Category:Ethiopian recipes.
+-23358 Brigadeiro:4ingredientlines/5steps.395gcondensedmilk can contents,1tbspbutter,3tbspcocoa,482gsprinklebox contents retained exactly; coatingconsumption/leftoversunknown. Published alternative two-metal-spoon shaping selected, so no invented extra handgreasing butter.25–30pieces and30–45minute total remain ranges/nullscalar,10–12minute cookingrange preserved. Category:Brazilian recipes.
+-90012 Candied Almonds:100gblanchedalmonds/100gicingsugar/125mlwater/optional1dropredcolour explicitlyincluded;4steps.180Coven temperature retained; a fewminutes andyield/totalunknown. Category:Swedish recipes.
+-8new exact source cuisine/region labels:chinese,korean,indonesian,greek,caribbean,ethiopian,brazilian,swedish. Existing22+new8=30source labels, not30approvednationalcuisines. Source language/title/context not used to create extra cuisine IDs.
+- Combined frozen28+new8local=36records:10fullyspecified/24needsreview/2notcookable;218source ingredientlines/19supplements/161steps/30source labels/0runtime. Prior library44+this8=52records before any simultaneous sibling creator addition; root owns final combined library count.
+- No prior28IDs/exactnames/family overlaps, no duplicate selected IDs/names/families. Existing54catalogue exact name matches0. No global6056dedup or cross-language unique-dish claim. Prior method relationships unchanged.
+
+## Reproducible immutable artifacts / source and rights
+- review-decisions.json manually records quantities/optional/alternatives/timing precision/Arabic methods and full authoritative derived-source fingerprints.
+- Eight source-snapshots/{123460,206996,471850,204774,39454,457203,23358,90012}.json preserve full original wikitext/revision/attribution/licence and authoritative parsedsource/bankSHA evidence. Authoritative offline reader validates bank index/source/parsed/category pins plus deterministic re-extraction before building.
+- normalized-recipes.json and COOKBOOK.ar.md use existing normalize/cookbook schema. SourceSnapshotSHA is rawUTF8bytehash; source/license/record fingerprints use existing sorted-key algorithm. Fixedrevisioncontributors links/CCBY-SA4.0adaptation notice retained; per-pageexception flags notapproved.
+- preflight-drafts/*.json and review-report.json preserve native unresolved gates, source precise versus approximate/minimum/endpoint timing, nullfoodbindings/scaling/nutrition/retention and0independentculinary/rightsapproval/kitchentesting.
+- New builder rejects wikitext/source/fullparsed/record/revision/URL/licence drift, unsupported cuisine/category pairing, ingredientorder/steporder changes, repeated/omitted steps and ID/title/family duplicates. Writes ownoutputs only, refuses differing immutable leafbytes and checks frozen oldpackSHAs before/after.
+- Final normalized pack SHA256:a6d83f85b46fc25983145378445d8aac9e61f43618fc12d3ba70c93ac2da29e7.
+- Frozen first16SHA2e8b81cba110ea979f6199dd0a7e8e67c9626e3081c98491897b83664d032946;gap4SHA9b4e2d203b80dd25c9c1392ef7b35d3dab097e0fc5e67cbee5a43908851aa4e5;third8SHAbef4b419623fd9a981d131232d04b5aa52e1d9e2fab50a0f57b5a313fe821d21.
+
+## Verification actually run
+- Initial missing-builder assertion failed with the intended message before implementation (test-driven-development skill). Initial fullrun7passed/1failed because expectederrorregex said mapping but actualguard said mapped; fixed assertion only.
+- Final node tool/recipes/curated-fourth-build.mjs exit0 offline:8recipes/52lines/4supplements/48steps/8needsreview/8labels/180draftissues/0runtime.
+- Final node --test tool/recipes/curated-fourth-build.test.mjs:8passed/0failed in3.44seconds. Checks exact source/license/content/snapshot pins, all prior28SHA/nonoverlap, actual source drift, falsecategory/ID rejection, step andingredient order, exactnewlabelunion, ranges/minima/endpoint/unknowns, publishedchoice/optionalpreservation, draftprecisetimersonly and immutable offline rebuild.
+- Builder's exact20and25minute timers only enter Awugdraft; everyother newscalar timer null. All8draftCompletefalse. No Flutter gates by helper; root owns manifest/native library integration gates. No broad repeatedbankreview, UI/cloud/Firebase/billing/audio/images/APK/Drive/userstate/processchanges.
+
+## Exact next action / returned ownership
+- Root add this8record pack +8snapshot assets through existing read-only recipe library manifest/pin flow, preserving source labels and range/unknown/choice boundaries. Display only as needs-review drafts; no planning/nutrition promotion.
+- Root combine sibling work and run focused library integration verification, shared STATUS/HANDOFF/queue, commit/push and final receipt. Further archive processing should prefer source-supported uncaptured labels or explicit oldgap choices; no booknetwork.
+- Helper ownership returned after final handoff. No Git writes/commit/push or sharedfiles changed. Root owns final preview/process check and deliveryreceipt.

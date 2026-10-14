@@ -195,3 +195,9 @@ Latest user priority: real retailer and delivery-app prices first; government so
 ## Current §72 banks
 
 44readable library records=28local+16creatorwebsite;7pinnedpacks/28upstream snapshots. _source in recipe_library_draft.dart now keeps exactmatching creator/list attribution in persisted evidence. New allergen research bank data/food/allergen-evidence/20261014/official-evidence.json links source→anchored claim→exact vocabulary mapping proposal;7claims/15proposals,2retrievedSFDA sources and2failedaccess checkpoints. SA historical menu scope only,EG unknown;0runtime product/alias/clinical/current-law approval. Existing FoodRecord declarations remain separately evidenced perrecord/source/version.
+
+## Current source/calculator/evidence map — §75
+
+9selected recipe packs +36source snapshots → original-byte manifest pins → RecipeLibraryRepository (55readable=36archive+19creatorwebsite) → explicit every-line RecipeLibraryDraftReview → atomic KitchenService private draft → existing nutrition calculator. Original54planning catalog and source-rights publication gate remain separate. RECIPE-LIBRARY.md has current counts; prior sections are historical.
+
+6manufacturer source attempts →4product observations →13contains/3mayContain statements → original-byte pinned ProductLabelEvidenceRepository → typed read-only research search/inspection. Proposed vocabulary and null local SKU/market/GTIN/nutrition are preserved. No automatic FoodRecord or clinical decision. PRODUCT-LABEL-EVIDENCE.md defines boundary. OFF access form draft is separate from product/recipe work.

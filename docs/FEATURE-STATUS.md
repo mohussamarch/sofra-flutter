@@ -15,3 +15,7 @@
 | APK | نسخة تجريبية سابقة للحساب والحفظ | هذه الدفعة لم تبن APK، ولم تجرّب علىS24Ultra أو ترفعDrive |
 
 هذه الدفعة لا تغير التصميم أو الأصوات أوFirebase. المصدر التنفيذي والتسليم التفصيلي: HANDOFF§72، RECIPE-LIBRARY.md، BACKEND-API.md.
+
+## Current bounded units — §75
+
+Built: library55readable records (36archive+19website), source-backed private draft calculation; read-only manufacturer statement repository,4observations/13contains/3mayContain. Not built by this unit: physical SKU approval, automatic recipe food/nutrition binding, complete YouTube recipe extraction, live delivery price provider. Original54planning catalog unchanged. Moderncreator acquisition and core source coverage remain continuous; next exact source/quantity/product evidence after fresh quota. OFF API requires pre-use form; draft prepared, submission awaits authorized contact email.
