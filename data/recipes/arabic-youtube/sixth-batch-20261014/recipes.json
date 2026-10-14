@@ -1,0 +1,690 @@
+{
+  "schemaVersion": 1,
+  "batchId": "arabic-creator-sixth-batch-20261014",
+  "retrievedAt": "2026-10-14",
+  "sourcePolicy": {
+    "sourceKind": "creator-website",
+    "youtubeDerived": false,
+    "sourceApproval": null,
+    "reuseRights": null,
+    "mediaDownloaded": false,
+    "transcriptExtraction": false,
+    "httpBodyHash": null,
+    "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+    "limitations": "Two complete recipe extracts are indexed from Manal Alalem official website. Direct page open currently returns a relaunch page; no page body was archived. Publication dates, recipe-specific video identity, rights, yield, actual elapsed time, food bindings and nutrition are unknown."
+  },
+  "creator": {
+    "creatorId": "manal-alalem",
+    "name": "الشيف منال العالم — موقع منال الرسمي",
+    "officialSite": "https://www.manalonline.com/",
+    "channelUrl": null,
+    "identityEvidence": "Official recipe pages identify the kitchen as مطبخ منال العالم; the opened official landing page links to YouTube but does not expose a verified channel URL.",
+    "identityStatus": "official-website-established-channel-link-pending"
+  },
+  "sourceIndex": [
+    {
+      "index": 0,
+      "request": 1,
+      "url": "https://www.youtube.com/",
+      "outcome": "Official Arabic cooking video search returned no result; no video identity/content accepted."
+    },
+    {
+      "index": 1,
+      "request": 2,
+      "url": "https://www.manalonline.com/recipes/",
+      "outcome": "Official recipe listing."
+    },
+    {
+      "index": 2,
+      "request": 3,
+      "url": "https://www.manalonline.com/category/%D8%A7%D9%84%D9%85%D8%B9%D8%AC%D9%86%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D9%85%D8%AE%D8%A8%D9%88%D8%B2%D8%A7%D8%AA/",
+      "outcome": "Official category listing."
+    },
+    {
+      "index": 3,
+      "request": 4,
+      "url": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+      "outcome": "Official search-index extract contains ingredients and all 12 method steps."
+    },
+    {
+      "index": 4,
+      "request": 5,
+      "url": "https://www.manalonline.com/category/%D8%A7%D9%84%D8%A3%D8%B7%D8%A8%D8%A7%D9%82-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/",
+      "outcome": "Official category listing."
+    },
+    {
+      "index": 5,
+      "request": 6,
+      "url": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+      "outcome": "Direct open showed relaunch page rather than recipe body."
+    },
+    {
+      "index": 6,
+      "request": 7,
+      "url": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+      "outcome": "Official search-index extract contains ingredients and all 12 method steps."
+    }
+  ],
+  "recipes": [
+    {
+      "recipeId": "manal-website-quick-musakhan-rolls",
+      "creatorId": "manal-alalem",
+      "title": "رولات المسخن السريعة",
+      "sourceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+      "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceApproval": null,
+      "reuseRights": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "worker-primary-search-extract",
+        "sourceIndex": 3,
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "methodSourceStepCount": 12,
+        "ingredientListCompleteInExtract": true
+      },
+      "cuisine": {
+        "value": null,
+        "evidence": "The source labels this category as المعجنات والمخبوزات; that is a site category, not a cuisine claim.",
+        "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+        "reviewStatus": "pending",
+        "status": "source-cuisine-not-stated"
+      },
+      "yield": {
+        "amount": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": null,
+        "publishedTotalText": null,
+        "publishedTotalEvidence": null,
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "approximate": true,
+            "sourceStepIndices": [
+              11
+            ],
+            "phase": "oven-browning-few-minutes",
+            "minutes": null
+          }
+        ],
+        "optionalWaits": [],
+        "conflicts": [
+          "الوقت الكلي والتحضير غير مذكورين؛ بضع دقائق تخص خيار تحمير الفرن فقط."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "فيليه دجاج مسلوق",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "3–4 قطع",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 0,
+          "optional": false
+        },
+        {
+          "labelAr": "زيت زيتون",
+          "amount": 0.75,
+          "unit": "cup",
+          "sourceQuantityText": "¾ كوب",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 1,
+          "optional": false
+        },
+        {
+          "labelAr": "بصل كبير مقطع جوانح",
+          "amount": 3,
+          "unit": "piece",
+          "sourceQuantityText": "3 حبة كبيرة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 2,
+          "optional": false
+        },
+        {
+          "labelAr": "سماق",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 3,
+          "optional": false
+        },
+        {
+          "labelAr": "عصير ليمون",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 ملعقة كبيرة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 4,
+          "optional": false
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 5,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أسود",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "¼ ملعقة صغيرة",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 6,
+          "optional": false
+        },
+        {
+          "labelAr": "صنوبر أو لوز",
+          "amount": 0.25,
+          "unit": "cup",
+          "sourceQuantityText": "¼ كوب صنوبر أو لوز",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 7,
+          "optional": false,
+          "choiceRequired": true,
+          "alternatives": [
+            "صنوبر",
+            "لوز"
+          ]
+        },
+        {
+          "labelAr": "خبز شراك",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": null,
+          "group": "wrapping",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceIngredientIndex": 8,
+          "optional": false
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "زيت زيتون إضافي لدهن الرولات",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "طبقة وفيرة؛ الكمية غير محددة",
+          "group": "grilling",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "optional": false
+        },
+        {
+          "labelAr": "سماق إضافي لخيار الفرن",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "بعض السماق؛ الكمية غير محددة",
+          "group": "oven-finish",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "optional": false
+        },
+        {
+          "labelAr": "لبن للتقديم",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "للتقديم؛ الكمية غير محددة",
+          "group": "serving",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "optional": false
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "فتتي الدجاج المسلوق. سخني الزيت وقلبي البصل حتى يلين، ثم أضيفي السماق والليمون والدجاج والملح والفلفل وقلبي قليلًا.",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceStepIndices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "textAr": "أضيفي الصنوبر أو اللوز واتركي الحشوة تبرد. قطعي خبز الشراك بالشكل الذي تفضلينه.",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceStepIndices": [
+            3,
+            4
+          ]
+        },
+        {
+          "textAr": "ضعي قليلًا من الحشوة على الخبز، اثني الجوانب ولفيه. ادهني الرولات بزيت الزيتون.",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceStepIndices": [
+            5,
+            6
+          ]
+        },
+        {
+          "textAr": "لخيار المقلاة: سخنيها واضغطي الرولات بصينية وثقل حتى يتحمص القاع، ثم اقلبيها لتحمير الجهة الأخرى.",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceStepIndices": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "textAr": "لخيار الفرن: رصي الرولات في طبق، ادهنيها بالزيت وانثري قليلًا من السماق، ثم حمريها على 200°م بضع دقائق. قدميها مع اللبن.",
+          "evidenceUrl": "https://www.manalonline.com/رولات-المسخن-السريعة/",
+          "sourceStepIndices": [
+            11
+          ]
+        }
+      ],
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 12,
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "acquisitionMethod": "root-primary-search-extract",
+      "unknowns": [
+        "عدد الحصص غير مذكور في المقتطف.",
+        "تاريخ النشر غير متاح.",
+        "الكمية الإجمالية لخبز الشراك غير محددة.",
+        "زيت دهن الرولات والسماق الإضافي واللبن للتقديم بلا مقادير.",
+        "الفرن مسار اختياري بديل عن تحمير المقلاة.",
+        "القناة الرسمية على YouTube وحقوق إعادة الاستخدام غير مثبتة."
+      ],
+      "contentSha256": "523df390f07664733188dfff2ae01e461fca36316f00c78fbd8c1fd3b0ec24de"
+    },
+    {
+      "recipeId": "manal-website-eggplant-chicken-cream-casserole",
+      "creatorId": "manal-alalem",
+      "title": "صينية الباذنجان والدجاج بالكريمة",
+      "sourceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+      "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-14",
+      "publishedAt": null,
+      "sourceApproval": null,
+      "reuseRights": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "worker-primary-search-extract",
+        "sourceIndex": 6,
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "methodSourceStepCount": 12,
+        "ingredientListCompleteInExtract": true
+      },
+      "cuisine": {
+        "value": null,
+        "evidence": "The source labels this category as الأطباق الرئيسية; that is a site category, not a cuisine claim.",
+        "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+        "reviewStatus": "pending",
+        "status": "source-cuisine-not-stated"
+      },
+      "yield": {
+        "amount": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": null,
+        "publishedTotalText": null,
+        "publishedTotalEvidence": null,
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": 30,
+            "approximate": true,
+            "phase": "oven-bake",
+            "sourceStepIndices": [
+              11
+            ]
+          },
+          {
+            "minutes": 35,
+            "approximate": true,
+            "phase": "oven-bake",
+            "sourceStepIndices": [
+              11
+            ]
+          }
+        ],
+        "optionalWaits": [],
+        "conflicts": [
+          "مصدر المقتطف يذكر مجال خبز 30–35 دقيقة؛ لا يحدد زمن الإعداد أو القلي أو الزمن المنقضي الكلي."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "باذنجان كبير",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 حبة كبيرة",
+          "group": "base",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 0,
+          "optional": false
+        },
+        {
+          "labelAr": "دجاج مسلوق مفتت",
+          "amount": 1,
+          "unit": "kg",
+          "sourceQuantityText": "1 كيلو",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 1,
+          "optional": false
+        },
+        {
+          "labelAr": "زيت",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 ملعقة كبيرة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 2,
+          "optional": false
+        },
+        {
+          "labelAr": "بصل كبير مقطع جوانح",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 حبة كبيرة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 3,
+          "optional": false
+        },
+        {
+          "labelAr": "ثوم مهروس",
+          "amount": 2,
+          "unit": "clove",
+          "sourceQuantityText": "2 فص",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 4,
+          "optional": false
+        },
+        {
+          "labelAr": "زنجبيل مفروم",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 5,
+          "optional": false
+        },
+        {
+          "labelAr": "جزر متوسط مبروش",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 حبة متوسطة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 6,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أخضر حلو كبير مفروم",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 حبة كبيرة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 7,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أحمر حلو كبير مفروم",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 حبة كبيرة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 8,
+          "optional": false
+        },
+        {
+          "labelAr": "مشروم متوسط شرائح",
+          "amount": 10,
+          "unit": "piece",
+          "sourceQuantityText": "10 حبة متوسطة",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 9,
+          "optional": false
+        },
+        {
+          "labelAr": "بهار مشكل",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 10,
+          "optional": false
+        },
+        {
+          "labelAr": "ملح للحشو",
+          "amount": 2,
+          "unit": "tsp",
+          "sourceQuantityText": "2 ملعقة صغيرة",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 11,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أسود للحشو",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "¼ ملعقة صغيرة",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 12,
+          "optional": false
+        },
+        {
+          "labelAr": "شطة مجروشة",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "¼ ملعقة صغيرة",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 13,
+          "optional": false
+        },
+        {
+          "labelAr": "كزبرة ناعمة",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 14,
+          "optional": false
+        },
+        {
+          "labelAr": "جبن موزاريلا للحشو",
+          "amount": 2,
+          "unit": "cup",
+          "sourceQuantityText": "2 كوب",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 15,
+          "optional": false
+        },
+        {
+          "labelAr": "بقدونس مفروم",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 كوب",
+          "group": "filling",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 16,
+          "optional": false
+        },
+        {
+          "labelAr": "بيض كبير",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 حبة كبيرة",
+          "group": "topping",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 17,
+          "optional": false
+        },
+        {
+          "labelAr": "جبن كاسات",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 كوب",
+          "group": "topping",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 18,
+          "optional": false
+        },
+        {
+          "labelAr": "كريمة",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 كوب",
+          "group": "topping",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 19,
+          "optional": false
+        },
+        {
+          "labelAr": "ملح للطبقة العلوية",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 ملعقة صغيرة",
+          "group": "topping",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 20,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أسود للطبقة العلوية",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "¼ ملعقة صغيرة",
+          "group": "topping",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 21,
+          "optional": false
+        },
+        {
+          "labelAr": "جبن موزاريلا للوجه",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 كوب",
+          "group": "topping",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 22,
+          "optional": false
+        },
+        {
+          "labelAr": "بقسماط",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 ملعقة كبيرة",
+          "group": "topping",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceIngredientIndex": 23,
+          "optional": false
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "زيت ذرة للقلي",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "ارتفاع بوصتين في المقلاة؛ الحجم المستخدم غير معلوم",
+          "group": "frying",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "optional": false
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "سخني الفرن إلى 180°م وجهزي طبق فرن كبيرًا أو أطباقًا فردية. قطعي الباذنجان طوليًا شرائح بسماكة 1 سم، رشي الملح واتركيه قليلًا ثم جففيه.",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceStepIndices": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "textAr": "اقلي شرائح الباذنجان على دفعات في زيت الذرة حتى يغمق لونها، ثم صفيها على ورق.",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceStepIndices": [
+            3,
+            4
+          ]
+        },
+        {
+          "textAr": "غطي قاع الطبق بنصف الباذنجان. ليّني البصل في الزيت ثم أضيفي الثوم والزنجبيل، وبعدها الدجاج والخضار والمشروم والبهارات وقلبيها.",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceStepIndices": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "textAr": "وزعي الحشو فوق الباذنجان مع موزاريلا الحشو والبقدونس، ثم أضيفي بقية شرائح الباذنجان.",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceStepIndices": [
+            8
+          ]
+        },
+        {
+          "textAr": "اخلطي البيض وجبن الكاسات والكريمة وملح وفلفل الوجه، واسكبيها فوق الصينية. انثري الموزاريلا والبقسماط واخبزي 30–35 دقيقة حتى يتحمر الوجه، ثم قدميها.",
+          "evidenceUrl": "https://www.manalonline.com/صينية-الباذنجان-والدجاج-بالكريمة/",
+          "sourceStepIndices": [
+            9,
+            10,
+            11
+          ]
+        }
+      ],
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 12,
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "acquisitionMethod": "root-primary-search-extract",
+      "unknowns": [
+        "عدد الحصص غير مذكور في المقتطف.",
+        "تاريخ النشر غير متاح.",
+        "الزيت الإضافي لقلي الباذنجان محدد بعمق في المقلاة لا بكمية حجمية.",
+        "الوقت الكلي والتحضير والقلي غير محددة؛ 30–35 دقيقة تخص الخَبز فقط.",
+        "القناة الرسمية على YouTube وحقوق إعادة الاستخدام غير مثبتة."
+      ],
+      "contentSha256": "2fbf6be0751cddee9da5e5cf8ae2d71eda773ea17669c3b5bb4f5be9fc7f5cbc"
+    }
+  ]
+}

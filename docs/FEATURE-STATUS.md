@@ -23,3 +23,7 @@ Built: library55readable records (36archive+19website), source-backed private dr
 ## Source quantity review delivered — §76
 
 Built: immutable source-only library audit with exact line indices/statuses and calculator-compatible source fingerprints; current632 lines/63 readable records. Added8 archived Arabic drafts/8 source labels (38 local labels total). Still missing: actual recipe food/form/quantity/preparation/rights coverage and complete YouTube extractions. No live price provider or new product approval. All sources with no amount/unit remain unknown; the audit never labels a recipe nutritionally complete. Actual237Flutter/16Node/analyze clean8.7sec.
+
+## Modern source continuation and monitor repair — §77
+
+Built:65readable source records and recipe-scoped request provenance in private review; read-only quantity audit669lines. Work monitor now honours latest recorded task/global-matching progress, with attempts only a fallback, preventing both false stalls and attempt timestamps hiding real stalls.30Node/239fullFlutter/analyze clean5.2sec. New modern website outputs2;0completeYT/liveprices/automaticnutrition/productapproval. Pan/oven source options preserved but not reviewed native variants.

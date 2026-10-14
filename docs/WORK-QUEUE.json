@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T20:46:04.701382+00:00",
-    "taskId": "library-quantity-audit",
-    "summary": "Eight archived drafts added; source-only quantity review report covers63recipes/632lines with current calculator-compatible pins;237Flutter/16Nodepassed",
+    "at": "2026-10-14T21:12:37.413045+00:00",
+    "taskId": "library-source-request-context",
+    "summary": "Two indexed official creator recipes added; scoped request evidence/private review and actual task-progress monitor fixed.239Flutter/30Nodepassed",
     "evidence": [
-      "lib/domain/recipe_library_coverage.dart",
-      "test/recipe_library_coverage_test.dart",
-      "data/recipes/curated-local/flutter-manifest.json"
+      "data/recipes/arabic-youtube/sixth-batch-20261014/recipes.json",
+      "lib/domain/recipe_library_draft.dart",
+      "tool/work/watchdog.test.mjs"
     ]
   },
   "tasks": [
@@ -17,12 +17,13 @@
       "priority": 0,
       "dependsOn": [],
       "status": "done",
-      "nextAction": "Implement and test read-only work audit and update existing schedule",
+      "nextAction": "Use actual task progress before attempt fallback; diagnose owner/process at60min, no second writer or auto-kill.",
       "lastAttemptAt": "2026-10-13T07:35:29Z",
       "completedAt": "2026-10-13T07:46:20.709536+00:00",
       "evidence": [
         "tool/work/watchdog.test.mjs"
-      ]
+      ],
+      "lastProgressAt": "2026-10-14T21:12:37.413045+00:00"
     },
     {
       "id": "measure-catalog",
@@ -76,9 +77,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Bounded modern Arabic creator acquisition with complete accessible ingredients/method;19website/0completeYT. Work on independent core after bounded batches.",
-      "lastAttemptAt": "2026-10-14T20:24:09.891300+00:00",
-      "lastProgressAt": "2026-10-14T20:24:09.891300+00:00",
+      "nextAction": "Bounded modern Arabic creator video/website source acquisition;21website/0completeYT. Verify complete facts/current access/channel/rights, no retries of failed URLs during gates; advance independent core after each batch.",
+      "lastAttemptAt": "2026-10-14T21:12:37.413045+00:00",
+      "lastProgressAt": "2026-10-14T21:12:37.413045+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -144,7 +145,10 @@
         "data/recipes/arabic-youtube/fourth-batch-20261014/recipes.json",
         "tool/recipes/creator-fourth-validation.test.mjs",
         "data/recipes/arabic-youtube/fifth-batch-20261014/recipes.json",
-        "docs/agents/creator-fifth-2005.md"
+        "docs/agents/creator-fifth-2005.md",
+        "data/recipes/arabic-youtube/sixth-batch-20261014/recipes.json",
+        "tool/recipes/creator-sixth-validation.test.mjs",
+        "docs/agents/modern-recipes-2048.md"
       ],
       "stage": "OfficialmodernArabiccreatorYouTubeandownwebsiteacquisition",
       "sourcePolicy": {
@@ -159,7 +163,7 @@
         "videoDiscoveries": 14,
         "partialVideoRecipes": 4,
         "completeVideoRecipes": 0,
-        "creatorWebsiteRecords": 19,
+        "creatorWebsiteRecords": 21,
         "runtimeApprovals": 0
       }
     },
@@ -411,23 +415,20 @@
       "lastProgressAt": "2026-10-14T20:46:04.701382+00:00",
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
       "completedUnit": {
-        "sourceQuantityAudit": {
-          "schemaVersion": 1,
-          "scope": "source-library-review-triage",
-          "recipeCount": 63,
-          "ingredientCount": 632,
-          "missingAmountCount": 98,
-          "missingUnitCount": 91,
-          "nonPositiveAmountCount": 0,
-          "unitNeedsReviewCount": 465,
-          "supplementalCount": 34,
-          "optionalCount": 7,
-          "recipesWithQuantityGaps": 63,
-          "runtimeApprovedRecipes": 0
-        },
+        "schemaVersion": 1,
+        "scope": "source-library-review-triage",
+        "recipeCount": 65,
+        "ingredientCount": 669,
+        "missingAmountCount": 104,
+        "missingUnitCount": 97,
+        "nonPositiveAmountCount": 0,
+        "unitNeedsReviewCount": 495,
+        "supplementalCount": 38,
+        "optionalCount": 7,
+        "recipesWithQuantityGaps": 65,
+        "runtimeApprovedRecipes": 0,
         "flutterAuditTests": 4,
-        "sourceFingerprintSharedWithCalculator": true,
-        "runtimeApprovals": 0
+        "sourceFingerprintSharedWithCalculator": true
       },
       "evidence": [
         "lib/domain/recipe_library_coverage.dart",
@@ -659,17 +660,17 @@
       "dependsOn": [],
       "status": "done",
       "completedAt": "2026-10-14T10:15:57.137053+00:00",
-      "nextAction": "63source-pinned entries plus read-only indexed coverage report; explicit food/quantity/form/inclusion review before personal calculation. No automatic runtime/rights approval.",
+      "nextAction": "65pinned source entries with indexed quantity triage and scoped request provenance; explicit review before personal calculation, no automatic bindings/publication.",
       "evidence": [
         "lib/data/recipe_library_repository.dart",
         "lib/data/recipe_library_assets.dart",
         "test/recipe_library_assets_test.dart",
         "docs/RECIPE-LIBRARY.md"
       ],
-      "lastProgressAt": "2026-10-14T20:46:04.701382+00:00",
+      "lastProgressAt": "2026-10-14T21:12:37.413045+00:00",
       "completedUnit": {
-        "records": 63,
-        "packs": 10,
+        "records": 65,
+        "packs": 11,
         "sourceSnapshots": 44,
         "runtimeApprovals": 0
       },
@@ -749,26 +750,62 @@
       "completedUnit": {
         "schemaVersion": 1,
         "scope": "source-library-review-triage",
-        "recipeCount": 63,
-        "ingredientCount": 632,
-        "missingAmountCount": 98,
-        "missingUnitCount": 91,
+        "recipeCount": 65,
+        "ingredientCount": 669,
+        "missingAmountCount": 104,
+        "missingUnitCount": 97,
         "nonPositiveAmountCount": 0,
-        "unitNeedsReviewCount": 465,
-        "supplementalCount": 34,
+        "unitNeedsReviewCount": 495,
+        "supplementalCount": 38,
         "optionalCount": 7,
-        "recipesWithQuantityGaps": 63,
+        "recipesWithQuantityGaps": 65,
         "runtimeApprovedRecipes": 0
+      }
+    },
+    {
+      "id": "library-source-request-context",
+      "priority": 34,
+      "status": "done",
+      "dependsOn": [
+        "library-draft-calculator"
+      ],
+      "completedAt": "2026-10-14T21:12:37.413045+00:00",
+      "lastProgressAt": "2026-10-14T21:12:37.413045+00:00",
+      "nextAction": "Retain scoped request evidence and legacy compatibility; no source pin refresh without explicit review.",
+      "evidence": [
+        "lib/domain/recipe_library_draft.dart",
+        "test/recipe_library_draft_test.dart",
+        "docs/LIBRARY-RECIPE-CALCULATOR.md"
+      ]
+    },
+    {
+      "id": "work-progress-timestamps",
+      "priority": 0,
+      "status": "done",
+      "dependsOn": [
+        "work-monitor"
+      ],
+      "completedAt": "2026-10-14T21:12:37.413045+00:00",
+      "lastProgressAt": "2026-10-14T21:12:37.413045+00:00",
+      "nextAction": "Monitor own real progress, not fresh attempts or unrelated work; inspect current owner before intervention.",
+      "evidence": [
+        "tool/work/watchdog.mjs",
+        "tool/work/watchdog.test.mjs"
+      ],
+      "completedUnit": {
+        "nodeTests": 15,
+        "newRegressions": 4,
+        "queueReadOnly": true
       }
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T20:46:04.701382+00:00",
-    "primaryUsedPercent": 58,
-    "weeklyUsedPercent": 40,
+    "at": "2026-10-14T21:12:37.413045+00:00",
+    "primaryUsedPercent": 78,
+    "weeklyUsedPercent": 43,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Bounded offline archive and independent audit complete; actual quota before next costly batch, no credits/reset."
+    "action": "Completed bounded continuation plus monitor/source-context fixes; no additional costly batch before fresh limits, no credits/reset."
   },
-  "updatedAt": "2026-10-14T20:46:04.701382+00:00"
+  "updatedAt": "2026-10-14T21:12:37.413045+00:00"
 }

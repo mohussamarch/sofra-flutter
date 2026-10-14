@@ -238,7 +238,29 @@ Map<String, dynamic> _source(RecipeLibraryEntry entry) {
     }
     if (matching.isNotEmpty) context['creators'] = matching.values.toList();
   }
+  if (metadata.containsKey('sourceIndex')) {
+    final rows = metadata['sourceIndex'];
+    if (rows is! List) {
+      throw const FormatException('Malformed source request context');
+    }
+    final matching = <Map<String, dynamic>>[];
+    for (final row in rows) {
+      final request = _map(row);
+      if (entry.sourceUrls.contains(request['url'])) matching.add(request);
+    }
+    final evidence = entry.sourceRecord['sourceEvidence'];
+    if (evidence is Map && evidence.containsKey('sourceIndex')) {
+      final index = evidence['sourceIndex'];
+      if (index is! int || !matching.any((row) => row['index'] == index)) {
+        throw const FormatException(
+          'Missing referenced source request context',
+        );
+      }
+    }
+    if (matching.isNotEmpty) context['sourceIndex'] = matching;
+  }
   source['packMetadata'] = context;
+  _validateSource(source);
   return _owned(source);
 }
 
@@ -294,8 +316,44 @@ void _validateSource(Map<String, dynamic> source) {
     _map(source['sourceSnapshot']);
   }
   final metadata = _map(source['packMetadata']);
+  if (metadata.containsKey('sourceIndex')) {
+    final rows = metadata['sourceIndex'];
+    if (rows is! List || rows.isEmpty) {
+      throw const FormatException('Malformed source request context');
+    }
+    final indexes = <int>{};
+    for (final row in rows) {
+      final request = _map(row);
+      final index = request['index'], ordinal = request['request'];
+      if (index is! int ||
+          index < 0 ||
+          !indexes.add(index) ||
+          ordinal is! int ||
+          ordinal <= 0 ||
+          !(source['sourceUrls'] as List).contains(request['url'])) {
+        throw const FormatException(
+          'Unrelated or malformed source request context',
+        );
+      }
+      _text(request['url']);
+      _text(request['outcome']);
+    }
+    final evidence = _map(source['sourceRecord'])['sourceEvidence'];
+    if (evidence is Map && evidence.containsKey('sourceIndex')) {
+      final index = evidence['sourceIndex'];
+      if (index is! int || !indexes.contains(index)) {
+        throw const FormatException(
+          'Missing referenced source request context',
+        );
+      }
+    }
+  }
+
   if (metadata.keys.any(
-    (key) => !_metadataFields.contains(key) && key != 'creators',
+    (key) =>
+        !_metadataFields.contains(key) &&
+        key != 'creators' &&
+        key != 'sourceIndex',
   )) {
     throw const FormatException(
       'Unrelated library pack metadata in draft review',

@@ -205,3 +205,7 @@ Latest user priority: real retailer and delivery-app prices first; government so
 ## Current source review branch — §76
 
 10 pinned recipe packs/44 source snapshots →63 RecipeLibraryEntry values → RecipeLibraryCoverageReport (632 indexed ingredient lines, source quantity gaps, shared calculator source fingerprints) → reviewer supplies every-line food/quantity/form/scaling/inclusion decisions → RecipeLibraryDraftReview → atomic KitchenService private draft/calculator. The audit is read-only and does not inspect saved user decisions or establish nutrient/rights approval. Source culinary completeness and accepted calculation inputs remain distinct. RECIPE-LIBRARY-COVERAGE.md and LIBRARY-RECIPE-CALCULATOR.md define the contracts.
+
+## Current scoped source transport — §77
+
+65pinned library records → source quantity audit669indexed lines → explicit private review/calculator. Recipe/source pin now includes only selected recipe URL requests from pack sourceIndex, preserving original index fields and access outcomes. No unrelated pack requests or inferred body/rights approval. Legacy review envelopes decode; current enriched source requires new acceptance. LIBRARY-RECIPE-CALCULATOR.md defines transport. Source bank sourceIndex and native lineIndex are distinct identifiers.

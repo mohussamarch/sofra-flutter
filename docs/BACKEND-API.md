@@ -168,3 +168,7 @@ ProductLabelEvidenceRepository exposes all/search/byProposedAllergen; Manufactur
 ## Read-only library quantity review — §76
 
 `RecipeLibraryCoverageReport.fromEntries(await library.all())` returns immutable per-recipe/per-line source triage, indexed optional/excluded/procedural lines, raw quantity/unit gaps and existing recipeLibrarySourceFingerprint. `toJson()` gives owned copies. Duplicate input recipes reject. No automatic conversion, food binding, saved-personal-review inspection, write or runtime approval. Contract RECIPE-LIBRARY-COVERAGE.md; selected library now63/10packs/44snapshots. Full237Flutter/analyze clean verified after integration.
+
+## Source request context compatibility — §77
+
+RecipeLibraryDraftReview includes recipe-scoped sourceIndex request evidence when supplied by the pinned pack; original request indexes/outcomes are retained, unrelated URLs excluded, explicit missing/duplicate references rejected. Existing source fingerprints cover the subset. Old reviews remain readable; assertSource rejects reusing them against newly enriched evidence. This is consistency/provenance, not food/medical/rights approval. Library65/11packs/44snapshots; contracts LIBRARY-RECIPE-CALCULATOR.md and RECIPE-LIBRARY-COVERAGE.md.

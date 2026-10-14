@@ -49,6 +49,117 @@ RecipeLibraryDraftReview makeReview(
 );
 
 void main() {
+  test('source request context retains only this recipe original indexes and access evidence', () async {
+    final f = fixtures.LibraryFixture();
+    f.creator['recipes'][0]['sourceEvidence'] = {'sourceIndex': 3};
+    f.creator['sourceIndex'] = [
+      {
+        'index': 3,
+        'request': 4,
+        'url': 'https://example.org/chef',
+        'outcome': 'indexed recipe',
+      },
+      {
+        'index': 5,
+        'request': 6,
+        'url': 'https://example.org/chef',
+        'outcome': 'direct body unavailable',
+      },
+      {
+        'index': 6,
+        'request': 7,
+        'url': 'https://example.org/other',
+        'outcome': 'other recipe',
+      },
+    ];
+    f.rebuild();
+    final entry = (await f.repository().all()).last;
+    final review = makeReview(entry);
+    final source = review.sourceSnapshot;
+    expect(source['packMetadata']['sourceIndex'], [
+      {
+        'index': 3,
+        'request': 4,
+        'url': 'https://example.org/chef',
+        'outcome': 'indexed recipe',
+      },
+      {
+        'index': 5,
+        'request': 6,
+        'url': 'https://example.org/chef',
+        'outcome': 'direct body unavailable',
+      },
+    ]);
+    expect(source['sourceRecord']['sourceEvidence']['sourceIndex'], 3);
+    final decoded = RecipeLibraryDraftReview.fromJson(review.toJson());
+    decoded.assertSource(entry);
+    expect(
+      decoded.sourceSnapshot['packMetadata']['sourceIndex'],
+      source['packMetadata']['sourceIndex'],
+    );
+    source['packMetadata']['sourceIndex'][0]['outcome'] = 'changed';
+    expect(
+      review.sourceSnapshot['packMetadata']['sourceIndex'][0]['outcome'],
+      'indexed recipe',
+    );
+    (f.creator['sourceIndex'] as List).add({
+      'index': 3,
+      'request': 4,
+      'url': 'https://example.org/chef',
+      'outcome': 'duplicate index',
+    });
+    f.rebuild();
+    final malformedEntry = (await f.repository().all()).last;
+    expect(() => makeReview(malformedEntry), throwsFormatException);
+    f.creator['sourceIndex'] = [
+      {
+        'index': 3,
+        'request': 4,
+        'url': 'https://example.org/other',
+        'outcome': 'unrelated',
+      },
+    ];
+    f.rebuild();
+    final missingReference = (await f.repository().all()).last;
+    expect(() => makeReview(missingReference), throwsFormatException);
+    final invalid = review.toJson();
+    invalid['source']['packMetadata']['sourceIndex'].add({
+      'index': 6,
+      'request': 7,
+      'url': 'https://example.org/other',
+      'outcome': 'unrelated',
+    });
+    expect(
+      () => RecipeLibraryDraftReview.fromJson(invalid),
+      throwsA(
+        isA<FormatException>().having(
+          (e) => e.message,
+          'message',
+          contains('source request'),
+        ),
+      ),
+    );
+  });
+  test('legacy source envelopes remain readable but new matching request evidence requires fresh review', () async {
+    final f = fixtures.LibraryFixture();
+    f.creator['recipes'][0]['sourceEvidence'] = {'sourceIndex': 3};
+    f.rebuild();
+    final old = makeReview((await f.repository().all()).last);
+    f.creator['sourceIndex'] = [
+      {
+        'index': 3,
+        'request': 4,
+        'url': 'https://example.org/chef',
+        'outcome': 'indexed recipe',
+      },
+    ];
+    f.rebuild();
+    final current = (await f.repository().all()).last;
+    final decoded = RecipeLibraryDraftReview.fromJson(old.toJson());
+    expect(decoded.sourceSnapshot['packMetadata']['sourceIndex'], isNull);
+    expect(() => decoded.assertSource(current), throwsStateError);
+  });
+
   test('bridges every explicit line while retaining unknown quantities metadata and full source', () async {
     final entry = (await fixtures.LibraryFixture().repository().all()).first;
     final review = makeReview(entry), draft = makeReview(entry).draft;
@@ -249,7 +360,7 @@ void main() {
       expectedManifestSha256: recipeLibraryManifestSha256,
       read: (path) => File(path).readAsString(),
     ).all();
-    expect(entries.length, 63);
+    expect(entries.length, 65);
     final entry = entries.firstWhere(
       (value) => value.id == 'manal-website-chicken-eggplant-maqluba',
     );

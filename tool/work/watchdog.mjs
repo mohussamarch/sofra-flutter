@@ -15,7 +15,7 @@ function validate(q){
   assert.ok(['ready','active','waiting','done','needs_user'].includes(t.status));
   assert.ok(typeof t.nextAction==='string'&&t.nextAction.trim());
   assert.ok(Array.isArray(t.dependsOn)&&new Set(t.dependsOn).size===t.dependsOn.length);byId.set(t.id,t);
-  if(t.blockedUntil)time(t.blockedUntil);if(t.lastAttemptAt)time(t.lastAttemptAt);
+  if(t.blockedUntil)time(t.blockedUntil);if(t.lastAttemptAt)time(t.lastAttemptAt);if(Object.hasOwn(t,'lastProgressAt'))time(t.lastProgressAt);
  }
  const visiting=new Set(),visited=new Set();
  function visit(id){assert.ok(byId.has(id),'Unknown dependency');assert.ok(!visiting.has(id),'Dependency cycle');if(visited.has(id))return;
@@ -38,7 +38,10 @@ export function auditWork(queue,{now=new Date().toISOString(),usage,sourceState,
  const active=queue.tasks.filter(t=>t.status==='active');
  if(active.length){
   const stalled=active.filter(t=>{
-   const progress=queue.lastProgress?.taskId===t.id?time(queue.lastProgress.at):(t.lastAttemptAt?time(t.lastAttemptAt):0);
+   const recorded=[];
+   if(Object.hasOwn(t,'lastProgressAt'))recorded.push(time(t.lastProgressAt));
+   if(queue.lastProgress?.taskId===t.id)recorded.push(time(queue.lastProgress.at));
+   const progress=recorded.length?Math.max(...recorded):(t.lastAttemptAt?time(t.lastAttemptAt):0);
    return nowMs-progress>=queue.stallMinutes*60000;
   });
   if(stalled.length)return answer('stalled_active_task',null,'Inspect existing owner/process and evidence; resume it or release ownership before another writer',{activeTasks:active.map(t=>t.id),stalledTasks:stalled.map(t=>t.id)});

@@ -202,3 +202,7 @@ Library44/7packs/28snapshots; local28/22sourcecuisine-regionlabels,16creatorwebs
 ## Current §76 — indexed source quantity triage
 
 Library63 records/10 packs/44 snapshots;44 local (10 culinary fully specified/32 review/2 not cookable)+19 creator websites.38 local source region/cuisine labels, not approved national cuisines. RecipeLibraryCoverageReport is source-only read-only triage of632 lines with shared calculator source pins, not saved personal decisions or nutrition approval. Preserve repeated/excluded/optional/procedural indices; missing remains null, source zero flagged, raw units other than g/kg require explicit review. Use RECIPE-LIBRARY-COVERAGE.md before consuming counters; they overlap. Original54 planning records and no-UI/cloud/billing/medical-inference constraints unchanged.
+
+## Current §77 — progress and source request scope
+
+Library65 records/11packs/44snapshots=44archive+21creatorwebsite;38local source labels,0newcompleteYT. Preserve recipe-scoped sourceIndex request indexes/outcomes in private reviews; lookup by original index, not subset position. No direct-body/video/date/rights/food approval from indexed extracts. Old envelopes decode; enriched current pins require re-review. Watchdog uses latest actual task.lastProgressAt/global matching taskId, attempts only fallback. No false progress via refreshed attempts or unrelated work. See HANDOFF§77/LIBRARY-RECIPE-CALCULATOR.md; all unchanged scope decisions apply.

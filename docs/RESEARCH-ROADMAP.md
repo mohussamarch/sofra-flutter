@@ -190,3 +190,9 @@ Archived local8 and modernwebsite3 added,55selected library total; source catego
 ## Next reviewed inputs after quantity audit — §76
 
 Source library now63 entries/38 local cuisine-region labels. Independent core unit delivered: indexed quantity-gap report tied to the calculator source pin. Next use it for a bounded source-supported food/quantity review, then next modern creator/different-family source batch plus independent core. Continuous ready banks remain open; missing product access/merchant data does not stop these local units. No quantity or food acceptance inferred from report counters or culinary completeness.
+
+## Task progress diagnosis repaired — §77
+
+Continue source/logic units while actual quota permits: after §76 delivery, a bounded modern creator batch added2website records and coordinator repaired monitor task progress plus source evidence transport. Source search/index facts remain distinguished from direct/current body/video retrieval. Highest next review uses indexed source quantity/identity gaps; fresh primary access/date/channel/rights evidence still needed. No timer/attempt counted as product progress.
+
+Watchdog now validates task.lastProgressAt and uses latest recorded own-task or matching global progress. lastAttemptAt is fallback only if neither real progress value exists; recent unrelated work or attempts cannot hide a stale owner. At60min without progress diagnose the existing owner/process before resuming/releasing. No automatic spawn/kill/queue mutation or quota/backoff change.

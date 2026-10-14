@@ -10,7 +10,7 @@ void main() {
     () async {
       final repository = bundledRecipeLibrary();
       final entries = await repository.all();
-      expect(entries, hasLength(63));
+      expect(entries, hasLength(65));
       expect(entries.where((entry) => entry.runtimeReady), isEmpty);
       expect(entries.every((entry) => entry.nutrition == null), isTrue);
       expect(await repository.search('مقلوبة'), hasLength(2));

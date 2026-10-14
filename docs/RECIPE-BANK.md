@@ -97,3 +97,7 @@ ManifestSHAfa2a3968ef46d070c4f532903bb5b68328ec9df2f0d8d6749391363278600c33. Ori
 The fifth archived pack adds84 source ingredient lines +1 procedural line/59 ordered steps,278 unresolved native preflight issues. Source ranges, alternatives, unknown yields/quantities and time conflicts remain explicit. PackSHA1df899307df2cf630c3fe850dc5ddb997a1f179dd8a1e2ea67bdb7eb77fbf6be. ManifestSHA832cc02a2388db284505fad121783b916f1ecd5c0881b81736c828ce23498b6c.
 
 RecipeLibraryCoverageReport records every indexed line with its existing calculator source fingerprint. Actual63-record report:632 lines,98 missing amounts,91 missing units,465 units needing explicit review,34 procedural lines,7 optional lines;63 recipes have source quantity gaps. Counters overlap. Only raw g/kg are recognised by this audit; positive mass alone does not approve food/form/nutrition. Saved personal review decisions are outside its scope. Contract RECIPE-LIBRARY-COVERAGE.md.16 Node +237 full Flutter passed, analyze clean8.7seconds; prior §75 counts are historical.
+
+## Current selected modern source output — §77
+
+65selected records=44archive+21creatorwebsite,11packs/44snapshots. Two additional indexed official Manal website recipes with37source/procedural lines/10summarized steps.0newcompletevideo recipes/cuisine approvals/food bindings. Direct recipe open returned a relaunch page; indexed facts and date/rights/body/channel unknowns explicitly preserved. RECIPE-LIBRARY.md and docs/agents/modern-recipes-2048.md contain current limitations/pins; original54planning/4cuisines unchanged.

@@ -62,3 +62,9 @@ Pack attribution can use either `creator` or `creators`. The bridge now collects
 ## Current inputs and source triage — §76
 
 The earlier44-record/7-pack counts above are historical. Current selected library63 records/10 packs/44 source snapshots. `RecipeLibraryCoverageReport` offers source-only indexed triage with `recipeLibrarySourceFingerprint`, raw quantities and optional/excluded/procedural flags; it does not inspect saved decisions, supply a gram conversion, or accept a FoodRecord. Every-line explicit `RecipeLibraryLineDecision` and all source/publication guards above still apply. RECIPE-LIBRARY-COVERAGE.md explains the counters and limits.
+
+## Recipe-scoped source request evidence — §77
+
+Current library65 records/11 packs/44 snapshots. Source extraction can include a pack sourceIndex table and a row sourceEvidence.sourceIndex reference. The private review envelope now retains only requests whose exact URL belongs to that entry, preserving original index/request values and both indexed extraction and failed direct access outcomes. Look up by each stored index field, not the subset list position; indexes are not renumbered. Other recipe/listing/video requests are omitted.
+
+Explicit tables must retain the row's referenced index; malformed/duplicate indexes, invalid request ordinals or unrelated URLs reject before new review creation and during fromJson. The source request subset contributes to the existing source fingerprint. Legacy envelopes without the table still decode; an enriched current source requires explicit re-review rather than silently refreshing the old pin. No body hash or source/authentication/rights approval is invented. The actual two new records are worker-acquired indexed official website extracts; direct opening one recipe returned a relaunch page. Full body archive and channel identity remain unknown.

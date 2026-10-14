@@ -72,3 +72,30 @@ test('explicit99 limit preserves default90 and all hard stops',()=>{
  assert.equal(auditWork(q,{now,quotaLimit:99}).reason,'usage_unknown');
  for(const n of [89,100,NaN])assert.throws(()=>auditWork(q,{now,usage:u,quotaLimit:n}));
 });
+
+test('task progress remains authoritative when another unit has the global progress slot',()=>{
+ const q=queue([task('finished',0,'done'),{...task('active',1,'active'),lastAttemptAt:'2026-10-13T06:00:00Z',lastProgressAt:'2026-10-13T07:55:00Z'}]);
+ const before=JSON.stringify(q);
+ assert.equal(auditWork(q,{now,usage}).reason,'work_in_progress');
+ assert.equal(JSON.stringify(q),before);
+});
+
+test('a fresh attempt cannot hide recorded stale task progress',()=>{
+ const q=queue([task('finished',0,'done'),{...task('active',1,'active'),lastAttemptAt:'2026-10-13T07:59:00Z',lastProgressAt:'2026-10-13T06:00:00Z'}]);
+ const a=auditWork(q,{now,usage});
+ assert.equal(a.reason,'stalled_active_task');
+ assert.deepEqual(a.stalledTasks,['active']);
+});
+
+test('latest own task or matching global progress wins, never unrelated progress',()=>{
+ const q=queue([{...task('active',1,'active'),lastAttemptAt:'2026-10-13T06:00:00Z',lastProgressAt:'2026-10-13T07:55:00Z'}]);
+ q.lastProgress={at:'2026-10-13T06:00:00Z',taskId:'active',summary:'actual change',evidence:['test']};
+ assert.equal(auditWork(q,{now,usage}).reason,'work_in_progress');
+ q.tasks[0].lastProgressAt='2026-10-13T06:00:00Z';q.lastProgress.at='2026-10-13T07:55:00Z';
+ assert.equal(auditWork(q,{now,usage}).reason,'work_in_progress');
+});
+
+test('malformed own progress timestamps reject instead of hiding a stalled task',()=>{
+ const q=queue([{...task('active',1,'active'),lastAttemptAt:'2026-10-13T06:00:00Z',lastProgressAt:'not-a-time'}]);
+ assert.throws(()=>auditWork(q,{now,usage}),/timestamp/);
+});
