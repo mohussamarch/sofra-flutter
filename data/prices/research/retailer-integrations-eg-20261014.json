@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-14T11:24:17.252875Z",
+  "country": "EG",
+  "priority": "actual-retailer-and-delivery-catalog-first",
+  "sources": [
+    {
+      "platform": "talabat",
+      "url": "https://developer.talabat.com/api-specifications",
+      "verified": "Documented OAuth partner GET vendor catalog and async export; SKU/barcodes/price/active/weight fields. Chain/vendor scoped, not public read-all-stores. Access requires Partner Portal/account manager.",
+      "permissionToRepublish": null
+    },
+    {
+      "platform": "talabat",
+      "url": "https://developer.talabat.com/en/documentation/catalog-api-faq",
+      "verified": "Partner portal is for stores onboarded to the platform, own-store product prices and integration access.",
+      "consumerAccountEqualsPartnerAccess": false
+    },
+    {
+      "platform": "talabat",
+      "url": "https://developer.talabat.com/en/documentation/catalog-sftp-overview",
+      "verified": "SFTP pushes merchant CSV price/status updates INTO talabat. Not an all-store outbound price feed.",
+      "direction": "merchant-to-platform"
+    },
+    {
+      "platform": "Rabbit",
+      "url": "https://www.rabbitmart.com/partners/",
+      "verified": "Official page offers restaurant listing, selling packaged products and advertising.",
+      "publicConsumerCatalogApiConfirmed": false,
+      "absenceOfApiProven": false
+    },
+    {
+      "platform": "Breadfast",
+      "url": "https://www.breadfast.com/",
+      "verified": "Official grocery consumer storefront reviewed; public partner price-catalog read documentation not confirmed in this bounded search.",
+      "publicConsumerCatalogApiConfirmed": false,
+      "absenceOfApiProven": false
+    },
+    {
+      "platform": "instashop",
+      "url": "https://instashop.com/en-eg",
+      "verified": "Official Egyptian consumer marketplace includes groceries and butcheries. API reuse/access terms for Sofra not established.",
+      "publicConsumerCatalogApiConfirmed": false,
+      "absenceOfApiProven": false
+    }
+  ],
+  "recommendation": {
+    "firstPilot": "One cooperating grocery merchant per market, read-only POS/JSON/CSV with documented sharing permission, then additional merchants; no need to wait for government tables.",
+    "aggregatorRoute": "Request catalog-read/data-licensing or affiliate feed explicitly; a merchant-order integration alone does not authorize all-platform price access.",
+    "fallback": "Explicit user-entered price and reviewed receipts remain supported; no fabricated nationwide mean."
+  },
+  "liveConnection": false,
+  "credentialsUsed": false,
+  "messagesOrApplicationsSent": false,
+  "runtimePriceRows": 0,
+  "requiredFeedFields": [
+    "country",
+    "currency",
+    "merchant",
+    "branch",
+    "city-or-service-area",
+    "SKU",
+    "barcode-if-known",
+    "pack-size-and-unit",
+    "regular-and-sale-price",
+    "tax-status",
+    "availability",
+    "price-effective-time-if-known",
+    "observedAt",
+    "reuse-permission-reference"
+  ],
+  "unknowns": [
+    "platform commercial/data license availability",
+    "fees and quotas",
+    "city coverage",
+    "exact branch scope",
+    "freshness SLA",
+    "right to republish",
+    "live endpoint access"
+  ]
+}

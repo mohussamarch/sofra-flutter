@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-14T11:24:17.252875Z",
+  "source": "GASTAT",
+  "country": "SA",
+  "pricePeriod": "2026-07",
+  "latestAvailablePeriodConfirmed": false,
+  "landingUrl": "https://www.stats.gov.sa/ar/d/apgstables-jul2026-ar-en",
+  "downloadUrl": "https://www.stats.gov.sa/documents/20117/2435267/APGSTables-Jul2026-AR-EN.xlsx/e4b90f89-4d24-4d89-263b-bef01cd10c87?version=1.0&t=1786253819368&download=true",
+  "externalOriginal": "E:\\work\\SOFRA\\source-cache\\prices\\APGSTables-Jul2026-AR-EN.xlsx",
+  "workbookSha256": "6f367b9ee4534cc2e5cbdd7f45f44017d47f668fb0adfa2d11c5e63efe21c0d0",
+  "tableSha256": "9e0d83c2e7e9cf010869326264db092a961b8b79b9ea29ba3ba8f5864efc2492",
+  "rawWorkbookRedistributedInGit": false,
+  "sheet": "1",
+  "range": "B1:J123",
+  "numericFoodRows": 100,
+  "columns": {
+    "D": "July2026 average price",
+    "E": "June2026 average price",
+    "F": "July2025 average price",
+    "G": "monthly percent change",
+    "H": "annual percent change",
+    "C": "source Arabic unit",
+    "I": "source English unit"
+  },
+  "currency": null,
+  "currencyReview": "Food table does not explicitly label currency; SAR is publisher-series context, not a reviewed food-table cell. No runtime conversion or currency assignment.",
+  "usePolicy": {
+    "url": "https://www.stats.gov.sa/en/use-policy",
+    "browserVerified": true,
+    "rawPolicyBodySha256": null,
+    "summary": "Policy1.2.2 permits data/material reuse with attribution and modification notice, excluding trademarks/logos/clearly identified third-party material. Indicator-specific policies may override.",
+    "datasetSpecificReuseApproved": false
+  },
+  "portalMismatch": {
+    "url": "https://dp.stats.gov.sa/opendata/cdata-v1-public-price-averages-statistics",
+    "observedEndpoints": [
+      "/v1/stats/DPV_CLI_CHANGE_MONTH",
+      "/v1/stats/DPV_CLI_CHANGE_YEAR"
+    ],
+    "metric": "CPI percentage change, not item currency amount",
+    "apiDirectoryRedirectedToLogin": true,
+    "credentialsEntered": false
+  },
+  "role": "secondary-statistical-source-checkpoint",
+  "normalizedPriceBankBuilt": false,
+  "runtimeReady": false,
+  "unknowns": [
+    "latest period",
+    "food-table currency evidence",
+    "per-item identity and price basis",
+    "current store/availability",
+    "dataset-specific exception review"
+  ]
+}

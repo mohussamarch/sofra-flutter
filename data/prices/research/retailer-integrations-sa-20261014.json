@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "researchId": "sa-retailer-catalog-integrations-20261014",
+  "retrievedAt": "2026-10-14",
+  "countryFocus": "Saudi Arabia",
+  "userPriority": "delivery-app and retail-market prices first; government sources are secondary helpers",
+  "researchBoundary": {
+    "primarySourcesOnly": true,
+    "platformLoginOrContactAttempted": false,
+    "credentialsRequestedOrUsed": false,
+    "hiddenEndpointsOrConsumerAppAutomation": false,
+    "claimThatNoPublicApiExists": false,
+    "rightsOrReuseApprovalObtained": false
+  },
+  "summary": {
+    "practicalFastPath": "Start with willing local retailers that can provide a POS/export CSV or merchant-authorized read access to their Salla/Zid catalog. Capture each merchant/store identity and observation time. Use delivery-platform partner APIs only for that merchant's own contracted vendor catalog. These documented APIs are not a verified public read-any-store/city catalog feed.",
+    "consumerCatalogBoundary": "A consumer-facing catalog can be browsed in the platform app for a selected service area, but the official HungerStation terms prohibit copying merchant-listing content for republication and warn the displayed menu can differ from what is actually offered. No public consumer bulk-read API was confirmed in this bounded review; that is not proof that none exists.",
+    "freshnessRule": "Persist source, store/branch, checkedAt, currency, product/pack identity, price kind (regular/sale), and availability. Re-fetch on a short interval agreed with each feed owner; show the last-checked time. An API's real-time update capability is not a guarantee of consumer checkout price or a source freshness SLA.",
+    "smallShopRecommendation": [
+      "For an independent shop, request a permitted CSV/POS export first. Keep a store-specific read-only feed and price/stock timestamps.",
+      "If the merchant runs Salla or Zid, offer a merchant-authorized OAuth/app connection with the narrow products.read scope for that merchant's own catalog.",
+      "If the shop wants orders through an aggregator, apply through the merchant onboarding route first; use its vendor portal or approved API/SFTP integration for its own outlet data. Confirm commission, contract scope, and supported cities directly with the platform before relying on it.",
+      "Do not treat an aggregator consumer app as permission to bulk copy/re-publish other merchants' catalogs or prices."
+    ]
+  },
+  "integrations": [
+    {
+      "platform": "HungerStation / Delivery Hero Local Shops",
+      "sourceClass": "delivery-platform merchant partner integration",
+      "geography": {
+        "country": "Saudi Arabia",
+        "coverageEvidence": "Partner application says availability is checked during merchant registration for the merchant's area; exact supported-city list was not present in the reviewed page.",
+        "branchScope": "Partner catalog endpoints are keyed by chain_id and vendor_id; data is scoped to the merchant chain/outlet, not every consumer-visible store in a city."
+      },
+      "publicConsumerCatalog": {
+        "consumerCanBrowse": "Platform terms describe stores in the user's local area and menus available for ordering.",
+        "bulkReadApiConfirmed": false,
+        "reuseBoundary": "Terms prohibit copying store-listing content for republication. They also state the displayed menu may not match what the merchant actually provides.",
+        "interpretation": "No official consumer catalog API for reading all stores/cities/prices was confirmed in this review; absence is not proven. Do not scrape or use hidden endpoints."
+      },
+      "merchantIntegration": {
+        "partnerRequired": true,
+        "documentedOptions": ["Partner API", "file-based SFTP CSV", "self-service vendor tools for smaller shops"],
+        "read": "Catalog use-case docs list GET to retrieve the partner's available products and export an assortment snapshot.",
+        "write": "Partner API supports PUT single/bulk product catalog updates; fields include SKU, barcode, quantity reference, price, active state, and maximum sales quantity. Updates are asynchronous; bulk completion can be reported by webhook.",
+        "pricingAndAvailability": "Partner API overview describes real-time availability/stock and product price synchronization. The docs say the quantity field in the catalog update acts as a reference against a configured sales buffer and is not stored as stock quantity.",
+        "otherPartnerFunctions": "Orders can be received and tracked in real time; outlet open/closed status, schedules, closures, and busy mode can be managed through partner integrations.",
+        "authAndRequirements": "Must already be a partner and have Partner Portal plus Integrations Plugin access. Documentation describes chain/vendor IDs and OAuth2 credentials issued/generated via Partner Portal or account manager. Partner signup asks for a valid commercial registration, Saudi national ID, product photos, logo, menu, and branch coordinates; tax certificate, authorization, and IBAN are listed when applicable.",
+        "smallMerchantRoute": "HungerStation's Local Shops docs say smaller partners commonly use self-service tools; API/SFTP is for automating catalog/order/promotion work. SFTP is structured CSV and needs no API development, but still is a partner-side integration to that merchant's own assortment.",
+        "freshnessAndLimits": "Real-time is the documented partner synchronization capability, not a published freshness SLA for consumer prices. Catalog update endpoints return queued job IDs; observe completion before assuming an update is live. Exact per-outlet coverage depends on the merchant vendor IDs and approved partner access.",
+        "fees": "Partner onboarding describes commission but gives no percentage in the reviewed page. Consumer terms say displayed item prices are current at order time and may later change; delivery/small-order/service/payment fees can be added, shown before checkout, and service fee can vary by customer distance. Treat product price separately from delivery/platform fees."
+      },
+      "sources": [
+        {"url":"https://developer.hungerstation.com/en/documentation/introduction","title":"Delivery Hero Local Shops integration introduction","retrievedAt":"2026-10-14","supports":["small-shop self-service versus API/SFTP","partner-specific catalog ownership","CSV SFTP without API development","partner catalog/order scope"]},
+        {"url":"https://developer.hungerstation.com/en/documentation/api-partner-api-overview","title":"HungerStation Partner API overview","retrievedAt":"2026-10-14","supports":["real-time partner catalog availability and price synchronization","orders and outlet controls","SFTP alternative"]},
+        {"url":"https://developer.hungerstation.com/en/documentation/catalog-api-use-cases","title":"HungerStation Catalog API use cases","retrievedAt":"2026-10-14","supports":["GET available-products/assortment retrieval","PUT product price and active-state changes","asynchronous catalog jobs and per-vendor endpoints"]},
+        {"url":"https://developer.hungerstation.com/en/documentation/outlet-management-api-how-to-integrate","title":"HungerStation Outlet Management API integration requirements","retrievedAt":"2026-10-14","supports":["existing partner and Partner Portal access required","Integrations Plugin requirement","OAuth2 credential flow and chain/vendor IDs"]},
+        {"url":"https://partner.hungerstation.com/ar_SA","title":"HungerStation Saudi merchant signup","retrievedAt":"2026-10-14","supports":["availability is checked in merchant registration","application documents","commission exists but page does not specify rate"]},
+        {"url":"https://hungerstation.com/sa-ar/terms-of-use","title":"HungerStation Saudi terms of use","retrievedAt":"2026-10-14","supports":["local-area consumer listings","no guarantee displayed menu matches actual offer","listing reuse restriction","item price timing and extra delivery/service fees"]}
+      ]
+    },
+    {
+      "platform": "Salla",
+      "sourceClass": "retailer e-commerce merchant catalog API",
+      "geography": {
+        "countryFocus": "Saudi merchant platform; source documents the Salla merchant API generally, not a citywide retail feed",
+        "coverageEvidence": "A merchant-authorized Salla store at a time; API page says products related to your store.",
+        "branchScope": "The list-products endpoint is store-scoped; no branch-specific price coverage was confirmed in the reviewed endpoint. Store delivery zones/branch variation require separate merchant agreement or additional APIs."
+      },
+      "catalogRead": {
+        "endpoint": "GET https://api.salla.dev/admin/v2/products",
+        "scope": "products.read",
+        "fieldsConfirmedInExample": ["product ID", "SKU/GTIN", "name", "price amount and currency", "taxed/pre-tax price", "sale price", "quantity", "availability/status", "product URL"],
+        "filteringAndPagination": "Keyword, status, category, page, and per_page parameters are documented; response includes pagination.",
+        "authAndRequirements": "Salla says Merchant APIs require a verified Salla Partners account and OAuth2.0. The merchant must install/authorize the app and grant the requested store scope; access can be revoked by the merchant. Published app authorization uses Salla's Easy Mode.",
+        "freshnessAndLimits": "The API returns the store's current catalog response when read; documentation reviewed did not state an update freshness SLA or push notification for price changes. Poll/webhook only with merchant authorization and platform rules; save checkedAt and don't call it live checkout price.",
+        "fees": "API docs reviewed do not specify Salla merchant subscription, app, or integration fees; confirm separately."
+      },
+      "sources": [
+        {"url":"https://docs.salla.dev/5394168e0","title":"Salla Merchant API: List Products","retrievedAt":"2026-10-14","supports":["GET products for your store","products.read scope","price/taxed price/currency/sale price/quantity fields","filters and pagination"]},
+        {"url":"https://docs.salla.dev/doc-421118","title":"Salla OAuth Authorization","retrievedAt":"2026-10-14","supports":["verified partners account prerequisite","merchant-approved, scoped store access","merchant revocation","OAuth2 published-app flow"]},
+        {"url":"https://docs.salla.dev/security","title":"Salla Merchant API Security Considerations","retrievedAt":"2026-10-14","supports":["no anonymous access to merchant APIs","OAuth through Salla Partners Portal"]}
+      ]
+    },
+    {
+      "platform": "Zid",
+      "sourceClass": "retailer e-commerce merchant catalog API",
+      "geography": {
+        "countryFocus": "Saudi merchant platform; reviewed API is store-scoped, not a citywide listing feed",
+        "coverageEvidence": "GET /v1/products/ request requires a Store-Id and access token.",
+        "branchScope": "The product-list endpoint is scoped to a store; branch-specific catalog/price coverage was not established in the reviewed page."
+      },
+      "catalogRead": {
+        "endpoint": "GET https://api.zid.sa/v1/products/",
+        "scope": "products.read",
+        "fieldsConfirmedInExample": ["product ID", "SKU/barcode", "Arabic and English product name", "price", "sale price", "currency", "quantity", "availability/draft fields"],
+        "authAndRequirements": "The official endpoint documentation shows Access-Token, Store-Id, and Manager role headers and requires products.read. Merchant authorization/credential issuance details should be confirmed with the merchant/Zid; no credential was requested or used for this review.",
+        "freshnessAndLimits": "List response is paginated and can be filtered by stock and price. The docs reviewed do not state price freshness SLA or change timestamps; record checkedAt and confirm whether webhooks are available to the authorized merchant integration.",
+        "fees": "API documentation reviewed does not state Zid subscription/app/integration fees; confirm separately."
+      },
+      "sources": [
+        {"url":"https://docs.zid.sa/retrieve-a-list-of-products","title":"Zid API: List Products","retrievedAt":"2026-10-14","supports":["GET store catalog","products.read scope","Store-Id and Access-Token headers","price/currency/sale price/quantity fields","pagination and filters"]}
+      ]
+    },
+    {
+      "platform": "Nana Apps (secondary integration option)",
+      "sourceClass": "provider mini-app partnership, not a public grocery-catalog reader",
+      "geography": {
+        "country": "Saudi Arabia",
+        "coverageEvidence": "Application asks providers which cities they serve and operational capacity; sources do not publish a definitive supported-city list."
+      },
+      "programFacts": {
+        "whatItIs": "A service-provider mini-app integrated inside Nana, with APIs/templates for catalog, service areas, pricing, and order status.",
+        "catalogReadAnyStore": "Not documented in reviewed sources; this is a route for a provider's own storefront/service, not a cross-store grocery price feed.",
+        "requirements": "Apply, describe service/cities/capacity, build using APIs/templates or own developer, pass business verification and quality/safety review, and receive a controlled rollout. Developer docs say Nana supplies SDK access/credentials and conducts code review.",
+        "feesAndFreshness": "No fee schedule or catalog freshness SLA found in the reviewed sources; terms need confirmation with Nana before relying on this route."
+      },
+      "sources": [
+        {"url":"https://nana.sa/english/miniapps","title":"Nana Apps for service providers","retrievedAt":"2026-10-14","supports":["provider mini-app, catalog/pricing/service-area APIs","application city/capacity details","verification and controlled launch"]},
+        {"url":"https://docs.apps.nana.sa/docs/getting-started","title":"Nana Mini Apps developer guide","retrievedAt":"2026-10-14","supports":["third-party mini-app integration","SDK access and Nana-provided credentials","code review and submission approval"]}
+      ]
+    }
+  ],
+  "dataCaptureContract": {
+    "requiredPerObservation": ["merchant/platform", "storeId", "branchId when supplied", "sku or barcode when supplied", "productName", "packSizeAndUnit", "regularPrice", "salePrice if present", "currency", "taxInclusionStatus if exposed", "availability if supplied", "sourceUrlOrApi", "checkedAt", "merchantPermissionReference"],
+    "missingFieldBehavior": "Keep unknown fields null; never infer product pack size, branch coverage, delivery fees, tax inclusion, or live status.",
+    "pricePresentation": "Display last-checked timestamp and separate item price from delivery, service, small-order, and payment fees."
+  },
+  "unresolved": [
+    "No official public API for bulk-reading all consumer stores and prices across a Saudi city was confirmed. This bounded search does not prove none exists.",
+    "Exact HungerStation commission rate, supported city list, partner access contract, and any third-party reuse rights require merchant/platform agreement.",
+    "Salla and Zid endpoint examples provide merchant-store data; branch-level availability/pricing and API fee terms were not established from the cited pages.",
+    "Nana's city coverage, commercial terms, and any app-specific feed freshness terms remain unverified.",
+    "A consumer-visible delivery price may change with store selection, stock, promotion, delivery area, distance, or checkout fees; app terms do not guarantee the displayed menu matches fulfillment."
+  ]
+}

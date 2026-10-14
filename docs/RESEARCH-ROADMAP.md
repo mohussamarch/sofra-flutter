@@ -83,7 +83,7 @@ Source ingredient sections and review cues are implemented/validated in research
 
 ## Heartbeat13:44 identity guard
 
-Source batch240pages acquired;429checkpoint respected. Research identity proposal guard complete/6tests; nextcuration/authoritativefoodreader. OFF503 waits do not stop local logic. No source count completion cap.
+Source batch240pages acquired;429checkpoint respected. Research identity proposal guard complete/8tests; nextcuration/authoritativefoodreader. OFF503 waits do not stop local logic. No source count completion cap.
 
 
 ## Heartbeat16:14: source readers, proposals and recovery
@@ -170,3 +170,7 @@ The latest user request replaces the previous source expansion direction: modern
 ##14October — closed units and next order
 
 Completed a bounded local curation unit(16Arabic records/4explicit preflightdrafts), modern Arabic creator unit(6website recipes/14videodiscoveries), pinned Flutter readable library(22records), and stock-aware planned purchase forecast(18tests). Source acquisition remains ongoing; no final bank completion claim. Current status is FEATURE-STATUS.md; detailed APIs RECIPE-LIBRARY.md/BACKEND-API.md. Next prioritize resolving curated recipe metadata/rights/quantity gaps and source-supported modern creator recipes; monthly budget optimizer still needs reviewed prices/people constraints. No booknetwork resurrection, UI activation or fake nutrition.
+
+##14October — market-first source correction
+
+Latest user priority: real retailer and delivery-app prices first; government sources are secondary, no waiting for government exports. See MARKET-PRICE-INTEGRATIONS.md, new official-source EG/SA dossiers, and offline partner-catalog-candidates.mjs (8tests). Talabat/HungerStation partner scope is own chain/vendor; Salla/Zid can read consenting merchant catalogs. No live feed or reuse permission acquired. GASTATJuly2026 workbook/100food rows saved as raw source checkpoint only; no normalized/livepricebank/currency approval. Arabiccreatorsecondbatch adds2website recipes with explicit source omissions;22bundled readable entries unchanged, nextassetintegration separate.

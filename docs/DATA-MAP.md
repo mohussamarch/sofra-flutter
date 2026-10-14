@@ -183,3 +183,7 @@ Current recipe acquisition policy: RECIPE-ACQUISITION-ARABIC-YOUTUBE.md (officia
 RECIPE-LIBRARY.md:6056بحث قديم →16مراجعة عربية محلية +6من مواقع طهاة رسميين →قارئ Flutter مثبت بالبصمات للعرض والبحث(22سجلًا)، مع حفظ حالات4مكتملة/10مراجعة/2ناقصة محليًا.11وسم منطقة/مطبخ مصدر، عائلة نان بطريقتين؛ لا زيادة تلقائية إلى54وصفة التخطيط أو ربط غذائي. ملفات المصدر ودفتران عربيان وأربع مسودات preflight وروابط كل سجل محفوظة. منيوتيوب14فيديو/4ناقص/0كامل. FEATURE-STATUS.md يوضح المبني والجزئي والمتبقي.
 
 من خطط الوجبات إلى المال:KitchenService.previewPurchases →تجميع مطلوب الوصفات→توزيع المخزون مرة واحدة→شراء النواقص منفصلًا عن قيمة الاستهلاك؛ بيانات ناقصة تمنع الإجمالي المكتمل، لا تعديل مخزون أو تاريخ.
+
+##14October — market-first source correction
+
+Latest user priority: real retailer and delivery-app prices first; government sources are secondary, no waiting for government exports. See MARKET-PRICE-INTEGRATIONS.md, new official-source EG/SA dossiers, and offline partner-catalog-candidates.mjs (8tests). Talabat/HungerStation partner scope is own chain/vendor; Salla/Zid can read consenting merchant catalogs. No live feed or reuse permission acquired. GASTATJuly2026 workbook/100food rows saved as raw source checkpoint only; no normalized/livepricebank/currency approval. Arabiccreatorsecondbatch adds2website recipes with explicit source omissions;22bundled readable entries unchanged, nextassetintegration separate.

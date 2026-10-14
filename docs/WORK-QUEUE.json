@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T10:15:57.137053+00:00",
-    "taskId": "recipe-library",
-    "summary": "16curated+6creator records readable via Flutter pinned assets; full210Flutter and13Node passed; stock-aware planned purchase preview complete.",
+    "at": "2026-10-14T11:24:17.252875Z",
+    "taskId": "prices",
+    "summary": "Marketfirst EG/SA integration routes documented; offline own-vendor price reader8tests;2additionalArabiccreator recipes; govsource secondary.",
     "evidence": [
-      "docs/RECIPE-LIBRARY.md",
-      "test/recipe_library_assets_test.dart",
-      "test/purchase_forecast_integration_test.dart"
+      "docs/MARKET-PRICE-INTEGRATIONS.md",
+      "tool/prices/partner-catalog-candidates.test.mjs",
+      "data/recipes/arabic-youtube/second-batch-20261014/recipes.json"
     ]
   },
   "tasks": [
@@ -76,7 +76,7 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Modern official Arab creator recipes: complete explicit source quantities/methods; review6website records and4partial video descriptions; no new book collection.",
+      "nextAction": "Complete explicit omissions and review source rights; integrate2newcreator records via pinned selected assets as separate reviewed unit; continue bounded modernArabcreator acquisition.",
       "lastAttemptAt": "2026-10-14T10:04:23.521510+00:00",
       "lastProgressAt": "2026-10-14T10:15:57.137053+00:00",
       "completedUnit": {
@@ -137,7 +137,8 @@
         "docs/RECIPE-ACQUISITION-ARABIC-YOUTUBE.md",
         "data/recipes/arabic-youtube/2026-10-first-batch.json",
         "data/recipes/arabic-youtube/COOKBOOK.ar.md",
-        "docs/RECIPE-LIBRARY.md"
+        "docs/RECIPE-LIBRARY.md",
+        "data/recipes/arabic-youtube/second-batch-20261014/recipes.json"
       ],
       "stage": "OfficialmodernArabiccreatorYouTubeandownwebsiteacquisition",
       "sourcePolicy": {
@@ -152,7 +153,7 @@
         "videoDiscoveries": 14,
         "partialVideoRecipes": 4,
         "completeVideoRecipes": 0,
-        "creatorWebsiteRecords": 6,
+        "creatorWebsiteRecords": 8,
         "runtimeApprovals": 0
       }
     },
@@ -382,10 +383,10 @@
       "priority": 30,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Verify latest reusable official exports for EG/SA and fresh meat/produce/city/pack coverage; seek permitted retailer feed. Bind exact items/stores and review freshness before runtime provider; keep recipe helper progressing.",
+      "nextAction": "Market-first: obtain permitted real merchant POS/CSV or authorized catalog read sample EG/SA,20–50products/branch; validate price basis/rights/time. Request aggregator catalog/data-licensing access, notjustorders API. Government secondary, no blocker.",
       "lastAttemptAt": "2026-10-14T07:44:38.033989+00:00",
-      "stage": "Historical officialintervalcontract verified;currentlicensedexportsstillunavailable",
-      "lastProgressAt": "2026-10-14T08:29:40.119819+00:00",
+      "stage": "Official market integration routes documented; offline partner catalog candidate reader tested8; no liveconnection. GASTAT100food rows rawcheckpoint only.",
+      "lastProgressAt": "2026-10-14T11:24:17.252875Z",
       "completedUnit": {
         "researchObservations": 34,
         "egypt": 30,
@@ -404,7 +405,12 @@
         "tool/prices/research-index.test.mjs",
         "data/prices/research/official/msit-2025-06-ranges.json",
         "tool/prices/official-price-ranges.mjs",
-        "tool/prices/official-price-ranges.test.mjs"
+        "tool/prices/official-price-ranges.test.mjs",
+        "docs/MARKET-PRICE-INTEGRATIONS.md",
+        "data/prices/research/retailer-integrations-eg-20261014.json",
+        "data/prices/research/retailer-integrations-sa-20261014.json",
+        "tool/prices/partner-catalog-candidates.test.mjs",
+        "data/prices/research/official/gastat-jul2026/provenance.json"
       ],
       "lastSourceAccessCheck": {
         "url": "https://www.stats.gov.sa/en/use-policy",
@@ -579,11 +585,11 @@
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T10:17:44.074021+00:00",
-    "primaryUsedPercent": 61,
-    "weeklyUsedPercent": 10,
+    "at": "2026-10-14T11:26:11.373315+00:00",
+    "primaryUsedPercent": 78,
+    "weeklyUsedPercent": 12,
     "ordinaryUsageAllowed": true,
-    "action": "Finished bounded verified units; owners released; no purchase/reset; fresh limits before next costly source batch."
+    "action": "Marketfirst boundedunit finished; no purchase/reset, freshquota before next costlybatch."
   },
-  "updatedAt": "2026-10-14T10:15:57.137053+00:00"
+  "updatedAt": "2026-10-14T11:24:17.252875Z"
 }
