@@ -173,7 +173,11 @@ class RecipeLibraryRepository {
     for (final rawPack in _list(manifest['packs'], 'packs')) {
       final pack = _map(rawPack, 'pack'),
           kind = _text(_map(rawPack, 'pack')['kind'], 'pack kind');
-      if (kind != 'curated-local' && kind != 'creator-website') {
+      if (!{
+        'curated-local',
+        'creator-website',
+        'creator-youtube',
+      }.contains(kind)) {
         throw const FormatException('Unsupported recipe library kind');
       }
       final file = _text(pack['file'], 'pack file');
@@ -249,12 +253,28 @@ class RecipeLibraryRepository {
           }
           usedSnapshots.add(path);
         } else {
-          if (row['sourceKind'] != 'creator-website' ||
+          if (row['sourceKind'] != kind ||
               row['runtimeReady'] == true ||
               row['nutrition'] != null) {
             throw const FormatException(
-              'Only creator website cookbook records are supported',
+              'Creator cookbook source kind or approval mismatch',
             );
+          }
+        }
+        if (kind == 'creator-website' &&
+            row.containsKey('youtubeDerived') &&
+            row['youtubeDerived'] != false) {
+          throw const FormatException(
+            'Website source cannot claim video derivation',
+          );
+        }
+        if (kind == 'creator-youtube') {
+          final id = row['sourceVideoId'];
+          if (row['youtubeDerived'] != true ||
+              id is! String ||
+              !RegExp(r'^[A-Za-z0-9_-]{11}$').hasMatch(id) ||
+              row['sourceUrl'] != 'https://www.youtube.com/watch?v=$id') {
+            throw const FormatException('YouTube source identity mismatch');
           }
         }
         final entry = _entry(row, kind, snapshot, metadata);

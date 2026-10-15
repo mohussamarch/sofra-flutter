@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "batchId": "arabic-creator-seventh-batch-20261015",
+  "retrievedAt": "2026-10-15",
+  "sourcePolicy": {
+    "sourceKind": "creator-youtube",
+    "youtubeDerived": true,
+    "sourceApproval": null,
+    "reuseRights": null,
+    "mediaDownloaded": false,
+    "transcriptExtraction": false,
+    "httpBodyHash": null,
+    "methodRepresentation": "concise-Arabic-paraphrase-of-public-description-not-transcript",
+    "limitations": "Search-result extract from an official verified Manal Alalem channel video description supplied ingredients and five method steps; direct video-page opens failed. Video media and transcript were not accessed. Exact displayed title unavailable; a descriptive dish title is used and marked. Reuse rights and source approval remain unknown."
+  },
+  "creator": {
+    "creatorId": "manal-alalem",
+    "name": "الشيف منال العالم",
+    "channelUrl": "https://www.youtube.com/@manalalalem",
+    "channelVerification": "existing official-channel evidence plus verified channel attribution in search result",
+    "officialSite": "https://www.manalonline.com/",
+    "identityStatus": "verified-channel-existing-evidence"
+  },
+  "sourceIndex": [
+    {
+      "index": 0,
+      "request": 2,
+      "url": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+      "outcome": "Official verified Manal Alalem channel search extract exposed ingredients and five method steps for a kofta-and-yogurt dish. Accepted as a YouTube-description-derived record; exact video title was unavailable."
+    }
+  ],
+  "sourceSearchLog": [
+    {
+      "request": 1,
+      "action": "three search queries",
+      "outcome": "Found a 2022 Manal Alalem kofta vegetable tray description with quantities but no method, plus fish descriptions with quantities but no method; none imported.",
+      "queries": [
+        "site:youtube.com/@manalalalem المقادير وصفة",
+        "site:youtube.com/@chef.shaheen مقادير وصفة",
+        "site:youtube.com/user/tvchoumicha المقادير وصفة"
+      ]
+    },
+    {
+      "request": 2,
+      "action": "three search queries",
+      "outcome": "Found the accepted Manal Alalem kofta-and-yogurt description with complete quantities and method; also found a commercial seasoning-mix recipe, excluded as product-dependent.",
+      "queries": [
+        "site:youtube.com/watch مطبخ منال العالم طريقة التحضير المقادير وصفة",
+        "site:youtube.com/watch Manal Alalem المقادير طريقة التحضير وصفة دجاج",
+        "site:youtube.com/watch الشيف منال العالم وصفة كيلو ملعقة"
+      ]
+    },
+    {
+      "request": 3,
+      "action": "three search queries",
+      "outcome": "Found chicken-and-eggplant description with ingredients and steps but no exact title in the extract, plus a duplicate accepted result; chicken dish excluded because its title was unverified.",
+      "queries": [
+        "site:youtube.com/watch?v= By: Manal Alalem طريقة التحضير المقادير وصفة chicken",
+        "site:youtube.com/watch?v= By: Chef Shaheen مقادير وصفة طريقة التحضير",
+        "site:youtube.com/watch?v= By: tvchoumicha المقادير طريقة التحضير"
+      ]
+    },
+    {
+      "request": 4,
+      "action": "two direct video opens",
+      "outcome": "Direct fetch failed for both URLs; no video or transcript content accessed.",
+      "targets": [
+        "https://www.youtube.com/watch?v=pRhIh2o2x00",
+        "https://www.youtube.com/watch?v=AlVO92r8CjU"
+      ]
+    },
+    {
+      "request": 5,
+      "action": "two exact-ID searches",
+      "outcome": "No results for either video ID.",
+      "queries": [
+        "AlVO92r8CjU",
+        "pRhIh2o2x00"
+      ]
+    },
+    {
+      "request": 6,
+      "action": "one targeted search query",
+      "outcome": "Returned unrelated older Manal Alalem videos (نمورة, مراصيع), not the queried video; no new recipe accepted.",
+      "queries": [
+        "site:youtube.com/watch?v=AlVO92r8CjU مطبخ منال العالم"
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "recipeId": "manal-youtube-kofta-yogurt-descriptive",
+      "title": "كفتة بصلصة اللبن والثوم والكزبرة",
+      "titleBasis": "Descriptive title based on listed ingredients and method; exact displayed video title was unavailable.",
+      "creatorId": "manal-alalem",
+      "sourceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+      "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+      "sourceKind": "creator-youtube",
+      "sourceVideoId": "pRhIh2o2x00",
+      "youtubeDerived": true,
+      "retrievedAt": "2026-10-15",
+      "publishedAt": "2020-03-16",
+      "sourceApproval": null,
+      "reuseRights": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "worker-primary-search-extract",
+        "sourceIndex": 0,
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "mediaAccessed": false,
+        "transcriptAccessed": false,
+        "methodSourceStepCount": 5,
+        "ingredientListCompleteInExtract": true,
+        "titleExact": false
+      },
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 5,
+      "cuisine": {
+        "value": null,
+        "evidence": null,
+        "evidenceUrl": null,
+        "reviewStatus": "pending",
+        "status": "source-cuisine-not-stated"
+      },
+      "yield": {
+        "amount": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": null,
+        "publishedTotalText": null,
+        "publishedTotalEvidence": null,
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "approximate": false,
+            "sourceStepIndices": [
+              2
+            ],
+            "phase": "simmer-kofta-in-yogurt-until-cooked",
+            "minutes": 10
+          },
+          {
+            "approximate": false,
+            "sourceStepIndices": [
+              2
+            ],
+            "phase": "simmer-kofta-in-yogurt-until-cooked",
+            "minutes": 15
+          }
+        ],
+        "optionalWaits": [],
+        "conflicts": [
+          "لا يوجد زمن إجمالي أو تحضير منشور؛ 10–15 دقيقة تخص طهي الكفتة في اللبن فقط."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "كفتة",
+          "amount": 250,
+          "unit": "g",
+          "sourceQuantityText": "250 جرام",
+          "group": "main",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 0,
+          "optional": false
+        },
+        {
+          "labelAr": "دقيق",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 ملعقة كبيرة",
+          "group": "coating",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 1,
+          "optional": false
+        },
+        {
+          "labelAr": "زيت للقلي",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 ملعقة كبيرة",
+          "group": "frying",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 2,
+          "optional": false
+        },
+        {
+          "labelAr": "لبن زبادي",
+          "amount": 6,
+          "unit": "cup",
+          "sourceQuantityText": "6 كوب زبادي (روب)",
+          "group": "sauce",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 3,
+          "optional": false
+        },
+        {
+          "labelAr": "ماء",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 كوب",
+          "group": "sauce",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 4,
+          "optional": false
+        },
+        {
+          "labelAr": "بيض",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 حبة كبيرة",
+          "group": "sauce",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 5,
+          "optional": false
+        },
+        {
+          "labelAr": "نشا",
+          "amount": 2,
+          "unit": "tsp",
+          "sourceQuantityText": "2 ملعقة صغيرة",
+          "group": "sauce",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 6,
+          "optional": false
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 2,
+          "unit": "tsp",
+          "sourceQuantityText": "2 ملعقة صغيرة",
+          "group": "seasoning",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 7,
+          "optional": false
+        },
+        {
+          "labelAr": "زيت ذرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 ملعقة كبيرة",
+          "group": "tempering",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 8,
+          "optional": false
+        },
+        {
+          "labelAr": "ثوم مهروس",
+          "amount": 4,
+          "unit": "clove",
+          "sourceQuantityText": "4 فص",
+          "group": "tempering",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 9,
+          "optional": false
+        },
+        {
+          "labelAr": "كزبرة مفرومة",
+          "amount": 0.25,
+          "unit": "cup",
+          "sourceQuantityText": "1/4 كوب",
+          "group": "tempering",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": 10,
+          "optional": false
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "صنوبر للتزيين",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "ذُكر في خطوة التقديم؛ دون كمية بقائمة المقادير",
+          "group": "garnish",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceIngredientIndex": null,
+          "optional": false
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "شكّلي الكفتة كرات صغيرة ثم غلّفيها بالدقيق.",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "حمّري الكرات بالزيت حتى تكتسب لونًا ذهبيًا، ثم ارفعيها جانبًا.",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "اخلطي الزبادي والماء والبيض والنشا والملح في قدر مع التحريك الهادئ. أعيدي الكفتة واتركيها على غليان هادئ 10–15 دقيقة حتى تنضج ويتماسك اللبن قليلًا.",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceStepIndices": [
+            2
+          ]
+        },
+        {
+          "textAr": "حمّري الثوم بزيت الذرة، أضيفي الكزبرة لثوانٍ، ثم اسكبي الخليط فوق الكفتة واللبن.",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceStepIndices": [
+            3
+          ]
+        },
+        {
+          "textAr": "قدّمي الطبق ساخنًا مع الصنوبر للتزيين.",
+          "evidenceUrl": "https://www.youtube.com/watch?v=pRhIh2o2x00",
+          "sourceStepIndices": [
+            4
+          ]
+        }
+      ],
+      "unknowns": [
+        "exact video title",
+        "yield",
+        "cuisine",
+        "prep time",
+        "total time",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "contentSha256": "3ce49db1537840d6116f6c00e067a7b25fb792e7743a269ef69bc11e23ee8d0f"
+    }
+  ]
+}

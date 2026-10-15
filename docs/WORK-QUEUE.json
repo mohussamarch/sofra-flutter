@@ -2,13 +2,15 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-14T21:23:42.430215+00:00",
-    "taskId": "quantity-review-unique-count",
-    "summary": "Unique source quantity workload counter added/tested;592lines instead of summing overlapping flags.65records unchanged",
+    "at": "2026-10-15T02:37:34.778884+00:00",
+    "taskId": "library-food-search",
+    "summary": "Pinned per-ingredient food search and truthful indexed video source integrated;66records/681lines/603quantity gaps.247Flutter/31Node, analyzerclean.",
     "evidence": [
-      "lib/domain/recipe_library_coverage.dart",
-      "test/recipe_library_coverage_test.dart",
-      "docs/RECIPE-LIBRARY-COVERAGE.md"
+      "lib/data/recipe_library_food_search.dart",
+      "test/recipe_library_food_search_test.dart",
+      "test/recipe_library_video_source_test.dart",
+      "data/recipes/arabic-youtube/seventh-batch-20261015/recipes.json",
+      "docs/HANDOFF.md"
     ]
   },
   "tasks": [
@@ -77,9 +79,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Bounded modern Arabic creator video/website source acquisition;21website/0completeYT. Verify complete facts/current access/channel/rights, no retries of failed URLs during gates; advance independent core after each batch.",
-      "lastAttemptAt": "2026-10-14T21:12:37.413045+00:00",
-      "lastProgressAt": "2026-10-14T21:12:37.413045+00:00",
+      "nextAction": "Next bounded modern Arabic creator description/website acquisition with pre-counted underlying queries/opens.21website+1indexedvideo-description,0complete directvideo sources; advance independent core after batch.",
+      "lastAttemptAt": "2026-10-15T02:30:14.398973+00:00",
+      "lastProgressAt": "2026-10-15T02:37:34.778884+00:00",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -148,7 +150,10 @@
         "docs/agents/creator-fifth-2005.md",
         "data/recipes/arabic-youtube/sixth-batch-20261014/recipes.json",
         "tool/recipes/creator-sixth-validation.test.mjs",
-        "docs/agents/modern-recipes-2048.md"
+        "docs/agents/modern-recipes-2048.md",
+        "data/recipes/arabic-youtube/seventh-batch-20261015/recipes.json",
+        "tool/recipes/creator-seventh-validation.test.mjs",
+        "docs/agents/modern-recipes-0219.md"
       ],
       "stage": "OfficialmodernArabiccreatorYouTubeandownwebsiteacquisition",
       "sourcePolicy": {
@@ -164,8 +169,11 @@
         "partialVideoRecipes": 4,
         "completeVideoRecipes": 0,
         "creatorWebsiteRecords": 21,
-        "runtimeApprovals": 0
-      }
+        "runtimeApprovals": 0,
+        "youtubeDescriptionRecords": 1,
+        "completeVideoSources": 0
+      },
+      "owner": null
     },
     {
       "id": "recipe-quantities",
@@ -410,9 +418,9 @@
         "compound-revisions"
       ],
       "status": "ready",
-      "nextAction": "Use RecipeLibraryCoverageReport to select source-pinned recipe/line quantity gaps; review actual food identities and conversions explicitly.63recipes/632lines remain source-only; no binding inferred.",
+      "nextAction": "Use source-pinned indexed food search for actual food/form/quantity review.66source recipes/681lines/603distinct quantity gaps; no binding inferred.",
       "infrastructureDoesNotApproveData": true,
-      "lastProgressAt": "2026-10-14T21:23:42.430215+00:00",
+      "lastProgressAt": "2026-10-15T02:37:34.778884+00:00",
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
       "completedUnit": {
         "schemaVersion": 1,
@@ -434,8 +442,23 @@
       "evidence": [
         "lib/domain/recipe_library_coverage.dart",
         "test/recipe_library_coverage_test.dart",
-        "docs/RECIPE-LIBRARY-COVERAGE.md"
-      ]
+        "docs/RECIPE-LIBRARY-COVERAGE.md",
+        "lib/data/recipe_library_food_search.dart",
+        "test/recipe_library_food_search_test.dart"
+      ],
+      "sourceQuantityAudit": {
+        "recipeCount": 66,
+        "ingredientCount": 681,
+        "quantityReviewLineCount": 603,
+        "missingAmountCount": 105,
+        "missingUnitCount": 98,
+        "unitNeedsReviewCount": 505,
+        "nonPositiveAmountCount": 0,
+        "supplementalCount": 39,
+        "optionalCount": 7,
+        "recipesWithQuantityGaps": 66,
+        "runtimeApprovedRecipes": 0
+      }
     },
     {
       "id": "prices",
@@ -821,6 +844,59 @@
         "focusedFlutterTests": 4,
         "sourceDataChanged": false
       }
+    },
+    {
+      "id": "library-food-search",
+      "priority": 49,
+      "status": "done",
+      "dependsOn": [
+        "recipe-quantities"
+      ],
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T02:30:14.398973+00:00",
+      "lastProgressAt": "2026-10-15T02:37:34.778884+00:00",
+      "nextAction": "Use explicit query/pin/index and caller food/form/amount decisions; later save rechecks current source.",
+      "evidence": [
+        "lib/data/recipe_library_food_search.dart",
+        "test/recipe_library_food_search_test.dart"
+      ],
+      "completedAt": "2026-10-15T02:37:34.778884+00:00",
+      "completedUnit": {
+        "focusedSearchTests": 5,
+        "fullFlutterTests": 247,
+        "readOnly": true,
+        "runtimeBindings": 0,
+        "sourceQuantityAudit": {
+          "recipeCount": 66,
+          "ingredientCount": 681,
+          "quantityReviewLineCount": 603,
+          "missingAmountCount": 105,
+          "missingUnitCount": 98,
+          "unitNeedsReviewCount": 505,
+          "nonPositiveAmountCount": 0,
+          "supplementalCount": 39,
+          "optionalCount": 7,
+          "recipesWithQuantityGaps": 66,
+          "runtimeApprovedRecipes": 0
+        }
+      }
+    },
+    {
+      "id": "library-video-provenance",
+      "priority": 49,
+      "status": "done",
+      "dependsOn": [
+        "library-food-search"
+      ],
+      "completedAt": "2026-10-15T02:37:34.778884+00:00",
+      "lastProgressAt": "2026-10-15T02:37:34.778884+00:00",
+      "nextAction": "Preserve indexeddescription/directbody distinction and canonicalvideoidentity in future batches; legacywebsiteomission remainsreadable.",
+      "evidence": [
+        "lib/data/recipe_library_repository.dart",
+        "test/recipe_library_video_source_test.dart",
+        "tool/recipes/library-video-kind.test.mjs",
+        "tool/recipes/creator-seventh-validation.test.mjs"
+      ]
     }
   ],
   "quotaCheckpoint": {

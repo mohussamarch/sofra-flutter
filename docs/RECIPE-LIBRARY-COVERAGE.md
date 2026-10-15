@@ -36,3 +36,7 @@ for (final recipe in report.recipes) {
 `quantityReviewLineCount` متاح كخاصية وفي `toJson()`: يحسب كل سطر له `needsQuantityReview` مرة واحدة، ولو كانت الكمية والوحدة معًا ناقصتين. لا تجمع عدادات النواقص للحصول على حجم العمل. التقرير الحالي:592 سطرًا مختلفًا من669 يحتاج مراجعة كمية، عبر65سجلًا. باقي77سطرًا لا يحمل هذه الرايات في حقول المصدر؛ يظل كل سطر محتاجًا مراجعة هوية/شكل/اختيارات صريحة، ولا يعني العدد اعتمادًا غذائيًا.
 
 اختبار التداخل:5سطور، منها4تحتاج مراجعة رغم أن مجموع عدادات المشكلات6؛ المجموعة الفارغة تعطي0.4اختبارات مرتبطة نجحت والتحليل نظيف5.0ثانية. فحص239Flutter الكامل فيd7e444c تاريخي، لم يعد لهذا الحقل التجميعي الصغير؛ الأصول والبصمات وبيانات الوصفات لم تتغير.
+
+## Current §79 — actual source review inputs
+
+66records/681lines,603distinctquantity-reviewlines.105missingamount/98missingunit/505unitreview/0nonpositive/39procedural/7optional;66recipeswithgaps,0runtimeapprovals.78unflaggedquantityrows still require identity/form/choice/scaling review. RecipeLibraryFoodSearch now opens the next explicit step using sourcepin+lineIndex+query, preserving rawsource and independent candidate evidence. Counts come from actual fullFlutter audit, not sum of overlapping flags. HANDOFF§79 records247fullFlutter and31Node.

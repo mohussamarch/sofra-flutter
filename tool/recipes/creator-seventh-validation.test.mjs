@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {actual,validate,fingerprint} from './creator-seventh-validation.mjs';
+const {batch,summary,prior}=await actual();const copy=()=>structuredClone(batch);const repin=r=>{delete r.contentSha256;r.contentSha256=fingerprint(r)};
+test('one official video-description recipe stays distinct and source-pinned',()=>{assert.equal(summary.recipes,1);assert.equal(summary.ingredients,12);assert.equal(summary.steps,5);assert.equal(batch.recipes[0].sourceKind,'creator-youtube');assert.equal(batch.recipes[0].sourceEvidence.acquisitionMethod,'worker-primary-search-extract');assert.equal(batch.recipes[0].sourceEvidence.fullPageRetrievedByWorker,false);assert.equal(batch.recipes[0].sourceEvidence.mediaAccessed,false)});
+test('all unknowns and partial-source exclusions remain explicit',()=>{const r=batch.recipes[0];assert.equal(r.titleBasis.includes('exact displayed video title was unavailable'),true);assert.equal(r.yield.amount,null);assert.equal(r.cuisine.value,null);assert.equal(r.time.totalMinutes,null);assert.equal(r.sourceApproval,null);assert.equal(r.reuseRights,null);assert.deepEqual(batch.sourceSearchLog.map(x=>x.request),[1,2,3,4,5,6]);assert.equal(summary.searchQueries,12);assert.equal(summary.directOpens,2);assert.equal(summary.underlyingRequests,14);assert.equal(summary.requestCapExceeded,true)});
+test('normalized ID, title, and URL duplicates are rejected against all prior creator batches',()=>{const r=batch.recipes[0];assert.throws(()=>validate(batch,{ids:[r.recipeId],titles:[],urls:[]}));assert.throws(()=>validate(batch,{ids:[],titles:[r.title],urls:[]}));assert.throws(()=>validate(batch,{ids:[],titles:[],urls:[r.sourceUrl]}));assert.ok(prior.ids.length>0)});
+test('source, approval, step mapping, and content pins reject drift',()=>{for(const edit of [b=>b.recipes[0].youtubeDerived=false,b=>b.recipes[0].sourceVideoId='wrong',b=>b.recipes[0].sourceApproval=true,b=>b.recipes[0].steps.reverse(),b=>b.recipes[0].time.totalMinutes=30]){const b=copy();edit(b);repin(b.recipes[0]);assert.throws(()=>validate(b,prior))}const b=copy();b.recipes[0].title+=' جديد';assert.throws(()=>validate(b,prior),/content drift/)});
+
+test('different video IDs are distinct but tracking variants of the same video deduplicate',()=>{
+ assert.doesNotThrow(()=>validate(batch,{ids:[],titles:[],urls:['https://www.youtube.com/watch?v=ZRhIh2o2x00']}));
+ assert.throws(()=>validate(batch,{ids:[],titles:[],urls:[batch.recipes[0].sourceUrl+'&t=30']}),/Duplicate source URL/);
+});

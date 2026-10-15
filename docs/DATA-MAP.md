@@ -209,3 +209,7 @@ Latest user priority: real retailer and delivery-app prices first; government so
 ## Current scoped source transport — §77
 
 65pinned library records → source quantity audit669indexed lines → explicit private review/calculator. Recipe/source pin now includes only selected recipe URL requests from pack sourceIndex, preserving original index fields and access outcomes. No unrelated pack requests or inferred body/rights approval. Legacy review envelopes decode; current enriched source requires new acceptance. LIBRARY-RECIPE-CALCULATOR.md defines transport. Source bank sourceIndex and native lineIndex are distinct identifiers.
+
+## Current §79 — source line → food-bank candidates → explicit review
+
+12pinnedpacks/44snapshots →66RecipeLibraryEntry values(44archive+21website+1indexedYouTubedescription) → RecipeLibraryCoverageReport(681lines/603distinctquantitygaps) → RecipeLibraryFoodSearch(exactsourcepin+lineIndex+explicitquery) → ownedlicensed-bankcandidateevidence → caller reviewsfood/form/quantity/scaling/inclusion → RecipeLibraryDraftReview → atomicKitchenServiceprivatecalculator. Candidate matching and source culinary completeness supply no automatic food/rights approval. Indexed video descriptions retain access method/direct-fetch failure/title uncertainty separately from website sources. BACKEND-API.md and LIBRARY-RECIPE-CALCULATOR.md describe API; source/manufacturer/price banks otherwise unchanged.

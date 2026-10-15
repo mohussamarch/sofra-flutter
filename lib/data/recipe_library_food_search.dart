@@ -1,0 +1,100 @@
+import 'dart:convert';
+
+import '../domain/recipe_library_draft.dart';
+import 'food_repository.dart';
+import 'recipe_library_repository.dart';
+
+List<Map<String, dynamic>> _copyCandidates(List<Map<String, dynamic>> rows) =>
+    (jsonDecode(jsonEncode(rows)) as List)
+        .map((row) => Map<String, dynamic>.from(row as Map))
+        .toList();
+
+/// Food-bank search evidence for one pinned source line, never a food binding.
+class RecipeLibraryFoodSearchResult {
+  RecipeLibraryFoodSearchResult._({
+    required this.recipeId,
+    required this.sourceFingerprint,
+    required this.lineIndex,
+    required this.ingredient,
+    required this.query,
+    required this.market,
+    required this.packagedOnly,
+    required this.limit,
+    required List<Map<String, dynamic>> candidates,
+  }) : _candidates = _copyCandidates(candidates);
+
+  final String recipeId, sourceFingerprint, query;
+  final int lineIndex, limit;
+  final RecipeLibraryIngredient ingredient;
+  final String? market;
+  final bool packagedOnly;
+  final List<Map<String, dynamic>> _candidates;
+
+  /// Each read is an owned deep copy; the list itself cannot be changed.
+  List<Map<String, dynamic>> get candidates =>
+      List.unmodifiable(_copyCandidates(_candidates));
+  bool get requiresExplicitReview => true;
+
+  Map<String, dynamic> toJson() => {
+    'schemaVersion': 1,
+    'scope': 'library-ingredient-food-search',
+    'recipeId': recipeId,
+    'sourceFingerprint': sourceFingerprint,
+    'lineIndex': lineIndex,
+    'ingredient': ingredient.toJson(),
+    'query': query,
+    'market': market,
+    'packagedOnly': packagedOnly,
+    'limit': limit,
+    'candidates': _copyCandidates(_candidates),
+    'requiresExplicitReview': true,
+    'runtimeApproved': false,
+  };
+}
+
+/// Connects library triage to the existing licensed food-bank search.
+/// Query is explicit: names, translations and first matches are not identities.
+class RecipeLibraryFoodSearch {
+  RecipeLibraryFoodSearch({required this.foods});
+  final FoodRepository foods;
+
+  Future<RecipeLibraryFoodSearchResult> search({
+    required RecipeLibraryEntry entry,
+    required String expectedSourceFingerprint,
+    required int lineIndex,
+    required String query,
+    String? market,
+    bool packagedOnly = false,
+    int limit = 40,
+  }) async {
+    final pin = recipeLibrarySourceFingerprint(entry);
+    if (pin != expectedSourceFingerprint) {
+      throw StateError('Library source changed; review the source again');
+    }
+    if (lineIndex < 0 || lineIndex >= entry.ingredients.length) {
+      throw ArgumentError('Unknown library ingredient line');
+    }
+    final trimmed = query.trim();
+    if (trimmed.isEmpty) {
+      throw ArgumentError('Explicit non-empty food search query required');
+    }
+    // FoodRepository validates limit/market before reading either source bank.
+    final rows = await foods.search(
+      query: trimmed,
+      market: market,
+      packagedOnly: packagedOnly,
+      limit: limit,
+    );
+    return RecipeLibraryFoodSearchResult._(
+      recipeId: entry.id,
+      sourceFingerprint: pin,
+      lineIndex: lineIndex,
+      ingredient: entry.ingredients[lineIndex],
+      query: trimmed,
+      market: market,
+      packagedOnly: packagedOnly,
+      limit: limit,
+      candidates: rows,
+    );
+  }
+}

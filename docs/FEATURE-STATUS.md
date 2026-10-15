@@ -31,3 +31,7 @@ Built:65readable source records and recipe-scoped request provenance in private 
 ## Quantity review workload count — §78
 
 Added unique quantityReviewLineCount to existing read-only source audit:592 distinct pending quantity lines/669, not the sum of overlapping flags.65recipes and38local source labels unchanged,0newrecipes or food approvals.4focusedFlutter passed; analyze clean5.0sec. Full239Flutter/30Node atd7e444c historical.
+
+## Current §79 — backend/source delivery
+
+Implemented and verified: pinned per-ingredient food-bank search with explicit query, preserved source indices/unknowns/owned candidates; first selected indexed officialManal video-description record; truthful video/source-kind/URL-ID gates and video-ID-aware dedup.247fullFlutter/31Node and cleananalysis, detailsHANDOFF§79. Library66(44archive+21website+1description)/12packs/44snapshots,38local source labels;681lines/603unique quantity gaps.54planning/4cuisines/1reviewed multi-methodfamily unchanged. No automatic nutrition/source rights approval or UIactivation. Source batch14requests exceeded8cap and stopped;0complete directvideo sources; title/rights/yield/total time unknown.

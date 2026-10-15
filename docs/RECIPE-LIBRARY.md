@@ -1,8 +1,8 @@
 # مكتبة الوصفات المقروءة — الحالة الحالية
 
-راجع HANDOFF§71 وLIBRARY-RECIPE-CALCULATOR.md. المكتبة31 سجلًا عربيًا،5 حزم مثبتة و20 لقطة مصدر. أضيفت7 في هذه الدفعة:4 من الأرشيف الموجود و3 من موقع شميشة الرسمي. لم يتغير كتالوج التخطيط54وصفة/4مطابخ.
+الحالة الحالية HANDOFF§79:66سجلًا مقروءًا،12حزمة مثبتة و44لقطة مصدر؛44أرشيفًا+21موقع طاه+1وصف فيديو مفهرس. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
 
-## ما تحتويه
+## تفصيل تسليم§71 التاريخي
 
 - محليًا20 سجلًا:8مكتملة بيانات المقادير والطريقة والناتج والزمن (المغذيات ليست مكتملة)،10تحتاج مراجعة و2غير مكتملتين.13وسم مطبخ/منطقة من المصدر، لا13مطبخًا وطنيًا معتمدًا. عائلة نان واحدة بطريقتين؛ خبزا الصودا اختلاف مكونات.
 -11 وصفة من مواقع منال العالم وشميشة الرسمية؛ المصدر website وليس YouTube.14اكتشاف فيديو/4أوصاف فيديو ناقصة/0وصفات كاملة مستخرجة من يوتيوب. حقوق الموقع والموافقات لم تتحول إلى قبول تلقائي.
@@ -75,3 +75,7 @@ RecipeLibraryCoverageReport records every indexed line with its existing calcula
 Rolls preserve source pan/oven options; this is not a second reviewed native variant family.38local source cuisine/region labels and one reviewed distinct-method naan family unchanged. No new completeYT, approvedplanning/nutrition/rights or country label. PackSHA7e66851ecd92b42860545c4f3d2879cbb6667de198891b3cced3a5149e2994c2; manifestSHAa151e6e058adfa1d6c2e7701218043568883a60aeeb8e1522f3c76821addc024.
 
 Review source envelopes now retain related original request indexes/outcomes, including failed direct access, and reject losing a referenced request. Old envelopes remain readable; enriched pins need explicit re-review. Actual source-gap report65recipes/669lines:104missingamounts/97missingunits/495units needing explicit review/38procedural/7optional. Counters overlap; no saved personal decision is inspected. Final30Node/239Flutter/analyze clean5.2sec; preceding checkpoints historical.
+
+## Current §79 — description-derived source and calculation review
+
+كفتة بصلصة اللبن والثوم والكزبرة من وصف فيديو منال العالم المفهرس؛11مكونًا+صنوبر بلا كمية و5خطوات. مصدرcreator-youtube، العنوان وصفي، الجلب المباشر فشل؛الحصص/التغذية/الحقوق/الزمن الإجمالي مجهولة. COOKBOOK.ar.md داخلseventh-batch-20261015 يتيح مراجعتها.0مصدر فيديو كامل مباشر و0اعتمادتشغيل جديد. بحثFoodRepositoryموصول بكل سطر عبرRecipeLibraryFoodSearchوبصمةمصدره؛هويته/كميته/شكله تقبل صراحةً. المكتبة66/12/44و38وسمًا محليًا؛ تقرير603/681مراجعةكمية. الأصل المحلي44(10/32/2)وعائلةنان1وكتالوج54/4ثابتة.

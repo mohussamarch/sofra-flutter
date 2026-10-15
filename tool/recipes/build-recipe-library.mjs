@@ -19,9 +19,19 @@ const files=[
  ['creator-website','data/recipes/arabic-youtube/fifth-batch-20261014/recipes.json'],
  ['curated-local','data/recipes/curated-local/fifth-reviewed-20261014/normalized-recipes.json'],
  ['creator-website','data/recipes/arabic-youtube/sixth-batch-20261014/recipes.json'],
+ ['creator-youtube','data/recipes/arabic-youtube/seventh-batch-20261015/recipes.json'],
 ];
 const sha=v=>createHash('sha256').update(v).digest('hex');
 const need=(v,m)=>{if(!v)throw Error(m);};
+export function validateCreatorSource(row,kind){
+ need(row&&row.sourceKind===kind&&['creator-website','creator-youtube'].includes(kind),'Creator source kind mismatch');
+ need(row.runtimeReady!==true&&row.nutrition==null,'Research cannot enable runtime/nutrition');
+ if(kind==='creator-website')need(row.youtubeDerived===false,'Creator source kind mismatch');
+ else{
+  const id=row.sourceVideoId;
+  need(row.youtubeDerived===true&&typeof id==='string'&&/^[A-Za-z0-9_-]{11}$/.test(id)&&row.sourceUrl===`https://www.youtube.com/watch?v=${id}`,'YouTube source identity mismatch');
+ }
+}
 export function safePath(file){
  need(typeof file==='string'&&/^(data\/recipes\/(curated-local|arabic-youtube)\/)([a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.json$/.test(file)&&!file.includes('..'),'Unsafe recipe library path');
  return file;
@@ -47,7 +57,7 @@ export async function buildManifest(read){
     need(hash===p.sourceSnapshotSha256,'Source snapshot drift: '+path);
     parseObject(source);
     snapshots.set(path,{file:path,sha256:hash});
-   }else need(row.sourceKind==='creator-website'&&row.youtubeDerived===false,'Creator source kind mismatch');
+   }else validateCreatorSource(row,kind);
   }
   packs.push({kind,file,sha256:sha(raw),sourceSnapshots:[...snapshots.values()].sort((a,b)=>a.file.localeCompare(b.file))});
  }

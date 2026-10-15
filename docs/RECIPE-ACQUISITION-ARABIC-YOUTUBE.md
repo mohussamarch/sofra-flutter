@@ -29,3 +29,7 @@
 6. التقرير التالي يفصل: عدد الفيديوهات، السجلات المستخرجة، الأطباق المختلفة بعد المراجعة، الأطباق متعددة الطرق، عدد الطرق، المطابخ المعتمدة، والسجلات القابلة للاستخدام. لا استبدال التقدم الغذائي الفعلي بأعداد صفحات خام.
 
 هذه الخطة تستبدل وجهة جمع الوصفات السابقة. مصدر أسعار المنتجات أو USDA/OFF للتغذية لا يتغير بهذا التوجيه. عند90%أوحدمجهول/ordinaryfalse يتوقف الجمع المكلف، وتُحفظ نقطة الاستكمال بلا شراء رصيد أوreset.
+
+## Current §79 — first description-derived selected record
+
+One indexed officialManal video-description recipe added, sourceVideoIdpRhIh2o2x00;11listed+1unquantifiedgarnish/5steps. Title descriptive, directopenfailed, no media/transcript/bodyarchive;0complete directvideo sources. First1description-derivedlibraryentry is distinct from21creatorwebsite entries and prior14discoveries/4partialdescriptions. Exactfinalglobaldiscoverycount not inferred. Agent used12queries+2opens=14requests against8cap; stopped. Count every query and URLtarget BEFORE dispatch, including batchedcalls, and never call tool-call count source-request count. Detailed agent/root handoffs preserve failure and facts.

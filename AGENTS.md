@@ -210,3 +210,7 @@ Library65 records/11packs/44snapshots=44archive+21creatorwebsite;38local source 
 ## Current §78 — source quantity counts
 
 Use quantityReviewLineCount for unique pending quantity lines; missing-amount/unit/unit-review counts overlap.592of669 current source lines need quantity review. Other77 still require explicit food/form/inclusion/scaling/source acceptance.65library/38local source labels and all source/rights/runtime approvals unchanged. No saved personal-review inspection or completion percentage inferred.4focusedFlutter/analyze clean;239full atd7e444c historical.
+
+## Current §79 — recipe line search and video evidence
+
+66libraryrecords=44archive+21website+1indexedvideodescription;12packs/44snapshots,38local source labels. RecipeLibraryFoodSearch requires exact sourcepin/lineIndex/explicitquery; preserve owned candidates and packaged-only market scope. Explicit food/form/amount/scaling/inclusion and private review remain required. Creator-youtube validates matchingcase-sensitivevideoID/canonicalURL; website presentyoutubeDerived mustfalse, legacyomissionreadable. Indexeddescription/directbody/media/transcript/rights stay distinct.603of681source lines need quantity review; no automatic binding. Source helper14underlyingrequests exceeded8; before nextcall sumqueries+opens against remaining budget, stopbeforeoverrun. Root consolidates sharedfiles/Git. Detailed§79/DELIVERY verification. OFFneeds authorizedcontact/form separately; noUI/Firebase/billing changes.
