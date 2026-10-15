@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "packFile": "data/recipes/curated-local/bulk-2000-20261015/normalized-recipes.json",
+  "packSha256": "1d65a70f09930fd5b6e375069a6869080d424d3868f43dc55c9e1ea0c82905c7",
+  "counts": {
+    "recipes": 1000,
+    "ingredientLines": 8479,
+    "steps": 6936,
+    "alreadyParsedRecords": 1000,
+    "newAcquisitions": 0,
+    "newNativeLibraryRecords": 1000,
+    "fullySpecified": 0,
+    "needsReview": 1000,
+    "runtimeReady": 0,
+    "translatedRecords": 0,
+    "missingAmountLines": 8479,
+    "missingUnitLines": 8479,
+    "unknownYieldRecords": 1000,
+    "unknownTimeRecords": 1000
+  },
+  "cuisineCounts": {
+    "indian": 42,
+    "italian": 11
+  },
+  "untaggedRecords": 947,
+  "sourceSnapshotCount": 1000,
+  "archiveParsedRecipes": 3640,
+  "eligibleCandidates": 2575,
+  "duplicateReview": {
+    "previousSelectedRecords": 1090,
+    "inputManifestSha256": "584f7a80f91afdb2e5814477e4c5e6c87760e715ebd5cac7fde4d0cf858f5804",
+    "excluded": {
+      "previousSource": 1064,
+      "exactContent": 0,
+      "nonRecipeOrEmpty": 1
+    },
+    "scope": "Exact source page/revision/permalink and normalized source ingredient+method content against all selected records and within batch. No semantic, translation or unique-dish claim."
+  },
+  "integrityIsCulinaryApproval": false
+}

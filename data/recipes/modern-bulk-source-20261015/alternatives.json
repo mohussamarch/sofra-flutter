@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "assessedAt": "2026-10-15",
+  "checkout": "E:\\work\\SOFRA\\app",
+  "scope": "metadata-only modern bulk alternatives",
+  "minimumBatchRecipes": 1000,
+  "longTermGoalAtLeast": 10000,
+  "quotaAtStart": {
+    "primaryUsedPercent": 38,
+    "weeklyUsedPercent": 22,
+    "ordinaryUsageAllowed": true,
+    "userAuthorizedStopPercent": 99
+  },
+  "requestCap": 12,
+  "underlyingRequests": 12,
+  "queries": 2,
+  "openOrClickTargets": 10,
+  "sourceToolCalls": 6,
+  "requests": [
+    {
+      "request": 1,
+      "kind": "open",
+      "target": "https://www.themealdb.com/api.php",
+      "outcome": "Public API docs; test key1 development/educational, appstore supporter/full-database supporter restrictions."
+    },
+    {
+      "request": 2,
+      "kind": "open",
+      "target": "https://www.themealdb.com/",
+      "outcome": "Official displayed793meals/992ingredients; platform counts, not successful contents."
+    },
+    {
+      "request": 3,
+      "kind": "click-open",
+      "target": "https://www.themealdb.com/terms_of_use.php",
+      "outcome": "Terms dated01/07/2025; official-API copy/modify allowed, website scrape prohibited, free development/appstore paid and third-party content conditions."
+    },
+    {
+      "request": 4,
+      "kind": "click-open",
+      "target": "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata",
+      "outcome": "Documented sample id52771;8nonempty ingredient/measure pairs and instructions. Source/date/CC fields null. No import."
+    },
+    {
+      "request": 5,
+      "kind": "query",
+      "target": "site:based.cooking \"license\"",
+      "outcome": "No matching result."
+    },
+    {
+      "request": 6,
+      "kind": "query",
+      "target": "RecipeNLG official dataset terms license download",
+      "outcome": "Original Glorf project2231142claim and official dataset link; mirrors/forks not licence evidence."
+    },
+    {
+      "request": 7,
+      "kind": "open",
+      "target": "https://based.cooking/",
+      "outcome": "440recipe-link entries/439distinct displayed titles locally counted from returned text; no complete-record validation."
+    },
+    {
+      "request": 8,
+      "kind": "open",
+      "target": "https://recipenlg.cs.put.poznan.pl/dataset",
+      "outcome": "HTML response exposed0text lines; no data terms accepted or download."
+    },
+    {
+      "request": 9,
+      "kind": "open",
+      "target": "https://based.cooking/ (line620)",
+      "outcome": "Available page footer links source repository; not retry of failed URL."
+    },
+    {
+      "request": 10,
+      "kind": "open",
+      "target": "https://huggingface.co/datasets/mbien/recipe_nlg/blob/main/README.md",
+      "outcome": "Author-handle card opened; extract did not expose substantive licence terms; no data download."
+    },
+    {
+      "request": 11,
+      "kind": "click-open",
+      "target": "https://github.com/lukesmithxyz/based.cooking",
+      "outcome": "Branch master; content/ plus static/layouts/data/authors; README says website and all content publicdomain, Unlicense badge."
+    },
+    {
+      "request": 12,
+      "kind": "click-open",
+      "target": "https://based.cooking/pesto-chicken-quinoa-bowls/",
+      "outcome": "11ingredient lines/6numbered directions+oven variant, yield/time. No body archived/imported."
+    }
+  ],
+  "recipesCollected": 0,
+  "recipesImported": 0,
+  "contentSamplesObserved": 2,
+  "verifiedCompleteDistinctBulkRecipes": 0,
+  "outcome": "qualified-partial-sources-found; no1000complete-distinct batch verified",
+  "mealdb": {
+    "docs": "https://www.themealdb.com/api.php",
+    "terms": "https://www.themealdb.com/terms_of_use.php",
+    "termsPrintedUpdate": "01/07/2025",
+    "homepage": "https://www.themealdb.com/",
+    "displayedMealCount": 793,
+    "displayedIngredientVocabulary": 992,
+    "countsAreCollectedRecipes": false,
+    "documentedApiSample": "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata",
+    "documentedFirstLetter": "https://www.themealdb.com/api/json/v1/1/search.php?f=a",
+    "documentedLookup": "https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772",
+    "sampleId": "52771",
+    "sampleIngredientMeasurePairs": 8,
+    "sampleInstructionsPresent": true,
+    "sampleSource": null,
+    "sampleDateModified": null,
+    "sampleArtworkCreativeCommonsConfirmed": null,
+    "access": "Testkey1 for development/education; appstore release requires paid supporter. Docs describe full database capability as supporter feature rather than100-item limitation. No limit circumvention.",
+    "reuse": "Official-API content copy/modify allowed; retain copyright/trademark notices. No website scraping. Third-party content needs owner permission or legal entitlement. Artwork CC field is not blanket recipe data licence.",
+    "status": "qualified-partial-development-only;793below1000; production/redistribution approval not inferred"
+  },
+  "basedCooking": {
+    "site": "https://based.cooking/",
+    "siteLinkedRepository": "https://github.com/lukesmithxyz/based.cooking",
+    "observedBranch": "master",
+    "observedContentPath": "content/",
+    "observedRecipeFileFormat": "Markdown; README says model after example.md and put in content/",
+    "observedOtherPaths": [
+      "static/",
+      "layouts/",
+      "data/authors/"
+    ],
+    "repositoryIsMarkdownOnly": false,
+    "commitSha": null,
+    "indexEntries": 440,
+    "distinctDisplayedTitles": 439,
+    "indexCountsAreCompleteRecipes": false,
+    "dataLicenseEvidence": "README License section expressly declares website and all content publicdomain; contributor text/images covered; repo Unlicense badge. Not code-only licence inference.",
+    "sample": "https://based.cooking/pesto-chicken-quinoa-bowls/",
+    "sampleIngredients": 11,
+    "sampleNumberedDirections": 6,
+    "alternateMethodProse": true,
+    "sampleYieldTimePresent": true,
+    "bodyArchived": false,
+    "acquisitionPlan": "Future authorized collector: pin source commit and licence, select content/*.md plus attribution metadata; exclude static/images/media/theme/index files; no full media-containing archive download. Parse nonempty ingredients+directions and exact/near dedup with existing library and MealDB.",
+    "status": "clearest-first-party-open-content-partial-source;not1000validatedrecords",
+    "limits": [
+      "Current index below1000;440links/439titles not unique dishes.",
+      "Some index entries historical-themed; no oldbook link followed, preserve provenance and exclude new oldbook collection.",
+      "Contributor/source exceptions if noted require review; no automatic runtime/nutrition/medical/cuisine approval."
+    ]
+  },
+  "recipeNlg": {
+    "originalProject": "https://github.com/Glorf/recipenlg",
+    "officialDataset": "https://recipenlg.cs.put.poznan.pl/dataset",
+    "authorCard": "https://huggingface.co/datasets/mbien/recipe_nlg/blob/main/README.md",
+    "projectClaim": 2231142,
+    "gatheredSubsetApprox": 1600000,
+    "claimIsCollected": false,
+    "officialTextLinesExposed": 0,
+    "dataLicenseVerified": null,
+    "codeLicenseAppliedToData": false,
+    "agreementAccepted": false,
+    "dataDownloaded": false,
+    "status": "excluded-current-data-contract-unverified",
+    "notes": "Original project mixes gathered recipes and older datasets. Gathered subset is a quality filter, not rights clearance. Third-party research/noncommercial snippets not accepted as current primary terms; no academic agreement accepted."
+  },
+  "combined": {
+    "rawArithmeticUpperBoundNotValidated": 1233,
+    "notAUniqueRecipeCount": true,
+    "crossSourceAndExistingLibraryDedupDone": false,
+    "completeContentValidationDone": false,
+    "minimum1000Met": false,
+    "next": "A future prototype collector may investigate separately licensed Based Cooking content and development-permitted MealDB endpoints, only after preserving each access contract and rate limits; count only successful unique ingredient+method records. Do not bypass free full-database limitations or publish appstore using testkey.",
+    "sourceGuard": "Before every collection batch, capture fresh actual ordinary/limit/time evidence<=30seconds if command guard needed; fail closed if absent/unknown/ordinaryfalse or used>=99(user-authorized ceiling), with source-specific access/lock/backoff checks. No reset/credit purchase.",
+    "cuisineCoverage": "Arabcreator/YouTube and broad Asian/Maghreb/Gulf/Omani coverage remain unverified; labels not inferred."
+  },
+  "notDone": [
+    "network-oldbooks",
+    "media-or-huge-downloads",
+    "account/signup/payment",
+    "academic-agreement-acceptance",
+    "gate/captcha/alternatehost-bypass",
+    "private-OFF/account-tab",
+    "external-contact",
+    "code/shared/Git changes"
+  ],
+  "ownership": "all assigned alternatives metadata/full/short notes returned; no new fetches"
+}

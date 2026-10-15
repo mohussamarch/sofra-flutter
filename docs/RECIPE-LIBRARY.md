@@ -1,6 +1,6 @@
 # مكتبة الوصفات المقروءة — الحالة الحالية
 
-الحالة الحالية HANDOFF§88:1090 سجلًا مقروءًا،19 حزمة مثبتة و1064 لقطة مصدر؛1064 أرشيفًا+23 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
+الحالة الحالية HANDOFF§89:2090 سجلًا مقروءًا،20 حزمة مثبتة و2064 لقطة مصدر؛2064 أرشيفًا+23 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
 
 ## تفصيل تسليم§71 التاريخي
 
@@ -112,3 +112,8 @@ Two ChefOmar site-attributed creator-website records: chicken with mushroom crea
 ## Current §88
 
 1090 readable source records=1064offlinearchive+23creatorwebsite+3indexedYTdescriptions;19packs/1064snapshots,71local source-category labels. Planning54/4 and reviewed naanmethodfamily1 unchanged. Native1000-record batch and snapshot-safe monthly candidate search service implemented;306fullFlutter/31relatedNode/analyze clean. HANDOFF§88. Exact1000 already-parsed archive records converted to native schema with1000immutable source snapshots,9709ingredients/7431steps,53sourcecategories/102untagged. OriginalEnglish retained,0translations/newacquisitions/culinary/nutrition/runtimeapprovals. All9709acceptedamounts/units and1000yield/time values unknown; rawsource/quantity candidates preserved for explicit review. Exactsource/contentdedup versus prior90 and withinbatch, no semantic/crosslanguageuniquedish claim. Eligiblepool3575of3640Englishparsedrecords. Frozen18pack baseline allows own/laterregistration withunchangedoriginalpins. PackSHA26d6ca3ebf32b88f46e3573fdaadf8d5f959e4b230203a9e4b90be783981be02; CLI tool/recipes/bulk-normalize-1000.mjs --check,6focusedNodepassed. No newbooknetwork. This batch meets1000conversiontarget, not1000newacquisitions.
+
+
+## Current §89
+
+2090 readable source records=2064archive+23website+3indexedYTdescriptions;20packs/2064snapshots,71local source labels unchanged. Planning54/4/methodfamily1 unchanged. Second1000native conversion and explicit repeat/diversity search preferences;319fullFlutter/37Node/analyze clean. HANDOFF§89. Second exact1000 native source records+1000snapshots,8479ingredients/6936steps,0newacquisitions/translations/runtimeapprovals. Frozen19pack baseline coversall1090previous;1064prior archive identities excluded inclfirst1000,2575eligible. Indian42/Italian11,947untagged; no guessedsourcecuisine. All accepted quantity/unit/yield/timeunknown; rawtext/candidates preserved. buildBatch reusable safeone-basename outputFolder, defaultfirstpackbytesunchanged; original6+new6Nodepassed,both--checkpassafterregistration. PackSHA1d65a70f09930fd5b6e375069a6869080d424d3868f43dc55c9e1ea0c82905c7; originalpack26d6ca...unchanged.

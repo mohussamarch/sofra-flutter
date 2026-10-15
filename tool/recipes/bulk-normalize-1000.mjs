@@ -58,8 +58,10 @@ export async function loadInputs(){
  return {...loaded,sources,previous,inputManifestSha256:sha(baselineRaw),baselineManifestRaw:baselineRaw.toString('utf8')};
 }
 
-export function buildBatch({recipes,index,evidence,sources,previous,inputManifestSha256,baselineManifestRaw},count=1000){
+export function buildBatch({recipes,index,evidence,sources,previous,inputManifestSha256,baselineManifestRaw},count=1000,{outputFolder=folder}={}){
  need(Number.isSafeInteger(count)&&count>0,'Invalid batch size');
+ need(typeof outputFolder==='string'&&/^data\/recipes\/curated-local\/[A-Za-z0-9_-]+$/.test(outputFolder),'Unsafe batch output folder');
+ const outputPackFile=`${outputFolder}/normalized-recipes.json`,outputBaselineFile=`${outputFolder}/baseline-manifest.json`;
  const excludedPages=new Set(),excludedRecords=new Set(),excludedUrls=new Set(),signatures=new Set();
  for(const row of previous){
   const p=row.provenance??row;
@@ -102,7 +104,7 @@ export function buildBatch({recipes,index,evidence,sources,previous,inputManifes
  need(selected.length===count,`Only ${selected.length} eligible records for requested ${count}; goal not lowered`);
  const files=new Map(),rows=[];
  for(const {r,source,entry,signature}of selected){
-  const path=`${folder}/source-snapshots/${source.sourcePageId}.json`;
+  const path=`${outputFolder}/source-snapshots/${source.sourcePageId}.json`;
   const snapshot=fmt({schemaVersion:1,sourceRecord:source,parsedRecipe:r,authoritativeEvidence:evidence});files.set(path,snapshot);
   const cuisines=entry.cuisineTags.map(tag=>{
    const c=cuisineMap.get(tag);need(entry.sourceCategories.includes(c.sourceCategory),'Unanchored cuisine category');
@@ -124,10 +126,10 @@ export function buildBatch({recipes,index,evidence,sources,previous,inputManifes
   missingAmountLines:rows.reduce((n,r)=>n+r.ingredients.filter(i=>i.amount===null).length,0),missingUnitLines:rows.reduce((n,r)=>n+r.ingredients.filter(i=>i.unit===null).length,0),unknownYieldRecords:rows.length,unknownTimeRecords:rows.length};
  const cuisineCounts=Object.fromEntries([...cuisineMap.keys()].sort().map(id=>[id,rows.filter(r=>r.cuisines.some(c=>c.id===id)).length]).filter(([,n])=>n));
  const pack={schemaVersion:1,adapterVersion:'native-library-source-v1',sourceLanguage:'en',translationStatus:'not-translated',reviewStatus:'source-extracted-unreviewed',runtimeReady:false,changeNotice:notice,sourceEvidence:evidence,sourceCount:rows.length,counts,cuisineCounts,duplicateReview:{previousSelectedRecords:previous.length,inputManifestSha256,excluded:rejected,scope:'Exact source page/revision/permalink and normalized source ingredient+method content against all selected records and within batch. No semantic, translation or unique-dish claim.'},recipes:rows,relationships:[]};
- files.set(packFile,fmt(pack));
- const report={schemaVersion:1,packFile,packSha256:sha(files.get(packFile)),counts,cuisineCounts,untaggedRecords:rows.filter(r=>!r.cuisines.length).length,sourceSnapshotCount:rows.length,archiveParsedRecipes:recipes.size,eligibleCandidates:candidates.length,duplicateReview:pack.duplicateReview,integrityIsCulinaryApproval:false};
- files.set(`${folder}/conversion-report.json`,JSON.stringify(report,null,2)+'\n');
- if(baselineManifestRaw!==undefined){need(sha(baselineManifestRaw)===baselineManifestSha256,'Frozen baseline manifest drift');files.set(baselineFile,baselineManifestRaw);}
+ files.set(outputPackFile,fmt(pack));
+ const report={schemaVersion:1,packFile:outputPackFile,packSha256:sha(files.get(outputPackFile)),counts,cuisineCounts,untaggedRecords:rows.filter(r=>!r.cuisines.length).length,sourceSnapshotCount:rows.length,archiveParsedRecipes:recipes.size,eligibleCandidates:candidates.length,duplicateReview:pack.duplicateReview,integrityIsCulinaryApproval:false};
+ files.set(`${outputFolder}/conversion-report.json`,JSON.stringify(report,null,2)+'\n');
+ if(baselineManifestRaw!==undefined){need(sha(baselineManifestRaw)===(outputFolder===folder?baselineManifestSha256:inputManifestSha256),'Frozen baseline manifest drift');files.set(outputBaselineFile,baselineManifestRaw);}
  return {pack,report,files};
 }
 

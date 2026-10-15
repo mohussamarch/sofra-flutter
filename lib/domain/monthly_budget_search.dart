@@ -1,6 +1,7 @@
 import 'kitchen_core.dart';
 import 'market_profile.dart';
 import 'monthly_budget_choices.dart';
+import 'monthly_budget_preferences.dart';
 
 /// Explicit reviewed alternatives for one date/slot. Candidate order defines
 /// search order; the same recipe may appear in different slot pools.
@@ -27,14 +28,40 @@ class MonthlyBudgetSearchResult {
     required this.truncated,
     required this.bestKnownAffordable,
     required this.outcome,
-  });
+    required this.recipePreferences,
+    required Map<MonthlyBudgetCandidateKey, String> candidateRecipeIds,
+    required Map<String, List<MonthlyBudgetPreferenceViolation>>
+    preferenceViolationsByOption,
+    required List<MonthlyBudgetAssessment> eligibleRanked,
+  }) : candidateRecipeIds = Map.unmodifiable(candidateRecipeIds),
+       preferenceViolationsByOption = Map.unmodifiable({
+         for (final entry in preferenceViolationsByOption.entries)
+           entry.key: List<MonthlyBudgetPreferenceViolation>.unmodifiable(
+             entry.value,
+           ),
+       }),
+       eligibleRanked = List.unmodifiable(eligibleRanked);
+
+  /// Financial evidence for every evaluated option, including rejected options.
   final MonthlyBudgetComparison comparison;
   final BigInt totalCombinations;
   final bool truncated;
   final MonthlyBudgetAssessment? bestKnownAffordable;
   final MonthlyBudgetSearchOutcome outcome;
+  final MonthlyBudgetRecipePreferences? recipePreferences;
+  final Map<MonthlyBudgetCandidateKey, String> candidateRecipeIds;
+  final Map<String, List<MonthlyBudgetPreferenceViolation>>
+  preferenceViolationsByOption;
+
+  /// Complete-price options passing all explicit preferences, by purchase cost.
+  final List<MonthlyBudgetAssessment> eligibleRanked;
   int get evaluatedCount => comparison.assessments.length;
   int get unknownCostCount => comparison.unranked.length;
+
+  /// Includes preference-passing options whose price remains unknown.
+  int get eligibleCount => preferenceViolationsByOption.values
+      .where((reasons) => reasons.isEmpty)
+      .length;
 }
 
 /// Evaluates at most [maxEvaluations] whole combinations in caller pool order,
@@ -45,6 +72,12 @@ class MonthlyBudgetSearchResult {
 /// not certify supplied source/quantity/food review. The pure callback must use
 /// the supplied country and user prices before averages. All input collections
 /// are owned before callbacks; no stock, ledger, intake or plans are written.
+///
+/// Explicit recipe preferences apply only to supplied proposal slots. All raw
+/// combinations still consume the cap and retain financial comparison evidence;
+/// eligibleRanked/bestKnownAffordable apply the user limits without relaxation.
+/// Exact identities are mandatory for every candidate when constraints are active.
+/// No identity aliases, recipe-family/cuisine or medical grouping is inferred.
 ///
 /// A capped search or any unknown evaluated cost is indeterminate, even when a
 /// known affordable option exists. Exhaustive outcomes concern only these exact
@@ -58,7 +91,18 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
   required double? Function(MarketCountry country, IngredientUse use)
   estimateCost,
   List<UnitRule> rules = const [],
+  MonthlyBudgetRecipePreferences? recipePreferences,
+  Map<MonthlyBudgetCandidateKey, String> candidateRecipeIds = const {},
 }) {
+  final preferences = recipePreferences == null
+      ? null
+      : MonthlyBudgetRecipePreferences(
+          maxOccurrencesByRecipe: recipePreferences.maxOccurrencesByRecipe,
+          minimumDistinctRecipes: recipePreferences.minimumDistinctRecipes,
+        );
+  final identities = Map<MonthlyBudgetCandidateKey, String>.of(
+    candidateRecipeIds,
+  );
   final ownedPools = List<MonthlyBudgetSlotPool>.of(pools);
   final ownedStock = List<InventoryLot>.of(stock);
   final purchases = List<MoneyEntry>.of(confirmedPurchases);
@@ -82,6 +126,7 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
   }
   var total = BigInt.one;
   final coverage = <(String, String)>{};
+  final expectedIdentities = <MonthlyBudgetCandidateKey>{};
   for (final pool in ownedPools) {
     if (!period.includes(parseDay(pool.date)) ||
         pool.slot.trim().isEmpty ||
@@ -97,6 +142,11 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
           !ids.add(candidate.candidateId)) {
         throw ArgumentError('Candidate identity or date/slot mismatch');
       }
+      expectedIdentities.add((
+        date: candidate.date,
+        slot: candidate.slot,
+        candidateId: candidate.candidateId,
+      ));
       for (final use in candidate.requirements) {
         requireAmount(use.quantity);
         if (use.ingredientId.trim().isEmpty || use.unit.isEmpty) {
@@ -111,6 +161,15 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
     }
     total *= BigInt.from(pool.candidates.length);
   }
+  if ((preferences?.hasConstraints ?? false) || identities.isNotEmpty) {
+    if (identities.length != expectedIdentities.length ||
+        !expectedIdentities.every(identities.containsKey) ||
+        identities.values.any((id) => id.trim().isEmpty)) {
+      throw ArgumentError(
+        'Exact recipe identities required for every supplied candidate',
+      );
+    }
+  }
   final comparison = compareMonthlyBudgetChoices(
     period: period,
     confirmedPurchases: purchases,
@@ -119,8 +178,24 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
     estimateCost: estimateCost,
     rules: ownedRules,
   );
+  final violations = <String, List<MonthlyBudgetPreferenceViolation>>{
+    for (final row in comparison.assessments)
+      row.option.id: preferences?.hasConstraints == true
+          ? assessMonthlyRecipePreferences(preferences!, [
+              for (final meal in row.option.meals)
+                identities[(
+                  date: meal.date,
+                  slot: meal.slot,
+                  candidateId: meal.candidateId,
+                )]!,
+            ])
+          : const [],
+  };
+  final eligible = comparison.ranked
+      .where((row) => violations[row.option.id]!.isEmpty)
+      .toList();
   MonthlyBudgetAssessment? best;
-  for (final assessment in comparison.ranked) {
+  for (final assessment in eligible) {
     if (assessment.withinBudget == true) {
       best = assessment;
       break;
@@ -138,6 +213,10 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
     truncated: truncated,
     bestKnownAffordable: best,
     outcome: outcome,
+    recipePreferences: preferences,
+    candidateRecipeIds: identities,
+    preferenceViolationsByOption: violations,
+    eligibleRanked: eligible,
   );
 }
 

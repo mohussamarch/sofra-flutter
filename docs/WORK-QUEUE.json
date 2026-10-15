@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-15T11:58:38.072533+00:00",
-    "taskId": "recipe-bulk-1000",
-    "summary": "Integrated1000archive recipes/1090library andmonthlysearchservice;306Flutter/31Node/analyzeclean.",
+    "at": "2026-10-15T12:14:31.611385+00:00",
+    "taskId": "recipe-local-curation",
+    "summary": "Second1000source records/2090library andexplicitrecipepreferences;319Flutter/37Node/analyzeclean.",
     "evidence": [
-      "data/recipes/curated-local/bulk-1000-20261015/conversion-report.json",
-      "lib/data/kitchen_service.dart",
+      "data/recipes/curated-local/bulk-2000-20261015/conversion-report.json",
+      "lib/domain/monthly_budget_preferences.dart",
       "docs/HANDOFF.md"
     ]
   },
@@ -632,13 +632,13 @@
       "priority": 34,
       "status": "ready",
       "dependsOn": [],
-      "lastAttemptAt": "2026-10-15T07:02:32.889085+00:00",
-      "nextAction": "Next >=1000source-recordconversion batch versuscurrent1090; modernacquisitionpriority separately, allcuisines, exactshortfallreport.",
-      "lastProgressAt": "2026-10-15T11:58:38.072533+00:00",
+      "lastAttemptAt": "2026-10-15T12:02:29.815046+00:00",
+      "nextAction": "Next1000distinctsource-recordconversion againstcurrent2090; native2064/71labels, no newbooks.",
+      "lastProgressAt": "2026-10-15T12:14:31.611385+00:00",
       "completedUnit": {
-        "records": 1064,
+        "records": 2064,
         "fullySpecified": 10,
-        "needsReview": 1052,
+        "needsReview": 2052,
         "notCookable": 2,
         "sourceCuisineLabels": 71,
         "newBatchRecipes": 1000,
@@ -667,7 +667,9 @@
         "tool/recipes/curated-seventh-build.test.mjs",
         "docs/agents/local-recipes-0259.md",
         "data/recipes/curated-local/twelfth-reviewed-20261015/normalized-recipes.json",
-        "docs/agents/local-curation-0700.md"
+        "docs/agents/local-curation-0700.md",
+        "data/recipes/curated-local/bulk-2000-20261015/conversion-report.json",
+        "docs/agents/bulk-second-thousand-20261015.md"
       ],
       "owner": null
     },
@@ -1327,17 +1329,65 @@
         "viableBulkRouteVerified": false,
         "productProgress": false
       }
+    },
+    {
+      "id": "modern-bulk-alternatives",
+      "priority": 35,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T12:02:29.815046+00:00",
+      "nextAction": "Next independent unit under99quota; actualsourcecount/shortfall andallapprovalgatespreserved.",
+      "completedAt": "2026-10-15T12:14:31.611385+00:00",
+      "lastProgressAt": "2026-10-15T12:14:31.611385+00:00",
+      "evidence": [
+        "docs/agents/modern-bulk-alternatives-20261015.md",
+        "data/recipes/modern-bulk-source-20261015/alternatives.json"
+      ],
+      "completedUnit": {
+        "target": 1000,
+        "newRecipes": 0,
+        "underlyingRequests": 12,
+        "requestCap": 12,
+        "publicDomainPartialSourceLead": true,
+        "viable1000BatchVerified": false,
+        "productProgress": false
+      }
+    },
+    {
+      "id": "budget-explicit-preferences",
+      "priority": 34,
+      "dependsOn": [
+        "budget-search-service"
+      ],
+      "status": "done",
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T12:04:56.437710+00:00",
+      "nextAction": "Next independent unit under99quota; actualsourcecount/shortfall andallapprovalgatespreserved.",
+      "completedAt": "2026-10-15T12:14:31.611385+00:00",
+      "lastProgressAt": "2026-10-15T12:14:31.611385+00:00",
+      "evidence": [
+        "lib/domain/monthly_budget_preferences.dart",
+        "test/monthly_budget_preferences_test.dart",
+        "test/monthly_budget_preferences_service_test.dart",
+        "docs/agents/budget-preferences-20261015.md"
+      ],
+      "completedUnit": {
+        "newTests": 13,
+        "focusedTests": 37,
+        "fullFlutterTests": 319,
+        "stateWrites": 0
+      }
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-15T11:58:38.072533+00:00",
-    "primaryUsedPercent": 28,
-    "weeklyUsedPercent": 20,
+    "at": "2026-10-15T12:14:31.611385+00:00",
+    "primaryUsedPercent": 57,
+    "weeklyUsedPercent": 25,
     "ordinaryUsageAllowed": true,
-    "operationalLimit": 99,
-    "action": "Useful unitsclosed; freshactualquota before next1000batch."
+    "operationalLimit": 99
   },
-  "updatedAt": "2026-10-15T11:58:38.072533+00:00",
+  "updatedAt": "2026-10-15T12:14:31.611385+00:00",
   "resumeDiagnosis": {
     "at": "2026-10-15T11:50:29.010768+00:00",
     "cause": "Previous primary usage ceiling reached; bulk worker errored and automatic command approval review could not run due account usage limit. No recipe-source503cause; only preview31004/check31124 processes present. Existing1000pack generated but integration/tests/notes/delivery incomplete.",

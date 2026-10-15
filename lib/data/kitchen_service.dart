@@ -3,6 +3,7 @@ import 'dart:convert';
 import '../domain/kitchen_core.dart';
 import '../domain/purchase_forecast.dart';
 import '../domain/monthly_budget_choices.dart';
+import '../domain/monthly_budget_preferences.dart';
 import '../domain/monthly_budget_search.dart' as budget_search;
 import '../domain/food_nutrition.dart';
 import '../domain/person_nutrition.dart';
@@ -1454,14 +1455,23 @@ class KitchenService {
   /// Resolves and validates every candidate before bounded cost enumeration.
   /// The returned evidence pins current resolutions without saving or applying
   /// them. Explicit supplied coverage may represent only part of a month.
+  /// Optional user recipe limits count exact recipe IDs in those slots. Rejected
+  /// options still consume the cap and retain separate financial evidence.
   Future<MonthlyBudgetSearchPreview> searchMonthlyBudgetChoices(
     String budgetId, {
     required Map<String, List<PlannedMeal>> pools,
     required int maxEvaluations,
+    MonthlyBudgetRecipePreferences? recipePreferences,
     List<UnitRule> rules = const [],
     Map<String, Map<String, Set<int>>> optionalLinesByPool = const {},
     Map<String, Map<String, Map<int, IngredientUse>>> measuredByPool = const {},
   }) async {
+    final preferences = recipePreferences == null
+        ? null
+        : MonthlyBudgetRecipePreferences(
+            maxOccurrencesByRecipe: recipePreferences.maxOccurrencesByRecipe,
+            minimumDistinctRecipes: recipePreferences.minimumDistinctRecipes,
+          );
     final candidates = {
       for (final pool in pools.entries)
         pool.key: List<PlannedMeal>.of(pool.value),
@@ -1536,11 +1546,18 @@ class KitchenService {
     }
     final resolvedPools = <budget_search.MonthlyBudgetSlotPool>[];
     final evidence = <String, Map<String, PlannedMeal>>{};
+    final recipeIdentities = <MonthlyBudgetCandidateKey, String>{};
     for (final pool in candidates.entries) {
       final resolved = <MonthlyBudgetMeal>[];
       final pinned = <String, PlannedMeal>{};
       for (final meal in pool.value) {
         final revision = await _resolveMeal(meal);
+        recipeIdentities[(
+              date: meal.date,
+              slot: meal.slot,
+              candidateId: meal.id,
+            )] =
+            revision.variantId;
         resolved.add(
           _purchasePreviewMeal(
             meal,
@@ -1569,6 +1586,8 @@ class KitchenService {
       period: period,
       pools: resolvedPools,
       maxEvaluations: maxEvaluations,
+      recipePreferences: preferences,
+      candidateRecipeIds: recipeIdentities,
       rules: ownedRules,
       stock: (k['inventory'] as List)
           .map(
