@@ -1065,15 +1065,37 @@
         "offlineTests": 2,
         "networkRequests": 0
       }
+    },
+    {
+      "id": "modern-source-eighth-attempt",
+      "priority": 35,
+      "status": "done",
+      "dependsOn": [],
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T03:24:17.624094+00:00",
+      "completedAt": "2026-10-15T03:24:17.624094+00:00",
+      "nextAction": "No recipe accepted. Revisit only with a reason to expect access; continue local core or a distinct modern source.",
+      "evidence": [
+        "data/recipes/arabic-youtube/eighth-batch-20261015/source-attempt.json",
+        "docs/agents/modern-recipes-0345.md",
+        "tool/recipes/creator-eighth-validation.test.mjs"
+      ],
+      "completedUnit": {
+        "sourceRequests": 1,
+        "requestCap": 4,
+        "recipesAccepted": 0,
+        "productProgress": false,
+        "focusedEvidenceTests": 2
+      }
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-15T03:18:57.878019+00:00",
-    "primaryUsedPercent": 77,
+    "at": "2026-10-15T03:24:17.624094+00:00",
+    "primaryUsedPercent": 82,
     "weeklyUsedPercent": 59,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Actual observed before delivery; fresh reading before new unit. No purchase/reset."
+    "action": "Close verified delivery with remaining8points; last bounded core/source integration used about13points. No new costly unit until fresh quota/capacity assessment; not quota-blocked."
   },
-  "updatedAt": "2026-10-15T03:18:57.878019+00:00"
+  "updatedAt": "2026-10-15T03:24:17.624094+00:00"
 }

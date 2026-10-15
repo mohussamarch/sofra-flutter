@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "batchId": "arabic-creator-eighth-batch-20261015",
+  "attemptedAt": "2026-10-15",
+  "outcome": "blocked-source-unavailable",
+  "quotaAtStart": {
+    "primaryUsedPercent": 80,
+    "weeklyUsedPercent": 59,
+    "ordinaryUsageAllowed": true,
+    "stopThresholdPrimaryPercent": 85
+  },
+  "sourceRequests": [
+    {
+      "request": 1,
+      "kind": "direct-video-page-open",
+      "url": "https://www.youtube.com/watch?v=FmpmSDkknD0",
+      "videoId": "FmpmSDkknD0",
+      "outcome": "Failed to fetch the video page; no description, recipe content, publication date, or license statement was retrieved. No retry or fallback was made."
+    }
+  ],
+  "requestCount": 1,
+  "requestCap": 4,
+  "recipesAccepted": 0,
+  "identityStatus": "video-attribution-observed-in-prior-search-result; direct-page-content-unavailable",
+  "videoAttributionEvidence": {
+    "sourceUrl": "https://www.youtube.com/watch?v=FmpmSDkknD0",
+    "displayedTitle": "لأول مرة الشيف منال العالم مع اخواتها لتحضير وصفة رائعة",
+    "displayedByline": "Manal Alalem (Verified)",
+    "displayedPublishedDate": "2022-07-28",
+    "priorExtractOutcome": "Search result included an ingredient list but no method; it was incomplete and was not accepted as a recipe.",
+    "evidenceOrigin": "prior web search result turn178youtube0 in this task history; not found in persisted recipe packs",
+    "videoToCreatorLink": "The prior result directly attributed this exact video URL to Manal Alalem; the separate first-batch channel record corroborates channel identity but is not used alone to link this video."
+  },
+  "sourceIdentityContext": {
+    "creatorId": "manal-alalem",
+    "channelUrl": "https://www.youtube.com/@manalalalem",
+    "verificationEvidenceFile": "data/recipes/arabic-youtube/2026-10-first-batch.json",
+    "verificationEvidenceSelector": "creators[0]: official-site-linked verified channel, high confidence; corroborates channel identity only"
+  },
+  "rights": null,
+  "descriptionHash": null,
+  "mediaDownloaded": false,
+  "transcriptAccessed": false,
+  "limitations": [
+    "A source page could not be retrieved, so no recipe record or extract was created.",
+    "Publication date, description facts, and reuse rights remain unknown."
+  ]
+}
