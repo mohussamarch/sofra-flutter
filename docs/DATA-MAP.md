@@ -221,3 +221,8 @@ Latest user priority: real retailer and delivery-app prices first; government so
 ## Current §81 — packaged source branch
 
 78 source entries (56archive+21website+1indexed description),14 packs/56 snapshots →797 ingredient lines/715 quantity gaps → pinned line search → explicit USDA identity/version selection OR packaged barcode/market/full-snapshot selection → optional exact-barcode basis evidence → caller's explicit quantity/form/selection/scaling → complete private review and existing atomic calculator. Selection creates no state or physical/local matching approval.50 local source category labels; planning54/4 unchanged. Contract LIBRARY-FOOD-SELECTION.md, evidenceHANDOFF§81.
+
+
+## Current §82
+
+RecipeLibraryMassProposal.fromSource requires full source fingerprint, exact line and explicit acknowledgement of an existing positive numeric g/kg declaration. It preserves amount/unit/raw text without parsing or conversion. toDecision rechecks current recipe/source and applicable exclusion override; food/forms/inclusion/scaling/as-purchased/preparation remain explicit and quantityEstimated is always true. No measurement, food match, source approval or state write. Contract docs/LIBRARY-SOURCE-MASS.md. 84 readable source records =62 offline archive +21 creator website +1 indexed video description;15 pinned packs/62 snapshots,51 local source cuisine/region labels. Planning54/4 and reviewed method family1 unchanged;0 new runtime/nutrition approvals. Final258Flutter/27relatedNode/analyze clean; earlier counts are historical.

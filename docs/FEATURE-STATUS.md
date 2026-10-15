@@ -43,3 +43,8 @@ FourreadableArabicarchiveddraftsaddedwithHungarian/Lebanese/Ghanaian/Tanzanian s
 ## Current §81 — source expansion and package selection
 
 Eight Arabic offline archived drafts added; local56(10/44/2),50 exact source category labels; library78/14packs/56snapshots. Core supports explicit packaged result selection with market/pin/barcode/full-row and scoped100g/ml label review. Unknown basis remains unknown and blocks calculation.254fullFlutter/33Node/analyze6.1s clean.715/797 source lines still need quantity review. Planning54/4 and one reviewed method family unchanged; no UI/camera/live feed/automatic source or nutrition acceptance.
+
+
+## Current §82
+
+RecipeLibraryMassProposal.fromSource requires full source fingerprint, exact line and explicit acknowledgement of an existing positive numeric g/kg declaration. It preserves amount/unit/raw text without parsing or conversion. toDecision rechecks current recipe/source and applicable exclusion override; food/forms/inclusion/scaling/as-purchased/preparation remain explicit and quantityEstimated is always true. No measurement, food match, source approval or state write. Contract docs/LIBRARY-SOURCE-MASS.md. 84 readable source records =62 offline archive +21 creator website +1 indexed video description;15 pinned packs/62 snapshots,51 local source cuisine/region labels. Planning54/4 and reviewed method family1 unchanged;0 new runtime/nutrition approvals. Final258Flutter/27relatedNode/analyze clean; earlier counts are historical.

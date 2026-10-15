@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-15T03:09:23.849026+00:00",
-    "taskId": "local-curation-seventh",
-    "summary": "8offline Arabic drafts/8new source labels and explicit packaged food selection tested;78library,715of797quantity gaps;254Flutter/33Node/analyzeclean.",
+    "at": "2026-10-15T03:18:57.878019+00:00",
+    "taskId": "local-curation-eighth",
+    "summary": "Six local Arabic drafts and explicit estimated source mass decision bridge;84source records,258Flutter/27Node/analyze clean.",
     "evidence": [
-      "data/recipes/curated-local/seventh-reviewed-20261015/normalized-recipes.json",
-      "lib/data/recipe_library_food_search.dart",
-      "test/recipe_library_packaged_selection_test.dart",
+      "data/recipes/curated-local/eighth-reviewed-20261015/review-report.json",
+      "lib/domain/recipe_library_draft.dart",
+      "test/recipe_library_source_mass_test.dart",
       "docs/HANDOFF.md"
     ]
   },
@@ -78,7 +78,7 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Next bounded modern Arabic creator description/website acquisition with pre-counted underlying queries/opens.21website+1indexedvideo-description,0complete directvideo sources; advance independent core after batch.",
+      "nextAction": "Actual reviewed food/quantity/form decisions via pinned search/selection/source mass, or next distinct bounded modern/local unit.62local/51labels/84library; no newbooknetwork.",
       "lastAttemptAt": "2026-10-15T02:30:14.398973+00:00",
       "lastProgressAt": "2026-10-15T02:37:34.778884+00:00",
       "completedUnit": {
@@ -630,7 +630,7 @@
       "status": "ready",
       "dependsOn": [],
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
-      "nextAction": "Actual source food/quantity/form review via pinned generic/package selection, or next distinct bounded modern/local batch.56local/50labels/78library; no book network.",
+      "nextAction": "Actual reviewed food/quantity/form decisions via pinned search/selection/source mass, or next distinct bounded modern/local unit.62local/51labels/84library; no newbooknetwork.",
       "lastProgressAt": "2026-10-15T03:09:23.849026+00:00",
       "completedUnit": {
         "records": 44,
@@ -1019,15 +1019,61 @@
         "fullFlutterTests": 254,
         "runtimeBindings": 0
       }
+    },
+    {
+      "id": "library-source-mass",
+      "priority": 34,
+      "status": "done",
+      "dependsOn": [
+        "library-food-search"
+      ],
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T03:14:08.184828+00:00",
+      "nextAction": "Use explicit source mass estimate in all-line private review; actual measurement remains separate.",
+      "completedAt": "2026-10-15T03:18:57.878019+00:00",
+      "lastProgressAt": "2026-10-15T03:18:57.878019+00:00",
+      "evidence": [
+        "lib/domain/recipe_library_draft.dart",
+        "test/recipe_library_source_mass_test.dart",
+        "docs/LIBRARY-SOURCE-MASS.md"
+      ],
+      "completedUnit": {
+        "newTests": 4,
+        "focusedTests": 14,
+        "fullFlutterTests": 258,
+        "runtimeBindings": 0
+      }
+    },
+    {
+      "id": "local-curation-eighth",
+      "priority": 34,
+      "status": "done",
+      "dependsOn": [],
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T03:14:08.184828+00:00",
+      "nextAction": "Next distinct bounded modern/local unit; no book network.",
+      "completedAt": "2026-10-15T03:18:57.878019+00:00",
+      "lastProgressAt": "2026-10-15T03:18:57.878019+00:00",
+      "evidence": [
+        "data/recipes/curated-local/eighth-reviewed-20261015/review-report.json",
+        "tool/recipes/curated-eighth-build.test.mjs",
+        "docs/agents/local-recipes-0330.md"
+      ],
+      "completedUnit": {
+        "recipes": 6,
+        "newSourceLabels": 1,
+        "offlineTests": 2,
+        "networkRequests": 0
+      }
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-14T21:23:42.430215+00:00",
-    "primaryUsedPercent": 85,
-    "weeklyUsedPercent": 44,
+    "at": "2026-10-15T03:18:57.878019+00:00",
+    "primaryUsedPercent": 77,
+    "weeklyUsedPercent": 59,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Small local audit unit closed nearreserve. Fresh actual quota before any new costly source/implementation unit; no credits/reset."
+    "action": "Actual observed before delivery; fresh reading before new unit. No purchase/reset."
   },
-  "updatedAt": "2026-10-14T21:23:42.430215+00:00"
+  "updatedAt": "2026-10-15T03:18:57.878019+00:00"
 }

@@ -7,7 +7,7 @@ test('Git CRLF conversion is allowed only for generated Dart, never pinned JSON'
  assert.equal(outputMatches(manifestFile,'{}\r\n','{}\n'),false);
 });
 test('actual selected recipe assets and generated pins are current',async()=>{
- const result=await run({check:true});assert.equal(result.packs,14);assert.equal(result.snapshots,56);
+ const result=await run({check:true});assert.equal(result.packs,15);assert.equal(result.snapshots,62);
 });
 test('source snapshot corruption refuses to generate a trusted manifest',async()=>{
  const source=Buffer.from('{}\n'),hash=createHash('sha256').update(source).digest('hex');

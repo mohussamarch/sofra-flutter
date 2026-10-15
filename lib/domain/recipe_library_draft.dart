@@ -198,6 +198,101 @@ class RecipeLibraryDraftReview {
   }
 }
 
+/// An explicitly acknowledged numeric source declaration, never a measurement.
+/// No volume/count conversion, food matching, recipe scaling or persistence.
+class RecipeLibraryMassProposal {
+  RecipeLibraryMassProposal._({
+    required this.recipeId,
+    required this.sourceFingerprint,
+    required this.lineIndex,
+    required this.ingredient,
+    required this.amount,
+  });
+
+  factory RecipeLibraryMassProposal.fromSource({
+    required RecipeLibraryEntry entry,
+    required String expectedSourceFingerprint,
+    required int lineIndex,
+    required bool acknowledgeDeclaredSourceMass,
+  }) {
+    if (!acknowledgeDeclaredSourceMass) {
+      throw ArgumentError(
+        'Review the declared source mass before proposing it',
+      );
+    }
+    final pin = recipeLibrarySourceFingerprint(entry);
+    if (pin != expectedSourceFingerprint) {
+      throw StateError('Library source changed; review the source again');
+    }
+    if (lineIndex < 0 || lineIndex >= entry.ingredients.length) {
+      throw ArgumentError('Unknown library ingredient line');
+    }
+    final ingredient = entry.ingredients[lineIndex];
+    final value = ingredient.amount;
+    final unit = switch (ingredient.unit) {
+      'g' => FoodQuantityUnit.g,
+      'kg' => FoodQuantityUnit.kg,
+      _ => null,
+    };
+    if (value == null || !value.isFinite || value <= 0 || unit == null) {
+      throw ArgumentError(
+        'Only positive declared g/kg source amounts supported',
+      );
+    }
+    return RecipeLibraryMassProposal._(
+      recipeId: entry.id,
+      sourceFingerprint: pin,
+      lineIndex: lineIndex,
+      ingredient: ingredient,
+      amount: FoodAmount(value: value, unit: unit),
+    );
+  }
+
+  final String recipeId, sourceFingerprint;
+  final int lineIndex;
+  final RecipeLibraryIngredient ingredient;
+  final FoodAmount amount;
+
+  /// Caller still reviews identity, forms, inclusion, scaling and preparation.
+  /// The resulting decision always retains quantityEstimated=true.
+  RecipeLibraryLineDecision toDecision({
+    required RecipeLibraryEntry currentEntry,
+    required String ingredientId,
+    required FoodRecord? food,
+    required FoodForm amountForm,
+    required FoodForm preparedForm,
+    required bool optional,
+    required bool selected,
+    required bool asPurchased,
+    required PreparationTransform? preparation,
+    required bool scales,
+    required bool overrideSourceExclusion,
+  }) {
+    if (currentEntry.id != recipeId ||
+        recipeLibrarySourceFingerprint(currentEntry) != sourceFingerprint) {
+      throw StateError('Library source changed; review the mass again');
+    }
+    _selection(ingredient.included, selected, overrideSourceExclusion);
+    return RecipeLibraryLineDecision(
+      input: RecipeFoodInput(
+        ingredientId: ingredientId,
+        food: food,
+        amount: amount,
+        amountForm: amountForm,
+        preparedForm: preparedForm,
+        quantityEstimated: true,
+        optional: optional,
+        selected: selected,
+        asPurchased: asPurchased,
+        preparation: preparation,
+      ),
+      scales: scales,
+      overrideSourceExclusion: overrideSourceExclusion,
+      name: ingredient.labelAr,
+    );
+  }
+}
+
 void _selection(bool? sourceIncluded, bool selected, bool override) {
   final replacingExclusion = sourceIncluded == false && selected;
   if (override != replacingExclusion) {

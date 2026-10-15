@@ -11,3 +11,8 @@ Reviewer inspectedresolveUsdaCandidate andnewselectiontests read-only, foundno c
 ## Current §81 — packaged resolver review
 
 Read-only reviewer inspected resolvePackagedCandidate/_orderedSource and4 new tests. No concrete gap under stated contract: acknowledgment/market/source pin/unique barcode and paired exact-barcode basis evidence gate raw lookup; canonical whole-row comparison detects changed facts and ignores object-key order; existing source-market and unknown-basis behavior remains. Reviewer ran no tests or edits. Root ran12focused, final254fullFlutter/33Node/analysis6.1s. Test fixture invalid shortGTIN was corrected without changing validation. Root records returned review findings and owns integration.
+
+
+## Current §82
+
+Read-only reviewer inspected new RecipeLibraryMassProposal and four tests, found no concrete gap under bounded numeric-source contract. Acknowledgement/pin/index/positive exact g/kg and immutable ingredient/amount are retained. toDecision repeats current source and applicable exclusion checks, requires explicit arguments and always quantityEstimated:true. Reviewer ran no tests/edits; root ran14focused and final258Flutter/27Node/analyze clean. Root owns integration.

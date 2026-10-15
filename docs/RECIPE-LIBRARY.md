@@ -1,6 +1,6 @@
 # مكتبة الوصفات المقروءة — الحالة الحالية
 
-الحالة الحالية HANDOFF§81:78 سجلًا مقروءًا،14 حزمة مثبتة و56 لقطة مصدر؛56 أرشيفًا+21 موقع طاه+وصف فيديو مفهرس واحد. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
+الحالة الحالية HANDOFF§82:84 سجلًا مقروءًا،15 حزمة مثبتة و62 لقطة مصدر؛62 أرشيفًا+21 موقع طاه+وصف فيديو مفهرس واحد. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
 
 ## تفصيل تسليم§71 التاريخي
 
@@ -87,3 +87,8 @@ Review source envelopes now retain related original request indexes/outcomes, in
 ## Current §81 — eight more readable drafts
 
 دجاج جيرك جامايكي،سيرنيكي روسية،ياسا غامبية،رولكس أوغندي،كواكوكو كاميرونية،عصيدة ليبية،فاصولياء وأرز زامبي،زيتومبوا ملاوية.73مكونًا+2إجرائية/57خطوة،كلها تحتاج مراجعة. مصدرها إصدارات الأرشيف القائمة برخصها وبصماتها،0طلبات شبكة. المحلي56(10طبخيًا مكتملة/44مراجعة/2غير قابلتين للطبخ) و50وسمًا مصدريًا؛ المكتبة78/14/56. التخطيط54/4 ثابت. COOKBOOK.ar.md فيseventh-reviewed-20261015 للمراجعة، واختيار الغذاء والمنتج فيLIBRARY-FOOD-SELECTION.md.
+
+
+## Current §82
+
+Six additional offline drafts: Korean bulgogi, Brazilian fish moqueca, Greek saganaki, Norwegian lefse, Indonesian klepon and coconut rice.44listed+4procedural/32steps;all6needreview/151preflightissues. Norwegian is one new source category label; other countries already represented. Local62=10culinaryfullyspecified+50needsreview+2notcookable,457listed+29procedural/339steps. No global deduplication or automatic rights/food/runtime approval. NewpackSHA295b204f9618d52555fe8c0236f9f0ca4feee214943e0b75081101c5dae08a7b;manifestab23f2e62ba34096e40d4ffe7ed2286308c410e2afac784c7c032436439e55ca.

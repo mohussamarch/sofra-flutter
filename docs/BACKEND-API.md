@@ -190,3 +190,8 @@ RecipeLibraryFoodSearch.resolveUsdaCandidate(result:,currentEntry:,foodId:,form:
 ## Current §81 — explicit packaged candidate
 
 `resolvePackagedCandidate(result:,currentEntry:,barcode:,market:,acknowledgeProductIdentity:,reviewedBasis:,reviewSource:)` extends the source-pinned search flow. Require explicit identity/market, matching scoped search market, recipe ID/pin and unique returned barcode. Before raw lookup, paired basis/source must refer to the exact barcode (`reviewSource.recordId`) and100g/ml. Compare the whole processed product row canonically before existingpackagedFood; key reordering is harmless, changed nutrients/markets/names/source require fresh review. Without basis review, unknown basis blocks quantitative calculation. No quantity/state write or local physical product/rights approval. See LIBRARY-FOOD-SELECTION.md; current78/14packs/56snapshots,254fullFlutter/33Node/analyze6.1s.
+
+
+## Current §82
+
+RecipeLibraryMassProposal.fromSource requires full source fingerprint, exact line and explicit acknowledgement of an existing positive numeric g/kg declaration. It preserves amount/unit/raw text without parsing or conversion. toDecision rechecks current recipe/source and applicable exclusion override; food/forms/inclusion/scaling/as-purchased/preparation remain explicit and quantityEstimated is always true. No measurement, food match, source approval or state write. Contract docs/LIBRARY-SOURCE-MASS.md. 84 readable source records =62 offline archive +21 creator website +1 indexed video description;15 pinned packs/62 snapshots,51 local source cuisine/region labels. Planning54/4 and reviewed method family1 unchanged;0 new runtime/nutrition approvals. Final258Flutter/27relatedNode/analyze clean; earlier counts are historical.

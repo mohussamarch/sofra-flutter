@@ -10,7 +10,7 @@ void main() {
     () async {
       final repository = bundledRecipeLibrary();
       final entries = await repository.all();
-      expect(entries, hasLength(78));
+      expect(entries, hasLength(84));
       expect(entries.where((entry) => entry.runtimeReady), isEmpty);
       expect(entries.every((entry) => entry.nutrition == null), isTrue);
       expect(await repository.search('مقلوبة'), hasLength(2));
@@ -20,7 +20,7 @@ void main() {
       expect((await RecipeRepository().index), hasLength(54));
       expect(
         entries.where((entry) => entry.sourceSnapshot != null),
-        hasLength(56),
+        hasLength(62),
       );
       expect(entries.every((entry) => entry.stepsArabic.isNotEmpty), isTrue);
       for (final cuisine in [
@@ -56,6 +56,7 @@ void main() {
         'libyan',
         'zambian',
         'malawian',
+        'norwegian',
       ]) {
         expect(await repository.filterByCuisine(cuisine), isNotEmpty);
       }

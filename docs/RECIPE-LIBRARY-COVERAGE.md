@@ -48,3 +48,8 @@ for (final recipe in report.recipes) {
 ## Current §81 — actual merged source audit
 
 78recipes/797indexed lines;715 distinct quantity-review lines,133missing amount/126missing unit/589unit review/0nonpositive/44procedural/12optional. All78 have quantity gaps and0runtime approval;82 quantity-unflagged rows still require identity/form/choice/scaling review. Explicit package selection adds source consistency, not accepted quantities or saved-personal-review coverage. Actual full Flutter audit is recorded inHANDOFF§81 (254tests);33Node and cleananalysis6.1s.
+
+
+## Current §82
+
+84 readable source records =62 offline archive +21 creator website +1 indexed video description;15 pinned packs/62 snapshots,51 local source cuisine/region labels. Planning54/4 and reviewed method family1 unchanged;0 new runtime/nutrition approvals. Source audit845lines/756distinctquantityreview,145missingamount/138missingunit/618unitreview/0nonpositive/48procedural/17optional;all84recipes have quantity gaps. Counts overlap;89lines without quantity flags still need identity/form/inclusion/scaling review. Mass proposal does not reduce this source audit or prove saved user reviews. Four new mass tests cover immutable originalunit/estimated roundtrip, invalid/unknown units/amounts, drift/ack/index and exclusion override;14focused/258fullFlutter/27Node/analyze clean.

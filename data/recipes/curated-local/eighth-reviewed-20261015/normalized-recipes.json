@@ -1,0 +1,2078 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-15T00:00:00.000Z",
+  "reviewer": "Bounded offline archived-source Arabic transcription; no kitchen testing",
+  "changeNotice": "Six Arabic adaptations from exact revisions already present in the local Wikibooks archive. Source categories are retained as evidence, not approved national cuisine. Original quantities, alternatives, unknowns, and timing gaps remain explicit. No new books or network requests. CC BY-SA 4.0 attribution and change notice retained; page-specific rights exceptions are not reviewed.",
+  "sourceEvidence": {
+    "sourceFileSha256": "93e85705e9141453d5708622c321c17fc793b4fbacfb0663d079fd365e1385d0",
+    "parsedRecipesSha256": "b03a74dbe473f11d42d9a7456834d930384c3188d2cf6cae512dfe3cbb50dad5",
+    "categoryObservationsSha256": "44b3f050f8fb7ed4bed800554d280e8f9251ea58830e90257f18049ecd70f350"
+  },
+  "sourceCount": 6,
+  "recipes": [
+    {
+      "id": "curated-local:13447",
+      "recordVersion": 1,
+      "name": "Bulgogi",
+      "nameAr": "بولغوغي كوري (لحم بقري مشوي بالتتبيلة)",
+      "status": "needs-review",
+      "familyId": "curated-local:korean-bulgogi-grilled-beef",
+      "methodId": "marinate-grill",
+      "cuisines": [
+        {
+          "id": "korean",
+          "nameAr": "كوري",
+          "evidenceText": "Category:Korean recipes",
+          "sourceRecordId": "wikibooks-13447-r4610539",
+          "reviewStatus": "source-supported-not-runtime-approved"
+        }
+      ],
+      "yield": {
+        "amount": 6,
+        "min": 6,
+        "max": 6,
+        "unit": "servings",
+        "sourceText": "6"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "الزمن الإجمالي غير منشور"
+      },
+      "ingredients": [
+        {
+          "sourceLineIndex": 0,
+          "name": "1 lb (450 g) beef suitable for grilling, sliced as thin as possible",
+          "nameAr": "لحم بقري للشواء مقطع رقيقًا",
+          "amount": 450,
+          "unit": "g",
+          "optional": false,
+          "included": true,
+          "decisionNote": "المصدر يذكر 1 رطل ومعادله المنشور 450 جم؛ أُخذت قيمة الجرام من النص دون حساب تحويل.",
+          "sourceText": "1 lb (450 g) beef suitable for grilling, sliced as thin as possible",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 0,
+            "lineId": "source-line-1",
+            "sourceText": "1 lb (450 g) beef suitable for grilling, sliced as thin as possible",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 1,
+          "name": "3 green onions, sliced on the bias",
+          "nameAr": "بصل أخضر مقطع مائلًا",
+          "amount": 3,
+          "unit": "green-onion",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "3 green onions, sliced on the bias",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 1,
+            "lineId": "source-line-2",
+            "sourceText": "3 green onions, sliced on the bias",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 2,
+          "name": "4 button mushrooms (optional), sliced",
+          "nameAr": "فطر أبيض مقطع",
+          "amount": 4,
+          "unit": "mushroom",
+          "optional": true,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "4 button mushrooms (optional), sliced",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 2,
+            "lineId": "source-line-3",
+            "sourceText": "4 button mushrooms (optional), sliced",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 3,
+          "name": "½ onion (optional), thinly sliced",
+          "nameAr": "بصل مقطع رقيقًا",
+          "amount": 0.5,
+          "unit": "onion",
+          "optional": true,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "½ onion (optional), thinly sliced",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 3,
+            "lineId": "source-line-4",
+            "sourceText": "½ onion (optional), thinly sliced",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 4,
+          "name": "¾ cup soy sauce",
+          "nameAr": "صلصة صويا",
+          "amount": 0.75,
+          "unit": "cup",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "¾ cup soy sauce",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 4,
+            "lineId": "source-line-5",
+            "sourceText": "¾ cup soy sauce",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 5,
+          "name": "¼ cup white granulated sugar",
+          "nameAr": "سكر أبيض حبيبي",
+          "amount": 0.25,
+          "unit": "cup",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "¼ cup white granulated sugar",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 5,
+            "lineId": "source-line-6",
+            "sourceText": "¼ cup white granulated sugar",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 6,
+          "name": "¼ cup (4 tbsp) sesame oil",
+          "nameAr": "زيت سمسم",
+          "amount": 0.25,
+          "unit": "cup",
+          "optional": false,
+          "included": true,
+          "decisionNote": "المصدر يذكر ربع كوب (4 ملاعق كبيرة)؛ نظام الحجم غير محدد.",
+          "sourceText": "¼ cup (4 tbsp) sesame oil",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 6,
+            "lineId": "source-line-7",
+            "sourceText": "¼ cup (4 tbsp) sesame oil",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 7,
+          "name": "4 tsp pepper",
+          "nameAr": "فلفل",
+          "amount": 4,
+          "unit": "tsp",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "4 tsp pepper",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 7,
+            "lineId": "source-line-8",
+            "sourceText": "4 tsp pepper",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 8,
+          "name": "1–2 tbsp minced garlic",
+          "nameAr": "ثوم مفروم",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "decisionNote": "مدى 1–2 ملعقة كبيرة محفوظ؛ لم يُختر مقدار واحد.",
+          "sourceText": "1–2 tbsp minced garlic",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 8,
+            "lineId": "source-line-9",
+            "sourceText": "1–2 tbsp minced garlic",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 9,
+          "name": "1 tbsp mirin (optional)",
+          "nameAr": "ميرين",
+          "amount": 1,
+          "unit": "tbsp",
+          "optional": true,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "1 tbsp mirin (optional)",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:13447",
+            "recordId": "wikibooks-13447-r4610539",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4610539",
+            "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 9,
+            "lineId": "source-line-10",
+            "sourceText": "1 tbsp mirin (optional)",
+            "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "rice",
+          "nameAr": "أرز للتقديم",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "sourceText": "Serve with rice.",
+          "reason": "مذكور في التقديم فقط دون مقدار.",
+          "foodBinding": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "textAr": "اخلط كل المكونات في وعاء كبير، واتركها تتبل 30 دقيقة على الأقل؛ يذكر المصدر أن التتبيل طوال الليل يعطي أفضل نكهة وتطرية.",
+          "sourceStepIndices": [
+            0
+          ],
+          "duration": {
+            "min": 30,
+            "max": null,
+            "scope": "minimum-marinade",
+            "approximate": false
+          }
+        },
+        {
+          "n": 2,
+          "textAr": "اشوِ اللحم البقري.",
+          "sourceStepIndices": [
+            1
+          ],
+          "duration": null
+        },
+        {
+          "n": 3,
+          "textAr": "قدّم مع الأرز.",
+          "sourceStepIndices": [
+            2
+          ],
+          "duration": null
+        }
+      ],
+      "excludedSourceSteps": [],
+      "notes": [
+        "قائمة المصدر تذكر ثلاثة أرباع كوب صويا وربع كوب سكر؛ ملاحظة لاحقة تقول استخدام المقدار نفسه منهما. حُفظت القائمة مع إعلان التعارض دون اختيار تصحيح.",
+        "المصدر يذكر خفض الصويا والتبريد عند التحضير قبل يوم، ويقترح المقلاة أو إضافة الكولا بدل السكر أو ثمرة كمثرى كورية مفرومة/مبشورة بدل السكر أو الكولا؛ هذه بدائل غير مختارة وليست طرقًا مراجعة مستقلة.",
+        "ست حصص منشورة في قالب المصدر؛ زمن الشواء وحرارته العددية غير منشورين."
+      ],
+      "blockers": [
+        "تعارض نسبة الصويا والسكر، ومدى الثوم، وزمن الشواء مجهول؛ لا اعتماد أو تحجيم تلقائي."
+      ],
+      "provenance": {
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "recordId": "wikibooks-13447-r4610539",
+        "sourceRevision": "4610539",
+        "sourceRevisionTimestamp": "2026-01-05T00:13:08Z",
+        "retrievedAt": "2026-10-13T12:24:46.577Z",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Bulgogi&oldid=4610539",
+        "sourceSha256": "5953b62682c5433a32f7550a24b97b301711888ab3b543eb63b2d36e4874abea",
+        "derivedRecipeSha256": "1318241de5c78f4ac8fe8f8225bac3207e3084b1a29fb582050b99ae92b83b8c",
+        "sourceSnapshotFile": "data/recipes/curated-local/eighth-reviewed-20261015/source-snapshots/13447.json",
+        "sourceSnapshotSha256": "40fc64e03ad081cc3d33814cc3134457b08ba75f885a0cb47f186f0bd0767ff8",
+        "license": {
+          "id": "wikibooks-cookbook-cc-by-sa-4.0",
+          "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+          "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+          "policyStatus": "verified-license",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+          "changeNoticeRequired": true,
+          "shareAlikeRequired": true
+        },
+        "licenseSha256": "7dc7e6d68854fef6219629c22af63a6408816df9a465f677ba7ea4bb69bd88b3",
+        "changeNotice": "Six Arabic adaptations from exact revisions already present in the local Wikibooks archive. Source categories are retained as evidence, not approved national cuisine. Original quantities, alternatives, unknowns, and timing gaps remain explicit. No new books or network requests. CC BY-SA 4.0 attribution and change notice retained; page-specific rights exceptions are not reviewed."
+      },
+      "nutrition": null,
+      "runtimeReady": false,
+      "actuallyKitchenTested": false,
+      "gates": {
+        "culinarySourceTranscription": true,
+        "independentCulinaryApproval": false,
+        "perPageLicenseApproved": false,
+        "inventoryIdentityApproved": false,
+        "nutritionApproved": false
+      },
+      "contentSha256": "02bd70caee0e2a572c9c9300783f5305fee3c8eebbfd6e64e2dada8bb8e30b67"
+    },
+    {
+      "id": "curated-local:14459",
+      "recordVersion": 1,
+      "name": "Moqueca de Peixe (Brazilian Seafood Stew)",
+      "nameAr": "موكيكا برازيلية (يخنة السمك بحليب جوز الهند)",
+      "status": "needs-review",
+      "familyId": "curated-local:brazilian-moqueca-fish-coconut",
+      "methodId": "marinate-layer-boil",
+      "cuisines": [
+        {
+          "id": "brazilian",
+          "nameAr": "برازيلي",
+          "evidenceText": "Category:Brazilian recipes",
+          "sourceRecordId": "wikibooks-14459-r4518657",
+          "reviewStatus": "source-supported-not-runtime-approved"
+        }
+      ],
+      "yield": {
+        "amount": 5,
+        "min": 5,
+        "max": 5,
+        "unit": "servings",
+        "sourceText": "5"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "الزمن الإجمالي غير منشور"
+      },
+      "ingredients": [
+        {
+          "sourceLineIndex": 0,
+          "name": "1 kg fresh white fish, cut into two finger-wide strips/slices",
+          "nameAr": "سمك أبيض طازج مقطع شرائح بعرض إصبعين",
+          "amount": 1,
+          "unit": "kg",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "1 kg fresh white fish, cut into two finger-wide strips/slices",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 0,
+            "lineId": "source-line-1",
+            "sourceText": "1 kg fresh white fish, cut into two finger-wide strips/slices",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 1,
+          "name": "1 lemon, juiced",
+          "nameAr": "عصير ليمونة",
+          "amount": 1,
+          "unit": "lemon",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "1 lemon, juiced",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 1,
+            "lineId": "source-line-2",
+            "sourceText": "1 lemon, juiced",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 2,
+          "name": "2 mid-sized onions, cut into circular slices",
+          "nameAr": "بصل متوسط مقطع حلقات",
+          "amount": 2,
+          "unit": "onion",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "2 mid-sized onions, cut into circular slices",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 2,
+            "lineId": "source-line-3",
+            "sourceText": "2 mid-sized onions, cut into circular slices",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 3,
+          "name": "2 bell peppers (one red, one green), cut into circular slices",
+          "nameAr": "فلفل حلو: واحدة حمراء وواحدة خضراء",
+          "amount": 2,
+          "unit": "pepper",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "2 bell peppers (one red, one green), cut into circular slices",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 3,
+            "lineId": "source-line-4",
+            "sourceText": "2 bell peppers (one red, one green), cut into circular slices",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 4,
+          "name": "1 clove of garlic, pressed",
+          "nameAr": "ثوم مهروس",
+          "amount": 1,
+          "unit": "clove",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "1 clove of garlic, pressed",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 4,
+            "lineId": "source-line-5",
+            "sourceText": "1 clove of garlic, pressed",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 5,
+          "name": "4 ripe tomatoes, optionally skinned then chopped",
+          "nameAr": "طماطم ناضجة مفرومة، وتقشيرها اختياري",
+          "amount": 4,
+          "unit": "tomato",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الطماطم مطلوبة؛ الاختيار يخص التقشير وحده ولا يعني استبعاد المكون.",
+          "sourceText": "4 ripe tomatoes, optionally skinned then chopped",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 5,
+            "lineId": "source-line-6",
+            "sourceText": "4 ripe tomatoes, optionally skinned then chopped",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 6,
+          "name": "4 cilantro stems with leaves, finely chopped",
+          "nameAr": "سيقان كزبرة بأوراقها مفرومة",
+          "amount": 4,
+          "unit": "stem",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "4 cilantro stems with leaves, finely chopped",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 6,
+            "lineId": "source-line-7",
+            "sourceText": "4 cilantro stems with leaves, finely chopped",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 7,
+          "name": "12 tablespoons Azeite de dendê (a very tasty, heavy, saffron-colored palm oil, which may not be omitted under any circumstances)",
+          "nameAr": "زيت نخيل دينديه",
+          "amount": 12,
+          "unit": "tbsp",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "12 tablespoons Azeite de dendê (a very tasty, heavy, saffron-colored palm oil, which may not be omitted under any circumstances)",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 7,
+            "lineId": "source-line-8",
+            "sourceText": "12 tablespoons Azeite de dendê (a very tasty, heavy, saffron-colored palm oil, which may not be omitted under any circumstances)",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 8,
+          "name": "200 ml coconut milk",
+          "nameAr": "حليب جوز الهند",
+          "amount": 200,
+          "unit": "ml",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "200 ml coconut milk",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 8,
+            "lineId": "source-line-9",
+            "sourceText": "200 ml coconut milk",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 9,
+          "name": "Salt",
+          "nameAr": "ملح",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "decisionNote": "المقدار غير منشور؛ لم يُستنتج من ملاحظة التتبيل.",
+          "sourceText": "Salt",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 9,
+            "lineId": "source-line-10",
+            "sourceText": "Salt",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 10,
+          "name": "Pepper",
+          "nameAr": "فلفل مطحون ناعم",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "decisionNote": "المقدار غير منشور.",
+          "sourceText": "Pepper",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:14459",
+            "recordId": "wikibooks-14459-r4518657",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518657",
+            "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 10,
+            "lineId": "source-line-11",
+            "sourceText": "Pepper",
+            "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "white rice",
+          "nameAr": "أرز أبيض للتقديم",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "sourceText": "Serve with white rice.",
+          "reason": "مذكور في التقديم فقط دون مقدار.",
+          "foodBinding": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "textAr": "انقع السمك في عصير الليمون والفلفل الناعم ساعة على الأقل.",
+          "sourceStepIndices": [
+            0
+          ],
+          "duration": {
+            "min": 60,
+            "max": null,
+            "scope": "minimum-marinade",
+            "approximate": false
+          }
+        },
+        {
+          "n": 2,
+          "textAr": "رتّب السمك والبصل والفلفل الحلو والثوم والطماطم والكزبرة في طبقات متعددة داخل قدر.",
+          "sourceStepIndices": [
+            1
+          ],
+          "duration": null
+        },
+        {
+          "n": 3,
+          "textAr": "اسكب زيت دينديه وحليب جوز الهند فوق المكونات، واغلِها 20 دقيقة. من حين إلى آخر، انقل بعض السائل من قاع القدر إلى أعلاه بحذر كي لا يتكسر السمك.",
+          "sourceStepIndices": [
+            2
+          ],
+          "duration": {
+            "min": 20,
+            "max": 20,
+            "scope": "boil-stew",
+            "approximate": false
+          }
+        },
+        {
+          "n": 4,
+          "textAr": "أضف الملح حسب الذوق.",
+          "sourceStepIndices": [
+            3
+          ],
+          "duration": null
+        },
+        {
+          "n": 5,
+          "textAr": "قدّم مع الأرز الأبيض.",
+          "sourceStepIndices": [
+            4
+          ],
+          "duration": null
+        }
+      ],
+      "excludedSourceSteps": [],
+      "notes": [
+        "يصف المصدر الطبق بأنه من باهيا ويشدد على زيت دينديه؛ لم تُستبدل هويته بزيت آخر.",
+        "خمس حصص معلنة؛ زمن التحضير والإجمالي غير منشورين، ولم تجمع مدة التتبيل والطهي لتخمين الإجمالي."
+      ],
+      "blockers": [
+        "مقادير الملح والفلفل وأرز التقديم مجهولة؛ لا تغذية أو تحجيم أو اعتماد سلامة."
+      ],
+      "provenance": {
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "recordId": "wikibooks-14459-r4518657",
+        "sourceRevision": "4518657",
+        "sourceRevisionTimestamp": "2025-06-21T16:31:34Z",
+        "retrievedAt": "2026-10-13T13:09:19.205Z",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Moqueca%20de%20Peixe%20(Brazilian%20Seafood%20Stew)&oldid=4518657",
+        "sourceSha256": "6fbc33f4ec438c5d3da2448aedc0f6ff4fd292368411ed4bf5ac18f903996d4d",
+        "derivedRecipeSha256": "2e1ec7f3624fd78532d5d66f274ace4ca8cab37a9ac5e73423494ee0e20db839",
+        "sourceSnapshotFile": "data/recipes/curated-local/eighth-reviewed-20261015/source-snapshots/14459.json",
+        "sourceSnapshotSha256": "ee19d491c5d8d0cf84c2a7aa16f9e6a60cd1afda60b7baa657b834fb2afa627a",
+        "license": {
+          "id": "wikibooks-cookbook-cc-by-sa-4.0",
+          "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+          "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+          "policyStatus": "verified-license",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+          "changeNoticeRequired": true,
+          "shareAlikeRequired": true
+        },
+        "licenseSha256": "7dc7e6d68854fef6219629c22af63a6408816df9a465f677ba7ea4bb69bd88b3",
+        "changeNotice": "Six Arabic adaptations from exact revisions already present in the local Wikibooks archive. Source categories are retained as evidence, not approved national cuisine. Original quantities, alternatives, unknowns, and timing gaps remain explicit. No new books or network requests. CC BY-SA 4.0 attribution and change notice retained; page-specific rights exceptions are not reviewed."
+      },
+      "nutrition": null,
+      "runtimeReady": false,
+      "actuallyKitchenTested": false,
+      "gates": {
+        "culinarySourceTranscription": true,
+        "independentCulinaryApproval": false,
+        "perPageLicenseApproved": false,
+        "inventoryIdentityApproved": false,
+        "nutritionApproved": false
+      },
+      "contentSha256": "35f6fe04c34635888fca3725d9e2b7328cb81d001009ec1e1767881b0a7026c0"
+    },
+    {
+      "id": "curated-local:219286",
+      "recordVersion": 1,
+      "name": "Pan-Fried White Brined Cheese (Saganaki)",
+      "nameAr": "ساغاناكي يونانية (جبن أبيض مملح بالمقلاة)",
+      "status": "needs-review",
+      "familyId": "curated-local:greek-saganaki-pan-fried-cheese",
+      "methodId": "optional-flour-pan-fry",
+      "cuisines": [
+        {
+          "id": "greek",
+          "nameAr": "يوناني",
+          "evidenceText": "Category:Greek recipes",
+          "sourceRecordId": "wikibooks-219286-r4613881",
+          "reviewStatus": "source-supported-not-runtime-approved"
+        }
+      ],
+      "yield": {
+        "amount": 1,
+        "min": 1,
+        "max": 1,
+        "unit": "servings",
+        "sourceText": "1"
+      },
+      "time": {
+        "declaredTotalMinutes": 5,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "5 minutes"
+      },
+      "ingredients": [
+        {
+          "sourceLineIndex": 0,
+          "name": "1 large slice of salty, brined white cheese (e.g. feta, sirene)",
+          "nameAr": "شريحة كبيرة من جبن أبيض مملح محفوظ في محلول ملحي مثل فيتا أو سيريني",
+          "amount": 1,
+          "unit": "slice",
+          "optional": false,
+          "included": true,
+          "decisionNote": "شريحة كبيرة بحسب النص؛ النوع والوزن غير محسومين.",
+          "sourceText": "1 large slice of salty, brined white cheese (e.g. feta, sirene)",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:219286",
+            "recordId": "wikibooks-219286-r4613881",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4613881",
+            "sourceSha256": "9f185435f342d4732a36045b413646fcf43b83b45a7acd8a68d5861d2a868a94",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 0,
+            "lineId": "source-line-1",
+            "sourceText": "1 large slice of salty, brined white cheese (e.g. feta, sirene)",
+            "derivedRecipeSha256": "97661ef530f224fc3d2ae26ecf7bae629bf9cf84043007e445282aa95ee5f022"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 1,
+          "name": "1 tablespoon olive oil (not extra virgin)",
+          "nameAr": "زيت زيتون غير بكر ممتاز",
+          "amount": 1,
+          "unit": "tbsp",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "1 tablespoon olive oil (not extra virgin)",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:219286",
+            "recordId": "wikibooks-219286-r4613881",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4613881",
+            "sourceSha256": "9f185435f342d4732a36045b413646fcf43b83b45a7acd8a68d5861d2a868a94",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 1,
+            "lineId": "source-line-2",
+            "sourceText": "1 tablespoon olive oil (not extra virgin)",
+            "derivedRecipeSha256": "97661ef530f224fc3d2ae26ecf7bae629bf9cf84043007e445282aa95ee5f022"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 2,
+          "name": "1 large lemon wedge",
+          "nameAr": "قطعة ليمون كبيرة",
+          "amount": 1,
+          "unit": "wedge",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "1 large lemon wedge",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:219286",
+            "recordId": "wikibooks-219286-r4613881",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4613881",
+            "sourceSha256": "9f185435f342d4732a36045b413646fcf43b83b45a7acd8a68d5861d2a868a94",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 2,
+            "lineId": "source-line-3",
+            "sourceText": "1 large lemon wedge",
+            "derivedRecipeSha256": "97661ef530f224fc3d2ae26ecf7bae629bf9cf84043007e445282aa95ee5f022"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 3,
+          "name": "A small amount of flour (optional)",
+          "nameAr": "دقيق للتغليف",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "included": true,
+          "decisionNote": "كمية صغيرة غير محددة؛ المكون اختياري.",
+          "sourceText": "A small amount of flour (optional)",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:219286",
+            "recordId": "wikibooks-219286-r4613881",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4613881",
+            "sourceSha256": "9f185435f342d4732a36045b413646fcf43b83b45a7acd8a68d5861d2a868a94",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 3,
+            "lineId": "source-line-4",
+            "sourceText": "A small amount of flour (optional)",
+            "derivedRecipeSha256": "97661ef530f224fc3d2ae26ecf7bae629bf9cf84043007e445282aa95ee5f022"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 4,
+          "name": "Pita or other bread (optional)",
+          "nameAr": "خبز بيتا أو خبز آخر",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "included": true,
+          "decisionNote": "بدائل التقديم اختيارية وبلا مقدار.",
+          "sourceText": "Pita or other bread (optional)",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:219286",
+            "recordId": "wikibooks-219286-r4613881",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4613881",
+            "sourceSha256": "9f185435f342d4732a36045b413646fcf43b83b45a7acd8a68d5861d2a868a94",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 4,
+            "lineId": "source-line-5",
+            "sourceText": "Pita or other bread (optional)",
+            "derivedRecipeSha256": "97661ef530f224fc3d2ae26ecf7bae629bf9cf84043007e445282aa95ee5f022"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "n": 1,
+          "textAr": "سخّن مقلاة صغيرة على نار متوسطة إلى عالية.",
+          "sourceStepIndices": [
+            0
+          ],
+          "duration": null
+        },
+        {
+          "n": 2,
+          "textAr": "أثناء تسخين المقلاة، قطّع الجبن بالسمك والحجم المطلوبين. القطع السميكة تحتاج وقتًا أطول وقد تحترق؛ والرفيعة قد لا تتحمر جيدًا بحسب المصدر.",
+          "sourceStepIndices": [
+            1
+          ],
+          "duration": null
+        },
+        {
+          "n": 3,
+          "textAr": "يمكن تغليف الشرائح بالدقيق اختياريًا لقشرة أغمق وأكثر قرمشة قليلًا وتقليل تناثر الزيت.",
+          "sourceStepIndices": [
+            2
+          ],
+          "duration": null
+        },
+        {
+          "n": 4,
+          "textAr": "أضف الزيت إلى المقلاة الساخنة وحرّكه. عندما يلمع ويبدو أكثر سيولة أضف الجبن وابتعد عن تناثره الناتج عن ماء المحلول الملحي.",
+          "sourceStepIndices": [
+            3
+          ],
+          "duration": null
+        },
+        {
+          "n": 5,
+          "textAr": "اقلب الجبن بعد دقيقة أو دقيقتين؛ يذكر المصدر أن شريحة بسمك ثلاثة أرباع سنتيمتر تحتاج نحو 1–2 دقيقة لكل جانب.",
+          "sourceStepIndices": [
+            4
+          ],
+          "duration": {
+            "min": 1,
+            "max": 2,
+            "scope": "per-side-for-0.75-cm-cheese",
+            "approximate": true
+          }
+        },
+        {
+          "n": 6,
+          "textAr": "قدّم فورًا مع الليمون، ومع الخبز اختياريًا.",
+          "sourceStepIndices": [
+            5
+          ],
+          "duration": null
+        }
+      ],
+      "excludedSourceSteps": [],
+      "notes": [
+        "حصة واحدة وزمن 5 دقائق منشوران في قالب المصدر. المدة المذكورة لكل وجه مرتبطة بشريحة سمكها ثلاثة أرباع سنتيمتر، وليست زمنًا لجميع الأحجام.",
+        "الجبن له بدائل فيتا/سيريني، وملاحظة المصدر تقترح كفالوجرافييرا أو كاسيري أو كفالوتيري؛ لم يُختر نوع نهائي."
+      ],
+      "blockers": [
+        "وزن ونوع الجبن والدقيق والخبز غير محسومة؛ وجود زمن وناتج لا يثبت اكتمال الكميات أو التغذية."
+      ],
+      "provenance": {
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "recordId": "wikibooks-219286-r4613881",
+        "sourceRevision": "4613881",
+        "sourceRevisionTimestamp": "2026-01-27T02:54:10Z",
+        "retrievedAt": "2026-10-13T13:20:09.094Z",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Pan-Fried%20White%20Brined%20Cheese%20(Saganaki)&oldid=4613881",
+        "sourceSha256": "9f185435f342d4732a36045b413646fcf43b83b45a7acd8a68d5861d2a868a94",
+        "derivedRecipeSha256": "97661ef530f224fc3d2ae26ecf7bae629bf9cf84043007e445282aa95ee5f022",
+        "sourceSnapshotFile": "data/recipes/curated-local/eighth-reviewed-20261015/source-snapshots/219286.json",
+        "sourceSnapshotSha256": "86e91a6d51ea08fbd21fcb327b943459b67dbea2655e8eb734c033a56e7aa271",
+        "license": {
+          "id": "wikibooks-cookbook-cc-by-sa-4.0",
+          "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+          "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+          "policyStatus": "verified-license",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+          "changeNoticeRequired": true,
+          "shareAlikeRequired": true
+        },
+        "licenseSha256": "7dc7e6d68854fef6219629c22af63a6408816df9a465f677ba7ea4bb69bd88b3",
+        "changeNotice": "Six Arabic adaptations from exact revisions already present in the local Wikibooks archive. Source categories are retained as evidence, not approved national cuisine. Original quantities, alternatives, unknowns, and timing gaps remain explicit. No new books or network requests. CC BY-SA 4.0 attribution and change notice retained; page-specific rights exceptions are not reviewed."
+      },
+      "nutrition": null,
+      "runtimeReady": false,
+      "actuallyKitchenTested": false,
+      "gates": {
+        "culinarySourceTranscription": true,
+        "independentCulinaryApproval": false,
+        "perPageLicenseApproved": false,
+        "inventoryIdentityApproved": false,
+        "nutritionApproved": false
+      },
+      "contentSha256": "7d12bac390383841504326d6ac27ed358a2416afb50ac2bdb06da93eca4099f0"
+    },
+    {
+      "id": "curated-local:294156",
+      "recordVersion": 1,
+      "name": "Lefse (Norwegian Potato Flatbread)",
+      "nameAr": "ليفسه نرويجية (خبز البطاطس المسطح)",
+      "status": "needs-review",
+      "familyId": "curated-local:norwegian-lefse-potato-flatbread",
+      "methodId": "mix-roll-griddle",
+      "cuisines": [
+        {
+          "id": "norwegian",
+          "nameAr": "نرويجي",
+          "evidenceText": "Category:Norwegian recipes",
+          "sourceRecordId": "wikibooks-294156-r4519135",
+          "reviewStatus": "source-supported-not-runtime-approved"
+        }
+      ],
+      "yield": {
+        "amount": null,
+        "min": null,
+        "max": null,
+        "unit": "pieces",
+        "sourceText": "About 40 lefse"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": 60,
+        "sourceText": "Prep: 1–2 hours; Cooking: 1 hour"
+      },
+      "ingredients": [
+        {
+          "sourceLineIndex": 0,
+          "name": "8 cups boiled and mashed russet potatoes, still hot",
+          "nameAr": "بطاطس روسيت مسلوقة ومهروسة وما زالت ساخنة",
+          "amount": 8,
+          "unit": "cup",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "8 cups boiled and mashed russet potatoes, still hot",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:294156",
+            "recordId": "wikibooks-294156-r4519135",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4519135",
+            "sourceSha256": "2dfcca195f0df348bc7aa781bf477a64a7729d93275852c83f5885f5c736bb02",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 0,
+            "lineId": "source-line-1",
+            "sourceText": "8 cups boiled and mashed russet potatoes, still hot",
+            "derivedRecipeSha256": "1496c4e815744e0e59f2f9755f94119e3fda5d3ebdabaa5e12bd22f4b7579b79"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 1,
+          "name": "½ cup melted butter",
+          "nameAr": "زبدة مذابة",
+          "amount": 0.5,
+          "unit": "cup",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "½ cup melted butter",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:294156",
+            "recordId": "wikibooks-294156-r4519135",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4519135",
+            "sourceSha256": "2dfcca195f0df348bc7aa781bf477a64a7729d93275852c83f5885f5c736bb02",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 1,
+            "lineId": "source-line-2",
+            "sourceText": "½ cup melted butter",
+            "derivedRecipeSha256": "1496c4e815744e0e59f2f9755f94119e3fda5d3ebdabaa5e12bd22f4b7579b79"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 2,
+          "name": "3 cups unbleached flour",
+          "nameAr": "دقيق غير مبيض",
+          "amount": 3,
+          "unit": "cup",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "3 cups unbleached flour",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:294156",
+            "recordId": "wikibooks-294156-r4519135",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4519135",
+            "sourceSha256": "2dfcca195f0df348bc7aa781bf477a64a7729d93275852c83f5885f5c736bb02",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 2,
+            "lineId": "source-line-3",
+            "sourceText": "3 cups unbleached flour",
+            "derivedRecipeSha256": "1496c4e815744e0e59f2f9755f94119e3fda5d3ebdabaa5e12bd22f4b7579b79"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 3,
+          "name": "2 tablespoons granulated sugar",
+          "nameAr": "سكر حبيبي",
+          "amount": 2,
+          "unit": "tbsp",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "2 tablespoons granulated sugar",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:294156",
+            "recordId": "wikibooks-294156-r4519135",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4519135",
+            "sourceSha256": "2dfcca195f0df348bc7aa781bf477a64a7729d93275852c83f5885f5c736bb02",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 3,
+            "lineId": "source-line-4",
+            "sourceText": "2 tablespoons granulated sugar",
+            "derivedRecipeSha256": "1496c4e815744e0e59f2f9755f94119e3fda5d3ebdabaa5e12bd22f4b7579b79"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 4,
+          "name": "2 teaspoons salt",
+          "nameAr": "ملح",
+          "amount": 2,
+          "unit": "tsp",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "2 teaspoons salt",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:294156",
+            "recordId": "wikibooks-294156-r4519135",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4519135",
+            "sourceSha256": "2dfcca195f0df348bc7aa781bf477a64a7729d93275852c83f5885f5c736bb02",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 4,
+            "lineId": "source-line-5",
+            "sourceText": "2 teaspoons salt",
+            "derivedRecipeSha256": "1496c4e815744e0e59f2f9755f94119e3fda5d3ebdabaa5e12bd22f4b7579b79"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 5,
+          "name": "1 cup cream",
+          "nameAr": "قشدة",
+          "amount": 1,
+          "unit": "cup",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "1 cup cream",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:294156",
+            "recordId": "wikibooks-294156-r4519135",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4519135",
+            "sourceSha256": "2dfcca195f0df348bc7aa781bf477a64a7729d93275852c83f5885f5c736bb02",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 5,
+            "lineId": "source-line-6",
+            "sourceText": "1 cup cream",
+            "derivedRecipeSha256": "1496c4e815744e0e59f2f9755f94119e3fda5d3ebdabaa5e12bd22f4b7579b79"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "flour for dusting",
+          "nameAr": "دقيق إضافي للفرد",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "sourceText": "Use flour to keep the mix from sticking",
+          "reason": "مذكور في الخطوات؛ مقدار الزيادة غير منشور.",
+          "foodBinding": null
+        },
+        {
+          "name": "toppings",
+          "nameAr": "إضافات التقديم",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "sourceText": "Add toppings",
+          "reason": "لا تحدد الخطوة نوعًا أو مقدارًا؛ الاقتراحات في الملاحظات غير مختارة.",
+          "foodBinding": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "textAr": "اخلط البطاطس المهروسة بالزبدة المذابة.",
+          "sourceStepIndices": [
+            0
+          ],
+          "duration": null
+        },
+        {
+          "n": 2,
+          "textAr": "إذا حضرتها مسبقًا، برّد الخليط طوال الليل، وأخرج البطاطس قبل استكمال التحضير بساعة.",
+          "sourceStepIndices": [
+            1
+          ],
+          "duration": null
+        },
+        {
+          "n": 3,
+          "textAr": "اخلط السكر والملح والقشدة وخليط البطاطس في وعاء كبير. أضف الدقيق تدريجيًا مع التقليب.",
+          "sourceStepIndices": [
+            2
+          ],
+          "duration": null
+        },
+        {
+          "n": 4,
+          "textAr": "خذ في كل مرة نحو ملعقتين كبيرتين من الخليط أو قطعة بحجم كرة غولف، وافردها دوائر مسطحة على سطح أملس. استخدم الدقيق لمنع الالتصاق بالسطح والنشابة.",
+          "sourceStepIndices": [
+            3
+          ],
+          "duration": null
+        },
+        {
+          "n": 5,
+          "textAr": "ضع الدوائر على صاج، واطهها حتى يتحمر أسفلها. اقلبها وكرر على الجانب الآخر.",
+          "sourceStepIndices": [
+            4
+          ],
+          "duration": null
+        },
+        {
+          "n": 6,
+          "textAr": "أضف إضافات التقديم، وقدّمها ساخنة.",
+          "sourceStepIndices": [
+            5
+          ],
+          "duration": null
+        }
+      ],
+      "excludedSourceSteps": [],
+      "notes": [
+        "الناتج المنشور نحو 40 قطعة وليس رقمًا مؤكدًا؛ التحضير 1–2 ساعة والطهي ساعة، دون زمن إجمالي منفرد أو مدة لكل قطعة.",
+        "خطوة التبريد طوال الليل مشروطة بالتحضير المسبق. ملاحظات المصدر تذكر زبدة وسكرًا للتقديم وإمكان زيادة القشدة/الدقيق عند الحاجة؛ لم تُضف تلك الزيادات إلى المقادير الأساسية أو يُستنتج وزن."
+      ],
+      "blockers": [
+        "دقيق الفرد وإضافات التقديم بلا مقدار؛ الناتج والتحضير تقريبيان/مدى، ولا تحجيم تلقائي."
+      ],
+      "provenance": {
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "recordId": "wikibooks-294156-r4519135",
+        "sourceRevision": "4519135",
+        "sourceRevisionTimestamp": "2025-06-21T17:55:24Z",
+        "retrievedAt": "2026-10-13T13:07:20.077Z",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Lefse%20(Norwegian%20Potato%20Flatbread)&oldid=4519135",
+        "sourceSha256": "2dfcca195f0df348bc7aa781bf477a64a7729d93275852c83f5885f5c736bb02",
+        "derivedRecipeSha256": "1496c4e815744e0e59f2f9755f94119e3fda5d3ebdabaa5e12bd22f4b7579b79",
+        "sourceSnapshotFile": "data/recipes/curated-local/eighth-reviewed-20261015/source-snapshots/294156.json",
+        "sourceSnapshotSha256": "45381f2a51a9428b0b6343efb6faf77f323ef1c6aae53789c76c3f63b118b998",
+        "license": {
+          "id": "wikibooks-cookbook-cc-by-sa-4.0",
+          "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+          "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+          "policyStatus": "verified-license",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+          "changeNoticeRequired": true,
+          "shareAlikeRequired": true
+        },
+        "licenseSha256": "7dc7e6d68854fef6219629c22af63a6408816df9a465f677ba7ea4bb69bd88b3",
+        "changeNotice": "Six Arabic adaptations from exact revisions already present in the local Wikibooks archive. Source categories are retained as evidence, not approved national cuisine. Original quantities, alternatives, unknowns, and timing gaps remain explicit. No new books or network requests. CC BY-SA 4.0 attribution and change notice retained; page-specific rights exceptions are not reviewed."
+      },
+      "nutrition": null,
+      "runtimeReady": false,
+      "actuallyKitchenTested": false,
+      "gates": {
+        "culinarySourceTranscription": true,
+        "independentCulinaryApproval": false,
+        "perPageLicenseApproved": false,
+        "inventoryIdentityApproved": false,
+        "nutritionApproved": false
+      },
+      "contentSha256": "0e48a6aec9b3dcb8b63ba0872e1f00ec74a128cc325958dd5bdc18e951e3d1d0"
+    },
+    {
+      "id": "curated-local:234180",
+      "recordVersion": 1,
+      "name": "Klepon (Indonesian Sweet Boiled Rice Cake)",
+      "nameAr": "كليبون إندونيسية (كرات الأرز بسكر النخيل وجوز الهند)",
+      "status": "needs-review",
+      "familyId": "curated-local:indonesian-klepon-palm-sugar-rice",
+      "methodId": "fill-boil-coconut-coat",
+      "cuisines": [
+        {
+          "id": "indonesian",
+          "nameAr": "إندونيسي",
+          "evidenceText": "Category:Indonesian recipes",
+          "sourceRecordId": "wikibooks-234180-r4541090",
+          "reviewStatus": "source-supported-not-runtime-approved"
+        }
+      ],
+      "yield": {
+        "amount": null,
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "الزمن الإجمالي غير منشور"
+      },
+      "ingredients": [
+        {
+          "sourceLineIndex": 0,
+          "name": "8–10 pandan leaves or pandan paste",
+          "nameAr": "أوراق باندان أو معجون باندان",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "decisionNote": "مدى 8–10 أوراق أو معجون؛ كمية المعجون غير محددة ولم يُختر البديل.",
+          "sourceText": "8–10 pandan leaves or pandan paste",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:234180",
+            "recordId": "wikibooks-234180-r4541090",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4541090",
+            "sourceSha256": "2b8079ccf11013cdc15c6558c59dffa835a007ff2b9ee6f3b364cf3807591e82",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 0,
+            "lineId": "source-line-1",
+            "sourceText": "8–10 pandan leaves or pandan paste",
+            "derivedRecipeSha256": "143cfe05442dd2bc133b282bda6554a6cd16cb3614955665e3666bd2ee8819e6"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 1,
+          "name": "300 g glutinous rice flour",
+          "nameAr": "دقيق أرز دبق",
+          "amount": 300,
+          "unit": "g",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "300 g glutinous rice flour",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:234180",
+            "recordId": "wikibooks-234180-r4541090",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4541090",
+            "sourceSha256": "2b8079ccf11013cdc15c6558c59dffa835a007ff2b9ee6f3b364cf3807591e82",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 1,
+            "lineId": "source-line-2",
+            "sourceText": "300 g glutinous rice flour",
+            "derivedRecipeSha256": "143cfe05442dd2bc133b282bda6554a6cd16cb3614955665e3666bd2ee8819e6"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 2,
+          "name": "30 g sago flour",
+          "nameAr": "دقيق ساغو",
+          "amount": 30,
+          "unit": "g",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "30 g sago flour",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:234180",
+            "recordId": "wikibooks-234180-r4541090",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4541090",
+            "sourceSha256": "2b8079ccf11013cdc15c6558c59dffa835a007ff2b9ee6f3b364cf3807591e82",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 2,
+            "lineId": "source-line-3",
+            "sourceText": "30 g sago flour",
+            "derivedRecipeSha256": "143cfe05442dd2bc133b282bda6554a6cd16cb3614955665e3666bd2ee8819e6"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 3,
+          "name": "150 g gula jawa (palm sugar)",
+          "nameAr": "سكر نخيل غولا جاوا",
+          "amount": 150,
+          "unit": "g",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "150 g gula jawa (palm sugar)",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:234180",
+            "recordId": "wikibooks-234180-r4541090",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4541090",
+            "sourceSha256": "2b8079ccf11013cdc15c6558c59dffa835a007ff2b9ee6f3b364cf3807591e82",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 3,
+            "lineId": "source-line-4",
+            "sourceText": "150 g gula jawa (palm sugar)",
+            "derivedRecipeSha256": "143cfe05442dd2bc133b282bda6554a6cd16cb3614955665e3666bd2ee8819e6"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 4,
+          "name": "300 g grated coconut",
+          "nameAr": "جوز هند مبشور",
+          "amount": 300,
+          "unit": "g",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "300 g grated coconut",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:234180",
+            "recordId": "wikibooks-234180-r4541090",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4541090",
+            "sourceSha256": "2b8079ccf11013cdc15c6558c59dffa835a007ff2b9ee6f3b364cf3807591e82",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 4,
+            "lineId": "source-line-5",
+            "sourceText": "300 g grated coconut",
+            "derivedRecipeSha256": "143cfe05442dd2bc133b282bda6554a6cd16cb3614955665e3666bd2ee8819e6"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 5,
+          "name": "Water",
+          "nameAr": "ماء",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "decisionNote": "ماء للعجين والطهي؛ لا كمية منشورة.",
+          "sourceText": "Water",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:234180",
+            "recordId": "wikibooks-234180-r4541090",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4541090",
+            "sourceSha256": "2b8079ccf11013cdc15c6558c59dffa835a007ff2b9ee6f3b364cf3807591e82",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 5,
+            "lineId": "source-line-6",
+            "sourceText": "Water",
+            "derivedRecipeSha256": "143cfe05442dd2bc133b282bda6554a6cd16cb3614955665e3666bd2ee8819e6"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "n": 1,
+          "textAr": "إذا استخدمت أوراق الباندان الكاملة، اطحنها إلى معجون ناعم مع قليل من الماء عند الحاجة.",
+          "sourceStepIndices": [
+            0
+          ],
+          "duration": null
+        },
+        {
+          "n": 2,
+          "textAr": "اخلط دقيق الأرز الدبق ودقيق الساغو جيدًا. أضف معجون الباندان، ثم الماء تدريجيًا حتى تتكون عجينة خضراء طرية.",
+          "sourceStepIndices": [
+            1
+          ],
+          "duration": null
+        },
+        {
+          "n": 3,
+          "textAr": "شكّل كرات قطرها نحو 2–3 سم، واصنع فتحة في كل كرة. املأها بسكر النخيل وأغلق العجين عليه، ثم أعد تشكيل الكرة برفق عند الحاجة.",
+          "sourceStepIndices": [
+            2
+          ],
+          "duration": null
+        },
+        {
+          "n": 4,
+          "textAr": "اغلِ كمية كبيرة من الماء في قدر واسع، وضع الكرات واحدة تلو الأخرى. اطهها نحو 5 دقائق حتى تطفو.",
+          "sourceStepIndices": [
+            3
+          ],
+          "duration": {
+            "min": 5,
+            "max": 5,
+            "scope": "boil-until-floating",
+            "approximate": true
+          }
+        },
+        {
+          "n": 5,
+          "textAr": "صفِّ الكرات.",
+          "sourceStepIndices": [
+            4
+          ],
+          "duration": null
+        },
+        {
+          "n": 6,
+          "textAr": "دحرجها في جوز الهند المبشور وقدّمها.",
+          "sourceStepIndices": [
+            5
+          ],
+          "duration": null
+        }
+      ],
+      "excludedSourceSteps": [],
+      "notes": [
+        "يذكر النص أنها من المطبخ الجاوي ضمن إندونيسيا؛ وسم الحزمة يعتمد تصنيف المصدر الإندونيسي، دون اعتماد مطبخ مستقل أو تخمين.",
+        "الناتج والزمن الإجمالي مجهولان؛ خمس دقائق مدة طهي تقريبية فقط."
+      ],
+      "blockers": [
+        "كمية الماء واختيار الباندان والناتج غير محددة؛ لا تغذية أو تحجيم تلقائي."
+      ],
+      "provenance": {
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "recordId": "wikibooks-234180-r4541090",
+        "sourceRevision": "4541090",
+        "sourceRevisionTimestamp": "2025-10-04T23:05:09Z",
+        "retrievedAt": "2026-10-13T13:07:15.213Z",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Klepon%20(Indonesian%20Sweet%20Boiled%20Rice%20Cake)&oldid=4541090",
+        "sourceSha256": "2b8079ccf11013cdc15c6558c59dffa835a007ff2b9ee6f3b364cf3807591e82",
+        "derivedRecipeSha256": "143cfe05442dd2bc133b282bda6554a6cd16cb3614955665e3666bd2ee8819e6",
+        "sourceSnapshotFile": "data/recipes/curated-local/eighth-reviewed-20261015/source-snapshots/234180.json",
+        "sourceSnapshotSha256": "77eee8e815b1657869f529810c99c13d8a8ec7a05bdbd50899fa96d508cabf9c",
+        "license": {
+          "id": "wikibooks-cookbook-cc-by-sa-4.0",
+          "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+          "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+          "policyStatus": "verified-license",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+          "changeNoticeRequired": true,
+          "shareAlikeRequired": true
+        },
+        "licenseSha256": "7dc7e6d68854fef6219629c22af63a6408816df9a465f677ba7ea4bb69bd88b3",
+        "changeNotice": "Six Arabic adaptations from exact revisions already present in the local Wikibooks archive. Source categories are retained as evidence, not approved national cuisine. Original quantities, alternatives, unknowns, and timing gaps remain explicit. No new books or network requests. CC BY-SA 4.0 attribution and change notice retained; page-specific rights exceptions are not reviewed."
+      },
+      "nutrition": null,
+      "runtimeReady": false,
+      "actuallyKitchenTested": false,
+      "gates": {
+        "culinarySourceTranscription": true,
+        "independentCulinaryApproval": false,
+        "perPageLicenseApproved": false,
+        "inventoryIdentityApproved": false,
+        "nutritionApproved": false
+      },
+      "contentSha256": "37186fb18649b9b315011a3b1cd84675aa262218ae9f64a7b2a56d4d280567db"
+    },
+    {
+      "id": "curated-local:452631",
+      "recordVersion": 1,
+      "name": "Coconut Rice (Indonesian)",
+      "nameAr": "أرز إندونيسي بحليب جوز الهند",
+      "status": "needs-review",
+      "familyId": "curated-local:indonesian-coconut-rice-pandan",
+      "methodId": "simmer-rest-coconut-rice",
+      "cuisines": [
+        {
+          "id": "indonesian",
+          "nameAr": "إندونيسي",
+          "evidenceText": "Category:Indonesian recipes",
+          "sourceRecordId": "wikibooks-452631-r4512915",
+          "reviewStatus": "source-supported-not-runtime-approved"
+        }
+      ],
+      "yield": {
+        "amount": 4,
+        "min": 4,
+        "max": 4,
+        "unit": "servings",
+        "sourceText": "4"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "الزمن الإجمالي غير منشور"
+      },
+      "ingredients": [
+        {
+          "sourceLineIndex": 0,
+          "name": "300 grams uncooked white long-grain rice",
+          "nameAr": "أرز أبيض طويل الحبة غير مطهو",
+          "amount": 300,
+          "unit": "g",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "300 grams uncooked white long-grain rice",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:452631",
+            "recordId": "wikibooks-452631-r4512915",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4512915",
+            "sourceSha256": "e7f8e302c78f20756845ad80a612ae4458586ca3511d87f85d99327eb94edccd",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 0,
+            "lineId": "source-line-1",
+            "sourceText": "300 grams uncooked white long-grain rice",
+            "derivedRecipeSha256": "1ddc09db9c190e12fd58301d1bab52db98b1f533614d7ed920689f63d5a31af1"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 1,
+          "name": "400 ml coconut milk",
+          "nameAr": "حليب جوز الهند",
+          "amount": 400,
+          "unit": "ml",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "400 ml coconut milk",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:452631",
+            "recordId": "wikibooks-452631-r4512915",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4512915",
+            "sourceSha256": "e7f8e302c78f20756845ad80a612ae4458586ca3511d87f85d99327eb94edccd",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 1,
+            "lineId": "source-line-2",
+            "sourceText": "400 ml coconut milk",
+            "derivedRecipeSha256": "1ddc09db9c190e12fd58301d1bab52db98b1f533614d7ed920689f63d5a31af1"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 2,
+          "name": "2 red shallots",
+          "nameAr": "كراث أحمر صغير (شالوت)",
+          "amount": 2,
+          "unit": "shallot",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "2 red shallots",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:452631",
+            "recordId": "wikibooks-452631-r4512915",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4512915",
+            "sourceSha256": "e7f8e302c78f20756845ad80a612ae4458586ca3511d87f85d99327eb94edccd",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 2,
+            "lineId": "source-line-3",
+            "sourceText": "2 red shallots",
+            "derivedRecipeSha256": "1ddc09db9c190e12fd58301d1bab52db98b1f533614d7ed920689f63d5a31af1"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 3,
+          "name": "2 slices fresh ginger",
+          "nameAr": "شرائح زنجبيل طازج",
+          "amount": 2,
+          "unit": "slice",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "2 slices fresh ginger",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:452631",
+            "recordId": "wikibooks-452631-r4512915",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4512915",
+            "sourceSha256": "e7f8e302c78f20756845ad80a612ae4458586ca3511d87f85d99327eb94edccd",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 3,
+            "lineId": "source-line-4",
+            "sourceText": "2 slices fresh ginger",
+            "derivedRecipeSha256": "1ddc09db9c190e12fd58301d1bab52db98b1f533614d7ed920689f63d5a31af1"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 4,
+          "name": "1 pinpoint of fenugreek seed",
+          "nameAr": "بذور حلبة",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "decisionNote": "المصدر يقول pinpoint دون مقدار قياسي؛ لا تحويل إلى رشة أو وزن.",
+          "sourceText": "1 pinpoint of fenugreek seed",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:452631",
+            "recordId": "wikibooks-452631-r4512915",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4512915",
+            "sourceSha256": "e7f8e302c78f20756845ad80a612ae4458586ca3511d87f85d99327eb94edccd",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 4,
+            "lineId": "source-line-5",
+            "sourceText": "1 pinpoint of fenugreek seed",
+            "derivedRecipeSha256": "1ddc09db9c190e12fd58301d1bab52db98b1f533614d7ed920689f63d5a31af1"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 5,
+          "name": "2 pandan leaves",
+          "nameAr": "أوراق باندان",
+          "amount": 2,
+          "unit": "leaf",
+          "optional": false,
+          "included": true,
+          "decisionNote": "الكمية كما وردت؛ لا تحويل إلى وزن أو غذاء معيّن.",
+          "sourceText": "2 pandan leaves",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:452631",
+            "recordId": "wikibooks-452631-r4512915",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4512915",
+            "sourceSha256": "e7f8e302c78f20756845ad80a612ae4458586ca3511d87f85d99327eb94edccd",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 5,
+            "lineId": "source-line-6",
+            "sourceText": "2 pandan leaves",
+            "derivedRecipeSha256": "1ddc09db9c190e12fd58301d1bab52db98b1f533614d7ed920689f63d5a31af1"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "n": 1,
+          "textAr": "اشطف الأرز وصفِّه.",
+          "sourceStepIndices": [
+            0
+          ],
+          "duration": null
+        },
+        {
+          "n": 2,
+          "textAr": "ضع كل المكونات في مقلاة عميقة أو قدر، مع التأكد من غمر الأرز بحليب جوز الهند بمقدار 2 سم بحسب النص.",
+          "sourceStepIndices": [
+            1
+          ],
+          "duration": null
+        },
+        {
+          "n": 3,
+          "textAr": "غطِّ القدر واطهه على نار متوسطة إلى منخفضة حتى يمتص السائل.",
+          "sourceStepIndices": [
+            2
+          ],
+          "duration": null
+        },
+        {
+          "n": 4,
+          "textAr": "أزل أوراق الباندان.",
+          "sourceStepIndices": [
+            3
+          ],
+          "duration": null
+        },
+        {
+          "n": 5,
+          "textAr": "اسكب بقية حليب جوز الهند فوق الأرز.",
+          "sourceStepIndices": [
+            4
+          ],
+          "duration": null
+        },
+        {
+          "n": 6,
+          "textAr": "اتركه يرتاح 15 دقيقة في درجة حرارة الغرفة ثم قدّمه.",
+          "sourceStepIndices": [
+            5
+          ],
+          "duration": {
+            "min": 15,
+            "max": 15,
+            "scope": "rest-room-temperature",
+            "approximate": false
+          }
+        }
+      ],
+      "excludedSourceSteps": [],
+      "notes": [
+        "المصدر يقول وضع كل المكونات أولًا ثم إضافة بقية الحليب لاحقًا دون تحديد تقسيم 400 مل؛ حُفظ التناقض واحتاج مراجعة، ولم يُختر مقدار للجزء الأول أو الأخير.",
+        "أربع حصص معلنة. زمن الطبخ غير محدد؛ 15 دقيقة للراحة فقط.",
+        "ملاحظات المصدر تقترح 2 ديسيلتر حليب مع 2 ديسيلتر ماء أو 350 جم أرز وفق السمك والنقع والتفضيل؛ بدائل غير مختارة ولم تُبدّل المقادير الأساسية."
+      ],
+      "blockers": [
+        "توزيع الحليب بين الخطوات ومقدار الحلبة وزمن الطهي غير محسومة؛ لا تنفيذ أو تحجيم تلقائي."
+      ],
+      "provenance": {
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "recordId": "wikibooks-452631-r4512915",
+        "sourceRevision": "4512915",
+        "sourceRevisionTimestamp": "2025-06-18T23:48:25Z",
+        "retrievedAt": "2026-10-13T12:38:21.252Z",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Coconut%20Rice%20(Indonesian)&oldid=4512915",
+        "sourceSha256": "e7f8e302c78f20756845ad80a612ae4458586ca3511d87f85d99327eb94edccd",
+        "derivedRecipeSha256": "1ddc09db9c190e12fd58301d1bab52db98b1f533614d7ed920689f63d5a31af1",
+        "sourceSnapshotFile": "data/recipes/curated-local/eighth-reviewed-20261015/source-snapshots/452631.json",
+        "sourceSnapshotSha256": "5fbdcacfe7e997817587c17c3ebb82315d73ddec05cf5548b8c7703c5879bd1d",
+        "license": {
+          "id": "wikibooks-cookbook-cc-by-sa-4.0",
+          "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+          "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+          "policyStatus": "verified-license",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+          "changeNoticeRequired": true,
+          "shareAlikeRequired": true
+        },
+        "licenseSha256": "7dc7e6d68854fef6219629c22af63a6408816df9a465f677ba7ea4bb69bd88b3",
+        "changeNotice": "Six Arabic adaptations from exact revisions already present in the local Wikibooks archive. Source categories are retained as evidence, not approved national cuisine. Original quantities, alternatives, unknowns, and timing gaps remain explicit. No new books or network requests. CC BY-SA 4.0 attribution and change notice retained; page-specific rights exceptions are not reviewed."
+      },
+      "nutrition": null,
+      "runtimeReady": false,
+      "actuallyKitchenTested": false,
+      "gates": {
+        "culinarySourceTranscription": true,
+        "independentCulinaryApproval": false,
+        "perPageLicenseApproved": false,
+        "inventoryIdentityApproved": false,
+        "nutritionApproved": false
+      },
+      "contentSha256": "c5bfe9428b125f8ad45b4410744a6a11dda8e0b02558a446048b643e70e35889"
+    }
+  ],
+  "relationships": [],
+  "counts": {
+    "recipes": 6,
+    "ingredientLines": 44,
+    "supplementalIngredients": 4,
+    "steps": 32,
+    "fullySpecified": 0,
+    "needsReview": 6,
+    "notCookable": 0,
+    "sourceSupportedCuisineLabels": 5,
+    "runtimeReady": 0
+  },
+  "duplicateReview": {
+    "scope": "Exact source identities, titles, family IDs, selected labels, and existing 54 catalogue names compared with seven prior local packs and archived creator records; no global 6056-record uniqueness claim.",
+    "priorLocalRecords": 56,
+    "creatorArchiveRecords": 22,
+    "duplicateSourceIds": 0,
+    "duplicateTitles": 0,
+    "duplicateFamilies": 0,
+    "existingCatalogueCount": 54,
+    "exactCatalogueNameMatches": [],
+    "crossLanguageDuplicateReview": "not performed; no global uniqueness claim"
+  }
+}

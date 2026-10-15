@@ -80,3 +80,8 @@ Currentlibrary70/13packs/48snapshots. resolveUsdaCandidate returnsauser-selected
 ## Current §81 — source-scoped package choice
 
 Current78 entries/14packs/56snapshots. Food search can now resolve an explicitly chosen package after source pin, market and whole-row consistency checks. Optional label basis evidence must name the chosen barcode; unknown basis remains a calculation gap. This returns a FoodRecord, followed by the same explicit per-line quantity/form/inclusion/scaling decisions and complete atomic private-review save. Source quantity audit715/797 is source-only and never saved-user review completion. LIBRARY-FOOD-SELECTION.md defines both generic and packaged branches.
+
+
+## Current §82
+
+RecipeLibraryMassProposal.fromSource requires full source fingerprint, exact line and explicit acknowledgement of an existing positive numeric g/kg declaration. It preserves amount/unit/raw text without parsing or conversion. toDecision rechecks current recipe/source and applicable exclusion override; food/forms/inclusion/scaling/as-purchased/preparation remain explicit and quantityEstimated is always true. No measurement, food match, source approval or state write. Contract docs/LIBRARY-SOURCE-MASS.md. 84 readable source records =62 offline archive +21 creator website +1 indexed video description;15 pinned packs/62 snapshots,51 local source cuisine/region labels. Planning54/4 and reviewed method family1 unchanged;0 new runtime/nutrition approvals. Final258Flutter/27relatedNode/analyze clean; earlier counts are historical.
