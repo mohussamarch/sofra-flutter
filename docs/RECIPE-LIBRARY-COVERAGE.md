@@ -58,3 +58,8 @@ for (final recipe in report.recipes) {
 ## Current §85
 
 86 source records=62localarchive+21creatorwebsite+3indexedYTdescriptions;16packs/62snapshots,51local source labels. Planning54/4 unchanged. New read-only monthly explicit alternative comparison and runtime OFF contact/privacy guards;269Flutter/62Node/analyze clean. HANDOFF§85. Sourceaudit86recipes/862lines/773distinctquantityreview,162missingamount/155missingunit/618unitreview/0nonpositive/49procedural/17optional;all86withgaps/0runtime.89quantity-unflagged lines stillneedidentity/form/inclusion/scaling review. New2 indexedsource records have17unknown quantities; no resolved saveduserreview inferred.
+
+
+## Current §86
+
+88 readable source records=62localarchive+23creatorwebsite+3indexedYTdescriptions;17packs/62snapshots,51local source labels. Planning54/4 and reviewed naanmethodfamily1 unchanged. KitchenService snapshot-safe monthly advisory adapter implemented;282fullFlutter/36relatedNode/analyze clean. HANDOFF§86. Actual audit88recipes/880ingredientlines/789distinctquantityreview;168missingamount/162missingunit/627unitreview/0nonpositive/49procedural/17optional;all88withgaps/0runtime.91otherlines still need explicit identity/form/inclusion/scaling review; counts overlap, no saved review completion inferred.

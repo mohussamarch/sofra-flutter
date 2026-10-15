@@ -1,6 +1,6 @@
 # مكتبة الوصفات المقروءة — الحالة الحالية
 
-الحالة الحالية HANDOFF§85:86 سجلًا مقروءًا،16 حزمة مثبتة و62 لقطة مصدر؛62 أرشيفًا+21 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
+الحالة الحالية HANDOFF§86:88 سجلًا مقروءًا،17 حزمة مثبتة و62 لقطة مصدر؛62 أرشيفًا+23 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
 
 ## تفصيل تسليم§71 التاريخي
 
@@ -97,3 +97,8 @@ Six additional offline drafts: Korean bulgogi, Brazilian fish moqueca, Greek sag
 ## Current §85
 
 Two indexed-description records attributed specifically to CBCSofra(Verified)/NaglaaElSherbiny: taro _DmSJzc2Ksc(2022-10-31), sayadiya-rice segment aExAOsnzqSI(2022-08-10).16listed+1proceduralwater/10steps;17quantityunknowns,yield/time/cuisine/rightsunknown,0familyclaims/0directbody/media/transcripts. Search2queries+2directopensfailed=4underlyingrequests within8; stoppedat2acceptedsource records. Raw search receipt extracts/content hashes retained; no claim of upstreamsignature. PackSHAc99a0e0ba72c36011eb64b895d637167e001e860b151ecdac1e28f3b1437eb93;manifest508fb8c04b401466c2d63c9b9bd0f0ab1c908a3a02cfe306654883741569ebd6. All15previousselectedpackpinsunchanged;sourcecuisine-labeltotal51unchanged.
+
+
+## Current §86
+
+Two ChefOmar site-attributed creator-website records: chicken with mushroom cream and mujaddara component. Site/channel ownership link unconfirmed, legacy creator ID/officialSite field is not ownership verification; youtubeDerived=false.18listedingredients/9Arabicsteps from3source methodparts,11amount+unit/7incomplete. Chicken500unitnull; mujaddara componentyield/timenull while combinedpage30min/4servings remain separate evidence.6queries+2failedopens=8/8underlying requests; indexed excerpts only,0directbody/media/transcript/newbooks. No cuisine/family/rights/nutrition/runtime approval. PackSHAe66c8109e43a72c58645ba575ad7e92ca3d17cf58d626da1dd7be84ceed1be7d; manifest4e1a9f2674b7c4290401d712c47c081fdf3e0f1d648138b93964fe84338cadcc; all16priorpackpins unchanged.

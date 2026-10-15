@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-15T06:42:45.851700+00:00",
-    "taskId": "budget-advisory-core",
-    "summary": "Added readonlymonthlybudgetalternatives,2modernindexedsource recipes andOFFcontact/privacyguards;269Flutter/62Node/analyzeclean.",
+    "at": "2026-10-15T07:00:14.454070+00:00",
+    "taskId": "budget-advisory-service",
+    "summary": "Built snapshot-safe monthly service and2creatorwebsite records;282Flutter/36Node/analyze clean.",
     "evidence": [
-      "lib/domain/monthly_budget_choices.dart",
-      "data/recipes/arabic-youtube/ninth-batch-20261015/recipes.json",
-      "tool/food/off-contact.test.mjs",
+      "lib/data/kitchen_service.dart",
+      "test/monthly_budget_service_test.dart",
+      "data/recipes/arabic-youtube/tenth-batch-20261015/recipes.json",
       "docs/HANDOFF.md"
     ]
   },
@@ -1185,23 +1185,73 @@
     {
       "id": "budget-advisory-service",
       "priority": 34,
-      "status": "ready",
+      "status": "done",
       "owner": null,
       "dependsOn": [
         "budget-advisory-core"
       ],
-      "nextAction": "Snapshot-safe readonly KitchenService adapter assembling current reviewed candidate needs and country/user-first costs; no autosave/planedit."
+      "nextAction": "Next bounded explicit-candidate search or actual reviewed recipe inputs; no automatic source approval.",
+      "lastAttemptAt": "2026-10-15T06:47:41.001423+00:00",
+      "completedAt": "2026-10-15T07:00:14.454070+00:00",
+      "lastProgressAt": "2026-10-15T07:00:14.454070+00:00",
+      "evidence": [
+        "lib/data/kitchen_service.dart",
+        "test/monthly_budget_service_test.dart",
+        "docs/agents/budget-service-0650.md"
+      ],
+      "completedUnit": {
+        "newTests": 13,
+        "focusedTests": 31,
+        "fullFlutterTests": 282,
+        "stateWrites": 0
+      }
+    },
+    {
+      "id": "modern-recipes-tenth",
+      "priority": 35,
+      "status": "done",
+      "owner": null,
+      "dependsOn": [],
+      "lastAttemptAt": "2026-10-15T06:47:41.001423+00:00",
+      "nextAction": "Next bounded explicit-candidate search or actual reviewed recipe inputs; no automatic source approval.",
+      "completedAt": "2026-10-15T07:00:14.454070+00:00",
+      "lastProgressAt": "2026-10-15T07:00:14.454070+00:00",
+      "evidence": [
+        "data/recipes/arabic-youtube/tenth-batch-20261015/recipes.json",
+        "tool/recipes/creator-tenth-validation.test.mjs",
+        "docs/agents/modern-recipes-0650.md"
+      ],
+      "completedUnit": {
+        "records": 2,
+        "listedIngredients": 18,
+        "steps": 9,
+        "quantityIncompleteLines": 7,
+        "underlyingRequests": 8,
+        "requestCap": 8,
+        "sourceTests": 5,
+        "runtimeApprovals": 0
+      }
+    },
+    {
+      "id": "budget-candidate-search",
+      "priority": 34,
+      "status": "ready",
+      "owner": null,
+      "dependsOn": [
+        "budget-advisory-service"
+      ],
+      "nextAction": "Bounded deterministic lazy whole-option combinations from explicit reviewed pools; unknown/capped is indeterminate, no autoapply."
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-15T06:42:45.851700+00:00",
-    "primaryUsedPercent": 32,
-    "weeklyUsedPercent": 5,
+    "at": "2026-10-15T07:00:14.454070+00:00",
+    "primaryUsedPercent": 64,
+    "weeklyUsedPercent": 10,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Unitreadyfordelivery; freshactualreadingbefore nextunit, no credits/reset."
+    "action": "Useful unit verified; fresh quota after delivery before next unit."
   },
-  "updatedAt": "2026-10-15T06:42:45.851700+00:00",
+  "updatedAt": "2026-10-15T07:00:14.454070+00:00",
   "resumeDiagnosis": {
     "at": "2026-10-15T06:33:27.756165+00:00",
     "cause": "Prior actual85to98percent quota limited complete source/core unit capacity; no running collector/writer. New actual0/0ordinarytrue reading permits resume. No reset or credits used byagent.",

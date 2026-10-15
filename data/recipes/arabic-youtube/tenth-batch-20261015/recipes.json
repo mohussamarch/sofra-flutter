@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "batchId": "arabic-creator-tenth-batch-20261015",
+  "retrievedAt": "2026-10-15",
+  "quotaAtStart": {
+    "primaryUsedPercent": 38,
+    "weeklyUsedPercent": 6,
+    "ordinaryUsageAllowed": true,
+    "stopThresholdPercent": 90
+  },
+  "sourcePolicy": {
+    "sourceKind": "creator-website",
+    "youtubeDerived": false,
+    "sourceApproval": null,
+    "reuseRights": null,
+    "clinicalApproval": null,
+    "nutritionApproval": null,
+    "mediaDownloaded": false,
+    "transcriptExtraction": false,
+    "httpBodyHash": null,
+    "limitations": "Site-attributed Chef Omar website indexed extracts; accepted chicken page direct open failed, mujaddara page not opened. No raw upstream body, video derivation, media/transcript, rights or runtime approval. Six query targets plus two opens exhausted eight-request budget. Verified channel ownership linkage remains unconfirmed."
+  },
+  "creator": {
+    "creatorId": "chef-omar-official-website",
+    "name": "الشيف عمر",
+    "officialSite": "https://chef-omar.com/",
+    "identityStatus": "site-attributed; ownership-link-to-verified-channel-not-established-in-this-unit",
+    "channelUrl": null,
+    "identityEvidence": "Prior fifth pack establishes website name only, with channel link pending. Current specific recipe results have Chef Omar site titles; ownership linkage to a verified channel remains unconfirmed."
+  },
+  "sourceIndex": [
+    {
+      "index": 0,
+      "request": 6,
+      "url": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+      "outcome": "accepted-complete-indexed-site-attributed-website-extract",
+      "extractFile": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-06.txt",
+      "extractSha256": "7a8cd713299cff6ce8d14e7347f957500fa044341807ec9e392bf71d34ecd88e"
+    },
+    {
+      "index": 1,
+      "request": 5,
+      "url": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+      "outcome": "accepted-complete-indexed-site-attributed-website-extract",
+      "extractFile": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-05.txt",
+      "extractSha256": "5ac62a752f6672ec837affbdc67a0687e424bc1ba654ce659243fd320475b1cd"
+    }
+  ],
+  "sourceSearchLog": [
+    {
+      "request": 1,
+      "underlyingRequestIndices": [
+        1
+      ],
+      "queries": [
+        "site:youtube.com/watch \"منال العالم\" \"طريقة التحضير\" \"كوب\" \"مجدرة\""
+      ],
+      "outcome": "No results"
+    },
+    {
+      "request": 2,
+      "underlyingRequestIndices": [
+        2
+      ],
+      "queries": [
+        "site:youtube.com/watch \"Manal Alalem\" \"طريقة التحضير\" \"كوب\""
+      ],
+      "outcome": "Existing kofta duplicate plus unnamed chicken/baked-eggplant description with fraction/herb/temperature ambiguities; neither accepted"
+    },
+    {
+      "request": 3,
+      "underlyingRequestIndices": [
+        3
+      ],
+      "queries": [
+        "site:manalonline.com \"مجدرة\" \"المقادير\" \"طريقة التحضير\""
+      ],
+      "outcome": "No results"
+    },
+    {
+      "request": 4,
+      "underlyingRequestIndices": [
+        4
+      ],
+      "queries": [
+        "site:manalonline.com \"صينية البطاطس\" \"المقادير\""
+      ],
+      "outcome": "No results"
+    },
+    {
+      "request": 5,
+      "underlyingRequestIndices": [
+        5
+      ],
+      "queries": [
+        "site:chef-omar.com \"Mujaddara\""
+      ],
+      "outcome": "Site-attributed website mujaddara and pasta recipe with complete method and ingredient sections found"
+    },
+    {
+      "request": 6,
+      "underlyingRequestIndices": [
+        6
+      ],
+      "queries": [
+        "site:chef-omar.com/blog/post/ \"Chicken with cream of mushroom\""
+      ],
+      "outcome": "Site-attributed website chicken-with-cream recipe with complete method and ingredient list found"
+    },
+    {
+      "request": 7,
+      "underlyingRequestIndices": [
+        7,
+        8
+      ],
+      "targets": [
+        "https://chef-omar.com/blog/post/Chicken_with_cream/",
+        "https://chef-omar.com/blog/post/Rice-with-Hummus/"
+      ],
+      "outcome": "Both direct opens failed (cache miss; timeout). Rice/hummus not accepted because no recipe body or complete extract was retrieved. No retry."
+    }
+  ],
+  "requestCap": 8,
+  "underlyingRequestCount": 8,
+  "stoppedBecause": "request-cap-reached; two complete same-kind website extracts available",
+  "recipes": [
+    {
+      "recipeId": "chef-omar-website-chicken-mushroom-cream",
+      "title": "دجاج بكريمة الفطر",
+      "titleBasis": "Arabic translation of exact displayed website title",
+      "creatorId": "chef-omar-official-website",
+      "sourceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+      "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-15",
+      "publishedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": null,
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "worker-primary-search-extract",
+        "sourceIndex": 0,
+        "sourceExtractFile": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-06.txt",
+        "sourceExtractSha256": "7a8cd713299cff6ce8d14e7347f957500fa044341807ec9e392bf71d34ecd88e",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "mediaAccessed": false,
+        "transcriptAccessed": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 2,
+        "sourcePageTitle": "Chicken with cream of mushroom",
+        "selectedSection": "whole-recipe",
+        "directFetchOutcome": "failed-cache-miss",
+        "directFetchRequest": 7,
+        "sourcePageYield": {
+          "amount": 4,
+          "unit": "serving",
+          "sourceText": "Serves 4",
+          "scope": "whole-recipe"
+        },
+        "sourcePageTotalTime": {
+          "minutes": 30,
+          "sourceText": "30 mins",
+          "scope": "whole-recipe"
+        }
+      },
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 2,
+      "cuisine": {
+        "value": null,
+        "evidence": null,
+        "evidenceUrl": null,
+        "reviewStatus": "pending",
+        "status": "source-cuisine-not-stated"
+      },
+      "yield": {
+        "amount": 4,
+        "unit": "serving",
+        "sourceText": "Serves 4"
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": 30,
+        "publishedTotalText": "30 mins",
+        "publishedTotalEvidence": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": 2,
+            "approximate": true,
+            "phase": "brown-first-side",
+            "sourceStepIndices": [
+              1
+            ]
+          },
+          {
+            "minutes": 2,
+            "approximate": true,
+            "phase": "brown-second-side",
+            "sourceStepIndices": [
+              1
+            ]
+          },
+          {
+            "minutes": 10,
+            "approximate": true,
+            "phase": "simmer-chicken-in-cream",
+            "sourceStepIndices": [
+              1
+            ]
+          }
+        ],
+        "optionalWaits": [],
+        "conflicts": [
+          "Published total30minutes is not measured elapsed time; timers are approximate phases."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "زعتر أو أوريغانو ورق",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Thyme or oregano leaves",
+          "group": "chicken",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 0,
+          "optional": false
+        },
+        {
+          "labelAr": "زبدة",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "tablespoon butter",
+          "group": "chicken",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 1,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أبيض",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "Half a teaspoon of white pepper",
+          "group": "chicken",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 2,
+          "optional": false
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "Teaspoon salt",
+          "group": "chicken",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 3,
+          "optional": false
+        },
+        {
+          "labelAr": "ثوم",
+          "amount": 3,
+          "unit": "clove",
+          "sourceQuantityText": "3 cloves garlic",
+          "group": "chicken",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 4,
+          "optional": false
+        },
+        {
+          "labelAr": "بصل صغير",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "small onion",
+          "group": "chicken",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 5,
+          "optional": false
+        },
+        {
+          "labelAr": "فطر",
+          "amount": 300,
+          "unit": "g",
+          "sourceQuantityText": "300 grams mushroom",
+          "group": "chicken",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 6,
+          "optional": false
+        },
+        {
+          "labelAr": "صدور دجاج",
+          "amount": 500,
+          "unit": null,
+          "sourceQuantityText": "500 chicken breasts",
+          "group": "chicken",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 7,
+          "optional": false
+        },
+        {
+          "labelAr": "زبدة",
+          "amount": 100,
+          "unit": "g",
+          "sourceQuantityText": "100 grams butter",
+          "group": "cream",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 8,
+          "optional": false
+        },
+        {
+          "labelAr": "دقيق",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 tablespoon flour",
+          "group": "cream",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 9,
+          "optional": false
+        },
+        {
+          "labelAr": "حليب كامل الدسم",
+          "amount": 600,
+          "unit": "ml",
+          "sourceQuantityText": "600ml full fat milk",
+          "group": "cream",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceIngredientIndex": 10,
+          "optional": false
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "اخلطي الحليب والدقيق ثم سخّنيهما حتى يغلي الحليب. ارفعي الوعاء وأذيبي فيه الزبدة مع التقليب.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "افرمي البصل والثوم وقطّعي الفطر قطعًا متوسطة.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 1
+        },
+        {
+          "textAr": "اقسمي كل صدر إلى جزأين وتبّليه بالملح والفلفل. حمّري القطع في الزبدة بمقلاة شديدة السخونة نحو دقيقتين لكل جانب، ثم ارفعيها.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceStepIndices": [
+            1
+          ],
+          "sourceStepSegmentIndex": 2
+        },
+        {
+          "textAr": "خفّضي النار وشوّحي البصل والثوم ثم الفطر. أضيفي الكريمة وأعيدي الدجاج مع قليل من الزعتر.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceStepIndices": [
+            1
+          ],
+          "sourceStepSegmentIndex": 3
+        },
+        {
+          "textAr": "اتركيه على النار نحو عشر دقائق، ثم أضيفي قليلًا من الملح والزعتر البري.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Chicken_with_cream/",
+          "sourceStepIndices": [
+            1
+          ],
+          "sourceStepSegmentIndex": 4
+        }
+      ],
+      "sourceNotes": [
+        "المصدر يكتب 500 chicken breasts بلا وحدة؛ حُفظ الرقم500 وبقيت الوحدة مجهولة، ولا يفترض أنه جرام.",
+        "small onion يذكر الحجم دون رقم؛ الكمية العددية مجهولة.",
+        "Thyme or oregano leaves بديل مصرح به؛ لم يُختر واحد منهما كهوية غذاء.",
+        "ترتيب عناوين مجموعتي المقادير في الصفحة معكوس: Mushroom chicken وprecious. رُبط الحليب والدقيق و100جرام زبدة بالكريمة من نص الطريقة نفسه.",
+        "الزبدة موزعة بسطرين منفصلين؛ مقدار القلي في الطريقة قليل دون قياس مستقل.",
+        "لفظ tablespoon butter وTeaspoon salt يذكر مكيالًا واحدًا دون رقم مطبوع؛ التطبيع1مكيال يحفظ النص الأصلي ولا يحوله إلى وزن."
+      ],
+      "unknowns": [
+        "chicken quantity unit",
+        "onion quantity",
+        "thyme-or-oregano amount",
+        "prep time",
+        "cook time",
+        "actual elapsed time",
+        "cuisine",
+        "publication date",
+        "reuse rights",
+        "source approval",
+        "clinical approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "contentSha256": "30c81a469ef02af024149629ac7340d6ae5c55dbff1db65e7d6617b78b18f93b"
+    },
+    {
+      "recipeId": "chef-omar-website-mujaddara-bulgur-section",
+      "title": "مجدرة بالبرغل",
+      "titleBasis": "Descriptive Arabic title from explicitly selected mujaddara section and listed bulgur",
+      "creatorId": "chef-omar-official-website",
+      "sourceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+      "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-15",
+      "publishedAt": null,
+      "sourceLanguage": "ar-and-en",
+      "sourceApproval": null,
+      "reuseRights": null,
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "worker-primary-search-extract",
+        "sourceIndex": 1,
+        "sourceExtractFile": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-05.txt",
+        "sourceExtractSha256": "5ac62a752f6672ec837affbdc67a0687e424bc1ba654ce659243fd320475b1cd",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "mediaAccessed": false,
+        "transcriptAccessed": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 1,
+        "sourcePageTitle": "Mujaddara and Pasta with Vegetables",
+        "selectedSection": "For the mujaddara / لتحضير المجدرة",
+        "directFetchOutcome": "not-attempted",
+        "directFetchRequest": null,
+        "sourcePageYield": {
+          "amount": 4,
+          "unit": "serving",
+          "sourceText": "Serves 4",
+          "scope": "combined-page-not-assigned-to-component"
+        },
+        "sourcePageTotalTime": {
+          "minutes": 30,
+          "sourceText": "30 mins",
+          "scope": "combined-page-not-assigned-to-component"
+        }
+      },
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 1,
+      "cuisine": {
+        "value": null,
+        "evidence": "Source introduction associates mujaddara with Syria, Lebanon, Iraq, Palestine and Jordan; these are source observations only.",
+        "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+        "reviewStatus": "pending",
+        "status": "multiple-source-regions-not-national-cuisine-approval"
+      },
+      "yield": {
+        "amount": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": null,
+        "publishedTotalText": null,
+        "publishedTotalEvidence": null,
+        "actualElapsedMinutes": null,
+        "sourceTimers": [],
+        "optionalWaits": [],
+        "conflicts": [
+          "Combined-page time30minutes and yield4 are retained in sourceEvidence only; component timing/yield unknown."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "عدس",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 cup of lentils",
+          "group": "mujaddara",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceIngredientIndex": 0,
+          "optional": false
+        },
+        {
+          "labelAr": "برغل",
+          "amount": 2,
+          "unit": "cup",
+          "sourceQuantityText": "2 cups of bulgur",
+          "group": "mujaddara",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceIngredientIndex": 1,
+          "optional": false
+        },
+        {
+          "labelAr": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Olive oil",
+          "group": "mujaddara",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceIngredientIndex": 2,
+          "optional": false
+        },
+        {
+          "labelAr": "بصل",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 onions",
+          "group": "mujaddara",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceIngredientIndex": 3,
+          "optional": false
+        },
+        {
+          "labelAr": "ملح",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "A pinch of salt",
+          "group": "mujaddara",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceIngredientIndex": 4,
+          "optional": false
+        },
+        {
+          "labelAr": "فلفل أبيض",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "A pinch of white pepper",
+          "group": "mujaddara",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceIngredientIndex": 5,
+          "optional": false
+        },
+        {
+          "labelAr": "ماء",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Immersion water",
+          "group": "mujaddara",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceIngredientIndex": 6,
+          "optional": false
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "اغسلي العدس والبرغل كلًا على حدة.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "شوّحي البصل المقطع في زيت الزيتون، ثم أضيفي العدس والماء المغلي. اتركي العدس على نار متوسطة حتى يقارب ثلاثة أرباع النضج.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 1
+        },
+        {
+          "textAr": "أضيفي البرغل والملح، ثم البصل المقطع كما يذكر المصدر، واتركي الخليط حتى ينضج.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 2
+        },
+        {
+          "textAr": "اسكبي المجدرة وزينيها بقليل من البصل المقلي.",
+          "evidenceUrl": "https://chef-omar.com/blog/post/Mujaddara-and-Pasta-with-Vegetables/",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 3
+        }
+      ],
+      "sourceNotes": [
+        "اختير قسم For the mujaddara وطريقته فقط. مقادير السلطة وقسم المعكرونة لم يستوردا؛ لم يحسبا طريقة أخرى للمجدرة.",
+        "30mins وServes4 معلومتان للصفحة المركبة؛ لا تُنسبان إلى المجدرة وحدها.",
+        "توزيع البصلتين بين التشويح والإضافة والتزيين غير مبين؛ لا تضاف بصلة أخرى مفترضة.",
+        "الفلفل الأبيض في القائمة لكن توقيت إضافته غير مذكور.",
+        "الصفحة تصف المجدرة بأنها من المأكولات العربية التراثية وتذكرسوريا ولبنان والعراق وفلسطين والأردن؛ تبقى تصنيفات المصدر غير معتمدة ولا تعني مطبخًا وطنيًا واحدًا."
+      ],
+      "unknowns": [
+        "oil/salt/pepper/water amounts",
+        "onion allocation",
+        "component yield",
+        "component time",
+        "publication date",
+        "reuse rights",
+        "source approval",
+        "clinical approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "contentSha256": "14929c41f72e319627d78005847bc1f1a66980762b67efb574599b1a83868b45"
+    }
+  ]
+}

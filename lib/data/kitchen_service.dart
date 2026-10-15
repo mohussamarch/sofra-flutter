@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import '../domain/kitchen_core.dart';
 import '../domain/purchase_forecast.dart';
+import '../domain/monthly_budget_choices.dart';
 import '../domain/food_nutrition.dart';
 import '../domain/person_nutrition.dart';
 import '../domain/recipe_nutrition.dart';
@@ -1208,6 +1209,50 @@ class KitchenService {
   double? estimatedCost(IngredientUse use, {List<UnitRule> rules = const []}) =>
       _cost(snapshot, use, rules);
 
+  // Shared by plan and advisory previews so explicit line decisions, scaling
+  // and unknown requirements retain identical semantics.
+  MonthlyBudgetMeal _purchasePreviewMeal(
+    PlannedMeal meal,
+    RecipeRevision revision, {
+    Set<int> optionalLines = const {},
+    Map<int, IngredientUse> measuredLines = const {},
+  }) {
+    final scaled = revision.recipe.forServings(meal.servings);
+    final rows = scaled.recipe.ingredients;
+    bool validLine(int line) => line >= 0 && line < rows.length;
+    if (optionalLines.any((line) => !validLine(line) || !rows[line].optional) ||
+        measuredLines.entries.any(
+          (entry) =>
+              !validLine(entry.key) ||
+              scaled.quantity(rows[entry.key]) != null ||
+              entry.value.ingredientId != rows[entry.key].id ||
+              (rows[entry.key].optional && !optionalLines.contains(entry.key)),
+        )) {
+      throw ArgumentError('Invalid or ignored forecast line decision');
+    }
+    final uses = <IngredientUse>[], unresolved = <String>{};
+    for (var line = 0; line < rows.length; line++) {
+      final ingredient = rows[line];
+      if (ingredient.optional && !optionalLines.contains(line)) continue;
+      final quantity = scaled.quantity(ingredient);
+      final explicit = measuredLines[line];
+      if (explicit != null) {
+        uses.add(explicit);
+      } else if (quantity == null) {
+        unresolved.add('${meal.id}:$line:${ingredient.id}');
+      } else {
+        uses.add(IngredientUse(ingredient.id, quantity, ingredient.unit!));
+      }
+    }
+    return MonthlyBudgetMeal(
+      date: meal.date,
+      slot: meal.slot,
+      candidateId: revision.key,
+      requirements: uses,
+      unresolvedRequirements: unresolved,
+    );
+  }
+
   Future<PurchaseForecast> previewPurchases(
     Iterable<String> planIds, {
     List<UnitRule> rules = const [],
@@ -1251,34 +1296,14 @@ class KitchenService {
     final uses = <IngredientUse>[], unresolved = <String>{};
     for (final meal in selected) {
       final revision = await _resolveMeal(meal);
-      final scaled = revision.recipe.forServings(meal.servings);
-      final rows = scaled.recipe.ingredients;
-      final optional = optionals[meal.id] ?? <int>{};
-      final measuredLines = measured[meal.id] ?? <int, IngredientUse>{};
-      bool validLine(int line) => line >= 0 && line < rows.length;
-      if (optional.any((line) => !validLine(line) || !rows[line].optional) ||
-          measuredLines.entries.any(
-            (entry) =>
-                !validLine(entry.key) ||
-                scaled.quantity(rows[entry.key]) != null ||
-                entry.value.ingredientId != rows[entry.key].id ||
-                (rows[entry.key].optional && !optional.contains(entry.key)),
-          )) {
-        throw ArgumentError('Invalid or ignored forecast line decision');
-      }
-      for (var line = 0; line < rows.length; line++) {
-        final ingredient = rows[line];
-        if (ingredient.optional && !optional.contains(line)) continue;
-        final quantity = scaled.quantity(ingredient);
-        final explicit = measuredLines[line];
-        if (explicit != null) {
-          uses.add(explicit);
-        } else if (quantity == null) {
-          unresolved.add('${meal.id}:$line:${ingredient.id}');
-        } else {
-          uses.add(IngredientUse(ingredient.id, quantity, ingredient.unit!));
-        }
-      }
+      final preview = _purchasePreviewMeal(
+        meal,
+        revision,
+        optionalLines: optionals[meal.id] ?? const {},
+        measuredLines: measured[meal.id] ?? const {},
+      );
+      uses.addAll(preview.requirements);
+      unresolved.addAll(preview.unresolvedRequirements);
     }
     await _tail;
     if (jsonEncode(snapshot) != guard) {
@@ -1295,6 +1320,117 @@ class KitchenService {
       rules: ownedRules,
       estimateCost: (use) => _cost(k, use, ownedRules),
       unresolvedRequirements: unresolved,
+    );
+  }
+
+  /// Read-only advice for explicit unsaved recipe candidates and a saved month.
+  /// Uses current kitchen prices/ledger/stock and the existing effective-revision
+  /// resolver; a null requested revision is resolved now, not initially pinned.
+  /// The returned candidateId is each exact resolved revision key. Coverage can
+  /// be partial; no clinical/food/quantity approval or automatic plan is implied.
+  Future<MonthlyBudgetComparison> previewMonthlyBudgetChoices(
+    String budgetId, {
+    required Map<String, List<PlannedMeal>> options,
+    List<UnitRule> rules = const [],
+    Map<String, Map<String, Set<int>>> optionalLinesByOption = const {},
+    Map<String, Map<String, Map<int, IngredientUse>>> measuredByOption =
+        const {},
+  }) async {
+    // All leaves (PlannedMeal, IngredientUse and UnitRule) have final scalar
+    // fields. Own every mutable collection before yielding to queued work.
+    final candidates = {
+      for (final entry in options.entries)
+        entry.key: List<PlannedMeal>.of(entry.value),
+    };
+    final ownedRules = List<UnitRule>.of(rules);
+    final optionals = {
+      for (final option in optionalLinesByOption.entries)
+        option.key: {
+          for (final meal in option.value.entries)
+            meal.key: Set<int>.of(meal.value),
+        },
+    };
+    final measurements = {
+      for (final option in measuredByOption.entries)
+        option.key: {
+          for (final meal in option.value.entries)
+            meal.key: Map<int, IngredientUse>.of(meal.value),
+        },
+    };
+    if (budgetId.trim().isEmpty ||
+        candidates.isEmpty ||
+        candidates.keys.any((id) => id.trim().isEmpty) ||
+        optionals.keys.any((id) => !candidates.containsKey(id)) ||
+        measurements.keys.any((id) => !candidates.containsKey(id))) {
+      throw ArgumentError(
+        'Explicit budget/options and selected decisions required',
+      );
+    }
+    for (final option in candidates.entries) {
+      final ids = option.value.map((meal) => meal.id).toSet();
+      if (ids.length != option.value.length ||
+          (optionals[option.key]?.keys.any((id) => !ids.contains(id)) ??
+              false) ||
+          (measurements[option.key]?.keys.any((id) => !ids.contains(id)) ??
+              false)) {
+        throw ArgumentError('Duplicate candidate IDs or unselected decisions');
+      }
+      if (option.value.any((meal) => meal.completed)) {
+        throw StateError('Cannot forecast completed candidate meals');
+      }
+    }
+    await _tail;
+    final k = snapshot;
+    final guard = jsonEncode(k);
+    final budgets = (k['budgets'] as List)
+        .where((row) => row['id'] == budgetId)
+        .toList();
+    if (budgets.length != 1) throw ArgumentError('Unknown or ambiguous budget');
+    final period = BudgetPeriod.fromJson(
+      Map<String, dynamic>.from(budgets.single as Map),
+    );
+    if (period.country !=
+        MarketProfile.fromCode(k['country'] as String).country) {
+      throw StateError(
+        'Select the budget country before previewing alternatives',
+      );
+    }
+    final resolved = <MonthlyBudgetOption>[];
+    for (final option in candidates.entries) {
+      final meals = <MonthlyBudgetMeal>[];
+      for (final meal in option.value) {
+        final revision = await _resolveMeal(meal);
+        meals.add(
+          _purchasePreviewMeal(
+            meal,
+            revision,
+            optionalLines: optionals[option.key]?[meal.id] ?? const {},
+            measuredLines: measurements[option.key]?[meal.id] ?? const {},
+          ),
+        );
+      }
+      resolved.add(MonthlyBudgetOption(id: option.key, meals: meals));
+    }
+    await _tail;
+    if (jsonEncode(snapshot) != guard) {
+      throw StateError('Kitchen changed; review monthly budget choices again');
+    }
+    return compareMonthlyBudgetChoices(
+      period: period,
+      options: resolved,
+      rules: ownedRules,
+      stock: (k['inventory'] as List)
+          .map(
+            (row) =>
+                InventoryLot.fromJson(Map<String, dynamic>.from(row as Map)),
+          )
+          .toList(),
+      confirmedPurchases: (k['purchases'] as List)
+          .map(
+            (row) => MoneyEntry.fromJson(Map<String, dynamic>.from(row as Map)),
+          )
+          .toList(),
+      estimateCost: (_, use) => _cost(k, use, ownedRules),
     );
   }
 

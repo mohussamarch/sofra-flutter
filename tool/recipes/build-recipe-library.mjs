@@ -21,6 +21,7 @@ const files=[
  ['creator-website','data/recipes/arabic-youtube/sixth-batch-20261014/recipes.json'],
  ['creator-youtube','data/recipes/arabic-youtube/seventh-batch-20261015/recipes.json'],
  ['creator-youtube','data/recipes/arabic-youtube/ninth-batch-20261015/recipes.json'],
+ ['creator-website','data/recipes/arabic-youtube/tenth-batch-20261015/recipes.json'],
  ['curated-local','data/recipes/curated-local/sixth-reviewed-20261015/normalized-recipes.json'],
  ['curated-local','data/recipes/curated-local/seventh-reviewed-20261015/normalized-recipes.json'],
  ['curated-local','data/recipes/curated-local/eighth-reviewed-20261015/normalized-recipes.json'],

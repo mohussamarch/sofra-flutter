@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "description": "Exact returned web tool text including unrelated candidates, not raw upstream HTTP bodies or proof of identity/rights.",
+  "retrievedAt": "2026-10-15",
+  "requests": [
+    {
+      "toolCall": 1,
+      "file": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-01.txt",
+      "sha256": "16ec7624db2ae01bffc621a7f02bf7da483925d597e602db957bc70f171833f1",
+      "underlyingRequestIndices": [
+        1
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "indexed-search-extract",
+      "httpBodyHash": null
+    },
+    {
+      "toolCall": 2,
+      "file": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-02.txt",
+      "sha256": "7a9f350fffc57bb624facb7ba3a3bbb239c5e052cf97c39f8b64747941559fd2",
+      "underlyingRequestIndices": [
+        2
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "indexed-search-extract",
+      "httpBodyHash": null
+    },
+    {
+      "toolCall": 3,
+      "file": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-03.txt",
+      "sha256": "16ec7624db2ae01bffc621a7f02bf7da483925d597e602db957bc70f171833f1",
+      "underlyingRequestIndices": [
+        3
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "indexed-search-extract",
+      "httpBodyHash": null
+    },
+    {
+      "toolCall": 4,
+      "file": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-04.txt",
+      "sha256": "16ec7624db2ae01bffc621a7f02bf7da483925d597e602db957bc70f171833f1",
+      "underlyingRequestIndices": [
+        4
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "indexed-search-extract",
+      "httpBodyHash": null
+    },
+    {
+      "toolCall": 5,
+      "file": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-05.txt",
+      "sha256": "5ac62a752f6672ec837affbdc67a0687e424bc1ba654ce659243fd320475b1cd",
+      "underlyingRequestIndices": [
+        5
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "indexed-search-extract",
+      "httpBodyHash": null
+    },
+    {
+      "toolCall": 6,
+      "file": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-06.txt",
+      "sha256": "7a8cd713299cff6ce8d14e7347f957500fa044341807ec9e392bf71d34ecd88e",
+      "underlyingRequestIndices": [
+        6
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "indexed-search-extract",
+      "httpBodyHash": null
+    },
+    {
+      "toolCall": 7,
+      "file": "data/recipes/arabic-youtube/tenth-batch-20261015/source-extracts/request-07.txt",
+      "sha256": "e09ce228b4422e05f8ca82d43512806ed4fb7010b6737b6eafafd6566379a158",
+      "underlyingRequestIndices": [
+        7,
+        8
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "failed-direct-page-opens",
+      "httpBodyHash": null
+    }
+  ]
+}
