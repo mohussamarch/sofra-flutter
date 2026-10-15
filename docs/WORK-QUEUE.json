@@ -2,14 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-15T02:37:34.778884+00:00",
-    "taskId": "library-food-search",
-    "summary": "Pinned per-ingredient food search and truthful indexed video source integrated;66records/681lines/603quantity gaps.247Flutter/31Node, analyzerclean.",
+    "at": "2026-10-15T02:52:23.383392+00:00",
+    "taskId": "local-curation-sixth",
+    "summary": "4offlineArabicdrafts/4newsourcecategorylabels andexplicitUSDAidentityselection tested;70library,642of722quantitygaps;250Flutter/34Node/analyzeclean.",
     "evidence": [
+      "data/recipes/curated-local/sixth-reviewed-20261015/normalized-recipes.json",
       "lib/data/recipe_library_food_search.dart",
-      "test/recipe_library_food_search_test.dart",
-      "test/recipe_library_video_source_test.dart",
-      "data/recipes/arabic-youtube/seventh-batch-20261015/recipes.json",
+      "test/recipe_library_food_selection_test.dart",
       "docs/HANDOFF.md"
     ]
   },
@@ -418,9 +417,9 @@
         "compound-revisions"
       ],
       "status": "ready",
-      "nextAction": "Use source-pinned indexed food search for actual food/form/quantity review.66source recipes/681lines/603distinct quantity gaps; no binding inferred.",
+      "nextAction": "Review actual source food/form/amount throughpinnedsearch+explicitcandidate selection.70recipes/722lines/642distinctquantitygaps;no bindinginferred.",
       "infrastructureDoesNotApproveData": true,
-      "lastProgressAt": "2026-10-15T02:37:34.778884+00:00",
+      "lastProgressAt": "2026-10-15T02:52:23.383392+00:00",
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
       "completedUnit": {
         "schemaVersion": 1,
@@ -447,16 +446,18 @@
         "test/recipe_library_food_search_test.dart"
       ],
       "sourceQuantityAudit": {
-        "recipeCount": 66,
-        "ingredientCount": 681,
-        "quantityReviewLineCount": 603,
-        "missingAmountCount": 105,
-        "missingUnitCount": 98,
-        "unitNeedsReviewCount": 505,
+        "schemaVersion": 1,
+        "scope": "source-library-review-triage",
+        "recipeCount": 70,
+        "ingredientCount": 722,
+        "quantityReviewLineCount": 642,
+        "missingAmountCount": 118,
+        "missingUnitCount": 111,
         "nonPositiveAmountCount": 0,
-        "supplementalCount": 39,
-        "optionalCount": 7,
-        "recipesWithQuantityGaps": 66,
+        "unitNeedsReviewCount": 531,
+        "supplementalCount": 42,
+        "optionalCount": 8,
+        "recipesWithQuantityGaps": 70,
         "runtimeApprovedRecipes": 0
       }
     },
@@ -629,8 +630,8 @@
       "status": "ready",
       "dependsOn": [],
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
-      "nextAction": "Use source-gap report to select a bounded real quantity/identity review, or next distinct modern/archived source batch. After each bounded batch advance independent core; no new book network.",
-      "lastProgressAt": "2026-10-14T20:46:04.701382+00:00",
+      "nextAction": "Use explicit search/selection for actual source food/quantity review, or next distinct bounded modern/local batch;local48/42labels,70library;no newbooknetwork.",
+      "lastProgressAt": "2026-10-15T02:52:23.383392+00:00",
       "completedUnit": {
         "records": 44,
         "fullySpecified": 10,
@@ -657,7 +658,10 @@
         "docs/agents/curated-fourth-2000.md",
         "data/recipes/curated-local/fifth-reviewed-20261014/normalized-recipes.json",
         "tool/recipes/curated-fifth-build.test.mjs",
-        "docs/agents/curated-fifth-2030.md"
+        "docs/agents/curated-fifth-2030.md",
+        "data/recipes/curated-local/sixth-reviewed-20261015/normalized-recipes.json",
+        "tool/recipes/curated-sixth-build.test.mjs",
+        "docs/agents/local-recipes-0241.md"
       ]
     },
     {
@@ -897,6 +901,61 @@
         "tool/recipes/library-video-kind.test.mjs",
         "tool/recipes/creator-seventh-validation.test.mjs"
       ]
+    },
+    {
+      "id": "local-curation-sixth",
+      "priority": 34,
+      "status": "done",
+      "dependsOn": [],
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T02:43:48.209202+00:00",
+      "nextAction": "Review actual remaining food/quantity/source gaps; no further candidates in closed4recordbatch.",
+      "evidence": [
+        "data/recipes/curated-local/sixth-reviewed-20261015/normalized-recipes.json",
+        "tool/recipes/curated-sixth-build.test.mjs",
+        "docs/agents/local-recipes-0241.md"
+      ],
+      "completedAt": "2026-10-15T02:52:23.383392+00:00",
+      "lastProgressAt": "2026-10-15T02:52:23.383392+00:00",
+      "completedUnit": {
+        "recipes": 4,
+        "ingredients": 38,
+        "supplemental": 3,
+        "steps": 30,
+        "needsReview": 4,
+        "runtimeReady": 0,
+        "newSourceLabels": [
+          "Hungarian",
+          "Lebanese",
+          "Ghanaian",
+          "Tanzanian"
+        ],
+        "offlineTests": 3,
+        "networkRequests": 0
+      }
+    },
+    {
+      "id": "library-food-selection",
+      "priority": 49,
+      "status": "done",
+      "dependsOn": [
+        "library-food-search"
+      ],
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T02:43:48.209202+00:00",
+      "lastProgressAt": "2026-10-15T02:52:23.383392+00:00",
+      "nextAction": "Useexplicitselectedidentitythenreviewamount/form/scaling/inclusion,savecompleteprivateenvelope;latercheckcurrentlibrary.",
+      "evidence": [
+        "lib/data/recipe_library_food_search.dart",
+        "test/recipe_library_food_selection_test.dart",
+        "docs/LIBRARY-FOOD-SELECTION.md"
+      ],
+      "completedAt": "2026-10-15T02:52:23.383392+00:00",
+      "completedUnit": {
+        "newFocusedTests": 3,
+        "fullFlutterTests": 250,
+        "runtimeBindings": 0
+      }
     }
   ],
   "quotaCheckpoint": {

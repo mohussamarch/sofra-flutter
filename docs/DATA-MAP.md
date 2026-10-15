@@ -213,3 +213,7 @@ Latest user priority: real retailer and delivery-app prices first; government so
 ## Current §79 — source line → food-bank candidates → explicit review
 
 12pinnedpacks/44snapshots →66RecipeLibraryEntry values(44archive+21website+1indexedYouTubedescription) → RecipeLibraryCoverageReport(681lines/603distinctquantitygaps) → RecipeLibraryFoodSearch(exactsourcepin+lineIndex+explicitquery) → ownedlicensed-bankcandidateevidence → caller reviewsfood/form/quantity/scaling/inclusion → RecipeLibraryDraftReview → atomicKitchenServiceprivatecalculator. Candidate matching and source culinary completeness supply no automatic food/rights approval. Indexed video descriptions retain access method/direct-fetch failure/title uncertainty separately from website sources. BACKEND-API.md and LIBRARY-RECIPE-CALCULATOR.md describe API; source/manufacturer/price banks otherwise unchanged.
+
+## Current §80 — source search choice → reviewed food input
+
+70pinnedsourceentries(48archive+21website+1indexeddescription),13packs/48snapshots →722sourceingredientlines/642quantitygaps → perlineRecipeLibraryFoodSearch → explicitresolveUsdaCandidate(ack+form+chosenresultID+currentrecipepin+rawname/version) → genericFoodRecord → caller'sexplicitquantity/form/scaling/inclusiondecisions → completeprivateRecipeLibraryDraftReview → KitchenServiceatomiccalculator. No state write or nutritional/local-product acceptance at search/selection.42exactlocalsourcecategorylabels,54planningrecipes/4cuisines unchanged. LIBRARY-FOOD-SELECTION.md andHANDOFF§80 contain gates/evidence.

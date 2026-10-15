@@ -200,3 +200,7 @@ Watchdog now validates task.lastProgressAt and uses latest recorded own-task or 
 ## Current §79 — concrete search bridge and modern source
 
 66selected source records now include one officialManal indexedvideo-description recipe. Source-pinned ingredientfoodsearch connects library review to licensed banks with explicit query and ownedresultcontext;603of681lines havequantitygaps. Next bounded unit is actual source/food/amount/form review via that API, plus distinct moderncreator sources when quota permits. Do not resume historicalbooknetwork or wait forOFF/merchant sample. Source-request budget must count underlyingqueries/opens; last14>8overrun disclosed and sourceworkstopped. Core source-kind/URL-ID guards/dedup tested,247fullFlutter/31Node; rights/runtime/clinicalapprovals0.
+
+## Current §80 — another bank unit and independent selection logic
+
+Continued after§79with actual26/51ordinarytrue:4offlinearchivecurations/4newsourcecategorylabels plus explicitUSDAcandidate selection guardedbyrecipepin/ack/form/resultID/foodversion-name. Library70/13packs/48snapshots,42localsourcelabels;642of722quantitygaps.250fullFlutter/34Node/analyze5.2s. Next source/food/quantity/form reviewedinputs or distinctmoderncreatorbudgetedbatch; keepbankscontinuousandadvancecore. No newbooknetwork;OFFform/merchantaccesspending separately. No automaticclinical/rights/nutritionapproval.

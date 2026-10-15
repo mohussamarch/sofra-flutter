@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import '../domain/recipe_library_draft.dart';
+import '../domain/food_nutrition.dart';
 import 'food_repository.dart';
 import 'recipe_library_repository.dart';
 
@@ -57,6 +58,44 @@ class RecipeLibraryFoodSearchResult {
 class RecipeLibraryFoodSearch {
   RecipeLibraryFoodSearch({required this.foods});
   final FoodRepository foods;
+
+  /// Explicitly selected generic food, not a recipe binding or quantity choice.
+  /// The caller supplies the current entry; later draft save checks the library.
+  Future<FoodRecord> resolveUsdaCandidate({
+    required RecipeLibraryFoodSearchResult result,
+    required RecipeLibraryEntry currentEntry,
+    required String foodId,
+    required String form,
+    required bool acknowledgeFoodIdentity,
+  }) async {
+    if (!acknowledgeFoodIdentity ||
+        !{'raw', 'cooked', 'asSold', 'prepared'}.contains(form)) {
+      throw ArgumentError('Explicit food identity and form review required');
+    }
+    if (result.recipeId != currentEntry.id ||
+        result.sourceFingerprint !=
+            recipeLibrarySourceFingerprint(currentEntry)) {
+      throw StateError('Library source changed; search and review again');
+    }
+    final matches = result._candidates
+        .where((row) => row['id'] == foodId && !row.containsKey('barcode'))
+        .toList();
+    if (matches.length != 1 || !foodId.startsWith('usda:')) {
+      throw ArgumentError('Select one USDA identity from this search result');
+    }
+    final chosen = matches.single;
+    if (chosen['version'] is! String ||
+        (chosen['version'] as String).trim().isEmpty ||
+        chosen['name'] is! String ||
+        (chosen['name'] as String).trim().isEmpty) {
+      throw StateError('Food search lacks source identity/version evidence');
+    }
+    final raw = await foods.usdaRaw(foodId);
+    if (raw['version'] != chosen['version'] || raw['name'] != chosen['name']) {
+      throw StateError('Food source changed; search and review again');
+    }
+    return foods.usdaFood(foodId, form: form);
+  }
 
   Future<RecipeLibraryFoodSearchResult> search({
     required RecipeLibraryEntry entry,

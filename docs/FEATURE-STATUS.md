@@ -35,3 +35,7 @@ Added unique quantityReviewLineCount to existing read-only source audit:592 dist
 ## Current §79 — backend/source delivery
 
 Implemented and verified: pinned per-ingredient food-bank search with explicit query, preserved source indices/unknowns/owned candidates; first selected indexed officialManal video-description record; truthful video/source-kind/URL-ID gates and video-ID-aware dedup.247fullFlutter/31Node and cleananalysis, detailsHANDOFF§79. Library66(44archive+21website+1description)/12packs/44snapshots,38local source labels;681lines/603unique quantity gaps.54planning/4cuisines/1reviewed multi-methodfamily unchanged. No automatic nutrition/source rights approval or UIactivation. Source batch14requests exceeded8cap and stopped;0complete directvideo sources; title/rights/yield/total time unknown.
+
+## Current §80 — local bank and selection progress
+
+FourreadableArabicarchiveddraftsaddedwithHungarian/Lebanese/Ghanaian/Tanzanian sourcelabels;local48(10/36/2),42source-labels,library70/13packs/48snapshots. No newbooknetwork/automaticnutrition/runtimeapproval. USDAcandidate selection nowchecks explicitchoice/form/ack, currentrecipepinandfoodname/version; noquantity/statewrite.250fullFlutter/34Node/analyze5.2sclean.642of722source linesneedquantityreview;unflagged80stillneedidentity/form/scaling review.54planning/4cuisines/1reviewedmethodfamily unchanged.

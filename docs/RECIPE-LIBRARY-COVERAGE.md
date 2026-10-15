@@ -40,3 +40,7 @@ for (final recipe in report.recipes) {
 ## Current §79 — actual source review inputs
 
 66records/681lines,603distinctquantity-reviewlines.105missingamount/98missingunit/505unitreview/0nonpositive/39procedural/7optional;66recipeswithgaps,0runtimeapprovals.78unflaggedquantityrows still require identity/form/choice/scaling review. RecipeLibraryFoodSearch now opens the next explicit step using sourcepin+lineIndex+query, preserving rawsource and independent candidate evidence. Counts come from actual fullFlutter audit, not sum of overlapping flags. HANDOFF§79 records247fullFlutter and31Node.
+
+## Current §80 — actual source workload after offline curation
+
+70recipes/722indexedlines,642uniquequantityreviewlines:118missingamount/111missingunit/531unitreview/0nonpositive/42procedural/8optional;all70recipeswithgaps/0runtimeapproval.80unflaggedquantityrows stillneedidentity/form/choice/scaling review. RecipeLibraryFoodSearch andexplicitresolveUsdaCandidate helpreviewerchooseanexactfoodidentity/version; selectiondoesnotchoosequantityor inspectstoreduserreviews.250fullFlutter/34Node/analyze5.2sclean;detailsHANDOFF§80.
