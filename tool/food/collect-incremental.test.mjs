@@ -62,7 +62,7 @@ test('batch persists 503 backoff, rotates to a different job, and avoids rebuild
     return new Response(JSON.stringify({ count: 0, products: [] }), { status: 200, headers: { 'content-type': 'application/json' } });
   };
   try {
-    const result = await runBatch({ out, maxRequests: 2, fetchImpl, nowMs: () => now, sleep: async () => {}, rebuild: false });
+    const result = await runBatch({ contactEmail: 'collector@example.invalid', out, maxRequests: 2, fetchImpl, nowMs: () => now, sleep: async () => {}, rebuild: false });
     assert.equal(calls, 2);
     assert.equal(result.results[0].status, 'failed');
     assert.equal(result.results[1].status, 'success');
@@ -75,7 +75,7 @@ test('batch persists 503 backoff, rotates to a different job, and avoids rebuild
 test('all-failure batch uses production rebuild default and creates no manifest', async () => {
   const out = await mkdtemp(path.join(os.tmpdir(), 'sofra-food-failure-only-'));
   try {
-    const result = await runBatch({ out, maxRequests: 1, nowMs: () => Date.parse('2026-10-12T21:00:00.000Z'), sleep: async () => {}, fetchImpl: async () => new Response('busy', { status: 503 }) });
+    const result = await runBatch({ contactEmail: 'collector@example.invalid', out, maxRequests: 1, nowMs: () => Date.parse('2026-10-12T21:00:00.000Z'), sleep: async () => {}, fetchImpl: async () => new Response('busy', { status: 503 }) });
     assert.equal(result.fetched, false);
     assert.equal(result.results[0].status, 'failed');
     await assert.rejects(readFile(path.join(out, 'manifest.json'), 'utf8'), { code: 'ENOENT' });

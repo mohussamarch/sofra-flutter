@@ -1,6 +1,6 @@
 # مكتبة الوصفات المقروءة — الحالة الحالية
 
-الحالة الحالية HANDOFF§82:84 سجلًا مقروءًا،15 حزمة مثبتة و62 لقطة مصدر؛62 أرشيفًا+21 موقع طاه+وصف فيديو مفهرس واحد. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
+الحالة الحالية HANDOFF§85:86 سجلًا مقروءًا،16 حزمة مثبتة و62 لقطة مصدر؛62 أرشيفًا+21 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
 
 ## تفصيل تسليم§71 التاريخي
 
@@ -92,3 +92,8 @@ Review source envelopes now retain related original request indexes/outcomes, in
 ## Current §82
 
 Six additional offline drafts: Korean bulgogi, Brazilian fish moqueca, Greek saganaki, Norwegian lefse, Indonesian klepon and coconut rice.44listed+4procedural/32steps;all6needreview/151preflightissues. Norwegian is one new source category label; other countries already represented. Local62=10culinaryfullyspecified+50needsreview+2notcookable,457listed+29procedural/339steps. No global deduplication or automatic rights/food/runtime approval. NewpackSHA295b204f9618d52555fe8c0236f9f0ca4feee214943e0b75081101c5dae08a7b;manifestab23f2e62ba34096e40d4ffe7ed2286308c410e2afac784c7c032436439e55ca.
+
+
+## Current §85
+
+Two indexed-description records attributed specifically to CBCSofra(Verified)/NaglaaElSherbiny: taro _DmSJzc2Ksc(2022-10-31), sayadiya-rice segment aExAOsnzqSI(2022-08-10).16listed+1proceduralwater/10steps;17quantityunknowns,yield/time/cuisine/rightsunknown,0familyclaims/0directbody/media/transcripts. Search2queries+2directopensfailed=4underlyingrequests within8; stoppedat2acceptedsource records. Raw search receipt extracts/content hashes retained; no claim of upstreamsignature. PackSHAc99a0e0ba72c36011eb64b895d637167e001e860b151ecdac1e28f3b1437eb93;manifest508fb8c04b401466c2d63c9b9bd0f0ab1c908a3a02cfe306654883741569ebd6. All15previousselectedpackpinsunchanged;sourcecuisine-labeltotal51unchanged.

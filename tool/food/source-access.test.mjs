@@ -28,10 +28,10 @@ test('new401or403stops a multi-request batch before another job and saved gate b
  for(const status of [401,403])await fixture(async out=>{
   let calls=0;
   const args={out,maxRequests:6,nowMs:()=>now,sleep:async()=>{},rebuild:false,fetchImpl:async()=>{calls++;return new Response('denied',{status});}};
-  const first=await runBatch(args);
+  const first=await runBatch({...args,contactEmail:'collector@example.invalid'});
   assert.equal(calls,1);assert.equal(first.results.length,1);assert.equal(first.fetched,false);
   const checkpoint=await readFile(path.join(out,'collection-state.json'),'utf8');
-  const second=await runBatch(args);
+  const second=await runBatch({...args,contactEmail:'collector@example.invalid'});
   assert.equal(calls,1);assert.equal(second.results.length,0);assert.equal(second.blockedReason,'source_access_backoff');
   assert.equal(await readFile(path.join(out,'collection-state.json'),'utf8'),checkpoint);
  });
@@ -43,7 +43,7 @@ test('legacy saved Saudi401 prevents dueEgypt request and malformed date fails b
   const file=path.join(out,'collection-state.json');
   await writeFile(file,JSON.stringify(state));
   const args={out,maxRequests:1,nowMs:()=>now,rebuild:false,fetchImpl:async()=>{calls++;throw Error('unexpectedrequest');}};
-  const result=await runBatch(args);assert.equal(calls,0);assert.equal(result.blockedUntil,until);
+  const result=await runBatch({...args,contactEmail:'collector@example.invalid'});assert.equal(calls,0);assert.equal(result.blockedUntil,until);
   state.failures[0].nextAttemptAt='bad';await writeFile(file,JSON.stringify(state));
   await assert.rejects(runBatch(args));assert.equal(calls,0);
  });

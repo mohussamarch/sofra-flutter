@@ -1,3 +1,4 @@
+import {offResearchUserAgent} from './off-contact.mjs';
 import { sourceAccessUntil } from './source-access.mjs';
 import { mkdir, readFile, writeFile, readdir, open, stat, unlink } from 'node:fs/promises';
 import path from 'node:path';
@@ -56,7 +57,7 @@ export async function inferCursor(out, job, saved = {}) {
   }
 }
 
-export async function runBatch({ out, maxRequests = 6, fetchImpl = fetch, nowMs = () => Date.now(), sleep = sleepReal, rebuild = true, onProgress = () => {} }) {
+export async function runBatch({ out, maxRequests = 6, fetchImpl = fetch, contactEmail = process.env.SOFRA_OFF_CONTACT_EMAIL, nowMs = () => Date.now(), sleep = sleepReal, rebuild = true, onProgress = () => {} }) {
   const statePath = path.join(out, 'collection-state.json');
   const state = await loadCheckpoint(statePath);
   Object.assign(state, { ...baseState(), ...state });
@@ -85,12 +86,14 @@ export async function runBatch({ out, maxRequests = 6, fetchImpl = fetch, nowMs 
       continue;
     }
 
+    // Local config failure must not become a source failure/backoff or consume a request.
+    offResearchUserAgent(contactEmail);
     const last = state.lastRequestAt ? Date.parse(state.lastRequestAt) : 0;
     const wait = Math.max(0, 8000 - (nowMs() - last));
     if (wait) await sleep(wait);
     let accessRefused = false;
     try {
-      const records = await fetchArchive(out, { country: job.country, category: job.category, page: cursor.page, id, fetchImpl, now: () => new Date(nowMs()).toISOString() });
+      const records = await fetchArchive(out, { country: job.country, category: job.category, page: cursor.page, id, fetchImpl, contactEmail, now: () => new Date(nowMs()).toISOString() });
       state.lastRequestAt = new Date(nowMs()).toISOString();
       const archive = await readArchive(out, `${id}.json`);
       const progressed = cursorFromArchive({ ...cursor, failures: 0, nextAttemptAt: null }, archive, cursor.page);

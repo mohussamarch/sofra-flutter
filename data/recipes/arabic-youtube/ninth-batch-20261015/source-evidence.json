@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "description": "Exact returned web tool text, including unrelated result candidates. Hashes identify these extract bytes, not upstream HTTP bodies or approval.",
+  "retrievedAt": "2026-10-15",
+  "requests": [
+    {
+      "toolCall": 1,
+      "file": "data/recipes/arabic-youtube/ninth-batch-20261015/source-extracts/request-01.txt",
+      "sha256": "67d95c70c81fefc4e661074a8546f5eb87022f732dfca4ff73e9339b025ea99b",
+      "underlyingRequestIndices": [
+        1
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "indexed-search-extract",
+      "httpBodyHash": null
+    },
+    {
+      "toolCall": 2,
+      "file": "data/recipes/arabic-youtube/ninth-batch-20261015/source-extracts/request-02.txt",
+      "sha256": "e3c43524a1f88abe453f3f89fe120eadc8a0d2b82351a1ec19efb486f86ea116",
+      "underlyingRequestIndices": [
+        2
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "indexed-search-extract",
+      "httpBodyHash": null
+    },
+    {
+      "toolCall": 3,
+      "file": "data/recipes/arabic-youtube/ninth-batch-20261015/source-extracts/request-03.txt",
+      "sha256": "4653c8df2543590a84905115d25b4a795eda6a43fdab9dcce93cb77f9e22100c",
+      "underlyingRequestIndices": [
+        3,
+        4
+      ],
+      "retrievedAt": "2026-10-15",
+      "kind": "failed-direct-page-opens",
+      "httpBodyHash": null
+    }
+  ]
+}

@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-15T03:18:57.878019+00:00",
-    "taskId": "local-curation-eighth",
-    "summary": "Six local Arabic drafts and explicit estimated source mass decision bridge;84source records,258Flutter/27Node/analyze clean.",
+    "at": "2026-10-15T06:42:45.851700+00:00",
+    "taskId": "budget-advisory-core",
+    "summary": "Added readonlymonthlybudgetalternatives,2modernindexedsource recipes andOFFcontact/privacyguards;269Flutter/62Node/analyzeclean.",
     "evidence": [
-      "data/recipes/curated-local/eighth-reviewed-20261015/review-report.json",
-      "lib/domain/recipe_library_draft.dart",
-      "test/recipe_library_source_mass_test.dart",
+      "lib/domain/monthly_budget_choices.dart",
+      "data/recipes/arabic-youtube/ninth-batch-20261015/recipes.json",
+      "tool/food/off-contact.test.mjs",
       "docs/HANDOFF.md"
     ]
   },
@@ -78,7 +78,7 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Actual reviewed food/quantity/form decisions via pinned search/selection/source mass, or next distinct bounded modern/local unit.62local/51labels/84library; no newbooknetwork.",
+      "nextAction": "Actual sourcefood/quantity/form review or distinctboundedmodern/localunit.86library/62local/51source labels;3indexedYTdescriptions,0directvideosources;no newbooks.",
       "lastAttemptAt": "2026-10-15T02:30:14.398973+00:00",
       "lastProgressAt": "2026-10-15T02:37:34.778884+00:00",
       "completedUnit": {
@@ -520,7 +520,7 @@
       "priority": 80,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "After fresh quota below90 with capacity, review documented exports/API access and preserved source gate before one controlled collector attempt. User contact/submission authorization already supplied; do not ask again.2378/67unchanged.",
+      "nextAction": "Review documentedOFFexport route for few-hundred+collection; Saudi503jobbackoffuntil2026-10-15T14:29:11.411Z, Egypt401oldretained. No repeatedAPIloop or formcontactrequest; freshquota/lock/sourcegate required.2378/67unchanged.",
       "lastProgressAt": "2026-10-14T02:35:01.478Z",
       "completedUnit": {
         "products": 2378,
@@ -531,7 +531,7 @@
         "runtimeNutritionBasisApprovals": 0,
         "actualBankTests": 5
       },
-      "lastAttemptAt": "2026-10-14T15:13:18.596Z",
+      "lastAttemptAt": "2026-10-15T06:29:11.411Z",
       "lastFailure": {
         "status": 401,
         "job": "saudi-arabia/global",
@@ -541,23 +541,25 @@
         "requests": 1,
         "growth": 0
       },
-      "stage": "Usage form submitted with visible receipt; actual API access and prior401 cause unverified",
+      "stage": "One contact-corrected diagnostic503; bankunchanged. Exportroute reviewnext.",
       "evidence": [
         "docs/agents/food-bank-1500.md",
         "docs/OFF-ACCESS-REQUEST-DRAFT.md",
         "docs/agents/food-bank-2000.md"
       ],
       "accessReview": {
-        "at": "2026-10-15T06:10:29.103728+00:00",
+        "at": "2026-10-15T06:42:45.851700+00:00",
         "officialDocumentation": "https://openfoodfacts.github.io/openfoodfacts-server/api/",
         "formSubmitted": true,
         "userAuthorizationPending": false,
-        "newSourceRequests": 0,
+        "newSourceRequests": 1,
         "backoffExpiredDoesNotResolveAccess": true,
         "formReceiptVerified": true,
         "contactStoredOutsideGit": true,
-        "apiAccessVerified": false
-      }
+        "apiAccessVerified": false,
+        "lastDiagnosticStatus": 503
+      },
+      "owner": null
     },
     {
       "id": "budget-planner",
@@ -632,7 +634,7 @@
       "status": "ready",
       "dependsOn": [],
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
-      "nextAction": "Actual reviewed food/quantity/form decisions via pinned search/selection/source mass, or next distinct bounded modern/local unit.62local/51labels/84library; no newbooknetwork.",
+      "nextAction": "Actual sourcefood/quantity/form review or distinctboundedmodern/localunit.86library/62local/51source labels;3indexedYTdescriptions,0directvideosources;no newbooks.",
       "lastProgressAt": "2026-10-15T03:09:23.849026+00:00",
       "completedUnit": {
         "records": 44,
@@ -1110,15 +1112,104 @@
         "newProducts": 0,
         "productProgress": false
       }
+    },
+    {
+      "id": "modern-recipes-ninth",
+      "priority": 35,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T06:33:27.756165+00:00",
+      "nextAction": "Nextdistinctmodern/localboundedunit or actualreviewedinputs; no newbooknetwork.",
+      "completedAt": "2026-10-15T06:42:45.851700+00:00",
+      "lastProgressAt": "2026-10-15T06:42:45.851700+00:00",
+      "evidence": [
+        "data/recipes/arabic-youtube/ninth-batch-20261015/recipes.json",
+        "tool/recipes/creator-ninth-validation.test.mjs",
+        "docs/agents/modern-recipes-0630.md"
+      ],
+      "completedUnit": {
+        "records": 2,
+        "unknownQuantityLines": 17,
+        "steps": 10,
+        "underlyingRequests": 4,
+        "requestCap": 8,
+        "sourceTests": 5,
+        "runtimeApprovals": 0
+      }
+    },
+    {
+      "id": "budget-advisory-core",
+      "priority": 35,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T06:33:27.756165+00:00",
+      "nextAction": "Build snapshot-safe KitchenService advisory adapter; full automaticmonthgenerator remainsseparate.",
+      "completedAt": "2026-10-15T06:42:45.851700+00:00",
+      "lastProgressAt": "2026-10-15T06:42:45.851700+00:00",
+      "evidence": [
+        "lib/domain/monthly_budget_choices.dart",
+        "test/monthly_budget_choices_test.dart",
+        "docs/MONTHLY-BUDGET-CHOICES.md"
+      ],
+      "completedUnit": {
+        "newTests": 11,
+        "focusedTests": 22,
+        "fullFlutterTests": 269,
+        "stateWrites": 0
+      }
+    },
+    {
+      "id": "off-contact-config",
+      "priority": 34,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T06:33:27.756165+00:00",
+      "nextAction": "Use private runtime contact onlywhen source/quota gatesallow; exportroute reviewbeforebulk collection.",
+      "completedAt": "2026-10-15T06:42:45.851700+00:00",
+      "lastProgressAt": "2026-10-15T06:42:45.851700+00:00",
+      "evidence": [
+        "tool/food/off-contact.mjs",
+        "tool/food/off-contact.test.mjs",
+        "tool/food/collect-incremental.mjs",
+        "tool/food/import.mjs"
+      ],
+      "completedUnit": {
+        "newTests": 5,
+        "reviewFindingsReproducedAndFixed": 2,
+        "sourceRequestsAfterCodeChange": 0
+      }
+    },
+    {
+      "id": "budget-advisory-service",
+      "priority": 34,
+      "status": "ready",
+      "owner": null,
+      "dependsOn": [
+        "budget-advisory-core"
+      ],
+      "nextAction": "Snapshot-safe readonly KitchenService adapter assembling current reviewed candidate needs and country/user-first costs; no autosave/planedit."
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-15T03:24:17.624094+00:00",
-    "primaryUsedPercent": 82,
-    "weeklyUsedPercent": 59,
+    "at": "2026-10-15T06:42:45.851700+00:00",
+    "primaryUsedPercent": 32,
+    "weeklyUsedPercent": 5,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Close verified delivery with remaining8points; last bounded core/source integration used about13points. No new costly unit until fresh quota/capacity assessment; not quota-blocked."
+    "action": "Unitreadyfordelivery; freshactualreadingbefore nextunit, no credits/reset."
   },
-  "updatedAt": "2026-10-15T06:10:29.103728+00:00"
+  "updatedAt": "2026-10-15T06:42:45.851700+00:00",
+  "resumeDiagnosis": {
+    "at": "2026-10-15T06:33:27.756165+00:00",
+    "cause": "Prior actual85to98percent quota limited complete source/core unit capacity; no running collector/writer. New actual0/0ordinarytrue reading permits resume. No reset or credits used byagent.",
+    "evidence": [
+      "docs/HANDOFF.md sections83/84",
+      "MONITOR-CHECKPOINT.json external",
+      "Git clean1872fdd;CIM only preview31004/check31124"
+    ],
+    "correctiveAction": "Resume bounded modern recipes, independent monthlybudgetcomparison and one OFF diagnostic;503backoff applies to source job only."
+  }
 }

@@ -48,3 +48,8 @@ Eight Arabic offline archived drafts added; local56(10/44/2),50 exact source cat
 ## Current §82
 
 RecipeLibraryMassProposal.fromSource requires full source fingerprint, exact line and explicit acknowledgement of an existing positive numeric g/kg declaration. It preserves amount/unit/raw text without parsing or conversion. toDecision rechecks current recipe/source and applicable exclusion override; food/forms/inclusion/scaling/as-purchased/preparation remain explicit and quantityEstimated is always true. No measurement, food match, source approval or state write. Contract docs/LIBRARY-SOURCE-MASS.md. 84 readable source records =62 offline archive +21 creator website +1 indexed video description;15 pinned packs/62 snapshots,51 local source cuisine/region labels. Planning54/4 and reviewed method family1 unchanged;0 new runtime/nutrition approvals. Final258Flutter/27relatedNode/analyze clean; earlier counts are historical.
+
+
+## Current §85
+
+86 source records=62localarchive+21creatorwebsite+3indexedYTdescriptions;16packs/62snapshots,51local source labels. Planning54/4 unchanged. New read-only monthly explicit alternative comparison and runtime OFF contact/privacy guards;269Flutter/62Node/analyze clean. HANDOFF§85. `compareMonthlyBudgetChoices` compares only supplied matching date/slot coverage with stock once perwholeoption and frozen matching-periodspend. Unknown totals remainnull/unranked; no autosave/clinicalrules/fullmonthlygenerator. Contract MONTHLY-BUDGET-CHOICES.md. Pure API currently separate from KitchenService stale-snapshot adapter. OFF503sourcewait doesnotblocklocalcore.

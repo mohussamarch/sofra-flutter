@@ -7,7 +7,7 @@ test('Git CRLF conversion is allowed only for generated Dart, never pinned JSON'
  assert.equal(outputMatches(manifestFile,'{}\r\n','{}\n'),false);
 });
 test('actual selected recipe assets and generated pins are current',async()=>{
- const result=await run({check:true});assert.equal(result.packs,15);assert.equal(result.snapshots,62);
+ const result=await run({check:true});assert.equal(result.packs,16);assert.equal(result.snapshots,62);
 });
 test('source snapshot corruption refuses to generate a trusted manifest',async()=>{
  const source=Buffer.from('{}\n'),hash=createHash('sha256').update(source).digest('hex');
@@ -27,7 +27,7 @@ function syntheticRead({duplicate=false,blankId,invalidUtf8=false,snapshot}={}){
   const position=n++,local=file.endsWith('/normalized-recipes.json');
   const id=position===0&&blankId!==undefined?blankId:duplicate&&position<2?'same-id':'row-'+position;
   const row=local?{id,provenance:{sourceSnapshotFile:'data/recipes/curated-local/snapshot.json',sourceSnapshotSha256:hash}}:{recipeId:id,sourceKind:'creator-website',youtubeDerived:false};
-  if(file.includes('/seventh-batch-20261015/'))Object.assign(row,{sourceKind:'creator-youtube',youtubeDerived:true,sourceVideoId:'Abc_123-xyz',sourceUrl:'https://www.youtube.com/watch?v=Abc_123-xyz'});
+  if(file.includes('/seventh-batch-20261015/')||file.includes('/ninth-batch-20261015/'))Object.assign(row,{sourceKind:'creator-youtube',youtubeDerived:true,sourceVideoId:'Abc_123-xyz',sourceUrl:'https://www.youtube.com/watch?v=Abc_123-xyz'});
   row.note='VALID';
   const text=JSON.stringify({recipes:[row]});
   if(invalidUtf8&&position===0){

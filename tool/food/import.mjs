@@ -1,3 +1,4 @@
+import {offResearchUserAgent} from './off-contact.mjs';
 import { mkdir, readFile, writeFile, readdir, access } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -84,12 +85,13 @@ export function normalize(raw, provenance) {
 
 const fields = ['code','product_name','product_name_ar','product_name_en','brands','categories_tags','countries_tags','quantity','product_quantity','product_quantity_unit','serving_size','serving_quantity','serving_quantity_unit','nutrition_data','nutrition_data_per','nutrition_data_prepared_per','nutriments','allergens','allergens_tags','traces','traces_tags','ingredients_text','ingredients_text_ar','ingredients_text_en','last_modified_t','data_quality_errors_tags','data_quality_warnings_tags','states_tags'];
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-export async function fetchArchive(out, { country, page = 1, category = null, id, fetchImpl = fetch, now = () => new Date().toISOString() }) {
+export async function fetchArchive(out, { country, page = 1, category = null, id, fetchImpl = fetch, contactEmail = process.env.SOFRA_OFF_CONTACT_EMAIL, now = () => new Date().toISOString() }) {
   try { await access(path.join(out,'raw',`${id}.json`)); console.log(`${id}: cached`); return 0; } catch {}
+  const userAgent = offResearchUserAgent(contactEmail);
   const url = new URL('https://world.openfoodfacts.org/cgi/search.pl');
   for (const [key, value] of Object.entries({action:'process',json:1,page_size:100,page,sort_by:'unique_scans_n',fields:fields.join(','),tagtype_0:'countries',tag_contains_0:'contains',tag_0:country})) url.searchParams.set(key, value);
   if (category) for (const [key, value] of Object.entries({tagtype_1:'categories',tag_contains_1:'contains',tag_1:category})) url.searchParams.set(key,value);
-  const response = await fetchImpl(url, { headers: {'User-Agent':'SofraResearch/0.1 (https://github.com/mohussamarch/sofra-flutter)'}, signal: AbortSignal.timeout(60000) });
+  const response = await fetchImpl(url, { headers: {'User-Agent':userAgent}, signal: AbortSignal.timeout(60000) });
   if (!response.ok) {
     // Undici requires consuming or cancelling bodies to release connections.
     // Cleanup failure must not replace the HTTP status used for source backoff.
@@ -108,7 +110,7 @@ export async function collect(out, plans) {
   const failures=[];
   for (const plan of plans) {
     try { await fetchArchive(out,plan); }
-    catch (error) { console.error(`${plan.id}: ${error.message}`); failures.push({plan,error:String(error.message),at:new Date().toISOString()}); }
+    catch (error) { console.error(`${plan.id}: ${error.message}`); failures.push({plan:{country:plan.country,page:plan.page??1,category:plan.category??null,id:plan.id},error:String(error.message),at:new Date().toISOString()}); }
     await sleep(8000);
   }
   await mkdir(out,{recursive:true});

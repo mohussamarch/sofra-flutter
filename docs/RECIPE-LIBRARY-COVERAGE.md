@@ -53,3 +53,8 @@ for (final recipe in report.recipes) {
 ## Current §82
 
 84 readable source records =62 offline archive +21 creator website +1 indexed video description;15 pinned packs/62 snapshots,51 local source cuisine/region labels. Planning54/4 and reviewed method family1 unchanged;0 new runtime/nutrition approvals. Source audit845lines/756distinctquantityreview,145missingamount/138missingunit/618unitreview/0nonpositive/48procedural/17optional;all84recipes have quantity gaps. Counts overlap;89lines without quantity flags still need identity/form/inclusion/scaling review. Mass proposal does not reduce this source audit or prove saved user reviews. Four new mass tests cover immutable originalunit/estimated roundtrip, invalid/unknown units/amounts, drift/ack/index and exclusion override;14focused/258fullFlutter/27Node/analyze clean.
+
+
+## Current §85
+
+86 source records=62localarchive+21creatorwebsite+3indexedYTdescriptions;16packs/62snapshots,51local source labels. Planning54/4 unchanged. New read-only monthly explicit alternative comparison and runtime OFF contact/privacy guards;269Flutter/62Node/analyze clean. HANDOFF§85. Sourceaudit86recipes/862lines/773distinctquantityreview,162missingamount/155missingunit/618unitreview/0nonpositive/49procedural/17optional;all86withgaps/0runtime.89quantity-unflagged lines stillneedidentity/form/inclusion/scaling review. New2 indexedsource records have17unknown quantities; no resolved saveduserreview inferred.

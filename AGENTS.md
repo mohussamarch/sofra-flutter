@@ -232,3 +232,8 @@ RecipeLibraryMassProposal.fromSource requires full source fingerprint, exact lin
 ## OFF declaration received —15October2026
 
 HANDOFF§84/OFF-ACCESS-REQUEST-DRAFT.md supersedes earlier pending-contact state: user authorized the usage-form submission by supplying the chosen email; visible confirmation received. Private contact/screenshot outside Git in OFF-SUBMISSION-RECEIPT.json. Do not ask again for the same submission permission/email. Receipt is not API access/approval or401resolution; do not clear source gate or start collection automatically. Quota91/61 prevents research/collection;2378/67unchanged. Fresh eligible quota plus documented source-access review precedes a bounded collector attempt.
+
+
+## Current §85
+
+86 source records=62localarchive+21creatorwebsite+3indexedYTdescriptions;16packs/62snapshots,51local source labels. Planning54/4 unchanged. New read-only monthly explicit alternative comparison and runtime OFF contact/privacy guards;269Flutter/62Node/analyze clean. HANDOFF§85. Monthly compare contract MONTHLY-BUDGET-CHOICES.md: current explicit slots/quantified candidates and pure country/user-first callback, no fullgenerator/writes. OFF uncached requests now require SOFRA_OFF_CONTACT_EMAIL from private runtime config, notGit; local config failure never becomesHTTPbackoff. One diagnostic503 preserved Saudi14:29:11.411Zbackoff; no bulkAPI continuation. Review official export route before more few-hundred+collection. No email/account/reuseapproval inferred from formreceipt.

@@ -16,3 +16,8 @@ Read-only reviewer inspected resolvePackagedCandidate/_orderedSource and4 new te
 ## Current §82
 
 Read-only reviewer inspected new RecipeLibraryMassProposal and four tests, found no concrete gap under bounded numeric-source contract. Acknowledgement/pin/index/positive exact g/kg and immutable ingredient/amount are retained. toDecision repeats current source and applicable exclusion checks, requires explicit arguments and always quantityEstimated:true. Reviewer ran no tests/edits; root ran14focused and final258Flutter/27Node/analyze clean. Root owns integration.
+
+
+## Current §85
+
+Read-only reviewer found2concreteOFFcontact defects: legacy collect failure receipt serialized fullplan/contactEmail; contact pattern accepted invalid domainlabels/local dot forms. Root reproduced both failures innewtests, then whitelisted publicplanfields and strengthened commonASCIIparts;5newtests nowpass. Reviewer rechecked fixes and newmonthlybudgetcomparison;no furtherconcretegap under boundedcontract. No tests/edits/source requests byreviewer. Root final269Flutter/62Node/analyze clean; recordsownershiproot.
