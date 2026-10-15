@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-15T07:11:24.775288+00:00",
-    "taskId": "budget-candidate-search",
-    "summary": "Bounded monthly candidate combinations and2offline sourcedrafts;292Flutter/30Node/analyzeclean.",
+    "at": "2026-10-15T11:58:38.072533+00:00",
+    "taskId": "recipe-bulk-1000",
+    "summary": "Integrated1000archive recipes/1090library andmonthlysearchservice;306Flutter/31Node/analyzeclean.",
     "evidence": [
-      "lib/domain/monthly_budget_search.dart",
-      "data/recipes/curated-local/twelfth-reviewed-20261015/normalized-recipes.json",
+      "data/recipes/curated-local/bulk-1000-20261015/conversion-report.json",
+      "lib/data/kitchen_service.dart",
       "docs/HANDOFF.md"
     ]
   },
@@ -633,16 +633,16 @@
       "status": "ready",
       "dependsOn": [],
       "lastAttemptAt": "2026-10-15T07:02:32.889085+00:00",
-      "nextAction": "Actual reviewed food/quantity/form inputs or nextdistinctmodern/localboundedunit;90library/64local/53sourcelabels;no newbooknetwork.",
-      "lastProgressAt": "2026-10-15T07:11:24.775288+00:00",
+      "nextAction": "Next >=1000source-recordconversion batch versuscurrent1090; modernacquisitionpriority separately, allcuisines, exactshortfallreport.",
+      "lastProgressAt": "2026-10-15T11:58:38.072533+00:00",
       "completedUnit": {
-        "records": 64,
+        "records": 1064,
         "fullySpecified": 10,
-        "needsReview": 52,
+        "needsReview": 1052,
         "notCookable": 2,
-        "sourceCuisineLabels": 53,
-        "newBatchRecipes": 2,
-        "newBatchSourceLabels": 2,
+        "sourceCuisineLabels": 71,
+        "newBatchRecipes": 1000,
+        "newAcquisitions": 0,
         "runtimeApprovals": 0
       },
       "evidence": [
@@ -1259,31 +1259,104 @@
     {
       "id": "budget-search-service",
       "priority": 34,
-      "status": "ready",
+      "status": "done",
       "owner": null,
       "dependsOn": [
         "budget-candidate-search"
       ],
-      "nextAction": "Build readonly snapshot-safe search from explicit PlannedMeal pools/currentreviewed decisions, currentcountry/user-first prices; no autosave."
+      "nextAction": "Next distinct1000recordbatch/modernroute or independentcore; preserve source/runtime gates.",
+      "lastAttemptAt": "2026-10-15T11:50:29.010768+00:00",
+      "completedAt": "2026-10-15T11:58:38.072533+00:00",
+      "lastProgressAt": "2026-10-15T11:58:38.072533+00:00",
+      "evidence": [
+        "lib/data/kitchen_service.dart",
+        "test/monthly_budget_search_service_test.dart",
+        "docs/agents/budget-search-service-20261015.md"
+      ],
+      "completedUnit": {
+        "newTests": 14,
+        "focusedTests": 27,
+        "fullFlutterTests": 306,
+        "stateWrites": 0
+      }
+    },
+    {
+      "id": "recipe-bulk-1000",
+      "priority": 33,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T11:50:29.010768+00:00",
+      "nextAction": "Next distinct1000recordbatch/modernroute or independentcore; preserve source/runtime gates.",
+      "completedAt": "2026-10-15T11:58:38.072533+00:00",
+      "lastProgressAt": "2026-10-15T11:58:38.072533+00:00",
+      "evidence": [
+        "tool/recipes/bulk-normalize-1000.mjs",
+        "data/recipes/curated-local/bulk-1000-20261015/conversion-report.json",
+        "docs/agents/bulk-thousand-20261015.md"
+      ],
+      "completedUnit": {
+        "records": 1000,
+        "newAcquisitions": 0,
+        "sourceSnapshots": 1000,
+        "ingredientLines": 9709,
+        "steps": 7431,
+        "newTests": 6,
+        "runtimeApprovals": 0
+      }
+    },
+    {
+      "id": "modern-bulk-source-assessment",
+      "priority": 35,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T11:50:29.010768+00:00",
+      "nextAction": "Next distinct1000recordbatch/modernroute or independentcore; preserve source/runtime gates.",
+      "completedAt": "2026-10-15T11:58:38.072533+00:00",
+      "lastProgressAt": "2026-10-15T11:58:38.072533+00:00",
+      "evidence": [
+        "docs/agents/modern-bulk-source-20261015.md",
+        "data/recipes/modern-bulk-source-20261015/source-assessment.json"
+      ],
+      "completedUnit": {
+        "target": 1000,
+        "newRecipes": 0,
+        "underlyingRequests": 12,
+        "requestCap": 12,
+        "viableBulkRouteVerified": false,
+        "productProgress": false
+      }
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-15T07:11:24.775288+00:00",
-    "primaryUsedPercent": 84,
-    "weeklyUsedPercent": 13,
+    "at": "2026-10-15T11:58:38.072533+00:00",
+    "primaryUsedPercent": 28,
+    "weeklyUsedPercent": 20,
     "ordinaryUsageAllowed": true,
-    "operationalLimit": 90,
-    "action": "Close current verified unit near reserve; fresh sufficientquota before next costly unit."
+    "operationalLimit": 99,
+    "action": "Useful unitsclosed; freshactualquota before next1000batch."
   },
-  "updatedAt": "2026-10-15T07:11:24.775288+00:00",
+  "updatedAt": "2026-10-15T11:58:38.072533+00:00",
   "resumeDiagnosis": {
-    "at": "2026-10-15T06:33:27.756165+00:00",
-    "cause": "Prior actual85to98percent quota limited complete source/core unit capacity; no running collector/writer. New actual0/0ordinarytrue reading permits resume. No reset or credits used byagent.",
+    "at": "2026-10-15T11:50:29.010768+00:00",
+    "cause": "Previous primary usage ceiling reached; bulk worker errored and automatic command approval review could not run due account usage limit. No recipe-source503cause; only preview31004/check31124 processes present. Existing1000pack generated but integration/tests/notes/delivery incomplete.",
     "evidence": [
-      "docs/HANDOFF.md sections83/84",
-      "MONITOR-CHECKPOINT.json external",
-      "Git clean1872fdd;CIM only preview31004/check31124"
+      "Worker bulk_thousand usage-limit error",
+      "Automatic approval review failed before integration command executed",
+      "Git base6bee479 with policy5files and1000pack/module/tests uncommitted",
+      "Current actual1/16ordinarytrue; noreset/credits used; no active source process"
     ],
-    "correctiveAction": "Resume bounded modern recipes, independent monthlybudgetcomparison and one OFF diagnostic;503backoff applies to source job only."
+    "correctiveAction": "Resume samebulkowner tofinish targetedverification; independent core/searchservice and modernsourceassessment separateowners. Rootintegratesonlyreturnedfiles, runsactualgates thencommit/push/mirrors. Preserve original lastProgress until actualtested productunit."
+  },
+  "operationalQuotaLimit": 99,
+  "recipeBatchPolicy": {
+    "minimumTarget": 1000,
+    "totalGoal": 10000,
+    "scope": "All cuisines; Asian/Moroccan/Greek/Omani included, not exclusive",
+    "countedRecipe": "nonempty ingredients and method with exact source provenance; discovery URLs separate",
+    "belowTargetReportRequired": true,
+    "existingArchiveIsNotNewAcquisition": true,
+    "runtimePromotionAutomatic": false
   }
 }

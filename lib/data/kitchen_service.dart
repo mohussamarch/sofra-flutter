@@ -3,6 +3,7 @@ import 'dart:convert';
 import '../domain/kitchen_core.dart';
 import '../domain/purchase_forecast.dart';
 import '../domain/monthly_budget_choices.dart';
+import '../domain/monthly_budget_search.dart' as budget_search;
 import '../domain/food_nutrition.dart';
 import '../domain/person_nutrition.dart';
 import '../domain/recipe_nutrition.dart';
@@ -37,6 +38,20 @@ Map<String, dynamic> _fresh() => {
   'purchases': [],
   'budgets': [],
 };
+
+/// Read-only search plus exact resolved evidence for every supplied candidate.
+/// Pool candidate IDs are caller meal IDs; pins include current resolution.
+class MonthlyBudgetSearchPreview {
+  MonthlyBudgetSearchPreview._({
+    required this.search,
+    required Map<String, Map<String, PlannedMeal>> candidatesByPool,
+  }) : candidatesByPool = Map.unmodifiable({
+         for (final pool in candidatesByPool.entries)
+           pool.key: Map<String, PlannedMeal>.unmodifiable(pool.value),
+       });
+  final budget_search.MonthlyBudgetSearchResult search;
+  final Map<String, Map<String, PlannedMeal>> candidatesByPool;
+}
 
 /// One state owner for the future UI. Writes are atomic and published only after
 /// the existing local/Firestore store succeeds; stale cloud writes still fail.
@@ -1214,6 +1229,7 @@ class KitchenService {
   MonthlyBudgetMeal _purchasePreviewMeal(
     PlannedMeal meal,
     RecipeRevision revision, {
+    String? candidateId,
     Set<int> optionalLines = const {},
     Map<int, IngredientUse> measuredLines = const {},
   }) {
@@ -1247,7 +1263,7 @@ class KitchenService {
     return MonthlyBudgetMeal(
       date: meal.date,
       slot: meal.slot,
-      candidateId: revision.key,
+      candidateId: candidateId ?? revision.key,
       requirements: uses,
       unresolvedRequirements: unresolved,
     );
@@ -1431,6 +1447,145 @@ class KitchenService {
           )
           .toList(),
       estimateCost: (_, use) => _cost(k, use, ownedRules),
+    );
+  }
+
+  /// Searches explicit unsaved candidate pools against one saved month snapshot.
+  /// Resolves and validates every candidate before bounded cost enumeration.
+  /// The returned evidence pins current resolutions without saving or applying
+  /// them. Explicit supplied coverage may represent only part of a month.
+  Future<MonthlyBudgetSearchPreview> searchMonthlyBudgetChoices(
+    String budgetId, {
+    required Map<String, List<PlannedMeal>> pools,
+    required int maxEvaluations,
+    List<UnitRule> rules = const [],
+    Map<String, Map<String, Set<int>>> optionalLinesByPool = const {},
+    Map<String, Map<String, Map<int, IngredientUse>>> measuredByPool = const {},
+  }) async {
+    final candidates = {
+      for (final pool in pools.entries)
+        pool.key: List<PlannedMeal>.of(pool.value),
+    };
+    final ownedRules = List<UnitRule>.of(rules);
+    final optionals = {
+      for (final pool in optionalLinesByPool.entries)
+        pool.key: {
+          for (final meal in pool.value.entries)
+            meal.key: Set<int>.of(meal.value),
+        },
+    };
+    final measurements = {
+      for (final pool in measuredByPool.entries)
+        pool.key: {
+          for (final meal in pool.value.entries)
+            meal.key: Map<int, IngredientUse>.of(meal.value),
+        },
+    };
+    if (budgetId.trim().isEmpty ||
+        maxEvaluations < 1 ||
+        candidates.isEmpty ||
+        candidates.keys.any((id) => id.trim().isEmpty) ||
+        optionals.keys.any((id) => !candidates.containsKey(id)) ||
+        measurements.keys.any((id) => !candidates.containsKey(id))) {
+      throw ArgumentError(
+        'Explicit budget, pools and positive search limit required',
+      );
+    }
+    final coverage = <(String, String)>{};
+    for (final pool in candidates.entries) {
+      final meals = pool.value;
+      if (meals.isEmpty) {
+        throw ArgumentError('Candidate pools must be nonempty');
+      }
+      final ids = meals.map((meal) => meal.id).toSet();
+      if (ids.any((id) => id.trim().isEmpty) ||
+          ids.length != meals.length ||
+          (optionals[pool.key]?.keys.any((id) => !ids.contains(id)) ?? false) ||
+          (measurements[pool.key]?.keys.any((id) => !ids.contains(id)) ??
+              false)) {
+        throw ArgumentError(
+          'Duplicate candidate IDs or unselected pool decisions',
+        );
+      }
+      if (meals.any((meal) => meal.completed)) {
+        throw StateError('Cannot search completed candidate meals');
+      }
+      final first = meals.first;
+      if (!coverage.add((first.date, first.slot)) ||
+          meals.any(
+            (meal) => meal.date != first.date || meal.slot != first.slot,
+          )) {
+        throw ArgumentError('Pools must cover unique explicit dates/slots');
+      }
+    }
+    await _tail;
+    final k = snapshot;
+    final guard = jsonEncode(k);
+    final budgets = (k['budgets'] as List)
+        .where((row) => row['id'] == budgetId)
+        .toList();
+    if (budgets.length != 1) throw ArgumentError('Unknown or ambiguous budget');
+    final period = BudgetPeriod.fromJson(
+      Map<String, dynamic>.from(budgets.single as Map),
+    );
+    if (period.country !=
+        MarketProfile.fromCode(k['country'] as String).country) {
+      throw StateError(
+        'Select the budget country before searching alternatives',
+      );
+    }
+    final resolvedPools = <budget_search.MonthlyBudgetSlotPool>[];
+    final evidence = <String, Map<String, PlannedMeal>>{};
+    for (final pool in candidates.entries) {
+      final resolved = <MonthlyBudgetMeal>[];
+      final pinned = <String, PlannedMeal>{};
+      for (final meal in pool.value) {
+        final revision = await _resolveMeal(meal);
+        resolved.add(
+          _purchasePreviewMeal(
+            meal,
+            revision,
+            candidateId: meal.id,
+            optionalLines: optionals[pool.key]?[meal.id] ?? const {},
+            measuredLines: measurements[pool.key]?[meal.id] ?? const {},
+          ),
+        );
+        pinned[meal.id] = meal.withRecipeRevision(revision.key);
+      }
+      evidence[pool.key] = pinned;
+      resolvedPools.add(
+        budget_search.MonthlyBudgetSlotPool(
+          date: pool.value.first.date,
+          slot: pool.value.first.slot,
+          candidates: resolved,
+        ),
+      );
+    }
+    await _tail;
+    if (jsonEncode(snapshot) != guard) {
+      throw StateError('Kitchen changed; review monthly budget search again');
+    }
+    final result = budget_search.searchMonthlyBudgetChoices(
+      period: period,
+      pools: resolvedPools,
+      maxEvaluations: maxEvaluations,
+      rules: ownedRules,
+      stock: (k['inventory'] as List)
+          .map(
+            (row) =>
+                InventoryLot.fromJson(Map<String, dynamic>.from(row as Map)),
+          )
+          .toList(),
+      confirmedPurchases: (k['purchases'] as List)
+          .map(
+            (row) => MoneyEntry.fromJson(Map<String, dynamic>.from(row as Map)),
+          )
+          .toList(),
+      estimateCost: (_, use) => _cost(k, use, ownedRules),
+    );
+    return MonthlyBudgetSearchPreview._(
+      search: result,
+      candidatesByPool: evidence,
     );
   }
 

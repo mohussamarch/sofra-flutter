@@ -1,6 +1,6 @@
 # مكتبة الوصفات المقروءة — الحالة الحالية
 
-الحالة الحالية HANDOFF§87:90 سجلًا مقروءًا،18 حزمة مثبتة و64 لقطة مصدر؛64 أرشيفًا+23 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
+الحالة الحالية HANDOFF§88:1090 سجلًا مقروءًا،19 حزمة مثبتة و1064 لقطة مصدر؛1064 أرشيفًا+23 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
 
 ## تفصيل تسليم§71 التاريخي
 
@@ -107,3 +107,8 @@ Two ChefOmar site-attributed creator-website records: chicken with mushroom crea
 ## Current §87
 
 90 readable source records=64localarchive+23creatorwebsite+3indexedYTdescriptions;18packs/64snapshots,53local source category labels. Planning54/4 and naanmethodfamily1 unchanged. Bounded explicit-candidate monthly search implemented;292fullFlutter/30relatedNode/analyze clean. HANDOFF§87. Offline existing source236563/r4518607 Egyptian lentilstew and129995/r4518126 Cypriotsalad;16ingredients+2optionalprocedural extras/12steps, bothneeds-review. Exactcategory labels egyptian/cypriot are new local labels, not newly approved cuisines. Preserve salt/soupmix alternative, unknowngarnishes,5–6oliverange/spoon ambiguity/saladtimeyield; no invented80min total.0network/newbooks/runtimeapprovals;53preflightissues. PackSHAea7c1ec0ed013632c8fb1e1326303fa7be09a20db6d91c87c52c72d6cf6d5a94;all17priorpinsunchanged. Manifest85cb5e078705592ecafcdfb8b7440e17bc62a64dd477b08b6d0c818ce30aadde.
+
+
+## Current §88
+
+1090 readable source records=1064offlinearchive+23creatorwebsite+3indexedYTdescriptions;19packs/1064snapshots,71local source-category labels. Planning54/4 and reviewed naanmethodfamily1 unchanged. Native1000-record batch and snapshot-safe monthly candidate search service implemented;306fullFlutter/31relatedNode/analyze clean. HANDOFF§88. Exact1000 already-parsed archive records converted to native schema with1000immutable source snapshots,9709ingredients/7431steps,53sourcecategories/102untagged. OriginalEnglish retained,0translations/newacquisitions/culinary/nutrition/runtimeapprovals. All9709acceptedamounts/units and1000yield/time values unknown; rawsource/quantity candidates preserved for explicit review. Exactsource/contentdedup versus prior90 and withinbatch, no semantic/crosslanguageuniquedish claim. Eligiblepool3575of3640Englishparsedrecords. Frozen18pack baseline allows own/laterregistration withunchangedoriginalpins. PackSHA26d6ca3ebf32b88f46e3573fdaadf8d5f959e4b230203a9e4b90be783981be02; CLI tool/recipes/bulk-normalize-1000.mjs --check,6focusedNodepassed. No newbooknetwork. This batch meets1000conversiontarget, not1000newacquisitions.

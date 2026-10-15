@@ -6,21 +6,53 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test(
-    'selected Arabic library assets load without promoting planning data',
+    'selected source library assets load without promoting planning data',
     () async {
       final repository = bundledRecipeLibrary();
       final entries = await repository.all();
-      expect(entries, hasLength(90));
+      expect(entries, hasLength(1090));
       expect(entries.where((entry) => entry.runtimeReady), isEmpty);
       expect(entries.every((entry) => entry.nutrition == null), isTrue);
+      final sourceLanguageEntries = entries
+          .where(
+            (entry) =>
+                entry.sourceRecord['translationStatus'] == 'not-translated',
+          )
+          .toList();
+      expect(sourceLanguageEntries, hasLength(1000));
+      expect(
+        sourceLanguageEntries.fold<int>(
+          0,
+          (n, entry) => n + entry.ingredients.length,
+        ),
+        9709,
+      );
+      expect(
+        sourceLanguageEntries.fold<int>(
+          0,
+          (n, entry) => n + entry.stepsArabic.length,
+        ),
+        7431,
+      );
+      expect(
+        sourceLanguageEntries.every(
+          (entry) =>
+              entry.sourceRecord['nameAr'] == null &&
+              entry.titleAr.isNotEmpty &&
+              entry.ingredients.every(
+                (line) => line.amount == null && line.unit == null,
+              ),
+        ),
+        isTrue,
+      );
       expect(await repository.search('مقلوبة'), hasLength(2));
       expect(await repository.search('نان'), isNotEmpty);
       expect(await repository.search('حريرة'), isNotEmpty);
-      expect(await repository.filterByCuisine('Moroccan'), hasLength(10));
+      expect(await repository.filterByCuisine('Moroccan'), hasLength(15));
       expect((await RecipeRepository().index), hasLength(54));
       expect(
         entries.where((entry) => entry.sourceSnapshot != null),
-        hasLength(64),
+        hasLength(1064),
       );
       expect(entries.every((entry) => entry.stepsArabic.isNotEmpty), isTrue);
       for (final cuisine in [
@@ -77,8 +109,8 @@ void main() {
       );
       expect(cake.ingredients.first.amount, isNull);
       expect(cake.ingredients.first.sourceQuantityText, '5-4');
-      expect(await repository.filterByCuisine('japanese'), hasLength(1));
-      expect(await repository.filterByCuisine('thai'), hasLength(1));
+      expect(await repository.filterByCuisine('japanese'), hasLength(37));
+      expect(await repository.filterByCuisine('thai'), hasLength(35));
     },
   );
 }

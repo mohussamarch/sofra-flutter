@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "assessedAt": "2026-10-15",
+  "checkout": "E:\\work\\SOFRA\\app",
+  "scope": "metadata-only-modern-source-reconnaissance; not recipe acquisition or existing-archive reprocessing",
+  "minimumRequestedBatchRecipes": 1000,
+  "longTermRequestedGoalAtLeast": 10000,
+  "quotaAtStart": {
+    "primaryUsedPercent": 7,
+    "weeklyUsedPercent": 17,
+    "ordinaryUsageAllowed": true,
+    "userAuthorizedStopPercent": 99
+  },
+  "requestCap": 12,
+  "sourceToolCalls": 7,
+  "underlyingRequests": 12,
+  "queries": 6,
+  "openOrClickTargets": 6,
+  "requests": [
+    {
+      "request": 1,
+      "kind": "query",
+      "query": "site.myplate.gov recipes search 1000 recipes USDA Mixing Bowl download",
+      "outcome": "Malformed site filter returned third-party mirrors plus some official USDA results. Mirror1072 count/rights/retirement claims not accepted as primary evidence."
+    },
+    {
+      "request": 2,
+      "kind": "query",
+      "query": "site:myplate.gov \"Copyright\" recipes",
+      "outcome": "No source-specific licence/contributor-exception policy established."
+    },
+    {
+      "request": 3,
+      "kind": "open",
+      "url": "https://www.myplate.gov/myplate-kitchen/recipes",
+      "outcome": "Timeout; no index body or current recipe count retrieved."
+    },
+    {
+      "request": 4,
+      "kind": "open",
+      "url": "https://www.myplate.gov/",
+      "outcome": "Timeout; no current homepage body retrieved."
+    },
+    {
+      "request": 5,
+      "kind": "query",
+      "query": "site:choumicha.ma \"recettes\" \"1000\"",
+      "outcome": "No matching result; source scale not established, not proof source has fewer than1000."
+    },
+    {
+      "request": 6,
+      "kind": "query",
+      "query": "site:kingarthurbaking.com \"thousands\" \"recipes\"",
+      "outcome": "Primary app/newsroom pages state2700+ recipes; count is publisher claim, not independently enumerated or collected."
+    },
+    {
+      "request": 7,
+      "kind": "open",
+      "url": "https://www.kingarthurbaking.com/recipes",
+      "outcome": "Public HTML recipe hub with category/recipe links; not a1000-record content export."
+    },
+    {
+      "request": 8,
+      "kind": "open",
+      "url": "https://www.kingarthurbaking.com/robots.txt",
+      "outcome": "Retrieved. Declares sitemap.xml; normal /recipes/{slug}-recipe not listed as disallowed. Search/print/ajax-print paths disallowed; robots is not reuse permission."
+    },
+    {
+      "request": 9,
+      "kind": "open",
+      "url": "https://www.kingarthurbaking.com/sitemap.xml",
+      "outcome": "Declared URL not accessible via web tool. No sitemap XML parsed, recipe URLs counted or retry attempted."
+    },
+    {
+      "request": 10,
+      "kind": "click-open",
+      "from": "https://www.kingarthurbaking.com/recipes",
+      "url": "https://www.kingarthurbaking.com/recipes/maple-pecan-cheesecake-recipe",
+      "outcome": "Public page exposes20ingredient bullet lines and15numbered instruction items including storage; named author, update date2026-10-09, yield/time. Content completeness observed for this one page only; nothing imported."
+    },
+    {
+      "request": 11,
+      "kind": "query",
+      "query": "site:kingarthurbaking.com \"terms\" \"recipes\" \"permission\"",
+      "outcome": "Current primary Terms effective2026-04-01, indexed today:§6expressly disallows scraping/crawling;§10requires written permission for content exploitation. Candidate not eligible for proposed automatic crawl."
+    },
+    {
+      "request": 12,
+      "kind": "query",
+      "query": "site:usda.gov copyright third party recipes permission public domain",
+      "outcome": "NAL primary policies say most NAL information public domain with third-party exceptions; federal-employee works distinction. Not a MyPlate-specific blanket licence, no resolution of university/state/contributor recipes. Unrelated research PDFs ignored."
+    }
+  ],
+  "outcome": "no-eligible-scalable-source-verified-within-cap",
+  "recipesCollected": 0,
+  "recipesImported": 0,
+  "completeSamplePagesObserved": 1,
+  "sampledIngredientLines": 20,
+  "sampledInstructionItems": 15,
+  "independentlyEnumeratedDistinctRecipeUrls": 0,
+  "verifiedRetrievableCompleteRecipeCount": null,
+  "rightsApprovedRecipes": 0,
+  "candidates": [
+    {
+      "sourceId": "king-arthur-baking",
+      "ownerEvidence": "primary publisher website/app/newsroom",
+      "claimedRecipeCountMinimum": 2700,
+      "claimUrl": "https://www.kingarthurbaking.com/app",
+      "supportingCountUrl": "https://www.kingarthurbaking.com/newsroom/2025/11/18/king-arthur-baking-company-launches-new-recipe-app",
+      "claimIsRetrievedCount": false,
+      "sampleUrl": "https://www.kingarthurbaking.com/recipes/maple-pecan-cheesecake-recipe",
+      "sampleIngredientsPresent": true,
+      "sampleInstructionsPresent": true,
+      "sampleIngredientBulletLines": 20,
+      "sampleNumberedInstructionItems": 15,
+      "sampleContainsOptionalGroups": true,
+      "rawRecipeSaved": false,
+      "robotsUrl": "https://www.kingarthurbaking.com/robots.txt",
+      "declaredSitemap": "https://www.kingarthurbaking.com/sitemap.xml",
+      "sitemapRetrieved": false,
+      "documentedPublicBulkApi": null,
+      "blindApiProbes": 0,
+      "termsUrl": "https://www.kingarthurbaking.com/policies/terms-of-use",
+      "termsEffectiveDate": "2026-04-01",
+      "collectionStatus": "do-not-start-automatic-crawl; explicit site terms prohibit scraping",
+      "reuseRights": "written-permission-required-under-publisher-terms; no permission obtained",
+      "limitation": "Publisher2700+ and one page do not establish1000distinct fully retrievable recipes; mainly baking and not broad-cuisine coverage."
+    },
+    {
+      "sourceId": "myplate-usda-official",
+      "indexUrl": "https://www.myplate.gov/myplate-kitchen/recipes",
+      "homepageUrl": "https://www.myplate.gov/",
+      "directFetchStatus": "both-timeout",
+      "claimedCurrentRecipeCount": null,
+      "recipeBodyRetrieved": false,
+      "documentedPublicBulkApi": null,
+      "contributorsReviewed": false,
+      "englishSpanishDedupReviewed": false,
+      "reuseRights": null,
+      "automaticCollectionReady": false,
+      "unaffiliatedMirrorClaimsAccepted": false,
+      "limitation": "No official retirement/count/licence/content or language-duplicate evidence established in this probe. Do not treat all externally contributed USDA-hosted content as federal employee works."
+    },
+    {
+      "sourceId": "choumicha",
+      "officialDomainQueried": "choumicha.ma",
+      "scaleVerified": false,
+      "recipeCount": null,
+      "reuseRights": null,
+      "automaticCollectionReady": false,
+      "limitation": "One constrained query returned no matching result; not an exhaustive Arab creator/source assessment."
+    }
+  ],
+  "primaryPolicyEvidence": [
+    {
+      "url": "https://www.nal.usda.gov/web-policies-and-important-links",
+      "scope": "NAL website, not automatic MyPlate recipe licence",
+      "observation": "Most information public domain; certain third-party material has copyright/trademark/patent or personal-use restrictions."
+    },
+    {
+      "url": "https://www.nal.usda.gov/programs/speccoll",
+      "scope": "NAL collection guidance",
+      "observation": "Federal employee works made in course of jobs distinguished from works merely held by library; copyright ownership requires item review."
+    }
+  ],
+  "requiredBeforeCollection": [
+    "For KingArthur: documented owner permission or supplied licensed export that expressly covers automated bulk access and intended reuse; no contact was made. A robots sitemap alone is insufficient.",
+    "For MyPlate: current official reachable index/feed/export with ingredients and method; inspect each source/contributor licence/credit and exceptions, without assuming federal-domain rights from hosting.",
+    "Enumerate canonical source recipe IDs/URLs and count only successful nonempty ingredients+method records; exclude navigation/articles, partial pages, failures, duplicate snapshots and English/Spanish translations of same recipe.",
+    "Confirm at least1000distinct complete contents after exact/near duplicate and language-version checks. Publisher counts or1000links do not meet requested batch.",
+    "Implement resumable collector only after source access is documented: pacing/backoff, bounded responses, hashes/provenance, immutable snapshots, unknown quantity/yield/time retention; no print/search-disallowed paths or guessed endpoints.",
+    "Keep modern-source progress separate from coordinator existing-archive1000 batch; do not count reprocessing as new acquisition. Cuisine coverage must be evidenced, not inferred."
+  ],
+  "forbiddenActionsNotTaken": {
+    "networkOldBooks": false,
+    "mediaDownloaded": false,
+    "accountOrSignup": false,
+    "paidApi": false,
+    "captchaOrGateBypass": false,
+    "alternateHostCircumvention": false,
+    "blindDrupalWordPressApiGuessing": false,
+    "merchantContact": false
+  },
+  "nextAction": "Return assessment to coordinator; no eligible automatic collector starts from this probe."
+}
