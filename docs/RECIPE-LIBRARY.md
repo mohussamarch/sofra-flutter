@@ -1,6 +1,6 @@
 # مكتبة الوصفات المقروءة — الحالة الحالية
 
-الحالة الحالية HANDOFF§86:88 سجلًا مقروءًا،17 حزمة مثبتة و62 لقطة مصدر؛62 أرشيفًا+23 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
+الحالة الحالية HANDOFF§87:90 سجلًا مقروءًا،18 حزمة مثبتة و64 لقطة مصدر؛64 أرشيفًا+23 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
 
 ## تفصيل تسليم§71 التاريخي
 
@@ -102,3 +102,8 @@ Two indexed-description records attributed specifically to CBCSofra(Verified)/Na
 ## Current §86
 
 Two ChefOmar site-attributed creator-website records: chicken with mushroom cream and mujaddara component. Site/channel ownership link unconfirmed, legacy creator ID/officialSite field is not ownership verification; youtubeDerived=false.18listedingredients/9Arabicsteps from3source methodparts,11amount+unit/7incomplete. Chicken500unitnull; mujaddara componentyield/timenull while combinedpage30min/4servings remain separate evidence.6queries+2failedopens=8/8underlying requests; indexed excerpts only,0directbody/media/transcript/newbooks. No cuisine/family/rights/nutrition/runtime approval. PackSHAe66c8109e43a72c58645ba575ad7e92ca3d17cf58d626da1dd7be84ceed1be7d; manifest4e1a9f2674b7c4290401d712c47c081fdf3e0f1d648138b93964fe84338cadcc; all16priorpackpins unchanged.
+
+
+## Current §87
+
+90 readable source records=64localarchive+23creatorwebsite+3indexedYTdescriptions;18packs/64snapshots,53local source category labels. Planning54/4 and naanmethodfamily1 unchanged. Bounded explicit-candidate monthly search implemented;292fullFlutter/30relatedNode/analyze clean. HANDOFF§87. Offline existing source236563/r4518607 Egyptian lentilstew and129995/r4518126 Cypriotsalad;16ingredients+2optionalprocedural extras/12steps, bothneeds-review. Exactcategory labels egyptian/cypriot are new local labels, not newly approved cuisines. Preserve salt/soupmix alternative, unknowngarnishes,5–6oliverange/spoon ambiguity/saladtimeyield; no invented80min total.0network/newbooks/runtimeapprovals;53preflightissues. PackSHAea7c1ec0ed013632c8fb1e1326303fa7be09a20db6d91c87c52c72d6cf6d5a94;all17priorpinsunchanged. Manifest85cb5e078705592ecafcdfb8b7440e17bc62a64dd477b08b6d0c818ce30aadde.

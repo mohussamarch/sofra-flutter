@@ -1,0 +1,770 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-15",
+  "reviewer": "Bounded offline archived-source Arabic transcription; no kitchen testing",
+  "changeNotice": "Two Arabic adaptations of exact Wikibooks revisions already in the local archive; zero network/new book acquisition. CC BY-SA 4.0 attribution and share-alike retained. Category evidence is source-supported only, not approved national cuisine. Unspecified spoon sizes, ingredient alternatives, ranges and unknowns are preserved. Page-specific exceptions and culinary/runtime approval remain unreviewed.",
+  "sourceEvidence": {
+    "sourceFileSha256": "93e85705e9141453d5708622c321c17fc793b4fbacfb0663d079fd365e1385d0",
+    "parsedRecipesSha256": "b03a74dbe473f11d42d9a7456834d930384c3188d2cf6cae512dfe3cbb50dad5",
+    "categoryObservationsSha256": "44b3f050f8fb7ed4bed800554d280e8f9251ea58830e90257f18049ecd70f350"
+  },
+  "sourceCount": 2,
+  "recipes": [
+    {
+      "id": "curated-local:236563",
+      "recordVersion": 1,
+      "name": "Egyptian Lentil Stew",
+      "nameAr": "يخنة العدس المصرية",
+      "status": "needs-review",
+      "familyId": "curated-local:egyptian-red-lentil-stew",
+      "methodId": "saute-simmer-lemon",
+      "cuisines": [
+        {
+          "id": "egyptian",
+          "nameAr": "مصري",
+          "evidenceText": "Category:Egyptian recipes",
+          "sourceRecordId": "wikibooks-236563-r4518607",
+          "reviewStatus": "source-supported-not-runtime-approved"
+        }
+      ],
+      "yield": {
+        "amount": 4,
+        "min": 4,
+        "max": 4,
+        "unit": "servings",
+        "sourceText": "4"
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": 20,
+        "cookMinutes": 60,
+        "sourceText": "20 minutes (prep); 1 hour (cook)"
+      },
+      "ingredients": [
+        {
+          "sourceLineIndex": 0,
+          "name": "2 onions, peeled and chopped",
+          "nameAr": "بصل مقشر ومفروم",
+          "amount": 2,
+          "unit": "onion",
+          "optional": false,
+          "included": true,
+          "decisionNote": "بصلتان كما في المصدر؛ لا وزن مفترض.",
+          "sourceText": "2 onions, peeled and chopped",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:236563",
+            "recordId": "wikibooks-236563-r4518607",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518607",
+            "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 0,
+            "lineId": "source-line-1",
+            "sourceText": "2 onions, peeled and chopped",
+            "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 1,
+          "name": "4 tablespoons olive oil",
+          "nameAr": "زيت زيتون",
+          "amount": 4,
+          "unit": "tbsp",
+          "optional": false,
+          "included": true,
+          "decisionNote": "4ملاعق كبيرة دون تحويل إلى حجم أو وزن.",
+          "sourceText": "4 tablespoons olive oil",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:236563",
+            "recordId": "wikibooks-236563-r4518607",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518607",
+            "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 1,
+            "lineId": "source-line-2",
+            "sourceText": "4 tablespoons olive oil",
+            "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 2,
+          "name": "8 cups water",
+          "nameAr": "ماء",
+          "amount": 8,
+          "unit": "cup",
+          "optional": false,
+          "included": true,
+          "decisionNote": "8أكواب؛ نظام حجم الكوب غير محدد.",
+          "sourceText": "8 cups water",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:236563",
+            "recordId": "wikibooks-236563-r4518607",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518607",
+            "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 2,
+            "lineId": "source-line-3",
+            "sourceText": "8 cups water",
+            "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 3,
+          "name": "½ pound red lentils",
+          "nameAr": "عدس أحمر",
+          "amount": 0.5,
+          "unit": "lb",
+          "optional": false,
+          "included": true,
+          "decisionNote": "نصف رطل كما في المصدر؛ لا تحويل إلى جرام.",
+          "sourceText": "½ pound red lentils",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:236563",
+            "recordId": "wikibooks-236563-r4518607",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518607",
+            "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 3,
+            "lineId": "source-line-4",
+            "sourceText": "½ pound red lentils",
+            "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 4,
+          "name": "Salt to taste or 4 tablespoons of soup mix (you can use any kind of soup mix, or if you don't have any, you can just leave it out)",
+          "nameAr": "ملح حسب الذوق أو خليط شوربة",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "included": true,
+          "decisionNote": "المصدر: ملح حسب الذوق أو4ملاعق كبيرة خليط شوربة ويمكن حذفه؛ لم يُختر بديل ولم يوحد السطر المركب كمكون غذائي.",
+          "sourceText": "Salt to taste or 4 tablespoons of soup mix (you can use any kind of soup mix, or if you don't have any, you can just leave it out)",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:236563",
+            "recordId": "wikibooks-236563-r4518607",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518607",
+            "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 4,
+            "lineId": "source-line-5",
+            "sourceText": "Salt to taste or 4 tablespoons of soup mix (you can use any kind of soup mix, or if you don't have any, you can just leave it out)",
+            "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 5,
+          "name": "1 teaspoon ground cumin",
+          "nameAr": "كمون مطحون",
+          "amount": 1,
+          "unit": "tsp",
+          "optional": false,
+          "included": true,
+          "decisionNote": "ملعقة صغيرة كما في المصدر.",
+          "sourceText": "1 teaspoon ground cumin",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:236563",
+            "recordId": "wikibooks-236563-r4518607",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518607",
+            "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 5,
+            "lineId": "source-line-6",
+            "sourceText": "1 teaspoon ground cumin",
+            "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 6,
+          "name": "1 teaspoon ground coriander",
+          "nameAr": "كزبرة مطحونة",
+          "amount": 1,
+          "unit": "tsp",
+          "optional": false,
+          "included": true,
+          "decisionNote": "ملعقة صغيرة كما في المصدر.",
+          "sourceText": "1 teaspoon ground coriander",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:236563",
+            "recordId": "wikibooks-236563-r4518607",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518607",
+            "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 6,
+            "lineId": "source-line-7",
+            "sourceText": "1 teaspoon ground coriander",
+            "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 7,
+          "name": "1 lemon",
+          "nameAr": "ليمون",
+          "amount": 1,
+          "unit": "lemon",
+          "optional": false,
+          "included": true,
+          "decisionNote": "ليمونة كاملة لعصرها؛ مردود العصير مجهول.",
+          "sourceText": "1 lemon",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:236563",
+            "recordId": "wikibooks-236563-r4518607",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518607",
+            "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 7,
+            "lineId": "source-line-8",
+            "sourceText": "1 lemon",
+            "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "name": "extra cumin to serve",
+          "nameAr": "كمون إضافي عند التقديم",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "included": true,
+          "sourceText": "Cumin and more fresh lemon and can be added to the bowl according to preference.",
+          "reason": "إضافة اختيارية إجرائية بلا كمية؛ لا تخصم تلقائيًا من الملعقة الأساسية.",
+          "foodBinding": null
+        },
+        {
+          "name": "extra fresh lemon to serve",
+          "nameAr": "ليمون طازج إضافي عند التقديم",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "included": true,
+          "sourceText": "Cumin and more fresh lemon and can be added to the bowl according to preference.",
+          "reason": "إضافة اختيارية إجرائية بلا كمية؛ لا تفترض ليمونة ثانية.",
+          "foodBinding": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "textAr": "ضعي البصل المفروم في قدر كبير مع4ملاعق كبيرة زيت الزيتون.",
+          "sourceStepIndices": [
+            0
+          ],
+          "duration": null
+        },
+        {
+          "n": 2,
+          "textAr": "شوّحي البصل على نار منخفضة حتى يشفّ ويصبح ذهبيًا قليلًا.",
+          "sourceStepIndices": [
+            1
+          ],
+          "duration": null
+        },
+        {
+          "n": 3,
+          "textAr": "أضيفي8أكواب الماء والعدس والكمون والكزبرة؛ تذكر الخطوة الأصلية خليط الشوربة، بينما بديله مع الملح وحذفه ما زال يحتاج اختيارًا.",
+          "sourceStepIndices": [
+            2
+          ],
+          "duration": null
+        },
+        {
+          "n": 4,
+          "textAr": "قلّبي وارفعِي الحرارة إلى المتوسطة تقريبًا ليظهر غليان خفيف دون غليان شديد.",
+          "sourceStepIndices": [
+            3
+          ],
+          "duration": null
+        },
+        {
+          "n": 5,
+          "textAr": "اتركي الخليط على غليان هادئ ساعة مع التقليب كل بضع دقائق وضبط الحرارة؛ تذوقي وأضيفي الملح عند الحاجة بحسب اختيار المكوّن.",
+          "sourceStepIndices": [
+            4
+          ],
+          "duration": {
+            "min": 60,
+            "max": 60,
+            "scope": "simmer",
+            "approximate": false
+          }
+        },
+        {
+          "n": 6,
+          "textAr": "أطفئي الموقد وانقلي القدر إلى موقد آخر حتى لا يستمر الطهي.",
+          "sourceStepIndices": [
+            5
+          ],
+          "duration": null
+        },
+        {
+          "n": 7,
+          "textAr": "اقطعي الليمونة نصفين واعصريها.",
+          "sourceStepIndices": [
+            6
+          ],
+          "duration": null
+        },
+        {
+          "n": 8,
+          "textAr": "أضيفي عصير الليمون إلى القدر وقلّبي.",
+          "sourceStepIndices": [
+            7
+          ],
+          "duration": null
+        },
+        {
+          "n": 9,
+          "textAr": "تذوقي وقدّمي؛ يذكر المصدر إمكانية إضافة كمون وليمون طازج إضافيين حسب التفضيل.",
+          "sourceStepIndices": [
+            8
+          ],
+          "duration": null
+        }
+      ],
+      "excludedSourceSteps": [],
+      "notes": [
+        "الناتج4حصص، والتحضير20دقيقة والطهي ساعة منشوران؛ لا يوجد مجموع منشور ولا زمن مقاس فعليًا، فلا ننتج80دقيقة كحقيقة مصدرية.",
+        "القائمة تسمح بملح أو4ملاعق خليط شوربة أوحذفه، لكن الخطوة3تذكر خليط الشوربة ثم تضيف الملح عند الحاجة؛ لم يُحسم الاختيار أو هوية الخليط.",
+        "المصدر يسميها يخنة عدس مصرية ويذكر اسم shorbat ads بمعنى حساء عدس؛ لا يثبت ذلك تطابقها مع وصفة كتالوج أخرى أو اختلاف طريقة معتمد.",
+        "تصنيف Category:Egyptian recipes دليل المصدر، وليس اعتماد مطبخ وطني أو وصفة سريرية."
+      ],
+      "blockers": [
+        "اختيار الملح/خليط الشوربة وكميته وهوية الخليط والكوب والرطل والتزيين يحتاج مراجعة قبل التحجيم أو الحساب."
+      ],
+      "provenance": {
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "recordId": "wikibooks-236563-r4518607",
+        "sourceRevision": "4518607",
+        "sourceRevisionTimestamp": "2025-06-21T16:31:04Z",
+        "retrievedAt": "2026-10-13T12:41:48.487Z",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Egyptian%20Lentil%20Stew&oldid=4518607",
+        "sourceSha256": "5e641ad39ea89d064cbd92228b0d5d4fd93a229f69e445b7203feac4f320ab35",
+        "derivedRecipeSha256": "bd2dd747872117f1f59c36f12241a4c8288f55ae97e47a8cd1220f9e013a992a",
+        "sourceSnapshotFile": "data/recipes/curated-local/twelfth-reviewed-20261015/source-snapshots/236563.json",
+        "sourceSnapshotSha256": "51ca10517748b223b1911ec35afbdd08168c8b4fc56892c1dcece4717f7125c5",
+        "license": {
+          "id": "wikibooks-cookbook-cc-by-sa-4.0",
+          "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+          "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+          "policyStatus": "verified-license",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+          "changeNoticeRequired": true,
+          "shareAlikeRequired": true
+        },
+        "licenseSha256": "7dc7e6d68854fef6219629c22af63a6408816df9a465f677ba7ea4bb69bd88b3",
+        "changeNotice": "Two Arabic adaptations of exact Wikibooks revisions already in the local archive; zero network/new book acquisition. CC BY-SA 4.0 attribution and share-alike retained. Category evidence is source-supported only, not approved national cuisine. Unspecified spoon sizes, ingredient alternatives, ranges and unknowns are preserved. Page-specific exceptions and culinary/runtime approval remain unreviewed."
+      },
+      "nutrition": null,
+      "runtimeReady": false,
+      "actuallyKitchenTested": false,
+      "gates": {
+        "culinarySourceTranscription": true,
+        "independentCulinaryApproval": false,
+        "perPageLicenseApproved": false,
+        "inventoryIdentityApproved": false,
+        "nutritionApproved": false
+      },
+      "contentSha256": "2f56468f15a260c449c655d2655e9168b477533fc186edff018f91eb03bbf5aa"
+    },
+    {
+      "id": "curated-local:129995",
+      "recordVersion": 1,
+      "name": "Cypriot Salad",
+      "nameAr": "سلطة قبرصية",
+      "status": "needs-review",
+      "familyId": "curated-local:cypriot-vegetable-feta-salad",
+      "methodId": "raw-cut-dress",
+      "cuisines": [
+        {
+          "id": "cypriot",
+          "nameAr": "قبرصي",
+          "evidenceText": "Category:Cypriot recipes",
+          "sourceRecordId": "wikibooks-129995-r4518126",
+          "reviewStatus": "source-supported-not-runtime-approved"
+        }
+      ],
+      "yield": {
+        "amount": null,
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "declaredTotalMinutes": null,
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "sourceText": "غير منشور"
+      },
+      "ingredients": [
+        {
+          "sourceLineIndex": 0,
+          "name": "1 tomato",
+          "nameAr": "طماطم",
+          "amount": 1,
+          "unit": "tomato",
+          "optional": false,
+          "included": true,
+          "decisionNote": "ثمرة واحدة كما وردت؛ حجمها ووزنها غير منشورين.",
+          "sourceText": "1 tomato",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:129995",
+            "recordId": "wikibooks-129995-r4518126",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518126",
+            "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 0,
+            "lineId": "source-line-1",
+            "sourceText": "1 tomato",
+            "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 1,
+          "name": "1 cucumber",
+          "nameAr": "خيار",
+          "amount": 1,
+          "unit": "cucumber",
+          "optional": false,
+          "included": true,
+          "decisionNote": "ثمرة واحدة كما وردت؛ حجمها ووزنها غير منشورين.",
+          "sourceText": "1 cucumber",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:129995",
+            "recordId": "wikibooks-129995-r4518126",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518126",
+            "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 1,
+            "lineId": "source-line-2",
+            "sourceText": "1 cucumber",
+            "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 2,
+          "name": "3 leaves of lettuce",
+          "nameAr": "خس",
+          "amount": 3,
+          "unit": "leaf",
+          "optional": false,
+          "included": true,
+          "decisionNote": "3أوراق؛ لا وزن مفترض.",
+          "sourceText": "3 leaves of lettuce",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:129995",
+            "recordId": "wikibooks-129995-r4518126",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518126",
+            "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 2,
+            "lineId": "source-line-3",
+            "sourceText": "3 leaves of lettuce",
+            "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 3,
+          "name": "1 small onion",
+          "nameAr": "بصل صغير",
+          "amount": 1,
+          "unit": "onion",
+          "optional": false,
+          "included": true,
+          "decisionNote": "بصلة صغيرة واحدة كما في المصدر.",
+          "sourceText": "1 small onion",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:129995",
+            "recordId": "wikibooks-129995-r4518126",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518126",
+            "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 3,
+            "lineId": "source-line-4",
+            "sourceText": "1 small onion",
+            "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 4,
+          "name": "1 spoon of feta cheese, cut into small pieces",
+          "nameAr": "جبن فيتا مقطع صغيرًا",
+          "amount": 1,
+          "unit": "spoon-unspecified",
+          "optional": false,
+          "included": true,
+          "decisionNote": "المصدر1spoon؛ لا يفترض أنها ملعقة طعام أو صغيرة.",
+          "sourceText": "1 spoon of feta cheese, cut into small pieces",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:129995",
+            "recordId": "wikibooks-129995-r4518126",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518126",
+            "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 4,
+            "lineId": "source-line-5",
+            "sourceText": "1 spoon of feta cheese, cut into small pieces",
+            "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 5,
+          "name": "5–6 black olives",
+          "nameAr": "زيتون أسود",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "included": true,
+          "decisionNote": "المدى5–6حبات محفوظ في النص؛ لم يُختر عدد واحد.",
+          "sourceText": "5–6 black olives",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:129995",
+            "recordId": "wikibooks-129995-r4518126",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518126",
+            "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 5,
+            "lineId": "source-line-6",
+            "sourceText": "5–6 black olives",
+            "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad"
+          },
+          "quantityPrecision": "unknown",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 6,
+          "name": "3 spoons of olive oil",
+          "nameAr": "زيت زيتون",
+          "amount": 3,
+          "unit": "spoon-unspecified",
+          "optional": false,
+          "included": true,
+          "decisionNote": "المصدر3spoons؛ نوع الملعقة وحجمها مجهولان.",
+          "sourceText": "3 spoons of olive oil",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:129995",
+            "recordId": "wikibooks-129995-r4518126",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518126",
+            "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 6,
+            "lineId": "source-line-7",
+            "sourceText": "3 spoons of olive oil",
+            "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        },
+        {
+          "sourceLineIndex": 7,
+          "name": "2 spoons of lemon juice",
+          "nameAr": "عصير ليمون",
+          "amount": 2,
+          "unit": "spoon-unspecified",
+          "optional": false,
+          "included": true,
+          "decisionNote": "المصدر2spoons؛ نوع الملعقة وحجمها مجهولان.",
+          "sourceText": "2 spoons of lemon juice",
+          "target": {
+            "schemaVersion": 1,
+            "recipeId": "wikibooks:129995",
+            "recordId": "wikibooks-129995-r4518126",
+            "sourceId": "wikibooks-cookbook-cc-by-sa",
+            "sourceRevision": "4518126",
+            "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+            "parserVersion": "wikibooks-sections-v3",
+            "quantityParserVersion": "source-prefix-v2",
+            "lineIndex": 7,
+            "lineId": "source-line-8",
+            "sourceText": "2 spoons of lemon juice",
+            "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad"
+          },
+          "quantityPrecision": "source-stated",
+          "scales": null,
+          "foodBinding": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "n": 1,
+          "textAr": "قطّعي الخضروات إلى قطع.",
+          "sourceStepIndices": [
+            0
+          ],
+          "duration": null
+        },
+        {
+          "n": 2,
+          "textAr": "ضعيها في وعاء وزينيها بالبصل وجبن الفيتا والزيتون وفق ترتيبك.",
+          "sourceStepIndices": [
+            1
+          ],
+          "duration": null
+        },
+        {
+          "n": 3,
+          "textAr": "قبيل التقديم أضيفي زيت الزيتون والليمون وقلّبي؛ عبارة المصدر add salad في هذه الخطوة ملتبسة ومحفوظة للمراجعة.",
+          "sourceStepIndices": [
+            2
+          ],
+          "duration": null
+        }
+      ],
+      "excludedSourceSteps": [],
+      "notes": [
+        "الناتج والتحضير والطهي والمجموع غير منشورة؛ لا يُخترع زمن صفري لأنها سلطة نيئة.",
+        "المدى5–6للزيتون محفوظ؛ لم نحوله إلى5أو6أو5.5.",
+        "spoon في مقادير الفيتا والزيت والليمون لا يحدد حجمًا؛ الوحدةspoon-unspecified تبقي هذا الغموض ولا تعنيtbsp.",
+        "الخطوة الأخيرة تقول add salad and olive oil with lemon and shake؛ لم تُضف مكونات غير مذكورة لحل الصياغة.",
+        "رابط Cuisine of Cyprus وCategory:Cypriot recipes في النص يدعمان نسبة المصدر؛ لا تعتمد تسمية قومية أو مساواة مع سلطة يونانية."
+      ],
+      "blockers": [
+        "مقاس الملعقة ومدى الزيتون والناتج والزمن وصياغة الخطوة الأخيرة تحتاج مراجعة قبل التحجيم أو الحساب."
+      ],
+      "provenance": {
+        "sourceId": "wikibooks-cookbook-cc-by-sa",
+        "recordId": "wikibooks-129995-r4518126",
+        "sourceRevision": "4518126",
+        "sourceRevisionTimestamp": "2025-06-21T16:15:17Z",
+        "retrievedAt": "2026-10-13T12:41:34.045Z",
+        "sourceUrl": "https://en.wikibooks.org/w/index.php?title=Cookbook:Cypriot%20Salad&oldid=4518126",
+        "sourceSha256": "9d570522eccf4ace67fcb596e89c7c33c5941d1b0c17c47de49b98c36f886616",
+        "derivedRecipeSha256": "cffe4163e72b20de0c5947730b37e126cd21e76bf96cee705b2b6c2020b33dad",
+        "sourceSnapshotFile": "data/recipes/curated-local/twelfth-reviewed-20261015/source-snapshots/129995.json",
+        "sourceSnapshotSha256": "800fcdaca18e157d91d8455e5182835eb51478afc67218b22da744c34d01ce3c",
+        "license": {
+          "id": "wikibooks-cookbook-cc-by-sa-4.0",
+          "name": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0); Wikibooks text is generally dual-licensed with GFDL unless otherwise noted",
+          "evidenceUrl": "https://en.wikibooks.org/wiki/Wikibooks:Copyrights",
+          "policyStatus": "verified-license",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "attribution": "Attribute Wikibooks contributors by linking each version-specific source page. Indicate that structured fields are extracted and any translated or edited text is modified. Include CC BY-SA 4.0 notice/link and share adaptations under CC BY-SA 4.0 or later.",
+          "changeNoticeRequired": true,
+          "shareAlikeRequired": true
+        },
+        "licenseSha256": "7dc7e6d68854fef6219629c22af63a6408816df9a465f677ba7ea4bb69bd88b3",
+        "changeNotice": "Two Arabic adaptations of exact Wikibooks revisions already in the local archive; zero network/new book acquisition. CC BY-SA 4.0 attribution and share-alike retained. Category evidence is source-supported only, not approved national cuisine. Unspecified spoon sizes, ingredient alternatives, ranges and unknowns are preserved. Page-specific exceptions and culinary/runtime approval remain unreviewed."
+      },
+      "nutrition": null,
+      "runtimeReady": false,
+      "actuallyKitchenTested": false,
+      "gates": {
+        "culinarySourceTranscription": true,
+        "independentCulinaryApproval": false,
+        "perPageLicenseApproved": false,
+        "inventoryIdentityApproved": false,
+        "nutritionApproved": false
+      },
+      "contentSha256": "94a9e5ed0e07cc5603545e5b72c8b68f2be4da1f3258ed81a6f0e12a81f6374f"
+    }
+  ],
+  "relationships": [],
+  "counts": {
+    "recipes": 2,
+    "ingredientLines": 16,
+    "supplementalIngredients": 2,
+    "steps": 12,
+    "fullySpecified": 0,
+    "needsReview": 2,
+    "notCookable": 0,
+    "sourceSupportedCuisineLabels": 2,
+    "runtimeReady": 0
+  },
+  "duplicateReview": {
+    "scope": "All current selected manifest packs, exact source identity/URL, normalized English/Arabic title and family; no global6056unique-dishes claim",
+    "priorPacks": 17,
+    "priorRecords": 88,
+    "duplicateSourceIds": 0,
+    "duplicateTitles": 0,
+    "duplicateFamilies": 0,
+    "crossLanguageDuplicateReview": "not exhaustive; source distinctness is not global dish uniqueness"
+  }
+}

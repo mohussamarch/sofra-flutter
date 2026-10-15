@@ -2,13 +2,12 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-15T07:00:14.454070+00:00",
-    "taskId": "budget-advisory-service",
-    "summary": "Built snapshot-safe monthly service and2creatorwebsite records;282Flutter/36Node/analyze clean.",
+    "at": "2026-10-15T07:11:24.775288+00:00",
+    "taskId": "budget-candidate-search",
+    "summary": "Bounded monthly candidate combinations and2offline sourcedrafts;292Flutter/30Node/analyzeclean.",
     "evidence": [
-      "lib/data/kitchen_service.dart",
-      "test/monthly_budget_service_test.dart",
-      "data/recipes/arabic-youtube/tenth-batch-20261015/recipes.json",
+      "lib/domain/monthly_budget_search.dart",
+      "data/recipes/curated-local/twelfth-reviewed-20261015/normalized-recipes.json",
       "docs/HANDOFF.md"
     ]
   },
@@ -633,19 +632,17 @@
       "priority": 34,
       "status": "ready",
       "dependsOn": [],
-      "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
-      "nextAction": "Actual sourcefood/quantity/form review or distinctboundedmodern/localunit.86library/62local/51source labels;3indexedYTdescriptions,0directvideosources;no newbooks.",
-      "lastProgressAt": "2026-10-15T03:09:23.849026+00:00",
+      "lastAttemptAt": "2026-10-15T07:02:32.889085+00:00",
+      "nextAction": "Actual reviewed food/quantity/form inputs or nextdistinctmodern/localboundedunit;90library/64local/53sourcelabels;no newbooknetwork.",
+      "lastProgressAt": "2026-10-15T07:11:24.775288+00:00",
       "completedUnit": {
-        "records": 44,
+        "records": 64,
         "fullySpecified": 10,
-        "needsReview": 32,
+        "needsReview": 52,
         "notCookable": 2,
-        "sourceCuisineLabels": 38,
-        "distinctMethodFamilies": 1,
-        "newBatchRecipes": 8,
-        "newBatchSourceLabels": 8,
-        "newNativeGapResolutions": 0,
+        "sourceCuisineLabels": 53,
+        "newBatchRecipes": 2,
+        "newBatchSourceLabels": 2,
         "runtimeApprovals": 0
       },
       "evidence": [
@@ -668,8 +665,11 @@
         "docs/agents/local-recipes-0241.md",
         "data/recipes/curated-local/seventh-reviewed-20261015/normalized-recipes.json",
         "tool/recipes/curated-seventh-build.test.mjs",
-        "docs/agents/local-recipes-0259.md"
-      ]
+        "docs/agents/local-recipes-0259.md",
+        "data/recipes/curated-local/twelfth-reviewed-20261015/normalized-recipes.json",
+        "docs/agents/local-curation-0700.md"
+      ],
+      "owner": null
     },
     {
       "id": "purchase-forecast",
@@ -1235,23 +1235,47 @@
     {
       "id": "budget-candidate-search",
       "priority": 34,
-      "status": "ready",
+      "status": "done",
       "owner": null,
       "dependsOn": [
         "budget-advisory-service"
       ],
-      "nextAction": "Bounded deterministic lazy whole-option combinations from explicit reviewed pools; unknown/capped is indeterminate, no autoapply."
+      "nextAction": "Snapshot-safe KitchenService explicitpool search adapter; no autosave/clinical/global claims.",
+      "lastAttemptAt": "2026-10-15T07:02:32.889085+00:00",
+      "completedAt": "2026-10-15T07:11:24.775288+00:00",
+      "lastProgressAt": "2026-10-15T07:11:24.775288+00:00",
+      "evidence": [
+        "lib/domain/monthly_budget_search.dart",
+        "test/monthly_budget_search_test.dart",
+        "docs/agents/budget-search-0700.md"
+      ],
+      "completedUnit": {
+        "newTests": 10,
+        "focusedTests": 21,
+        "fullFlutterTests": 292,
+        "stateWrites": 0
+      }
+    },
+    {
+      "id": "budget-search-service",
+      "priority": 34,
+      "status": "ready",
+      "owner": null,
+      "dependsOn": [
+        "budget-candidate-search"
+      ],
+      "nextAction": "Build readonly snapshot-safe search from explicit PlannedMeal pools/currentreviewed decisions, currentcountry/user-first prices; no autosave."
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-15T07:00:14.454070+00:00",
-    "primaryUsedPercent": 64,
-    "weeklyUsedPercent": 10,
+    "at": "2026-10-15T07:11:24.775288+00:00",
+    "primaryUsedPercent": 84,
+    "weeklyUsedPercent": 13,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 90,
-    "action": "Useful unit verified; fresh quota after delivery before next unit."
+    "action": "Close current verified unit near reserve; fresh sufficientquota before next costly unit."
   },
-  "updatedAt": "2026-10-15T07:00:14.454070+00:00",
+  "updatedAt": "2026-10-15T07:11:24.775288+00:00",
   "resumeDiagnosis": {
     "at": "2026-10-15T06:33:27.756165+00:00",
     "cause": "Prior actual85to98percent quota limited complete source/core unit capacity; no running collector/writer. New actual0/0ordinarytrue reading permits resume. No reset or credits used byagent.",

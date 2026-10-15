@@ -63,3 +63,8 @@ for (final recipe in report.recipes) {
 ## Current §86
 
 88 readable source records=62localarchive+23creatorwebsite+3indexedYTdescriptions;17packs/62snapshots,51local source labels. Planning54/4 and reviewed naanmethodfamily1 unchanged. KitchenService snapshot-safe monthly advisory adapter implemented;282fullFlutter/36relatedNode/analyze clean. HANDOFF§86. Actual audit88recipes/880ingredientlines/789distinctquantityreview;168missingamount/162missingunit/627unitreview/0nonpositive/49procedural/17optional;all88withgaps/0runtime.91otherlines still need explicit identity/form/inclusion/scaling review; counts overlap, no saved review completion inferred.
+
+
+## Current §87
+
+90 readable source records=64localarchive+23creatorwebsite+3indexedYTdescriptions;18packs/64snapshots,53local source category labels. Planning54/4 and naanmethodfamily1 unchanged. Bounded explicit-candidate monthly search implemented;292fullFlutter/30relatedNode/analyze clean. HANDOFF§87. Actual audit {"schemaVersion": 1, "scope": "source-library-review-triage", "recipeCount": 90, "ingredientCount": 898, "quantityReviewLineCount": 807, "missingAmountCount": 172, "missingUnitCount": 166, "nonPositiveAmountCount": 0, "unitNeedsReviewCount": 641, "supplementalCount": 51, "optionalCount": 20, "recipesWithQuantityGaps": 90, "runtimeApprovedRecipes": 0}. Counters overlap; unflagged quantity lines still require food/form/inclusion/scaling review, no saved acceptance inferred.
