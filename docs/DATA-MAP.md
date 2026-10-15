@@ -217,3 +217,7 @@ Latest user priority: real retailer and delivery-app prices first; government so
 ## Current §80 — source search choice → reviewed food input
 
 70pinnedsourceentries(48archive+21website+1indexeddescription),13packs/48snapshots →722sourceingredientlines/642quantitygaps → perlineRecipeLibraryFoodSearch → explicitresolveUsdaCandidate(ack+form+chosenresultID+currentrecipepin+rawname/version) → genericFoodRecord → caller'sexplicitquantity/form/scaling/inclusiondecisions → completeprivateRecipeLibraryDraftReview → KitchenServiceatomiccalculator. No state write or nutritional/local-product acceptance at search/selection.42exactlocalsourcecategorylabels,54planningrecipes/4cuisines unchanged. LIBRARY-FOOD-SELECTION.md andHANDOFF§80 contain gates/evidence.
+
+## Current §81 — packaged source branch
+
+78 source entries (56archive+21website+1indexed description),14 packs/56 snapshots →797 ingredient lines/715 quantity gaps → pinned line search → explicit USDA identity/version selection OR packaged barcode/market/full-snapshot selection → optional exact-barcode basis evidence → caller's explicit quantity/form/selection/scaling → complete private review and existing atomic calculator. Selection creates no state or physical/local matching approval.50 local source category labels; planning54/4 unchanged. Contract LIBRARY-FOOD-SELECTION.md, evidenceHANDOFF§81.

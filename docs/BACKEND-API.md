@@ -186,3 +186,7 @@ Selected66records/12packs/44snapshots now include creator-youtube indexed video-
 ## Current §80 — explicit chosen USDA identity
 
 RecipeLibraryFoodSearch.resolveUsdaCandidate(result:,currentEntry:,foodId:,form:,acknowledgeFoodIdentity:) checks explicitack/form andrecipeID/sourcepin, requiresuniquereturnedUSDAcandidate(no barcode), comparesindexname/versiontoloadedrawfood,thenusdaFood. It returnsFoodRecord forcallerreview, with no quantity/binding/save orsource/marketapproval. Callerobtainscurrententry; laterprivate-draftsave checks currentlibrary. FullcontractLIBRARY-FOOD-SELECTION.md. Version/nameconsistency isdistinctfromrawnutrientbyteintegrity. Currentlibrary70records/13packs/48snapshots;250fullFlutter/34Node/analyzeclean.
+
+## Current §81 — explicit packaged candidate
+
+`resolvePackagedCandidate(result:,currentEntry:,barcode:,market:,acknowledgeProductIdentity:,reviewedBasis:,reviewSource:)` extends the source-pinned search flow. Require explicit identity/market, matching scoped search market, recipe ID/pin and unique returned barcode. Before raw lookup, paired basis/source must refer to the exact barcode (`reviewSource.recordId`) and100g/ml. Compare the whole processed product row canonically before existingpackagedFood; key reordering is harmless, changed nutrients/markets/names/source require fresh review. Without basis review, unknown basis blocks quantitative calculation. No quantity/state write or local physical product/rights approval. See LIBRARY-FOOD-SELECTION.md; current78/14packs/56snapshots,254fullFlutter/33Node/analyze6.1s.

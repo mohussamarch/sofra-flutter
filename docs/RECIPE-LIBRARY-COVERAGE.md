@@ -44,3 +44,7 @@ for (final recipe in report.recipes) {
 ## Current §80 — actual source workload after offline curation
 
 70recipes/722indexedlines,642uniquequantityreviewlines:118missingamount/111missingunit/531unitreview/0nonpositive/42procedural/8optional;all70recipeswithgaps/0runtimeapproval.80unflaggedquantityrows stillneedidentity/form/choice/scaling review. RecipeLibraryFoodSearch andexplicitresolveUsdaCandidate helpreviewerchooseanexactfoodidentity/version; selectiondoesnotchoosequantityor inspectstoreduserreviews.250fullFlutter/34Node/analyze5.2sclean;detailsHANDOFF§80.
+
+## Current §81 — actual merged source audit
+
+78recipes/797indexed lines;715 distinct quantity-review lines,133missing amount/126missing unit/589unit review/0nonpositive/44procedural/12optional. All78 have quantity gaps and0runtime approval;82 quantity-unflagged rows still require identity/form/choice/scaling review. Explicit package selection adds source consistency, not accepted quantities or saved-personal-review coverage. Actual full Flutter audit is recorded inHANDOFF§81 (254tests);33Node and cleananalysis6.1s.

@@ -7,3 +7,7 @@ Second scoped review: reader/builder/video-kind/seventhvalidation diffs. Found P
 ## Current §80 — chosen food resolver review
 
 Reviewer inspectedresolveUsdaCandidate andnewselectiontests read-only, foundno concretegapwithinboundedcontract. Explicitidentityack/form,sourcepin+ID,uniqueUSDAresultmembership/no barcode,nonemptyindexname/versionprecedefullreads;usdaRaw exactID andname/versioncompareprecedecachedusdaFood. Noquantity/binding/saveapproval. Reviewer ran no tests/edits;root executed final250Flutter/34Node/analyze5.2s. Checks areversion/nameconsistency,notcryptographicnutrientintegrity. Rootrecordsreturnedfindingshere;ownershiproot.
+
+## Current §81 — packaged resolver review
+
+Read-only reviewer inspected resolvePackagedCandidate/_orderedSource and4 new tests. No concrete gap under stated contract: acknowledgment/market/source pin/unique barcode and paired exact-barcode basis evidence gate raw lookup; canonical whole-row comparison detects changed facts and ignores object-key order; existing source-market and unknown-basis behavior remains. Reviewer ran no tests or edits. Root ran12focused, final254fullFlutter/33Node/analysis6.1s. Test fixture invalid shortGTIN was corrected without changing validation. Root records returned review findings and owns integration.

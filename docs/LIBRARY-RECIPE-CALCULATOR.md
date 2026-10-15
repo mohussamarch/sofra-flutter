@@ -76,3 +76,7 @@ Current66records/12packs/44snapshots. Create RecipeLibraryFoodSearch with existi
 ## Current §80 — selected identity before line decisions
 
 Currentlibrary70/13packs/48snapshots. resolveUsdaCandidate returnsauser-selectedgenericFoodRecordafterpin/resultmembership/ack/form/index-vs-rawname-versionchecks. It suppliesnoamountoracceptedrecipebinding; callerstillcovers everylineexplicitly,thenexistingatomicprivate-draftsave verifiescurrentlibrary. Currententryisprovidedbycallerandbankreaderscacheassets;dataversionconflictsrequireconsistentcurrentbankreload/review. LIBRARY-FOOD-SELECTION.md gives fullcontract. No automaticcompoundingredient or householdmeasure conversion. Actualsourceaudit642of722quantitygaps/0runtimeapprovals.
+
+## Current §81 — source-scoped package choice
+
+Current78 entries/14packs/56snapshots. Food search can now resolve an explicitly chosen package after source pin, market and whole-row consistency checks. Optional label basis evidence must name the chosen barcode; unknown basis remains a calculation gap. This returns a FoodRecord, followed by the same explicit per-line quantity/form/inclusion/scaling decisions and complete atomic private-review save. Source quantity audit715/797 is source-only and never saved-user review completion. LIBRARY-FOOD-SELECTION.md defines both generic and packaged branches.

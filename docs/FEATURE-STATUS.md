@@ -39,3 +39,7 @@ Implemented and verified: pinned per-ingredient food-bank search with explicit q
 ## Current §80 — local bank and selection progress
 
 FourreadableArabicarchiveddraftsaddedwithHungarian/Lebanese/Ghanaian/Tanzanian sourcelabels;local48(10/36/2),42source-labels,library70/13packs/48snapshots. No newbooknetwork/automaticnutrition/runtimeapproval. USDAcandidate selection nowchecks explicitchoice/form/ack, currentrecipepinandfoodname/version; noquantity/statewrite.250fullFlutter/34Node/analyze5.2sclean.642of722source linesneedquantityreview;unflagged80stillneedidentity/form/scaling review.54planning/4cuisines/1reviewedmethodfamily unchanged.
+
+## Current §81 — source expansion and package selection
+
+Eight Arabic offline archived drafts added; local56(10/44/2),50 exact source category labels; library78/14packs/56snapshots. Core supports explicit packaged result selection with market/pin/barcode/full-row and scoped100g/ml label review. Unknown basis remains unknown and blocks calculation.254fullFlutter/33Node/analyze6.1s clean.715/797 source lines still need quantity review. Planning54/4 and one reviewed method family unchanged; no UI/camera/live feed/automatic source or nutrition acceptance.

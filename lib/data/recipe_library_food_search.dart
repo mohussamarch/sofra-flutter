@@ -10,6 +10,15 @@ List<Map<String, dynamic>> _copyCandidates(List<Map<String, dynamic>> rows) =>
         .map((row) => Map<String, dynamic>.from(row as Map))
         .toList();
 
+Object? _orderedSource(Object? value) {
+  if (value is Map) {
+    final keys = value.keys.cast<String>().toList()..sort();
+    return {for (final key in keys) key: _orderedSource(value[key])};
+  }
+  if (value is List) return value.map(_orderedSource).toList();
+  return value;
+}
+
 /// Food-bank search evidence for one pinned source line, never a food binding.
 class RecipeLibraryFoodSearchResult {
   RecipeLibraryFoodSearchResult._({
@@ -95,6 +104,62 @@ class RecipeLibraryFoodSearch {
       throw StateError('Food source changed; search and review again');
     }
     return foods.usdaFood(foodId, form: form);
+  }
+
+  /// Explicit package choice keeps the source snapshot and label basis separate.
+  Future<FoodRecord> resolvePackagedCandidate({
+    required RecipeLibraryFoodSearchResult result,
+    required RecipeLibraryEntry currentEntry,
+    required String barcode,
+    required String market,
+    required bool acknowledgeProductIdentity,
+    NutritionBasis? reviewedBasis,
+    FoodSource? reviewSource,
+  }) async {
+    if (!acknowledgeProductIdentity ||
+        barcode.trim().isEmpty ||
+        !{'EG', 'SA'}.contains(market) ||
+        (result.market != null && result.market != market)) {
+      throw ArgumentError(
+        'Explicit product identity and search market required',
+      );
+    }
+    if (result.recipeId != currentEntry.id ||
+        result.sourceFingerprint !=
+            recipeLibrarySourceFingerprint(currentEntry)) {
+      throw StateError('Library source changed; search and review again');
+    }
+    final matches = result._candidates
+        .where((row) => row['barcode'] == barcode)
+        .toList();
+    if (matches.length != 1) {
+      throw ArgumentError('Select one package from this search result');
+    }
+    if ((reviewedBasis == null) != (reviewSource == null) ||
+        (reviewedBasis != null &&
+            (reviewSource!.recordId != barcode ||
+                reviewedBasis.amount != 100 ||
+                !{
+                  FoodQuantityUnit.g,
+                  FoodQuantityUnit.ml,
+                }.contains(reviewedBasis.unit)))) {
+      throw ArgumentError(
+        'Label basis requires evidence for this exact barcode',
+      );
+    }
+    final raw = await foods.productRaw(barcode);
+    if (jsonEncode(_orderedSource(raw)) !=
+        jsonEncode(_orderedSource(matches.single))) {
+      throw StateError(
+        'Product source changed; reload sources and review again',
+      );
+    }
+    return foods.packagedFood(
+      barcode,
+      market: market,
+      reviewedBasis: reviewedBasis,
+      reviewSource: reviewSource,
+    );
   }
 
   Future<RecipeLibraryFoodSearchResult> search({

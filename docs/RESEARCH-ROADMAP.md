@@ -204,3 +204,7 @@ Watchdog now validates task.lastProgressAt and uses latest recorded own-task or 
 ## Current §80 — another bank unit and independent selection logic
 
 Continued after§79with actual26/51ordinarytrue:4offlinearchivecurations/4newsourcecategorylabels plus explicitUSDAcandidate selection guardedbyrecipepin/ack/form/resultID/foodversion-name. Library70/13packs/48snapshots,42localsourcelabels;642of722quantitygaps.250fullFlutter/34Node/analyze5.2s. Next source/food/quantity/form reviewedinputs or distinctmoderncreatorbudgetedbatch; keepbankscontinuousandadvancecore. No newbooknetwork;OFFform/merchantaccesspending separately. No automaticclinical/rights/nutritionapproval.
+
+## Current §81 — another bounded bank and core unit
+
+Fresh43/53ordinary=true allowed8 offline archive curations and explicit packaged source selection. Library78/14packs/56snapshots,50 local source labels;715/797 indexed source quantity gaps. Whole package snapshot/market/barcode and scoped optional label basis are checked before using the existing packaged reader.254Flutter/33Node/analysis6.1s. Continue actual source food/quantity/form review or a pre-budgeted distinct modern/local batch; no new books/network this unit. OFF form and merchant sample remain separate prerequisites; no clinical/rights/nutrition approvals.
