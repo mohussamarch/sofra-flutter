@@ -227,3 +227,8 @@ Library78=56archive+21website+1indexed description,14packs/56snapshots,50 local 
 ## Current §82
 
 RecipeLibraryMassProposal.fromSource requires full source fingerprint, exact line and explicit acknowledgement of an existing positive numeric g/kg declaration. It preserves amount/unit/raw text without parsing or conversion. toDecision rechecks current recipe/source and applicable exclusion override; food/forms/inclusion/scaling/as-purchased/preparation remain explicit and quantityEstimated is always true. No measurement, food match, source approval or state write. Contract docs/LIBRARY-SOURCE-MASS.md. 84 readable source records =62 offline archive +21 creator website +1 indexed video description;15 pinned packs/62 snapshots,51 local source cuisine/region labels. Planning54/4 and reviewed method family1 unchanged;0 new runtime/nutrition approvals. Next actual food/quantity/form review; modern Arabic creator acquisition remains priority over new book collection. No network this unit.
+
+
+## OFF declaration received —15October2026
+
+HANDOFF§84/OFF-ACCESS-REQUEST-DRAFT.md supersedes earlier pending-contact state: user authorized the usage-form submission by supplying the chosen email; visible confirmation received. Private contact/screenshot outside Git in OFF-SUBMISSION-RECEIPT.json. Do not ask again for the same submission permission/email. Receipt is not API access/approval or401resolution; do not clear source gate or start collection automatically. Quota91/61 prevents research/collection;2378/67unchanged. Fresh eligible quota plus documented source-access review precedes a bounded collector attempt.

@@ -519,9 +519,8 @@
       "id": "product-bank",
       "priority": 80,
       "dependsOn": [],
-      "status": "needs_user",
-      "nextAction": "Submit prepared draft only after explicit authorization/email; inspect remaining form facts. Review exports/API access before one fresh guarded collector batch.2378/67 unchanged.",
-      "blockedReason": "External API usage form requires user-authorized contact email/submission;401cause unresolved",
+      "status": "ready",
+      "nextAction": "After fresh quota below90 with capacity, review documented exports/API access and preserved source gate before one controlled collector attempt. User contact/submission authorization already supplied; do not ask again.2378/67unchanged.",
       "lastProgressAt": "2026-10-14T02:35:01.478Z",
       "completedUnit": {
         "products": 2378,
@@ -542,19 +541,22 @@
         "requests": 1,
         "growth": 0
       },
-      "stage": "Official pre-use API form prerequisite reviewed; no collection requests",
+      "stage": "Usage form submitted with visible receipt; actual API access and prior401 cause unverified",
       "evidence": [
         "docs/agents/food-bank-1500.md",
         "docs/OFF-ACCESS-REQUEST-DRAFT.md",
         "docs/agents/food-bank-2000.md"
       ],
       "accessReview": {
-        "at": "2026-10-14T20:24:09.891300+00:00",
+        "at": "2026-10-15T06:10:29.103728+00:00",
         "officialDocumentation": "https://openfoodfacts.github.io/openfoodfacts-server/api/",
-        "formSubmitted": false,
-        "userAuthorizationPending": true,
+        "formSubmitted": true,
+        "userAuthorizationPending": false,
         "newSourceRequests": 0,
-        "backoffExpiredDoesNotResolveAccess": true
+        "backoffExpiredDoesNotResolveAccess": true,
+        "formReceiptVerified": true,
+        "contactStoredOutsideGit": true,
+        "apiAccessVerified": false
       }
     },
     {
@@ -1087,6 +1089,27 @@
         "productProgress": false,
         "focusedEvidenceTests": 2
       }
+    },
+    {
+      "id": "off-usage-declaration",
+      "priority": 80,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "completedAt": "2026-10-15T06:10:29.103728+00:00",
+      "nextAction": "Resume source-access review only with eligible quota; receipt does not resolve401.",
+      "evidence": [
+        "docs/OFF-ACCESS-REQUEST-DRAFT.md",
+        "docs/FOOD-BANK-CONTINUITY.md",
+        "docs/HANDOFF.md"
+      ],
+      "completedUnit": {
+        "formSubmitted": true,
+        "visibleReceipt": true,
+        "collectionRequests": 0,
+        "newProducts": 0,
+        "productProgress": false
+      }
     }
   ],
   "quotaCheckpoint": {
@@ -1097,5 +1120,5 @@
     "operationalLimit": 90,
     "action": "Close verified delivery with remaining8points; last bounded core/source integration used about13points. No new costly unit until fresh quota/capacity assessment; not quota-blocked."
   },
-  "updatedAt": "2026-10-15T03:24:17.624094+00:00"
+  "updatedAt": "2026-10-15T06:10:29.103728+00:00"
 }

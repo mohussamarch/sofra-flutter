@@ -70,3 +70,8 @@ Required focused gate after these tools change: node --test tool/food/source-acc
 ## Official OFF access prerequisite — §75
 
 https://openfoodfacts.github.io/openfoodfacts-server/api/ requires a pre-use usage form and recommends exports for collections beyond a few hundred products. Reviewed draft: docs/OFF-ACCESS-REQUEST-DRAFT.md; first page asks contact email, later fields uninspected. Not submitted; awaiting user authorization/email, no external contact or invented traffic/organisation. The documented form may be a prerequisite but is not proven to cure previous401. No route/host/auth bypass or automatic requests when access backoff expires.2378products/67archives unchanged; no collection requests this unit. Continue independent recipe/core work. Product collection stays one cheapgpt-6-luna/medium lane when access, quota and lock are actually valid.
+
+
+## Current usage declaration —15October2026 / HANDOFF§84
+
+The user supplied the contact email in reply to the explicit submission permission request. The linked official Google Form was submitted and displayed "Your response has been recorded". OFF-ACCESS-REQUEST-DRAFT.md now records exact supplied/omitted fields; private contact/proof stay outside Git. Earlier pending-email descriptions are historical. This is form receipt, not verified API access/approval or a cure for401. Preserve failure/cursor/backoff,2378products/67archives,0collectionrequests/0bankgrowth. User-contact prerequisite resolved; product-bank is ready for source-access review after fresh eligible quota, not waiting for the same email again. At actual91/61ordinarytrue no collector or source research batch was started. No product edits/media uploads/account/contract acceptance.

@@ -1,32 +1,25 @@
-# Open Food Facts — prepared usage-form draft
+# Open Food Facts — usage declaration submitted
 
-Status: prepared for review only; not submitted, no account/contact/message created.
+Status: submitted on15October2026 after the user supplied a chosen contact email in direct reply to the explicit submission-permission request. The Google Form displayed **Your response has been recorded**. This confirms form receipt only; access permission, server-side approval and resolution of the earlier401 are not established.
 
-## Why this is needed
-
-The current official API introduction asks users to read its reuse terms and complete the API usage form before using the API. It recommends direct exports when collecting more than a few hundred products. Our previous HTTP401 has not been diagnosed; completing the form is not a guarantee that it will resolve that response.
-
-- Documentation: https://openfoodfacts.github.io/openfoodfacts-server/api/
+- Official documentation: https://openfoodfacts.github.io/openfoodfacts-server/api/
 - Linked form: https://docs.google.com/forms/d/e/1FAIpQLSdIE3D8qvjC_zRJw1W8OmuHhsWJ_NSckiiniAHlfaVwUZCziQ/viewform
-- Checked14October2026. No authentication or alternate endpoint was attempted during this review.
+- Private contact and local confirmation screenshot: external E:\work\SOFRA\OFF-SUBMISSION-RECEIPT.json; the user's email, signed-in browser identity and private edit-response URL are not published in Git.
 
-## Fields actually visible on the first form page
+## Answers actually supplied
 
-| Field | Prepared answer |
+| Field | Answer |
 |---|---|
-| Email (required) | Awaiting the user's chosen contact address; none supplied or inferred |
+| Email | User's explicitly supplied contact; stored only outside Git |
 | App topic | nutrition |
+| App name | Sofra (سُفرة) — Android/Flutter prototype, not publicly launched |
+| Geography | Egypt and Saudi Arabia |
+| Platform | Android |
+| Technical use (Other) | Read-only API research with locally cached product snapshots, reviewing documented exports for larger datasets; provenance and uncertainty retained; community facts not automatically verified; no edits/image uploads |
+| Mobile technology | Flutter/Dart |
 
-Later form pages have not been inspected because the first page requires the contact address. Do not claim these are all fields or submit unknown answers.
+Optional unknown launch date, translation preference, producer relationships/onboarding, server details, contribution capabilities, store URLs and marketing channels were left blank or disabled. No organisation, release date, traffic estimate, server IP or commercial relationship was invented. No account was created and no contract/terms acceptance was presented.
 
-## Project description prepared if requested on later pages
+## Exact next action
 
-Sofra (سُفرة) is an Android/Flutter meal-planning and kitchen-inventory prototype. We intend to use product barcodes, ingredient declarations and nutritional facts, with initial interest in Egypt and Saudi Arabia. Data keeps provenance and uncertainty; imported community records are not automatically verified nutrition or allergen facts. The current use is read-only research, with no planned product edits or image uploads in this request. We will review the documented export route for larger datasets and retain the source licence/attribution requirements.
-
-No contact email, legal/company identity, launch date, traffic projection or licence acceptance is invented. Additional fields require factual answers. No passwords, keys or tokens belong in this form or draft.
-
-## Authorization boundary and next action
-
-Submitting the form sends the chosen email and project-use information to Open Food Facts through its linked Google Form. The user has authorized research, but has not authorized this external submission or provided a contact address. Request those two items together; once granted, inspect the remaining form pages, prepare factual answers and proceed only within the approved scope. If a field cannot be answered from project facts, ask for that missing information while continuing independent recipe/logic work.
-
-Until resolved, preserve the existing collector checkpoints and HTTP backoff; do not repeatedly retry401 or change source routes/accounts. Product bank stays2378 records/67 archives. This access draft is not product growth, source permission or source-side approval.
+User-contact/submission prerequisite is resolved. Keep previous401 failure/cursor/backoff evidence unchanged. Once actual quota is below90 with adequate capacity, review the documented export/API route and existing source gate before a single controlled access attempt using the established collector rules; form receipt alone must not trigger collection or clear401. No alternate route/account bypass.2378products/67archives and all food/runtime approvals unchanged;0collection requests in this administrative unit. Product work remains one economical collector when actually eligible.
