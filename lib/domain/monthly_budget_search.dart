@@ -1,6 +1,7 @@
 import 'kitchen_core.dart';
 import 'market_profile.dart';
 import 'monthly_budget_choices.dart';
+import 'monthly_budget_coverage.dart';
 import 'monthly_budget_preferences.dart';
 
 /// Explicit reviewed alternatives for one date/slot. Candidate order defines
@@ -29,6 +30,7 @@ class MonthlyBudgetSearchResult {
     required this.bestKnownAffordable,
     required this.outcome,
     required this.recipePreferences,
+    required this.requiredCoverage,
     required Map<MonthlyBudgetCandidateKey, String> candidateRecipeIds,
     required Map<String, List<MonthlyBudgetPreferenceViolation>>
     preferenceViolationsByOption,
@@ -49,6 +51,9 @@ class MonthlyBudgetSearchResult {
   final MonthlyBudgetAssessment? bestKnownAffordable;
   final MonthlyBudgetSearchOutcome outcome;
   final MonthlyBudgetRecipePreferences? recipePreferences;
+
+  /// Null preserves caller-defined partial-coverage behavior.
+  final MonthlyBudgetSlotCoverageAssessment? requiredCoverage;
   final Map<MonthlyBudgetCandidateKey, String> candidateRecipeIds;
   final Map<String, List<MonthlyBudgetPreferenceViolation>>
   preferenceViolationsByOption;
@@ -82,6 +87,8 @@ class MonthlyBudgetSearchResult {
 /// A capped search or any unknown evaluated cost is indeterminate, even when a
 /// known affordable option exists. Exhaustive outcomes concern only these exact
 /// supplied pools and coverage; they imply no global menu/clinical conclusion.
+/// Explicit required slots may be supplied to gate affordability on coverage.
+/// Additional supplied slots remain included in every evaluated option.
 MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
   required BudgetPeriod period,
   required List<MoneyEntry> confirmedPurchases,
@@ -91,6 +98,7 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
   required double? Function(MarketCountry country, IngredientUse use)
   estimateCost,
   List<UnitRule> rules = const [],
+  List<MonthlyBudgetCoverage>? requiredSlots,
   MonthlyBudgetRecipePreferences? recipePreferences,
   Map<MonthlyBudgetCandidateKey, String> candidateRecipeIds = const {},
 }) {
@@ -107,6 +115,9 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
   final ownedStock = List<InventoryLot>.of(stock);
   final purchases = List<MoneyEntry>.of(confirmedPurchases);
   final ownedRules = List<UnitRule>.of(rules);
+  final ownedRequiredSlots = requiredSlots == null
+      ? null
+      : List<MonthlyBudgetCoverage>.of(requiredSlots);
   final start = parseDay(period.start), end = parseDay(period.end);
   if (start.day != 1 || end != DateTime(start.year, start.month + 1)) {
     throw ArgumentError('Budget must span exactly one calendar month');
@@ -170,6 +181,16 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
       );
     }
   }
+  final requiredCoverage = ownedRequiredSlots == null
+      ? null
+      : assessMonthlyBudgetSlotCoverage(
+          period: period,
+          requiredSlots: ownedRequiredSlots,
+          suppliedSlots: [
+            for (final pool in ownedPools)
+              MonthlyBudgetCoverage(pool.date, pool.slot),
+          ],
+        );
   final comparison = compareMonthlyBudgetChoices(
     period: period,
     confirmedPurchases: purchases,
@@ -195,14 +216,19 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
       .where((row) => violations[row.option.id]!.isEmpty)
       .toList();
   MonthlyBudgetAssessment? best;
-  for (final assessment in eligible) {
-    if (assessment.withinBudget == true) {
-      best = assessment;
-      break;
+  if (requiredCoverage == null || requiredCoverage.coversRequired) {
+    for (final assessment in eligible) {
+      if (assessment.withinBudget == true) {
+        best = assessment;
+        break;
+      }
     }
   }
   final truncated = BigInt.from(comparison.assessments.length) < total;
-  final outcome = truncated || comparison.unranked.isNotEmpty
+  final outcome =
+      truncated ||
+          comparison.unranked.isNotEmpty ||
+          (requiredCoverage != null && !requiredCoverage.coversRequired)
       ? MonthlyBudgetSearchOutcome.indeterminate
       : best != null
       ? MonthlyBudgetSearchOutcome.affordableFound
@@ -214,6 +240,7 @@ MonthlyBudgetSearchResult searchMonthlyBudgetChoices({
     bestKnownAffordable: best,
     outcome: outcome,
     recipePreferences: preferences,
+    requiredCoverage: requiredCoverage,
     candidateRecipeIds: identities,
     preferenceViolationsByOption: violations,
     eligibleRanked: eligible,

@@ -71,6 +71,22 @@ Future<List<RecipeLibraryEntry>> fixture({double? amount = 100}) async {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  test(
+    'unreviewed source optionality stays unknown through entry and report',
+    () async {
+      final entry = (await fixture()).single;
+      expect(entry.ingredients[1].optional, isNull);
+      expect((entry.toJson()['ingredients'] as List)[1]['optional'], isNull);
+      final report = RecipeLibraryCoverageReport.fromEntries([entry]);
+      expect(report.recipes.single.lines[1].optional, isNull);
+      expect(
+        (report.recipes.single.toJson()['lines'] as List)[1]['optional'],
+        isNull,
+      );
+      expect(report.recipes.single.lines[2].optional, isTrue);
+    },
+  );
+
   test('indexed source gaps preserve repeated, optional, excluded and procedural lines', () async {
     final entries = await fixture();
     final report = RecipeLibraryCoverageReport.fromEntries(entries);

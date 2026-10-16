@@ -14,7 +14,7 @@ class RecipeLibraryIngredient {
     required this.amount,
     required this.unit,
     required this.sourceQuantityText,
-    this.optional = false,
+    this.optional,
     this.included,
     this.supplemental = false,
   });
@@ -22,7 +22,8 @@ class RecipeLibraryIngredient {
   final String? sourceQuantityText;
   final double? amount;
   final String? unit;
-  final bool optional, supplemental;
+  final bool? optional;
+  final bool supplemental;
   final bool? included;
   Map<String, dynamic> toJson() => {
     'labelAr': labelAr,
@@ -304,6 +305,9 @@ RecipeLibraryEntry _entry(
     if (amount != null && (amount is! num || !amount.isFinite || amount < 0)) {
       throw const FormatException('Invalid source amount');
     }
+    if (value['optional'] != null && value['optional'] is! bool) {
+      throw const FormatException('Invalid source optionality');
+    }
     ingredients.add(
       RecipeLibraryIngredient(
         labelAr: _text(
@@ -318,7 +322,7 @@ RecipeLibraryEntry _entry(
           local ? value['sourceText'] : value['sourceQuantityText'],
           'source quantity text',
         ),
-        optional: value['optional'] == true,
+        optional: value['optional'] as bool?,
         included: value['included'] as bool?,
         supplemental: supplemental,
       ),

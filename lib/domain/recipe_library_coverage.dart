@@ -15,7 +15,8 @@ class RecipeLibraryLineCoverage {
   final String labelAr;
   final String? sourceQuantityText, unit;
   final double? amount;
-  final bool optional, supplemental;
+  final bool? optional;
+  final bool supplemental;
   final bool? included;
   bool get missingAmount => amount == null;
   bool get missingUnit => unit == null;
@@ -100,7 +101,7 @@ class RecipeLibraryCoverageReport {
       _lines.where((l) => l.nonPositiveAmount).length;
   int get unitNeedsReviewCount => _lines.where((l) => l.unitNeedsReview).length;
   int get supplementalCount => _lines.where((l) => l.supplemental).length;
-  int get optionalCount => _lines.where((l) => l.optional).length;
+  int get optionalCount => _lines.where((l) => l.optional == true).length;
   int get recipesWithQuantityGaps =>
       recipes.where((r) => r.hasQuantityGaps).length;
   int get runtimeApprovedRecipes => 0;

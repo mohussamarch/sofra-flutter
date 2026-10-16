@@ -117,3 +117,8 @@ Two ChefOmar site-attributed creator-website records: chicken with mushroom crea
 ## Current §89
 
 2090 readable source records=2064archive+23website+3indexedYTdescriptions;20packs/2064snapshots,71local source labels unchanged. Planning54/4/methodfamily1 unchanged. Second1000native conversion and explicit repeat/diversity search preferences;319fullFlutter/37Node/analyze clean. HANDOFF§89. Second exact1000 native source records+1000snapshots,8479ingredients/6936steps,0newacquisitions/translations/runtimeapprovals. Frozen19pack baseline coversall1090previous;1064prior archive identities excluded inclfirst1000,2575eligible. Indian42/Italian11,947untagged; no guessedsourcecuisine. All accepted quantity/unit/yield/timeunknown; rawtext/candidates preserved. buildBatch reusable safeone-basename outputFolder, defaultfirstpackbytesunchanged; original6+new6Nodepassed,both--checkpassafterregistration. PackSHA1d65a70f09930fd5b6e375069a6869080d424d3868f43dc55c9e1ea0c82905c7; originalpack26d6ca...unchanged.
+
+
+## Current library §90 —16October2026
+
+3530 readable source records/22pinned packs/3504 source snapshots:3064 already acquired archive records,440 new Based Cooking content records,23 creator website recipes,3 indexed video descriptions. Third1000 archive batch is reprocessing, not acquisition; Based Cooking only440/1000 accepted because the pinned repository has441 Markdown files and one is metadata.3440 English entries remain untranslated, all newly added amounts/units/time/yield and optionality require explicit review; source categories are not plannable cuisines. Planning54 recipes/4 cuisines unchanged,0 automatic nutrition/runtime approvals. Exact evidence and SHA in HANDOFF§90.

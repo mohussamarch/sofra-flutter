@@ -397,7 +397,7 @@ void _validateSource(Map<String, dynamic> source) {
     _text(ingredient['labelAr']);
     final amount = ingredient['amount'];
     if (amount != null && (amount is! num || !amount.isFinite || amount < 0) ||
-        ingredient['optional'] is! bool ||
+        (ingredient['optional'] != null && ingredient['optional'] is! bool) ||
         ingredient['supplemental'] is! bool ||
         ingredient['included'] != null && ingredient['included'] is! bool) {
       throw const FormatException('Malformed library source ingredient');

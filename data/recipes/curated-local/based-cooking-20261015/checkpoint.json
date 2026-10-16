@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "based-cooking",
+  "targetRecipes": 1000,
+  "networkOperations": [
+    {
+      "operation": "clone",
+      "startedAt": "2026-10-15T12:19:51.485Z",
+      "quota": {
+        "primary": 81,
+        "weekly": 28,
+        "ordinary": true,
+        "capturedAt": "2026-10-15T12:19:42Z"
+      },
+      "status": "completed",
+      "httpRequestCount": null
+    },
+    {
+      "operation": "checkout",
+      "startedAt": "2026-10-15T12:20:09.063Z",
+      "quota": {
+        "primary": 81,
+        "weekly": 28,
+        "ordinary": true,
+        "capturedAt": "2026-10-15T12:20:00Z"
+      },
+      "status": "completed",
+      "httpRequestCount": null
+    }
+  ],
+  "lastCompletedAt": "2026-10-15T12:20:10.699Z",
+  "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+  "completedAt": "2026-10-16T05:21:12.262Z",
+  "accepted": 440,
+  "shortfall": 560
+}

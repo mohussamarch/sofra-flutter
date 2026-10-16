@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "packFile": "data/recipes/curated-local/bulk-3000-20261015/normalized-recipes.json",
+  "packSha256": "58ee1b09e2eeba05962fe6a292e9a0ad0bd0302033d2053744653d1d58f5d4fc",
+  "counts": {
+    "recipes": 1000,
+    "ingredientLines": 8250,
+    "steps": 6113,
+    "alreadyParsedRecords": 1000,
+    "newAcquisitions": 0,
+    "newNativeLibraryRecords": 1000,
+    "fullySpecified": 0,
+    "needsReview": 1000,
+    "runtimeReady": 0,
+    "translatedRecords": 0,
+    "missingAmountLines": 8250,
+    "missingUnitLines": 8250,
+    "unknownYieldRecords": 1000,
+    "unknownTimeRecords": 1000
+  },
+  "cuisineCounts": {},
+  "untaggedRecords": 1000,
+  "sourceSnapshotCount": 1000,
+  "archiveParsedRecipes": 3640,
+  "eligibleCandidates": 1575,
+  "duplicateReview": {
+    "previousSelectedRecords": 2090,
+    "inputManifestSha256": "4006dee753cae5703fa666cdbd642c778557e4875c0cf24898db7437d64c9a97",
+    "excluded": {
+      "previousSource": 2064,
+      "exactContent": 0,
+      "nonRecipeOrEmpty": 1
+    },
+    "scope": "Exact source page/revision/permalink and normalized source ingredient+method content against all selected records and within batch. No semantic, translation or unique-dish claim."
+  },
+  "integrityIsCulinaryApproval": false
+}

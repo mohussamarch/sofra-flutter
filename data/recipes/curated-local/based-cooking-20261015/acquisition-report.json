@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "based-cooking",
+  "targetRecipes": 1000,
+  "actualAcquiredMarkdownFiles": 441,
+  "accepted": 440,
+  "rejected": 1,
+  "rejections": [
+    {
+      "path": "content/_index.md",
+      "reason": "no-complete-ingredient-and-method-or-metadata-page"
+    }
+  ],
+  "counts": {
+    "recipes": 440,
+    "ingredientLines": 3583,
+    "supplementalIngredients": 0,
+    "steps": 3243,
+    "fullySpecified": 0,
+    "needsReview": 440,
+    "notCookable": 0,
+    "sourceSupportedCuisineLabels": 0,
+    "runtimeReady": 0
+  },
+  "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+  "sourceTimestamp": "2026-09-09T08:51:41+02:00",
+  "collectedAt": "2026-10-16T05:21:12.262Z",
+  "sourceOnlyValidRecipes": 440,
+  "targetMet": false,
+  "shortfall": 560,
+  "reason": "source-only-440-accepted-recipes-under-parser-and-dedup; minimum1000notmet",
+  "priorRecordsChecked": 3090,
+  "networkOperations": [
+    {
+      "operation": "clone",
+      "startedAt": "2026-10-15T12:19:51.485Z",
+      "quota": {
+        "primary": 81,
+        "weekly": 28,
+        "ordinary": true,
+        "capturedAt": "2026-10-15T12:19:42Z"
+      },
+      "status": "completed",
+      "httpRequestCount": null
+    },
+    {
+      "operation": "checkout",
+      "startedAt": "2026-10-15T12:20:09.063Z",
+      "quota": {
+        "primary": 81,
+        "weekly": 28,
+        "ordinary": true,
+        "capturedAt": "2026-10-15T12:20:00Z"
+      },
+      "status": "completed",
+      "httpRequestCount": null
+    }
+  ],
+  "httpRequestCount": null,
+  "newAcquisition": true,
+  "existingArchivesRecounted": 0,
+  "rightsRuntimeApproval": false
+}

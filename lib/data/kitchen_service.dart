@@ -3,6 +3,7 @@ import 'dart:convert';
 import '../domain/kitchen_core.dart';
 import '../domain/purchase_forecast.dart';
 import '../domain/monthly_budget_choices.dart';
+import '../domain/monthly_budget_coverage.dart';
 import '../domain/monthly_budget_preferences.dart';
 import '../domain/monthly_budget_search.dart' as budget_search;
 import '../domain/food_nutrition.dart';
@@ -1457,11 +1458,14 @@ class KitchenService {
   /// them. Explicit supplied coverage may represent only part of a month.
   /// Optional user recipe limits count exact recipe IDs in those slots. Rejected
   /// options still consume the cap and retain separate financial evidence.
+  /// Optional requiredSlots names caller-required date/slot pairs only; no
+  /// daily pattern or household-member coverage is inferred.
   Future<MonthlyBudgetSearchPreview> searchMonthlyBudgetChoices(
     String budgetId, {
     required Map<String, List<PlannedMeal>> pools,
     required int maxEvaluations,
     MonthlyBudgetRecipePreferences? recipePreferences,
+    List<MonthlyBudgetCoverage>? requiredSlots,
     List<UnitRule> rules = const [],
     Map<String, Map<String, Set<int>>> optionalLinesByPool = const {},
     Map<String, Map<String, Map<int, IngredientUse>>> measuredByPool = const {},
@@ -1477,6 +1481,9 @@ class KitchenService {
         pool.key: List<PlannedMeal>.of(pool.value),
     };
     final ownedRules = List<UnitRule>.of(rules);
+    final ownedRequiredSlots = requiredSlots == null
+        ? null
+        : List<MonthlyBudgetCoverage>.of(requiredSlots);
     final optionals = {
       for (final pool in optionalLinesByPool.entries)
         pool.key: {
@@ -1544,6 +1551,16 @@ class KitchenService {
         'Select the budget country before searching alternatives',
       );
     }
+    if (ownedRequiredSlots != null) {
+      assessMonthlyBudgetSlotCoverage(
+        period: period,
+        requiredSlots: ownedRequiredSlots,
+        suppliedSlots: [
+          for (final (date, slot) in coverage)
+            MonthlyBudgetCoverage(date, slot),
+        ],
+      );
+    }
     final resolvedPools = <budget_search.MonthlyBudgetSlotPool>[];
     final evidence = <String, Map<String, PlannedMeal>>{};
     final recipeIdentities = <MonthlyBudgetCandidateKey, String>{};
@@ -1587,6 +1604,7 @@ class KitchenService {
       pools: resolvedPools,
       maxEvaluations: maxEvaluations,
       recipePreferences: preferences,
+      requiredSlots: ownedRequiredSlots,
       candidateRecipeIds: recipeIdentities,
       rules: ownedRules,
       stock: (k['inventory'] as List)

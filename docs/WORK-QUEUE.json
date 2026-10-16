@@ -2,13 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-15T12:14:31.611385+00:00",
+    "at": "2026-10-16T05:38:02.649482+00:00",
     "taskId": "recipe-local-curation",
-    "summary": "Second1000source records/2090library andexplicitrecipepreferences;319Flutter/37Node/analyzeclean.",
+    "summary": "Third1000 existing-archive records and440 new modern source records integrated into3530library; required-slot coverage and optional-null fix; actual gates passed.",
     "evidence": [
-      "data/recipes/curated-local/bulk-2000-20261015/conversion-report.json",
-      "lib/domain/monthly_budget_preferences.dart",
-      "docs/HANDOFF.md"
+      "data/recipes/curated-local/flutter-manifest.json",
+      "docs/HANDOFF.md",
+      "test/recipe_library_assets_test.dart",
+      "test/monthly_budget_coverage_test.dart"
     ]
   },
   "tasks": [
@@ -632,17 +633,17 @@
       "priority": 34,
       "status": "ready",
       "dependsOn": [],
-      "lastAttemptAt": "2026-10-15T12:02:29.815046+00:00",
-      "nextAction": "Next1000distinctsource-recordconversion againstcurrent2090; native2064/71labels, no newbooks.",
-      "lastProgressAt": "2026-10-15T12:14:31.611385+00:00",
+      "lastAttemptAt": "2026-10-15T12:17:35.037053+00:00",
+      "nextAction": "Next exact1000 source-record batch requires another existing archive-language pool or new licensed source; English archive remaining <=575. No old-book network. Preserve explicit review gates.",
+      "lastProgressAt": "2026-10-16T05:38:02.649482+00:00",
       "completedUnit": {
-        "records": 2064,
+        "archiveRecords": 3064,
+        "latestConverted": 1000,
+        "newAcquisitions": 0,
         "fullySpecified": 10,
-        "needsReview": 2052,
+        "needsReview": 3052,
         "notCookable": 2,
         "sourceCuisineLabels": 71,
-        "newBatchRecipes": 1000,
-        "newAcquisitions": 0,
         "runtimeApprovals": 0
       },
       "evidence": [
@@ -669,7 +670,9 @@
         "data/recipes/curated-local/twelfth-reviewed-20261015/normalized-recipes.json",
         "docs/agents/local-curation-0700.md",
         "data/recipes/curated-local/bulk-2000-20261015/conversion-report.json",
-        "docs/agents/bulk-second-thousand-20261015.md"
+        "docs/agents/bulk-second-thousand-20261015.md",
+        "data/recipes/curated-local/bulk-3000-20261015/conversion-report.json",
+        "docs/agents/bulk-third-thousand-20261015.md"
       ],
       "owner": null
     },
@@ -1378,26 +1381,113 @@
         "fullFlutterTests": 319,
         "stateWrites": 0
       }
+    },
+    {
+      "id": "based-cooking-collection",
+      "priority": 33,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "lastAttemptAt": "2026-10-15T12:17:35.037053+00:00",
+      "nextAction": "Pinned source exhausted at440 accepted/1000 target; find different licensed modern source, keep shortfall560 and per-page review open.",
+      "lastProgressAt": "2026-10-16T05:38:02.649482+00:00",
+      "completedAt": "2026-10-16T05:38:02.649482+00:00",
+      "completedUnit": {
+        "accepted": 440,
+        "rejected": 1,
+        "newAcquisitions": 440,
+        "target": 1000,
+        "shortfall": 560,
+        "priorRecordsChecked": 3090,
+        "runtimeApprovals": 0
+      },
+      "evidence": [
+        "data/recipes/curated-local/based-cooking-20261015/acquisition-report.json",
+        "docs/agents/based-cooking-collection-20261016.md"
+      ]
+    },
+    {
+      "id": "monthly-required-coverage",
+      "priority": 34,
+      "dependsOn": [
+        "budget-search-service"
+      ],
+      "status": "done",
+      "owner": null,
+      "lastProgressAt": "2026-10-16T05:38:02.649482+00:00",
+      "completedAt": "2026-10-16T05:38:02.649482+00:00",
+      "nextAction": "Use only caller-declared required slots; full month/person targets and live prices remain separate.",
+      "completedUnit": {
+        "newFocusedTests": 6,
+        "stateWrites": 0
+      },
+      "evidence": [
+        "lib/domain/monthly_budget_coverage.dart",
+        "test/monthly_budget_coverage_test.dart",
+        "test/monthly_budget_coverage_service_test.dart",
+        "docs/agents/monthly-logic-20261016.md"
+      ]
+    },
+    {
+      "id": "recipe-source-optional-unknown",
+      "priority": 34,
+      "dependsOn": [
+        "recipe-library"
+      ],
+      "status": "done",
+      "owner": null,
+      "lastProgressAt": "2026-10-16T05:38:02.649482+00:00",
+      "completedAt": "2026-10-16T05:38:02.649482+00:00",
+      "nextAction": "Require explicit optionality/inclusion review before source promotion; old fingerprints may require re-review.",
+      "completedUnit": {
+        "unknownPreserved": true,
+        "newRegressionTests": 1
+      },
+      "evidence": [
+        "lib/data/recipe_library_repository.dart",
+        "lib/domain/recipe_library_coverage.dart",
+        "test/recipe_library_coverage_test.dart"
+      ]
+    },
+    {
+      "id": "modern-source-next",
+      "priority": 35,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "lastProgressAt": "2026-10-16T05:38:02.649482+00:00",
+      "completedAt": "2026-10-16T05:38:02.649482+00:00",
+      "nextAction": "Suhtayn below1000 by publisher claim and bulk reuse requires written permission; search a different eligible modern source, no bulk import/contact.",
+      "completedUnit": {
+        "newCompleteRecipes": 0,
+        "target": 1000,
+        "queries": 6,
+        "opens": 5,
+        "underlyingRequests": 11
+      },
+      "evidence": [
+        "docs/agents/modern-source-next-20261016.md"
+      ]
     }
   ],
   "quotaCheckpoint": {
-    "at": "2026-10-15T12:14:31.611385+00:00",
-    "primaryUsedPercent": 57,
-    "weeklyUsedPercent": 25,
+    "at": "2026-10-16T05:38:02.649482+00:00",
+    "primaryUsedPercent": 39,
+    "weeklyUsedPercent": 38,
     "ordinaryUsageAllowed": true,
     "operationalLimit": 99
   },
-  "updatedAt": "2026-10-15T12:14:31.611385+00:00",
+  "updatedAt": "2026-10-16T05:38:02.649482+00:00",
   "resumeDiagnosis": {
-    "at": "2026-10-15T11:50:29.010768+00:00",
-    "cause": "Previous primary usage ceiling reached; bulk worker errored and automatic command approval review could not run due account usage limit. No recipe-source503cause; only preview31004/check31124 processes present. Existing1000pack generated but integration/tests/notes/delivery incomplete.",
+    "at": "2026-10-16T05:38:02.649482+00:00",
+    "cause": "Previous usage ceiling and automatic command-review failure interrupted prepared third archive and Based Cooking workers; no source writer process remained. OFF503 was unrelated.",
     "evidence": [
-      "Worker bulk_thousand usage-limit error",
-      "Automatic approval review failed before integration command executed",
-      "Git base6bee479 with policy5files and1000pack/module/tests uncommitted",
-      "Current actual1/16ordinarytrue; noreset/credits used; no active source process"
+      "watchdog stalled_active_task for recipe-local-curation and based-cooking-collection",
+      "Git dirty preparation on base aa3d6fe738fb1e3dcfa042ec67e185243b69a8d1",
+      "CIM no competing source writer",
+      "Fresh actual quota enabled root offline rebuild, native integration and full gate"
     ],
-    "correctiveAction": "Resume samebulkowner tofinish targetedverification; independent core/searchservice and modernsourceassessment separateowners. Rootintegratesonlyreturnedfiles, runsactualgates thencommit/push/mirrors. Preserve original lastProgress until actualtested productunit."
+    "correctiveAction": "Root resumed same units without second writer, verified immutable pins and actual counts, closed owners; separate monthly agent edited disjoint files. Search next licensed modern source and preserve rights/quantity review."
   },
   "operationalQuotaLimit": 99,
   "recipeBatchPolicy": {
