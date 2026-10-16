@@ -10,7 +10,7 @@ void main() {
     () async {
       final repository = bundledRecipeLibrary();
       final entries = await repository.all();
-      expect(entries, hasLength(3530));
+      expect(entries, hasLength(4530));
       expect(entries.where((entry) => entry.runtimeReady), isEmpty);
       expect(entries.every((entry) => entry.nutrition == null), isTrue);
       final sourceLanguageEntries = entries
@@ -19,20 +19,20 @@ void main() {
                 entry.sourceRecord['translationStatus'] == 'not-translated',
           )
           .toList();
-      expect(sourceLanguageEntries, hasLength(3440));
+      expect(sourceLanguageEntries, hasLength(4440));
       expect(
         sourceLanguageEntries.fold<int>(
           0,
           (n, entry) => n + entry.ingredients.length,
         ),
-        30021,
+        37188,
       );
       expect(
         sourceLanguageEntries.fold<int>(
           0,
           (n, entry) => n + entry.stepsArabic.length,
         ),
-        23723,
+        30053,
       );
       expect(
         sourceLanguageEntries.every(
@@ -52,7 +52,18 @@ void main() {
       expect((await RecipeRepository().index), hasLength(54));
       expect(
         entries.where((entry) => entry.sourceSnapshot != null),
-        hasLength(3504),
+        hasLength(4504),
+      );
+      final frenchRecovery = entries
+          .where((entry) => entry.sourceRecord['sourceTextRecovery'] != null)
+          .toList();
+      expect(frenchRecovery, hasLength(1000));
+      expect(
+        frenchRecovery.where(
+          (entry) => (entry.sourceRecord['sourceTextRecovery'] as Map)[
+              'sourceTextWithoutUnresolvedMarkup'] == true,
+        ),
+        hasLength(988),
       );
       expect(entries.every((entry) => entry.stepsArabic.isNotEmpty), isTrue);
       for (final cuisine in [

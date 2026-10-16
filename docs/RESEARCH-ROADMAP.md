@@ -1,5 +1,7 @@
 # سُفرة — أولويات البحث والمنطق والبنوك
 
+تحديث16أكتوبر2026: توقف عند **2% متبقية**،أي استخدام **98%** لأي حد؛هذا ينسخ حدود99% و90% التاريخية أدناه. المجهول أو ordinaryUsageAllowed=false يوقف البحث المكلف؛لا credits/reset. المراقب `--quota-limit 98` بالقيم الفعلية. استكمال الجلسات في `docs/CLAUDE-RESUME.md`؛كاتب واحد فقط على نسخة E.
+
 13أكتوبر2026. نسخة واحدة E:\work\SOFRA\app؛ origin/main. طلب المستخدم صراحة ترتيب كل النواقص، التنفيذ بالترتيب، وجدولة ومراقب يفسر التوقف ويستأنف العمل الممكن. هذه خطة تشغيل مستمرة؛ ليست وعدًا باكتمال كل المراحل في جلسة واحدة.
 
 ## القرار الحالي
@@ -248,3 +250,8 @@ User correction15October2026 supersedes all earlier90percent instructions: opera
 ## Current §90 —16October2026
 
 3530 readable source records=3064 previously acquired archive conversions+440 newly acquired Based Cooking rows+23 creator websites+3 indexed video descriptions;22packs/3504 snapshots. Third exact1000 archive conversion met the native-unit target, not new acquisition. Modern source acquired440/1000, short560 due pinned source size; next lead search0/1000 with11requests, Suhtayn terms block bulk reuse without permission and its733 publisher claim is below target. Do not count discovery pages, duplicate bilingual variants or the old6056research rows as ready recipes. English3440 untranslated, local source labels71 and planning catalog54/4/methodfamily1 unchanged. Source optionality null preserved in Flutter and required caller month slots now gate bounded budget search; no full automatic menu/person/medical claim. Full current Flutter/Node/analyze and exact next work in HANDOFF§90; do not restart book network. User99% ceiling/no credits remains. Continue modern Arabic creator/video priority, broader world cuisines, actual quantity/food/rights review and live merchant sampling independent of OFF source backoff.
+
+
+## Current §91 —16October2026
+
+4530 source records=4064 existing archive conversions+440 Based Cooking+23 creator websites+3 indexed video descriptions;23 packs/4504 snapshots. Fourth offline French batch pinned1000 source records, but source-line audit found only988 with ingredient+method text free of unresolved markup, **12 short of the user's1000 fully extracted text target**. The original parser had stripped ingredient-reference names in946 rows and omitted125 ingredient lines in77; the new adapter restores only literal source parameters from pinned wikitext and flags12 unresolved rows, preserving parser and raw evidence. 7167 ingredient lines/6330 steps,0 new acquisitions/translations/runtime or nutritional approvals. Exact and semantic duplicate checks have different scopes; no claim of1000 distinct ready dishes or new approved cuisine. Source-language untranslated4440; planning54/4 unchanged. Person-target interaction now reports complete estimated subtotals as estimated and legacy null confidence as unknown, without clinical inference. Detail, hashes, check gates and next actions in HANDOFF§91 and `docs/PROGRAM-STATUS-20261016.md`. Continue modern Arab creator priority, complete extraction review, prices and independent core work; no new old-book network or OFF-blocked logic.

@@ -2,14 +2,15 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-16T05:38:02.649482+00:00",
+    "at": "2026-10-16T11:34:54Z",
     "taskId": "recipe-local-curation",
-    "summary": "Third1000 existing-archive records and440 new modern source records integrated into3530library; required-slot coverage and optional-null fix; actual gates passed.",
+    "summary": "Fourth1000 archived source records integrated into4530library with988 text-complete and12 flagged; literal recovery restored125 ingredient lines. Target-confidence logic and full327Flutter/49Node/analyze passed. User reserve now2percent (98used).",
     "evidence": [
       "data/recipes/curated-local/flutter-manifest.json",
       "docs/HANDOFF.md",
       "test/recipe_library_assets_test.dart",
-      "test/monthly_budget_coverage_test.dart"
+      "test/person_nutrition_test.dart",
+      "docs/CLAUDE-RESUME.md"
     ]
   },
   "tasks": [
@@ -513,7 +514,20 @@
         "allergen-evidence"
       ],
       "status": "ready",
-      "nextAction": "Source official explicit personal targets/guidance. Recipe confidence now survives person adapter/report (true/false/legacy null); consuming/rendering interactions must retain it. No clinical rules inferred from health notes."
+      "nextAction": "Source official explicit personal targets/guidance and present estimated/unknown interaction states distinctly. No clinical rules inferred from health notes or estimated nutrition.",
+      "lastProgressAt": "2026-10-16T05:59:10Z",
+      "completedUnit": {
+        "kind": "target-confidence-classification",
+        "estimatedSubtotalResult": "targetEstimated",
+        "legacyUnknownConfidenceResult": "targetUnknown",
+        "focusedFlutterTests": 9,
+        "automaticClinicalTargets": 0
+      },
+      "evidence": [
+        "lib/domain/person_nutrition.dart",
+        "test/person_nutrition_test.dart",
+        "docs/agents/person-target-confidence-20261016.md"
+      ]
     },
     {
       "id": "product-bank",
@@ -634,14 +648,17 @@
       "status": "ready",
       "dependsOn": [],
       "lastAttemptAt": "2026-10-15T12:17:35.037053+00:00",
-      "nextAction": "Next exact1000 source-record batch requires another existing archive-language pool or new licensed source; English archive remaining <=575. No old-book network. Preserve explicit review gates.",
-      "lastProgressAt": "2026-10-16T05:38:02.649482+00:00",
+      "nextAction": "Resolve 12 marked French source-markup cases, then review quantities, exact ingredients, rights and language. For the next >=1000 genuinely complete source-text batch use a permitted modern source or another existing archive-language pool; no new old-book network.",
+      "lastProgressAt": "2026-10-16T05:59:10Z",
       "completedUnit": {
-        "archiveRecords": 3064,
+        "archiveRecords": 4064,
         "latestConverted": 1000,
+        "latestCompleteSourceText": 988,
+        "latestUnresolvedSourceMarkup": 12,
+        "restoredOmittedIngredientLines": 125,
         "newAcquisitions": 0,
         "fullySpecified": 10,
-        "needsReview": 3052,
+        "needsReview": 4052,
         "notCookable": 2,
         "sourceCuisineLabels": 71,
         "runtimeApprovals": 0
@@ -672,7 +689,10 @@
         "data/recipes/curated-local/bulk-2000-20261015/conversion-report.json",
         "docs/agents/bulk-second-thousand-20261015.md",
         "data/recipes/curated-local/bulk-3000-20261015/conversion-report.json",
-        "docs/agents/bulk-third-thousand-20261015.md"
+        "docs/agents/bulk-third-thousand-20261015.md",
+        "data/recipes/curated-local/bulk-4000-20261016/conversion-report.json",
+        "tool/recipes/bulk-normalize-4000.test.mjs",
+        "docs/agents/bulk-fourth-thousand-20261016.md"
       ],
       "owner": null
     },

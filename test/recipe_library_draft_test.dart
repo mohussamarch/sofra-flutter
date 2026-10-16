@@ -360,7 +360,7 @@ void main() {
       expectedManifestSha256: recipeLibraryManifestSha256,
       read: (path) => File(path).readAsString(),
     ).all();
-    expect(entries.length, 3530);
+    expect(entries.length, 4530);
     final entry = entries.firstWhere(
       (value) => value.id == 'manal-website-chicken-eggplant-maqluba',
     );

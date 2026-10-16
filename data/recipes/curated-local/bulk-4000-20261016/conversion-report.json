@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "packFile": "data/recipes/curated-local/bulk-4000-20261016/normalized-recipes.json",
+  "packSha256": "05964518b95bc6260b8180d112a5907a87a3aa482ec96e6262732f49860c6d09",
+  "counts": {
+    "recipes": 1000,
+    "ingredientLines": 7167,
+    "steps": 6330,
+    "alreadyParsedRecords": 1000,
+    "newAcquisitions": 0,
+    "newNativeLibraryRecords": 1000,
+    "fullySpecified": 0,
+    "needsReview": 1000,
+    "runtimeReady": 0,
+    "translatedRecords": 0,
+    "missingAmountLines": 7167,
+    "missingUnitLines": 7167,
+    "unknownYieldRecords": 1000,
+    "unknownTimeRecords": 1000,
+    "ingredientReferenceTemplateRecords": 946,
+    "parserOmittedIngredientRecords": 77,
+    "parserOmittedIngredientLines": 125,
+    "unresolvedSourceMarkupRecords": 12,
+    "sourceTextWithoutUnresolvedMarkupRecords": 988
+  },
+  "cuisineCounts": {},
+  "untaggedRecords": 1000,
+  "sourceSnapshotCount": 1000,
+  "archiveParsedRecipes": 1011,
+  "eligibleCandidates": 1010,
+  "duplicateReview": {
+    "previousSelectedRecords": 3530,
+    "inputManifestSha256": "0de3aacf29146b8ad61ec5598bc570c33bbb27ece5c676c675f1a25dfacb491f",
+    "excluded": {
+      "previousSource": 0,
+      "previousContent": 0,
+      "withinArchiveExactContent": 1,
+      "emptyIngredientOrMethod": 0
+    },
+    "scope": "Exact source record/revision URL and normalized recovered plus archived-parser ingredient+method content against all 22 previous packs and within this French archive. No semantic or cross-language dish uniqueness claim."
+  },
+  "integrityIsCulinaryApproval": false
+}

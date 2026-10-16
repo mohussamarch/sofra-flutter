@@ -356,6 +356,7 @@ void main() {
       double value, {
       bool complete = true,
       String unit = 'g',
+      bool? estimated = false,
     }) => PersonNutritionReport(
       personId: 'member-1',
       day: '2026-10-12',
@@ -366,6 +367,7 @@ void main() {
           knownSubtotal: value,
           complete: complete,
           unit: unit,
+          estimated: estimated,
         ),
       },
     );
@@ -382,6 +384,14 @@ void main() {
     expect(status(report(25)), NutritionInteractionKind.targetWithin);
     expect(status(report(10)), NutritionInteractionKind.targetBelow);
     expect(status(report(50)), NutritionInteractionKind.targetAbove);
+    expect(
+      status(report(25, estimated: true)),
+      NutritionInteractionKind.targetEstimated,
+    );
+    expect(
+      status(report(25, estimated: null)),
+      NutritionInteractionKind.targetUnknown,
+    );
     expect(
       status(report(10), periodComplete: false),
       NutritionInteractionKind.targetUnknown,
@@ -404,5 +414,49 @@ void main() {
       ),
       NutritionInteractionKind.targetNeedsReview,
     );
+  });
+
+  test('ledger confidence cannot certify a daily target', () {
+    final person = NutritionPersonProfile(
+      memberId: 'member-1',
+      targets: [target()],
+    );
+    for (final (confidence, expected) in [
+      (true, NutritionInteractionKind.targetEstimated),
+      (null, NutritionInteractionKind.targetUnknown),
+    ]) {
+      final ledger = NutritionLedger.empty()
+          .addBatch(
+            MealBatch(
+              id: 'batch',
+              recipeId: 'bechamel',
+              sourceSnapshotId: 'recipe-v1',
+              nutrients: {
+                'protein': PersonNutrientValue(
+                  knownSubtotal: 100,
+                  complete: true,
+                  unit: 'g',
+                  estimated: confidence,
+                ),
+              },
+            ),
+          )
+          .append(event('actual'));
+      final report = ledger.report(
+        personId: 'member-1',
+        day: '2026-10-12',
+        kind: NutritionEventKind.consumed,
+      );
+      expect(report.nutrients['protein']!.estimated, confidence);
+      expect(
+        targetInteractions(
+          person: person,
+          report: report,
+          periodComplete: true,
+          triggerId: 'daily',
+        ).single.kind,
+        expected,
+      );
+    }
   });
 }

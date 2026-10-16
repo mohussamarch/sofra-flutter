@@ -611,6 +611,7 @@ enum NutritionInteractionKind {
   targetAbove,
   targetWithin,
   targetUnknown,
+  targetEstimated,
   targetNeedsReview,
 }
 
@@ -664,6 +665,8 @@ List<NutritionInteraction> mealInteractions({
 
 /// periodComplete must be explicitly asserted by the caller. A partial day or
 /// unknown meal nutrient cannot establish that a daily target was satisfied.
+/// A complete but estimated subtotal remains a separate review state; legacy
+/// null confidence is unknown and cannot certify within/below/above either.
 List<NutritionInteraction> targetInteractions({
   required NutritionPersonProfile person,
   required PersonNutritionReport report,
@@ -693,8 +696,12 @@ List<NutritionInteraction> targetInteractions({
     if (!periodComplete ||
         value == null ||
         !value.complete ||
-        value.unit != target.unit) {
+        value.unit != target.unit ||
+        value.estimated == null) {
       add(NutritionInteractionKind.targetUnknown, target.nutrientId);
+    } else if (value.estimated == true) {
+      // A complete subtotal can still be estimated; do not certify a target.
+      add(NutritionInteractionKind.targetEstimated, target.nutrientId);
     } else if (target.minimum != null &&
         value.knownSubtotal < target.minimum!) {
       add(NutritionInteractionKind.targetBelow, target.nutrientId);

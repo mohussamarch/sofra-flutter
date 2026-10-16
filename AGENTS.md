@@ -1,5 +1,11 @@
 # Agent handoff and economical execution
 
+## Latest user correction —16October2026
+
+Stop with2% remaining: operational ceiling **98% used** for either actual Codex quota window;this supersedes older99/90instructions. Unknown quota or ordinaryUsageAllowed=false still blocks costly work;no credits/reset. Pass watchdog `--quota-limit 98`. `automation-2` is currently PAUSED;do not resume it while another session owns writing. A Claude continuation reads `docs/CLAUDE-RESUME.md`,actual Git/owner and external DELIVERY before writing in the sole E checkout.
+
+Current§91:4530 source records/23packs/4504snapshots;planning54/4 unchanged. Fourth French1000source records have988texts without unresolved markup and12flagged incomplete;0newacquisitions/culinary/runtimeapprovals. Preserve this shortfall. Full327Flutter/49relatedNode/analyze clean;details HANDOFF§91. Person target estimated/null confidence does not certify daily target ranges. Table/mindmap in PROGRAM-STATUS-20261016.md.
+
 ## Start
 
 1. Read `docs/STATUS.md` first; keep it under 50 lines.
