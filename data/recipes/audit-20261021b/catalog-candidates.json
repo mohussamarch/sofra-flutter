@@ -1,0 +1,3121 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-21T07:49:57.456Z",
+  "auditScope": "Local Based Cooking 440-row archive only; no network and no Wikibooks/other recipe sources.",
+  "repositoryHead": "91754179a00f4e69e7ab4040c684ddf1a8b13757",
+  "sourcePack": {
+    "file": "data/recipes/curated-local/based-cooking-20261015/normalized-recipes.json",
+    "recipeCount": 440,
+    "sha256": "a155d89532f4e4c0a185057ed2afbd7ae31288a1c3e3b9d295eac467adeaee3e",
+    "manifestSha256": "1fb26f05cfdc56dfb954edc77f87952bbf67edc5d4f1ad3616d57937d612f04a",
+    "pinnedManifestSha256": "a155d89532f4e4c0a185057ed2afbd7ae31288a1c3e3b9d295eac467adeaee3e",
+    "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2"
+  },
+  "inclusionRule": "Each row has explicit cuisine source-tags (or saved description evidence for tzatziki), positive numeric prep and cook fields, and positive integer servings in saved Markdown. Raw values are retained. Ingredient quantities stay source text; accepted amount/unit remain null and scalingAllowed=false.",
+  "candidates": [
+    {
+      "candidateId": "based-cooking:tzatziki",
+      "title": {
+        "source": "Tzatziki",
+        "normalized": "Tzatziki",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-description",
+        "exactExcerpt": "A traditional greek dip that goes well with crackers, celery and carrots or in a greek gyro.",
+        "statement": "The saved source description explicitly calls this a traditional Greek dip."
+      },
+      "sourceTags": [
+        "basic",
+        "snack",
+        "spread",
+        "traditional"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "2 min",
+          "minutes": 2
+        },
+        "cook": {
+          "raw": "6 min",
+          "minutes": 6
+        },
+        "servings": {
+          "raw": "3",
+          "count": 3
+        },
+        "sourcePrepPlusCookMinutes": 8,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 17,
+          "sourceText": "Greek yogurt, 2 cups",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "Cucumber, 3 inches",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "Dill",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "Garlic, 1 clove/teaspoon",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "Olive oil, 1 teaspoon",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "Lemon/lime or vinegar",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "Salt and pepper",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              27
+            ],
+            "text": "Finely grate the cucumber and chop the dill"
+          },
+          {
+            "sourceLineNumbers": [
+              28
+            ],
+            "text": "Strain the cucumber thoroughly with a clean kitchen towel"
+          },
+          {
+            "sourceLineNumbers": [
+              29
+            ],
+            "text": "Mash the garlic and the olive oil in a mortar and pestle"
+          },
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Add all three to the Greek yogurt"
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Squeeze in some lemon/lime or vinegar"
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Add a generous pinch of salt and small pinch of pepper"
+          },
+          {
+            "sourceLineNumbers": [
+              33
+            ],
+            "text": "Optionally add some extra olive oil"
+          },
+          {
+            "sourceLineNumbers": [
+              34
+            ],
+            "text": "Stir and enjoy with your favorite snack"
+          }
+        ],
+        "groupedDisplayProposal": "Finely grate the cucumber and chop the dill\nStrain the cucumber thoroughly with a clean kitchen towel\nMash the garlic and the olive oil in a mortar and pestle\nAdd all three to the Greek yogurt\nSqueeze in some lemon/lime or vinegar\nAdd a generous pinch of salt and small pinch of pepper\nOptionally add some extra olive oil\nStir and enjoy with your favorite snack",
+        "groupedDurationMinutes": 8
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/tzatziki.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/tzatziki.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tzatziki.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "a582cc8885f3e3027bd8d27ddc6a575039efa60f834502073c0da21a02503e4e",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/tzatziki.json",
+        "snapshotSha256": "2dd354b333802e6992b6376c28ade3c47ebb57d7ca6f6e6fb2a2dacc5d623939",
+        "fullSavedSourceText": "---\ntitle: \"Tzatziki\"\ntags: ['basic', 'snack', 'spread', 'traditional']\ndate: 2022-04-16\n---\n\n![Tzatziki](/pix/tzatziki.webp)\n\nA traditional greek dip that goes well with crackers, celery and carrots or in a greek gyro. Great for parties and sharing with your family friends. Can be eaten immediately after preparation or after a few hours of being in the fridge for enhanced flavor.\n\n- ⏲️ Prep time: 2 min\n- 🍳 Cook time: 6 min\n- 🍽️ Servings: 3\n\n## Ingredients\n\n- Greek yogurt, 2 cups\n- Cucumber, 3 inches\n- Dill\n- Garlic, 1 clove/teaspoon\n- Olive oil, 1 teaspoon\n- Lemon/lime or vinegar\n- Salt and pepper\n\n## Directions\n\n1. Finely grate the cucumber and chop the dill\n2. Strain the cucumber thoroughly with a clean kitchen towel\n3. Mash the garlic and the olive oil in a mortar and pestle\n4. Add all three to the Greek yogurt\n5. Squeeze in some lemon/lime or vinegar\n6. Add a generous pinch of salt and small pinch of pepper\n7. Optionally add some extra olive oil\n8. Stir and enjoy with your favorite snack\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:chicken-paprikash",
+      "title": {
+        "source": "Chicken Paprikash",
+        "normalized": "Chicken Paprikash",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "hungarian"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "stew",
+        "chicken",
+        "hungarian"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "cook": {
+          "raw": "1 hr 25 min",
+          "minutes": 85
+        },
+        "servings": {
+          "raw": "8",
+          "count": 8
+        },
+        "sourcePrepPlusCookMinutes": 95,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 16,
+          "sourceText": "8 bone-in, skin-on chicken thighs",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 17,
+          "sourceText": "salt to taste",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "pepper to taste",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "2 cups chicken or beef broth",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "2 tablespoons olive oil",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "2 medium sized onions",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "1 tablespoon powdered garlic",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "3 tablespoons tomato paste",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "1/4 cup Hungarian paprika or regular paprika",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceText": "1 tablespoon cayenne pepper (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceText": "1 cup sour cream (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Pat raw chicken thighs with paper towels for crispier skin. Season with salt and pepper."
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Heat up a heavy, deep-sided pan on high heat with a little olive oil."
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Add the chicken thighs skin-side down. Brown the thighs for five minutes on each side then remove each thigh and place them aside once browned."
+          },
+          {
+            "sourceLineNumbers": [
+              33
+            ],
+            "text": "Add chopped onions to the pan with the chicken fat and sauce until the onions are golden."
+          },
+          {
+            "sourceLineNumbers": [
+              34
+            ],
+            "text": "Add powdered garlic and tomato paste. Stir this another 5 minutes to create a tomato-roux."
+          },
+          {
+            "sourceLineNumbers": [
+              35
+            ],
+            "text": "Add Hungarian paprika and stir another minute."
+          },
+          {
+            "sourceLineNumbers": [
+              36
+            ],
+            "text": "Add chicken or beef broth and bring it to a medium temperature."
+          },
+          {
+            "sourceLineNumbers": [
+              37
+            ],
+            "text": "Reduce the heat to medium low and transfer the chicken thighs from the plate back into the pan. Be sure not to waste any chicken fat."
+          },
+          {
+            "sourceLineNumbers": [
+              38
+            ],
+            "text": "Cover the pan with a lid and simmer the dish for 45 to 60 minutes."
+          },
+          {
+            "sourceLineNumbers": [
+              39
+            ],
+            "text": "With a fork, test to see that the chicken is tender. Add salt and pepper to taste afterwards."
+          },
+          {
+            "sourceLineNumbers": [
+              40
+            ],
+            "text": "Plate the chicken with an optional dusting of cayenne pepper and serve it with some nice hearty bread. This dish has sour cream added to it traditionally, however if dairy is not your thing it’s delicious without it also. So for this last step you can add some sour cream to the sauce and stir it or add the sour cream at the end when you plate the chicken. Then garnish with herbs and enjoy!"
+          }
+        ],
+        "groupedDisplayProposal": "Pat raw chicken thighs with paper towels for crispier skin. Season with salt and pepper.\nHeat up a heavy, deep-sided pan on high heat with a little olive oil.\nAdd the chicken thighs skin-side down. Brown the thighs for five minutes on each side then remove each thigh and place them aside once browned.\nAdd chopped onions to the pan with the chicken fat and sauce until the onions are golden.\nAdd powdered garlic and tomato paste. Stir this another 5 minutes to create a tomato-roux.\nAdd Hungarian paprika and stir another minute.\nAdd chicken or beef broth and bring it to a medium temperature.\nReduce the heat to medium low and transfer the chicken thighs from the plate back into the pan. Be sure not to waste any chicken fat.\nCover the pan with a lid and simmer the dish for 45 to 60 minutes.\nWith a fork, test to see that the chicken is tender. Add salt and pepper to taste afterwards.\nPlate the chicken with an optional dusting of cayenne pepper and serve it with some nice hearty bread. This dish has sour cream added to it traditionally, however if dairy is not your thing it’s delicious without it also. So for this last step you can add some sour cream to the sauce and stir it or add the sour cream at the end when you plate the chicken. Then garnish with herbs and enjoy!",
+        "groupedDurationMinutes": 95
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/chicken-paprikash.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/chicken-paprikash.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-paprikash.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "e43b12dc0baf6f82399308174bc0c8d94222afbdcad524d0eb8feb28f2695b81",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/chicken-paprikash.json",
+        "snapshotSha256": "82905386011c864f587c69adbd4e52d661ff791824baa044b2acfb6472cfb16d",
+        "fullSavedSourceText": "---\ntitle: \"Chicken Paprikash\"\ntags: ['stew', 'chicken', 'hungarian']\ndate: 2022-06-18\nauthor: hcm444\n---\n\nChicken Paprikash is a delicious meal from Hungary, and I hope you are also Hungary! I make it all the time when I have guests.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 1 hr 25 min\n- 🍽️ Servings: 8\n\n## Ingredients\n\n- 8 bone-in, skin-on chicken thighs\n- salt to taste\n- pepper to taste\n- 2 cups chicken or beef broth\n- 2 tablespoons olive oil\n- 2 medium sized onions\n- 1 tablespoon powdered garlic\n- 3 tablespoons tomato paste\n- 1/4 cup Hungarian paprika or regular paprika\n- 1 tablespoon cayenne pepper (optional)\n- 1 cup sour cream (optional)\n\n## Directions\n\n1. Pat raw chicken thighs with paper towels for crispier skin. Season with salt and pepper.\n2. Heat up a heavy, deep-sided pan on high heat with a little olive oil.\n3. Add the chicken thighs skin-side down. Brown the thighs for five minutes on each side then remove each thigh and place them aside once browned.\n4. Add chopped onions to the pan with the chicken fat and sauce until the onions are golden.\n5. Add powdered garlic and tomato paste. Stir this another 5 minutes to create a tomato-roux.\n6. Add Hungarian paprika and stir another minute.\n7. Add chicken or beef broth and bring it to a medium temperature.\n8. Reduce the heat to medium low and transfer the chicken thighs from the plate back into the pan. Be sure not to waste any chicken fat.\n9. Cover the pan with a lid and simmer the dish for 45 to 60 minutes.\n10. With a fork, test to see that the chicken is tender. Add salt and pepper to taste afterwards.\n11. Plate the chicken with an optional dusting of cayenne pepper and serve it with some nice hearty bread. This dish has sour cream added to it traditionally, however if dairy is not your thing it’s delicious without it also. So for this last step you can add some sour cream to the sauce and stir it or add the sour cream at the end when you plate the chicken. Then garnish with herbs and enjoy!\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:chicken-satay",
+      "title": {
+        "source": "Chicken Satay with Peanut Sauce",
+        "normalized": "Chicken Satay with Peanut Sauce",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "thai"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "chicken",
+        "thai",
+        "asian"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "cook": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 25,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 14,
+          "sourceText": "2 lbs boneless chicken breast or thigh",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 15,
+          "sourceText": "1.5 tbsp oyster sauce",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 16,
+          "sourceText": "1 tbsp ground tumeric",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 17,
+          "sourceText": "2 tbsp sugar",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "2 tbsp coconut milk",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "3 tbsp peanut butter (creamy)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "1 tbsp massaman curry paste",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "water to thin peanut sauce",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              25
+            ],
+            "text": "Cut the chicken into 1/2 inch thick strips."
+          },
+          {
+            "sourceLineNumbers": [
+              26
+            ],
+            "text": "Mix chicken with oyster sauce, tumeric, 1 tbsp sugar and coconut milk.  Allow chicken to marinade for at least an hour."
+          },
+          {
+            "sourceLineNumbers": [
+              27
+            ],
+            "text": "Optionally, you can skewer the meat with wooden skewers."
+          },
+          {
+            "sourceLineNumbers": [
+              28
+            ],
+            "text": "Grill chicken until cooked through."
+          },
+          {
+            "sourceLineNumbers": [
+              29
+            ],
+            "text": "Mix peanut butter, 1 tbsp sugar and curry paste together in a small saucepan.  Add enough water to thin to a thick sauce."
+          },
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Cook for 1-2 min stirring frequently."
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Serve chicken with peanut sauce for dipping."
+          }
+        ],
+        "groupedDisplayProposal": "Cut the chicken into 1/2 inch thick strips.\nMix chicken with oyster sauce, tumeric, 1 tbsp sugar and coconut milk.  Allow chicken to marinade for at least an hour.\nOptionally, you can skewer the meat with wooden skewers.\nGrill chicken until cooked through.\nMix peanut butter, 1 tbsp sugar and curry paste together in a small saucepan.  Add enough water to thin to a thick sauce.\nCook for 1-2 min stirring frequently.\nServe chicken with peanut sauce for dipping.",
+        "groupedDurationMinutes": 25
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/chicken-satay.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/chicken-satay.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-satay.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "911e3db0a35b7afcbcf4e9697ac7c87d4cf9c373ec16a4b72fc56e4e7393255f",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/chicken-satay.json",
+        "snapshotSha256": "28f11d9dcf85d5e393511cdb96e150721bb32facc7b50a548e08e4f2423f5332",
+        "fullSavedSourceText": "---\ntitle: Chicken Satay with Peanut Sauce\ntags: ['chicken', 'thai', 'asian']\ndate: 2022-07-10\nauthor: \"Eric Lindberg\"\n---\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 15 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 2 lbs boneless chicken breast or thigh\n- 1.5 tbsp oyster sauce\n- 1 tbsp ground tumeric\n- 2 tbsp sugar\n- 2 tbsp coconut milk\n- 3 tbsp peanut butter (creamy)\n- 1 tbsp massaman curry paste\n- water to thin peanut sauce\n\n## Directions\n\n1. Cut the chicken into 1/2 inch thick strips.\n2. Mix chicken with oyster sauce, tumeric, 1 tbsp sugar and coconut milk.  Allow chicken to marinade for at least an hour.\n3. Optionally, you can skewer the meat with wooden skewers.\n4. Grill chicken until cooked through.\n5. Mix peanut butter, 1 tbsp sugar and curry paste together in a small saucepan.  Add enough water to thin to a thick sauce.\n6. Cook for 1-2 min stirring frequently.\n7. Serve chicken with peanut sauce for dipping.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:butter-chicken-masala",
+      "title": {
+        "source": "Butter Chicken Masala Curry",
+        "normalized": "Butter Chicken Masala Curry",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "indian"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "indian",
+        "curry",
+        "chicken"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "30 min",
+          "minutes": 30
+        },
+        "cook": {
+          "raw": "30 min",
+          "minutes": 30
+        },
+        "servings": {
+          "raw": "2",
+          "count": 2
+        },
+        "sourcePrepPlusCookMinutes": 60,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "Boneless Chicken 1/2lb, cubed",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "Butter Melted 2 tbsp",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "Onions 2 medium-sized, minced",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "Tomato 2 medium-sized, pureed",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "Oil 2 tbsp",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "Lemon juice 1 tbsp",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "Garlic cloves 3, minced/crushed",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceText": "Ginger 1tbsp, minced/paste",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceText": "[Garam Masala](/garam-masala)/Chicken Masala 1 tbsp",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceText": "Cream 4tbsp (or cashew paste)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 28,
+          "sourceText": "Chilli Powder 1 tbsp",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceText": "Turmeric powder 1/4 tbsp",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceText": "Crushed fenugreek leaves 1/4 tbsp",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceText": "1 small bunch of coriander leaves / cilantro, for ganish",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              35
+            ],
+            "text": "In a bowl, mix chicken with salt, pepper, 1/2 tbsp ginger-garlic paste, 1/2 tbsp chili powder, turmeric powder, and lemon juice for the chicken marinade; let marinate for an hour."
+          },
+          {
+            "sourceLineNumbers": [
+              36
+            ],
+            "text": "Roast the marinated chicken in an oven at medium temperature for 5 to 10 minutes. The chicken should be three-fourths done."
+          },
+          {
+            "sourceLineNumbers": [
+              37
+            ],
+            "text": "Heat butter in a pan. Fry the onions until it turns translucent."
+          },
+          {
+            "sourceLineNumbers": [
+              38
+            ],
+            "text": "Add garlic-ginger and sauté for a minute, then add garam masala. Cook for a few seconds making sure not to burn the paste."
+          },
+          {
+            "sourceLineNumbers": [
+              39
+            ],
+            "text": "Add tomato puree, salt, and chili powder. Let simmer for about 5 minutes, occasionally stirring until sauce thickens and becomes a deep brown-red color."
+          },
+          {
+            "sourceLineNumbers": [
+              40
+            ],
+            "text": "Add the marinated chicken, butter, fresh cream, the crushed fenugreek leaves, and sliced green chilies. Cook for an additional 5 to 10 min until the chicken is cooked."
+          },
+          {
+            "sourceLineNumbers": [
+              41
+            ],
+            "text": "Adjust salt, garnish with the coriander leaves. Serve over rice or naan."
+          }
+        ],
+        "groupedDisplayProposal": "In a bowl, mix chicken with salt, pepper, 1/2 tbsp ginger-garlic paste, 1/2 tbsp chili powder, turmeric powder, and lemon juice for the chicken marinade; let marinate for an hour.\nRoast the marinated chicken in an oven at medium temperature for 5 to 10 minutes. The chicken should be three-fourths done.\nHeat butter in a pan. Fry the onions until it turns translucent.\nAdd garlic-ginger and sauté for a minute, then add garam masala. Cook for a few seconds making sure not to burn the paste.\nAdd tomato puree, salt, and chili powder. Let simmer for about 5 minutes, occasionally stirring until sauce thickens and becomes a deep brown-red color.\nAdd the marinated chicken, butter, fresh cream, the crushed fenugreek leaves, and sliced green chilies. Cook for an additional 5 to 10 min until the chicken is cooked.\nAdjust salt, garnish with the coriander leaves. Serve over rice or naan.",
+        "groupedDurationMinutes": 60
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/butter-chicken-masala.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/butter-chicken-masala.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/butter-chicken-masala.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "d405edca4cdbbf490256f797b8bf761edf287e4d384b5f94485c563da31ea2c3",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/butter-chicken-masala.json",
+        "snapshotSha256": "74e36932a61de34cbe8ad2f0eb38278fac5bc062dab4cca0d03c318b27d83352",
+        "fullSavedSourceText": "---\ntitle: \"Butter Chicken Masala Curry\"\ndate: 2021-03-15\ntags: ['indian', 'curry', 'chicken']\nauthor: nihar-samantaray\n---\n\n![Butter Chicken Masala](/pix/butter-chicken-masala.webp)\n\nButter chicken Masala is one of India's most popular chicken recipes, a mild curry with a tomato-onion-cream base and boneless chicken pieces cooked in it to perfection.\n\n- ⏲️ Prep time: 30 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 2\n\n## Ingredients\n\n- Boneless Chicken 1/2lb, cubed\n- Butter Melted 2 tbsp\n- Onions 2 medium-sized, minced\n- Tomato 2 medium-sized, pureed\n- Oil 2 tbsp\n- Lemon juice 1 tbsp\n- Garlic cloves 3, minced/crushed\n- Ginger 1tbsp, minced/paste\n- [Garam Masala](/garam-masala)/Chicken Masala 1 tbsp\n- Cream 4tbsp (or cashew paste)\n- Chilli Powder 1 tbsp\n- Turmeric powder 1/4 tbsp\n- Crushed fenugreek leaves 1/4 tbsp\n- 1 small bunch of coriander leaves / cilantro, for ganish\n\n## Directions\n\n1. In a bowl, mix chicken with salt, pepper, 1/2 tbsp ginger-garlic paste, 1/2 tbsp chili powder, turmeric powder, and lemon juice for the chicken marinade; let marinate for an hour.\n2. Roast the marinated chicken in an oven at medium temperature for 5 to 10 minutes. The chicken should be three-fourths done.\n3. Heat butter in a pan. Fry the onions until it turns translucent.\n4. Add garlic-ginger and sauté for a minute, then add garam masala. Cook for a few seconds making sure not to burn the paste.\n5. Add tomato puree, salt, and chili powder. Let simmer for about 5 minutes, occasionally stirring until sauce thickens and becomes a deep brown-red color.\n6. Add the marinated chicken, butter, fresh cream, the crushed fenugreek leaves, and sliced green chilies. Cook for an additional 5 to 10 min until the chicken is cooked.\n7. Adjust salt, garnish with the coriander leaves. Serve over rice or naan.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:ardei-umpluti",
+      "title": {
+        "source": "Ardei umpluti with meat",
+        "normalized": "Ardei umpluti with meat",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "romanian"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "romanian",
+        "peppers",
+        "baking",
+        "meat"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "cook": {
+          "raw": "40 min",
+          "minutes": 40
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 50,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "2 yellow peppers per person",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "Around 120g of ground beef meat per person",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "1 or 2 onions",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "Condiments of your choice: Parsley, origan or cumin",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "Olive oil",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "Salt and pepper",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "Tomato sauce",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceText": "Bechamel (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              29
+            ],
+            "text": "Heat the oven to 200C."
+          },
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Empty the peppers and remove the seeds."
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Slice the top to the peppers and place them in the oven tray, you may need to slice the bottom a litte bit to make them stand together. (Hint: Put the peppers inside a pan over the oven tray)."
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Cover the peppers with aluminum and cook in the oven for 1h30min."
+          },
+          {
+            "sourceLineNumbers": [
+              33
+            ],
+            "text": "Meanwhile, saute the onions, garlic and last, the meat."
+          },
+          {
+            "sourceLineNumbers": [
+              34
+            ],
+            "text": "Mix with fresh tomato soup."
+          },
+          {
+            "sourceLineNumbers": [
+              35
+            ],
+            "text": "When the peppers are finished, remove the aluminum, fill the peppers with the mix and cook in the oven for another 45 minutes."
+          },
+          {
+            "sourceLineNumbers": [
+              36
+            ],
+            "text": "Optionally: (Not traditional!) Add the bechamel a couple of minutes before the time is up and finish cooking in the oven."
+          },
+          {
+            "sourceLineNumbers": [
+              37
+            ],
+            "text": "Optionally: Instead of bechamel you can use sour cream."
+          },
+          {
+            "sourceLineNumbers": [
+              38
+            ],
+            "text": "Enjoy."
+          }
+        ],
+        "groupedDisplayProposal": "Heat the oven to 200C.\nEmpty the peppers and remove the seeds.\nSlice the top to the peppers and place them in the oven tray, you may need to slice the bottom a litte bit to make them stand together. (Hint: Put the peppers inside a pan over the oven tray).\nCover the peppers with aluminum and cook in the oven for 1h30min.\nMeanwhile, saute the onions, garlic and last, the meat.\nMix with fresh tomato soup.\nWhen the peppers are finished, remove the aluminum, fill the peppers with the mix and cook in the oven for another 45 minutes.\nOptionally: (Not traditional!) Add the bechamel a couple of minutes before the time is up and finish cooking in the oven.\nOptionally: Instead of bechamel you can use sour cream.\nEnjoy.",
+        "groupedDurationMinutes": 50
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/ardei-umpluti.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/ardei-umpluti.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ardei-umpluti.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "7b749192a4aa357d1f1f387c203bca493e76780e1af6ab479e40dfca381de508",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/ardei-umpluti.json",
+        "snapshotSha256": "95146b1197ffe83a0641b9c9829966002e36d729e0795a67dfa46f513fca2991",
+        "fullSavedSourceText": "---\ntitle: \"Ardei umpluti with meat\"\ntags: ['romanian', 'peppers', 'baking', 'meat']\ndate: 2022-07-11\nauthor: miraunpajaro\n---\n\n![Ardei umpluti](/pix/ardei-umpluti.webp)\n\nFarcies peppers with rice.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 40 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 2 yellow peppers per person\n- Around 120g of ground beef meat per person\n- 1 or 2 onions\n- Condiments of your choice: Parsley, origan or cumin\n- Olive oil\n- Salt and pepper\n- Tomato sauce\n- Bechamel (optional)\n\n## Directions\n\n1. Heat the oven to 200C.\n2. Empty the peppers and remove the seeds.\n3. Slice the top to the peppers and place them in the oven tray, you may need to slice the bottom a litte bit to make them stand together. (Hint: Put the peppers inside a pan over the oven tray).\n4. Cover the peppers with aluminum and cook in the oven for 1h30min.\n5. Meanwhile, saute the onions, garlic and last, the meat.\n6. Mix with fresh tomato soup.\n7. When the peppers are finished, remove the aluminum, fill the peppers with the mix and cook in the oven for another 45 minutes.\n8. Optionally: (Not traditional!) Add the bechamel a couple of minutes before the time is up and finish cooking in the oven.\n9. Optionally: Instead of bechamel you can use sour cream.\n10. Enjoy.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:baked-rice",
+      "title": {
+        "source": "Valencian Baked Rice (Arroz al Horno)",
+        "normalized": "Valencian Baked Rice (Arroz al Horno)",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "Spanish"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "rice",
+        "Spanish"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "20 min",
+          "minutes": 20
+        },
+        "cook": {
+          "raw": "60 min",
+          "minutes": 60
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 80,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "400 g of bomba rice",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "150 g of cooked chickpeas",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "500 g of pork ribs, cut into pieces",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "200 g of pork belly, cut into pieces",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "2 blood sausages (*morcillas de cebolla*)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "1 medium potato",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "1 large tomato",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceText": "1 whole garlic head",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceText": "100 g of crushed tomatoes",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceText": "50 ml of extra virgin olive oil",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 28,
+          "sourceText": "800 ml of hot broth (preferably from stew)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceText": "1 teaspoon of sweet paprika",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceText": "A few saffron threads",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceText": "Salt to taste",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              35
+            ],
+            "text": "Preheat the oven to 220°C (428°F), using both upper and lower heat."
+          },
+          {
+            "sourceLineNumbers": [
+              37
+            ],
+            "text": "Peel the potato and cut it into 1 cm thick slices. Set aside."
+          },
+          {
+            "sourceLineNumbers": [
+              39
+            ],
+            "text": "In a clay casserole (oven-safe), heat the olive oil over medium-high heat. Brown the pork ribs and pork belly until golden and crispy. Remove and set aside."
+          },
+          {
+            "sourceLineNumbers": [
+              41
+            ],
+            "text": "In the same oil, lightly fry the potato slices until golden. Remove and set aside."
+          },
+          {
+            "sourceLineNumbers": [
+              43
+            ],
+            "text": "Sear the blood sausages for a few minutes, being careful not to break them. Remove and set aside."
+          },
+          {
+            "sourceLineNumbers": [
+              45
+            ],
+            "text": "Stir the sweet paprika into the remaining oil, mixing quickly to avoid burning. Add the crushed tomatoes and cook until the oil separates from the sauce."
+          },
+          {
+            "sourceLineNumbers": [
+              47
+            ],
+            "text": "Mix in the cooked chickpeas and rice, stirring for a couple of minutes so the rice absorbs the flavors."
+          },
+          {
+            "sourceLineNumbers": [
+              49
+            ],
+            "text": "Return the pork ribs, pork belly, and potato slices to the casserole, evenly distributing them over the rice. Place the whole garlic head in the center and arrange the blood sausages and tomato slices on top."
+          },
+          {
+            "sourceLineNumbers": [
+              51
+            ],
+            "text": "Pour the hot broth into the casserole, ensuring it covers all ingredients. Add the saffron threads and adjust the salt if needed."
+          },
+          {
+            "sourceLineNumbers": [
+              53
+            ],
+            "text": "Bake in the preheated oven for 20-25 minutes, or until the rice has absorbed all the broth and is tender."
+          },
+          {
+            "sourceLineNumbers": [
+              55
+            ],
+            "text": "Once done, remove from the oven and let the baked rice rest, covered with a clean cloth, for 5 minutes before serving."
+          }
+        ],
+        "groupedDisplayProposal": "Preheat the oven to 220°C (428°F), using both upper and lower heat.\nPeel the potato and cut it into 1 cm thick slices. Set aside.\nIn a clay casserole (oven-safe), heat the olive oil over medium-high heat. Brown the pork ribs and pork belly until golden and crispy. Remove and set aside.\nIn the same oil, lightly fry the potato slices until golden. Remove and set aside.\nSear the blood sausages for a few minutes, being careful not to break them. Remove and set aside.\nStir the sweet paprika into the remaining oil, mixing quickly to avoid burning. Add the crushed tomatoes and cook until the oil separates from the sauce.\nMix in the cooked chickpeas and rice, stirring for a couple of minutes so the rice absorbs the flavors.\nReturn the pork ribs, pork belly, and potato slices to the casserole, evenly distributing them over the rice. Place the whole garlic head in the center and arrange the blood sausages and tomato slices on top.\nPour the hot broth into the casserole, ensuring it covers all ingredients. Add the saffron threads and adjust the salt if needed.\nBake in the preheated oven for 20-25 minutes, or until the rice has absorbed all the broth and is tender.\nOnce done, remove from the oven and let the baked rice rest, covered with a clean cloth, for 5 minutes before serving.",
+        "groupedDurationMinutes": 80
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/baked-rice.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/baked-rice.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/baked-rice.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "3dfdc5c8d5b0de3df2e3552ce7c5bac5ec7e24b00ca0aea17d8ee0ee06f7cb1f",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/baked-rice.json",
+        "snapshotSha256": "e2a7db4163cbeef0071adb2869da594ce839e05e98250c052856f0391f716008",
+        "fullSavedSourceText": "---\ntitle: Valencian Baked Rice (Arroz al Horno)\ntags: ['rice', 'Spanish']\ndate: 2025-03-15\nauthor: \"daviduhden\"\n---\n\n![Valencian Baked Rice](/pix/baked-rice.webp)\n\n**Valencian Baked Rice (Arroz al Horno)** is a traditional dish from the Valencian Community, known for being cooked in a clay casserole and baked in the oven. This comforting and flavorful meal combines rice, meats, chickpeas, and vegetables.\n\n- ⏲️ Prep time: 20 min\n- 🍳 Cook time: 60 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 400 g of bomba rice\n- 150 g of cooked chickpeas\n- 500 g of pork ribs, cut into pieces\n- 200 g of pork belly, cut into pieces\n- 2 blood sausages (*morcillas de cebolla*)\n- 1 medium potato\n- 1 large tomato\n- 1 whole garlic head\n- 100 g of crushed tomatoes\n- 50 ml of extra virgin olive oil\n- 800 ml of hot broth (preferably from stew)\n- 1 teaspoon of sweet paprika\n- A few saffron threads\n- Salt to taste\n\n## Directions\n\n1. Preheat the oven to 220°C (428°F), using both upper and lower heat.\n\n2. Peel the potato and cut it into 1 cm thick slices. Set aside.\n\n3. In a clay casserole (oven-safe), heat the olive oil over medium-high heat. Brown the pork ribs and pork belly until golden and crispy. Remove and set aside.\n\n4. In the same oil, lightly fry the potato slices until golden. Remove and set aside.\n\n5. Sear the blood sausages for a few minutes, being careful not to break them. Remove and set aside.\n\n6. Stir the sweet paprika into the remaining oil, mixing quickly to avoid burning. Add the crushed tomatoes and cook until the oil separates from the sauce.\n\n7. Mix in the cooked chickpeas and rice, stirring for a couple of minutes so the rice absorbs the flavors.\n\n8. Return the pork ribs, pork belly, and potato slices to the casserole, evenly distributing them over the rice. Place the whole garlic head in the center and arrange the blood sausages and tomato slices on top.\n\n9. Pour the hot broth into the casserole, ensuring it covers all ingredients. Add the saffron threads and adjust the salt if needed.\n\n10. Bake in the preheated oven for 20-25 minutes, or until the rice has absorbed all the broth and is tender.\n\n11. Once done, remove from the oven and let the baked rice rest, covered with a clean cloth, for 5 minutes before serving."
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:chicken-in-red-wine-vinegar-sauce",
+      "title": {
+        "source": "Chicken in Red Wine Vinegar Sauce",
+        "normalized": "Chicken in Red Wine Vinegar Sauce",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "french"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "chicken",
+        "french",
+        "wine"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "cook": {
+          "raw": "25 min",
+          "minutes": 25
+        },
+        "servings": {
+          "raw": "6",
+          "count": 6
+        },
+        "sourcePrepPlusCookMinutes": 40,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 13,
+          "sourceText": "3 tablespoons/~44 milliliters extra-virgin olive oil",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 14,
+          "sourceText": "1 tablespoon/~14 grams unsalted butter",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 15,
+          "sourceText": "1 whole chicken, cut into 10 pieces (alternatively, use breasts or legs)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 16,
+          "sourceText": "4 shallots, finely chopped",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 17,
+          "sourceText": "1 cup/720 milliliters red wine vinegar",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "1 cup/240 milliliters crème fraîche or heavy cream",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "Finely chopped parsley (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              23
+            ],
+            "text": "Rub each piece of chicken in salt and pepper mixture."
+          },
+          {
+            "sourceLineNumbers": [
+              24
+            ],
+            "text": "Heat oil and melt butter in deep-sided, 12-inch (~30 centimeter) sauté pan on medium-high heat. When the oil is hot, but not smoking, use tongs to add chicken skin side down."
+          },
+          {
+            "sourceLineNumbers": [
+              25
+            ],
+            "text": "Brown both sides until skin is golden brown and chicken is cooked, about 12-15 minutes. Remove chicken to a platter and cover loosely with aluminum foil to keep warm."
+          },
+          {
+            "sourceLineNumbers": [
+              26
+            ],
+            "text": "Pour out half of oil from pan, and use other half to brown shallots over medium-high heat. Slowly add vinegar and boil until reduced to almost a syrup. Add crème fraîche/cream and cook until blended and brown, about 5 minutes. Return chicken to pan to coat and heat."
+          },
+          {
+            "sourceLineNumbers": [
+              27
+            ],
+            "text": "Return chicken to platter. Add garnish if available, and serve."
+          }
+        ],
+        "groupedDisplayProposal": "Rub each piece of chicken in salt and pepper mixture.\nHeat oil and melt butter in deep-sided, 12-inch (~30 centimeter) sauté pan on medium-high heat. When the oil is hot, but not smoking, use tongs to add chicken skin side down.\nBrown both sides until skin is golden brown and chicken is cooked, about 12-15 minutes. Remove chicken to a platter and cover loosely with aluminum foil to keep warm.\nPour out half of oil from pan, and use other half to brown shallots over medium-high heat. Slowly add vinegar and boil until reduced to almost a syrup. Add crème fraîche/cream and cook until blended and brown, about 5 minutes. Return chicken to pan to coat and heat.\nReturn chicken to platter. Add garnish if available, and serve.",
+        "groupedDurationMinutes": 40
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/chicken-in-red-wine-vinegar-sauce.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/chicken-in-red-wine-vinegar-sauce.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-in-red-wine-vinegar-sauce.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "34ef1eff0f8e3c7f0f9a8b0fd9dad41bedf4edfb3386a2929e5ae3599d9944bc",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/chicken-in-red-wine-vinegar-sauce.json",
+        "snapshotSha256": "66cb040b04694c95a14a6b9cffee35ae7f62c73493a35032dbe5a78f86db636d",
+        "fullSavedSourceText": "---\ntitle: \"Chicken in Red Wine Vinegar Sauce\"\ndate: 2021-03-16\ntags: ['chicken', 'french', 'wine']\n---\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 25 min\n- 🍽️ Servings: 6\n\n## Ingredients\n\n- 3 tablespoons/~44 milliliters extra-virgin olive oil\n- 1 tablespoon/~14 grams unsalted butter\n- 1 whole chicken, cut into 10 pieces (alternatively, use breasts or legs)\n- 4 shallots, finely chopped\n- 1 cup/720 milliliters red wine vinegar\n- 1 cup/240 milliliters crème fraîche or heavy cream\n- Finely chopped parsley (optional)\n\n## Directions\n\n1. Rub each piece of chicken in salt and pepper mixture.\n2. Heat oil and melt butter in deep-sided, 12-inch (~30 centimeter) sauté pan on medium-high heat. When the oil is hot, but not smoking, use tongs to add chicken skin side down.\n3. Brown both sides until skin is golden brown and chicken is cooked, about 12-15 minutes. Remove chicken to a platter and cover loosely with aluminum foil to keep warm.\n4. Pour out half of oil from pan, and use other half to brown shallots over medium-high heat. Slowly add vinegar and boil until reduced to almost a syrup. Add crème fraîche/cream and cook until blended and brown, about 5 minutes. Return chicken to pan to coat and heat.\n5. Return chicken to platter. Add garnish if available, and serve.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:cheesy-ham-and-potato-bake",
+      "title": {
+        "source": "Cheesy Ham and Potato Bake",
+        "normalized": "Cheesy Ham and Potato Bake",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "finnish"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "pork",
+        "potato",
+        "cheese",
+        "finnish"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "30 min",
+          "minutes": 30
+        },
+        "cook": {
+          "raw": "1 h 30 min",
+          "minutes": 90
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 120,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "~ 1 kg (~2.2lb) of potatoes",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "~ 300g (~0.7 lb) of smoked ham",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "1 onion chopped",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "~ 200g (~0.5 lb) grated cheddar",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "2 dl (~1 cup) cream",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "cayenne pepper (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "thyme (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              28
+            ],
+            "text": "Saute the chopped onion on a medium hot pan in a bit of butter or oil, until it's mildly translucent."
+          },
+          {
+            "sourceLineNumbers": [
+              29
+            ],
+            "text": "Wash and slice the potatoes into thin less than 1 cm slices."
+          },
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Cut the ham into strips."
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Place the potatoes into a large oven dish and place the ham on top of the potatoes."
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Pour the cream evenly into the dish."
+          },
+          {
+            "sourceLineNumbers": [
+              33
+            ],
+            "text": "Add salt and ground black pepper to taste. Additionally, you can add a bit of cayenne pepper powder and thyme to give the dish a bit of spiciness."
+          },
+          {
+            "sourceLineNumbers": [
+              34
+            ],
+            "text": "Spread the grated cheddar evenly on top of the other ingredients."
+          },
+          {
+            "sourceLineNumbers": [
+              35
+            ],
+            "text": "Bake in the oven in 200C (400F) for 1h 3omin. Cover with aluminum foil once the cheese has got a bit of colour."
+          }
+        ],
+        "groupedDisplayProposal": "Saute the chopped onion on a medium hot pan in a bit of butter or oil, until it's mildly translucent.\nWash and slice the potatoes into thin less than 1 cm slices.\nCut the ham into strips.\nPlace the potatoes into a large oven dish and place the ham on top of the potatoes.\nPour the cream evenly into the dish.\nAdd salt and ground black pepper to taste. Additionally, you can add a bit of cayenne pepper powder and thyme to give the dish a bit of spiciness.\nSpread the grated cheddar evenly on top of the other ingredients.\nBake in the oven in 200C (400F) for 1h 3omin. Cover with aluminum foil once the cheese has got a bit of colour.",
+        "groupedDurationMinutes": 120
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/cheesy-ham-and-potato-bake.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/cheesy-ham-and-potato-bake.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cheesy-ham-and-potato-bake.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "7844947a15d8151da6a3b2cb2c5c312cd9c226fd975b66a4a6dfbec3dda350a8",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/cheesy-ham-and-potato-bake.json",
+        "snapshotSha256": "4366bddb32afa08edffba610bb1d887194c8f388fe74e3437197606ac77365bb",
+        "fullSavedSourceText": "---\ntitle: Cheesy Ham and Potato Bake\ntags: ['pork', 'potato', 'cheese', 'finnish']\ndate: 2022-10-14\nauthor: \"NestNik\"\n---\n\n![Cheesy ham and potato bake](/pix/cheesy-ham-and-potato-bake.webp)\n\nA simple version of a popular Finnish oven bake.\n\n- ⏲️ Prep time: 30 min\n- 🍳 Cook time: 1 h 30 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- ~ 1 kg (~2.2lb) of potatoes\n- ~ 300g (~0.7 lb) of smoked ham\n- 1 onion chopped\n- ~ 200g (~0.5 lb) grated cheddar\n- 2 dl (~1 cup) cream\n- cayenne pepper (optional)\n- thyme (optional)\n\n## Directions\n\n1. Saute the chopped onion on a medium hot pan in a bit of butter or oil, until it's mildly translucent.\n2. Wash and slice the potatoes into thin less than 1 cm slices.\n3. Cut the ham into strips.\n4. Place the potatoes into a large oven dish and place the ham on top of the potatoes.\n5. Pour the cream evenly into the dish.\n6. Add salt and ground black pepper to taste. Additionally, you can add a bit of cayenne pepper powder and thyme to give the dish a bit of spiciness.\n7. Spread the grated cheddar evenly on top of the other ingredients.\n8. Bake in the oven in 200C (400F) for 1h 3omin. Cover with aluminum foil once the cheese has got a bit of colour.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:tarte-merengada",
+      "title": {
+        "source": "Tarte Merengada de Limão",
+        "normalized": "Tarte Merengada de Limão",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "portuguese"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "meringue",
+        "lemon",
+        "pie",
+        "portuguese",
+        "sweet"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "cook": {
+          "raw": "20 min",
+          "minutes": 20
+        },
+        "servings": {
+          "raw": "20",
+          "count": 20
+        },
+        "sourcePrepPlusCookMinutes": 30,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "200g of buttered cookies (shortcake)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "80g of margarine",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "1 can of condensed milk (370g)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "3 / 4 lemons ( 1 dl of juice + the outer scrapings )",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "5 eggs",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "150g of sugar",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              27
+            ],
+            "text": "Pre-heat the oven to 220ºC."
+          },
+          {
+            "sourceLineNumbers": [
+              28
+            ],
+            "text": "Separate the yolk from the egg whites and mix the yolks with the condensed milk into whipped cream."
+          },
+          {
+            "sourceLineNumbers": [
+              29
+            ],
+            "text": "Meanwhile mash the cookies into a powder and mix it with the margarine while covering the bottom and sides of a pie dish."
+          },
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Take the outer scrapings of a lemon with a gratter and squeeze the juice of all the lemons."
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Mix the scrappings and the juice with the yolk and add to the pie dish."
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Take it to the oven."
+          },
+          {
+            "sourceLineNumbers": [
+              33
+            ],
+            "text": "Meanwhile mix the egg whites until they start to foam, add the sugar then and keep mixing them until the meringe starts to be firm."
+          },
+          {
+            "sourceLineNumbers": [
+              34
+            ],
+            "text": "After 10 to 15 minutes in the oven, cover the surface of the pie with small dumpings of meringe with a spoon."
+          },
+          {
+            "sourceLineNumbers": [
+              35
+            ],
+            "text": "Reduce the heat of the oven to 160ºC and put the pie back into the oven until the meringe on top becomes golden brown."
+          }
+        ],
+        "groupedDisplayProposal": "Pre-heat the oven to 220ºC.\nSeparate the yolk from the egg whites and mix the yolks with the condensed milk into whipped cream.\nMeanwhile mash the cookies into a powder and mix it with the margarine while covering the bottom and sides of a pie dish.\nTake the outer scrapings of a lemon with a gratter and squeeze the juice of all the lemons.\nMix the scrappings and the juice with the yolk and add to the pie dish.\nTake it to the oven.\nMeanwhile mix the egg whites until they start to foam, add the sugar then and keep mixing them until the meringe starts to be firm.\nAfter 10 to 15 minutes in the oven, cover the surface of the pie with small dumpings of meringe with a spoon.\nReduce the heat of the oven to 160ºC and put the pie back into the oven until the meringe on top becomes golden brown.",
+        "groupedDurationMinutes": 30
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/tarte-merengada.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/tarte-merengada.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tarte-merengada.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "35a9358c155cdd625ef4726d87c0422d26c540564290f107682928df2f2407a5",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/tarte-merengada.json",
+        "snapshotSha256": "b06a2fd1f90e62de397738e6b3f5934519168c1a2d3510da35b472741cff9f6f",
+        "fullSavedSourceText": "---\ntitle: Tarte Merengada de Limão\ntags: ['meringue', 'lemon', 'pie', 'portuguese', 'sweet']\ndate: 2023-03-27\nauthor: magikarp-salesman\n---\n\n![Meringe Lemon Pie](/pix/tarte-merengada.webp)\n\nThis lemon meringue pie is a delicious dessert. Ideal for those with a sweet tooth, it is very easy to make and is ready in just half an hour. Enjoy!\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 20 min\n- 🍽️ Servings: 20\n\n## Ingredients\n\n- 200g of buttered cookies (shortcake)\n- 80g of margarine\n- 1 can of condensed milk (370g)\n- 3 / 4 lemons ( 1 dl of juice + the outer scrapings )\n- 5 eggs\n- 150g of sugar\n\n## Directions\n\n1. Pre-heat the oven to 220ºC.\n2. Separate the yolk from the egg whites and mix the yolks with the condensed milk into whipped cream.\n3. Meanwhile mash the cookies into a powder and mix it with the margarine while covering the bottom and sides of a pie dish.\n4. Take the outer scrapings of a lemon with a gratter and squeeze the juice of all the lemons.\n5. Mix the scrappings and the juice with the yolk and add to the pie dish.\n6. Take it to the oven.\n7. Meanwhile mix the egg whites until they start to foam, add the sugar then and keep mixing them until the meringe starts to be firm.\n8. After 10 to 15 minutes in the oven, cover the surface of the pie with small dumpings of meringe with a spoon.\n9. Reduce the heat of the oven to 160ºC and put the pie back into the oven until the meringe on top becomes golden brown.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:ukrainian-borscht",
+      "title": {
+        "source": "Ukrainian Borscht",
+        "normalized": "Ukrainian Borscht",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "ukrainian",
+          "russian"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "ukrainian",
+        "soup",
+        "beetroot",
+        "russian"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "25 mins",
+          "minutes": 25
+        },
+        "cook": {
+          "raw": "40 mins",
+          "minutes": 40
+        },
+        "servings": {
+          "raw": "10",
+          "count": 10
+        },
+        "sourcePrepPlusCookMinutes": 65,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "3 red beetroots",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "4 Tbsp extra virgin olive oil",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "8 cups chicken broth + 2 cups water",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "3 yukon potatoes",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "2 carrots",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "2 celery ribs",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceText": "1 onion",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceText": "4 Tbsp ketchup or 3 Tbsp tomato sauce",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceText": "1 red bell pepper (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 28,
+          "sourceText": "1 can white cannelini beans with their juice (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceText": "2 bay leaves (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceText": "1 pressed garlic clove (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceText": "1 cup sour cream (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 32,
+          "sourceText": "fresh dill to taste (optional)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              36
+            ],
+            "text": "Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain)."
+          },
+          {
+            "sourceLineNumbers": [
+              37
+            ],
+            "text": "Heat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil."
+          },
+          {
+            "sourceLineNumbers": [
+              38
+            ],
+            "text": "Add grated beets and sauté 10 minutes, stirring occasionally until beets are softened."
+          },
+          {
+            "sourceLineNumbers": [
+              39
+            ],
+            "text": "Add 8 cups broth and 2 cups water."
+          },
+          {
+            "sourceLineNumbers": [
+              40
+            ],
+            "text": "Add sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork."
+          },
+          {
+            "sourceLineNumbers": [
+              41
+            ],
+            "text": "While potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil."
+          },
+          {
+            "sourceLineNumbers": [
+              42
+            ],
+            "text": "Add chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes)."
+          },
+          {
+            "sourceLineNumbers": [
+              43
+            ],
+            "text": "Add 4 Tbsp Ketchup and stir fry for 30 seconds then transfer to the soup pot to continue cooking with the potatoes."
+          },
+          {
+            "sourceLineNumbers": [
+              44
+            ],
+            "text": "When potatoes and carrots reach desired softness, add optional ingredients from the list."
+          },
+          {
+            "sourceLineNumbers": [
+              45
+            ],
+            "text": "Simmer for an additional 2-3 minutes and add more spices to taste."
+          },
+          {
+            "sourceLineNumbers": [
+              46
+            ],
+            "text": "Serve with a dollop of sour cream on top."
+          }
+        ],
+        "groupedDisplayProposal": "Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain).\nHeat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil.\nAdd grated beets and sauté 10 minutes, stirring occasionally until beets are softened.\nAdd 8 cups broth and 2 cups water.\nAdd sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork.\nWhile potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil.\nAdd chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes).\nAdd 4 Tbsp Ketchup and stir fry for 30 seconds then transfer to the soup pot to continue cooking with the potatoes.\nWhen potatoes and carrots reach desired softness, add optional ingredients from the list.\nSimmer for an additional 2-3 minutes and add more spices to taste.\nServe with a dollop of sour cream on top.",
+        "groupedDurationMinutes": 65
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/ukrainian-borscht.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/ukrainian-borscht.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ukrainian-borscht.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "929b50c0faf1a8c733ec8cf9c9ca96dfeab6c930bd5b35013960bbb0aba163c7",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/ukrainian-borscht.json",
+        "snapshotSha256": "55d0b3fc30ab70e61f828bdf2f3e72527c877ce2ff1fdc06a98facb91187a7f6",
+        "fullSavedSourceText": "---\ntitle: \"Ukrainian Borscht\"\ndate: 2021-04-02\ntags: ['ukrainian', 'soup', 'beetroot', 'russian']\nauthor: stanislav\n---\n\n![Borscht in a bowl](/pix/borscht.webp)\n\nBorscht is a beet soup that originates from Ukraine and is common in Eastern Europe and North Asia.\nDepending on the recipe, borscht may be purely vegetarian; it may be served either hot or cold; and it may range from a hearty one-pot meal to a clear broth or a smooth drink.\n\n- ⏲️ Prep time: 25 mins\n- 🍳 Cook time: 40 mins\n- 🍽️ Servings: 10\n\n## Ingredients\n\n- 3 red beetroots\n- 4 Tbsp extra virgin olive oil\n- 8 cups chicken broth + 2 cups water\n- 3 yukon potatoes\n- 2 carrots\n- 2 celery ribs\n- 1 onion\n- 4 Tbsp ketchup or 3 Tbsp tomato sauce\n- 1 red bell pepper (optional)\n- 1 can white cannelini beans with their juice (optional)\n- 2 bay leaves (optional)\n- 1 pressed garlic clove (optional)\n- 1 cup sour cream (optional)\n- fresh dill to taste (optional)\n\n## Directions\n\n1. Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain).\n2. Heat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil.\n3. Add grated beets and sauté 10 minutes, stirring occasionally until beets are softened.\n4. Add 8 cups broth and 2 cups water.\n5. Add sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork.\n6. While potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil.\n7. Add chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes).\n8. Add 4 Tbsp Ketchup and stir fry for 30 seconds then transfer to the soup pot to continue cooking with the potatoes.\n9. When potatoes and carrots reach desired softness, add optional ingredients from the list.\n10. Simmer for an additional 2-3 minutes and add more spices to taste.\n11. Serve with a dollop of sour cream on top.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:tajine",
+      "title": {
+        "source": "Tajine Maadnous",
+        "normalized": "Tajine Maadnous",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "tunisian"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "tunisian",
+        "Eggs"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "20 min",
+          "minutes": 20
+        },
+        "cook": {
+          "raw": "35 min",
+          "minutes": 35
+        },
+        "servings": {
+          "raw": "12",
+          "count": 12
+        },
+        "sourcePrepPlusCookMinutes": 55,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "1 lb chicken breasts diced",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "1 medium onion chopped",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "1 large potato peeled and diced",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "1 cup water",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "1 small bunch parsley (about 1.5 cups, chopped, loosely packed)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "8 large eggs",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "6 oz cheese",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceText": "2 tbsp olive oil",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              41
+            ],
+            "text": "Mix the spices together (grinding any whole spices if necessary) and set them aside."
+          },
+          {
+            "sourceLineNumbers": [
+              42
+            ],
+            "text": "In a large frying pan or pot over medium heat, saute the onions in about 1 tbsp of olive oil until tender."
+          },
+          {
+            "sourceLineNumbers": [
+              43
+            ],
+            "text": "Toss chicken with 1/2 of the spice mix. Add this to the pan and brown."
+          },
+          {
+            "sourceLineNumbers": [
+              44
+            ],
+            "text": "Add the potatoes and the water to the pan. Bring to a gentle simmer, then cook uncovered until potatoes are tender and most of the liquid has evaporated."
+          },
+          {
+            "sourceLineNumbers": [
+              45
+            ],
+            "text": "Stir chopped parsley into the cooked mixture and set aside to cool."
+          },
+          {
+            "sourceLineNumbers": [
+              46
+            ],
+            "text": "Preheat oven to 350°F (180°C), and grease a medium (2 quart/liter) baking pan with the remaining olive oil."
+          },
+          {
+            "sourceLineNumbers": [
+              47
+            ],
+            "text": "Thoroughly whisk the eggs in a large bowl, then mix in the cheese. Stir in the chicken, potato, and parsley mixture, along with the remaining spice mixture. Stir until well-combined, then pour into the oiled baking dish."
+          },
+          {
+            "sourceLineNumbers": [
+              48
+            ],
+            "text": "Bake for 30-35 minutes, or until set in the center. Allow to cool, and serve warm or at room temperature. Serve with some harissa, if you like."
+          }
+        ],
+        "groupedDisplayProposal": "Mix the spices together (grinding any whole spices if necessary) and set them aside.\nIn a large frying pan or pot over medium heat, saute the onions in about 1 tbsp of olive oil until tender.\nToss chicken with 1/2 of the spice mix. Add this to the pan and brown.\nAdd the potatoes and the water to the pan. Bring to a gentle simmer, then cook uncovered until potatoes are tender and most of the liquid has evaporated.\nStir chopped parsley into the cooked mixture and set aside to cool.\nPreheat oven to 350°F (180°C), and grease a medium (2 quart/liter) baking pan with the remaining olive oil.\nThoroughly whisk the eggs in a large bowl, then mix in the cheese. Stir in the chicken, potato, and parsley mixture, along with the remaining spice mixture. Stir until well-combined, then pour into the oiled baking dish.\nBake for 30-35 minutes, or until set in the center. Allow to cool, and serve warm or at room temperature. Serve with some harissa, if you like.",
+        "groupedDurationMinutes": 55
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/tajine.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/tajine.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tajine.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "9e3373d701dc3b8e2d1041b71c54f01024b1c12ce046b419fd4d09134af1f531",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/tajine.json",
+        "snapshotSha256": "dd74ab7bc22735657b1aa979147b1fda72f83568bb358fbb1baab599235eae0d",
+        "fullSavedSourceText": "---\ntitle: \"Tajine Maadnous\"\ndate: 2022-11-16\ntags: ['tunisian', 'Eggs']\nauthor: Sami Ben Romdhane\n---\n\nSimilar to an Italian frittata or Spanish tortilla, Tunisian tajine maadnous is an easy & delicious egg omelette filled with chicken, parsley, and spices.\n\n![tajine maadnous](/pix/tajine-maadnous.webp)\n\n- ⏲️ Prep time: 20 min\n- 🍳 Cook time: 35 min\n- 🍽️ Servings: 12\n\n## Ingredients\n\n- 1 lb chicken breasts diced\n- 1 medium onion chopped\n- 1 large potato peeled and diced\n- 1 cup water\n- 1 small bunch parsley (about 1.5 cups, chopped, loosely packed)\n- 8 large eggs\n- 6 oz cheese\n- 2 tbsp olive oil\n\n## Spice Blend\n\n- 1 tsp cumin\n- 1 tsp coriander\n- 1 tsp turmeric\n- 1 tsp salt\n- 1/2 tsp paprika or cayenne pepper if you want some heat\n- 1/2 tsp black pepper\n- 1/4 tsp caraway\n- 1/4 tsp thyme\n- 1/4 tsp cinnamon\n\n## Directions\n\n1. Mix the spices together (grinding any whole spices if necessary) and set them aside.\n2. In a large frying pan or pot over medium heat, saute the onions in about 1 tbsp of olive oil until tender.\n3. Toss chicken with 1/2 of the spice mix. Add this to the pan and brown.\n4. Add the potatoes and the water to the pan. Bring to a gentle simmer, then cook uncovered until potatoes are tender and most of the liquid has evaporated.\n5. Stir chopped parsley into the cooked mixture and set aside to cool.\n6. Preheat oven to 350°F (180°C), and grease a medium (2 quart/liter) baking pan with the remaining olive oil.\n7. Thoroughly whisk the eggs in a large bowl, then mix in the cheese. Stir in the chicken, potato, and parsley mixture, along with the remaining spice mixture. Stir until well-combined, then pour into the oiled baking dish.\n8. Bake for 30-35 minutes, or until set in the center. Allow to cool, and serve warm or at room temperature. Serve with some harissa, if you like.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:tarta-de-santiago",
+      "title": {
+        "source": "Tarta de Santiago",
+        "normalized": "Tarta de Santiago",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "spanish",
+          "galician"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "spanish",
+        "cake",
+        "galician"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "cook": {
+          "raw": "40 min",
+          "minutes": 40
+        },
+        "servings": {
+          "raw": "8",
+          "count": 8
+        },
+        "sourcePrepPlusCookMinutes": 55,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "3 eggs",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "¾ cup sugar (150 gr)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "1 ½ cup almond meal (150 gr)",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "½ teaspoon cinnamon powder",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "¼ teaspoon salt",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "Zest of 1 lemon",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "Zest of 1 clementine",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceText": "Icing sugar, for dusting on top",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              29
+            ],
+            "text": "Add eggs and sugar into a bowl and whisk until the mixture turns pale."
+          },
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Add the rest of the ingredients, except for icing sugar and using a spatula, gently fold everything until well combine."
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Pour batter into a 7 inch (18 cm) springform pan that has been buttered and floured. Bake in a preheated oven at 360ºF (180ºC) for 40 minutes or until golden brown and fully cooked."
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Cool completely. Place the Santiago cross cut out on top and dust generous amount of icing sugar all over the cake. Carefully remove the cut out. Slice and serve, enjoy!"
+          }
+        ],
+        "groupedDisplayProposal": "Add eggs and sugar into a bowl and whisk until the mixture turns pale.\nAdd the rest of the ingredients, except for icing sugar and using a spatula, gently fold everything until well combine.\nPour batter into a 7 inch (18 cm) springform pan that has been buttered and floured. Bake in a preheated oven at 360ºF (180ºC) for 40 minutes or until golden brown and fully cooked.\nCool completely. Place the Santiago cross cut out on top and dust generous amount of icing sugar all over the cake. Carefully remove the cut out. Slice and serve, enjoy!",
+        "groupedDurationMinutes": 55
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/tarta-de-santiago.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/tarta-de-santiago.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tarta-de-santiago.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "bcb09e1b9695f61d2ae646265b1bbbe1dc66328079516da370e1aa43243339ea",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/tarta-de-santiago.json",
+        "snapshotSha256": "06859ba9559177d21f57e986aed3c0c0b99bc2efd79594f2d12f903fc7ae61a8",
+        "fullSavedSourceText": "---\ntitle: \"Tarta de Santiago\"\ndate: 2022-07-03\ntags: ['spanish', 'cake', 'galician']\nauthor: laura-alvarez\n---\n\n![Tarta de Santiago](/pix/tarta-de-santiago.webp)\n\nDelicious Spanish almond cake or famously known as tarta de Santiago. This is a cake from Galicia and it is super easy to make, with only 3 main ingredients. I always feel this type of cake is just perfect for the holiday season.\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 40 min\n- 🍽️ Servings: 8\n\n## Ingredients\n\n* 3 eggs\n* ¾ cup sugar (150 gr)\n* 1 ½ cup almond meal (150 gr)\n* ½ teaspoon cinnamon powder\n* ¼ teaspoon salt\n* Zest of 1 lemon\n* Zest of 1 clementine\n* Icing sugar, for dusting on top\n\n## Directions\n\n1. Add eggs and sugar into a bowl and whisk until the mixture turns pale.\n2. Add the rest of the ingredients, except for icing sugar and using a spatula, gently fold everything until well combine.\n3. Pour batter into a 7 inch (18 cm) springform pan that has been buttered and floured. Bake in a preheated oven at 360ºF (180ºC) for 40 minutes or until golden brown and fully cooked.\n4. Cool completely. Place the Santiago cross cut out on top and dust generous amount of icing sugar all over the cake. Carefully remove the cut out. Slice and serve, enjoy!\n\n## Notes\n\n* As I mentioned earlier, this cake is dusted with icing sugar with an imprint of Santiago's cross on its top surface. You can also make an imprint of a scallop shell. Or with no imprint at all. Your choice.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:yorkshire-puddings",
+      "title": {
+        "source": "Yorkshire Puddings",
+        "normalized": "Yorkshire Puddings",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "english"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "english",
+        "side"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "5 min",
+          "minutes": 5
+        },
+        "cook": {
+          "raw": "20 min",
+          "minutes": 20
+        },
+        "servings": {
+          "raw": "2",
+          "count": 2
+        },
+        "sourcePrepPlusCookMinutes": 25,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "140g flour",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "4 eggs",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "200ml milk",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "sunflower oil",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              26
+            ],
+            "text": "Preheat oven to 230°C / gas mark 8."
+          },
+          {
+            "sourceLineNumbers": [
+              27
+            ],
+            "text": "Drizzle oil into 24 'cupcake tin' slots. (The pans you make cupcakes in). Heat in oven."
+          },
+          {
+            "sourceLineNumbers": [
+              28
+            ],
+            "text": "Pour flour into bowl."
+          },
+          {
+            "sourceLineNumbers": [
+              29
+            ],
+            "text": "Whisk eggs, add to bowl."
+          },
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Add milk to bowl in small amounts, beating/whisking after each addition. Until there are no lumps in the batter. You may season with salt & pepper."
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Tip batter into a jug so that you may pour into the cupcake pan slots evenly and carefully."
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Bake undisturbed ( opening oven will impede the rising ), until the puddings have puffed up and browned."
+          },
+          {
+            "sourceLineNumbers": [
+              34
+            ],
+            "text": "Originally published on [Good Food](https://www.bbcgoodfood.com/recipes/best-yorkshire-puddings)."
+          }
+        ],
+        "groupedDisplayProposal": "Preheat oven to 230°C / gas mark 8.\nDrizzle oil into 24 'cupcake tin' slots. (The pans you make cupcakes in). Heat in oven.\nPour flour into bowl.\nWhisk eggs, add to bowl.\nAdd milk to bowl in small amounts, beating/whisking after each addition. Until there are no lumps in the batter. You may season with salt & pepper.\nTip batter into a jug so that you may pour into the cupcake pan slots evenly and carefully.\nBake undisturbed ( opening oven will impede the rising ), until the puddings have puffed up and browned.\nOriginally published on [Good Food](https://www.bbcgoodfood.com/recipes/best-yorkshire-puddings).",
+        "groupedDurationMinutes": 25
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/yorkshire-puddings.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/yorkshire-puddings.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/yorkshire-puddings.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "01ec25ce222f61571f70b8ce0d4ca6d8c66de93b15ffe98da7fd8b6114d26f11",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/yorkshire-puddings.json",
+        "snapshotSha256": "6c3b1e553c2d1f942699457e9e11d782d953072df18ba8f1c02869611438e5fe",
+        "fullSavedSourceText": "---\ntitle: \"Yorkshire Puddings\"\ndate: 2021-04-20\ntags: ['english', 'side']\nauthor: siggines\n---\n\n![Yorkshire Puddings](/pix/yorkshire-puddings.webp)\n\nBasically the northern England equivalent of the french pancake ( a means to make use of extra flour when you didn't have enough for bread ). They go well with Sunday Roasts.\nPuddings may be preserved in freezer for up to a month.\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 20 min\n- 🍽️ Servings: 2\n\n## Ingredients\n\n- 140g flour\n- 4 eggs\n- 200ml milk\n- sunflower oil\n\n## Directions\n\n1. Preheat oven to 230°C / gas mark 8.\n2. Drizzle oil into 24 'cupcake tin' slots. (The pans you make cupcakes in). Heat in oven.\n3. Pour flour into bowl.\n4. Whisk eggs, add to bowl.\n5. Add milk to bowl in small amounts, beating/whisking after each addition. Until there are no lumps in the batter. You may season with salt & pepper.\n6. Tip batter into a jug so that you may pour into the cupcake pan slots evenly and carefully.\n7. Bake undisturbed ( opening oven will impede the rising ), until the puddings have puffed up and browned.\n\nOriginally published on [Good Food](https://www.bbcgoodfood.com/recipes/best-yorkshire-puddings).\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:zurich-sytle-meat-saute",
+      "title": {
+        "source": "Zurich-Style Meat Saute",
+        "normalized": "Zurich-Style Meat Saute",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "swiss"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "beef",
+        "cream",
+        "swiss",
+        "quick"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "cook": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 30,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "600g\tBeef, finely sliced",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "250g\tMushrooms, finely sliced",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "1\tOnion",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "1 tbsp Flour",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceText": "200ml\tWhite whine",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceText": "200ml Cream",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceText": "1 tbsp chopped parsley",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Fry the meat in butter at high heat until it starts loosing liquid."
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Take the meat out of the pan and set aside."
+          },
+          {
+            "sourceLineNumbers": [
+              33
+            ],
+            "text": "Saute the onions."
+          },
+          {
+            "sourceLineNumbers": [
+              34,
+              35
+            ],
+            "text": "Add the mushrooms, saute, then add a tbsp of flour and mix well. The flour will make the sauce thicker, so use carfully."
+          },
+          {
+            "sourceLineNumbers": [
+              36
+            ],
+            "text": "Add the white wine and let it boil for a few minutes."
+          },
+          {
+            "sourceLineNumbers": [
+              37
+            ],
+            "text": "Add cream, boil until the sauce is very creamy."
+          },
+          {
+            "sourceLineNumbers": [
+              38
+            ],
+            "text": "Add the meat, boil until the meat is warm."
+          },
+          {
+            "sourceLineNumbers": [
+              39
+            ],
+            "text": "Add parsley, and serve."
+          },
+          {
+            "sourceLineNumbers": [
+              41
+            ],
+            "text": "Serve with [Rösti](./roesti.md) or other traditional Swiss dish."
+          }
+        ],
+        "groupedDisplayProposal": "Fry the meat in butter at high heat until it starts loosing liquid.\nTake the meat out of the pan and set aside.\nSaute the onions.\nAdd the mushrooms, saute, then add a tbsp of flour and mix well. The flour will make the sauce thicker, so use carfully.\nAdd the white wine and let it boil for a few minutes.\nAdd cream, boil until the sauce is very creamy.\nAdd the meat, boil until the meat is warm.\nAdd parsley, and serve.\nServe with [Rösti](./roesti.md) or other traditional Swiss dish.",
+        "groupedDurationMinutes": 30
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/zurich-sytle-meat-saute.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/zurich-sytle-meat-saute.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/zurich-sytle-meat-saute.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "167d6934f256286fb819b288c6cb58f7277be4b3bf91e7f720af7abb92b9a173",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/zurich-sytle-meat-saute.json",
+        "snapshotSha256": "6e6724639a2c1385fcf1f23bc1a8f2e52d05697710598a0dbbbeff88aa623b62",
+        "fullSavedSourceText": "---\ntitle: Zurich-Style Meat Saute\ntags: ['beef', 'cream', 'swiss', 'quick']\ndate: 2023-01-06\nauthor: elias-pahls\n---\n\nOriginally called  \"Züri Gschnätzlets\" (Zurich chopped) from the city of Zurich\nin Switzerland, this is a tasty and practical recipe from simple ingredients.\nYou can use any kind of meat really, depending on your taste. Very\ntraditionally, finely sliced liver and kidney is also mixed in with the meat\nand mushrooms.\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 15 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n\n- 600g\tBeef, finely sliced\n- 250g\tMushrooms, finely sliced\n- 1\tOnion\n- 1 tbsp Flour\n- 200ml\tWhite whine\n- 200ml Cream\n- 1 tbsp chopped parsley\n\n## Directions\n\n1. Fry the meat in butter at high heat until it starts loosing liquid.\n2. Take the meat out of the pan and set aside.\n3. Saute the onions.\n4. Add the mushrooms, saute, then add a tbsp of flour and mix well. The flour\n   will make the sauce thicker, so use carfully.\n5. Add the white wine and let it boil for a few minutes.\n6. Add cream, boil until the sauce is very creamy.\n7. Add the meat, boil until the meat is warm.\n8. Add parsley, and serve.\n\nServe with [Rösti](./roesti.md) or other traditional Swiss dish.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    },
+    {
+      "candidateId": "based-cooking:arroz-chaufa",
+      "title": {
+        "source": "Arroz Chaufa",
+        "normalized": "Arroz Chaufa",
+        "nameAr": null
+      },
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "peruvian",
+          "chinese"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "peruvian",
+        "chinese",
+        "rice"
+      ],
+      "sourceTiming": {
+        "prep": {
+          "raw": "40 min",
+          "minutes": 40
+        },
+        "cook": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 50,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "ingredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceText": "Rice",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceText": "Salt",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceText": "Bell pepper",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceText": "Chicken",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceText": "Eggs",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceText": "Soy sauce",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceText": "Welsh onion",
+          "sourceGroup": null,
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scalingAllowed": false
+        }
+      ],
+      "method": {
+        "sourceSteps": [
+          {
+            "sourceLineNumbers": [
+              28
+            ],
+            "text": "Cut the chicken into pieces and fry it. Don't forget the salt."
+          },
+          {
+            "sourceLineNumbers": [
+              29
+            ],
+            "text": "Cook scrambled eggs. Don't forget the salt."
+          },
+          {
+            "sourceLineNumbers": [
+              30
+            ],
+            "text": "Cook the rice. If it is yesterday's rice better, preferably without salt."
+          },
+          {
+            "sourceLineNumbers": [
+              31
+            ],
+            "text": "Cut the welsh onion and bell pepper into small squares."
+          },
+          {
+            "sourceLineNumbers": [
+              32
+            ],
+            "text": "Mix everything over low heat, adding soy sauce."
+          },
+          {
+            "sourceLineNumbers": [
+              33
+            ],
+            "text": "Optional: add bacon, sesame oil."
+          },
+          {
+            "sourceLineNumbers": [
+              34
+            ],
+            "text": "If everything is salty, you can reduce it with just a teaspoon of sugar, especially if you cook the rice with salt."
+          }
+        ],
+        "groupedDisplayProposal": "Cut the chicken into pieces and fry it. Don't forget the salt.\nCook scrambled eggs. Don't forget the salt.\nCook the rice. If it is yesterday's rice better, preferably without salt.\nCut the welsh onion and bell pepper into small squares.\nMix everything over low heat, adding soy sauce.\nOptional: add bacon, sesame oil.\nIf everything is salty, you can reduce it with just a teaspoon of sugar, especially if you cook the rice with salt.",
+        "groupedDurationMinutes": 50
+      },
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/arroz-chaufa.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/arroz-chaufa.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/arroz-chaufa.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "6b59cc2e1b3cf707c04ecf636e6af90a7dea58b71c28c5be68bcc648cc6ae982",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/arroz-chaufa.json",
+        "snapshotSha256": "d75591fa811ce490b69c781387a6094273219de0b8501cc97086ad01d7d50bae",
+        "fullSavedSourceText": "---\ntitle: \"Arroz Chaufa\"\ndate: 2021-03-16\ntags: ['peruvian', 'chinese', 'rice']\nauthor: andy-rufasto\n---\n\nPeruvian-chinese dish. Easy to cook just add and mix everything.\n\n![Arroz Chaufa](/pix/arroz-chaufa.webp)\n\n- ⏲️ Prep time: 40 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- Rice\n- Salt\n- Bell pepper\n- Chicken\n- Eggs\n- Soy sauce\n- Welsh onion\n\n## Directions\n\n1. Cut the chicken into pieces and fry it. Don't forget the salt.\n2. Cook scrambled eggs. Don't forget the salt.\n3. Cook the rice. If it is yesterday's rice better, preferably without salt.\n4. Cut the welsh onion and bell pepper into small squares.\n5. Mix everything over low heat, adding soy sauce.\n6. Optional: add bacon, sesame oil.\n7. If everything is salty, you can reduce it with just a teaspoon of sugar, especially if you cook the rice with salt.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "currentSourceReadiness": {
+        "runtimeReady": false,
+        "status": "needs-review",
+        "sourceLanguage": "en",
+        "translationStatus": "not-translated",
+        "allAcceptedAmountsRemainUnknown": true,
+        "allIngredientsNonScaling": true,
+        "nutrition": null,
+        "culinaryApproval": false,
+        "perPageRightsApproval": false
+      }
+    }
+  ]
+}

@@ -143,10 +143,10 @@ RecipeFoodSelection selection(RecipeRevision revision) => RecipeFoodSelection(
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('all54 shipped recipes round-trip complete snapshot content', () async {
+  test('all65 shipped recipes round-trip complete snapshot content', () async {
     final recipes = await RecipeRepository(read: (p) => File(p).readAsString())
         .loadAll();
-    expect(recipes.length, 54);
+    expect(recipes.length, 65);
     for (final r in recipes) {
       final saved = r.toJson();
       final restored = CatalogRecipe.fromJson(saved);

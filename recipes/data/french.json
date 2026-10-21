@@ -1,0 +1,90 @@
+{
+  "cuisine": "فرنسي",
+  "cuisineSlug": "french",
+  "version": "1.1.0",
+  "recipes": [
+    {
+      "id": "bc-chicken-in-red-wine-vinegar-sauce",
+      "name": "دجاج بصلصة خل النبيذ الأحمر",
+      "nameEn": "Chicken in Red Wine Vinegar Sauce",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "دجاج محمر بصلصة الكراث وخل النبيذ الأحمر والكريمة.",
+      "servings": 6,
+      "prepTime": 15,
+      "cookTime": 25,
+      "totalTime": 40,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-1",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-2",
+          "name": "زبدة غير مملحة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-3",
+          "name": "دجاجة كاملة مقطعة إلى 10 قطع",
+          "amount": 1,
+          "unit": "حبة",
+          "note": "المقدار للدجاجة الكاملة؛ يذكر المصدر الصدور أو الأفخاذ بديلًا دون تحديد مقدارهما."
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-4",
+          "name": "كراث صغير مفروم ناعمًا",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-5",
+          "name": "خل نبيذ أحمر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: 1 cup/720 milliliters red wine vinegar"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-6",
+          "name": "كريمة طازجة أو كريمة ثقيلة",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-7",
+          "name": "بقدونس مفروم ناعمًا",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "scale": false,
+          "label": "بقدونس مفروم للتزيين حسب الرغبة"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-extra-1",
+          "name": "ملح وفلفل للتتبيل",
+          "amount": null,
+          "unit": null,
+          "label": "مذكور في الطريقة فقط، بلا مقدار في قائمة المصدر",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. افركي قطع الدجاج بمزيج الملح والفلفل.\n2. سخني الزيت وأذيبي الزبدة في مقلاة عميقة قطرها 12 بوصة على نار متوسطة عالية. عندما يسخن الزيت دون أن يدخن، أضيفي الدجاج بالملقط والجلد إلى الأسفل.\n3. حمّري الجانبين حتى يصبح الجلد ذهبيًا وينضج الدجاج، نحو 12 إلى 15 دقيقة. أخرجي الدجاج إلى طبق وغطيه برفق بالألمنيوم لإبقائه دافئًا.\n4. اسكبي نصف الزيت من المقلاة واستخدمي النصف الآخر لتحمير الكراث على نار متوسطة عالية. أضيفي الخل ببطء واغليه حتى يختزل إلى قوام شبه شرابي. أضيفي الكريمة واطهي نحو 5 دقائق حتى تمتزج ويصبح لونها بنيًا. أعيدي الدجاج وقلّبيه لتغطيته وتسخينه.\n5. أعيدي الدجاج إلى الطبق وزينيه بالبقدونس إن توفر وقدميه.\nإضافة سلامة من USDA FSIS: قِس حرارة الدجاج بترمومتر طعام، وتأكد من بلوغ داخله 73.9°م (165°ف)؛ المدة أو لون السطح وحدهما لا يثبتان الوصول إلى هذه الحرارة.",
+          "duration": 40,
+          "passive": false,
+          "tip": "المدة الإجمالية 40 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-in-red-wine-vinegar-sauce.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/chicken-in-red-wine-vinegar-sauce.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر يكتب «1 cup/720 milliliters» للخل، وهو تعارض مقدار ووحدة؛ حُفظ المقدار مجهولًا بدل الاختيار. يذكر المصدر بدائل للدجاج والكريمة. الزيت والزبدة لهما مكافئات تقريبية ووحدات بديلة محفوظة حرفيًا في sidecar. التحقق من تمام نضج الدجاج يحتاج مراجعة سلامة مستقلة؛ مدة التحمير المنقولة ليست شهادة سلامة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    }
+  ]
+}

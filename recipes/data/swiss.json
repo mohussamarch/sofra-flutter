@@ -1,0 +1,83 @@
+{
+  "cuisine": "سويسري",
+  "cuisineSlug": "swiss",
+  "version": "1.1.0",
+  "recipes": [
+    {
+      "id": "bc-zurich-sytle-meat-saute",
+      "name": "لحم سوتيه على طريقة زيورخ",
+      "nameEn": "Zurich-Style Meat Saute",
+      "cuisine": "سويسري",
+      "category": "طبق رئيسي",
+      "description": "طبق زيوريخي تقليدي من اللحم والفطر والكريمة والنبيذ الأبيض.",
+      "servings": 4,
+      "prepTime": 15,
+      "cookTime": 15,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-1",
+          "name": "لحم بقري مقطع شرائح رفيعة",
+          "amount": 600,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-2",
+          "name": "فطر مقطع شرائح رفيعة",
+          "amount": 250,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-3",
+          "name": "بصل",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-4",
+          "name": "دقيق",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-5",
+          "name": "نبيذ أبيض",
+          "amount": 200,
+          "unit": "مل"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-6",
+          "name": "كريمة",
+          "amount": 200,
+          "unit": "مل"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-7",
+          "name": "بقدونس مفروم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-extra-1",
+          "name": "زبدة للقلي",
+          "amount": null,
+          "unit": null,
+          "label": "مذكور في الطريقة فقط، بلا مقدار في قائمة المصدر",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. اقلي اللحم في الزبدة على نار عالية حتى يبدأ بإخراج السوائل.\n2. أخرجي اللحم من المقلاة وضعيه جانبًا.\n3. شوّحي البصل.\n4. أضيفي الفطر وشوّحيه، ثم أضيفي ملعقة كبيرة من الدقيق واخلطي جيدًا. الدقيق يثخّن الصلصة؛ استخدميه بحذر.\n5. أضيفي النبيذ الأبيض واتركيه يغلي بضع دقائق.\n6. أضيفي الكريمة واغلي حتى تصبح الصلصة كثيفة جدًا.\n7. أضيفي اللحم واغليه حتى يسخن.\n8. أضيفي البقدونس وقدمي.\n9. يُقدّم مع Rösti أو طبق سويسري تقليدي آخر.",
+          "duration": 30,
+          "passive": false,
+          "tip": "المدة الإجمالية 30 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/zurich-sytle-meat-saute.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/zurich-sytle-meat-saute.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر يطلب الزبدة في الطريقة لكنها غير مدرجة. وصف النبيذ في قائمة المكونات فيه typo «White whine»؛ عُرض نبيذ أبيض بحسب سياق الخطوة مع حفظ الأصل في sidecar. مصدر الوصفة يذكر أن الكبد والكلى قد يضافان تقليديًا، ولا يدرجهما كعنصرين أساسيين."
+    }
+  ]
+}

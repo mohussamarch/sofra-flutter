@@ -1,0 +1,1078 @@
+{
+  "schemaVersion": 1,
+  "repositoryHead": "91754179a00f4e69e7ab4040c684ddf1a8b13757",
+  "cuisineSlugs": [
+    "greek",
+    "hungarian",
+    "spanish",
+    "french",
+    "finnish",
+    "portuguese",
+    "ukrainian",
+    "tunisian",
+    "swiss",
+    "peruvian"
+  ],
+  "recipes": [
+    {
+      "id": "bc-tzatziki",
+      "name": "تزاتزيكي",
+      "nameEn": "Tzatziki",
+      "cuisine": "يوناني",
+      "category": "مقبلات",
+      "description": "غموس يوناني من الزبادي والخيار والشبت والثوم.",
+      "servings": 3,
+      "prepTime": 2,
+      "cookTime": 6,
+      "totalTime": 8,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-tzatziki-ing-1",
+          "name": "زبادي يوناني",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-tzatziki-ing-2",
+          "name": "خيار",
+          "amount": 3,
+          "unit": "بوصة"
+        },
+        {
+          "id": "bc-tzatziki-ing-3",
+          "name": "شبت",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية غير محددة بوضوح في المصدر",
+          "display": "كما ورد: Dill"
+        },
+        {
+          "id": "bc-tzatziki-ing-4",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية غير محددة بوضوح في المصدر",
+          "display": "كما ورد: Garlic, 1 clove/teaspoon"
+        },
+        {
+          "id": "bc-tzatziki-ing-5",
+          "name": "زيت زيتون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tzatziki-ing-6",
+          "name": "ليمون أو لايم أو خل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية غير محددة بوضوح في المصدر",
+          "display": "كما ورد: Lemon/lime or vinegar"
+        },
+        {
+          "id": "bc-tzatziki-ing-7",
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية غير محددة بوضوح في المصدر",
+          "display": "كما ورد: Salt and pepper"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. ابشري الخيار ناعمًا وافرمي الشبت.\n2. صفّي الخيار جيدًا باستخدام منشفة مطبخ نظيفة.\n3. اهرسي الثوم مع زيت الزيتون في هاون ومدقة.\n4. أضيفي المكونات الثلاثة إلى الزبادي اليوناني.\n5. اعصري قليلًا من الليمون أو اللايم أو أضيفي الخل.\n6. أضيفي رشة وافرة من الملح ورشة صغيرة من الفلفل.\n7. يمكن إضافة قليل من زيت الزيتون.\n8. قلّبي وقدّميه مع وجبتك الخفيفة المفضلة.",
+          "duration": 8,
+          "passive": false,
+          "tip": "المدة الإجمالية 8 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tzatziki.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/tzatziki.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. يذكر المصدر 6 دقائق للطهي رغم أن الطريقة لا تصف طهيًا؛ حُفظ الوقت المنشور. ملاحظة زمنية: المصدر يذكر 6 دقائق للطهي مع أن الوصفة الباردة لا تصف طهيًا؛ احتُفظ بالبيانات كما نُشرت."
+    },
+    {
+      "id": "bc-chicken-paprikash",
+      "name": "دجاج بابريكاش",
+      "nameEn": "Chicken Paprikash",
+      "cuisine": "مجري",
+      "category": "طبق رئيسي",
+      "description": "يخنة دجاج مجرية بالبابريكا والبصل والمرق، مع كريمة حامضة اختيارية.",
+      "servings": 8,
+      "prepTime": 10,
+      "cookTime": 85,
+      "totalTime": 95,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-chicken-paprikash-ing-1",
+          "name": "أفخاذ دجاج بالعظم والجلد",
+          "amount": 8,
+          "unit": "فخذ"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-2",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية غير محددة بوضوح في المصدر",
+          "display": "كما ورد: salt to taste"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-3",
+          "name": "فلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية غير محددة بوضوح في المصدر",
+          "display": "كما ورد: pepper to taste"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-4",
+          "name": "مرق دجاج أو لحم بقري",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-5",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-6",
+          "name": "بصل",
+          "amount": 2,
+          "unit": "بصلة متوسطة"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-7",
+          "name": "ثوم مطحون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-8",
+          "name": "معجون طماطم",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-9",
+          "name": "بابريكا مجرية أو عادية",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-10",
+          "name": "فلفل كايين",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-11",
+          "name": "كريمة حامضة",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. جففي أفخاذ الدجاج النيئة بالمناشف الورقية للحصول على جلد مقرمش، ثم تبّليها بالملح والفلفل.\n2. سخّني مقلاة ثقيلة عميقة على نار عالية مع قليل من زيت الزيتون.\n3. ضعي الأفخاذ والجلد إلى الأسفل. حمّريها خمس دقائق على كل جانب، ثم أخرجيها جانبًا بعد أن تتحمر.\n4. أضيفي البصل المفروم إلى دهن الدجاج وصلصته واطهيه حتى يصبح ذهبيًا.\n5. أضيفي الثوم المطحون ومعجون الطماطم وحرّكي خمس دقائق أخرى لتكوين قاعدة طماطم كثيفة.\n6. أضيفي البابريكا المجرية وحرّكي دقيقة أخرى.\n7. أضيفي مرق الدجاج أو اللحم واتركيه يصل إلى حرارة متوسطة.\n8. خففي النار إلى متوسطة منخفضة وأعيدي الأفخاذ من الطبق إلى المقلاة مع دهن الدجاج.\n9. غطي المقلاة واتركي الطبق يطهى على نار هادئة 45 إلى 60 دقيقة.\n10. اختبري طراوة الدجاج بالشوكة، ثم أضيفي الملح والفلفل حسب الرغبة.\n11. قدمي الدجاج مع رشة اختيارية من فلفل كايين وخبز كثيف. يمكن تقليب الكريمة الحامضة في الصلصة أو إضافتها عند التقديم، ثم تزيينه بالأعشاب.\nإضافة سلامة من USDA FSIS: قِس حرارة الدجاج بترمومتر طعام، وتأكد من بلوغ داخله 73.9°م (165°ف)؛ المدة أو لون السطح وحدهما لا يثبتان الوصول إلى هذه الحرارة.",
+          "duration": 95,
+          "passive": false,
+          "tip": "المدة الإجمالية 95 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-paprikash.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/chicken-paprikash.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    },
+    {
+      "id": "bc-baked-rice",
+      "name": "أرز فالنسيا المخبوز",
+      "nameEn": "Valencian Baked Rice (Arroz al Horno)",
+      "cuisine": "إسباني",
+      "category": "مخبوزات",
+      "description": "أرز مخبوز مع الحمص ولحم الخنزير والطماطم والزعفران.",
+      "servings": 4,
+      "prepTime": 20,
+      "cookTime": 60,
+      "totalTime": 80,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-baked-rice-ing-1",
+          "name": "أرز بومبا",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-baked-rice-ing-2",
+          "name": "حمص مطبوخ",
+          "amount": 150,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-baked-rice-ing-3",
+          "name": "أضلاع خنزير مقطعة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-baked-rice-ing-4",
+          "name": "لحم بطن الخنزير مقطع",
+          "amount": 200,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-baked-rice-ing-5",
+          "name": "نقانق دم بالبصل",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-baked-rice-ing-6",
+          "name": "بطاطس",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-baked-rice-ing-7",
+          "name": "طماطم كبيرة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-baked-rice-ing-8",
+          "name": "رأس ثوم كامل",
+          "amount": 1,
+          "unit": "رأس"
+        },
+        {
+          "id": "bc-baked-rice-ing-9",
+          "name": "طماطم مهروسة",
+          "amount": 100,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-baked-rice-ing-10",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 50,
+          "unit": "مل"
+        },
+        {
+          "id": "bc-baked-rice-ing-11",
+          "name": "مرق ساخن ويفضل مرق يخنة",
+          "amount": 800,
+          "unit": "مل"
+        },
+        {
+          "id": "bc-baked-rice-ing-12",
+          "name": "بابريكا حلوة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-baked-rice-ing-13",
+          "name": "خيوط زعفران",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: A few saffron threads"
+        },
+        {
+          "id": "bc-baked-rice-ing-14",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: Salt to taste"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. سخني الفرن إلى 220°م بحرارة علوية وسفلية.\n2. قشري البطاطس وقطعيها شرائح بسماكة 1 سم وضعيها جانبًا.\n3. في قدر فخاري صالح للفرن سخني الزيت على نار متوسطة إلى عالية. حمّري أضلاع الخنزير ولحم البطن حتى يصبحا ذهبيين ومقرمشين، ثم أخرجيهما جانبًا.\n4. في الزيت نفسه اقلي شرائح البطاطس قليلًا حتى تكتسب اللون الذهبي، ثم أخرجيها.\n5. حمّري النقانق بضع دقائق بحذر حتى لا تتفتت، ثم أخرجيها.\n6. حرّكي البابريكا في الزيت المتبقي بسرعة كيلا تحترق. أضيفي الطماطم المهروسة واطهي حتى ينفصل الزيت عن الصلصة.\n7. أضيفي الحمص المطبوخ والأرز وحرّكي بضع دقائق ليمتص الأرز النكهات.\n8. أعيدي الأضلاع ولحم البطن والبطاطس ووزعيها فوق الأرز. ضعي رأس الثوم في الوسط ورتبي النقانق وشرائح الطماطم فوقه.\n9. اسكبي المرق الساخن بحيث يغطي المكونات. أضيفي الزعفران وعدّلي الملح عند الحاجة.\n10. اخبزي 20 إلى 25 دقيقة أو حتى يمتص الأرز المرق ويطرى.\n11. أخرجيه واتركيه مغطى بقطعة قماش نظيفة 5 دقائق قبل التقديم.",
+          "duration": 80,
+          "passive": false,
+          "tip": "المدة الإجمالية 80 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/baked-rice.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/baked-rice.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة."
+    },
+    {
+      "id": "bc-chicken-in-red-wine-vinegar-sauce",
+      "name": "دجاج بصلصة خل النبيذ الأحمر",
+      "nameEn": "Chicken in Red Wine Vinegar Sauce",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "دجاج محمر بصلصة الكراث وخل النبيذ الأحمر والكريمة.",
+      "servings": 6,
+      "prepTime": 15,
+      "cookTime": 25,
+      "totalTime": 40,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-1",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-2",
+          "name": "زبدة غير مملحة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-3",
+          "name": "دجاجة كاملة مقطعة إلى 10 قطع",
+          "amount": 1,
+          "unit": "حبة",
+          "note": "المقدار للدجاجة الكاملة؛ يذكر المصدر الصدور أو الأفخاذ بديلًا دون تحديد مقدارهما."
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-4",
+          "name": "كراث صغير مفروم ناعمًا",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-5",
+          "name": "خل نبيذ أحمر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: 1 cup/720 milliliters red wine vinegar"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-6",
+          "name": "كريمة طازجة أو كريمة ثقيلة",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-7",
+          "name": "بقدونس مفروم ناعمًا",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "scale": false,
+          "label": "بقدونس مفروم للتزيين حسب الرغبة"
+        },
+        {
+          "id": "bc-chicken-in-red-wine-vinegar-sauce-ing-extra-1",
+          "name": "ملح وفلفل للتتبيل",
+          "amount": null,
+          "unit": null,
+          "label": "مذكور في الطريقة فقط، بلا مقدار في قائمة المصدر",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. افركي قطع الدجاج بمزيج الملح والفلفل.\n2. سخني الزيت وأذيبي الزبدة في مقلاة عميقة قطرها 12 بوصة على نار متوسطة عالية. عندما يسخن الزيت دون أن يدخن، أضيفي الدجاج بالملقط والجلد إلى الأسفل.\n3. حمّري الجانبين حتى يصبح الجلد ذهبيًا وينضج الدجاج، نحو 12 إلى 15 دقيقة. أخرجي الدجاج إلى طبق وغطيه برفق بالألمنيوم لإبقائه دافئًا.\n4. اسكبي نصف الزيت من المقلاة واستخدمي النصف الآخر لتحمير الكراث على نار متوسطة عالية. أضيفي الخل ببطء واغليه حتى يختزل إلى قوام شبه شرابي. أضيفي الكريمة واطهي نحو 5 دقائق حتى تمتزج ويصبح لونها بنيًا. أعيدي الدجاج وقلّبيه لتغطيته وتسخينه.\n5. أعيدي الدجاج إلى الطبق وزينيه بالبقدونس إن توفر وقدميه.\nإضافة سلامة من USDA FSIS: قِس حرارة الدجاج بترمومتر طعام، وتأكد من بلوغ داخله 73.9°م (165°ف)؛ المدة أو لون السطح وحدهما لا يثبتان الوصول إلى هذه الحرارة.",
+          "duration": 40,
+          "passive": false,
+          "tip": "المدة الإجمالية 40 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-in-red-wine-vinegar-sauce.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/chicken-in-red-wine-vinegar-sauce.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر يكتب «1 cup/720 milliliters» للخل، وهو تعارض مقدار ووحدة؛ حُفظ المقدار مجهولًا بدل الاختيار. يذكر المصدر بدائل للدجاج والكريمة. الزيت والزبدة لهما مكافئات تقريبية ووحدات بديلة محفوظة حرفيًا في sidecar. التحقق من تمام نضج الدجاج يحتاج مراجعة سلامة مستقلة؛ مدة التحمير المنقولة ليست شهادة سلامة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    },
+    {
+      "id": "bc-cheesy-ham-and-potato-bake",
+      "name": "صينية البطاطس واللحم المدخن بالجبن",
+      "nameEn": "Cheesy Ham and Potato Bake",
+      "cuisine": "فنلندي",
+      "category": "طبق رئيسي",
+      "description": "نسخة بسيطة من صينية فرن فنلندية شعبية بالبطاطس والكريمة والجبن.",
+      "servings": 4,
+      "prepTime": 30,
+      "cookTime": 90,
+      "totalTime": 120,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-cheesy-ham-and-potato-bake-ing-1",
+          "name": "بطاطس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: ~ 1 kg (~2.2lb) of potatoes"
+        },
+        {
+          "id": "bc-cheesy-ham-and-potato-bake-ing-2",
+          "name": "لحم خنزير مدخن",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: ~ 300g (~0.7 lb) of smoked ham"
+        },
+        {
+          "id": "bc-cheesy-ham-and-potato-bake-ing-3",
+          "name": "بصل مفروم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-cheesy-ham-and-potato-bake-ing-4",
+          "name": "جبن شيدر مبشور",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: ~ 200g (~0.5 lb) grated cheddar"
+        },
+        {
+          "id": "bc-cheesy-ham-and-potato-bake-ing-5",
+          "name": "كريمة",
+          "amount": 2,
+          "unit": "ديسيلتر"
+        },
+        {
+          "id": "bc-cheesy-ham-and-potato-bake-ing-6",
+          "name": "فلفل كايين (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: cayenne pepper (optional)",
+          "optional": true
+        },
+        {
+          "id": "bc-cheesy-ham-and-potato-bake-ing-7",
+          "name": "زعتر (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: thyme (optional)",
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. شوّحي البصل المفروم في مقلاة متوسطة الحرارة مع قليل من الزبدة أو الزيت حتى يشف قليلًا.\n2. اغسلي البطاطس وقطعيها شرائح رقيقة أقل من 1 سم.\n3. قطعي اللحم المدخن إلى شرائح.\n4. ضعي البطاطس في طبق فرن كبير وضعي اللحم فوقها.\n5. اسكبي الكريمة بالتساوي في الطبق.\n6. أضيفي الملح والفلفل الأسود المطحون حسب الرغبة. ويمكن إضافة قليل من مسحوق فلفل كايين والزعتر لإضفاء نكهة حارة.\n7. وزعي الشيدر المبشور بالتساوي فوق المكونات.\n8. اخبزي في فرن 200°م لمدة ساعة و30 دقيقة. غطيه بورق الألمنيوم بعد أن يكتسب الجبن بعض اللون.",
+          "duration": 120,
+          "passive": false,
+          "tip": "المدة الإجمالية 120 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cheesy-ham-and-potato-bake.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/cheesy-ham-and-potato-bake.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. كميات البطاطس واللحم والجبن مسبوقة بعلامة التقريب (~) وبمكافئات متعارضة؛ بقيت مجهولة. خطوة الفرن مكتوبة «1h 3omin» بينما خانة الوقت تقول 1 h 30 min؛ اتُبع الوقت المنشور في خانة metadata."
+    },
+    {
+      "id": "bc-tarte-merengada",
+      "name": "تارت الليمون والمرينغ",
+      "nameEn": "Tarte Merengada de Limão",
+      "cuisine": "برتغالي",
+      "category": "حلويات",
+      "description": "تارت بحشوة الحليب المكثف والليمون مع طبقة مرينغ.",
+      "servings": 20,
+      "prepTime": 10,
+      "cookTime": 20,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-tarte-merengada-ing-1",
+          "name": "بسكويت زبدي (شورت كيك)",
+          "amount": 200,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-tarte-merengada-ing-2",
+          "name": "مارغرين",
+          "amount": 80,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-tarte-merengada-ing-3",
+          "name": "علبة حليب مكثف",
+          "amount": 1,
+          "unit": "علبة",
+          "note": "العبوة 370 غرامًا وفق المصدر."
+        },
+        {
+          "id": "bc-tarte-merengada-ing-4",
+          "name": "ليمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "عدد الليمون غير محسوم؛ يذكر 3 / 4",
+          "display": "كما ورد: 3 / 4 lemons ( 1 dl of juice + the outer scrapings )"
+        },
+        {
+          "id": "bc-tarte-merengada-ing-5",
+          "name": "بيض",
+          "amount": 5,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-tarte-merengada-ing-6",
+          "name": "سكر",
+          "amount": 150,
+          "unit": "جرام"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. سخني الفرن إلى 220°م.\n2. افصلي صفار البيض عن البياض واخلطي الصفار بالحليب المكثف حتى يصبح كريميًا.\n3. في الأثناء اطحني البسكويت إلى مسحوق واخلطيه بالمارغرين، ثم غطي قاع جوانب قالب التارت.\n4. ابشري قشر ليمونة واعصري الليمون كله.\n5. اخلطي القشر والعصير بالصفار واسكبي الخليط في قالب التارت.\n6. أدخليه الفرن.\n7. في الأثناء اخفقي بياض البيض حتى يبدأ بالرغوة، ثم أضيفي السكر وواصلي الخفق حتى يتماسك المرينغ.\n8. بعد 10 إلى 15 دقيقة في الفرن، غطي سطح التارت بكتل صغيرة من المرينغ باستخدام ملعقة.\n9. اخفض حرارة الفرن إلى 160°م، وأعد التارت إليه حتى يصبح المرينغ ذهبي اللون؛ لم يحدد المصدر مدة لهذه المرحلة.",
+          "duration": 30,
+          "passive": false,
+          "tip": "المدة الإجمالية 30 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tarte-merengada.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/tarte-merengada.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. عدد الليمون مكتوب «3 / 4»؛ المقدار مجهول. خطوة الخَبز الأخيرة حتى يصبح المرينغ ذهبيًا بلا مدة. استخدم وقت المصدر الإجمالي المنشور فقط."
+    },
+    {
+      "id": "bc-ukrainian-borscht",
+      "name": "بورش أوكراني",
+      "nameEn": "Ukrainian Borscht",
+      "cuisine": "أوكراني",
+      "category": "شوربة",
+      "description": "شوربة أوكرانية بالخضار والمرق.",
+      "servings": 10,
+      "prepTime": 25,
+      "cookTime": 40,
+      "totalTime": 65,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-ukrainian-borscht-ing-1",
+          "name": "شمندر أحمر",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-2",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-3",
+          "name": "مرق دجاج",
+          "amount": 8,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-4",
+          "name": "ماء",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-5",
+          "name": "بطاطس يوكون",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-6",
+          "name": "جزر",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-7",
+          "name": "كرفس",
+          "amount": 2,
+          "unit": "عود"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-8",
+          "name": "بصل",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-9",
+          "name": "كاتشب أو صلصة طماطم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "المقدار غير محدد؛ يلزم اختيار صريح",
+          "note": "بديلان بمقدارين مختلفين؛ لا تختار الآلة أحدهما.",
+          "display": "4 ملاعق كبيرة كاتشب أو 3 ملاعق كبيرة صلصة طماطم"
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-10",
+          "name": "فلفل أحمر حلو",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-11",
+          "name": "فاصوليا كانيليني بيضاء مع سائلها",
+          "amount": 1,
+          "unit": "علبة",
+          "optional": true
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-12",
+          "name": "ورق غار",
+          "amount": 2,
+          "unit": "ورقة",
+          "optional": true
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-13",
+          "name": "ثوم مهروس",
+          "amount": 1,
+          "unit": "فص",
+          "optional": true
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-14",
+          "name": "كريمة حامضة للتقديم",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "bc-ukrainian-borscht-ing-15",
+          "name": "شبت طازج حسب الرغبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "المقدار غير محدد؛ يلزم اختيار صريح",
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. قشري جميع الخضار وابشريها أو قطعيها؛ أبقي شرائح البطاطس في ماء بارد لمنع اسمرارها حتى يحين استخدامها، ثم صفيها.\n2. سخني قدر شوربة كبيرًا (5.5 كوارت أو أكبر) على نار متوسطة إلى عالية وأضيفي ملعقتين كبيرتين من زيت الزيتون.\n3. أضيفي الشمندر المبشور وشوّحيه 10 دقائق مع التحريك أحيانًا حتى يلين.\n4. أضيفي 8 أكواب من المرق وكوبين من الماء.\n5. أضيفي شرائح البطاطس والجزر واطهي 10 إلى 15 دقيقة أو حتى يسهل وخزها بالشوكة.\n6. أثناء طهي البطاطس، ضعي مقلاة كبيرة على نار متوسطة إلى عالية وأضيفي ملعقتين كبيرتين من الزيت.\n7. أضيفي البصل المفروم والكرفس والفلفل الحلو. شوّحي مع التحريك أحيانًا حتى تلين ويصبح لونها ذهبيًا خفيفًا (7 إلى 8 دقائق).\n8. أضيفي 4 ملاعق كبيرة من الكاتشب وقلّبي 30 ثانية، ثم انقلي الخليط إلى قدر الشوربة ليواصل الطهي مع البطاطس.\n9. عندما تبلغ البطاطس والجزر درجة الطراوة المطلوبة، أضيفي المكونات الاختيارية من القائمة.\n10. اتركيها على نار هادئة 2 إلى 3 دقائق إضافية وأضيفي مزيدًا من التوابل حسب الرغبة.\n11. قدميها مع ملعقة من الكريمة الحامضة على الوجه.",
+          "duration": 65,
+          "passive": false,
+          "tip": "المدة الإجمالية 65 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ukrainian-borscht.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/ukrainian-borscht.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر موسوم أوكراني وRussian؛ التصنيف الأساسي أوكراني كما يصفه النص. فُصل المرق والماء دون تحويل؛ وبقي بديل الكاتشب/صلصة الطماطم مجهول الاختيار لأن لكل بديل مقدارًا مختلفًا. optional محفوظ لكل العناصر الستة الاختيارية."
+    },
+    {
+      "id": "bc-tajine",
+      "name": "طاجين تونسي",
+      "nameEn": "Tajine Maadnous",
+      "cuisine": "تونسي",
+      "category": "طبق رئيسي",
+      "description": "طاجين تونسي بالدجاج والبطاطس والبيض والجبن.",
+      "servings": 12,
+      "prepTime": 20,
+      "cookTime": 35,
+      "totalTime": 55,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-tajine-ing-1",
+          "name": "صدور دجاج مقطعة مكعبات",
+          "amount": 1,
+          "unit": "رطل"
+        },
+        {
+          "id": "bc-tajine-ing-2",
+          "name": "بصل متوسط مفروم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-tajine-ing-3",
+          "name": "بطاطس كبيرة مقشرة ومقطعة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-tajine-ing-4",
+          "name": "ماء",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-tajine-ing-5",
+          "name": "بقدونس مفروم",
+          "amount": 1,
+          "unit": "حزمة",
+          "note": "حزمة صغيرة؛ يذكر المصدر نحو كوب ونصف مفرومًا وموضوعًا دون ضغط. لم تُحوّل الوحدات."
+        },
+        {
+          "id": "bc-tajine-ing-6",
+          "name": "بيض كبير",
+          "amount": 8,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-tajine-ing-7",
+          "name": "جبن",
+          "amount": 6,
+          "unit": "أونصة"
+        },
+        {
+          "id": "bc-tajine-ing-8",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-tajine-ing-9",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-10",
+          "name": "كزبرة مطحونة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-11",
+          "name": "كركم",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-12",
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-13",
+          "name": "بابريكا أو فلفل كايين عند الرغبة في طعم حار",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-14",
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-15",
+          "name": "كراوية",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-16",
+          "name": "زعتر",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-17",
+          "name": "قرفة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tajine-ing-18",
+          "name": "هريسة للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "المقدار غير محدد؛ يلزم اختيار صريح",
+          "optional": true,
+          "note": "إضافة اختيارية مذكورة في آخر خطوة، بلا مقدار."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. اخلط التوابل التسعة، مع طحن ما يلزم منها، وضع الخليط جانبًا.\n2. على نار متوسطة، شوّح البصل في نحو ملعقة كبيرة من زيت الزيتون حتى يلين.\n3. قلّب الدجاج مع نصف خليط التوابل، وأضفه إلى المقلاة ليكتسب لونًا.\n4. أضف البطاطس والماء، واتركهما على غليان خفيف دون غطاء حتى تلين البطاطس ويتبخر معظم السائل.\n5. أضف البقدونس المفروم إلى الخليط المطهو واتركه جانبًا ليبرد.\n6. سخّن الفرن إلى 180°م، وادهن صينية متوسطة سعتها نحو لترين بباقي زيت الزيتون.\n7. اخفق البيض جيدًا، ثم اخلط معه الجبن، وخليط الدجاج والبطاطس والبقدونس، وباقي خليط التوابل. اسكب المزيج في الصينية.\n8. اخبزه 30–35 دقيقة أو حتى يتماسك الوسط. اتركه يبرد وقدمه دافئًا أو بدرجة حرارة الغرفة؛ يمكن تقديم الهريسة معه.\nإضافة سلامة من USDA FSIS: قِس حرارة الدجاج بترمومتر طعام، وتأكد من بلوغ داخله 73.9°م (165°ف)؛ المدة أو لون السطح وحدهما لا يثبتان الوصول إلى هذه الحرارة.",
+          "duration": 55,
+          "passive": false,
+          "tip": "المدة الإجمالية 55 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tajine.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/tajine.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. وسم المصدر تونسي. حُفظت قائمة التوابل كاملة من قسم Spice Blend المنفصل، بلا اختراع مقدار إجمالي للخليط. الزمن 20+35 دقيقة هو بيانات الناشر الإجمالية؛ أزمنة المراحل غير المنشورة تظل غير معلومة. الرطل والأونصة وحدتا المصدر دون تحويل. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    },
+    {
+      "id": "bc-tarta-de-santiago",
+      "name": "تارت سانتياغو",
+      "nameEn": "Tarta de Santiago",
+      "cuisine": "إسباني",
+      "category": "حلويات",
+      "description": "كعكة لوز إسبانية من غاليسيا، مزينة بالسكر البودرة.",
+      "servings": 8,
+      "prepTime": 15,
+      "cookTime": 40,
+      "totalTime": 55,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-tarta-de-santiago-ing-1",
+          "name": "بيض",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-tarta-de-santiago-ing-2",
+          "name": "سكر",
+          "amount": 0.75,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-tarta-de-santiago-ing-3",
+          "name": "لوز مطحون",
+          "amount": 1.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-tarta-de-santiago-ing-4",
+          "name": "قرفة مطحونة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tarta-de-santiago-ing-5",
+          "name": "ملح",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "bc-tarta-de-santiago-ing-6",
+          "name": "قشر ليمون",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-tarta-de-santiago-ing-7",
+          "name": "قشر كلمنتينا",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-tarta-de-santiago-ing-8",
+          "name": "سكر بودرة للتزيين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية أو الوحدة غير واضحة بالمصدر",
+          "display": "كما ورد: Icing sugar, for dusting on top"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. أضيفي البيض والسكر إلى وعاء واخفقي حتى يصبح الخليط شاحب اللون.\n2. أضيفي بقية المكونات عدا السكر البودرة، وقلّبي برفق بملعقة حتى تمتزج.\n3. اسكبي الخليط في قالب زنبركي 7 بوصات (18 سم) مدهون ومذرور بالدقيق. اخبزي في فرن مسخن مسبقًا إلى 180°م لمدة 40 دقيقة أو حتى يصبح ذهبيًا وينضج.\n4. اتركيه يبرد تمامًا. ضعي قالب صليب سانتياغو الورقي فوقه ورشي كمية وافرة من السكر البودرة. أزيلي القالب بحذر، ثم قطعي وقدمي.",
+          "duration": 55,
+          "passive": false,
+          "tip": "المدة الإجمالية 55 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tarta-de-santiago.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/tarta-de-santiago.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر يورد ¾ كوب سكر (150غ) و1½ كوب لوز (150غ)؛ أبقيت الوحدة الأساسية كما نشرها المصدر ولم أحولها للغرام. الوصف يذكر غاليسيا ووسم galician محفوظ كملاحظة، والتصنيف الأساسي الإسباني."
+    },
+    {
+      "id": "bc-zurich-sytle-meat-saute",
+      "name": "لحم سوتيه على طريقة زيورخ",
+      "nameEn": "Zurich-Style Meat Saute",
+      "cuisine": "سويسري",
+      "category": "طبق رئيسي",
+      "description": "طبق زيوريخي تقليدي من اللحم والفطر والكريمة والنبيذ الأبيض.",
+      "servings": 4,
+      "prepTime": 15,
+      "cookTime": 15,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-1",
+          "name": "لحم بقري مقطع شرائح رفيعة",
+          "amount": 600,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-2",
+          "name": "فطر مقطع شرائح رفيعة",
+          "amount": 250,
+          "unit": "جرام"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-3",
+          "name": "بصل",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-4",
+          "name": "دقيق",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-5",
+          "name": "نبيذ أبيض",
+          "amount": 200,
+          "unit": "مل"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-6",
+          "name": "كريمة",
+          "amount": 200,
+          "unit": "مل"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-7",
+          "name": "بقدونس مفروم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-zurich-sytle-meat-saute-ing-extra-1",
+          "name": "زبدة للقلي",
+          "amount": null,
+          "unit": null,
+          "label": "مذكور في الطريقة فقط، بلا مقدار في قائمة المصدر",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. اقلي اللحم في الزبدة على نار عالية حتى يبدأ بإخراج السوائل.\n2. أخرجي اللحم من المقلاة وضعيه جانبًا.\n3. شوّحي البصل.\n4. أضيفي الفطر وشوّحيه، ثم أضيفي ملعقة كبيرة من الدقيق واخلطي جيدًا. الدقيق يثخّن الصلصة؛ استخدميه بحذر.\n5. أضيفي النبيذ الأبيض واتركيه يغلي بضع دقائق.\n6. أضيفي الكريمة واغلي حتى تصبح الصلصة كثيفة جدًا.\n7. أضيفي اللحم واغليه حتى يسخن.\n8. أضيفي البقدونس وقدمي.\n9. يُقدّم مع Rösti أو طبق سويسري تقليدي آخر.",
+          "duration": 30,
+          "passive": false,
+          "tip": "المدة الإجمالية 30 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/zurich-sytle-meat-saute.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/zurich-sytle-meat-saute.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر يطلب الزبدة في الطريقة لكنها غير مدرجة. وصف النبيذ في قائمة المكونات فيه typo «White whine»؛ عُرض نبيذ أبيض بحسب سياق الخطوة مع حفظ الأصل في sidecar. مصدر الوصفة يذكر أن الكبد والكلى قد يضافان تقليديًا، ولا يدرجهما كعنصرين أساسيين."
+    },
+    {
+      "id": "bc-arroz-chaufa",
+      "name": "أروز تشاوفا",
+      "nameEn": "Arroz Chaufa",
+      "cuisine": "بيروفي",
+      "category": "طبق رئيسي",
+      "description": "طبق بيروفي صيني من الأرز والدجاج والبيض وصلصة الصويا.",
+      "servings": 4,
+      "prepTime": 40,
+      "cookTime": 10,
+      "totalTime": 50,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-arroz-chaufa-ing-1",
+          "name": "أرز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-2",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-3",
+          "name": "فلفل حلو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-4",
+          "name": "دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-5",
+          "name": "بيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-6",
+          "name": "صلصة صويا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-7",
+          "name": "بصل أخضر ويلزي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-8",
+          "name": "لحم مقدد (بايكون)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "المقدار غير محدد؛ يلزم اختيار صريح",
+          "optional": true,
+          "note": "إضافة اختيارية في خطوة المصدر6، بلا مقدار."
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-9",
+          "name": "زيت سمسم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "المقدار غير محدد؛ يلزم اختيار صريح",
+          "optional": true,
+          "note": "إضافة اختيارية في خطوة المصدر6، بلا مقدار."
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-10",
+          "name": "سكر",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": true,
+          "note": "إضافة مشروطة بالطعم المالح في خطوة المصدر7؛ لا تعني خفض الصوديوم."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. قطعي الدجاج واقليه، ولا تنسي الملح.\n2. اطهي البيض مخفوقًا ولا تنسي الملح.\n3. اطهي الأرز؛ ويكون أفضل إن كان من اليوم السابق، ويفضل دون ملح.\n4. قطعي البصل الأخضر والفلفل الحلو إلى مكعبات صغيرة.\n5. اخلطي كل شيء على نار هادئة مع إضافة صلصة الصويا.\n6. اختياريًا أضيفي لحم الخنزير المقدد وزيت السمسم.\n7. إذا كان المزيج مالحًا، يمكنك تقليل الملوحة بإضافة ملعقة صغيرة من السكر، خصوصًا إذا طهيت الأرز بالملح.\nإضافة سلامة من USDA FSIS: قِس حرارة الدجاج بترمومتر طعام، وتأكد من بلوغ داخله 73.9°م (165°ف)؛ المدة أو لون السطح وحدهما لا يثبتان الوصول إلى هذه الحرارة.",
+          "duration": 50,
+          "passive": false,
+          "tip": "المدة الإجمالية 50 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/arroz-chaufa.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/arroz-chaufa.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. الوصفة موسومة Peruvian وChinese؛ المطبخ الأساسي بيروفي، والوسم الصيني محفوظ في المصدر. لا توجد مقادير للمكونات في المصدر لذلك بقيت مجهولة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    }
+  ]
+}

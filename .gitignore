@@ -51,3 +51,10 @@ node_modules/
 *.keystore
 *.jks
 .firebase/
+
+# Frozen source packs retain evidence; these are regenerable acquisition caches/duplicates.
+/data/recipes/modern-scale-20261021b-bulk/source-cache/
+/data/recipes/modern-scale-20261021b-bulk/source-snapshots/
+/data/recipes/modern-scale-20261021b-bulk/normalized-recipes.json
+/data/recipes/modern-scale-20261021b-arabic/source-extracts/
+/data/recipes/modern-scale-20261021b-arabic/recipes.json

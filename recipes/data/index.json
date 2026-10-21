@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "updatedAt": "2026-10-12",
+  "version": "1.1.0",
+  "updatedAt": "2026-10-21",
   "cuisines": [
     {
       "name": "مصري",
@@ -25,6 +25,66 @@
       "slug": "italian",
       "file": "italian.json",
       "count": 14
+    },
+    {
+      "name": "يوناني",
+      "slug": "greek",
+      "file": "greek.json",
+      "count": 1
+    },
+    {
+      "name": "مجري",
+      "slug": "hungarian",
+      "file": "hungarian.json",
+      "count": 1
+    },
+    {
+      "name": "إسباني",
+      "slug": "spanish",
+      "file": "spanish.json",
+      "count": 2
+    },
+    {
+      "name": "فرنسي",
+      "slug": "french",
+      "file": "french.json",
+      "count": 1
+    },
+    {
+      "name": "فنلندي",
+      "slug": "finnish",
+      "file": "finnish.json",
+      "count": 1
+    },
+    {
+      "name": "برتغالي",
+      "slug": "portuguese",
+      "file": "portuguese.json",
+      "count": 1
+    },
+    {
+      "name": "أوكراني",
+      "slug": "ukrainian",
+      "file": "ukrainian.json",
+      "count": 1
+    },
+    {
+      "name": "تونسي",
+      "slug": "tunisian",
+      "file": "tunisian.json",
+      "count": 1
+    },
+    {
+      "name": "سويسري",
+      "slug": "swiss",
+      "file": "swiss.json",
+      "count": 1
+    },
+    {
+      "name": "بيروفي",
+      "slug": "peruvian",
+      "file": "peruvian.json",
+      "count": 1
     }
   ],
   "categories": [
@@ -1025,6 +1085,160 @@
       "ingredientCount": 10,
       "stepCount": 6,
       "file": "italian.json"
+    },
+    {
+      "id": "bc-tzatziki",
+      "name": "تزاتزيكي",
+      "nameEn": "Tzatziki",
+      "cuisine": "يوناني",
+      "category": "مقبلات",
+      "servings": 3,
+      "totalTime": 8,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 7,
+      "stepCount": 1,
+      "file": "greek.json"
+    },
+    {
+      "id": "bc-chicken-paprikash",
+      "name": "دجاج بابريكاش",
+      "nameEn": "Chicken Paprikash",
+      "cuisine": "مجري",
+      "category": "طبق رئيسي",
+      "servings": 8,
+      "totalTime": 95,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 11,
+      "stepCount": 1,
+      "file": "hungarian.json"
+    },
+    {
+      "id": "bc-baked-rice",
+      "name": "أرز فالنسيا المخبوز",
+      "nameEn": "Valencian Baked Rice (Arroz al Horno)",
+      "cuisine": "إسباني",
+      "category": "مخبوزات",
+      "servings": 4,
+      "totalTime": 80,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 14,
+      "stepCount": 1,
+      "file": "spanish.json"
+    },
+    {
+      "id": "bc-tarta-de-santiago",
+      "name": "تارت سانتياغو",
+      "nameEn": "Tarta de Santiago",
+      "cuisine": "إسباني",
+      "category": "حلويات",
+      "servings": 8,
+      "totalTime": 55,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 8,
+      "stepCount": 1,
+      "file": "spanish.json"
+    },
+    {
+      "id": "bc-chicken-in-red-wine-vinegar-sauce",
+      "name": "دجاج بصلصة خل النبيذ الأحمر",
+      "nameEn": "Chicken in Red Wine Vinegar Sauce",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "servings": 6,
+      "totalTime": 40,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 8,
+      "stepCount": 1,
+      "file": "french.json"
+    },
+    {
+      "id": "bc-cheesy-ham-and-potato-bake",
+      "name": "صينية البطاطس واللحم المدخن بالجبن",
+      "nameEn": "Cheesy Ham and Potato Bake",
+      "cuisine": "فنلندي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 120,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 7,
+      "stepCount": 1,
+      "file": "finnish.json"
+    },
+    {
+      "id": "bc-tarte-merengada",
+      "name": "تارت الليمون والمرينغ",
+      "nameEn": "Tarte Merengada de Limão",
+      "cuisine": "برتغالي",
+      "category": "حلويات",
+      "servings": 20,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 6,
+      "stepCount": 1,
+      "file": "portuguese.json"
+    },
+    {
+      "id": "bc-ukrainian-borscht",
+      "name": "بورش أوكراني",
+      "nameEn": "Ukrainian Borscht",
+      "cuisine": "أوكراني",
+      "category": "شوربة",
+      "servings": 10,
+      "totalTime": 65,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 15,
+      "stepCount": 1,
+      "file": "ukrainian.json"
+    },
+    {
+      "id": "bc-tajine",
+      "name": "طاجين تونسي",
+      "nameEn": "Tajine Maadnous",
+      "cuisine": "تونسي",
+      "category": "طبق رئيسي",
+      "servings": 12,
+      "totalTime": 55,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 18,
+      "stepCount": 1,
+      "file": "tunisian.json"
+    },
+    {
+      "id": "bc-zurich-sytle-meat-saute",
+      "name": "لحم سوتيه على طريقة زيورخ",
+      "nameEn": "Zurich-Style Meat Saute",
+      "cuisine": "سويسري",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 8,
+      "stepCount": 1,
+      "file": "swiss.json"
+    },
+    {
+      "id": "bc-arroz-chaufa",
+      "name": "أروز تشاوفا",
+      "nameEn": "Arroz Chaufa",
+      "cuisine": "بيروفي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 50,
+      "difficulty": "غير محدد بالمصدر",
+      "tags": [],
+      "ingredientCount": 10,
+      "stepCount": 1,
+      "file": "peruvian.json"
     }
   ]
 }

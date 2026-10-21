@@ -1,0 +1,41 @@
+state: frozen source pack set; awaiting parent manifest integration and review
+source_revision: 4fd174745182885bea01d47c8ba71b1946375898
+accepted_records: 10000
+batch_size: 1000
+batch_count: 10
+first_pack: data/recipes/curated-local/foodista-scale-20261021b/normalized-recipes.json
+first_pack_sha256: 0ed49edd177ab2dfbcf8de777b6bb412959b6415c2de9b183f5f2bca46d5aaf8
+last_pack: data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json
+last_pack_sha256: 387761ff22aff93475dade6c2ea00eb8ad23d1fba17a7e77e8afd76fc19d72ea
+referenced_and_on_disk_snapshots: 10000
+snapshot_hashes_verified: 10000
+stale_snapshot_json_files: 0
+accepted_exact_ingredient_and_method_coverage: 10000
+flagged_prior_coverage_rows_rechecked: 18
+flagged_prior_rows_passed: 18
+unique_canonical_urls_across_new_packs: 10000
+unique_normalized_content_across_new_packs: 10000
+external_baseline_records: 5648
+external_baseline_pack_hashes_checked: 28
+external_baseline_new_url_or_content_collisions: 0
+external_baseline_internal_content_duplicate_pairs: 1
+first_pack_ingredient_lines: 9918
+first_pack_method_blocks: 1041
+total_ingredient_lines: 97436
+total_method_blocks: 10267
+component_review_records: 6182
+unknown_recipe_kind_records: 3818
+rights_cue_conflicts_in_accepted_records: 0
+source_created_date_range: 2009-11-30 through 2024-04-11
+content_free_rejection_ledger: data/recipes/modern-scale-20261021b-bulk/rejection-ledger.jsonl
+rejection_ledger_entries_after_rebuild: 822
+accepted_records_in_rejection_ledger: 0
+parser_regression_tests: 8 passed
+known_prior_logical_requests: 13
+unknown_prior_request_attempts: 1
+network_requests_during_final_regeneration: 0
+final_audit: data/recipes/modern-scale-20261021b-bulk/final-audit.json
+runtime_ready: false
+nutrition: null
+source_language: English; not translated
+shared_manifest_or_pubspec_modified: false

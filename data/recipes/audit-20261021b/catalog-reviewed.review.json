@@ -1,0 +1,4469 @@
+{
+  "schemaVersion": 1,
+  "sourcePack": {
+    "file": "data/recipes/curated-local/based-cooking-20261015/normalized-recipes.json",
+    "recipeCount": 440,
+    "sha256": "a155d89532f4e4c0a185057ed2afbd7ae31288a1c3e3b9d295eac467adeaee3e",
+    "manifestSha256": "1fb26f05cfdc56dfb954edc77f87952bbf67edc5d4f1ad3616d57937d612f04a",
+    "pinnedManifestSha256": "a155d89532f4e4c0a185057ed2afbd7ae31288a1c3e3b9d295eac467adeaee3e",
+    "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2"
+  },
+  "recipes": [
+    {
+      "recipeId": "bc-tzatziki",
+      "candidateId": "based-cooking:tzatziki",
+      "cuisineEvidence": {
+        "kind": "source-description",
+        "exactExcerpt": "A traditional greek dip that goes well with crackers, celery and carrots or in a greek gyro.",
+        "statement": "The saved source description explicitly calls this a traditional Greek dip."
+      },
+      "sourceTags": [
+        "basic",
+        "snack",
+        "spread",
+        "traditional"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/tzatziki.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/tzatziki.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tzatziki.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "a582cc8885f3e3027bd8d27ddc6a575039efa60f834502073c0da21a02503e4e",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/tzatziki.json",
+        "snapshotSha256": "2dd354b333802e6992b6376c28ade3c47ebb57d7ca6f6e6fb2a2dacc5d623939",
+        "fullSavedSourceText": "---\ntitle: \"Tzatziki\"\ntags: ['basic', 'snack', 'spread', 'traditional']\ndate: 2022-04-16\n---\n\n![Tzatziki](/pix/tzatziki.webp)\n\nA traditional greek dip that goes well with crackers, celery and carrots or in a greek gyro. Great for parties and sharing with your family friends. Can be eaten immediately after preparation or after a few hours of being in the fridge for enhanced flavor.\n\n- ⏲️ Prep time: 2 min\n- 🍳 Cook time: 6 min\n- 🍽️ Servings: 3\n\n## Ingredients\n\n- Greek yogurt, 2 cups\n- Cucumber, 3 inches\n- Dill\n- Garlic, 1 clove/teaspoon\n- Olive oil, 1 teaspoon\n- Lemon/lime or vinegar\n- Salt and pepper\n\n## Directions\n\n1. Finely grate the cucumber and chop the dill\n2. Strain the cucumber thoroughly with a clean kitchen towel\n3. Mash the garlic and the olive oil in a mortar and pestle\n4. Add all three to the Greek yogurt\n5. Squeeze in some lemon/lime or vinegar\n6. Add a generous pinch of salt and small pinch of pepper\n7. Optionally add some extra olive oil\n8. Stir and enjoy with your favorite snack\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "2 min",
+          "minutes": 2
+        },
+        "cook": {
+          "raw": "6 min",
+          "minutes": 6
+        },
+        "servings": {
+          "raw": "3",
+          "count": 3
+        },
+        "sourcePrepPlusCookMinutes": 8,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            27
+          ],
+          "sourceText": "Finely grate the cucumber and chop the dill",
+          "translation": "ابشري الخيار ناعمًا وافرمي الشبت."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            28
+          ],
+          "sourceText": "Strain the cucumber thoroughly with a clean kitchen towel",
+          "translation": "صفّي الخيار جيدًا باستخدام منشفة مطبخ نظيفة."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            29
+          ],
+          "sourceText": "Mash the garlic and the olive oil in a mortar and pestle",
+          "translation": "اهرسي الثوم مع زيت الزيتون في هاون ومدقة."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            30
+          ],
+          "sourceText": "Add all three to the Greek yogurt",
+          "translation": "أضيفي المكونات الثلاثة إلى الزبادي اليوناني."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            31
+          ],
+          "sourceText": "Squeeze in some lemon/lime or vinegar",
+          "translation": "اعصري قليلًا من الليمون أو اللايم أو أضيفي الخل."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            32
+          ],
+          "sourceText": "Add a generous pinch of salt and small pinch of pepper",
+          "translation": "أضيفي رشة وافرة من الملح ورشة صغيرة من الفلفل."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            33
+          ],
+          "sourceText": "Optionally add some extra olive oil",
+          "translation": "يمكن إضافة قليل من زيت الزيتون."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceLineNumbers": [
+            34
+          ],
+          "sourceText": "Stir and enjoy with your favorite snack",
+          "translation": "قلّبي وقدّميه مع وجبتك الخفيفة المفضلة."
+        }
+      ],
+      "sourceNotes": "ملاحظة زمنية: المصدر يذكر 6 دقائق للطهي مع أن الوصفة الباردة لا تصف طهيًا؛ احتُفظ بالبيانات كما نُشرت.",
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 17,
+          "sourceSection": "Ingredients",
+          "sourceText": "Greek yogurt, 2 cups",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "Cucumber, 3 inches",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "Dill",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "Garlic, 1 clove/teaspoon",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "Olive oil, 1 teaspoon",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "Lemon/lime or vinegar",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "Salt and pepper",
+          "optional": false
+        }
+      ],
+      "catalogIngredientCount": 7,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "1f0e6304ed311eb269426dee6f7338da4e0584290d64c733be857d661224a96e"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 17,
+          "sourceText": "Greek yogurt, 2 cups",
+          "translatedName": "زبادي يوناني",
+          "amount": 2,
+          "unit": "كوب",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 18,
+          "sourceText": "Cucumber, 3 inches",
+          "translatedName": "خيار",
+          "amount": 3,
+          "unit": "بوصة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 19,
+          "sourceText": "Dill",
+          "translatedName": "شبت",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: Dill",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 20,
+          "sourceText": "Garlic, 1 clove/teaspoon",
+          "translatedName": "ثوم",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: Garlic, 1 clove/teaspoon",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 21,
+          "sourceText": "Olive oil, 1 teaspoon",
+          "translatedName": "زيت زيتون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 22,
+          "sourceText": "Lemon/lime or vinegar",
+          "translatedName": "ليمون أو لايم أو خل",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: Lemon/lime or vinegar",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 23,
+          "sourceText": "Salt and pepper",
+          "translatedName": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: Salt and pepper",
+          "scale": false
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 17,
+          "sourceSection": "Ingredients",
+          "sourceText": "Greek yogurt, 2 cups",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "Cucumber, 3 inches",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "Dill",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "Garlic, 1 clove/teaspoon",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "Olive oil, 1 teaspoon",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "Lemon/lime or vinegar",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "Salt and pepper",
+          "optional": false
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-chicken-paprikash",
+      "candidateId": "based-cooking:chicken-paprikash",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "hungarian"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "stew",
+        "chicken",
+        "hungarian"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/chicken-paprikash.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/chicken-paprikash.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-paprikash.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "e43b12dc0baf6f82399308174bc0c8d94222afbdcad524d0eb8feb28f2695b81",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/chicken-paprikash.json",
+        "snapshotSha256": "82905386011c864f587c69adbd4e52d661ff791824baa044b2acfb6472cfb16d",
+        "fullSavedSourceText": "---\ntitle: \"Chicken Paprikash\"\ntags: ['stew', 'chicken', 'hungarian']\ndate: 2022-06-18\nauthor: hcm444\n---\n\nChicken Paprikash is a delicious meal from Hungary, and I hope you are also Hungary! I make it all the time when I have guests.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 1 hr 25 min\n- 🍽️ Servings: 8\n\n## Ingredients\n\n- 8 bone-in, skin-on chicken thighs\n- salt to taste\n- pepper to taste\n- 2 cups chicken or beef broth\n- 2 tablespoons olive oil\n- 2 medium sized onions\n- 1 tablespoon powdered garlic\n- 3 tablespoons tomato paste\n- 1/4 cup Hungarian paprika or regular paprika\n- 1 tablespoon cayenne pepper (optional)\n- 1 cup sour cream (optional)\n\n## Directions\n\n1. Pat raw chicken thighs with paper towels for crispier skin. Season with salt and pepper.\n2. Heat up a heavy, deep-sided pan on high heat with a little olive oil.\n3. Add the chicken thighs skin-side down. Brown the thighs for five minutes on each side then remove each thigh and place them aside once browned.\n4. Add chopped onions to the pan with the chicken fat and sauce until the onions are golden.\n5. Add powdered garlic and tomato paste. Stir this another 5 minutes to create a tomato-roux.\n6. Add Hungarian paprika and stir another minute.\n7. Add chicken or beef broth and bring it to a medium temperature.\n8. Reduce the heat to medium low and transfer the chicken thighs from the plate back into the pan. Be sure not to waste any chicken fat.\n9. Cover the pan with a lid and simmer the dish for 45 to 60 minutes.\n10. With a fork, test to see that the chicken is tender. Add salt and pepper to taste afterwards.\n11. Plate the chicken with an optional dusting of cayenne pepper and serve it with some nice hearty bread. This dish has sour cream added to it traditionally, however if dairy is not your thing it’s delicious without it also. So for this last step you can add some sour cream to the sauce and stir it or add the sour cream at the end when you plate the chicken. Then garnish with herbs and enjoy!\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "cook": {
+          "raw": "1 hr 25 min",
+          "minutes": 85
+        },
+        "servings": {
+          "raw": "8",
+          "count": 8
+        },
+        "sourcePrepPlusCookMinutes": 95,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            30
+          ],
+          "sourceText": "Pat raw chicken thighs with paper towels for crispier skin. Season with salt and pepper.",
+          "translation": "جففي أفخاذ الدجاج النيئة بالمناشف الورقية للحصول على جلد مقرمش، ثم تبّليها بالملح والفلفل."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            31
+          ],
+          "sourceText": "Heat up a heavy, deep-sided pan on high heat with a little olive oil.",
+          "translation": "سخّني مقلاة ثقيلة عميقة على نار عالية مع قليل من زيت الزيتون."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            32
+          ],
+          "sourceText": "Add the chicken thighs skin-side down. Brown the thighs for five minutes on each side then remove each thigh and place them aside once browned.",
+          "translation": "ضعي الأفخاذ والجلد إلى الأسفل. حمّريها خمس دقائق على كل جانب، ثم أخرجيها جانبًا بعد أن تتحمر."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            33
+          ],
+          "sourceText": "Add chopped onions to the pan with the chicken fat and sauce until the onions are golden.",
+          "translation": "أضيفي البصل المفروم إلى دهن الدجاج وصلصته واطهيه حتى يصبح ذهبيًا."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            34
+          ],
+          "sourceText": "Add powdered garlic and tomato paste. Stir this another 5 minutes to create a tomato-roux.",
+          "translation": "أضيفي الثوم المطحون ومعجون الطماطم وحرّكي خمس دقائق أخرى لتكوين قاعدة طماطم كثيفة."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            35
+          ],
+          "sourceText": "Add Hungarian paprika and stir another minute.",
+          "translation": "أضيفي البابريكا المجرية وحرّكي دقيقة أخرى."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            36
+          ],
+          "sourceText": "Add chicken or beef broth and bring it to a medium temperature.",
+          "translation": "أضيفي مرق الدجاج أو اللحم واتركيه يصل إلى حرارة متوسطة."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceLineNumbers": [
+            37
+          ],
+          "sourceText": "Reduce the heat to medium low and transfer the chicken thighs from the plate back into the pan. Be sure not to waste any chicken fat.",
+          "translation": "خففي النار إلى متوسطة منخفضة وأعيدي الأفخاذ من الطبق إلى المقلاة مع دهن الدجاج."
+        },
+        {
+          "sourceStepIndex": 8,
+          "sourceLineNumbers": [
+            38
+          ],
+          "sourceText": "Cover the pan with a lid and simmer the dish for 45 to 60 minutes.",
+          "translation": "غطي المقلاة واتركي الطبق يطهى على نار هادئة 45 إلى 60 دقيقة."
+        },
+        {
+          "sourceStepIndex": 9,
+          "sourceLineNumbers": [
+            39
+          ],
+          "sourceText": "With a fork, test to see that the chicken is tender. Add salt and pepper to taste afterwards.",
+          "translation": "اختبري طراوة الدجاج بالشوكة، ثم أضيفي الملح والفلفل حسب الرغبة."
+        },
+        {
+          "sourceStepIndex": 10,
+          "sourceLineNumbers": [
+            40
+          ],
+          "sourceText": "Plate the chicken with an optional dusting of cayenne pepper and serve it with some nice hearty bread. This dish has sour cream added to it traditionally, however if dairy is not your thing it’s delicious without it also. So for this last step you can add some sour cream to the sauce and stir it or add the sour cream at the end when you plate the chicken. Then garnish with herbs and enjoy!",
+          "translation": "قدمي الدجاج مع رشة اختيارية من فلفل كايين وخبز كثيف. يمكن تقليب الكريمة الحامضة في الصلصة أو إضافتها عند التقديم، ثم تزيينه بالأعشاب."
+        }
+      ],
+      "sourceNotes": "",
+      "independentSafetyEvidence": {
+        "sourceUrl": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+        "checkedAt": "2026-10-21",
+        "bodyArchived": false,
+        "bodySha256": null,
+        "poultryMinimumCelsius": 73.9,
+        "poultryMinimumFahrenheit": 165,
+        "basis": "Food thermometer; All Poultry row. Separate coordinator addition, not a source recipe quote or clinical rule."
+      },
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 16,
+          "sourceSection": "Ingredients",
+          "sourceText": "8 bone-in, skin-on chicken thighs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 17,
+          "sourceSection": "Ingredients",
+          "sourceText": "salt to taste",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "pepper to taste",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 cups chicken or beef broth",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 tablespoons olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 medium sized onions",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tablespoon powdered garlic",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 tablespoons tomato paste",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "1/4 cup Hungarian paprika or regular paprika",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tablespoon cayenne pepper (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup sour cream (optional)",
+          "optional": true
+        }
+      ],
+      "catalogIngredientCount": 11,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "8bddbe85143bf36206f5c3323f502b4ac22cf5e4fbc93d0f1b268b1a39512a3f"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 16,
+          "sourceText": "8 bone-in, skin-on chicken thighs",
+          "translatedName": "أفخاذ دجاج بالعظم والجلد",
+          "amount": 8,
+          "unit": "فخذ",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 17,
+          "sourceText": "salt to taste",
+          "translatedName": "ملح",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: salt to taste",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 18,
+          "sourceText": "pepper to taste",
+          "translatedName": "فلفل",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: pepper to taste",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 19,
+          "sourceText": "2 cups chicken or beef broth",
+          "translatedName": "مرق دجاج أو لحم بقري",
+          "amount": 2,
+          "unit": "كوب",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 20,
+          "sourceText": "2 tablespoons olive oil",
+          "translatedName": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 21,
+          "sourceText": "2 medium sized onions",
+          "translatedName": "بصل",
+          "amount": 2,
+          "unit": "بصلة متوسطة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 22,
+          "sourceText": "1 tablespoon powdered garlic",
+          "translatedName": "ثوم مطحون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 7,
+          "sourceLineNumber": 23,
+          "sourceText": "3 tablespoons tomato paste",
+          "translatedName": "معجون طماطم",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 8,
+          "sourceLineNumber": 24,
+          "sourceText": "1/4 cup Hungarian paprika or regular paprika",
+          "translatedName": "بابريكا مجرية أو عادية",
+          "amount": 0.25,
+          "unit": "كوب",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 9,
+          "sourceLineNumber": 25,
+          "sourceText": "1 tablespoon cayenne pepper (optional)",
+          "translatedName": "فلفل كايين",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 10,
+          "sourceLineNumber": 26,
+          "sourceText": "1 cup sour cream (optional)",
+          "translatedName": "كريمة حامضة",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true,
+          "display": null,
+          "scale": null
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 16,
+          "sourceSection": "Ingredients",
+          "sourceText": "8 bone-in, skin-on chicken thighs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 17,
+          "sourceSection": "Ingredients",
+          "sourceText": "salt to taste",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "pepper to taste",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 cups chicken or beef broth",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 tablespoons olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 medium sized onions",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tablespoon powdered garlic",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 tablespoons tomato paste",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "1/4 cup Hungarian paprika or regular paprika",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tablespoon cayenne pepper (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup sour cream (optional)",
+          "optional": true
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-baked-rice",
+      "candidateId": "based-cooking:baked-rice",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "Spanish"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "rice",
+        "Spanish"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/baked-rice.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/baked-rice.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/baked-rice.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "3dfdc5c8d5b0de3df2e3552ce7c5bac5ec7e24b00ca0aea17d8ee0ee06f7cb1f",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/baked-rice.json",
+        "snapshotSha256": "e2a7db4163cbeef0071adb2869da594ce839e05e98250c052856f0391f716008",
+        "fullSavedSourceText": "---\ntitle: Valencian Baked Rice (Arroz al Horno)\ntags: ['rice', 'Spanish']\ndate: 2025-03-15\nauthor: \"daviduhden\"\n---\n\n![Valencian Baked Rice](/pix/baked-rice.webp)\n\n**Valencian Baked Rice (Arroz al Horno)** is a traditional dish from the Valencian Community, known for being cooked in a clay casserole and baked in the oven. This comforting and flavorful meal combines rice, meats, chickpeas, and vegetables.\n\n- ⏲️ Prep time: 20 min\n- 🍳 Cook time: 60 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 400 g of bomba rice\n- 150 g of cooked chickpeas\n- 500 g of pork ribs, cut into pieces\n- 200 g of pork belly, cut into pieces\n- 2 blood sausages (*morcillas de cebolla*)\n- 1 medium potato\n- 1 large tomato\n- 1 whole garlic head\n- 100 g of crushed tomatoes\n- 50 ml of extra virgin olive oil\n- 800 ml of hot broth (preferably from stew)\n- 1 teaspoon of sweet paprika\n- A few saffron threads\n- Salt to taste\n\n## Directions\n\n1. Preheat the oven to 220°C (428°F), using both upper and lower heat.\n\n2. Peel the potato and cut it into 1 cm thick slices. Set aside.\n\n3. In a clay casserole (oven-safe), heat the olive oil over medium-high heat. Brown the pork ribs and pork belly until golden and crispy. Remove and set aside.\n\n4. In the same oil, lightly fry the potato slices until golden. Remove and set aside.\n\n5. Sear the blood sausages for a few minutes, being careful not to break them. Remove and set aside.\n\n6. Stir the sweet paprika into the remaining oil, mixing quickly to avoid burning. Add the crushed tomatoes and cook until the oil separates from the sauce.\n\n7. Mix in the cooked chickpeas and rice, stirring for a couple of minutes so the rice absorbs the flavors.\n\n8. Return the pork ribs, pork belly, and potato slices to the casserole, evenly distributing them over the rice. Place the whole garlic head in the center and arrange the blood sausages and tomato slices on top.\n\n9. Pour the hot broth into the casserole, ensuring it covers all ingredients. Add the saffron threads and adjust the salt if needed.\n\n10. Bake in the preheated oven for 20-25 minutes, or until the rice has absorbed all the broth and is tender.\n\n11. Once done, remove from the oven and let the baked rice rest, covered with a clean cloth, for 5 minutes before serving."
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "20 min",
+          "minutes": 20
+        },
+        "cook": {
+          "raw": "60 min",
+          "minutes": 60
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 80,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            35
+          ],
+          "sourceText": "Preheat the oven to 220°C (428°F), using both upper and lower heat.",
+          "translation": "سخني الفرن إلى 220°م بحرارة علوية وسفلية."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            37
+          ],
+          "sourceText": "Peel the potato and cut it into 1 cm thick slices. Set aside.",
+          "translation": "قشري البطاطس وقطعيها شرائح بسماكة 1 سم وضعيها جانبًا."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            39
+          ],
+          "sourceText": "In a clay casserole (oven-safe), heat the olive oil over medium-high heat. Brown the pork ribs and pork belly until golden and crispy. Remove and set aside.",
+          "translation": "في قدر فخاري صالح للفرن سخني الزيت على نار متوسطة إلى عالية. حمّري أضلاع الخنزير ولحم البطن حتى يصبحا ذهبيين ومقرمشين، ثم أخرجيهما جانبًا."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            41
+          ],
+          "sourceText": "In the same oil, lightly fry the potato slices until golden. Remove and set aside.",
+          "translation": "في الزيت نفسه اقلي شرائح البطاطس قليلًا حتى تكتسب اللون الذهبي، ثم أخرجيها."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            43
+          ],
+          "sourceText": "Sear the blood sausages for a few minutes, being careful not to break them. Remove and set aside.",
+          "translation": "حمّري النقانق بضع دقائق بحذر حتى لا تتفتت، ثم أخرجيها."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            45
+          ],
+          "sourceText": "Stir the sweet paprika into the remaining oil, mixing quickly to avoid burning. Add the crushed tomatoes and cook until the oil separates from the sauce.",
+          "translation": "حرّكي البابريكا في الزيت المتبقي بسرعة كيلا تحترق. أضيفي الطماطم المهروسة واطهي حتى ينفصل الزيت عن الصلصة."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            47
+          ],
+          "sourceText": "Mix in the cooked chickpeas and rice, stirring for a couple of minutes so the rice absorbs the flavors.",
+          "translation": "أضيفي الحمص المطبوخ والأرز وحرّكي بضع دقائق ليمتص الأرز النكهات."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceLineNumbers": [
+            49
+          ],
+          "sourceText": "Return the pork ribs, pork belly, and potato slices to the casserole, evenly distributing them over the rice. Place the whole garlic head in the center and arrange the blood sausages and tomato slices on top.",
+          "translation": "أعيدي الأضلاع ولحم البطن والبطاطس ووزعيها فوق الأرز. ضعي رأس الثوم في الوسط ورتبي النقانق وشرائح الطماطم فوقه."
+        },
+        {
+          "sourceStepIndex": 8,
+          "sourceLineNumbers": [
+            51
+          ],
+          "sourceText": "Pour the hot broth into the casserole, ensuring it covers all ingredients. Add the saffron threads and adjust the salt if needed.",
+          "translation": "اسكبي المرق الساخن بحيث يغطي المكونات. أضيفي الزعفران وعدّلي الملح عند الحاجة."
+        },
+        {
+          "sourceStepIndex": 9,
+          "sourceLineNumbers": [
+            53
+          ],
+          "sourceText": "Bake in the preheated oven for 20-25 minutes, or until the rice has absorbed all the broth and is tender.",
+          "translation": "اخبزي 20 إلى 25 دقيقة أو حتى يمتص الأرز المرق ويطرى."
+        },
+        {
+          "sourceStepIndex": 10,
+          "sourceLineNumbers": [
+            55
+          ],
+          "sourceText": "Once done, remove from the oven and let the baked rice rest, covered with a clean cloth, for 5 minutes before serving.",
+          "translation": "أخرجيه واتركيه مغطى بقطعة قماش نظيفة 5 دقائق قبل التقديم."
+        }
+      ],
+      "sourceNotes": "",
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "400 g of bomba rice",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "150 g of cooked chickpeas",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "500 g of pork ribs, cut into pieces",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "200 g of pork belly, cut into pieces",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 blood sausages (*morcillas de cebolla*)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 medium potato",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 large tomato",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 whole garlic head",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceSection": "Ingredients",
+          "sourceText": "100 g of crushed tomatoes",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceSection": "Ingredients",
+          "sourceText": "50 ml of extra virgin olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 28,
+          "sourceSection": "Ingredients",
+          "sourceText": "800 ml of hot broth (preferably from stew)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 teaspoon of sweet paprika",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceSection": "Ingredients",
+          "sourceText": "A few saffron threads",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceSection": "Ingredients",
+          "sourceText": "Salt to taste",
+          "optional": false
+        }
+      ],
+      "catalogIngredientCount": 14,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "bd019d39a0a4828b994c7364507bdaa0864145496db5299bcd9cce8b6c2f884f"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 18,
+          "sourceText": "400 g of bomba rice",
+          "translatedName": "أرز بومبا",
+          "amount": 400,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 19,
+          "sourceText": "150 g of cooked chickpeas",
+          "translatedName": "حمص مطبوخ",
+          "amount": 150,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 20,
+          "sourceText": "500 g of pork ribs, cut into pieces",
+          "translatedName": "أضلاع خنزير مقطعة",
+          "amount": 500,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 21,
+          "sourceText": "200 g of pork belly, cut into pieces",
+          "translatedName": "لحم بطن الخنزير مقطع",
+          "amount": 200,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 22,
+          "sourceText": "2 blood sausages (*morcillas de cebolla*)",
+          "translatedName": "نقانق دم بالبصل",
+          "amount": 2,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 23,
+          "sourceText": "1 medium potato",
+          "translatedName": "بطاطس",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 24,
+          "sourceText": "1 large tomato",
+          "translatedName": "طماطم كبيرة",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 7,
+          "sourceLineNumber": 25,
+          "sourceText": "1 whole garlic head",
+          "translatedName": "رأس ثوم كامل",
+          "amount": 1,
+          "unit": "رأس",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 8,
+          "sourceLineNumber": 26,
+          "sourceText": "100 g of crushed tomatoes",
+          "translatedName": "طماطم مهروسة",
+          "amount": 100,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 9,
+          "sourceLineNumber": 27,
+          "sourceText": "50 ml of extra virgin olive oil",
+          "translatedName": "زيت زيتون بكر ممتاز",
+          "amount": 50,
+          "unit": "مل",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 10,
+          "sourceLineNumber": 28,
+          "sourceText": "800 ml of hot broth (preferably from stew)",
+          "translatedName": "مرق ساخن ويفضل مرق يخنة",
+          "amount": 800,
+          "unit": "مل",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 11,
+          "sourceLineNumber": 29,
+          "sourceText": "1 teaspoon of sweet paprika",
+          "translatedName": "بابريكا حلوة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 12,
+          "sourceLineNumber": 30,
+          "sourceText": "A few saffron threads",
+          "translatedName": "خيوط زعفران",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: A few saffron threads",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 13,
+          "sourceLineNumber": 31,
+          "sourceText": "Salt to taste",
+          "translatedName": "ملح",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: Salt to taste",
+          "scale": false
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "400 g of bomba rice",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "150 g of cooked chickpeas",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "500 g of pork ribs, cut into pieces",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "200 g of pork belly, cut into pieces",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 blood sausages (*morcillas de cebolla*)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 medium potato",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 large tomato",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 whole garlic head",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceSection": "Ingredients",
+          "sourceText": "100 g of crushed tomatoes",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceSection": "Ingredients",
+          "sourceText": "50 ml of extra virgin olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 28,
+          "sourceSection": "Ingredients",
+          "sourceText": "800 ml of hot broth (preferably from stew)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 teaspoon of sweet paprika",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceSection": "Ingredients",
+          "sourceText": "A few saffron threads",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceSection": "Ingredients",
+          "sourceText": "Salt to taste",
+          "optional": false
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-chicken-in-red-wine-vinegar-sauce",
+      "candidateId": "based-cooking:chicken-in-red-wine-vinegar-sauce",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "french"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "chicken",
+        "french",
+        "wine"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/chicken-in-red-wine-vinegar-sauce.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/chicken-in-red-wine-vinegar-sauce.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-in-red-wine-vinegar-sauce.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "34ef1eff0f8e3c7f0f9a8b0fd9dad41bedf4edfb3386a2929e5ae3599d9944bc",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/chicken-in-red-wine-vinegar-sauce.json",
+        "snapshotSha256": "66cb040b04694c95a14a6b9cffee35ae7f62c73493a35032dbe5a78f86db636d",
+        "fullSavedSourceText": "---\ntitle: \"Chicken in Red Wine Vinegar Sauce\"\ndate: 2021-03-16\ntags: ['chicken', 'french', 'wine']\n---\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 25 min\n- 🍽️ Servings: 6\n\n## Ingredients\n\n- 3 tablespoons/~44 milliliters extra-virgin olive oil\n- 1 tablespoon/~14 grams unsalted butter\n- 1 whole chicken, cut into 10 pieces (alternatively, use breasts or legs)\n- 4 shallots, finely chopped\n- 1 cup/720 milliliters red wine vinegar\n- 1 cup/240 milliliters crème fraîche or heavy cream\n- Finely chopped parsley (optional)\n\n## Directions\n\n1. Rub each piece of chicken in salt and pepper mixture.\n2. Heat oil and melt butter in deep-sided, 12-inch (~30 centimeter) sauté pan on medium-high heat. When the oil is hot, but not smoking, use tongs to add chicken skin side down.\n3. Brown both sides until skin is golden brown and chicken is cooked, about 12-15 minutes. Remove chicken to a platter and cover loosely with aluminum foil to keep warm.\n4. Pour out half of oil from pan, and use other half to brown shallots over medium-high heat. Slowly add vinegar and boil until reduced to almost a syrup. Add crème fraîche/cream and cook until blended and brown, about 5 minutes. Return chicken to pan to coat and heat.\n5. Return chicken to platter. Add garnish if available, and serve.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "cook": {
+          "raw": "25 min",
+          "minutes": 25
+        },
+        "servings": {
+          "raw": "6",
+          "count": 6
+        },
+        "sourcePrepPlusCookMinutes": 40,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            23
+          ],
+          "sourceText": "Rub each piece of chicken in salt and pepper mixture.",
+          "translation": "افركي قطع الدجاج بمزيج الملح والفلفل."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            24
+          ],
+          "sourceText": "Heat oil and melt butter in deep-sided, 12-inch (~30 centimeter) sauté pan on medium-high heat. When the oil is hot, but not smoking, use tongs to add chicken skin side down.",
+          "translation": "سخني الزيت وأذيبي الزبدة في مقلاة عميقة قطرها 12 بوصة على نار متوسطة عالية. عندما يسخن الزيت دون أن يدخن، أضيفي الدجاج بالملقط والجلد إلى الأسفل."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            25
+          ],
+          "sourceText": "Brown both sides until skin is golden brown and chicken is cooked, about 12-15 minutes. Remove chicken to a platter and cover loosely with aluminum foil to keep warm.",
+          "translation": "حمّري الجانبين حتى يصبح الجلد ذهبيًا وينضج الدجاج، نحو 12 إلى 15 دقيقة. أخرجي الدجاج إلى طبق وغطيه برفق بالألمنيوم لإبقائه دافئًا."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            26
+          ],
+          "sourceText": "Pour out half of oil from pan, and use other half to brown shallots over medium-high heat. Slowly add vinegar and boil until reduced to almost a syrup. Add crème fraîche/cream and cook until blended and brown, about 5 minutes. Return chicken to pan to coat and heat.",
+          "translation": "اسكبي نصف الزيت من المقلاة واستخدمي النصف الآخر لتحمير الكراث على نار متوسطة عالية. أضيفي الخل ببطء واغليه حتى يختزل إلى قوام شبه شرابي. أضيفي الكريمة واطهي نحو 5 دقائق حتى تمتزج ويصبح لونها بنيًا. أعيدي الدجاج وقلّبيه لتغطيته وتسخينه."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            27
+          ],
+          "sourceText": "Return chicken to platter. Add garnish if available, and serve.",
+          "translation": "أعيدي الدجاج إلى الطبق وزينيه بالبقدونس إن توفر وقدميه."
+        }
+      ],
+      "sourceNotes": "المصدر يكتب «1 cup/720 milliliters» للخل، وهو تعارض مقدار ووحدة؛ حُفظ المقدار مجهولًا بدل الاختيار. يذكر المصدر بدائل للدجاج والكريمة. الزيت والزبدة لهما مكافئات تقريبية ووحدات بديلة محفوظة حرفيًا في sidecar.",
+      "supplementalIngredients": [
+        {
+          "sourceIngredientIndex": null,
+          "sourceMethodStepReference": "source step 0",
+          "sourceText": "ملح وفلفل للتتبيل",
+          "translatedName": "ملح وفلفل للتتبيل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "reason": "مذكور في الطريقة لكنه غير موجود في قائمة المكونات بالمصدر."
+        }
+      ],
+      "independentSafetyEvidence": {
+        "sourceUrl": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+        "checkedAt": "2026-10-21",
+        "bodyArchived": false,
+        "bodySha256": null,
+        "poultryMinimumCelsius": 73.9,
+        "poultryMinimumFahrenheit": 165,
+        "basis": "Food thermometer; All Poultry row. Separate coordinator addition, not a source recipe quote or clinical rule."
+      },
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 13,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 tablespoons/~44 milliliters extra-virgin olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 14,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tablespoon/~14 grams unsalted butter",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 15,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 whole chicken, cut into 10 pieces (alternatively, use breasts or legs)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 16,
+          "sourceSection": "Ingredients",
+          "sourceText": "4 shallots, finely chopped",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 17,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup/720 milliliters red wine vinegar",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup/240 milliliters crème fraîche or heavy cream",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "Finely chopped parsley (optional)",
+          "optional": true
+        }
+      ],
+      "catalogIngredientCount": 8,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "2d9069b24e43691584465d284c75184695d48c9d72ab6718bcf732a7dc42091a"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 13,
+          "sourceText": "3 tablespoons/~44 milliliters extra-virgin olive oil",
+          "translatedName": "زيت زيتون بكر ممتاز",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 14,
+          "sourceText": "1 tablespoon/~14 grams unsalted butter",
+          "translatedName": "زبدة غير مملحة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 15,
+          "sourceText": "1 whole chicken, cut into 10 pieces (alternatively, use breasts or legs)",
+          "translatedName": "دجاجة كاملة مقطعة 10 قطع أو صدور أو أفخاذ",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": null,
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 16,
+          "sourceText": "4 shallots, finely chopped",
+          "translatedName": "كراث صغير مفروم ناعمًا",
+          "amount": 4,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 17,
+          "sourceText": "1 cup/720 milliliters red wine vinegar",
+          "translatedName": "خل نبيذ أحمر",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: 1 cup/720 milliliters red wine vinegar",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 18,
+          "sourceText": "1 cup/240 milliliters crème fraîche or heavy cream",
+          "translatedName": "كريمة طازجة أو كريمة ثقيلة",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 19,
+          "sourceText": "Finely chopped parsley (optional)",
+          "translatedName": "بقدونس مفروم ناعمًا",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true,
+          "display": null,
+          "scale": null
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 13,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 tablespoons/~44 milliliters extra-virgin olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 14,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tablespoon/~14 grams unsalted butter",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 15,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 whole chicken, cut into 10 pieces (alternatively, use breasts or legs)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 16,
+          "sourceSection": "Ingredients",
+          "sourceText": "4 shallots, finely chopped",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 17,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup/720 milliliters red wine vinegar",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup/240 milliliters crème fraîche or heavy cream",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "Finely chopped parsley (optional)",
+          "optional": true
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-cheesy-ham-and-potato-bake",
+      "candidateId": "based-cooking:cheesy-ham-and-potato-bake",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "finnish"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "pork",
+        "potato",
+        "cheese",
+        "finnish"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/cheesy-ham-and-potato-bake.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/cheesy-ham-and-potato-bake.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cheesy-ham-and-potato-bake.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "7844947a15d8151da6a3b2cb2c5c312cd9c226fd975b66a4a6dfbec3dda350a8",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/cheesy-ham-and-potato-bake.json",
+        "snapshotSha256": "4366bddb32afa08edffba610bb1d887194c8f388fe74e3437197606ac77365bb",
+        "fullSavedSourceText": "---\ntitle: Cheesy Ham and Potato Bake\ntags: ['pork', 'potato', 'cheese', 'finnish']\ndate: 2022-10-14\nauthor: \"NestNik\"\n---\n\n![Cheesy ham and potato bake](/pix/cheesy-ham-and-potato-bake.webp)\n\nA simple version of a popular Finnish oven bake.\n\n- ⏲️ Prep time: 30 min\n- 🍳 Cook time: 1 h 30 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- ~ 1 kg (~2.2lb) of potatoes\n- ~ 300g (~0.7 lb) of smoked ham\n- 1 onion chopped\n- ~ 200g (~0.5 lb) grated cheddar\n- 2 dl (~1 cup) cream\n- cayenne pepper (optional)\n- thyme (optional)\n\n## Directions\n\n1. Saute the chopped onion on a medium hot pan in a bit of butter or oil, until it's mildly translucent.\n2. Wash and slice the potatoes into thin less than 1 cm slices.\n3. Cut the ham into strips.\n4. Place the potatoes into a large oven dish and place the ham on top of the potatoes.\n5. Pour the cream evenly into the dish.\n6. Add salt and ground black pepper to taste. Additionally, you can add a bit of cayenne pepper powder and thyme to give the dish a bit of spiciness.\n7. Spread the grated cheddar evenly on top of the other ingredients.\n8. Bake in the oven in 200C (400F) for 1h 3omin. Cover with aluminum foil once the cheese has got a bit of colour.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "30 min",
+          "minutes": 30
+        },
+        "cook": {
+          "raw": "1 h 30 min",
+          "minutes": 90
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 120,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            28
+          ],
+          "sourceText": "Saute the chopped onion on a medium hot pan in a bit of butter or oil, until it's mildly translucent.",
+          "translation": "شوّحي البصل المفروم في مقلاة متوسطة الحرارة مع قليل من الزبدة أو الزيت حتى يشف قليلًا."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            29
+          ],
+          "sourceText": "Wash and slice the potatoes into thin less than 1 cm slices.",
+          "translation": "اغسلي البطاطس وقطعيها شرائح رقيقة أقل من 1 سم."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            30
+          ],
+          "sourceText": "Cut the ham into strips.",
+          "translation": "قطعي اللحم المدخن إلى شرائح."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            31
+          ],
+          "sourceText": "Place the potatoes into a large oven dish and place the ham on top of the potatoes.",
+          "translation": "ضعي البطاطس في طبق فرن كبير وضعي اللحم فوقها."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            32
+          ],
+          "sourceText": "Pour the cream evenly into the dish.",
+          "translation": "اسكبي الكريمة بالتساوي في الطبق."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            33
+          ],
+          "sourceText": "Add salt and ground black pepper to taste. Additionally, you can add a bit of cayenne pepper powder and thyme to give the dish a bit of spiciness.",
+          "translation": "أضيفي الملح والفلفل الأسود المطحون حسب الرغبة. ويمكن إضافة قليل من مسحوق فلفل كايين والزعتر لإضفاء نكهة حارة."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            34
+          ],
+          "sourceText": "Spread the grated cheddar evenly on top of the other ingredients.",
+          "translation": "وزعي الشيدر المبشور بالتساوي فوق المكونات."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceLineNumbers": [
+            35
+          ],
+          "sourceText": "Bake in the oven in 200C (400F) for 1h 3omin. Cover with aluminum foil once the cheese has got a bit of colour.",
+          "translation": "اخبزي في فرن 200°م لمدة ساعة و30 دقيقة. غطيه بورق الألمنيوم بعد أن يكتسب الجبن بعض اللون."
+        }
+      ],
+      "sourceNotes": "كميات البطاطس واللحم والجبن مسبوقة بعلامة التقريب (~) وبمكافئات متعارضة؛ بقيت مجهولة. خطوة الفرن مكتوبة «1h 3omin» بينما خانة الوقت تقول 1 h 30 min؛ اتُبع الوقت المنشور في خانة metadata.",
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "~ 1 kg (~2.2lb) of potatoes",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "~ 300g (~0.7 lb) of smoked ham",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 onion chopped",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "~ 200g (~0.5 lb) grated cheddar",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 dl (~1 cup) cream",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "cayenne pepper (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "thyme (optional)",
+          "optional": true
+        }
+      ],
+      "catalogIngredientCount": 7,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "88594f5cc2f534322e6eee0c005d32fece30e527ae0e91a84c3347beac86e000"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 18,
+          "sourceText": "~ 1 kg (~2.2lb) of potatoes",
+          "translatedName": "بطاطس",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: ~ 1 kg (~2.2lb) of potatoes",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 19,
+          "sourceText": "~ 300g (~0.7 lb) of smoked ham",
+          "translatedName": "لحم خنزير مدخن",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: ~ 300g (~0.7 lb) of smoked ham",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 20,
+          "sourceText": "1 onion chopped",
+          "translatedName": "بصل مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 21,
+          "sourceText": "~ 200g (~0.5 lb) grated cheddar",
+          "translatedName": "جبن شيدر مبشور",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: ~ 200g (~0.5 lb) grated cheddar",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 22,
+          "sourceText": "2 dl (~1 cup) cream",
+          "translatedName": "كريمة",
+          "amount": 2,
+          "unit": "ديسيلتر",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 23,
+          "sourceText": "cayenne pepper (optional)",
+          "translatedName": "فلفل كايين (اختياري)",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "display": "كما ورد: cayenne pepper (optional)",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 24,
+          "sourceText": "thyme (optional)",
+          "translatedName": "زعتر (اختياري)",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "display": "كما ورد: thyme (optional)",
+          "scale": false
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "~ 1 kg (~2.2lb) of potatoes",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "~ 300g (~0.7 lb) of smoked ham",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 onion chopped",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "~ 200g (~0.5 lb) grated cheddar",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 dl (~1 cup) cream",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "cayenne pepper (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "thyme (optional)",
+          "optional": true
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-tarte-merengada",
+      "candidateId": "based-cooking:tarte-merengada",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "portuguese"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "meringue",
+        "lemon",
+        "pie",
+        "portuguese",
+        "sweet"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/tarte-merengada.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/tarte-merengada.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tarte-merengada.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "35a9358c155cdd625ef4726d87c0422d26c540564290f107682928df2f2407a5",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/tarte-merengada.json",
+        "snapshotSha256": "b06a2fd1f90e62de397738e6b3f5934519168c1a2d3510da35b472741cff9f6f",
+        "fullSavedSourceText": "---\ntitle: Tarte Merengada de Limão\ntags: ['meringue', 'lemon', 'pie', 'portuguese', 'sweet']\ndate: 2023-03-27\nauthor: magikarp-salesman\n---\n\n![Meringe Lemon Pie](/pix/tarte-merengada.webp)\n\nThis lemon meringue pie is a delicious dessert. Ideal for those with a sweet tooth, it is very easy to make and is ready in just half an hour. Enjoy!\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 20 min\n- 🍽️ Servings: 20\n\n## Ingredients\n\n- 200g of buttered cookies (shortcake)\n- 80g of margarine\n- 1 can of condensed milk (370g)\n- 3 / 4 lemons ( 1 dl of juice + the outer scrapings )\n- 5 eggs\n- 150g of sugar\n\n## Directions\n\n1. Pre-heat the oven to 220ºC.\n2. Separate the yolk from the egg whites and mix the yolks with the condensed milk into whipped cream.\n3. Meanwhile mash the cookies into a powder and mix it with the margarine while covering the bottom and sides of a pie dish.\n4. Take the outer scrapings of a lemon with a gratter and squeeze the juice of all the lemons.\n5. Mix the scrappings and the juice with the yolk and add to the pie dish.\n6. Take it to the oven.\n7. Meanwhile mix the egg whites until they start to foam, add the sugar then and keep mixing them until the meringe starts to be firm.\n8. After 10 to 15 minutes in the oven, cover the surface of the pie with small dumpings of meringe with a spoon.\n9. Reduce the heat of the oven to 160ºC and put the pie back into the oven until the meringe on top becomes golden brown.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "cook": {
+          "raw": "20 min",
+          "minutes": 20
+        },
+        "servings": {
+          "raw": "20",
+          "count": 20
+        },
+        "sourcePrepPlusCookMinutes": 30,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            27
+          ],
+          "sourceText": "Pre-heat the oven to 220ºC.",
+          "translation": "سخني الفرن إلى 220°م."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            28
+          ],
+          "sourceText": "Separate the yolk from the egg whites and mix the yolks with the condensed milk into whipped cream.",
+          "translation": "افصلي صفار البيض عن البياض واخلطي الصفار بالحليب المكثف حتى يصبح كريميًا."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            29
+          ],
+          "sourceText": "Meanwhile mash the cookies into a powder and mix it with the margarine while covering the bottom and sides of a pie dish.",
+          "translation": "في الأثناء اطحني البسكويت إلى مسحوق واخلطيه بالمارغرين، ثم غطي قاع جوانب قالب التارت."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            30
+          ],
+          "sourceText": "Take the outer scrapings of a lemon with a gratter and squeeze the juice of all the lemons.",
+          "translation": "ابشري قشر ليمونة واعصري الليمون كله."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            31
+          ],
+          "sourceText": "Mix the scrappings and the juice with the yolk and add to the pie dish.",
+          "translation": "اخلطي القشر والعصير بالصفار واسكبي الخليط في قالب التارت."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            32
+          ],
+          "sourceText": "Take it to the oven.",
+          "translation": "أدخليه الفرن."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            33
+          ],
+          "sourceText": "Meanwhile mix the egg whites until they start to foam, add the sugar then and keep mixing them until the meringe starts to be firm.",
+          "translation": "في الأثناء اخفقي بياض البيض حتى يبدأ بالرغوة، ثم أضيفي السكر وواصلي الخفق حتى يتماسك المرينغ."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceLineNumbers": [
+            34
+          ],
+          "sourceText": "After 10 to 15 minutes in the oven, cover the surface of the pie with small dumpings of meringe with a spoon.",
+          "translation": "بعد 10 إلى 15 دقيقة في الفرن، غطي سطح التارت بكتل صغيرة من المرينغ باستخدام ملعقة."
+        },
+        {
+          "sourceStepIndex": 8,
+          "sourceLineNumbers": [
+            35
+          ],
+          "sourceText": "Reduce the heat of the oven to 160ºC and put the pie back into the oven until the meringe on top becomes golden brown.",
+          "translation": "خففي حرارة الفرن واتركي التارت حتى يصبح المرينغ ذهبيًا؛ لم يحدد المصدر مدة هذه المرحلة."
+        }
+      ],
+      "sourceNotes": "عدد الليمون مكتوب «3 / 4»؛ المقدار مجهول. خطوة الخَبز الأخيرة حتى يصبح المرينغ ذهبيًا بلا مدة. استخدم وقت المصدر الإجمالي المنشور فقط.",
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "200g of buttered cookies (shortcake)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "80g of margarine",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 can of condensed milk (370g)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 / 4 lemons ( 1 dl of juice + the outer scrapings )",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "5 eggs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "150g of sugar",
+          "optional": false
+        }
+      ],
+      "catalogIngredientCount": 6,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "a59eae93d7992e34896849c655048f19a10efa75309ea5bba9480fc9646e298d"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 18,
+          "sourceText": "200g of buttered cookies (shortcake)",
+          "translatedName": "بسكويت زبدي (شورت كيك)",
+          "amount": 200,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 19,
+          "sourceText": "80g of margarine",
+          "translatedName": "مارغرين",
+          "amount": 80,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 20,
+          "sourceText": "1 can of condensed milk (370g)",
+          "translatedName": "علبة حليب مكثف",
+          "amount": 1,
+          "unit": "علبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 21,
+          "sourceText": "3 / 4 lemons ( 1 dl of juice + the outer scrapings )",
+          "translatedName": "ليمون",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: 3 / 4 lemons ( 1 dl of juice + the outer scrapings )",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 22,
+          "sourceText": "5 eggs",
+          "translatedName": "بيض",
+          "amount": 5,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 23,
+          "sourceText": "150g of sugar",
+          "translatedName": "سكر",
+          "amount": 150,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "200g of buttered cookies (shortcake)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "80g of margarine",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 can of condensed milk (370g)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 / 4 lemons ( 1 dl of juice + the outer scrapings )",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "5 eggs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "150g of sugar",
+          "optional": false
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-ukrainian-borscht",
+      "candidateId": "based-cooking:ukrainian-borscht",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "ukrainian",
+          "russian"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "ukrainian",
+        "soup",
+        "beetroot",
+        "russian"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/ukrainian-borscht.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/ukrainian-borscht.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ukrainian-borscht.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "929b50c0faf1a8c733ec8cf9c9ca96dfeab6c930bd5b35013960bbb0aba163c7",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/ukrainian-borscht.json",
+        "snapshotSha256": "55d0b3fc30ab70e61f828bdf2f3e72527c877ce2ff1fdc06a98facb91187a7f6",
+        "fullSavedSourceText": "---\ntitle: \"Ukrainian Borscht\"\ndate: 2021-04-02\ntags: ['ukrainian', 'soup', 'beetroot', 'russian']\nauthor: stanislav\n---\n\n![Borscht in a bowl](/pix/borscht.webp)\n\nBorscht is a beet soup that originates from Ukraine and is common in Eastern Europe and North Asia.\nDepending on the recipe, borscht may be purely vegetarian; it may be served either hot or cold; and it may range from a hearty one-pot meal to a clear broth or a smooth drink.\n\n- ⏲️ Prep time: 25 mins\n- 🍳 Cook time: 40 mins\n- 🍽️ Servings: 10\n\n## Ingredients\n\n- 3 red beetroots\n- 4 Tbsp extra virgin olive oil\n- 8 cups chicken broth + 2 cups water\n- 3 yukon potatoes\n- 2 carrots\n- 2 celery ribs\n- 1 onion\n- 4 Tbsp ketchup or 3 Tbsp tomato sauce\n- 1 red bell pepper (optional)\n- 1 can white cannelini beans with their juice (optional)\n- 2 bay leaves (optional)\n- 1 pressed garlic clove (optional)\n- 1 cup sour cream (optional)\n- fresh dill to taste (optional)\n\n## Directions\n\n1. Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain).\n2. Heat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil.\n3. Add grated beets and sauté 10 minutes, stirring occasionally until beets are softened.\n4. Add 8 cups broth and 2 cups water.\n5. Add sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork.\n6. While potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil.\n7. Add chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes).\n8. Add 4 Tbsp Ketchup and stir fry for 30 seconds then transfer to the soup pot to continue cooking with the potatoes.\n9. When potatoes and carrots reach desired softness, add optional ingredients from the list.\n10. Simmer for an additional 2-3 minutes and add more spices to taste.\n11. Serve with a dollop of sour cream on top.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "25 mins",
+          "minutes": 25
+        },
+        "cook": {
+          "raw": "40 mins",
+          "minutes": 40
+        },
+        "servings": {
+          "raw": "10",
+          "count": 10
+        },
+        "sourcePrepPlusCookMinutes": 65,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            36
+          ],
+          "sourceText": "Peel, grate and/or slice all vegetables (keeping sliced potatoes in cold water to prevent browning until ready to use then drain).",
+          "translation": "قشري جميع الخضار وابشريها أو قطعيها؛ أبقي شرائح البطاطس في ماء بارد لمنع اسمرارها حتى يحين استخدامها، ثم صفيها."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            37
+          ],
+          "sourceText": "Heat a large soup pot (5 1/2 Qt or larger) over medium/high heat and add 2 Tbsp olive oil.",
+          "translation": "سخني قدر شوربة كبيرًا (5.5 كوارت أو أكبر) على نار متوسطة إلى عالية وأضيفي ملعقتين كبيرتين من زيت الزيتون."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            38
+          ],
+          "sourceText": "Add grated beets and sauté 10 minutes, stirring occasionally until beets are softened.",
+          "translation": "أضيفي الشمندر المبشور وشوّحيه 10 دقائق مع التحريك أحيانًا حتى يلين."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            39
+          ],
+          "sourceText": "Add 8 cups broth and 2 cups water.",
+          "translation": "أضيفي 8 أكواب من المرق وكوبين من الماء."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            40
+          ],
+          "sourceText": "Add sliced potatoes and sliced carrots then cook for 10-15 minutes or until easily pierced with a fork.",
+          "translation": "أضيفي شرائح البطاطس والجزر واطهي 10 إلى 15 دقيقة أو حتى يسهل وخزها بالشوكة."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            41
+          ],
+          "sourceText": "While potatoes are cooking, place a large skillet over medium/high heat and add 2 Tbsp oil.",
+          "translation": "أثناء طهي البطاطس، ضعي مقلاة كبيرة على نار متوسطة إلى عالية وأضيفي ملعقتين كبيرتين من الزيت."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            42
+          ],
+          "sourceText": "Add chopped onion, celery and bell pepper. Saute stirring occasionally until softened and lightly golden (7-8 minutes).",
+          "translation": "أضيفي البصل المفروم والكرفس والفلفل الحلو. شوّحي مع التحريك أحيانًا حتى تلين ويصبح لونها ذهبيًا خفيفًا (7 إلى 8 دقائق)."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceLineNumbers": [
+            43
+          ],
+          "sourceText": "Add 4 Tbsp Ketchup and stir fry for 30 seconds then transfer to the soup pot to continue cooking with the potatoes.",
+          "translation": "أضيفي 4 ملاعق كبيرة من الكاتشب وقلّبي 30 ثانية، ثم انقلي الخليط إلى قدر الشوربة ليواصل الطهي مع البطاطس."
+        },
+        {
+          "sourceStepIndex": 8,
+          "sourceLineNumbers": [
+            44
+          ],
+          "sourceText": "When potatoes and carrots reach desired softness, add optional ingredients from the list.",
+          "translation": "عندما تبلغ البطاطس والجزر درجة الطراوة المطلوبة، أضيفي المكونات الاختيارية من القائمة."
+        },
+        {
+          "sourceStepIndex": 9,
+          "sourceLineNumbers": [
+            45
+          ],
+          "sourceText": "Simmer for an additional 2-3 minutes and add more spices to taste.",
+          "translation": "اتركيها على نار هادئة 2 إلى 3 دقائق إضافية وأضيفي مزيدًا من التوابل حسب الرغبة."
+        },
+        {
+          "sourceStepIndex": 10,
+          "sourceLineNumbers": [
+            46
+          ],
+          "sourceText": "Serve with a dollop of sour cream on top.",
+          "translation": "قدميها مع ملعقة من الكريمة الحامضة على الوجه."
+        }
+      ],
+      "sourceNotes": "وسوم المصدر تتضمن Russian، لكن اختيار الأوكرانية هنا يستند إلى اسم المصدر ووصفه الأوكراني؛ يُحفظ Russian كملاحظة tag لا كتصنيف أساسي. مكونات المرق والماء والكاتشب/الصلصة مكتوبة كبدائل أو مجموعات، فبقيت الكمية غير قابلة للضبط.",
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 red beetroots",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "4 Tbsp extra virgin olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "8 cups chicken broth + 2 cups water",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 yukon potatoes",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 carrots",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 celery ribs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 onion",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceSection": "Ingredients",
+          "sourceText": "4 Tbsp ketchup or 3 Tbsp tomato sauce",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 red bell pepper (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 28,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 can white cannelini beans with their juice (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 bay leaves (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 pressed garlic clove (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup sour cream (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 32,
+          "sourceSection": "Ingredients",
+          "sourceText": "fresh dill to taste (optional)",
+          "optional": true
+        }
+      ],
+      "catalogIngredientCount": 15,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "8fcf0fa3733faf75b223eec7bfaf3255ce084b53217f9ee1107836a10a36c11d"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 19,
+          "sourceText": "3 red beetroots",
+          "translatedName": "شمندر أحمر",
+          "amount": 3,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 20,
+          "sourceText": "4 Tbsp extra virgin olive oil",
+          "translatedName": "زيت زيتون بكر ممتاز",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 21,
+          "sourceText": "8 cups chicken broth + 2 cups water",
+          "translatedName": "مرق دجاج وماء",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: 8 cups chicken broth + 2 cups water",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 22,
+          "sourceText": "3 yukon potatoes",
+          "translatedName": "بطاطس يوكون",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: 3 yukon potatoes",
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 23,
+          "sourceText": "2 carrots",
+          "translatedName": "جزر",
+          "amount": 3,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 24,
+          "sourceText": "2 celery ribs",
+          "translatedName": "أعواد كرفس",
+          "amount": 2,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 25,
+          "sourceText": "1 onion",
+          "translatedName": "بصل",
+          "amount": 2,
+          "unit": "عود",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 7,
+          "sourceLineNumber": 26,
+          "sourceText": "4 Tbsp ketchup or 3 Tbsp tomato sauce",
+          "translatedName": "كاتشب أو صلصة طماطم",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 8,
+          "sourceLineNumber": 27,
+          "sourceText": "1 red bell pepper (optional)",
+          "translatedName": "فلفل أحمر حلو (اختياري)",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": true,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 9,
+          "sourceLineNumber": 28,
+          "sourceText": "1 can white cannelini beans with their juice (optional)",
+          "translatedName": "علبة فاصوليا كانيليني بيضاء مع سائلها (اختياري)",
+          "amount": 1,
+          "unit": "علبة",
+          "optional": true,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 10,
+          "sourceLineNumber": 29,
+          "sourceText": "2 bay leaves (optional)",
+          "translatedName": "ورق غار (اختياري)",
+          "amount": 2,
+          "unit": "ورقة",
+          "optional": true,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 11,
+          "sourceLineNumber": 30,
+          "sourceText": "1 pressed garlic clove (optional)",
+          "translatedName": "فص ثوم مهروس (اختياري)",
+          "amount": 1,
+          "unit": "فص",
+          "optional": true,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 12,
+          "sourceLineNumber": 31,
+          "sourceText": "1 cup sour cream (optional)",
+          "translatedName": "كريمة حامضة للتقديم (اختياري)",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 13,
+          "sourceLineNumber": 32,
+          "sourceText": "fresh dill to taste (optional)",
+          "translatedName": "شبت طازج حسب الرغبة (اختياري)",
+          "amount": null,
+          "unit": null,
+          "optional": true,
+          "display": "كما ورد: fresh dill to taste (optional)",
+          "scale": false
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 red beetroots",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "4 Tbsp extra virgin olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "8 cups chicken broth + 2 cups water",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 yukon potatoes",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 carrots",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 celery ribs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 onion",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceSection": "Ingredients",
+          "sourceText": "4 Tbsp ketchup or 3 Tbsp tomato sauce",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 red bell pepper (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 28,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 can white cannelini beans with their juice (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 bay leaves (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 pressed garlic clove (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup sour cream (optional)",
+          "optional": true
+        },
+        {
+          "sourceLineNumber": 32,
+          "sourceSection": "Ingredients",
+          "sourceText": "fresh dill to taste (optional)",
+          "optional": true
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-tajine",
+      "candidateId": "based-cooking:tajine",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "tunisian"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "tunisian",
+        "Eggs"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/tajine.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/tajine.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tajine.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "9e3373d701dc3b8e2d1041b71c54f01024b1c12ce046b419fd4d09134af1f531",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/tajine.json",
+        "snapshotSha256": "dd74ab7bc22735657b1aa979147b1fda72f83568bb358fbb1baab599235eae0d",
+        "fullSavedSourceText": "---\ntitle: \"Tajine Maadnous\"\ndate: 2022-11-16\ntags: ['tunisian', 'Eggs']\nauthor: Sami Ben Romdhane\n---\n\nSimilar to an Italian frittata or Spanish tortilla, Tunisian tajine maadnous is an easy & delicious egg omelette filled with chicken, parsley, and spices.\n\n![tajine maadnous](/pix/tajine-maadnous.webp)\n\n- ⏲️ Prep time: 20 min\n- 🍳 Cook time: 35 min\n- 🍽️ Servings: 12\n\n## Ingredients\n\n- 1 lb chicken breasts diced\n- 1 medium onion chopped\n- 1 large potato peeled and diced\n- 1 cup water\n- 1 small bunch parsley (about 1.5 cups, chopped, loosely packed)\n- 8 large eggs\n- 6 oz cheese\n- 2 tbsp olive oil\n\n## Spice Blend\n\n- 1 tsp cumin\n- 1 tsp coriander\n- 1 tsp turmeric\n- 1 tsp salt\n- 1/2 tsp paprika or cayenne pepper if you want some heat\n- 1/2 tsp black pepper\n- 1/4 tsp caraway\n- 1/4 tsp thyme\n- 1/4 tsp cinnamon\n\n## Directions\n\n1. Mix the spices together (grinding any whole spices if necessary) and set them aside.\n2. In a large frying pan or pot over medium heat, saute the onions in about 1 tbsp of olive oil until tender.\n3. Toss chicken with 1/2 of the spice mix. Add this to the pan and brown.\n4. Add the potatoes and the water to the pan. Bring to a gentle simmer, then cook uncovered until potatoes are tender and most of the liquid has evaporated.\n5. Stir chopped parsley into the cooked mixture and set aside to cool.\n6. Preheat oven to 350°F (180°C), and grease a medium (2 quart/liter) baking pan with the remaining olive oil.\n7. Thoroughly whisk the eggs in a large bowl, then mix in the cheese. Stir in the chicken, potato, and parsley mixture, along with the remaining spice mixture. Stir until well-combined, then pour into the oiled baking dish.\n8. Bake for 30-35 minutes, or until set in the center. Allow to cool, and serve warm or at room temperature. Serve with some harissa, if you like.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "20 min",
+          "minutes": 20
+        },
+        "cook": {
+          "raw": "35 min",
+          "minutes": 35
+        },
+        "servings": {
+          "raw": "12",
+          "count": 12
+        },
+        "sourcePrepPlusCookMinutes": 55,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            41
+          ],
+          "sourceText": "Mix the spices together (grinding any whole spices if necessary) and set them aside.",
+          "translation": "اخلطي التوابل واطحني الحبوب الكاملة إن لزم، ثم ضعيها جانبًا."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            42
+          ],
+          "sourceText": "In a large frying pan or pot over medium heat, saute the onions in about 1 tbsp of olive oil until tender.",
+          "translation": "في مقلاة كبيرة أو قدر على نار متوسطة شوّحي البصل في نحو ملعقة كبيرة من زيت الزيتون حتى يطرى."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            43
+          ],
+          "sourceText": "Toss chicken with 1/2 of the spice mix. Add this to the pan and brown.",
+          "translation": "قلّبي الدجاج مع نصف مزيج التوابل ثم أضيفيه للمقلاة وحمّريه."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            44
+          ],
+          "sourceText": "Add the potatoes and the water to the pan. Bring to a gentle simmer, then cook uncovered until potatoes are tender and most of the liquid has evaporated.",
+          "translation": "أضيفي البطاطس والماء. اتركيه يغلي برفق ثم اطهيه مكشوفًا حتى تطرى البطاطس ويتبخر معظم السائل."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            45
+          ],
+          "sourceText": "Stir chopped parsley into the cooked mixture and set aside to cool.",
+          "translation": "قلّبي البقدونس المفروم في الخليط المطهو واتركيه يبرد."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            46
+          ],
+          "sourceText": "Preheat oven to 350°F (180°C), and grease a medium (2 quart/liter) baking pan with the remaining olive oil.",
+          "translation": "سخني الفرن إلى 180°م وادهني طبق خبز متوسطًا (2 كوارت/لتر) ببقية الزيت."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            47
+          ],
+          "sourceText": "Thoroughly whisk the eggs in a large bowl, then mix in the cheese. Stir in the chicken, potato, and parsley mixture, along with the remaining spice mixture. Stir until well-combined, then pour into the oiled baking dish.",
+          "translation": "اخفقي البيض جيدًا في وعاء كبير ثم اخلطي الجبن. أضيفي خليط الدجاج والبطاطس والبقدونس وبقية التوابل، وامزجي حتى يتجانس ثم اسكبيه في طبق الخبز."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceLineNumbers": [
+            48
+          ],
+          "sourceText": "Bake for 30-35 minutes, or until set in the center. Allow to cool, and serve warm or at room temperature. Serve with some harissa, if you like.",
+          "translation": "اخبزي 30 إلى 35 دقيقة حتى يتماسك الوسط. اتركيه يبرد وقدميه دافئًا أو بدرجة حرارة الغرفة مع الهريسة إن رغبت."
+        }
+      ],
+      "sourceNotes": "وقت metadata المنشور 20+35 دقيقة، وهو إجمالي مصدرّي لا توزيع دقيق لكل مرحلة؛ قد تتداخل مدة شوح المقلاة مع وقت التحضير.",
+      "independentSafetyEvidence": {
+        "sourceUrl": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+        "checkedAt": "2026-10-21",
+        "bodyArchived": false,
+        "bodySha256": null,
+        "poultryMinimumCelsius": 73.9,
+        "poultryMinimumFahrenheit": 165,
+        "basis": "Food thermometer; All Poultry row. Separate coordinator addition, not a source recipe quote or clinical rule."
+      },
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 lb chicken breasts diced",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 medium onion chopped",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 large potato peeled and diced",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup water",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 small bunch parsley (about 1.5 cups, chopped, loosely packed)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "8 large eggs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "6 oz cheese",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 tbsp olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1 tsp cumin",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1 tsp coriander",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1 tsp turmeric",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 32,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1 tsp salt",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 33,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/2 tsp paprika or cayenne pepper if you want some heat",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 34,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/2 tsp black pepper",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 35,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/4 tsp caraway",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 36,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/4 tsp thyme",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 37,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/4 tsp cinnamon",
+          "optional": false
+        }
+      ],
+      "catalogIngredientCount": 18,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "9fb25669da6074a9cd7c2347e6f37bf8b67d6fecde3a8237825d3ae4349dde8b"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 18,
+          "sourceText": "1 lb chicken breasts diced",
+          "translatedName": "دجاج",
+          "amount": 1,
+          "unit": "رطل",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 19,
+          "sourceText": "1 medium onion chopped",
+          "translatedName": "بيض",
+          "amount": 1,
+          "unit": "بصلة متوسطة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 20,
+          "sourceText": "1 large potato peeled and diced",
+          "translatedName": "بطاطس",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 21,
+          "sourceText": "1 cup water",
+          "translatedName": "بصل",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 22,
+          "sourceText": "1 small bunch parsley (about 1.5 cups, chopped, loosely packed)",
+          "translatedName": "جبن",
+          "amount": 1.5,
+          "unit": "كوب",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 23,
+          "sourceText": "8 large eggs",
+          "translatedName": "بقدونس",
+          "amount": 8,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 24,
+          "sourceText": "6 oz cheese",
+          "translatedName": "زيت زيتون",
+          "amount": 6,
+          "unit": "أونصة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 7,
+          "sourceLineNumber": 25,
+          "sourceText": "2 tbsp olive oil",
+          "translatedName": "مزيج توابل",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 lb chicken breasts diced",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 medium onion chopped",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 large potato peeled and diced",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 cup water",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 small bunch parsley (about 1.5 cups, chopped, loosely packed)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "8 large eggs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "6 oz cheese",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "2 tbsp olive oil",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 29,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1 tsp cumin",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 30,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1 tsp coriander",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 31,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1 tsp turmeric",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 32,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1 tsp salt",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 33,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/2 tsp paprika or cayenne pepper if you want some heat",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 34,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/2 tsp black pepper",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 35,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/4 tsp caraway",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 36,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/4 tsp thyme",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 37,
+          "sourceSection": "Spice Blend",
+          "sourceText": "1/4 tsp cinnamon",
+          "optional": false
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-tarta-de-santiago",
+      "candidateId": "based-cooking:tarta-de-santiago",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "spanish",
+          "galician"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "spanish",
+        "cake",
+        "galician"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/tarta-de-santiago.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/tarta-de-santiago.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tarta-de-santiago.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "bcb09e1b9695f61d2ae646265b1bbbe1dc66328079516da370e1aa43243339ea",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/tarta-de-santiago.json",
+        "snapshotSha256": "06859ba9559177d21f57e986aed3c0c0b99bc2efd79594f2d12f903fc7ae61a8",
+        "fullSavedSourceText": "---\ntitle: \"Tarta de Santiago\"\ndate: 2022-07-03\ntags: ['spanish', 'cake', 'galician']\nauthor: laura-alvarez\n---\n\n![Tarta de Santiago](/pix/tarta-de-santiago.webp)\n\nDelicious Spanish almond cake or famously known as tarta de Santiago. This is a cake from Galicia and it is super easy to make, with only 3 main ingredients. I always feel this type of cake is just perfect for the holiday season.\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 40 min\n- 🍽️ Servings: 8\n\n## Ingredients\n\n* 3 eggs\n* ¾ cup sugar (150 gr)\n* 1 ½ cup almond meal (150 gr)\n* ½ teaspoon cinnamon powder\n* ¼ teaspoon salt\n* Zest of 1 lemon\n* Zest of 1 clementine\n* Icing sugar, for dusting on top\n\n## Directions\n\n1. Add eggs and sugar into a bowl and whisk until the mixture turns pale.\n2. Add the rest of the ingredients, except for icing sugar and using a spatula, gently fold everything until well combine.\n3. Pour batter into a 7 inch (18 cm) springform pan that has been buttered and floured. Bake in a preheated oven at 360ºF (180ºC) for 40 minutes or until golden brown and fully cooked.\n4. Cool completely. Place the Santiago cross cut out on top and dust generous amount of icing sugar all over the cake. Carefully remove the cut out. Slice and serve, enjoy!\n\n## Notes\n\n* As I mentioned earlier, this cake is dusted with icing sugar with an imprint of Santiago's cross on its top surface. You can also make an imprint of a scallop shell. Or with no imprint at all. Your choice.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "cook": {
+          "raw": "40 min",
+          "minutes": 40
+        },
+        "servings": {
+          "raw": "8",
+          "count": 8
+        },
+        "sourcePrepPlusCookMinutes": 55,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            29
+          ],
+          "sourceText": "Add eggs and sugar into a bowl and whisk until the mixture turns pale.",
+          "translation": "أضيفي البيض والسكر إلى وعاء واخفقي حتى يصبح الخليط شاحب اللون."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            30
+          ],
+          "sourceText": "Add the rest of the ingredients, except for icing sugar and using a spatula, gently fold everything until well combine.",
+          "translation": "أضيفي بقية المكونات عدا السكر البودرة، وقلّبي برفق بملعقة حتى تمتزج."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            31
+          ],
+          "sourceText": "Pour batter into a 7 inch (18 cm) springform pan that has been buttered and floured. Bake in a preheated oven at 360ºF (180ºC) for 40 minutes or until golden brown and fully cooked.",
+          "translation": "اسكبي الخليط في قالب زنبركي 7 بوصات (18 سم) مدهون ومذرور بالدقيق. اخبزي في فرن مسخن مسبقًا إلى 180°م لمدة 40 دقيقة أو حتى يصبح ذهبيًا وينضج."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            32
+          ],
+          "sourceText": "Cool completely. Place the Santiago cross cut out on top and dust generous amount of icing sugar all over the cake. Carefully remove the cut out. Slice and serve, enjoy!",
+          "translation": "اتركيه يبرد تمامًا. ضعي قالب صليب سانتياغو الورقي فوقه ورشي كمية وافرة من السكر البودرة. أزيلي القالب بحذر، ثم قطعي وقدمي."
+        }
+      ],
+      "sourceNotes": "المصدر يورد ¾ كوب سكر (150غ) و1½ كوب لوز (150غ)؛ أبقيت الوحدة الأساسية كما نشرها المصدر ولم أحولها للغرام. الوصف يذكر غاليسيا ووسم galician محفوظ كملاحظة، والتصنيف الأساسي الإسباني.",
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 eggs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "¾ cup sugar (150 gr)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 ½ cup almond meal (150 gr)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "½ teaspoon cinnamon powder",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "¼ teaspoon salt",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "Zest of 1 lemon",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "Zest of 1 clementine",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "Icing sugar, for dusting on top",
+          "optional": false
+        }
+      ],
+      "catalogIngredientCount": 8,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "87bd622715d737a4345f763da18261cf00a45eb17487b8276a1980b57e0e6f41"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 18,
+          "sourceText": "3 eggs",
+          "translatedName": "بيض",
+          "amount": 3,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 19,
+          "sourceText": "¾ cup sugar (150 gr)",
+          "translatedName": "سكر",
+          "amount": 0.75,
+          "unit": "كوب",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 20,
+          "sourceText": "1 ½ cup almond meal (150 gr)",
+          "translatedName": "لوز مطحون",
+          "amount": 1.5,
+          "unit": "كوب",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 21,
+          "sourceText": "½ teaspoon cinnamon powder",
+          "translatedName": "قرفة مطحونة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 22,
+          "sourceText": "¼ teaspoon salt",
+          "translatedName": "ملح",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 23,
+          "sourceText": "Zest of 1 lemon",
+          "translatedName": "قشر ليمون",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 24,
+          "sourceText": "Zest of 1 clementine",
+          "translatedName": "قشر كلمنتينا",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 7,
+          "sourceLineNumber": 25,
+          "sourceText": "Icing sugar, for dusting on top",
+          "translatedName": "سكر بودرة للتزيين",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": "كما ورد: Icing sugar, for dusting on top",
+          "scale": false
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "3 eggs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "¾ cup sugar (150 gr)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 ½ cup almond meal (150 gr)",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "½ teaspoon cinnamon powder",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "¼ teaspoon salt",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "Zest of 1 lemon",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "Zest of 1 clementine",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "Icing sugar, for dusting on top",
+          "optional": false
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-zurich-sytle-meat-saute",
+      "candidateId": "based-cooking:zurich-sytle-meat-saute",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "swiss"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "beef",
+        "cream",
+        "swiss",
+        "quick"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/zurich-sytle-meat-saute.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/zurich-sytle-meat-saute.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/zurich-sytle-meat-saute.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "167d6934f256286fb819b288c6cb58f7277be4b3bf91e7f720af7abb92b9a173",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/zurich-sytle-meat-saute.json",
+        "snapshotSha256": "6e6724639a2c1385fcf1f23bc1a8f2e52d05697710598a0dbbbeff88aa623b62",
+        "fullSavedSourceText": "---\ntitle: Zurich-Style Meat Saute\ntags: ['beef', 'cream', 'swiss', 'quick']\ndate: 2023-01-06\nauthor: elias-pahls\n---\n\nOriginally called  \"Züri Gschnätzlets\" (Zurich chopped) from the city of Zurich\nin Switzerland, this is a tasty and practical recipe from simple ingredients.\nYou can use any kind of meat really, depending on your taste. Very\ntraditionally, finely sliced liver and kidney is also mixed in with the meat\nand mushrooms.\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 15 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n\n- 600g\tBeef, finely sliced\n- 250g\tMushrooms, finely sliced\n- 1\tOnion\n- 1 tbsp Flour\n- 200ml\tWhite whine\n- 200ml Cream\n- 1 tbsp chopped parsley\n\n## Directions\n\n1. Fry the meat in butter at high heat until it starts loosing liquid.\n2. Take the meat out of the pan and set aside.\n3. Saute the onions.\n4. Add the mushrooms, saute, then add a tbsp of flour and mix well. The flour\n   will make the sauce thicker, so use carfully.\n5. Add the white wine and let it boil for a few minutes.\n6. Add cream, boil until the sauce is very creamy.\n7. Add the meat, boil until the meat is warm.\n8. Add parsley, and serve.\n\nServe with [Rösti](./roesti.md) or other traditional Swiss dish.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "cook": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 30,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            31
+          ],
+          "sourceText": "Fry the meat in butter at high heat until it starts loosing liquid.",
+          "translation": "اقلي اللحم في الزبدة على نار عالية حتى يبدأ بإخراج السوائل."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            32
+          ],
+          "sourceText": "Take the meat out of the pan and set aside.",
+          "translation": "أخرجي اللحم من المقلاة وضعيه جانبًا."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            33
+          ],
+          "sourceText": "Saute the onions.",
+          "translation": "شوّحي البصل."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            34,
+            35
+          ],
+          "sourceText": "Add the mushrooms, saute, then add a tbsp of flour and mix well. The flour will make the sauce thicker, so use carfully.",
+          "translation": "أضيفي الفطر وشوّحيه، ثم أضيفي ملعقة كبيرة من الدقيق واخلطي جيدًا. الدقيق يثخّن الصلصة؛ استخدميه بحذر."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            36
+          ],
+          "sourceText": "Add the white wine and let it boil for a few minutes.",
+          "translation": "أضيفي النبيذ الأبيض واتركيه يغلي بضع دقائق."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            37
+          ],
+          "sourceText": "Add cream, boil until the sauce is very creamy.",
+          "translation": "أضيفي الكريمة واغلي حتى تصبح الصلصة كثيفة جدًا."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            38
+          ],
+          "sourceText": "Add the meat, boil until the meat is warm.",
+          "translation": "أضيفي اللحم واغليه حتى يسخن."
+        },
+        {
+          "sourceStepIndex": 7,
+          "sourceLineNumbers": [
+            39
+          ],
+          "sourceText": "Add parsley, and serve.",
+          "translation": "أضيفي البقدونس وقدمي."
+        },
+        {
+          "sourceStepIndex": 8,
+          "sourceLineNumbers": [
+            41
+          ],
+          "sourceText": "Serve with [Rösti](./roesti.md) or other traditional Swiss dish.",
+          "translation": "يُقدّم مع Rösti أو طبق سويسري تقليدي آخر."
+        }
+      ],
+      "sourceNotes": "المصدر يطلب الزبدة في الطريقة لكنها غير مدرجة. وصف النبيذ في قائمة المكونات فيه typo «White whine»؛ عُرض نبيذ أبيض بحسب سياق الخطوة مع حفظ الأصل في sidecar. مصدر الوصفة يذكر أن الكبد والكلى قد يضافان تقليديًا، ولا يدرجهما كعنصرين أساسيين.",
+      "supplementalIngredients": [
+        {
+          "sourceIngredientIndex": null,
+          "sourceMethodStepReference": "source step 0",
+          "sourceText": "زبدة للقلي",
+          "translatedName": "زبدة للقلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "reason": "مذكور في الطريقة لكنه غير موجود في قائمة المكونات بالمصدر."
+        }
+      ],
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "600g\tBeef, finely sliced",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "250g\tMushrooms, finely sliced",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "1\tOnion",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tbsp Flour",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "200ml\tWhite whine",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceSection": "Ingredients",
+          "sourceText": "200ml Cream",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tbsp chopped parsley",
+          "optional": false
+        }
+      ],
+      "catalogIngredientCount": 8,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "868a0f70baf554939864b3d22ccaef71e6b33a3d0fbaac114ce02cc893c73e36"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 21,
+          "sourceText": "600g\tBeef, finely sliced",
+          "translatedName": "لحم بقري مقطع شرائح رفيعة",
+          "amount": 600,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 22,
+          "sourceText": "250g\tMushrooms, finely sliced",
+          "translatedName": "فطر مقطع شرائح رفيعة",
+          "amount": 250,
+          "unit": "جرام",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 23,
+          "sourceText": "1\tOnion",
+          "translatedName": "بصل",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 24,
+          "sourceText": "1 tbsp Flour",
+          "translatedName": "دقيق",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 25,
+          "sourceText": "200ml\tWhite whine",
+          "translatedName": "نبيذ أبيض",
+          "amount": 200,
+          "unit": "مل",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 26,
+          "sourceText": "200ml Cream",
+          "translatedName": "كريمة",
+          "amount": 200,
+          "unit": "مل",
+          "optional": false,
+          "display": null,
+          "scale": null
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 27,
+          "sourceText": "1 tbsp chopped parsley",
+          "translatedName": "بقدونس مفروم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": false,
+          "display": null,
+          "scale": null
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "600g\tBeef, finely sliced",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "250g\tMushrooms, finely sliced",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "1\tOnion",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tbsp Flour",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 25,
+          "sourceSection": "Ingredients",
+          "sourceText": "200ml\tWhite whine",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 26,
+          "sourceSection": "Ingredients",
+          "sourceText": "200ml Cream",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 27,
+          "sourceSection": "Ingredients",
+          "sourceText": "1 tbsp chopped parsley",
+          "optional": false
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    },
+    {
+      "recipeId": "bc-arroz-chaufa",
+      "candidateId": "based-cooking:arroz-chaufa",
+      "cuisineEvidence": {
+        "kind": "source-tags",
+        "exactTags": [
+          "peruvian",
+          "chinese"
+        ],
+        "statement": "Cuisine label is present in the source frontmatter tags; no origin inferred from language or title."
+      },
+      "sourceTags": [
+        "peruvian",
+        "chinese",
+        "rice"
+      ],
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/arroz-chaufa.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/arroz-chaufa.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/arroz-chaufa.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "6b59cc2e1b3cf707c04ecf636e6af90a7dea58b71c28c5be68bcc648cc6ae982",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/arroz-chaufa.json",
+        "snapshotSha256": "d75591fa811ce490b69c781387a6094273219de0b8501cc97086ad01d7d50bae",
+        "fullSavedSourceText": "---\ntitle: \"Arroz Chaufa\"\ndate: 2021-03-16\ntags: ['peruvian', 'chinese', 'rice']\nauthor: andy-rufasto\n---\n\nPeruvian-chinese dish. Easy to cook just add and mix everything.\n\n![Arroz Chaufa](/pix/arroz-chaufa.webp)\n\n- ⏲️ Prep time: 40 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- Rice\n- Salt\n- Bell pepper\n- Chicken\n- Eggs\n- Soy sauce\n- Welsh onion\n\n## Directions\n\n1. Cut the chicken into pieces and fry it. Don't forget the salt.\n2. Cook scrambled eggs. Don't forget the salt.\n3. Cook the rice. If it is yesterday's rice better, preferably without salt.\n4. Cut the welsh onion and bell pepper into small squares.\n5. Mix everything over low heat, adding soy sauce.\n6. Optional: add bacon, sesame oil.\n7. If everything is salty, you can reduce it with just a teaspoon of sugar, especially if you cook the rice with salt.\n"
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "40 min",
+          "minutes": 40
+        },
+        "cook": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 50,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceSteps": [
+        {
+          "sourceStepIndex": 0,
+          "sourceLineNumbers": [
+            28
+          ],
+          "sourceText": "Cut the chicken into pieces and fry it. Don't forget the salt.",
+          "translation": "قطعي الدجاج واقليه، ولا تنسي الملح."
+        },
+        {
+          "sourceStepIndex": 1,
+          "sourceLineNumbers": [
+            29
+          ],
+          "sourceText": "Cook scrambled eggs. Don't forget the salt.",
+          "translation": "اطهي البيض مخفوقًا ولا تنسي الملح."
+        },
+        {
+          "sourceStepIndex": 2,
+          "sourceLineNumbers": [
+            30
+          ],
+          "sourceText": "Cook the rice. If it is yesterday's rice better, preferably without salt.",
+          "translation": "اطهي الأرز؛ ويكون أفضل إن كان من اليوم السابق، ويفضل دون ملح."
+        },
+        {
+          "sourceStepIndex": 3,
+          "sourceLineNumbers": [
+            31
+          ],
+          "sourceText": "Cut the welsh onion and bell pepper into small squares.",
+          "translation": "قطعي البصل الأخضر والفلفل الحلو إلى مكعبات صغيرة."
+        },
+        {
+          "sourceStepIndex": 4,
+          "sourceLineNumbers": [
+            32
+          ],
+          "sourceText": "Mix everything over low heat, adding soy sauce.",
+          "translation": "اخلطي كل شيء على نار هادئة مع إضافة صلصة الصويا."
+        },
+        {
+          "sourceStepIndex": 5,
+          "sourceLineNumbers": [
+            33
+          ],
+          "sourceText": "Optional: add bacon, sesame oil.",
+          "translation": "اختياريًا أضيفي لحم الخنزير المقدد وزيت السمسم."
+        },
+        {
+          "sourceStepIndex": 6,
+          "sourceLineNumbers": [
+            34
+          ],
+          "sourceText": "If everything is salty, you can reduce it with just a teaspoon of sugar, especially if you cook the rice with salt.",
+          "translation": "إذا كان المزيج مالحًا، يمكنك تقليل الملوحة بإضافة ملعقة صغيرة من السكر، خصوصًا إذا طهيت الأرز بالملح."
+        }
+      ],
+      "sourceNotes": "الوصفة موسومة Peruvian وChinese؛ المطبخ الأساسي بيروفي، والوسم الصيني محفوظ في المصدر. لا توجد مقادير للمكونات في المصدر لذلك بقيت مجهولة.",
+      "independentSafetyEvidence": {
+        "sourceUrl": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart",
+        "checkedAt": "2026-10-21",
+        "bodyArchived": false,
+        "bodySha256": null,
+        "poultryMinimumCelsius": 73.9,
+        "poultryMinimumFahrenheit": 165,
+        "basis": "Food thermometer; All Poultry row. Separate coordinator addition, not a source recipe quote or clinical rule."
+      },
+      "sourceIngredientsCorrected": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "Rice",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "Salt",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "Bell pepper",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "Chicken",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "Eggs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "Soy sauce",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "Welsh onion",
+          "optional": false
+        }
+      ],
+      "catalogIngredientCount": 10,
+      "coordinatorCorrection": {
+        "source": "exact fullSavedSourceText, not only old extracted ingredient subset",
+        "review": "Corrected names, units/amounts, alternatives, optionality, full Spice Blend and supplemental lines; retained all original source metadata and history.",
+        "recipeSha256": "9d56e6cd0e4d74c9cd584b7af6e037f5a7755e711973f1a9dc05432d9d4d9dda"
+      },
+      "initialSourceIngredientsHistorical": [
+        {
+          "sourceIngredientIndex": 0,
+          "sourceLineNumber": 18,
+          "sourceText": "Rice",
+          "translatedName": "أرز",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": null,
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 1,
+          "sourceLineNumber": 19,
+          "sourceText": "Salt",
+          "translatedName": "ملح",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": null,
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 2,
+          "sourceLineNumber": 20,
+          "sourceText": "Bell pepper",
+          "translatedName": "فلفل حلو",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": null,
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 3,
+          "sourceLineNumber": 21,
+          "sourceText": "Chicken",
+          "translatedName": "دجاج",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": null,
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 4,
+          "sourceLineNumber": 22,
+          "sourceText": "Eggs",
+          "translatedName": "بيض",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": null,
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 5,
+          "sourceLineNumber": 23,
+          "sourceText": "Soy sauce",
+          "translatedName": "صلصة صويا",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": null,
+          "scale": false
+        },
+        {
+          "sourceIngredientIndex": 6,
+          "sourceLineNumber": 24,
+          "sourceText": "Welsh onion",
+          "translatedName": "بصل أخضر ويلزي",
+          "amount": null,
+          "unit": null,
+          "optional": false,
+          "display": null,
+          "scale": false
+        }
+      ],
+      "sourceIngredients": [
+        {
+          "sourceLineNumber": 18,
+          "sourceSection": "Ingredients",
+          "sourceText": "Rice",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 19,
+          "sourceSection": "Ingredients",
+          "sourceText": "Salt",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 20,
+          "sourceSection": "Ingredients",
+          "sourceText": "Bell pepper",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 21,
+          "sourceSection": "Ingredients",
+          "sourceText": "Chicken",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 22,
+          "sourceSection": "Ingredients",
+          "sourceText": "Eggs",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 23,
+          "sourceSection": "Ingredients",
+          "sourceText": "Soy sauce",
+          "optional": false
+        },
+        {
+          "sourceLineNumber": 24,
+          "sourceSection": "Ingredients",
+          "sourceText": "Welsh onion",
+          "optional": false
+        }
+      ],
+      "catalogAcceptance": {
+        "sourceFidelityReview": true,
+        "independentReviewFile": "docs/agents/catalog-review-20261021b.md",
+        "publisherAllContentLicenseAndSavedPageExceptionReview": true,
+        "rightsBasis": "Pinned publisher whole-content public-domain declaration and saved full-page inspection; explicit external-source candidate Yorkshire is held, not promoted.",
+        "manualPlanningSupported": true,
+        "automaticInventoryOrNutritionBindingApproved": false,
+        "kitchenTested": false,
+        "clinicalApproval": false,
+        "timeBasis": "Published source prep+cook aggregate estimate, not inferred per-step timing.",
+        "unknownQuantitiesRequireExplicitChoice": true
+      }
+    }
+  ],
+  "heldCandidates": [
+    {
+      "candidateId": "based-cooking:chicken-satay",
+      "decision": "held",
+      "reason": "الطريقة تشترط تتبيلًا ساعة على الأقل، بينما وقت التحضير والطهي المنشوران 10+15=25 دقيقة. لم يُعرض الإجمالي على أنه يغطي النقع.",
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/chicken-satay.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/chicken-satay.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-satay.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "911e3db0a35b7afcbcf4e9697ac7c87d4cf9c373ec16a4b72fc56e4e7393255f",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/chicken-satay.json",
+        "snapshotSha256": "28f11d9dcf85d5e393511cdb96e150721bb32facc7b50a548e08e4f2423f5332",
+        "fullSavedSourceText": "---\ntitle: Chicken Satay with Peanut Sauce\ntags: ['chicken', 'thai', 'asian']\ndate: 2022-07-10\nauthor: \"Eric Lindberg\"\n---\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 15 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 2 lbs boneless chicken breast or thigh\n- 1.5 tbsp oyster sauce\n- 1 tbsp ground tumeric\n- 2 tbsp sugar\n- 2 tbsp coconut milk\n- 3 tbsp peanut butter (creamy)\n- 1 tbsp massaman curry paste\n- water to thin peanut sauce\n\n## Directions\n\n1. Cut the chicken into 1/2 inch thick strips.\n2. Mix chicken with oyster sauce, tumeric, 1 tbsp sugar and coconut milk.  Allow chicken to marinade for at least an hour.\n3. Optionally, you can skewer the meat with wooden skewers.\n4. Grill chicken until cooked through.\n5. Mix peanut butter, 1 tbsp sugar and curry paste together in a small saucepan.  Add enough water to thin to a thick sauce.\n6. Cook for 1-2 min stirring frequently.\n7. Serve chicken with peanut sauce for dipping.\n"
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "cook": {
+          "raw": "15 min",
+          "minutes": 15
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 25,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      }
+    },
+    {
+      "candidateId": "based-cooking:butter-chicken-masala",
+      "decision": "held",
+      "reason": "الطريقة تتطلب نقعًا ساعة، ثم تحميرًا بالفرن 5–10 دقائق وطهيًا 5–10 دقائق إضافية، مع وقت metadata إجمالي 30+30=60 دقيقة. لا يوضح المصدر أن وقت النقع منفصل أو داخل الوقت؛ لا يُعرض 60 دقيقة كمدة كلية مؤكدة.",
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/butter-chicken-masala.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/butter-chicken-masala.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/butter-chicken-masala.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "d405edca4cdbbf490256f797b8bf761edf287e4d384b5f94485c563da31ea2c3",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/butter-chicken-masala.json",
+        "snapshotSha256": "74e36932a61de34cbe8ad2f0eb38278fac5bc062dab4cca0d03c318b27d83352",
+        "fullSavedSourceText": "---\ntitle: \"Butter Chicken Masala Curry\"\ndate: 2021-03-15\ntags: ['indian', 'curry', 'chicken']\nauthor: nihar-samantaray\n---\n\n![Butter Chicken Masala](/pix/butter-chicken-masala.webp)\n\nButter chicken Masala is one of India's most popular chicken recipes, a mild curry with a tomato-onion-cream base and boneless chicken pieces cooked in it to perfection.\n\n- ⏲️ Prep time: 30 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 2\n\n## Ingredients\n\n- Boneless Chicken 1/2lb, cubed\n- Butter Melted 2 tbsp\n- Onions 2 medium-sized, minced\n- Tomato 2 medium-sized, pureed\n- Oil 2 tbsp\n- Lemon juice 1 tbsp\n- Garlic cloves 3, minced/crushed\n- Ginger 1tbsp, minced/paste\n- [Garam Masala](/garam-masala)/Chicken Masala 1 tbsp\n- Cream 4tbsp (or cashew paste)\n- Chilli Powder 1 tbsp\n- Turmeric powder 1/4 tbsp\n- Crushed fenugreek leaves 1/4 tbsp\n- 1 small bunch of coriander leaves / cilantro, for ganish\n\n## Directions\n\n1. In a bowl, mix chicken with salt, pepper, 1/2 tbsp ginger-garlic paste, 1/2 tbsp chili powder, turmeric powder, and lemon juice for the chicken marinade; let marinate for an hour.\n2. Roast the marinated chicken in an oven at medium temperature for 5 to 10 minutes. The chicken should be three-fourths done.\n3. Heat butter in a pan. Fry the onions until it turns translucent.\n4. Add garlic-ginger and sauté for a minute, then add garam masala. Cook for a few seconds making sure not to burn the paste.\n5. Add tomato puree, salt, and chili powder. Let simmer for about 5 minutes, occasionally stirring until sauce thickens and becomes a deep brown-red color.\n6. Add the marinated chicken, butter, fresh cream, the crushed fenugreek leaves, and sliced green chilies. Cook for an additional 5 to 10 min until the chicken is cooked.\n7. Adjust salt, garnish with the coriander leaves. Serve over rice or naan.\n"
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "30 min",
+          "minutes": 30
+        },
+        "cook": {
+          "raw": "30 min",
+          "minutes": 30
+        },
+        "servings": {
+          "raw": "2",
+          "count": 2
+        },
+        "sourcePrepPlusCookMinutes": 60,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "sourceMethod": [
+        {
+          "sourceLineNumbers": [
+            35
+          ],
+          "text": "In a bowl, mix chicken with salt, pepper, 1/2 tbsp ginger-garlic paste, 1/2 tbsp chili powder, turmeric powder, and lemon juice for the chicken marinade; let marinate for an hour."
+        },
+        {
+          "sourceLineNumbers": [
+            36
+          ],
+          "text": "Roast the marinated chicken in an oven at medium temperature for 5 to 10 minutes. The chicken should be three-fourths done."
+        },
+        {
+          "sourceLineNumbers": [
+            37
+          ],
+          "text": "Heat butter in a pan. Fry the onions until it turns translucent."
+        },
+        {
+          "sourceLineNumbers": [
+            38
+          ],
+          "text": "Add garlic-ginger and sauté for a minute, then add garam masala. Cook for a few seconds making sure not to burn the paste."
+        },
+        {
+          "sourceLineNumbers": [
+            39
+          ],
+          "text": "Add tomato puree, salt, and chili powder. Let simmer for about 5 minutes, occasionally stirring until sauce thickens and becomes a deep brown-red color."
+        },
+        {
+          "sourceLineNumbers": [
+            40
+          ],
+          "text": "Add the marinated chicken, butter, fresh cream, the crushed fenugreek leaves, and sliced green chilies. Cook for an additional 5 to 10 min until the chicken is cooked."
+        },
+        {
+          "sourceLineNumbers": [
+            41
+          ],
+          "text": "Adjust salt, garnish with the coriander leaves. Serve over rice or naan."
+        }
+      ]
+    },
+    {
+      "candidateId": "based-cooking:ardei-umpluti",
+      "decision": "held",
+      "reason": "الطريقة تصف خبزًا ساعة ونصف ثم 45 دقيقة أخرى، لكن metadata المنشور 10+40=50 دقيقة. لا يمكن تقديم هذه البيانات كتخطيط زمني كامل. كما أن الكميات لكل شخص والوصف يذكر الأرز دون ظهوره في قائمة المكونات أو الطريقة.",
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/ardei-umpluti.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/ardei-umpluti.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ardei-umpluti.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "7b749192a4aa357d1f1f387c203bca493e76780e1af6ab479e40dfca381de508",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/ardei-umpluti.json",
+        "snapshotSha256": "95146b1197ffe83a0641b9c9829966002e36d729e0795a67dfa46f513fca2991",
+        "fullSavedSourceText": "---\ntitle: \"Ardei umpluti with meat\"\ntags: ['romanian', 'peppers', 'baking', 'meat']\ndate: 2022-07-11\nauthor: miraunpajaro\n---\n\n![Ardei umpluti](/pix/ardei-umpluti.webp)\n\nFarcies peppers with rice.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 40 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 2 yellow peppers per person\n- Around 120g of ground beef meat per person\n- 1 or 2 onions\n- Condiments of your choice: Parsley, origan or cumin\n- Olive oil\n- Salt and pepper\n- Tomato sauce\n- Bechamel (optional)\n\n## Directions\n\n1. Heat the oven to 200C.\n2. Empty the peppers and remove the seeds.\n3. Slice the top to the peppers and place them in the oven tray, you may need to slice the bottom a litte bit to make them stand together. (Hint: Put the peppers inside a pan over the oven tray).\n4. Cover the peppers with aluminum and cook in the oven for 1h30min.\n5. Meanwhile, saute the onions, garlic and last, the meat.\n6. Mix with fresh tomato soup.\n7. When the peppers are finished, remove the aluminum, fill the peppers with the mix and cook in the oven for another 45 minutes.\n8. Optionally: (Not traditional!) Add the bechamel a couple of minutes before the time is up and finish cooking in the oven.\n9. Optionally: Instead of bechamel you can use sour cream.\n10. Enjoy.\n"
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "10 min",
+          "minutes": 10
+        },
+        "cook": {
+          "raw": "40 min",
+          "minutes": 40
+        },
+        "servings": {
+          "raw": "4",
+          "count": 4
+        },
+        "sourcePrepPlusCookMinutes": 50,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceMethod": [
+        {
+          "sourceLineNumbers": [
+            29
+          ],
+          "text": "Heat the oven to 200C."
+        },
+        {
+          "sourceLineNumbers": [
+            30
+          ],
+          "text": "Empty the peppers and remove the seeds."
+        },
+        {
+          "sourceLineNumbers": [
+            31
+          ],
+          "text": "Slice the top to the peppers and place them in the oven tray, you may need to slice the bottom a litte bit to make them stand together. (Hint: Put the peppers inside a pan over the oven tray)."
+        },
+        {
+          "sourceLineNumbers": [
+            32
+          ],
+          "text": "Cover the peppers with aluminum and cook in the oven for 1h30min."
+        },
+        {
+          "sourceLineNumbers": [
+            33
+          ],
+          "text": "Meanwhile, saute the onions, garlic and last, the meat."
+        },
+        {
+          "sourceLineNumbers": [
+            34
+          ],
+          "text": "Mix with fresh tomato soup."
+        },
+        {
+          "sourceLineNumbers": [
+            35
+          ],
+          "text": "When the peppers are finished, remove the aluminum, fill the peppers with the mix and cook in the oven for another 45 minutes."
+        },
+        {
+          "sourceLineNumbers": [
+            36
+          ],
+          "text": "Optionally: (Not traditional!) Add the bechamel a couple of minutes before the time is up and finish cooking in the oven."
+        },
+        {
+          "sourceLineNumbers": [
+            37
+          ],
+          "text": "Optionally: Instead of bechamel you can use sour cream."
+        },
+        {
+          "sourceLineNumbers": [
+            38
+          ],
+          "text": "Enjoy."
+        }
+      ]
+    },
+    {
+      "candidateId": "based-cooking:yorkshire-puddings",
+      "decision": "held",
+      "reason": "الصفحة المحفوظة تنسب النشر الأصلي إلى Good Food/BBC. ترخيص هذا المصدر الخارجي غير مراجع، لذلك أوقفنا إدراج الوصفة إلى حين حسمه.",
+      "source": {
+        "recordId": "based-cooking:9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2:content/yorkshire-puddings.md",
+        "sourceId": "based-cooking",
+        "revision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+        "revisionTimestamp": "2026-09-09T08:51:41+02:00",
+        "sourcePath": "content/yorkshire-puddings.md",
+        "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/yorkshire-puddings.md",
+        "retrievedAt": "2026-10-16T05:21:12.262Z",
+        "sourceSha256": "01ec25ce222f61571f70b8ce0d4ca6d8c66de93b15ffe98da7fd8b6114d26f11",
+        "snapshotFile": "data/recipes/curated-local/based-cooking-20261015/source-snapshots/yorkshire-puddings.json",
+        "snapshotSha256": "6c3b1e553c2d1f942699457e9e11d782d953072df18ba8f1c02869611438e5fe",
+        "fullSavedSourceText": "---\ntitle: \"Yorkshire Puddings\"\ndate: 2021-04-20\ntags: ['english', 'side']\nauthor: siggines\n---\n\n![Yorkshire Puddings](/pix/yorkshire-puddings.webp)\n\nBasically the northern England equivalent of the french pancake ( a means to make use of extra flour when you didn't have enough for bread ). They go well with Sunday Roasts.\nPuddings may be preserved in freezer for up to a month.\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 20 min\n- 🍽️ Servings: 2\n\n## Ingredients\n\n- 140g flour\n- 4 eggs\n- 200ml milk\n- sunflower oil\n\n## Directions\n\n1. Preheat oven to 230°C / gas mark 8.\n2. Drizzle oil into 24 'cupcake tin' slots. (The pans you make cupcakes in). Heat in oven.\n3. Pour flour into bowl.\n4. Whisk eggs, add to bowl.\n5. Add milk to bowl in small amounts, beating/whisking after each addition. Until there are no lumps in the batter. You may season with salt & pepper.\n6. Tip batter into a jug so that you may pour into the cupcake pan slots evenly and carefully.\n7. Bake undisturbed ( opening oven will impede the rising ), until the puddings have puffed up and browned.\n\nOriginally published on [Good Food](https://www.bbcgoodfood.com/recipes/best-yorkshire-puddings).\n"
+      },
+      "sourceTiming": {
+        "prep": {
+          "raw": "5 min",
+          "minutes": 5
+        },
+        "cook": {
+          "raw": "20 min",
+          "minutes": 20
+        },
+        "servings": {
+          "raw": "2",
+          "count": 2
+        },
+        "sourcePrepPlusCookMinutes": 25,
+        "durationSemantics": "Published prep + cook metadata from source; aggregate candidate duration, not an inferred per-step duration."
+      },
+      "rights": {
+        "policy": {
+          "id": "based-cooking-public-domain-declaration",
+          "name": "Publisher public-domain declaration; repository Unlicense",
+          "evidenceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+          "policyStatus": "first-party-all-content-declaration",
+          "pageExceptionStatus": "not-reviewed-per-page",
+          "readmeSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+          "licenseTextSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "attribution": "Retain repository commit/path and contributor metadata; no endorsement or runtime approval"
+        },
+        "localLicenseFile": "data/recipes/curated-local/based-cooking-20261015/LICENSE.source.md",
+        "localLicenseFileSha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+        "localRepositoryLicenseEvidenceFile": "data/recipes/curated-local/based-cooking-20261015/README.source.md",
+        "localRepositoryLicenseEvidenceSha256": "207a6e49834bf21011f98d50b895ecb45233102de7e6fc0d391cc70560b68923",
+        "pageSpecificScan": {
+          "result": "no-explicit-copyright-permission-or-reprint-exception-marker-found-in-saved-page-text",
+          "markers": []
+        }
+      },
+      "sourceMethod": [
+        {
+          "sourceLineNumbers": [
+            26
+          ],
+          "text": "Preheat oven to 230°C / gas mark 8."
+        },
+        {
+          "sourceLineNumbers": [
+            27
+          ],
+          "text": "Drizzle oil into 24 'cupcake tin' slots. (The pans you make cupcakes in). Heat in oven."
+        },
+        {
+          "sourceLineNumbers": [
+            28
+          ],
+          "text": "Pour flour into bowl."
+        },
+        {
+          "sourceLineNumbers": [
+            29
+          ],
+          "text": "Whisk eggs, add to bowl."
+        },
+        {
+          "sourceLineNumbers": [
+            30
+          ],
+          "text": "Add milk to bowl in small amounts, beating/whisking after each addition. Until there are no lumps in the batter. You may season with salt & pepper."
+        },
+        {
+          "sourceLineNumbers": [
+            31
+          ],
+          "text": "Tip batter into a jug so that you may pour into the cupcake pan slots evenly and carefully."
+        },
+        {
+          "sourceLineNumbers": [
+            32
+          ],
+          "text": "Bake undisturbed ( opening oven will impede the rising ), until the puddings have puffed up and browned."
+        },
+        {
+          "sourceLineNumbers": [
+            34
+          ],
+          "text": "Originally published on [Good Food](https://www.bbcgoodfood.com/recipes/best-yorkshire-puddings)."
+        }
+      ]
+    }
+  ]
+}

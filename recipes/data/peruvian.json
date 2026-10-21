@@ -1,0 +1,117 @@
+{
+  "cuisine": "بيروفي",
+  "cuisineSlug": "peruvian",
+  "version": "1.1.0",
+  "recipes": [
+    {
+      "id": "bc-arroz-chaufa",
+      "name": "أروز تشاوفا",
+      "nameEn": "Arroz Chaufa",
+      "cuisine": "بيروفي",
+      "category": "طبق رئيسي",
+      "description": "طبق بيروفي صيني من الأرز والدجاج والبيض وصلصة الصويا.",
+      "servings": 4,
+      "prepTime": 40,
+      "cookTime": 10,
+      "totalTime": 50,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-arroz-chaufa-ing-1",
+          "name": "أرز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-2",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-3",
+          "name": "فلفل حلو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-4",
+          "name": "دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-5",
+          "name": "بيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-6",
+          "name": "صلصة صويا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-7",
+          "name": "بصل أخضر ويلزي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "لم يحدد المصدر مقدارًا"
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-8",
+          "name": "لحم مقدد (بايكون)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "المقدار غير محدد؛ يلزم اختيار صريح",
+          "optional": true,
+          "note": "إضافة اختيارية في خطوة المصدر6، بلا مقدار."
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-9",
+          "name": "زيت سمسم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "المقدار غير محدد؛ يلزم اختيار صريح",
+          "optional": true,
+          "note": "إضافة اختيارية في خطوة المصدر6، بلا مقدار."
+        },
+        {
+          "id": "bc-arroz-chaufa-ing-10",
+          "name": "سكر",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": true,
+          "note": "إضافة مشروطة بالطعم المالح في خطوة المصدر7؛ لا تعني خفض الصوديوم."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. قطعي الدجاج واقليه، ولا تنسي الملح.\n2. اطهي البيض مخفوقًا ولا تنسي الملح.\n3. اطهي الأرز؛ ويكون أفضل إن كان من اليوم السابق، ويفضل دون ملح.\n4. قطعي البصل الأخضر والفلفل الحلو إلى مكعبات صغيرة.\n5. اخلطي كل شيء على نار هادئة مع إضافة صلصة الصويا.\n6. اختياريًا أضيفي لحم الخنزير المقدد وزيت السمسم.\n7. إذا كان المزيج مالحًا، يمكنك تقليل الملوحة بإضافة ملعقة صغيرة من السكر، خصوصًا إذا طهيت الأرز بالملح.\nإضافة سلامة من USDA FSIS: قِس حرارة الدجاج بترمومتر طعام، وتأكد من بلوغ داخله 73.9°م (165°ف)؛ المدة أو لون السطح وحدهما لا يثبتان الوصول إلى هذه الحرارة.",
+          "duration": 50,
+          "passive": false,
+          "tip": "المدة الإجمالية 50 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/arroz-chaufa.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/arroz-chaufa.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. الوصفة موسومة Peruvian وChinese؛ المطبخ الأساسي بيروفي، والوسم الصيني محفوظ في المصدر. لا توجد مقادير للمكونات في المصدر لذلك بقيت مجهولة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    }
+  ]
+}

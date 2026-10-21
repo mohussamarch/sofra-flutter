@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-10-21T08:39:16.400Z",
+  "target": 1000,
+  "batch": 10,
+  "skipAccepted": true,
+  "accepted": 1000,
+  "remaining": 0,
+  "counts": {
+    "totalRows": 24707,
+    "foodistaUrls": 10822,
+    "complete": 10591,
+    "incomplete": 229,
+    "noLicense": 0,
+    "ingredientCoverageFailures": 2,
+    "methodCoverageFailures": 0,
+    "qualityRejected": 573,
+    "rightsExcluded": 214,
+    "rejectedByReason": {
+      "link-ad-or-placeholder-method": 170,
+      "explicit-third-party-source-attribution": 172,
+      "no-preparation-action": 150,
+      "named-third-party-recipe-source": 14,
+      "named-person-recipe-attribution": 20,
+      "article-or-blog-title": 3,
+      "baked-title-missing-cooking-or-setting-action": 36,
+      "explicit-copyright-or-permission-reservation": 8
+    },
+    "repeatedNumberingReview": 23,
+    "duplicates": 9018,
+    "accepted": 1000
+  },
+  "requests": [
+    {
+      "shard": "00000_foodista.jsonl.gz",
+      "requestUrl": "https://huggingface.co/datasets/common-pile/foodista/resolve/4fd174745182885bea01d47c8ba71b1946375898/v0/documents/00000_foodista.jsonl.gz",
+      "inputMode": "local-cache",
+      "originalFetchStatus": 200,
+      "startedAt": "2026-10-21T08:39:14.067Z",
+      "finishedAt": "2026-10-21T08:39:14.209Z",
+      "compressedBytes": 6760459,
+      "compressedSha256": "014757f2b949d9dd679dc7cfb061db250f41c6e4fe9403e97ac549d69dffd4c5",
+      "rows": 13885,
+      "accepted": 0
+    },
+    {
+      "shard": "00003_foodista.jsonl.gz",
+      "requestUrl": "https://huggingface.co/datasets/common-pile/foodista/resolve/4fd174745182885bea01d47c8ba71b1946375898/v0/documents/00003_foodista.jsonl.gz",
+      "inputMode": "local-cache",
+      "originalFetchStatus": 200,
+      "startedAt": "2026-10-21T08:39:14.219Z",
+      "finishedAt": "2026-10-21T08:39:15.994Z",
+      "compressedBytes": 10040835,
+      "compressedSha256": "9706998001be7270ea61b31e8808b68f36521088d9540b97447d68994f5b2e43",
+      "rows": 10822,
+      "accepted": 1000
+    }
+  ],
+  "requestHistory": [
+    {
+      "phase": "initial-assessment",
+      "knownLogicalRequests": 6,
+      "detail": "00000 twice, 00004 three times, HF revision API once; statuses not all retained"
+    },
+    {
+      "phase": "first-bulk-pass",
+      "knownHttp200": 4,
+      "detail": "00000-00003; fifth-shard outcome unknown; one request may have been attempted and is uncheckpointed"
+    },
+    {
+      "phase": "cache-recovery",
+      "knownHttp200": 2,
+      "detail": "00000 and 00003 saved before parsing"
+    },
+    {
+      "phase": "direct-source-check",
+      "knownLogicalRequests": 1,
+      "detail": "Foodista page returned a Vercel checkpoint; no bypass or retry"
+    }
+  ],
+  "knownLogicalRequestCount": 13,
+  "unknownRequestAttemptCount": 1,
+  "packPath": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json",
+  "packSha256": "387761ff22aff93475dade6c2ea00eb8ad23d1fba17a7e77e8afd76fc19d72ea",
+  "snapshotCount": 1000,
+  "sourceRevision": "4fd174745182885bea01d47c8ba71b1946375898",
+  "sourceRevisionTimestamp": null,
+  "sourceShardHashes": {
+    "00000_foodista.jsonl.gz": "014757f2b949d9dd679dc7cfb061db250f41c6e4fe9403e97ac549d69dffd4c5",
+    "00003_foodista.jsonl.gz": "9706998001be7270ea61b31e8808b68f36521088d9540b97447d68994f5b2e43"
+  },
+  "stopPolicy": "No retries; stop on access/status failure."
+}

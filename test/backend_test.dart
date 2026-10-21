@@ -47,10 +47,10 @@ void main() {
   final now = DateTime(2026, 10, 12, 10);
 
   test(
-    'all 54 real assets parse, search and preserve scaling parity',
+    'all 65 real assets parse, search and preserve scaling parity',
     () async {
       final repo = repository(), all = await repo.loadAll();
-      expect(all.length, 54);
+      expect(all.length, 65);
       expect((await repo.search(cuisine: 'سعودي')).length, 14);
       expect((await repo.search(query: 'كُشري')).single['id'], 'eg-koshari');
       expect(roundRecipeAmount(.25, 'كوب'), .25);
@@ -72,9 +72,9 @@ void main() {
   );
 
   test(
-    'catalog uses bundled Flutter assets and caches only four cuisine files',
+    'catalog uses bundled Flutter assets and caches cuisine files by name',
     () async {
-      expect((await RecipeRepository().loadAll()).length, 54);
+      expect((await RecipeRepository().loadAll()).length, 65);
       final reads = <String, int>{};
       final repo = RecipeRepository(
         read: (path) {

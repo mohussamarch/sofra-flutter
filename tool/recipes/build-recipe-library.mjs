@@ -35,6 +35,8 @@ const files=[
  ['creator-website','data/recipes/arabic-youtube/modern-expansion-20261021-asian/recipes.json'],
  ['creator-website','data/recipes/arabic-youtube/modern-expansion-20261021-gulf/recipes.json'],
  ['creator-website','data/recipes/arabic-youtube/modern-expansion-20261021-balkan-tibetan/recipes.json'],
+ ['curated-local','data/recipes/curated-local/foodista-scale-20261021b/normalized-recipes.json'],
+ ['creator-website','data/recipes/arabic-youtube/manal-scale-20261021b/finalpackrecipes.json'],
 ];
 const sha=v=>createHash('sha256').update(v).digest('hex');
 const need=(v,m)=>{if(!v)throw Error(m);};

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-10-21T08:42:35.074Z",
+  "sourceRevision": "4fd174745182885bea01d47c8ba71b1946375898",
+  "externalBaseline": {
+    "packs": 28,
+    "records": 5648,
+    "filesHashChecked": 28,
+    "historicalRecordsBeforeSeparateManalPack": 5545,
+    "manalRecords": 103,
+    "externalInternalContentDuplicates": 1,
+    "externalRepeatedCanonicalUrls": 5062,
+    "newUrlOrContentCollisions": 0
+  },
+  "acceptedFoodista": 10000,
+  "packs": [
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "0ed49edd177ab2dfbcf8de777b6bb412959b6415c2de9b183f5f2bca46d5aaf8",
+      "ingredientLines": 9918,
+      "methodBlocks": 1041
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0002/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "cf2a473bb4d68e28c222bde2598fc3038314d761233c47c5d6c84da6b5631dfa",
+      "ingredientLines": 9818,
+      "methodBlocks": 1023
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0003/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "fa302021636880c3a8201fb5c392b9cca49184eaa829abecaa52e0077fdd0724",
+      "ingredientLines": 9620,
+      "methodBlocks": 1033
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0004/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "30da33356986ce0f7f01982c311f6b3f3cf8d30889b022e1ec62691bef62b767",
+      "ingredientLines": 9625,
+      "methodBlocks": 1021
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "fd1204ee65ff3a93d11dbb66b3b44410215d4203210da06c93eeba042b8c21c4",
+      "ingredientLines": 9594,
+      "methodBlocks": 1050
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0006/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "fc574248a992d2b4c2a2d6d77e5cce13ba1bd98c441b244dad2b410064bab0a7",
+      "ingredientLines": 9788,
+      "methodBlocks": 1015
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0007/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "367ceed7ccd150461374b0123158bb762d1fd6f40348973708dbc2a91af58a2b",
+      "ingredientLines": 9856,
+      "methodBlocks": 1025
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "a5a1a44480b7fa55080d52ca761c21ebabfd1af2d9895ab7a41af2ab20045c95",
+      "ingredientLines": 9642,
+      "methodBlocks": 1026
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0009/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "906aa2354c5fcbe8430cc0cfadf79257d6cc93e809330978c347bffff435a350",
+      "ingredientLines": 9626,
+      "methodBlocks": 1018
+    },
+    {
+      "path": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json",
+      "records": 1000,
+      "sha256": "387761ff22aff93475dade6c2ea00eb8ad23d1fba17a7e77e8afd76fc19d72ea",
+      "ingredientLines": 9949,
+      "methodBlocks": 1015
+    }
+  ],
+  "ingredientLines": 97436,
+  "methodBlocks": 10267,
+  "snapshots": {
+    "referenced": 10000,
+    "onDisk": 10000,
+    "stale": 0,
+    "hashValid": 10000
+  },
+  "coverage": {
+    "acceptedExactSections": 10000,
+    "flaggedPriorRowsRechecked": 18,
+    "flaggedRowsPassingCoverage": 18
+  },
+  "rightsCueConflictsInAccepted": 0,
+  "normalizedContentDuplicatesWithinNewPacks": 0,
+  "canonicalUrlDuplicatesWithinNewPacks": 0,
+  "sourceCreatedDateRange": {
+    "earliest": "2009-11-30T12:18:00",
+    "latest": "2024-04-11T11:57:00"
+  },
+  "firstPack": {
+    "ingredientLines": 9918,
+    "methodBlocks": 1041
+  },
+  "rejectionLedger": {
+    "entries": 822,
+    "acceptedRecordIdsPresent": 0
+  },
+  "runtimeReady": 0,
+  "nutritionFilled": 0,
+  "sourceLanguage": "English, not translated",
+  "requests": {
+    "networkDuringFinalRegeneration": 0,
+    "cachedShardFiles": [
+      "00000_foodista.jsonl.gz",
+      "00003_foodista.jsonl.gz"
+    ],
+    "knownPriorLogicalRequests": 13,
+    "unknownPriorAttemptCount": 1
+  }
+}

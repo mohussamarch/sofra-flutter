@@ -16,29 +16,32 @@ void main() {
     debugPrint(
       'SOURCE_LIBRARY_AUDIT ${jsonEncode({'recipes': audit.recipeCount, 'ingredients': audit.ingredientCount, 'quantityReviewLines': audit.quantityReviewLineCount, 'missingAmount': audit.missingAmountCount, 'missingUnit': audit.missingUnitCount, 'unitNeedsReview': audit.unitNeedsReviewCount, 'supplemental': audit.supplementalCount, 'optional': audit.optionalCount, 'runtimeApproved': audit.runtimeApprovedRecipes})}',
     );
-    expect(entries, hasLength(5545));
+    expect(entries, hasLength(6648));
     expect(entries.where((entry) => entry.runtimeReady), isEmpty);
     expect(entries.every((entry) => entry.nutrition == null), isTrue);
     final sourceLanguageEntries = entries
         .where(
           (entry) =>
-              entry.sourceRecord['translationStatus'] == 'not-translated',
+              (entry.sourceRecord['translationStatus'] ??
+                  (entry.sourceRecord['provenance']
+                      as Map?)?['translationStatus']) ==
+              'not-translated',
         )
         .toList();
-    expect(sourceLanguageEntries, hasLength(5440));
+    expect(sourceLanguageEntries, hasLength(6440));
     expect(
       sourceLanguageEntries.fold<int>(
         0,
         (n, entry) => n + entry.ingredients.length,
       ),
-      45218,
+      55136,
     );
     expect(
       sourceLanguageEntries.fold<int>(
         0,
         (n, entry) => n + entry.stepsArabic.length,
       ),
-      35947,
+      36988,
     );
     expect(
       sourceLanguageEntries.every(
@@ -55,10 +58,10 @@ void main() {
     expect(await repository.search('نان'), isNotEmpty);
     expect(await repository.search('حريرة'), isNotEmpty);
     expect(await repository.filterByCuisine('Moroccan'), hasLength(15));
-    expect((await RecipeRepository().index), hasLength(54));
+    expect((await RecipeRepository().index), hasLength(65));
     expect(
       entries.where((entry) => entry.sourceSnapshot != null),
-      hasLength(5504),
+      hasLength(6504),
     );
     final frenchRecovery = entries
         .where((entry) => entry.sourceRecord['sourceTextRecovery'] != null)

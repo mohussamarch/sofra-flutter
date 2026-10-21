@@ -1,0 +1,107 @@
+{
+  "cuisine": "مجري",
+  "cuisineSlug": "hungarian",
+  "version": "1.1.0",
+  "recipes": [
+    {
+      "id": "bc-chicken-paprikash",
+      "name": "دجاج بابريكاش",
+      "nameEn": "Chicken Paprikash",
+      "cuisine": "مجري",
+      "category": "طبق رئيسي",
+      "description": "يخنة دجاج مجرية بالبابريكا والبصل والمرق، مع كريمة حامضة اختيارية.",
+      "servings": 8,
+      "prepTime": 10,
+      "cookTime": 85,
+      "totalTime": 95,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc-chicken-paprikash-ing-1",
+          "name": "أفخاذ دجاج بالعظم والجلد",
+          "amount": 8,
+          "unit": "فخذ"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-2",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية غير محددة بوضوح في المصدر",
+          "display": "كما ورد: salt to taste"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-3",
+          "name": "فلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "label": "الكمية غير محددة بوضوح في المصدر",
+          "display": "كما ورد: pepper to taste"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-4",
+          "name": "مرق دجاج أو لحم بقري",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-5",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-6",
+          "name": "بصل",
+          "amount": 2,
+          "unit": "بصلة متوسطة"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-7",
+          "name": "ثوم مطحون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-8",
+          "name": "معجون طماطم",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-9",
+          "name": "بابريكا مجرية أو عادية",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-10",
+          "name": "فلفل كايين",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "bc-chicken-paprikash-ing-11",
+          "name": "كريمة حامضة",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "1. جففي أفخاذ الدجاج النيئة بالمناشف الورقية للحصول على جلد مقرمش، ثم تبّليها بالملح والفلفل.\n2. سخّني مقلاة ثقيلة عميقة على نار عالية مع قليل من زيت الزيتون.\n3. ضعي الأفخاذ والجلد إلى الأسفل. حمّريها خمس دقائق على كل جانب، ثم أخرجيها جانبًا بعد أن تتحمر.\n4. أضيفي البصل المفروم إلى دهن الدجاج وصلصته واطهيه حتى يصبح ذهبيًا.\n5. أضيفي الثوم المطحون ومعجون الطماطم وحرّكي خمس دقائق أخرى لتكوين قاعدة طماطم كثيفة.\n6. أضيفي البابريكا المجرية وحرّكي دقيقة أخرى.\n7. أضيفي مرق الدجاج أو اللحم واتركيه يصل إلى حرارة متوسطة.\n8. خففي النار إلى متوسطة منخفضة وأعيدي الأفخاذ من الطبق إلى المقلاة مع دهن الدجاج.\n9. غطي المقلاة واتركي الطبق يطهى على نار هادئة 45 إلى 60 دقيقة.\n10. اختبري طراوة الدجاج بالشوكة، ثم أضيفي الملح والفلفل حسب الرغبة.\n11. قدمي الدجاج مع رشة اختيارية من فلفل كايين وخبز كثيف. يمكن تقليب الكريمة الحامضة في الصلصة أو إضافتها عند التقديم، ثم تزيينه بالأعشاب.\nإضافة سلامة من USDA FSIS: قِس حرارة الدجاج بترمومتر طعام، وتأكد من بلوغ داخله 73.9°م (165°ف)؛ المدة أو لون السطح وحدهما لا يثبتان الوصول إلى هذه الحرارة.",
+          "duration": 95,
+          "passive": false,
+          "tip": "المدة الإجمالية 95 دقيقة هي مجموع وقت التحضير والطهي المنشورين؛ ليست مدة مفترضة لكل مرحلة."
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-paprikash.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/chicken-paprikash.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    }
+  ]
+}
