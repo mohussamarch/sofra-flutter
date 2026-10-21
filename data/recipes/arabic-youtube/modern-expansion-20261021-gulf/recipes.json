@@ -1,0 +1,1698 @@
+{
+  "schemaVersion": 1,
+  "batchId": "modern-creator-oman-dine-with-dina-20261021",
+  "retrievedAt": "2026-10-21",
+  "quotaAtStart": {
+    "primaryUsedPercent": 9,
+    "weeklyUsedPercent": 1,
+    "ordinaryUsageAllowed": true,
+    "stopThresholdPercent": 98
+  },
+  "quotaChecks": [
+    {
+      "phase": "initial extraction",
+      "primaryUsedPercent": 9,
+      "weeklyUsedPercent": 1,
+      "ordinaryUsageAllowed": true
+    },
+    {
+      "phase": "remaining-target continuation",
+      "primaryUsedPercent": 21,
+      "weeklyUsedPercent": 3,
+      "ordinaryUsageAllowed": true
+    }
+  ],
+  "requestCap": 24,
+  "underlyingRequestCount": 24,
+  "sourcePolicy": {
+    "sourceKind": "creator-website",
+    "youtubeDerived": false,
+    "sourceApproval": null,
+    "reuseRights": null,
+    "clinicalApproval": null,
+    "nutritionApproval": null,
+    "mediaDownloaded": false,
+    "transcriptExtraction": false,
+    "httpBodyHash": null,
+    "limitations": "Two complete Omani and two complete Yemeni creator records from public primary recipe pages. Use is limited to research facts and concise original method summaries; no reuse license or explicit bulk-crawl permission was established. Compact evidence extracts preserve exact displayed ingredient lines and step-index coverage, not raw HTML or expressive method text. Dine with Dina's Tuna Kebab page failed direct open and was not extracted. Sifra Foods Oxtail page timed out directly; its complete ingredients and 12 directions were present in the primary-site indexed result."
+  },
+  "creator": {
+    "creatorId": "dine-with-dina-dina-macki",
+    "name": "Dina Macki",
+    "officialSite": "https://dinewithdina.co.uk/",
+    "identityStatus": "primary creator website; author bio and recipe pages identify Dina Macki",
+    "channelUrl": null,
+    "identityEvidence": "Official About page identifies Dina Macki as an author, food presenter, writer, and recipe developer; it says she was born and raised in the UK to an Omani and Zanzibari family. Individual recipe pages carry the Dine with Dina identity and explicit Omani labels."
+  },
+  "additionalCreators": [
+    {
+      "creatorId": "sifra-foods-amjaad-al-hussain",
+      "name": "Amjaad Al-Hussain",
+      "officialSite": "https://www.sifrafoods.com/",
+      "identityStatus": "primary creator website; About page identifies Amjaad as creator and attributes documented family recipes to Yemeni culture",
+      "channelUrl": null,
+      "identityEvidence": "Sifra Foods About page says Amjaad Al-Hussain documented her family’s Yemeni dishes and created Sifra Foods to preserve Yemeni culture; both selected primary-site recipe titles identify Yemeni cuisine."
+    }
+  ],
+  "sourceSearchLog": [
+    {
+      "request": 1,
+      "underlyingRequestIndices": [
+        1,
+        2,
+        3
+      ],
+      "queries": [
+        "DineWithDina Omani recipes Oman author recipes",
+        "site:dinewithdina.com Omani recipe",
+        "DineWithDina Omani recipe ingredients"
+      ],
+      "outcome": "Found the primary Dine with Dina domain, author Dina Macki, and three recipe-index items explicitly tagged Omani; recipe excerpts from third-party pages were excluded."
+    },
+    {
+      "request": 2,
+      "underlyingRequestIndices": [
+        4
+      ],
+      "targets": [
+        "https://dinewithdina.co.uk/"
+      ],
+      "outcome": "Official home page opened; identified creator and showed three recipe titles with Omani cuisine labels."
+    },
+    {
+      "request": 3,
+      "underlyingRequestIndices": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "targets": [
+        "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+        "https://dinewithdina.co.uk/recipes/tuna-kebab-dried-lime-curr/",
+        "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+        "https://dinewithdina.co.uk/recipes/"
+      ],
+      "outcome": "Tuna stew and Paplo direct pages opened with complete ingredient and method sections; Tuna Kebab direct page failed cache miss. Recipe index opened and explicitly offered Omani among cuisine labels."
+    },
+    {
+      "request": 4,
+      "underlyingRequestIndices": [
+        9
+      ],
+      "queries": [
+        "site:dinewithdina.co.uk/recipes/ Omani Dina Macki recipe"
+      ],
+      "outcome": "Confirmed the creator recipe index and Omani filter; no additional direct Omani record surfaced."
+    },
+    {
+      "request": 5,
+      "underlyingRequestIndices": [
+        10,
+        11
+      ],
+      "targets": [
+        "https://dinewithdina.co.uk/recipes/tuna-kebab-dried-lime-curr/"
+      ],
+      "queries": [
+        "site:dinewithdina.co.uk/recipes/tuna-kebab-dried-lime-curr/ ingredients method"
+      ],
+      "outcome": "Second direct open failed cache miss; search returned the home/index pages, not recipe body. No record accepted."
+    },
+    {
+      "request": 6,
+      "underlyingRequestIndices": [
+        12,
+        13
+      ],
+      "queries": [
+        "site:dinewithdina.co.uk/recipes/tuna-kebab-dried-lime-curr/ Ingredients Method",
+        "site:dinewithdina.co.uk/recipes/ Omani Dina Macki ingredients recipe"
+      ],
+      "outcome": "Search returned index/home/about pages only; no additional complete primary recipe body."
+    },
+    {
+      "request": 7,
+      "underlyingRequestIndices": [
+        14
+      ],
+      "targets": [
+        "https://dinewithdina.co.uk/recipes/"
+      ],
+      "outcome": "The observed cuisine-filter link returned the same index page without recipe cards."
+    },
+    {
+      "request": 8,
+      "underlyingRequestIndices": [
+        15,
+        16,
+        17
+      ],
+      "queries": [
+        "site:dinewithdina.co.uk/recipes/ Omani Ingredients",
+        "site:dinewithdina.co.uk/recipes/ Omani fish recipe Dina",
+        "site:dinewithdina.co.uk/recipes/ Omani rice recipe Dina Macki"
+      ],
+      "outcome": "Only the previously observed three Omani recipes surfaced; no additional complete primary recipe was found."
+    },
+    {
+      "request": 9,
+      "underlyingRequestIndices": [
+        18,
+        19
+      ],
+      "queries": [
+        "Yemeni chef recipe website Yemeni cuisine ingredients method official recipes",
+        "site:*.com Yemen cuisine recipes Yemeni chef Ingredients recipe site"
+      ],
+      "outcome": "Found Sifra Foods as a creator-owned Yemeni cooking source; other leads were not used."
+    },
+    {
+      "request": 10,
+      "underlyingRequestIndices": [
+        20
+      ],
+      "targets": [
+        "https://www.sifrafoods.com/"
+      ],
+      "outcome": "Sifra Foods public home page opened and linked its recipe and about sections."
+    },
+    {
+      "request": 11,
+      "underlyingRequestIndices": [
+        21,
+        22
+      ],
+      "targets": [
+        "https://www.sifrafoods.com/about",
+        "https://www.sifrafoods.com/blog"
+      ],
+      "outcome": "About page attributes Yemeni family recipe documentation to Amjaad Al-Hussain; recipe index linked Oxtail Yemeni Marag and a Yemeni Classics category."
+    },
+    {
+      "request": 12,
+      "underlyingRequestIndices": [
+        23
+      ],
+      "targets": [
+        "https://www.sifrafoods.com/post/oxtail-yemeni-marag"
+      ],
+      "outcome": "Direct open timed out; no block was bypassed."
+    },
+    {
+      "request": 13,
+      "underlyingRequestIndices": [
+        24
+      ],
+      "queries": [
+        "site:sifrafoods.com/post/oxtail-yemeni-marag ingredients method"
+      ],
+      "outcome": "Primary-site indexed extract exposed complete ingredient and 12-step content for Oxtail Yemeni Marag and complete ingredient and 6-step content for Yemeni Chicken in Marag; other candidate snippets were incomplete and excluded."
+    }
+  ],
+  "sourceIndex": [
+    {
+      "index": 0,
+      "request": 5,
+      "url": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+      "outcome": "accepted-complete-primary-creator-page",
+      "extractFile": "data/recipes/arabic-youtube/modern-expansion-20261021-gulf/source-extracts/request-05.txt",
+      "extractSha256": "ada33fe18c27c9ac50e7f8f33678c94b246d7a364334b700cc2ac21957fd54f8"
+    },
+    {
+      "index": 1,
+      "request": 7,
+      "url": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+      "outcome": "accepted-complete-primary-creator-page",
+      "extractFile": "data/recipes/arabic-youtube/modern-expansion-20261021-gulf/source-extracts/request-07.txt",
+      "extractSha256": "a34096aa8b55931353b89b4504ea4be694d3645a2c4520172a0d0c041d0c4383"
+    },
+    {
+      "index": 2,
+      "request": 24,
+      "url": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+      "outcome": "accepted-complete-primary-site-indexed-extract-after-direct-timeout",
+      "extractFile": "data/recipes/arabic-youtube/modern-expansion-20261021-gulf/source-extracts/request-24-oxtail.txt",
+      "extractSha256": "6693425b7d6ef67e559db3144191f736277fbfc8b99ba96ba3f5b46ea3332c37"
+    },
+    {
+      "index": 3,
+      "request": 24,
+      "url": "https://www.sifrafoods.com/post/yemeni-marag",
+      "outcome": "accepted-complete-primary-site-indexed-extract",
+      "extractFile": "data/recipes/arabic-youtube/modern-expansion-20261021-gulf/source-extracts/request-24-chicken-marag.txt",
+      "extractSha256": "aaab398d0d9cadbf91767331928b74ec94ffdadc822ef270e00f7835f157faaa"
+    }
+  ],
+  "sourceCuisineSupport": {
+    "acceptedRecords": 4,
+    "Omani": {
+      "count": 2,
+      "evidence": "Each accepted source recipe page explicitly displays the label Omani; the index also lists Omani as a cuisine filter. Creator nationality alone was not used to assign cuisine."
+    },
+    "Yemeni": {
+      "count": 2,
+      "evidence": "Sifra Foods About page documents the creator’s Yemeni family-food project; both accepted recipe titles contain Yemeni, and the author’s public site supplies complete ingredient/method extracts."
+    },
+    "Moroccan": {
+      "count": 0,
+      "reason": "Not targeted in this Omani-first extraction pass."
+    },
+    "Tunisian": {
+      "count": 0,
+      "reason": "Not targeted in this Omani-first extraction pass."
+    },
+    "Algerian": {
+      "count": 0,
+      "reason": "Not targeted in this Omani-first extraction pass."
+    }
+  },
+  "counts": {
+    "recipes": 4,
+    "ingredients": 58,
+    "steps": 29,
+    "supplementalIngredients": 10,
+    "completeRecipes": 4,
+    "duplicates": 0,
+    "rejected": 2,
+    "rejectedReason": "The source-index Omani tuna-kebab recipe could not be opened after two attempts; no complete content was retrieved. Other indexed Sifra recipe snippets were incomplete and not accepted."
+  },
+  "recipes": [
+    {
+      "recipeId": "dina-macki-tuna-dried-lime-zaatar-cinnamon-stew",
+      "title": "يخنة التونة باللومي والزعتر والقرفة",
+      "titleBasis": "Arabic translation of the exact displayed recipe title",
+      "creatorId": "dine-with-dina-dina-macki",
+      "sourceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+      "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": null,
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "worker-primary-web-page",
+        "sourceIndex": 0,
+        "sourceExtractFile": "data/recipes/arabic-youtube/modern-expansion-20261021-gulf/source-extracts/request-05.txt",
+        "sourceExtractSha256": "ada33fe18c27c9ac50e7f8f33678c94b246d7a364334b700cc2ac21957fd54f8",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": true,
+        "mediaAccessed": false,
+        "transcriptAccessed": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 5,
+        "sourcePageTitle": "Tuna, Dried Lime, Za’atar & Cinnamon Stew",
+        "selectedSection": "whole-recipe",
+        "directFetchOutcome": "web-open-success",
+        "directFetchRequest": 5,
+        "sourcePageYield": {
+          "amount": null,
+          "unit": null,
+          "sourceText": null,
+          "scope": "whole-recipe"
+        },
+        "sourcePageTotalTime": {
+          "minutes": null,
+          "sourceText": null,
+          "scope": "whole-recipe"
+        }
+      },
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 5,
+      "cuisine": {
+        "value": "Omani",
+        "evidence": "Omani",
+        "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+        "reviewStatus": "pending",
+        "status": "source-labeled"
+      },
+      "yield": {
+        "amount": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": null,
+        "publishedTotalText": null,
+        "publishedTotalEvidence": null,
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": null,
+            "durationText": "10-15mins",
+            "approximate": true,
+            "sourceStepIndices": [
+              1
+            ]
+          },
+          {
+            "minutes": null,
+            "durationText": "roughly 20-30mins",
+            "approximate": true,
+            "sourceStepIndices": [
+              2
+            ]
+          },
+          {
+            "minutes": null,
+            "durationText": "3-5 minutes",
+            "approximate": true,
+            "sourceStepIndices": [
+              3
+            ]
+          }
+        ],
+        "optionalWaits": [],
+        "conflicts": []
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "قطع تونة طازجة أو مجمدة",
+          "amount": 500,
+          "unit": "g",
+          "sourceQuantityText": "500g Fresh or Frozen Tuna Chunks",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "بصلة صغيرة",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 Small Onion (Cut into Slices)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "كركم",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 TSP Turmeric",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "عودا قرفة",
+          "amount": 2,
+          "unit": "stick",
+          "sourceQuantityText": "2 Cinnamon Sticks",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "قرفة مطحونة",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 TSP Ground Cinnamon",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "معجون الثوم والزنجبيل",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 TBSP Garlic & Ginger Paste",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفلتان خضراوان",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 Green Chilli (Chopped in half)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "حبتا بطاطس متوسطتان",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 Medium Potatoes (Peeled, Cut into 4's)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        },
+        {
+          "labelAr": "لومي مجفف",
+          "amount": 3,
+          "unit": "piece",
+          "sourceQuantityText": "3 Dried Limes (Crushed/Broken into big pieces)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "أوراق زعتر",
+          "amount": 3,
+          "unit": "tbsp",
+          "sourceQuantityText": "3 TBSP Za'atar Leaves",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 9,
+          "optional": null
+        },
+        {
+          "labelAr": "حبة طماطم كبيرة",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 Large Tomato (Chopped into quarters)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        },
+        {
+          "labelAr": "ملح",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Salt",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 11,
+          "optional": null
+        },
+        {
+          "labelAr": "معجون طماطم",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 TBSP Tomato Paste",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 12,
+          "optional": null
+        },
+        {
+          "labelAr": "دقيق أبيض",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 TBSP Plain Flour",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 13,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء",
+          "amount": null,
+          "unit": "l",
+          "sourceQuantityText": "1.5-2 Litres of Water (Enough to cover the ingredients, fill the saucepan)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": 14,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "أرز للتقديم",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Serve up and enjoy with rice!",
+          "group": "serving",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceIngredientIndex": null,
+          "optional": null
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "ضعي جميع المكونات عدا التونة والزعتر في قدر مناسب حتى تغلي.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "اتركي المرق يغلي برفق نحو 10–15 دقيقة حتى يغمق لونه ويصبح معكرًا قليلًا.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceStepIndices": [
+            1
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي التونة واطهيها على نار هادئة إلى متوسطة نحو 20–30 دقيقة حتى تنضج ويثخن المرق مع بقائه بقوام الحساء.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceStepIndices": [
+            2
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي الزعتر قرب التقديم واتركيه في المرق 3–5 دقائق.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceStepIndices": [
+            3
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "قدّمي اليخنة مع الأرز.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/tuna-dried-lime-zaatar-cinnamon-stew/",
+          "sourceStepIndices": [
+            4
+          ],
+          "sourceStepSegmentIndex": 0
+        }
+      ],
+      "sourceNotes": [
+        "مقدار الماء نطاق 1.5–2 لتر؛ خُزن نص المصدر وبقي amount رقمًا مجهولًا لأن الحقل لا يمثل مدى.",
+        "الملح مذكور بلا مقدار.",
+        "الأرز يظهر كتوجيه تقديم فقط، فحُفظ كمكوّن تكميلي غير مقدر لا ضمن قائمة المكونات الأصلية.",
+        "أزمنة المراحل محفوظة كنصوص نطاقية في sourceTimers؛ الزمن الكلي غير منشور."
+      ],
+      "unknowns": [
+        "water exact amount within stated range",
+        "salt amount",
+        "yield",
+        "total time",
+        "publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "contentSha256": "b9666b5592d4f15e19bd2b1c4dfc5d7bbee03908b50af83759666c7a168c9d62"
+    },
+    {
+      "recipeId": "dina-macki-paplo-omani-balochi-lemon-fish-curry",
+      "title": "بابلو البلوشي العماني بكاري السمك والليمون",
+      "titleBasis": "Arabic transliteration/translation of the exact displayed recipe title",
+      "creatorId": "dine-with-dina-dina-macki",
+      "sourceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+      "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": null,
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "worker-primary-web-page",
+        "sourceIndex": 1,
+        "sourceExtractFile": "data/recipes/arabic-youtube/modern-expansion-20261021-gulf/source-extracts/request-07.txt",
+        "sourceExtractSha256": "a34096aa8b55931353b89b4504ea4be694d3645a2c4520172a0d0c041d0c4383",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": true,
+        "mediaAccessed": false,
+        "transcriptAccessed": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 6,
+        "sourcePageTitle": "Paplo – Omani-Balochi Lemon Fish Curry",
+        "selectedSection": "whole-recipe",
+        "directFetchOutcome": "web-open-success",
+        "directFetchRequest": 7,
+        "sourcePageYield": {
+          "amount": null,
+          "unit": null,
+          "sourceText": null,
+          "scope": "whole-recipe"
+        },
+        "sourcePageTotalTime": {
+          "minutes": null,
+          "sourceText": "30 - 60 (time-category badge; not exact recipe duration)",
+          "scope": "category-badge-not-assigned"
+        }
+      },
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 6,
+      "cuisine": {
+        "value": "Omani",
+        "evidence": "Omani",
+        "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+        "reviewStatus": "pending",
+        "status": "source-labeled"
+      },
+      "yield": {
+        "amount": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": null,
+        "publishedTotalText": null,
+        "publishedTotalEvidence": null,
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": 10,
+            "durationText": "about 10 minutes",
+            "approximate": true,
+            "sourceStepIndices": [
+              3
+            ]
+          }
+        ],
+        "optionalWaits": [],
+        "conflicts": [
+          "The 30 - 60 badge is a time category; exact total duration remains unknown."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "ثوم",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1TBSP Garlic",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "بصلتان",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 Onions (diced small)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "سمك سيف أو بديل",
+          "amount": 650,
+          "unit": "g",
+          "sourceQuantityText": "650g Sword fish (or alternative, chopped into small chunks)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "كركم",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 TBSP Turmeric",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "حبتا طماطم متوسطتان",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 Medium Tomatoes (Quartered)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Salt to taste",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "عصير ليمون طازج",
+          "amount": 80,
+          "unit": "ml",
+          "sourceQuantityText": "80ml Lemon Juice (roughly 2.5 lemons)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء",
+          "amount": 1.5,
+          "unit": "l",
+          "sourceQuantityText": "1.5litres Water",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        },
+        {
+          "labelAr": "بهارات",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 TSP Baharat",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفلتان خضراوان طازجتان",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 Fresh Green Chillies (roughly chopped)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 9,
+          "optional": null
+        },
+        {
+          "labelAr": "حزمة صغيرة من الكزبرة الطازجة",
+          "amount": null,
+          "unit": "g",
+          "sourceQuantityText": "Small Bunch of Fresh Coriander (about 30-40g, chopped fine)",
+          "group": null,
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "أرز بسمتي أبيض للتقديم",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Don’t forget to drown some white basmati rice with it and enjoy!",
+          "group": "serving",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceIngredientIndex": null,
+          "optional": null
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "اغلي الماء مع الثوم والبصل والفلفل والطماطم والبهارات والكركم.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي السمك عندما يبدأ السائل بالغليان.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceStepIndices": [
+            1
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "اتركي الخليط حتى ينضج السمك، ثم أضيفي الملح وعصير الليمون.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceStepIndices": [
+            2
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "واصلي الطهي على نار هادئة نحو 10 دقائق حتى يتبخر قليل من السائل.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceStepIndices": [
+            3
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي الكزبرة قبل التقديم وقلّبيها في المرق.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceStepIndices": [
+            4
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "قدّميه مع أرز بسمتي أبيض.",
+          "evidenceUrl": "https://dinewithdina.co.uk/recipes/paplo-omani-balochi-lemon-fish-curry/",
+          "sourceStepIndices": [
+            5
+          ],
+          "sourceStepSegmentIndex": 0
+        }
+      ],
+      "sourceNotes": [
+        "المصدر يوصي تقليديًا بسمك الكنعد أو التونة، ويذكر السيف بديلًا؛ سطر المقادير يحدد 650غ سمك سيف أو بديل، لذلك لم يُربط نوع واحد بالبديل.",
+        "بدائل السمك المذكورة في ملاحظات الطبخ: الكنعد أو التونة تقليديًا، وباس البحر أو ماهي ماهي أو التربوت أو سمك موسى كبدائل أخرى.",
+        "الليمون المذكور في المقادير هو عصير طازج 80مل، مع وصف تقريبي يعادل 2.5 ليمونة.",
+        "الكزبرة حزمة صغيرة وتقديرها نحو 30–40غ؛ خزّن النص كاملًا وبقي amount رقميًا مجهولًا لأن الحقل لا يمثل مدى.",
+        "الأرز البسمتي الأبيض يظهر كتوجيه تقديم في الطريقة، فحُفظ كمكوّن تكميلي غير مقدر.",
+        "شارة 30–60 تصنيف مدة وليست زمنًا كليًا دقيقًا؛ بقي إجمالي الوقت مجهولًا."
+      ],
+      "unknowns": [
+        "exact coriander amount within stated approximate range",
+        "yield",
+        "total time",
+        "publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "contentSha256": "e22e27aceac864de76db6795db8d683c08811615d707d14ccd933aebf022c3bc"
+    },
+    {
+      "recipeId": "amjaad-al-hussain-oxtail-yemeni-marag",
+      "title": "مرق الذيل البقري اليمني",
+      "titleBasis": "Arabic translation of the exact displayed title",
+      "creatorId": "sifra-foods-amjaad-al-hussain",
+      "sourceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+      "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": "2021-01-17",
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": null,
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-site-indexed-search-extract",
+        "sourceIndex": 2,
+        "sourceExtractFile": "data/recipes/arabic-youtube/modern-expansion-20261021-gulf/source-extracts/request-24-oxtail.txt",
+        "sourceExtractSha256": "6693425b7d6ef67e559db3144191f736277fbfc8b99ba96ba3f5b46ea3332c37",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "mediaAccessed": false,
+        "transcriptAccessed": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 12,
+        "sourcePageTitle": "Oxtail Yemeni Marag",
+        "selectedSection": "whole-recipe",
+        "directFetchOutcome": "failed-timeout",
+        "directFetchRequest": 23,
+        "sourcePageYield": {
+          "amount": null,
+          "minimum": 6,
+          "maximum": 8,
+          "unit": "adults",
+          "sourceText": "6-8 adults",
+          "scope": "whole-recipe"
+        },
+        "sourcePageTotalTime": {
+          "minutes": null,
+          "sourceText": null,
+          "scope": "whole-recipe"
+        }
+      },
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 12,
+      "cuisine": {
+        "value": "Yemeni",
+        "evidence": "Yemeni",
+        "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+        "reviewStatus": "pending",
+        "status": "source-labeled"
+      },
+      "yield": {
+        "amount": null,
+        "unit": "adults",
+        "sourceText": "6-8 adults"
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": null,
+        "publishedTotalText": null,
+        "publishedTotalEvidence": null,
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": null,
+            "durationText": "2-3 minutes",
+            "approximate": true,
+            "sourceStepIndices": [
+              4
+            ]
+          },
+          {
+            "minutes": null,
+            "durationText": "35-45 minutes (pressure cooker)",
+            "approximate": true,
+            "sourceStepIndices": [
+              8
+            ]
+          },
+          {
+            "minutes": null,
+            "durationText": "45-55 minutes (Dutch oven)",
+            "approximate": true,
+            "sourceStepIndices": [
+              8
+            ]
+          },
+          {
+            "minutes": null,
+            "durationText": "30-50 minutes (additional meat cooking)",
+            "approximate": true,
+            "sourceStepIndices": [
+              10
+            ]
+          }
+        ],
+        "optionalWaits": [],
+        "conflicts": [
+          "Ingredient list says 1 tbsp olive oil; method says 2 tbsp.",
+          "Ingredient list says green bell pepper; method says red pepper."
+        ]
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "ذيل بقري",
+          "amount": null,
+          "unit": "piece",
+          "sourceQuantityText": "Oxtail (8-9 large pieces or 12-15 smaller pieces)",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت أفوكادو أو زيت نباتي",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons avocado oil or vegetable oil",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت زيتون",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 tablespoon olive oil",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "بصل أصفر كبير",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 large yellow onions, roughly chopped",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "جزر كبير",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 large carrots, chopped into large pieces",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "بطاطس ذهبية متوسطة",
+          "amount": null,
+          "unit": "piece",
+          "sourceQuantityText": "5-6 medium golden potatoes, peeled are halved",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل رومي أخضر كبير",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 large green bell pepper, chopped into large pieces",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "أعواد بصل أخضر",
+          "amount": null,
+          "unit": "stalk",
+          "sourceQuantityText": "4-5 stalks green onion, thinly sliced",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        },
+        {
+          "labelAr": "ثوم مهروس",
+          "amount": null,
+          "unit": "tbsp",
+          "sourceQuantityText": "2.5-3 tablespoons crushed garlic",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "هالابينو",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 tablespoon jalapeño, minced",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 9,
+          "optional": null
+        },
+        {
+          "labelAr": "معجون طماطم",
+          "amount": null,
+          "unit": "tbsp",
+          "sourceQuantityText": "2-3 tablespoons tomato paste",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        },
+        {
+          "labelAr": "مرق دجاج",
+          "amount": 1,
+          "unit": "carton",
+          "sourceQuantityText": "1 carton chicken broth plus additional water",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 11,
+          "optional": null
+        },
+        {
+          "labelAr": "ليمون مجفف",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 dried lemons",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 12,
+          "optional": null
+        },
+        {
+          "labelAr": "ورق غار كبير",
+          "amount": 5,
+          "unit": "leaf",
+          "sourceQuantityText": "5 large bay leaves",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 13,
+          "optional": null
+        },
+        {
+          "labelAr": "بهارات حوائج يمنية",
+          "amount": 3,
+          "unit": "tbsp",
+          "sourceQuantityText": "3 tablespoons Yemeni Hawayij",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 14,
+          "optional": null
+        },
+        {
+          "labelAr": "بابريكا",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons paprika",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 15,
+          "optional": null
+        },
+        {
+          "labelAr": "بهارات سَزون",
+          "amount": 1,
+          "unit": "packet",
+          "sourceQuantityText": "Optional: one packet of Sazon seasoning (orange blend)",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 16,
+          "optional": true
+        },
+        {
+          "labelAr": "ملح",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Salt to taste",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 17,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل أسود مطحون طازجًا",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Freshly ground black pepper",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceIngredientIndex": 18,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "جففي قطع الذيل البقري وتبّلي جميع جوانبها بالملح والفلفل.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "حمّري اللحم على دفعات في الزيت من جميع الجوانب، ثم ارفعيه جانبًا.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            1
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "في القدر نفسه ليّني البصل والفلفل والبصل الأخضر وورق الغار بزيت الزيتون.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            2
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي الثوم والهالابينو واطهيهما حتى تفوح رائحتهما وتبدأ أطراف البصل بالتحمير.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            3
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي معجون الطماطم والحوائج والبابريكا والسازون الاختياري، واطهي الخليط 2–3 دقائق.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            4
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أعيدي اللحم وما تساقط من عصائره إلى القدر.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            5
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي مرق الدجاج والبطاطس والجزر والليمون المجفف، وضعي الخضار فوق اللحم.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            6
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي الماء حتى يغطي الخضار.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            7
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "اطهي بقدر الضغط 35–45 دقيقة، أو بقدر هولندي مغطى 45–55 دقيقة حتى تلين البطاطس.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            8
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "ارفعي البطاطس والجزر الناضجين إلى وعاء وغطّيهما.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            9
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "واصلي طهي اللحم 30–50 دقيقة حتى يطرى بالشوكة، ثم اضبطي الملح وأعيدي الخضار.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            10
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "إذا جف السائل أضيفي الماء تدريجيًا بكوب في كل مرة حتى يصير القوام كما تفضلين.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/oxtail-yemeni-marag",
+          "sourceStepIndices": [
+            11
+          ],
+          "sourceStepSegmentIndex": 0
+        }
+      ],
+      "sourceNotes": [
+        "المقادير تذكر ملعقة زيت زيتون واحدة، بينما الخطوة الثالثة تذكر ملعقتين؛ بقيت القائمة كما هي مع توثيق التعارض.",
+        "قائمة المقادير تذكر فلفلًا أخضر، بينما الخطوة الثانية تقول red pepper؛ لم تُخترع كمية أو صنف إضافي.",
+        "مجموعة البطاطس مكتوبة كنطاق 5-6؛ بقي المقدار الرقمي null والنص الأصلي محفوظ.",
+        "كمية الثوم والبصل الأخضر ومعجون الطماطم نطاقات؛ بقيت amount null والنص الأصلي محفوظ.",
+        "مرق الدجاج مقداره عبوة واحدة، والماء الإضافي بلا مقدار محدد.",
+        "نطاق الحصص 6-8 بالغين؛ لم يُحوّل إلى عدد مفرد."
+      ],
+      "unknowns": [
+        "oxtail piece count choice between size options",
+        "potato exact count",
+        "green onion stalk count",
+        "garlic amount within range",
+        "tomato paste amount within range",
+        "additional water amount",
+        "total time",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "contentSha256": "f98727a53680a58719712171f4ac6aa0d29d0ce96c62842a4b657a35afc67e77"
+    },
+    {
+      "recipeId": "amjaad-al-hussain-yemeni-chicken-in-marag",
+      "title": "دجاج يمني بالمرق",
+      "titleBasis": "Arabic translation of the exact displayed title",
+      "creatorId": "sifra-foods-amjaad-al-hussain",
+      "sourceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+      "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": "2019-11-10",
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": null,
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-site-indexed-search-extract",
+        "sourceIndex": 3,
+        "sourceExtractFile": "data/recipes/arabic-youtube/modern-expansion-20261021-gulf/source-extracts/request-24-chicken-marag.txt",
+        "sourceExtractSha256": "aaab398d0d9cadbf91767331928b74ec94ffdadc822ef270e00f7835f157faaa",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "mediaAccessed": false,
+        "transcriptAccessed": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 6,
+        "sourcePageTitle": "Yemeni Chicken in Marag",
+        "selectedSection": "whole-recipe",
+        "directFetchOutcome": "indexed-source-result",
+        "directFetchRequest": null,
+        "sourcePageYield": {
+          "amount": null,
+          "unit": null,
+          "sourceText": null,
+          "scope": "whole-recipe"
+        },
+        "sourcePageTotalTime": {
+          "minutes": null,
+          "sourceText": null,
+          "scope": "whole-recipe"
+        },
+        "sourceUpdatedAt": "2020-04-27"
+      },
+      "methodRepresentation": "concise-Arabic-paraphrase-not-transcript",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 6,
+      "cuisine": {
+        "value": "Yemeni",
+        "evidence": "Yemeni",
+        "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+        "reviewStatus": "pending",
+        "status": "source-labeled"
+      },
+      "yield": {
+        "amount": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "publishedTotalMinutes": null,
+        "publishedTotalText": null,
+        "publishedTotalEvidence": null,
+        "actualElapsedMinutes": null,
+        "sourceTimers": [
+          {
+            "minutes": 5,
+            "durationText": "another 5 minutes",
+            "approximate": true,
+            "sourceStepIndices": [
+              2
+            ]
+          },
+          {
+            "minutes": null,
+            "durationText": "20-40 minutes (pressure cooker average)",
+            "approximate": true,
+            "sourceStepIndices": [
+              4
+            ]
+          },
+          {
+            "minutes": null,
+            "durationText": "an hour or more (regular pot)",
+            "approximate": true,
+            "sourceStepIndices": [
+              4
+            ]
+          }
+        ],
+        "optionalWaits": [],
+        "conflicts": []
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "زيت نباتي",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons vegetable oil",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "دجاجة كاملة مقطعة بعظمها",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 whole chicken cut into parts (bone-in)",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "بصل أصفر كبير",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 large yellow onions roughly chopped",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "فصوص ثوم",
+          "amount": 8,
+          "unit": "clove",
+          "sourceQuantityText": "8 cloves garlic",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "زنجبيل مبشور",
+          "amount": 1.5,
+          "unit": "tbsp",
+          "sourceQuantityText": "1.5 tbsp grated ginger",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "أوراق غار كبيرة",
+          "amount": null,
+          "unit": "leaf",
+          "sourceQuantityText": "2 - 3 large bay leaves",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "ليمون مجفف",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 dried lemon or lime",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل أخضر حار أو هالابينو",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 spicy green peppers or jalapenos (optional)",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 7,
+          "optional": true
+        },
+        {
+          "labelAr": "بطاطس ذهبية مقشرة",
+          "amount": null,
+          "unit": "piece",
+          "sourceQuantityText": "4-5 peeled golden potatoes",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "بهارات حوائج يمنية",
+          "amount": 1.5,
+          "unit": "tbsp",
+          "sourceQuantityText": "1.5 tablespoons Yemeni Hawayij",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 9,
+          "optional": null
+        },
+        {
+          "labelAr": "ملح حسب المذاق",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Salt to taste",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        },
+        {
+          "labelAr": "بقدونس مفروم",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceQuantityText": "½ cup chopped parsley",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 11,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء لتغطية الدجاج",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Water to cover the chicken",
+          "group": null,
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 12,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "عودا قرفة",
+          "amount": 2,
+          "unit": "stick",
+          "sourceQuantityText": "2 cinnamon sticks (Hawayij substitute)",
+          "group": "hawayij-substitution",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "حبوب هيل",
+          "amount": 5,
+          "unit": "pod",
+          "sourceQuantityText": "5 cardamom pods (Hawayij substitute)",
+          "group": "hawayij-substitution",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "حبات قرنفل",
+          "amount": 4,
+          "unit": "clove",
+          "sourceQuantityText": "4 cloves (Hawayij substitute)",
+          "group": "hawayij-substitution",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "كمون مطحون",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp cumin (Hawayij substitute)",
+          "group": "hawayij-substitution",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "كزبرة مطحونة",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp ground coriander (Hawayij substitute)",
+          "group": "hawayij-substitution",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "كركم",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp turmeric (Hawayij substitute)",
+          "group": "hawayij-substitution",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل أسود مطحون",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 tsp black pepper (Hawayij substitute)",
+          "group": "hawayij-substitution",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "جوزة الطيب",
+          "amount": null,
+          "unit": "pinch",
+          "sourceQuantityText": "Pinch of nutmeg (Hawayij substitute)",
+          "group": "hawayij-substitution",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "سخّني الزيت وحمّري قطع الدجاج قليلًا مع تقليبها دوريًا.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceStepIndices": [
+            0
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي البصل والزنجبيل والثوم والفلفل الاختياري والليمون المجفف وورق الغار، واطهيها حتى يلين البصل. عند غياب الحوائج أضيفي القرفة والهيل والقرنفل هنا.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceStepIndices": [
+            1
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي الحوائج اليمنية أو خلطة بديلها واطهي نحو 5 دقائق حتى تفوح رائحة البهارات.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceStepIndices": [
+            2
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي الماء حتى يغطي الدجاج ثم أضيفي البطاطس المقشرة والمقطعة إلى أنصاف.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceStepIndices": [
+            3
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي الملح واطهي بقدر الضغط وفق تعليماته نحو 20–40 دقيقة، أو بقدر عادي ساعة أو أكثر حتى يطرى اللحم وينفصل عن العظم.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceStepIndices": [
+            4
+          ],
+          "sourceStepSegmentIndex": 0
+        },
+        {
+          "textAr": "أضيفي البقدونس وقلّبي قبل التقديم.",
+          "evidenceUrl": "https://www.sifrafoods.com/post/yemeni-marag",
+          "sourceStepIndices": [
+            5
+          ],
+          "sourceStepSegmentIndex": 0
+        }
+      ],
+      "sourceNotes": [
+        "البدائل الثمانية للحوائج معروضة كخلطة بديلة مشروطة وليست مكونات مضافة إلى مقدار الحوائج؛ حُفظت كمجموعة تكميليّة منفصلة.",
+        "الفلفل الحار اختياري صراحةً؛ الاختيار بين الفلفل الأخضر والهالابينو لم يُحسم.",
+        "البطاطس والورق وماء التغطية لها أعداد/كميات نطاقية أو غير محددة؛ نص المصدر محفوظ والقيمة العددية بقيت null.",
+        "صفحة المصدر تقول إن متوسط قدر الضغط 20–40 دقيقة، والقدر العادي ساعة أو أكثر؛ المدة الإجمالية الدقيقة غير محددة."
+      ],
+      "unknowns": [
+        "bay-leaf count within range",
+        "potato count within range",
+        "water amount",
+        "yield",
+        "exact total time",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "contentSha256": "e794d89f51b9371afc03e996752e0f1dfb4f6f985e1bdbae5d71c52695aa4898"
+    }
+  ]
+}

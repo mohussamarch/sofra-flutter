@@ -1,5 +1,10 @@
 # مكتبة الوصفات المقروءة — الحالة الحالية
 
+## Current checkpoint —21October2026 (§92)
+
+5545source records/27packs/5504snapshots;15newwebsite rows=11complete+4partial,1000newtargetshort989. Fiftharchive1000converted/846textcomplete/154flagged,0newacquisition. Planning54/4unchanged. Sevennewsource labels,only5withcompleteevidence. See RECIPE-ROUND-20261021 and RECIPE-CELL-MAP-20261021 for actual structure,source limits and proposals. Fresh checks:16 اختبار Flutter مرتبطًا ناجحًا؛40 اختبار Node ناجحًا؛analyze بلا مشاكل (34.5s)؛converter/manifest --check ناجحان؛الخريطة9فروع و320/360/736 بلا أخطاء JS أو تجاوز عرض;full327at§91historical. SoleEcheckout,98usedceiling,automationPAUSED,no secondwriter.
+
+
 الحالة الحالية HANDOFF§89:2090 سجلًا مقروءًا،20 حزمة مثبتة و2064 لقطة مصدر؛2064 أرشيفًا+23 موقع طاه+3 أوصاف فيديو مفهرسة. كتالوج التخطيط54وصفة/4مطابخ ثابت. الفقرات القديمة أدناه تاريخية بأرقام تسليمها.
 
 ## تفصيل تسليم§71 التاريخي

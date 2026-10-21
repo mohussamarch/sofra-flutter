@@ -27,10 +27,14 @@ const files=[
  ['curated-local','data/recipes/curated-local/bulk-2000-20261015/normalized-recipes.json'],
  ['curated-local','data/recipes/curated-local/bulk-3000-20261015/normalized-recipes.json'],
  ['curated-local','data/recipes/curated-local/bulk-4000-20261016/normalized-recipes.json'],
+ ['curated-local','data/recipes/curated-local/bulk-5000-20261021/normalized-recipes.json'],
  ['curated-local','data/recipes/curated-local/based-cooking-20261015/normalized-recipes.json'],
  ['curated-local','data/recipes/curated-local/sixth-reviewed-20261015/normalized-recipes.json'],
  ['curated-local','data/recipes/curated-local/seventh-reviewed-20261015/normalized-recipes.json'],
  ['curated-local','data/recipes/curated-local/eighth-reviewed-20261015/normalized-recipes.json'],
+ ['creator-website','data/recipes/arabic-youtube/modern-expansion-20261021-asian/recipes.json'],
+ ['creator-website','data/recipes/arabic-youtube/modern-expansion-20261021-gulf/recipes.json'],
+ ['creator-website','data/recipes/arabic-youtube/modern-expansion-20261021-balkan-tibetan/recipes.json'],
 ];
 const sha=v=>createHash('sha256').update(v).digest('hex');
 const need=(v,m)=>{if(!v)throw Error(m);};

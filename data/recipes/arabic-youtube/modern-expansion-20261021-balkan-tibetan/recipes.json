@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "batchId": "modern-expansion-20261021-balkan-tibetan",
+  "retrievedAt": "2026-10-21",
+  "sourcePolicy": {
+    "sourceKind": "creator-website",
+    "youtubeDerived": false,
+    "reuseRights": "unknown",
+    "rawBodyArchived": false,
+    "mediaDownloaded": false,
+    "nutritionApproval": null,
+    "clinicalApproval": null,
+    "limitations": "Bounded manual primary-source factual extraction with brief original Arabic method summaries. Source-derived prose kept compact; no raw page, media, or general health claims retained."
+  },
+  "creators": [
+    {
+      "creatorId": "balkan-lunchbox-aida",
+      "name": "Aida — Balkan Lunch Box",
+      "officialSiteUrl": "https://balkanlunchbox.com/",
+      "identityEvidenceUrl": "https://balkanlunchbox.com/about/",
+      "channelUrl": null
+    },
+    {
+      "creatorId": "yowangdu-chodrak",
+      "name": "Chodrak family recipe, published by YoWangdu",
+      "officialSiteUrl": "https://www.yowangdu.com/",
+      "identityEvidenceUrl": "https://www.yowangdu.com/about-us",
+      "channelUrl": null
+    }
+  ],
+  "requestAccounting": {
+    "underlyingTargets": 13,
+    "searchQueries": 6,
+    "pageOpens": 7,
+    "newBookRequests": 0
+  },
+  "recipes": [
+    {
+      "recipeId": "balkan-lunchbox-bosnian-tepsijas-20261021",
+      "title": "خبز الصاج البوسني تيبسياش",
+      "creatorId": "balkan-lunchbox-aida",
+      "sourceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+      "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": "2016-08-17",
+      "sourceUpdatedAt": "2025-03-27",
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "sourceExtractFile": "source-extracts/balkan-lunchbox-bosnian-tepsijas-20261021.json",
+        "sourceExtractSha256": "cd2a98a318f17c5c40eb7bd9e70ce3b26294ff2c6093f1d586a604b73223d50b",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": true,
+        "pageViewFormat": "parsed web page; body not archived",
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "sourceCuisineEvidence": "Cuisine: Bosnian",
+        "nativeSourceStepCoverageVerified": false
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 8,
+      "cuisine": {
+        "value": "Bosnian",
+        "evidence": "Cuisine: Bosnian",
+        "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+        "reviewStatus": "source-evidence-recorded"
+      },
+      "yield": {
+        "amount": 6,
+        "unit": "servings",
+        "sourceText": "6 servings"
+      },
+      "time": {
+        "prepMinutes": 15,
+        "cookMinutes": 45,
+        "restMinutes": 120,
+        "publishedTotalMinutes": 180,
+        "actualElapsedMinutes": null,
+        "totalMinutes": null
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "خميرة جافة نشطة",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons active dry yeast",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": null,
+          "sourceIngredientIndex": 0
+        },
+        {
+          "labelAr": "سكر",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons sugar",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": null,
+          "sourceIngredientIndex": 1
+        },
+        {
+          "labelAr": "دقيق أبيض متعدد الاستعمال",
+          "amount": 4,
+          "unit": "cup",
+          "sourceQuantityText": "4 cups all purpose white flour; plus a little more; source permits one third whole wheat",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": null,
+          "sourceIngredientIndex": 2
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 2,
+          "unit": "tsp",
+          "sourceQuantityText": "2 teaspoons salt",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": null,
+          "sourceIngredientIndex": 3
+        },
+        {
+          "labelAr": "ماء فاتر",
+          "amount": 1.3,
+          "unit": "cup",
+          "sourceQuantityText": "1.3 cups water, lukewarm, approximately",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": null,
+          "sourceIngredientIndex": 4
+        },
+        {
+          "labelAr": "صفار بيض",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "1–2 egg yolks",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": null,
+          "sourceIngredientIndex": 5
+        },
+        {
+          "labelAr": "زبدة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "2–3 tablespoons butter (30–45 g), divided; optional",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": true,
+          "sourceIngredientIndex": 6
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "دقيق إضافي للنثر",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "plus a little more flour",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": null,
+          "sourceMethodEvidence": true
+        },
+        {
+          "labelAr": "دهن للصينية",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "greased pan; fat identity and amount not specified",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "optional": null,
+          "sourceMethodEvidence": true
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "نشّط الخميرة مع السكر 10–15 دقيقة؛ سطر المصدر يحذف اسم السائل فلا يحدد مقدارًا له.",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "اعجن الدقيق والملح والخميرة، وأضف الماء تدريجيًا؛ الزبدة اختيارية حسب المصدر.",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "اترك العجين يتضاعف، ثم أعد عجنه وشكّله وانقله للصينية المدهونة ليرتفع مرة أخرى.",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "sourceStepIndices": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "textAr": "ادهن بالصفار واخبز وفق حرارة المصدر، ثم برّد وغطّ حسب الطريقة المذكورة.",
+          "evidenceUrl": "https://balkanlunchbox.com/how-to-make-homemade-bread-hljeb-kruh/",
+          "sourceStepIndices": [
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "sourceNotes": [
+        "Main preparation section used, not the repeated recipe-card method. Published card total is retained separately; it is not a measured elapsed time.",
+        "Water is approximately 1.3 cups; do not reinterpret decimal as the fraction 1/3. Egg and butter ranges are preserved without a chosen numeric amount.",
+        "Extra flour and pan grease are unquantified process mentions, not invented additional measured quantities."
+      ],
+      "unknowns": [
+        "Reuse rights and per-recipe redistribution approval are unknown.",
+        "No food bindings, nutritional or clinical approval.",
+        "Canonical dish/family identity and translation review pending."
+      ],
+      "foodBindings": [],
+      "contentSha256": "1ca92fd837819fcf815ea8b30a30c4f9f1ef40de00e905d6e9788fbbefbdf46a",
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null
+    },
+    {
+      "recipeId": "balkan-lunchbox-bosnian-egg-drop-soup-20261021",
+      "title": "شوربة البيض البوسنية",
+      "creatorId": "balkan-lunchbox-aida",
+      "sourceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+      "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": "2016-02-23",
+      "sourceUpdatedAt": "2024-03-22",
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "sourceExtractFile": "source-extracts/balkan-lunchbox-bosnian-egg-drop-soup-20261021.json",
+        "sourceExtractSha256": "fde3e70cb99b06c1b49516abdcb6d4339404a024a273c6b786c65e2b1fd75764",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": true,
+        "pageViewFormat": "parsed web page; body not archived",
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "sourceCuisineEvidence": "Cuisine: Bosnian, Croatian, Serbian",
+        "nativeSourceStepCoverageVerified": false
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 5,
+      "cuisine": {
+        "value": "Bosnian",
+        "evidence": "Cuisine: Bosnian, Croatian, Serbian",
+        "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+        "reviewStatus": "source-evidence-recorded"
+      },
+      "yield": {
+        "amount": 3,
+        "unit": "servings",
+        "sourceText": "3 servings"
+      },
+      "time": {
+        "prepMinutes": 1,
+        "cookMinutes": 9,
+        "publishedTotalMinutes": 10,
+        "actualElapsedMinutes": null,
+        "totalMinutes": null
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "زيت",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons oil",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "optional": null,
+          "sourceIngredientIndex": 0
+        },
+        {
+          "labelAr": "زبدة",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons butter",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "optional": null,
+          "sourceIngredientIndex": 1
+        },
+        {
+          "labelAr": "مرق دجاج ساخن",
+          "amount": 4,
+          "unit": "cup",
+          "sourceQuantityText": "4 cups hot chicken broth",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "optional": null,
+          "sourceIngredientIndex": 2
+        },
+        {
+          "labelAr": "بيض",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 egg",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "optional": null,
+          "sourceIngredientIndex": 3
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 teaspoon salt",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "optional": null,
+          "sourceIngredientIndex": 4
+        },
+        {
+          "labelAr": "بقدونس مفروم",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "2–3 tablespoons minced parsley, optional",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "optional": true,
+          "sourceIngredientIndex": 5
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "سخّن الزيت والزبدة، ثم اغْلِ المرق.",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "sourceStepIndices": [
+            0,
+            1
+          ]
+        },
+        {
+          "textAr": "اخفق البيضة والملح؛ اخفض النار وصبها ببطء مع الخفق 1–2 دقيقة.",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "sourceStepIndices": [
+            2,
+            3
+          ]
+        },
+        {
+          "textAr": "أكمل الطهي 3–4 دقائق، وأضف البقدونس إذا رغبت.",
+          "evidenceUrl": "https://balkanlunchbox.com/egg-drop-soup-recipe-supica-od-jaja/",
+          "sourceStepIndices": [
+            4
+          ]
+        }
+      ],
+      "sourceNotes": [
+        "All three explicit source cuisine labels retained as evidence; Bosnian is the selected research label, not three separate records.",
+        "No vegetarian, medical or nutritional classification imported: the ingredient list contains chicken broth."
+      ],
+      "unknowns": [
+        "Reuse rights and per-recipe redistribution approval are unknown.",
+        "No food bindings, nutritional or clinical approval.",
+        "Canonical dish/family identity and translation review pending."
+      ],
+      "foodBindings": [],
+      "contentSha256": "0e73a45e8a731b974671ced86e5ff512f8c169c609c08d99ebae2aa061751df7",
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null
+    },
+    {
+      "recipeId": "yowangdu-tibetan-thue-20261021",
+      "title": "ثوي: حلوى تبتية بالجبن والزبدة",
+      "creatorId": "yowangdu-chodrak",
+      "sourceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+      "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "clinicalApproval": null,
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "sourceExtractFile": "source-extracts/yowangdu-tibetan-thue-20261021.json",
+        "sourceExtractSha256": "df364c5af42740cc350acf2e61bbe680e882833d7e313be7bf8fb1e3dcf43750",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": true,
+        "pageViewFormat": "parsed web page; body not archived",
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "sourceCuisineEvidence": "Page identifies Thue as a Tibetan sweet; family recipe attributed to Chodrak from Lhasa.",
+        "nativeSourceStepCoverageVerified": false
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 6,
+      "cuisine": {
+        "value": "Tibetan",
+        "evidence": "Page identifies Thue as a Tibetan sweet; family recipe attributed to Chodrak from Lhasa.",
+        "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+        "reviewStatus": "source-evidence-recorded"
+      },
+      "yield": {
+        "amount": 2,
+        "unit": "bricks",
+        "sourceText": "two bricks",
+        "servings": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "publishedTotalMinutes": null,
+        "actualElapsedMinutes": null,
+        "totalMinutes": null
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "جبن ياك مجفف صلب ومبشور",
+          "amount": 1,
+          "unit": "lb",
+          "sourceQuantityText": "1 lb dri (yak) hard dried shredded cheese; Parmesan, Romano or another hard cheese suggested as alternatives",
+          "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+          "optional": null,
+          "sourceIngredientIndex": 0
+        },
+        {
+          "labelAr": "سكر بني",
+          "amount": 2,
+          "unit": "cup",
+          "sourceQuantityText": "2 cups brown sugar; cane sugar or piloncillo mentioned as alternatives",
+          "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+          "optional": null,
+          "sourceIngredientIndex": 1
+        },
+        {
+          "labelAr": "زبدة غير مملحة",
+          "amount": 6,
+          "unit": "stick",
+          "sourceQuantityText": "6 sticks (24 oz) unsalted sweet cream butter",
+          "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+          "optional": null,
+          "sourceIngredientIndex": 2
+        }
+      ],
+      "supplementalIngredients": [
+        {
+          "labelAr": "زبدة للزخرفة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "butter decoration; additional amount not given; optional status not explicit",
+          "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+          "optional": null,
+          "sourceMethodEvidence": true
+        },
+        {
+          "labelAr": "ماء مثلج لتشكيل الزبدة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "ice water while forming butter decorations; process use, consumption not assumed",
+          "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+          "optional": null,
+          "sourceMethodEvidence": true
+        }
+      ],
+      "steps": [
+        {
+          "textAr": "اخلط الجبن والسكر والزبدة باليد حتى تتفكك الكتل.",
+          "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "شكّل الخليط إلى قالبين مستطيلين باليد أو باستخدام القالب الخشبي المذكور.",
+          "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+          "sourceStepIndices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "textAr": "للزخارف التقليدية المذكورة، ليّن الزبدة وشكّلها مع التبريد بالماء المثلج.",
+          "evidenceUrl": "https://www.yowangdu.com/tibetan-food/thue",
+          "sourceStepIndices": [
+            4,
+            5
+          ]
+        }
+      ],
+      "sourceNotes": [
+        "Source page publication/updated date and numeric servings are unknown; yield is two bricks, not two portions.",
+        "Source alternative cheeses and sweeteners are retained but not selected or bound to a food record. No stick/ounce-to-gram conversion inferred.",
+        "No heating or elapsed time stated. This does not prove a zero-minute cooking process."
+      ],
+      "unknowns": [
+        "Reuse rights and per-recipe redistribution approval are unknown.",
+        "No food bindings, nutritional or clinical approval.",
+        "Canonical dish/family identity and translation review pending."
+      ],
+      "foodBindings": [],
+      "contentSha256": "9ba10db967c57902fb75b0a1bac22eac549de11c76da1a0b453c23bac77ac67d",
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null
+    }
+  ]
+}

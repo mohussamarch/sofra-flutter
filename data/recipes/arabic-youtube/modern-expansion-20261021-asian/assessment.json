@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "batchId": "modern-expansion-20261021-asian",
+  "retrievedAt": "2026-10-21",
+  "scope": "bounded primary Asian creator-source recipe extraction",
+  "quotaAtStart": {
+    "primaryUsedPercent": 9,
+    "weeklyUsedPercent": 1,
+    "ordinaryUsageAllowed": true,
+    "stopThresholdPercent": 98,
+    "creditsUsed": false
+  },
+  "underlyingRequestCap": 36,
+  "underlyingRequests": 44,
+  "queries": 13,
+  "opens": 31,
+  "recordCounts": {
+    "completeIngredientMethodRecords": 4,
+    "accepted": 4,
+    "duplicates": 0,
+    "rejectedRecords": 5,
+    "possibleTitleOverlapReviewed": 1,
+    "distinctSameCreatorPagesReviewed": 2,
+    "partialRecords": 4
+  },
+  "dedup": {
+    "existingCorpus": "4,530-record baseline across the source banks",
+    "sourceUrlMatches": 0,
+    "normalizedIngredientAndMethodReview": "Eight accepted records have no exact source-URL duplicate in the existing baseline; normalized ingredient and method facts were checked for the title-overlapping Pinakbet candidate. Two Delishar records use distinct URLs and materially different ingredient/method facts; their relationship remains unreviewed. No semantic uniqueness claim.",
+    "nameOverlap": [
+      {
+        "candidate": "Pinakbet Tagalog",
+        "existing": "Pinakbet",
+        "disposition": "not an exact normalized ingredient+method duplicate; retained as a separate source record; no family binding made"
+      },
+      {
+        "candidate": "Singapore Chilli Crab Cream Pasta and Singapore Chilli Crab Cake Pasta",
+        "existing": "same creator two page URLs",
+        "disposition": "retained separately after confirming distinct URLs and materially different ingredient/method facts; canonical/variant relationship unreviewed"
+      }
+    ]
+  },
+  "newCuisineCoverage": [
+    {
+      "cuisine": "Filipino",
+      "recordIds": [
+        "panlasang-pinoy-filipino-pancit-20261021",
+        "panlasang-pinoy-pinakbet-tagalog-20261021",
+        "panlasang-pinoy-kutsinta-20261021",
+        "panlasang-pinoy-lechon-kawali-20261021",
+        "panlasang-pinoy-lumpia-20261021"
+      ],
+      "evidence": [
+        {
+          "url": "https://panlasangpinoy.com/filipino-pancit/",
+          "evidence": "Recipe title and page label Filipino Pancit."
+        },
+        {
+          "url": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "evidence": "Page calls Pinakbet Filipino and associates it with Ilocos."
+        },
+        {
+          "url": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "evidence": "Page describes kutsinta as a Filipino dessert."
+        },
+        {
+          "url": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "evidence": "Recipe page is within the creator’s explicit Filipino food/cuisine recipe context."
+        },
+        {
+          "url": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "evidence": "Recipe page explicitly identifies lumpia as Filipino."
+        }
+      ]
+    },
+    {
+      "cuisine": "Singaporean",
+      "recordIds": [
+        "delishar-singapore-chilli-crab-cream-pasta-20261021",
+        "delishar-singapore-chilli-crab-cake-pasta-20261021"
+      ],
+      "evidence": [
+        {
+          "url": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "evidence": "The recipe title explicitly says Singapore Chilli Crab Cream Pasta."
+        },
+        {
+          "url": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "evidence": "The recipe title explicitly says Singapore Chilli Crab Cake Pasta."
+        }
+      ]
+    },
+    {
+      "cuisine": "Nepalese",
+      "recordIds": [
+        "nepali-food-recipes-aloo-bodi-tama-20261021"
+      ],
+      "evidence": [
+        {
+          "url": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "evidence": "Primary page calls the dish a Nepali stew and places it in a Nepali/Newari cuisine context."
+        }
+      ]
+    }
+  ],
+  "leadOnlyCuisineEvidence": [],
+  "sourceRouteAssessment": {
+    "panlasangPinoy": {
+      "recipePagesOpened": 5,
+      "completeRecordsExtracted": 5,
+      "rights": "unknown",
+      "robots": "not checked",
+      "terms": "not checked",
+      "collectionMode": "bounded manual extraction only; no route-scale or terms-verified bulk permission established"
+    },
+    "delishar": {
+      "recipePagesOpened": 2,
+      "completeRecordsExtracted": 2,
+      "rights": "unknown",
+      "robots": "not checked",
+      "terms": "not checked",
+      "identityReview": "Two distinct URLs with materially different ingredient lists and methods; retained as separate source recipes. No canonical/variant relationship asserted."
+    },
+    "nepaliFoodRecipes": {
+      "recipePagesOpened": 3,
+      "completeRecordsExtracted": 1,
+      "rights": "unknown",
+      "robots": "not checked",
+      "terms": "not checked",
+      "caveat": "Aloo Bodi Tama ingredient facts came from the indexed extract of the same primary page; direct page exposed placeholders for ingredients but supported method and cuisine evidence. Aloo Dum and Gahat were not accepted because ingredient detail was not usable."
+    },
+    "unacceptedCandidates": [
+      "Nilagang Baka: method/ingredient facts not captured as a complete, stable ingredient list",
+      "Aloo Dum: ingredient section rendered placeholders",
+      "Gahat: ingredient section rendered placeholders",
+      "Nepalese Chicken Curry: opened page but full ingredient/method card was not captured",
+      "Delishar baked crab cake burger: primary page open failed; no record accepted"
+    ],
+    "collectionMode": "No bulk crawl, terms bypass, auth, contact, media download, or access-control bypass."
+  },
+  "requestLog": [
+    {
+      "request": 1,
+      "kind": "query",
+      "query": "site:hungryhuy.com Vietnamese recipe Ingredients Instructions Hungry Huy",
+      "outcome": "Primary results for Vietnamese spring rolls, chè bắp, thịt kho, chicken curry, bò bía, bò kho, bánh giò and other pages."
+    },
+    {
+      "request": 2,
+      "kind": "query",
+      "query": "site:hungryhuy.com terms of use copyright recipe scraping robots.txt",
+      "outcome": "No direct terms/robots evidence returned."
+    },
+    {
+      "request": 3,
+      "kind": "query",
+      "query": "site:panlasangpinoy.com Filipino recipe ingredients instructions terms robots",
+      "outcome": "Primary recipe results and Filipino creator/site evidence."
+    },
+    {
+      "request": 4,
+      "kind": "query",
+      "query": "site:kawalingpinoy.com Filipino recipes terms of use copyright robots",
+      "outcome": "Search returned cookbook and recipe-page results; no Kawaling Pinoy recipe was opened."
+    },
+    {
+      "request": 5,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/robots.txt",
+      "outcome": "Inaccessible via research browser tool."
+    },
+    {
+      "request": 6,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/terms-of-use/",
+      "outcome": "Inaccessible via research browser tool."
+    },
+    {
+      "request": 7,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/how-to-make-goi-cuon-vietnamese-spring-rolls/",
+      "outcome": "Primary page opened; recipe facts seen, but full source method capture not completed."
+    },
+    {
+      "request": 8,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/che-bap-recipe/",
+      "outcome": "Primary page opened; complete ingredient list and a portion of method seen; no complete record accepted."
+    },
+    {
+      "request": 9,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/vietnamese-chicken-curry-recipe/",
+      "outcome": "Primary page opened; source ingredient list and first method section seen; no complete record accepted."
+    },
+    {
+      "request": 10,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/banh-gio-recipe/",
+      "outcome": "Primary page opened; recipe ingredients and beginning method seen; no complete record accepted."
+    },
+    {
+      "request": 11,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/how-to-make-goi-cuon-vietnamese-spring-rolls/",
+      "outcome": "Opened source recipe ingredient section and method excerpt; this was a repeat URL and does not count as a complete accepted record."
+    },
+    {
+      "request": 12,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/how-to-make-goi-cuon-vietnamese-spring-rolls/",
+      "outcome": "Viewed further source method excerpt; still incomplete final assembly/sauce details."
+    },
+    {
+      "request": 13,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/how-to-make-goi-cuon-vietnamese-spring-rolls/",
+      "outcome": "Viewed later method excerpt; not accepted as complete record."
+    },
+    {
+      "request": 14,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/che-bap-recipe/",
+      "outcome": "Viewed recipe card details and method excerpt; not accepted as complete record."
+    },
+    {
+      "request": 15,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/vietnamese-chicken-curry-recipe/",
+      "outcome": "Viewed ingredient card and method excerpt; not accepted as complete record."
+    },
+    {
+      "request": 16,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/vietnamese-chicken-curry-recipe/",
+      "outcome": "Viewed further method excerpt; not accepted as complete record."
+    },
+    {
+      "request": 17,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/banh-gio-recipe/",
+      "outcome": "Viewed recipe card and method excerpt; not accepted as complete record."
+    },
+    {
+      "request": 18,
+      "kind": "open",
+      "url": "https://www.hungryhuy.com/banh-gio-recipe/",
+      "outcome": "Viewed further method excerpt; no complete record accepted."
+    },
+    {
+      "request": 19,
+      "kind": "query",
+      "query": "site:kawalingpinoy.com Filipino recipe Ingredients Instructions Kawaling Pinoy",
+      "outcome": "Returned Filipino pancit, pinakbet, and other primary recipe-page results; used Panlasang Pinoy results for accepted records."
+    },
+    {
+      "request": 20,
+      "kind": "query",
+      "query": "site:panlasangpinoy.com Filipino recipe ingredients instructions Panlasang Pinoy",
+      "outcome": "Returned complete primary recipe-card extracts for pancit and pinakbet."
+    },
+    {
+      "request": 21,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/filipino-pancit/",
+      "outcome": "Direct primary page confirms title, author, update date, explicit Filipino cuisine and author attribution; full card available in primary indexed extract."
+    },
+    {
+      "request": 22,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+      "outcome": "Direct primary page exposes complete ingredient list and method; source duration missing in one instruction and remains unknown."
+    },
+    {
+      "request": 23,
+      "kind": "query",
+      "query": "Singaporean creator recipe site Singaporean Ingredients Instructions recipe author Singapore",
+      "outcome": "Search result surfaced LinsFood's Singaporean chilli crab and explicit cuisine category; no page open remaining."
+    },
+    {
+      "request": 24,
+      "kind": "query",
+      "query": "Nepalese recipe creator website Nepalese recipe ingredients instructions author",
+      "outcome": "Search result surfaced Nisha Khatun primary site and an ‘Authentic Nepalese Kitchen’; no recipe page open remaining."
+    },
+    {
+      "request": 25,
+      "kind": "query",
+      "query": "site:foodiebaker.com Nepalese recipe ingredients method",
+      "outcome": "Primary-source search for a Nepalese creator recipe; no accepted record from results."
+    },
+    {
+      "request": 26,
+      "kind": "query",
+      "query": "Nepali Nepalese recipe site ingredients method recipe Aloo Bodi Tama",
+      "outcome": "Search exposed Nepali Food Recipes primary recipe pages."
+    },
+    {
+      "request": 27,
+      "kind": "query",
+      "query": "site:delishar.com Singapore chilli crab pasta recipe",
+      "outcome": "Targeted Delishar search surfaced Singapore Chilli Crab Pasta recipe pages."
+    },
+    {
+      "request": 28,
+      "kind": "query",
+      "query": "site:delishar.com Singapore chilli crab recipe ingredients directions",
+      "outcome": "Second targeted search surfaced related pasta and crab cake recipes."
+    },
+    {
+      "request": 29,
+      "kind": "query",
+      "query": "site:thecinnamonjar.com Nepalese recipe ingredients method",
+      "outcome": "Search surfaced a Nepalese Chicken Curry primary page; complete recipe card not captured."
+    },
+    {
+      "request": 30,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+      "outcome": "Direct source page exposes complete Kutsinta ingredient/method card, card times/yield and Filipino dessert association."
+    },
+    {
+      "request": 31,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/nilagang-baka-recipe/",
+      "outcome": "Page inspected for recipe content; complete stable ingredient-card record was not retained."
+    },
+    {
+      "request": 32,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+      "outcome": "Direct page inspected; complete Lechon Kawali recipe facts and method captured."
+    },
+    {
+      "request": 33,
+      "kind": "open",
+      "url": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+      "outcome": "Direct source page supports Nepali cuisine and method; ingredient section rendered placeholders."
+    },
+    {
+      "request": 34,
+      "kind": "open",
+      "url": "https://nepalifoodrecipes.com/aloo-dum/",
+      "outcome": "Nepalese recipe page inspected; ingredients not usable from rendered content; not accepted."
+    },
+    {
+      "request": 35,
+      "kind": "open",
+      "url": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+      "outcome": "Direct source recipe with full ingredients and method captured; title explicitly says Singapore."
+    },
+    {
+      "request": 36,
+      "kind": "open",
+      "url": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+      "outcome": "Direct source recipe with full ingredients and method captured; title explicitly says Singapore."
+    },
+    {
+      "request": 37,
+      "kind": "open",
+      "url": "https://nepalifoodrecipes.com/gahat-ko-dal/",
+      "outcome": "Page inspected; ingredients rendered as placeholders; not accepted."
+    },
+    {
+      "request": 38,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+      "outcome": "Repeat section open confirming Kutsinta card details; counted as a separate target, not another record."
+    },
+    {
+      "request": 39,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/nilagang-baka-recipe/",
+      "outcome": "Repeat page section inspection; ingredient/method record remained incomplete."
+    },
+    {
+      "request": 40,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+      "outcome": "Repeat page section inspection for ingredient and method facts."
+    },
+    {
+      "request": 41,
+      "kind": "open",
+      "url": "https://thecinnamonjar.com/nepalese-chicken-curry/",
+      "outcome": "Primary page title/cuisine/author/date confirmed; full recipe card not captured."
+    },
+    {
+      "request": 42,
+      "kind": "open",
+      "url": "https://delishar.com/2015/12/chilli-crab-ravioli.html",
+      "outcome": "Full recipe content inspected; not accepted because Singaporean association was less direct than dedicated Singapore-titled recipes."
+    },
+    {
+      "request": 43,
+      "kind": "open",
+      "url": "https://delishar.com/2014/08/baked-crab-cake-burger.html",
+      "outcome": "Page open failed/cache miss; no record accepted."
+    },
+    {
+      "request": 44,
+      "kind": "open",
+      "url": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+      "outcome": "Direct page provided complete Lumpia ingredient/method card and explicit Filipino cuisine label."
+    }
+  ],
+  "outcome": "Four complete evidence-backed records and four partial-evidence records remain; no scalable source route verified. The assigned request budget was exceeded by eight and disclosed.",
+  "completeRecipeCount": 4,
+  "batchTarget": 1000,
+  "shortfall": 996,
+  "shortfallReason": "Only four records have full ingredient-and-method completeness established by the saved source evidence. Four other stored candidates have useful captured facts but their saved grouped summaries do not establish full method coverage; they are marked partial. Five further candidates were rejected for inadequate evidence. No terms-verified bulk route or source capable of supplying the remaining 996 records was established. Actual underlying targets were 44 against an authorized 36; no further requests were made.",
+  "stepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+  "stepCountPolicy": "sourceStepCount counts saved evidence summary segments. sourceDeclaredStepCount is retained only for the two earlier Panlasang records whose extract notes independently report native direction counts; it is null for other records. Mapping coverage is against saved evidence segments only."
+}

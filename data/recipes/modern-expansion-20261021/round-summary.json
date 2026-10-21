@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-21T03:25:36.129654Z",
+  "baseCommit": "8012d7943fc0243e83bef38e482e2ff2d39f74ce",
+  "library": {
+    "sourceRecords": 5545,
+    "packs": 27,
+    "snapshots": 5504,
+    "untranslatedSourceRecords": 5440,
+    "manifestSha256": "1fb26f05cfdc56dfb954edc77f87952bbf67edc5d4f1ad3616d57937d612f04a",
+    "planningRecipes": 54,
+    "planningCuisines": 4,
+    "runtimeApprovalsAdded": 0
+  },
+  "newAcquisition": {
+    "sourceRecords": 15,
+    "completeIngredientAndMethod": 11,
+    "partialMethod": 4,
+    "target": 1000,
+    "completeShortfall": 989,
+    "newCuisineLabels": {
+      "Filipino": {
+        "sourceRecords": 5,
+        "completeIngredientAndMethod": 4,
+        "partialMethod": 1
+      },
+      "Singaporean": {
+        "sourceRecords": 2,
+        "completeIngredientAndMethod": 0,
+        "partialMethod": 2
+      },
+      "Nepalese": {
+        "sourceRecords": 1,
+        "completeIngredientAndMethod": 0,
+        "partialMethod": 1
+      },
+      "Omani": {
+        "sourceRecords": 2,
+        "completeIngredientAndMethod": 2,
+        "partialMethod": 0
+      },
+      "Yemeni": {
+        "sourceRecords": 2,
+        "completeIngredientAndMethod": 2,
+        "partialMethod": 0
+      },
+      "Bosnian": {
+        "sourceRecords": 2,
+        "completeIngredientAndMethod": 2,
+        "partialMethod": 0
+      },
+      "Tibetan": {
+        "sourceRecords": 1,
+        "completeIngredientAndMethod": 1,
+        "partialMethod": 0
+      }
+    },
+    "sourceKind": "creator-website",
+    "directYouTubeRecipes": 0,
+    "bodySnapshotsArchived": false,
+    "reuseRights": "unknown",
+    "reasonForShortfall": "Bounded primary-source acquisition yielded11complete/4partial records; inaccessible or insufficient methods were excluded from completeness. No scalable permitted bulk route established. MyPlate.food advertises1072 but bans systematic retrieval/storage; original USDA route unavailable, so no crawl or inventedfill."
+  },
+  "offlineArchiveConversion": {
+    "schemaVersion": 1,
+    "packFile": "data/recipes/curated-local/bulk-5000-20261021/normalized-recipes.json",
+    "packSha256": "54243d124c4648021ae169dc00283ecf19fd29fa176fcbe0c1eeba30241fc62d",
+    "counts": {
+      "recipes": 1000,
+      "convertedRecords": 1000,
+      "ingredientLines": 8030,
+      "steps": 5894,
+      "alreadyArchivedRecords": 1000,
+      "newAcquisitions": 0,
+      "newNativeLibraryRecords": 1000,
+      "completeIngredientAndMethodRecords": 846,
+      "incompleteIngredientAndMethodRecords": 154,
+      "omittedIngredientNames": 0,
+      "omittedMethodText": 0,
+      "rawIngredientCoverageVerifiedRecords": 978,
+      "rawIngredientCoverageReviewRequiredRecords": 22,
+      "rawMethodCoverageVerifiedRecords": 853,
+      "rawMethodCoverageReviewRequiredRecords": 147,
+      "fullyReviewed": 0,
+      "needsReview": 1000,
+      "runtimeReady": 0,
+      "translatedRecords": 0,
+      "missingAmountLines": 8030,
+      "missingUnitLines": 8030,
+      "unknownYieldRecords": 1000,
+      "unknownTimeRecords": 1000,
+      "unresolvedMarkupIngredientLines": 12,
+      "unresolvedMarkupMethodSteps": 3,
+      "pageLicenseExceptionsNotReviewed": 1000
+    },
+    "languageCounts": {
+      "de": 370,
+      "es": 630
+    },
+    "cuisineCounts": {},
+    "untaggedRecords": 1000,
+    "sourceSnapshotCount": 1000,
+    "archiveCandidateCounts": {
+      "es": 853,
+      "de": 544
+    },
+    "completeCandidateCounts": {
+      "es": 476,
+      "de": 373
+    },
+    "incompleteCandidateCounts": {
+      "es": 377,
+      "de": 171
+    },
+    "rawIngredientCoverageReviewRequiredCandidates": {
+      "es": 73,
+      "de": 2
+    },
+    "rawMethodCoverageReviewRequiredCandidates": {
+      "es": 311,
+      "de": 149
+    },
+    "selectedCompleteRecords": 846,
+    "selectedIncompleteRecords": 154,
+    "duplicateReview": {
+      "previousSelectedRecords": 4530,
+      "inputManifestSha256": "038a62a40cdd528855f5b0b97cbf0ee1e34aa78c0edb8019bd141a30a912435a",
+      "excluded": {
+        "priorSource": 0,
+        "priorContent": 4,
+        "withinArchiveDuplicate": 0,
+        "sourceIntegrity": 0
+      },
+      "scope": "Source record/revision/permalink and normalized ingredient+method text checked against all 23 frozen packs and within the two archived language candidates. No semantic translated-dish uniqueness claim."
+    },
+    "integrityIsCulinaryOrRightsApproval": false
+  },
+  "researchTargets": {
+    "actual": 105,
+    "asian": 44,
+    "gulfIncludingInitialDiscovery": 36,
+    "scalableSourceAssessment": 12,
+    "coordinator": 13,
+    "asianAuthorized": 36,
+    "asianOverrun": 8,
+    "newBookNetwork": 0
+  },
+  "sourceQuantityAudit": {
+    "recipes": 5545,
+    "ingredients": 46306,
+    "quantityReviewLines": 46209,
+    "missingAmount": 45425,
+    "missingUnit": 45409,
+    "nonPositiveAmount": 0,
+    "unitNeedsReview": 799,
+    "supplemental": 65,
+    "optional": 26,
+    "runtimeApproved": 0
+  },
+  "checks": {
+    "flutter": {
+      "passed": 16,
+      "failed": 0,
+      "scope": [
+        "recipe_library_assets_test.dart",
+        "recipe_library_draft_test.dart",
+        "recipe_library_coverage_test.dart"
+      ],
+      "duration": "2m04s",
+      "fullSuiteRun": false,
+      "historicalFullSuitePassed": 327
+    },
+    "node": {
+      "passed": 40,
+      "failed": 0,
+      "scope": [
+        "modern-expansion-20261021",
+        "build-recipe-library",
+        "library-video-kind",
+        "bulk-normalize-5000",
+        "watchdog"
+      ]
+    },
+    "analysis": {
+      "result": "No issues found",
+      "seconds": 34.5,
+      "subsequentDartChange": "generated manifest SHA256 literal only"
+    },
+    "converterCheck": {
+      "result": "passed",
+      "packSha256": "54243d124c4648021ae169dc00283ecf19fd29fa176fcbe0c1eeba30241fc62d"
+    },
+    "manifestCheck": {
+      "result": "passed",
+      "sha256": "1fb26f05cfdc56dfb954edc77f87952bbf67edc5d4f1ad3616d57937d612f04a"
+    },
+    "visualization": {
+      "branches": 9,
+      "interaction": "native branch open/close passed",
+      "widths": [
+        736,
+        360,
+        320
+      ],
+      "javascriptErrors": 0,
+      "horizontalOverflow": false
+    },
+    "review": {
+      "independentReviewPerformed": true,
+      "sourceCompletenessClaimsReduced": true,
+      "provenanceReaderNotWeakened": true
+    }
+  }
+}

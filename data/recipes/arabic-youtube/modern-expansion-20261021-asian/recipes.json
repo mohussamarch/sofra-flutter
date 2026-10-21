@@ -1,0 +1,1919 @@
+{
+  "schemaVersion": 1,
+  "batchId": "modern-expansion-20261021-asian",
+  "retrievedAt": "2026-10-21",
+  "quotaAtStart": {
+    "primaryUsedPercent": 9,
+    "weeklyUsedPercent": 1,
+    "ordinaryUsageAllowed": true,
+    "userAuthorizedStopPercent": 98,
+    "creditsUsed": false
+  },
+  "sourcePolicy": {
+    "sourceKind": "creator-website",
+    "youtubeDerived": false,
+    "sourceApproval": null,
+    "reuseRights": "unknown",
+    "licenseStatus": "unknown",
+    "clinicalApproval": null,
+    "nutritionApproval": null,
+    "mediaDownloaded": false,
+    "transcriptExtraction": false,
+    "limitations": "Bounded manual primary-source extraction, no bulk crawl. Full page body was not saved. Panlasang Pinoy direct page opens provided source metadata and cuisine evidence; recipe card facts were retrieved through indexed primary-site extracts and direct page extracts. Arabic methods are concise original summaries. No rights or runtime approval asserted."
+  },
+  "recipes": [
+    {
+      "recipeId": "panlasang-pinoy-filipino-pancit-20261021",
+      "title": "بانسيت فلبيني بنودلز البيهون والكانتُون",
+      "creatorId": "panlasang-pinoy-vanjo-merano",
+      "sourceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+      "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": "2026-10-11",
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-search-extract-plus-primary-page-open",
+        "sourceExtractFile": "source-extracts/pancit-evidence.json",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "recipeCardExtractComplete": true,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 4,
+        "directPageOpen": true,
+        "directPageEvidence": "Title and text identify Filipino Pancit; author and updated date appear on the source page. Full ingredient/method recipe card was present in the primary-site indexed extract.",
+        "sourcePageTitle": "Filipino Pancit Recipe",
+        "sourcePageAuthor": "Vanjo Merano",
+        "sourcePageYield": {
+          "amount": 6,
+          "unit": "people",
+          "sourceText": "6 people"
+        },
+        "sourcePageTime": {
+          "prepMinutes": 10,
+          "cookMinutes": 30,
+          "totalMinutes": 40
+        },
+        "sourceCuisineEvidence": "The source title is ‘Filipino Pancit Recipe’; the page calls it a Filipino stir-fried noodle dish.",
+        "sourceCuisineEvidenceLine": 43,
+        "sourceExtractSha256": "43d0c815c94e55433ddacfb10e192b353a52805b7a2f05f910619774a0e42bad",
+        "sourceDeclaredStepCount": 8,
+        "methodStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+        "methodCoverageNote": "Saved source facts are grouped summary segments; indices refer to these evidence segments, not native source steps."
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 4,
+      "cuisine": {
+        "value": "Filipino",
+        "evidence": "The recipe title explicitly says Filipino Pancit; the source page calls it a Filipino stir-fried noodle dish.",
+        "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+        "reviewStatus": "source-evidence-recorded",
+        "status": "explicit-recipe-source-label"
+      },
+      "yield": {
+        "amount": 6,
+        "unit": "people",
+        "sourceText": "6 people"
+      },
+      "time": {
+        "prepMinutes": 10,
+        "cookMinutes": 30,
+        "totalMinutes": 40,
+        "actualElapsedMinutes": null,
+        "sourceEvidenceUrl": "https://panlasangpinoy.com/filipino-pancit/"
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "نودلز بانسيت بيهون",
+          "amount": 0.5,
+          "unit": "lb",
+          "sourceQuantityText": "1/2 lb pancit bihon",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "نودلز بانسيت كانتون",
+          "amount": 0.5,
+          "unit": "lb",
+          "sourceQuantityText": "1/2 lb pancit canton",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "بطن خنزير شرائح",
+          "amount": 0.5,
+          "unit": "lb",
+          "sourceQuantityText": "1/2 lb. pork belly sliced",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "جزر",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 cup carrot",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "ملفوف صغير",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "1/2 small cabbage chopped",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "بصل مفروم",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 onion chopped",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "ثوم مفروم",
+          "amount": 0.5,
+          "unit": "tbsp",
+          "sourceQuantityText": "1/2 tbsp garlic minced",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "بقدونس مفروم",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceQuantityText": "1/2 cup parsley chopped",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        },
+        {
+          "labelAr": "مكعب مرق دجاج",
+          "amount": 1,
+          "unit": "cube",
+          "sourceQuantityText": "1 Maggi Magic Chicken Cube",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "صلصة صويا",
+          "amount": 0.25,
+          "unit": "cup",
+          "sourceQuantityText": "1/4 cup soy sauce",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 9,
+          "optional": null
+        },
+        {
+          "labelAr": "صلصة محار",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons oyster sauce",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء",
+          "amount": 4,
+          "unit": "cup",
+          "sourceQuantityText": "4 cups water",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 11,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت طبخ",
+          "amount": 3,
+          "unit": "tbsp",
+          "sourceQuantityText": "3 tbsp cooking oil",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 12,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل أسود مطحون وصلصة سمك",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "Ground black pepper and fish sauce to taste",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceIngredientIndex": 13,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "ليّني نودلز البيهون بالنقع القصير. سخّني الزيت في مقلاة واسعة وقلّبي الثوم والبصل حتى يلينَا.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "أضيفي شرائح لحم الخنزير وقلّبيها حتى تتحمر قليلًا.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "أضيفي صلصة الصويا وصلصة المحار والماء، واتركي المزيج يغلي ثم غطّيه واطهيه نحو عشرين دقيقة حتى يطرى اللحم.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceStepIndices": [
+            2
+          ]
+        },
+        {
+          "textAr": "أذيبي مكعب المرق، ثم أضيفي الجزر والملفوف وقلّبي لنحو دقيقة.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceStepIndices": [
+            2
+          ]
+        },
+        {
+          "textAr": "أضيفي نودلز البيهون المنقوعة والكانتُون، وقلّبي برفق حتى تلين وتمتص معظم الصلصة.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceStepIndices": [
+            3
+          ]
+        },
+        {
+          "textAr": "أضيفي البقدونس وتبّلي بالفلفل الأسود وصلصة السمك حسب الذوق.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceStepIndices": [
+            3
+          ]
+        },
+        {
+          "textAr": "غطّي المقلاة نحو ثلاث دقائق، ثم أطفئي النار وانقلي الطبق للتقديم.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-pancit/",
+          "sourceStepIndices": [
+            3
+          ]
+        }
+      ],
+      "sourceNotes": [],
+      "unknowns": [
+        "exact publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": 8,
+      "contentSha256": "0f5cc1f14fd70a2eebdc8da9b66ff4ce53b7543ff2d254052b8f710d5945d639"
+    },
+    {
+      "recipeId": "panlasang-pinoy-pinakbet-tagalog-20261021",
+      "title": "بينكبيت تاغالوغ",
+      "creatorId": "panlasang-pinoy-vanjo-merano",
+      "sourceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+      "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": "2024-10-19",
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-recipe-page-open",
+        "sourceExtractFile": "source-extracts/pinakbet-evidence.json",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "recipeCardExtractComplete": true,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 5,
+        "sourcePageTitle": "Pinakbet Tagalog",
+        "sourcePageAuthor": "Vanjo Merano",
+        "sourcePageYield": {
+          "amount": 4,
+          "unit": "people",
+          "sourceText": "4 people"
+        },
+        "sourcePageTime": {
+          "prepMinutes": 5,
+          "cookMinutes": 35,
+          "totalMinutes": 40
+        },
+        "sourceCuisineEvidence": "The page explicitly calls Pinakbet Filipino, says it originated in Ilocos, and describes it as a Filipino dish.",
+        "sourceCuisineEvidenceLine": 71,
+        "sourceBodyTextGap": "The source states an unnumbered cook duration in step 8; that unknown duration is retained in the Arabic summary.",
+        "sourceExtractSha256": "3184909965f8eae954b95813a09ca3770209baabc3327bcf2510bafc376c560c",
+        "sourceDeclaredStepCount": 9,
+        "methodStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+        "methodCoverageNote": "Saved source facts are grouped summary segments; indices refer to these evidence segments, not native source steps."
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 5,
+      "cuisine": {
+        "value": "Filipino",
+        "evidence": "The source says this Pinakbet is an unapologetically Filipino dish and links it to the Ilocos region.",
+        "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+        "reviewStatus": "source-evidence-recorded",
+        "status": "explicit-recipe-source-label"
+      },
+      "yield": {
+        "amount": 4,
+        "unit": "people",
+        "sourceText": "4 people"
+      },
+      "time": {
+        "prepMinutes": 5,
+        "cookMinutes": 35,
+        "totalMinutes": 40,
+        "actualElapsedMinutes": null,
+        "sourceEvidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/"
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "ليتشون كاوالِي شرائح",
+          "amount": 1,
+          "unit": "lb",
+          "sourceQuantityText": "1 lb lechon kawali sliced",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "مكعب مرق روبيان",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 piece Knorr Shrimp Cube",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "فاصوليا طويلة (سيتاو)",
+          "amount": 12,
+          "unit": "piece",
+          "sourceQuantityText": "12 pieces sitaw cut into 2 inch length",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "قرع كاباشا",
+          "amount": 0.5,
+          "unit": "piece",
+          "sourceQuantityText": "1/2 piece kalabasa cubed",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "بامية",
+          "amount": 12,
+          "unit": "piece",
+          "sourceQuantityText": "12 pieces okra",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "باذنجان صيني",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 piece Chinese eggplant sliced",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "أمبالايا (قرع مُر)",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 piece ampalaya sliced",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "بطاطا حلوة",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 piece kamote cubed (optional)",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 7,
+          "optional": true
+        },
+        {
+          "labelAr": "طماطم",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 pieces tomato cubed",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "زنجبيل",
+          "amount": 2,
+          "unit": "thumb",
+          "sourceQuantityText": "2 thumbs ginger crushed (optional)",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 9,
+          "optional": true
+        },
+        {
+          "labelAr": "بصل",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 piece onion chopped",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        },
+        {
+          "labelAr": "ثوم",
+          "amount": 4,
+          "unit": "clove",
+          "sourceQuantityText": "4 cloves garlic crushed",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 11,
+          "optional": null
+        },
+        {
+          "labelAr": "باغونغ ألامانغ (معجون روبيان مخمّر)",
+          "amount": 2,
+          "unit": "tsp",
+          "sourceQuantityText": "2 teaspoons bagoong alamang",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 12,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء",
+          "amount": 2.5,
+          "unit": "cup",
+          "sourceQuantityText": "2 ½ cups water",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 13,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت طبخ",
+          "amount": 3,
+          "unit": "tbsp",
+          "sourceQuantityText": "3 tablespoons cooking oil",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 14,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل أسود مطحون",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "1/4 teaspoon ground black pepper",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceIngredientIndex": 15,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "سخّني الزيت في قدر وقلّبي البصل والثوم والزنجبيل حتى يلين البصل.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "أضيفي نصف لحم الليتشون كاوالِي وقلّبيه دقيقة.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "أضيفي الماء واتركيه حتى يغلي.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "أضيفي مكعب مرق الروبيان، وغطّي القدر واطهي على نار متوسطة عشرين دقيقة.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "أضيفي الطماطم والباغونغ، واطهيهما مغطّيين ثلاث دقائق.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            2
+          ]
+        },
+        {
+          "textAr": "أضيفي القرع والبطاطا الحلوة واطهيهما سبع دقائق.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            3
+          ]
+        },
+        {
+          "textAr": "أضيفي الفاصوليا الطويلة والبامية والأمبالايا والباذنجان، واطهيها مغطّاة خمس دقائق.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            3
+          ]
+        },
+        {
+          "textAr": "تبّلي بالفلفل وأضيفي بقية لحم الليتشون كاوالِي؛ يذكر المصدر الطهي دون تحديد مدته.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            3
+          ]
+        },
+        {
+          "textAr": "انقلي الطبق إلى طبق التقديم وقدّميه.",
+          "evidenceUrl": "https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/",
+          "sourceStepIndices": [
+            4
+          ]
+        }
+      ],
+      "sourceNotes": [
+        "A source direction says ‘Cook for minutes’ without a number; no duration was inferred."
+      ],
+      "unknowns": [
+        "exact publication date",
+        "reuse rights",
+        "source approval",
+        "duration for source step 8",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": 9,
+      "contentSha256": "ab3bdd2d448c2d9faba7d7c89ec660dd763f48ed7a3933f39c2bbfc6338a39f0"
+    },
+    {
+      "recipeId": "panlasang-pinoy-kutsinta-20261021",
+      "title": "كوتشينتا فلبينية",
+      "creatorId": "panlasang-pinoy-vanjo-merano",
+      "sourceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+      "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-recipe-page-open",
+        "sourceExtractFile": "source-extracts/panlasang-pinoy-kutsinta-20261021-evidence.json",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "recipeCardExtractComplete": true,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 3,
+        "directPageOpen": true,
+        "directPageEvidence": "The source page describes kutsinta as one of the most popular Filipino desserts.",
+        "sourcePageTitle": "Kutsinta Recipe",
+        "sourcePageAuthor": "Vanjo Merano",
+        "sourcePageYield": {
+          "amount": 6,
+          "unit": "servings",
+          "sourceText": "6 servings"
+        },
+        "sourcePageTime": {
+          "prepMinutes": 20,
+          "cookMinutes": 60,
+          "totalMinutes": 80,
+          "actualElapsedMinutes": null,
+          "sourceEvidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/"
+        },
+        "sourceCuisineEvidence": "The source page describes kutsinta as one of the most popular Filipino desserts.",
+        "sourceExtractSha256": "006d8663275ac16a42489c4d2085e95b779e28d10399622c303c552c5b380f87",
+        "sourceDeclaredStepCount": null,
+        "methodStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+        "methodCoverageNote": "Saved source facts are grouped summary segments; indices refer to these evidence segments, not native source steps."
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 3,
+      "cuisine": {
+        "value": "Filipino",
+        "evidence": "The source page describes kutsinta as one of the most popular Filipino desserts.",
+        "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+        "reviewStatus": "source-evidence-recorded",
+        "status": "explicit-recipe-source-label"
+      },
+      "yield": {
+        "amount": 6,
+        "unit": "servings",
+        "sourceText": "6 servings"
+      },
+      "time": {
+        "prepMinutes": 20,
+        "cookMinutes": 60,
+        "totalMinutes": 80,
+        "actualElapsedMinutes": null,
+        "sourceEvidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/"
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "دقيق أرز",
+          "amount": 1.5,
+          "unit": "cup",
+          "sourceQuantityText": "1 1/2 cups rice flour",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "دقيق متعدد الاستعمالات",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceQuantityText": "1/2 cup all-purpose flour",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "سكر بني",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 cup brown sugar",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء",
+          "amount": 3,
+          "unit": "cup",
+          "sourceQuantityText": "3 cups water",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء قلوي للطعام",
+          "amount": 1.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1 1/2 teaspoons lye water",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "بذور أناتو",
+          "amount": 2,
+          "unit": "tsp",
+          "sourceQuantityText": "2 teaspoons annatto seeds",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "اخلطي دقيق الأرز والدقيق والسكر، ثم أضيفي الماء تدريجيًا مع التحريك.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "أضيفي ماء اللاي وماء الأناتو المصفّى وامزجي الخليط.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "وزّعيه في قوالب صغيرة واطهيه بالبخار حتى يتماسك، ثم قدّميه مع جوز الهند المبشور.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/",
+          "sourceStepIndices": [
+            2
+          ]
+        }
+      ],
+      "sourceNotes": [],
+      "unknowns": [
+        "exact publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null,
+      "contentSha256": "2740445b738470f0da5493173e4e62e03a1e34104282b3be0b3b43b40749f16f"
+    },
+    {
+      "recipeId": "panlasang-pinoy-lechon-kawali-20261021",
+      "title": "ليتشون كاوالِي",
+      "creatorId": "panlasang-pinoy-vanjo-merano",
+      "sourceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+      "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-recipe-page-open",
+        "sourceExtractFile": "source-extracts/panlasang-pinoy-lechon-kawali-20261021-evidence.json",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "recipeCardExtractComplete": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": false,
+        "methodSourceStepCount": 3,
+        "directPageOpen": true,
+        "directPageEvidence": "The recipe appears on Panlasang Pinoy; the page/source context explicitly describes the creator’s aim as introducing Filipino food and cuisine.",
+        "sourcePageTitle": "Lechon Kawali",
+        "sourcePageAuthor": "Vanjo Merano",
+        "sourcePageYield": {
+          "amount": 4,
+          "unit": "servings",
+          "sourceText": "4 servings"
+        },
+        "sourcePageTime": {
+          "prepMinutes": 10,
+          "cookMinutes": 70,
+          "totalMinutes": 80,
+          "actualElapsedMinutes": null,
+          "sourceEvidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/"
+        },
+        "sourceCuisineEvidence": "The recipe appears on Panlasang Pinoy; the page/source context explicitly describes the creator’s aim as introducing Filipino food and cuisine.",
+        "sourceExtractSha256": "a08f6bdfb790231fe78b145832f372a7d81518f2081a55828bcf7300610c09df",
+        "sourceDeclaredStepCount": null,
+        "methodStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+        "methodCoverageNote": "Saved source facts are grouped summary segments; indices refer to these evidence segments, not native source steps.",
+        "methodCompletenessStatus": "not-established-from-saved-evidence",
+        "methodCompletenessNote": "Only grouped factual summary segments remain in the local evidence note; full source-method coverage cannot be established from the saved artifact."
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 3,
+      "cuisine": {
+        "value": "Filipino",
+        "evidence": "The recipe appears on Panlasang Pinoy; the page/source context explicitly describes the creator’s aim as introducing Filipino food and cuisine.",
+        "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+        "reviewStatus": "source-evidence-recorded",
+        "status": "explicit-recipe-source-label"
+      },
+      "yield": {
+        "amount": 4,
+        "unit": "servings",
+        "sourceText": "4 servings"
+      },
+      "time": {
+        "prepMinutes": 10,
+        "cookMinutes": 70,
+        "totalMinutes": 80,
+        "actualElapsedMinutes": null,
+        "sourceEvidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/"
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "بطن خنزير",
+          "amount": 2,
+          "unit": "lb",
+          "sourceQuantityText": "2 lb pork belly",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "مكعب مرق خنزير",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 pork cube",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "أوراق غار",
+          "amount": 5,
+          "unit": "piece",
+          "sourceQuantityText": "5 bay leaves",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "حب فلفل أسود",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 tablespoon whole peppercorn",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "منكّه سائل",
+          "amount": 0.25,
+          "unit": "cup",
+          "sourceQuantityText": "1/4 cup Knorr liquid seasoning",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "8 to 10 cups water",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت للقلي",
+          "amount": 4,
+          "unit": "cup",
+          "sourceQuantityText": "4 cups oil",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "اغلي الماء مع حب الفلفل وأوراق الغار ومكعب المرق، ثم أضيفي اللحم واطهيه مغطّى حتى يلين.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "برّدي اللحم وتبّليه بالمنكّه السائل، واتركيه ليتشرّب النكهة.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "اقليه في زيت عميق على حرارة منخفضة متوسطة حتى يتحمّر ويصبح مقرمشًا، ثم صفّيه وقدّميه.",
+          "evidenceUrl": "https://panlasangpinoy.com/filipino-lechon-kawali/",
+          "sourceStepIndices": [
+            2
+          ]
+        }
+      ],
+      "sourceNotes": [
+        "The source water quantity is a range; amount is null and source quantity text is preserved."
+      ],
+      "unknowns": [
+        "exact publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null,
+      "contentSha256": "098085a9a26b79a85191be91e7c8263029e03db5f3852c593d0038c4fa1eef18"
+    },
+    {
+      "recipeId": "panlasang-pinoy-lumpia-20261021",
+      "title": "لومبيا فلبينية",
+      "creatorId": "panlasang-pinoy-vanjo-merano",
+      "sourceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+      "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-recipe-page-open",
+        "sourceExtractFile": "source-extracts/panlasang-pinoy-lumpia-20261021-evidence.json",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "recipeCardExtractComplete": true,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": true,
+        "methodSourceStepCount": 3,
+        "directPageOpen": true,
+        "directPageEvidence": "The source page explicitly identifies lumpia as a Filipino dish.",
+        "sourcePageTitle": "How to Cook Lumpia",
+        "sourcePageAuthor": "Vanjo Merano",
+        "sourcePageYield": {
+          "amount": 4,
+          "unit": "servings",
+          "sourceText": "4 servings"
+        },
+        "sourcePageTime": {
+          "prepMinutes": 15,
+          "cookMinutes": 12,
+          "totalMinutes": 27,
+          "actualElapsedMinutes": null,
+          "sourceEvidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/"
+        },
+        "sourceCuisineEvidence": "The source page explicitly identifies lumpia as a Filipino dish.",
+        "sourceExtractSha256": "ddd0dd47e7a371bad72d4fc9f6622946630a6717bf33d1eb5551d793d78712d3",
+        "sourceDeclaredStepCount": null,
+        "methodStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+        "methodCoverageNote": "Saved source facts are grouped summary segments; indices refer to these evidence segments, not native source steps."
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 3,
+      "cuisine": {
+        "value": "Filipino",
+        "evidence": "The source page explicitly identifies lumpia as a Filipino dish.",
+        "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+        "reviewStatus": "source-evidence-recorded",
+        "status": "explicit-recipe-source-label"
+      },
+      "yield": {
+        "amount": 4,
+        "unit": "servings",
+        "sourceText": "4 servings"
+      },
+      "time": {
+        "prepMinutes": 15,
+        "cookMinutes": 12,
+        "totalMinutes": 27,
+        "actualElapsedMinutes": null,
+        "sourceEvidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/"
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "لحم خنزير مفروم",
+          "amount": 1,
+          "unit": "lb",
+          "sourceQuantityText": "1 lb ground pork",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "جزر صغير",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 small carrot",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "بصل أصفر متوسط",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 medium yellow onion",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "مسحوق ثوم",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 teaspoon garlic powder",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل أسود",
+          "amount": 0.125,
+          "unit": "tsp",
+          "sourceQuantityText": "1/8 teaspoon black pepper",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 teaspoon salt",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "بيضة",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 egg",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "أغلفة لومبيا متوسطة",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "20 to 25 medium lumpia wrappers",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت طبخ",
+          "amount": 1.5,
+          "unit": "cup",
+          "sourceQuantityText": "1 1/2 cups cooking oil",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "اخلطي اللحم مع الجزر والبصل والتوابل والبيضة حتى يتجانس الحشو.",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "ضعي مقدارًا من الحشو على كل غلاف ولفّيه بإحكام.",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "اقلي اللفائف على دفعات في الزيت الساخن حتى تصبح ذهبية، ثم صفّيها وقدّميها.",
+          "evidenceUrl": "https://panlasangpinoy.com/how-to-cook-lumpia/",
+          "sourceStepIndices": [
+            2
+          ]
+        }
+      ],
+      "sourceNotes": [],
+      "unknowns": [
+        "exact publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null,
+      "contentSha256": "d23d6e265fb9ccbf1a33c110ecc4f3f7c1c4d06cc14589edd928055c8097f615"
+    },
+    {
+      "recipeId": "delishar-singapore-chilli-crab-cream-pasta-20261021",
+      "title": "مكرونة كريمة سلطعون الفلفل السنغافوري",
+      "creatorId": "delishar-sharon",
+      "sourceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+      "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-recipe-page-open",
+        "sourceExtractFile": "source-extracts/delishar-singapore-chilli-crab-cream-pasta-20261021-evidence.json",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "recipeCardExtractComplete": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": false,
+        "methodSourceStepCount": 4,
+        "directPageOpen": true,
+        "directPageEvidence": "The source recipe title explicitly identifies the dish as Singapore Chilli Crab Cream Pasta.",
+        "sourcePageTitle": "Singapore Chilli Crab Cream Pasta",
+        "sourcePageAuthor": "Sharon",
+        "sourcePageYield": {
+          "amount": 2,
+          "unit": "to 3 servings",
+          "sourceText": "2 to 3 servings"
+        },
+        "sourcePageTime": null,
+        "sourceCuisineEvidence": "The source recipe title explicitly identifies the dish as Singapore Chilli Crab Cream Pasta.",
+        "sourceExtractSha256": "0964290f3f8d3d9ec968409bc23e9d50532475a7d491132ef3135b2b7c57988c",
+        "sourceDeclaredStepCount": null,
+        "methodStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+        "methodCoverageNote": "Saved source facts are grouped summary segments; indices refer to these evidence segments, not native source steps.",
+        "methodCompletenessStatus": "not-established-from-saved-evidence",
+        "methodCompletenessNote": "Only grouped factual summary segments remain in the local evidence note; full source-method coverage cannot be established from the saved artifact."
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 4,
+      "cuisine": {
+        "value": "Singaporean",
+        "evidence": "The source recipe title explicitly identifies the dish as Singapore Chilli Crab Cream Pasta.",
+        "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+        "reviewStatus": "source-evidence-recorded",
+        "status": "explicit-recipe-source-label"
+      },
+      "yield": {
+        "amount": 2,
+        "unit": "to 3 servings",
+        "sourceText": "2 to 3 servings"
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "actualElapsedMinutes": null,
+        "sourceEvidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html"
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "لحم سلطعون مجمّد",
+          "amount": 250,
+          "unit": "g",
+          "sourceQuantityText": "250 g frozen crab",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "كراث صغير (شالوت)",
+          "amount": 4,
+          "unit": "piece",
+          "sourceQuantityText": "4 shallots",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "ثوم",
+          "amount": 5,
+          "unit": "clove",
+          "sourceQuantityText": "5 cloves garlic",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "زنجبيل",
+          "amount": 1.5,
+          "unit": "inch",
+          "sourceQuantityText": "1.5 inch ginger",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل تشيلي صغير",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "4 to 6 chili padi",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "عشب الليمون",
+          "amount": 1,
+          "unit": "stalk",
+          "sourceQuantityText": "1 stalk lemongrass",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "كاتشب",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 cup ketchup",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "خل",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 tablespoon vinegar",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        },
+        {
+          "labelAr": "سكر",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons sugar",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "معجون تشيلي بلاقان",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 teaspoon belacan chili",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 9,
+          "optional": null
+        },
+        {
+          "labelAr": "مرق دجاج",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "1 to 1.5 cups chicken stock",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        },
+        {
+          "labelAr": "كريمة كثيفة",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 tablespoon heavy cream",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 11,
+          "optional": null
+        },
+        {
+          "labelAr": "بيضة",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 egg",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 12,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "4 to 5 tablespoons oil",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceIngredientIndex": 13,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "افرمي الشالوت والثوم والزنجبيل والفلفل وعشب الليمون، ثم اطهي السلطعون في جزء من المرق.",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "قلّبي خليط العطريات ومعجون البلاقان في الزيت، ثم أضيفي الكاتشب والخل والسكر والمرق.",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "أعيدي السلطعون إلى الصلصة وأضيفي الكريمة والبيضة مع التحريك حتى يتماسك الخليط.",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceStepIndices": [
+            2
+          ]
+        },
+        {
+          "textAr": "قدّمي الصلصة فوق المكرونة المطهوة.",
+          "evidenceUrl": "https://delishar.com/2013/09/singapore-chilli-crab-cream-pasta.html",
+          "sourceStepIndices": [
+            3
+          ]
+        }
+      ],
+      "sourceNotes": [],
+      "unknowns": [
+        "exact publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null,
+      "contentSha256": "d82c4de5e003b065c1cf1439f4c6f7d7c4fb8ace7ace50cbb652867954de896d"
+    },
+    {
+      "recipeId": "delishar-singapore-chilli-crab-cake-pasta-20261021",
+      "title": "مكرونة كعكات السلطعون بالفلفل السنغافوري",
+      "creatorId": "delishar-sharon",
+      "sourceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+      "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-recipe-page-open",
+        "sourceExtractFile": "source-extracts/delishar-singapore-chilli-crab-cake-pasta-20261021-evidence.json",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "recipeCardExtractComplete": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": false,
+        "methodSourceStepCount": 4,
+        "directPageOpen": true,
+        "directPageEvidence": "The recipe title explicitly identifies the dish as Singapore Chilli Crab Cake Pasta.",
+        "sourcePageTitle": "Singapore Chilli Crab Cake Pasta",
+        "sourcePageAuthor": "Sharon",
+        "sourcePageYield": {
+          "amount": 4,
+          "unit": "servings",
+          "sourceText": "4 servings"
+        },
+        "sourcePageTime": null,
+        "sourceCuisineEvidence": "The recipe title explicitly identifies the dish as Singapore Chilli Crab Cake Pasta.",
+        "sourceExtractSha256": "3d4cde357c19bbac3482d7629963bccd148802539ecebfd8dbba34d68ba9e9de",
+        "sourceDeclaredStepCount": null,
+        "methodStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+        "methodCoverageNote": "Saved source facts are grouped summary segments; indices refer to these evidence segments, not native source steps.",
+        "methodCompletenessStatus": "not-established-from-saved-evidence",
+        "methodCompletenessNote": "Only grouped factual summary segments remain in the local evidence note; full source-method coverage cannot be established from the saved artifact."
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 4,
+      "cuisine": {
+        "value": "Singaporean",
+        "evidence": "The recipe title explicitly identifies the dish as Singapore Chilli Crab Cake Pasta.",
+        "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+        "reviewStatus": "source-evidence-recorded",
+        "status": "explicit-recipe-source-label"
+      },
+      "yield": {
+        "amount": 4,
+        "unit": "servings",
+        "sourceText": "4 servings"
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "actualElapsedMinutes": null,
+        "sourceEvidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html"
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "لحم سلطعون",
+          "amount": 400,
+          "unit": "g",
+          "sourceQuantityText": "400 g crab",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "فتات خبز بانكو",
+          "amount": 0.333,
+          "unit": "cup",
+          "sourceQuantityText": "1/3 cup panko",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "بيضة",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 egg",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "مسحوق بصل",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 teaspoon onion powder",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "مسحوق ثوم",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 teaspoon garlic powder",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل أحمر مكعبات",
+          "amount": 0.25,
+          "unit": "cup",
+          "sourceQuantityText": "1/4 cup diced red pepper",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "بصل أخضر",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons spring onion",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت كانولا",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceQuantityText": "2 tablespoons canola oil",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        },
+        {
+          "labelAr": "كراث صغير (شالوت)",
+          "amount": 4,
+          "unit": "piece",
+          "sourceQuantityText": "4 shallots",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "ثوم",
+          "amount": 5,
+          "unit": "clove",
+          "sourceQuantityText": "5 cloves garlic",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 9,
+          "optional": null
+        },
+        {
+          "labelAr": "زنجبيل",
+          "amount": 1.5,
+          "unit": "inch",
+          "sourceQuantityText": "1.5 inch ginger",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        },
+        {
+          "labelAr": "عشب الليمون",
+          "amount": 2,
+          "unit": "stalk",
+          "sourceQuantityText": "2 stalks lemongrass",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 11,
+          "optional": null
+        },
+        {
+          "labelAr": "فلفل تشيلي صغير",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "4 to 6 chili padi",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 12,
+          "optional": null
+        },
+        {
+          "labelAr": "كاتشب",
+          "amount": 1,
+          "unit": "cup",
+          "sourceQuantityText": "1 cup ketchup",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 13,
+          "optional": null
+        },
+        {
+          "labelAr": "خل",
+          "amount": 1,
+          "unit": "tbsp",
+          "sourceQuantityText": "1 tablespoon vinegar",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 14,
+          "optional": null
+        },
+        {
+          "labelAr": "سكر",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "2 to 3 tablespoons sugar",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 15,
+          "optional": null
+        },
+        {
+          "labelAr": "معجون تشيلي بلاقان",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 teaspoon belacan chili",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 16,
+          "optional": null
+        },
+        {
+          "labelAr": "مرق دجاج",
+          "amount": null,
+          "unit": null,
+          "sourceQuantityText": "1 to 1.5 cups chicken stock",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 17,
+          "optional": null
+        },
+        {
+          "labelAr": "بيضة للصلصة",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 eggs",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 18,
+          "optional": null
+        },
+        {
+          "labelAr": "معكرونة مطهوة",
+          "amount": 4,
+          "unit": "serving",
+          "sourceQuantityText": "4 servings cooked spaghetti",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceIngredientIndex": 19,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "اخلطي السلطعون والبانكو والبيضة ومساحيق التوابل والفلفل والبصل الأخضر، وشكّلي أقراصًا واقليها حتى تنضج.",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "اطحني الشالوت والثوم والزنجبيل وعشب الليمون والفلفل، ثم قلّبيها مع معجون البلاقان.",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "أضيفي الكاتشب والخل والسكر والمرق واتركي الصلصة تتجانس.",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceStepIndices": [
+            2
+          ]
+        },
+        {
+          "textAr": "أضيفي كعكات السلطعون والبيض المخفوق، ثم قدّميها مع السباغيتي المطهوة.",
+          "evidenceUrl": "https://delishar.com/2014/08/singapore-chilli-crab-cake-pasta.html",
+          "sourceStepIndices": [
+            3
+          ]
+        }
+      ],
+      "sourceNotes": [],
+      "unknowns": [
+        "exact publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings"
+      ],
+      "foodBindings": [],
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null,
+      "contentSha256": "86b9424d19f8ba95986492f33033a6e5321ae0c8963ee8d6a4f04eb69963daf4"
+    },
+    {
+      "recipeId": "nepali-food-recipes-aloo-bodi-tama-20261021",
+      "title": "ألو بودي تاما النيبالية",
+      "creatorId": "nepali-food-recipes",
+      "sourceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+      "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+      "sourceKind": "creator-website",
+      "sourceVideoId": null,
+      "youtubeDerived": false,
+      "retrievedAt": "2026-10-21",
+      "publishedAt": null,
+      "sourceUpdatedAt": null,
+      "sourceLanguage": "en",
+      "sourceApproval": null,
+      "reuseRights": "unknown",
+      "licenseStatus": "unknown",
+      "httpBodyHash": null,
+      "sourceEvidence": {
+        "acquisitionMethod": "primary-search-extract-plus-primary-page-open",
+        "sourceExtractFile": "source-extracts/nepali-food-recipes-aloo-bodi-tama-20261021-evidence.json",
+        "rawBodyArchived": false,
+        "fullPageRetrievedByWorker": false,
+        "recipeCardExtractComplete": false,
+        "ingredientListCompleteInExtract": true,
+        "methodCompleteInExtract": false,
+        "methodSourceStepCount": 4,
+        "directPageOpen": true,
+        "directPageEvidence": "The primary page calls the dish a Nepali stew and describes it in a Nepali/Newari cuisine context.",
+        "sourcePageTitle": "Potatoes, Bamboo Shoots and Black Eyed Beans (Aloo Bodi Tama)",
+        "sourcePageAuthor": null,
+        "sourcePageYield": {
+          "amount": null,
+          "unit": null,
+          "sourceText": null
+        },
+        "sourcePageTime": null,
+        "sourceCuisineEvidence": "The primary page calls the dish a Nepali stew and describes it in a Nepali/Newari cuisine context.",
+        "sourceExtractSha256": "ea4e1f1dcc249695e1e1d5648173d5bb1df71dbb10340ee837a271c8f30c2b82",
+        "sourceDeclaredStepCount": null,
+        "methodStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+        "methodCoverageNote": "Saved source facts are grouped summary segments; indices refer to these evidence segments, not native source steps.",
+        "methodCompletenessStatus": "not-established-from-saved-evidence",
+        "methodCompletenessNote": "Only grouped factual summary segments remain in the local evidence note; full source-method coverage cannot be established from the saved artifact."
+      },
+      "methodRepresentation": "concise-original-Arabic-summary",
+      "sourceStepIndexBase": 0,
+      "sourceStepCount": 4,
+      "cuisine": {
+        "value": "Nepalese",
+        "evidence": "The primary page calls the dish a Nepali stew and describes it in a Nepali/Newari cuisine context.",
+        "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+        "reviewStatus": "source-evidence-recorded",
+        "status": "explicit-recipe-source-label"
+      },
+      "yield": {
+        "amount": null,
+        "unit": null,
+        "sourceText": null
+      },
+      "time": {
+        "prepMinutes": null,
+        "cookMinutes": null,
+        "totalMinutes": null,
+        "actualElapsedMinutes": null,
+        "sourceEvidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/"
+      },
+      "runtimeReady": false,
+      "nutrition": null,
+      "ingredients": [
+        {
+          "labelAr": "براعم خيزران",
+          "amount": 100,
+          "unit": "g",
+          "sourceQuantityText": "100 g bamboo shoots",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 0,
+          "optional": null
+        },
+        {
+          "labelAr": "بطاطا متوسطة",
+          "amount": 2,
+          "unit": "piece",
+          "sourceQuantityText": "2 medium potatoes",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 1,
+          "optional": null
+        },
+        {
+          "labelAr": "بصل",
+          "amount": 1,
+          "unit": "piece",
+          "sourceQuantityText": "1 onion",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 2,
+          "optional": null
+        },
+        {
+          "labelAr": "لوبيا سوداء العين",
+          "amount": 80,
+          "unit": "g",
+          "sourceQuantityText": "80 g black-eyed beans",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 3,
+          "optional": null
+        },
+        {
+          "labelAr": "طماطم كرزية",
+          "amount": 6,
+          "unit": "piece",
+          "sourceQuantityText": "6 cherry tomatoes",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 4,
+          "optional": null
+        },
+        {
+          "labelAr": "ملح",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 teaspoon salt",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 5,
+          "optional": null
+        },
+        {
+          "labelAr": "كركم",
+          "amount": 0.25,
+          "unit": "tsp",
+          "sourceQuantityText": "1/4 teaspoon turmeric",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 6,
+          "optional": null
+        },
+        {
+          "labelAr": "مسحوق فلفل حار",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 teaspoon chili powder",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 7,
+          "optional": null
+        },
+        {
+          "labelAr": "كمون",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 teaspoon cumin",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 8,
+          "optional": null
+        },
+        {
+          "labelAr": "كزبرة مطحونة",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 teaspoon coriander powder",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 9,
+          "optional": null
+        },
+        {
+          "labelAr": "غارام ماسالا",
+          "amount": 0.5,
+          "unit": "tsp",
+          "sourceQuantityText": "1/2 teaspoon garam masala",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 10,
+          "optional": null
+        },
+        {
+          "labelAr": "معجون ثوم",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 teaspoon garlic paste",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 11,
+          "optional": null
+        },
+        {
+          "labelAr": "معجون زنجبيل",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceQuantityText": "1 teaspoon ginger paste",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 12,
+          "optional": null
+        },
+        {
+          "labelAr": "أوراق كزبرة",
+          "amount": 4,
+          "unit": "leaf",
+          "sourceQuantityText": "4 coriander leaves",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 13,
+          "optional": null
+        },
+        {
+          "labelAr": "زيت دوار الشمس",
+          "amount": 4,
+          "unit": "tbsp",
+          "sourceQuantityText": "4 tablespoons sunflower oil",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 14,
+          "optional": null
+        },
+        {
+          "labelAr": "ماء",
+          "amount": 2,
+          "unit": "dl",
+          "sourceQuantityText": "2 dl water",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceIngredientIndex": 15,
+          "optional": null
+        }
+      ],
+      "supplementalIngredients": [],
+      "steps": [
+        {
+          "textAr": "انقعي اللوبيا طوال الليل ثم صفّيها؛ اسلقي البطاطا وقطّعيها.",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceStepIndices": [
+            0
+          ]
+        },
+        {
+          "textAr": "شوّحي البصل بالزيت، ثم أضيفي التوابل والطماطم ومعجوني الثوم والزنجبيل واللوبيا والماء.",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceStepIndices": [
+            1
+          ]
+        },
+        {
+          "textAr": "اطهي المزيج على نار هادئة حتى تلين اللوبيا، ثم أضيفي البطاطا.",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceStepIndices": [
+            2
+          ]
+        },
+        {
+          "textAr": "أضيفي براعم الخيزران واطهيها قليلًا، ثم زيّني بالكزبرة.",
+          "evidenceUrl": "https://nepalifoodrecipes.com/potatoes-bamboo-shoots-and-black-eyed-beans-aloo-bodi-tama/",
+          "sourceStepIndices": [
+            3
+          ]
+        }
+      ],
+      "sourceNotes": [
+        "Ingredient list comes from the indexed extract of this same primary recipe page; direct rendered page showed placeholders."
+      ],
+      "unknowns": [
+        "exact publication date",
+        "reuse rights",
+        "source approval",
+        "nutrition",
+        "food bindings",
+        "yield",
+        "prep and cook times"
+      ],
+      "foodBindings": [],
+      "sourceStepIndexSemantics": "saved-evidence-summary-segment,not-source-native-step",
+      "sourceDeclaredStepCount": null,
+      "contentSha256": "771e75be8dc2c2eaa96a855453fa31d0106de551dbc954ab4af5a78130c5d393"
+    }
+  ]
+}

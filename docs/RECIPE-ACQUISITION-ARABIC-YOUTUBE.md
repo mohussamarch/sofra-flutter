@@ -1,5 +1,10 @@
 # الوصفات — الأعداد واتجاه الجمع المعتمد
 
+## Current checkpoint —21October2026 (§92)
+
+5545source records/27packs/5504snapshots;15newwebsite rows=11complete+4partial,1000newtargetshort989. Fiftharchive1000converted/846textcomplete/154flagged,0newacquisition. Planning54/4unchanged. Sevennewsource labels,only5withcompleteevidence. See RECIPE-ROUND-20261021 and RECIPE-CELL-MAP-20261021 for actual structure,source limits and proposals. Fresh checks:16 اختبار Flutter مرتبطًا ناجحًا؛40 اختبار Node ناجحًا؛analyze بلا مشاكل (34.5s)؛converter/manifest --check ناجحان؛الخريطة9فروع و320/360/736 بلا أخطاء JS أو تجاوز عرض;full327at§91historical. SoleEcheckout,98usedceiling,automationPAUSED,no secondwriter.
+
+
 توجيه المستخدم في14أكتوبر2026: أولوية الوصفات الحديثة من مشاهير الطبخ العرب على يوتيوب. إيقاف التوسع الحالي في وصفات الكتب والمراجع القديمة والتاريخية، بما فيه مواصلة مسار Wikibooks. البيانات المجمعة محفوظة؛ لا نحذفها أو نصفها بأنها معتمدة.
 
 ## الأعداد الحالية المثبتة

@@ -1,5 +1,10 @@
 # Agent handoff and economical execution
 
+## Current checkpoint —21October2026 (§92)
+
+5545source records/27packs/5504snapshots;15newwebsite rows=11complete+4partial,1000newtargetshort989. Fiftharchive1000converted/846textcomplete/154flagged,0newacquisition. Planning54/4unchanged. Sevennewsource labels,only5withcompleteevidence. See RECIPE-ROUND-20261021 and RECIPE-CELL-MAP-20261021 for actual structure,source limits and proposals. Fresh checks:16 اختبار Flutter مرتبطًا ناجحًا؛40 اختبار Node ناجحًا؛analyze بلا مشاكل (34.5s)؛converter/manifest --check ناجحان؛الخريطة9فروع و320/360/736 بلا أخطاء JS أو تجاوز عرض;full327at§91historical. SoleEcheckout,98usedceiling,automationPAUSED,no secondwriter.
+
+
 ## Latest user correction —16October2026
 
 Stop with2% remaining: operational ceiling **98% used** for either actual Codex quota window;this supersedes older99/90instructions. Unknown quota or ordinaryUsageAllowed=false still blocks costly work;no credits/reset. Pass watchdog `--quota-limit 98`. `automation-2` is currently PAUSED;do not resume it while another session owns writing. A Claude continuation reads `docs/CLAUDE-RESUME.md`,actual Git/owner and external DELIVERY before writing in the sole E checkout.

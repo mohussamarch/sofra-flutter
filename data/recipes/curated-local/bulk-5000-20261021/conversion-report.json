@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "packFile": "data/recipes/curated-local/bulk-5000-20261021/normalized-recipes.json",
+  "packSha256": "54243d124c4648021ae169dc00283ecf19fd29fa176fcbe0c1eeba30241fc62d",
+  "counts": {
+    "recipes": 1000,
+    "convertedRecords": 1000,
+    "ingredientLines": 8030,
+    "steps": 5894,
+    "alreadyArchivedRecords": 1000,
+    "newAcquisitions": 0,
+    "newNativeLibraryRecords": 1000,
+    "completeIngredientAndMethodRecords": 846,
+    "incompleteIngredientAndMethodRecords": 154,
+    "omittedIngredientNames": 0,
+    "omittedMethodText": 0,
+    "rawIngredientCoverageVerifiedRecords": 978,
+    "rawIngredientCoverageReviewRequiredRecords": 22,
+    "rawMethodCoverageVerifiedRecords": 853,
+    "rawMethodCoverageReviewRequiredRecords": 147,
+    "fullyReviewed": 0,
+    "needsReview": 1000,
+    "runtimeReady": 0,
+    "translatedRecords": 0,
+    "missingAmountLines": 8030,
+    "missingUnitLines": 8030,
+    "unknownYieldRecords": 1000,
+    "unknownTimeRecords": 1000,
+    "unresolvedMarkupIngredientLines": 12,
+    "unresolvedMarkupMethodSteps": 3,
+    "pageLicenseExceptionsNotReviewed": 1000
+  },
+  "languageCounts": {
+    "de": 370,
+    "es": 630
+  },
+  "cuisineCounts": {},
+  "untaggedRecords": 1000,
+  "sourceSnapshotCount": 1000,
+  "archiveCandidateCounts": {
+    "es": 853,
+    "de": 544
+  },
+  "completeCandidateCounts": {
+    "es": 476,
+    "de": 373
+  },
+  "incompleteCandidateCounts": {
+    "es": 377,
+    "de": 171
+  },
+  "rawIngredientCoverageReviewRequiredCandidates": {
+    "es": 73,
+    "de": 2
+  },
+  "rawMethodCoverageReviewRequiredCandidates": {
+    "es": 311,
+    "de": 149
+  },
+  "selectedCompleteRecords": 846,
+  "selectedIncompleteRecords": 154,
+  "duplicateReview": {
+    "previousSelectedRecords": 4530,
+    "inputManifestSha256": "038a62a40cdd528855f5b0b97cbf0ee1e34aa78c0edb8019bd141a30a912435a",
+    "excluded": {
+      "priorSource": 0,
+      "priorContent": 4,
+      "withinArchiveDuplicate": 0,
+      "sourceIntegrity": 0
+    },
+    "scope": "Source record/revision/permalink and normalized ingredient+method text checked against all 23 frozen packs and within the two archived language candidates. No semantic translated-dish uniqueness claim."
+  },
+  "integrityIsCulinaryOrRightsApproval": false
+}

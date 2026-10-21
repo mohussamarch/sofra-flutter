@@ -2,15 +2,13 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-16T11:34:54Z",
-    "taskId": "recipe-local-curation",
-    "summary": "Fourth1000 archived source records integrated into4530library with988 text-complete and12 flagged; literal recovery restored125 ingredient lines. Target-confidence logic and full327Flutter/49Node/analyze passed. User reserve now2percent (98used).",
+    "at": "2026-10-21T03:25:36.129654Z",
+    "taskId": "recipe-bank",
+    "summary": "Integrated15new source rows(11complete/4partial)+1000offlinearchive(846textcomplete/154flagged),verifiedrecipe-cellmap and relatedchecks. Newacquisitiontargetshort989.",
     "evidence": [
-      "data/recipes/curated-local/flutter-manifest.json",
-      "docs/HANDOFF.md",
-      "test/recipe_library_assets_test.dart",
-      "test/person_nutrition_test.dart",
-      "docs/CLAUDE-RESUME.md"
+      "docs/RECIPE-ROUND-20261021.md",
+      "docs/RECIPE-CELL-MAP-20261021.md",
+      "data/recipes/modern-expansion-20261021/round-summary.json"
     ]
   },
   "tasks": [
@@ -79,9 +77,9 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Actual sourcefood/quantity/form review or distinctboundedmodern/localunit.86library/62local/51source labels;3indexedYTdescriptions,0directvideosources;no newbooks.",
+      "nextAction": "Complete4partial modern methods or obtain scalable permitted modern source;11newcomplete/1000target,short989. Sevennewsource labels,5withfullmethod;no runtimeapproval. ModernArabicYouTube priority;no newbooknetwork.",
       "lastAttemptAt": "2026-10-15T02:30:14.398973+00:00",
-      "lastProgressAt": "2026-10-15T02:37:34.778884+00:00",
+      "lastProgressAt": "2026-10-21T03:25:36.129654Z",
       "completedUnit": {
         "englishSourcePages": 3796,
         "englishParsedRecipes": 3640,
@@ -418,7 +416,7 @@
         "compound-revisions"
       ],
       "status": "ready",
-      "nextAction": "Review actual source quantities/forms with explicit selected food.78recipes/797lines/715distinct quantity gaps; no bindings inferred.",
+      "nextAction": "Explicit food/quantity/form review for5545source records/46306lines/46209quantitygaps;no automatic bindings.4modernmethods partial.",
       "infrastructureDoesNotApproveData": true,
       "lastProgressAt": "2026-10-15T03:09:23.849026+00:00",
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
@@ -648,8 +646,8 @@
       "status": "ready",
       "dependsOn": [],
       "lastAttemptAt": "2026-10-15T12:17:35.037053+00:00",
-      "nextAction": "Resolve 12 marked French source-markup cases, then review quantities, exact ingredients, rights and language. For the next >=1000 genuinely complete source-text batch use a permitted modern source or another existing archive-language pool; no new old-book network.",
-      "lastProgressAt": "2026-10-16T05:59:10Z",
+      "nextAction": "Fifth archive1000converted/846text-complete; review quantities/rights/translation and12priorFrenchmarkupcases. Sourcecompleteness isnotculinaryapproval;no newbooknetwork.",
+      "lastProgressAt": "2026-10-21T03:25:36.129654Z",
       "completedUnit": {
         "archiveRecords": 4064,
         "latestConverted": 1000,
@@ -1488,14 +1486,71 @@
       "evidence": [
         "docs/agents/modern-source-next-20261016.md"
       ]
+    },
+    {
+      "id": "recipe-modern-expansion-20261021",
+      "priority": 35,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "completedAt": "2026-10-21T03:25:36.129654Z",
+      "lastProgressAt": "2026-10-21T03:25:36.129654Z",
+      "nextAction": "Closed scoped unit; remaining source/quality/core work stays open in recipe-bank/recipe-local-curation.",
+      "evidence": [
+        "docs/RECIPE-ROUND-20261021.md"
+      ]
+    },
+    {
+      "id": "recipe-bulk-5000",
+      "priority": 35,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "completedAt": "2026-10-21T03:25:36.129654Z",
+      "lastProgressAt": "2026-10-21T03:25:36.129654Z",
+      "nextAction": "Closed scoped unit; remaining source/quality/core work stays open in recipe-bank/recipe-local-curation.",
+      "evidence": [
+        "data/recipes/curated-local/bulk-5000-20261021/conversion-report.json"
+      ]
+    },
+    {
+      "id": "recipe-cell-map",
+      "priority": 35,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "completedAt": "2026-10-21T03:25:36.129654Z",
+      "lastProgressAt": "2026-10-21T03:25:36.129654Z",
+      "nextAction": "Closed scoped unit; remaining source/quality/core work stays open in recipe-bank/recipe-local-curation.",
+      "evidence": [
+        "docs/RECIPE-CELL-MAP-20261021.md"
+      ]
     }
   ],
+  "activeResearchRound": {
+    "id": "modern-expansion-20261021",
+    "status": "closed-with-shortfall",
+    "owner": null,
+    "baseCommit": "8012d7943fc0243e83bef38e482e2ff2d39f74ce",
+    "completedAt": "2026-10-21T03:25:36.129654Z",
+    "newComplete": 11,
+    "newPartial": 4,
+    "archiveConverted": 1000,
+    "archiveTextComplete": 846,
+    "evidence": [
+      "docs/RECIPE-ROUND-20261021.md",
+      "docs/RECIPE-CELL-MAP-20261021.md",
+      "data/recipes/modern-expansion-20261021/round-summary.json"
+    ]
+  },
   "quotaCheckpoint": {
-    "at": "2026-10-16T05:38:02.649482+00:00",
-    "primaryUsedPercent": 39,
-    "weeklyUsedPercent": 38,
+    "at": "2026-10-21T03:24:49Z",
+    "primaryUsedPercent": 71,
+    "weeklyUsedPercent": 11,
     "ordinaryUsageAllowed": true,
-    "operationalLimit": 99
+    "operationalLimitPercent": 98,
+    "creditsUsed": false,
+    "resetCreditsUsed": false
   },
   "updatedAt": "2026-10-16T05:38:02.649482+00:00",
   "resumeDiagnosis": {
@@ -1509,7 +1564,7 @@
     ],
     "correctiveAction": "Root resumed same units without second writer, verified immutable pins and actual counts, closed owners; separate monthly agent edited disjoint files. Search next licensed modern source and preserve rights/quantity review."
   },
-  "operationalQuotaLimit": 99,
+  "operationalQuotaLimit": 98,
   "recipeBatchPolicy": {
     "minimumTarget": 1000,
     "totalGoal": 10000,
