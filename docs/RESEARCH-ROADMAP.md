@@ -1,5 +1,11 @@
 # سُفرة — أولويات البحث والمنطق والبنوك
 
+## Current checkpoint —22October2026 (§95)
+
+Current§95:446active concrete-cuisine recipes/211held/657retained;15user-selectedSofra primary cuisines+other,notexternalrank.650active target needs204. Explicitweeklymonthpoolgenerator built;full369Flutter/analyze clean. SeeCUISINE-POLICY-20261022,CUISINES-20261022,CLAUDE-RESUME. Prior§94counts historicalunderoldercriteria. SoleE,98%ceiling,automationPAUSED;finalhash externalDELIVERY.
+
+Earlier checkpoints below are historical.
+
 ## Current checkpoint —22October2026 (§94)
 
 Current §94:657 actual Arabic catalog recipes (+592),63 cuisine/region/style groups;650 target met22Oct. Two built backend units: durable personal yield review and explicit atomic chosen-month-plan acceptance. Full356Flutter/analyze clean;65original/260parity; source643/1479checks. Warehouse15648/38 and bundled6648/29/6504 unchanged,acquisition0. See RECIPE-650-RESULT,CUISINES-20261022,CLAUDE-RESUME. SoleEcheckout;98%ceiling,automationPAUSED; finalcommit in external DELIVERY.json.

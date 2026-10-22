@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-22T06:43:10.765707Z",
-    "taskId": "catalog-650-20261021",
-    "summary": "657 actual catalog recipes (+592),650 target met; two backend flows built; full356Flutter/analyze clean; source hashes preserved.",
+    "at": "2026-10-22T11:50:19.871369Z",
+    "taskId": "monthly-pool-generation",
+    "summary": "Sofra15selected byuser;446active/211heldwithout deletion; weekly-monthpoolgeneratorbuilt;full369Flutter/analyzeclean.",
     "evidence": [
-      "recipes/data/index.json",
-      "data/recipes/catalog-650-20261021/final-summary.json",
-      "docs/RECIPE-650-RESULT.md",
-      "test/catalog_650_progress_test.dart"
+      "docs/CUISINE-POLICY-20261022.md",
+      "data/recipes/cuisine-policy-20261022/final-summary.json",
+      "test/cuisine_policy_test.dart",
+      "test/monthly_pool_generation_test.dart"
     ]
   },
   "tasks": [
@@ -78,7 +78,7 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Catalog657/63 target650 met; warehouse15648/38 unchanged. Prioritize actual recipe eligibility/Arabic creator additions; source acquisition remains separate and must report any1000-target shortfall.",
+      "nextAction": "446active/211held/657retained. Prioritize selectedSofra15 and actual concrete-cuisine/ingredient/yield/food review; no secondary cuisine expansion or held/source-only count inflation.",
       "lastAttemptAt": "2026-10-15T02:30:14.398973+00:00",
       "lastProgressAt": "2026-10-21T08:46:19.654549Z",
       "completedUnit": {
@@ -417,7 +417,7 @@
         "compound-revisions"
       ],
       "status": "ready",
-      "nextAction": "Explicit food/quantity/form review for657catalog recipes (183known yield,474unknown) and6648selected source assets; no automatic nutrition/allergy/cost approval. Preserve nulls and immutable revision-specific evidence.",
+      "nextAction": "446active/211held/657retained. Prioritize selectedSofra15 and actual concrete-cuisine/ingredient/yield/food review; no secondary cuisine expansion or held/source-only count inflation.",
       "infrastructureDoesNotApproveData": true,
       "lastProgressAt": "2026-10-15T03:09:23.849026+00:00",
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
@@ -583,7 +583,7 @@
         "people-targets"
       ],
       "status": "ready",
-      "nextAction": "Existing explicit search/preferences/coverage and atomic selected-option save are built. Remaining full planner needs automatic eligible candidate pools plus actual price/people review; unknown source feeds do not block independent pool-policy code."
+      "nextAction": "Explicit weekly-pattern monthly pools, bounded search and atomic selected-option acceptance built. Remaining: reviewed automatic eligibility/prices/personfit; no global clinical optimizer or autoedits."
     },
     {
       "id": "scan-ocr",
@@ -647,7 +647,7 @@
       "status": "ready",
       "dependsOn": [],
       "lastAttemptAt": "2026-10-15T12:17:35.037053+00:00",
-      "nextAction": "Catalog657/63,650target met. Continue modern Arabic creator coverage and exact source-based yield/time/ingredient review; source acquisition and unmerged drafts do not increase catalog count.",
+      "nextAction": "446active/211held/657retained. Prioritize selectedSofra15 and actual concrete-cuisine/ingredient/yield/food review; no secondary cuisine expansion or held/source-only count inflation.",
       "lastProgressAt": "2026-10-21T08:46:19.654549Z",
       "completedUnit": {
         "archiveRecords": 4064,
@@ -1672,7 +1672,7 @@
       "owner": null,
       "baseCommit": "533891c1a879fd7cbd2fa9ed9c8114a2fbe209a2",
       "startedAt": "2026-10-21T12:40:59.277060Z",
-      "nextAction": "650 target met. Continue actual yield/time/ingredient/cost/nutrition eligibility review; no source-only inflation.",
+      "nextAction": "Current446active/211held tracked by catalog-650-classified; do not reuse historical657 as current active count.",
       "evidence": [
         "recipes/data/index.json",
         "data/recipes/catalog-650-20261021/final-summary.json",
@@ -1683,7 +1683,8 @@
       "lastProgressAt": "2026-10-22T06:43:10.765707Z",
       "actualCatalogCount": 657,
       "remainingToTarget": 0,
-      "completedAt": "2026-10-22T06:43:10.765707Z"
+      "completedAt": "2026-10-22T06:43:10.765707Z",
+      "completionScope": "Historical657retained extracted recipes before the later concrete-cuisine admission criterion"
     },
     {
       "id": "yield-review-20261022",
@@ -1718,11 +1719,33 @@
         "monthly-acceptance-20261022",
         "yield-review-20261022"
       ],
-      "status": "ready",
-      "nextAction": "Define explicit required date/slot coverage, caller-approved eligible recipe revisions and servings, then generate bounded candidate pools locally; preserve unknown yield/cost/nutrition and no clinical/global suitability claims. This generator is not built yet.",
+      "status": "done",
+      "nextAction": "Explicit weekly-template calendar generator done. Automatic nutritional eligibility, reviewed prices and global recipe choice remain separate; use generatedrequiredSlots in search then explicit atomicacceptance.",
       "evidence": [
-        "docs/LOGIC-BUILD-20261022.md",
-        "docs/agents/logic-gap-audit-20261022.md"
+        "docs/CUISINE-POLICY-20261022.md",
+        "data/recipes/cuisine-policy-20261022/final-summary.json",
+        "test/cuisine_policy_test.dart",
+        "test/monthly_pool_generation_test.dart"
+      ],
+      "completedAt": "2026-10-22T11:50:19.871369Z",
+      "lastProgressAt": "2026-10-22T11:50:19.871369Z"
+    },
+    {
+      "id": "catalog-650-classified",
+      "priority": 24,
+      "dependsOn": [],
+      "status": "ready",
+      "target": 650,
+      "actualCatalogCount": 446,
+      "retainedRecipeCount": 657,
+      "heldCuisineReview": 211,
+      "remainingToTarget": 204,
+      "nextAction": "Review211held cuisines from contemporary evidence, prioritize selectedSofra15, and reach650active concrete-cuisine recipes. No inferred national origin or countingretained/heldasactive.",
+      "evidence": [
+        "docs/CUISINE-POLICY-20261022.md",
+        "data/recipes/cuisine-policy-20261022/final-summary.json",
+        "test/cuisine_policy_test.dart",
+        "test/monthly_pool_generation_test.dart"
       ]
     }
   ],

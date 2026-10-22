@@ -26,6 +26,7 @@ import 'preparation_category_repository.dart';
 import 'state_store.dart';
 
 part 'monthly_plan_acceptance.dart';
+part 'monthly_pool_generation.dart';
 
 Map<String, dynamic> _clone(Map<String, dynamic> value) =>
     jsonDecode(jsonEncode(value)) as Map<String, dynamic>;
@@ -510,7 +511,7 @@ class KitchenService {
       recipe: review.candidate.recipe,
       sourceImportReview: review,
     );
-    if ((await recipes.index).any((v) => v['id'] == draft.variantId)) {
+    if ((await recipes.retainedIndex).any((v) => v['id'] == draft.variantId)) {
       throw StateError(
         'Source import cannot overwrite a shipping catalog identity',
       );
@@ -541,7 +542,9 @@ class KitchenService {
       recipe: review.recipe,
       authoredReview: review,
     );
-    if ((await recipes.index).any((v) => v['id'] == revision.variantId)) {
+    if ((await recipes.retainedIndex).any(
+      (v) => v['id'] == revision.variantId,
+    )) {
       throw StateError('Personal recipe cannot overwrite catalog identity');
     }
     await _write((k) {
@@ -598,7 +601,9 @@ class KitchenService {
       );
     }
     if (revision.kind == RecipeRevisionKind.catalog ||
-        (await recipes.index).any((v) => v['id'] == revision.variantId)) {
+        (await recipes.retainedIndex).any(
+          (v) => v['id'] == revision.variantId,
+        )) {
       throw StateError('Custom recipes cannot overwrite catalog identities');
     }
     await _write((k) {
@@ -631,7 +636,7 @@ class KitchenService {
       reviewedAt: reviewedAt,
       acknowledgeWholeRecipeYield: acknowledgeWholeRecipeYield,
     );
-    if ((await recipes.index).any((v) => v['id'] == draft.variantId)) {
+    if ((await recipes.retainedIndex).any((v) => v['id'] == draft.variantId)) {
       throw StateError('Yield review cannot overwrite a catalog identity');
     }
     await _write((k) {
@@ -1192,6 +1197,9 @@ class KitchenService {
 
   Future<void> plan(PlannedMeal meal) async {
     final revision = await _resolveMeal(meal);
+    if (!RecipeRepository.hasConcreteCuisine(revision.recipe.cuisine)) {
+      throw StateError('Review a specific cuisine before creating a new plan');
+    }
     final pinned = meal.withRecipeRevision(revision.key);
     await _write((k) {
       if (revision.kind == RecipeRevisionKind.catalog) {
@@ -1621,7 +1629,7 @@ class KitchenService {
       final resolved = <MonthlyBudgetMeal>[];
       final pinned = <String, PlannedMeal>{};
       for (final meal in pool.value) {
-        final revision = await _resolveMeal(meal);
+        final revision = await _resolveMonthlyCandidate(meal);
         recipeIdentities[(
               date: meal.date,
               slot: meal.slot,

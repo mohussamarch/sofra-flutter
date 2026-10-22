@@ -1,0 +1,226 @@
+{
+  "at": "2026-10-22T11:50:19.871369Z",
+  "baseCommit": "35ace0e43228e1cc382570f6aace629a01a852ea",
+  "retainedRecipes": 657,
+  "activeRecipes": 446,
+  "heldCuisineReview": 211,
+  "primaryGroups": 15,
+  "secondaryGroup": "مطابخ أخرى",
+  "groups": [
+    {
+      "id": "egyptian",
+      "name": "مصري",
+      "members": [
+        "مصري"
+      ],
+      "kind": "primary",
+      "order": 1,
+      "count": 13
+    },
+    {
+      "id": "saudi",
+      "name": "سعودي",
+      "members": [
+        "سعودي"
+      ],
+      "kind": "primary",
+      "order": 2,
+      "count": 15
+    },
+    {
+      "id": "levantine",
+      "name": "شامي",
+      "members": [
+        "شامي",
+        "لبناني"
+      ],
+      "kind": "primary",
+      "order": 3,
+      "count": 18
+    },
+    {
+      "id": "moroccan",
+      "name": "مغربي",
+      "members": [
+        "مغربي"
+      ],
+      "kind": "primary",
+      "order": 4,
+      "count": 9
+    },
+    {
+      "id": "italian",
+      "name": "إيطالي",
+      "members": [
+        "إيطالي"
+      ],
+      "kind": "primary",
+      "order": 5,
+      "count": 49
+    },
+    {
+      "id": "french",
+      "name": "فرنسي",
+      "members": [
+        "فرنسي"
+      ],
+      "kind": "primary",
+      "order": 6,
+      "count": 13
+    },
+    {
+      "id": "greek",
+      "name": "يوناني",
+      "members": [
+        "يوناني"
+      ],
+      "kind": "primary",
+      "order": 7,
+      "count": 17
+    },
+    {
+      "id": "spanish",
+      "name": "إسباني",
+      "members": [
+        "إسباني"
+      ],
+      "kind": "primary",
+      "order": 8,
+      "count": 17
+    },
+    {
+      "id": "turkish",
+      "name": "تركي",
+      "members": [
+        "تركي"
+      ],
+      "kind": "primary",
+      "order": 9,
+      "count": 13
+    },
+    {
+      "id": "chinese",
+      "name": "صيني",
+      "members": [
+        "صيني",
+        "سيتشواني"
+      ],
+      "kind": "primary",
+      "order": 10,
+      "count": 27
+    },
+    {
+      "id": "japanese",
+      "name": "ياباني",
+      "members": [
+        "ياباني"
+      ],
+      "kind": "primary",
+      "order": 11,
+      "count": 12
+    },
+    {
+      "id": "indian",
+      "name": "هندي",
+      "members": [
+        "هندي"
+      ],
+      "kind": "primary",
+      "order": 12,
+      "count": 22
+    },
+    {
+      "id": "thai",
+      "name": "تايلاندي",
+      "members": [
+        "تايلاندي"
+      ],
+      "kind": "primary",
+      "order": 13,
+      "count": 26
+    },
+    {
+      "id": "korean",
+      "name": "كوري",
+      "members": [
+        "كوري"
+      ],
+      "kind": "primary",
+      "order": 14,
+      "count": 19
+    },
+    {
+      "id": "mexican",
+      "name": "مكسيكي",
+      "members": [
+        "مكسيكي"
+      ],
+      "kind": "primary",
+      "order": 15,
+      "count": 22
+    },
+    {
+      "id": "other",
+      "name": "مطابخ أخرى",
+      "members": [
+        "أرجنتيني",
+        "أسترالي",
+        "ألماني",
+        "أمريكي",
+        "أوزبكي",
+        "أوكراني",
+        "أيرلندي",
+        "إثيوبي",
+        "إندونيسي",
+        "إيطالي أمريكي",
+        "باكستاني",
+        "برازيلي",
+        "برتغالي",
+        "بريطاني",
+        "بلجيكي",
+        "بنجابي",
+        "بوسني",
+        "بولندي",
+        "بيروفي",
+        "تبتي",
+        "تونسي",
+        "جامايكي",
+        "دومينيكاني",
+        "روسي",
+        "سويدي",
+        "سويسري",
+        "عُماني",
+        "فلبيني",
+        "فنزويلي",
+        "فنلندي",
+        "فيتنامي",
+        "كاجوني",
+        "كشميري",
+        "ليتواني",
+        "مالطي",
+        "ماليزي",
+        "متوسطي",
+        "مجري",
+        "مكسيكي أمريكي",
+        "نمساوي",
+        "هولندي",
+        "يمني"
+      ],
+      "kind": "secondary",
+      "order": null,
+      "count": 154
+    }
+  ],
+  "target650ActiveRemaining": 204,
+  "newRecipeAcquisition": 0,
+  "sourceAssetsUnchanged": true,
+  "fullFlutterTests": 369,
+  "analysis": "No issues found",
+  "newLogic": "complete explicit weekly-pattern to calendar-month candidate generator; exact pins, coverage, caps, no writes or automatic choice",
+  "limitations": [
+    "211cuisines remain unresolved; no inferred origin or source approval",
+    "No new native UI/APK/Firebase/billing",
+    "Generator uses caller-reviewed weekly candidates; automatic nutritional eligibility and global optimization remain separate"
+  ],
+  "postStyleRelatedFlutterTests": 21
+}
