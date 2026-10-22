@@ -1,0 +1,2730 @@
+{
+  "schemaVersion": 1,
+  "chunk": 9,
+  "recipes": [
+    {
+      "id": "bc650-aglio-e-olio",
+      "name": "سباغيتي بالثوم والزيت",
+      "nameEn": "Spaghetti aglio e olio",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "معكرونة طويلة بزيت الزيتون والثوم والفلفل الأحمر والبقدونس.",
+      "servings": 4,
+      "prepTime": null,
+      "cookTime": 15,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-aglio-e-olio-ing-1",
+          "name": "سباغيتي، رطل واحد (500 جم) أو معكرونة بشكل مشابه",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 pound (500g) spaghetti (or similarly shaped pasta)"
+        },
+        {
+          "id": "bc650-aglio-e-olio-ing-2",
+          "name": "زيت زيتون بكر ممتاز، نصف كوب (110 جم)",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-aglio-e-olio-ing-3",
+          "name": "5–6 فصوص ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5-6 cloves of garlic"
+        },
+        {
+          "id": "bc650-aglio-e-olio-ing-4",
+          "name": "رقائق فلفل أحمر، ربع ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-aglio-e-olio-ing-5",
+          "name": "حزمة بقدونس طازج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A bunch of fresh parsley"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن مقلاة كبيرة على حرارة متوسطة عالية وابدأ بطهي المعكرونة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع الثوم شرائح رفيعة أو افرمه ناعماً، وافرم البقدونس.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الزيت والثوم إلى المقلاة واطههما برفق حتى يصبح الثوم ذهبياً فاتحاً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف رقائق الفلفل وخفف الحرارة كي تتشرب الزيت نكهتها.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "عندما تنضج المعكرونة صفّها واحتفظ بما لا يقل عن كوب تقريباً من ماء الطهي.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف المعكرونة المصفاة مع قليل من ماء الطهي إلى المقلاة وقلّب بقوة حتى يساعد نشا الماء على استحلاب الصلصة وضبط قوامها.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف البقدونس في اللحظة الأخيرة للحفاظ على نضارته، واضبط التتبيل حسب الحاجة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - 🍳 Cook time: 15 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/aglio-e-olio.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=5553d40adf1595339afd576f3b352457391fb711daa989d3e8e2b488d3ab50cd"
+    },
+    {
+      "id": "bc650-spaghetti-all-amatriciana",
+      "name": "سباغيتي ألا ماتريتشيانا",
+      "nameEn": "Spaghetti all'amatriciana",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "سباغيتي بصلصة الطماطم والفلفل الحار والغوانتشالي أو اللحم المقدد، مع جبن بيكورينو رومانو.",
+      "servings": 4,
+      "prepTime": 5,
+      "cookTime": 25,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-1",
+          "name": "جبن بيكورينو رومانو، ويفضل، أو بارميزان، 1.5 أونصة (40 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pecorino romano cheese preferably or Parmesan 1.5oz (40g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-2",
+          "name": "فلفل حار طازج بالكمية المرغوبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Fresh chili pepper (as many as you'd like)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-3",
+          "name": "زيت زيتون بكر ممتاز، ربع كوب (40 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Extra virgin olive oil 1/4 cup (40g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-4",
+          "name": "غوانتشالي، ويفضل، أو لحم مقدد، 3.5 أونصة (100 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Guanciale preferably or Bacon 3.5oz (100g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-5",
+          "name": "نبيذ أبيض، ربع كوب (60 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "White wine 1/4 cup (60g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-6",
+          "name": "باساتا طماطم، 10 أونصات (300 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tomato passata 10oz (300g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-7",
+          "name": "سباغيتي أو معكرونة طويلة مشابهة، 12 أونصة (350 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Spaghetti or similar long pasta 12oz (350g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-8",
+          "name": "بيكورينو رومانو أو بارميزان إضافي (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "(optional) Extra pecorino romano or parmesan"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ابشر البيكورينو واتركه جانباً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "افرِم الفلفل الحار واتركه جانباً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطّع الغوانتشالي شرائح رفيعة واطهه في الزيت مع الفلفل المفروم نحو 3 دقائق على حرارة متوسطة عالية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف النبيذ وارفع الحرارة واطه حتى يتبخر الكحول.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ابدأ بطهي المعكرونة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "خفف الحرارة إلى متوسطة وأضف الباساتا وقليلاً من الملح وكثيراً من الفلفل. اطه نحو 15 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "عند انتهاء الصلصة صفّ المعكرونة واخلطها مع الصلصة والبيكورينو أو البارميزان، وقدّم فوراً. أضف جبناً إضافياً على الوجه إن رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 25 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spaghetti-all-amatriciana.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=7630714c82b81fbbdda0b78b25cb38fd3424549982dc87667cf8bb97d5a3371b"
+    },
+    {
+      "id": "bc650-spicy-sausage-pasta",
+      "name": "معكرونة حارة بالنقانق",
+      "nameEn": "Spicy Sausage Pasta",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "نقانق إيطالية حارة مع البصل وإكليل الجبل والنبيذ الأحمر والطماطم والكريمة ومعكرونة بينّي.",
+      "servings": 4,
+      "prepTime": 10,
+      "cookTime": 50,
+      "totalTime": 60,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-1",
+          "name": "بصلتان حمراوان مفرومتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 red onions, chopped"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-2",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-3",
+          "name": "6 نقانق إيطالية حارة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "6 spicy Italian sausages"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-4",
+          "name": "غصن إكليل جبل، أوراقه مفرومة ناعماً",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 sprig rosemary, needles finely chopped"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-5",
+          "name": "فلفلة حمراء حارة منزوعة البذور ومقطعة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 red chilli, deseeded and diced"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-6",
+          "name": "كأس كبير من النبيذ الأحمر (نحو 250 مل)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A large glass of red wine (approx. 250ml)"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-7",
+          "name": "علبتان من الطماطم البرقوقية المفرومة، 400 جم لكل منهما",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 x 400g tins chopped plum tomatoes"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-8",
+          "name": "معكرونة، 300 جم، ويفضل بينّي",
+          "amount": 300,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-9",
+          "name": "بارميزان، 50 جم",
+          "amount": 50,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-10",
+          "name": "قشدة مزدوجة، 300 مل",
+          "amount": 300,
+          "unit": "ml",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقْلِ البصل الأحمر في رشة من الزيت بمقلاة عميقة، ثم أضف لحم النقانق بعد التخلص من الأغلفة عند الحاجة. أضف إكليل الجبل والفلفل الحار.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ارفع الحرارة وفتّت لحم النقانق بملعقة خشبية. عندما يتحمر اللحم أضف النبيذ الأحمر واتركه ينقص إلى النصف.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الطماطم المفرومة واترك الصلصة مكشوفة نحو 30 دقيقة حتى تتكاثف.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اطه المعكرونة حسب تعليمات العبوة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ابشر البارميزان. صفّ المعكرونة وقلّبها في الصلصة مع البارميزان والقشدة وبعض التتبيل.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "قدّم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 50 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spicy-sausage-pasta.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=c9776a9b4b23f42202e2e790cbe63c1d12bbd1f1a6a90457f7e794d980724f79"
+    },
+    {
+      "id": "bc650-ravioli",
+      "name": "رافيولي بحشوة الريكوتا والليمون",
+      "nameEn": "Ravioli",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "عجينة باستا منزلية محشوة بالريكوتا والبيض وقشر الليمون وعصيره وجبن بيكورينو، مع خيار إضافة المأكولات البحرية.",
+      "servings": 4,
+      "prepTime": 30,
+      "cookTime": 2,
+      "totalTime": 32,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-ravioli-ing-1",
+          "name": "4 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 eggs"
+        },
+        {
+          "id": "bc650-ravioli-ing-2",
+          "name": "دقيق 00، 400 جم",
+          "amount": 400,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ravioli-ing-3",
+          "name": "رشة زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Drizzle of olive oil"
+        },
+        {
+          "id": "bc650-ravioli-ing-4",
+          "name": "ليمونة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 lemon"
+        },
+        {
+          "id": "bc650-ravioli-ing-5",
+          "name": "جبن بيكورينو رومانو مبشور، 50 جم",
+          "amount": 50,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ravioli-ing-6",
+          "name": "ريكوتا، 250 جم",
+          "amount": 250,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ravioli-ing-7",
+          "name": "بيضة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 egg"
+        },
+        {
+          "id": "bc650-ravioli-ing-8",
+          "name": "قطع أرجل أو ذيل كركند متبقية أو لحم سلطعون مفروم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chopped leftover lobster legs, lobster tail, or minced crab (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "القاعدة التقريبية للعجينة هي 100 جم دقيق وبيضة واحدة لكل شخص. يمكن استخدام طريقة البئر التقليدية أو العجانة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "للطريقة اليدوية كوّم الدقيق على سطح العمل وافتح حفرة في وسطه. اكسر البيض فيها وأضف رشة زيت زيتون. اخفق البيض بالشوكة وادمجه تدريجياً بالدقيق حتى لا يبقى بيض سائل خارج الحافة، ثم اجمع الخليط واعجنه 5–10 دقائق حتى يصبح ناعماً. أو اخلط مكونات العجين بخطاف العجانة على المستوى 4 نحو 3–5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اكشط جوانب الوعاء واعجن باليد عند الحاجة حتى تتكون كرة ناعمة. غطها بغلاف بلاستيكي وبرّدها 15–30 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "للحشوة اخلط الريكوتا والبيضة في وعاء، ثم ابشر قشر الليمون واعصره فيه. أضف المأكولات البحرية اختيارياً، وابشر البيكورينو فوق الخليط، ثم أضف الملح والفلفل حسب الذوق واخلط.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قطّع العجينة إلى أربع قطع وغطّ القطع غير المستخدمة كي لا تجف. افرد العجينة بآلة الباستا حتى تصبح رقيقة جداً، أو بالنشابة إلى شريط طويل.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "وزع ملعقة صغيرة من الحشوة على العجينة مع ترك مسافات حولها. غطها بورقة عجين ثانية أو اطو الورقة نفسها واضغط لإخراج الهواء وإحكام الحواف. بللها بالماء إن كان الدقيق يمنع الالتصاق.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اقطع بين الحشوات بسكين أو قاطع باستا. إن لم تستخدم قاطعاً فاضغط الحواف بالشوكة بإحكام حتى لا تتسرب الحشوة أو تبقى فقاعات هواء. يمكن حفظ الرافيولي على ورق شمع مرشوش بالدقيق أو تجميده.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "لطهيها ألقها في ماء مملح يغلي. تطفو عند النضج، عادة خلال 1–2 دقيقة. يقدم إصدار المأكولات البحرية مع صلصة طماطم حمراء وأعشاب، أو صلصة طماطم مع قشدة ثقيلة ورشة فلفل أحمر مجروش.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 30 min ؛ - 🍳Cook time: 2 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ravioli.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=54c6fc6fd9133f4270d6f90f1427acd9d6836ece14c1110cd3a6ce96abce77db"
+    },
+    {
+      "id": "bc650-tortellini",
+      "name": "تورتيليني بالقشدة والبيض",
+      "nameEn": "Tortellini",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "تورتيليني جاهز، ويفضل بحشوة اللحم أو السبانخ، يخلط بالقشدة والبيض وجبن اختياري.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-tortellini-ing-1",
+          "name": "تورتيليني جاهز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tortellini"
+        },
+        {
+          "id": "bc650-tortellini-ing-2",
+          "name": "بيضة أو بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-2 eggs"
+        },
+        {
+          "id": "bc650-tortellini-ing-3",
+          "name": "قشدة طبخ",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cooking cream"
+        },
+        {
+          "id": "bc650-tortellini-ing-4",
+          "name": "جبن (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cheese (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اشترِ تورتيليني، ويفضل بحشوة اللحم أو السبانخ.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اغلِ الماء ولا تضف الملح إلا بعد الغليان، ثم أضف التورتيليني واطهه 3 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "صفّ الماء مع إبقاء التورتيليني في القدر. أضف قشدة الطبخ وقلّب على حرارة متوسطة حتى تتكاثف قليلاً وتصبح كريمية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أطفئ الحرارة وأضف بيضة أو بيضتين. قلّب حتى تطهيا بحرارة المعكرونة والقدر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قدّم في طبق، وأضف الفلفل والملح حسب الحاجة والجبن المبشور اختيارياً لمزيد من القوام الكريمي.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tortellini.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=d4caa6e974791fcc74d0c437cf1ac633cc2757778ef2e958c3860166e5cd8c8f"
+    },
+    {
+      "id": "bc650-tuhu",
+      "name": "حساء لحم الضأن والشمندر توهو",
+      "nameEn": "Tuh'u",
+      "cuisine": "عالمي متنوع",
+      "category": "حساء",
+      "description": "وصفة توهو القديمة بلحم الضأن والشمندر والبيرة الحامضة والجرجير والكزبرة والكراث؛ يورد المصدر أسماء مكونات أكدية مع تنبيه إلى عدم اليقين في ترجمتها.",
+      "servings": 3,
+      "prepTime": 30,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-tuhu-ing-1",
+          "name": "لحم فخذ ضأن مكعبات، 450 جم",
+          "amount": 450,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tuhu-ing-2",
+          "name": "زيت سمسم أو زيت زيتون أو دهن مذاب، 4 ملاعق كبيرة",
+          "amount": 4,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tuhu-ing-3",
+          "name": "ماء محضر، 350 مل",
+          "amount": 350,
+          "unit": "mL",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tuhu-ing-4",
+          "name": "بيرة ذات مذاق حامض مثل فايسبير، 350 مل",
+          "amount": 350,
+          "unit": "mL",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tuhu-ing-5",
+          "name": "بصلة كبيرة مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 large onion, chopped"
+        },
+        {
+          "id": "bc650-tuhu-ing-6",
+          "name": "جرجير، كوبان مفرومان",
+          "amount": 2,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tuhu-ing-7",
+          "name": "كزبرة طازجة، ثلاثة أرباع كوب مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "¾ cup of cilantro, chopped"
+        },
+        {
+          "id": "bc650-tuhu-ing-8",
+          "name": "بذور كمون مسحوقة، ملعقتان صغيرتان",
+          "amount": 2,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tuhu-ing-9",
+          "name": "حبتا شمندر كبيرتان مفرومتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 large beetroots, chopped"
+        },
+        {
+          "id": "bc650-tuhu-ing-10",
+          "name": "كراث، حبة واحدة مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 leek, minced or diced"
+        },
+        {
+          "id": "bc650-tuhu-ing-11",
+          "name": "3–9 فصوص ثوم مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3-9 cloves of garlic, minced or diced"
+        },
+        {
+          "id": "bc650-tuhu-ing-12",
+          "name": "بصل شالوت فارسي واحد؛ الترجمة الأكّدية غير مؤكدة في المصدر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Persian shallot (Akkadian: *samidu*; uncertain translation)"
+        },
+        {
+          "id": "bc650-tuhu-ing-13",
+          "name": "كراث مصري واحد؛ الترجمة الأكّدية غير مؤكدة في المصدر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Egyptian leek (Akkadian: *suhutinnu*; uncertain translation)"
+        },
+        {
+          "id": "bc650-tuhu-ing-14",
+          "name": "بذور كزبرة للتزيين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Coriander seeds for garnish"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "أضف الزيت أو الدهن إلى قدر كبير، ويفضل حديدياً، على نار عالية. حمّر لحم الضأن فيه عدة دقائق حتى يكتسب لوناً بنياً خفيفاً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف البصل واطهه 5 دقائق، ثم أضف الشمندر واتركه 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الملح والماء والبيرة والجرجير والكزبرة والشالوت والكمون، وارفع المزيج إلى الغليان.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخلط الثوم مع الكراث والكراث المصري ثم أضف الخليط إلى القدر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "خفف الحرارة إلى متوسطة واتركه يغلي برفق 60 دقيقة أو حتى ينضج الشمندر واللحم كما تفضل.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "قدّم الحساء في أوعية ورش بذور الكزبرة. زيّن بالكزبرة المفرومة والكراث المصري المفروم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 30 min ؛ - 🍳 Cook time: 60-90 min ؛ - 🍽️ Servings: 3. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tuhu.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=4702cd5c8fbb1af4042e1ac9fdf3de8b64b481bf0bdf114c0f491382f2036673"
+    },
+    {
+      "id": "bc650-stracciatella-soup",
+      "name": "شوربة ستراتشاتيلا بالبيض",
+      "nameEn": "Stracciatella soup",
+      "cuisine": "إيطالي",
+      "category": "حساء",
+      "description": "بيض مخفوق يسكب في مرق ساخن حتى يتخثر، مع زيت زيتون اختياري.",
+      "servings": 1,
+      "prepTime": 15,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-stracciatella-soup-ing-1",
+          "name": "بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 eggs"
+        },
+        {
+          "id": "bc650-stracciatella-soup-ing-2",
+          "name": "مرق، 500 مل",
+          "amount": 500,
+          "unit": "ml",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-stracciatella-soup-ing-3",
+          "name": "زيت زيتون (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخفق البيض في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخّن المرق حتى يغلي.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اسكب البيض في المرق من دون رفعه عن الموقد، واخفق حتى يتخثر البيض.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قدّم المرق والبيض معاً. تبّله بزيت الزيتون إن رغبت. يقترح المصدر تقديمه مع خبز محمص.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 15 min ؛ - 🍽️ Servings: 1. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/stracciatella-soup.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=f744ff895f91f0655747d043870a131d18d3863ae180d319305612aa982012ff"
+    },
+    {
+      "id": "bc650-pozharskiye-cutlets",
+      "name": "كتلات بوجارسكي بالدجاج",
+      "nameEn": "Pozharskiye Cutlets",
+      "cuisine": "روسي",
+      "category": "طبق رئيسي",
+      "description": "كتلات دجاج طرية بالزبدة، تغلف بالخبز والبيض وتقلى؛ يترك المصدر المقادير الدقيقة حسب حجم الكمية.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pozharskiye-cutlets-ing-1",
+          "name": "دجاج مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chicken mince"
+        },
+        {
+          "id": "bc650-pozharskiye-cutlets-ing-2",
+          "name": "زبدة؛ يورد المصدر أصلاً جزءاً واحداً لكل جزأين من الدجاج، ويقول إن الربع ينجح جيداً",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter (originally, 1 part butter per 2 parts chicken; 1/4 works perfectly fine)"
+        },
+        {
+          "id": "bc650-pozharskiye-cutlets-ing-3",
+          "name": "بيض؛ نحو بيضة لكل 500 جم دجاج، إضافة إلى 3–5 بيضات للتغليف",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Eggs (~1 egg per 500g chicken, plus 3-5 for the breading)"
+        },
+        {
+          "id": "bc650-pozharskiye-cutlets-ing-4",
+          "name": "رغيفان تقريباً من الخبز الأبيض؛ ويمكن استعمال فتات الخبز الجاهز لكنه يحتاج إلى بيض أكثر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A couple white bread loaves (store-bought breadcrumbs also suffice, but require more eggs)"
+        },
+        {
+          "id": "bc650-pozharskiye-cutlets-ing-5",
+          "name": "بهارات وملح (اختياري ويوصي بهما المصدر)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Spices/salt (optional, recommended)"
+        },
+        {
+          "id": "bc650-pozharskiye-cutlets-ing-6",
+          "name": "صلصة غير مبنية على شحم الخنزير وغير مكتنزة (اختيارية)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Non-lard based, non-chunky sauce (optional)"
+        },
+        {
+          "id": "bc650-pozharskiye-cutlets-ing-7",
+          "name": "بصل (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Onions (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "جهّز وعاءين متوسطين ووعاءً كبيراً جداً وعدة أطباق ومقلاة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أخرج الدجاج من البرودة وضعه في الوعاء الكبير، وضع الزبدة على طبق حتى تلين. أثناء ذلك فتّت الخبز يدوياً إلى فتات ناعم، أو ضع الفتات الجاهز في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "افرِم الدجاج إن لم يكن مفرومًا، والبصل إن رغبت. قطّع الزبدة اللينة إلى قطع متوسطة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف البيض إلى اللحم وضع بعض البيض في وعاء متوسط للتغليف؛ اخلط محتوى الوعاءين جيداً. أضف البهارات والملح أو الصلصة حسب اختيارك، ثم أضف الزبدة اللينة إلى خليط الدجاج واخلط جيداً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "لإعداد كتلة اختبار صغيرة، شكّل كرة من اللحم واغمسها في الفتات ثم البيض ثم الفتات مرة أخرى، واضغط طبقة التغليف قليلاً بين الغمسات. التكرار يزيد طبقة التغليف التي تحبس العصارة، لكن لا تكثر منها.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اقْلِ كتلة الاختبار واتركها تبرد ثم تذوقها. يذكر المصدر أن الكتل كثيرة العصارة ولذلك يُتوقع وجود سائل في المقلاة. إذا لم ترضك النكهة فأضف المزيد، وإلا كرر خطوات التشكيل والتغليف للكمية الباقية. أحجام الكتل المختلفة تصلح.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pozharskiye-cutlets.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=65c0963c49e0ba3120035e620d80a2eee4523bbbb0e2f58351d8965f4d1b4342"
+    },
+    {
+      "id": "bc650-easy-chicken-and-rice-casserole",
+      "name": "طاجن دجاج وأرز سهل",
+      "nameEn": "Easy Chicken and Rice Casserole",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "دجاج مطهو مع الأرز والبازلاء والجزر والكرفس والفطر في طبق مخبوز مغطى.",
+      "servings": 4,
+      "prepTime": 5,
+      "cookTime": 40,
+      "totalTime": 45,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-1",
+          "name": "بصل مفروم، نصف كوب",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-2",
+          "name": "كرفس مفروم، نصف كوب",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-3",
+          "name": "زبدة أو مارغرين، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "Tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-4",
+          "name": "دجاج مطهو ومقطع، كوبان",
+          "amount": 2,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-5",
+          "name": "ماء ساخن، كوب وثلاثة أرباع",
+          "amount": 1.75,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-6",
+          "name": "أرز أبيض طويل الحبة، ثلثا كوب",
+          "amount": 0.6666666666666666,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-7",
+          "name": "علبة فطر مع سائلها، 10 أونصات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can (10 oz) Mushrooms with liquid"
+        },
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-8",
+          "name": "بازلاء وجزر مجمدان، كوب واحد",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-easy-chicken-and-rice-casserole-ing-9",
+          "name": "زعتر وإكليل جبل مجففان، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اطه البصل والكرفس في الزبدة بمقلاة كبيرة حتى يطرى.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف بقية المكونات وقلّب.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "انقل الخليط إلى طبق خبز مغطى سعة 8 أكواب. اخبزه في فرن مسخن مسبقاً إلى 350°F (نحو 175°C) قرابة 30 دقيقة أو حتى ينضج الأرز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 40 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/easy-chicken-and-rice-casserole.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=4b06f8dd306bb7b225bd97003bdec93d7637d924b38874c99054b2e896284df1"
+    },
+    {
+      "id": "bc650-chicken-biscuit-potpie",
+      "name": "فطيرة دجاج مغطاة بالبسكويت",
+      "nameEn": "Chicken Biscuit Potpie Recipe",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "خضار مشكلة ودجاج مطهو وشوربة كريمة الدجاج تحت طبقة بسكويت تُخبز حتى تحمر.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-1",
+          "name": "خضار مشكلة مجمدة مذابة، كوب وثلثا كوب (1⅔ كوب)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-2/3 cups frozen mixed vegetables, thawed"
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-2",
+          "name": "دجاج مطهو مكعبات، كوب ونصف",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-1/2 cups cubed cooked chicken"
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-3",
+          "name": "علبة شوربة كريمة الدجاج المكثفة غير المخففة، 10¾ أونصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can (10-3/4 ounces) condensed cream of chicken soup, undiluted"
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-4",
+          "name": "زعتر مجفف، ربع ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-5",
+          "name": "خليط بسكويت أو خبز سريع، كوب واحد",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-6",
+          "name": "حليب كامل الدسم، نصف كوب",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-7",
+          "name": "بيضة كبيرة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 large egg"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 400°F (200°C). في وعاء كبير اخلط الخضار والدجاج والشوربة والزعتر.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اسكب الخليط في طبق فطيرة عميق قطره 9 بوصات غير مدهون.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخلط مزيج البسكويت مع الحليب والبيضة، ثم وزعه بالملعقة فوق خليط الدجاج.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخبز 25–30 دقيقة حتى يصبح الوجه ذهبياً ويخرج عود الأسنان نظيفاً عند إدخاله في الوسط.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-biscuit-potpie.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3e3b5f9e1013157c0eb3af9143da7bca36b93a91c64f2356555ddc7239f640d9"
+    },
+    {
+      "id": "bc650-honey-sriracha-chicken-thighs",
+      "name": "أفخاذ دجاج بالعسل وسريراتشا",
+      "nameEn": "Honey Sriracha Chicken Thighs",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "أفخاذ دجاج بجلدها تُحمّر في المقلاة ثم تُخبز مغطاة بصلصة العسل والسريراتشا.",
+      "servings": 4,
+      "prepTime": 5,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-honey-sriracha-chicken-thighs-ing-1",
+          "name": "5–6 أفخاذ دجاج بالعظم والجلد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5-6 bone-in, skin-on chicken thighs"
+        },
+        {
+          "id": "bc650-honey-sriracha-chicken-thighs-ing-2",
+          "name": "زيت زيتون، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tablespoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-sriracha-chicken-thighs-ing-3",
+          "name": "عسل، ثلث كوب",
+          "amount": 0.3333333333333333,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-sriracha-chicken-thighs-ing-4",
+          "name": "صلصة سريراتشا حارة، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "tablespoons",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-sriracha-chicken-thighs-ing-5",
+          "name": "ملح كوشير، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-sriracha-chicken-thighs-ing-6",
+          "name": "فلفل أسود، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-sriracha-chicken-thighs-ing-7",
+          "name": "بذور سمسم للتزيين (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sesame seeds as a garnish (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 350°F. تبّل الدجاج، وافرك الأفخاذ بقليل من زيت الزيتون وتبّلها بسخاء بالملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضع الأفخاذ في مقلاة باردة والجلد إلى الأسفل. اطهها 15 دقيقة على حرارة متوسطة منخفضة دون تحريك.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخلط العسل والسريراتشا في وعاء. اقلب الدجاج واطهه 10 دقائق أخرى.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "انقل الأفخاذ إلى صينية خبز، أو أبقها في المقلاة إن كانت من الحديد المصبوب. اسكب صلصة السريراتشا على الجانبين وغطهما بها؛ لا يلزم استخدام الصلصة كلها.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اخبز 15 دقيقة. افحص النضج؛ ينبغي أن تصل حرارة الدجاج الداخلية إلى 165°F.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "إذا قاربت الأفخاذ النضج أو نضجت، ادهنها مرة أخرى بباقي الصلصة عند الرغبة، وأعدها إلى الفرن 5 دقائق أخرى. اتركها تبرد بضع دقائق وزيّن ببذور السمسم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 40-45 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/honey-sriracha-chicken-thighs.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=ed7a492fc9076c175385586d0014b5ce216b0ed9c915f908220e04d58c256839"
+    },
+    {
+      "id": "bc650-lithuanian-cold-borscht",
+      "name": "شَلبَة شمندر باردة ليتوانية",
+      "nameEn": "Lithuanian Cold Borscht",
+      "cuisine": "ليتواني",
+      "category": "حساء",
+      "description": "شمندر مبشور مع خيار وأعشاب وكفير بارد، يقدم مع البطاطا والبيض والقشدة الحامضة.",
+      "servings": null,
+      "prepTime": 120,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-1",
+          "name": "2–3 حبات شمندر طازج أو مخلل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2-3 fresh or pickled beets"
+        },
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-2",
+          "name": "بطاطا، حبة إلى حبتين لكل حصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-2 potatoes per serving"
+        },
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-3",
+          "name": "خيار متوسط، حبة إلى حبتين لكل حصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-2 normal sized cucumbers per serving"
+        },
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-4",
+          "name": "شبت وبقدونس وثوم معمر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Dill, parsley, chives"
+        },
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-5",
+          "name": "بيضة لكل حصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Egg (1 per serving)"
+        },
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-6",
+          "name": "كفير، نحو 150–300 مل لكل حصة؛ أو زبادي حامض أو لبن مخيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Kefir (if not available - sour yoghurt or buttermilk) about 150-300 ml per serving"
+        },
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-7",
+          "name": "قشدة حامضة، ملعقة كبيرة لكل حصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sour cream (1 tbsp per serving)"
+        },
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-8",
+          "name": "قليل من الفجل (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Some radish (optional)"
+        },
+        {
+          "id": "bc650-lithuanian-cold-borscht-ing-9",
+          "name": "ليمونة واحدة (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 lemon (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغسل 2–3 حبات شمندر واطهها في 2–3 لترات ماء من دون تصفيته، ثم قشّرها وابشرها بمبشرة متوسطة أو خشنة. اعصر قليلاً من الليمون في ماء السلق واخلط، ثم أضف الملح والسكر والفلفل حسب الذوق وبرّد المزيج في الثلاجة. يمكن استخدام الشمندر المخلل المبشور بدلاً من المسلوق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع الخيار شرائح رفيعة واخلطه بالشبت والبقدونس المفرومين. يمكن إضافة الفجل المفروم.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخبز البطاطا أو اسلقها من دون تقشير. اسلق بيضة لكل حصة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع عدة ملاعق كبيرة من الشمندر المبرد وخليط الخضار في وعاء. اسكب الكفير البارد وماء الشمندر المبرد، 50–150 مل. إذا كان الكفير كثيفاً جداً أضف مزيداً من السائل؛ تختلف النسبة حسب المنطقة وتضبط حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قدّم مع البطاطا وبيضة مقسومة وملعقة قشدة حامضة على الوجه، ورش الثوم المعمر. ويمكن الاستغناء عن البيض.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 2 hours ؛ - 🍳 Cook time: 2-3 min. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/lithuanian-cold-borscht.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=976a73a50f65128e86643f96ae99745cb2e57746aa36a8065f2cb0a70c1f7e61"
+    },
+    {
+      "id": "bc650-beef-jerky",
+      "name": "لحم بقري مجفف متبل",
+      "nameEn": "Beef Jerky",
+      "cuisine": "عالمي متنوع",
+      "category": "وجبة خفيفة",
+      "description": "شرائح لحم بقري تُنقع في محلول ورشستر أو ترياكي مع السكر والثوم ثم تجفف في جهاز تجفيف أو فرن.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-beef-jerky-ing-1",
+          "name": "ملح، ثلاثة أرباع ملعقة صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "¾ tsp. salt"
+        },
+        {
+          "id": "bc650-beef-jerky-ing-2",
+          "name": "فلفل، ربع ملعقة صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "¼ tsp. pepper"
+        },
+        {
+          "id": "bc650-beef-jerky-ing-3",
+          "name": "سكر بني، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-beef-jerky-ing-4",
+          "name": "ثوم، ربع ملعقة صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "¼ tsp. garlic"
+        },
+        {
+          "id": "bc650-beef-jerky-ing-5",
+          "name": "صلصة ورشستر أو ترياكي، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-beef-jerky-ing-6",
+          "name": "نكهة الدخان السائل، ربع ملعقة صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "¼ tsp. Liquid Smoke"
+        },
+        {
+          "id": "bc650-beef-jerky-ing-7",
+          "name": "لحم بقري، رطل واحد (450 جم)، ويفضل قطعة الخاصرة أو الخاصرة الجانبية",
+          "amount": 1,
+          "unit": "Lb",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-beef-jerky-ing-8",
+          "name": "توابل شائعة أخرى اختيارياً: ربع ملعقة صغيرة فلفل كايين أو مسحوق جبن أو فلفل أبيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Other common seasonings may include (¼ tsp. of) cayenne pepper, cheese powder, and/or white pepper"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "افرِم الثوم أو اهرسه. اخلط كل المكونات عدا اللحم لإعداد التتبيلة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع اللحم شرائح بسماكة ربع بوصة (نصف سم). ويمكن استخدام مكعبات صغيرة نحو ثلاثة أرباع بوصة (2 سم) من لحم اليخنة. إن أمكن اقطع بمحاذاة ألياف اللحم. قد يسهل تجميده قبل التقطيع كي لا ينسحب ويتشوه.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "انقع اللحم طوال الليل أو ساعة إلى ساعتين على الأقل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع اللحم على رفوف وجففه في جهاز تجفيف الطعام عند 145°F (63°C) مدة 6–8 ساعات. يمكن استخدام فرن عند 150°F (65°C) مع رفوف مغطاة بورق الألمنيوم؛ في الفرن اقلبه بعد 3–4 ساعات وخفف الحرارة إلى 130°F (55°C).",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "يكون اللحم مجففاً كما ينبغي عندما ينثني ولا ينكسر.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "وجبة خفيفة"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/beef-jerky.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=b8f118c2c54b7ed2712c5e3c167ab30abdc7de54cd139bdab2842154abe240aa"
+    },
+    {
+      "id": "bc650-croque-monsieur",
+      "name": "كروك موسيو صغير بالبشاميل",
+      "nameEn": "Croque-monsieur bites",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "قطع خبز محشوة بالخردل والهام والجبن وبينها طبقتا بشاميل، وتخبز حتى يذوب الجبن ويتحمر.",
+      "servings": 6,
+      "prepTime": 10,
+      "cookTime": 10,
+      "totalTime": 20,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-croque-monsieur-ing-1",
+          "name": "زبدة، 50 جم",
+          "amount": 50,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-2",
+          "name": "دقيق، 50 جم",
+          "amount": 50,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-3",
+          "name": "حليب، لتر واحد",
+          "amount": 1,
+          "unit": "Liter",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-4",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-5",
+          "name": "فلفل مطحون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Ground Pepper"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-6",
+          "name": "جوزة الطيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Nutmeg"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-7",
+          "name": "شرائح خبز، 12",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "12 Slices of bread"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-8",
+          "name": "خردل، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "Tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-9",
+          "name": "شرائح هام رفيعة بالأعشاب الإيطالية، 12",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "12 very thin slices of ham with Italian herbs"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-10",
+          "name": "جبن مبشور، 80 جم (إمنتال أو كومتيه أو غرويير أو ميموليت)",
+          "amount": 80,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "لتحضير البشاميل أذب الزبدة في قدر ثقيل القاعدة. عندما تبدأ بالرغوة رش الدقيق والملح والفلفل ورشة جوزة الطيب واخلط.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الحليب تدريجياً، ولا تضفه كله مرة واحدة، مع الخفق كل مرة حتى تتكاثف الصلصة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "سخّن الفرن إلى الدرجة 6 أو 180°C، وأخرج صينية الخبز وبطنها بورق ألمنيوم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "صفّ 6 شرائح خبز أمامك وادهنها بقليل من الخردل، ثم أضف طبقة بشاميل وشريحة هام مطوية أربع طيات وجبناً مبشوراً وطبقة أخرى من البشاميل.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع شرائح الخبز الست المتبقية فوقها، ثم أضف طبقة رقيقة من البشاميل ووزع بقية الجبن.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "رتّب القطع في الصينية واخبز نحو 10 دقائق. يمكن وضعها تحت الشواية 3–4 دقائق في النهاية.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 10 min ؛ - 🍽️ Servings: 6. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/croque-monsieur.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e84e3cfad0f02ce5b4ca29826237483b4733cbc035197656c91c391cb62f21af"
+    },
+    {
+      "id": "bc650-dulce-de-leche",
+      "name": "دولسي دي ليتشي",
+      "nameEn": "Dulce de Leche",
+      "cuisine": "أرجنتيني",
+      "category": "حلوى",
+      "description": "حليب وسكر وبيكربونات الصوديوم وفانيليا اختيارية تُطهى على نار هادئة مع التحريك حتى تصبح كثيفة كالكاسترد.",
+      "servings": null,
+      "prepTime": 5,
+      "cookTime": 180,
+      "totalTime": 185,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-dulce-de-leche-ing-1",
+          "name": "حليب، لتر واحد",
+          "amount": 1,
+          "unit": "liter",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-dulce-de-leche-ing-2",
+          "name": "سكر، 350 جم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "350 grams of sugar."
+        },
+        {
+          "id": "bc650-dulce-de-leche-ing-3",
+          "name": "بيكربونات الصوديوم، نصف ملعقة صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Half a teaspoon of baking soda."
+        },
+        {
+          "id": "bc650-dulce-de-leche-ing-4",
+          "name": "قرن فانيليا أو خلاصة فانيليا (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A vanilla bean, or essence (Optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن المكونات كلها في قدر على حرارة متوسطة مع التحريك المستمر بملعقة خشبية؛ يمكن إضافة الكرات الزجاجية الاختيارية التقليدية لمنع الالتصاق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "بعد ذوبان السكر خفف الحرارة إلى أدنى درجة وحرّك من حين لآخر نحو ساعتين. يجب ألا يغلي؛ إن بدأ بالغليان أبعده عن النار واستمر بالتحريك، ثم أعده بعد أن تنخفض حرارته.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "عندما يزداد المزيج كثافة حرّكه بتواتر أكبر كي لا يلتصق ويحترق أو تتكون كتل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "عندما يصبح قوامه شبيهاً بالكاسترد ارفعه عن النار وحرّكه 10 دقائق حتى يبرد ويزداد كثافة. مرر إصبعك في منتصف ظهر الملعقة؛ إذا لم يلتئم الأثر يكون جاهزاً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "بعد أن يبرد ضعه في مرطبان زجاجي واحفظه في الثلاجة، أو عقّمه للحفظ.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حلوى"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 3 hours ؛ - 🍽️ Servings: An average-sized mason jar.. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/dulce-de-leche.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=f31b1acbae6fe77bc85588e3585dce7575073ea27525b08b9767d44b39e7aef2"
+    },
+    {
+      "id": "bc650-coleslaw",
+      "name": "سلطة ملفوف بالجزر وصلصة اللبن",
+      "nameEn": "Coleslaw",
+      "cuisine": "أمريكي",
+      "category": "سلطة",
+      "description": "ملفوف أخضر وجزر مبشوران مع صلصة من المايونيز واللبن والخل والليمون والزيت والتوابل.",
+      "servings": null,
+      "prepTime": 25,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-coleslaw-ing-1",
+          "name": "مايونيز، ثلاثة أرباع كوب",
+          "amount": 0.75,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-2",
+          "name": "لبن مخيض، نصف كوب",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-3",
+          "name": "عصير ليمون، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-4",
+          "name": "خل تفاح، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-5",
+          "name": "خل مقطر، 4 ملاعق كبيرة",
+          "amount": 4,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-6",
+          "name": "زيت زيتون، ثلث كوب",
+          "amount": 0.3333333333333333,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-7",
+          "name": "سكر حبيبي، ربع كوب",
+          "amount": 0.25,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-8",
+          "name": "ملح كوشير، ملعقة ونصف صغيرة",
+          "amount": 1.5,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-9",
+          "name": "فلفل أسود مطحون، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-10",
+          "name": "بذور كرفس، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-11",
+          "name": "مسحوق بصل، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-12",
+          "name": "ثوم حبيبي، ربع ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-13",
+          "name": "مسحوق خردل، ربع ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-14",
+          "name": "رأس ملفوف أخضر كبير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "One large head of green cabbage"
+        },
+        {
+          "id": "bc650-coleslaw-ing-15",
+          "name": "جزرة كبيرة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "One large carrot"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ابشر الجزر ناعماً واغسله وصفّه. افرم الملفوف ناعماً، ويفضل باستخدام محضرة الطعام.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخفق المايونيز واللبن المخيض وعصير الليمون وخل التفاح والخل المقطر وزيت الزيتون والسكر.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الملح والفلفل وبذور الكرفس ومسحوق البصل والثوم الحبيبي واخلط جيداً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع الملفوف والجزر في وعاء منفصل. أضف الصلصة ببطء حتى تغطي الخضار بطبقة خفيفة وقلّب. زد الصلصة حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "برّد السلطة ساعة على الأقل قبل التقديم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "سلطة"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 25 min ؛ - 🍽️ Servings: 8 - 10. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/coleslaw.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e39a9f2b9d77063f80f4b6642f3d664e47224daecec49ad63329000a47cad155"
+    },
+    {
+      "id": "bc650-cooked-chickpeas",
+      "name": "حمص حب مقلي بالتوابل",
+      "nameEn": "Cooked Chickpeas",
+      "cuisine": "عالمي متنوع",
+      "category": "وجبة خفيفة",
+      "description": "حمص معلب يقلى بزيت الزيتون ومسحوق الثوم والكمون والبابريكا والفلفل الحار.",
+      "servings": 3,
+      "prepTime": 1,
+      "cookTime": 15,
+      "totalTime": 16,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-cooked-chickpeas-ing-1",
+          "name": "علبة حمص أو غاربانزو، مصفاة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can chickpeas / garbanzo beans, drained"
+        },
+        {
+          "id": "bc650-cooked-chickpeas-ing-2",
+          "name": "زيت زيتون، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cooked-chickpeas-ing-3",
+          "name": "مسحوق ثوم، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cooked-chickpeas-ing-4",
+          "name": "كمون، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cooked-chickpeas-ing-5",
+          "name": "بابريكا، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cooked-chickpeas-ing-6",
+          "name": "فلفل كايين، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الزيت في مقلاة. أضف الحمص والتوابل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اطه على حرارة متوسطة عالية 10–15 دقيقة. أضف الملح والفلفل حسب الذوق.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "وجبة خفيفة"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 1 min ؛ - 🍳 Cook time: 15 min ؛ - 🍽️ Servings: 3. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cooked-chickpeas.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=161ffb4e7b0342a144964756e482da62ee112a6c34540576c9c1bc229ad3921e"
+    },
+    {
+      "id": "bc650-french-toast",
+      "name": "توست فرنسي",
+      "nameEn": "French Toast",
+      "cuisine": "فرنسي",
+      "category": "إفطار",
+      "description": "شرائح خبز تغمس في خليط البيض والحليب وتقلى بالزبدة حتى تصبح ذهبية، وتقدم مع شراب القيقب اختياريًا.",
+      "servings": 1,
+      "prepTime": 5,
+      "cookTime": 25,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-french-toast-ing-1",
+          "name": "بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 Eggs"
+        },
+        {
+          "id": "bc650-french-toast-ing-2",
+          "name": "حليب، نصف كوب (أو ربع كوب لقوام أصلب)",
+          "amount": 0.5,
+          "unit": "Cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-french-toast-ing-3",
+          "name": "شرائح خبز، 5",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5 Slices of bread"
+        },
+        {
+          "id": "bc650-french-toast-ing-4",
+          "name": "شراب قيقب (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Maple Syrup (Optional)"
+        },
+        {
+          "id": "bc650-french-toast-ing-5",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ادهن مقلاة بالزبدة وضعها على الموقد بحرارة منخفضة إلى متوسطة؛ قد تحتاج إلى إضافة مزيد من الزبدة بين الشرائح.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اكسر البيضتين في وعاء، وأضف الحليب واخفقهما حتى يصبح الخليط سائلاً أصفر بلا كتل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اغمس وجهاً من شريحة الخبز في الخليط حتى يبتل سطحه كله، ثم ارفعه فوراً واكشط السائل الزائد بسكين زبدة. كرر للوجه الآخر.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع الشريحة في المقلاة الساخنة واطه وجهيها حتى يذهبا. انقلها إلى طبق وكرر مع بقية الخبز.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اسكب شراب القيقب فوق كومة التوست الفرنسي إن رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 25 min ؛ - 🍽️ Servings: 1. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/french-toast.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=a5538256dfabf22979f64072eda2795cca2893fd9ff39b52ba6d4100fad1f7cc"
+    },
+    {
+      "id": "bc650-breakfast-wrap",
+      "name": "لفافة إفطار بالنقانق والبيض",
+      "nameEn": "Breakfast Wrap",
+      "cuisine": "عالمي متنوع",
+      "category": "إفطار",
+      "description": "نقانق ولحم مقدد وبيض مخفوق مع قليل من الحليب تلف داخل خبز تورتيلا، مع كاتشب اختياري.",
+      "servings": null,
+      "prepTime": 5,
+      "cookTime": 10,
+      "totalTime": 15,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-breakfast-wrap-ing-1",
+          "name": "نقانقان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 sausages"
+        },
+        {
+          "id": "bc650-breakfast-wrap-ing-2",
+          "name": "شريحتا لحم مقدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 bacon rashers"
+        },
+        {
+          "id": "bc650-breakfast-wrap-ing-3",
+          "name": "بيضة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 egg"
+        },
+        {
+          "id": "bc650-breakfast-wrap-ing-4",
+          "name": "خبزتا لف، تورتيلا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 wraps"
+        },
+        {
+          "id": "bc650-breakfast-wrap-ing-5",
+          "name": "حليب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "milk"
+        },
+        {
+          "id": "bc650-breakfast-wrap-ing-6",
+          "name": "كاتشب (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "ketchup (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقطع النقانق إلى نصفين واقلها حتى تنضج بالكامل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اقْلِ شرائح اللحم المقدد.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أثناء قلي اللحم المقدد أو بعده اكسر البيضة في وعاء، أضف رشة حليب واخفق.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع خليط البيض في الميكروويف دقيقة، أخرجه واخفقه، وكرر ذلك مرتين أو حتى يصبح البيض المخفوق جاهزاً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع النقانق واللحم المقدد والبيض المخفوق في خبزتي اللف؛ يقترح المصدر نصف وعاء البيض وشريحة لحم مقدد ونصفي نقانق لكل واحدة. أضف الكاتشب إن رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 10 min ؛ - 🍽️ Servings: 1 (2 wraps). المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/breakfast-wrap.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=837c5931a8792f6d41621496ec46e001ba87249a376de003890b78ef49822966"
+    },
+    {
+      "id": "bc650-basic-waffles",
+      "name": "وافل أساسي",
+      "nameEn": "Basic Waffles",
+      "cuisine": "عالمي متنوع",
+      "category": "إفطار",
+      "description": "عجينة وافل بالبيض والزبدة والسكر وسكر الفانيليا والدقيق والبيكنج باودر والحليب.",
+      "servings": null,
+      "prepTime": 10,
+      "cookTime": 20,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-basic-waffles-ing-1",
+          "name": "زبدة، 250 جم",
+          "amount": 250,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-basic-waffles-ing-2",
+          "name": "سكر، 200 جم",
+          "amount": 200,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-basic-waffles-ing-3",
+          "name": "عبوتا سكر فانيليا (16 جم) أو منكّه فانيليا آخر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 pcks vanilla sugar (16g) *or* other vanilla flavouring"
+        },
+        {
+          "id": "bc650-basic-waffles-ing-4",
+          "name": "5 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5 eggs"
+        },
+        {
+          "id": "bc650-basic-waffles-ing-5",
+          "name": "دقيق، 500 جم",
+          "amount": 500,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-basic-waffles-ing-6",
+          "name": "بيكنج باودر، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-basic-waffles-ing-7",
+          "name": "حليب، 350–400 مل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "350-400ml milk"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخفق البيض حتى يصبح كريمياً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف السكر كله تدريجياً ثم نكهة الفانيليا.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أذب الزبدة ثم اخلطها في المزيج.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف البيكنج باودر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف الحليب والدقيق بالتناوب مع التحريك باستمرار.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اخلط بأعلى سرعة في الخلاط حتى تتكون عجينة ناعمة. اتركها بضع دقائق.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "سخّن جهاز الوافل مسبقاً، واسكب العجينة فيه. اطه حتى يصبح الوافل ذهبياً.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 10 mins ؛ - 🍳 Cook time: 20 mins. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/basic-waffles.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=8f7c3626bb4d7baa30580e3cd456d6f42a0d95896356792ac3978bd5422a741e"
+    },
+    {
+      "id": "bc650-french-crepes",
+      "name": "كريب فرنسي",
+      "nameEn": "French Crêpes",
+      "cuisine": "فرنسي",
+      "category": "إفطار",
+      "description": "عجينة كريب بالدقيق والبيض والحليب والبيرة، مع زبدة أو زيت، تترك لترتاح ثم تطهى في مقلاة مسطحة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-french-crepes-ing-1",
+          "name": "دقيق أبيض، 300 جم",
+          "amount": 300,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-french-crepes-ing-2",
+          "name": "3 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 eggs"
+        },
+        {
+          "id": "bc650-french-crepes-ing-3",
+          "name": "حليب، 60 سنتيلتر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "60cl milk"
+        },
+        {
+          "id": "bc650-french-crepes-ing-4",
+          "name": "بيرة، 20 سنتيلتر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "20cl beer"
+        },
+        {
+          "id": "bc650-french-crepes-ing-5",
+          "name": "زبدة، 30 جم، أو زيت، 3 ملاعق كبيرة",
+          "amount": 30,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلط الدقيق والملح والبيض والزبدة المذابة أو الزيت بهذا الترتيب كي لا يبقى الدقيق جافاً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الحليب والبيرة ببطء حتى يصبح قوام العجين سائلاً بما يكفي لينساب عن المغرفة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اترك العجين يرتاح ساعة؛ وهذه الخطوة اختيارية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اطه الكريب في مقلاة مسطحة، مغرفة واحدة في كل مرة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/french-crepes.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=9cc09276fee66a9bbd366c0a72ac0ceb1f6372c1bef7b8dbe4c6a3e018c20ea7"
+    },
+    {
+      "id": "bc650-blueberry-muffins",
+      "name": "مافن بالتوت الأزرق",
+      "nameEn": "Blueberry Muffins",
+      "cuisine": "عالمي متنوع",
+      "category": "حلوى",
+      "description": "مافن من الدقيق والسكر والبيض والحليب والزبدة مع توت أزرق طازج.",
+      "servings": 12,
+      "prepTime": 10,
+      "cookTime": 30,
+      "totalTime": 40,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-blueberry-muffins-ing-1",
+          "name": "دقيق لجميع الاستعمالات، كوبان",
+          "amount": 2,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-blueberry-muffins-ing-2",
+          "name": "سكر حبيبي، كوب واحد",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-blueberry-muffins-ing-3",
+          "name": "بيكنج باودر، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tablespoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-blueberry-muffins-ing-4",
+          "name": "ملح، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-blueberry-muffins-ing-5",
+          "name": "زبدة غير مملحة مذابة، نصف كوب",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-blueberry-muffins-ing-6",
+          "name": "حليب، كوب واحد",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-blueberry-muffins-ing-7",
+          "name": "بيضتان كبيرتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 large eggs"
+        },
+        {
+          "id": "bc650-blueberry-muffins-ing-8",
+          "name": "خلاصة فانيليا، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "teaspoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-blueberry-muffins-ing-9",
+          "name": "توت أزرق طازج، كوب ونصف",
+          "amount": 1.5,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 375°F (190°C). ضع أوراق المافن في القالب أو ادهن القالب.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "في وعاء كبير اخلط المكونات الجافة: الدقيق والسكر والبيكنج باودر والملح.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "في وعاء آخر اخفق المكونات السائلة: الزبدة المذابة والحليب والبيض وخلاصة الفانيليا.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اسكب المكونات السائلة فوق الجافة وقلّب حتى تمتزج فقط؛ لا تفرط في الخلط.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اطوِ التوت الأزرق الطازج برفق داخل العجين.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "وزع العجين في تجاويف القالب حتى يملأ كل واحد نحو ثلاثة أرباعه.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اخبز حتى 20–25 دقيقة أو حتى يخرج عود الأسنان الذي يوضع في الوسط نظيفاً.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اترك المافن يبرد في القالب بضع دقائق ثم انقله إلى شبك حتى يبرد تماماً.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حلوى"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: ⏲️ Prep time: 10 min ؛ 🍳 Cook time: 30 min ؛ 🍽️ Servings: 12. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/blueberry-muffins.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=6fff70461e3dcea16712f65ac366d1431e1965ed8e69e3150a44bfb0bd0c5f41"
+    },
+    {
+      "id": "bc650-mazurek",
+      "name": "مازورك بولندي بالبرتقال والمكسرات",
+      "nameEn": "Mazurek",
+      "cuisine": "بولندي",
+      "category": "حلوى",
+      "description": "قاعدة عجين زبدية مخبوزة لعيد الفصح، تزين بمربى البرتقال والمكسرات أو الفواكه المجففة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-mazurek-ing-1",
+          "name": "دقيق، كوبان ونصف",
+          "amount": 2.5,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-mazurek-ing-2",
+          "name": "سكر بودرة، ربع كوب",
+          "amount": 0.25,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-mazurek-ing-3",
+          "name": "زبدة، 200 جم (7 أونصات)",
+          "amount": 200,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-mazurek-ing-4",
+          "name": "قشدة حامضة 18%، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "tablespoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-mazurek-ing-5",
+          "name": "صفارا بيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 egg yolks"
+        },
+        {
+          "id": "bc650-mazurek-ing-6",
+          "name": "مربى برتقال للتزيين (مثل مربى من 4 برتقالات)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "topping: for example [orange jam](/orange-jam) from 4 oranges"
+        },
+        {
+          "id": "bc650-mazurek-ing-7",
+          "name": "جوز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "walnuts"
+        },
+        {
+          "id": "bc650-mazurek-ing-8",
+          "name": "جوز بيكان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "pecans"
+        },
+        {
+          "id": "bc650-mazurek-ing-9",
+          "name": "زبيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "raisins"
+        },
+        {
+          "id": "bc650-mazurek-ing-10",
+          "name": "لوز شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "sliced almonds"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع الدقيق والزبدة في وعاء. قطّع الزبدة بسكين حاد إلى قطع صغيرة جداً مع خلطها بالدقيق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف صفار البيض والسكر والقشدة الحامضة ورشة ملح. اعجن جيداً وشكل كرة، ولفها بغلاف بلاستيكي وبرّدها نحو ساعة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "افرد العجين وضعه على صينية كبيرة 25×35 سم (10×14 بوصة) مبطنة بورق الخبز. اثقب العجين بالشوكة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخبز 15–20 دقيقة عند 200°C (395°F)، ثم اتركه يبرد.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "وزع طبقة من مربى البرتقال فوق القاعدة المبردة وزينها بالمكسرات أو الزبيب أو اللوز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حلوى"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/mazurek.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=523a02bb4be3b8a67a3a8293fdab16a0f5e4b33cc76981326f431d4a5f2ba668"
+    },
+    {
+      "id": "bc650-granola",
+      "name": "جرانولا منزلية بالفواكه المجففة",
+      "nameEn": "Granola",
+      "cuisine": "عالمي متنوع",
+      "category": "إفطار",
+      "description": "شوفان ومكسرات وتوابل يخبز مع زيت الزيتون وشراب القيقب، ثم يخلط بالفواكه المجففة.",
+      "servings": 5,
+      "prepTime": 10,
+      "cookTime": 40,
+      "totalTime": 50,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-granola-ing-1",
+          "name": "شوفان، 3 أكواب",
+          "amount": 3,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-granola-ing-2",
+          "name": "زيت زيتون، نصف كوب",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-granola-ing-3",
+          "name": "شراب قيقب، نصف كوب",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-granola-ing-4",
+          "name": "مكسرات مفرومة، كوب واحد (مثل اللوز أو بذور اليقطين)",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-granola-ing-5",
+          "name": "قرنفل مطحون، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-granola-ing-6",
+          "name": "هيل مطحون، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-granola-ing-7",
+          "name": "فواكه مجففة، كوب واحد (مثل المشمش أو التوت البري غير المحلى أو التمر)",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 315°F.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "في وعاء كبير اخلط الشوفان والزيت وشراب القيقب والمكسرات والتوابل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "غطّ صينيتين كبيرتين بورق الخبز وافرد الخليط عليهما بطبقة رقيقة ومتساوية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخبز 15 دقيقة، أخرج الصواني وقلّب الخليط ثم أعده إلى الفرن مع تبديل موضعي الصواني لتتساوى الحرارة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اخبز 15 دقيقة أخرى وكرر التقليب وتبديل مواضع الصواني.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اخبز 10 دقائق أخيرة من دون تقليب كي تتكون كتل، ثم اتركه يبرد.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "قطّع الفواكه المجففة خشناً واخلطها بالجرانولا. قدّمها مع الزبادي أو الحليب أو الفاكهة الطازجة حسب اقتراح المصدر.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 40 min ؛ - 🍽️ Servings: 5. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/granola.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=18914fb04bc1963a27cf3e808d0df45d33e63f21bff8dec18cc2843eb8dc8166"
+    },
+    {
+      "id": "bc650-air-fryer-zucchini",
+      "name": "كوسة مقرمشة في القلاية الهوائية",
+      "nameEn": "Air Fryer Zucchini",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق جانبي",
+      "description": "مكعبات كوسة مع زيت الزيتون وملح متبل ومساحيق الثوم والبصل الاختيارية، تطهى في القلاية الهوائية.",
+      "servings": 2,
+      "prepTime": 10,
+      "cookTime": 8,
+      "totalTime": 18,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-air-fryer-zucchini-ing-1",
+          "name": "حبتا كوسة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 zucchinis"
+        },
+        {
+          "id": "bc650-air-fryer-zucchini-ing-2",
+          "name": "رشة ملح متبل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pinch of season salt"
+        },
+        {
+          "id": "bc650-air-fryer-zucchini-ing-3",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil"
+        },
+        {
+          "id": "bc650-air-fryer-zucchini-ing-4",
+          "name": "مسحوق ثوم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Garlic powder (optional)"
+        },
+        {
+          "id": "bc650-air-fryer-zucchini-ing-5",
+          "name": "مسحوق بصل (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Onion powder (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع الكوسة إلى مكعبات متوسطة الحجم.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضعها في وعاء وأضف قليلاً من زيت الزيتون والملح المتبل ومسحوق الثوم والبصل الاختياريين.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اطه في القلاية الهوائية 8 دقائق عند 400°F أو حتى تصبح مقرمشة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 8 min ؛ - 🍽️ Servings: 2. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/air-fryer-zucchini.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=01eebd62bc0fc6a17569098f2d570bba6517595038cf10f029e0d448b93bbe6d"
+    }
+  ]
+}

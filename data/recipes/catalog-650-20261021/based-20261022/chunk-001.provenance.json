@@ -1,0 +1,1860 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+  "recipes": [
+    {
+      "recipeId": "bc650-newfoundland-cod-chowder",
+      "sourceTitle": "Newfoundland Cod Chowder",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/newfoundland-cod-chowder.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/newfoundland-cod-chowder.md",
+      "snapshotSHA256": "f71326f711437930ff6f220dc9bb2465446af7abf8175addca487b512cf9aebb",
+      "sourceAuthor": "joel-maxuel",
+      "sourceTags": [
+        "fish",
+        "soup",
+        "seafood"
+      ],
+      "sourceIngredientLines": [
+        "4 Slices Bacon",
+        "2 Onions, sliced",
+        "1 tsp Savoury",
+        "6 Potatoes, peeled and cubed",
+        "3 Carrots, sliced",
+        "1 1/2 lbs Cod Fillets",
+        "1 can Evaporated Milk",
+        "2 Tbsp Fresh Parsley or Chives, chopped"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-1",
+          "arabicName": "شرائح لحم مقدد، 4",
+          "candidateDisplay": "4 Slices Bacon",
+          "sourceIngredientIndex": 0,
+          "sourceText": "4 Slices Bacon",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-2",
+          "arabicName": "بصلتان مقطعتان شرائح",
+          "candidateDisplay": "2 Onions, sliced",
+          "sourceIngredientIndex": 1,
+          "sourceText": "2 Onions, sliced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-3",
+          "arabicName": "سافوري مجفف، ملعقة صغيرة",
+          "candidateDisplay": "1 tsp Savoury",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 tsp Savoury",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-4",
+          "arabicName": "بطاطا مقشرة ومكعبة، 6 حبات",
+          "candidateDisplay": "6 Potatoes, peeled and cubed",
+          "sourceIngredientIndex": 3,
+          "sourceText": "6 Potatoes, peeled and cubed",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-5",
+          "arabicName": "جزر مقطع شرائح، 3 حبات",
+          "candidateDisplay": "3 Carrots, sliced",
+          "sourceIngredientIndex": 4,
+          "sourceText": "3 Carrots, sliced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-6",
+          "arabicName": "فيليه قد، رطل ونصف",
+          "candidateDisplay": "1 1/2 lbs Cod Fillets",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1 1/2 lbs Cod Fillets",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1.5,
+          "acceptedUnit": "lbs",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-7",
+          "arabicName": "حليب مبخر، علبة واحدة",
+          "candidateDisplay": "1 can Evaporated Milk",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 can Evaporated Milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-8",
+          "arabicName": "بقدونس طازج أو ثوم معمر مفروم، ملعقتان كبيرتان",
+          "candidateDisplay": "2 Tbsp Fresh Parsley or Chives, chopped",
+          "sourceIngredientIndex": 7,
+          "sourceText": "2 Tbsp Fresh Parsley or Chives, chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-9",
+          "arabicName": "ماء",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add potatoes, carrots, water and salt.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-10",
+          "arabicName": "ملح",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add potatoes, carrots, water and salt.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-11",
+          "arabicName": "دهن اللحم المقدد، ملعقة كبيرة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Drain off all but 1 tbsp. fat from saucepan.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-newfoundland-cod-chowder-ing-12",
+          "arabicName": "فلفل أبيض",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add milk and white pepper, heat through.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ماء",
+          "sourceText": "Add potatoes, carrots, water and salt."
+        },
+        {
+          "name": "ملح",
+          "sourceText": "Add potatoes, carrots, water and salt."
+        },
+        {
+          "name": "دهن اللحم المقدد، ملعقة كبيرة",
+          "sourceText": "Drain off all but 1 tbsp. fat from saucepan."
+        },
+        {
+          "name": "فلفل أبيض",
+          "sourceText": "Add milk and white pepper, heat through."
+        }
+      ],
+      "sourceMethodLines": [
+        "In a large, heavy saucepan, cook bacon over medium-high heat for about 10 minutes or until crisp. Chop coarsely and set aside.",
+        "Drain off all but 1 tbsp. fat from saucepan. Add onions and savoury. Cook, stirring occasionally for 5 minutes or until softened.",
+        "Add potatoes, carrots, water and salt. Bring to boil, cover, reduce heat and simmer for about 20 minutes or until tender",
+        "Cut cod into 1-inch chunks. Add to vegetables and simmer for about 5 minutes or until fish flakes easily",
+        "Add milk and white pepper, heat through. Garnish with bacon and parsley."
+      ],
+      "sourceRawText": "---\ntitle: Newfoundland Cod Chowder\ntags: ['fish', 'soup', 'seafood']\ndate: 2022-08-09\nauthor: joel-maxuel\n---\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 8\n\n## Ingredients\n\n- 4 Slices Bacon\n- 2 Onions, sliced\n- 1 tsp Savoury\n- 6 Potatoes, peeled and cubed\n- 3 Carrots, sliced\n- 1 1/2 lbs Cod Fillets\n- 1 can Evaporated Milk\n- 2 Tbsp Fresh Parsley or Chives, chopped\n\n## Directions\n\n1. In a large, heavy saucepan, cook bacon over medium-high heat for about 10 minutes or until crisp. Chop coarsely and set aside.\n2. Drain off all but 1 tbsp. fat from saucepan. Add onions and savoury. Cook, stirring occasionally for 5 minutes or until softened.\n3. Add potatoes, carrots, water and salt. Bring to boil, cover, reduce heat and simmer for about 20 minutes or until tender\n4. Cut cod into 1-inch chunks. Add to vegetables and simmer for about 5 minutes or until fish flakes easily\n5. Add milk and white pepper, heat through. Garnish with bacon and parsley.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 8,
+        "prepTime": 10,
+        "cookTime": 30,
+        "totalTime": 40,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 30 min",
+          "- 🍽️ Servings: 8"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-pate-chinois",
+      "sourceTitle": "Pâté Chinois (Quebec Style Shepherd’s Pie)",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pate-chinois.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/pate-chinois.md",
+      "snapshotSHA256": "80fc30618c5511a35dbfc971eedf29019a32b24d2d5d39bf910360db33394a7d",
+      "sourceAuthor": "julien",
+      "sourceTags": [
+        "quebec",
+        "beef",
+        "pie",
+        "potato"
+      ],
+      "sourceIngredientLines": [
+        "1½ lb of potatoes or around 6 big one, peeled and diced",
+        "2 tbsp of butter",
+        "½ cup milk",
+        "1 tsp of  herbs de Provence or dried parsley",
+        "(optional) ½ cup of strong cheddar cheese, grated",
+        "Pinch of nutmeg",
+        "Paprika",
+        "1 tbsp of butter",
+        "1 lb of ground beef",
+        "1 onion, diced",
+        "1 tbsp of soya sauce",
+        "1 tbsp of herbs de Provence",
+        "1 tsp of Worcestershire sauce",
+        "1 small can (around 14oz) of whole kernel corn",
+        "1 small can (around 14oz) of cream style corn"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-pate-chinois-ing-1",
+          "arabicName": "بطاطا مقشرة ومكعبة، رطل ونصف أو نحو 6 حبات كبيرة",
+          "candidateDisplay": "1½ lb of potatoes or around 6 big one, peeled and diced",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1½ lb of potatoes or around 6 big one, peeled and diced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-2",
+          "arabicName": "زبدة، ملعقتان كبيرتان",
+          "candidateDisplay": "2 tbsp of butter",
+          "sourceIngredientIndex": 1,
+          "sourceText": "2 tbsp of butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-3",
+          "arabicName": "حليب، نصف كوب",
+          "candidateDisplay": "½ cup milk",
+          "sourceIngredientIndex": 2,
+          "sourceText": "½ cup milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-4",
+          "arabicName": "أعشاب بروفانس أو بقدونس مجفف، ملعقة صغيرة",
+          "candidateDisplay": "1 tsp of  herbs de Provence or dried parsley",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 tsp of  herbs de Provence or dried parsley",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-5",
+          "arabicName": "جبن شيدر قوي مبشور اختياري، نصف كوب",
+          "candidateDisplay": "(optional) ½ cup of strong cheddar cheese, grated",
+          "sourceIngredientIndex": 4,
+          "sourceText": "(optional) ½ cup of strong cheddar cheese, grated",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-6",
+          "arabicName": "رشة جوزة الطيب",
+          "candidateDisplay": "Pinch of nutmeg",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Pinch of nutmeg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-7",
+          "arabicName": "بابريكا",
+          "candidateDisplay": "Paprika",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Paprika",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-8",
+          "arabicName": "زبدة، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp of butter",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 tbsp of butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-9",
+          "arabicName": "لحم بقري مفروم، رطل واحد",
+          "candidateDisplay": "1 lb of ground beef",
+          "sourceIngredientIndex": 8,
+          "sourceText": "1 lb of ground beef",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "lb",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-10",
+          "arabicName": "بصلة مكعبة",
+          "candidateDisplay": "1 onion, diced",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1 onion, diced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-11",
+          "arabicName": "صلصة صويا، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp of soya sauce",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1 tbsp of soya sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-12",
+          "arabicName": "أعشاب بروفانس، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp of herbs de Provence",
+          "sourceIngredientIndex": 11,
+          "sourceText": "1 tbsp of herbs de Provence",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-13",
+          "arabicName": "صلصة ورشيسترشاير، ملعقة صغيرة",
+          "candidateDisplay": "1 tsp of Worcestershire sauce",
+          "sourceIngredientIndex": 12,
+          "sourceText": "1 tsp of Worcestershire sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-14",
+          "arabicName": "ذرة حب كاملة معلبة، علبة صغيرة نحو 14 أونصة",
+          "candidateDisplay": "1 small can (around 14oz) of whole kernel corn",
+          "sourceIngredientIndex": 13,
+          "sourceText": "1 small can (around 14oz) of whole kernel corn",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-15",
+          "arabicName": "ذرة كريمية معلبة، علبة صغيرة نحو 14 أونصة",
+          "candidateDisplay": "1 small can (around 14oz) of cream style corn",
+          "sourceIngredientIndex": 14,
+          "sourceText": "1 small can (around 14oz) of cream style corn",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-16",
+          "arabicName": "ماء مملح لسلق البطاطا",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "In a large pot of salted water, cook the potatoes for 20-30min or until tender.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-17",
+          "arabicName": "ملح",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Season with salt and pepper and set aside.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-18",
+          "arabicName": "فلفل",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Season with salt and pepper and set aside.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-19",
+          "arabicName": "كاتشب للتقديم",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Serve with ketchup on top and with marinated beets on the side.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pate-chinois-ing-20",
+          "arabicName": "شمندر متبل للتقديم",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Serve with ketchup on top and with marinated beets on the side.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ماء مملح لسلق البطاطا",
+          "sourceText": "In a large pot of salted water, cook the potatoes for 20-30min or until tender."
+        },
+        {
+          "name": "ملح",
+          "sourceText": "Season with salt and pepper and set aside."
+        },
+        {
+          "name": "فلفل",
+          "sourceText": "Season with salt and pepper and set aside."
+        },
+        {
+          "name": "كاتشب للتقديم",
+          "sourceText": "Serve with ketchup on top and with marinated beets on the side."
+        },
+        {
+          "name": "شمندر متبل للتقديم",
+          "sourceText": "Serve with ketchup on top and with marinated beets on the side."
+        }
+      ],
+      "sourceMethodLines": [
+        "Preheat the oven to 375°F (190°C).",
+        "In a large pot of salted water, cook the potatoes for 20-30min or until tender. Drain.",
+        "Add the butter, the milk, the herbs, the nutmeg and mash the potatoes with a masher or an electric mixer. Gradually add the cheese. Season with salt and pepper and set aside.",
+        "In a pan at medium-high heat, brown the onion in the butter and cook the beef until golden brown. Add the herbs, the Worcestershire and the soya sauce and cook it for another 2min. Set aside.",
+        "In a 6-8 inch baking dish, press the meat into the bottom. Evenly cover with the whole kernel corn, the cream corn and finish with the layer of mashed potatoes.",
+        "Sprinkle some paprika to taste.",
+        "Bake it in the oven for 20-30min.",
+        "(Optional) Finish the cooking under the broiler for no more than 2min.",
+        "Serve with ketchup on top and with marinated beets on the side."
+      ],
+      "sourceRawText": "---\ntitle: \"Pâté Chinois (Quebec Style Shepherd’s Pie)\"\ndate: 2021-03-22\ntags: ['quebec', 'beef', 'pie', 'potato']\nauthor: julien\n---\n\n![pate chinois](/pix/pate-chinois.webp \"Homemade pate chinois with to much ketchup\")\n\nThis is the most traditional dish that every household eats in Quebec. As a kid, you would eat Pâté Chinois at least once a week, either at home or at the school's cafeteria,. It is very similar to a Shepherd’s Pie, as it is divided in 3 layers of ingredients: meat, legumes and mashed potatoes. The literal translation of the name is something like _chinese pie_. You can search for the origin of the name on the internet, I'm not an history teacher.\n\n- ⏲️ Prep time: 20 min\n- 🍳 Cook time: 40-60 min\n- 🍽️ Servings: 6-8\n\n## Ingredients\n\n### Mashed potatoes layer\n* 1½ lb of potatoes or around 6 big one, peeled and diced\n* 2 tbsp of butter\n* ½ cup milk\n* 1 tsp of  herbs de Provence or dried parsley\n* (optional) ½ cup of strong cheddar cheese, grated\n* Pinch of nutmeg\n* Paprika\n\n### Beef layer\n* 1 tbsp of butter\n* 1 lb of ground beef\n* 1 onion, diced\n* 1 tbsp of soya sauce\n* 1 tbsp of herbs de Provence\n* 1 tsp of Worcestershire sauce\n\n### Corn layer\n* 1 small can (around 14oz) of whole kernel corn\n* 1 small can (around 14oz) of cream style corn\n\n## Directions\n\n1. Preheat the oven to 375°F (190°C).\n2. In a large pot of salted water, cook the potatoes for 20-30min or until tender. Drain.\n3. Add the butter, the milk, the herbs, the nutmeg and mash the potatoes with a masher or an electric mixer. Gradually\nadd the cheese. Season with salt and pepper and set aside.\n4. In a pan at medium-high heat, brown the onion in the butter and cook the beef until golden brown. Add the herbs, the Worcestershire and the soya sauce and cook it for another 2min. Set aside.\n5. In a 6-8 inch baking dish, press the meat into the bottom. Evenly cover with the whole kernel corn, the cream corn and finish with the layer of mashed potatoes.\n6. Sprinkle some paprika to taste.\n7. Bake it in the oven for 20-30min.\n9. (Optional) Finish the cooking under the broiler for no more than 2min.\n10. Serve with ketchup on top and with marinated beets on the side.\n\n## Note\n\n- For a vegetarian alternative, you can replace the beef with 500g of fake meat and a can of 19oz of lentils (drain and washed).\n- This recipe can be easily double and you can also freeze it for lunches.\n- If you like mushrooms, you can brown 1/2 cup of sliced mushrooms with the onions of the beef layer.\n- If you want to be wild, you can swap the corn layer with a mix of diced veges like black radishes, parsnips, carrots, turnips and/or cauliflower.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 20,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": [
+          "- ⏲️ Prep time: 20 min",
+          "- 🍳 Cook time: 40-60 min",
+          "- 🍽️ Servings: 6-8"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-tofu-and-cashew-chow-mein",
+      "sourceTitle": "Tofu and Cashew Chow Mein",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tofu-and-cashew-chow-mein.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/tofu-and-cashew-chow-mein.md",
+      "snapshotSHA256": "2db69ab45f9d697cd6607ba9831bb3a0970c4a3d9de412f81f158e797635b03f",
+      "sourceAuthor": "joel-maxuel",
+      "sourceTags": [
+        "tofu",
+        "asian"
+      ],
+      "sourceIngredientLines": [
+        "10 oz Precooked Thick Wheat Noodles",
+        "3 Tbsp Soy Sauce",
+        "2 Tbsp Oyster Sauce",
+        "2 tsp Sesame Oil",
+        "2 Tbsp Peanut Oil or other suitable frying oil",
+        "6 oz Firm Tofu, cut into cubes",
+        "1 Carrot, julienned",
+        "2 cups Small Broccoli Florets",
+        "2 cloves Garlic, minced",
+        "2 tsp Ginger, finely grated",
+        "1/2 cup Roasted Cashews"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-1",
+          "arabicName": "نودلز قمح سميكة مطهوة مسبقاً، 10 أونصات",
+          "candidateDisplay": "10 oz Precooked Thick Wheat Noodles",
+          "sourceIngredientIndex": 0,
+          "sourceText": "10 oz Precooked Thick Wheat Noodles",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 10,
+          "acceptedUnit": "oz",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-2",
+          "arabicName": "صلصة صويا، 3 ملاعق كبيرة",
+          "candidateDisplay": "3 Tbsp Soy Sauce",
+          "sourceIngredientIndex": 1,
+          "sourceText": "3 Tbsp Soy Sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 3,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-3",
+          "arabicName": "صلصة محار، ملعقتان كبيرتان",
+          "candidateDisplay": "2 Tbsp Oyster Sauce",
+          "sourceIngredientIndex": 2,
+          "sourceText": "2 Tbsp Oyster Sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-4",
+          "arabicName": "زيت سمسم، ملعقتان صغيرتان",
+          "candidateDisplay": "2 tsp Sesame Oil",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 tsp Sesame Oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-5",
+          "arabicName": "زيت فول سوداني أو زيت قلي مناسب آخر، ملعقتان كبيرتان",
+          "candidateDisplay": "2 Tbsp Peanut Oil or other suitable frying oil",
+          "sourceIngredientIndex": 4,
+          "sourceText": "2 Tbsp Peanut Oil or other suitable frying oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-6",
+          "arabicName": "توفو متماسك مقطع مكعبات، 6 أونصات",
+          "candidateDisplay": "6 oz Firm Tofu, cut into cubes",
+          "sourceIngredientIndex": 5,
+          "sourceText": "6 oz Firm Tofu, cut into cubes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 6,
+          "acceptedUnit": "oz",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-7",
+          "arabicName": "جزرة مقطعة عيداناً رفيعة، واحدة",
+          "candidateDisplay": "1 Carrot, julienned",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 Carrot, julienned",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-8",
+          "arabicName": "زهرات بروكلي صغيرة، كوبان",
+          "candidateDisplay": "2 cups Small Broccoli Florets",
+          "sourceIngredientIndex": 7,
+          "sourceText": "2 cups Small Broccoli Florets",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-9",
+          "arabicName": "فصا ثوم مفرومان",
+          "candidateDisplay": "2 cloves Garlic, minced",
+          "sourceIngredientIndex": 8,
+          "sourceText": "2 cloves Garlic, minced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-10",
+          "arabicName": "زنجبيل مبشور ناعماً، ملعقتان صغيرتان",
+          "candidateDisplay": "2 tsp Ginger, finely grated",
+          "sourceIngredientIndex": 9,
+          "sourceText": "2 tsp Ginger, finely grated",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-11",
+          "arabicName": "كاجو محمص، نصف كوب",
+          "candidateDisplay": "1/2 cup Roasted Cashews",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1/2 cup Roasted Cashews",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tofu-and-cashew-chow-mein-ing-12",
+          "arabicName": "ماء للصلصة، ملعقتان كبيرتان",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Mix together the soy sauce, oyster sauce, sesame oil and 2 Tbsp water in a bowl.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ماء للصلصة، ملعقتان كبيرتان",
+          "sourceText": "Mix together the soy sauce, oyster sauce, sesame oil and 2 Tbsp water in a bowl."
+        }
+      ],
+      "sourceMethodLines": [
+        "Loosen the precooked noodles by soaking in a bowl of hot water for 2-3 minutes, then drain and set aside.",
+        "Mix together the soy sauce, oyster sauce, sesame oil and 2 Tbsp water in a bowl.",
+        "Heat a wok or large frying pan over a high heat, add the oil and stir-fry the carrot and broccoli for 2 minutes.",
+        "Add the tofu and stir-fry for 4 minutes.",
+        "Add the garlic and ginger and stir-fry for a minute.",
+        "Stir through the noodles and then add the sauce mixture and cashews and mix until thoroughly combined and heated through."
+      ],
+      "sourceRawText": "---\ntitle: Tofu and Cashew Chow Mein\ntags: ['tofu', 'asian']\ndate: 2022-09-10\nauthor: joel-maxuel\n---\n\nPrecooked thick wheat noodles are typically found in the refrigerated section of the supermarket. Preparing soba noodles is a worthy substitute.\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 3\n\n## Ingredients\n\n- 10 oz Precooked Thick Wheat Noodles\n- 3 Tbsp Soy Sauce\n- 2 Tbsp Oyster Sauce\n- 2 tsp Sesame Oil\n- 2 Tbsp Peanut Oil or other suitable frying oil\n- 6 oz Firm Tofu, cut into cubes\n- 1 Carrot, julienned\n- 2 cups Small Broccoli Florets\n- 2 cloves Garlic, minced\n- 2 tsp Ginger, finely grated\n- 1/2 cup Roasted Cashews\n\n## Directions\n\n1. Loosen the precooked noodles by soaking in a bowl of hot water for 2-3 minutes, then drain and set aside.\n2. Mix together the soy sauce, oyster sauce, sesame oil and 2 Tbsp water in a bowl.\n3. Heat a wok or large frying pan over a high heat, add the oil and stir-fry the carrot and broccoli for 2 minutes.\n4. Add the tofu and stir-fry for 4 minutes.\n5. Add the garlic and ginger and stir-fry for a minute.\n6. Stir through the noodles and then add the sauce mixture and cashews and mix until thoroughly combined and heated through.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 3,
+        "prepTime": 15,
+        "cookTime": 10,
+        "totalTime": 25,
+        "sourceReported": [
+          "- ⏲️ Prep time: 15 min",
+          "- 🍳 Cook time: 10 min",
+          "- 🍽️ Servings: 3"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-slowcooked-green-bean-beef-soup-supreme",
+      "sourceTitle": "Slowcooked Green Bean Beef Soup Supreme",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/slowcooked-green-bean-beef-soup-supreme.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/slowcooked-green-bean-beef-soup-supreme.md",
+      "snapshotSHA256": "33c6f1b0fbbeafd220b13fa9dee072cef4e9de645392c9af0ac2f5d059fb414b",
+      "sourceAuthor": "\"Bradley Gustin\"",
+      "sourceTags": [
+        "beef",
+        "vegetables",
+        "stew",
+        "soup",
+        "crockpot",
+        "slowcooked",
+        "spice",
+        "adaptable"
+      ],
+      "sourceIngredientLines": [
+        "1x Seasoned Meat package (beef, peppers, some rub)",
+        "1-2 cups of water (250-450 ml)",
+        "2x Cans french cut green beans (Or Diced green beans)",
+        "3x Small Cans chicken noodle soup",
+        "1-4x Jalapenos, depending on preferred spice level (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-slowcooked-green-bean-beef-soup-supreme-ing-1",
+          "arabicName": "عبوة لحم متبل (لحم بقري وفلفل وبعض التوابل)",
+          "candidateDisplay": "1x Seasoned Meat package (beef, peppers, some rub)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1x Seasoned Meat package (beef, peppers, some rub)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-slowcooked-green-bean-beef-soup-supreme-ing-2",
+          "arabicName": "ماء، 1–2 كوب (250–450 مل)",
+          "candidateDisplay": "1-2 cups of water (250-450 ml)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1-2 cups of water (250-450 ml)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-slowcooked-green-bean-beef-soup-supreme-ing-3",
+          "arabicName": "علبتان فاصوليا خضراء مقطعة فرنسياً أو مكعبة",
+          "candidateDisplay": "2x Cans french cut green beans (Or Diced green beans)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "2x Cans french cut green beans (Or Diced green beans)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-slowcooked-green-bean-beef-soup-supreme-ing-4",
+          "arabicName": "3 علب صغيرة شوربة دجاج بالنودلز",
+          "candidateDisplay": "3x Small Cans chicken noodle soup",
+          "sourceIngredientIndex": 3,
+          "sourceText": "3x Small Cans chicken noodle soup",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-slowcooked-green-bean-beef-soup-supreme-ing-5",
+          "arabicName": "فلفل هالبينو، 1–4 حسب درجة الحرارة المرغوبة (اختياري)",
+          "candidateDisplay": "1-4x Jalapenos, depending on preferred spice level (optional)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1-4x Jalapenos, depending on preferred spice level (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-slowcooked-green-bean-beef-soup-supreme-ing-6",
+          "arabicName": "ماء إضافي حسب الحاجة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Taste with a spoon midway to verify flavour or make any adjustments as needed (Add spices, thin with additional water, ETC).",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-slowcooked-green-bean-beef-soup-supreme-ing-7",
+          "arabicName": "بهارات إضافية حسب الحاجة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Taste with a spoon midway to verify flavour or make any adjustments as needed (Add spices, thin with additional water, ETC).",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ماء إضافي حسب الحاجة",
+          "sourceText": "Taste with a spoon midway to verify flavour or make any adjustments as needed (Add spices, thin with additional water, ETC)."
+        },
+        {
+          "name": "بهارات إضافية حسب الحاجة",
+          "sourceText": "Taste with a spoon midway to verify flavour or make any adjustments as needed (Add spices, thin with additional water, ETC)."
+        }
+      ],
+      "sourceMethodLines": [
+        "Place the slow cooker on HIGH to let warm up, and pre-thaw the Seasoned Meat Package if applicable.",
+        "Place the Seasoned Meat in the slow cooker on HIGH for 2-3 hours with 1-2 cups of water to produce vapors, 3-4 hours if you prefer the meat to be more pull-apart.",
+        "Once the meat is semi-cooked, cut the meat down into thirds or fourth sections. The inside should still be pink and not fully cooked.",
+        "Dump the cans of soup and green beans into the slow cooker.",
+        "Dice and cut the jalapenos, then dump into slow cooker.",
+        "Let cook on HIGH for another 3 or so hours. Taste with a spoon midway to verify flavour or make any adjustments as needed (Add spices, thin with additional water, ETC).",
+        "Seperate or \"pull-apart\" the meat within the slow cooker to ensure fully cooked and to release additional flavours.",
+        "Turn off the slow cooker and turn lid partially to let hot air vent. Let sit for 30 minutes to cool before serving."
+      ],
+      "sourceRawText": "---\ntitle: Slowcooked Green Bean Beef Soup Supreme\ntags: ['beef', 'vegetables', 'stew', 'soup', 'crockpot', 'slowcooked', 'spice', 'adaptable']\ndate: 2025-11-13\nauthor: \"Bradley Gustin\"\n---\n\nA spicy, slowcooked meal with vegetables, beef, and premade soup. Made with ingredients easily obtained at a grocery store on the cheap, and will last a single person about a week. Many ingredients in this recipe can be supplimented depending on your flavour pallette or preferences. Say for example the green beans can be replaced with other mundane veggies, or the beef with another meat such as venison or chicken.\n\n![Slowcooked Green Bean Beef Soup Supreme](/pix/slowcooked-green-bean-beef-soup-supreme.webp)\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 400 min\n- 🍽️ Servings: 6\n\n## Ingredients\n\n- 1x Seasoned Meat package (beef, peppers, some rub)\n- 1-2 cups of water (250-450 ml)\n- 2x Cans french cut green beans (Or Diced green beans)\n- 3x Small Cans chicken noodle soup\n- 1-4x Jalapenos, depending on preferred spice level (optional)\n\n## Directions\n\n1. Place the slow cooker on HIGH to let warm up, and pre-thaw the Seasoned Meat Package if applicable.\n3. Place the Seasoned Meat in the slow cooker on HIGH for 2-3 hours with 1-2 cups of water to produce vapors, 3-4 hours if you prefer the meat to be more pull-apart.\n4. Once the meat is semi-cooked, cut the meat down into thirds or fourth sections. The inside should still be pink and not fully cooked.\n4. Dump the cans of soup and green beans into the slow cooker.\n5. Dice and cut the jalapenos, then dump into slow cooker.\n6. Let cook on HIGH for another 3 or so hours. Taste with a spoon midway to verify flavour or make any adjustments as needed (Add spices, thin with additional water, ETC).\n7. Seperate or \"pull-apart\" the meat within the slow cooker to ensure fully cooked and to release additional flavours.\n8. Turn off the slow cooker and turn lid partially to let hot air vent. Let sit for 30 minutes to cool before serving.",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 6,
+        "prepTime": 10,
+        "cookTime": 400,
+        "totalTime": 410,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 400 min",
+          "- 🍽️ Servings: 6"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-merchants-buckwheat",
+      "sourceTitle": "Merchant's Buckwheat",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/merchants-buckwheat.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/merchants-buckwheat.md",
+      "snapshotSHA256": "0a61d248246f77a49f5e7bc6be72376e373303a6b58d36e7d672b4fa8840d4d0",
+      "sourceAuthor": "yaroslav-smirnov",
+      "sourceTags": [
+        "russian",
+        "pork"
+      ],
+      "sourceIngredientLines": [
+        "400g pork meat",
+        "1/2 metric cup (~125ml) buckwheat",
+        "1 1/5 metric cup (~300ml) water",
+        "1 medium-sized carrot",
+        "1 small onion",
+        "6-8 tablespoons tomato paste",
+        "Wheat flour",
+        "Curcuma",
+        "Chili powder (optional)",
+        "3-4 garlic cloves",
+        "Parsley",
+        "3-4 bay leaves"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-1",
+          "arabicName": "لحم خنزير، 400 جم",
+          "candidateDisplay": "400g pork meat",
+          "sourceIngredientIndex": 0,
+          "sourceText": "400g pork meat",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 400,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-2",
+          "arabicName": "حنطة سوداء، نصف كوب متري (نحو 125 مل)",
+          "candidateDisplay": "1/2 metric cup (~125ml) buckwheat",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1/2 metric cup (~125ml) buckwheat",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-3",
+          "arabicName": "ماء، كوب وثلث متري (نحو 300 مل)",
+          "candidateDisplay": "1 1/5 metric cup (~300ml) water",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 1/5 metric cup (~300ml) water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-4",
+          "arabicName": "جزرة متوسطة واحدة",
+          "candidateDisplay": "1 medium-sized carrot",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 medium-sized carrot",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-5",
+          "arabicName": "بصلة صغيرة واحدة",
+          "candidateDisplay": "1 small onion",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 small onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-6",
+          "arabicName": "معجون طماطم، 6–8 ملاعق كبيرة",
+          "candidateDisplay": "6-8 tablespoons tomato paste",
+          "sourceIngredientIndex": 5,
+          "sourceText": "6-8 tablespoons tomato paste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-7",
+          "arabicName": "دقيق قمح",
+          "candidateDisplay": "Wheat flour",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Wheat flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-8",
+          "arabicName": "كركم",
+          "candidateDisplay": "Curcuma",
+          "sourceIngredientIndex": 7,
+          "sourceText": "Curcuma",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-9",
+          "arabicName": "مسحوق فلفل حار اختياري",
+          "candidateDisplay": "Chili powder (optional)",
+          "sourceIngredientIndex": 8,
+          "sourceText": "Chili powder (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-10",
+          "arabicName": "فصوص ثوم، 3–4",
+          "candidateDisplay": "3-4 garlic cloves",
+          "sourceIngredientIndex": 9,
+          "sourceText": "3-4 garlic cloves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-11",
+          "arabicName": "بقدونس",
+          "candidateDisplay": "Parsley",
+          "sourceIngredientIndex": 10,
+          "sourceText": "Parsley",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-12",
+          "arabicName": "أوراق غار، 3–4",
+          "candidateDisplay": "3-4 bay leaves",
+          "sourceIngredientIndex": 11,
+          "sourceText": "3-4 bay leaves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-13",
+          "arabicName": "دقيق لتغليف لحم الخنزير",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Dust the pork with some flour.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-14",
+          "arabicName": "زيت قلي",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Heat the frying pan add a bit of oil, add the pork and onion, and fry for about 10-15 minutes over medium-high heat.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-15",
+          "arabicName": "ملح حسب الذوق",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add curcuma, chili powder, salt and black pepper to taste; mix thoroughly.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-merchants-buckwheat-ing-16",
+          "arabicName": "فلفل أسود حسب الذوق",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add curcuma, chili powder, salt and black pepper to taste; mix thoroughly.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "دقيق لتغليف لحم الخنزير",
+          "sourceText": "Dust the pork with some flour."
+        },
+        {
+          "name": "زيت قلي",
+          "sourceText": "Heat the frying pan add a bit of oil, add the pork and onion, and fry for about 10-15 minutes over medium-high heat."
+        },
+        {
+          "name": "ملح حسب الذوق",
+          "sourceText": "Add curcuma, chili powder, salt and black pepper to taste; mix thoroughly."
+        },
+        {
+          "name": "فلفل أسود حسب الذوق",
+          "sourceText": "Add curcuma, chili powder, salt and black pepper to taste; mix thoroughly."
+        }
+      ],
+      "sourceMethodLines": [
+        "Chop the onion and cut the pork into small pieces.",
+        "Dust the pork with some flour. I sometimes like to do this once I've added the pork to the pan, just because I am lazy and I haven't noticed much difference between either approach.",
+        "Heat the frying pan add a bit of oil, add the pork and onion, and fry for about 10-15 minutes over medium-high heat.",
+        "While the pork and onion are being fried, cut the carrot into small pieces and chop the parsley.",
+        "Once the pork and onion are fried, add the water, tomato paste, buckwheat and carrots.",
+        "Add curcuma, chili powder, salt and black pepper to taste; mix thoroughly.",
+        "Add in the garlic cloves, bay leaves and chopped parsley.",
+        "Once the water is boiling, close the pan with a lid and stew for about 25 minutes over low heat.",
+        "Serve hot and enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Merchant's Buckwheat\"\ndate: 2021-03-12\ntags: ['russian', 'pork']\nauthor: yaroslav-smirnov\n---\n\n![Merchant's Buckwheat](/pix/merchants-buckwheat.webp)\n\nBuckwheat is not very popular outside Russia, the former USSR, and some Asian\ncountries; but it is a nice grain full of nutrients which can be used to prepare\ndelicious and nutritious dishes.\n\n## Ingredients\n\nThe ingredients below are for 2 hearty portions.\n\n* 400g pork meat\n* 1/2 metric cup (~125ml) buckwheat\n* 1 1/5 metric cup (~300ml) water\n* 1 medium-sized carrot\n* 1 small onion\n* 6-8 tablespoons tomato paste\n* Wheat flour\n* Curcuma\n* Chili powder (optional)\n* 3-4 garlic cloves\n* Parsley\n* 3-4 bay leaves\n\n## Directions\n\n1. Chop the onion and cut the pork into small pieces.\n2. Dust the pork with some flour. I sometimes like to do this once I've added\n   the pork to the pan, just because I am lazy and I haven't noticed much\n   difference between either approach.\n3. Heat the frying pan add a bit of oil, add the pork and onion, and fry for\n   about 10-15 minutes over medium-high heat.\n4. While the pork and onion are being fried, cut the carrot into small pieces\n   and chop the parsley.\n5. Once the pork and onion are fried, add the water, tomato paste, buckwheat and\n   carrots.\n6. Add curcuma, chili powder, salt and black pepper to taste; mix thoroughly.\n7. Add in the garlic cloves, bay leaves and chopped parsley.\n8. Once the water is boiling, close the pan with a lid and stew for about 25\n   minutes over low heat.\n9. Serve hot and enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-pilaf",
+      "sourceTitle": "Pilaf",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pilaf.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/pilaf.md",
+      "snapshotSHA256": "6d8892c82f1423a72d4068ee4c076794eeb1b457f7b9b9866edc54be5c9b4982",
+      "sourceAuthor": "\"Roman Mirzayev\"",
+      "sourceTags": [
+        "uzbek",
+        "rice",
+        "lamb"
+      ],
+      "sourceIngredientLines": [
+        "150ml cooking oil",
+        "1kg long grain [rice](/rice)",
+        "1.5kg meat (lamb or any other kind of meat)",
+        "500g onions",
+        "500g carrots",
+        "2 tbsp salt",
+        "5 cloves of garlic",
+        "raisins, cardamom, paprika, coriander, cinnamon, cumin, turmeric (all optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-pilaf-ing-1",
+          "arabicName": "زيت طهي، 150 مل",
+          "candidateDisplay": "150ml cooking oil",
+          "sourceIngredientIndex": 0,
+          "sourceText": "150ml cooking oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 150,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-2",
+          "arabicName": "أرز طويل الحبة، 1 كجم",
+          "candidateDisplay": "1kg long grain [rice](/rice)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1kg long grain [rice](/rice)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "kg",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-3",
+          "arabicName": "لحم ضأن أو أي نوع لحم آخر، 1.5 كجم",
+          "candidateDisplay": "1.5kg meat (lamb or any other kind of meat)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1.5kg meat (lamb or any other kind of meat)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1.5,
+          "acceptedUnit": "kg",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-4",
+          "arabicName": "بصل، 500 جم",
+          "candidateDisplay": "500g onions",
+          "sourceIngredientIndex": 3,
+          "sourceText": "500g onions",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 500,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-5",
+          "arabicName": "جزر، 500 جم",
+          "candidateDisplay": "500g carrots",
+          "sourceIngredientIndex": 4,
+          "sourceText": "500g carrots",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 500,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-6",
+          "arabicName": "ملح، ملعقتان كبيرتان",
+          "candidateDisplay": "2 tbsp salt",
+          "sourceIngredientIndex": 5,
+          "sourceText": "2 tbsp salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-7",
+          "arabicName": "فصوص ثوم، 5",
+          "candidateDisplay": "5 cloves of garlic",
+          "sourceIngredientIndex": 6,
+          "sourceText": "5 cloves of garlic",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-8",
+          "arabicName": "زبيب وبهارات اختيارية: هيل وبابريكا وكزبرة وقرفة وكمون وكركم",
+          "candidateDisplay": "raisins, cardamom, paprika, coriander, cinnamon, cumin, turmeric (all optional)",
+          "sourceIngredientIndex": 7,
+          "sourceText": "raisins, cardamom, paprika, coriander, cinnamon, cumin, turmeric (all optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-9",
+          "arabicName": "بصلة كاملة لتسخين الزيت ثم تزال",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "add a head of onion until it is black, then throw it out.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-10",
+          "arabicName": "ماء، 500 مل (الدفعة الأولى)",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add 500 ml of water diluted with tomato paste, boil for 5 minutes.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 500,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-11",
+          "arabicName": "معجون طماطم (المقدار غير محدد)",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add 500 ml of water diluted with tomato paste, boil for 5 minutes.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pilaf-ing-12",
+          "arabicName": "ماء، 500 مل (الدفعة الثانية)",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add another 500 ml of water diluted with tomato paste and wait until it is boiling.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 500,
+          "acceptedUnit": "ml",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "بصلة كاملة لتسخين الزيت ثم تزال",
+          "sourceText": "add a head of onion until it is black, then throw it out."
+        },
+        {
+          "name": "ماء، 500 مل (الدفعة الأولى)",
+          "sourceText": "Add 500 ml of water diluted with tomato paste, boil for 5 minutes.",
+          "amount": 500,
+          "unit": "ml"
+        },
+        {
+          "name": "معجون طماطم (المقدار غير محدد)",
+          "sourceText": "Add 500 ml of water diluted with tomato paste, boil for 5 minutes."
+        },
+        {
+          "name": "ماء، 500 مل (الدفعة الثانية)",
+          "sourceText": "Add another 500 ml of water diluted with tomato paste and wait until it is boiling.",
+          "amount": 500,
+          "unit": "ml"
+        }
+      ],
+      "sourceMethodLines": [
+        "Put the cooking oil in a cauldron and heat it until the oil is boiling, add a head of onion until it is black, then throw it out.",
+        "Throw coarsely chopped meat into the cauldron and let it boil until it's golden brown, then add a pinch of salt.",
+        "Add the chopped onions, then wait 2 minutes and add the sliced carrots, boil for another 2 minutes.",
+        "Add 500 ml of water diluted with tomato paste, boil for 5 minutes.",
+        "Rinse the rice and put it into the cauldron but do not mix.",
+        "Add another 500 ml of water diluted with tomato paste and wait until it is boiling.",
+        "Reduce the heat to minimum, then add two table spoons of salt.",
+        "Close the cauldron and leave it on low heat for 1.5-2 hours.",
+        "1 hour before it is ready(or when you can't see water above the rice), add the garlic.",
+        "You can now turn over the rice if it is undercooked and add some raisins.",
+        "Keep boiling until all water is evaporated."
+      ],
+      "sourceRawText": "---\ntitle: \"Pilaf\"\ndate: 2021-03-17\ntags: ['uzbek', 'rice', 'lamb']\nauthor: \"Roman Mirzayev\"\n---\n\nPopular central asian and middle eastern dish.\nHigh in nutrition, designed to be prepared and eaten communally.\n\n## Ingredients\n\n- 150ml cooking oil\n- 1kg long grain [rice](/rice)\n- 1.5kg meat (lamb or any other kind of meat)\n- 500g onions\n- 500g carrots\n- 2 tbsp salt\n- 5 cloves of garlic\n- raisins, cardamom, paprika, coriander, cinnamon, cumin, turmeric (all optional)\n\n## Directions\n\n1. Put the cooking oil in a cauldron and heat it until the oil is boiling, add a head of onion until it is black, then throw it out.\n2. Throw coarsely chopped meat into the cauldron and let it boil until it's golden brown, then add a pinch of salt.\n3. Add the chopped onions, then wait 2 minutes and add the sliced carrots, boil for another 2 minutes.\n4. Add 500 ml of water diluted with tomato paste, boil for 5 minutes.\n5. Rinse the rice and put it into the cauldron but do not mix.\n6. Add another 500 ml of water diluted with tomato paste and wait until it is boiling.\n7. Reduce the heat to minimum, then add two table spoons of salt.\n8. Close the cauldron and leave it on low heat for 1.5-2 hours.\n9. 1 hour before it is ready(or when you can't see water above the rice), add the garlic.\n10. You can now turn over the rice if it is undercooked and add some raisins.\n11. Keep boiling until all water is evaporated.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-frittata",
+      "sourceTitle": "Frittata",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/frittata.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/frittata.md",
+      "snapshotSHA256": "231a71777c1effe3f2e625e65c2aa31738a01598156c788e28a29478022a0d86",
+      "sourceAuthor": "aj",
+      "sourceTags": [
+        "eggs",
+        "italian",
+        "cheesefare"
+      ],
+      "sourceIngredientLines": [
+        "4-6 Eggs",
+        "1/2 Onion",
+        "1 Bell Pepper",
+        "2 Tbsp Heavy Cream",
+        "Thinly sliced meat (prosciutto, shaved chicken, sandwich steak, etc.) (Optional)",
+        "Shredded cheese of choice (Optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-frittata-ing-1",
+          "arabicName": "بيض، 4–6",
+          "candidateDisplay": "4-6 Eggs",
+          "sourceIngredientIndex": 0,
+          "sourceText": "4-6 Eggs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-frittata-ing-2",
+          "arabicName": "نصف بصلة",
+          "candidateDisplay": "1/2 Onion",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1/2 Onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-frittata-ing-3",
+          "arabicName": "فلفل رومي، حبة واحدة",
+          "candidateDisplay": "1 Bell Pepper",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 Bell Pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-frittata-ing-4",
+          "arabicName": "كريمة دسمة، ملعقتان كبيرتان",
+          "candidateDisplay": "2 Tbsp Heavy Cream",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 Tbsp Heavy Cream",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-frittata-ing-5",
+          "arabicName": "لحم مقطع شرائح رفيعة اختياري (بروسكيوتو أو دجاج أو ستيك ساندويتش)",
+          "candidateDisplay": "Thinly sliced meat (prosciutto, shaved chicken, sandwich steak, etc.) (Optional)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Thinly sliced meat (prosciutto, shaved chicken, sandwich steak, etc.) (Optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-frittata-ing-6",
+          "arabicName": "جبن مبشور من اختيارك، اختياري",
+          "candidateDisplay": "Shredded cheese of choice (Optional)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Shredded cheese of choice (Optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-frittata-ing-7",
+          "arabicName": "زيت للقلي",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Dice peppers and onions and saute in an oven safe pan at medium heat.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-frittata-ing-8",
+          "arabicName": "ملح",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Beat eggs, cream, salt, and pepper together in a bowl.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-frittata-ing-9",
+          "arabicName": "فلفل",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Beat eggs, cream, salt, and pepper together in a bowl.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "زيت للقلي",
+          "sourceText": "Dice peppers and onions and saute in an oven safe pan at medium heat."
+        },
+        {
+          "name": "ملح",
+          "sourceText": "Beat eggs, cream, salt, and pepper together in a bowl."
+        },
+        {
+          "name": "فلفل",
+          "sourceText": "Beat eggs, cream, salt, and pepper together in a bowl."
+        }
+      ],
+      "sourceMethodLines": [
+        "Dice peppers and onions and saute in an oven safe pan at medium heat.",
+        "Add in meat to the pan and set oven to low broil.",
+        "Beat eggs, cream, salt, and pepper together in a bowl.",
+        "Add in egg mixture to the pan and mix together until even.",
+        "Cook egg and vegetable mixture in pan until eggs begin to firm up and edges begin to pull away. Place into oven",
+        "Keep in Oven until completely firm. At this point you can add shredded cheese on top and put back into the oven until melted (about 2 more minutes)",
+        "Flip out of pan and cool to room temperature to ensure settling."
+      ],
+      "sourceRawText": "---\ntitle: \"Frittata\"\ndate: 2021-03-15\ntags: ['eggs', 'italian', 'cheesefare']\nauthor: aj\n---\n\nVery filling egg dish that's easy, fast, and can be eaten at any meal. Any other types of vegetables can be added, this is just what I use the most\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings:4-6\n\n## Ingredients\n\n- 4-6 Eggs\n- 1/2 Onion\n- 1 Bell Pepper\n- 2 Tbsp Heavy Cream\n- Thinly sliced meat (prosciutto, shaved chicken, sandwich steak, etc.) (Optional)\n- Shredded cheese of choice (Optional)\n\n## Directions\n\n1. Dice peppers and onions and saute in an oven safe pan at medium heat.\n2. Add in meat to the pan and set oven to low broil.\n3. Beat eggs, cream, salt, and pepper together in a bowl.\n4. Add in egg mixture to the pan and mix together until even.\n5. Cook egg and vegetable mixture in pan until eggs begin to firm up and edges begin to pull away. Place into oven\n6. Keep in Oven until completely firm. At this point you can add shredded cheese on top and put back into the oven until melted (about 2 more minutes)\n7. Flip out of pan and cool to room temperature to ensure settling.\n\n## Notes\n- Other good vegetables include spinach, tomatoes, mushrooms, broccoli rabe\n- If adding tomatoes, try to keep as much of the juice out to prevent it from being too watery and falling apart\n- An easy way to get it out of the pan is flip upside down on to a plate and then flip again onto another plate/cooling rack\n- It is possible to use ground meat as well, but it may have to cook a bit longer in the over to ensure firmness.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 10,
+        "cookTime": 30,
+        "totalTime": 40,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 30 min",
+          "- 🍽️ Servings:4-6"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-spiced-apple-pancakes",
+      "sourceTitle": "Spiced Apple Pancakes",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spiced-apple-pancakes.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/spiced-apple-pancakes.md",
+      "snapshotSHA256": "037e4ceb9fa8384017064c70ecbed479f14d9ec28e4d09c4ab4aea5efc685286",
+      "sourceAuthor": "\"Elsie Bee\"",
+      "sourceTags": [
+        "apple",
+        "pancake",
+        "german",
+        "breakfast"
+      ],
+      "sourceIngredientLines": [
+        "1 cup flour",
+        "1 large apple, peeled",
+        "1 tbsp sugar",
+        "1 tbsp cinnamon (or more to taste)",
+        "1/2 tsp baking powder",
+        "1 tsp vanilla extract",
+        "2/3 cup milk",
+        "1 egg"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-1",
+          "arabicName": "دقيق، كوب واحد",
+          "candidateDisplay": "1 cup flour",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 cup flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-2",
+          "arabicName": "تفاحة كبيرة مقشرة",
+          "candidateDisplay": "1 large apple, peeled",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 large apple, peeled",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-3",
+          "arabicName": "سكر، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp sugar",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 tbsp sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-4",
+          "arabicName": "قرفة، ملعقة كبيرة أو أكثر حسب الذوق",
+          "candidateDisplay": "1 tbsp cinnamon (or more to taste)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 tbsp cinnamon (or more to taste)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-5",
+          "arabicName": "مسحوق خبز، نصف ملعقة صغيرة",
+          "candidateDisplay": "1/2 tsp baking powder",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1/2 tsp baking powder",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-6",
+          "arabicName": "مستخلص فانيليا، ملعقة صغيرة",
+          "candidateDisplay": "1 tsp vanilla extract",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1 tsp vanilla extract",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-7",
+          "arabicName": "حليب، ثلثا كوب",
+          "candidateDisplay": "2/3 cup milk",
+          "sourceIngredientIndex": 6,
+          "sourceText": "2/3 cup milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.6666666666666666,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-8",
+          "arabicName": "بيضة واحدة",
+          "candidateDisplay": "1 egg",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 egg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-9",
+          "arabicName": "ملح، رشة واحدة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "combine flour, sugar, cinnamon, baking powder, and 1 pinch of salt.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-spiced-apple-pancakes-ing-10",
+          "arabicName": "زبدة للقلي، ملعقة كبيرة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "To a large pan, add 1 tbsp butter.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ملح، رشة واحدة",
+          "sourceText": "combine flour, sugar, cinnamon, baking powder, and 1 pinch of salt."
+        },
+        {
+          "name": "زبدة للقلي، ملعقة كبيرة",
+          "sourceText": "To a large pan, add 1 tbsp butter."
+        }
+      ],
+      "sourceMethodLines": [
+        "In a medium bowl, combine flour, sugar, cinnamon, baking powder, and 1 pinch of salt.",
+        "Separate the egg yolk and egg white. Add the egg yolk to the dry ingredients.",
+        "Whisk the egg white until foamy.",
+        "Slice the peeled apple into thin strips. Alternatively, grate the apple.",
+        "Combine dry ingredients, apple, vanilla extract, egg white, and milk into a homogenous batter.",
+        "To a large pan, add 1 tbsp butter. Add the batter (about 3 tbsp per pancake) and cook for 2 min per side on medium-high heat."
+      ],
+      "sourceRawText": "---\ntitle: Spiced Apple Pancakes\ntags: ['apple', 'pancake', 'german', 'breakfast']\ndate: 2022-11-16\nauthor: \"Elsie Bee\"\n---\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 8 pancakes\n\n## Ingredients\n\n- 1 cup flour\n- 1 large apple, peeled\n- 1 tbsp sugar\n- 1 tbsp cinnamon (or more to taste)\n- 1/2 tsp baking powder\n- 1 tsp vanilla extract\n- 2/3 cup milk\n- 1 egg\n\n## Directions\n\n1. In a medium bowl, combine flour, sugar, cinnamon, baking powder, and 1 pinch of salt.\n2. Separate the egg yolk and egg white. Add the egg yolk to the dry ingredients.\n3. Whisk the egg white until foamy.\n4. Slice the peeled apple into thin strips. Alternatively, grate the apple.\n5. Combine dry ingredients, apple, vanilla extract, egg white, and milk into a homogenous batter.\n6. To a large pan, add 1 tbsp butter. Add the batter (about 3 tbsp per pancake) and cook for 2 min per side on medium-high heat.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 15,
+        "cookTime": 10,
+        "totalTime": 25,
+        "sourceReported": [
+          "- ⏲️ Prep time: 15 min",
+          "- 🍳 Cook time: 10 min",
+          "- 🍽️ Servings: 8 pancakes"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-venezuelan-arepa",
+      "sourceTitle": "Venezuelan Arepa",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/venezuelan-arepa.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/venezuelan-arepa.md",
+      "snapshotSHA256": "bba45574e8ae6a3cc6f7b3967e5843552153e1c75c74af998e88fdb1e8368c66",
+      "sourceAuthor": "\"Leliel\"",
+      "sourceTags": [
+        "venezuelan",
+        "basic",
+        "breakfast",
+        "corn",
+        "quick"
+      ],
+      "sourceIngredientLines": [
+        "2 ½ cups of water",
+        "2 cups of precooked corn flour",
+        "delicatessen to taste"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-venezuelan-arepa-ing-1",
+          "arabicName": "ماء، كوبان ونصف",
+          "candidateDisplay": "2 ½ cups of water",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 ½ cups of water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-venezuelan-arepa-ing-2",
+          "arabicName": "دقيق ذرة مطهو مسبقاً، كوبان",
+          "candidateDisplay": "2 cups of precooked corn flour",
+          "sourceIngredientIndex": 1,
+          "sourceText": "2 cups of precooked corn flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-venezuelan-arepa-ing-3",
+          "arabicName": "حشوة لحوم باردة حسب الذوق",
+          "candidateDisplay": "delicatessen to taste",
+          "sourceIngredientIndex": 2,
+          "sourceText": "delicatessen to taste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-venezuelan-arepa-ing-4",
+          "arabicName": "ملح قليل للعجين",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Combine the water, the precooked corn flour, and a little bit of salt in a large mixing bowl.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-venezuelan-arepa-ing-5",
+          "arabicName": "زيت لتسخين المقلاة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Preheat a pan with oil over low heat.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-venezuelan-arepa-ing-6",
+          "arabicName": "زبدة لدهن الأريبا",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Cut through the middle of the arepas with a butter knife, and brush them with butter.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-venezuelan-arepa-ing-7",
+          "arabicName": "حشوات اختيارية: لحم خنزير أو جبن أو فاصوليا أو مرتديلا أو بيض",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Fill them with delicatessen to taste (ham, cheese, beans, mortadella, eggs, etc.)",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ملح قليل للعجين",
+          "sourceText": "Combine the water, the precooked corn flour, and a little bit of salt in a large mixing bowl."
+        },
+        {
+          "name": "زيت لتسخين المقلاة",
+          "sourceText": "Preheat a pan with oil over low heat."
+        },
+        {
+          "name": "زبدة لدهن الأريبا",
+          "sourceText": "Cut through the middle of the arepas with a butter knife, and brush them with butter."
+        },
+        {
+          "name": "حشوات اختيارية: لحم خنزير أو جبن أو فاصوليا أو مرتديلا أو بيض",
+          "sourceText": "Fill them with delicatessen to taste (ham, cheese, beans, mortadella, eggs, etc.)"
+        }
+      ],
+      "sourceMethodLines": [
+        "Combine the water, the precooked corn flour, and a little bit of salt in a large mixing bowl.",
+        "Mix the ingredients by hand until no clumps remain in the resulting dough and it has a smooth but solid consistency.",
+        "Preheat a pan with oil over low heat.",
+        "Take a piece of dough and form a ball the size of the palm of your hand.",
+        "Carefully slap the ball side by side to make a disk neither too thick nor too thin.",
+        "Repeat the process with the remainder of the dough.",
+        "Put the arepas in the preheated pan and wait for it approximately 2 minutes and a half to flip it over.",
+        "When both sides are cooked, take them out of the pan.",
+        "Cut through the middle of the arepas with a butter knife, and brush them with butter.",
+        "Fill them with delicatessen to taste (ham, cheese, beans, mortadella, eggs, etc.)"
+      ],
+      "sourceRawText": "---\ntitle: \"Venezuelan Arepa\"\ndate: 2025-04-15\ntags: ['venezuelan', 'basic', 'breakfast', 'corn', 'quick']\nauthor: \"Leliel\"\n---\n\nVenezuelan Arepas (not to be confused with Colombian Arepas) are a tipical venezuelan dish.\nThey can be filled with dozens of things, and each presentation has a particular name, but they're still arepas.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 5 min\n- 🍽️ Servings: 3-4\n\n## Ingredients\n\n- 2 ½ cups of water\n- 2 cups of precooked corn flour\n- delicatessen to taste\n\n## Directions\n\n1. Combine the water, the precooked corn flour, and a little bit of salt in a large mixing bowl.\n2. Mix the ingredients by hand until no clumps remain in the resulting dough and it has a smooth but solid consistency.\n3. Preheat a pan with oil over low heat.\n4. Take a piece of dough and form a ball the size of the palm of your hand.\n5. Carefully slap the ball side by side to make a disk neither too thick nor too thin.\n6. Repeat the process with the remainder of the dough.\n7. Put the arepas in the preheated pan and wait for it approximately 2 minutes and a half to flip it over.\n8. When both sides are cooked, take them out of the pan.\n9. Cut through the middle of the arepas with a butter knife, and brush them with butter.\n10. Fill them with delicatessen to taste (ham, cheese, beans, mortadella, eggs, etc.)\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 10,
+        "cookTime": 5,
+        "totalTime": 15,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 5 min",
+          "- 🍽️ Servings: 3-4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-no-knead-bread",
+      "sourceTitle": "No-knead Bread",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/no-knead-bread.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/no-knead-bread.md",
+      "snapshotSHA256": "b4bb3e974a3d78ace9938079ecbcc805c22eb1108185b2bef94c0a9a252f36db",
+      "sourceAuthor": "enthdegree",
+      "sourceTags": [
+        "bread",
+        "dough"
+      ],
+      "sourceIngredientLines": [
+        "3 c flour",
+        "1 tsp salt",
+        "1/4 tsp instant yeast or 1.25/4 tsp active dry yeast",
+        "1 1/2 cups warm water",
+        "Oven-safe pan"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-no-knead-bread-ing-1",
+          "arabicName": "دقيق، 3 أكواب",
+          "candidateDisplay": "3 c flour",
+          "sourceIngredientIndex": 0,
+          "sourceText": "3 c flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-no-knead-bread-ing-2",
+          "arabicName": "ملح، ملعقة صغيرة",
+          "candidateDisplay": "1 tsp salt",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 tsp salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-no-knead-bread-ing-3",
+          "arabicName": "خميرة فورية، ربع ملعقة صغيرة، أو خميرة جافة نشطة 1.25/4 ملعقة صغيرة",
+          "candidateDisplay": "1/4 tsp instant yeast or 1.25/4 tsp active dry yeast",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1/4 tsp instant yeast or 1.25/4 tsp active dry yeast",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.25,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-no-knead-bread-ing-4",
+          "arabicName": "ماء دافئ، كوب ونصف",
+          "candidateDisplay": "1 1/2 cups warm water",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 1/2 cups warm water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1.5,
+          "acceptedUnit": "cups",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [
+        4
+      ],
+      "methodDerivedIngredients": [],
+      "sourceMethodLines": [
+        "Mix the dry ingredients then add the hot water. It should come out as a firm dough.",
+        "Leave the dough at room temperature for 12 hours. You can then keep the dough in the fridge for up to 48 hours before cooking.",
+        "Preheat oven and pan to 450 F (230 C).",
+        "Bake for 30 minutes covered (e.g. aluminum foil), then 20 minutes uncovered."
+      ],
+      "sourceRawText": "---\ntitle: \"No-knead Bread\"\ndate: 2021-03-21\ntags: ['bread', 'dough']\nauthor: enthdegree\n---\n\n![Finished bread](/pix/no-knead-bread.webp)\n\n- ⏲️ Prep time: 13 h\n- 🍳 Cook time: 50 m\n- 🍽️ Servings: 8-12 slices\n\n## Ingredients\n\n- 3 c flour\n- 1 tsp salt\n- 1/4 tsp instant yeast or 1.25/4 tsp active dry yeast\n- 1 1/2 cups warm water\n- Oven-safe pan\n\n## Directions\n\n 1. Mix the dry ingredients then add the hot water. It should come out as a firm dough.\n 2. Leave the dough at room temperature for 12 hours. You can then keep the dough in the fridge for up to 48 hours before cooking.\n 3. Preheat oven and pan to 450 F (230 C).\n 4. Bake for 30 minutes covered (e.g. aluminum foil), then 20 minutes uncovered.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": [
+          "- ⏲️ Prep time: 13 h",
+          "- 🍳 Cook time: 50 m",
+          "- 🍽️ Servings: 8-12 slices"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

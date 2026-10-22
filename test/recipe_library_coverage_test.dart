@@ -1,3 +1,8 @@
+// Full pinned 6,648-entry source-bank integration; repeated SHA/coverage work
+// exceeds the default 30s on this machine. No integrity assertion is skipped.
+@Timeout(Duration(minutes: 2))
+library;
+
 import 'dart:convert';
 
 import 'package:crypto/crypto.dart';

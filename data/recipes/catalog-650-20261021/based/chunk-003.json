@@ -1,0 +1,2600 @@
+{
+  "schemaVersion": 1,
+  "chunk": 3,
+  "recipes": [
+    {
+      "id": "bc650-galinha-caipira",
+      "name": "دجاجة كايبيرا برازيلية",
+      "nameEn": "Galinha Caipira",
+      "cuisine": "برازيلي",
+      "category": "طبق رئيسي",
+      "description": "دجاجة ريفية مطهوة ببطء مع البصل والثوم والثوم المعمر وشحم الخنزير.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-galinha-caipira-ing-1",
+          "name": "دجاجة كاملة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A whole ckicken weighing close to 2,5kg (roughly 3 pounds). Avoid industrially grown birds, as those can make the stew very greasy and flavorless."
+        },
+        {
+          "id": "bc650-galinha-caipira-ing-2",
+          "name": "بصل مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A cup of diced onions of any kind."
+        },
+        {
+          "id": "bc650-galinha-caipira-ing-3",
+          "name": "ثوم معمر مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Half a cup of diced chives."
+        },
+        {
+          "id": "bc650-galinha-caipira-ing-4",
+          "name": "شحم خنزير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A tablespoon of lard."
+        },
+        {
+          "id": "bc650-galinha-caipira-ing-5",
+          "name": "ماء مغلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A full kettle of boiled water."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي الدجاج إلى قطع، وأزيلي الأحشاء أو العظام الصغيرة إن رغبت. تبّليه بالملح والفلفل الآن.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني الشحم جيدًا في مقلاة، ويفضل أن تكون من الحديد الزهر. أضيفي الدجاج وخففي الحرارة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "بعد تحمير اللحم أضيفي البصل. عندما يحمر، غطي الدجاج بالماء المغلي واتركيه على نار هادئة ساعتين؛ أضيفي ماء إذا جف.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "بعد الساعتين أضيفي الثوم المعمر واتركيه 30 دقيقة أخرى.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/galinha-caipira.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=fa36739d65fad15634536d6f381108485527f7533b4bc478e9c163a373b1c950"
+    },
+    {
+      "id": "bc650-guobaorou",
+      "name": "غوباو رو (لحم خنزير حلو وحامض) ",
+      "nameEn": "Guobaorou (sweet-and-sour pork)",
+      "cuisine": "صيني",
+      "category": "طبق رئيسي",
+      "description": "شرائح لحم خنزير مقلية ومقرمشة مغطاة بصلصة طماطم وسكر وخل.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-guobaorou-ing-1",
+          "name": "لحم خاصرة أو فيليه خنزير",
+          "amount": 400,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-guobaorou-ing-2",
+          "name": "نشا بطاطس أو ذرة",
+          "amount": 250,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-guobaorou-ing-3",
+          "name": "جزر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1/2 carrot"
+        },
+        {
+          "id": "bc650-guobaorou-ing-4",
+          "name": "معجون طماطم",
+          "amount": 2,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-guobaorou-ing-5",
+          "name": "سكر",
+          "amount": 2,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-guobaorou-ing-6",
+          "name": "خل أرز أو خل عالي التركيز أقل",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-guobaorou-ing-7",
+          "name": "زيت للقلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1L oil (to fry)"
+        },
+        {
+          "id": "bc650-guobaorou-ing-8",
+          "name": "ملح",
+          "amount": 0.5,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي اللحم شرائح نحو 2×2 سم. اخلطي النشا بالماء حتى يصير كالكريمة السميكة، غطي اللحم وافركي الخليط فيه واتركيه 30 دقيقة مع تقليبه أحيانًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني الزيت واقلي اللحم على دفعات حتى يكتسب لونًا ذهبيًا ويقرمش. صفيه على مناشف ورقية. قطعي الجزر عيدانًا رفيعة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخلطي ملعقتي نشا بكوب ماء بارد. في مقلاة عميقة اطهي معجون الطماطم والسكر مع قليل من الماء حتى يغلي ويظهر فقاعات.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي الخل وخليط النشا والماء وقلبي حتى يثخن قليلًا. أضيفي اللحم المقلي ثم الجزر وقلبي حتى تلتصق الصلصة وتتكرمل قليلًا. قدميه ساخنًا ويفضل مع الأرز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/guobaorou.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=bdf8cffb58d6bb4f73d45a5d1be2f97e99a37feff40831b49866e3efd5ce6e84"
+    },
+    {
+      "id": "bc650-honey-garlic-chicken",
+      "name": "دجاج بالعسل والثوم مع البروكلي والأرز البني",
+      "nameEn": "Honey Garlic Chicken with Broccoli and Brown Rice",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "دجاج مكعبات بالعسل والصويا والثوم يقدم مع الأرز والبازلاء والبروكلي.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-honey-garlic-chicken-ing-1",
+          "name": "أرز بني",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-garlic-chicken-ing-2",
+          "name": "بازلاء مجمدة",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-garlic-chicken-ing-3",
+          "name": "رأس بروكلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 head broccoli (you can use really any amount of broccoli)"
+        },
+        {
+          "id": "bc650-honey-garlic-chicken-ing-4",
+          "name": "صدرا دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 chicken breasts"
+        },
+        {
+          "id": "bc650-honey-garlic-chicken-ing-5",
+          "name": "عسل",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-garlic-chicken-ing-6",
+          "name": "صلصة صويا قليلة الصوديوم",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-honey-garlic-chicken-ing-7",
+          "name": "ثوم مفروم",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اطهي الأرز حسب تعليمات العبوة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أثناء طهيه قطعي الدجاج مكعبات وتبليه بزيت الزيتون والفلفل الأسود والبابريكا. قطعي البروكلي وضعيه في سلة بخار فوق قدر نصفه ماء، لكن لا تشغليه بعد.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ضعي الدجاج في مقلاة ساخنة واطهيه نحو 3 دقائق. أضيفي العسل والصويا والثوم واطهي 5 دقائق أخرى. ابدئي بغلي ماء البروكلي.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي البازلاء المجمدة إلى الأرز وقلبي لتسخن سريعًا.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي الأرز والبازلاء إلى الدجاج وقلبي.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/honey-garlic-chicken.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3465e8f1ace3e8c0cd3c42aba325c9ef8949d6bb74c655a9c573d1045f622eeb"
+    },
+    {
+      "id": "bc650-lemon-and-oregano-chicken-traybake",
+      "name": "صينية دجاج بالليمون والأوريغانو",
+      "nameEn": "Lemon and oregano chicken traybake",
+      "cuisine": "متوسطي",
+      "category": "طبق رئيسي",
+      "description": "أفخاذ دجاج وبطاطس صغيرة وبصل كراث وباكون بالليمون والأوريغانو، تخبز مع المرق والنبيذ الأبيض.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-1",
+          "name": "أفخاذ دجاج بجلدها",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "8 chicken thighs (skin on)"
+        },
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-2",
+          "name": "بطاطس صغيرة",
+          "amount": 500,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-3",
+          "name": "لحم مقدد مكعبات صغيرة",
+          "amount": 100,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-4",
+          "name": "كراث صغير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "8 shallots"
+        },
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-5",
+          "name": "أغصان أوريغانو أو رشة كبيرة من أوراقه",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5 oregano sprigs / heavy sprinkle of oregano leaves"
+        },
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-6",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-7",
+          "name": "ليمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 lemons"
+        },
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-8",
+          "name": "مرق دجاج",
+          "amount": 200,
+          "unit": "ml",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-lemon-and-oregano-chicken-traybake-ing-9",
+          "name": "نبيذ أبيض",
+          "amount": 100,
+          "unit": "ml",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الفرن إلى 220°C/200°C مع المروحة أو درجة الغاز 7. قطعي البطاطس شرائح 0.5–1 سم، وضعيها في صينية مع ملعقة زيت وتتبيل جيد. اخبزيها 20 دقيقة أو حتى تبدأ بالقرمشة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "تبّلي أفخاذ الدجاج. قطعي الكراث إلى أثمان والليمون إلى أرباع. أخرجي الصينية وأضيفي الدجاج والكراث والليمون والباكون ورشي ملعقة الزيت المتبقية. اخبزي 20 دقيقة أخرى.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اسكبي 200 مل مرق و100 مل نبيذ فوق الصينية وأعيديها للفرن 20 دقيقة أخيرة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/lemon-and-oregano-chicken-traybake.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=f34b15712c6733b9301f1085318d5dfa2af0f985417fc2e08e1ab427fbac9ff3"
+    },
+    {
+      "id": "bc650-marinated-pork-steaks",
+      "name": "شرائح كتف خنزير متبلة",
+      "nameEn": "Marinated pork steaks ",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "شرائح كتف خنزير منقوعة في زيت الزيتون والصويا والعسل والليمون والثوم ثم تشوى.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-marinated-pork-steaks-ing-1",
+          "name": "زيت زيتون",
+          "amount": 6,
+          "unit": "tablespoons",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-marinated-pork-steaks-ing-2",
+          "name": "صلصة صويا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "¼ cup soy sauce"
+        },
+        {
+          "id": "bc650-marinated-pork-steaks-ing-3",
+          "name": "عسل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "¼ cup of honey"
+        },
+        {
+          "id": "bc650-marinated-pork-steaks-ing-4",
+          "name": "عصير ليمون أخضر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Juice from 1 lime"
+        },
+        {
+          "id": "bc650-marinated-pork-steaks-ing-5",
+          "name": "فصوص ثوم مقشرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 peeled cloves garlic"
+        },
+        {
+          "id": "bc650-marinated-pork-steaks-ing-6",
+          "name": "شرائح كتف خنزير منزوعة العظم بسماكة ربع بوصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 ¼ inch thick boneless pork shoulder steaks"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلطي زيت الزيتون والصويا والعسل وعصير الليمون حتى تتجانس التتبيلة. أضيفي الفلفل والثوم المهروس.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي شرائح اللحم واتركيها في حرارة الغرفة 30 دقيقة أو أكثر قليلًا.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "سخني الشواية أو مقلاة القلي. اطهي الشرائح دقيقتين ثم اقلبيها وكرري حتى يبلغ مجموع الطهي 10 دقائق. اسكبي بقية التتبيلة عليها في الدقائق الأخيرة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اتركي اللحم يرتاح 10 دقائق قبل التقديم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/marinated-pork-steaks.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=1c92a0c7ec05a8d52cb5e440e35e1a836a631afd6990adcf8f78098d5254a89c"
+    },
+    {
+      "id": "bc650-pan-seared-chicken",
+      "name": "فيليه دجاج محمر بالمقلاة",
+      "nameEn": "Pan-seared Chicken Fillet",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "فيليه دجاج مغطى بالدقيق والبابريكا ومسحوق الثوم وأعشاب بروفانس ثم يحمر بالمقلاة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pan-seared-chicken-ing-1",
+          "name": "فيليه دجاج أو صدور دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chicken fillet(s); I normally use chicken breasts"
+        },
+        {
+          "id": "bc650-pan-seared-chicken-ing-2",
+          "name": "دقيق قمح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Wheat flour"
+        },
+        {
+          "id": "bc650-pan-seared-chicken-ing-3",
+          "name": "بابريكا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Paprika"
+        },
+        {
+          "id": "bc650-pan-seared-chicken-ing-4",
+          "name": "مسحوق ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Garlic powder"
+        },
+        {
+          "id": "bc650-pan-seared-chicken-ing-5",
+          "name": "أعشاب بروفانس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Herbes de Provence"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اشطفي الفيليه وجففي الرطوبة الزائدة بمنشفة ورقية. اقطعيه نصفين إذا كان سميكًا جدًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضعي كمية كافية من الدقيق في وعاء صغير واخلطيه بالبابريكا ومسحوق الثوم وأعشاب بروفانس والملح والفلفل حسب الرغبة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي قليلًا من زيت الطهي إلى المقلاة وسخنيه على حرارة متوسطة إلى عالية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "مرري الفيليه في خليط الدقيق لتغطيته. عندما تسخن المقلاة حمري كل جانب نحو 5 دقائق على حرارة متوسطة إلى عالية.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "إذا بقي الفيليه سميكًا، خففي الحرارة واطهيه 2–3 دقائق إضافية.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pan-seared-chicken.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=057255acaabae04ac9d690fb02887e60388368f127ee1cf58afa18a68c65702c"
+    },
+    {
+      "id": "bc650-portuguese-creamy-cod",
+      "name": "سمك القد البرتغالي بالكريمة",
+      "nameEn": "Portuguese Creamy Cod",
+      "cuisine": "برتغالي",
+      "category": "طبق رئيسي",
+      "description": "سمك قد مسلوق بالحليب ومفتت مع البصل والبطاطس والكريمة والجبن ثم يخبز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-portuguese-creamy-cod-ing-1",
+          "name": "قطعتا فيليه سمك قد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 cod fillets (+- 250 grams)"
+        },
+        {
+          "id": "bc650-portuguese-creamy-cod-ing-2",
+          "name": "حليب كامل أو نصف دسم",
+          "amount": 400,
+          "unit": "ml",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-portuguese-creamy-cod-ing-3",
+          "name": "نصف بصلة شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "half an onion, sliced"
+        },
+        {
+          "id": "bc650-portuguese-creamy-cod-ing-4",
+          "name": "دقيق",
+          "amount": 0.5,
+          "unit": "tablespoons",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-portuguese-creamy-cod-ing-5",
+          "name": "بطاطس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "500 grams of potatoes"
+        },
+        {
+          "id": "bc650-portuguese-creamy-cod-ing-6",
+          "name": "كريمة طازجة",
+          "amount": 150,
+          "unit": "ml",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-portuguese-creamy-cod-ing-7",
+          "name": "جبن مبشور مثل موزاريلا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "grated cheese (mozzarella works fine)"
+        },
+        {
+          "id": "bc650-portuguese-creamy-cod-ing-8",
+          "name": "جوزة الطيب مطحونة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "ground nutmeg"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "صبي الحليب في قدر واتركيه يغلي، ثم ضعي الفيليه فيه واغليه 10–15 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطعي البصل واقليه بزيت الزيتون حتى يكتسب لونًا ذهبيًا. صفي السمك واحتفظي بالحليب، ثم فتتي السمك واخلطيه بالبصل واقليه بضع دقائق. أضيفي الحليب المستخدم والدقيق للتكثيف، واتركيه على نار منخفضة 5–10 دقائق حتى يصل للقوام المرغوب.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطعي البطاطس مكعبات بحجم النرد واقليها قليلًا في زيت أو زيت زيتون على نار منخفضة 5–10 دقائق، دون قلي عميق.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ادهني صينية فرن بزيت الزيتون وضعي فيها السمك والبطاطس واخلطيهما. أضيفي جوزة الطيب والملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اسكبي الكريمة ورشي الجبن. اخبزي نحو 20 دقيقة حتى يصبح الوجه ذهبيًا ومقرمشًا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/portuguese-creamy-cod.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=7cf1685fb4ae5f7c550e250d8e0caa03c7927cf80708a7a31fe609310805bfa9"
+    },
+    {
+      "id": "bc650-portuguese-steak-with-beer-sauce",
+      "name": "بيتوكي (شرائح لحم برتغالية بصلصة البيرة)",
+      "nameEn": "Bitoque - Portuguese Steak with Beer Sauce",
+      "cuisine": "برتغالي",
+      "category": "طبق رئيسي",
+      "description": "شرائح سيرلوين بصلصة المقلاة بالحليب والبيرة والخردل، تقدم مع بيض مقلي.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-portuguese-steak-with-beer-sauce-ing-1",
+          "name": "شرائح سيرلوين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "sirloin steaks"
+        },
+        {
+          "id": "bc650-portuguese-steak-with-beer-sauce-ing-2",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "garlic"
+        },
+        {
+          "id": "bc650-portuguese-steak-with-beer-sauce-ing-3",
+          "name": "زيت زيتون حسب الحاجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "olive oil q.b. (quanto basta – ‘enough’)"
+        },
+        {
+          "id": "bc650-portuguese-steak-with-beer-sauce-ing-4",
+          "name": "حليب متوسط الدسم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "medium fat milk"
+        },
+        {
+          "id": "bc650-portuguese-steak-with-beer-sauce-ing-5",
+          "name": "بيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "beer"
+        },
+        {
+          "id": "bc650-portuguese-steak-with-beer-sauce-ing-6",
+          "name": "خردل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "mustard"
+        },
+        {
+          "id": "bc650-portuguese-steak-with-beer-sauce-ing-7",
+          "name": "دقيق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "flour"
+        },
+        {
+          "id": "bc650-portuguese-steak-with-beer-sauce-ing-8",
+          "name": "بيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "eggs"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "تبّلي شرائح اللحم بالثوم المقطع والملح. اطهيها في مقلاة مع كمية وفيرة من زيت الزيتون حتى تقلى، ثم أخرجيها وغطّيها بورق ألمنيوم لتبقى دافئة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "على نار منخفضة أضيفي قليلًا من الزبدة أو المارغرين إلى صلصة اللحم واتركيها تذوب، ثم أضيفي الحليب ودعيه يغلي قليلًا.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي البيرة والخردل والدقيق المذاب في قليل من الماء أو الحليب وقلبي. أضيفي عصارة اللحم من الطبق ورشة فلفل، وقلبي على نار منخفضة حتى تثخن. عدلي التتبيل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أعيدي شرائح اللحم إلى المقلاة دقائق قليلة. اقلي البيض في مقلاة غير لاصقة، وتبلي البياض بالملح والصفار بالفلفل الأسود.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قدمي اللحم مع الصلصة والبيض في أوعية فخارية، مع البطاطس المقلية والأرز الأبيض والسلطة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/portuguese-steak-with-beer-sauce.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=04d769e746ae17fc35dbd7a709034bb63e9ccc778f73ee67f1480c78a4064070"
+    },
+    {
+      "id": "bc650-pulled-rabbit",
+      "name": "أرنب مفتت مطهو",
+      "nameEn": "Pulled Rabbit",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "لحم أرنب مسلوق ومفتت مع الكريمة أو الزبدة والأعشاب الحلوة وقشر الليمون وصفار البيض والتوابل.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pulled-rabbit-ing-1",
+          "name": "أرانب منظفة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 cleaned rabbits"
+        },
+        {
+          "id": "bc650-pulled-rabbit-ing-2",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "butter"
+        },
+        {
+          "id": "bc650-pulled-rabbit-ing-3",
+          "name": "صفارا بيض مسلوقان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 hard-boiled egg yolks"
+        },
+        {
+          "id": "bc650-pulled-rabbit-ing-4",
+          "name": "أعشاب حلوة مفرومة مثل الريحان أو إكليل الجبل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "minced sweet herbs (basil and/or rosemary)"
+        },
+        {
+          "id": "bc650-pulled-rabbit-ing-5",
+          "name": "ليمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "lemon"
+        },
+        {
+          "id": "bc650-pulled-rabbit-ing-6",
+          "name": "جوزة الطيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "nutmeg"
+        },
+        {
+          "id": "bc650-pulled-rabbit-ing-7",
+          "name": "فلفل كايين اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cayenne (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اسلقي الأرنبين المنظفين حتى يطرى اللحم جدًا، ثم أخرجيهما ليبردا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "بعد أن يبردا قطعيهما كما عند التقديم وأزيلي الجلد. افصلي اللحم عن العظام بالشوكة بعد إرخائه بالسكين.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ضعي اللحم في قدر يخنة مع كمية وفيرة من الكريمة، أو قطع زبدة طازجة مغطاة بالدقيق، والأعشاب المفرومة وقشر الليمون المبشور وصفار البيض المفتت. تبليه بالكايين وجوزة الطيب.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "غطي القدر واتركيه يهدأ حتى يغلي، ثم أطفئي النار فورًا وانقليه إلى طبق عميق. يقدم ساخنًا؛ يذكر المصدر أنه طبق جانبي للعشاء.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pulled-rabbit.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=02dd0e832ba9763661c748af0cbe3d4b5b5b4ad1869881781d6dae802abd0f9a"
+    },
+    {
+      "id": "bc650-rabbit-onions",
+      "name": "أرانب بالبصل",
+      "nameEn": "Rabbits with Onions",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "قطع أرنب مقلية بالزبدة أو الشحم ثم تغطى بالبصل المطهو والمتبل بجوزة الطيب والكايين.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-rabbit-onions-ing-1",
+          "name": "أرانب منظفة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 cleaned rabbits"
+        },
+        {
+          "id": "bc650-rabbit-onions-ing-2",
+          "name": "بصل كبير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "6 large onions"
+        },
+        {
+          "id": "bc650-rabbit-onions-ing-3",
+          "name": "جوزة الطيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "nutmeg"
+        },
+        {
+          "id": "bc650-rabbit-onions-ing-4",
+          "name": "زبدة أو شحم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "butter or lard"
+        },
+        {
+          "id": "bc650-rabbit-onions-ing-5",
+          "name": "دقيق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "flour"
+        },
+        {
+          "id": "bc650-rabbit-onions-ing-6",
+          "name": "فلفل كايين اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cayenne (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قشري ست بصلات كبيرة أو أكثر واسلقيها وقطعيها شرائح. تبليها بجوزة الطيب وقليل جدًا من الكايين، غطيها واتركيها جانبًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطعي لحم الأرنبين واقليه بالزبدة أو الشحم. عندما يتحمر ويقارب النضج، غطيه بشرائح البصل وحمريها مع قطع زبدة ملفوفة بالدقيق بينها.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ضعي الأرنب في طبق بحيث تختفي القطع تحت البصل.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/rabbit-onions.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=73f413ea77b240c927ed6f999870d3bf65fe85b124a17ff779c768a2f4289242"
+    },
+    {
+      "id": "bc650-scouse",
+      "name": "سكاوس (يخنة لحم وخضار) ",
+      "nameEn": "Scouse",
+      "cuisine": "إنجليزي",
+      "category": "طبق رئيسي",
+      "description": "لحم بقري مفروم وخضروات جذرية مطهوة بمرق اللحم ومكثفة بحبيبات المرق.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-scouse-ing-1",
+          "name": "لحم بقري مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "beef mince"
+        },
+        {
+          "id": "bc650-scouse-ing-2",
+          "name": "بصلة بيضاء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "a white onion"
+        },
+        {
+          "id": "bc650-scouse-ing-3",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "garlic"
+        },
+        {
+          "id": "bc650-scouse-ing-4",
+          "name": "ورق غار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "bayleaf"
+        },
+        {
+          "id": "bc650-scouse-ing-5",
+          "name": "بطاطس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "potatoes"
+        },
+        {
+          "id": "bc650-scouse-ing-6",
+          "name": "جزر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "carrots"
+        },
+        {
+          "id": "bc650-scouse-ing-7",
+          "name": "مرق بقري نحو نصف لتر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "beef stock ~1 pint"
+        },
+        {
+          "id": "bc650-scouse-ing-8",
+          "name": "حبيبات صلصة مرق بقري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "beef gravy granules"
+        },
+        {
+          "id": "bc650-scouse-ing-9",
+          "name": "جزر أبيض اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "parsnips(optional)"
+        },
+        {
+          "id": "bc650-scouse-ing-10",
+          "name": "لفت سويدي اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "swede(optional)"
+        },
+        {
+          "id": "bc650-scouse-ing-11",
+          "name": "ملفوف اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cabbage(optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي البصل والثوم ناعمًا. قطعي الجزر والبطاطس والجزر الأبيض و/أو اللفت السويدي إلى قطع متساوية.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اقلي البصل بقليل من الزيت في قدر عميق حتى يحمر، ثم اقلي الثوم سريعًا حتى تفوح رائحته.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي اللحم المفروم كتلة واحدة وحمريه، واقلبيه لتحمير الجانب الآخر قبل تفتيته.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "بعد أن يتحمر اللحم جيدًا اسكبي مرق اللحم. أضيفي الخضروات الجذرية وورق الغار والملح والفلفل بوفرة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اتركيها تغلي نحو نصف ساعة وأزيلي ورق الغار. أضيفي الملفوف في منتصف المدة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "قلبي حبيبات صلصة المرق حتى تصلي إلى السماكة المطلوبة ثم قدميها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/scouse.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=a6b0a4ff3fb853344d4ce7629e754cb5527dabf7317b44f5086fd0a1b433a8f1"
+    },
+    {
+      "id": "bc650-shepherds-pie",
+      "name": "فطيرة الراعي",
+      "nameEn": "Shepherd's Pie",
+      "cuisine": "إنجليزي",
+      "category": "طبق رئيسي",
+      "description": "لحم ضأن مفروم مع البصل والجزر والبازلاء في المرق، يغطى بهريس البطاطس ويخبز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-shepherds-pie-ing-1",
+          "name": "بطاطس دقيقية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "600 grams (g) of mealy/floury potatoes"
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-2",
+          "name": "بصل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 onions"
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-3",
+          "name": "جزر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 carrots"
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-4",
+          "name": "زيت",
+          "amount": 4,
+          "unit": "tablespoons",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-5",
+          "name": "لحم ضأن مفروم",
+          "amount": 800,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-6",
+          "name": "بازلاء مجمدة",
+          "amount": 100,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-7",
+          "name": "معجون طماطم",
+          "amount": 2,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-8",
+          "name": "مرق بقري",
+          "amount": 300,
+          "unit": "milliliters",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-9",
+          "name": "بابريكا حلوة أو مدخنة",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-10",
+          "name": "زبدة",
+          "amount": 30,
+          "unit": "g",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-11",
+          "name": "حليب",
+          "amount": 200,
+          "unit": "ml",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-12",
+          "name": "رشة جوزة الطيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 pinch of nutmeg"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قشري البطاطس وقطعيها مكعبات واسلقيها في ماء مملح 20 دقيقة. قشري البصل والجزر وقطعيهما مكعبات صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني الزيت في مقلاة واقلي اللحم حتى يتفتت. أضيفي البصل والجزر والبازلاء ومعجون الطماطم والمرق وقلبي، ثم تبلي بالبابريكا والفلفل والملح.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "صفي البطاطس واهرسيها بالزبدة. أضيفي الحليب وجوزة الطيب وقلبي حتى تصبح كريمية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "سخني الفرن إلى 200°C وادهني طبق طاجن بالزبدة. ضعي خليط اللحم ثم وزعي فوقه البطاطس المهروسة. اخبزي 30–40 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/shepherds-pie.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=0501443bed4cff749f3645f6d25d0753248d29c03c44d9120acb047454efb30b"
+    },
+    {
+      "id": "bc650-shrimp-creole",
+      "name": "روبيان كريولي",
+      "nameEn": "Shrimp Creole",
+      "cuisine": "أمريكي جنوبي",
+      "category": "طبق رئيسي",
+      "description": "يخنة كريولية من الفلفل والبصل والكرفس والطماطم والزبيب واللوز والروبيان، تقدم فوق الأرز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-shrimp-creole-ing-1",
+          "name": "فلفل رومي أخضر مكعبات",
+          "amount": 2,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-2",
+          "name": "بصلة صفراء أو بيضاء 5 بوصات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 5-inch Yellow or White Onion, diced"
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-3",
+          "name": "كرفس مكعبات",
+          "amount": 2,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-4",
+          "name": "زيت زيتون أو طهي",
+          "amount": 0.25,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-5",
+          "name": "صلصة فلفل Heinz",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-6",
+          "name": "صلصة Frank’s RedHot اختيارية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "[optional] 3 tbsp Frank's RedHot sauce"
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-7",
+          "name": "زبيب ذهبي بلا بذور",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-8",
+          "name": "لوز شرائح",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-9",
+          "name": "طماطم مكعبات معلبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3x 14.5oz cans of diced tomato - optionally blend one"
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-10",
+          "name": "فلفل وزعتر وملح",
+          "amount": 1,
+          "unit": "teaspoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-11",
+          "name": "مسحوق كاري",
+          "amount": 2,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-12",
+          "name": "بقدونس",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-13",
+          "name": "روبيان منظف مقشر",
+          "amount": 2,
+          "unit": "lb",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shrimp-creole-ing-14",
+          "name": "أرز أبيض مطبوخ",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cooked white rice"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "شوحي الخضروات النيئة بالزيت.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي بقية المكونات ما عدا الروبيان.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اتركي الخليط يطهى على نار هادئة ساعة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي الروبيان واطهيه 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قدميه فوق الأرز المطبوخ. يشير المصدر إلى أن الطبق يكون أفضل عند طهيه قبل يوم وإعادة تسخينه.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/shrimp-creole.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=8417089ea26d5dabf69d8c951bf5fd56a0e2cb707d83ffade838cc8bffb876bd"
+    },
+    {
+      "id": "bc650-sticky-porkchops",
+      "name": "شرائح لحم خنزير لزجة",
+      "nameEn": "Sticky Porkchops",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "شرائح لحم خنزير متبلة بالصويا والعسل والثوم والزنجبيل وبهار صيني خماسي، ثم تطهى بالمقلاة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-sticky-porkchops-ing-1",
+          "name": "شرائح لحم خنزير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 Pork chops"
+        },
+        {
+          "id": "bc650-sticky-porkchops-ing-2",
+          "name": "عسل سائل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 heaped tbsp Set honey"
+        },
+        {
+          "id": "bc650-sticky-porkchops-ing-3",
+          "name": "فصوص ثوم مهروسة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 Garlic cloves, crushed"
+        },
+        {
+          "id": "bc650-sticky-porkchops-ing-4",
+          "name": "صلصة صويا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Soy sauce"
+        },
+        {
+          "id": "bc650-sticky-porkchops-ing-5",
+          "name": "قطعة زنجبيل بحجم الإبهام شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Ginger (thumb sized piece), sliced"
+        },
+        {
+          "id": "bc650-sticky-porkchops-ing-6",
+          "name": "بهار صيني خماسي",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "املئي طبقًا مسطحًا قليل العمق بصلصة الصويا إلى نحو نصف سماكة شرائح اللحم، دون أن تغمرها كليًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلطي العسل بالصويا حتى يمتزجا، ثم أضيفي الثوم والزنجبيل والبهار الصيني الخماسي.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ضعي شرائح اللحم في الطبق وقلبيها. غطيه بغلاف بلاستيكي وبرّديه ساعة ونصف.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أخرجي الطبق واقلبي الشرائح ثم غطيه وبرّديه ساعة ونصف أخرى.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "سخني قليلًا من زيت الزيتون في مقلاة على حرارة متوسطة واطهي الشرائح 10–15 دقيقة أو حتى تنضج.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أخرجي اللحم واتركيه بضع دقائق قبل تقطيعه وتقديمه.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/sticky-porkchops.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=699c15253b03140d169f779f93febccedfa927d5a1640f170f58a18a7dbdabc9"
+    },
+    {
+      "id": "bc650-stir-fried-chicken-with-an-orange-sauce",
+      "name": "دجاج مقلي سريعًا بصلصة البرتقال",
+      "nameEn": "Stir Fried Chicken with an Orange Sauce",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "دجاج مع البصل والفلفل الأحمر وصلصة من عصير البرتقال والصويا والعسل، تقدم فوق الأرز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-stir-fried-chicken-with-an-orange-sauce-ing-1",
+          "name": "دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chicken (a pound or two)"
+        },
+        {
+          "id": "bc650-stir-fried-chicken-with-an-orange-sauce-ing-2",
+          "name": "برتقال",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Oranges"
+        },
+        {
+          "id": "bc650-stir-fried-chicken-with-an-orange-sauce-ing-3",
+          "name": "بصلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "An Onion"
+        },
+        {
+          "id": "bc650-stir-fried-chicken-with-an-orange-sauce-ing-4",
+          "name": "فلفل رومي أحمر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Two Red Bell Peppers"
+        },
+        {
+          "id": "bc650-stir-fried-chicken-with-an-orange-sauce-ing-5",
+          "name": "صلصة صويا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Soy Sauce"
+        },
+        {
+          "id": "bc650-stir-fried-chicken-with-an-orange-sauce-ing-6",
+          "name": "عسل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Honey"
+        },
+        {
+          "id": "bc650-stir-fried-chicken-with-an-orange-sauce-ing-7",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter"
+        },
+        {
+          "id": "bc650-stir-fried-chicken-with-an-orange-sauce-ing-8",
+          "name": "دقيق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Flour"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي البصل والفلفل الأحمر قطعًا صغيرة وضعيهما في مقلاة كبيرة مع قطعة زبدة، وقلبي من حين لآخر.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطعي الدجاج مكعبات صغيرة وأضيفيه عندما يبدأ البصل بالشفافية. قلبي أحيانًا.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "إذا توفر مبشرة قشر، أضيفي قليلًا من قشر البرتقال إلى المقلاة؛ وإلا فتجاوزي ذلك.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أثناء طهي الدجاج اعصري البرتقال يدويًا في وعاء؛ يذكر المصدر أنه يستخدم عادة عصير خمسة برتقالات، وقد تكفي ثلاثة أو أربعة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "بعد نضج الدجاج اسكبي العصير في المقلاة ثم أضيفي الصويا بنسبة تقارب 3:1 للعصير، حسب التقدير. أضيفي العسل، ولا تقل الكمية المقترحة بالمصدر عن ملعقتين كبيرتين، وقلبي ثم ارفعي الحرارة إلى متوسطة عالية.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اتركي الخليط بضع دقائق ثم أضيفي بضع ملاعق من الدقيق لتكثيف الصلصة. عندما تبلغ السماكة المطلوبة أزيليه عن النار وقدميه فوق الأرز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/stir-fried-chicken-with-an-orange-sauce.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=9e330c1acbafb627e3717bfff99991379ee45a7aa1ebd7f8dc864d2fa20b14d3"
+    },
+    {
+      "id": "bc650-baked-salmon",
+      "name": "سلمون مخبوز",
+      "nameEn": "Baked Salmon",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "سلمون بالليمون والزبدة مخبوز في الفرن.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-baked-salmon-ing-1",
+          "name": "شرائح سلمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salmon Steaks"
+        },
+        {
+          "id": "bc650-baked-salmon-ing-2",
+          "name": "رقائق فلفل أحمر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Red Pepper Flakes"
+        },
+        {
+          "id": "bc650-baked-salmon-ing-3",
+          "name": "عصير ليمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Lemon Juice"
+        },
+        {
+          "id": "bc650-baked-salmon-ing-4",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter"
+        },
+        {
+          "id": "bc650-baked-salmon-ing-5",
+          "name": "زيت طهي أو بخاخ",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cooking oil / spray"
+        },
+        {
+          "id": "bc650-baked-salmon-ing-6",
+          "name": "ورق ألمنيوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Aluminum Foil"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "تبّلي السلمون بالملح والفلفل الأسود والفلفل الأحمر حسب الرغبة، وضعيه على ورق ألمنيوم مدهون على صينية فرن.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اعصري الليمون وضعي ملعقة صغيرة من الزبدة على كل شريحة. اخبزي عند 400°F / 200°C مدة 19 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/baked-salmon.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=eb2a4d7d45dce73787ab9e6e24c0aeb659af33ee8e3fb4aaa0d523c659f017fc"
+    },
+    {
+      "id": "bc650-baked-trout",
+      "name": "سمك مرقط مخبوز",
+      "nameEn": "Baked Trout",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "سمك مرقط ملفوف بلحم مقدد وثوم وزبدة ومخبوز بورق ألمنيوم.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-baked-trout-ing-1",
+          "name": "سمك مرقط منظف",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cleaned trout"
+        },
+        {
+          "id": "bc650-baked-trout-ing-2",
+          "name": "لحم مقدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "bacon"
+        },
+        {
+          "id": "bc650-baked-trout-ing-3",
+          "name": "ثوم أو مسحوق ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "garlic (or garlic power)"
+        },
+        {
+          "id": "bc650-baked-trout-ing-4",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "butter"
+        },
+        {
+          "id": "bc650-baked-trout-ing-5",
+          "name": "فلفل كايين اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cayenne (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "لفي كل سمكة منظفة بشريحة لحم مقدد رقيقة مع الثوم وفلفل كايين اختياري. ضعي شريحة زبدة في الوسط ولفيها بورق ألمنيوم.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخبزي عند 350°F / 175°C مدة 15 دقيقة؛ يكون السمك جاهزًا حين ينفصل الجلد بسهولة. أخرجيه وقدميه.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/baked-trout.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=32bcfb9a7b21dabd170666fa3a555f7efccb5e6ec6c7776c24ae173b1bc1af64"
+    },
+    {
+      "id": "bc650-cheddar-crusted-chicken",
+      "name": "دجاج بقشرة الشيدر",
+      "nameEn": "Cheddar-Crusted Chicken",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "صدور دجاج مغطاة بالبانكو والشيدر والبابريكا والثوم.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-cheddar-crusted-chicken-ing-1",
+          "name": "صدرا دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 Chicken Breasts"
+        },
+        {
+          "id": "bc650-cheddar-crusted-chicken-ing-2",
+          "name": "مايونيز",
+          "amount": 2,
+          "unit": "Tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheddar-crusted-chicken-ing-3",
+          "name": "فتات بانكو",
+          "amount": 0.25,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheddar-crusted-chicken-ing-4",
+          "name": "جبن شيدر مبشور",
+          "amount": 0.25,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheddar-crusted-chicken-ing-5",
+          "name": "مزيج بابريكا مدخنة وثوم",
+          "amount": 1,
+          "unit": "Tbsp",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلطي البانكو والجبن ومزيج البابريكا والثوم وسخني الفرن إلى 425°F.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "جففي الدجاج وافتحي الصدر طوليًا كالكتاب مع ترك نصف بوصة متصلة عند الطرف، ثم تبّلي بالملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ادهني جانبًا بالمايونيز واضغطيه في الخليط ليلتصق. ضعيه على صينية مبطنة والجانب المغطى للأعلى واخبزيه حتى ينضج، 18–20 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cheddar-crusted-chicken.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=46e886357b01d35a63ab5742bf7742152a61b151292d4ca851db02cf8dfb7947"
+    },
+    {
+      "id": "bc650-chicken-biscuit-potpie",
+      "name": "فطيرة دجاج بغطاء البسكويت",
+      "nameEn": "Chicken Biscuit Potpie Recipe",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "دجاج وخضار وشوربة كريمة مغطاة بعجينة بسكويت ومخبوزة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-1",
+          "name": "خضار مشكلة مجمدة مذابة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-2/3 cups frozen mixed vegetables, thawed"
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-2",
+          "name": "دجاج مطبوخ مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-1/2 cups cubed cooked chicken"
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-3",
+          "name": "شوربة كريمة الدجاج المكثفة غير المخففة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can (10-3/4 ounces) condensed cream of chicken soup, undiluted"
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-4",
+          "name": "زعتر مجفف",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-5",
+          "name": "خليط بسكويت",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-6",
+          "name": "حليب كامل الدسم",
+          "amount": 0.5,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-biscuit-potpie-ing-7",
+          "name": "بيضة كبيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 large egg"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الفرن إلى 400°F. اخلطي الخضار والدجاج والشوربة والزعتر وضعيها في طبق فطيرة عميق 9 بوصات. اخلطي مزيج البسكويت والحليب والبيض واسكبيه فوقها.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخبزي حتى يصبح الوجه ذهبيًا ويخرج عود أسنان من الوسط نظيفًا، 25–30 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-biscuit-potpie.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3e3b5f9e1013157c0eb3af9143da7bca36b93a91c64f2356555ddc7239f640d9"
+    },
+    {
+      "id": "bc650-chicken-pasta-casserole",
+      "name": "طاجن الدجاج والمعكرونة",
+      "nameEn": "Chicken Pasta Casserole",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "طاجن معكرونة ودجاج وطماطم وموزاريلا مع غطاء بارميزان وفتات الخبز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-1",
+          "name": "معكرونة كوع أو بيني",
+          "amount": 16,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-2",
+          "name": "صدر دجاج نيئ مكعبات",
+          "amount": 24,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-3",
+          "name": "موزاريلا مبشورة",
+          "amount": 9,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-4",
+          "name": "بارميزان مبشور",
+          "amount": 1.5,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-5",
+          "name": "فتات خبز",
+          "amount": 1.5,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-6",
+          "name": "طماطم مكعبات",
+          "amount": 16,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-7",
+          "name": "قليل من الزيت والزبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Some oil and butter"
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-8",
+          "name": "مزيد من الموزاريلا والبارميزان اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "(Optional) More mozzarella and parmesan for fans of cheese."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الفرن إلى 400°F واطهي الدجاج بالزيت حتى ينضج.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اطهي المعكرونة أقل من المعتاد نحو 7–8 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخلطي الدجاج والمعكرونة والطماطم والموزاريلا في طبق طاجن. غطي الوجه بالبارميزان وفتات الخبز ووزعي قليلًا من الزبدة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخبزي 22–25 دقيقة حتى يصبح الوجه ذهبيًا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-pasta-casserole.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3fbe40f2efb453ad26f7090267098374ca9229b89735a2d92a31419b7a7036c0"
+    },
+    {
+      "id": "bc650-chicken-wings",
+      "name": "أجنحة دجاج",
+      "nameEn": "Chicken Wings",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "أجنحة تنقع في صلصة حارة وتطهى بكيس فرن ثم تشوى.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicken-wings-ing-1",
+          "name": "أجنحة وأفخاذ دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chicken wings and drums"
+        },
+        {
+          "id": "bc650-chicken-wings-ing-2",
+          "name": "صلصة فلفل حار للتتبيل والتغطية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Enough Frank's RedHot Sauce to marinate and top dress*"
+        },
+        {
+          "id": "bc650-chicken-wings-ing-3",
+          "name": "كيس فرن Reynolds",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Reynold's Oven Bag"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "انقعي الأجنحة طوال الليل في صلصة Frank’s RedHot، وليس نوع صلصة الأجنحة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني الفرن إلى 350°F. ضعي الأجنحة في كيس فرن محكم واخبزيها ساعة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "سخني الشواية واشوي الأجنحة حتى يتحمر الجلد، ثم ادهنيها بقليل من الصلصة. يقول المصدر إن المقلاة قد تصلح بديلًا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-wings.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=142a714393ad1bf05ae4bb8664927902f984845dea700f137b456c746ec7b278"
+    },
+    {
+      "id": "bc650-chimichanga",
+      "name": "تشيميتشانغا",
+      "nameEn": "Chimichanga",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "حشوة تاكو وخضار وجبن تلف في تورتيلا كبيرة ثم تقلى.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chimichanga-ing-1",
+          "name": "لحم تاكو محضر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "[taco-meat](/taco-meat)"
+        },
+        {
+          "id": "bc650-chimichanga-ing-2",
+          "name": "بصلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Onion"
+        },
+        {
+          "id": "bc650-chimichanga-ing-3",
+          "name": "طماطم مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Diced Tomatoes"
+        },
+        {
+          "id": "bc650-chimichanga-ing-4",
+          "name": "فلفل رومي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Bell Pepper"
+        },
+        {
+          "id": "bc650-chimichanga-ing-5",
+          "name": "تورتيلا كبيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Burrito sized tortilla"
+        },
+        {
+          "id": "bc650-chimichanga-ing-6",
+          "name": "زبادي يوناني أو قشدة حامضة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Plain Greek Yogurt or Sour Cream"
+        },
+        {
+          "id": "bc650-chimichanga-ing-7",
+          "name": "خضار إضافية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Any other vegetables you want"
+        },
+        {
+          "id": "bc650-chimichanga-ing-8",
+          "name": "جبن مبشور اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Shredded cheese of choice (Optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي الفلفل والطماطم والبصل وقلّيها. أضيفي اللحم وتبّليه واطهيه حتى يتحمر أو ينضج.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني التورتيلا وضعي قليلًا من الزبادي والجبن والحشوة على النصف السفلي.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اطوي الطرف السفلي ثم الجانبين ولفيها. اقليها بالطريقة المفضلة؛ المصدر يحيل إلى طرق أخرى.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chimichanga.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=757731fb84e31bed40181c6c58f46f0226d60e57f73df2a11b74ba821b0013b2"
+    },
+    {
+      "id": "bc650-drunken-beans",
+      "name": "فاصوليا بينتو بالبيرة",
+      "nameEn": "Drunken beans (Pintos Borrachos)",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "فاصوليا بينتو مطهوة مع البصل والثوم والطماطم والتوابل والبيرة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-drunken-beans-ing-1",
+          "name": "بصلة صفراء صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 small yellow onion"
+        },
+        {
+          "id": "bc650-drunken-beans-ing-2",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 gloves of garlic"
+        },
+        {
+          "id": "bc650-drunken-beans-ing-3",
+          "name": "طماطم مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 tomatoes. chopped"
+        },
+        {
+          "id": "bc650-drunken-beans-ing-4",
+          "name": "ماء",
+          "amount": 4,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-5",
+          "name": "فاصوليا بينتو جافة أو معلبة",
+          "amount": 1.5,
+          "unit": "cups",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-6",
+          "name": "أوريغانو",
+          "amount": 1,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-7",
+          "name": "كمون",
+          "amount": 0.75,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-8",
+          "name": "مسحوق فلفل حار",
+          "amount": 2,
+          "unit": "tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-9",
+          "name": "بيرة أو إيل داكن",
+          "amount": 12,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "شوحي البصل ثم أضيفي الثوم واطهي قليلًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي الطماطم والماء والفاصوليا والأوريغانو والكمون والفلفل الحار والبيرة والملح وارفعيها تدريجيًا للغليان.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "خففي النار. حين تقارب الفاصوليا النضج، نحو ساعة للجافة، ارفعي الحرارة لتبخير السائل حتى تصير كاليخنة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أبعدي القدر واهرسي الفاصوليا أو اتركيها كاملة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/drunken-beans.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=bd99ef153dae5a726810802fdb1b1d1f7f0989e3037a84d1ddb74107447d5dca"
+    },
+    {
+      "id": "bc650-fajitas",
+      "name": "فاهيتا",
+      "nameEn": "Fajitas",
+      "cuisine": "عالمي متنوع",
+      "category": "طبق رئيسي",
+      "description": "دجاج أو شريحة خاصرة متبلة بالليمون والصويا والتوابل مع بصل وفلفل مقليين.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-fajitas-ing-1",
+          "name": "عصير ليمون مقسم",
+          "amount": 0.25,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-2",
+          "name": "زيت زيتون مقسم",
+          "amount": 3,
+          "unit": "Tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-3",
+          "name": "ثوم مهروس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 cloves Garlic, crushed"
+        },
+        {
+          "id": "bc650-fajitas-ing-4",
+          "name": "صلصة صويا مقسمة",
+          "amount": 3,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-5",
+          "name": "ملح",
+          "amount": 1,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-6",
+          "name": "دخان سائل",
+          "amount": 0.5,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-7",
+          "name": "فلفل كايين",
+          "amount": 0.5,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-8",
+          "name": "فلفل أسود",
+          "amount": 0.25,
+          "unit": "tsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-9",
+          "name": "دجاج أو شريحة خاصرة منزوعة العظم والجلد",
+          "amount": 1,
+          "unit": "lb",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-10",
+          "name": "ماء",
+          "amount": 2,
+          "unit": "Tbsp",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-fajitas-ing-11",
+          "name": "بصلة إسبانية شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 large Spanish Onion, thinly sliced"
+        },
+        {
+          "id": "bc650-fajitas-ing-12",
+          "name": "فلفل أخضر وأحمر وأصفر شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1/2 each Green, Red, and Yellow Bell Pepper, thinly sliced"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلطي ربع كوب ليمون وملعقتين زيت والثوم وملعقتين صغيرتين صويا والملح والدخان السائل والكايين والفلفل. أضيفي اللحم وغطيه وبرّديه ساعتين أو طوال الليل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلطي الماء وبقية الصويا والليمون مع رشة ملح وفلفل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اشوي اللحم 4–5 دقائق لكل جانب أو حتى ينضج، ثم قطعيه شرائح واتركيه دافئًا.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اطهي البصل والفلفل بالزيت حتى يتحمرا ثم أضيفي السائل المحفوظ واخلطيه مع اللحم. قدمي مع التورتيلا والإضافات المرغوبة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/fajitas.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=82763aca7f165a954f4b52a33a7132760a280b4313913e774794ebc7dc225533"
+    },
+    {
+      "id": "bc650-frijol-con-puerco",
+      "name": "فريخول كون بويركو (فاصوليا سوداء بلحم الخنزير)",
+      "nameEn": "Frijol con puerco",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "فاصوليا سوداء ولحم خنزير مطهو مع البصل والإبازوت أو الكزبرة، يقدم مع الفجل والأفوكادو والليمون وصلصة تشيلتوماتي.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-frijol-con-puerco-ing-1",
+          "name": "فاصوليا سوداء مغسولة",
+          "amount": 1,
+          "unit": "kg",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-2",
+          "name": "خاصرة أو أضلاع خنزير قطع 5 سم",
+          "amount": 2,
+          "unit": "kg",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-3",
+          "name": "بصلة بيضاء نصفان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**1 white onion** without skin cut, in half."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-4",
+          "name": "إبازوت أو كزبرة مربوطة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**4 branches of fresh _epazote_**, or **15 branches of coriander** tied with kitchen twine."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-5",
+          "name": "فجل عيدان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**8 to 10 radishes**, julienned or striped."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-6",
+          "name": "كزبرة مفرومة",
+          "amount": 1,
+          "unit": "cup",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-7",
+          "name": "أفوكادو مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**1 Mexican avocado**, halved, pitted, pulp cut into squares."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-8",
+          "name": "ليمون أرباع",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**4 lemons**, quartered."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-9",
+          "name": "صلصة تشيلتوماتي اختيارية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**Yucatan style tomato sauce** or _Chiltomate_ to taste (**optional**)"
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-10",
+          "name": "تورتيلا مكسيكية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**Mexican tortillas**"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضعي الفاصوليا في قدر مع 6 لترات ماء واغليها 45 دقيقة والغطاء مفتوح جزئيًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي لحم الخنزير والبصل والإبازوت أو الكزبرة والملح. اطهي ساعة ونصف والقدر مغطى جزئيًا حتى يطرى اللحم.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "لا تدعي المرق يجف؛ يمكن إضافة نحو 4 أكواب ماء مغلي. أطفئي النار وتحققي من التتبيل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قدميها مع الفجل والكزبرة والأفوكادو والليمون وصلصة تشيلتوماتي وفلفل هابانيرو وتورتيلا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/frijol-con-puerco.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=d644bc3973fff900620ef6222ee00b36314149a6d0f09619de26a68241ab0f61؛ الإشارة الجغرافية من وسم المصدر: يوكاتان.؛ الإقليم محفوظ كمعلومة مصدرية، لا كتصنيف مستقل."
+    }
+  ]
+}

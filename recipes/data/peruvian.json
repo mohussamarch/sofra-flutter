@@ -1,7 +1,7 @@
 {
   "cuisine": "بيروفي",
   "cuisineSlug": "peruvian",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "recipes": [
     {
       "id": "bc-arroz-chaufa",
@@ -112,6 +112,333 @@
       ],
       "tags": [],
       "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/arroz-chaufa.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/arroz-chaufa.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. الوصفة موسومة Peruvian وChinese؛ المطبخ الأساسي بيروفي، والوسم الصيني محفوظ في المصدر. لا توجد مقادير للمكونات في المصدر لذلك بقيت مجهولة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    },
+    {
+      "id": "fiw650-57139",
+      "name": "سيكو دي كورديرو يخنة لحم الضأن البيروفية",
+      "nameEn": "Seco De Cordero - Peruvian Lamb Stew",
+      "cuisine": "بيروفي",
+      "category": "أطباق رئيسية",
+      "description": "يخنة فخذ ضأن بالعظم مع النبيذ الأحمر وصلصة الفلفل والكزبرة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "فخذ ضأن بالعظم، يطلب من الجزار تقطيعه 3–4 قطع",
+          "amount": 1,
+          "unit": "فخذ",
+          "scale": false,
+          "optional": false,
+          "note": "الوزن غير مذكور",
+          "id": "fiw650-57139-i0"
+        },
+        {
+          "name": "نبيذ أحمر",
+          "amount": 1.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-57139-i1",
+          "display": null
+        },
+        {
+          "name": "خل نبيذ أحمر أو خل تفاح",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "بديلان",
+          "id": "fiw650-57139-i2",
+          "display": null
+        },
+        {
+          "name": "زيت طهو",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-57139-i3",
+          "display": null
+        },
+        {
+          "name": "فصوص ثوم",
+          "amount": 3,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-57139-i4",
+          "display": null
+        },
+        {
+          "name": "معجون فلفل حار",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": "وصف خلطة الأجي والفلفل مبتور بالمصدر",
+          "id": "fiw650-57139-i5",
+          "display": null
+        },
+        {
+          "name": "فلفل أجي أماريو مشقوق طولياً",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": true,
+          "note": null,
+          "id": "fiw650-57139-i6",
+          "display": null
+        },
+        {
+          "name": "بصل شرائح",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-57139-i7",
+          "display": null
+        },
+        {
+          "name": "كزبرة",
+          "amount": 1,
+          "unit": "حزمة",
+          "scale": false,
+          "optional": false,
+          "note": "حجم الحزمة غير محدد",
+          "id": "fiw650-57139-i8"
+        },
+        {
+          "name": "طماطم طازجة أو كاملة مقشرة معلبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "3 طازجة أو علبة 14 أونصة؛ بديلان لا يحولان لوحدة واحدة",
+          "id": "fiw650-57139-i9"
+        },
+        {
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-57139-i10"
+        },
+        {
+          "name": "كمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "note": "بضع رشات اختيارية؛ غير معياري",
+          "id": "fiw650-57139-i11"
+        }
+      ],
+      "steps": [
+        {
+          "text": "اغسل الضأن بالملح وقطّعه إلى قطع أصغر متساوية قدر الإمكان مع إبقاء العظم. تبّل القطع بالملح والفلفل في وعاء كبير، ثم أضف النبيذ والخل واتركها منقوعة 45 دقيقة إلى ساعة و15 دقيقة على الأقل. سخّن الزيت في قدر ثقيل القاع على حرارة متوسطة إلى متوسطة عالية. أضف الثوم المفروم وحمّره دقيقة دون أن يصبح بنياً، ثم أضف معجون الفلفل وحمّره دقيقة أخرى حتى تفوح رائحته. أضف اللحم مع النبيذ وحمّر كل جانب 2–3 دقائق؛ اخفض الحرارة إلى متوسطة إن لزم كي يطهى على نار هادئة أثناء التحمير. أضف البصل والطماطم منزوعة القلب والمقطعة طولياً والكزبرة المفرومة. أضف الملح إن رغبت وحرّك، ثم خفّض الحرارة إلى هادئة وغطّ القدر 45 دقيقة مع التحريك أحياناً. أضف الملح عند الحاجة؛ وعندما يطرى اللحم يمكن إضافة الكمون إن رغبت.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "ضأن",
+        "يخنة",
+        "مطبخ بيروفي"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/MNMW3T6V/seco-de-cordero-peruvian-lamb-stew — SHA-256 للاستخراج: f2f9b2a60866b9be00a892552a796c2efd48051457be3e8d202a91cade36c03f — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-55821",
+      "name": "سيفيتشي السمك البيروفي الشمالي",
+      "nameEn": "Classic Northern Peruvian Ceviche",
+      "cuisine": "بيروفي",
+      "category": "أطباق رئيسية",
+      "description": "سمك نيئ يتبل بعصير الليمون مع البصل والكزبرة والفلفل ويقدم مع خضار مسلوقة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "شرائح سمك",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": "مصدر مستدام بحسب المصدر",
+          "id": "fiw650-55821-i0",
+          "display": null
+        },
+        {
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-55821-i1"
+        },
+        {
+          "name": "ليمون يوريكا أو ليمون أخضر جزئياً",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "3 أو 4 حبات؛ لا يستبدل كله بالليمون الأخضر",
+          "id": "fiw650-55821-i2"
+        },
+        {
+          "name": "ثوم",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55821-i3",
+          "display": null
+        },
+        {
+          "name": "بصل أحمر صغير إلى متوسط",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55821-i4",
+          "display": null
+        },
+        {
+          "name": "كزبرة مفرومة",
+          "amount": 0.5,
+          "unit": "ربطة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55821-i5",
+          "display": null
+        },
+        {
+          "name": "كرفس",
+          "amount": 0.5,
+          "unit": "عود",
+          "scale": true,
+          "optional": true,
+          "note": null,
+          "id": "fiw650-55821-i6",
+          "display": null
+        },
+        {
+          "name": "فلفل أجي أماريلو أو هالبينو طازج",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": "البديل كما بالمصدر",
+          "id": "fiw650-55821-i7",
+          "display": null
+        },
+        {
+          "name": "ذرة وبطاطس ذهبية وبطاطا حلوة أو يوكا وأوراق خس للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكميات غير محددة؛ خيارات جانبية",
+          "id": "fiw650-55821-i8"
+        }
+      ],
+      "steps": [
+        {
+          "text": "قطّع السمك إلى شرائح طويلة ثم مكعبات متقاربة الحجم. ضعه في وعاء زجاجي كبير وتبّله بالملح والفلفل. اعصر الليمون واسكبه على السمك بحيث تغمر العصارة القطع قدر الإمكان، وحافظ على غمرها عند إضافة المكونات. افرم الثوم وأضفه. قطّع البصل إلى شرائح طويلة رفيعة وأضفه، ثم أضف الكزبرة والكرفس المقطع ناعماً. اشوِ فلفل الأجي أو الهالبينو على لهب أو في مقلاة، اتركه يبرد وقشّر جلده وخذ لبه حول البذور؛ أضف بعض البذور إن رغبت بمزيد من الحرارة، ثم قطّعه وأضفه. غطّ الوعاء واتركه ساعة ونصف؛ بعد 45 دقيقة تذوق الملح وأضف حسب الرغبة. اسلق الذرة والبطاطس والبطاطا الحلوة أو اليوكا كلّاً في قدر منفصل بماء مملح. قدّم السيفيتشي على ورقة خس مع نوعين على الأقل من النشويات الجانبية.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "سمك",
+        "سيفيتشي"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/LTC7TDKB/classic-northern-peruvian-ceviche — SHA-256 للاستخراج: 4a5a6c86c5b6db96278040ae43257cbf845c95ef773e265343bf9eaf9d33e3df — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "bc650-ceviche",
+      "name": "سيفيتشي بالسمك والليمون الأخضر",
+      "nameEn": "Ceviche",
+      "cuisine": "بيروفي",
+      "category": "طبق رئيسي",
+      "description": "مأكولات بحرية مكعبة منقوعة بعصير الليمون الأخضر مع البصل الأحمر والملح والفلفل.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-ceviche-ing-1",
+          "name": "مأكولات بحرية من اختيارك",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Seafood"
+        },
+        {
+          "id": "bc650-ceviche-ing-2",
+          "name": "بصل أحمر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Red Onion"
+        },
+        {
+          "id": "bc650-ceviche-ing-3",
+          "name": "عصير ليمون أخضر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Lime Juice"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع البصل إلى شرائح رفيعة قدر الإمكان واتركها في وعاء ماء بارد لبعض الوقت؛ يشرح المصدر أن النقع يخفف قوة نكهته كي لا تطغى على بقية المكونات.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أثناء نقع البصل قطّع المأكولات البحرية المختارة مكعبات. يمكن إعداد السيفيتشي بأي نوع من المأكولات البحرية؛ ويقترح المصدر أسماكاً بيضاء من أمريكا الجنوبية أو الروبيان أو الأخطبوط. تبّل المكعبات بسخاء بالملح والفلفل وضعها في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اعصر عصير عدة حبات ليمون أخضر فوق المأكولات البحرية. اختر الحبات الأطرى لأنها أغزر عصيراً. غطّ اللحم بالعصير جيداً، مع الانتباه إلى أن زيادته ممكنة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف شرائح البصل ثم غطّ الوعاء وضعه في الثلاجة. يذكر المصدر إمكان أكله بعد ساعة، لكنه يرى أن النكهة تتحسن مع طول النقع وقد يتركه طوال الليل.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ceviche.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=88a2ec17c1297bf0c409ff1e7ca25cc6a81fbcc023b0d91e1920b16962510e99"
     }
   ]
 }

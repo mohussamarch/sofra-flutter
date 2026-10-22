@@ -5,8 +5,34 @@ import 'package:crypto/crypto.dart';
 
 import 'recipe_repository.dart';
 
-Map<String, dynamic> _owned(Map<String, dynamic> value) =>
-    jsonDecode(jsonEncode(value)) as Map<String, dynamic>;
+const _snapshotReadConcurrency = 8;
+
+Map<String, dynamic> _owned(Map<String, dynamic> value) => _copyJsonMap(value);
+
+Map<String, dynamic> _copyJsonMap(Map<String, dynamic> value) => {
+  for (final entry in value.entries) entry.key: _copyJsonValue(entry.value),
+};
+
+Object? _copyJsonValue(Object? value) {
+  if (value == null || value is String || value is bool || value is int) {
+    return value;
+  }
+  if (value is double) {
+    if (!value.isFinite) throw JsonUnsupportedObjectError(value);
+    return value;
+  }
+  if (value is Map<String, dynamic>) return _copyJsonMap(value);
+  if (value is Map) {
+    final result = <String, dynamic>{};
+    for (final entry in value.entries) {
+      if (entry.key is! String) throw JsonUnsupportedObjectError(value);
+      result[entry.key as String] = _copyJsonValue(entry.value);
+    }
+    return result;
+  }
+  if (value is List) return value.map(_copyJsonValue).toList();
+  throw JsonUnsupportedObjectError(value);
+}
 
 class RecipeLibraryIngredient {
   const RecipeLibraryIngredient({
@@ -60,15 +86,19 @@ class RecipeLibraryEntry {
     required this.familyId,
     required this.methodId,
     required Map<String, dynamic> sourceRecord,
-    required Map<String, dynamic>? sourceSnapshot,
-    required Map<String, dynamic> packMetadata,
+    required this._sourceSnapshot,
+    required this._packMetadata,
   }) : ingredients = List.unmodifiable(ingredients),
        stepsArabic = List.unmodifiable(stepsArabic),
        sourceUrls = List.unmodifiable(sourceUrls),
        cuisineLabels = List.unmodifiable(cuisineLabels),
-       _sourceRecord = _owned(sourceRecord),
-       _sourceSnapshot = sourceSnapshot == null ? null : _owned(sourceSnapshot),
-       _packMetadata = _owned(packMetadata);
+       // These maps come from this repository's private JSON decode and are
+       // never mutated after construction. Public accessors still deep-copy.
+       _sourceRecord = sourceRecord,
+       // Keep search on the small immutable index, not the deep-copying getter.
+       _normalizedSearchText = _searchText(
+         '$titleAr ${sourceRecord['name'] ?? ''} ${ingredients.map((i) => i.labelAr).join(' ')}',
+       );
   final String id, titleAr;
   final String? familyId, methodId;
   final List<RecipeLibraryIngredient> ingredients;
@@ -76,6 +106,7 @@ class RecipeLibraryEntry {
   final List<RecipeLibraryCuisine> cuisineLabels;
   final Map<String, dynamic> _sourceRecord, _packMetadata;
   final Map<String, dynamic>? _sourceSnapshot;
+  final String _normalizedSearchText;
   bool get runtimeReady => false;
   Object? get nutrition => null;
   Map<String, dynamic> get sourceRecord => _owned(_sourceRecord);
@@ -120,9 +151,7 @@ class RecipeLibraryRepository {
     final needle = _searchText(query);
     return List.unmodifiable(
       (await all()).where(
-        (entry) => _searchText(
-          '${entry.titleAr} ${entry.sourceRecord['name'] ?? ''} ${entry.ingredients.map((i) => i.labelAr).join(' ')}',
-        ).contains(needle),
+        (entry) => entry._normalizedSearchText.contains(needle),
       ),
     );
   }
@@ -189,9 +218,10 @@ class RecipeLibraryRepository {
       if (!file.startsWith(prefix) || !packFiles.add(file)) {
         throw const FormatException('Duplicate or mismatched pack path');
       }
-      final data = await _readPinned(file, _text(pack['sha256'], 'pack hash'));
-      final snapshots = <String, Map<String, dynamic>>{},
-          hashes = <String, String>{};
+      final packHash = _text(pack['sha256'], 'pack hash');
+      _sha(packHash);
+      final hashes = <String, String>{};
+      final snapshotFiles = <String>[];
       for (final rawSource in _list(
         pack['sourceSnapshots'],
         'source snapshots',
@@ -206,9 +236,13 @@ class RecipeLibraryRepository {
             path == file) {
           throw const FormatException('Invalid or duplicate source snapshot');
         }
+        _sha(hash);
         hashes[path] = hash;
-        snapshots[path] = await _readPinned(path, hash);
+        snapshotFiles.add(path);
       }
+      // Validate every path and digest in this pack before opening its assets.
+      final data = await _readPinned(file, packHash);
+      final snapshots = await _readSnapshotBatch(snapshotFiles, hashes);
       final usedSnapshots = <String>{};
       final metadata = Map<String, dynamic>.from(data)
         ..remove('recipes')
@@ -289,6 +323,36 @@ class RecipeLibraryRepository {
       }
     }
     return List.unmodifiable(entries);
+  }
+
+  Future<Map<String, Map<String, dynamic>>> _readSnapshotBatch(
+    List<String> paths,
+    Map<String, String> hashes,
+  ) async {
+    final snapshots = List<Map<String, dynamic>?>.filled(paths.length, null);
+    final failures = <Object>[];
+    var next = 0;
+    Future<void> worker() async {
+      while (true) {
+        final index = next++;
+        if (index >= paths.length) return;
+        try {
+          snapshots[index] = await _readPinned(
+            paths[index],
+            hashes[paths[index]]!,
+          );
+        } catch (error) {
+          failures.add(error);
+        }
+      }
+    }
+
+    final workerCount = paths.length < _snapshotReadConcurrency
+        ? paths.length
+        : _snapshotReadConcurrency;
+    await Future.wait(List.generate(workerCount, (_) => worker()));
+    if (failures.isNotEmpty) throw failures.first;
+    return {for (var i = 0; i < paths.length; i++) paths[i]: snapshots[i]!};
   }
 }
 

@@ -26,7 +26,9 @@ void main() {
   test(
     'new cuisines load through the operational repository and preserve sources',
     () async {
-      final all = await repo.loadAll();
+      final all = (await repo.loadAll())
+          .where((r) => r.metadataPolicy == null)
+          .toList();
       expect(all, hasLength(65));
       expect(all.map((r) => r.cuisine).toSet(), hasLength(14));
       for (final pair in added.entries) {
@@ -50,7 +52,7 @@ void main() {
         expect(recipe.steps, hasLength(1));
         expect(
           recipe.steps.single.minutes,
-          recipe.prepMinutes + recipe.cookMinutes,
+          recipe.prepMinutes! + recipe.cookMinutes!,
         );
         expect(recipe.steps.single.tip, contains('إجمالي'));
         expect(recipe.steps.single.passive, isFalse);
@@ -59,22 +61,22 @@ void main() {
           if (ingredient.amount == null) {
             expect(ingredient.scales, isFalse);
             expect(
-              recipe.forServings(recipe.servings * 2).quantity(ingredient),
+              recipe.forServings(recipe.servings! * 2).quantity(ingredient),
               isNull,
             );
           }
         }
         final coverage = assessRecipeNutrition(
-          scaled: recipe.forServings(recipe.servings),
+          scaled: recipe.forServings(recipe.servings!),
           selections: [],
         );
         expect(coverage.whole[NutrientId.protein]!.value, isNull);
         expect(coverage.per100g, isNull);
       }
-      expect((await repo.search(cuisine: 'مصري')), hasLength(12));
-      expect((await repo.search(cuisine: 'شامي')), hasLength(14));
-      expect((await repo.search(cuisine: 'سعودي')), hasLength(14));
-      expect((await repo.search(cuisine: 'إيطالي')), hasLength(14));
+      expect(all.where((r) => r.cuisine == 'مصري'), hasLength(12));
+      expect(all.where((r) => r.cuisine == 'شامي'), hasLength(14));
+      expect(all.where((r) => r.cuisine == 'سعودي'), hasLength(14));
+      expect(all.where((r) => r.cuisine == 'إيطالي'), hasLength(14));
     },
   );
 }

@@ -25,6 +25,8 @@ import 'household_measure_repository.dart';
 import 'preparation_category_repository.dart';
 import 'state_store.dart';
 
+part 'monthly_plan_acceptance.dart';
+
 Map<String, dynamic> _clone(Map<String, dynamic> value) =>
     jsonDecode(jsonEncode(value)) as Map<String, dynamic>;
 Map<String, dynamic> _fresh() => {
@@ -46,11 +48,18 @@ Map<String, dynamic> _fresh() => {
 class MonthlyBudgetSearchPreview {
   MonthlyBudgetSearchPreview._({
     required this.search,
+    required this._owner,
+    required String stateSnapshot,
+    required this._writeTail,
     required Map<String, Map<String, PlannedMeal>> candidatesByPool,
-  }) : candidatesByPool = Map.unmodifiable({
+  }) : _snapshot = stateSnapshot,
+       candidatesByPool = Map.unmodifiable({
          for (final pool in candidatesByPool.entries)
            pool.key: Map<String, PlannedMeal>.unmodifiable(pool.value),
        });
+  final KitchenService _owner;
+  final String _snapshot;
+  final Future<void> _writeTail;
   final budget_search.MonthlyBudgetSearchResult search;
   final Map<String, Map<String, PlannedMeal>> candidatesByPool;
 }
@@ -595,6 +604,50 @@ class KitchenService {
     await _write((k) {
       k['recipeBook'] = _recipeBook(k).addRevision(revision).toJson();
     });
+  }
+
+  /// Caller-reviewed whole-batch yield in a new personal snapshot. Source and
+  /// existing plans are unchanged; food bindings are never inherited.
+  Future<RecipeRevision> reviewRecipeYield({
+    required String sourceRevisionKey,
+    required int baseServings,
+    required String variantId,
+    required String revision,
+    required String reviewNote,
+    required DateTime reviewedAt,
+    required bool acknowledgeWholeRecipeYield,
+    String? expectedActiveKey,
+  }) async {
+    final source = recipeBook.revisions[sourceRevisionKey];
+    if (source == null) {
+      throw StateError('Register exact source revision first');
+    }
+    final draft = buildRecipeYieldRevision(
+      source: source,
+      baseServings: baseServings,
+      variantId: variantId,
+      revision: revision,
+      reviewNote: reviewNote,
+      reviewedAt: reviewedAt,
+      acknowledgeWholeRecipeYield: acknowledgeWholeRecipeYield,
+    );
+    if ((await recipes.index).any((v) => v['id'] == draft.variantId)) {
+      throw StateError('Yield review cannot overwrite a catalog identity');
+    }
+    await _write((k) {
+      final book = _recipeBook(k);
+      if (book.revisions.containsKey(draft.key)) {
+        book.addRevision(
+          draft,
+        ); // Exact retries never reactivate old revisions.
+        return;
+      }
+      if (book.active[draft.variantId] != expectedActiveKey) {
+        throw StateError('Personal recipe changed; review yield again');
+      }
+      k['recipeBook'] = book.addRevision(draft).toJson();
+    });
+    return draft;
   }
 
   /// New personal revision only: no implicit food bindings, replanning or ratios.
@@ -1622,6 +1675,9 @@ class KitchenService {
     );
     return MonthlyBudgetSearchPreview._(
       search: result,
+      owner: this,
+      stateSnapshot: guard,
+      writeTail: _tail,
       candidatesByPool: evidence,
     );
   }

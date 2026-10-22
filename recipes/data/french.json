@@ -1,7 +1,7 @@
 {
   "cuisine": "فرنسي",
   "cuisineSlug": "french",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "recipes": [
     {
       "id": "bc-chicken-in-red-wine-vinegar-sauce",
@@ -85,6 +85,1566 @@
       ],
       "tags": [],
       "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-in-red-wine-vinegar-sauce.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/chicken-in-red-wine-vinegar-sauce.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر يكتب «1 cup/720 milliliters» للخل، وهو تعارض مقدار ووحدة؛ حُفظ المقدار مجهولًا بدل الاختيار. يذكر المصدر بدائل للدجاج والكريمة. الزيت والزبدة لهما مكافئات تقريبية ووحدات بديلة محفوظة حرفيًا في sidecar. التحقق من تمام نضج الدجاج يحتاج مراجعة سلامة مستقلة؛ مدة التحمير المنقولة ليست شهادة سلامة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    },
+    {
+      "id": "bc650-french-onion-soup",
+      "name": "حساء البصل الفرنسي",
+      "nameEn": "French Onion Soup",
+      "cuisine": "فرنسي",
+      "category": "حساء",
+      "description": "بصل يطهى ببطء ويتكرمل ثم يضاف إليه مرق اللحم وأوراق الغار، ويقدم مع خبز وجبن مذاب.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-french-onion-soup-ing-1",
+          "name": "6–7 بصلات مقطعة أنصاف دوائر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "6-7 Onions, cut into quarter moons"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-2",
+          "name": "قالب زبدة واحد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 stick of butter"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-3",
+          "name": "زيت زيتون، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-4",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt, to taste"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-5",
+          "name": "رغيف باغيت مقطع شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Baguette Loaf, sliced"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-6",
+          "name": "علبة مرق دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Can of Chicken Broth"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-7",
+          "name": "3 فصوص ثوم مفرومة ناعماً",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 Garlic cloves, finely chopped"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-8",
+          "name": "سكر بني، ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-9",
+          "name": "خل بلسمي حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Balsamic vinegar, to taste"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-10",
+          "name": "صلصة ورشيسترشاير حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Worcestershire Sauce, to taste"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-11",
+          "name": "صلصة صويا حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Soy Sauce, to taste"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-12",
+          "name": "مرق لحم بقر، 64 أونصة",
+          "amount": 64,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-13",
+          "name": "2–3 أوراق غار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2-3 Bay Leaves"
+        },
+        {
+          "id": "bc650-french-onion-soup-ing-14",
+          "name": "جبن يذوب ويفضل غرويير أو سويسري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Melty cheese, preferably guereye or swiss"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ليّن البصل في قدر هولندي مغطى على حرارة متوسطة منخفضة، مع الملح وقالب الزبدة الكامل وبعض زيت الزيتون، نحو ساعتين مع التحريك من حين لآخر وزيادة تكرار التحريك تدريجياً مع رفع الحرارة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "عندما يلين البصل وينكمش ويغطيه معظم الزبدة والزيت وعصارة البصل، صفِّه واجمع العصارة في وعاء. ادهن جانبي شرائح الباغيت بالعصارة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أعد البصل المصفى إلى حرارة متوسطة عالية من دون غطاء. حرّك وأزل ما يلتصق بمرق الدجاج على فترات، من دون تكرار مبالغ فيه حتى لا يتهرى البصل. بعد إضافة علبة المرق كلها أضف الثوم والسكر البني والخل البلسمي وورشيسترشاير والصويا. انتظر حتى يجف قاع القدر وتتكون طبقة بنية قبل إضافة كل سائل تالٍ ببطء، مع التحريك بملعقة خشبية وكرملة البصل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "بعد اكتمال الكرملة وعدم بقاء سوائل أخرى للإضافة، اسكب مرق اللحم وأوراق الغار. غط القدر على حرارة متوسطة حتى يغلي بهدوء.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "حمّص شرائح الخبز المدهونة بعصارة البصل في فرن عند 400°F، ثم ضع الجبن عليها وحمّرها تحت الشواية حتى يذوب. قدّم الحساء فوق الخبز أو والخبز طافٍ على سطحه.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/french-onion-soup.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=6b7e0494e9f10f7f49c76b97de8a201e3812e2db8d511cc02c0c521107861f35"
+    },
+    {
+      "id": "bc650-french-mustard-sauce-porkchops",
+      "name": "شرائح لحم الخنزير بصلصة الخردل الفرنسية",
+      "nameEn": "French mustard sauce porkchops (Côtes de porc charcutières)",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "شرائح لحم خنزير محمرة مع صلصة كراث ونبيذ أبيض ومخلل صغير وخردل.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-french-mustard-sauce-porkchops-ing-1",
+          "name": "شرائح لحم خنزير، 4",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "porkchops: 4"
+        },
+        {
+          "id": "bc650-french-mustard-sauce-porkchops-ing-2",
+          "name": "حبتا كراث فرنسي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "shallots: 2"
+        },
+        {
+          "id": "bc650-french-mustard-sauce-porkchops-ing-3",
+          "name": "نحو 12 مخللاً متوسط الحجم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "gerkins: a dozen medium sized ones"
+        },
+        {
+          "id": "bc650-french-mustard-sauce-porkchops-ing-4",
+          "name": "نبيذ أبيض، 350 مل / 1½ كوب كما وردا في المصدر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "white wine: 350ml | 1 1/2 cup"
+        },
+        {
+          "id": "bc650-french-mustard-sauce-porkchops-ing-5",
+          "name": "مرق بني، 100 مل / نصف كوب كما وردا في المصدر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "brown stock: 100ml | 1/2 cup"
+        },
+        {
+          "id": "bc650-french-mustard-sauce-porkchops-ing-6",
+          "name": "خردل، ملعقتان كبيرتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "mustard: 2tbsp"
+        },
+        {
+          "id": "bc650-french-mustard-sauce-porkchops-ing-7",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "butter"
+        },
+        {
+          "id": "bc650-french-mustard-sauce-porkchops-ing-8",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "olive oil"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع الكراث إلى مكعبات صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع الخيار المخلل إلى شرائح طويلة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "حمّر شرائح لحم الخنزير في مقلاة حديد زهر أو ستانلس على نار عالية حتى تصبح ذهبية على الجانبين، ثم أكمل طهيها على حرارة أقل حتى تنضج.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أخرج الشرائح بعد نضجها واتركها في مكان دافئ.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ليّن الكراث في المقلاة نفسها.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أزل ما التصق بقاع المقلاة بالنبيذ الأبيض واتركه يختزل حتى يبقى نحو ملعقتين صغيرتين.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف المرق ثم الخيار المخلل.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "امزج الخردل.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اترك الصلصة تختزل حتى تكسو الملعقة.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "امزج قطعة من الزبدة.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "أعد شرائح اللحم وقلّبها لتتغطى بالصلصة وسخّنها 30 ثانية.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "قدّم مع بطاطا مهروسة أو بطاطا مشوحة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/french-mustard-sauce-porkchops.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=b82f80f31cb0a96bf1df1d0fe6094f50a6108a120ec9615089f3cdd1dcb39c07"
+    },
+    {
+      "id": "bc650-farci-tomatoes",
+      "name": "طماطم محشوة باللحم",
+      "nameEn": "Farci tomatoes",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "طماطم مفرغة تحشى باللب مع لحم البقر والبصل والتوابل والجبن ثم تخبز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-farci-tomatoes-ing-1",
+          "name": "حبتا طماطم لكل شخص",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 tomatoes per person"
+        },
+        {
+          "id": "bc650-farci-tomatoes-ing-2",
+          "name": "لحم بقر مفروم، 300 جم",
+          "amount": 300,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-farci-tomatoes-ing-3",
+          "name": "بصلة أو بصلة ونصف",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 or 2 onions"
+        },
+        {
+          "id": "bc650-farci-tomatoes-ing-4",
+          "name": "توابل من اختيارك: بقدونس أو أوريغانو أو كمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Condiments of your choice: parsley, origan or cumin"
+        },
+        {
+          "id": "bc650-farci-tomatoes-ing-5",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil"
+        },
+        {
+          "id": "bc650-farci-tomatoes-ing-6",
+          "name": "جبن غرويير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Gruyere cheese"
+        },
+        {
+          "id": "bc650-farci-tomatoes-ing-7",
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt and pepper"
+        },
+        {
+          "id": "bc650-farci-tomatoes-ing-8",
+          "name": "زبدة (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 200°C.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اقطع قمم الطماطم وضعها في صينية الفرن.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أفرغ الطماطم بملعقة واحتفظ باللب في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخلط لب الطماطم مع بقية المكونات.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أعد حشو الطماطم بالخليط.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "يمكن إضافة طبقة رقيقة من الزبدة فوق الطماطم اختيارياً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أعد الغطاء المقطوع إلى أعلى كل طماطم.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اخبز في الفرن 40 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/farci-tomatoes.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=bbf2fd1b8855a4bfe1dfb2643cb350f120b2c8b7fbda162687bf659fba438001"
+    },
+    {
+      "id": "bc650-flammkuchen",
+      "name": "فلامكوشن بالبصل واللحم المقدد",
+      "nameEn": "Flammkuchen",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "عجينة رقيقة جداً مغطاة بطبقة رفيعة من القشدة الحامضة والبصل واللحم المقدد أو الخضار، وتخبز سريعاً.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-flammkuchen-ing-1",
+          "name": "عجينة بيتزا، 400 جم، جاهزة أو محضرة من وصفة المصدر",
+          "amount": 400,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-flammkuchen-ing-2",
+          "name": "بصلة واحدة (يفضل المصدر الحمراء للون)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 onion (I prefer the red ones for optical reasons)"
+        },
+        {
+          "id": "bc650-flammkuchen-ing-3",
+          "name": "لحم مقدد، 150 جم (يمكن استبداله بالفطر أو خضار أخرى)",
+          "amount": 150,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-flammkuchen-ing-4",
+          "name": "ملعقتان كبيرتان مكدستان من القشدة الحامضة أو كريم فريش",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 big spoons of sour creme or creme fraiche"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "افرد العجينة واجعلها أرق حتى مما يباع كقشرة رقيقة جداً. تكفي لتغطية صينيتين؛ ستكون فلامكوشن كبيرة لكل شخص لأن العجينة رقيقة. يضع المصدر العجينة بين ورقتي خبز ويفردها بزجاجة لتصبح رقيقة قدر الإمكان (1–2 مم).",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "بعد فردها ضعها في صينية وسخّن الفرن إلى 450–500°F/230–260°C.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "وزع القشدة الحامضة بالتساوي بطبقة رقيقة جداً تكاد تغطي العجينة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قطّع البصل واللحم المقدد إلى قطع صغيرة ووزعهما بالتساوي، وكذلك الخضار البديلة إن استخدمتها.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اخبز 10 دقائق وأخرجها عندما تبدأ بالاسمرار قليلاً؛ ستصبح الأجزاء الرقيقة بنية قليلاً.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "يمكن رفعها عن الصينية وتركها تبرد 2–5 دقائق قبل الأكل.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/flammkuchen.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=7e78253d2bf89b3f781829be9d71f0ddbd213e6dfa1da6c4e121da2ca4df46ae"
+    },
+    {
+      "id": "bc650-lobster-bisque",
+      "name": "بيسك الكركند",
+      "nameEn": "Lobster bisque",
+      "cuisine": "فرنسي",
+      "category": "حساء",
+      "description": "حساء كركند مهروس مع الخضار والطماطم والكونياك والنبيذ الأبيض ومرق السمك والقشدة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": 30,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-lobster-bisque-ing-1",
+          "name": "كركند حي يزن نحو 750 جم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 live lobster that weighs ~750 grams"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-2",
+          "name": "بصلتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 onions"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-3",
+          "name": "جزرتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 carrots"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-4",
+          "name": "حبة كراث فرنسي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 shallot"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-5",
+          "name": "فصا ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 garlic cloves"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-6",
+          "name": "كونياك",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cognac"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-7",
+          "name": "معجون طماطم مركز، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-8",
+          "name": "4 حبات طماطم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 tomatoes"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-9",
+          "name": "دقيق، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-10",
+          "name": "كأس نبيذ أبيض جاف",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 glass dry white wine"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-11",
+          "name": "مرق سمك، لتران",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 litres fish stock"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-12",
+          "name": "ورقة غار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 bayleaf"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-13",
+          "name": "غصنا زعتر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 twigs of thyme"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-14",
+          "name": "بقدونس طازج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "fresh parsley"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-15",
+          "name": "قشدة كثيفة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "heavy cream"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-16",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "olive oil"
+        },
+        {
+          "id": "bc650-lobster-bisque-ing-17",
+          "name": "زبدة، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع البصل والجزر والكراث والثوم مكعبات صغيرة واتركها جانباً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اسلق الكركند في ماء يغلي دقيقتين، ثم أخرجه واتركه يصفّي.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اقطع الكركند من المنتصف وأخرج اللحم من القشرة واتركه جانباً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع قدر مرق على حرارة متوسطة عالية وسخّن زيتاً يكفي لتغطية القاع. أضف قشور الكركند واطهها حتى تحمر بوضوح.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أزل الزيت من المقلاة وتخلص منه ثم أضف الزبدة إلى القشور.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الخضار المقطعة وشوّح دقيقتين، ثم أضف رشة كونياك وأشعلها، وخفّض الحرارة إلى متوسطة منخفضة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "قطّع الطماطم خشناً وأضفها مع معجون الطماطم، وشوّح دقيقتين.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف الدقيق وحرّك ثم اتركه يجف في المقلاة.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "أزل ما التصق بالنبيذ الأبيض، وبعد أن يجف قليلاً أضف مرق السمك.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "اربط الأعشاب بخيط مطبخ وأضفها إلى القدر.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "اترك الحساء يغلي بهدوء على نار منخفضة 30 دقيقة. أثناء ذلك قطّع لحم الكركند لقيمات.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "بعد الغليان صفِّ الحساء بمصفاة دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 13,
+          "text": "أعد الحساء المصفى إلى غليان خفيف وأضف قطع لحم الكركند.",
+          "duration": null
+        },
+        {
+          "n": 14,
+          "text": "اغله 4 دقائق أخرى لتسخين الكركند وقدّمه مع الملح والفلفل حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 15,
+          "text": "أكمل كل طبق بقليل من القشدة الثقيلة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 20 ؛ - 🍳Cook time: 30 min ؛ - 🍽️ Servings: 2 litres. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/lobster-bisque.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3e3cac58c9aa6641a056149f9fa10de1aa1fd726d3d93a76d3661751fa1883cc"
+    },
+    {
+      "id": "bc650-ratatouille",
+      "name": "راتاتوي بالخضار والطماطم",
+      "nameEn": "Ratatouille",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "طماطم وباذنجان وكوسة وفلفل وبصل وثوم تطهى ببطء بزيت الزيتون وأعشاب بروفانس.",
+      "servings": 12,
+      "prepTime": 12,
+      "cookTime": 75,
+      "totalTime": 87,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-ratatouille-ing-1",
+          "name": "طماطم، 3½ أرطال",
+          "amount": 3.5,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ratatouille-ing-2",
+          "name": "باذنجان، 1½ رطل",
+          "amount": 1.5,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ratatouille-ing-3",
+          "name": "كوسة، رطل واحد",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ratatouille-ing-4",
+          "name": "3 حبات فلفل رومي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 Bell Peppers"
+        },
+        {
+          "id": "bc650-ratatouille-ing-5",
+          "name": "بصل، رطلان",
+          "amount": 2,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ratatouille-ing-6",
+          "name": "6 فصوص ثوم",
+          "amount": 6.0,
+          "unit": "فص",
+          "scale": true,
+          "display": null,
+          "label": "6 cloves Garlic"
+        },
+        {
+          "id": "bc650-ratatouille-ing-7",
+          "name": "أعشاب بروفانس (ريحان وزعتر وبقدونس)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Herbes de Provence (Basil, Thyme, Parsley)"
+        },
+        {
+          "id": "bc650-ratatouille-ing-8",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive Oil"
+        },
+        {
+          "id": "bc650-ratatouille-ing-9",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt"
+        },
+        {
+          "id": "bc650-ratatouille-ing-10",
+          "name": "فلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pepper"
+        },
+        {
+          "id": "bc650-ratatouille-ing-11",
+          "name": "معجون طماطم، 140 جم (اختياري إذا لم تكن الطماطم لذيذة)",
+          "amount": 140,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قشّر الطماطم وصفّها من العصارة (لا تهتم بالبذور): أزل قلب الساق واغمر الطماطم كاملة في ماء يغلي دقيقتين. انقلها إلى مصفاة؛ ينبغي أن يتشقق الجلد ليسهل نزعه، وإلا اصنع شقاً على شكل X في الأعلى ثم قشّرها.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع البصل والثوم. نظف الفلفل الرومي وقطّعه شرائط صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "في قدر طهي كبير سميك القاع ضع زيت الزيتون والبصل والثوم والفلفل. غط القدر للاحتفاظ بالرطوبة واطه 20 دقيقة مع التحريك كثيراً وإضافة الزيت حسب الحاجة لمنع الاحتراق.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف الطماطم وأعشاب بروفانس. إذا لم يكن لديك طماطم حديقة لذيذة فأضف علبة صغيرة معجون طماطم. حرّك جيداً واطه 15 دقيقة أخرى.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قطّع الباذنجان إلى أقراص والكوسة إلى أقراص.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الباذنجان والكوسة إلى القدر.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اطه نحو 30 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 12 min ؛ - 🍳 Cook time: 75 min ؛ - 🍽️ Servings: 12. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ratatouille.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=343ecff9ae1d639584a01c8cd1e66938bf9bd646bc5f05c9362e1724ed489704"
+    },
+    {
+      "id": "bc650-quiche",
+      "name": "كيش لورين",
+      "nameEn": "Quiche Lorraine - Lothringer Käsetorte",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "قشرة عجين محشوة بالهام وخليط البيض والقشدة والجبن، تخبز حتى تتماسك.",
+      "servings": 4,
+      "prepTime": 160,
+      "cookTime": 30,
+      "totalTime": 190,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-quiche-ing-1",
+          "name": "دقيق، 200 جم (قمح كامل كما كتب المصدر)",
+          "amount": 200,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-quiche-ing-2",
+          "name": "زبدة أو مارغرين، 100 جم",
+          "amount": 100,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-quiche-ing-3",
+          "name": "ماء، 5 ملاعق كبيرة",
+          "amount": 5,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-quiche-ing-4",
+          "name": "هام، 200 جم (أو هام مطهو)",
+          "amount": 200,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-quiche-ing-5",
+          "name": "4 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 Eggs"
+        },
+        {
+          "id": "bc650-quiche-ing-6",
+          "name": "قشدة، ربع [الوحدة غير مذكورة في المصدر]",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1/4 Cream"
+        },
+        {
+          "id": "bc650-quiche-ing-7",
+          "name": "جبن إيدام مبشور، 125 جم",
+          "amount": 125,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-quiche-ing-8",
+          "name": "زبدة ودقيق إضافيان لقالب الخبز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "For the Baking Tin: More Butter and Flour"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ادهن قالب خبز قطره 26 سم أو قالبين أصغر بالزبدة وغطيهما بالدقيق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "انخل الدقيق وامزجه مع الزبدة أو المارغرين المقطعة رقائق صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اصنع تجويفاً في وسط الدقيق وأضف ملاعق الماء.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخلط جميع المكونات باليد حتى يصبح العجين كتلة متجانسة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "لف العجين بورق الألمنيوم واتركه في الثلاجة ساعتين (نحو −4°C كما ورد بالمصدر).",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "سخّن الفرن إلى 200°C.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "افرد العجين على سطح مرشوش بالدقيق حتى سماكة نحو 4 مم وشكّل حافة على الجانبين.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اثقب العجين بالشوكة لتحسين نفاذ الحرارة.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "قطّع الهام شرائح ووزعها بالتساوي فوق العجين.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "افصل صفار البيض عن البياض.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "اخفق الصفار مع القشدة.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "أضف الجبن المبشور.",
+          "duration": null
+        },
+        {
+          "n": 13,
+          "text": "اخفق بياض البيض حتى يصبح رغوياً ثم أضفه إلى خليط الصفار والقشدة والملح والفلفل والجبن.",
+          "duration": null
+        },
+        {
+          "n": 14,
+          "text": "غط الهام في القالب بالخليط وسوِّ السطح.",
+          "duration": null
+        },
+        {
+          "n": 15,
+          "text": "اخبز الكيش على الرف الأوسط 30 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 16,
+          "text": "بعد الخبز اتركه بضع دقائق ثم قدّمه دافئاً. يوصي المصدر بتقديمه مع كأس نبيذ أبيض.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 160 min ؛ - 🍳 Cook time: 30 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/quiche.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=014aa8d77f0ad6ab6ac9e35a1b8078bf4019717f4f52f79f6418825117b1df54"
+    },
+    {
+      "id": "bc650-croque-monsieur",
+      "name": "كروك موسيو صغير بالبشاميل",
+      "nameEn": "Croque-monsieur bites",
+      "cuisine": "فرنسي",
+      "category": "طبق رئيسي",
+      "description": "قطع خبز محشوة بالخردل والهام والجبن وبينها طبقتا بشاميل، وتخبز حتى يذوب الجبن ويتحمر.",
+      "servings": 6,
+      "prepTime": 10,
+      "cookTime": 10,
+      "totalTime": 20,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-croque-monsieur-ing-1",
+          "name": "زبدة، 50 جم",
+          "amount": 50,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-2",
+          "name": "دقيق، 50 جم",
+          "amount": 50,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-3",
+          "name": "حليب، لتر واحد",
+          "amount": 1,
+          "unit": "لتر",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-4",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-5",
+          "name": "فلفل مطحون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Ground Pepper"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-6",
+          "name": "جوزة الطيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Nutmeg"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-7",
+          "name": "شرائح خبز، 12",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "12 Slices of bread"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-8",
+          "name": "خردل، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-9",
+          "name": "شرائح هام رفيعة بالأعشاب الإيطالية، 12",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "12 very thin slices of ham with Italian herbs"
+        },
+        {
+          "id": "bc650-croque-monsieur-ing-10",
+          "name": "جبن مبشور، 80 جم (إمنتال أو كومتيه أو غرويير أو ميموليت)",
+          "amount": 80,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "لتحضير البشاميل أذب الزبدة في قدر ثقيل القاعدة. عندما تبدأ بالرغوة رش الدقيق والملح والفلفل ورشة جوزة الطيب واخلط.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الحليب تدريجياً، ولا تضفه كله مرة واحدة، مع الخفق كل مرة حتى تتكاثف الصلصة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "سخّن الفرن إلى الدرجة 6 أو 180°C، وأخرج صينية الخبز وبطنها بورق ألمنيوم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "صفّ 6 شرائح خبز أمامك وادهنها بقليل من الخردل، ثم أضف طبقة بشاميل وشريحة هام مطوية أربع طيات وجبناً مبشوراً وطبقة أخرى من البشاميل.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع شرائح الخبز الست المتبقية فوقها، ثم أضف طبقة رقيقة من البشاميل ووزع بقية الجبن.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "رتّب القطع في الصينية واخبز نحو 10 دقائق. يمكن وضعها تحت الشواية 3–4 دقائق في النهاية.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 10 min ؛ - 🍽️ Servings: 6. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/croque-monsieur.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e84e3cfad0f02ce5b4ca29826237483b4733cbc035197656c91c391cb62f21af"
+    },
+    {
+      "id": "bc650-french-toast",
+      "name": "توست فرنسي",
+      "nameEn": "French Toast",
+      "cuisine": "فرنسي",
+      "category": "إفطار",
+      "description": "شرائح خبز تغمس في خليط البيض والحليب وتقلى بالزبدة حتى تصبح ذهبية، وتقدم مع شراب القيقب اختياريًا.",
+      "servings": 1,
+      "prepTime": 5,
+      "cookTime": 25,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-french-toast-ing-1",
+          "name": "بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 Eggs"
+        },
+        {
+          "id": "bc650-french-toast-ing-2",
+          "name": "حليب، نصف كوب (أو ربع كوب لقوام أصلب)",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-french-toast-ing-3",
+          "name": "شرائح خبز، 5",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5 Slices of bread"
+        },
+        {
+          "id": "bc650-french-toast-ing-4",
+          "name": "شراب قيقب (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Maple Syrup (Optional)"
+        },
+        {
+          "id": "bc650-french-toast-ing-5",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ادهن مقلاة بالزبدة وضعها على الموقد بحرارة منخفضة إلى متوسطة؛ قد تحتاج إلى إضافة مزيد من الزبدة بين الشرائح.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اكسر البيضتين في وعاء، وأضف الحليب واخفقهما حتى يصبح الخليط سائلاً أصفر بلا كتل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اغمس وجهاً من شريحة الخبز في الخليط حتى يبتل سطحه كله، ثم ارفعه فوراً واكشط السائل الزائد بسكين زبدة. كرر للوجه الآخر.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع الشريحة في المقلاة الساخنة واطه وجهيها حتى يذهبا. انقلها إلى طبق وكرر مع بقية الخبز.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اسكب شراب القيقب فوق كومة التوست الفرنسي إن رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 25 min ؛ - 🍽️ Servings: 1. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/french-toast.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=a5538256dfabf22979f64072eda2795cca2893fd9ff39b52ba6d4100fad1f7cc"
+    },
+    {
+      "id": "bc650-french-crepes",
+      "name": "كريب فرنسي",
+      "nameEn": "French Crêpes",
+      "cuisine": "فرنسي",
+      "category": "إفطار",
+      "description": "عجينة كريب بالدقيق والبيض والحليب والبيرة، مع زبدة أو زيت، تترك لترتاح ثم تطهى في مقلاة مسطحة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-french-crepes-ing-1",
+          "name": "دقيق أبيض، 300 جم",
+          "amount": 300,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-french-crepes-ing-2",
+          "name": "3 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 eggs"
+        },
+        {
+          "id": "bc650-french-crepes-ing-3",
+          "name": "حليب، 60 سنتيلتر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "60cl milk"
+        },
+        {
+          "id": "bc650-french-crepes-ing-4",
+          "name": "بيرة، 20 سنتيلتر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "20cl beer"
+        },
+        {
+          "id": "bc650-french-crepes-ing-5",
+          "name": "زبدة، 30 جم، أو زيت، 3 ملاعق كبيرة",
+          "amount": 30,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلط الدقيق والملح والبيض والزبدة المذابة أو الزيت بهذا الترتيب كي لا يبقى الدقيق جافاً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الحليب والبيرة ببطء حتى يصبح قوام العجين سائلاً بما يكفي لينساب عن المغرفة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اترك العجين يرتاح ساعة؛ وهذه الخطوة اختيارية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اطه الكريب في مقلاة مسطحة، مغرفة واحدة في كل مرة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/french-crepes.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=9cc09276fee66a9bbd366c0a72ac0ceb1f6372c1bef7b8dbe4c6a3e018c20ea7"
+    },
+    {
+      "id": "bc650-creme-brulee",
+      "name": "كريم بروليه",
+      "nameEn": "Crème brûlée",
+      "cuisine": "فرنسي",
+      "category": "حلوى",
+      "description": "قشدة وحليب وصفار بيض مع سكر وفانيليا وقشر ليمون، تطهى في قوالب داخل حمام مائي ثم يكرمل السكر على سطحها.",
+      "servings": 4,
+      "prepTime": 20,
+      "cookTime": 30,
+      "totalTime": 50,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-creme-brulee-ing-1",
+          "name": "قشدة عالية الدسم، 400 مل",
+          "amount": 400,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-creme-brulee-ing-2",
+          "name": "حليب كامل الدسم، 140 مل",
+          "amount": 140,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-creme-brulee-ing-3",
+          "name": "سكر (يفضل البني)، 85 جم",
+          "amount": 85,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-creme-brulee-ing-4",
+          "name": "5 صفارات بيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5 egg yolk"
+        },
+        {
+          "id": "bc650-creme-brulee-ing-5",
+          "name": "قرن فانيليا واحد أو خلاصة (اختيارياً)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 vanilla bean (mark, optionally essence)"
+        },
+        {
+          "id": "bc650-creme-brulee-ing-6",
+          "name": "قشر ليمون مبشور",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Lemon peel, rubbed"
+        },
+        {
+          "id": "bc650-creme-brulee-ing-7",
+          "name": "سكر لقشرة الوجه",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sugar for the top crust"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلط القشدة والحليب وصفار البيض.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف السكر والفانيليا والليمون.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اترك الخليط يرتاح 30 دقيقة على الأقل؛ ويمكن تركه طوال الليل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اسكب الخليط في 4–6 قوالب مقاومة للحرارة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "سخّن الفرن مسبقاً إلى 150°C وضع صينية الخَبز في الرف الأوسط.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "ضع القوالب على الصينية واملأها بماء مغلي.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اطه الكريم بروليه 55 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اترك القوالب تبرد إلى حرارة الغرفة ثم ضعها في الثلاجة ساعتين على الأقل.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "انثر ملعقة صغيرة من السكر فوق كل قالب.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "كرمل السكر بموقد شعلة؛ ويمكن أن تنجح شواية الفرن بديلاً.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حلوى"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️  Prep time: 20 min ؛ - 🍳 Cook time: 30 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/creme-brulee.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=1253f1fd2595bf6c93136e48fb11fd7b9c4b2aa9cbfe026dadd6325533f7fd66"
+    },
+    {
+      "id": "bc650-croutons",
+      "name": "مكعبات خبز محمصة للسلطة",
+      "nameEn": "Croutons",
+      "cuisine": "فرنسي",
+      "category": "طبق جانبي",
+      "description": "مكعبات خبز أبيض تغطى بزيت الزيتون والتوابل ثم تخبز حتى تصبح مقرمشة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-croutons-ing-1",
+          "name": "خبز أبيض متين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Hearty White Bread"
+        },
+        {
+          "id": "bc650-croutons-ing-2",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Extra Virgin Olive Oil"
+        },
+        {
+          "id": "bc650-croutons-ing-3",
+          "name": "توابل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Spices"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 350°F (نحو 180°C). قطّع شرائح الخبز الأبيض برفق إلى مكعبات بسكين طاهٍ؛ عادة تكفي شريحة أو شريحتان للشخص.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "في وعاء كبير اخلط زيت الزيتون والتوابل ومكعبات الخبز برفق حتى تتبل بالتساوي. يمكن استخدام أي توابل؛ يقترح المصدر الأوريغانو والبابريكا والفلفل الأسود ومسحوق الثوم أو الثوم الطازج ورشة صغيرة من كايين.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "وزع مكعبات الخبز على صينية ووجوهها الكبيرة إلى الأسفل. اخبز 6–8 دقائق، ثم اقلب كل مكعب وأعده 6–8 دقائق أخرى أو حتى يصبح مقرمشاً بالكامل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اتركها تبرد. تؤكل فوراً أو تحفظ في كيس شطائر.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/croutons.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=61608760967ed62ac48a737c3f6e1c556b5bb0791c830ddbaa433935b7c17a08"
     }
   ]
 }

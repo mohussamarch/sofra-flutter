@@ -119,11 +119,15 @@ void main() {
     },
   );
   test(
-    'all 54 recipes expose explicit coverage gaps without false totals',
+    'all catalog recipes expose coverage gaps or require explicit source yield',
     () async {
       for (final recipe in await recipes().loadAll()) {
+        if (!recipe.hasKnownYield) {
+          expect(() => recipe.forServings(4), throwsArgumentError);
+          continue;
+        }
         final result = assessRecipeNutrition(
-          scaled: recipe.forServings(recipe.servings),
+          scaled: recipe.forServings(recipe.servings!),
           selections: [],
         );
         expect(result.whole[NutrientId.protein]!.value, null);
@@ -160,7 +164,7 @@ void main() {
         date: '2026-10-12',
         slot: 'lunch',
         recipeId: r.id,
-        servings: r.servings,
+        servings: r.servings!,
       ),
     );
     final stock = <String, (double, String)>{};

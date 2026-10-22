@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-22T06:43:10.765707Z",
+  "baseCommit": "533891c1a879fd7cbd2fa9ed9c8114a2fbe209a2",
+  "baseline": 65,
+  "target": 650,
+  "dueDate": "2026-10-23",
+  "catalogCount": 657,
+  "newCatalogRecipes": 592,
+  "remainingToTarget": 0,
+  "targetAchieved": true,
+  "groupCount": 63,
+  "knownYield": 183,
+  "unknownYield": 474,
+  "knownTotalTime": 165,
+  "completeStepSchedules": 65,
+  "newSourceAcquisition": 0,
+  "fullFlutterTests": 356,
+  "flutterAnalyze": "clean",
+  "baselineParity": {
+    "recipes": 65,
+    "scalingScenarios": 260
+  },
+  "sourceAudit": {
+    "sourceSnapshotChecks": 643,
+    "independentArabicNumericChecks": 1479,
+    "candidateRows": 643,
+    "scope": "source-consistency-only; not culinary/nutrition approval"
+  },
+  "sourceWarehouse": {
+    "records": 15648,
+    "packs": 38
+  },
+  "bundledSources": {
+    "records": 6648,
+    "packs": 29,
+    "snapshots": 6504
+  },
+  "sourceManifestSha256": "9159c077135f8dd44c86f940276ea09811c95aa223811b8be22e68f8fd23b4af",
+  "newBackendUnits": [
+    "revision-scoped persisted whole-recipe yield review",
+    "explicit atomic monthly search option acceptance"
+  ],
+  "limitations": [
+    "Not all recipes have reviewed nutrition, price, allergen or automatic-planning eligibility",
+    "No new APK or UI integration",
+    "Monthly candidate pool generation remains unbuilt"
+  ],
+  "postStyleRelatedFlutterTests": 20
+}

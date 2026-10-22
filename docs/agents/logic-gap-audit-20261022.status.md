@@ -1,0 +1,1 @@
+Read-only backend audit completed: `logic-gap-audit-20261022.md` records three proved gaps and recommends atomic acceptance of a chosen monthly search result as the next bounded unit. No implementation or tests performed.

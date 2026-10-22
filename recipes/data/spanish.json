@@ -1,7 +1,7 @@
 {
   "cuisine": "إسباني",
   "cuisineSlug": "spanish",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "recipes": [
     {
       "id": "bc-baked-rice",
@@ -195,6 +195,2119 @@
       ],
       "tags": [],
       "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tarta-de-santiago.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/tarta-de-santiago.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر يورد ¾ كوب سكر (150غ) و1½ كوب لوز (150غ)؛ أبقيت الوحدة الأساسية كما نشرها المصدر ولم أحولها للغرام. الوصف يذكر غاليسيا ووسم galician محفوظ كملاحظة، والتصنيف الأساسي الإسباني."
+    },
+    {
+      "id": "bc650-chorizo-chickpea-soup",
+      "name": "حساء الحمص والكوريزو",
+      "nameEn": "Chorizo & Chickpea Soup",
+      "cuisine": "إسباني",
+      "category": "حساء",
+      "description": "حساء سريع بالكوريزو والحمص؛ يقترح المصدر تقديمه مع خبز الذرة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-chorizo-chickpea-soup-ing-1",
+          "name": "نقانق كوريزو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chorizo Sausage(s)؛ الكمية غير محددة"
+        },
+        {
+          "id": "bc650-chorizo-chickpea-soup-ing-2",
+          "name": "ثوم",
+          "amount": 2,
+          "unit": "فص",
+          "display": null,
+          "label": "2 Garlic cloves"
+        },
+        {
+          "id": "bc650-chorizo-chickpea-soup-ing-3",
+          "name": "زنجبيل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Ginger؛ الكمية غير محددة"
+        },
+        {
+          "id": "bc650-chorizo-chickpea-soup-ing-4",
+          "name": "بابريكا",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "display": null,
+          "label": "Paprika, 2 Tsp"
+        },
+        {
+          "id": "bc650-chorizo-chickpea-soup-ing-5",
+          "name": "كمون وبقدونس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cumin, Parsley؛ الكمية غير محددة"
+        },
+        {
+          "id": "bc650-chorizo-chickpea-soup-ing-6",
+          "name": "عصير ليمونة كاملة",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "Juice from whole Lemon"
+        },
+        {
+          "id": "bc650-chorizo-chickpea-soup-ing-7",
+          "name": "حمص مصفى",
+          "amount": 400,
+          "unit": "جرام",
+          "display": null,
+          "label": "Chickpeas, 400g ( drained )"
+        },
+        {
+          "id": "bc650-chorizo-chickpea-soup-ing-8",
+          "name": "زبدة وزيت دوار الشمس للقلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter and sunflower oil, for frying"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقلي شرائح الكوريزو بالزبدة مع الزنجبيل والثوم المقطعين. أضيفي الزيت بعد بضع دقائق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي عصير الليمون والحمص والكمون والبابريكا، ثم 100 مل ماء.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اتركي المزيج يغلي نحو 5 دقائق. أضيفي البقدونس ثم الملح حسب الذوق.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "المصدر يذكر زمن طهي 10–15 دقيقة فقط، بلا تحضير أو حصص. قدمه مع خبز الذرة حسب اقتراح المصدر. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chorizo-and-chickpea-soup.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 28ad592a7e43c532dc2f64c456f3b71bda111a4b53bb52fdffbd7d9f68ce0ecd.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-zarangollo",
+      "name": "زارانغولو",
+      "nameEn": "Zarangollo",
+      "cuisine": "إسباني",
+      "category": "مقبلات",
+      "description": "طبق خضار بسيط من مورسيا في جنوب شرق إسبانيا، وفق وصف المصدر.",
+      "servings": 2,
+      "prepTime": 5,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-zarangollo-ing-1",
+          "name": "بصلة بيضاء",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 White onion"
+        },
+        {
+          "id": "bc650-zarangollo-ing-2",
+          "name": "باذنجان",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 Eggplant"
+        },
+        {
+          "id": "bc650-zarangollo-ing-3",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil؛ كمية تكفي لتغطية الخضار بالكاد في المقلاة"
+        },
+        {
+          "id": "bc650-zarangollo-ing-4",
+          "name": "بيضة (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "Egg (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي البصل شرائح جوليان (شرائح رفيعة)، والباذنجان شرائح أو قطعًا صغيرة تناسب الملعقة الصغيرة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي الزيت إلى مقلاة غير مسطحة؛ يفضل أن تكون عريضة وعميقة قليلًا، حتى يغطي الخضار بالكاد.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اطهي مع التحريك على حرارة متوسطة حتى يلين الخضار ويتكرمل ويصبح شفافًا.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ارفعي الحرارة قليلًا لتحمير الخضار وجعله مقرمشًا، ولكن لفترة قصيرة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اختياري: أطفئي الحرارة واكسري بيضة فوقه. اتركي الحرارة المتبقية تطهوها؛ وإذا انكسرت يمكن خفقها.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "يمكن تقديم الطبق مع الزيت ما دام غير محترق، أو حفظ الزيت لاستخدامه في طهي أطعمة أخرى.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "مقبلات"
+      ],
+      "notes": "الحصص والتحضير من المصدر؛ مدى الطهي 10–15 دقيقة. لم يُختر رقم داخل المدى. مقدار الزيت غير محدد. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/zarangollo.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 988d345e5739443f6e67f2a820166d8b6171b8487215edda6c705e88a9aea522.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-spanish-lentil-soup",
+      "name": "حساء العدس الإسباني",
+      "nameEn": "Sopa de Lentejas",
+      "cuisine": "إسباني",
+      "category": "حساء",
+      "description": "يصف المصدر الطبق بأنه إسباني تقليدي.",
+      "servings": null,
+      "prepTime": 5,
+      "cookTime": 35,
+      "totalTime": 40,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-spanish-lentil-soup-ing-1",
+          "name": "جزر مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 carrot, chopped"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-2",
+          "name": "فلفل رومي أخضر مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 green bell pepper, chopped"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-3",
+          "name": "ثوم مفروم",
+          "amount": 4,
+          "unit": "فص",
+          "display": null,
+          "label": "4 garlic cloves, minced"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-4",
+          "name": "بصلة كبيرة مفرومة",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 large onion, chopped"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-5",
+          "name": "عدس بني جاف منقوع ليلة ومصفى",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null,
+          "label": "1 cup dry brown lentils, soaked overnight and drained"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-6",
+          "name": "طماطم برقوقية مفرومة",
+          "amount": 2,
+          "unit": "حبة",
+          "display": null,
+          "label": "2 plum tomatoes, chopped"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-7",
+          "name": "ماء",
+          "amount": 2,
+          "unit": "كوب",
+          "display": null,
+          "label": "2 cups water, or as needed"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-8",
+          "name": "ورقة غار",
+          "amount": 1,
+          "unit": "ورقة",
+          "display": null,
+          "label": "1 bay leaf"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-9",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "1 tbsp extra-virgin olive oil"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-10",
+          "name": "بابريكا",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "display": null,
+          "label": "1/2 tsp of paprika"
+        },
+        {
+          "id": "bc650-spanish-lentil-soup-ing-11",
+          "name": "كوريزو حار (اختياري)",
+          "amount": 0.25,
+          "unit": "حبة",
+          "optional": true,
+          "display": null,
+          "label": "1/4 spicy chorizo (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني زيت الزيتون في قدر كبير على حرارة متوسطة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي البصل والجزر والفلفل الرومي، واطهي مع التحريك حتى تبدأ الخضروات بالطرواة، نحو 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي الثوم والطماطم والكوريزو وورقة الغار واطهي نحو 4 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي العدس والماء؛ ينبغي أن يكون الماء أعلى من مستوى العدس بنحو بوصة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ارفعي المزيج إلى الغليان على حرارة عالية، ثم خففي النار واتركيه مكشوفًا حتى ينضج العدس بالكاد، من 15 إلى 20 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "المصدر يذكر الحصص 4–6؛ تُركت null لعدم تحديد مقدار أدق. أوقات التحضير والطهي من المصدر. تنتهي طريقة المصدر بعد طهي العدس دون خطوة تقديم صريحة؛ لم أضفها. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/lentejas.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 fc7e083873bf98ad43251a1210c7601b145a650229c17cebf3b81828264f3d9a.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-valencian-paella",
+      "name": "باييا بلنسية",
+      "nameEn": "Valencian Paella",
+      "cuisine": "إسباني",
+      "category": "طبق رئيسي",
+      "description": "باييا من منطقة بلنسية بالأرز واللحم والخضروات، كما يصفها المصدر.",
+      "servings": 4,
+      "prepTime": 20,
+      "cookTime": 60,
+      "totalTime": 80,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-valencian-paella-ing-1",
+          "name": "أرز بومبا",
+          "amount": 500,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-2",
+          "name": "دجاج تربية حرة مقطع",
+          "amount": 1,
+          "unit": "دجاجة",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-3",
+          "name": "أرنب مقطع",
+          "amount": 500,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-4",
+          "name": "فاصوليا خضراء عريضة",
+          "amount": 150,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-5",
+          "name": "فاصوليا بيضاء كبيرة",
+          "amount": 150,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-6",
+          "name": "طماطم ناضجة مبشورة",
+          "amount": 2,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-7",
+          "name": "بابريكا حلوة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-8",
+          "name": "خيوط زعفران",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A few saffron threads"
+        },
+        {
+          "id": "bc650-valencian-paella-ing-9",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 5,
+          "unit": "ملعقة كبيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-10",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt to taste"
+        },
+        {
+          "id": "bc650-valencian-paella-ing-11",
+          "name": "ماء",
+          "amount": 1.5,
+          "unit": "لتر",
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-12",
+          "name": "خرشوف مفروم (اختياري)",
+          "amount": 6,
+          "unit": "حبة",
+          "optional": true,
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-13",
+          "name": "حلزون منظف (اختياري)",
+          "amount": 500,
+          "unit": "جرام",
+          "optional": true,
+          "display": null
+        },
+        {
+          "id": "bc650-valencian-paella-ing-14",
+          "name": "إكليل الجبل الطازج (مقترح اختياري للطريقة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "a few sprigs of fresh rosemary؛ mentioned only in method"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني زيت الزيتون في مقلاة باييا على حرارة متوسطة إلى عالية. أضيفي قطع الدجاج والأرنب واقليهما حتى يذهبا إلى اللون الذهبي من جميع الجهات.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي الفاصوليا الخضراء والفاصوليا البيضاء وقلبيها مع اللحم بضع دقائق لتمتص النكهة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي الطماطم المبشورة واطهيها حتى تقل وينفصل الزيت.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "رشي البابريكا الحلوة وقلبي بحذر كي لا تحترق وتصبح مرة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اسكبي الماء الساخن واتركي المزيج يغلي، ثم اطهيه على حرارة متوسطة نحو 20 دقيقة ليكوّن مرقًا غنيًا.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "وزعي الأرز بالتساوي في المقلاة وأضيفي الزعفران واضبطي الملح إن احتاج.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اطهي على حرارة عالية 10 دقائق دون تحريك الأرز، ثم خففيها إلى متوسطة منخفضة 8–10 دقائق حتى يمتص الأرز المرق وينضج.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اختياري: ضعي أغصان إكليل الجبل فوق الأرز خلال الدقائق الأخيرة لإضافة الرائحة.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "ارفعي المقلاة عن النار وغطيها بقطعة قماش نظيفة واتركي الباييا ترتاح 5 دقائق قبل التقديم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "المقادير والحصص والأزمنة والهوية البلنسية الإسبانية موصوفة صراحة في المصدر. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/paella.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=5386dc5a39ec9cdfa5650eec2fc338fdb3b901d76d906292bee50997b26b2a18؛ التصنيف الإقليمي كما في مراجعة المصدر: إسباني (بلنسية)"
+    },
+    {
+      "id": "fiw650-51915",
+      "name": "باييّا إسبانية بالمأكولات البحرية",
+      "nameEn": "Paella for Four; A Wonderful Spanish Mixed Seafood Stew",
+      "cuisine": "إسباني",
+      "category": "أطباق رئيسية",
+      "description": "باييّا بالدجاج والمحار والروبيان والسجق والأرز قصير الحبة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "بابريكا مدخنة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "للتتبيلة",
+          "id": "fiw650-51915-i0",
+          "display": null
+        },
+        {
+          "name": "أوريغانو مجفف",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": "للتتبيلة",
+          "id": "fiw650-51915-i1",
+          "display": null
+        },
+        {
+          "name": "ملح كوشير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "رشة؛ المقدار غير معياري",
+          "id": "fiw650-51915-i2"
+        },
+        {
+          "name": "فلفل أسود مطحون طازجاً",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "رشة؛ المقدار غير معياري",
+          "id": "fiw650-51915-i3"
+        },
+        {
+          "name": "أجنحة دجاج",
+          "amount": 8,
+          "unit": "قطعة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51915-i4",
+          "display": null
+        },
+        {
+          "name": "محار صغير littleneck أو كبير (12 صغيراً أو 8 كبيراً)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "بديلان بالحجم والعدد كما بالمصدر؛ لا تحويل إلى مقدار واحد",
+          "id": "fiw650-51915-i5"
+        },
+        {
+          "name": "سجق تشوريزو صلب، 6–8 أونصات، مقطع إلى دوائر بسمك ربع بوصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "نطاق المصدر محفوظ نصاً",
+          "id": "fiw650-51915-i6"
+        },
+        {
+          "name": "روبيان (8 كبيرة أو 12 صغيرة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "بديلان بالحجم والعدد كما بالمصدر؛ لا تحويل إلى مقدار واحد",
+          "id": "fiw650-51915-i7"
+        },
+        {
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51915-i8",
+          "display": null
+        },
+        {
+          "name": "بصل أبيض مقشر ومقطع مكعبات",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51915-i9",
+          "display": null
+        },
+        {
+          "name": "فصوص ثوم كبيرة مقشرة ومقطعة",
+          "amount": 4,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51915-i10",
+          "display": null
+        },
+        {
+          "name": "أوراق بقدونس إيطالي مفرومة",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51915-i11",
+          "display": null
+        },
+        {
+          "name": "طماطم كاملة معلبة، مصفاة ومهروسة ومفرومة خشناً",
+          "amount": 1,
+          "unit": "علبة",
+          "scale": true,
+          "optional": false,
+          "note": "العبوة 14.5 أونصة كما بالمصدر",
+          "id": "fiw650-51915-i12",
+          "display": null
+        },
+        {
+          "name": "أرز إسباني قصير الحبة (La Bomba أو Arborio بديل)",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "يحفظ البديل كما بالمصدر",
+          "id": "fiw650-51915-i13",
+          "display": null
+        },
+        {
+          "name": "ماء ساخن",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51915-i14",
+          "display": null
+        },
+        {
+          "name": "زعفران",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "رشة؛ المقدار غير معياري",
+          "id": "fiw650-51915-i15"
+        },
+        {
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-51915-i16"
+        },
+        {
+          "name": "بازلاء خضراء مقشرة للتزيين",
+          "amount": 4,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51915-i17",
+          "display": null
+        },
+        {
+          "name": "أوتاد ليمون للتقديم (4–8)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "نطاق المصدر محفوظ نصاً",
+          "id": "fiw650-51915-i18"
+        }
+      ],
+      "steps": [
+        {
+          "text": "استخدم مقلاة ستانلس ستيل قطرها 12 بوصة أو ما يعادلها؛ لا يلزم استخدام مقلاة باييّا. اخلط التتبيلة وافركها بالدجاج، ثم برّده ساعة. أخرجه ليصبح بحرارة الغرفة 30 دقيقة قبل الطهو. سخّن نصف الزيت على حرارة متوسطة إلى عالية وحمّر دوائر السجق ثم ارفعها جانباً. أضف بقية الزيت وحمّر الدجاج من جميع الجهات ثم ارفعه. خفّض الحرارة إلى متوسطة وأضف البصل والثوم والبقدونس واطهها 2–3 دقائق؛ أضف الطماطم المصفاة المهروسة واطهها نحو 3 دقائق حتى تمتزج النكهات؛ هذه قاعدة السوڤريتو. أضف الأرز وحرّكه لتغطيه القاعدة نحو دقيقتين. أعد السجق والدجاج، واسكب الماء الساخن واتركه يغلي برفق نحو 5 دقائق مع التحريك أحياناً لترتيب القطع. ضع المحار في مواضع التقديم ولا تحرك بعد ذلك، واطهه 5 دقائق. ضع الروبيان وذيوله إلى الأعلى كما تريد أن يظهر في الطبق. اطه نحو 10 دقائق أو حتى ينفتح المحار ويحمر الروبيان ويصبح الأرز طرياً ورطباً دون أن يجف. افحص قاع الطبق بالشوكة؛ إذا تكوّنت قشرة خفيفة (سوكرات) فالطبق جاهز. إن لم تتكون، ارفع الحرارة 30–45 ثانية لتتشكل ثم قدّم فوراً.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "أرز",
+        "مأكولات بحرية",
+        "مطبخ إسباني"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/J76JJX3Q/paella-for-four-a-wonderful-spanish-mixed-seafood-stew — SHA-256: 2c4ad46a5ab95c091ea2a0a74535823bec745624f9e8b671b110eb3f32b382a2 — CC BY 3.0. الأعداد والبدائل والأزمنة ودرجة الحرارة محفوظة؛ لم يُفترض مردود من كلمة Four في العنوان."
+    },
+    {
+      "id": "fiw650-51981",
+      "name": "حساء غازباتشو إسباني",
+      "nameEn": "Spanish Gazpacho Soup",
+      "cuisine": "إسباني",
+      "category": "شوربات",
+      "description": "حساء خضار بارد مخلوط بالطماطم والخيار والفلفل والخبز وزيت الزيتون.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 4,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "طماطم ناضجة",
+          "amount": 1,
+          "unit": "كيلوغرام",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51981-i0",
+          "display": null
+        },
+        {
+          "name": "خيار بطول نحو 10–15 سم",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": false,
+          "optional": false,
+          "note": "الحجم التقريبي محفوظ؛ لا يتحجّم",
+          "id": "fiw650-51981-i1"
+        },
+        {
+          "name": "فلفل أخضر متوسط",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51981-i2",
+          "display": null
+        },
+        {
+          "name": "بصل صغير",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51981-i3",
+          "display": null
+        },
+        {
+          "name": "فص ثوم",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51981-i4",
+          "display": null
+        },
+        {
+          "name": "شرائح خبز صغيرة",
+          "amount": 2,
+          "unit": "شريحة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51981-i5",
+          "display": null
+        },
+        {
+          "name": "ماء",
+          "amount": 200,
+          "unit": "ملليلتر",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51981-i6",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون (يفضل البكر الممتاز)",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51981-i7",
+          "display": null
+        },
+        {
+          "name": "خل",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51981-i8",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-51981-i9"
+        }
+      ],
+      "steps": [
+        {
+          "text": "اختياري: اغْلِ قدراً من الماء. اصنع شقاً على شكل X في كل طماطم وضعها في الماء المغلي ثوانٍ قليلة. أخرجها واتركها تبرد (يمكن وضعها في ماء بارد)، ثم قطّعها وضعها في وعاء مع بقية الخضار. قطّع الخضار إلى قطع وضعها في محضرة الطعام أو وعاء كبير. إن أردت إبقاء قشر الطماطم فاقطعها مع بقية الخضار دون سلق. أضف الخبز والماء والثوم وزيت الزيتون والخل والملح والطماطم إذا لم تكن قد أضيفت. اخلط بمحضرة الطعام أو خلاط يدوي حتى يصبح الحساء ناعماً. برّده في الثلاجة ساعة على الأقل. يقدم في وعاء أو كأس مع مكعبات ثلج وخضار مفرومة ناعماً.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "طماطم",
+        "حساء بارد",
+        "مطبخ إسباني"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/J8FLJFS5/spanish-gazpacho-soup — SHA-256: 48a636202f3f4009a1ba41dbf73afa1f6aac3e23cd194c3bda570f5a850417bd — CC BY 3.0. المصدر يصرح بأربع حصص؛ التبريد ساعة على الأقل محفوظ في الطريقة."
+    },
+    {
+      "id": "fiw650-52387",
+      "name": "باييّا إسبانية نباتية",
+      "nameEn": "Vegan Spanish Paella",
+      "cuisine": "إسباني",
+      "category": "أطباق رئيسية",
+      "description": "أرز بسمتي مع مرق الخضار والفلفل والبازلاء والزعفران.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "أرز بسمتي منقوع 30 دقيقة",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "المصدر لا يحدد كمية ماء النقع",
+          "id": "fiw650-52387-i0",
+          "display": null
+        },
+        {
+          "name": "مرق خضار",
+          "amount": 2.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52387-i1",
+          "display": null
+        },
+        {
+          "name": "فلفل حلو صغير مشوي، أي لون",
+          "amount": 6,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52387-i2",
+          "display": null
+        },
+        {
+          "name": "فلفل كوبانيلي مشوي",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52387-i3",
+          "display": null
+        },
+        {
+          "name": "بازلاء خضراء طازجة أو مجمدة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "يحفظ البديل",
+          "id": "fiw650-52387-i4",
+          "display": null
+        },
+        {
+          "name": "زعفران منقوع في ماء دافئ 30 دقيقة",
+          "amount": 1,
+          "unit": "رشة",
+          "scale": false,
+          "optional": false,
+          "note": "المقدار غير معياري",
+          "id": "fiw650-52387-i5"
+        },
+        {
+          "name": "بصل شرائح طولية",
+          "amount": 1,
+          "unit": "حبة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52387-i6",
+          "display": null
+        },
+        {
+          "name": "فلفل أخضر حار مشقوق طولياً",
+          "amount": 4,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52387-i7",
+          "display": null
+        },
+        {
+          "name": "فلفل مجروش",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52387-i8",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52387-i9",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-52387-i10"
+        },
+        {
+          "name": "ماء دافئ لنقع الزعفران",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "مذكور في سطر الزعفران بالمصدر؛ النقع 30 دقيقة",
+          "id": "fiw650-52387-i11",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "سخّن الزيت في مقلاة عميقة سميكة القاع وأضف البصل. شوّحه حتى يتحمر. أضف الفلفل الأخضر الحار والفلفل المجروش واقلهما بضع دقائق. اسكب مرق الخضار وماء الزعفران المنقوع واتركهما يغليان، ثم أضف الملح وحرّك. صفِّ ماء الأرز تماماً وأضفه إلى المقلاة. أضف الفلفل المشوي أو المقطع الطازج (استخدم كاتب الوصفة الفلفل المشوي بالفرن) والبازلاء. تحقق من الملح واطه بغطاء مغلق 7–8 دقائق على نار منخفضة إلى متوسطة. قدّم فوراً.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "أرز",
+        "نباتي",
+        "مطبخ إسباني"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JKBGWG4B/vegan-spanish-paella — SHA-256: 72ad73cb420eb0737833d1d6a486f89de9d10f12f0150735086f1a796ef395b3 — CC BY 3.0. طريقة التحميص تحفظ خيار الفلفل المشوي أو الطازج الوارد؛ لا مردود مذكور."
+    },
+    {
+      "id": "fiw650-50319",
+      "name": "سلطة حمضيات إسبانية ملوّنة",
+      "nameEn": "Colorful Citrus Spanish Salad",
+      "cuisine": "إسباني",
+      "category": "سلطات",
+      "description": "سلطة جرجير وماندرين وفجل وزيتون مع تتبيلة العسل والحمضيات.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "جرجير ممزق",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i0",
+          "display": null
+        },
+        {
+          "name": "فصوص يوسفي",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i1",
+          "display": null
+        },
+        {
+          "name": "فجل شرائح رفيعة",
+          "amount": 8,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i2",
+          "display": null
+        },
+        {
+          "name": "زيتون أسود منزوع النوى ومشقوق نصفين",
+          "amount": 10,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i3",
+          "display": null
+        },
+        {
+          "name": "عصير برتقال",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i4",
+          "display": null
+        },
+        {
+          "name": "عصير ليمون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i5",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i6",
+          "display": null
+        },
+        {
+          "name": "عسل",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i7",
+          "display": null
+        },
+        {
+          "name": "قرفة",
+          "amount": 0.125,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i8",
+          "display": null
+        },
+        {
+          "name": "فلفل حريف",
+          "amount": 0.125,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50319-i9",
+          "display": null
+        },
+        {
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-50319-i10"
+        }
+      ],
+      "steps": [
+        {
+          "text": "اخفق في وعاء عصير البرتقال والليمون وزيت الزيتون والعسل والقرفة والفلفل الحريف. أضف الملح والفلفل حسب الذوق. اسكب التتبيلة في وعاء يمكن رجّه واتركها 20 دقيقة على الأقل. في وعاء تقديم كبير افرد الجرجير بطبقة واحدة، ثم ضع طبقة البرتقال، تليها الفجل، ثم الزيتون فوقها. قبل التقديم أضف بعض التتبيلة وقلّب السلطة؛ قدّمها مع بقية التتبيلة جانباً.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "سلطة",
+        "حمضيات",
+        "مطبخ إسباني"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/H77LPFWL/colorful-citrus-spanish-salad — SHA-256 للاستخراج: 73f5ec3869f096e01bcacf2ba77920a27d4a48c001b5189f8716334e1a69d462 — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-52762",
+      "name": "فيليه سلمون على الطريقة الإسبانية",
+      "nameEn": "Spanish style salmon fillets",
+      "cuisine": "إسباني",
+      "category": "أطباق رئيسية",
+      "description": "سلمون يخبز مع الخبز المحمص والزيتون والبصل والفلفل والبابريكا المدخنة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "مكعبات خبز محمصة",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52762-i0",
+          "display": null
+        },
+        {
+          "name": "زيتون أخضر منزوع النوى",
+          "amount": 0.75,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52762-i1",
+          "display": null
+        },
+        {
+          "name": "بصل أحمر مقطع أرباعاً",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52762-i2",
+          "display": null
+        },
+        {
+          "name": "فلفل أحمر حلو منزوع البذور ومقطع شرائح سميكة",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52762-i3",
+          "display": null
+        },
+        {
+          "name": "بابريكا مدخنة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52762-i4",
+          "display": null
+        },
+        {
+          "name": "ملح بحري خشن",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": "المقدار الأصلي: 1 + ½",
+          "id": "fiw650-52762-i5",
+          "display": null
+        },
+        {
+          "name": "فلفل أسود مطحون",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": "المقدار الأصلي: 1 + ½",
+          "id": "fiw650-52762-i6",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون",
+          "amount": 5,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52762-i7",
+          "display": null
+        },
+        {
+          "name": "فيليه سلمون",
+          "amount": 200,
+          "unit": "جرام",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52762-i8",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "ضع مكعبات الخبز والزيتون والبصل والفلفل في صينية فرن. أضف البابريكا والملح والفلفل وثلاث ملاعق كبيرة من زيت الزيتون وقلّب حتى تتغطى المكونات. اخبزها عند 200°C مدة 15 دقيقة. ادهن السلمون بملعقتي زيت الزيتون المتبقيتين وتبّله بالملح والفلفل المتبقيين. رتبه بين الخضار ومكعبات الخبز في الصينية واخبزه 10–15 دقيقة أو حتى ينضج.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "سلمون"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JS5W8D53/spanish-style-salmon-fillets — SHA-256 للاستخراج: 37e29678c73971523e86657bb137188c38b87d00f90053e694e491f4a72eef42 — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-53456",
+      "name": "حساء غازباتشو إسباني نيئ مع خبز بالجبن النباتي",
+      "nameEn": "Spanish Gazpacho Soup In The Raw With Broiled Cheese Toast",
+      "cuisine": "إسباني",
+      "category": "شوربات",
+      "description": "غازباتشو من الطماطم والخيار والفلفل يخلط ويبرد، مع خبز محمص ببديل جبن نباتي.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 1,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "طماطم ناضجة على العرنوس منزوعة القلب",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i0",
+          "display": null
+        },
+        {
+          "name": "طماطم عنبية",
+          "amount": 1.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i1",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i2",
+          "display": null
+        },
+        {
+          "name": "خيار إنجليزي مقشر ومنزوع البذور",
+          "amount": 0.75,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i3",
+          "display": null
+        },
+        {
+          "name": "فتات خبز بانكو",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i4",
+          "display": null
+        },
+        {
+          "name": "فلفل برتقالي حلو مكعبات",
+          "amount": 0.25,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i5",
+          "display": null
+        },
+        {
+          "name": "بصل أحمر مكعبات",
+          "amount": 0.5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i6",
+          "display": null
+        },
+        {
+          "name": "ثوم",
+          "amount": 3,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i7",
+          "display": null
+        },
+        {
+          "name": "ماء",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i8",
+          "display": null
+        },
+        {
+          "name": "ملح بحري ناعم",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i9",
+          "display": null
+        },
+        {
+          "name": "خل تفاح",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i10",
+          "display": null
+        },
+        {
+          "name": "خبز جاودار",
+          "amount": 2,
+          "unit": "شريحة",
+          "scale": true,
+          "optional": false,
+          "note": "للخبز المحمص",
+          "id": "fiw650-53456-i11",
+          "display": null
+        },
+        {
+          "name": "فتات شيدر نباتي Daiya",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i12",
+          "display": null
+        },
+        {
+          "name": "بقدونس مجفف",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i13",
+          "display": null
+        },
+        {
+          "name": "ملح للخبز",
+          "amount": 0.125,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53456-i14",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "لحساء الغازباتشو، ضع كل المكونات في خلاط وامزج حتى تنعم نحو 3 دقائق. برّد ساعة إلى ساعتين قبل التقديم. زيّن ببصل مقرمش وبقدونس مفروم أو مجفف. لتحضير الخبز، ضع رف الفرن ثاني أعلى موضع وشغّل الشواية. رتب شرائح الخبز في صينية واقسم بديل الجبن بينهما. رش البقدونس والملح وضعها تحت الشواية حتى يتحمر السطح ويذوب البديل. اتركه يبرد قليلاً ثم اقطع كل شريحة إلى نصفين.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "غازباتشو",
+        "طماطم"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/K7VQ8VNM/spanish-gazpacho-soup-in-the-raw-with-broiled-cheese-toast — SHA-256: 367fe45f07a29830dcd58af2bdfcb0413e1eeb146d30c5df96ab7ab934a6eea7 — تمت الترجمة مع حفظ المقادير والبدائل وتسلسل الخطوات؛ لا اعتماد تشغيلي أو اختبار مطبخي."
+    },
+    {
+      "id": "fiw650-55173",
+      "name": "بيتزا إسبانية في المقلاة",
+      "nameEn": "Spanish Pan Pizza",
+      "cuisine": "إسباني",
+      "category": "أطباق رئيسية",
+      "description": "بيتزا عجين مخمر مع صلصة فلفل محمص وفطر شيري وشوريزو مانشيغو وزيتون.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "خميرة جافة فعالة",
+          "amount": 0.25,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": "عبوة واحدة",
+          "id": "fiw650-55173-i0",
+          "display": null
+        },
+        {
+          "name": "دقيق خبز",
+          "amount": 1.75,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "حتى كوبين",
+          "id": "fiw650-55173-i1",
+          "display": null
+        },
+        {
+          "name": "ماء دافئ 105–110°F",
+          "amount": 0.75,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i2",
+          "display": null
+        },
+        {
+          "name": "ملح كوشير",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i3",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون للعجين",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i4",
+          "display": null
+        },
+        {
+          "name": "صلصة طماطم",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "للصلصة",
+          "id": "fiw650-55173-i5",
+          "display": null
+        },
+        {
+          "name": "فلفل أحمر حلو مشوي",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i6",
+          "display": null
+        },
+        {
+          "name": "مسحوق ثوم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i7",
+          "display": null
+        },
+        {
+          "name": "بابريكا مدخنة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i8",
+          "display": null
+        },
+        {
+          "name": "فلفل أحمر مجروش",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i9",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون للتغطية",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i10",
+          "display": null
+        },
+        {
+          "name": "فطر أبيض شرائح رقيقة",
+          "amount": 4,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i11",
+          "display": null
+        },
+        {
+          "name": "شيري جاف",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i12",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": 1,
+          "unit": "رشة",
+          "scale": false,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i13"
+        },
+        {
+          "name": "جبن موزاريلا مبشور أو شرائح",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i14",
+          "display": null
+        },
+        {
+          "name": "جبن مانشيغو مبشور",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i15",
+          "display": null
+        },
+        {
+          "name": "شوريزو إسباني شرائح رقيقة",
+          "amount": 3,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i16",
+          "display": null
+        },
+        {
+          "name": "زيتون مانزانيلا أخضر محشو فلفلاً",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55173-i17",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "للعجين، اخلط الخميرة مع ملعقة كبيرة من الدقيق وربع كوب ماء دافئ واتركها خمس دقائق أو حتى تظهر رغوة. أضف بقية الماء والملح، ثم أضف الدقيق نصف كوب في كل مرة حتى تنفصل العجينة عن جوانب الوعاء. اعجنها على سطح مرشوش بالدقيق حتى تصبح لينة وناعمة ومطاطية. غطها بقماش واتركها في مكان دافئ حتى يتضاعف حجمها، نحو ساعة. اسكب ملعقتي الزيت في مقلاة حديد قطرها 10 أو 10½ بوصات واضغط العجين برفق ليمتد إلى الحواف، ثم غطه واتركه في مكان دافئ ساعتين. للصلصة، اطحن كل مكوناتها في محضرة طعام صغيرة نحو 30 ثانية حتى تنعم واتركها جانباً. سخّن الفرن إلى 550°F. شوّح الفطر في ملعقة الزيت على نار متوسطة مرتفعة 2–3 دقائق حتى يحمر قليلاً. ارفع النار وأضف الشيري والملح واطه 1–2 دقيقة حتى يتبخر الشيري. اضغط العجين لتحرير فقاعات الهواء ومده إلى حافة المقلاة، ثم وزع الصلصة. أضف الموزاريلا والفطر والشوريزو والزيتون والمانشيغو. اخبز 15 دقيقة أو حتى يتحمر أسفل العجين ويذوب الجبن ويحمر قليلاً. انقل البيتزا إلى لوح وقطّعها 6–8 شرائح.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "بيتزا",
+        "مانشيغو"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/LF6MVYRN/spanish-pan-pizza — SHA-256: fc02c4bf2e2a45655f8f59bf1d32b157259701c05e0973da0cd207c2becb2e17 — تمت الترجمة مع حفظ المقادير والبدائل وتسلسل الخطوات؛ لا اعتماد تشغيلي أو اختبار مطبخي."
+    },
+    {
+      "id": "fiw650-55622",
+      "name": "يخنة إسبانية بالحمص والسبانخ",
+      "nameEn": "Spanish Chickpea and Spinach Stew",
+      "cuisine": "إسباني",
+      "category": "أطباق رئيسية",
+      "description": "حمص وسبانخ في مرق مع بابريكا إسبانية وزعفران وخليط ثوم وخبز مهروس.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "حمص معلب مصفى ومغسول",
+          "amount": 2,
+          "unit": "علبتان (15 أونصة لكل منهما)",
+          "scale": false,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55622-i0"
+        },
+        {
+          "name": "مرق دجاج أو خضار",
+          "amount": 4,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "بديلان",
+          "id": "fiw650-55622-i1",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55622-i2",
+          "display": null
+        },
+        {
+          "name": "ثوم مقشر",
+          "amount": 6,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55622-i3",
+          "display": null
+        },
+        {
+          "name": "خبز أبيض منزوع القشرة",
+          "amount": 3,
+          "unit": "شريحة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55622-i4",
+          "display": null
+        },
+        {
+          "name": "بابريكا إسبانية",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55622-i5",
+          "display": null
+        },
+        {
+          "name": "خيوط زعفران أو أزافران",
+          "amount": 1,
+          "unit": "رشة",
+          "scale": false,
+          "optional": false,
+          "note": "أو ربع ملعقة صغيرة من Azafran",
+          "id": "fiw650-55622-i6"
+        },
+        {
+          "name": "خل شيري إسباني",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55622-i7",
+          "display": null
+        },
+        {
+          "name": "سبانخ أو أوراق سلق مفرومة ومغسولة",
+          "amount": 0.5,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": "بديلان",
+          "id": "fiw650-55622-i8",
+          "display": null
+        },
+        {
+          "name": "كمون مطحون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-55622-i9",
+          "display": null
+        },
+        {
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-55622-i10"
+        }
+      ],
+      "steps": [
+        {
+          "text": "ضع الحمص والمرق في قدر واتركهما على نار هادئة متوسطة منخفضة. في مقلاة شوّح الثوم في زيت الزيتون على نار متوسطة حتى يصبح بنيّاً فاتحاً. أخرج الثوم وأضف الخبز واطهه حتى يتحمر قليلاً، ثم ارفع المقلاة واتركها تبرد قليلاً. وهي بعيداً عن النار أضف البابريكا والزعفران إلى الزيت المتبقي، وأضف الخل فوراً كي لا تحترق البابريكا. قلّب واتركه جانباً. اهرس الثوم والخبز في هاون ومدقة حتى يصبحا عجينة. أضف الكمون إلى خليط البابريكا والثوم وامزج. أضف السبانخ أو السلق إلى الحمص واتركه دقيقة أو اثنتين حتى يذبل، ثم أضف خليط البابريكا والثوم واطه مع التحريك دقيقة إلى دقيقتين. تبّل بالملح والفلفل واسكب في أوعية. يصف المصدر اليخنة بأنها كثيفة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "حمص",
+        "سبانخ"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/LPGP2L7Q/spanish-chickpea-spinach-stew — SHA-256: 7524d35aac1a1b1f2d241d5de5b88e0805c3e512902f6d2f1a6507eb0d098553 — تمت الترجمة مع حفظ المقادير والبدائل وتسلسل الخطوات؛ لا اعتماد تشغيلي أو اختبار مطبخي."
+    },
+    {
+      "id": "bc650-pulpo-gallega",
+      "name": "بولبو آ لا غاييغا، أخطبوط غاليسيا",
+      "nameEn": "Pulpo a la gallega",
+      "cuisine": "إسباني",
+      "category": "طبق رئيسي",
+      "description": "أخطبوط مسلوق يقدم فوق شرائح البطاطا مع الملح والفلفل الأحمر الحلو والحار وزيت الزيتون.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pulpo-gallega-ing-1",
+          "name": "أخطبوط واحد، 1.7–2 كجم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 octopus (1.7 to 2kg)"
+        },
+        {
+          "id": "bc650-pulpo-gallega-ing-2",
+          "name": "بطاطا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Potatoes"
+        },
+        {
+          "id": "bc650-pulpo-gallega-ing-3",
+          "name": "ورقتا غار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 bay leaves"
+        },
+        {
+          "id": "bc650-pulpo-gallega-ing-4",
+          "name": "فلفل أحمر حلو وحار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sweet and spicy red pepper"
+        },
+        {
+          "id": "bc650-pulpo-gallega-ing-5",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt"
+        },
+        {
+          "id": "bc650-pulpo-gallega-ing-6",
+          "name": "زيت",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "oil"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغْلِ الماء مع الملح وورق الغار.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "عندما يغلي الماء أدخل الأخطبوط وأخرجه ثلاث مرات، ثم اتركه يطهى 35–40 دقيقة. اثقبه للتحقق من طراوته؛ إن لم يطر فأبقِه مدة أطول.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أطفئ النار واترك الأخطبوط يرتاح 20 دقيقة أخرى في الماء نفسه. في هذه الأثناء اسلق البطاطا بقشرها نحو 25 دقيقة بحسب حجمها.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أخرج الأخطبوط من الماء واتركه يبرد، ثم قطّعه شرائح بالمقص.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "لترتيب الطبق قطّع البطاطا شرائح وضعها في أسفل الطبق، وفوقها شرائح الأخطبوط. تبّل بالملح والفلفل الأحمر الحلو والحار واسكب كمية جيدة من زيت الزيتون.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pulpo-gallega.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=f2877a2f6098c141535050d895ac837e70301de6b43f3a744335f045fc5d1ad1"
+    },
+    {
+      "id": "bc650-spanish-tortilla",
+      "name": "تورتيّا إسبانية بالبطاطا",
+      "nameEn": "Spanish Tortilla",
+      "cuisine": "إسباني",
+      "category": "طبق رئيسي",
+      "description": "قرص من البيض المخفوق مع شرائح البطاطا والبصل المقلي بزيت الزيتون، يطهى على الجانبين في المقلاة.",
+      "servings": 6,
+      "prepTime": 5,
+      "cookTime": 35,
+      "totalTime": 40,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-spanish-tortilla-ing-1",
+          "name": "بيض بلدي، 8",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "8 free-range eggs"
+        },
+        {
+          "id": "bc650-spanish-tortilla-ing-2",
+          "name": "بطاطا، 1 كجم",
+          "amount": 1,
+          "unit": "كيلو",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spanish-tortilla-ing-3",
+          "name": "بصلة بيضاء واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 white onion"
+        },
+        {
+          "id": "bc650-spanish-tortilla-ing-4",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Extra virgin olive oil"
+        },
+        {
+          "id": "bc650-spanish-tortilla-ing-5",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cut the potatoes into thin slices. Put in a bowl, add salt to taste and stir."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قشّر البطاطا واشطفها وجففها.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع البطاطا شرائح رفيعة، وضعها في وعاء وأضف الملح حسب الذوق وقلّب.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ضع مقلاة غير لاصقة على النار وأضف زيت زيتون يكفي لقلي كل شرائح البطاطا.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف البطاطا المملحة واطهها نحو 20 دقيقة على حرارة منخفضة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أثناء قلي البطاطا اخفق البيض في وعاء، وقشّر البصل وقطّعه ناعماً قدر الإمكان.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف زيت الزيتون إلى مقلاة أخرى واقل البصل ببطء حتى يكتسب لوناً ذهبياً خفيفاً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "صفِّ البصل وأضفه إلى وعاء البيض المخفوق.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أخرج البطاطا بملعقة مثقبة مع تصفية الزيت قدر الإمكان ثم أضفها إلى البيض والبصل.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اترك الخليط يرتاح 5 دقائق على الأقل حتى تمتزج النكهات، وحرّكه بلطف من حين لآخر.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "أزل الزيت من المقلاة التي قليت فيها البطاطا. اطه الخليط في المقلاة على حرارة متوسطة إلى عالية نحو 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "اقلب التورتيّا بمساعدة طبق كبير واطه الجانب الآخر 5 دقائق أخرى. يعتمد تقطيع البطاطا وكمية الملح ومدى تماسك الوسط على الذوق كما يذكر المصدر.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 35 min ؛ - 🍽️ Servings: 6. المصدر يذكر 5 دقائق للتحضير و35 دقيقة للطهي و6 حصص. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spanish-tortilla.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=22c7ba1ae36259fb3c7c1543087f1511ed0a0a211e2d3b0313665ded9ffc367c"
+    },
+    {
+      "id": "bc650-apple-chicken",
+      "name": "دجاج مخبوز بالتفاح",
+      "nameEn": "Apple Chicken",
+      "cuisine": "إسباني",
+      "category": "طبق رئيسي",
+      "description": "دجاج مخبوز مع التفاح والبصل، يقدم مع البطاطا المهروسة بالكريمة أو الكريمة الطازجة.",
+      "servings": 4,
+      "prepTime": 10,
+      "cookTime": 40,
+      "totalTime": 50,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-apple-chicken-ing-1",
+          "name": "صدر دجاج أو قطعة دجاج مماثلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chicken breast or similar."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-2",
+          "name": "بصل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Onions."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-3",
+          "name": "جوزة الطيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Nuez moscada."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-4",
+          "name": "تفاح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Apples."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-5",
+          "name": "بطاطا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Potatoes."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-6",
+          "name": "كريمة أو كريمة طازجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cream or creme fraiche."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-7",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-8",
+          "name": "فلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pepper."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-9",
+          "name": "كأس نبيذ (33 سنتيلتر) أو كونياك",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "One glass (33c) of wine or cognac."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-10",
+          "name": "زبدة لحشو التفاح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "fill with nuez moscada and butter."
+        },
+        {
+          "id": "bc650-apple-chicken-ing-11",
+          "name": "حليب للبطاطا المهروسة (اختياري بديل الكريمة الطازجة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "mush them with a fork and add milk or creme fraiche."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 200°م وجهّز صينية فرن.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلط الدجاج بجوزة الطيب والملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أزل قلب التفاح واحشُه بجوزة الطيب والزبدة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع الدجاج في صينية الفرن، ثم أضف البصل والتفاح. تبّل بالملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اخبز 40 دقيقة. أثناء ذلك حضّر البطاطا المهروسة: اسلق البطاطا بقشرها حتى تلين، ثم قشّرها واهرِسها بالشوكة وأضف الحليب أو الكريمة الطازجة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف النبيذ أو الكونياك إلى الصينية واطه حتى ينضج الدجاج تماماً.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 40 min ؛ - 🍽️ Servings: 4. يذكر المصدر 10 دقائق تحضير و40 دقيقة طهي و4 حصص. المصدر يكرر وضع الدجاج بالصينية، وقد جُمعت التعليمات دون تغيير معناها. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/apple-chicken.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e292dee64a9b24032e9e3363607a9eaa0cdf01c13830333326c772c5c659c36d"
     }
   ]
 }

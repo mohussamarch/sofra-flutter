@@ -1,0 +1,2501 @@
+{
+  "cuisine": "أمريكي",
+  "cuisineSlug": "american",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "bc650-chicken-wings",
+      "name": "أجنحة دجاج",
+      "nameEn": "Chicken Wings",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "أجنحة تنقع في صلصة حارة وتطهى بكيس فرن ثم تشوى.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicken-wings-ing-1",
+          "name": "أجنحة وأفخاذ دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chicken wings and drums"
+        },
+        {
+          "id": "bc650-chicken-wings-ing-2",
+          "name": "صلصة فلفل حار للتتبيل والتغطية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Enough Frank's RedHot Sauce to marinate and top dress*"
+        },
+        {
+          "id": "bc650-chicken-wings-ing-3",
+          "name": "كيس فرن Reynolds",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Reynold's Oven Bag"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "انقعي الأجنحة طوال الليل في صلصة Frank’s RedHot، وليس نوع صلصة الأجنحة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني الفرن إلى 350°F. ضعي الأجنحة في كيس فرن محكم واخبزيها ساعة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "سخني الشواية واشوي الأجنحة حتى يتحمر الجلد، ثم ادهنيها بقليل من الصلصة. يقول المصدر إن المقلاة قد تصلح بديلًا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-wings.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=142a714393ad1bf05ae4bb8664927902f984845dea700f137b456c746ec7b278"
+    },
+    {
+      "id": "bc650-baby-back-ribs",
+      "name": "أضلاع خنزير مدخنة بالعسل",
+      "nameEn": "Baby Back Ribs",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "أضلاع تُدخّن على مرحلتين، ثم تُلمّع بصلصة الشواء والعسل.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-baby-back-ribs-ing-1",
+          "name": "خشب تفاح أو خشب حلو آخر للتدخين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Applewood (or other sweet cooking wood such as cherry or maple)"
+        },
+        {
+          "id": "bc650-baby-back-ribs-ing-2",
+          "name": "رفّان من أضلاع ظهر الخنزير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 baby back rib racks"
+        },
+        {
+          "id": "bc650-baby-back-ribs-ing-3",
+          "name": "خلطة توابل للشواء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 container of barbecue rub ([Traeger Pork and Poultry Rub](https://www.traeger.com/rubs-spices/pork-poultry) is recommended)"
+        },
+        {
+          "id": "bc650-baby-back-ribs-ing-4",
+          "name": "رقائق ألمنيوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tin foil"
+        },
+        {
+          "id": "bc650-baby-back-ribs-ing-5",
+          "name": "سكر بني",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Bag of brown sugar"
+        },
+        {
+          "id": "bc650-baby-back-ribs-ing-6",
+          "name": "عسل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Bottle of honey"
+        },
+        {
+          "id": "bc650-baby-back-ribs-ing-7",
+          "name": "صلصة شواء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Barbecue Sauce"
+        },
+        {
+          "id": "bc650-baby-back-ribs-ing-8",
+          "name": "زبدة (اختيارية)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "(Optional) A stick of butter"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن المدخّن إلى 180°F باستخدام خشب التفاح.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "انزع الغشاء الخلفي عن الأضلاع إن لم يكن الجزار قد أزاله.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "غطّ جانبي الأضلاع بسخاء بخلطة الشواء واتركها في حرارة الغرفة 30 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع الأضلاع على المدخّن والعظم إلى الأسفل، ودخّنها عند 180°F مدة 3 ساعات.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع اللحم فوق طبقتين من ورق الألمنيوم، وأضف السكر البني والعسل بسخاء على الجانبين ورشة من خلطة التوابل؛ ويمكن وضع شرائح زبدة على جهة اللحم.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "لفّ الأضلاع بالورق وأعدها إلى المدخّن عند 225°F مدة ساعتين.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أخرجها من الورق وأعدها إلى المدخّن والعظم إلى الأسفل.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "ادهنها بصلصة الشواء كل 30 دقيقة خلال الساعة التالية.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "أخرجها وغطّها بالألمنيوم واتركها ترتاح 10–30 دقيقة قبل التقديم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/baby-back-ribs.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3611f3d2b41a1bd7a756fd68966f2c4763922fd2347aaf43293537d12fae6e3e"
+    },
+    {
+      "id": "bc650-beef-tips",
+      "name": "مكعبات لحم بقر بمرق فوق بطاطا مهروسة بالقشدة",
+      "nameEn": "Beef Tips in Gravy on Sour Cream Mashed Potatoes",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "قطع لحم تُحمّر وتُطهى في قدر ضغط ثم تُقدّم بمرق كثيف فوق بطاطا بالقشدة الحامضة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-beef-tips-ing-1",
+          "name": "قطعة لحم قليلة الدهن وقاسية مثل الستيك المستدير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Any lean, tough cut of meat (ex. round steak)"
+        },
+        {
+          "id": "bc650-beef-tips-ing-2",
+          "name": "دهن حيواني غير مصنع مثل شحم البقر أو دهن الضأن",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Unprocessed animal fat of some kind (ex. beef suet, mutton fat)"
+        },
+        {
+          "id": "bc650-beef-tips-ing-3",
+          "name": "بطاطا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Potatoes"
+        },
+        {
+          "id": "bc650-beef-tips-ing-4",
+          "name": "قشدة حامضة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sour cream"
+        },
+        {
+          "id": "bc650-beef-tips-ing-5",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter"
+        },
+        {
+          "id": "bc650-beef-tips-ing-6",
+          "name": "حليب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Milk"
+        },
+        {
+          "id": "bc650-beef-tips-ing-7",
+          "name": "جبن مبشور حسب الاختيار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Shredded cheese of your choice"
+        },
+        {
+          "id": "bc650-beef-tips-ing-8",
+          "name": "كمية قليلة من الدقيق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Small amount of flour"
+        },
+        {
+          "id": "bc650-beef-tips-ing-9",
+          "name": "مرق لحم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Beef bouillon (optional)"
+        },
+        {
+          "id": "bc650-beef-tips-ing-10",
+          "name": "نبيذ أحمر (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Red wine (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "للمرق: سخّن قدر الضغط بغطاء مفتوح أو على وضع التشويح.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع الدهن مكعبات أو شرائط صغيرة متساوية وابدأ بتشويحها في القدر.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطّع اللحم مكعبات متوسطة وأضفه إلى الدهن.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اختياري: أضف نحو ملعقة صغيرة من مرق اللحم إذا لم تستخدم النبيذ أو كانت كمية اللحم قليلة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "تبّل بسخاء بالملح والفلفل، وأضف رشة صغيرة جداً من مسحوق الثوم.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "بعد تحمير اللحم وتكوّن طبقة بنية في القاع، أزلها بقليل من الماء الساخن أو النبيذ الأحمر.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أغلق القدر واطه اللحم على نار منخفضة نحو 30 دقيقة بينما تحضّر البطاطا.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "بعد نصف ساعة نفّس القدر وافتحه وأعده إلى نار منخفضة.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "أضف ماء ساخناً حتى يزيد السائل قليلاً على كمية المرق المرغوبة واتركه يغلي.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "اخلط الدقيق بقليل من الماء الدافئ حتى يصير سائلاً خفيفاً.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "أضف خليط الدقيق ببطء مع التحريك المستمر حتى يثخن المرق؛ أوقف الإضافة عند القوام المطلوب كي لا يثخن أكثر من اللازم.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "أطفئ النار وقدّم اللحم فوق البطاطا المهروسة بالقشدة الحامضة.",
+          "duration": null
+        },
+        {
+          "n": 13,
+          "text": "للبطاطا: قشّر البطاطا وقطّعها، واسلقها في ماء مملح قليلاً حتى تتفتت بالشوكة.",
+          "duration": null
+        },
+        {
+          "n": 14,
+          "text": "صفِّ الماء واهرِس البطاطا إلى القوام المرغوب.",
+          "duration": null
+        },
+        {
+          "n": 15,
+          "text": "أضف الزبدة والجبن المبشور وهي دافئة وحرّك.",
+          "duration": null
+        },
+        {
+          "n": 16,
+          "text": "أضف قليلاً من الحليب ثم القشدة الحامضة تدريجياً مع الخلط حتى تبلغ القوام المطلوب.",
+          "duration": null
+        },
+        {
+          "n": 17,
+          "text": "قدّم اللحم ومرقه فوق البطاطا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/beef-tips.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=b086f8dc2f39f724be4ba87fde1ffe0d4f3fa28ab7317345ca669ca115096299"
+    },
+    {
+      "id": "bc650-stroganoff",
+      "name": "ستروغانوف لحم البقر",
+      "nameEn": "Beef Stroganoff",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "شرائح لحم بقر مع البصل ومرق الدجاج وصلصة خردل وورشيسترشاير فوق معكرونة البيض.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-stroganoff-ing-1",
+          "name": "لحم بقر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "beef"
+        },
+        {
+          "id": "bc650-stroganoff-ing-2",
+          "name": "مرق دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "[chicken stock](/chicken-stock-bone-broth)"
+        },
+        {
+          "id": "bc650-stroganoff-ing-3",
+          "name": "بصل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "onions"
+        },
+        {
+          "id": "bc650-stroganoff-ing-4",
+          "name": "دقيق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "flour"
+        },
+        {
+          "id": "bc650-stroganoff-ing-5",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "butter"
+        },
+        {
+          "id": "bc650-stroganoff-ing-6",
+          "name": "صلصة ورشيسترشاير أو ما يشبهها",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Worchestershire sauce or something similar"
+        },
+        {
+          "id": "bc650-stroganoff-ing-7",
+          "name": "خردل ديجون أو ديجون بالعسل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "dijon or honey dijon mustard"
+        },
+        {
+          "id": "bc650-stroganoff-ing-8",
+          "name": "معكرونة بيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "egg noodles"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع بصلة إلى مكعبات.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع اللحم إلى شرائح بحجم لقمة. ويمكن استخدام اللحم المفروم، وإن لم يكن تقليدياً، إذا شكلته شرائح متقاربة الحجم.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "تبّل اللحم بملح كوشير وفلفل مطحون طازج أو أي توابل مرغوبة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "سخّن مقلاة على نار عالية مع الزبدة أو زيت الزيتون، واطه البصل حتى يوشك أن يصبح شفافاً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف شرائح اللحم تدريجياً واطهها مع التحريك لمنع الالتصاق أو عدم تساوي الطهي.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "في الأثناء اغْلِ قدراً من الماء المملح جيداً، وأضف معكرونة البيض. لا تفرط في طهيها كي لا تتفتت.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "بعد نضج اللحم اسكب السائل الذي أخرجه.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف مرق الدجاج إلى المقلاة وواصل الطهي.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "حضّر رو (اخلط قليلاً من الدقيق بالماء أو بالزبدة المذابة) وامزجه مع اللحم والمرق حتى يثخن للقوام المرغوب.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "أضف صلصة ورشيسترشاير وخردل ديجون حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "قدّم المعكرونة في طبق وعليها صلصة اللحم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/stroganoff.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=00ffe03af644fe8445beacb48d7fa59227960c4c3223232935651eb3ea36b017"
+    },
+    {
+      "id": "bc650-bean-salad",
+      "name": "سلطة الفاصولياء الثلاثية",
+      "nameEn": "Three Bean Salad",
+      "cuisine": "أمريكي",
+      "category": "سلطة",
+      "description": "سلطة فاصولياء خضراء وصفراء وحمراء مع جزر وبصل وفلفل وصلصة خل حلوة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-bean-salad-ing-1",
+          "name": "زيت سلطة (زيت زيتون أو كانولا أو دوار الشمس)، ثلث كوب",
+          "amount": 0.3333333333333333,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-bean-salad-ing-2",
+          "name": "خل تفاح، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-bean-salad-ing-3",
+          "name": "ملح، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-bean-salad-ing-4",
+          "name": "فلفل، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-bean-salad-ing-5",
+          "name": "سكر، ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-bean-salad-ing-6",
+          "name": "بذور كرفس، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-bean-salad-ing-7",
+          "name": "علبة فاصولياء خضراء مقطعة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can Cut Green Beans"
+        },
+        {
+          "id": "bc650-bean-salad-ing-8",
+          "name": "علبة فاصولياء صفراء مقطعة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can Cut Waxed Beans"
+        },
+        {
+          "id": "bc650-bean-salad-ing-9",
+          "name": "علبة فاصولياء حمراء كلوية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can Red Kidney Beans"
+        },
+        {
+          "id": "bc650-bean-salad-ing-10",
+          "name": "جزرة مقطعة شرائح رفيعة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Carrot, thinly sliced"
+        },
+        {
+          "id": "bc650-bean-salad-ing-11",
+          "name": "بصلة صغيرة مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 small Onion, chopped"
+        },
+        {
+          "id": "bc650-bean-salad-ing-12",
+          "name": "فلفل رومي واحد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Bell Pepper"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع مكونات الصلصة في وعاء سلطة كبير واخفقها حتى تمتزج.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أفرغ علب الفاصولياء في مصفاة واشطفها بماء بارد.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطّع بقية الخضار وأضفها إلى الصلصة. أضف الفاصولياء وحرّك بلطف.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "برّد السلطة ساعة على الأقل قبل التقديم مع التحريك من حين لآخر.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "سلطة"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/bean-salad.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e39063c0122ea20c87ec49efb050ec006fd523e987d0024a7a671e77de2625d1"
+    },
+    {
+      "id": "bc650-nashville-chicken",
+      "name": "ساندويتش دجاج ناشفيل الحار",
+      "nameEn": "Nashville Chicken Sandwich",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "دجاج مقلي مرتين بخلطة ناشفيل الحارة، يقدم في خبز محمص مع خس وطماطم وصلصة مايونيز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-nashville-chicken-ing-1",
+          "name": "لبن مخيض، كوبان",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-2",
+          "name": "صلصة حارة، ثلث كوب",
+          "amount": 0.3333333333333333,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-3",
+          "name": "دقيق لجميع الاستعمالات، كوبان ونصف",
+          "amount": 2.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-4",
+          "name": "نشا ذرة، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-5",
+          "name": "ملح متبل، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-6",
+          "name": "بابريكا، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-7",
+          "name": "فلفل كايين، ملعقتان صغيرتان",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-8",
+          "name": "فلفل أسود، ملعقتان صغيرتان",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-9",
+          "name": "مسحوق ثوم، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-10",
+          "name": "مسحوق بصل، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-11",
+          "name": "مسحوق خردل جاف، ملعقتان صغيرتان",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-12",
+          "name": "خلطة دجاج ناشفيل الحارة، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-13",
+          "name": "خلطة عسل أدوبو، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-14",
+          "name": "سكر بني داكن، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-15",
+          "name": "مسحوق فلفل حار، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-16",
+          "name": "مسحوق ثوم، ملعقة صغيرة إضافية",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-17",
+          "name": "بابريكا مدخنة، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-18",
+          "name": "زيت طهي للقلي، كوب ونصف",
+          "amount": 1.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-19",
+          "name": "مايونيز، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-20",
+          "name": "كاتشب، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-21",
+          "name": "مخلل حلو مفروم، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-nashville-chicken-ing-22",
+          "name": "صلصة حارة، ملعقة كبيرة إضافية",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "حضّر الدجاج بقصه إلى شرائح/أقراص للقلي أقل من نصف بوصة سماكة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "حضّر خليط الغمس والدقيق في وعاءين منفصلين.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اغمس الدجاج في الدقيق ثم الخليط السائل ثم الدقيق مرة أخرى. أثناء استقراره في طبقة الدقيق اسكب 2½ كوب من زيت الطهي في المقلاة على حرارة متوسطة أو 350 درجة، وانتظر نحو 20 دقيقة ليصل إلى الحرارة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "عندما يبلغ الزيت 350 درجة اقْلِ 3–4 قطع في المرة. اقْلِ 7 دقائق مع التقليب في منتصف الوقت، ثم ارفعها واتركها 5 دقائق وأعد قليها 3 دقائق؛ يعتمد ذلك على سماكة الدجاج.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع الدجاج على رف سلكي فوق صينية ليستريح ويحافظ على قرمشته. خلال ذلك اخلط خلطة ناشفيل الحارة مع 1½ كوب من زيت القلي المستخدم. ستغلي؛ اخفق بسرعة حتى يهدأ الغليان. ادهن الصلصة على الدجاج أو اغمره فيها.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "جهّز خبزاً محمصاً وركّب الساندويتش: صلصة على الشريحتين العليا والسفلى، ثم خس روماني مبشور، قطعة الدجاج، طماطم، والغطاء.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "يذكر المصدر أن الساندويتش حار جداً؛ قدّمه واستمتع به.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/nashville-chicken.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=491a5c3fc861d9df9c4adfbec918b1a5b6ef9e19488fb0474ff6754e9ad52915"
+    },
+    {
+      "id": "bc650-hamburger-patties-all-beef",
+      "name": "أقراص برغر من لحم البقر",
+      "nameEn": "Hamburger Patties",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "أقراص لحم بقر مفروم عالية الدهن تُطهى في مقلاة مع التوابل.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-hamburger-patties-all-beef-ing-1",
+          "name": "لحم بقر مفروم، رطل واحد ونسبة دهن 20% أو أكثر",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-hamburger-patties-all-beef-ing-2",
+          "name": "بصل مفروم أو مسحوق بصل (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Onion, chopped or powder (optional)"
+        },
+        {
+          "id": "bc650-hamburger-patties-all-beef-ing-3",
+          "name": "ثوم مفروم أو مسحوق ثوم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Garlic, chopped or powder (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "شكّل اللحم المفروم أقراصاً. استخدم لحماً عالي الدهن؛ لا تحتاج إلى زيت.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضع الأقراص في مقلاة مسخنة مسبقاً أو غير مسخنة على حرارة متوسطة إلى متوسطة عالية.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الملح والفلفل والتوابل الاختيارية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اطه حتى تنضج مع قلبها أحياناً لمنع احتراقها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/hamburger-patties-all-beef.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=0421e500c8e439d110be7aaf3745eb57dd053004272db2747b691c904f505045"
+    },
+    {
+      "id": "bc650-perfect-potato-salad",
+      "name": "سلطة البطاطا الكريمية",
+      "nameEn": "Perfect Potato Salad",
+      "cuisine": "أمريكي",
+      "category": "سلطة",
+      "description": "بطاطا مسلوقة تخلط بصلصة الزبادي والمايونيز والفجل الحار والأعشاب والخضار.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-perfect-potato-salad-ing-1",
+          "name": "5 حبات بطاطا مقشرة ومقطعة لقيمات (نحو رطلين)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5 Potatoes, peeled and cut into bite-size chunks (about 2 lbs)"
+        },
+        {
+          "id": "bc650-perfect-potato-salad-ing-2",
+          "name": "زبادي سادة، كوب واحد",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-perfect-potato-salad-ing-3",
+          "name": "مايونيز، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-perfect-potato-salad-ing-4",
+          "name": "فجل حار محضر، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-perfect-potato-salad-ing-5",
+          "name": "4 حبات فجل شرائح رفيعة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 Radishes, thinly sliced"
+        },
+        {
+          "id": "bc650-perfect-potato-salad-ing-6",
+          "name": "عودا كرفس مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 stalks Celery, diced"
+        },
+        {
+          "id": "bc650-perfect-potato-salad-ing-7",
+          "name": "بصلتان خضراوان كبيرتان شرائح رفيعة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 large Green Onions, thinly sliced"
+        },
+        {
+          "id": "bc650-perfect-potato-salad-ing-8",
+          "name": "بقدونس طازج مفروم، ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-perfect-potato-salad-ing-9",
+          "name": "شبت طازج مفروم، ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع البطاطا في قدر وغطها بالماء فقط. غط القدر جزئياً واتركه يغلي، ثم خفّض الحرارة واتركها تغلي بهدوء والغطاء جزئي حتى تلين، نحو 5 دقائق. لا تفرط في طهيها. صفّها جيداً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "في هذه الأثناء اخلط الزبادي والمايونيز والفجل الحار والملح والفلفل في وعاء كبير. أضف الفجل والكرفس والبصل الأخضر والبقدونس والشبت وحرّك.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف البطاطا الدافئة وامزج.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "برّد ساعة على الأقل قبل التقديم. تذوق واضبط التتبيل إذا رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "سلطة"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/perfect-potato-salad.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=d11f100ca8efef9f06e95025204c0d3c3b749b6369e36a360f7cf5f7d28d4042"
+    },
+    {
+      "id": "bc650-country-skillet",
+      "name": "مقلاة إفطار ريفية",
+      "nameEn": "Country Breakfast Skillet",
+      "cuisine": "أمريكي",
+      "category": "إفطار",
+      "description": "بطاطا ولحم مقدد وبصل وخضار وبيض وجبن تُطهى معاً في مقلاة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-country-skillet-ing-1",
+          "name": "بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 eggs"
+        },
+        {
+          "id": "bc650-country-skillet-ing-2",
+          "name": "حبتا بطاطا صغيرتان أو متوسطتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 small/medium-sized potatoes"
+        },
+        {
+          "id": "bc650-country-skillet-ing-3",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt"
+        },
+        {
+          "id": "bc650-country-skillet-ing-4",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Black pepper"
+        },
+        {
+          "id": "bc650-country-skillet-ing-5",
+          "name": "4–6 شرائح لحم مقدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4-6 bacon strips*"
+        },
+        {
+          "id": "bc650-country-skillet-ing-6",
+          "name": "نصف بصلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "½ an onion*"
+        },
+        {
+          "id": "bc650-country-skillet-ing-7",
+          "name": "جبن (يفضل المصدر غودا)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cheese (I usually use Gouda)*"
+        },
+        {
+          "id": "bc650-country-skillet-ing-8",
+          "name": "بابريكا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Paprika*"
+        },
+        {
+          "id": "bc650-country-skillet-ing-9",
+          "name": "بضع حبات فطر شامبينيون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A couple of Champignon 'shrooms**"
+        },
+        {
+          "id": "bc650-country-skillet-ing-10",
+          "name": "بضع شرائح فلفل رومي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Some slices of bell pepper**"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع اللحم المقدد واقله في مقلاة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع البطاطا مكعبات صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "بعد قلي اللحم ارفعه جانباً واستخدم دهنه لقلي البطاطا على حرارة متوسطة أو متوسطة منخفضة نحو 20 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف قليلاً من الملح والبابريكا إلى البطاطا واخلط واطه 10 دقائق أخرى.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قطّع البصل وأضفه إلى المقلاة واطه نحو 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "إذا رغبت بإضافة خضار مثل الفطر أو الفلفل فأضفها الآن.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "يمكن طهي البيض بطريقتين: اخفقه في وعاء ثم اسكبه في المقلاة، أو اكسره مباشرة فوق الخليط وامزج كل شيء جيداً.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "قطّع الجبن شرائح صغيرة وأضفه.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اطه بضع دقائق أخرى حتى ينضج البيض بما يكفي. لا تدعه يجف إلا إذا كنت تفضله كذلك.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "للمسة أخيرة افرم البقدونس أو الأعشاب المختارة وأضفها فوق الطبق.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "قدّم ساخناً مع فلفل مطحون طازج. يفضّل صاحب المصدر خفق البيض أولاً في وعاء.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/country-skillet.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=ac9d139b72c8d9990a5deb650d9c7d4a802a20935b2064c8460ab23138d7a59c"
+    },
+    {
+      "id": "bc650-maque-choux",
+      "name": "ماك شو بالذرة والفلفل",
+      "nameEn": "Maque Choux",
+      "cuisine": "أمريكي",
+      "category": "طبق جانبي",
+      "description": "حبات ذرة طازجة مع عصارتها وبصل وفلفل وطماطم تطهى ببطء في قدر مع دهن ساخن.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-maque-choux-ing-1",
+          "name": "قليل من السكر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A little sugar"
+        },
+        {
+          "id": "bc650-maque-choux-ing-2",
+          "name": "كمية جيدة من الدهن (نحو قبضة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A good bit of grease (about a handful)"
+        },
+        {
+          "id": "bc650-maque-choux-ing-3",
+          "name": "قبضة بصل مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Handful of chopped onion"
+        },
+        {
+          "id": "bc650-maque-choux-ing-4",
+          "name": "قبضة فلفل رومي مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Handful of chopped bell pepper"
+        },
+        {
+          "id": "bc650-maque-choux-ing-5",
+          "name": "8 أكواز ذرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Eight ears of corn"
+        },
+        {
+          "id": "bc650-maque-choux-ing-6",
+          "name": "قبضة طماطم مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Handful of chopped tomatoes"
+        },
+        {
+          "id": "bc650-maque-choux-ing-7",
+          "name": "ملح وفلفل حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt & Pepper (to taste)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "نظف الذرة واقطعها طولياً على بعد نحو عرض ظفر (¼ بوصة) من القمة، ثم اكشطها بالجانب غير الحاد من السكين للاحتفاظ بالعصارة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلط جميع المكونات في وعاء باستثناء الدهن. تبّل بالملح والفلفل حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اسكب الخليط في قدر يحوي الدهن الساخن على حرارة منخفضة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "غط القدر واطه 45 دقيقة، وحرّك عندما تنهض من مكانك لتناول مزيد من الجعة، كما تمزح تعليمات المصدر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قدّم. يذكر المصدر أن الوصفة تكفي 4–6 حصص.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/maque-choux.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=dcbea641bf4618e6f42b6fd240a272d01c19ff2910ca6b99df862e992a23ffe3"
+    },
+    {
+      "id": "bc650-clam-chowder",
+      "name": "حساء المحار الكريمي",
+      "nameEn": "Clam Chowder",
+      "cuisine": "أمريكي",
+      "category": "حساء",
+      "description": "حساء كريمي بالمحار والبطاطا وقاعدة من اللحم المقدد والزبدة والدقيق والمرق ونصف ونصف.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-clam-chowder-ing-1",
+          "name": "لحم مقدد يكفي لصنع ملعقتين كبيرتين على الأقل من الدهن",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Bacon, at least enough to create at least 2 tablespoons of drippings for the base"
+        },
+        {
+          "id": "bc650-clam-chowder-ing-2",
+          "name": "زبدة، ملعقتان كبيرتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter, 2 tablespoons"
+        },
+        {
+          "id": "bc650-clam-chowder-ing-3",
+          "name": "بصلة مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Onion, diced"
+        },
+        {
+          "id": "bc650-clam-chowder-ing-4",
+          "name": "3 فصوص ثوم مفرومة",
+          "amount": 3.0,
+          "unit": "فص",
+          "scale": true,
+          "display": null,
+          "label": "3 Cloves of Garlic, minced"
+        },
+        {
+          "id": "bc650-clam-chowder-ing-5",
+          "name": "دقيق، ثلث كوب",
+          "amount": 0.3333333333333333,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-clam-chowder-ing-6",
+          "name": "نصف ونصف، 3 أكواب",
+          "amount": 3,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-clam-chowder-ing-7",
+          "name": "مرق دجاج، كوب واحد (ويقول المصدر إن أنواع المرق الأخرى غالباً لا مشكلة فيها)",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-clam-chowder-ing-8",
+          "name": "عصير محار أو مرق داشي، كوب واحد",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-clam-chowder-ing-9",
+          "name": "محار مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chopped clams"
+        },
+        {
+          "id": "bc650-clam-chowder-ing-10",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt"
+        },
+        {
+          "id": "bc650-clam-chowder-ing-11",
+          "name": "بطاطا مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Potatoes, diced"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اطه اللحم المقدد في قدر يخنة أو حساء، ثم أخرجه وافرمه وأعده إلى القدر لاحقاً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الزبدة واطه البصل والثوم؛ تبّل حسب الرغبة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الدقيق واطهه.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "حرّك المرق ثم نصف ونصف داخل القدر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف الداشي أو عصير المحار واتركه يغلي بلطف ثم اطه على نار هادئة 20 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف البطاطا واتركها تغلي بهدوء حتى تنضج، عادة نحو 25 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف المحار واطه نحو 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "زيّن وقدّم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/clam-chowder.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3f1b0e42cb6267de79cd834f4af05c9dccde71b12631ed557584e251419b97c8"
+    },
+    {
+      "id": "bc650-sardine-cakes",
+      "name": "أقراص السردين مع صلصة الزبادي",
+      "nameEn": "Sardine Cakes",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "أقراص سردين مع مايونيز وبانكو وتوابل أولد باي، تشوى وتقدم مع صلصة زبادي وسريراتشا.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-sardine-cakes-ing-1",
+          "name": "علبتا سردين (نحو 4 أونصات لكل منهما)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 tins sardines (~4oz)"
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-2",
+          "name": "مايونيز، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null,
+          "label": "½ cup mayonnaise"
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-3",
+          "name": "فتات بانكو، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null,
+          "label": "½ cup Panko breadcrumbs"
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-4",
+          "name": "بهارات أولد باي، ملعقتان صغيرتان",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-5",
+          "name": "بيضة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 egg"
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-6",
+          "name": "عصير ليمون (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "lemon juice (optional)"
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-7",
+          "name": "زبادي سادة كامل الدسم، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null,
+          "label": "½ cup plain yogurt (whole milk)"
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-8",
+          "name": "سريراتشا، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-9",
+          "name": "خردل ديجون، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-10",
+          "name": "صلصة ورشيسترشاير، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-sardine-cakes-ing-11",
+          "name": "ثوم مفروم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "minced garlic (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "أخرج السردين من العلب واحتفظ بالزيت، وضع السمك في وعاء خلط. أضف بقية مكونات أقراص السمك وزيت علبة واحدة (نحو ملعقتين كبيرتين) إلى الوعاء.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلط جميع المكونات برفق بالشوكة حتى تمتزج، لكن لا تحولها إلى مهروس.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "استخدم أداة لاقتطاع الخليط إلى كرات صغيرة ثم افردها أقراصاً قطرها 2 بوصة وسماكتها نحو نصف بوصة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع الأقراص على صينية ذات حافة أو مقلاة حديد زهر كبيرة أو طبق طاجن.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "برّد الأقراص نحو 30 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أثناء تبريد الأقراص اخلط جميع مكونات صلصة الزبادي.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "انقل رف الفرن إلى الثلث العلوي. اشوِ الأقراص 5 دقائق ثم اقلبها واشوها 3–5 دقائق إضافية حتى تصبح ذهبية بنية.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "رش عصير الليمون فوقها وقدّمها ساخنة مع صلصة الزبادي.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/sardine-cakes.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=aa38789440d6f1bd3fbc77a0b7b03576002675f97481b5606192b2f51c475a7c"
+    },
+    {
+      "id": "bc650-cheesy-potatoe-bake",
+      "name": "صينية بطاطا بالجبن واللحم المقدد",
+      "nameEn": "Cheesy Potato Bake",
+      "cuisine": "أمريكي",
+      "category": "طبق جانبي",
+      "description": "شرائح بطاطا مع صلصة حليب وجبن شيدر، تضاف إليها قطع لحم مقدد اختيارياً وتخبز.",
+      "servings": 4,
+      "prepTime": 30,
+      "cookTime": 45,
+      "totalTime": 75,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-cheesy-potatoe-bake-ing-1",
+          "name": "زبدة، 30 جم أو أكثر",
+          "amount": 30.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "30g+ Butter"
+        },
+        {
+          "id": "bc650-cheesy-potatoe-bake-ing-2",
+          "name": "شيدر، 250 جم",
+          "amount": 250,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheesy-potatoe-bake-ing-3",
+          "name": "حليب، 275 مل",
+          "amount": 275,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheesy-potatoe-bake-ing-4",
+          "name": "دقيق، 16 جم",
+          "amount": 16,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheesy-potatoe-bake-ing-5",
+          "name": "بطاطا، 600 جم",
+          "amount": 600,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheesy-potatoe-bake-ing-6",
+          "name": "لحم مقدد للزينة بالكمية المرغوبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "As much bacon as you want to garnish"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 180°C.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ادهن طبق خبز عميقاً بالزبدة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قشّر البطاطا وقطّعها شرائح رفيعة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ابشر الجبن.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "للصلصة: أذب الزبدة في قدر.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الدقيق ببطء مع التحريك المستمر.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "بعد دقيقتين أو عندما تظهر الفقاعات ارفع القدر عن النار.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف الحليب ببطء مع التحريك المستمر.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "أضف ثلاثة أرباع الجبن.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "تبّل بالملح والفلفل حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "للتجميع ضع طبقة رقيقة من البطاطا في الطبق ثم طبقة من صلصة الجبن وطبقة من اللحم المقدد.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "كرر طبقات البطاطا والصلصة واللحم حتى تنفد البطاطا أو الصلصة.",
+          "duration": null
+        },
+        {
+          "n": 13,
+          "text": "أضف الربع المتبقي من الجبن على الوجه.",
+          "duration": null
+        },
+        {
+          "n": 14,
+          "text": "اخبز 45 دقيقة. إذا بدأ الوجه بالتحمر كثيراً فغطه بورق ألمنيوم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 30 min ؛ - 🍳 Cook time: 45 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cheesy-potatoe-bake.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=c4f73a28241a8187de37795a226bd58c8d2b0c4608ddb49365becc884675b7ce"
+    },
+    {
+      "id": "bc650-meatloaf",
+      "name": "رغيف لحم بقر بصلصة الطماطم",
+      "nameEn": "Meatloaf",
+      "cuisine": "أمريكي",
+      "category": "طبق رئيسي",
+      "description": "لحم بقر مفروم مخلوط بالبيض والبصل والخبز والتوابل، يخبز على شكل رغيفين أو ثلاثة ويغطى بصلصة الطماطم.",
+      "servings": null,
+      "prepTime": 30,
+      "cookTime": 70,
+      "totalTime": 100,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-meatloaf-ing-1",
+          "name": "لحم بقر مفروم، 4½ أرطال",
+          "amount": 4.5,
+          "unit": "رطل",
+          "scale": true,
+          "display": null,
+          "label": "4 1/2 pounds Ground beef"
+        },
+        {
+          "id": "bc650-meatloaf-ing-2",
+          "name": "بصلة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Onion"
+        },
+        {
+          "id": "bc650-meatloaf-ing-3",
+          "name": "شريحتا خبز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 Slices of bread"
+        },
+        {
+          "id": "bc650-meatloaf-ing-4",
+          "name": "4 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 Eggs"
+        },
+        {
+          "id": "bc650-meatloaf-ing-5",
+          "name": "حليب، ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-meatloaf-ing-6",
+          "name": "ملح ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Garlic salt"
+        },
+        {
+          "id": "bc650-meatloaf-ing-7",
+          "name": "مسحوق بصل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Onion powder"
+        },
+        {
+          "id": "bc650-meatloaf-ing-8",
+          "name": "خردل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Mustard"
+        },
+        {
+          "id": "bc650-meatloaf-ing-9",
+          "name": "كاتشب خالٍ من السكر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sugar free ketchup"
+        },
+        {
+          "id": "bc650-meatloaf-ing-10",
+          "name": "3 مكعبات سكر بني",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 Cubes of brown sugar"
+        },
+        {
+          "id": "bc650-meatloaf-ing-11",
+          "name": "علبة حساء طماطم كامبلز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Can of Campbell's tomato soup"
+        },
+        {
+          "id": "bc650-meatloaf-ing-12",
+          "name": "صلصة فرانكس ريد هوت (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Franks RedHot sauce (Optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "بعد إذابة اللحم ضعه كله في وعاء. تُضاف إليه الخطوات الأربع التالية في الوعاء نفسه.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع البصل وشرائح الخبز قطعاً صغيرة وأضفها.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اكسر البيض وأضفه.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اسكب الحليب وكمية متوسطة من الخردل والكاتشب.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف ملح الثوم ومسحوق البصل.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اخلط كل شيء جيداً بيدين نظيفتين ومعقمتين، مع الوصول إلى قاع الوعاء.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "وزع اللحم المخلوط بالتساوي في طبقين أو ثلاثة أطباق مدهونة صالحة للفرن وسوّ سطحه قدر الإمكان.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اصنع قناة صغيرة في منتصف كل رغيف للمساعدة على الحفاظ على شكله أثناء الطهي.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اخبز الأطباق عند 180°C ساعة.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "عندما يتبقى نحو 15 دقيقة ابدأ تحضير الصلصة.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "ضع مكعبات السكر الثلاثة في وعاء مع قليل من الماء الساخن لإذابتها.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "أضف حساء الطماطم وربع كوب من الكاتشب وربع كوب من الخردل.",
+          "duration": null
+        },
+        {
+          "n": 13,
+          "text": "حرّك الصلصة حتى تصبح كثيفة وحمراء فاتحة.",
+          "duration": null
+        },
+        {
+          "n": 14,
+          "text": "بعد مرور ساعة أخرج الأرغفة. يوصي المصدر بقطع أسمك رغيف للتأكد من نضج البقر.",
+          "duration": null
+        },
+        {
+          "n": 15,
+          "text": "غط سطح كل رغيف بالصلصة بالتساوي.",
+          "duration": null
+        },
+        {
+          "n": 16,
+          "text": "أعدها إلى الفرن 10 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 17,
+          "text": "أخرج الأرغفة واتركها تبرد ثم قطّعها وقدّمها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 30 min ؛ - 🍳 Cook time: 1 hour 10 minutes ؛ - 🍽️ Servings: 6+. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/meatloaf.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=12079d28816300dca79488fea596c19af9529cbe4f80b9e6be97937f1d6a6369"
+    },
+    {
+      "id": "bc650-eggs-benedict",
+      "name": "بيض بندكت",
+      "nameEn": "Eggs Benedict",
+      "cuisine": "أمريكي",
+      "category": "إفطار",
+      "description": "بيض مسلوق برفق فوق مافن إنجليزي مع لحم مقدد كندي وصلصة هولنديز بالزبدة والليمون.",
+      "servings": 2,
+      "prepTime": 15,
+      "cookTime": 20,
+      "totalTime": 35,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-eggs-benedict-ing-1",
+          "name": "3 صفار بيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 egg yolks"
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-2",
+          "name": "عصير ليمون، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-3",
+          "name": "زبدة غير مملحة مذابة، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-4",
+          "name": "فلفل كايين أو صلصة حارة حسب الذوق (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cayenne pepper or hot sauce, to taste (optional)"
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-5",
+          "name": "4 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 eggs"
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-6",
+          "name": "خل أبيض، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-7",
+          "name": "مافنان إنجليزيان أو خبز محمص، مفصولان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 english muffins or toast, split"
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-8",
+          "name": "4 شرائح لحم مقدد كندي أو هام",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 slices of Canadian bacon or ham"
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-9",
+          "name": "زبدة لدهن المافن (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter, for spreading on muffins (optional)"
+        },
+        {
+          "id": "bc650-eggs-benedict-ing-10",
+          "name": "ثوم معمر مفروم ناعماً (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chives, finely chopped (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "لتحضير الهولنديز امزج الصفار وعصير الليمون في خلاط لصنع القاعدة. يمكن بدلاً من ذلك استخدام حمام مائي مزدوج على غليان هادئ مع الخفق لتقليل التخثر.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اسكب الزبدة المذابة ببطء أثناء الخلط حتى تثخن الصلصة وتصبح كريمية. إذا صارت كثيفة جداً أضف قليلاً من الماء الدافئ أو عصير الليمون لتخفيفها.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "تبّل الصلصة بكايين أو صلصة حارة حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "حضّر قدراً كبيراً فيه ماء بعمق 4 بوصات على الأقل واتركه يغلي برفق. أضف الخل لمساعدة بياض البيض على التماسك.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أدخل البيض برفق في الماء المغلي. يساعد كسره في وعاء صغير أو مغرفة ثم إنزال الوعاء إلى سطح الماء على ذلك. حرّك الماء بملعقة لصنع دوامة صغيرة لإزاحة بياض زائد وجعل البيضة أمتن. اطه 3–4 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أخرج البيض بملعقة مثقبة وضعه على طبق مبطن بمناديل ورقية ليصفى.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اقطع المافن إلى نصفين وحمّصه. يمكن دهن النصفين بالزبدة اختيارياً، ويمكن استبدالهما بأي خبز إسفنجي.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اطه اللحم المقدد الكندي أو الهام في مقلاة على حرارة متوسطة حتى يتحمر قليلاً.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "ضع شريحة لحم مقدد على كل نصف مافن محمص، وفوقها بيضة مسلوقة وكمية وافرة من الهولنديز. زيّن بالثوم المعمر ورشة كايين إضافية حسب الرغبة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 15 min ؛ - 🍳 Cook time: 20 min ؛ - 🍽️ Servings: 2. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/eggs-benedict.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=97ad5e732289d5c8f8fd76e5ca018ddc32aba44d8928a0d9efd2b43a3176ed10"
+    },
+    {
+      "id": "bc650-coleslaw",
+      "name": "سلطة ملفوف بالجزر وصلصة اللبن",
+      "nameEn": "Coleslaw",
+      "cuisine": "أمريكي",
+      "category": "سلطة",
+      "description": "ملفوف أخضر وجزر مبشوران مع صلصة من المايونيز واللبن والخل والليمون والزيت والتوابل.",
+      "servings": null,
+      "prepTime": 25,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-coleslaw-ing-1",
+          "name": "مايونيز، ثلاثة أرباع كوب",
+          "amount": 0.75,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-2",
+          "name": "لبن مخيض، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-3",
+          "name": "عصير ليمون، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-4",
+          "name": "خل تفاح، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-5",
+          "name": "خل مقطر، 4 ملاعق كبيرة",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-6",
+          "name": "زيت زيتون، ثلث كوب",
+          "amount": 0.3333333333333333,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-7",
+          "name": "سكر حبيبي، ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-8",
+          "name": "ملح كوشير، ملعقة ونصف صغيرة",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-9",
+          "name": "فلفل أسود مطحون، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-10",
+          "name": "بذور كرفس، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-11",
+          "name": "مسحوق بصل، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-12",
+          "name": "ثوم حبيبي، ربع ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-13",
+          "name": "مسحوق خردل، ربع ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-coleslaw-ing-14",
+          "name": "رأس ملفوف أخضر كبير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "One large head of green cabbage"
+        },
+        {
+          "id": "bc650-coleslaw-ing-15",
+          "name": "جزرة كبيرة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "One large carrot"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ابشر الجزر ناعماً واغسله وصفّه. افرم الملفوف ناعماً، ويفضل باستخدام محضرة الطعام.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخفق المايونيز واللبن المخيض وعصير الليمون وخل التفاح والخل المقطر وزيت الزيتون والسكر.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الملح والفلفل وبذور الكرفس ومسحوق البصل والثوم الحبيبي واخلط جيداً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع الملفوف والجزر في وعاء منفصل. أضف الصلصة ببطء حتى تغطي الخضار بطبقة خفيفة وقلّب. زد الصلصة حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "برّد السلطة ساعة على الأقل قبل التقديم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "سلطة"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 25 min ؛ - 🍽️ Servings: 8 - 10. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/coleslaw.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e39a9f2b9d77063f80f4b6642f3d664e47224daecec49ad63329000a47cad155"
+    },
+    {
+      "id": "bc650-apple-pie",
+      "name": "فطيرة التفاح",
+      "nameEn": "Apple Pie",
+      "cuisine": "أمريكي",
+      "category": "حلوى",
+      "description": "تفاح ذهبي محلى بالقرفة وجوزة الطيب داخل قشرة من الزبدة والدقيق، وتدهن ببياض البيض اختيارياً.",
+      "servings": 8,
+      "prepTime": 30,
+      "cookTime": 45,
+      "totalTime": 75,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-apple-pie-ing-1",
+          "name": "تفاح غولدن ديليشس، 900 جم (4–5 حبات)",
+          "amount": 900,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-2",
+          "name": "عصير ليمون، 15 جم (ملعقة كبيرة)",
+          "amount": 15,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-3",
+          "name": "سكر أبيض، 50 جم",
+          "amount": 50,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-4",
+          "name": "سكر بني، 65 جم",
+          "amount": 65,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-5",
+          "name": "قرفة، 5 جم (ملعقة صغيرة)",
+          "amount": 5,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-6",
+          "name": "جوزة الطيب، 1–2 جم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-2 g nutmeg"
+        },
+        {
+          "id": "bc650-apple-pie-ing-7",
+          "name": "نشا ذرة، 15 جم",
+          "amount": 15,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-8",
+          "name": "ماء مثلج، 15 جم",
+          "amount": 15,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-9",
+          "name": "زبدة باردة شرائح، 226 جم (قالبان)",
+          "amount": 226,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-10",
+          "name": "دقيق، 350 جم",
+          "amount": 350,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-11",
+          "name": "ملح، 5 جم",
+          "amount": 5,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-12",
+          "name": "سكر أبيض، 30 جم",
+          "amount": 30,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-13",
+          "name": "زبدة، 225 جم",
+          "amount": 225,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-apple-pie-ing-14",
+          "name": "ماء مثلج، 50–100 مل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "50-100 ml ice water"
+        },
+        {
+          "id": "bc650-apple-pie-ing-15",
+          "name": "بيضة واحدة (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 egg (optional)"
+        },
+        {
+          "id": "bc650-apple-pie-ing-16",
+          "name": "ماء، 15 جم (اختياري)",
+          "amount": 15,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قشّر التفاح وقطّعه شرائح بطول 1–2 بوصة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "في وعاء اخلط التفاح بعصير الليمون والسكر والقرفة وجوزة الطيب والنشا، واتركه 15 دقيقة ليطلق سائله.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "انقل خليط الحشوة إلى قدر وقلّل سائله على حرارة متوسطة إلى منخفضة نحو 15 دقيقة مع التحريك بانتظام، ثم أطفئ الغاز.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أثناء انتظار الحشوة أو تقليلها، ابدأ العجينة بوضع الدقيق والملح والسكر وقطع الزبدة في محضرة الطعام.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "شغل المحضرة حتى يصبح الخليط كالرمل الخشن، 5–10 ثوان، ثم أضف ماء الثلج بالتنقيط حتى يبدأ بالتكتل. يكون جاهزاً حين يتماسك عند ضغطه باليد.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "سخّن الفرن إلى 350°F. اقسم العجينة نصفين وافرد كل نصف بالنشابة ليغطي قالب فطيرة قطره نحو 9 بوصات.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "ضع النصف السفلي في القالب واقطع الزائد بسكين. اسكب الحشوة وسوّ سطحها.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "غط الحشوة بالنصف العلوي من العجين واطوِ الحواف الزائدة إلى الداخل. اضغط العجينة العلوية والسفلية معاً بالشوكة أو الأصابع كي لا تبقى فجوات هواء.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "ادهن ببيضة وماء اختياريين كي يصبح الوجه لامعاً وذهبياً. اصنع شقوقاً صغيرة في الوجه لتصميمه والسماح بخروج الهواء.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "اخبز 45 دقيقة عند 350°F أو حتى تحمر القشرة وتغلي التفاحات داخلها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حلوى"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 30 min ؛ - 🍳Cook time: 45 min ؛ - 🍽️ Servings: 8. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/apple-pie.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=b875a7f7842d58edf75ab97872d765b2dfd69cb648301813637d93692937bd08"
+    }
+  ]
+}

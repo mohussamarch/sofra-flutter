@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "stallMinutes": 60,
   "lastProgress": {
-    "at": "2026-10-21T08:46:19.654549Z",
-    "taskId": "recipe-bank",
-    "summary": "Delivered10103new source records in10x1000+103,expandedoperationalcatalog65/14,andverifiedsource/source-library/revisioncoregates.",
+    "at": "2026-10-22T06:43:10.765707Z",
+    "taskId": "catalog-650-20261021",
+    "summary": "657 actual catalog recipes (+592),650 target met; two backend flows built; full356Flutter/analyze clean; source hashes preserved.",
     "evidence": [
-      "docs/RECIPE-ROUND-20261021B.md",
-      "data/recipes/modern-scale-20261021b-summary.json",
-      "test/catalog_expansion_test.dart",
-      "data/recipes/modern-scale-20261021b-bulk/root-audit.json"
+      "recipes/data/index.json",
+      "data/recipes/catalog-650-20261021/final-summary.json",
+      "docs/RECIPE-650-RESULT.md",
+      "test/catalog_650_progress_test.dart"
     ]
   },
   "tasks": [
@@ -78,7 +78,7 @@
       "priority": 35,
       "dependsOn": [],
       "status": "ready",
-      "nextAction": "Warehouse15648records/38packs,10103new;catalog65/14. Continue source-qualified Moroccan/Omani/Asian operational conversions and contemporary Arabic sources; preserve source/semantic/runtime distinction and1000-per-acquisition target.",
+      "nextAction": "Catalog657/63 target650 met; warehouse15648/38 unchanged. Prioritize actual recipe eligibility/Arabic creator additions; source acquisition remains separate and must report any1000-target shortfall.",
       "lastAttemptAt": "2026-10-15T02:30:14.398973+00:00",
       "lastProgressAt": "2026-10-21T08:46:19.654549Z",
       "completedUnit": {
@@ -417,7 +417,7 @@
         "compound-revisions"
       ],
       "status": "ready",
-      "nextAction": "Explicit food/quantity/form review for15648warehouse sources,6648selected assets and65operational recipes;new11have0automaticnutrition/inventorybindings. Preserve4oldpartialmethods and semanticdedupgap.",
+      "nextAction": "Explicit food/quantity/form review for657catalog recipes (183known yield,474unknown) and6648selected source assets; no automatic nutrition/allergy/cost approval. Preserve nulls and immutable revision-specific evidence.",
       "infrastructureDoesNotApproveData": true,
       "lastProgressAt": "2026-10-15T03:09:23.849026+00:00",
       "lastAttemptAt": "2026-10-14T20:46:04.701382+00:00",
@@ -583,7 +583,7 @@
         "people-targets"
       ],
       "status": "ready",
-      "nextAction": "Build explicit constrained monthly alternatives using completed stock-aware previewPurchases; reviewed prices/people targets still required, no automatic edits or carryover."
+      "nextAction": "Existing explicit search/preferences/coverage and atomic selected-option save are built. Remaining full planner needs automatic eligible candidate pools plus actual price/people review; unknown source feeds do not block independent pool-policy code."
     },
     {
       "id": "scan-ocr",
@@ -647,7 +647,7 @@
       "status": "ready",
       "dependsOn": [],
       "lastAttemptAt": "2026-10-15T12:17:35.037053+00:00",
-      "nextAction": "Continue source-to-catalog promotion beyond65/14 with actual quantity/time/rights review; explicit unknown timing and11accepted/4held examples in audit-20261021b;no newbooknetwork.",
+      "nextAction": "Catalog657/63,650target met. Continue modern Arabic creator coverage and exact source-based yield/time/ingredient review; source acquisition and unmerged drafts do not increase catalog count.",
       "lastProgressAt": "2026-10-21T08:46:19.654549Z",
       "completedUnit": {
         "archiveRecords": 4064,
@@ -719,7 +719,7 @@
       "dependsOn": [],
       "status": "done",
       "completedAt": "2026-10-14T10:15:57.137053+00:00",
-      "nextAction": "65pinned source entries with indexed quantity triage and scoped request provenance; explicit review before personal calculation, no automatic bindings/publication.",
+      "nextAction": "6648pinned source entries/29packs/6504snapshots; bounded verified reading and private search index. Use explicit review before personal calculation/publication; no automatic bindings.",
       "evidence": [
         "lib/data/recipe_library_repository.dart",
         "lib/data/recipe_library_assets.dart",
@@ -1663,6 +1663,67 @@
         }
       },
       "completedAt": "2026-10-21T08:46:19.654549Z"
+    },
+    {
+      "id": "catalog-650-20261021",
+      "priority": 1,
+      "dependsOn": [],
+      "status": "done",
+      "owner": null,
+      "baseCommit": "533891c1a879fd7cbd2fa9ed9c8114a2fbe209a2",
+      "startedAt": "2026-10-21T12:40:59.277060Z",
+      "nextAction": "650 target met. Continue actual yield/time/ingredient/cost/nutrition eligibility review; no source-only inflation.",
+      "evidence": [
+        "recipes/data/index.json",
+        "data/recipes/catalog-650-20261021/final-summary.json",
+        "docs/RECIPE-650-RESULT.md",
+        "test/catalog_650_progress_test.dart"
+      ],
+      "lastAttemptAt": "2026-10-21T13:24:06.320995Z",
+      "lastProgressAt": "2026-10-22T06:43:10.765707Z",
+      "actualCatalogCount": 657,
+      "remainingToTarget": 0,
+      "completedAt": "2026-10-22T06:43:10.765707Z"
+    },
+    {
+      "id": "yield-review-20261022",
+      "priority": 24,
+      "dependsOn": [],
+      "status": "done",
+      "completedAt": "2026-10-22T06:43:10.765707Z",
+      "lastProgressAt": "2026-10-22T06:43:10.765707Z",
+      "nextAction": "Consume explicit saved personal yield in the compatible future UI; source metadata stays unchanged.",
+      "evidence": [
+        "lib/domain/recipe_yield_review.dart",
+        "test/recipe_yield_review_test.dart"
+      ]
+    },
+    {
+      "id": "monthly-acceptance-20261022",
+      "priority": 25,
+      "dependsOn": [],
+      "status": "done",
+      "completedAt": "2026-10-22T06:43:10.765707Z",
+      "lastProgressAt": "2026-10-22T06:43:10.765707Z",
+      "nextAction": "Use exact current search preview with explicit complete coverage and known affordable selected option.",
+      "evidence": [
+        "lib/data/monthly_plan_acceptance.dart",
+        "test/monthly_plan_acceptance_test.dart"
+      ]
+    },
+    {
+      "id": "monthly-pool-generation",
+      "priority": 26,
+      "dependsOn": [
+        "monthly-acceptance-20261022",
+        "yield-review-20261022"
+      ],
+      "status": "ready",
+      "nextAction": "Define explicit required date/slot coverage, caller-approved eligible recipe revisions and servings, then generate bounded candidate pools locally; preserve unknown yield/cost/nutrition and no clinical/global suitability claims. This generator is not built yet.",
+      "evidence": [
+        "docs/LOGIC-BUILD-20261022.md",
+        "docs/agents/logic-gap-audit-20261022.md"
+      ]
     }
   ],
   "activeResearchRound": {
@@ -1711,5 +1772,33 @@
     "belowTargetReportRequired": true,
     "existingArchiveIsNotNewAcquisition": true,
     "runtimePromotionAutomatic": false
+  },
+  "operationalRecipeTarget": {
+    "target": 650,
+    "baseline": 65,
+    "additionalRequired": 585,
+    "requestedAt": "2026-10-21T12:40:59.277060Z",
+    "dueDateLocal": "2026-10-23",
+    "timezone": "Asia/Riyadh",
+    "countedRecipe": "Distinct reviewed catalog entry loaded by RecipeRepository, with ingredients, full method, source provenance and explicit unknown metadata; source-only records excluded.",
+    "scope": "World cuisines; priority Arabic contemporary sources, Moroccan/Omani/Asian coverage.",
+    "progressReport": "actual catalog count and remaining; no discovery counts substituted"
+  },
+  "quotaPolicy": {
+    "stopAtUsedPercent": 98,
+    "reservePercent": 2,
+    "unknownBlocksCostlyWork": true,
+    "creditsPurchased": false,
+    "resetCreditsUsed": false
+  },
+  "lastStallDiagnosis": {
+    "at": "2026-10-22T06:45:14.843122Z",
+    "taskId": "catalog-650-20261021",
+    "cause": "Previous interrupted unit was undelivered after quota/approval gate; no active collector/writer found at resumption. This was task interruption, not source HTTP wait.",
+    "correctiveAction": "Root resumed sole E owner, promoted657 and built two independent backend units; final356Flutter plus20post-style tests, analysis/parity/source gates passed.",
+    "evidence": [
+      "docs/HANDOFF.md#94",
+      "data/recipes/catalog-650-20261021/final-summary.json"
+    ]
   }
 }

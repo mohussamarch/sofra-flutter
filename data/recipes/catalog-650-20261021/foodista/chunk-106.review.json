@@ -1,0 +1,3474 @@
+{
+  "recipes": [
+    {
+      "id": "fi650-55601",
+      "sourceId": "modern-bulk:foodista:55601",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/source-snapshots/55601.json",
+      "sourceSnapshotSha256": "f523a655a9ecb94227cb7d08de13a99be292fa9c064794a36ca3838e0efcdea2",
+      "cuisineEvidence": "Korean Spicy Cucumber Salad (Oi Muchim)",
+      "sourceIngredientLines": [
+        "1 Cucumber, thinly sliced",
+        "1 teaspoon Sea Salt",
+        "1/2 Onion, thinly sliced",
+        "1 tablespoon Rice Vinegar",
+        "1 cup Water",
+        "3 cloves Garlic, crushed",
+        "1 teaspoon Korean Chili Powder (Gochugaru)",
+        "1 teaspoon Korean Pepper Paste (Gochujang)",
+        "1 teaspoon Light Corn Syrup or Honey",
+        "1 teaspoon Rice Vinegar",
+        "2 teaspoons Sesame Seeds, toasted"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "1 Cucumber, thinly sliced",
+          "targetIngredientId": "fi650-55601-i0",
+          "translatedName": "خيار مقطع شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "1 teaspoon Sea Salt",
+          "targetIngredientId": "fi650-55601-i1",
+          "translatedName": "ملح بحري"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1/2 Onion, thinly sliced",
+          "targetIngredientId": "fi650-55601-i2",
+          "translatedName": "نصف بصلة مقطعة شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1 tablespoon Rice Vinegar",
+          "targetIngredientId": "fi650-55601-i3",
+          "translatedName": "خل أرز لنقع البصل"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 cup Water",
+          "targetIngredientId": "fi650-55601-i4",
+          "translatedName": "ماء لنقع البصل"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "3 cloves Garlic, crushed",
+          "targetIngredientId": "fi650-55601-i5",
+          "translatedName": "فصوص ثوم مهروسة"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 teaspoon Korean Chili Powder (Gochugaru)",
+          "targetIngredientId": "fi650-55601-i6",
+          "translatedName": "مسحوق فلفل كوري غوچوغارو"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1 teaspoon Korean Pepper Paste (Gochujang)",
+          "targetIngredientId": "fi650-55601-i7",
+          "translatedName": "معجون فلفل كوري غوچوجانغ"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1 teaspoon Light Corn Syrup or Honey",
+          "targetIngredientId": "fi650-55601-i8",
+          "translatedName": "شراب ذرة خفيف أو عسل"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "1 teaspoon Rice Vinegar",
+          "targetIngredientId": "fi650-55601-i9",
+          "translatedName": "خل أرز إضافي للتتبيلة"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "2 teaspoons Sesame Seeds, toasted",
+          "targetIngredientId": "fi650-55601-i10",
+          "translatedName": "سمسم محمص"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Mix the cucumber with one teaspoon of sea salt and set aside. 2 Soak the onion slices with one tablespoon of rice vinegar and the water in the refrigerator for 20 minutes. 3 Rinse the salt off the cucumber and pat off the excess water. 4 Mix the garlic, chili powder, pepper paste, corn syrup or honey, and teaspoon of rice vinegar in a bowl. 5 Remove the onions from the water and add them to the dressing along with the cucumbers and toss. 6 Serve chilled."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اخلطي الخيار مع ملعقة صغيرة من الملح البحري واتركيه جانبًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "انقعي شرائح البصل في ملعقة كبيرة من خل الأرز وكوب الماء داخل الثلاجة 20 دقيقة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "اشطفي الملح عن الخيار وجففيه بالتربيت لإزالة الماء الزائد."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "اخلطي الثوم ومسحوق الفلفل ومعجون الفلفل وشراب الذرة أو العسل وملعقة صغيرة من خل الأرز في وعاء."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "أخرجي البصل من ماء النقع وأضيفيه إلى التتبيلة مع الخيار وقلبي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "قدمي السلطة باردة."
+        }
+      ],
+      "review": "الخل يرد مرتين بموضعين مختلفين بالمقادير؛ حُفظا كسطرين منفصلين. الخيار يترك مع الملح ثم يشطف.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/LP2K47C8/korean-spicy-cucumber-salad-oi-muchim",
+      "sourceAuthor": [
+        "Joe Mcpherson"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:55601",
+      "sourceTextSha256": "47258fb77edb998398252b1dc6befb56b4bea05096c66cc570de84b9ebea95de",
+      "sourceSnapshotContentSha256": "f523a655a9ecb94227cb7d08de13a99be292fa9c064794a36ca3838e0efcdea2"
+    },
+    {
+      "id": "fi650-55675",
+      "sourceId": "modern-bulk:foodista:55675",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/source-snapshots/55675.json",
+      "sourceSnapshotSha256": "5f7c9e38c2abc7db53e452202231d853dbba0f59f749f630ddd006fda90b2d3f",
+      "cuisineEvidence": "Chinese Jicama Dumplings",
+      "sourceIngredientLines": [
+        "INGREDIENTS (FILLING)",
+        "about 400 g Jicama / Yam Bean",
+        "about 100 g carrots",
+        "2 tbs dried shrimps",
+        "5 large garlic cloves, chopped",
+        "1 tbs oyster sauce",
+        "2 tbs light soy sauce",
+        "1 tbs sugar",
+        "1/2 cup water",
+        "oil for frying",
+        "INGREDIENTS (SKIN)",
+        "165 g wheat starch",
+        "85 g tapioca flour",
+        "420 g hot boiling water",
+        "3 - 5 tbs oil (I used 3 tbs)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "about 400 g Jicama / Yam Bean",
+          "targetIngredientId": "fi650-55675-i0",
+          "translatedName": "جذر يام/فاصوليا يام مقشر ومبشور؛ نحو 400 غرام"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "about 100 g carrots",
+          "targetIngredientId": "fi650-55675-i1",
+          "translatedName": "جزر؛ نحو 100 غرام"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "2 tbs dried shrimps",
+          "targetIngredientId": "fi650-55675-i2",
+          "translatedName": "روبيان مجفف"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "5 large garlic cloves, chopped",
+          "targetIngredientId": "fi650-55675-i3",
+          "translatedName": "فصوص ثوم كبيرة مفرومة"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 tbs oyster sauce",
+          "targetIngredientId": "fi650-55675-i4",
+          "translatedName": "صلصة محار"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "2 tbs light soy sauce",
+          "targetIngredientId": "fi650-55675-i5",
+          "translatedName": "صلصة صويا خفيفة"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1 tbs sugar",
+          "targetIngredientId": "fi650-55675-i6",
+          "translatedName": "سكر"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1/2 cup water",
+          "targetIngredientId": "fi650-55675-i7",
+          "translatedName": "ماء للحشوة"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "oil for frying",
+          "targetIngredientId": "fi650-55675-i8",
+          "translatedName": "زيت للقلي؛ المقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "165 g wheat starch",
+          "targetIngredientId": "fi650-55675-i9",
+          "translatedName": "نشا قمح"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "85 g tapioca flour",
+          "targetIngredientId": "fi650-55675-i10",
+          "translatedName": "دقيق تابيوكا"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "420 g hot boiling water",
+          "targetIngredientId": "fi650-55675-i11",
+          "translatedName": "ماء ساخن مغلي"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "3 - 5 tbs oil (I used 3 tbs)",
+          "targetIngredientId": "fi650-55675-i12",
+          "translatedName": "زيت يضاف للعجين تدريجيًا؛ المصدر يذكر نطاق 3–5 ملاعق ويقول إن الكاتب استخدم 3"
+        }
+      ],
+      "omittedSourceLines": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "INGREDIENTS (FILLING)",
+          "reason": "عنوان قسم الحشوة."
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "INGREDIENTS (SKIN)",
+          "reason": "عنوان قسم غلاف الزلابية."
+        }
+      ],
+      "sourceMethod": [
+        "1 METHOD (FILLING) 2 Rinse and soak dried shrimps until soft. (About 20 mins) 3 Peel and shred or finely julienne yam bean and carrots into about 3\" long strips. 4 Drain soaked shrimps and squeeze out water. Chop coarsely. 5 Heat a little oil and saute the garlic and shrimp until fragrant. 6 Stir in both veges until slightly cooked. 7 Add in oyster sauce, light soy sauce, sugar and water. 8 Stir to coat evenly. 9 Lower heat, cover and simmer. Give it a stir every now and then. Check often to see if you need to add more water. 10 Cook until vege is soft and translucent but still holding its shape (not too mushy). 11 Season to taste with salt and pepper. (I didn't add any) 12 Turn off heat and leave to cool. 13 METHOD (SKIN) 14 Combine wheat starch and tapioca flour in a large, heatproof mixing bowl. 15 Stir in boiling water until you get an almost translucent dough. 16 * Note: This was tough to do as the dough was very sticky and firm so I gave up and transferred to my Kenwood Chef mixer with a dough hook to mix and knead. 17 Once you get a nice translucent dough, cover and leave to rest for about 10 mins. 18 Add in the oil 1 tbs at a time and knead well after each addition. Keep at it until all 3 tbs oil are used up. 19 Remove from bowl and shape into a long log and divide into about 30 - 35 pieces, depending on how big you want your dumplings to be. 20 Prepare the steamer. 21 Oil the base of your steaming tray. (Some people use parchment paper) 22 Roll out the little balls of dough into circles (I rolled mine to about 3\" in diameter). 23 Work quickly or the skin will dry up and become too brittle to wrap or cover with a damp cloth in between. 24 Spoon a good tbs of jicama filling into the center of the skin. 25 Bring the two ends together, pleat and pinch to seal. 26 Arrange the dumplings onto well-oiled steaming tray and steam for 15 - 18 mins or until skin is translucent. 27 Serve warm with chilli sauce. 28 Dumplings can be kept in the freezer uncooked. 29 Place frozen dumplings directly into steamer and steam for about 15 - 18 mins or until translucent. 30 *Remember to oil the tray your dumplings sit on or use parchment paper to line."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اشطفي الروبيان المجفف وانقعيه حتى يلين، نحو 20 دقيقة. قشري جذر اليام والجزر وابشريهما أو قطعيهما عيدانًا رفيعة بطول نحو 3 بوصات."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "صفي الروبيان واعصري الماء وافرميه خشنًا. سخني قليلًا من الزيت وشوحي الثوم والروبيان حتى تفوح رائحتهما."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي الخضار وقلبي حتى تبدأ باللين. أضيفي صلصة المحار والصويا والسكر والماء وقلبي لتتغطى المكونات. خففي النار وغطي القدر واتركيها مع التقليب من وقت لآخر؛ افحصيها وأضيفي ماءً إن احتاجت. اطهي حتى تلين الخضار وتصبح شبه شفافة مع احتفاظها بالشكل. تبلي بالملح والفلفل حسب الذوق؛ يذكر الكاتب أنه لم يضفهما. ارفعيها واتركيها تبرد."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "اخلطي نشا القمح ودقيق التابيوكا في وعاء مقاوم للحرارة. أضيفي الماء المغلي وقلبي حتى تتكون عجينة شبه شفافة. يذكر المصدر أن العجينة كانت لزجة وصلبة وصعبة العجن يدويًا، فاستُخلاطت بخطاف العجين."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "غطي العجينة واتركيها ترتاح نحو 10 دقائق. أضيفي الزيت ملعقة في كل مرة واعجني بعد كل إضافة؛ يسجل المصدر نطاق 3–5 ملاعق وأن الكاتب استخدم 3."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "شكلي العجين أسطوانة طويلة وقسميها نحو 30–35 قطعة بحسب الحجم المرغوب. جهزي قدر البخار وادهني قاعدة الصينية."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 7,
+          "text": "افردي كل كرة على شكل دائرة قطرها نحو 3 بوصات. اعملي بسرعة كي لا يجف الغلاف، أو غطي القطع بقطعة قماش رطبة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 8,
+          "text": "ضعي ملعقة كبيرة ممتلئة تقريبًا من حشوة جذر اليام في الوسط. اجمعي الطرفين واطوي الحواف واضغطي لإغلاقها."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 9,
+          "text": "رتبي الزلابية على صينية مبخرة مدهونة جيدًا، أو استخدمي ورق خبز. اطهيها بالبخار 15–18 دقيقة حتى يصبح الغلاف شفافًا. قدميها دافئة مع صلصة الفلفل. يمكن تجميدها غير مطهوة وطبخها بالبخار مباشرة من التجميد 15–18 دقيقة حتى الشفافية."
+        }
+      ],
+      "review": "عنوانا الحشوة والغلاف استبعدا. مقدار زيت القلي في الحشوة وصفة عامة غير محددة؛ سطر الزيت ليس له كمية. المقادير 3–5 ملاعق زيت للعجين، وذكر الكاتب استخدام 3؛ أبقيناها غير قابلة للتوسيع آليًا بسبب النطاق.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/LQKBBZMC/chinese-jicama-dumplings",
+      "sourceAuthor": [
+        "ping"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:55675",
+      "sourceTextSha256": "be740b0e9ce3a40b212fa64b090f089e14a74dc380e1c9bd6a76a8c7c0a1c8a6",
+      "sourceSnapshotContentSha256": "5f7c9e38c2abc7db53e452202231d853dbba0f59f749f630ddd006fda90b2d3f"
+    },
+    {
+      "id": "fi650-56113",
+      "sourceId": "modern-bulk:foodista:56113",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0006/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0006/source-snapshots/56113.json",
+      "sourceSnapshotSha256": "841ff30088d7ac6f0a41ef9b4b7a63093d8ad5ced30530f61ddb468ff3a97bd7",
+      "cuisineEvidence": "Korean Curry",
+      "sourceIngredientLines": [
+        "•1 lb. of sirloin beef, thinly sliced (boneless chicken breasts)",
+        "•1 (100 gram) packet Ottogi Korean curry powder",
+        "•2 potatoes, diced",
+        "•1 onion, diced",
+        "•2 carrots, diced",
+        "•1 tbsp olive oil",
+        "•1 green bell pepper diced (optional)",
+        "•1/2 can corn (optional)",
+        "•1/2 Fuji apple, diced (optional)",
+        "•4 cups water"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "•1 lb. of sirloin beef, thinly sliced (boneless chicken breasts)",
+          "targetIngredientId": "fi650-56113-i0",
+          "translatedName": "لحم سيرلوين منزوع العظم شرائح رفيعة، أو صدور دجاج"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "•1 (100 gram) packet Ottogi Korean curry powder",
+          "targetIngredientId": "fi650-56113-i1",
+          "translatedName": "عبوة مسحوق كاري كوري أوتوغي"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "•2 potatoes, diced",
+          "targetIngredientId": "fi650-56113-i2",
+          "translatedName": "بطاطس مكعبات"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "•1 onion, diced",
+          "targetIngredientId": "fi650-56113-i3",
+          "translatedName": "بصلة مكعبات"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "•2 carrots, diced",
+          "targetIngredientId": "fi650-56113-i4",
+          "translatedName": "جزر مكعبات"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "•1 tbsp olive oil",
+          "targetIngredientId": "fi650-56113-i5",
+          "translatedName": "زيت زيتون"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "•1 green bell pepper diced (optional)",
+          "targetIngredientId": "fi650-56113-i6",
+          "translatedName": "فلفل أخضر حلو مكعبات، اختياري"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "•1/2 can corn (optional)",
+          "targetIngredientId": "fi650-56113-i7",
+          "translatedName": "نصف علبة ذرة اختيارية؛ حجم العلبة غير محدد"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "•1/2 Fuji apple, diced (optional)",
+          "targetIngredientId": "fi650-56113-i8",
+          "translatedName": "نصف تفاحة فوجي مكعبات اختيارية"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "•4 cups water",
+          "targetIngredientId": "fi650-56113-i9",
+          "translatedName": "ماء"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 1. Cut vegetables into 1/2-inch cubed pieces or into chunk sizes. Slice meat thinly and set aside. 2 2. Stir fry the vegetables in a non-stick skillet or frying pan with 1 tbsp olive oil, 3 or 4 minutes at most. Add in the thin slices of beef and continue to stir until most of the beef has browned. 3 3. Add the curry powder along with water stirring continuously to prevent clumping and sticking. Cook on medium heat (with slight bubbling) for 20 minutes, stirring occasionally. The water should just cover ingredients initially, adding more if necessary during cooking. 4 Sample potatoes or carrots to make sure cooked through. 5 4. Serve on a bed of rice with other Korean banchan (side dishes). Enjoy! 6 1. Cut vegetables into 1/2-inch cubed pieces or into chunk sizes. Slice meat thinly and set aside. 7 2. Stir fry the vegetables in a non-stick skillet or frying pan with 1 tbsp olive oil, 3 or 4 minutes at most. Add in the thin slices of beef and continue to stir until most of the beef has browned. 8 3. Add the curry powder along with water stirring continuously to prevent clumping and sticking. Cook on medium heat (with slight bubbling) for 20 minutes, stirring occasionally. The water should just cover ingredients initially, adding more if necessary during cooking. 9 Sample potatoes or carrots to make sure cooked through. 10 4. Serve on a bed of rice with other Korean banchan (side dishes). Enjoy!"
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "قطعي الخضار مكعبات بطول نصف بوصة تقريبًا أو قطعًا كبيرة. قطعي اللحم شرائح رفيعة واتركيه جانبًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "شوحي الخضار في مقلاة غير لاصقة مع ملعقة زيت الزيتون 3–4 دقائق كحد أقصى. أضيفي شرائح اللحم وقلبي حتى يتحمر معظمها."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي مسحوق الكاري والماء مع التحريك المستمر لمنع التكتل والالتصاق. اطهي على نار متوسطة مع فقاعات خفيفة 20 دقيقة، مع التقليب من حين لآخر. ينبغي أن يغطي الماء المكونات في البداية؛ أضيفي المزيد إذا لزم أثناء الطهي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "اختبري البطاطس أو الجزر للتأكد من نضجهما. قدمي الكاري فوق الأرز ومع أطباق البانشان الكورية."
+        }
+      ],
+      "review": "المصدر يكرر نص الطريقة كاملًا مرتين؛ تُرجم التسلسل مرة واحدة مع تسجيل التكرار بالمراجعة. اختيار اللحم البقري أو صدور الدجاج محفوظ.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/LZKBCBLS/korean-curry",
+      "sourceAuthor": [
+        "olivia kim"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:56113",
+      "sourceTextSha256": "996f0181023f63671efc89c49b85c7f92cdfe77048122d7d0cec408d7388e522",
+      "sourceSnapshotContentSha256": "841ff30088d7ac6f0a41ef9b4b7a63093d8ad5ced30530f61ddb468ff3a97bd7"
+    },
+    {
+      "id": "fi650-56525",
+      "sourceId": "modern-bulk:foodista:56525",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0006/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0006/source-snapshots/56525.json",
+      "sourceSnapshotSha256": "f46f2241fbb11e201d6c09bd11e5a007d104416005471def39bf417822b01e09",
+      "cuisineEvidence": "One-Pot Kimchi Ramen",
+      "sourceIngredientLines": [
+        "8 ounces pork belly (skinless), sliced",
+        "For the pork marinade:",
+        "3 cloves garlic, minced",
+        "1 tablespoon fresh ginger, minced",
+        "1 tablespoon Sherry",
+        "1 tablespoon soy sauce",
+        "For the kimchi ramen:",
+        "4 soft boiled eggs, halved",
+        "1/2 medium onion, thinly sliced",
+        "1 cup shiitake mushrooms, sliced",
+        "Half block of firm tofu, sliced",
+        "4 ounces enoki mushrooms",
+        "4 baby bok choy, halved",
+        "1 cup kimchi, firmly packed",
+        "1/2 cup kimchi juice",
+        "4 cups chicken bone broth or chicken broth",
+        "2 tablespoons spicy red pepper paste",
+        "1 tablespoon Korean red pepper powder",
+        "2 packages ramen",
+        "Chopped green onions for garnishing"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "8 ounces pork belly (skinless), sliced",
+          "targetIngredientId": "fi650-56525-i0",
+          "translatedName": "لحم بطن خنزير بلا جلد مقطع شرائح"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "3 cloves garlic, minced",
+          "targetIngredientId": "fi650-56525-i1",
+          "translatedName": "فصوص ثوم مفرومة لتتبيلة اللحم"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1 tablespoon fresh ginger, minced",
+          "targetIngredientId": "fi650-56525-i2",
+          "translatedName": "زنجبيل طازج مفروم"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 tablespoon Sherry",
+          "targetIngredientId": "fi650-56525-i3",
+          "translatedName": "شيري"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 tablespoon soy sauce",
+          "targetIngredientId": "fi650-56525-i4",
+          "translatedName": "صلصة صويا"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "4 soft boiled eggs, halved",
+          "targetIngredientId": "fi650-56525-i5",
+          "translatedName": "بيض مسلوق نصف سلق مقطوع نصفين"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1/2 medium onion, thinly sliced",
+          "targetIngredientId": "fi650-56525-i6",
+          "translatedName": "بصلة متوسطة مقطعة شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "1 cup shiitake mushrooms, sliced",
+          "targetIngredientId": "fi650-56525-i7",
+          "translatedName": "فطر شيتاكي شرائح"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "Half block of firm tofu, sliced",
+          "targetIngredientId": "fi650-56525-i8",
+          "translatedName": "نصف قالب توفو متماسك مقطع شرائح؛ وزن القالب غير محدد"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "4 ounces enoki mushrooms",
+          "targetIngredientId": "fi650-56525-i9",
+          "translatedName": "فطر إينوكي"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "4 baby bok choy, halved",
+          "targetIngredientId": "fi650-56525-i10",
+          "translatedName": "حبات بوك تشوي صغيرة مقسومة نصفين"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "1 cup kimchi, firmly packed",
+          "targetIngredientId": "fi650-56525-i11",
+          "translatedName": "كيمتشي معبأ بإحكام"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "1/2 cup kimchi juice",
+          "targetIngredientId": "fi650-56525-i12",
+          "translatedName": "عصير الكيمتشي"
+        },
+        {
+          "sourceLineIndex": 15,
+          "sourceText": "4 cups chicken bone broth or chicken broth",
+          "targetIngredientId": "fi650-56525-i13",
+          "translatedName": "مرق عظام دجاج أو مرق دجاج"
+        },
+        {
+          "sourceLineIndex": 16,
+          "sourceText": "2 tablespoons spicy red pepper paste",
+          "targetIngredientId": "fi650-56525-i14",
+          "translatedName": "معجون فلفل أحمر حار"
+        },
+        {
+          "sourceLineIndex": 17,
+          "sourceText": "1 tablespoon Korean red pepper powder",
+          "targetIngredientId": "fi650-56525-i15",
+          "translatedName": "مسحوق فلفل أحمر كوري"
+        },
+        {
+          "sourceLineIndex": 18,
+          "sourceText": "2 packages ramen",
+          "targetIngredientId": "fi650-56525-i16",
+          "translatedName": "عبوتا رامن"
+        },
+        {
+          "sourceLineIndex": 19,
+          "sourceText": "Chopped green onions for garnishing",
+          "targetIngredientId": "fi650-56525-i17",
+          "translatedName": "بصل أخضر مفروم للتزيين؛ المقدار غير محدد"
+        }
+      ],
+      "omittedSourceLines": [
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "For the pork marinade:",
+          "reason": "عنوان مكونات تتبيلة لحم الخنزير."
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "For the kimchi ramen:",
+          "reason": "عنوان قسم الرامن بالكيمتشي."
+        }
+      ],
+      "sourceMethod": [
+        "1 Combine all the ingredients for the pork marinade in a medium bowl. 2 Cut the pork belly slices into 2-inch long pieces. Add the pork into the marinade. Stir well and set aside. 3 In a small saucepan, bring 2 cups water to a boil. Carefully place eggs into the boiling water. Let them cook for 5 minutes. Scoop out eggs and place in cold water. 4 Meanwhile, slice onion, shiitake mushrooms, and tofu; clean enoki mushrooms and chop off the ends; wash baby bok choy and cut them in half. Set all prepared ingredients aside. 5 In a medium saucepan, cook marinated pork belly over medium-high heat for about 2 minutes, stirring often. 6 Add onion and kimchi. Sauté until fragrant, about 2 minutes. 7 Add kimchi juice, broth, red pepper paste, red pepper powder and bring to a boil. 8 Once the soup base is boiling, add ramen and shiitake mushrooms. Let it cook for 3 minutes. 9 Add tofu, enoki mushrooms, bok choy and cook for 2 minutes or until ramen is tender. Turn off heat. 10 Peel eggs and cut in half. 11 Dish the kimchi ramen and serve with halved eggs. Garnish with chopped green onions. Enjoy!"
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اخلطي الثوم والزنجبيل والشيري وصلصة الصويا في وعاء متوسط لتتبيلة اللحم. قطعي شرائح لحم الخنزير إلى قطع بطول بوصتين وأضيفيها إلى التتبيلة. قلبي واتركيها جانبًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "في قدر صغير اغلي كوبين من الماء. أضيفي البيض بحذر واتركيه خمس دقائق، ثم أخرجيه إلى ماء بارد."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "في أثناء ذلك قطعي البصل والفطر والتوفو، ونظفي فطر الإينوكي وأزيلي أطرافه، واغسلي البوك تشوي واقسميه نصفين."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "اطهي لحم الخنزير المتبل في قدر متوسط على نار متوسطة مرتفعة نحو دقيقتين مع التقليب المتكرر."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "أضيفي البصل والكيمتشي وشوحي حتى تفوح الرائحة، نحو دقيقتين."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "أضيفي عصير الكيمتشي والمرق ومعجون الفلفل ومسحوقه واتركي المزيج حتى يغلي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 7,
+          "text": "أضيفي الرامن وفطر الشيتاكي واطهي ثلاث دقائق. أضيفي التوفو وفطر الإينو والبوك تشوي واطهي دقيقتين أو حتى تلين المعكرونة. أطفئي النار."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 8,
+          "text": "قشري البيض واقسميه نصفين. قدمي الرامن مع البيض والبصل الأخضر المفروم."
+        }
+      ],
+      "review": "سطر كمية التوفو يحدد نصف قالب دون وزن القالب. عنواني التتبيلة وقسم الرامن استبعدا. مقدار البصل الأخضر للتزيين غير محدد.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/M8SXMTSC/one-pot-kimchi-ramen",
+      "sourceAuthor": [
+        "Sharon Chen"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:56525",
+      "sourceTextSha256": "dd66d9b699bc052b8879827f28560f0907a4c35523aff0c84b01b6b975e3c255",
+      "sourceSnapshotContentSha256": "f46f2241fbb11e201d6c09bd11e5a007d104416005471def39bf417822b01e09"
+    },
+    {
+      "id": "fi650-56933",
+      "sourceId": "modern-bulk:foodista:56933",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0007/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0007/source-snapshots/56933.json",
+      "sourceSnapshotSha256": "a1d3176e421e3ee5a841ed035762b89fc3cba87a76928484a8f33d3919f8318d",
+      "cuisineEvidence": "Green Thai Curry",
+      "sourceIngredientLines": [
+        "1 1/2 kgs (3lbs) Roasting chicken",
+        "225 mls (8fl oz) Coconut milk",
+        "3 teaspoons Green curry paste",
+        "2 sprigs tender citrus leaves",
+        "1 teaspoon Salt",
+        "2 tablespoons Fish sauce",
+        "2 tablespoons Finely chopped fresh green chillies, 4 tablespoons Finely chopped fresh basil or coriander leaves"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "1 1/2 kgs (3lbs) Roasting chicken",
+          "targetIngredientId": "fi650-56933-i0",
+          "translatedName": "دجاج تحمير كامل مقطع مفاصل"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "225 mls (8fl oz) Coconut milk",
+          "targetIngredientId": "fi650-56933-i1",
+          "translatedName": "حليب جوز الهند"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "3 teaspoons Green curry paste",
+          "targetIngredientId": "fi650-56933-i2",
+          "translatedName": "معجون كاري أخضر"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "2 sprigs tender citrus leaves",
+          "targetIngredientId": "fi650-56933-i3",
+          "translatedName": "غصنا أوراق حمضيات طرية"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 teaspoon Salt",
+          "targetIngredientId": "fi650-56933-i4",
+          "translatedName": "ملح"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "2 tablespoons Fish sauce",
+          "targetIngredientId": "fi650-56933-i5",
+          "translatedName": "صلصة سمك"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "2 tablespoons Finely chopped fresh green chillies, 4 tablespoons Finely chopped fresh basil or coriander leaves",
+          "targetIngredientId": "fi650-56933-i6",
+          "translatedName": "فلفل أخضر طازج مفروم (ملعقتان كبيرتان) وأوراق ريحان أو كزبرة طازجة مفرومة (4 ملاعق كبيرة)؛ الصياغة تجمع عنصرين"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Divide the chicken into joints. 2 Heat a cupful of coconut cream (scooped off the top of the milk, after it has been left to stand for a while) in a large heavy saucepan, stirring occasionally, until the cream thickens and oil bubbles around. By this time it should be reduced to a quarter of the original amount. 3 Add the curry paste and fry the rich oily cream for about 5 minutes, stirring constantly. The curry paste will smell cooked, and the oil will separate from it when it is ready. 4 When this happens add the pieces of chicken and cook over a medium low heat, stirring frequently and turning them, for about 15 minutes. The chicken will change color and have a cooked appearance. 5 Add the remaining coconut milk, citrus leaves, salt and fish sauce and stir while the coconut milk comes to the boil. 6 Then turn the heat down and allow to simmer uncovered for about 35 to 40 minutes, or until the chicken is well cooked and tender and the gravy is rich. 7 Stir in the chopped fresh chillies and herbs, simmer for 5 minutes longer and then turn onto a serving dish. Serve with rice."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "قطعي الدجاج إلى مفاصل."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "اغرفي كوبًا من كريمة جوز الهند التي تتجمع أعلى الحليب بعد تركه، وضعيها في قدر ثقيل كبير. سخنيها مع التقليب من حين لآخر حتى تثخن وتظهر فقاعات الزيت حولها، وينخفض مقدارها إلى ربع حجمها الأصلي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي معجون الكاري واقليه في الكريمة الزيتية نحو خمس دقائق مع التحريك المستمر. يكون جاهزًا عندما تفوح رائحة نضجه وينفصل الزيت عنه."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "أضيفي قطع الدجاج واطهي على نار متوسطة منخفضة نحو 15 دقيقة، مع التقليب المتكرر وتقليب القطع حتى يتغير لونها ويبدو سطحها مطهوًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "أضيفي بقية حليب جوز الهند وأوراق الحمضيات والملح وصلصة السمك وقلبي حتى يغلي الحليب."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "خففي النار واتركي القدر مكشوفًا على نار هادئة 35–40 دقيقة حتى ينضج الدجاج ويلين وتصبح الصلصة غنية."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 7,
+          "text": "أضيفي الفلفل الأخضر والأعشاب المفرومة واطهي خمس دقائق أخرى. انقلي الكاري إلى طبق تقديم وقدميه مع الأرز."
+        }
+      ],
+      "review": "سطر المكونات الأخير يجمع مقدار الفلفل الحار (ملعقتان كبيرتان) ومقدار أعشاب الكزبرة أو الريحان (4 ملاعق كبيرة)؛ بقي غير قابل للتوسيع كعنصر واحد مع حفظ المقادير بالنص. المقادير تذكر 225 مل حليبًا، بينما الطريقة تبدأ بفصل كوب كريمة من الحليب دون تحديد إضافي.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/MK2PZZMS/green-thai-curry",
+      "sourceAuthor": [
+        "Helen Pitlick"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:56933",
+      "sourceTextSha256": "17dbb449d503dc93b4524d63fa92d8267c74560004533c24fb081c4b968c7dff",
+      "sourceSnapshotContentSha256": "a1d3176e421e3ee5a841ed035762b89fc3cba87a76928484a8f33d3919f8318d"
+    },
+    {
+      "id": "fi650-57392",
+      "sourceId": "modern-bulk:foodista:57392",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0007/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0007/source-snapshots/57392.json",
+      "sourceSnapshotSha256": "d56546b2bc4799fceed2515537196986e30a930f14f4f139c627ed6765b01f33",
+      "cuisineEvidence": "Korean Bulgoki",
+      "sourceIngredientLines": [
+        "3/4 cup soy sauce",
+        "1 cup rice wine, (such as sake or shaoxing)",
+        "1 teaspoon dark sesame oil",
+        "2 smalls jalapeno or serrano chiles, thinly sliced",
+        "1 teaspoon fresh ground black pepper",
+        "5 green onions, (including tops), thinly sliced",
+        "1 tablespoon minced garlic",
+        "thumb-sized piece of fresh ginger, peeled and minced",
+        "4 pounds meaty thick-cut short ribs",
+        "1/4 cup sesame seeds",
+        "2 tablespoons minced cilantro",
+        "steamed rice, for accompaniment"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "3/4 cup soy sauce",
+          "targetIngredientId": "fi650-57392-i0",
+          "translatedName": "صلصة صويا"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "1 cup rice wine, (such as sake or shaoxing)",
+          "targetIngredientId": "fi650-57392-i1",
+          "translatedName": "نبيذ أرز، مثل الساكي أو شاوشينغ"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1 teaspoon dark sesame oil",
+          "targetIngredientId": "fi650-57392-i2",
+          "translatedName": "زيت سمسم داكن"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "2 smalls jalapeno or serrano chiles, thinly sliced",
+          "targetIngredientId": "fi650-57392-i3",
+          "translatedName": "فلفل هالابينو أو سيرانو صغير مقطع شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 teaspoon fresh ground black pepper",
+          "targetIngredientId": "fi650-57392-i4",
+          "translatedName": "فلفل أسود مطحون طازجًا"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "5 green onions, (including tops), thinly sliced",
+          "targetIngredientId": "fi650-57392-i5",
+          "translatedName": "أعواد بصل أخضر مع الأجزاء الخضراء مقطعة شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 tablespoon minced garlic",
+          "targetIngredientId": "fi650-57392-i6",
+          "translatedName": "ثوم مفروم"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "thumb-sized piece of fresh ginger, peeled and minced",
+          "targetIngredientId": "fi650-57392-i7",
+          "translatedName": "قطعة زنجبيل بحجم الإبهام مقشرة ومفرومة"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "4 pounds meaty thick-cut short ribs",
+          "targetIngredientId": "fi650-57392-i8",
+          "translatedName": "أضلاع قصيرة سميكة كثيرة اللحم"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "1/4 cup sesame seeds",
+          "targetIngredientId": "fi650-57392-i9",
+          "translatedName": "سمسم"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "2 tablespoons minced cilantro",
+          "targetIngredientId": "fi650-57392-i10",
+          "translatedName": "كزبرة مفرومة"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "steamed rice, for accompaniment",
+          "targetIngredientId": "fi650-57392-i11",
+          "translatedName": "أرز مطهو على البخار للتقديم؛ المقدار غير محدد"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 1. Mix soy sauce, wine, oil, chiles, black pepper, green onions, garlic, and ginger in large roasting pan. Add ribs, turning them several times in liquid. Cover pan with foil or plastic wrap and let ribs marinate 3 hours at room temperature or overnight in the refrigerator, turning several times to coat meat thoroughly. 2 2. Preheat oven to 375 degrees F. Remove and reserve ribs and pour marinade into bowl. Return ribs to pan, bone side down, leaving some space between them. Bake until tender (40 minutes to 1 hour, depending on thickness), brushing with reserved marinade every 10 minutes. 3 3. At the final basting, sprinkle ribs with sesame seed. When done, remove from oven, sprinkle with cilantro, and serve immediately with steamed rice. 4 NOTES : Salty, spicy, grilled Korean short ribs have attained worldwide popularity in recent years. This version is oven baked."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اخلطي صلصة الصويا ونبيذ الأرز والزيت والفلفل والبصل الأخضر والفلفل الأسود والثوم والزنجبيل في صينية شوي كبيرة. أضيفي الأضلاع وقلبيها مرات عدة في السائل."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "غطي الصينية بورق ألمنيوم أو غلاف بلاستيكي واتركي اللحم منقوعًا ثلاث ساعات في حرارة الغرفة أو طوال الليل في الثلاجة، مع تقليبه مرات عدة ليغطيه التتبيل."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "سخني الفرن إلى 375°F. أخرجي الأضلاع واحتفظي بالتتبيلة في وعاء. أعيدي الأضلاع إلى الصينية بحيث تكون جهة العظم إلى أسفل وبين القطع فراغ."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "اخبزيها حتى تلين، 40 دقيقة إلى ساعة بحسب السماكة، وادهنيها بالتتبيلة المحفوظة كل عشر دقائق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "عند الدهن الأخير رشي السمسم. أخرجيها من الفرن وانثري الكزبرة وقدمي فورًا مع الأرز المطهو على البخار."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "توضح ملاحظة المصدر أن هذه النسخة من أضلاع اللحم الكورية تُخبز في الفرن."
+        }
+      ],
+      "review": "زمن الخَبز نطاق 40 دقيقة إلى ساعة بحسب سماكة القطع، مع نقع 3 ساعات بحرارة الغرفة أو طوال الليل في الثلاجة. لا حُوّل أي منهما إلى رقم موحد.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/MSTBM2QD/korean-bulgoki",
+      "sourceAuthor": [
+        "Anonymous"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:57392",
+      "sourceTextSha256": "f2209c4507a9c39d98795191caeb4a0abd945173f67c7bdcd03a8c7785333dfb",
+      "sourceSnapshotContentSha256": "d56546b2bc4799fceed2515537196986e30a930f14f4f139c627ed6765b01f33"
+    },
+    {
+      "id": "fi650-58018",
+      "sourceId": "modern-bulk:foodista:58018",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/source-snapshots/58018.json",
+      "sourceSnapshotSha256": "4cbfa9ebd290ed02f59f9427ac82b3fbeb02a926305982a6526dd2252142685b",
+      "cuisineEvidence": "Chinese-Style Aubergine",
+      "sourceIngredientLines": [
+        "1 large aubergine",
+        "2 tablespoons salt",
+        "1 teaspoon freshly-grated ginger root",
+        "1 tablespoon red chile paste with garlic",
+        "1 tablespoon chinese rice wine",
+        "1 tablespoon soy sauce, light",
+        "1 tablespoon sweet bean sauce",
+        "1 tablespoon hot bean sauce",
+        "3 tablespoons peanut oil",
+        "3 garlic cloves, minced",
+        "4 green onions, chopped",
+        "1 tablespoon toasted sesame oil",
+        "green tops of 3 green onions, chopped for garnish"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "1 large aubergine",
+          "targetIngredientId": "fi650-58018-i0",
+          "translatedName": "باذنجانة كبيرة"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "2 tablespoons salt",
+          "targetIngredientId": "fi650-58018-i1",
+          "translatedName": "ملح"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1 teaspoon freshly-grated ginger root",
+          "targetIngredientId": "fi650-58018-i2",
+          "translatedName": "زنجبيل طازج مبشور"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1 tablespoon red chile paste with garlic",
+          "targetIngredientId": "fi650-58018-i3",
+          "translatedName": "معجون فلفل أحمر حار بالثوم"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 tablespoon chinese rice wine",
+          "targetIngredientId": "fi650-58018-i4",
+          "translatedName": "نبيذ أرز صيني"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 tablespoon soy sauce, light",
+          "targetIngredientId": "fi650-58018-i5",
+          "translatedName": "صلصة صويا خفيفة"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 tablespoon sweet bean sauce",
+          "targetIngredientId": "fi650-58018-i6",
+          "translatedName": "صلصة فاصوليا حلوة"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1 tablespoon hot bean sauce",
+          "targetIngredientId": "fi650-58018-i7",
+          "translatedName": "صلصة فاصوليا حارة"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "3 tablespoons peanut oil",
+          "targetIngredientId": "fi650-58018-i8",
+          "translatedName": "زيت فول سوداني"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "3 garlic cloves, minced",
+          "targetIngredientId": "fi650-58018-i9",
+          "translatedName": "فصوص ثوم مفرومة"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "4 green onions, chopped",
+          "targetIngredientId": "fi650-58018-i10",
+          "translatedName": "بصل أخضر مفروم"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "1 tablespoon toasted sesame oil",
+          "targetIngredientId": "fi650-58018-i11",
+          "translatedName": "زيت سمسم محمص"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "green tops of 3 green onions, chopped for garnish",
+          "targetIngredientId": "fi650-58018-i12",
+          "translatedName": "الأجزاء الخضراء من ثلاثة أعواد بصل أخضر، مفرومة للتزيين"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Cut off the stem of the aubergine and cut into 3/4-inch slices. Cut the slices again so that you have 3/4-inch-square cubes. Place in a bowl and mix with the salt. Place in a colander and let drain for 45 minutes. Rinse off the cubes and drain for another 45 minutes. Or rinse and pat dry with paper towels.  2 Meanwhile, mix the sauce: In a small bowl mix the ginger, red chile paste with garlic, wine, soy sauce, hot bean sauce, and the sweet bean sauce. Stir and set aside. 3 Heat a wok or very large frying pan. Add the peanut oil and the garlic. Saute for a moment and then add the aubergine and green onion. Stir-fry over high heat until the aubergine is tender, 7 to 10 minutes. Add the mixed sauce. Continue cooking for another 3 minutes. 4 Place on the serving platter and drizzle the sesame oil over the top. Add green onion tops for garnish."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "أزيلي ساق الباذنجان وقطعيه شرائح بسماكة ثلاثة أرباع البوصة، ثم قطعي الشرائح مكعبات بالمقاس نفسه. ضعيها في وعاء واخلطيها بالملح."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "ضعي الباذنجان في مصفاة واتركيه يتصفى 45 دقيقة. اشطفي المكعبات ثم صفيها 45 دقيقة أخرى، أو اشطفيها وجففيها بالتربيت بمناشف ورقية."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "في أثناء ذلك اخلطي الزنجبيل ومعجون الفلفل بالثوم ونبيذ الأرز وصلصة الصويا وصلصة الفاصوليا الحارة والحلوة في وعاء صغير."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "سخني ووك أو مقلاة كبيرة جدًا، وأضيفي زيت الفول السوداني والثوم. شوحي قليلًا ثم أضيفي الباذنجان والبصل الأخضر."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "قلبي على نار مرتفعة حتى يلين الباذنجان، 7–10 دقائق. أضيفي خليط الصلصة واطهي ثلاث دقائق أخرى."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "انقلي الطبق إلى طبق التقديم ورشي زيت السمسم، ثم أضيفي الأجزاء الخضراء من البصل للتزيين."
+        }
+      ],
+      "review": "المصدر يذكر تصفية مكعبات الباذنجان 45 دقيقة ثم شطفها وتصفيتها 45 دقيقة أخرى، أو تجفيفها بعد الشطف بالمناشف الورقية؛ حُفظ البديل كما ورد.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/N7JTJNY6/chinese-style-aubergine",
+      "sourceAuthor": [
+        "Helen Pitlick"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:58018",
+      "sourceTextSha256": "66a99f347da951128aec7952e9d872efb65679ba26db0db7e73d7070a991ba81",
+      "sourceSnapshotContentSha256": "4cbfa9ebd290ed02f59f9427ac82b3fbeb02a926305982a6526dd2252142685b"
+    },
+    {
+      "id": "fi650-58657",
+      "sourceId": "modern-bulk:foodista:58657",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/source-snapshots/58657.json",
+      "sourceSnapshotSha256": "1e712c3055d486115a553661a31ffb01d3dd995c8acc6a5e33b4738b7a8485d7",
+      "cuisineEvidence": "Channa-Chickpea, Potato & Cauliflower Curry",
+      "sourceIngredientLines": [
+        "2 tablespoons sunflower oil",
+        "1 onion-sliced thinly",
+        "3 cloves garlic-minced",
+        "3 tablespoons fresh ginger-minced",
+        "1 teaspoon tumeric",
+        "1 tablespoon ground cumin",
+        "1 teaspoon fenugreek- toasted and crushed",
+        "1 teaspoon cumin seeds- toasted and crushed",
+        "1 tablespoon curry powder",
+        "2 teaspoons paprika",
+        "2 potatoes-peeled and chopped",
+        "water-to cover",
+        "1 can of chickpeas-drained and rinsed",
+        "head of cauliflower-cut into florets",
+        "sea salt",
+        "2 teaspoons apple cider vinegar",
+        "2 teaspoons sugar"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "2 tablespoons sunflower oil",
+          "targetIngredientId": "fi650-58657-i0",
+          "translatedName": "زيت دوار الشمس"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "1 onion-sliced thinly",
+          "targetIngredientId": "fi650-58657-i1",
+          "translatedName": "بصلة مقطعة شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "3 cloves garlic-minced",
+          "targetIngredientId": "fi650-58657-i2",
+          "translatedName": "فصوص ثوم مفرومة"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "3 tablespoons fresh ginger-minced",
+          "targetIngredientId": "fi650-58657-i3",
+          "translatedName": "زنجبيل طازج مفروم"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 teaspoon tumeric",
+          "targetIngredientId": "fi650-58657-i4",
+          "translatedName": "كركم"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 tablespoon ground cumin",
+          "targetIngredientId": "fi650-58657-i5",
+          "translatedName": "كمون مطحون"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 teaspoon fenugreek- toasted and crushed",
+          "targetIngredientId": "fi650-58657-i6",
+          "translatedName": "حلبة محمصة ومطحونة"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1 teaspoon cumin seeds- toasted and crushed",
+          "targetIngredientId": "fi650-58657-i7",
+          "translatedName": "بذور كمون محمصة ومطحونة"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1 tablespoon curry powder",
+          "targetIngredientId": "fi650-58657-i8",
+          "translatedName": "مسحوق كاري"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "2 teaspoons paprika",
+          "targetIngredientId": "fi650-58657-i9",
+          "translatedName": "بابريكا"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "2 potatoes-peeled and chopped",
+          "targetIngredientId": "fi650-58657-i10",
+          "translatedName": "بطاطس مقشرة ومقطعة"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "water-to cover",
+          "targetIngredientId": "fi650-58657-i11",
+          "translatedName": "ماء للتغطية؛ المقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "1 can of chickpeas-drained and rinsed",
+          "targetIngredientId": "fi650-58657-i12",
+          "translatedName": "حمص معلب مصفى ومغسول"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "head of cauliflower-cut into florets",
+          "targetIngredientId": "fi650-58657-i13",
+          "translatedName": "رأس قرنبيط مقطع زهيرات"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "sea salt",
+          "targetIngredientId": "fi650-58657-i14",
+          "translatedName": "ملح بحري؛ المقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 15,
+          "sourceText": "2 teaspoons apple cider vinegar",
+          "targetIngredientId": "fi650-58657-i15",
+          "translatedName": "خل تفاح"
+        },
+        {
+          "sourceLineIndex": 16,
+          "sourceText": "2 teaspoons sugar",
+          "targetIngredientId": "fi650-58657-i16",
+          "translatedName": "سكر"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 In a large pot heat oil. 2 Add onions saute until very soft. 3 Add garlic and ginger, saute for 3-4 minutes. 4 Add spices, saute with potatoes until they are covered with the spice mixture. 5 Add water to cover. 6 Simmer until potatoes are soft. 7 Add chickpeas, and cauliflower. 8 Simmer with lid on for 20 minutes,stirring occasionally. 9 Season with salt,sugar and vinegar. Serve with brown rice"
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "سخني الزيت في قدر كبير. أضيفي البصل وشوحيه حتى يلين جدًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "أضيفي الثوم والزنجبيل وشوحي 3–4 دقائق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي التوابل والبطاطس وقلبي حتى تغطيها التوابل."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "أضيفي ماء يكفي للتغطية واتركي المزيج على نار هادئة حتى تلين البطاطس."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "أضيفي الحمص والقرنبيط وغطي القدر واتركيهما على نار هادئة 20 دقيقة مع التقليب من حين لآخر."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "تبلي بالملح والسكر والخل. قدمي الطبق مع الأرز البني."
+        }
+      ],
+      "review": "مقدار الماء يكفي للتغطية والملح حسب الذوق؛ لم يختلق لهما مقدار. المصدر يطلب التقديم مع الأرز البني دون تحديد الكمية.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/NN7H6HVG/channa-chickpea-potato-cauliflower-curry",
+      "sourceAuthor": [
+        "Kirsten's Kitchen"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:58657",
+      "sourceTextSha256": "c1c682651b9b8d6d7c06845059a25995e5b7e71e05c65962ab97765c2951f673",
+      "sourceSnapshotContentSha256": "1e712c3055d486115a553661a31ffb01d3dd995c8acc6a5e33b4738b7a8485d7"
+    },
+    {
+      "id": "fi650-58816",
+      "sourceId": "modern-bulk:foodista:58816",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/source-snapshots/58816.json",
+      "sourceSnapshotSha256": "1ccf9b36a7da91808ee1bbe38cee4adba8af63159db68f032345c9355cc3b7fe",
+      "cuisineEvidence": "Garden Biryani",
+      "sourceIngredientLines": [
+        "4 tablespoons mild, light-flavored olive oil",
+        "1 onion chopped",
+        "1 garlic clove minced",
+        "1 small red or green bell pepper cut into 1\" pieces",
+        "2 cups raw brown rice",
+        "1 teaspoon minced fresh ginger root",
+        "1/4 teaspoon ground cloves",
+        "3/4 teaspoon ground cinnamon",
+        "1/2 teaspoon ground cumin",
+        "4 cups boiling water",
+        "1 cup fresh or frozen green beans cut in 1 ½\" pieces",
+        "1 cup strip-cut carrots 1 ½\" strips",
+        "3/4 cup broccoli florets",
+        "3/4 cup cauliflower florets",
+        "1 cup diced potato",
+        "1/2 cup fresh or frozen green peas",
+        "1/2 cup unsalted peanuts or cashews"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "4 tablespoons mild, light-flavored olive oil",
+          "targetIngredientId": "fi650-58816-i0",
+          "translatedName": "زيت زيتون خفيف النكهة"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "1 onion chopped",
+          "targetIngredientId": "fi650-58816-i1",
+          "translatedName": "بصلة مفرومة"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1 garlic clove minced",
+          "targetIngredientId": "fi650-58816-i2",
+          "translatedName": "فص ثوم مفروم"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1 small red or green bell pepper cut into 1\" pieces",
+          "targetIngredientId": "fi650-58816-i3",
+          "translatedName": "فلفل أحمر أو أخضر صغير مقطع قطعًا بطول بوصة"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "2 cups raw brown rice",
+          "targetIngredientId": "fi650-58816-i4",
+          "translatedName": "أرز بني نيئ"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 teaspoon minced fresh ginger root",
+          "targetIngredientId": "fi650-58816-i5",
+          "translatedName": "زنجبيل طازج مفروم"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1/4 teaspoon ground cloves",
+          "targetIngredientId": "fi650-58816-i6",
+          "translatedName": "قرنفل مطحون"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "3/4 teaspoon ground cinnamon",
+          "targetIngredientId": "fi650-58816-i7",
+          "translatedName": "قرفة مطحونة"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1/2 teaspoon ground cumin",
+          "targetIngredientId": "fi650-58816-i8",
+          "translatedName": "كمون مطحون"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "4 cups boiling water",
+          "targetIngredientId": "fi650-58816-i9",
+          "translatedName": "ماء مغلي"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "1 cup fresh or frozen green beans cut in 1 ½\" pieces",
+          "targetIngredientId": "fi650-58816-i10",
+          "translatedName": "فاصوليا خضراء طازجة أو مجمدة مقطعة"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "1 cup strip-cut carrots 1 ½\" strips",
+          "targetIngredientId": "fi650-58816-i11",
+          "translatedName": "جزر مقطع شرائح"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "3/4 cup broccoli florets",
+          "targetIngredientId": "fi650-58816-i12",
+          "translatedName": "زهيرات بروكلي"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "3/4 cup cauliflower florets",
+          "targetIngredientId": "fi650-58816-i13",
+          "translatedName": "زهيرات قرنبيط"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "1 cup diced potato",
+          "targetIngredientId": "fi650-58816-i14",
+          "translatedName": "بطاطس مكعبات"
+        },
+        {
+          "sourceLineIndex": 15,
+          "sourceText": "1/2 cup fresh or frozen green peas",
+          "targetIngredientId": "fi650-58816-i15",
+          "translatedName": "بازلاء طازجة أو مجمدة"
+        },
+        {
+          "sourceLineIndex": 16,
+          "sourceText": "1/2 cup unsalted peanuts or cashews",
+          "targetIngredientId": "fi650-58816-i16",
+          "translatedName": "فول سوداني أو كاجو غير مملح"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Heat 3 tablespoons of the olive oil in a large heavy saucepan over medium heat. Saute the onion, garlic, and red or green pepper for 5 minutes. Add the rice and stir until it is coated with oil. 2 Add the ginger, cloves, cinnamon, cumin, and stir over medium heat for 2 minutes. 3 Add the boiling water. As soon as the water returns to a boil, add the green beans, carrots, broccoli, cauliflower, potato, and peas. Cover and gently simmer the mixture for 45 minutes, until rice is tender. 4 Immediately before serving, heat the remaining tablespoon olive oil in a skillet over medium heat and saute the nuts until they are slightly toasted. Sprinkle over biryani."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "سخني ثلاث ملاعق كبيرة من الزيت في قدر ثقيل كبير على نار متوسطة. شوحي البصل والثوم والفلفل خمس دقائق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "أضيفي الأرز وقلبيه حتى يتغطى بالزيت."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي الزنجبيل والقرنفل والقرفة والكمون وقلبي دقيقتين."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "أضيفي الماء المغلي. عندما يعود إلى الغليان أضيفي الفاصوليا والجزر والبروكلي والقرنبيط والبطاطس والبازلاء."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "غطي القدر واتركي المزيج على نار هادئة 45 دقيقة حتى يطرى الأرز."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "قبل التقديم مباشرة سخني ملعقة الزيت المتبقية وحمصي المكسرات قليلًا، ثم انثريها فوق البرياني."
+        }
+      ],
+      "review": "المصدر يستخدم ثلاث ملاعق من أصل أربع ملاعق زيت عند البدء، والملعقة المتبقية لتحميص المكسرات. الاختيار بين الفول السوداني والكاجو محفوظ.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/NQWW4PZP/garden-biryani",
+      "sourceAuthor": [
+        "Helen Pitlick"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:58816",
+      "sourceTextSha256": "9bd423f6287daec65c997ba9d9301c05e2e57e3e8548f8a4af8ecd3675051f8b",
+      "sourceSnapshotContentSha256": "1ccf9b36a7da91808ee1bbe38cee4adba8af63159db68f032345c9355cc3b7fe"
+    },
+    {
+      "id": "fi650-60067",
+      "sourceId": "modern-bulk:foodista:60067",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/source-snapshots/60067.json",
+      "sourceSnapshotSha256": "311ba0b6b12ab6b9052f64ab346561fb08eb4c254df88cc1661c2f99078bc887",
+      "cuisineEvidence": "Authentic Thai Vegetable Soup",
+      "sourceIngredientLines": [
+        "1 can (13.66 fl oz) unsweetened coconut milk (I like Thai Kitchen brand)",
+        "2 cups water",
+        "1/2 cup pumpkin purée (optional)",
+        "1/4 cup galangal, sliced",
+        "1 stalk lemongrass, sliced into 1 inch long pieces",
+        "1/4 cup onion, sliced",
+        "1 cup broccoli florets, chopped",
+        "1/2 cup carrot, sliced",
+        "1/2 cup tofu, sliced",
+        "1 Roma tomato, sliced",
+        "1 cup mushroom, sliced",
+        "2 tablespoons fish sauce or soy sauce",
+        "1 teaspoon brown sugar",
+        "Salt to taste",
+        "2 tablespoons lime juice",
+        "1 stem spring onion, finely chopped",
+        "1/2 teaspoon crushed chili pepper",
+        "Cilantro leaves for garnishing"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "1 can (13.66 fl oz) unsweetened coconut milk (I like Thai Kitchen brand)",
+          "targetIngredientId": "fi650-60067-i0",
+          "translatedName": "حليب جوز هند غير محلى، علبة 13.66 أونصة سائلة"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "2 cups water",
+          "targetIngredientId": "fi650-60067-i1",
+          "translatedName": "ماء"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1/2 cup pumpkin purée (optional)",
+          "targetIngredientId": "fi650-60067-i2",
+          "translatedName": "هريس يقطين اختياري"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1/4 cup galangal, sliced",
+          "targetIngredientId": "fi650-60067-i3",
+          "translatedName": "خولنجان مقطع شرائح"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 stalk lemongrass, sliced into 1 inch long pieces",
+          "targetIngredientId": "fi650-60067-i4",
+          "translatedName": "عود ليمون عشبي مقطع"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1/4 cup onion, sliced",
+          "targetIngredientId": "fi650-60067-i5",
+          "translatedName": "بصل مقطع شرائح"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 cup broccoli florets, chopped",
+          "targetIngredientId": "fi650-60067-i6",
+          "translatedName": "بروكلي مقطع زهيرات"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1/2 cup carrot, sliced",
+          "targetIngredientId": "fi650-60067-i7",
+          "translatedName": "جزر مقطع شرائح"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1/2 cup tofu, sliced",
+          "targetIngredientId": "fi650-60067-i8",
+          "translatedName": "توفو مقطع شرائح"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "1 Roma tomato, sliced",
+          "targetIngredientId": "fi650-60067-i9",
+          "translatedName": "طماطم روما مقطعة شرائح"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "1 cup mushroom, sliced",
+          "targetIngredientId": "fi650-60067-i10",
+          "translatedName": "فطر مقطع شرائح"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "2 tablespoons fish sauce or soy sauce",
+          "targetIngredientId": "fi650-60067-i11",
+          "translatedName": "صلصة سمك أو صلصة صويا"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "1 teaspoon brown sugar",
+          "targetIngredientId": "fi650-60067-i12",
+          "translatedName": "سكر بني"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "Salt to taste",
+          "targetIngredientId": "fi650-60067-i13",
+          "translatedName": "ملح حسب الذوق؛ المقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "2 tablespoons lime juice",
+          "targetIngredientId": "fi650-60067-i14",
+          "translatedName": "عصير ليمون أخضر"
+        },
+        {
+          "sourceLineIndex": 15,
+          "sourceText": "1 stem spring onion, finely chopped",
+          "targetIngredientId": "fi650-60067-i15",
+          "translatedName": "عود بصل أخضر مفروم ناعمًا"
+        },
+        {
+          "sourceLineIndex": 16,
+          "sourceText": "1/2 teaspoon crushed chili pepper",
+          "targetIngredientId": "fi650-60067-i16",
+          "translatedName": "فلفل حار مجروش"
+        },
+        {
+          "sourceLineIndex": 17,
+          "sourceText": "Cilantro leaves for garnishing",
+          "targetIngredientId": "fi650-60067-i17",
+          "translatedName": "أوراق كزبرة للتزيين؛ المقدار غير محدد"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Mix coconut milk, water, and pumpkin purée in a saucepan, stir and bring to a boil. 2 Add galangal, lemongrass, onion, broccoli, and carrot into the saucepan, cook over high heat for 2 -3 minutes or until fragrant. 3 Add tofu, tomato, and mushroom, bring to a boil again. Continuing cooking until vegetables are done. 4 Season with fish sauce, sugar and a pinch of salt to taste. 5 Turn off the heat. Discard the lemongrass and galangal. Stir in lime juice, spring onion, and crushed chilies. 6 Dish and garnish with cilantro leaves. Enjoy!"
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اخلطي حليب جوز الهند والماء وهريس اليقطين في قدر وقلبي حتى يغلي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "أضيفي الخولنجان والليمون العشبي والبصل والبروكلي والجزر واطهي على نار عالية 2–3 دقائق حتى تفوح الرائحة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي التوفو والطماطم والفطر واتركي المزيج يغلي مجددًا. واصلي الطهي حتى تنضج الخضار."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "تبلي بصلصة السمك أو الصويا والسكر ورشة ملح حسب الذوق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "أطفئي النار وأزيلي الليمون العشبي والخولنجان. أضيفي عصير الليمون والبصل الأخضر والفلفل الحار وقلبي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "اسكبي الشوربة في أطباق وزيني بأوراق الكزبرة."
+        }
+      ],
+      "review": "هريس اليقطين اختياري، والملح حسب الذوق. أوراق الكزبرة للتزيين دون مقدار محدد.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/PLD43WND/authentic-thai-vegetable-soup",
+      "sourceAuthor": [
+        "Sharon Chen"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:60067",
+      "sourceTextSha256": "04adc9e00bcbd2172b2bef364764fd0e5022f38ea7116e2199ff30a0b3af08ef",
+      "sourceSnapshotContentSha256": "311ba0b6b12ab6b9052f64ab346561fb08eb4c254df88cc1661c2f99078bc887"
+    },
+    {
+      "id": "fi650-60108",
+      "sourceId": "modern-bulk:foodista:60108",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/source-snapshots/60108.json",
+      "sourceSnapshotSha256": "32c1a8eee17add26cef8cca64b41ddc85a4e30d153d846e8944e52b69af4a52f",
+      "cuisineEvidence": "Thai Lemongrass Soup",
+      "sourceIngredientLines": [
+        "8 cups chicken stock",
+        "1/2 - 1 bunch cilantro",
+        "1 can straw mushroom",
+        "16 large shrimps, peeled, deveined",
+        "1 cup snow peas",
+        "cup shredded carrots (just for color)",
+        "juice of 1 lime",
+        "1/2 - 1 tsp. crushed red pepper",
+        "1 chili pepper, cut into rings",
+        "4 tablespoons nam plah (you can find at Oriental food stores)",
+        "a few stalks of lemongrass (use about 6)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "8 cups chicken stock",
+          "targetIngredientId": "fi650-60108-i0",
+          "translatedName": "مرق دجاج"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "1/2 - 1 bunch cilantro",
+          "targetIngredientId": "fi650-60108-i1",
+          "translatedName": "كزبرة؛ المصدر يذكر نصف حزمة إلى حزمة"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1 can straw mushroom",
+          "targetIngredientId": "fi650-60108-i2",
+          "translatedName": "فطر قش معلب؛ حجم العلبة غير مذكور"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "16 large shrimps, peeled, deveined",
+          "targetIngredientId": "fi650-60108-i3",
+          "translatedName": "حبات روبيان كبيرة مقشرة ومنزوعة العروق"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 cup snow peas",
+          "targetIngredientId": "fi650-60108-i4",
+          "translatedName": "بازلاء ثلجية"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "cup shredded carrots (just for color)",
+          "targetIngredientId": "fi650-60108-i5",
+          "translatedName": "جزر مبشور للون؛ المقدار غير ظاهر في المصدر"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "juice of 1 lime",
+          "targetIngredientId": "fi650-60108-i6",
+          "translatedName": "عصير ليمونة خضراء"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1/2 - 1 tsp. crushed red pepper",
+          "targetIngredientId": "fi650-60108-i7",
+          "translatedName": "فلفل أحمر مجروش؛ المصدر يذكر نصف إلى ملعقة صغيرة"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1 chili pepper, cut into rings",
+          "targetIngredientId": "fi650-60108-i8",
+          "translatedName": "فلفل حار مقطع حلقات"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "4 tablespoons nam plah (you can find at Oriental food stores)",
+          "targetIngredientId": "fi650-60108-i9",
+          "translatedName": "نام بلا (صلصة سمك تايلاندية)"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "a few stalks of lemongrass (use about 6)",
+          "targetIngredientId": "fi650-60108-i10",
+          "translatedName": "أعواد ليمون عشبي؛ يذكر المصدر نحو ستة أعواد"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Bring the broth to a simmer. Add cruched red pepper and shrimp. simmer for 5 min. Add lemongrass and simmer for another 5 min. Add the rest of the ingredients and simmer a few minutes more. Be careful not to over cook or the vegitables will lose their color and will get limp. 2 Submitted by: RC"
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "سخني المرق حتى يغلي برفق. أضيفي الفلفل الأحمر المجروش والروبيان واتركيهما خمس دقائق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "أضيفي الليمون العشبي واتركي الشوربة على نار هادئة خمس دقائق أخرى."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي بقية المكونات واتركيها دقائق قليلة. يحذر المصدر من الإفراط في الطهي كي لا يفقد الخضار لونه وتلين أكثر من اللازم."
+        }
+      ],
+      "review": "سطر الجزر ناقص المقدار، وسطر الكزبرة يذكر نطاق نصف إلى حزمة؛ بقيت المقادير مجهولة. المصدر لا يذكر مردودًا.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/PM5V5M8X/thai-lemongrass-soup",
+      "sourceAuthor": [
+        "Anonymous"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:60108",
+      "sourceTextSha256": "a5785f48b2cde6543065283554e995a716116e3440f4cfd8344cb8a931e0f251",
+      "sourceSnapshotContentSha256": "32c1a8eee17add26cef8cca64b41ddc85a4e30d153d846e8944e52b69af4a52f"
+    },
+    {
+      "id": "fi650-60800",
+      "sourceId": "modern-bulk:foodista:60800",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/source-snapshots/60800.json",
+      "sourceSnapshotSha256": "d3fb00d102490d881548d93eb5cde2733a537820cd572867ce270b1f6d516e5d",
+      "cuisineEvidence": "Peanut Spicy Curry",
+      "sourceIngredientLines": [
+        "Raw Peanut - 1 kg",
+        "Onion - 2 big ( chopped)",
+        "Tomato - 3 big ( chopped)",
+        "Tamarind - small medium ball size",
+        "Oil",
+        "Mustard",
+        "Curry leaves",
+        "Garam masala powder - 2 tbsp",
+        "Salt",
+        "Ghee - 1 tbsp",
+        "Coriander leaves"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "Raw Peanut - 1 kg",
+          "targetIngredientId": "fi650-60800-i0",
+          "translatedName": "فول سوداني نيئ"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "Onion - 2 big ( chopped)",
+          "targetIngredientId": "fi650-60800-i1",
+          "translatedName": "بصلتان كبيرتان مفرومتان"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "Tomato - 3 big ( chopped)",
+          "targetIngredientId": "fi650-60800-i2",
+          "translatedName": "ثلاث حبات طماطم كبيرة مفرومة"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "Tamarind - small medium ball size",
+          "targetIngredientId": "fi650-60800-i3",
+          "translatedName": "تمر هندي بحجم كرة صغيرة إلى متوسطة؛ ينقع في 4 أكواب ماء بحسب الطريقة"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "Oil",
+          "targetIngredientId": "fi650-60800-i4",
+          "translatedName": "زيت؛ الطريقة تحدد أربع ملاعق كبيرة"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "Mustard",
+          "targetIngredientId": "fi650-60800-i5",
+          "translatedName": "بذور خردل؛ مقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "Curry leaves",
+          "targetIngredientId": "fi650-60800-i6",
+          "translatedName": "أوراق كاري؛ مقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "Garam masala powder - 2 tbsp",
+          "targetIngredientId": "fi650-60800-i7",
+          "translatedName": "مسحوق غارام ماسالا؛ الطريقة تذكر ملعقتين ممتلئتين"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "Salt",
+          "targetIngredientId": "fi650-60800-i8",
+          "translatedName": "ملح؛ مقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "Ghee - 1 tbsp",
+          "targetIngredientId": "fi650-60800-i9",
+          "translatedName": "سمن"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "Coriander leaves",
+          "targetIngredientId": "fi650-60800-i10",
+          "translatedName": "أوراق كزبرة للتزيين؛ مقدار غير محدد"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 1. Pressure cook the raw peanut for 5 whistles. Remove the skin & keep it aside. 2 2. Soak tamarind in 4 cups of water, extract the juice & keep it aside. 3 3. Heat 4 tbsp of oil in a heavy bottom frying pan. Add mustard seeds. When mustard splatters, add curry leaves & onion. 4 4. When onion turns transparent add tomatoes. Cook until tomatoes becomes mushy. 5 5. Then add 2 full tbsp of garam masala, mix well & cook for one minute. 6 6. Next add tamarind water & salt. Mix thoroughly & let the masala boil. 7 7. Once the masala boils & there is no raw smell, then add the cooked peanuts. Give a mix. Cover it with the lid and let it cook for 10 mins. 8 8. Add a tbsp of ghee & mix. 9 9. Remove it from the flame. Garnish with coriander leaves & serve hot with steamed rice. Peanut curry goes well with hot idilis & ven pongal also."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اطهي الفول السوداني النيئ في قدر الضغط خمس صفارات. انزعي القشور واتركيه جانبًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "انقعي التمر الهندي في أربعة أكواب ماء واستخرجي العصير واتركيه جانبًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "سخني أربع ملاعق كبيرة زيت في مقلاة ثقيلة القاعدة. أضيفي بذور الخردل. عندما تبدأ بالتفرقع أضيفي أوراق الكاري والبصل."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "عندما يصبح البصل شفافًا أضيفي الطماطم واطهي حتى تلين وتهرس."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "أضيفي ملعقتين ممتلئتين من غارام ماسالا وامزجي واطهي دقيقة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "أضيفي ماء التمر الهندي والملح وامزجي حتى يغلي المزيج وتزول رائحة التوابل النيئة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 7,
+          "text": "أضيفي الفول السوداني المطهو وامزجيه. غطي القدر واطهي عشر دقائق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 8,
+          "text": "أضيفي ملعقة السمن وامزجي، ثم ارفعي القدر عن النار."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 9,
+          "text": "زيني بالكزبرة وقدمي ساخنًا مع الأرز المطهو أو الإيدلي أو فين بونغال."
+        }
+      ],
+      "review": "قائمة المكونات لا تحدد مقدار الزيت والخردل وأوراق الكاري والملح والكزبرة، لكن الطريقة تحدد 4 ملاعق زيت ومقداري التمر الهندي (4 أكواب ماء) وغارام ماسالا (ملعقتان ممتلئتان)، ونقلت هذه الأرقام مع نسبتها إلى الطريقة.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/Q2L436LS/peanut-spicy-curry",
+      "sourceAuthor": [
+        "Helen"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:60800",
+      "sourceTextSha256": "b322c7a26968c7c49efa0f6ee2d9da7c23316c3ff76740683bcdf9305663992a",
+      "sourceSnapshotContentSha256": "d3fb00d102490d881548d93eb5cde2733a537820cd572867ce270b1f6d516e5d"
+    },
+    {
+      "id": "fi650-60978",
+      "sourceId": "modern-bulk:foodista:60978",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/source-snapshots/60978.json",
+      "sourceSnapshotSha256": "6d4badbade3590998cb310f3d59f78ff11fa9683d6997011df5bcf7c2d34c6cf",
+      "cuisineEvidence": "Chicken Tagine With Couscous",
+      "sourceIngredientLines": [
+        "2 tablespoons olive oil",
+        "1 whole chicken, skin removed and cut into chunks",
+        "1 medium yellow onion, thinly sliced",
+        "1/4 cup mild green olives, sliced",
+        "4 large garlic cloves, minced",
+        "1 tablespoon minced fresh ginger",
+        "1 teaspoon ground cinnamon",
+        "1 teaspoon ground turmeric",
+        "1 teaspoon ground coriander",
+        "1/4 teaspoon freshly ground black pepper",
+        "2 cardamom pods, lightly crushed",
+        "1 roasted red pepper",
+        "2 smalls dried red chilies",
+        "2 small preserved lemons, sliced",
+        "1 teaspoon salt",
+        "4 cups reduced-sodium chicken broth",
+        "5 cups fresh flat-leaf parsley sprigs, plus 1/4 minced fresh parsley leaves",
+        "1 1/2 cups couscous",
+        "1/4 cup lightly toasted pine nuts",
+        "1 teaspoon grated fresh lemon zest"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "2 tablespoons olive oil",
+          "targetIngredientId": "fi650-60978-i0",
+          "translatedName": "زيت زيتون"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "1 whole chicken, skin removed and cut into chunks",
+          "targetIngredientId": "fi650-60978-i1",
+          "translatedName": "دجاجة كاملة منزوعة الجلد ومقطعة"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1 medium yellow onion, thinly sliced",
+          "targetIngredientId": "fi650-60978-i2",
+          "translatedName": "بصلة صفراء متوسطة مقطعة شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1/4 cup mild green olives, sliced",
+          "targetIngredientId": "fi650-60978-i3",
+          "translatedName": "زيتون أخضر معتدل النكهة مقطع"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "4 large garlic cloves, minced",
+          "targetIngredientId": "fi650-60978-i4",
+          "translatedName": "فصوص ثوم كبيرة مفرومة"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 tablespoon minced fresh ginger",
+          "targetIngredientId": "fi650-60978-i5",
+          "translatedName": "زنجبيل طازج مفروم"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 teaspoon ground cinnamon",
+          "targetIngredientId": "fi650-60978-i6",
+          "translatedName": "قرفة مطحونة"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1 teaspoon ground turmeric",
+          "targetIngredientId": "fi650-60978-i7",
+          "translatedName": "كركم مطحون"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1 teaspoon ground coriander",
+          "targetIngredientId": "fi650-60978-i8",
+          "translatedName": "كزبرة مطحونة"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "1/4 teaspoon freshly ground black pepper",
+          "targetIngredientId": "fi650-60978-i9",
+          "translatedName": "فلفل أسود مطحون طازجًا"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "2 cardamom pods, lightly crushed",
+          "targetIngredientId": "fi650-60978-i10",
+          "translatedName": "حبتا هيل مهروستان قليلًا"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "1 roasted red pepper",
+          "targetIngredientId": "fi650-60978-i11",
+          "translatedName": "فلفل أحمر حلو مشوي"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "2 smalls dried red chilies",
+          "targetIngredientId": "fi650-60978-i12",
+          "translatedName": "فلفل أحمر حار مجفف صغير"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "2 small preserved lemons, sliced",
+          "targetIngredientId": "fi650-60978-i13",
+          "translatedName": "ليمونتان محفوظتان مقطعتان شرائح"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "1 teaspoon salt",
+          "targetIngredientId": "fi650-60978-i14",
+          "translatedName": "ملح"
+        },
+        {
+          "sourceLineIndex": 15,
+          "sourceText": "4 cups reduced-sodium chicken broth",
+          "targetIngredientId": "fi650-60978-i15",
+          "translatedName": "مرق دجاج قليل الصوديوم"
+        },
+        {
+          "sourceLineIndex": 16,
+          "sourceText": "5 cups fresh flat-leaf parsley sprigs, plus 1/4 minced fresh parsley leaves",
+          "targetIngredientId": "fi650-60978-i16",
+          "translatedName": "أغصان بقدونس طازج مسطح؛ خمس أكواب، إضافة إلى ربع كوب أوراق مفرومة بحسب السطر"
+        },
+        {
+          "sourceLineIndex": 17,
+          "sourceText": "1 1/2 cups couscous",
+          "targetIngredientId": "fi650-60978-i17",
+          "translatedName": "كسكس"
+        },
+        {
+          "sourceLineIndex": 18,
+          "sourceText": "1/4 cup lightly toasted pine nuts",
+          "targetIngredientId": "fi650-60978-i18",
+          "translatedName": "صنوبر محمص قليلًا"
+        },
+        {
+          "sourceLineIndex": 19,
+          "sourceText": "1 teaspoon grated fresh lemon zest",
+          "targetIngredientId": "fi650-60978-i19",
+          "translatedName": "قشر ليمون طازج مبشور"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Heat oil in a large pot over medium-high heat. Add the chicken and cook until golden brown. Transfer to a plate and set aside. 2 Drain all but 2 tablespoons of oil from pot and reduce heat to medium. Add onion and sauté until golden. Add garlic and ginger and cook, stirring constantly, for 3 minutes. 3 Add cinnamon, turmeric, coriander, black pepper, cardamom pods, chilies, preserved lemons, olives, and salt; stir to combine. 4 Return chicken to pot and add 2 cups chicken broth, and parsley sprigs. Bring mixture to a boil, then reduce heat to medium-low. Cover and simmer 40 minutes. 5 Take pot off heat and remove parsley sprigs and chilies. 6 For the couscous: In a covered medium saucepan, bring remaining 2 cups chicken broth to a boil. Turn off heat, stir in couscous, cover, and let sit 5 minutes. Uncover pan and fluff couscous with a fork. 7 Stir in 2 tbsp. minced parsley, pine nuts, and lemon zest and toss to combine. 8 Mound couscous on a platter. Top with chicken thighs and pour sauce over the chicken. Sprinkle with remaining parsley."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "سخني الزيت في قدر كبير على نار متوسطة مرتفعة. أضيفي الدجاج واطهيه حتى يكتسب لونًا ذهبيًا. انقليه إلى طبق واتركيه جانبًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "صفي الزيت واتركي في القدر ملعقتين كبيرتين، ثم خففي النار إلى متوسطة. أضيفي البصل وشوحيه حتى يكتسب لونًا ذهبيًا. أضيفي الثوم والزنجبيل واطهي مع التحريك المستمر ثلاث دقائق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي القرفة والكركم والكزبرة والفلفل الأسود والهيل والفلفل الحار والليمون المحفوظ والزيتون والملح وقلبي لتمتزج."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "أعيدي الدجاج إلى القدر وأضيفي كوبين من مرق الدجاج وأغصان البقدونس. اتركي المزيج يغلي، ثم خففي الحرارة إلى متوسطة منخفضة وغطيه واتركيه 40 دقيقة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "ارفعي القدر عن النار وأزيلي أغصان البقدونس والفلفل الحار."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "لتحضير الكسكس، اغلي كوبين المرق المتبقيين في قدر متوسط مغطى. أطفئي النار وأضيفي الكسكس وغطيه خمس دقائق. افتحي الغطاء وفلفلي الكسكس بشوكة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 7,
+          "text": "أضيفي ملعقتين كبيرتين من البقدونس المفروم والصنوبر وقشر الليمون وقلبي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 8,
+          "text": "ضعي الكسكس في طبق تقديم وفوقه قطع الدجاج واسكبي الصلصة. انثري بقية البقدونس. يسمي المصدر قطع الدجاج المقدمة أفخاذًا رغم أن قائمة المكونات تبدأ بدجاجة كاملة مقطعة."
+        }
+      ],
+      "review": "المصدر يذكر دجاجة كاملة، ثم يسمي أفخاذ الدجاج عند التقديم؛ حُفظت هذه الإشارة في الملاحظة دون إعادة تعريف القطع. يحتوي البقدونس على كمية للعيدان وربع كوب للأوراق المفرومة.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/Q5NYH6XQ/chicken-tagine-with-couscous",
+      "sourceAuthor": [
+        "Sheri Wetherell"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:60978",
+      "sourceTextSha256": "2e3d53f6d3e8cfcfec6a00d164f7e394eda09d39e81ea0873b8734f6657ba9f8",
+      "sourceSnapshotContentSha256": "6d4badbade3590998cb310f3d59f78ff11fa9683d6997011df5bcf7c2d34c6cf"
+    },
+    {
+      "id": "fi650-55677",
+      "sourceId": "modern-bulk:foodista:55677",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/source-snapshots/55677.json",
+      "sourceSnapshotSha256": "dc4e407084dec36a40a2e9162fdac7e66062f005697afb25f3520573e3962fcb",
+      "cuisineEvidence": "Stir Fried Beef Teriyaki",
+      "sourceIngredientLines": [
+        "1 pound boneless lean beef (chuck, round or flank)",
+        "3 tablespoons soy sauce",
+        "2 tablespoons honey",
+        "2 tablespoons sherry or lemon juice",
+        "1/8 teaspoon powdered ginger",
+        "1 clove garlic, minced or pressed",
+        "2 tablespoons salad oil"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "1 pound boneless lean beef (chuck, round or flank)",
+          "targetIngredientId": "fi650-55677-i0",
+          "translatedName": "لحم بقري طري منزوع العظم، مثل الكتف أو الفخذ أو الخاصرة"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "3 tablespoons soy sauce",
+          "targetIngredientId": "fi650-55677-i1",
+          "translatedName": "صلصة صويا"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "2 tablespoons honey",
+          "targetIngredientId": "fi650-55677-i2",
+          "translatedName": "عسل"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "2 tablespoons sherry or lemon juice",
+          "targetIngredientId": "fi650-55677-i3",
+          "translatedName": "شيري أو عصير ليمون"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1/8 teaspoon powdered ginger",
+          "targetIngredientId": "fi650-55677-i4",
+          "translatedName": "زنجبيل مسحوق"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 clove garlic, minced or pressed",
+          "targetIngredientId": "fi650-55677-i5",
+          "translatedName": "فص ثوم مفروم أو مهروس"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "2 tablespoons salad oil",
+          "targetIngredientId": "fi650-55677-i6",
+          "translatedName": "زيت سلطة"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 With very sharp knife, cut meat across grain into 1/8-inch thick slices. Mix soy sauce, honey, sherry, ginger and garlic in bowl. Add beef and mix to coat pieces well. Let stand 15 minutes. Drain, but reserve liquid. 2 Heat oil in wok or wide frying pan over high heat. When hot, add half the meat and stir-fry about 2 to 3 minutes until browned. Repeat for second batch of meat. Transfer to serving dish. Add reserved marinade to pan. Heat to boiling. Stir, then pour over meat and serve immediately. Serves 4. 3 Tips: You can substitute boneless pork, lamb or chicken breasts in this dish."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "بسكين حاد جدًا قطعي اللحم عرضيًا عكس اتجاه الألياف إلى شرائح بسماكة ثمن بوصة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "اخلطي صلصة الصويا والعسل والشيري أو عصير الليمون والزنجبيل والثوم في وعاء. أضيفي اللحم وقلبي لتتغطى القطع. اتركيه 15 دقيقة ثم صفيه واحتفظي بالسائل."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "سخني الزيت في ووك أو مقلاة عريضة على نار عالية. عندما يسخن أضيفي نصف اللحم وقلبيه 2–3 دقائق حتى يتحمر. كرري مع النصف الآخر ثم انقلي اللحم إلى طبق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "أضيفي التتبيلة المحفوظة إلى المقلاة واتركيها حتى الغليان مع التحريك، ثم اسكبيها فوق اللحم وقدمي فورًا. يذكر المصدر أربع حصص."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "تذكر ملاحظة المصدر إمكان استبدال اللحم البقري بلحم خنزير أو ضأن أو صدور دجاج منزوعة العظم."
+        }
+      ],
+      "review": "المصدر يذكر أربع حصص في الخطوة الثانية. الشيري أو عصير الليمون بديلان كما وردا، مع خيار استبدال نوع اللحم في ملاحظة المصدر.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/LQLT84GB/stir-fried-beef-teriyaki",
+      "sourceAuthor": [
+        "Anonymous"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:55677",
+      "sourceTextSha256": "4715b49ecb1105bf5094e95ee80faae92b9b34656b2b1ddc9e85bb9dd06059af",
+      "sourceSnapshotContentSha256": "dc4e407084dec36a40a2e9162fdac7e66062f005697afb25f3520573e3962fcb"
+    },
+    {
+      "id": "fi650-57812",
+      "sourceId": "modern-bulk:foodista:57812",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0007/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0007/source-snapshots/57812.json",
+      "sourceSnapshotSha256": "bb3233aa3028fbb89c995090d93ed9fb7b16657f8b0c71a647e0c7d73ae9372b",
+      "cuisineEvidence": "Chinese New Year Egg Roll",
+      "sourceIngredientLines": [
+        "3/4 cup bean sprout",
+        "1 bunch green onions, chopped",
+        "2 carrots, cut into thin slices",
+        "1 cup bamboo shoots",
+        "1 1/2 cups mushroom, cut into thin slices",
+        "1 teaspoon light brown sugar",
+        "1 tablespoon soy",
+        "1 tablespoon rice wine",
+        "1 teaspoon salt",
+        "1 tablespoon corn starch",
+        "Vegetable oil"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "3/4 cup bean sprout",
+          "targetIngredientId": "fi650-57812-i0",
+          "translatedName": "براعم فاصوليا"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "1 bunch green onions, chopped",
+          "targetIngredientId": "fi650-57812-i1",
+          "translatedName": "حزمة بصل أخضر مفرومة"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "2 carrots, cut into thin slices",
+          "targetIngredientId": "fi650-57812-i2",
+          "translatedName": "جزرتان مقطعتان شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1 cup bamboo shoots",
+          "targetIngredientId": "fi650-57812-i3",
+          "translatedName": "براعم خيزران"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1 1/2 cups mushroom, cut into thin slices",
+          "targetIngredientId": "fi650-57812-i4",
+          "translatedName": "فطر مقطع شرائح رفيعة"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 teaspoon light brown sugar",
+          "targetIngredientId": "fi650-57812-i5",
+          "translatedName": "سكر بني فاتح"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 tablespoon soy",
+          "targetIngredientId": "fi650-57812-i6",
+          "translatedName": "صلصة صويا"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1 tablespoon rice wine",
+          "targetIngredientId": "fi650-57812-i7",
+          "translatedName": "نبيذ أرز"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1 teaspoon salt",
+          "targetIngredientId": "fi650-57812-i8",
+          "translatedName": "ملح"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "1 tablespoon corn starch",
+          "targetIngredientId": "fi650-57812-i9",
+          "translatedName": "نشا ذرة"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "Vegetable oil",
+          "targetIngredientId": "fi650-57812-i10",
+          "translatedName": "زيت نباتي للقلي؛ مقدار بضع بوصات في الووك"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Get wok hot and heat oil 2 Stir fry bean sprouts, green onions, carrots, bamboo shoots, and mushrooms for 1 minute 3 Add salt, soy, brown sugar, and rice wine and stir fry for 2 minutes 4 Remove vegetable mixture 5 Mix cornstarch and water to make a paste 6 Place a couple tablespoons of the vegetable mixture in the middle of an eggroll wrapper, wrap, seal with cornstarch paste 7 Heat a couple inches of oil in wok until hot 8 Deep fry each eggroll for 2-3 minutes, turn when one side is brown, drain"
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "سخني الووك ثم سخني الزيت فيه. شوحي براعم الفاصوليا والبصل الأخضر والجزر وبراعم الخيزران والفطر دقيقة واحدة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "أضيفي الملح وصلصة الصويا والسكر البني ونبيذ الأرز وقلبي دقيقتين. أخرجي خليط الخضار."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "اخلطي نشا الذرة مع الماء لتكوين معجون؛ مقدار الماء غير محدد."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "ضعي بضع ملاعق كبيرة من خليط الخضار وسط غلاف لفافة بيض، ولفيه وأغلقيه بمعجون النشا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "سخني زيتًا بعمق بضع بوصات في الووك. اقلي كل لفافة 2–3 دقائق، وقلبيها عندما يتحمر أحد الجانبين. صفيها."
+        }
+      ],
+      "review": "المصدر يستخدم أغلفة لفائف البيض والماء لتحضير معجون النشا لكنهما بلا مقادير في القائمة؛ لم يضفا كمكونات موزونة. مقدار زيت القلي محدد بوصف بضع بوصات فقط.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/N3N5ZHXF/chinese-new-year-egg-roll",
+      "sourceAuthor": [
+        "Zomppa"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:57812",
+      "sourceTextSha256": "caedc6e53bf3cb78ea6a8cfbca9abd8b50df597d23134b3843e454fe00e6a728",
+      "sourceSnapshotContentSha256": "bb3233aa3028fbb89c995090d93ed9fb7b16657f8b0c71a647e0c7d73ae9372b"
+    },
+    {
+      "id": "fi650-60702",
+      "sourceId": "modern-bulk:foodista:60702",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/source-snapshots/60702.json",
+      "sourceSnapshotSha256": "1c68ee21afab048cce7c4a7e53571efcea46d40b120b74c7c8bf502a6dc537f7",
+      "cuisineEvidence": "Miso Marinated Chicken with Buckwheat Udon",
+      "sourceIngredientLines": [
+        "1 lb chicken breast cubed and marinated",
+        "8 oz whole wheat soba noodles",
+        "1/2 onion chopped",
+        "1 orange bell pepper chopped",
+        "2 cups shredded purple cabbage",
+        "1 clove garlic chopped",
+        "1 thumb ginger grated",
+        "2 tsp sesame oil",
+        "Salt and Pepper to taste",
+        "Marinade Ingredients",
+        "1 Tbsp miso paste",
+        "1/4 C rice vinegar",
+        "1 Tbsp honey"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "1 lb chicken breast cubed and marinated",
+          "targetIngredientId": "fi650-60702-i0",
+          "translatedName": "صدر دجاج مكعبات ومتبّل"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "8 oz whole wheat soba noodles",
+          "targetIngredientId": "fi650-60702-i1",
+          "translatedName": "نودلز سوبا من القمح الكامل"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1/2 onion chopped",
+          "targetIngredientId": "fi650-60702-i2",
+          "translatedName": "بصلة مفرومة"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1 orange bell pepper chopped",
+          "targetIngredientId": "fi650-60702-i3",
+          "translatedName": "فلفل حلو برتقالي مفروم"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "2 cups shredded purple cabbage",
+          "targetIngredientId": "fi650-60702-i4",
+          "translatedName": "ملفوف بنفسجي مبشور"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 clove garlic chopped",
+          "targetIngredientId": "fi650-60702-i5",
+          "translatedName": "فص ثوم مفروم"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 thumb ginger grated",
+          "targetIngredientId": "fi650-60702-i6",
+          "translatedName": "زنجبيل بحجم الإبهام مبشور"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "2 tsp sesame oil",
+          "targetIngredientId": "fi650-60702-i7",
+          "translatedName": "زيت سمسم"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "Salt and Pepper to taste",
+          "targetIngredientId": "fi650-60702-i8",
+          "translatedName": "ملح وفلفل حسب الذوق؛ المقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "1 Tbsp miso paste",
+          "targetIngredientId": "fi650-60702-i9",
+          "translatedName": "معجون ميسو"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "1/4 C rice vinegar",
+          "targetIngredientId": "fi650-60702-i10",
+          "translatedName": "خل أرز"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "1 Tbsp honey",
+          "targetIngredientId": "fi650-60702-i11",
+          "translatedName": "عسل"
+        }
+      ],
+      "omittedSourceLines": [
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "Marinade Ingredients",
+          "reason": "عنوان مكونات التتبيلة، وليس مكونًا."
+        }
+      ],
+      "sourceMethod": [
+        "1 Add miso paste, rice vinegar and honey to a bowl. Whisk to combine. 2 Add the chicken and toss to coat. Use your fingers. They are the best tools you have. 3 Cover with plastic wrap and put in the refrigerator. Let marinade at least 6 hours, overnight is even better. 4 Boil a pot of water. Cook the Soba noodles as per the directions on the package. 5 While the noodles are cooking heat sesame oil over medium heat. 6 Using a slotted spoon or tongs place the chicken into the hot pan. 7 Brown the chicken then remove with a slotted spoon to a paper towel lined plate to drain. 8 Add garlic and ginger to the pan. Cook for 30 seconds to 1 minute to just heat. 9 Next add the pepper and onion. Stir to mix with garlic and ginger and cook for 2-3 minutes to heat up. 10 Add the cabbage. Season with salt and pepper to taste and cook for 1 minute more. Notice we are cooking the vegetables for a very short period of time. I want them to retain their crunch while just being heated through. 11 Mix in the chicken and remove to a plate. 12 Drain the pasta. 13 Add the pasta to the hot pan. Cook for 30 seconds to 1 minute. 14 Add back the already prepared ingredients. 15 Mix well using your spatula or a set of tongs. 16 Serve on either a plate or in a bowl."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اخلطي معجون الميسو وخل الأرز والعسل في وعاء واخفيقيها."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "أضيفي الدجاج وقلبيه حتى يتغطى بالتتبيلة. غطيه وضعيه في الثلاجة ست ساعات على الأقل؛ والنقع طوال الليل أفضل بحسب المصدر."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "اغلي قدرًا من الماء واطهي نودلز السوبا وفق تعليمات العبوة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "في أثناء طهي النودلز سخني زيت السمسم على نار متوسطة. أخرجي الدجاج من التتبيلة بملعقة مثقبة أو ملقط وضعيه في المقلاة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "حمري الدجاج ثم ارفعيه بملعقة مثقبة إلى طبق مبطن بمناديل ورقية لتصفيته."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "أضيفي الثوم والزنجبيل إلى المقلاة واطهي 30 ثانية إلى دقيقة لتسخينهما."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 7,
+          "text": "أضيفي الفلفل والبصل وقلبيهما مع الثوم والزنجبيل 2–3 دقائق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 8,
+          "text": "أضيفي الملفوف وتبلي بالملح والفلفل حسب الذوق، واطهي دقيقة أخرى حتى تسخن الخضار مع بقائها مقرمشة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 9,
+          "text": "أعيدي الدجاج إلى المقلاة ثم انقليه إلى طبق. صفي النودلز."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 10,
+          "text": "أضيفي النودلز إلى المقلاة الساخنة واطهي 30 ثانية إلى دقيقة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 11,
+          "text": "أعيدي المكونات المحضرة وامزجيها بملعقة مسطحة أو ملقط. قدميها في طبق أو وعاء."
+        }
+      ],
+      "review": "المصدر يسمي النودلز سوبا من الحنطة السوداء، لا أودون؛ حافظنا على الاسم كما يحدده نوع النودلز. مقدار الملح والفلفل حسب الذوق.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/PYPYPCC4/miso-marinated-chicken-with-buckwheat-udon",
+      "sourceAuthor": [
+        "Chris Manteria"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:60702",
+      "sourceTextSha256": "3aad67df91516e21040a1bc18f346d323fadf1deadb1c510762da129382f065e",
+      "sourceSnapshotContentSha256": "1c68ee21afab048cce7c4a7e53571efcea46d40b120b74c7c8bf502a6dc537f7"
+    },
+    {
+      "id": "fi650-55584",
+      "sourceId": "modern-bulk:foodista:55584",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0005/source-snapshots/55584.json",
+      "sourceSnapshotSha256": "d0ebcae503cf1b013c7ed7664450e6e297beda144d2dacb2dc4951b639763dc9",
+      "cuisineEvidence": "Five Spice Chinese Pork Stew",
+      "sourceIngredientLines": [
+        "1 & 1/2 kilo pork paikut, sliced into cubes – you can use pork belly or spareribs as long as there is more meat than fat",
+        "for boiling the pork",
+        "water enough to cover the pork by 1/2 inch more",
+        "1/2 tsp Chinese five spice powder",
+        "1/2 tbsp cracked pepper",
+        "1 tbsp iodized salt",
+        "3-5 bay leaves",
+        "2-4 celery stalks",
+        "For the stew",
+        "2 tbsp vegetable oil",
+        "1 head of garlic, minced",
+        "2 medium-sized shallots/sibuyas na pula, sliced",
+        "1 large white onion, sliced",
+        "1/2 tsp Chinese five spice powder",
+        "1 tbsp honey",
+        "2 tbsp apple cider vinegar",
+        "3/4 cup light soy sauce",
+        "3 cups pork stock (the water used for boiling the pork)",
+        "1 ginger, two inches in length, sliced into 1/4 inch slices",
+        "1/2 tbsp anise seed",
+        "1 /2 tbsp cracked pepper",
+        "1 198gram can whole mushrooms, sliced in half (it’s chunkier that way)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "1 & 1/2 kilo pork paikut, sliced into cubes – you can use pork belly or spareribs as long as there is more meat than fat",
+          "targetIngredientId": "fi650-55584-i0",
+          "translatedName": "لحم كتف خنزير مقطع مكعبات؛ يمكن استخدام بطن الخنزير أو الأضلاع بشرط أن يكون اللحم أكثر من الدهن"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "water enough to cover the pork by 1/2 inch more",
+          "targetIngredientId": "fi650-55584-i1",
+          "translatedName": "ماء للسلق يكفي لتغطية اللحم وزيادة نصف بوصة"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1/2 tsp Chinese five spice powder",
+          "targetIngredientId": "fi650-55584-i2",
+          "translatedName": "مسحوق خمس بهارات صيني"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1/2 tbsp cracked pepper",
+          "targetIngredientId": "fi650-55584-i3",
+          "translatedName": "فلفل مجروش"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "1 tbsp iodized salt",
+          "targetIngredientId": "fi650-55584-i4",
+          "translatedName": "ملح يودي"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "3-5 bay leaves",
+          "targetIngredientId": "fi650-55584-i5",
+          "translatedName": "أوراق غار؛ العدد بين 3 و5"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "2-4 celery stalks",
+          "targetIngredientId": "fi650-55584-i6",
+          "translatedName": "أعواد كرفس؛ العدد بين 2 و4"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "2 tbsp vegetable oil",
+          "targetIngredientId": "fi650-55584-i7",
+          "translatedName": "زيت نباتي"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "1 head of garlic, minced",
+          "targetIngredientId": "fi650-55584-i8",
+          "translatedName": "رأس ثوم مفروم"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "2 medium-sized shallots/sibuyas na pula, sliced",
+          "targetIngredientId": "fi650-55584-i9",
+          "translatedName": "بصلتان صغيرتان من نوع شالوت أو سيبويس نا بولا مقطعتان شرائح"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "1 large white onion, sliced",
+          "targetIngredientId": "fi650-55584-i10",
+          "translatedName": "بصلة بيضاء كبيرة مقطعة شرائح"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "1/2 tsp Chinese five spice powder",
+          "targetIngredientId": "fi650-55584-i11",
+          "translatedName": "مسحوق خمس بهارات صيني"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "1 tbsp honey",
+          "targetIngredientId": "fi650-55584-i12",
+          "translatedName": "عسل"
+        },
+        {
+          "sourceLineIndex": 15,
+          "sourceText": "2 tbsp apple cider vinegar",
+          "targetIngredientId": "fi650-55584-i13",
+          "translatedName": "خل تفاح"
+        },
+        {
+          "sourceLineIndex": 16,
+          "sourceText": "3/4 cup light soy sauce",
+          "targetIngredientId": "fi650-55584-i14",
+          "translatedName": "صلصة صويا خفيفة"
+        },
+        {
+          "sourceLineIndex": 17,
+          "sourceText": "3 cups pork stock (the water used for boiling the pork)",
+          "targetIngredientId": "fi650-55584-i15",
+          "translatedName": "مرق خنزير من ماء سلق اللحم"
+        },
+        {
+          "sourceLineIndex": 18,
+          "sourceText": "1 ginger, two inches in length, sliced into 1/4 inch slices",
+          "targetIngredientId": "fi650-55584-i16",
+          "translatedName": "قطعة زنجبيل بطول بوصتين مقطعة شرائح بسمك ربع بوصة"
+        },
+        {
+          "sourceLineIndex": 19,
+          "sourceText": "1/2 tbsp anise seed",
+          "targetIngredientId": "fi650-55584-i17",
+          "translatedName": "بذور يانسون"
+        },
+        {
+          "sourceLineIndex": 20,
+          "sourceText": "1 /2 tbsp cracked pepper",
+          "targetIngredientId": "fi650-55584-i18",
+          "translatedName": "فلفل مجروش"
+        },
+        {
+          "sourceLineIndex": 21,
+          "sourceText": "1 198gram can whole mushrooms, sliced in half (it’s chunkier that way)",
+          "targetIngredientId": "fi650-55584-i19",
+          "translatedName": "فطر كامل معلب، 198 غرامًا، مقطوع نصفين"
+        }
+      ],
+      "omittedSourceLines": [
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "for boiling the pork",
+          "reason": "عنوان المكونات المستخدمة لسلق اللحم."
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "For the stew",
+          "reason": "عنوان قسم اليخنة."
+        }
+      ],
+      "sourceMethod": [
+        "1 In a large pot, add the pork with the rest of the ingredients for boiling. Add water, enough the cover by pork by 1/2 inch. 2 Boil on medium heat until the pork is fork tender. Once done, remove the pork from the pot. 3 Reserve the stock and run it through a fine sieve to strain the impurities. 4 In a wok or large pan, heat the oil and add the garlic. Allow to toast but be careful not to burn it. 5 Add the shallots and the white onion and saute until it sweats and goes slightly limp. Add the ginger and fry until very fragrant. Remove around 1/4 of the onion and ginger and reserve for garnish. 6 Add the pork and mix everything well until the pork is lightly toasted, around 2-3 minutes. Add the pork stock, followed the the soy sauce. 7 Add in the remaining ingredients and mix well. Cover the pot and allow the stew to reduce for 2 – 3 minutes. Add the mushrooms and cook for another minute. Remove from pan and serve hot, garnished with the sauteed onions and ginger, and with a heaping scoop of rice. Enjoy!"
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "ضعي اللحم في قدر كبير مع بقية مكونات السلق. أضيفي ماء يكفي لتغطيته نصف بوصة فوق سطحه. اغليه على نار متوسطة حتى يصبح طريًا عند وخزه بالشوكة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "أخرجي اللحم واحتفظي بالمرق. مرريه عبر مصفاة دقيقة لإزالة الشوائب."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "في ووك أو مقلاة كبيرة سخني الزيت وأضيفي الثوم. حمريه بحذر كي لا يحترق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "أضيفي الشالوت والبصل الأبيض وشوحي حتى يذبلا قليلًا. أضيفي الزنجبيل واقليه حتى تفوح رائحته. أخرجي نحو ربع خليط البصل والزنجبيل واتركيه جانبًا للتزيين."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "أضيفي اللحم وقلبيه حتى يتحمر قليلًا، نحو 2–3 دقائق. أضيفي مرق اللحم ثم صلصة الصويا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "أضيفي بقية المكونات وامزجي. غطي القدر ودعي اليخنة تقل نحو 2–3 دقائق. أضيفي الفطر واطهي دقيقة أخرى."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 7,
+          "text": "ارفعيها عن النار وقدميها ساخنة وزيني بالبصل والزنجبيل المشوحين المحفوظين. يقترح المصدر تقديمها مع كمية سخية من الأرز."
+        }
+      ],
+      "review": "عناوين قسمي السلق واليخنة استبعدت. الماء للسلق يحدد بأنه يغطي اللحم نصف بوصة، وكمية التوابل والملح لها مقادير ظاهرة. مقدار الزنجبيل وصفيًا قطعة بطول بوصتين.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/LNTFHNH5/five-spice-chinese-pork-stew",
+      "sourceAuthor": [
+        "Gio Ray Mangaya-ay"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:55584",
+      "sourceTextSha256": "fbaf45ed9b26e14b35dba34b4859107e7e88b7195f8d8f1a919a38d5fbe4d173",
+      "sourceSnapshotContentSha256": "d0ebcae503cf1b013c7ed7664450e6e297beda144d2dacb2dc4951b639763dc9"
+    },
+    {
+      "id": "fi650-56056",
+      "sourceId": "modern-bulk:foodista:56056",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0006/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0006/source-snapshots/56056.json",
+      "sourceSnapshotSha256": "66fdf148380fec11632433a3cd5ff61706d7c0e370f1e70f21511d80debc25d6",
+      "cuisineEvidence": "Korean Extra Crispy Fried Chicken w Sweet Spicy Glaze",
+      "sourceIngredientLines": [
+        "24 chicken wings, cut into 3 pieces and tips discarded",
+        "canola oil, for frying (peanut oil if available)",
+        "2 cloves garlic (or garlic powder)",
+        "1 cup soy sauce",
+        "3, 4 Thai chili peppers, deseeded and finely minced",
+        "2 tbsp ketchup",
+        "1, 2  tbsp rice vinegar (or cider vinegar)",
+        "3 tbsp brown sugar",
+        "1 tsp sesame oil",
+        "1 tbsp honey",
+        "2 cups cornstarch (1 cup coating, 1 cup for batter)",
+        "1 cup water",
+        "1/2 tsp salt and pepper",
+        "sesame seeds (garnish)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "24 chicken wings, cut into 3 pieces and tips discarded",
+          "targetIngredientId": "fi650-56056-i0",
+          "translatedName": "أجنحة دجاج مقطعة إلى ثلاثة أجزاء مع التخلص من الأطراف"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "canola oil, for frying (peanut oil if available)",
+          "targetIngredientId": "fi650-56056-i1",
+          "translatedName": "زيت كانولا أو زيت فول سوداني للقلي؛ عمق نحو 3 بوصات"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "2 cloves garlic (or garlic powder)",
+          "targetIngredientId": "fi650-56056-i2",
+          "translatedName": "فصا ثوم أو مسحوق ثوم؛ المقدار للمسحوق غير محدد"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "1 cup soy sauce",
+          "targetIngredientId": "fi650-56056-i3",
+          "translatedName": "صلصة صويا"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "3, 4 Thai chili peppers, deseeded and finely minced",
+          "targetIngredientId": "fi650-56056-i4",
+          "translatedName": "فلفل تايلاندي حار منزوع البذور ومفروم؛ العدد 3–4"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "2 tbsp ketchup",
+          "targetIngredientId": "fi650-56056-i5",
+          "translatedName": "كاتشب"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1, 2  tbsp rice vinegar (or cider vinegar)",
+          "targetIngredientId": "fi650-56056-i6",
+          "translatedName": "خل أرز أو خل تفاح؛ المقدار بين ملعقة وملعقتين"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "3 tbsp brown sugar",
+          "targetIngredientId": "fi650-56056-i7",
+          "translatedName": "سكر بني"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "1 tsp sesame oil",
+          "targetIngredientId": "fi650-56056-i8",
+          "translatedName": "زيت سمسم"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "1 tbsp honey",
+          "targetIngredientId": "fi650-56056-i9",
+          "translatedName": "عسل"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "2 cups cornstarch (1 cup coating, 1 cup for batter)",
+          "targetIngredientId": "fi650-56056-i10",
+          "translatedName": "نشا ذرة؛ المصدر يحدد كوبًا للتغطية وكوبًا للخليط السائل"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "1 cup water",
+          "targetIngredientId": "fi650-56056-i11",
+          "translatedName": "ماء"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "1/2 tsp salt and pepper",
+          "targetIngredientId": "fi650-56056-i12",
+          "translatedName": "ملح وفلفل؛ المقدار نصف ملعقة صغيرة إجمالًا في صياغة المصدر"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "sesame seeds (garnish)",
+          "targetIngredientId": "fi650-56056-i13",
+          "translatedName": "سمسم للتزيين؛ المقدار غير محدد"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 1. Cut and discard the end tip of each chicken wing. cut remaining pieces in half at the joint to create 2 pieces. Rinse pieces under cold water and set to dry for at least 10 minutes. In a heavy pot such as a dutch oven, pour in canola or peanut oil to a depth of 3 inches. Heat over medium-high for about 15 minutes or until ready for frying. 2 2. In the meantime, combine sauce ingredients of soy, vinegar, sugar, honey, ketchup, sesame oil, Thai chili peppers, and the seasoning in a small sauce pan. Boil until sauce slightly thickens and then set at low heat. Adjust the spiciness/sweetness of the sauce by adding more minced red peppers and/or sugar, continuously tasting for desired result. 3 3. In a large mixing bowl, mix 1 cup cornstarch and salt and pepper. Individually coat each chicken wing pieces with the cornstarch and set aside. 4 4. In another bowl, whisk the remaining cornstarch and water together to make a runny, liquidy batter. Add each chicken wing one at a time and coat well. Shake off excess batter and fry the chicken in batches for about 10~13 minutes, or until golden brown, then drain on paper towels. Do not overcrowd the pan when frying each batch. 5 5. Flavor the wings with a brush or by tossing them all together in a mixing bowl. Transfer to a serving plate and garnish with sesame seeds. Enjoy and eat while hot!"
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اقطعي طرف كل جناح وتخلصي منه. افصلي القطع المتبقية عند المفصل إلى قطعتين. اشطفيها بماء بارد واتركيها تجف عشر دقائق على الأقل."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "في قدر ثقيل اسكبي الزيت إلى عمق ثلاث بوصات. سخنيه على نار متوسطة مرتفعة نحو 15 دقيقة أو حتى يصبح جاهزًا للقلي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "في أثناء ذلك اخلطي صلصة الصويا والخل والسكر والعسل والكاتشب وزيت السمسم والفلفل الحار والتوابل في قدر صلصة صغير. اغلي حتى تثخن الصلصة قليلًا ثم أبقيها على نار منخفضة. يمكن ضبط الحدة والحلاوة بتذوق الصلصة وإضافة مزيد من الفلفل المفروم أو السكر."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "اخلطي كوبًا من نشا الذرة والملح والفلفل في وعاء كبير. غطي كل قطعة جناح بالنشا وضعيها جانبًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "في وعاء آخر اخفقي بقية النشا والماء لصنع عجينة سائلة. أضيفي قطع الدجاج واحدة تلو الأخرى وغطيها. تخلصي من فائض الخليط واقليها على دفعات 10–13 دقيقة أو حتى تصبح ذهبية، ثم صفيها على مناديل ورقية. لا تزدحمي القدر."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "ادهني الأجنحة بالصلصة أو قلبيها فيها جميعًا داخل وعاء. انقليها إلى طبق التقديم وزيني بالسمسم. تقدم ساخنة."
+        }
+      ],
+      "review": "المقادير التي وردت بنطاقات (عدد الفلفل والخل وكمية مسحوق الذرة بين الطلاء والعجين) بقيت مجهولة بدل اختيار طرف من النطاق. كمية زيت القلي تحدد بعمق ثلاث بوصات، لا بحجم رقمي.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/LYJP4NPZ/korean-extra-crispy-fried-chicken-w-sweet-spicy-glaze",
+      "sourceAuthor": [
+        "Sweet",
+        "olivia kim"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:56056",
+      "sourceTextSha256": "558b267da2795a99bb687eafb39267d0e7598cf4a01eb3359ced4179dc6f70a9",
+      "sourceSnapshotContentSha256": "66fdf148380fec11632433a3cd5ff61706d7c0e370f1e70f21511d80debc25d6"
+    },
+    {
+      "id": "fi650-60754",
+      "sourceId": "modern-bulk:foodista:60754",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0010/source-snapshots/60754.json",
+      "sourceSnapshotSha256": "b97fc02df8ca17f155eaa7c5ef5db776bc766bf488d8d22f70310409145ce881",
+      "cuisineEvidence": "A TYPICAL SOUTH INDIAN SAMBAR",
+      "sourceIngredientLines": [
+        "Dal to be pressure cooked with the veggies..",
+        "1\\2 Cup Pigeon peas | Tur dal,",
+        "1\\4 Cup Vegetable like Cabbage, Cauliflower, French Beans and Carrot added when dal is pressure cooked.",
+        "Also can be added Drum sticks, Pumpkin, or any of your choice which are boiled.",
+        "1\\8 Cup Brinjal cut in cubes,",
+        "4 -5 Lady's finger cut into two pieces,",
+        "1 Onion cut into pieces,",
+        "1\\2 Tomato cut into pieces.",
+        "4 - 5 Curry leaves,",
+        "1 Tbsp Tamarind pulp,",
+        "1 Tbsp Sugar,",
+        "1 Tbsp Oil,",
+        "1 -2 Pinch Mustard seeds,",
+        "1 Pinch of Asafoetida,",
+        "1\\8 Tsp Turmeric powder,",
+        "1 Tbsp Sambar powder,",
+        "1\\2 Tsp Coriander powder,",
+        "1 Tsp Red chilly powder,",
+        "Salt to taste."
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "1\\2 Cup Pigeon peas | Tur dal,",
+          "targetIngredientId": "fi650-60754-i0",
+          "translatedName": "بازلاء حمام مقسومة أو تور دال"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "1\\4 Cup Vegetable like Cabbage, Cauliflower, French Beans and Carrot added when dal is pressure cooked.",
+          "targetIngredientId": "fi650-60754-i1",
+          "translatedName": "خضار مثل الملفوف والقرنبيط والفاصوليا والجزر تضاف بعد طهي العدس؛ المصدر يذكر ربع كوب"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "Also can be added Drum sticks, Pumpkin, or any of your choice which are boiled.",
+          "targetIngredientId": "fi650-60754-i2",
+          "translatedName": "خضار اختيارية مسلوقة، مثل قرون المورينغا أو اليقطين أو ما تختارينه؛ المقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "1\\8 Cup Brinjal cut in cubes,",
+          "targetIngredientId": "fi650-60754-i3",
+          "translatedName": "باذنجان مكعبات"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "4 -5 Lady's finger cut into two pieces,",
+          "targetIngredientId": "fi650-60754-i4",
+          "translatedName": "بامية مقطوعة نصفين؛ العدد 4–5"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "1 Onion cut into pieces,",
+          "targetIngredientId": "fi650-60754-i5",
+          "translatedName": "بصلة مقطعة قطعًا"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "1\\2 Tomato cut into pieces.",
+          "targetIngredientId": "fi650-60754-i6",
+          "translatedName": "نصف طماطم مقطعة"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "4 - 5 Curry leaves,",
+          "targetIngredientId": "fi650-60754-i7",
+          "translatedName": "أوراق كاري؛ العدد 4–5"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "1 Tbsp Tamarind pulp,",
+          "targetIngredientId": "fi650-60754-i8",
+          "translatedName": "لب تمر هندي"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "1 Tbsp Sugar,",
+          "targetIngredientId": "fi650-60754-i9",
+          "translatedName": "سكر"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "1 Tbsp Oil,",
+          "targetIngredientId": "fi650-60754-i10",
+          "translatedName": "زيت"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "1 -2 Pinch Mustard seeds,",
+          "targetIngredientId": "fi650-60754-i11",
+          "translatedName": "بذور خردل؛ رشة أو رشتان"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "1 Pinch of Asafoetida,",
+          "targetIngredientId": "fi650-60754-i12",
+          "translatedName": "رشة حلتيت"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "1\\8 Tsp Turmeric powder,",
+          "targetIngredientId": "fi650-60754-i13",
+          "translatedName": "كركم مطحون"
+        },
+        {
+          "sourceLineIndex": 15,
+          "sourceText": "1 Tbsp Sambar powder,",
+          "targetIngredientId": "fi650-60754-i14",
+          "translatedName": "مسحوق سامبار"
+        },
+        {
+          "sourceLineIndex": 16,
+          "sourceText": "1\\2 Tsp Coriander powder,",
+          "targetIngredientId": "fi650-60754-i15",
+          "translatedName": "كزبرة مطحونة"
+        },
+        {
+          "sourceLineIndex": 17,
+          "sourceText": "1 Tsp Red chilly powder,",
+          "targetIngredientId": "fi650-60754-i16",
+          "translatedName": "مسحوق فلفل أحمر"
+        },
+        {
+          "sourceLineIndex": 18,
+          "sourceText": "Salt to taste.",
+          "targetIngredientId": "fi650-60754-i17",
+          "translatedName": "ملح؛ المقدار غير محدد"
+        }
+      ],
+      "omittedSourceLines": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "Dal to be pressure cooked with the veggies..",
+          "reason": "عنوان توجيهي يقول إن العدس يطهى بقدر الضغط مع الخضار."
+        }
+      ],
+      "sourceMethod": [
+        "1 Soak the dal and after 1\\2 an hour or more pressure cook the dal with Vegetable like Cabbage, Cauliflower,French Beans and Carrot. 2 Boil veggies like drum stick and pumpkin with one or two pinch of salt. 3 Put a pan to heat add oil, mustard seeds, asafoetida, curry leaves, onion and stir. 4 Also add the cut pieces of brinjal n lady's finger. 5 Now add tomatoes n tamarind pulp. 6 Also add red chilly powder n sambar powder cook until oil appears on low heat. 7 Put the pressure cooked dal to boil with salt, turmeric powder, coriander powder and later churn it. 8 Add the dal mixture to the pan and stir. 9 Now add the boile veggies also. 10 On slow flame allow to boil. 11 Lastly check the seasoning and add sugar. 12 Garnish with cut coriander leaves and serve hot with rice."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "انقعي العدس نصف ساعة أو أكثر. اطهيه في قدر الضغط مع خضار مثل الملفوف والقرنبيط والفاصوليا والجزر."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "اسلقي الخضار الاختيارية مثل قرون المورينغا واليقطين مع رشة أو رشتين من الملح."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "سخني الزيت في مقلاة وأضيفي بذور الخردل والحلتيت وأوراق الكاري والبصل وقلبي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "أضيفي مكعبات الباذنجان والبامية."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "أضيفي الطماطم ولب التمر الهندي."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 6,
+          "text": "أضيفي مسحوق الفلفل الأحمر ومسحوق السامبار واطهي على نار منخفضة حتى يظهر الزيت."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 7,
+          "text": "أضيفي العدس المطهو بالضغط واتركيه يغلي مع الملح والكركم والكزبرة المطحونة، ثم اهرسيه/اخفقيه."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 8,
+          "text": "أضيفي خليط العدس إلى المقلاة وقلبي. أضيفي أيضًا الخضار المسلوقة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 9,
+          "text": "اتركي المزيج يغلي على نار هادئة. تحققي من التتبيل وأضيفي السكر."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 10,
+          "text": "زيني بالكزبرة المقطعة وقدمي ساخنًا مع الأرز."
+        }
+      ],
+      "review": "المقادير الكسرية ذات الشرطة العكسية في المصدر واضحة سياقيًا كأنصاف وأثمان أكواب/ملعقة؛ فُسرت ككسور صريحة دون تغيير قيمتها. خضار السامبار البديلة تحفظ كما وردت. مقدار الملح حسب الذوق.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/PZG7GWYM/a-typical-south-indian-sambar",
+      "sourceAuthor": [
+        "Usha Chowdhary Gupta"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:60754",
+      "sourceTextSha256": "0160f49212e8347f787996bbd006c69240e0cc16c9506323b2abd7db0644792a",
+      "sourceSnapshotContentSha256": "b97fc02df8ca17f155eaa7c5ef5db776bc766bf488d8d22f70310409145ce881"
+    },
+    {
+      "id": "fi650-57978",
+      "sourceId": "modern-bulk:foodista:57978",
+      "sourcePack": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/normalized-recipes.json",
+      "sourceSnapshotFile": "data/recipes/curated-local/foodista-scale-20261021b/batches/batch-0008/source-snapshots/57978.json",
+      "sourceSnapshotSha256": "563a169fde83ee71720b8755a393641860f591d777e5b7e8a5f126311db44944",
+      "cuisineEvidence": "South Indian Meat Masala",
+      "sourceIngredientLines": [
+        "Mutton  1 kg",
+        "Tomatoes  chopped 3",
+        "Onion chopped 3",
+        "Garlic crushed 1 teaspoon",
+        "Ginger 1 teaspoon",
+        "Oil 1 cup",
+        "Fresh Coriander leaves for garnish",
+        "Salt to taste",
+        "Red Chilli  1 teaspoon",
+        "Black pepper 1 teaspoon",
+        "Mustard (Black) powder 2 teaspoon",
+        "Fenugreek powder 1 teaspoon",
+        "Kalaungi powder 1 teaspoon",
+        "Coriander powder 1 teaspoon",
+        "Garam Masala 1 teaspoon"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "sourceLineIndex": 0,
+          "sourceText": "Mutton  1 kg",
+          "targetIngredientId": "fi650-57978-i0",
+          "translatedName": "لحم ضأن"
+        },
+        {
+          "sourceLineIndex": 1,
+          "sourceText": "Tomatoes  chopped 3",
+          "targetIngredientId": "fi650-57978-i1",
+          "translatedName": "طماطم مفرومة"
+        },
+        {
+          "sourceLineIndex": 2,
+          "sourceText": "Onion chopped 3",
+          "targetIngredientId": "fi650-57978-i2",
+          "translatedName": "بصل مفروم"
+        },
+        {
+          "sourceLineIndex": 3,
+          "sourceText": "Garlic crushed 1 teaspoon",
+          "targetIngredientId": "fi650-57978-i3",
+          "translatedName": "ثوم مهروس"
+        },
+        {
+          "sourceLineIndex": 4,
+          "sourceText": "Ginger 1 teaspoon",
+          "targetIngredientId": "fi650-57978-i4",
+          "translatedName": "زنجبيل"
+        },
+        {
+          "sourceLineIndex": 5,
+          "sourceText": "Oil 1 cup",
+          "targetIngredientId": "fi650-57978-i5",
+          "translatedName": "زيت"
+        },
+        {
+          "sourceLineIndex": 6,
+          "sourceText": "Fresh Coriander leaves for garnish",
+          "targetIngredientId": "fi650-57978-i6",
+          "translatedName": "أوراق كزبرة طازجة للتزيين؛ المقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 7,
+          "sourceText": "Salt to taste",
+          "targetIngredientId": "fi650-57978-i7",
+          "translatedName": "ملح حسب الذوق؛ المقدار غير محدد"
+        },
+        {
+          "sourceLineIndex": 8,
+          "sourceText": "Red Chilli  1 teaspoon",
+          "targetIngredientId": "fi650-57978-i8",
+          "translatedName": "فلفل أحمر حار"
+        },
+        {
+          "sourceLineIndex": 9,
+          "sourceText": "Black pepper 1 teaspoon",
+          "targetIngredientId": "fi650-57978-i9",
+          "translatedName": "فلفل أسود"
+        },
+        {
+          "sourceLineIndex": 10,
+          "sourceText": "Mustard (Black) powder 2 teaspoon",
+          "targetIngredientId": "fi650-57978-i10",
+          "translatedName": "مسحوق خردل أسود"
+        },
+        {
+          "sourceLineIndex": 11,
+          "sourceText": "Fenugreek powder 1 teaspoon",
+          "targetIngredientId": "fi650-57978-i11",
+          "translatedName": "مسحوق حلبة"
+        },
+        {
+          "sourceLineIndex": 12,
+          "sourceText": "Kalaungi powder 1 teaspoon",
+          "targetIngredientId": "fi650-57978-i12",
+          "translatedName": "مسحوق حبة البركة"
+        },
+        {
+          "sourceLineIndex": 13,
+          "sourceText": "Coriander powder 1 teaspoon",
+          "targetIngredientId": "fi650-57978-i13",
+          "translatedName": "مسحوق كزبرة"
+        },
+        {
+          "sourceLineIndex": 14,
+          "sourceText": "Garam Masala 1 teaspoon",
+          "targetIngredientId": "fi650-57978-i14",
+          "translatedName": "غارام ماسالا"
+        }
+      ],
+      "omittedSourceLines": [],
+      "sourceMethod": [
+        "1 Fry onion in oil till brown. 2 Add tomatoes. garlic, ginger and fry for 3-5 minutes. 3 Now add Meat and spices and fry for another 3-5 minutes, and then add 2 cup water and cook on medium flame till meat is tender. 4 Garnish with Fresh coriander leaves and simmer. 5 Delicious South Indian Meat Masala Dish is ready. 6 Serve with Naan/Roti and salad."
+      ],
+      "translatedMethodCoverage": [
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 1,
+          "text": "اقلي البصل في الزيت حتى يصبح بنيًا."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 2,
+          "text": "أضيفي الطماطم والثوم والزنجبيل واطهي 3–5 دقائق."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 3,
+          "text": "أضيفي اللحم والتوابل واطهي 3–5 دقائق أخرى. أضيفي كوبين ماء واطهي على نار متوسطة حتى يطرى اللحم؛ لا يحدد المصدر مدة لذلك."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 4,
+          "text": "زيني بأوراق الكزبرة الطازجة واتركي الطبق على نار هادئة."
+        },
+        {
+          "sourceStepIndices": [
+            0
+          ],
+          "translatedStep": 5,
+          "text": "قدمي مسالا اللحم مع خبز نان أو روتي وسلطة."
+        }
+      ],
+      "review": "المصدر يذكر ملعقة صغيرة لكل من الثوم والزنجبيل، وكوب زيت دون تحديد مردود أو أزمنة طهي للحم. بقيت هذه المعلومات كما وردت.",
+      "quantityDecision": "المجهول محفوظ كما ورد؛ لم تُستنتج كمية أو وحدة أو مردود.",
+      "sourceUrl": "https://www.foodista.com/recipe/N6R8TMTS/south-indian-meat-masala",
+      "sourceAuthor": [
+        "miansari66"
+      ],
+      "sourceLicenseId": "CC-BY-3-0",
+      "sourceRecordId": "common-pile-foodista:4fd174745182885bea01d47c8ba71b1946375898:00003_foodista.jsonl.gz:57978",
+      "sourceTextSha256": "853888511637b3ecff50eac7e28e900b5c2feb7bae2763013e7f4a319e59430c",
+      "sourceSnapshotContentSha256": "563a169fde83ee71720b8755a393641860f591d777e5b7e8a5f126311db44944"
+    }
+  ]
+}

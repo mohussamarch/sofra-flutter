@@ -1,0 +1,4325 @@
+{
+  "cuisine": "هندي",
+  "cuisineSlug": "indian",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "bc650-indian-tea",
+      "name": "شاي هندي بالحليب والزنجبيل",
+      "nameEn": "Indian tea",
+      "cuisine": "هندي",
+      "category": "مشروب",
+      "description": "شاي بالحليب والزنجبيل والهيل؛ يذكر المصدر تحليته عند التقديم.",
+      "servings": 4,
+      "prepTime": 5,
+      "cookTime": 10,
+      "totalTime": 15,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-indian-tea-ing-1",
+          "name": "زنجبيل طازج",
+          "amount": 8,
+          "unit": "جرام",
+          "display": null,
+          "label": "8 g fresh ginger"
+        },
+        {
+          "id": "bc650-indian-tea-ing-2",
+          "name": "حبوب هيل",
+          "amount": 10,
+          "unit": "حبة",
+          "display": null,
+          "label": "10 cardamom seeds"
+        },
+        {
+          "id": "bc650-indian-tea-ing-3",
+          "name": "حليب",
+          "amount": 1.5,
+          "unit": "كوب",
+          "display": null,
+          "label": "1.5 cup milk"
+        },
+        {
+          "id": "bc650-indian-tea-ing-4",
+          "name": "شاي أسود",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "2 tablespoon black tea"
+        },
+        {
+          "id": "bc650-indian-tea-ing-5",
+          "name": "سكر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "ملعقة صغيرة لكل كوب، مذكورة بالطريقة لا قائمة المكونات"
+        },
+        {
+          "id": "bc650-indian-tea-ing-6",
+          "name": "ماء",
+          "amount": 1,
+          "unit": "لتر",
+          "display": null,
+          "label": "1 l water؛ مذكور بالطريقة فقط"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قشري الزنجبيل وقطعيه قطعًا صغيرة، ثم اسحقيه مع حبوب الهيل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اغلي لتر ماء ثم أطفئي الموقد.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي الزنجبيل والهيل والشاي الأسود والحليب إلى الماء وغطي القدر.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اتركي المكونات لتنقع 5 إلى 10 دقائق. قدمي الشاي مع ملعقة صغيرة من السكر لكل كوب. يمكن تصفيته أو الانتظار حتى تترسب الجزيئات.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "مشروب"
+      ],
+      "notes": "المصدر يقول إن المقادير تقريبية وتعدّل حسب الذوق. الحصص والأوقات من المصدر. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/indian-tea.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 121f46ec34e15ae3a39484f96586afb038a74ae6ada7ca59f466503e59e1e93c.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-pineapple-lentil-curry",
+      "name": "كاري العدس والأناناس",
+      "nameEn": "Pineapple Lentil Curry",
+      "cuisine": "هندي",
+      "category": "طبق رئيسي",
+      "description": "كاري عدس بحليب جوز الهند والأناناس، يقدم فوق الأرز وفق المصدر.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-1",
+          "name": "عدس أحمر جاف مغسول",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null,
+          "label": "1 cup dried red lentils, rinsed"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-2",
+          "name": "زيت زيتون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "1 tbsp olive oil"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-3",
+          "name": "بصلة مكعبات",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 onion, diced"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-4",
+          "name": "ثوم مفروم",
+          "amount": 2,
+          "unit": "فص",
+          "display": null,
+          "label": "2 cloves garlic, minced"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-5",
+          "name": "مسحوق كاري",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "1 tbsp curry powder"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-6",
+          "name": "طماطم مكعبات معلبة",
+          "amount": 1,
+          "unit": "علبة 14oz",
+          "display": null,
+          "label": "1 can (14oz) diced tomatoes"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-7",
+          "name": "قطع أناناس مصفاة معلبة",
+          "amount": 1,
+          "unit": "علبة",
+          "display": null,
+          "label": "1 can pineapple chunks, drained"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-8",
+          "name": "حليب جوز الهند",
+          "amount": 1,
+          "unit": "علبة",
+          "display": null,
+          "label": "1 can coconut milk"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-9",
+          "name": "مرق خضار",
+          "amount": 2,
+          "unit": "كوب",
+          "display": null,
+          "label": "2 cups vegetable broth"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-10",
+          "name": "أرز مطبوخ للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cooked rice, for serving"
+        },
+        {
+          "id": "bc650-pineapple-lentil-curry-ing-11",
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "salt and pepper؛ مذكوران في الطريقة بلا مقدار"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الزيت في قدر كبير على حرارة متوسطة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي البصل والثوم وشوحيهما نحو 5 دقائق حتى يطرى البصل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي مسحوق الكاري واطهي نحو دقيقة حتى تفوح رائحته.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي سائر المكونات وقلبي جيدًا. اتركي المزيج حتى يغلي، ثم خففيه إلى غليان هادئ وغطيه واطهيه 25–30 دقيقة مع التحريك من حين لآخر حتى يطرى العدس.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "تبلي بالملح والفلفل وقدمي الكاري فوق الأرز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "المصدر يقول زمن التحضير نحو 10 دقائق والطهي 25–30 دقيقة، ويقول إن الحصص 6 على الأقل؛ لم تسجل كتوقيت أو حصة دقيقة لوجود التقريب. أوردت المقادير كما هي. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pineapple-lentil-curry.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 e89a50777271ffedc9dfe8129ecc63cb1cbd1a7fba2d38a16818fd1dc103e18e.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-red-lentil-dahl",
+      "name": "دال العدس الأحمر",
+      "nameEn": "Red Lentil Dahl",
+      "cuisine": "هندي",
+      "category": "طبق رئيسي",
+      "description": "عدس أحمر مطهو مع طماطم وتوابل وزنجبيل وكزبرة.",
+      "servings": 6,
+      "prepTime": 10,
+      "cookTime": 50,
+      "totalTime": 60,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-red-lentil-dahl-ing-1",
+          "name": "زيت زيتون",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "3 Tbsp Olive Oil"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-2",
+          "name": "بصلة صفراء متوسطة",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 medium Yellow Onion"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-3",
+          "name": "زنجبيل طازج مبشور",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "1 Tbsp Fresh Ginger, grated"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-4",
+          "name": "ثوم مفروم",
+          "amount": 4,
+          "unit": "فص",
+          "display": null,
+          "label": "4 Garlic Cloves, minced"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-5",
+          "name": "كاري أصفر (مادراس خفيف)",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "2 Tbsp Yellow Curry (mild madras)"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-6",
+          "name": "ملح بحري",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "display": null,
+          "label": "1 tsp Sea Salt"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-7",
+          "name": "عدس أحمر جاف",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null,
+          "label": "1 cup dried Red Lentils"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-8",
+          "name": "ماء",
+          "amount": null,
+          "unit": null,
+          "display": "4 - 5 cups Water",
+          "scale": false
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-9",
+          "name": "طماطم برقوقية مفرومة",
+          "amount": 5,
+          "unit": "حبة",
+          "display": null,
+          "label": "5 Plum Tomatoes, chopped"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-10",
+          "name": "عصير ليمونة",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "juice of 1 Lemon"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-11",
+          "name": "كزبرة طازجة مفرومة ومعبأة بخفة",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null,
+          "label": "1 cup Fresh Cilantro, chopped and lightly packed"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-12",
+          "name": "فلفل أحمر مجفف أو فلفل كايين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Dried Red Chili's or cayenne pepper, to taste"
+        },
+        {
+          "id": "bc650-red-lentil-dahl-ing-13",
+          "name": "قرفة مطحونة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "display": null,
+          "label": "1/4 tsp Ground Cinnamon"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الزيت في قدر الحساء وشوحي البصل 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي الثوم والزنجبيل وشوحي 5 دقائق أخرى.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي التوابل والملح وشوحي 5 دقائق أخرى.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي 4 أكواب من الماء وقلبي، ثم أضيفي الطماطم والعدس. ارفعيه إلى الغليان، ثم خففي الحرارة قليلًا واتركيه 20 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي عصير الليمون والكزبرة، وماءً إضافيًا إذا كان كثيفًا جدًا. اتركيه 10 دقائق أخرى أو حتى يطرى العدس تمامًا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الحصص والأزمنة من المصدر. مصدر الماء يذكر 4–5 أكواب لكن الطريقة تبدأ بأربعة؛ حُفظ الاختلاف في display والطريقة دون اختيار كمية نهائية. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/red-lentil-dahl.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 1e413434e9f35e70c2a0071464fb1bce236e4eb381636e6d5060c16c9a99a1d5.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-onion-raitha",
+      "name": "رايتا البصل",
+      "nameEn": "Onion Raitha (Indian Tzatziki)",
+      "cuisine": "هندي",
+      "category": "صلصة",
+      "description": "صلصة هندية أساسها الزبادي، يوصي المصدر بتقديمها مع أطباق الأرز مثل البولاو والبرياني.",
+      "servings": 4,
+      "prepTime": 10,
+      "cookTime": 2,
+      "totalTime": 12,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-onion-raitha-ing-1",
+          "name": "زبادي يوناني",
+          "amount": 500,
+          "unit": "جرام",
+          "display": null,
+          "label": "500 gm of Greek Yogurt"
+        },
+        {
+          "id": "bc650-onion-raitha-ing-2",
+          "name": "بصلة حمراء",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "One Red onion"
+        },
+        {
+          "id": "bc650-onion-raitha-ing-3",
+          "name": "خيار",
+          "amount": 50,
+          "unit": "جرام",
+          "display": null,
+          "label": "50 gm of Cucumber"
+        },
+        {
+          "id": "bc650-onion-raitha-ing-4",
+          "name": "أغصان نعناع",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sprigs of Mint"
+        },
+        {
+          "id": "bc650-onion-raitha-ing-5",
+          "name": "قليل من العسل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Dash of Honey"
+        },
+        {
+          "id": "bc650-onion-raitha-ing-6",
+          "name": "رشة مسحوق فلفل حار أو سكر (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "Hint of Chilli Powder (Spicy option)/ Hint of sugar (Sweet option)"
+        },
+        {
+          "id": "bc650-onion-raitha-ing-7",
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "display": null,
+          "label": "1 tsp salt؛ مذكور في الطريقة فقط"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي البصل مكعبات صغيرة (0.5–1 سم أو 3/8 بوصة).",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطعي الخيار شرائح رفيعة بطريقة جوليان واهرسي النعناع بيدك.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ضعي الزبادي في وعاء التقديم وأضيفي البصل والخيار.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي النعناع والعسل وملعقة صغيرة من الملح والسكر أو مسحوق الفلفل حسب اختيار الطعم الحلو أو الحار.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اخلطي وقدميها؛ زينيها بمزيد من النعناع عند الرغبة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "صلصة"
+      ],
+      "notes": "المقادير والأوقات والحصص من المصدر. كمية النعناع والعسل والاختيار من السكر/الفلفل غير محددة. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/onion-raitha.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 5eb25ab7f5b3144889e948bc0391caa8acd1778b2e301557476ff3b2e3e1cf28.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-chicken-tikka-masala",
+      "name": "دجاج تيكا ماسالا",
+      "nameEn": "Chicken Tikka Masala",
+      "cuisine": "هندي",
+      "category": "طبق رئيسي",
+      "description": "دجاج بصلصة الطماطم واللبن والتوابل، يطهو في قدر بطيء بحسب المصدر.",
+      "servings": 8,
+      "prepTime": 25,
+      "cookTime": 240,
+      "totalTime": 265,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicken-tikka-masala-ing-1",
+          "name": "مهروس طماطم معلب",
+          "amount": 1,
+          "unit": "علبة 29 ounces",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-2",
+          "name": "زبادي سادة",
+          "amount": 1.5,
+          "unit": "كوب",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-3",
+          "name": "نصف بصلة كبيرة مفرومة ناعمًا",
+          "amount": 0.5,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-4",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-5",
+          "name": "زنجبيل طازج مفروم",
+          "amount": 4.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-6",
+          "name": "ثوم مفروم",
+          "amount": 4,
+          "unit": "فص",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-7",
+          "name": "غارام ماسالا",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-8",
+          "name": "ملح",
+          "amount": 2.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-9",
+          "name": "كمون مطحون",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-10",
+          "name": "بابريكا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-11",
+          "name": "فلفل أسود",
+          "amount": 0.75,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-12",
+          "name": "فلفل كايين",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-13",
+          "name": "قرفة مطحونة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-14",
+          "name": "صدور دجاج منزوعة العظم والجلد مكعبات",
+          "amount": 2.5,
+          "unit": "رطل",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-15",
+          "name": "فلفل هالابينو منزوع البذور",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-16",
+          "name": "ورقة غار",
+          "amount": 1,
+          "unit": "ورقة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-17",
+          "name": "نشا ذرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-18",
+          "name": "كريمة خفق ثقيلة",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-19",
+          "name": "أرز بسمتي مطبوخ ساخن للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Hot cooked basmati rice"
+        },
+        {
+          "id": "bc650-chicken-tikka-masala-ing-20",
+          "name": "كزبرة طازجة مفرومة (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "Chopped fresh cilantro, optional"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "في قدر بطيء سعته 5 كوارت، اخلطي أول 13 مكونًا (يمكن خلطها بالخلاط للسهولة). أضيفي الدجاج والهالابينو وورقة الغار. غطي القدر واطهي على حرارة منخفضة 4 ساعات أو حتى يطرى الدجاج. أخرجي الهالابينو وورقة الغار.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "في وعاء صغير اخلطي نشا الذرة والكريمة حتى ينعما. أضيفيهما تدريجيًا إلى الصلصة. غطي القدر واطهي على حرارة عالية 15–20 دقيقة أو حتى تثخن الصلصة. قدميه مع الأرز، ورشي الكزبرة إذا رغبتِ.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "زمن المصدر 4 ساعات لا يشمل صراحةً مرحلة التكثيف الإضافية 15–20 دقيقة؛ أبقي وقت metadata كما نشر، والتفصيل في الطريقة. الحصص والأزمنة من المصدر. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-tikka-masala.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=23a1bbcf7d88eca9511bf06e6ca68ec019c18255d7ecc22fcad2be87156ec933"
+    },
+    {
+      "id": "bc650-coriander-chicken",
+      "name": "دجاج بالكزبرة",
+      "nameEn": "Coriander Chicken",
+      "cuisine": "هندي",
+      "category": "طبق رئيسي",
+      "description": "دجاج منزوع العظم يتبل بصلصة من الزبادي والكزبرة كما يصفه المصدر.",
+      "servings": 3,
+      "prepTime": 30,
+      "cookTime": 20,
+      "totalTime": 50,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-coriander-chicken-ing-1",
+          "name": "صدر دجاج منزوع العظم",
+          "amount": 500,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-2",
+          "name": "زبادي خالي الدسم",
+          "amount": 250,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-3",
+          "name": "أوراق كزبرة",
+          "amount": 250,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-4",
+          "name": "زيت خردل أو دوار الشمس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Mustard oil / Sunflower oil"
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-5",
+          "name": "سكر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sugar"
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-6",
+          "name": "زنجبيل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Ginger"
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-7",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Garlic"
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-8",
+          "name": "بصل متوسط",
+          "amount": 2,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-9",
+          "name": "فلفل أخضر حار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Green chillies"
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-10",
+          "name": "غارام ماسالا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Garam masala"
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-11",
+          "name": "هيل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2/3 Cardamom pods"
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-12",
+          "name": "ورقة غار",
+          "amount": 1,
+          "unit": "ورقة",
+          "display": null
+        },
+        {
+          "id": "bc650-coriander-chicken-ing-13",
+          "name": "عود قرفة",
+          "amount": 1,
+          "unit": "عود",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي صدور الدجاج إلى قطع صغيرة مناسبة للأكل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضعي 250 غ من أوراق الكزبرة وثلثي الفلفل الأخضر و250 غ من الزبادي و20 غ من الزنجبيل و9–10 فصوص ثوم وبصلتين متوسطتين في الخلاط وامزجيها جيدًا.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "يمكن ضبط كمية الفلفل حسب الذوق. ضعي نصف الخليط في وعاء وامزجيه جيدًا مع الدجاج.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي ملعقة كبيرة من غارام ماسالا والملح حسب الذوق إلى الدجاج المتبل واتركيه نحو 30 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "سخني 3 ملاعق كبيرة من زيت الخردل أو دوار الشمس في مقلاة. أضيفي ملعقة كبيرة من السكر واطهيه حتى يذوب في الزيت.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضيفي حبتي هيل وعود قرفة صغيرًا وورقة غار إلى الزيت الساخن. اتركيها نحو دقيقة ثم خففي الحرارة إلى متوسطة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضيفي الدجاج المتبل واطهيه حتى يبدأ الزيت بالانفصال عنه، مع التحريك حتى لا يحترق أو يلتصق. أضيفي الملح حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضيفي بقية خليط الكزبرة المتروك بعد الخطوة الثالثة وقلبي حتى يثخن. قدميه مع نان أو أرز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "المصدر فيه عدم اتساق بين قائمة المكونات والطريقة: هيل 2/3 pods بالقائمة مقابل حبتي هيل بالطريقة؛ زنجبيل وثوم وزيت وسكر وغارام ماسالا مقاديرها بالطريقة فقط. تركت غير المتيقن null وأبقيت النصين. الحصص والأزمنة من المصدر. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/coriander-chicken.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=58c0a94e48c64a6579e37f001e122c73621fb915d7087177ce76f1b14a621944"
+    },
+    {
+      "id": "bc650-lamb-biriyani",
+      "name": "برياني لحم ضأن",
+      "nameEn": "Lamb Biriyani",
+      "cuisine": "هندي",
+      "category": "طبق رئيسي",
+      "description": "برياني لحم ضأن على أسلوب تاميل في جنوب الهند بحسب وصف المصدر.",
+      "servings": 4,
+      "prepTime": 30,
+      "cookTime": 75,
+      "totalTime": 105,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-lamb-biriyani-ing-1",
+          "name": "حبوب هيل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4-5 pods of Cardamom"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-2",
+          "name": "ورق غار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2-3 Bay leaves"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-3",
+          "name": "أعواد قرفة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3-4 Cinnamon Sticks"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-4",
+          "name": "قرنفل",
+          "amount": 8,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-5",
+          "name": "أرز بسمتي",
+          "amount": 400,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-6",
+          "name": "لحم ضأن أو غنم منزوع العظم",
+          "amount": 600,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-7",
+          "name": "بصل (يفضل أحمر)",
+          "amount": 2,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-8",
+          "name": "طماطم",
+          "amount": 2,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-9",
+          "name": "فلفل أخضر حار (اختياري)",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": false,
+          "optional": true,
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-10",
+          "name": "فصوص ثوم",
+          "amount": 10,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-11",
+          "name": "قطعة زنجبيل",
+          "amount": 5,
+          "unit": "cm",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-12",
+          "name": "غارام ماسالا",
+          "amount": 0.5,
+          "unit": "ملعقة كبيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-13",
+          "name": "مسحوق فلفل حار أو بابريكا مجرية مدخنة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-14",
+          "name": "عصير نصف ليمونة أو خل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Juice of 1/2 Lemon or 1 tsp of Vinegar"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-15",
+          "name": "مسحوق كركم (رشة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Dash of Tumeric Powder"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-16",
+          "name": "مسحوق كاري (رشة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Dash of Curry Powder"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-17",
+          "name": "غصن نعناع أو كزبرة للتزيين",
+          "amount": 1,
+          "unit": "غصن",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-18",
+          "name": "زيت محايد",
+          "amount": 30,
+          "unit": "مل",
+          "display": null
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-19",
+          "name": "ماء",
+          "amount": 2.0,
+          "unit": "كوب",
+          "scale": true,
+          "display": null,
+          "label": "2 cups (500ml) water; later ~2 cups or about 800gm of water; recipe instructions conflict"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-20",
+          "name": "ملح",
+          "amount": 1.0,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null,
+          "label": "1 Tbsp then 2 Tbsp salt in method; conflicting instructions"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-21",
+          "name": "بيض مسلوق للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "boiled Eggs; source serving suggestion"
+        },
+        {
+          "id": "bc650-lamb-biriyani-ing-22",
+          "name": "رايتا البصل للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "onion raitha; source serving suggestion"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغسلي الأرز حتى يصبح الماء صافيًا واتركيه منقوعًا 30 دقيقة على الأقل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطعي الطماطم مكعبات صغيرة والبصل شرائح جوليان. اطحني الزنجبيل والثوم إلى معجون. شقي الفلفل الأخضر من منتصفه مع إبقائه قطعة واحدة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "في قدر كبير أضيفي 30 مل من الزيت المحايد وحمصي التوابل 30 ثانية على حرارة متوسطة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي البصل وشوحيه نحو 3 دقائق، ثم الطماطم ومعجون الزنجبيل والثوم وشوحي 3 دقائق أخرى.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي اللحم وكوبين (500 مل) ماء وملعقة كبيرة ملح. ارفعي الحرارة وأضيفي الفلفل الأخضر والكركم ومسحوق الفلفل وملعقتين كبيرتين من الملح. اطهي اللحم نحو 40–50 دقيقة مع إضافة ماء إذا احتاج القدر.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضيفي نحو كوبين ماء أو حتى يصل مجموع الماء في القدر إلى نحو 800 غ، مع احتساب ما بقي فيه (نسبة الأرز إلى الماء 1:2). عندما يغلي مجددًا أضيفي الأرز وغارام ماسالا وعصير الليمون أو الخل.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "عندما يتبخر 80% من الماء الظاهر، خففي الحرارة لأدنى درجة وتذوقي الملح والتوابل وأضيفي المزيد عند الحاجة. غطي القدر واتركيه 10 دقائق أخرى.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "قدميه مع رايتا البصل والبيض المسلوق وزيني بأغصان الكزبرة أو النعناع.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "يقول المصدر إنه برياني تاميل من جنوب الهند معدّل لمذاق أقل حرارة. المقادير متضاربة: الماء يذكر 500 مل ثم 800 غ/نسبة 1:2، والملح 1 ملعقة كبيرة ثم 2؛ أبقيت الكميات المتضاربة نصًا ولم أختر مقدارًا. الحصص/الأزمنة المنشورة محفوظة. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/lamb-biriyani.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=07f40f568efe1448cef293dcf36374d886a317bc43ced813052a3dbf5876fbab؛ التصنيف الإقليمي كما في مراجعة المصدر: هندي جنوبي (تاميل)"
+    },
+    {
+      "id": "bc650-paneer-tikka-masala",
+      "name": "بانير تيكا ماسالا",
+      "nameEn": "Paneer Tikka Masala",
+      "cuisine": "هندي",
+      "category": "طبق رئيسي",
+      "description": "بانير مشوي مع صلصة طماطم وتوابل ولبن.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-paneer-tikka-masala-ing-1",
+          "name": "بانير مكعبات",
+          "amount": 250,
+          "unit": "جرام",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-2",
+          "name": "بصلة",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-3",
+          "name": "فلفل رومي",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-4",
+          "name": "مهروس طماطم",
+          "amount": 200,
+          "unit": "مل",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-5",
+          "name": "مسحوق فلفل أحمر",
+          "amount": 1.0,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null,
+          "label": "1 tsp red chilli powder in ingredients; 1/2 tsp in method"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-6",
+          "name": "مسحوق كركم",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-7",
+          "name": "مسحوق كزبرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-8",
+          "name": "غارام ماسالا",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-9",
+          "name": "زبادي كثيف",
+          "amount": 100,
+          "unit": "مل",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-10",
+          "name": "مسحوق حلبة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-11",
+          "name": "أوراق حلبة مجففة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "dry fenugreek leaves"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-12",
+          "name": "هيل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cardamom"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-13",
+          "name": "بذور كمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cumin seeds"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-14",
+          "name": "زنجبيل مبشور شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "shaved ginger"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-15",
+          "name": "معجون ثوم",
+          "amount": 20,
+          "unit": "مل",
+          "display": null
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-16",
+          "name": "وعاء ذرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 bowl corn"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-17",
+          "name": "زيت",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "some oil؛ mentioned in method"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-18",
+          "name": "ماء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "some water؛ mentioned in method"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-19",
+          "name": "عصير ليمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "lemon juice؛ garnish in method"
+        },
+        {
+          "id": "bc650-paneer-tikka-masala-ing-20",
+          "name": "كزبرة طازجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "fresh coriander؛ garnish in method"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "في وعاء زجاجي اخلطي مكعبات البانير مع نصف ملعقة صغيرة من مسحوق الفلفل الأحمر والكركم والكزبرة المطحونة وغارام ماسالا ومسحوق الحلبة و50 غ من الزبادي.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اتركي الخليط يتبل ساعة على الأقل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "سخني الفرن إلى 200°C (392°F)، وضعي مكعبات البانير المتبلة مع البصل والفلفل والطماطم في أسياخ. اشويها مع تقليبها كل 5 دقائق حتى تصبح القشرة الخارجية مقرمشة كما تريدين.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "سخني قليلًا من الزيت في مقلاة وأضيفي الهيل وبذور الكمون؛ سخنيها دقيقة أو دقيقتين حتى تنتقل الرائحة إلى الزيت.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي البصل المفروم والطماطم، ثم الزنجبيل ومعجون الثوم. شوحي حتى تزول بعض الرائحة النيئة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضيفي مهروس الطماطم وأوراق الحلبة المجففة واطهي نحو 15 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضيفي قليلًا من الماء واتركي الخليط يطهو أكثر.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضيفي البانير المشوي وبعض الخضروات المقطعة حسب الاختيار والذرة وقلبي جيدًا.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "عندما يتبخر الماء المضاف ويثخن الخليط، أطفئي الحرارة وزيني بعصير الليمون والكزبرة الطازجة. يقدم مع خبز حسب الرغبة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "المصدر لا يحدد الحصص أو الأزمنة. توجد مخالفة بين قائمة المكونات (1 ملعقة صغيرة فلفل) والطريقة (نصف ملعقة صغيرة)؛ كمية الفلفل null حفاظًا على الاختلاف. كمية الزبادي في الطريقة 50 غ مقابل 100 مل في القائمة؛ لم أعدل القائمة. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/paneer-tikka-masala.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=2873aa08943df65d07eea504eb7428d0c8f4e2137d1c3eabb1a0c7c665000b6f"
+    },
+    {
+      "id": "bc650-potato-eggplant-curry",
+      "name": "كاري البطاطس والباذنجان",
+      "nameEn": "Potato and Eggplant (Aubergine) Curry",
+      "cuisine": "هندي",
+      "category": "طبق رئيسي",
+      "description": "كاري بسيط من البطاطس والباذنجان وحليب جوز الهند والطماطم.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-potato-eggplant-curry-ing-1",
+          "name": "باذنجان كبير",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-2",
+          "name": "بطاطس متوسطة",
+          "amount": 2,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-3",
+          "name": "زيت زيتون",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-4",
+          "name": "بصل شرائح رفيعة",
+          "amount": 2,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-5",
+          "name": "ثوم مهروس",
+          "amount": 2,
+          "unit": "فص",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-6",
+          "name": "غارام ماسالا",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-7",
+          "name": "كركم",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-8",
+          "name": "كزبرة مطحونة",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-9",
+          "name": "طماطم مفرومة معلبة",
+          "amount": 400,
+          "unit": "ml can",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-10",
+          "name": "حليب جوز الهند معلب",
+          "amount": 400,
+          "unit": "ml can",
+          "display": null
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-11",
+          "name": "أرز للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "rice؛ بلا مقدار"
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-12",
+          "name": "جزر (إضافة اختيارية)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "carrots؛ optional extra in method"
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-13",
+          "name": "فلفل أحمر (إضافة اختيارية)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "red peppers (capsicums); optional extra in method"
+        },
+        {
+          "id": "bc650-potato-eggplant-curry-ing-14",
+          "name": "بانير (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "paneer؛ optional extra in method"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الفرن إلى نحو 200°C (392°F). قطعي الباذنجان شرائح 1 سم وضعيه في صينية وغطيه بطبقة زيت. اخبزيه 20 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اطهي شرائح البصل مع الزيت على حرارة متوسطة حتى تلين، نحو 5–6 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي الثوم وغارام ماسالا والكركم والكزبرة المطحونة واتركيها دقيقة أو دقيقتين حتى تفوح الرائحة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي الطماطم المعلبة وحليب جوز الهند والباذنجان وقطع البطاطس. يمكن إضافة الجزر أو الفلفل الأحمر في هذه المرحلة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "غطي القدر واتركيه يغلي بهدوء نحو 15–20 دقيقة. اسلقي مقدار حصتين من الأرز.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أزيلي الغطاء واطهي 5 دقائق أخرى أو حتى تقل الصلصة. يمكن إضافة البانير هنا. قدميه مع الأرز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "وسم المصدر يحدد الهند. لا حصص أو أوقات إجمالية في رأس الوصفة؛ الأزمنة داخل الطريقة محفوظة نصًا. أرقام الخطوات في المصدر تقفز من 5 إلى 7. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/potato-and-eggplant-curry.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=6e133abf270b37cee2316747bb48b1ea1f977132e5a73d4588c260e58a8d1229"
+    },
+    {
+      "id": "fi650-51415",
+      "name": "برياني الروبيان بالأرز الهندي المتبّل",
+      "nameEn": "Prawn Biryani( Shrimps In Aromatic and Flavored Indian Rice)",
+      "cuisine": "هندي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-51415-i0",
+          "name": "أرز بسمتي",
+          "amount": 500,
+          "unit": "جرام",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i1",
+          "name": "بصل كبير شرائح",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i2",
+          "name": "طماطم كبيرة مفرومة",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i3",
+          "name": "زنجبيل مقشر ومفروم",
+          "amount": 2,
+          "unit": "بوصة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i4",
+          "name": "فصوص ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "6–7 فصوص؛ نطاق المصدر",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i5",
+          "name": "فلفل أخضر حار",
+          "amount": 5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": "قد يزيد أو ينقص حسب حدّة الطبق."
+        },
+        {
+          "id": "fi650-51415-i6",
+          "name": "كركم مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i7",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "حسب الذوق",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i8",
+          "name": "أوراق نعناع مفرومة",
+          "amount": 1,
+          "unit": "حزمة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i9",
+          "name": "أوراق كزبرة مفرومة",
+          "amount": 1,
+          "unit": "حزمة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i10",
+          "name": "قرفة",
+          "amount": 1,
+          "unit": "بوصة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i11",
+          "name": "هيل أخضر",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i12",
+          "name": "قرنفل",
+          "amount": 5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i13",
+          "name": "يانسون نجمي",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i14",
+          "name": "صولجان (جوزة الطيب)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "كمية قليلة جدًا كما وردت",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i15",
+          "name": "زيت أو سمن",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية اللازمة؛ غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i16",
+          "name": "روبيان",
+          "amount": 500,
+          "unit": "جرام",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i17",
+          "name": "معجون زنجبيل وثوم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i18",
+          "name": "مسحوق فلفل حار",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i19",
+          "name": "لبن زبادي كثيف",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i20",
+          "name": "كركم مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51415-i21",
+          "name": "ملح",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "تبّلي الروبيان بمكونات التتبيلة واتركيه ساعتين على الأقل؛ ويذكر المصدر إمكان تركه طوال الليل في الثلاجة. انقعي أرز البسمتي نصف ساعة واحتفظي بقبضة من شرائح البصل للتزيين. اطحني الزنجبيل والثوم والفلفل الأخضر حتى يصير معجونًا ناعمًا. سخّني زيتًا أو سمنًا كافيًا في قدر ضغط، وأضيفي القرفة والهيل والقرنفل واليانسون النجمي والصولجان حتى تفوح الرائحة، ثم بقية البصل. شوّحيه حتى يلين ويصبح ورديًا، ثم أضيفي المعجون وقلّبيه حتى تزول رائحته النيئة. أضيفي الطماطم واطهيها حتى تهرس، ثم الروبيان مع تتبيلته. أضيفي الكركم والملح والنعناع والكزبرة. غطّي القدر واطهي الروبيان والمرق 3 دقائق. قيسي ماء الأرز المطلوب وأضيفيه، واتركي المرق يغلي. أضيفي الأرز المنقوع وغطّي القدر حتى ينضج. زيّني بالبصل والنعناع وقدّمي ساخنًا مع الكاري أو الرايتا حسب اقتراح المصدر.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/HVR32NSP/prawn-biryani-shrimps-in-aromatic-and-flavored-indian-rice؛ المؤلف: Mythreyi Dilip؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 9b02a0fb36e303805f5ad4e061301b359303988e3afb6cf20e88fd4af1630d5b؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. ترجمت التسلسل كاملًا وحافظت على أزمنة النقع والطبخ داخل الخطوات. الصولجان والزيت/السمن دون مقدار دقيق محفوظان كمجهولين."
+    },
+    {
+      "id": "fi650-52555",
+      "name": "أفيال بالخضار من جنوب الهند",
+      "nameEn": "Aviyal : Typical South Indian Recipe",
+      "cuisine": "هندي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-52555-i0",
+          "name": "فاصوليا خضراء، المصدر يذكر 5 إلى 6",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i1",
+          "name": "بطاطا متوسطة",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i2",
+          "name": "جزر، المصدر يذكر 2 إلى 3",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i3",
+          "name": "جوز هند مبشور",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i4",
+          "name": "بذور كمون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i5",
+          "name": "خردل",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i6",
+          "name": "فلفل أخضر",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i7",
+          "name": "أوراق كاري",
+          "amount": 10,
+          "unit": "ورقة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i8",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i9",
+          "name": "زيت جوز الهند",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i10",
+          "name": "أسافويتيدا",
+          "amount": 2,
+          "unit": "رشة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52555-i11",
+          "name": "لبن رائب",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي الخضار إلى أطوال 2 إلى 3 بوصات. اسلقيها مع 2 إلى 3 أكواب ماء كما يذكر المصدر.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "اطحني جوز الهند والكمون والفلفل الأخضر وأوراق الكاري والأسافويتيدا مع قليل من الماء حتى تتكون عجينة سميكة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "في مقلاة سخني الزيت وحمّصي بذور الخردل وأوراق الكاري. أضيفي الخضار المسلوقة مع ماء السلق والعجينة المطحونة واللبن الرائب.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي الملح واتركيها على النار 5 إلى 10 دقائق. تُقدّم ساخنة مع أداي أو راسام سادام. يقول المصدر إن أنواعًا مختلفة من الخضار تصلح، ويمكن إضافة رشة كركم للون. وإذا كان القوام مائيًا، يقترح كوب ماء ممزوجًا بملعقة صغيرة نشا ذرة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/JNL2C5RZ/aviyal-typical-south-indian-recipe؛ المؤلف: Priyaa Iyer؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر b0464556411b913ca6fa0322f1dd1b90834eb952bc9ddc66f28375ee71c18052؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. نطاقا الفاصوليا والجزر حُفظا نصيًا داخل الاسم وبقي المقدار null. الملاحظات الاختيارية في المصدر مترجمة في آخر خطوة.؛ وصف نسبة المطبخ كما في المصدر: هندي، جنوب الهند بحسب العنوان"
+    },
+    {
+      "id": "fi650-52098",
+      "name": "مرق البطاطا الصغيرة على الطريقة الهندية",
+      "nameEn": "Baby Potatoes Gravy Recipe Indian style",
+      "cuisine": "هندي",
+      "category": "أطباق جانبية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-52098-i0",
+          "name": "بطاطا صغيرة",
+          "amount": 10,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i1",
+          "name": "ماء حسب الحاجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i2",
+          "name": "زيت للقلي، المصدر يذكر 5 إلى 6 ملاعق كبيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i3",
+          "name": "زيت",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i4",
+          "name": "بصل",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i5",
+          "name": "كاجو، المصدر يذكر 10 إلى 12 حبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i6",
+          "name": "معجون زنجبيل وثوم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i7",
+          "name": "بذور كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i8",
+          "name": "لبن رائب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i9",
+          "name": "ماء حسب الحاجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i10",
+          "name": "زيت",
+          "amount": 3,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i11",
+          "name": "مسحوق غارام ماسالا",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i12",
+          "name": "مسحوق فلفل أحمر",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i13",
+          "name": "مسحوق كركم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i14",
+          "name": "مسحوق كزبرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i15",
+          "name": "مسحوق كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i16",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i17",
+          "name": "هينغ (أسافويتيدا)",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52098-i18",
+          "name": "كاسوري ميثي (حلبة مجففة)",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اسلقي البطاطا الصغيرة، قشريها واثقبيها بالشوكة. صفيها على منديل حتى تتخلص من الرطوبة الزائدة؛ يذكر المصدر أن الثقوب تساعد الزيت على طهيها بالتساوي.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "سخني زيت القلي وضعي البطاطا فيه. اقليها حتى تصبح الطبقة الخارجية مقرمشة وذهبية مع تقليبها بالملقط لتتحمر من الجهات كلها. صفيها على مناديل لامتصاص الزيت الزائد.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "سخني الزيت في مقلاة وأضيفي البصل والكاجو واقليهما. اتركيهما يبردان ثم اطحنيهما إلى معجون ناعم واتركيه جانبًا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "سخني زيتًا في مقلاة وأضيفي بذور الكمون. عندما تتفرقع أضيفي معجون الزنجبيل والثوم والهينغ واطهي دقيقة. أضيفي البطاطا المقلية ومعجون البصل والكاجو وامزجي.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي الغارام ماسالا والفلفل الأحمر والكركم والكزبرة والكمون والملح وامزجي. أضيفي اللبن المخفوق والماء حسب الحاجة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 6,
+          "text": "خففي النار وغطي المقلاة واطهي حتى يثخن المرق ويصبح كريميًا. أضيفي الحلبة المجففة المفتتة وامزجي ثم أطفئي النار.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/JCVSBBPK/baby-potatoes-gravy-recipe-indian-style؛ المؤلف: Shravani؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 0219b9f33889298d70fe3f7a28faf6584ee3ca5b4dbe1500f3bafeaf0a264d1a؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. عناوين الأقسام For Boiling and Frying Potatoes وFor Grinding وFor Preparation حُذفت مع توثيقها. المقادير الموصوفة بـ as needed أو مدى بقيت غير قابلة للتحجيم.؛ وصف نسبة المطبخ كما في المصدر: هندي بحسب عنوان المصدر"
+    },
+    {
+      "id": "fi650-51258",
+      "name": "مولي السمك بجوز الهند من جنوب الهند",
+      "nameEn": "Easy Fish Molee (South Indian-Style Fish Stew With Coconut)",
+      "cuisine": "هندي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-51258-i0",
+          "name": "فيليهان كبيران من سمك الباسا أو أي سمك أبيض متماسك",
+          "amount": 2,
+          "unit": "فيليه",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i1",
+          "name": "مسحوق كركم",
+          "amount": 1.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i2",
+          "name": "مسحوق فلفل تشيلي",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i3",
+          "name": "عصير ليمون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i4",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i5",
+          "name": "زيت زيتون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i6",
+          "name": "غصن أوراق كاري طازجة",
+          "amount": 1,
+          "unit": "غصن",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i7",
+          "name": "بذور خردل",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i8",
+          "name": "فلفلان أحمران صغيران منزوعا البذور إذا أريدت حرارة أقل",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i9",
+          "name": "بصلة متوسطة شرائح رفيعة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i10",
+          "name": "فصوص ثوم كبيرة شرائح رفيعة",
+          "amount": 4,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i11",
+          "name": "قطعة زنجبيل بطول بوصة شرائح رفيعة",
+          "amount": 1,
+          "unit": "قطعة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i12",
+          "name": "حليب جوز هند معلب",
+          "amount": 1,
+          "unit": "علبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i13",
+          "name": "خل أبيض",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i14",
+          "name": "كزبرة طازجة شرائح رفيعة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51258-i15",
+          "name": "طماطم مكعبات",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي السمك إلى أربع قطع لكل فيليه. تبّليه بربع ملعقة صغيرة من الكركم ومسحوق الفلفل والملح وعصير الليمون.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "في هذه الأثناء سخني زيت الزيتون. عندما يسخن أضيفي أوراق الكاري وبذور الخردل حتى تبدأ البذور بالفرقعة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي البصل والثوم والزنجبيل والفلفل واطهي حتى يطرى البصل ويصبح شفافًا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي ملعقة صغيرة الكركم المتبقية. إذا التصق الخليط أضيفي قليلًا من حليب جوز الهند وواصلي القلي نحو دقيقة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي بقية حليب جوز الهند والطماطم. خففي النار واتركيه يصل إلى الغليان ببطء. أضيفي السمك وغطيه واطهي حتى ينضج.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 6,
+          "text": "عدلي التتبيل وأضيفي الخل. ارفعي القدر عن النار وأضيفي الكزبرة المفرومة. يقدم مع أرز أبيض مطهو على البخار.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/HS3ZWPS5/easy-fish-molee-south-indian-style-fish-stew-with-coconut؛ المؤلف: Beverley Ann D'Cruz؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 670d052745fac7c6832772a1c0c2a99574768e596461015e2af6316db77a8150؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. المصدر يوزع مقدار الكركم: ربع ملعقة صغيرة للتتبيل والباقي في الطهي؛ حُفظ المقدار الكلي 1¼ ملعقة صغيرة كما في القائمة. لا مردود منشور.؛ وصف نسبة المطبخ كما في المصدر: هندي، جنوب الهند بحسب العنوان"
+    },
+    {
+      "id": "fi650-52631",
+      "name": "كادي باكورا من شمال الهند",
+      "nameEn": "North Indian Kadi Pakoda In Besan Curry",
+      "cuisine": "هندي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-52631-i0",
+          "name": "دقيق حمص (بيسان)",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i1",
+          "name": "دقيق أرز ودقيق مايدا",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i2",
+          "name": "سبانخ مفرومة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i3",
+          "name": "بصلة متوسطة مفرومة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i4",
+          "name": "فلفل أخضر مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i5",
+          "name": "أجواين (بذور الأجوين/الكاروم)",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i6",
+          "name": "مسحوق تشيلي",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i7",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i8",
+          "name": "مسحوق خبز اختياري، رشة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i9",
+          "name": "ماء حسب الحاجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i10",
+          "name": "زيت للقلي العميق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i11",
+          "name": "دقيق حمص (بيسان)",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i12",
+          "name": "لبن رائب مخفوق",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i13",
+          "name": "فلفل أحمر مجفف كامل",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i14",
+          "name": "مسحوق كركم",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i15",
+          "name": "مسحوق تشيلي",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i16",
+          "name": "أسافويتيدا، رشة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i17",
+          "name": "بذور كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i18",
+          "name": "زيت",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52631-i19",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلطي مكونات الباكورا عدا الزيت حتى تتكون عجينة سميكة جدًا. سخني الزيت في كاداي وأسقطي ملاعق من الخليط، نحو 5 إلى 6 قطع في كل دفعة. اقلي حتى تصبح ذهبية.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "في وعاء عميق اخلطي دقيق الحمص واللبن الرائب حتى يصبح ناعمًا بلا كتل. أضيفي الكركم ومسحوق التشيلي والملح وماءً كافيًا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "سخني الزيت في مقلاة وأضيفي بذور الكمون والفلفل الأحمر. عندما تتفرقع البذور أضيفي خليط دقيق الحمص. اتركيه يغلي ثم اطهي على نار هادئة 10 دقائق مع التقليب كي لا يلتصق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي الباكورا المقلية إلى الكادي. يقدم ساخنًا مع الأرز المطهو على البخار.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/JPW7SSLD/north-indian-kadi-pakoda-in-besan-curry؛ المؤلف: Mythreyi Dilip؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 9c193b76fe14d4e39e0bf8fdbd3f4a58c999ed46da45d0b85ca065f9d50e7bdb؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. عناوين قسم الباكورا وقسم الكادي حُذفت مع توثيقها؛ الماء والزيت للقلي حسب الحاجة كما وردا.؛ وصف نسبة المطبخ كما في المصدر: هندي، شمال الهند بحسب العنوان"
+    },
+    {
+      "id": "fi650-57813",
+      "name": "حساء العدس الأحمر المتبل على الطريقة الهندية",
+      "nameEn": "Indian Spiced Red Lentil Soup",
+      "cuisine": "هندي",
+      "category": "شوربات",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-57813-i0",
+          "name": "ماء مفلتر",
+          "amount": 12,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i1",
+          "name": "سيقان كزبرة عضوية اختيارية",
+          "amount": 2,
+          "unit": "حزمة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i2",
+          "name": "عدس أحمر عضوي",
+          "amount": 3,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i3",
+          "name": "مكعبا مرق خضار",
+          "amount": 2,
+          "unit": "مكعب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i4",
+          "name": "بصل أبيض عضوي",
+          "amount": 0.5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i5",
+          "name": "فصوص ثوم عضوي، العدد 2–3",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i6",
+          "name": "زنجبيل عضوي طازج",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i7",
+          "name": "فلفل سيرانو، العدد 2–4",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i8",
+          "name": "طماطم عضوية مهروسة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i9",
+          "name": "كركم",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i10",
+          "name": "غارام ماسالا",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i11",
+          "name": "بذور كزبرة أو مسحوق كزبرة؛ المصدر يذكر ملعقتين صغيرتين للبذور أو ملعقة للمسحوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i12",
+          "name": "بذور كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i13",
+          "name": "ملح بحري أو حسب الذوق؛ المصدر يذكر ملعقة كبيرة وملعقة صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57813-i14",
+          "name": "زيت بذور العنب المعصور بالطرد",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضعي سيقان الكزبرة في الماء واتركيه حتى يغلي، ثم أزيلي السيقان؛ هذه الخطوة اختيارية.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "اغسلي العدس وأضيفيه إلى مرق السيقان.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "أعيدي العدس إلى الغليان ثم خففي الحرارة إلى متوسطة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "اخلطي مكعبي المرق مع قليل من ماء العدس واهرسيهما، ثم أضيفيهما إلى العدس. مقدار هذا الماء غير محدد.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 5,
+          "text": "سخني زيت بذور العنب في مقلاة وأضيفي بذور الكزبرة والكمون والكركم والغارام ماسالا. قلبي على نار متوسطة حتى تفوح الرائحة، نحو خمس دقائق بحسب المصدر.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 6,
+          "text": "افرمي فلفل السيرانو وابشري الزنجبيل وافرمي البصل والثوم. أضيفيها إلى المقلاة وقلبي حتى يلين البصل.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 7,
+          "text": "أضيفي الطماطم واطهي على نار متوسطة منخفضة نحو عشر دقائق، ثم أضيفي المزيج إلى العدس المطهو واطهيه 20 دقيقة أخرى على نار منخفضة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 8,
+          "text": "للقوام الناعم يمكن هرس الحساء كله، أو نصفه لقوام محبب قليلًا، أو تركه كما هو.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/N3PKYN5Q/indian-spiced-red-lentil-soup؛ المؤلف: CaliZona؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر bd14ada91332aa8dfb9c4880dbaa940fb4520303da78e2292ef07246e8513019؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. سيقان الكزبرة اختيارية، والطحن اختياري وفق المصدر. مقدار الماء لخلط مكعبات المرق غير محدد وبقي كذلك.؛ نص نسبة الأسلوب كما في المراجعة: هندية بحسب العنوان"
+    },
+    {
+      "id": "fi650-58437",
+      "name": "بطاطس وبازلاء وقرنبيط متبل على الطريقة الهندية",
+      "nameEn": "Indian Potatoes, Peas and Cauliflower",
+      "cuisine": "هندي",
+      "category": "أطباق جانبية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 4,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-58437-i0",
+          "name": "زيت نباتي",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i1",
+          "name": "بطاطس روسيت مقشرة ومكعبات نصف بوصة",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i2",
+          "name": "زنجبيل طازج مفروم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i3",
+          "name": "زهيرات قرنبيط مقطعة لقيمات",
+          "amount": 4,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i4",
+          "name": "ملح",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i5",
+          "name": "كركم مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i6",
+          "name": "مسحوق فلفل حار",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i7",
+          "name": "بابريكا",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i8",
+          "name": "ماء",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-58437-i9",
+          "name": "بازلاء مجمدة مذابة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الزيت في مقلاة كبيرة غير لاصقة على نار متوسطة. أضيفي البطاطس والزنجبيل وشوحي حتى يتحمر سطح البطاطس قليلًا، نحو ثلاث دقائق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي القرنبيط ثم الملح والكركم ومسحوق الفلفل والبابريكا، وشوحي خمس دقائق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي نصف كوب ماء وغطي المقلاة واتركي الخضار على نار هادئة حتى تلين، نحو خمس دقائق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي البازلاء واتركيها على نار هادئة دقيقتين. تبلي بالملح والفلفل بحسب الذوق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 5,
+          "text": "يذكر المصدر أن الوصفة تكفي أربع حصص.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/NJ3WTSVY/indian-potatoes-peas-and-cauliflower؛ المؤلف: Anonymous؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 0cb01df8f4e24f8f159f726e57bbc1a015f471e0e8b36526c8e9c7230060c4b1؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. المصدر يذكر أربع حصص. زمن الطهي مذكور داخل خطوات المصدر دون زمن تحضير منفصل.؛ نص نسبة الأسلوب كما في المراجعة: هندية بحسب العنوان"
+    },
+    {
+      "id": "fi650-59571",
+      "name": "دجاج تيكا ماسالا هندي",
+      "nameEn": "Chicken Tikka Masala Indian",
+      "cuisine": "هندي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-59571-i0",
+          "name": "صدور دجاج منزوعة العظم مقطعة قطعًا كبيرة نحو بوصتين",
+          "amount": 2,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i1",
+          "name": "بصلة بيضاء مفرومة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i2",
+          "name": "فصوص ثوم مفرومة؛ العدد 3–4",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i3",
+          "name": "مسحوق زنجبيل",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i4",
+          "name": "صلصة طماطم مهروسة؛ علبة 26 أونصة، ويمكن استخدام الطماطم المقطعة",
+          "amount": 1,
+          "unit": "علبة 26 أونصة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i5",
+          "name": "كركم مطحون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i6",
+          "name": "كمون مطحون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i7",
+          "name": "غارام ماسالا",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i8",
+          "name": "بابريكا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i9",
+          "name": "فلفل كايين",
+          "amount": 0.5,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i10",
+          "name": "زبادي عادي",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i11",
+          "name": "زبدة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i12",
+          "name": "ملح وفلفل حسب الذوق؛ المقدار غير محدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i13",
+          "name": "زيت زيتون أو كانولا",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i14",
+          "name": "خبز نان جاهز",
+          "amount": 4,
+          "unit": "رغيف",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59571-i15",
+          "name": "كزبرة طازجة للتزيين؛ المقدار غير محدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي صدور الدجاج إلى قطع كبيرة تقارب بوصتين. تذكر مقدمة المصدر تتبيلة اختيارية من مسحوق الكزبرة والكمون والملح بمقادير غير مدرجة في القائمة؛ يمكن تتبيل الدجاج بها 20 دقيقة في حرارة الغرفة أو ساعة إلى ساعتين في الثلاجة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "في قدر ثقيل أو فرن هولندي على نار متوسطة، شوحي البصل والثوم بالزيت حتى يتحمرا جيدًا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي بقية المكونات عدا الدجاج وقلبي باستمرار نحو 5–10 دقائق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي الدجاج واطهي على نار متوسطة 25–30 دقيقة مع التقليب من وقت إلى آخر حتى ينضج. خلال الدقائق الخمس الأخيرة أضيفي الزبادي واتركي المزيج يغلي مع التحريك.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 5,
+          "text": "إن كان الكاري كثيفًا جدًا، يذكر المصدر إمكانية إضافة مقدار إضافي غير محدد حسب التفضيل. ارفعيه عن النار واتركيه يبرد دقائق قليلة. قدميه مع الأرز الدبق أو أرز بسمتي أو أرز غير دبق، وزيني بالكزبرة إن توفرت.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/P7ZX4DTZ/chicken-tikka-masala-indian؛ المؤلف: olivia kim؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 0bdc8e861506f59273eedac4203c99a96f736cf545b9dee1004ee35002418435؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. مقدار الثوم في المصدر 3–4 فصوص؛ بقي غير محدد بدل اختراع قيمة واحدة. خطوة التتبيل الاختيارية تذكر كزبرة وكمونًا وملحًا بمقادير غير مدرجة في القائمة، وأُشير إلى ذلك دون إضافتها كمكونات موزونة.؛ نص نسبة الأسلوب كما في المراجعة: هندية بحسب العنوان"
+    },
+    {
+      "id": "fi650-59982",
+      "name": "دجاج بالزبدة على الطريقة الهندية",
+      "nameEn": "INDIAN BUTTER CHICKEN RECIPE",
+      "cuisine": "هندي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-59982-i0",
+          "name": "زبادي طبيعي",
+          "amount": 150,
+          "unit": "ملليلتر",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i1",
+          "name": "لوز مطحون",
+          "amount": 50,
+          "unit": "جرام",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i2",
+          "name": "مسحوق فلفل حار",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i3",
+          "name": "ورق غار مجروش",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i4",
+          "name": "قرنفل مطحون",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i5",
+          "name": "قرفة مطحونة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i6",
+          "name": "غارام ماسالا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i7",
+          "name": "حبوب هيل أخضر",
+          "amount": 4,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i8",
+          "name": "معجون زنجبيل",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i9",
+          "name": "معجون ثوم",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i10",
+          "name": "طماطم معلبة 14 أونصة / 400 غرام",
+          "amount": 400,
+          "unit": "جرام",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i11",
+          "name": "ملح",
+          "amount": 1.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i12",
+          "name": "دجاج منزوع الجلد والعظم ومكعبات",
+          "amount": 1,
+          "unit": "كيلوغرام",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i13",
+          "name": "زبدة",
+          "amount": 75,
+          "unit": "جرام",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i14",
+          "name": "زيت ذرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i15",
+          "name": "بصلتان متوسطتان مقطعتان شرائح",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i16",
+          "name": "كزبرة طازجة مفرومة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59982-i17",
+          "name": "كريمة",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضعي الزبادي واللوز المطحون والتوابل الجافة والزنجبيل والثوم والطماطم والملح في وعاء واخلطيها جيدًا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "ضعي الدجاج في وعاء كبير واسكبي خليط الزبادي فوقه واتركيه جانبًا؛ لا يحدد المصدر مدة لذلك.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "أذيبي الزبدة والزيت معًا في قدر متوسط أو مقلاة. أضيفي البصل واقليه نحو ثلاث دقائق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي خليط الدجاج وقلبيه على نار متوسطة نحو 7–10 دقائق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي نحو نصف الكزبرة وامزجي. اسكبي الكريمة وقلبي جيدًا ثم ارفعي المزيج إلى الغليان.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 6,
+          "text": "زيني ببقية الكزبرة المفرومة وقدمي.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/PJTZ8XSB/indian-butter-chicken-recipe؛ المؤلف: obal kumar؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 4621f9ac63d916228ba171928a8357aa5c8e69391078215a0c696161b63351a9؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. المصدر يذكر مردودًا وزمنًا غير منظمين. قُدمت طريقة التتبيل ثم الطهي كما وردت؛ مدة ترك الدجاج جانبًا غير محددة.؛ نص نسبة الأسلوب كما في المراجعة: هندية بحسب العنوان"
+    },
+    {
+      "id": "fi650-60754",
+      "name": "سامبار جنوب هندي تقليدي",
+      "nameEn": "A TYPICAL SOUTH INDIAN SAMBAR",
+      "cuisine": "هندي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-60754-i0",
+          "name": "بازلاء حمام مقسومة أو تور دال",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i1",
+          "name": "خضار مثل الملفوف والقرنبيط والفاصوليا والجزر تضاف بعد طهي العدس؛ المصدر يذكر ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i2",
+          "name": "خضار اختيارية مسلوقة، مثل قرون المورينغا أو اليقطين أو ما تختارينه؛ المقدار غير محدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i3",
+          "name": "باذنجان مكعبات",
+          "amount": 0.125,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i4",
+          "name": "بامية مقطوعة نصفين؛ العدد 4–5",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i5",
+          "name": "بصلة مقطعة قطعًا",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i6",
+          "name": "نصف طماطم مقطعة",
+          "amount": 0.5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i7",
+          "name": "أوراق كاري؛ العدد 4–5",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i8",
+          "name": "لب تمر هندي",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i9",
+          "name": "سكر",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i10",
+          "name": "زيت",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i11",
+          "name": "بذور خردل؛ رشة أو رشتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i12",
+          "name": "رشة حلتيت",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i13",
+          "name": "كركم مطحون",
+          "amount": 0.125,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i14",
+          "name": "مسحوق سامبار",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i15",
+          "name": "كزبرة مطحونة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i16",
+          "name": "مسحوق فلفل أحمر",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60754-i17",
+          "name": "ملح؛ المقدار غير محدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "انقعي العدس نصف ساعة أو أكثر. اطهيه في قدر الضغط مع خضار مثل الملفوف والقرنبيط والفاصوليا والجزر.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "اسلقي الخضار الاختيارية مثل قرون المورينغا واليقطين مع رشة أو رشتين من الملح.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "سخني الزيت في مقلاة وأضيفي بذور الخردل والحلتيت وأوراق الكاري والبصل وقلبي.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي مكعبات الباذنجان والبامية.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 5,
+          "text": "أضيفي الطماطم ولب التمر الهندي.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 6,
+          "text": "أضيفي مسحوق الفلفل الأحمر ومسحوق السامبار واطهي على نار منخفضة حتى يظهر الزيت.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 7,
+          "text": "أضيفي العدس المطهو بالضغط واتركيه يغلي مع الملح والكركم والكزبرة المطحونة، ثم اهرسيه/اخفقيه.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 8,
+          "text": "أضيفي خليط العدس إلى المقلاة وقلبي. أضيفي أيضًا الخضار المسلوقة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 9,
+          "text": "اتركي المزيج يغلي على نار هادئة. تحققي من التتبيل وأضيفي السكر.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 10,
+          "text": "زيني بالكزبرة المقطعة وقدمي ساخنًا مع الأرز.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/PZG7GWYM/a-typical-south-indian-sambar؛ المؤلف: Usha Chowdhary Gupta؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر b97fc02df8ca17f155eaa7c5ef5db776bc766bf488d8d22f70310409145ce881؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. المقادير الكسرية ذات الشرطة العكسية في المصدر واضحة سياقيًا كأنصاف وأثمان أكواب/ملعقة؛ فُسرت ككسور صريحة دون تغيير قيمتها. خضار السامبار البديلة تحفظ كما وردت. مقدار الملح حسب الذوق.؛ وصف المطبخ السابق غير مثبت كأصل قومي: جنوب هندية بحسب العنوان؛ التصنيف الحالي يستند فقط لاسم البلد/الإقليم الصريح في عنوان المصدر، وإلا غير محدد."
+    },
+    {
+      "id": "fi650-57978",
+      "name": "مسالا لحم جنوب الهند",
+      "nameEn": "South Indian Meat Masala",
+      "cuisine": "هندي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-57978-i0",
+          "name": "لحم ضأن",
+          "amount": 1,
+          "unit": "كيلوغرام",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i1",
+          "name": "طماطم مفرومة",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i2",
+          "name": "بصل مفروم",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i3",
+          "name": "ثوم مهروس",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i4",
+          "name": "زنجبيل",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i5",
+          "name": "زيت",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i6",
+          "name": "أوراق كزبرة طازجة للتزيين؛ المقدار غير محدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i7",
+          "name": "ملح حسب الذوق؛ المقدار غير محدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i8",
+          "name": "فلفل أحمر حار",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i9",
+          "name": "فلفل أسود",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i10",
+          "name": "مسحوق خردل أسود",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i11",
+          "name": "مسحوق حلبة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i12",
+          "name": "مسحوق حبة البركة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i13",
+          "name": "مسحوق كزبرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57978-i14",
+          "name": "غارام ماسالا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقلي البصل في الزيت حتى يصبح بنيًا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي الطماطم والثوم والزنجبيل واطهي 3–5 دقائق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي اللحم والتوابل واطهي 3–5 دقائق أخرى. أضيفي كوبين ماء واطهي على نار متوسطة حتى يطرى اللحم؛ لا يحدد المصدر مدة لذلك.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "زيني بأوراق الكزبرة الطازجة واتركي الطبق على نار هادئة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 5,
+          "text": "قدمي مسالا اللحم مع خبز نان أو روتي وسلطة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/N6R8TMTS/south-indian-meat-masala؛ المؤلف: miansari66؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 563a169fde83ee71720b8755a393641860f591d777e5b7e8a5f126311db44944؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. المصدر يذكر ملعقة صغيرة لكل من الثوم والزنجبيل، وكوب زيت دون تحديد مردود أو أزمنة طهي للحم. بقيت هذه المعلومات كما وردت.؛ وصف المطبخ السابق غير مثبت كأصل قومي: جنوب هندية بحسب العنوان؛ التصنيف الحالي يستند فقط لاسم البلد/الإقليم الصريح في عنوان المصدر، وإلا غير محدد."
+    },
+    {
+      "id": "bc650-naan-bread",
+      "name": "خبز نان",
+      "nameEn": "Naan Bread",
+      "cuisine": "هندي",
+      "category": "خبز",
+      "description": "خبز نان منزلي مخمّر يخبز في الفرن، ويقدم مع اللحم أو الخضار أو البيض.",
+      "servings": 4,
+      "prepTime": 90,
+      "cookTime": 30,
+      "totalTime": 120,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-naan-bread-ing-1",
+          "name": "طحين متعدد الاستعمالات، 3 أكواب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "All-purpose flour 3 cups"
+        },
+        {
+          "id": "bc650-naan-bread-ing-2",
+          "name": "خميرة جافة فعالة، ملعقة كبيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Active dry yeast 1 tbsp"
+        },
+        {
+          "id": "bc650-naan-bread-ing-3",
+          "name": "سكر، ملعقتان كبيرتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sugar 2 tbsp"
+        },
+        {
+          "id": "bc650-naan-bread-ing-4",
+          "name": "حليب دافئ، كوب واحد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Warm Milk 1 cup"
+        },
+        {
+          "id": "bc650-naan-bread-ing-5",
+          "name": "زبدة مذابة، ملعقتان كبيرتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter melted 2 tbsp"
+        },
+        {
+          "id": "bc650-naan-bread-ing-6",
+          "name": "زيت لدهن العجين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Oil - little to grease"
+        },
+        {
+          "id": "bc650-naan-bread-ing-7",
+          "name": "ملح، ملعقة ونصف صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt - 1 1/2 teaspoons"
+        },
+        {
+          "id": "bc650-naan-bread-ing-8",
+          "name": "طحين إضافي للرش عند الحاجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sprinkle additional flour as needed to keep the dough from sticking to the sides."
+        },
+        {
+          "id": "bc650-naan-bread-ing-9",
+          "name": "طحين للرش أثناء العجن والفرد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "sprinkle all-purpose flour, and knead until smooth."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "أضف الخميرة والسكر إلى الحليب الدافئ في وعاء كبير وحرّك جيداً. اتركه 3–5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلط الطحين والملح في وعاء كبير. أضف طحيناً إضافياً عند الحاجة لمنع التصاق العجين بجوانب الوعاء.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "عندما يصبح العجين طرياً وجاهزاً، ادهنه بالزيت وغطه بقماش ناعم. يذكر المصدر تركه ساعتين إلى ثلاث ساعات.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اعجن العجين مرة أخرى، ورش طحيناً متعدد الاستعمالات واعجن حتى يصبح ناعماً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قسّم العجين إلى أربع قطع متساوية وشكلها كرات. افردها إلى السمك المرغوب، بحجم تورتيلا صغيرة تقريباً.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "انقل النان إلى صينية مبطنة بورق ألمنيوم واخبزه في فرن محمى إلى 180°م. يذكر المصدر 30–35 دقيقة في هذه الخطوة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "بعد الخبز ادهن الوجه بالزبدة وقطّعه إلى أربع قطع.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "خبز"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️ Prep time: 90 min ؛ - 🍳 Cook time: 30 min ؛ - 🍽️ Servings: 4. يذكر المصدر 90 دقيقة تحضير و30 دقيقة طهي و4 حصص، مع أن الطريقة تذكر ترك العجين ساعتين إلى ثلاث ساعات وخبزاً 30–35 دقيقة؛ أبقيت أزمنة الوصف كما وردت وسجلت التباين هنا. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/naan-bread.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=91641f6c3000e7d65a1bef01dacdb1954963be6649e545ff3449dba83cfd27c8"
+    },
+    {
+      "id": "bc650-garam-masala",
+      "name": "غارام ماسالا",
+      "nameEn": "Garam Masala",
+      "cuisine": "هندي",
+      "category": "بهارات",
+      "description": "مزيج توابل هندية كاملة تحمص ثم تطحن وتُحفظ في وعاء زجاجي محكم.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-garam-masala-ing-1",
+          "name": "هيل أخضر، 4 حبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 Green Cardamom"
+        },
+        {
+          "id": "bc650-garam-masala-ing-2",
+          "name": "هيل أسود، حبتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 Black Cardamom"
+        },
+        {
+          "id": "bc650-garam-masala-ing-3",
+          "name": "كزبرة، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-garam-masala-ing-4",
+          "name": "قرنفل، حبتان",
+          "amount": 2.0,
+          "unit": "فص",
+          "scale": true,
+          "display": null,
+          "label": "2 Cloves"
+        },
+        {
+          "id": "bc650-garam-masala-ing-5",
+          "name": "كمون، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-garam-masala-ing-6",
+          "name": "بذور شمر، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-garam-masala-ing-7",
+          "name": "ورق غار، 5–6",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5/6 Bayleaf"
+        },
+        {
+          "id": "bc650-garam-masala-ing-8",
+          "name": "حبوب فلفل أسود، 5–6",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5/6 Black pepper pods"
+        },
+        {
+          "id": "bc650-garam-masala-ing-9",
+          "name": "يانسون نجمي، 1 (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Star anise (Optional)"
+        },
+        {
+          "id": "bc650-garam-masala-ing-10",
+          "name": "صولجان جوزة الطيب، اختياري؛ لا يزيد على 3 خيوط",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Mace (Optional): Mace is a dried flower originating from the Nutmeg plant. Use no more than 3 strands of this flower."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "عادة لا يضاف اليانسون النجمي والصولجان إلى غارام ماسالا، ويضافان خصيصاً لمن يحضر برياني بحسب المصدر.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قد يجعل القرنفل الخليط حاراً جداً، لذا أضف منه بقدر الرغبة. كثرة الصولجان تجعل المزيج مراً؛ لا تتجاوز الكمية الموصى بها. يمكن تعديل بقية التوابل حسب الذوق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اغسل التوابل الجافة جيداً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "إذا كان الجو مشمساً جداً جففها بالشمس نحو يوم. وإلا ضعها في مقلاة ثقيلة القاعدة وحمصها جافاً حتى تفوح رائحتها.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اترك التوابل المحمصة لتبرد ثم اطحنها جيداً في الخلاط.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "انخل المسحوق وأعد القطع الكبيرة إلى الخلاط واطحنها مرة أخرى؛ قد تحتاج إلى التكرار حتى يصبح المسحوق ناعماً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "احفظ غارام ماسالا في أوعية زجاجية محكمة الإغلاق.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "بهارات"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. المصدر يذكر أنه يمكن حفظه نحو شهرين إلى ثلاثة أشهر في مكان بارد وجاف؛ لم أضع مدة التخزين ضمن metadata الطبخ. أعداد البذور كما وردت بالمصدر دون تحويل أو زيادة. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/garam-masala.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=5b8b81c4fef3748c9c73b26b0f8e56cc95171b3d836c3f4b355f8da274db7d9c"
+    }
+  ]
+}

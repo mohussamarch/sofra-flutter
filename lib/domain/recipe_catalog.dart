@@ -57,15 +57,19 @@ class CatalogIngredient {
 }
 
 class CatalogStep {
-  CatalogStep.fromJson(Map<String, dynamic> json)
-    : number = (json['n'] as num).toInt(),
-      text = _text(json['text'], 'step text'),
-      minutes = _number(json['duration'], 'duration', zero: true),
-      passive = json['passive'] == true,
-      tip = json['tip'] as String?;
+  CatalogStep.fromJson(
+    Map<String, dynamic> json, {
+    bool allowUnknownDuration = false,
+  }) : number = (json['n'] as num).toInt(),
+       text = _text(json['text'], 'step text'),
+       minutes = json['duration'] == null && allowUnknownDuration
+           ? null
+           : _number(json['duration'], 'duration', zero: true),
+       passive = json['passive'] == true,
+       tip = json['tip'] as String?;
   final int number;
   final String text;
-  final double minutes;
+  final double? minutes;
   final bool passive;
   final String? tip;
   Map<String, dynamic> toJson() => {
@@ -85,9 +89,22 @@ class CatalogRecipe {
       category = _text(json['category'], 'category'),
       description = _text(json['description'], 'description'),
       difficulty = _text(json['difficulty'], 'difficulty'),
-      servings = _number(json['servings'], 'servings').toInt(),
-      prepMinutes = _number(json['prepTime'], 'prepTime', zero: true),
-      cookMinutes = _number(json['cookTime'], 'cookTime', zero: true),
+      metadataPolicy = json['metadataPolicy'] as String?,
+      servings =
+          json['servings'] == null &&
+              json['metadataPolicy'] == unknownMetadataPolicy
+          ? null
+          : _number(json['servings'], 'servings').toInt(),
+      prepMinutes =
+          json['prepTime'] == null &&
+              json['metadataPolicy'] == unknownMetadataPolicy
+          ? null
+          : _number(json['prepTime'], 'prepTime', zero: true),
+      cookMinutes =
+          json['cookTime'] == null &&
+              json['metadataPolicy'] == unknownMetadataPolicy
+          ? null
+          : _number(json['cookTime'], 'cookTime', zero: true),
       ingredients = List.unmodifiable(
         (json['ingredients'] as List).map(
           (v) =>
@@ -96,18 +113,49 @@ class CatalogRecipe {
       ),
       steps = List.unmodifiable(
         (json['steps'] as List).map(
-          (v) => CatalogStep.fromJson(Map<String, dynamic>.from(v as Map)),
+          (v) => CatalogStep.fromJson(
+            Map<String, dynamic>.from(v as Map),
+            allowUnknownDuration:
+                json['metadataPolicy'] == unknownMetadataPolicy,
+          ),
         ),
       ),
       tags = List<String>.unmodifiable((json['tags'] as List).cast<String>()),
       notes = json['notes'] as String? {
-    if (servings < 1 ||
-        servings != json['servings'] ||
+    final allowsUnknown = metadataPolicy == unknownMetadataPolicy;
+    final rawSteps = json['steps'] as List;
+    if ((metadataPolicy != null && !allowsUnknown) ||
+        (allowsUnknown &&
+            (!json.containsKey('servings') ||
+                !json.containsKey('prepTime') ||
+                !json.containsKey('cookTime') ||
+                !json.containsKey('totalTime') ||
+                rawSteps.any(
+                  (v) =>
+                      v is! Map ||
+                      !Map<String, dynamic>.from(v).containsKey('duration'),
+                ))) ||
+        ((servings == null ||
+                prepMinutes == null ||
+                cookMinutes == null ||
+                steps.any((step) => step.minutes == null)) &&
+            (!allowsUnknown || notes == null || notes!.trim().isEmpty)) ||
+        (servings != null && (servings! < 1 || servings != json['servings'])) ||
         ingredients.isEmpty ||
         steps.isEmpty) {
       throw const FormatException('Invalid recipe contents');
     }
-    if ((prepMinutes + cookMinutes - (json['totalTime'] as num)).abs() > 1e-6) {
+    final total = json['totalTime'];
+    if (prepMinutes == null || cookMinutes == null) {
+      if (total != null) {
+        throw const FormatException(
+          'Unknown component times require unknown total',
+        );
+      }
+    } else if (total is! num ||
+        !total.isFinite ||
+        total < 0 ||
+        (prepMinutes! + cookMinutes! - total).abs() > 1e-6) {
       throw const FormatException('Recipe total time mismatch');
     }
     for (var i = 0; i < steps.length; i++) {
@@ -117,8 +165,15 @@ class CatalogRecipe {
     }
   }
   final String id, name, cuisine, category, description, difficulty;
-  final int servings;
-  final double prepMinutes, cookMinutes;
+  static const unknownMetadataPolicy = 'source-unknowns-v1';
+  final String? metadataPolicy;
+  final int? servings;
+  final double? prepMinutes, cookMinutes;
+  bool get hasKnownYield => servings != null;
+  bool get hasKnownTotalTime => prepMinutes != null && cookMinutes != null;
+  bool get hasCompleteSchedule => steps.every((step) => step.minutes != null);
+  double? get totalMinutes =>
+      hasKnownTotalTime ? prepMinutes! + cookMinutes! : null;
   final List<CatalogIngredient> ingredients;
   final List<CatalogStep> steps;
   final List<String> tags;
@@ -131,39 +186,69 @@ class CatalogRecipe {
     'category': category,
     'description': description,
     'difficulty': difficulty,
+    if (metadataPolicy != null) 'metadataPolicy': metadataPolicy,
     'servings': servings,
     'prepTime': prepMinutes,
     'cookTime': cookMinutes,
-    'totalTime': prepMinutes + cookMinutes,
+    'totalTime': totalMinutes,
     'ingredients': ingredients.map((v) => v.toJson()).toList(),
     'steps': steps.map((v) => v.toJson()).toList(),
     'tags': tags.toList(),
     'notes': notes,
   };
 
-  ScaledCatalogRecipe forServings(int target) {
+  ScaledCatalogRecipe forServings(int target, {int? sourceServings}) {
     if (target < 1 || target > 1000) {
       throw ArgumentError.value(target, 'servings');
     }
-    return ScaledCatalogRecipe(this, target);
+    final base = servings ?? sourceServings;
+    if (base == null || base < 1 || base > 1000) {
+      throw ArgumentError(
+        'Explicit valid sourceServings required for unknown yield',
+      );
+    }
+    return ScaledCatalogRecipe(this, target, base);
   }
 }
 
 class ScaledCatalogRecipe {
-  ScaledCatalogRecipe(this.recipe, this.servings);
+  ScaledCatalogRecipe(this.recipe, this.servings, [int? sourceServings])
+    : sourceServings =
+          recipe.servings ??
+          sourceServings ??
+          (throw ArgumentError('Explicit source yield required')) {
+    if (servings < 1 ||
+        servings > 1000 ||
+        this.sourceServings < 1 ||
+        this.sourceServings > 1000) {
+      throw ArgumentError('Invalid target or source yield');
+    }
+  }
   final CatalogRecipe recipe;
   final int servings;
-  double get factor => servings / recipe.servings;
+  final int sourceServings;
+  double get factor => servings / sourceServings;
   double? quantity(CatalogIngredient ingredient) =>
       ingredient.quantityFor(factor);
-  double get prepMinutes => scaleRecipeMinutes(recipe.prepMinutes, factor);
-  double get cookMinutes => scaleRecipeMinutes(recipe.cookMinutes, factor);
-  double get totalMinutes => prepMinutes + cookMinutes;
+  double? get prepMinutes => recipe.prepMinutes == null
+      ? null
+      : scaleRecipeMinutes(recipe.prepMinutes!, factor);
+  double? get cookMinutes => recipe.cookMinutes == null
+      ? null
+      : scaleRecipeMinutes(recipe.cookMinutes!, factor);
+  double? get totalMinutes => prepMinutes == null || cookMinutes == null
+      ? null
+      : prepMinutes! + cookMinutes!;
   List<RecipeScheduleStep> get schedule {
+    if (!recipe.hasCompleteSchedule) {
+      throw StateError(
+        'Recipe schedule is incomplete because step durations are unknown',
+      );
+    }
     var cursor = 0.0;
     return List.unmodifiable(
       recipe.steps.map((step) {
-        final duration = scaleRecipeMinutes(step.minutes, factor);
+        final duration = scaleRecipeMinutes(step.minutes!, factor);
         final start = cursor;
         cursor += duration;
         return RecipeScheduleStep(step, start, cursor);

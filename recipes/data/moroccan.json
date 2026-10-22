@@ -1,0 +1,1732 @@
+{
+  "cuisine": "مغربي",
+  "cuisineSlug": "moroccan",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "fi650-51935",
+      "name": "بطاطس مغربية بالخضروات وصلصة الأعشاب",
+      "nameEn": "Moroccan Potatoes",
+      "cuisine": "مغربي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-51935-i0",
+          "name": "فصوص ثوم",
+          "amount": 6,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i1",
+          "name": "ملح بحري",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i2",
+          "name": "خلطة توابل Picante Passion",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": "اسم تجاري؛ لم أستنتج مكوناتها."
+        },
+        {
+          "id": "fi650-51935-i3",
+          "name": "كزبرة طازجة مفرومة",
+          "amount": 0.75,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i4",
+          "name": "بقدونس مفروم",
+          "amount": 0.75,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i5",
+          "name": "عصير ليمونة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i6",
+          "name": "خل نبيذ أحمر أو خل بإكليل الجبل والفلفل والثوم",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i7",
+          "name": "زيت زيتون",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i8",
+          "name": "بطاطس حمراء شرائح نصف بوصة",
+          "amount": 1.5,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i9",
+          "name": "فلفل رومي أحمر قطع بوصة",
+          "amount": 1,
+          "unit": "حبة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i10",
+          "name": "فلفل رومي أصفر قطع مربعة بوصة ونصف",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i11",
+          "name": "فلفل رومي أخضر قطع بوصة ونصف",
+          "amount": 1,
+          "unit": "حبة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i12",
+          "name": "أعواد كرفس قطع بوصتين",
+          "amount": 4,
+          "unit": "عود",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i13",
+          "name": "طماطم كل واحدة مقسمة 8 أسافين",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51935-i14",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّني الفرن إلى 350°F (175°C). ضعي الثوم والملح وخلطة التوابل في محضرة الطعام واطحني حتى تصير عجينة. أضيفي الأعشاب واضربي نبضات قليلة. أضيفي عصير الليمون والخل و2–3 ملاعق كبيرة زيت واخلطي. في وعاء كبير اخلطي البطاطس والفلفلين والكرفس وتبّلي بالملح وقلّبي مع الصلصة. انقليها إلى صينية خبز مسطحة واسعة ووزّعي الطماطم بينها. رشي 1–2 ملعقة كبيرة زيت وغطي بورق القصدير. اخبزي 35 دقيقة، ثم أزيلي الغطاء واخبزي حتى تلين الخضروات 20–30 دقيقة أخرى. قدّميها دافئة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/J7HGBXZZ/moroccan-potatoes؛ المؤلف: Julie Cecchini؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر a147b345ebb891928d0b2e8a0b84e191ca85a3f37cb7c070a607cd41c98ffd59؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. ترجمت خطوات الخلط والخبز والأزمنة والحرارة. بديل الخل واسم الخلطة التجارية محفوظان دون تفسير."
+    },
+    {
+      "id": "fi650-52265",
+      "name": "كباب دجاج مغربي بماريناد الليمون",
+      "nameEn": "Moroccan Lemon Shish Kebabs",
+      "cuisine": "مغربي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-52265-i0",
+          "name": "صدور دجاج منزوعة الدهن ومكعبات",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": "المصدر يذكر مقاس 2 سم (1 بوصة)؛ الفرق محفوظ."
+        },
+        {
+          "id": "fi650-52265-i1",
+          "name": "بقدونس مفروم",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52265-i2",
+          "name": "أوراق إكليل الجبل الطازجة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52265-i3",
+          "name": "أوراق زعتر طازجة",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52265-i4",
+          "name": "فصوص ثوم مهروسة",
+          "amount": 2,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52265-i5",
+          "name": "حبات فلفل أسود مهروسة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52265-i6",
+          "name": "بشر ليمون وعصيره",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52265-i7",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّعي الدجاج إلى مكعبات؛ المقاس المنشور 2 سم (1 بوصة). اخلطي البقدونس وإكليل الجبل والزعتر والثوم والفلفل وبشر الليمون وعصيره وزيت الزيتون في وعاء. أضيفي الدجاج وغطيه بغلاف بلاستيكي واتركيه نصف ساعة على الأقل؛ يفضّل الكاتب مدة أطول في الثلاجة. انقعي أسياخ الخيزران أو المعدن في صينية ماء لتجنب احتراقها. شكّي قطع اللحم؛ يذكر المصدر نحو أربع قطع في كل سيخ. اطهيها على الشواية أو في المقلاة أو الفرن، والكاتب يفضّل الشواية. قدّميها فورًا مع الأرز أو الكسكس المتوسطي أو خبز البيتا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/JH2GSZPF/moroccan-lemon-shish-kebabs؛ المؤلف: Alejandro Duarte؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر b196c290c97dc7d6f32e564e4e172bb69e04d69405bb95692c58fbb643782b3c؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. ترجمت خطوات التتبيل ونقع الأسياخ وخيارات الطهي. تعارض المقاس 2 سم و1 بوصة محفوظ دون إصلاح صامت."
+    },
+    {
+      "id": "fi650-52352",
+      "name": "كسكس مغربي بالدجاج واللحم والخضروات",
+      "nameEn": "Moroccan Couscous",
+      "cuisine": "مغربي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-52352-i0",
+          "name": "كرفس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i1",
+          "name": "جزر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i2",
+          "name": "بصل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i3",
+          "name": "باذنجان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i4",
+          "name": "لفت",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i5",
+          "name": "فلفل رومي أخضر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i6",
+          "name": "طماطم ناضجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i7",
+          "name": "حمص معلب؛ الطازج يحتاج وقتًا أطول",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "علبة؛ الحجم غير محدد",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i8",
+          "name": "بقدونس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i9",
+          "name": "كوسا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i10",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i11",
+          "name": "زبيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i12",
+          "name": "مرق دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i13",
+          "name": "هريسة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i14",
+          "name": "أفخاذ دجاج مفصولة إلى ساق وفخذ",
+          "amount": 3,
+          "unit": "فخذ",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i15",
+          "name": "قطع ريش ضأن بعظم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "4 بوصات؛ معنى طول/عدد القطع غير واضح في المصدر",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i16",
+          "name": "قرفة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i17",
+          "name": "قرنفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i18",
+          "name": "بهار حلو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i19",
+          "name": "كراوية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i20",
+          "name": "زنجبيل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i21",
+          "name": "هيل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i22",
+          "name": "جوزة الطيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i23",
+          "name": "بابريكا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i24",
+          "name": "كركم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i25",
+          "name": "زعفران",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i26",
+          "name": "كزبرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i27",
+          "name": "فلفل كايين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i28",
+          "name": "سماق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52352-i29",
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "حسب الذوق",
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "حمّري اللحم في قدر يخنة مع قليل من زيت الزيتون ثم ارفعيه جانبًا. في القدر نفسه شوّحي البصل المقطع سميكًا وأضيفي التوابل واتركيها دقيقة لتفوح رائحتها. أزيلي ما التصق بقاع القدر بمرق الدجاج أو الضأن، ثم أعيدي اللحم وأضيفي جميع المكونات ما عدا الكوسا والباذنجان لتضافا قرب النهاية. غطي القدر واطهي حتى يطرى اللحم ويكاد يسقط عن العظم. أضيفي الكوسا والباذنجان واطهي نحو 15 دقيقة إضافية. يشرح الكاتب أنه يفضّل كسكسًا غير مطهو مسبقًا، ينقعه بمرق الدجاج ويفرك الحبات بالزيت أو الزبدة لفصلها ثم يطهيها بالبخار. لكنه استخدم كسكسًا مطهوًا مسبقًا وطبخه بقليل من مرق الدجاج. معظم المقادير بلا كميات في المصدر.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/JJL6ZYJ7/moroccan-couscous؛ المؤلف: Isabelle Mazzoni؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر b4d93b39bbecc560ba80d46aded6cb5b7e6d55396eb89db083bf12064fdb2a3d؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. طريقة كاملة مترجمة لكن مصدر المقادير لا يحدد كميات سوى الدجاج. تُركت جميع الكميات مجهولة؛ الوصفة لا يمكن تحجيمها. مقدار 4 بوصات للريش ملتبس."
+    },
+    {
+      "id": "fi650-56111",
+      "name": "خضروات مغربية متبلة مع الكسكس",
+      "nameEn": "Moroccan Vegetables With Spiced Couscous",
+      "cuisine": "مغربي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 6,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-56111-i0",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i1",
+          "name": "بصل متوسط شرائح رفيعة",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i2",
+          "name": "فصوص ثوم مفرومة",
+          "amount": 2,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i3",
+          "name": "رقائق فلفل أحمر حار",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i4",
+          "name": "كمون مطحون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i5",
+          "name": "قرفة مطحونة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i6",
+          "name": "فلفل رومي أحمر قطع نصف بوصة",
+          "amount": 1,
+          "unit": "حبة متوسطة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i7",
+          "name": "بطاطا حلوة مقشرة ومكعبات نصف بوصة",
+          "amount": 1,
+          "unit": "حبة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i8",
+          "name": "زعفران",
+          "amount": 1,
+          "unit": "رشة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i9",
+          "name": "مرق خضروات قليل الصوديوم",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i10",
+          "name": "زهيرات بروكلي",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i11",
+          "name": "كشمش",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i12",
+          "name": "صلصة فلفل حار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "حسب الذوق",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i13",
+          "name": "كسكس",
+          "amount": 1.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i14",
+          "name": "نعناع طازج مفروم",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56111-i15",
+          "name": "ملح",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "في مقلاة كبيرة غير لاصقة سخّني ملعقة كبيرة من الزيت على نار متوسطة. أضيفي البصل واطهيه مع التقليب حتى يكتسب اللون الذهبي، نحو 5–6 دقائق. أضيفي الثوم ورقائق الفلفل والكمون والقرفة وقلّبي حتى تفوح الرائحة، نحو دقيقة. أضيفي الفلفل الحلو والبطاطا الحلوة والزعفران والمرق. ارفعي الحرارة حتى يغلي السائل، ثم خففيها وغطي المقلاة واطهي مع التقليب مرة أو مرتين حتى تلين البطاطا، نحو 10 دقائق. أضيفي البروكلي والكشمش وغطي المقلاة واطهي حتى يلين البروكلي، نحو 5 دقائق. تبّلي بالملح والفلفل وصلصة الفلفل حسب الذوق. سخّني ملعقة الزيت المتبقية في مقلاة متوسطة، وأضيفي الكسكس وقلّبيه حتى يتغطى بالزيت، نحو 2–3 دقائق. في قدر صغير اغلي كوبين ماء واسكبيهما على الكسكس مع رشة ملح. حرّكيه عدة مرات وغطيه حتى يمتص الماء، نحو 10 دقائق، ثم فلفليه بالشوكة. وزعي الكسكس على ستة أطباق، وضعي فوقه الخضروات وانثري النعناع. يذكر المصدر أن المردود 6 حصص.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/LZHP3SJB/moroccan-vegetables-with-spiced-couscous؛ المؤلف: Anonymous؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر d4373aefe3622ef4cf82e27fc4c44fbb3d583b4aa272253bf23e411151ff5b4a؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. ترجمت خطوات الخضروات والكسكس وحفظت مردود المصدر الصريح: 6 حصص. الماء كوبان مذكوران في الطريقة وليس قائمة المكونات."
+    },
+    {
+      "id": "fi650-56446",
+      "name": "سمك مقلي على الطريقة المغربية",
+      "nameEn": "Moroccan Style Fish Fry",
+      "cuisine": "مغربي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-56446-i0",
+          "name": "شرائح سمك بلطي",
+          "amount": 4,
+          "unit": "شريحة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56446-i1",
+          "name": "أوراق كزبرة للتزيين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "الكمية غير محددة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56446-i2",
+          "name": "بابريكا مدخنة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56446-i3",
+          "name": "كمون مطحون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56446-i4",
+          "name": "كزبرة مطحونة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56446-i5",
+          "name": "زنجبيل",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56446-i6",
+          "name": "زيت للقلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "حسب الحاجة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56446-i7",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "حسب الحاجة",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-56446-i8",
+          "name": "فلفل أسود مطحون",
+          "amount": 0.75,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّني الزيت في مقلاة. في وعاء اخلطي الكمون والكزبرة المطحونة والملح والفلفل والزنجبيل والبابريكا المدخنة. افركي شرائح البلطي بالخليط حتى تتغطى الجهتان بالتساوي. ضعي الشرائح في الزيت واحدة بعد الأخرى واقليها حتى تصبح ذهبية. زيّني بالكزبرة وقدّميها ساخنة مع صلصة المانجو أو إلى جانب الكسكس، كما يقترح المصدر.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/M7GNMTRF/moroccan-style-fish-fry؛ المؤلف: San؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 62462783c81ad4634a1d664f432674224cb196a4e8ce72195b781febd7e204f3؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. ترجمت التتبيل والقلي والتقديم. صلصة المانجو اقتراح جانبي دون وصفة أو مقادير، فلم أضفها."
+    },
+    {
+      "id": "fi650-51988",
+      "name": "حساء الأرز والخضار المغربي",
+      "nameEn": "Moroccan Vegan Rice Soup",
+      "cuisine": "مغربي",
+      "category": "شوربات",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-51988-i0",
+          "name": "رشة زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i1",
+          "name": "بصل مفروم",
+          "amount": 0.5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i2",
+          "name": "كراث مفروم",
+          "amount": 0.5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i3",
+          "name": "رأس الحانوت",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i4",
+          "name": "مرق خضار",
+          "amount": 1,
+          "unit": "لتر",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i5",
+          "name": "باذنجان مكعبات",
+          "amount": 0.5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i6",
+          "name": "كوسا مكعبات",
+          "amount": 0.5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i7",
+          "name": "جزر شرائح",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i8",
+          "name": "أرز بني؛ يذكر المصدر أن هذا المقدار يعطي قوامًا كثيفًا ويمكن تعديله للذوق",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i9",
+          "name": "ملح وفلفل حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i10",
+          "name": "بقدونس مجفف حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-51988-i11",
+          "name": "أوتاد ليمون للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الزيت في قدر الطهي أو قدر الضغط إن استُخدم. أضيفي البصل والكراث ورأس الحانوت وقلّبي على نار متوسطة منخفضة حتى يشفّا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "اسكبي المرق وأضيفي بقية الخضار والأرز، وتبّلي بالملح والفلفل والبقدونس المجفف. غطي القدر واتركيه يغلي، ثم اطهي على نار منخفضة 15 دقيقة بعد بلوغ الضغط الكامل عند استخدام قدر الضغط، أو اتركيه على نار هادئة حتى ينضج الأرز في الطهي العادي.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "اتبعي تعليمات قدر الضغط وتعاملِي معه بحذر. قدمي الحساء؛ يذكر الكاتب أنه أضاف عصير الليمون في النهاية.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/J8MVTGJJ/moroccan-vegan-rice-soup؛ المؤلف: Soup Guru؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 0a95133a5bf540b1b9d399a4c63e991398e10e17ff55f32ac43c97791721d455؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. لقدر الضغط: 15 دقيقة بعد بلوغ الضغط الكامل؛ للطهي العادي: حتى ينضج الأرز. لا يوجد زمن إجمالي منشور."
+    },
+    {
+      "id": "fi650-57409",
+      "name": "أسياخ كفتة مغربية",
+      "nameEn": "Moroccan Brochettes",
+      "cuisine": "مغربي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 6,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-57409-i0",
+          "name": "بصلة مفرومة خشنًا",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i1",
+          "name": "فصا ثوم مفرومان خشنًا",
+          "amount": 2,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i2",
+          "name": "فلفل أحمر طازج منزوع البذور ومقطع شرائط",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i3",
+          "name": "لحم بقري مفروم؛ مقدار الرطل مفقود في المصدر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i4",
+          "name": "بقدونس طازج مفروم",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i5",
+          "name": "أوريغانو مجفف؛ مقدار الملعقة الصغيرة مفقود",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i6",
+          "name": "بابريكا وكمون مطحون؛ ملعقة صغيرة من كل نوع",
+          "amount": 1,
+          "unit": "ملعقة صغيرة لكل نوع",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i7",
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i8",
+          "name": "فلفل أسود طازج؛ مقدار الملعقة مفقود",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-57409-i9",
+          "name": "بصل أخضر مفروم للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضعي البصل والثوم والفلفل في محضرة الطعام وافرميها قليلًا. أضيفي اللحم والبقدونس والأوريغانو والبابريكا والكمون والملح والفلفل واخلطي حتى يصبح المزيج كالعجينة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "انقلي الخليط إلى وعاء وغطيه وبرّديه 30 دقيقة. بأيدٍ مبللة خذي مقدارًا بحجم بيضة وشكليه حول سيخ إلى شكل نقانق طويل. يمكن استخدام أغصان إكليل الجبل كأسياخ لإضافة رائحة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "اشوي الأسياخ تحت الشواية أو على شواية خارجية مع تقليبها باستمرار 6 إلى 7 دقائق حتى تتحمر من الخارج وتبقى رطبة من الداخل. للتقديم، يذكر المصدر وضع اللبن عليها ورش البصل الأخضر، وتقدم مع السلطة وخبز البيتا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/MT3WYC73/moroccan-brochettes؛ المؤلف: Anonymous؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر f3e8c2ebd357714a35d257c4a417f9b518c93ed256e67e7eea78e0d072a8ec31؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. المصدر يذكر 6 حصص. يذكر اللبن للتقديم في الطريقة لكنه غير موجود في قائمة المكونات؛ لم يُضف للقائمة."
+    },
+    {
+      "id": "fi650-60855",
+      "name": "حساء الحمص المغربي",
+      "nameEn": "Moroccan Chickpea Soup",
+      "cuisine": "مغربي",
+      "category": "شوربات",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 6,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-60855-i0",
+          "name": "حمص منقوع ومصفى",
+          "amount": 1.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i1",
+          "name": "ورقة غار",
+          "amount": 1,
+          "unit": "ورقة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i2",
+          "name": "زعفران؛ رشة كما وردت دون عدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i3",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i4",
+          "name": "بصلتان متوسطتان مفرومتان، نحو كوبين",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i5",
+          "name": "فصوص ثوم مفرومة",
+          "amount": 4,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i6",
+          "name": "رقائق فلفل أحمر",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i7",
+          "name": "كمون مطحون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i8",
+          "name": "كزبرة مطحونة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i9",
+          "name": "زنجبيل مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i10",
+          "name": "قرفة مطحونة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i11",
+          "name": "عصير ليمون طازج",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i12",
+          "name": "ملح",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i13",
+          "name": "بقدونس ورقي طازج مفروم خشنًا",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-60855-i14",
+          "name": "بقدونس إضافي لكل وعاء؛ المقدار غير محدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "في قدر كبير اخلطي الحمص وورقة الغار والزعفران و7 أكواب ماء. غطيه واتركيه حتى يغلي، ثم خفّضي الحرارة واتركيه على نار هادئة ومغطى جزئيًا ساعة ونصف حتى يقارب الحمص الطراوة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "في مقلاة متوسطة سخني الزيت على حرارة متوسطة. أضيفي البصل واطهيه مع التقليب حتى يطرى، نحو 7 دقائق. أضيفي الثوم ورقائق الفلفل والكمون والكزبرة والزنجبيل والقرفة واطهي مع التقليب 2 إلى 3 دقائق حتى تفوح الرائحة. أضيفي مزيج البصل إلى الحمص واتركيه حتى يطرى تمامًا، نحو 30 دقيقة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "ارفعي القدر عن النار وأضيفي ملعقة ونصف صغيرة ملح واتركيه 5 دقائق. أزيلي ورقة الغار. اهرسي نصف الحساء في محضرة الطعام أو الخلاط ثم أعيديه إلى القدر. أضيفي ماءً إذا لزم لتخفيفه، وعصير الليمون ومزيدًا من الملح حسب الرغبة ثم البقدونس. يقدم ساخنًا مع بقدونس إضافي.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "خيار قدر الضغط كما في المصدر: سخني الزيت في القدر واطهي البصل على نار متوسطة منخفضة نحو 7 دقائق. أضيفي الثوم ورقائق الفلفل والكمون والكزبرة والزنجبيل والقرفة واطهي 2 إلى 3 دقائق. أضيفي الحمص وورقة الغار والزعفران و4 أكواب ماء. اتركيه يغلي وأغلقي الغطاء وارفعي الضغط إلى العالي. اطهي على ضغط عالٍ 25 دقيقة، ثم دعي الضغط ينخفض طبيعيًا. افتحي الغطاء وأضيفي الملح وأكملي الخطوة الثالثة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/Q3JQNMPP/moroccan-chickpea-soup؛ المؤلف: Anonymous؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر ae28026e3656c40fb4c35e5545555c6dc01a53d9b99fec8ad7fbccbc485393a3؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. المصدر يذكر 6 حصص ويشرح خيار قدر الضغط؛ تُرجمت الطريقتان. البقدونس الإضافي للتزيين بلا مقدار محدد."
+    },
+    {
+      "id": "fi650-59551",
+      "name": "دجاج مغربي بالحمص والخضار",
+      "nameEn": "Hearty Moroccan Chicken",
+      "cuisine": "مغربي",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-59551-i0",
+          "name": "أرباع أفخاذ دجاج منزوعة الجلد",
+          "amount": 4,
+          "unit": "أرباع",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i1",
+          "name": "زيت زيتون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i2",
+          "name": "بصلة متوسطة مقطعة قطعًا كبيرة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i3",
+          "name": "فصوص ثوم مفرومة",
+          "amount": 4,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i4",
+          "name": "زنجبيل مفروم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i5",
+          "name": "جزرتان مقطعتان قطعًا كبيرة",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i6",
+          "name": "حمص معلب مصفى",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i7",
+          "name": "زبيب ذهبي",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i8",
+          "name": "عودا قرفة",
+          "amount": 2,
+          "unit": "عود",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i9",
+          "name": "كمون",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i10",
+          "name": "كركم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i11",
+          "name": "ماء",
+          "amount": 5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i12",
+          "name": "كوسا مقطعة قطعًا كبيرة",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-59551-i13",
+          "name": "كسكس جاهز للتحضير",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "في قدر ثقيل كبير غير لاصق أو فرن هولندي سخني زيت الزيتون على حرارة عالية. أضيفي الدجاج واطهي نحو 10 دقائق مع التقليب حتى يتحمر من كل الجهات.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي البصل والثوم والزنجبيل والجزر والحمص والزبيب والقرفة والكمون والكركم والماء. اتركيه يغلي بهدوء، ثم خففي الحرارة واطهي نحو 20 دقيقة.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي الكوسا واتركيها على نار هادئة 10 دقائق أخرى. أزيلي أعواد القرفة. قدميه في أوعية كبيرة فوق الكسكس.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/P7M3FWRB/hearty-moroccan-chicken؛ المؤلف: Anonymous؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 22dd5768dcad6fc9158b842c4b8c4b51c2c90f11d04b5439d2a37a118fcc4fc5؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. سطر المصدر «Skinned» تكملة لوصف أفخاذ الدجاج ودُمج بالترجمة. لا مردود أو أزمنة تحضير منشورة."
+    }
+  ]
+}

@@ -1,3 +1,8 @@
+// Full pinned 6,648-entry source-bank integration; repeated SHA/coverage work
+// exceeds the default 30s on this machine. No integrity assertion is skipped.
+@Timeout(Duration(minutes: 2))
+library;
+
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -12,8 +17,11 @@ import 'package:tabkha_demo/domain/personal_recipe_draft.dart';
 import 'personal_recipe_draft_test.dart' as food;
 import 'recipe_variants_test.dart' as fixtures;
 
+// Reuse one verified immutable bundled snapshot across persistence scenarios.
+final _bundled = bundledRecipeLibrary();
+
 Future<RecipeLibraryDraftReview> reviewed({String revision = 'v1'}) async {
-  final entry = (await bundledRecipeLibrary().all()).singleWhere(
+  final entry = (await _bundled.all()).singleWhere(
     (e) => e.id == 'curated-local:141667',
   );
   return RecipeLibraryDraftReview.create(
@@ -50,7 +58,7 @@ Future<void> save(
   RecipeLibraryRepository? library,
 }) => k.saveLibraryRecipeDraft(
   value,
-  library: library ?? bundledRecipeLibrary(),
+  library: library ?? _bundled,
   acknowledgeInputsReviewed: true,
   reviewNote:
       'Synthetic explicit test review; no source or nutritional approval',

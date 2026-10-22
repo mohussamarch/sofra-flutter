@@ -1,7 +1,7 @@
 {
   "cuisine": "سعودي",
   "cuisineSlug": "saudi",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "recipes": [
     {
       "id": "sa-chicken-kabsa",
@@ -16,20 +16,95 @@
       "totalTime": 75,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "rice", "name": "أرز بسمتي طويل الحبة", "amount": 3, "unit": "كوب" },
-        { "id": "chicken", "name": "دجاج مقطّع إلى ثماني قطع", "amount": 1.5, "unit": "كيلو" },
-        { "id": "onion", "name": "بصل مفروم", "amount": 2, "unit": "حبة" },
-        { "id": "tomato", "name": "طماطم مبشورة", "amount": 3, "unit": "حبة" },
-        { "id": "tomato-paste", "name": "صلصة طماطم", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "garlic", "name": "فصوص ثوم", "amount": 6, "unit": "فص" },
-        { "id": "loomi", "name": "لومي أسود", "amount": 2, "unit": "حبة", "scale": false, "note": "حبتان تكفيان الطبق مهما زادت الكمية، والزيادة تجعل الطعم مرّاً" },
-        { "id": "cardamom", "name": "هيل", "amount": 6, "unit": "حبة" },
-        { "id": "cinnamon", "name": "عود قرفة", "amount": 1, "unit": "عود" },
-        { "id": "cumin", "name": "كمون", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "coriander", "name": "كزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "oil", "name": "زيت", "amount": 0.5, "unit": "كوب" },
-        { "id": "water", "name": "ماء", "amount": 5, "unit": "كوب" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "rice",
+          "name": "أرز بسمتي طويل الحبة",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "chicken",
+          "name": "دجاج مقطّع إلى ثماني قطع",
+          "amount": 1.5,
+          "unit": "كيلو"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مبشورة",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص ثوم",
+          "amount": 6,
+          "unit": "فص"
+        },
+        {
+          "id": "loomi",
+          "name": "لومي أسود",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": false,
+          "note": "حبتان تكفيان الطبق مهما زادت الكمية، والزيادة تجعل الطعم مرّاً"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل",
+          "amount": 6,
+          "unit": "حبة"
+        },
+        {
+          "id": "cinnamon",
+          "name": "عود قرفة",
+          "amount": 1,
+          "unit": "عود"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 5,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -75,7 +150,11 @@
           "tip": "افتح الأرز بملعقة خشب من الأطراف لا من الوسط حتى تبقى الحبة كاملة."
         }
       ],
-      "tags": ["طبق وطني", "أرز", "عزومة"],
+      "tags": [
+        "طبق وطني",
+        "أرز",
+        "عزومة"
+      ],
       "notes": "قدّم الكبسة مع السلطة الحارة بالطماطم والفلفل الأخضر، ويمكن استبدال اللومي بعصير ليمون عند عدم توفره."
     },
     {
@@ -91,18 +170,85 @@
       "totalTime": 115,
       "difficulty": "متقدم",
       "ingredients": [
-        { "id": "lamb", "name": "لحم غنم بالعظم", "amount": 1.5, "unit": "كيلو" },
-        { "id": "rice", "name": "أرز بسمتي", "amount": 3, "unit": "كوب" },
-        { "id": "onion", "name": "بصل مفروم", "amount": 2, "unit": "حبة" },
-        { "id": "tomato", "name": "طماطم مفرومة", "amount": 2, "unit": "حبة" },
-        { "id": "loomi", "name": "لومي أسود", "amount": 1, "unit": "حبة", "scale": false, "note": "حبة واحدة تكفي مهما زادت الكمية، والزيادة تجعل الطعم مرّاً" },
-        { "id": "cardamom", "name": "هيل", "amount": 5, "unit": "حبة" },
-        { "id": "mandi-spices", "name": "بهارات مندي", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "ghee", "name": "سمنة", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "oil", "name": "زيت", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "water", "name": "ماء", "amount": 6, "unit": "كوب" },
-        { "id": "coal", "name": "فحم للتدخين", "amount": 1, "unit": "حبة", "scale": false, "note": "قطعة واحدة تكفي لتدخين الطبق مهما زادت الكمية" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "lamb",
+          "name": "لحم غنم بالعظم",
+          "amount": 1.5,
+          "unit": "كيلو"
+        },
+        {
+          "id": "rice",
+          "name": "أرز بسمتي",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مفرومة",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "loomi",
+          "name": "لومي أسود",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": false,
+          "note": "حبة واحدة تكفي مهما زادت الكمية، والزيادة تجعل الطعم مرّاً"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل",
+          "amount": 5,
+          "unit": "حبة"
+        },
+        {
+          "id": "mandi-spices",
+          "name": "بهارات مندي",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 6,
+          "unit": "كوب"
+        },
+        {
+          "id": "coal",
+          "name": "فحم للتدخين",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": false,
+          "note": "قطعة واحدة تكفي لتدخين الطبق مهما زادت الكمية"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -147,7 +293,11 @@
           "tip": "لا تزد مدة التدخين عن دقيقتين حتى لا يصبح الطعم لاذعاً."
         }
       ],
-      "tags": ["طهي بطيء", "لحم", "عزومة"],
+      "tags": [
+        "طهي بطيء",
+        "لحم",
+        "عزومة"
+      ],
       "notes": "لحفظ المندي غطِّه واتركه في الثلاجة يومين على الأكثر، ويمكن الاستغناء عن الفحم إذا لم يتوفر دون أن يفقد الطبق قيمته."
     },
     {
@@ -163,16 +313,70 @@
       "totalTime": 110,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "cracked-wheat", "name": "جريش (قمح مجروش خشن)", "amount": 2, "unit": "كوب" },
-        { "id": "lamb", "name": "لحم غنم مقطّع مكعبات صغيرة", "amount": 500, "unit": "جرام" },
-        { "id": "onion", "name": "بصل مفروم ناعم", "amount": 2, "unit": "حبة" },
-        { "id": "tomato", "name": "طماطم مفرومة", "amount": 2, "unit": "حبة" },
-        { "id": "ghee", "name": "سمنة", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "water", "name": "ماء", "amount": 6, "unit": "كوب" },
-        { "id": "laban", "name": "لبن رائب", "amount": 1, "unit": "كوب", "optional": true },
-        { "id": "cinnamon", "name": "قرفة مطحونة", "amount": 0.5, "unit": "ملعقة صغيرة" },
-        { "id": "cardamom", "name": "هيل", "amount": 3, "unit": "حبة" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "cracked-wheat",
+          "name": "جريش (قمح مجروش خشن)",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "lamb",
+          "name": "لحم غنم مقطّع مكعبات صغيرة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم ناعم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مفرومة",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 6,
+          "unit": "كوب"
+        },
+        {
+          "id": "laban",
+          "name": "لبن رائب",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة مطحونة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -214,7 +418,11 @@
           "duration": 5
         }
       ],
-      "tags": ["قمح", "أكل بيتي", "شتوي"],
+      "tags": [
+        "قمح",
+        "أكل بيتي",
+        "شتوي"
+      ],
       "notes": "إذا لم يتوفر الجريش يمكن استخدام البرغل الخشن بعد نقعه، ويحفظ الطبق في الثلاجة ثلاثة أيام ويسخّن مع قليل من الماء أو اللبن."
     },
     {
@@ -230,15 +438,66 @@
       "totalTime": 90,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "chicken", "name": "دجاجة كاملة", "amount": 1, "unit": "حبة", "scale": false, "note": "دجاجة واحدة تكفي للسلق والتقديم، ومع زيادة عدد الأشخاص يزاد الأرز واللبن فقط" },
-        { "id": "rice", "name": "أرز مصري قصير الحبة", "amount": 3, "unit": "كوب" },
-        { "id": "milk", "name": "لبن كامل الدسم", "amount": 5, "unit": "كوب" },
-        { "id": "ghee", "name": "سمنة", "amount": 4, "unit": "ملعقة كبيرة" },
-        { "id": "onion", "name": "بصل", "amount": 1, "unit": "حبة" },
-        { "id": "cardamom", "name": "هيل", "amount": 4, "unit": "حبة" },
-        { "id": "mastic", "name": "مستكة", "amount": 2, "unit": "حبة", "optional": true },
-        { "id": "water", "name": "ماء لسلق الدجاج", "amount": 8, "unit": "كوب" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "chicken",
+          "name": "دجاجة كاملة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": false,
+          "note": "دجاجة واحدة تكفي للسلق والتقديم، ومع زيادة عدد الأشخاص يزاد الأرز واللبن فقط"
+        },
+        {
+          "id": "rice",
+          "name": "أرز مصري قصير الحبة",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "milk",
+          "name": "لبن كامل الدسم",
+          "amount": 5,
+          "unit": "كوب"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "mastic",
+          "name": "مستكة",
+          "amount": 2,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "water",
+          "name": "ماء لسلق الدجاج",
+          "amount": 8,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -282,7 +541,11 @@
           "duration": 4
         }
       ],
-      "tags": ["حجازي", "لبن", "أكل بيتي"],
+      "tags": [
+        "حجازي",
+        "لبن",
+        "أكل بيتي"
+      ],
       "notes": "يمكن استبدال المستكة بقليل من الهيل، ويحفظ السليق في الثلاجة يومين ويسخّن مع قليل من اللبن الساخن حتى يعود إلى قوامه الكريمي."
     },
     {
@@ -298,18 +561,86 @@
       "totalTime": 70,
       "difficulty": "متقدم",
       "ingredients": [
-        { "id": "flour", "name": "دقيق", "amount": 3, "unit": "كوب" },
-        { "id": "dough-water", "name": "ماء للعجن", "amount": 1.25, "unit": "كوب", "scale": false, "note": "ماء العجن تقريبي، أضفه تدريجياً حسب امتصاص الدقيق" },
-        { "id": "oil", "name": "زيت للعجن", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "rice", "name": "أرز بسمتي مسلوق", "amount": 2, "unit": "كوب" },
-        { "id": "fish", "name": "سمك هامور مقطّع مكعبات صغيرة", "amount": 500, "unit": "جرام" },
-        { "id": "onion", "name": "بصل مفروم", "amount": 2, "unit": "حبة" },
-        { "id": "spring-onion", "name": "بصل أخضر مفروم", "amount": 1, "unit": "حزمة" },
-        { "id": "egg", "name": "بيض", "amount": 3, "unit": "حبة" },
-        { "id": "spices", "name": "كمون وكزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "tomato", "name": "طماطم مفرومة", "amount": 1, "unit": "حبة", "optional": true },
-        { "id": "frying-oil", "name": "زيت للتحمير الغزير", "amount": 2, "unit": "كوب", "scale": false, "note": "كمية التحمير لا تتغير مع عدد الأشخاص" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "flour",
+          "name": "دقيق",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "dough-water",
+          "name": "ماء للعجن",
+          "amount": 1.25,
+          "unit": "كوب",
+          "scale": false,
+          "note": "ماء العجن تقريبي، أضفه تدريجياً حسب امتصاص الدقيق"
+        },
+        {
+          "id": "oil",
+          "name": "زيت للعجن",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "rice",
+          "name": "أرز بسمتي مسلوق",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "fish",
+          "name": "سمك هامور مقطّع مكعبات صغيرة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "spring-onion",
+          "name": "بصل أخضر مفروم",
+          "amount": 1,
+          "unit": "حزمة"
+        },
+        {
+          "id": "egg",
+          "name": "بيض",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "spices",
+          "name": "كمون وكزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مفرومة",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "frying-oil",
+          "name": "زيت للتحمير الغزير",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": false,
+          "note": "كمية التحمير لا تتغير مع عدد الأشخاص"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -357,7 +688,11 @@
           "duration": 3
         }
       ],
-      "tags": ["حجازي", "معجنات", "سمك"],
+      "tags": [
+        "حجازي",
+        "معجنات",
+        "سمك"
+      ],
       "notes": "يمكن استبدال السمك باللحم المفروم أو الدجاج المفتّت، ويقدّم المطبق فور تحميره لأنه يفقد قرمشته عند التبريد."
     },
     {
@@ -373,19 +708,90 @@
       "totalTime": 110,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "lamb", "name": "لحم غنم مقطّع", "amount": 750, "unit": "جرام" },
-        { "id": "onion", "name": "بصل مفروم", "amount": 2, "unit": "حبة" },
-        { "id": "tomato", "name": "طماطم مفرومة", "amount": 3, "unit": "حبة" },
-        { "id": "tomato-paste", "name": "صلصة طماطم", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "zucchini", "name": "كوسة مقطّعة مكعبات", "amount": 2, "unit": "حبة" },
-        { "id": "carrot", "name": "جزر مقطّع", "amount": 2, "unit": "حبة" },
-        { "id": "eggplant", "name": "باذنجان مقطّع", "amount": 1, "unit": "حبة", "optional": true },
-        { "id": "flour", "name": "دقيق", "amount": 3, "unit": "كوب" },
-        { "id": "dough-water", "name": "ماء للعجن", "amount": 1.25, "unit": "كوب", "scale": false, "note": "ماء العجن تقريبي، أضفه تدريجياً حتى تتماسك العجينة" },
-        { "id": "water", "name": "ماء للمرق", "amount": 6, "unit": "كوب" },
-        { "id": "ghee", "name": "سمنة أو زيت", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "spices", "name": "كمون وكزبرة ناشفة", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "lamb",
+          "name": "لحم غنم مقطّع",
+          "amount": 750,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مفرومة",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "zucchini",
+          "name": "كوسة مقطّعة مكعبات",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزر مقطّع",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "eggplant",
+          "name": "باذنجان مقطّع",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "flour",
+          "name": "دقيق",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "dough-water",
+          "name": "ماء للعجن",
+          "amount": 1.25,
+          "unit": "كوب",
+          "scale": false,
+          "note": "ماء العجن تقريبي، أضفه تدريجياً حتى تتماسك العجينة"
+        },
+        {
+          "id": "water",
+          "name": "ماء للمرق",
+          "amount": 6,
+          "unit": "كوب"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة أو زيت",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "spices",
+          "name": "كمون وكزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -434,7 +840,11 @@
           "duration": 5
         }
       ],
-      "tags": ["عجين", "لحم", "طبق تقليدي"],
+      "tags": [
+        "عجين",
+        "لحم",
+        "طبق تقليدي"
+      ],
       "notes": "يمكن استخدام الدجاج بدل اللحم مع تقليل مدة الطهي، والمرقوق لا يصلح للتسخين المتكرر لأن العجينة تتفتت."
     },
     {
@@ -450,19 +860,91 @@
       "totalTime": 110,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "lamb", "name": "لحم غنم بالعظم", "amount": 750, "unit": "جرام" },
-        { "id": "onion", "name": "بصل مفروم", "amount": 2, "unit": "حبة" },
-        { "id": "tomato", "name": "طماطم مفرومة", "amount": 3, "unit": "حبة" },
-        { "id": "zucchini", "name": "كوسة مقطّعة", "amount": 2, "unit": "حبة" },
-        { "id": "carrot", "name": "جزر مقطّع", "amount": 1, "unit": "حبة" },
-        { "id": "pumpkin", "name": "قرع مقطّع", "amount": 200, "unit": "جرام", "optional": true },
-        { "id": "chickpeas", "name": "حمص منقوع", "amount": 0.5, "unit": "كوب", "optional": true },
-        { "id": "flour", "name": "دقيق", "amount": 3, "unit": "كوب" },
-        { "id": "dough-water", "name": "ماء للعجن", "amount": 1.25, "unit": "كوب", "scale": false, "note": "ماء العجن تقريبي، أضفه تدريجياً حتى تتشكل عجينة لينة" },
-        { "id": "water", "name": "ماء للمرق", "amount": 8, "unit": "كوب" },
-        { "id": "ghee", "name": "سمنة", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "spices", "name": "كمون وكزبرة ناشفة", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "lamb",
+          "name": "لحم غنم بالعظم",
+          "amount": 750,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مفرومة",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "zucchini",
+          "name": "كوسة مقطّعة",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزر مقطّع",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "pumpkin",
+          "name": "قرع مقطّع",
+          "amount": 200,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "chickpeas",
+          "name": "حمص منقوع",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "flour",
+          "name": "دقيق",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "dough-water",
+          "name": "ماء للعجن",
+          "amount": 1.25,
+          "unit": "كوب",
+          "scale": false,
+          "note": "ماء العجن تقريبي، أضفه تدريجياً حتى تتشكل عجينة لينة"
+        },
+        {
+          "id": "water",
+          "name": "ماء للمرق",
+          "amount": 8,
+          "unit": "كوب"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "spices",
+          "name": "كمون وكزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -510,7 +992,11 @@
           "duration": 5
         }
       ],
-      "tags": ["قصيمي", "مرق", "خبز"],
+      "tags": [
+        "قصيمي",
+        "مرق",
+        "خبز"
+      ],
       "notes": "يمكن تجفيف ما يزيد من الخبز وحفظه في وعاء محكم، ويسخّن القرسان بإضافة مرق ساخن لا بالميكروويف حتى لا يجف الخبز."
     },
     {
@@ -526,19 +1012,91 @@
       "totalTime": 70,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "fish", "name": "سمك هامور أو ناجل منظّف", "amount": 1.5, "unit": "كيلو" },
-        { "id": "rice", "name": "أرز بسمتي", "amount": 3, "unit": "كوب" },
-        { "id": "onion", "name": "بصل مقطّع شرائح رقيقة", "amount": 4, "unit": "حبة" },
-        { "id": "garlic", "name": "ثوم مفروم", "amount": 5, "unit": "فص" },
-        { "id": "cumin", "name": "كمون", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "coriander", "name": "كزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "turmeric", "name": "كركم", "amount": 0.5, "unit": "ملعقة صغيرة" },
-        { "id": "loomi", "name": "لومي أسود", "amount": 1, "unit": "حبة", "scale": false, "note": "حبة واحدة تكفي مهما زادت الكمية، ويُثقب قبل الإضافة" },
-        { "id": "lemon", "name": "ليمون", "amount": 2, "unit": "حبة" },
-        { "id": "flour", "name": "دقيق لتمويج السمك", "amount": 0.5, "unit": "كوب" },
-        { "id": "oil", "name": "زيت للتحمير", "amount": 2, "unit": "كوب", "scale": false, "note": "كمية التحمير لا تتغير مع عدد الأشخاص" },
-        { "id": "broth", "name": "ماء أو مرق", "amount": 4, "unit": "كوب" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "fish",
+          "name": "سمك هامور أو ناجل منظّف",
+          "amount": 1.5,
+          "unit": "كيلو"
+        },
+        {
+          "id": "rice",
+          "name": "أرز بسمتي",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مقطّع شرائح رقيقة",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 5,
+          "unit": "فص"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "turmeric",
+          "name": "كركم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "loomi",
+          "name": "لومي أسود",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": false,
+          "note": "حبة واحدة تكفي مهما زادت الكمية، ويُثقب قبل الإضافة"
+        },
+        {
+          "id": "lemon",
+          "name": "ليمون",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "flour",
+          "name": "دقيق لتمويج السمك",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "oil",
+          "name": "زيت للتحمير",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": false,
+          "note": "كمية التحمير لا تتغير مع عدد الأشخاص"
+        },
+        {
+          "id": "broth",
+          "name": "ماء أو مرق",
+          "amount": 4,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -581,7 +1139,11 @@
           "duration": 4
         }
       ],
-      "tags": ["سمك", "أرز", "أكل بحري"],
+      "tags": [
+        "سمك",
+        "أرز",
+        "أكل بحري"
+      ],
       "notes": "يمكن استخدام أي سمك أبيض متوفر، وإذا استخدمت رأس السمك في المرق زاد الطعم قوة، ويؤكل الطبق في اليوم نفسه."
     },
     {
@@ -597,16 +1159,72 @@
       "totalTime": 45,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "wrappers", "name": "رقائق سمبوسك جاهزة", "amount": 20, "unit": "حبة" },
-        { "id": "beef", "name": "لحم مفروم ناعم", "amount": 400, "unit": "جرام" },
-        { "id": "onion", "name": "بصل مفروم ناعم", "amount": 1, "unit": "حبة" },
-        { "id": "leek", "name": "كراث أو بصل أخضر مفروم", "amount": 1, "unit": "حزمة" },
-        { "id": "garlic", "name": "ثوم مفروم", "amount": 3, "unit": "فص" },
-        { "id": "spices", "name": "كمون وكزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "parsley", "name": "بقدونس مفروم", "amount": 0.5, "unit": "كوب", "optional": true },
-        { "id": "flour", "name": "دقيق لعجينة الإغلاق", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "oil", "name": "زيت للتحمير الغزير", "amount": 3, "unit": "كوب", "scale": false, "note": "كمية التحمير لا تتغير مع عدد الأشخاص" },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "wrappers",
+          "name": "رقائق سمبوسك جاهزة",
+          "amount": 20,
+          "unit": "حبة"
+        },
+        {
+          "id": "beef",
+          "name": "لحم مفروم ناعم",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم ناعم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "leek",
+          "name": "كراث أو بصل أخضر مفروم",
+          "amount": 1,
+          "unit": "حزمة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 3,
+          "unit": "فص"
+        },
+        {
+          "id": "spices",
+          "name": "كمون وكزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس مفروم",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "flour",
+          "name": "دقيق لعجينة الإغلاق",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت للتحمير الغزير",
+          "amount": 3,
+          "unit": "كوب",
+          "scale": false,
+          "note": "كمية التحمير لا تتغير مع عدد الأشخاص"
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -643,7 +1261,11 @@
           "tip": "الزيت البارد يجعل الرقائق تتشرب الزيت وتتفتح."
         }
       ],
-      "tags": ["مقبلات", "رمضان", "تحمير"],
+      "tags": [
+        "مقبلات",
+        "رمضان",
+        "تحمير"
+      ],
       "notes": "يمكن تجميد السمبوسك قبل التحمير في صينية ثم نقلها إلى كيس محكم، وتحمّر مباشرة من الفريزر."
     },
     {
@@ -659,17 +1281,80 @@
       "totalTime": 45,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "flour", "name": "دقيق", "amount": 2, "unit": "كوب" },
-        { "id": "starch", "name": "نشا", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "yogurt", "name": "زبادي", "amount": 0.5, "unit": "كوب" },
-        { "id": "yeast", "name": "خميرة فورية", "amount": 1, "unit": "ملعقة صغيرة", "scale": false, "note": "كمية الخميرة ثابتة ولا تتضاعف مع عدد الأشخاص" },
-        { "id": "sugar", "name": "سكر", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "water", "name": "ماء دافئ", "amount": 1, "unit": "كوب", "scale": false, "note": "ماء العجين تقريبي ويضاف تدريجياً حسب قوام الخليط" },
-        { "id": "cardamom", "name": "هيل مطحون", "amount": 0.5, "unit": "ملعقة صغيرة" },
-        { "id": "saffron", "name": "زعفران", "amount": 1, "unit": "رشة", "optional": true },
-        { "id": "date-syrup", "name": "دبس التمر", "amount": 1.5, "unit": "كوب" },
-        { "id": "oil", "name": "زيت للتحمير الغزير", "amount": 4, "unit": "كوب", "scale": false, "note": "كمية التحمير لا تتغير مع عدد الأشخاص" },
-        { "id": "sesame", "name": "سمسم محمّص", "amount": 2, "unit": "ملعقة كبيرة", "optional": true }
+        {
+          "id": "flour",
+          "name": "دقيق",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "starch",
+          "name": "نشا",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "yogurt",
+          "name": "زبادي",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "yeast",
+          "name": "خميرة فورية",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": false,
+          "note": "كمية الخميرة ثابتة ولا تتضاعف مع عدد الأشخاص"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء دافئ",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": false,
+          "note": "ماء العجين تقريبي ويضاف تدريجياً حسب قوام الخليط"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "saffron",
+          "name": "زعفران",
+          "amount": 1,
+          "unit": "رشة",
+          "optional": true
+        },
+        {
+          "id": "date-syrup",
+          "name": "دبس التمر",
+          "amount": 1.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "oil",
+          "name": "زيت للتحمير الغزير",
+          "amount": 4,
+          "unit": "كوب",
+          "scale": false,
+          "note": "كمية التحمير لا تتغير مع عدد الأشخاص"
+        },
+        {
+          "id": "sesame",
+          "name": "سمسم محمّص",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        }
       ],
       "steps": [
         {
@@ -712,7 +1397,11 @@
           "duration": 2
         }
       ],
-      "tags": ["حلويات", "دبس التمر", "رمضان"],
+      "tags": [
+        "حلويات",
+        "دبس التمر",
+        "رمضان"
+      ],
       "notes": "يمكن استبدال دبس التمر بالعسل أو الشربات، وللحفاظ على القرمشة قدّم اللقيمات في اليوم نفسه."
     },
     {
@@ -728,17 +1417,76 @@
       "totalTime": 70,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "flour", "name": "دقيق", "amount": 3, "unit": "كوب" },
-        { "id": "semolina", "name": "سمولينا ناعمة", "amount": 1, "unit": "كوب" },
-        { "id": "butter", "name": "زبدة مذابة", "amount": 1, "unit": "كوب" },
-        { "id": "milk-powder", "name": "حليب بودرة", "amount": 0.5, "unit": "كوب", "optional": true },
-        { "id": "sugar", "name": "سكر ناعم", "amount": 0.5, "unit": "كوب" },
-        { "id": "yeast", "name": "خميرة فورية", "amount": 1, "unit": "ملعقة صغيرة", "scale": false, "note": "لا تتضاعف مع عدد الأشخاص حتى لا يتغير قوام العجينة" },
-        { "id": "rose-water", "name": "ماء ورد", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "milk", "name": "حليب دافئ", "amount": 0.5, "unit": "كوب" },
-        { "id": "date-paste", "name": "معجون تمر", "amount": 500, "unit": "جرام" },
-        { "id": "cardamom", "name": "هيل مطحون", "amount": 0.5, "unit": "ملعقة صغيرة" },
-        { "id": "powdered-sugar", "name": "سكر بودرة للتزيين", "amount": 0.5, "unit": "كوب", "optional": true }
+        {
+          "id": "flour",
+          "name": "دقيق",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "semolina",
+          "name": "سمولينا ناعمة",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "butter",
+          "name": "زبدة مذابة",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "milk-powder",
+          "name": "حليب بودرة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "sugar",
+          "name": "سكر ناعم",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "yeast",
+          "name": "خميرة فورية",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": false,
+          "note": "لا تتضاعف مع عدد الأشخاص حتى لا يتغير قوام العجينة"
+        },
+        {
+          "id": "rose-water",
+          "name": "ماء ورد",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "milk",
+          "name": "حليب دافئ",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "date-paste",
+          "name": "معجون تمر",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "powdered-sugar",
+          "name": "سكر بودرة للتزيين",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        }
       ],
       "steps": [
         {
@@ -780,7 +1528,11 @@
           "tip": "لا تدع وجه المعمول يحمرّ كثيراً حتى يبقى طرياً."
         }
       ],
-      "tags": ["حلويات", "تمر", "عيد"],
+      "tags": [
+        "حلويات",
+        "تمر",
+        "عيد"
+      ],
       "notes": "يمكن استبدال معجون التمر بالجوز أو الفستق، ويحفظ المعمول في علبة محكمة أسبوعاً ويجمّد شهرين."
     },
     {
@@ -796,15 +1548,64 @@
       "totalTime": 210,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "wheat", "name": "حبوب الهريس (قمح مقشور)", "amount": 2, "unit": "كوب" },
-        { "id": "meat", "name": "دجاج أو لحم غنم مقطّع", "amount": 1, "unit": "كيلو" },
-        { "id": "onion", "name": "بصل", "amount": 1, "unit": "حبة" },
-        { "id": "water", "name": "ماء", "amount": 10, "unit": "كوب" },
-        { "id": "ghee", "name": "سمنة", "amount": 0.5, "unit": "كوب" },
-        { "id": "cinnamon", "name": "قرفة مطحونة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "sugar", "name": "سكر", "amount": 2, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "cardamom", "name": "هيل", "amount": 4, "unit": "حبة" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "wheat",
+          "name": "حبوب الهريس (قمح مقشور)",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "meat",
+          "name": "دجاج أو لحم غنم مقطّع",
+          "amount": 1,
+          "unit": "كيلو"
+        },
+        {
+          "id": "onion",
+          "name": "بصل",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 10,
+          "unit": "كوب"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة مطحونة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -847,7 +1648,11 @@
           "duration": 10
         }
       ],
-      "tags": ["قمح", "رمضان", "طهي بطيء"],
+      "tags": [
+        "قمح",
+        "رمضان",
+        "طهي بطيء"
+      ],
       "notes": "يمكن استخدام الجريش الناعم بدل الحبوب الكاملة مع تقليل مدة الطهي، ويحفظ الهريس في الثلاجة ثلاثة أيام."
     },
     {
@@ -863,18 +1668,83 @@
       "totalTime": 80,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "lamb", "name": "لحم غنم مقطّع", "amount": 750, "unit": "جرام" },
-        { "id": "okra", "name": "بامية طازجة أو مجمدة", "amount": 500, "unit": "جرام" },
-        { "id": "onion", "name": "بصل مفروم", "amount": 2, "unit": "حبة" },
-        { "id": "garlic", "name": "ثوم مفروم", "amount": 6, "unit": "فص" },
-        { "id": "tomato", "name": "طماطم مفرومة", "amount": 4, "unit": "حبة" },
-        { "id": "tomato-paste", "name": "صلصة طماطم", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "cilantro", "name": "كزبرة خضراء مفرومة", "amount": 1, "unit": "حزمة" },
-        { "id": "loomi", "name": "لومي أسود", "amount": 1, "unit": "حبة", "scale": false, "note": "حبة واحدة تكفي مهما زادت الكمية، ويُثقب قبل الإضافة" },
-        { "id": "spices", "name": "كمون وكزبرة ناشفة", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "oil", "name": "زيت", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "water", "name": "ماء", "amount": 4, "unit": "كوب" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "lamb",
+          "name": "لحم غنم مقطّع",
+          "amount": 750,
+          "unit": "جرام"
+        },
+        {
+          "id": "okra",
+          "name": "بامية طازجة أو مجمدة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 6,
+          "unit": "فص"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مفرومة",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "cilantro",
+          "name": "كزبرة خضراء مفرومة",
+          "amount": 1,
+          "unit": "حزمة"
+        },
+        {
+          "id": "loomi",
+          "name": "لومي أسود",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": false,
+          "note": "حبة واحدة تكفي مهما زادت الكمية، ويُثقب قبل الإضافة"
+        },
+        {
+          "id": "spices",
+          "name": "كمون وكزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 4,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -916,7 +1786,11 @@
           "duration": 5
         }
       ],
-      "tags": ["بامية", "مرق", "أكل بيتي"],
+      "tags": [
+        "بامية",
+        "مرق",
+        "أكل بيتي"
+      ],
       "notes": "لتقليل لزوجة البامية أضف ملعقة من عصير الليمون في آخر الطهي، ويحفظ المرق في الثلاجة يومين."
     },
     {
@@ -932,19 +1806,88 @@
       "totalTime": 105,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "lamb", "name": "لحم غنم مقطّع", "amount": 750, "unit": "جرام" },
-        { "id": "bread", "name": "خبز تميس أو خبز عربي", "amount": 4, "unit": "رغيف" },
-        { "id": "onion", "name": "بصل مفروم", "amount": 2, "unit": "حبة" },
-        { "id": "tomato", "name": "طماطم مفرومة", "amount": 4, "unit": "حبة" },
-        { "id": "zucchini", "name": "كوسة مقطّعة", "amount": 2, "unit": "حبة" },
-        { "id": "carrot", "name": "جزر مقطّع", "amount": 2, "unit": "حبة" },
-        { "id": "chickpeas", "name": "حمص منقوع", "amount": 0.5, "unit": "كوب", "optional": true },
-        { "id": "garlic", "name": "ثوم مفروم", "amount": 4, "unit": "فص" },
-        { "id": "spices", "name": "كمون وكزبرة ناشفة", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "tomato-paste", "name": "صلصة طماطم", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "ghee", "name": "سمنة", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "water", "name": "ماء", "amount": 6, "unit": "كوب" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص" }
+        {
+          "id": "lamb",
+          "name": "لحم غنم مقطّع",
+          "amount": 750,
+          "unit": "جرام"
+        },
+        {
+          "id": "bread",
+          "name": "خبز تميس أو خبز عربي",
+          "amount": 4,
+          "unit": "رغيف"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مفرومة",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "zucchini",
+          "name": "كوسة مقطّعة",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزر مقطّع",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "chickpeas",
+          "name": "حمص منقوع",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 4,
+          "unit": "فص"
+        },
+        {
+          "id": "spices",
+          "name": "كمون وكزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 6,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف حسب الرغبة ولا يتبع عدد الأشخاص"
+        }
       ],
       "steps": [
         {
@@ -986,8 +1929,207 @@
           "duration": 15
         }
       ],
-      "tags": ["خبز", "مرق", "طبق تقليدي"],
+      "tags": [
+        "خبز",
+        "مرق",
+        "طبق تقليدي"
+      ],
       "notes": "يمكن استبدال الخبز الطري بخبز مقسّم مخبوز في الفرن حتى يقرمش قليلاً، ويقدّم الثريد فوراً لأنه لا يصلح للتسخين."
+    },
+    {
+      "notes": "المصدر: https://www.manalonline.com/معمول-سعودي/ | بصمة الاستخراج: 588b9118cfb79a63ab570b1dd98e24a06bf750ea054821998d20878806d29c75 | المقادير محفوظة بعباراتها الأصلية، والطريقة تلخص حقائق المصدر بترتيبها؛ لم يُستنتج مقدار أو زمن أو مطبخ غير مذكور.",
+      "tags": [],
+      "category": "الحلويات",
+      "id": "ma650-manal-saudi-maamoul-20261021b",
+      "servings": null,
+      "cuisine": "سعودي",
+      "totalTime": null,
+      "steps": [
+        {
+          "passive": false,
+          "text": "سخني الفرن إلى 180° وجهزي صواني قصيرة.",
+          "tip": null,
+          "duration": null,
+          "n": 1
+        },
+        {
+          "passive": false,
+          "text": "اخلطي الدقيق والبيكنج باودر والملح والهيل والسكر بالخلاط ثواني.",
+          "tip": null,
+          "duration": null,
+          "n": 2
+        },
+        {
+          "passive": false,
+          "text": "أضيفي الزبدة والسمن حتى يصبح الخليط مثل فتات الخبز.",
+          "tip": null,
+          "duration": null,
+          "n": 3
+        },
+        {
+          "passive": false,
+          "text": "أضيفي البيض والفانيليا واخلطي حتى تتماسك العجينة.",
+          "tip": null,
+          "duration": null,
+          "n": 4
+        },
+        {
+          "passive": false,
+          "text": "اعجني العجين يدوياً 4–5 مرات فقط.",
+          "tip": null,
+          "duration": null,
+          "n": 5
+        },
+        {
+          "passive": false,
+          "text": "جهزي التمر في طبق؛ ذكرته الطريقة ولم يرد كسطر مكونات.",
+          "tip": null,
+          "duration": null,
+          "n": 6
+        },
+        {
+          "passive": false,
+          "text": "خذي مقداراً يناسب القالب، شكليه كرة واحشيه بالتمر ثم أغلقيه برفق.",
+          "tip": null,
+          "duration": null,
+          "n": 7
+        },
+        {
+          "passive": false,
+          "text": "اضغطي الكرة في القالب المزخرف واقلبيه لإخراج الحبة.",
+          "tip": null,
+          "duration": null,
+          "n": 8
+        },
+        {
+          "passive": false,
+          "text": "رتبي الحبات متباعدة في الصواني.",
+          "tip": null,
+          "duration": null,
+          "n": 9
+        },
+        {
+          "passive": false,
+          "text": "اخبزي 20–25 دقيقة حتى تصبح ذهبية.",
+          "tip": null,
+          "duration": null,
+          "n": 10
+        },
+        {
+          "passive": false,
+          "text": "اتركيها تبرد تماماً قبل التقديم.",
+          "tip": null,
+          "duration": null,
+          "n": 11
+        }
+      ],
+      "prepTime": null,
+      "description": "وصفة منشورة على موقع منال العالم.",
+      "name": "معمول سعودي",
+      "difficulty": "غير محدد",
+      "cookTime": null,
+      "ingredients": [
+        {
+          "optional": false,
+          "display": null,
+          "unit": "كوب",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i0",
+          "label": "2 1/4 كوب دقيق",
+          "name": "دقيق",
+          "scale": true,
+          "note": null,
+          "amount": 2.25
+        },
+        {
+          "optional": false,
+          "display": null,
+          "unit": "ملعقة صغيرة",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i1",
+          "label": "1 ملعقة صغيرة بيكنج باودر",
+          "name": "بيكنج باودر",
+          "scale": true,
+          "note": null,
+          "amount": 1.0
+        },
+        {
+          "optional": false,
+          "display": null,
+          "unit": "رشة",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i2",
+          "label": "1/4 رشة صغيرة ملح",
+          "name": "صغيرة ملح",
+          "scale": true,
+          "note": null,
+          "amount": 0.25
+        },
+        {
+          "optional": false,
+          "display": null,
+          "unit": "ملعقة صغيرة",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i3",
+          "label": "1 ملعقة صغيرة هيل ناعم",
+          "name": "هيل ناعم",
+          "scale": true,
+          "note": null,
+          "amount": 1.0
+        },
+        {
+          "optional": false,
+          "display": null,
+          "unit": "كوب",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i4",
+          "label": "1/2 كوب سكر ناعم بودرة",
+          "name": "سكر ناعم بودرة",
+          "scale": true,
+          "note": null,
+          "amount": 0.5
+        },
+        {
+          "optional": false,
+          "display": null,
+          "unit": "كوب",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i5",
+          "label": "1/2 كوب زبدة، لينة",
+          "name": "زبدة، لينة",
+          "scale": true,
+          "note": null,
+          "amount": 0.5
+        },
+        {
+          "optional": false,
+          "display": null,
+          "unit": "كوب",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i6",
+          "label": "1/4 كوب سمن",
+          "name": "سمن",
+          "scale": true,
+          "note": null,
+          "amount": 0.25
+        },
+        {
+          "optional": false,
+          "display": null,
+          "unit": "حبة",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i7",
+          "label": "1 حبة كبيرة بيض",
+          "name": "كبيرة بيض",
+          "scale": true,
+          "note": null,
+          "amount": 1.0
+        },
+        {
+          "optional": false,
+          "display": null,
+          "unit": "ملعقة صغيرة",
+          "id": "ma650-manal-saudi-maamoul-20261021b-i8",
+          "label": "1 ملعقة صغيرة فانيليا، سائلة",
+          "name": "فانيليا، سائلة",
+          "scale": true,
+          "note": null,
+          "amount": 1.0
+        }
+      ],
+      "metadataPolicy": "source-unknowns-v1"
     }
   ]
 }

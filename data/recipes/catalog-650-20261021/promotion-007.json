@@ -1,0 +1,292 @@
+{
+  "at": "2026-10-21T13:40:15.635817Z",
+  "target": 650,
+  "baseline": 65,
+  "catalogCount": 597,
+  "remainingToTarget": 53,
+  "newlyPromoted": 22,
+  "groupCount": 60,
+  "namedCuisineCount": 58,
+  "sourceSnapshotChecks": 583,
+  "independentArabicNumericChecks": 1479,
+  "additionalExplicitQuantitiesParsed": 7,
+  "validationStatus": "awaiting-Flutter-integration-gate",
+  "held": [
+    {
+      "id": "ma650-manal-chicken-kabsa-20261021b",
+      "name": "كبسة الدجاج",
+      "reason": "Existing chicken kabsa; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-macaroni-bechamel-20261021b",
+      "name": "مكرونة بالبشاميل",
+      "reason": "Existing bechamel pasta; source variant held outside new-dish target.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-fried-kibbeh-20261021b",
+      "name": "كبة مقلية",
+      "reason": "Existing fried kibbeh; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-grape-leaves-olive-oil-20261021b",
+      "name": "ورق العنب بالزيت",
+      "reason": "Existing grape leaves; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-chicken-shawarma-20261021b",
+      "name": "شاورما الدجاج",
+      "reason": "Existing chicken shawarma; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-lasagna-mushroom-20261021b",
+      "name": "لازانيا باللحم والمشروم",
+      "reason": "Existing lasagna; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-luxury-maamoul-20261021b",
+      "name": "المعمول الفاخر",
+      "reason": "Existing maamoul; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-simple-chicken-biryani-20261021b",
+      "name": "برياني الدجاج البسيط",
+      "reason": "Same batch already contains chicken biryani; simpler variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-rice-pudding-20261021b",
+      "name": "أرز بالحليب",
+      "reason": "Existing rice pudding; semantic duplicate held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-fish-sayadiya-20261021b",
+      "name": "صيادية سمك",
+      "reason": "Existing sayadiya; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-umm-ali-puff-pastry-20261021b",
+      "name": "ام علي",
+      "reason": "Same batch contains OmAli; pastry variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-tiramisu-mold-20261021b",
+      "name": "قالب التيراميسو",
+      "reason": "Existing tiramisu; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-okra-stew-20261021b",
+      "name": "البامية",
+      "reason": "Existing okra stew; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-05.json"
+    },
+    {
+      "id": "ma650-balkan-lunchbox-bosnian-tepsijas-20261021",
+      "name": "خبز الصاج البوسني تيبسياش",
+      "reason": "Source omits liquid identity in yeast activation; held for source clarification.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "bc650-tiramisu",
+      "name": "تيراميسو",
+      "reason": "Existing tiramisu; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "fi650-52472",
+      "name": "تبولة لبنانية بالبقدونس والبرغل",
+      "reason": "Existing tabbouleh; Lebanese source variant held outside the650distinct-recipe target.",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista/chunk-001.json"
+    },
+    {
+      "id": "bc650-beef-stew",
+      "name": "يخنة تقليدية بلحم البقر أو الضأن",
+      "reason": "English title or same source already represented: bc650-irish-beef-stew",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-005.json"
+    },
+    {
+      "id": "bc650-cheesy-ham-and-potato-bake",
+      "name": "صينية بطاطا بالهام والجبن",
+      "reason": "English title or same source already represented: bc-cheesy-ham-and-potato-bake",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-005.json"
+    },
+    {
+      "id": "bc650-chicken-in-red-wine-vinegar-sauce",
+      "name": "دجاج بصلصة خل النبيذ الأحمر",
+      "reason": "English title or same source already represented: bc-chicken-in-red-wine-vinegar-sauce",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-005.json"
+    },
+    {
+      "id": "bc650-chicken-paprikash",
+      "name": "دجاج بابريكاش مجري",
+      "reason": "English title or same source already represented: bc-chicken-paprikash",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-005.json"
+    },
+    {
+      "id": "bc650-chorizo-and-chickpea-soup",
+      "name": "حساء الحمص والتشوريزو",
+      "reason": "English title or same source already represented: bc650-chorizo-chickpea-soup",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-005.json"
+    },
+    {
+      "id": "bc650-potato-and-eggplant-curry",
+      "name": "كاري البطاطا والباذنجان",
+      "reason": "English title or same source already represented: bc650-potato-eggplant-curry",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-005.json"
+    },
+    {
+      "id": "bc650-beef-kidney",
+      "name": "كلى بقر بالخبز المحمص",
+      "reason": "Source method mentions wine/water absent from ingredient list; incomplete ingredient facts held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-006.json"
+    },
+    {
+      "id": "bc650-turkish-style-spiced-chicken",
+      "name": "دجاج متبل على الطريقة التركية",
+      "reason": "English title or same source already represented: bc650-turkish-spiced-chicken",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-006.json"
+    },
+    {
+      "id": "bc650-rice-pudding",
+      "name": "بودينغ الأرز بماء الورد",
+      "reason": "Existing rice pudding; source variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-006.json"
+    },
+    {
+      "id": "fi650-52440",
+      "name": "باد تاي",
+      "reason": "Pad Thai already in this round; source variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista/chunk-103.json"
+    },
+    {
+      "id": "bc650-lentejas",
+      "name": "حساء العدس الإسباني",
+      "reason": "English title or same source already represented: bc650-spanish-lentil-soup",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-007.json"
+    },
+    {
+      "id": "bc650-tabouleh",
+      "name": "تبولة",
+      "reason": "Exact normalized title already exists: sh-tabbouleh",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-007.json"
+    },
+    {
+      "id": "bc650-easy-chicken-and-rice-casserole",
+      "name": "طاجن دجاج وأرز سهل",
+      "reason": "English title or same source already represented: bc650-easy-chicken-rice-casserole",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "fiw650-52472",
+      "name": "تبولة لبنانية",
+      "reason": "Existing tabbouleh under another source identifier; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-006.json"
+    }
+  ],
+  "promoted": [
+    {
+      "id": "bc650-aglio-e-olio",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-spaghetti-all-amatriciana",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-spicy-sausage-pasta",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-ravioli",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-tortellini",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-tuhu",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-stracciatella-soup",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-pozharskiye-cutlets",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-lithuanian-cold-borscht",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-beef-jerky",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-croque-monsieur",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-dulce-de-leche",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-coleslaw",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-cooked-chickpeas",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-french-toast",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-breakfast-wrap",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-basic-waffles",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-french-crepes",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-blueberry-muffins",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-mazurek",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-granola",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    },
+    {
+      "id": "bc650-air-fryer-zucchini",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-009.json"
+    }
+  ],
+  "withdrawnPriorPromotion": [
+    {
+      "id": "fiw650-52472",
+      "reason": "Existing tabbouleh under another source identifier; variant held."
+    }
+  ]
+}

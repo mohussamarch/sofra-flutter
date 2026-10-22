@@ -1,7 +1,7 @@
 {
   "cuisine": "إيطالي",
   "cuisineSlug": "italian",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "recipes": [
     {
       "id": "it-spaghetti-bolognese",
@@ -16,20 +16,96 @@
       "totalTime": 110,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "spaghetti", "name": "سباجيتي (Spaghetti)", "amount": 400, "unit": "جرام" },
-        { "id": "beef", "name": "لحمة بقري مفرومة خشنة", "amount": 500, "unit": "جرام" },
-        { "id": "pancetta", "name": "بانسيتا (Pancetta) أو لحم مقدد مفروم", "amount": 100, "unit": "جرام", "optional": true },
-        { "id": "onion", "name": "بصل أصفر مفروم ناعم", "amount": 1, "unit": "حبة" },
-        { "id": "carrot", "name": "جزرة مفرومة ناعم", "amount": 1, "unit": "حبة" },
-        { "id": "celery", "name": "عود كرفس مفروم ناعم", "amount": 1, "unit": "حبة" },
-        { "id": "garlic", "name": "فصوص توم مفرومة", "amount": 3, "unit": "فص" },
-        { "id": "tomato-canned", "name": "طماطم معلبة مقشرة (Pelati)", "amount": 800, "unit": "جرام" },
-        { "id": "tomato-paste", "name": "صلصة طماطم مركزة", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "broth", "name": "مرق لحم أو ماء ساخن", "amount": 1, "unit": "كوب" },
-        { "id": "milk", "name": "لبن كامل الدسم", "amount": 0.5, "unit": "كوب", "note": "يُضاف في آخر الطهي لتليين حموضة الطماطم" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "parmigiano", "name": "جبنة بارميزان (Parmigiano) مبشورة للتقديم", "amount": 60, "unit": "جرام", "optional": true },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُعدّل في آخر الطهي ولا يتبع عدد الأفراد" }
+        {
+          "id": "spaghetti",
+          "name": "سباجيتي (Spaghetti)",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "beef",
+          "name": "لحمة بقري مفرومة خشنة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "pancetta",
+          "name": "بانسيتا (Pancetta) أو لحم مقدد مفروم",
+          "amount": 100,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "onion",
+          "name": "بصل أصفر مفروم ناعم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزرة مفرومة ناعم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "celery",
+          "name": "عود كرفس مفروم ناعم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم مفرومة",
+          "amount": 3,
+          "unit": "فص"
+        },
+        {
+          "id": "tomato-canned",
+          "name": "طماطم معلبة مقشرة (Pelati)",
+          "amount": 800,
+          "unit": "جرام"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم مركزة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "broth",
+          "name": "مرق لحم أو ماء ساخن",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "milk",
+          "name": "لبن كامل الدسم",
+          "amount": 0.5,
+          "unit": "كوب",
+          "note": "يُضاف في آخر الطهي لتليين حموضة الطماطم"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "parmigiano",
+          "name": "جبنة بارميزان (Parmigiano) مبشورة للتقديم",
+          "amount": 60,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُعدّل في آخر الطهي ولا يتبع عدد الأفراد"
+        }
       ],
       "steps": [
         {
@@ -80,7 +156,11 @@
           "tip": "ماء السلق النشوي هو الذي يجعل الصلصة تلتصق بالمكرونة بدل أن تتجمع في القاع."
         }
       ],
-      "tags": ["مكرونة", "صلصة بطيئة", "عزومة"],
+      "tags": [
+        "مكرونة",
+        "صلصة بطيئة",
+        "عزومة"
+      ],
       "notes": "الصلصة تتضاعف كميتها بسهولة وتُجمّد حتى ثلاثة أشهر؛ أعد تسخينها مع قليل من الماء قبل خلطها بالمكرونة."
     },
     {
@@ -96,16 +176,74 @@
       "totalTime": 25,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "spaghetti", "name": "سباجيتي (Spaghetti)", "amount": 400, "unit": "جرام" },
-        { "id": "guanciale", "name": "وجنة مقددة (Guanciale) أو بانسيتا مكعبات", "amount": 150, "unit": "جرام" },
-        { "id": "egg-yolk", "name": "صفار بيض", "amount": 6, "unit": "حبة" },
-        { "id": "egg", "name": "بيضة كاملة", "amount": 1, "unit": "حبة" },
-        { "id": "pecorino", "name": "جبنة بيكورينو رومانو (Pecorino Romano) مبشورة ناعم", "amount": 100, "unit": "جرام" },
-        { "id": "parmigiano", "name": "جبنة بارميزان (Parmigiano) مبشورة ناعم", "amount": 50, "unit": "جرام", "optional": true },
-        { "id": "black-pepper", "name": "فلفل أسود مطحون خشناً", "amount": 2, "unit": "ملعقة صغيرة" },
-        { "id": "water", "name": "ماء لسلق المكرونة", "amount": 4, "unit": "لتر", "scale": false, "note": "كمية الماء تتبع حجم الحلة وليس عدد الأفراد" },
-        { "id": "pasta-water", "name": "ماء سلق المكرونة النشوي", "amount": 1, "unit": "كوب", "scale": false, "note": "يُضاف ملعقة ملعقة حسب حاجة الصلصة ولا يتضاعف مع الأفراد" },
-        { "id": "salt", "name": "ملح لماء السلق", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "الماء يجب أن يكون مالحاً كالبحر، والبيكورينو مالح أصلاً" }
+        {
+          "id": "spaghetti",
+          "name": "سباجيتي (Spaghetti)",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "guanciale",
+          "name": "وجنة مقددة (Guanciale) أو بانسيتا مكعبات",
+          "amount": 150,
+          "unit": "جرام"
+        },
+        {
+          "id": "egg-yolk",
+          "name": "صفار بيض",
+          "amount": 6,
+          "unit": "حبة"
+        },
+        {
+          "id": "egg",
+          "name": "بيضة كاملة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "pecorino",
+          "name": "جبنة بيكورينو رومانو (Pecorino Romano) مبشورة ناعم",
+          "amount": 100,
+          "unit": "جرام"
+        },
+        {
+          "id": "parmigiano",
+          "name": "جبنة بارميزان (Parmigiano) مبشورة ناعم",
+          "amount": 50,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون خشناً",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء لسلق المكرونة",
+          "amount": 4,
+          "unit": "لتر",
+          "scale": false,
+          "note": "كمية الماء تتبع حجم الحلة وليس عدد الأفراد"
+        },
+        {
+          "id": "pasta-water",
+          "name": "ماء سلق المكرونة النشوي",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": false,
+          "note": "يُضاف ملعقة ملعقة حسب حاجة الصلصة ولا يتضاعف مع الأفراد"
+        },
+        {
+          "id": "salt",
+          "name": "ملح لماء السلق",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "الماء يجب أن يكون مالحاً كالبحر، والبيكورينو مالح أصلاً"
+        }
       ],
       "steps": [
         {
@@ -146,7 +284,11 @@
           "tip": "قدّمها في أطباق دافئة؛ الكاربونارا تبرد سريعاً وتتماسك."
         }
       ],
-      "tags": ["مكرونة", "سريع", "مطبخ روماني"],
+      "tags": [
+        "مكرونة",
+        "سريع",
+        "مطبخ روماني"
+      ],
       "notes": "لا تستخدم الكريمة ولا الجبنة الرومي؛ لو لم تتوفر الوجنة المقددة استخدم بانسيتا أو لحم مقدد مع ملعقة زيت زيتون إضافية."
     },
     {
@@ -162,20 +304,94 @@
       "totalTime": 100,
       "difficulty": "متقدم",
       "ingredients": [
-        { "id": "lasagna-sheets", "name": "شرائح لازانيا (Lasagne) جافة", "amount": 12, "unit": "ورقة" },
-        { "id": "beef", "name": "لحمة بقري مفرومة", "amount": 500, "unit": "جرام" },
-        { "id": "onion", "name": "بصل مفروم ناعم", "amount": 1, "unit": "حبة" },
-        { "id": "carrot", "name": "جزرة مفرومة ناعم", "amount": 1, "unit": "حبة" },
-        { "id": "tomato-canned", "name": "طماطم معلبة مقشرة (Pelati)", "amount": 800, "unit": "جرام" },
-        { "id": "tomato-paste", "name": "صلصة طماطم مركزة", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "broth", "name": "مرق لحم أو ماء ساخن", "amount": 1, "unit": "كوب" },
-        { "id": "butter", "name": "زبدة للبشاميل", "amount": 60, "unit": "جرام" },
-        { "id": "flour", "name": "دقيق", "amount": 60, "unit": "جرام" },
-        { "id": "milk", "name": "لبن كامل الدسم", "amount": 1, "unit": "لتر" },
-        { "id": "nutmeg", "name": "جوزة الطيب مبشورة", "amount": 0.25, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "mozzarella", "name": "جبنة موزاريلا (Mozzarella) مبشورة", "amount": 300, "unit": "جرام" },
-        { "id": "parmigiano", "name": "جبنة بارميزان (Parmigiano) مبشورة", "amount": 100, "unit": "جرام" },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "تُعدّل في البولونيز والبشاميل كل على حدة، ولا تتبع عدد الأفراد" }
+        {
+          "id": "lasagna-sheets",
+          "name": "شرائح لازانيا (Lasagne) جافة",
+          "amount": 12,
+          "unit": "ورقة"
+        },
+        {
+          "id": "beef",
+          "name": "لحمة بقري مفرومة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم ناعم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزرة مفرومة ناعم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato-canned",
+          "name": "طماطم معلبة مقشرة (Pelati)",
+          "amount": 800,
+          "unit": "جرام"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم مركزة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "broth",
+          "name": "مرق لحم أو ماء ساخن",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "butter",
+          "name": "زبدة للبشاميل",
+          "amount": 60,
+          "unit": "جرام"
+        },
+        {
+          "id": "flour",
+          "name": "دقيق",
+          "amount": 60,
+          "unit": "جرام"
+        },
+        {
+          "id": "milk",
+          "name": "لبن كامل الدسم",
+          "amount": 1,
+          "unit": "لتر"
+        },
+        {
+          "id": "nutmeg",
+          "name": "جوزة الطيب مبشورة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "mozzarella",
+          "name": "جبنة موزاريلا (Mozzarella) مبشورة",
+          "amount": 300,
+          "unit": "جرام"
+        },
+        {
+          "id": "parmigiano",
+          "name": "جبنة بارميزان (Parmigiano) مبشورة",
+          "amount": 100,
+          "unit": "جرام"
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "تُعدّل في البولونيز والبشاميل كل على حدة، ولا تتبع عدد الأفراد"
+        }
       ],
       "steps": [
         {
@@ -225,7 +441,11 @@
           "tip": "التقطيع فور الخروج يجعل الطبقات تسيل؛ الراحة هي سرّ المربعات المتماسكة."
         }
       ],
-      "tags": ["فرن", "عزومة", "طبقات"],
+      "tags": [
+        "فرن",
+        "عزومة",
+        "طبقات"
+      ],
       "notes": "يمكن تجميع الصينية قبل الخبز وتغطيتها وتجميدها حتى شهرين؛ اخبزها من الفريزر مع إضافة ٢٠ دقيقة للوقت."
     },
     {
@@ -241,17 +461,78 @@
       "totalTime": 165,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "flour", "name": "دقيق قوي (Manitoba) أو دقيق خبز", "amount": 500, "unit": "جرام" },
-        { "id": "water", "name": "ماء فاتر", "amount": 325, "unit": "مل", "note": "نسبة الترطيب ٦٥٪ من وزن الدقيق، وهي التي تعطي العجين قابلية الفرد دون نشابة" },
-        { "id": "yeast", "name": "خميرة فورية جافة", "amount": 7, "unit": "جرام", "scale": false, "note": "الخميرة لا تتضاعف خطياً مع الأفراد؛ الزيادة تعطي طعم خميرة قوياً" },
-        { "id": "sugar", "name": "سكر", "amount": 1, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "salt", "name": "ملح ناعم", "amount": 10, "unit": "جرام", "note": "نسبة ٢٪ من وزن الدقيق" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "tomato-canned", "name": "طماطم معلبة مقشرة (Pelati) مهروسة", "amount": 400, "unit": "جرام" },
-        { "id": "mozzarella", "name": "جبنة موزاريلا طازجة (Fior di Latte)", "amount": 250, "unit": "جرام" },
-        { "id": "basil", "name": "ورق ريحان طازج", "amount": 12, "unit": "ورقة" },
-        { "id": "parmigiano", "name": "جبنة بارميزان (Parmigiano) مبشورة", "amount": 30, "unit": "جرام", "optional": true },
-        { "id": "semolina", "name": "سمولينا أو دقيق للرش", "amount": 3, "unit": "ملعقة كبيرة" }
+        {
+          "id": "flour",
+          "name": "دقيق قوي (Manitoba) أو دقيق خبز",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "water",
+          "name": "ماء فاتر",
+          "amount": 325,
+          "unit": "مل",
+          "note": "نسبة الترطيب ٦٥٪ من وزن الدقيق، وهي التي تعطي العجين قابلية الفرد دون نشابة"
+        },
+        {
+          "id": "yeast",
+          "name": "خميرة فورية جافة",
+          "amount": 7,
+          "unit": "جرام",
+          "scale": false,
+          "note": "الخميرة لا تتضاعف خطياً مع الأفراد؛ الزيادة تعطي طعم خميرة قوياً"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح ناعم",
+          "amount": 10,
+          "unit": "جرام",
+          "note": "نسبة ٢٪ من وزن الدقيق"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "tomato-canned",
+          "name": "طماطم معلبة مقشرة (Pelati) مهروسة",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "mozzarella",
+          "name": "جبنة موزاريلا طازجة (Fior di Latte)",
+          "amount": 250,
+          "unit": "جرام"
+        },
+        {
+          "id": "basil",
+          "name": "ورق ريحان طازج",
+          "amount": 12,
+          "unit": "ورقة"
+        },
+        {
+          "id": "parmigiano",
+          "name": "جبنة بارميزان (Parmigiano) مبشورة",
+          "amount": 30,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "semolina",
+          "name": "سمولينا أو دقيق للرش",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        }
       ],
       "steps": [
         {
@@ -303,7 +584,11 @@
           "duration": 1
         }
       ],
-      "tags": ["مخبوزات", "عجين", "فرن"],
+      "tags": [
+        "مخبوزات",
+        "عجين",
+        "فرن"
+      ],
       "notes": "العجين يقبل التخمير البطيء في الثلاجة ٢٤ ساعة ويعطي طعماً أفضل؛ أخرجه ساعة قبل الفرد."
     },
     {
@@ -319,18 +604,85 @@
       "totalTime": 50,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "rice", "name": "أرز أربوريو (Arborio) أو كارنارولي", "amount": 320, "unit": "جرام" },
-        { "id": "mushroom", "name": "مشروم طازج مقطّع شرائح", "amount": 400, "unit": "جرام" },
-        { "id": "porcini", "name": "مشروم بورسيني مجفف (Porcini)", "amount": 20, "unit": "جرام", "optional": true },
-        { "id": "onion", "name": "بصلة صغيرة مفرومة ناعم", "amount": 1, "unit": "حبة" },
-        { "id": "garlic", "name": "فصوص توم مفرومة", "amount": 2, "unit": "فص" },
-        { "id": "butter", "name": "زبدة باردة مكعبات", "amount": 60, "unit": "جرام" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "broth", "name": "مرق دجاج أو خضار ساخن", "amount": 1.2, "unit": "لتر", "note": "يجب أن يبقى ساخناً طوال الطهي" },
-        { "id": "parmigiano", "name": "جبنة بارميزان (Parmigiano) مبشورة ناعم", "amount": 80, "unit": "جرام" },
-        { "id": "thyme", "name": "زعتر طازج", "amount": 1, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "parsley", "name": "بقدونس مفروم للتقديم", "amount": 2, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "انتبه لملوحة المرق والبارميزان قبل الإضافة" }
+        {
+          "id": "rice",
+          "name": "أرز أربوريو (Arborio) أو كارنارولي",
+          "amount": 320,
+          "unit": "جرام"
+        },
+        {
+          "id": "mushroom",
+          "name": "مشروم طازج مقطّع شرائح",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "porcini",
+          "name": "مشروم بورسيني مجفف (Porcini)",
+          "amount": 20,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "onion",
+          "name": "بصلة صغيرة مفرومة ناعم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم مفرومة",
+          "amount": 2,
+          "unit": "فص"
+        },
+        {
+          "id": "butter",
+          "name": "زبدة باردة مكعبات",
+          "amount": 60,
+          "unit": "جرام"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "broth",
+          "name": "مرق دجاج أو خضار ساخن",
+          "amount": 1.2,
+          "unit": "لتر",
+          "note": "يجب أن يبقى ساخناً طوال الطهي"
+        },
+        {
+          "id": "parmigiano",
+          "name": "جبنة بارميزان (Parmigiano) مبشورة ناعم",
+          "amount": 80,
+          "unit": "جرام"
+        },
+        {
+          "id": "thyme",
+          "name": "زعتر طازج",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس مفروم للتقديم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "انتبه لملوحة المرق والبارميزان قبل الإضافة"
+        }
       ],
       "steps": [
         {
@@ -376,7 +728,11 @@
           "tip": "التقليب القوي خارج النار هو الذي يطلق النشاء ويصنع الكريمية، والريزوتو لا ينتظر أحداً."
         }
       ],
-      "tags": ["أرز", "مشروم", "نباتي"],
+      "tags": [
+        "أرز",
+        "مشروم",
+        "نباتي"
+      ],
       "notes": "استخدم مرق خضار لنسخة نباتية كاملة، ويمكن استبدال البورسيني بمشروم طازج إضافي مع ملعقة صويا صغيرة للعمق."
     },
     {
@@ -392,16 +748,73 @@
       "totalTime": 35,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "penne", "name": "بيني ريجاتي (Penne Rigate)", "amount": 400, "unit": "جرام" },
-        { "id": "tomato-canned", "name": "طماطم معلبة مقشرة (Pelati)", "amount": 800, "unit": "جرام" },
-        { "id": "garlic", "name": "فصوص توم مقطعة شرائح رقيقة", "amount": 4, "unit": "فص" },
-        { "id": "chili", "name": "فلفل أحمر حار مجفف (Peperoncino)", "amount": 2, "unit": "حبة" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز", "amount": 4, "unit": "ملعقة كبيرة" },
-        { "id": "parsley", "name": "بقدونس مفروم", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "tomato-paste", "name": "صلصة طماطم مركزة", "amount": 1, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "pecorino", "name": "جبنة بيكورينو (Pecorino) مبشورة", "amount": 50, "unit": "جرام", "optional": true },
-        { "id": "water", "name": "ماء لسلق المكرونة", "amount": 4, "unit": "لتر", "scale": false, "note": "الماء يتبع حجم الحلة وليس عدد الأفراد" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُملّح ماء السلق فقط لأن الصلصة تتكاثف بالطهي" }
+        {
+          "id": "penne",
+          "name": "بيني ريجاتي (Penne Rigate)",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "tomato-canned",
+          "name": "طماطم معلبة مقشرة (Pelati)",
+          "amount": 800,
+          "unit": "جرام"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم مقطعة شرائح رقيقة",
+          "amount": 4,
+          "unit": "فص"
+        },
+        {
+          "id": "chili",
+          "name": "فلفل أحمر حار مجفف (Peperoncino)",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس مفروم",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم مركزة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "pecorino",
+          "name": "جبنة بيكورينو (Pecorino) مبشورة",
+          "amount": 50,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "water",
+          "name": "ماء لسلق المكرونة",
+          "amount": 4,
+          "unit": "لتر",
+          "scale": false,
+          "note": "الماء يتبع حجم الحلة وليس عدد الأفراد"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُملّح ماء السلق فقط لأن الصلصة تتكاثف بالطهي"
+        }
       ],
       "steps": [
         {
@@ -440,7 +853,11 @@
           "duration": 3
         }
       ],
-      "tags": ["مكرونة", "حار", "سريع"],
+      "tags": [
+        "مكرونة",
+        "حار",
+        "سريع"
+      ],
       "notes": "لو أردت حرارة أقل، أضف الفلفل المجفف كاملاً أثناء الطهي ثم أخرجه قبل التقديم."
     },
     {
@@ -456,14 +873,64 @@
       "totalTime": 20,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "tonnarelli", "name": "توناريلي (Tonnarelli) أو سباجيتي", "amount": 400, "unit": "جرام" },
-        { "id": "pecorino", "name": "جبنة بيكورينو رومانو (Pecorino Romano) مبشورة ناعم جداً", "amount": 180, "unit": "جرام" },
-        { "id": "parmigiano", "name": "جبنة بارميزان (Parmigiano) مبشورة ناعم", "amount": 40, "unit": "جرام", "optional": true },
-        { "id": "black-pepper", "name": "فلفل أسود حب محمّص ومطحون خشناً", "amount": 2, "unit": "ملعقة صغيرة" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز", "amount": 1, "unit": "ملعقة كبيرة", "optional": true, "note": "بعض النسخ تضيفه للمعة فقط" },
-        { "id": "water", "name": "ماء لسلق المكرونة", "amount": 3, "unit": "لتر", "scale": false, "note": "كمية الماء تتبع حجم الحلة، وتقليلها يزيد النشاء المفيد" },
-        { "id": "pasta-water", "name": "ماء السلق النشوي", "amount": 1, "unit": "كوب", "scale": false, "note": "يُضاف تدريجياً حسب قوام الصلصة ولا يتضاعف مع الأفراد" },
-        { "id": "salt", "name": "ملح لماء السلق", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "قليل جداً لأن البيكورينو مالح بطبيعته" }
+        {
+          "id": "tonnarelli",
+          "name": "توناريلي (Tonnarelli) أو سباجيتي",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "pecorino",
+          "name": "جبنة بيكورينو رومانو (Pecorino Romano) مبشورة ناعم جداً",
+          "amount": 180,
+          "unit": "جرام"
+        },
+        {
+          "id": "parmigiano",
+          "name": "جبنة بارميزان (Parmigiano) مبشورة ناعم",
+          "amount": 40,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود حب محمّص ومطحون خشناً",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true,
+          "note": "بعض النسخ تضيفه للمعة فقط"
+        },
+        {
+          "id": "water",
+          "name": "ماء لسلق المكرونة",
+          "amount": 3,
+          "unit": "لتر",
+          "scale": false,
+          "note": "كمية الماء تتبع حجم الحلة، وتقليلها يزيد النشاء المفيد"
+        },
+        {
+          "id": "pasta-water",
+          "name": "ماء السلق النشوي",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": false,
+          "note": "يُضاف تدريجياً حسب قوام الصلصة ولا يتضاعف مع الأفراد"
+        },
+        {
+          "id": "salt",
+          "name": "ملح لماء السلق",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "قليل جداً لأن البيكورينو مالح بطبيعته"
+        }
       ],
       "steps": [
         {
@@ -503,7 +970,11 @@
           "tip": "لو تكتلت الصلصة، ارفع المقلاة عن النار تماماً وأضف ماء سلق دافئاً وقلّب بعيداً عن الحرارة."
         }
       ],
-      "tags": ["مكرونة", "مطبخ روماني", "مكونات قليلة"],
+      "tags": [
+        "مكرونة",
+        "مطبخ روماني",
+        "مكونات قليلة"
+      ],
       "notes": "استخدم ماء سلق أقل من المعتاد لأن النشاء المركّز هو الذي يصنع الكريمية؛ ولا تستبدل البيكورينو جبنة رومي."
     },
     {
@@ -519,16 +990,80 @@
       "totalTime": 30,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "fettuccine", "name": "فيتوتشيني (Fettuccine) طازج أو جاف", "amount": 400, "unit": "جرام" },
-        { "id": "butter", "name": "زبدة", "amount": 100, "unit": "جرام" },
-        { "id": "parmigiano", "name": "جبنة بارميزان (Parmigiano Reggiano) مبشورة ناعم", "amount": 150, "unit": "جرام" },
-        { "id": "cream", "name": "كريمة طبخ", "amount": 0.5, "unit": "كوب", "optional": true, "note": "ليست في النسخة الأصلية، تُضاف لمن يريد قواماً أثقل" },
-        { "id": "garlic", "name": "فص توم كامل للطعم", "amount": 1, "unit": "فص", "optional": true },
-        { "id": "parsley", "name": "بقدونس مفروم للتزيين", "amount": 2, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "water", "name": "ماء لسلق المكرونة", "amount": 4, "unit": "لتر", "scale": false, "note": "كمية الماء تتبع حجم الحلة لا عدد الأفراد" },
-        { "id": "pasta-water", "name": "ماء السلق النشوي", "amount": 1, "unit": "كوب", "scale": false, "note": "يُضاف تدريجياً حسب قوام الصلصة ولا يتضاعف مع الأفراد" },
-        { "id": "nutmeg", "name": "جوزة الطيب مبشورة", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "رشة واحدة تكفي، والزيادة تُفسد الطعم" },
-        { "id": "salt", "name": "ملح لماء السلق", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "البارميزان مالح، فاختبر الملح في آخر خطوة" }
+        {
+          "id": "fettuccine",
+          "name": "فيتوتشيني (Fettuccine) طازج أو جاف",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "butter",
+          "name": "زبدة",
+          "amount": 100,
+          "unit": "جرام"
+        },
+        {
+          "id": "parmigiano",
+          "name": "جبنة بارميزان (Parmigiano Reggiano) مبشورة ناعم",
+          "amount": 150,
+          "unit": "جرام"
+        },
+        {
+          "id": "cream",
+          "name": "كريمة طبخ",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true,
+          "note": "ليست في النسخة الأصلية، تُضاف لمن يريد قواماً أثقل"
+        },
+        {
+          "id": "garlic",
+          "name": "فص توم كامل للطعم",
+          "amount": 1,
+          "unit": "فص",
+          "optional": true
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس مفروم للتزيين",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "water",
+          "name": "ماء لسلق المكرونة",
+          "amount": 4,
+          "unit": "لتر",
+          "scale": false,
+          "note": "كمية الماء تتبع حجم الحلة لا عدد الأفراد"
+        },
+        {
+          "id": "pasta-water",
+          "name": "ماء السلق النشوي",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": false,
+          "note": "يُضاف تدريجياً حسب قوام الصلصة ولا يتضاعف مع الأفراد"
+        },
+        {
+          "id": "nutmeg",
+          "name": "جوزة الطيب مبشورة",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "رشة واحدة تكفي، والزيادة تُفسد الطعم"
+        },
+        {
+          "id": "salt",
+          "name": "ملح لماء السلق",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "البارميزان مالح، فاختبر الملح في آخر خطوة"
+        }
       ],
       "steps": [
         {
@@ -567,7 +1102,11 @@
           "tip": "الأطباق الدافئة تمنع الصلصة من التماسك والبرود قبل أن تصل إلى المائدة."
         }
       ],
-      "tags": ["مكرونة", "سريع", "جبنة"],
+      "tags": [
+        "مكرونة",
+        "سريع",
+        "جبنة"
+      ],
       "notes": "المكرونة الطازجة تعطي نتيجة أفضل بكثير؛ لو استخدمت الجافة زد قليلاً من ماء السلق لأنها تمتص السائل أكثر."
     },
     {
@@ -583,20 +1122,93 @@
       "totalTime": 70,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "beans", "name": "فاصوليا بيضاء (Cannellini) مسلوقة أو معلبة", "amount": 400, "unit": "جرام" },
-        { "id": "tomato-canned", "name": "طماطم معلبة مقطعة", "amount": 400, "unit": "جرام" },
-        { "id": "onion", "name": "بصلة مفرومة", "amount": 1, "unit": "حبة" },
-        { "id": "carrot", "name": "جزرة مقطعة مكعبات صغيرة", "amount": 2, "unit": "حبة" },
-        { "id": "celery", "name": "عود كرفس مفروم", "amount": 2, "unit": "حبة" },
-        { "id": "potato", "name": "بطاطس مقطعة مكعبات", "amount": 2, "unit": "حبة" },
-        { "id": "zucchini", "name": "كوسة مقطعة مكعبات", "amount": 1, "unit": "حبة" },
-        { "id": "green-beans", "name": "فاصوليا خضراء مقطعة", "amount": 150, "unit": "جرام" },
-        { "id": "garlic", "name": "فصوص توم مفرومة", "amount": 3, "unit": "فص" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "pasta", "name": "مكرونة صغيرة (Ditalini)", "amount": 0.5, "unit": "كوب" },
-        { "id": "broth", "name": "مرق خضار أو ماء", "amount": 1.5, "unit": "لتر" },
-        { "id": "basil", "name": "ورق ريحان طازج", "amount": 6, "unit": "ورقة" },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُعدّل في نهاية الطهي لأن المرق والمعلبات مملحة" }
+        {
+          "id": "beans",
+          "name": "فاصوليا بيضاء (Cannellini) مسلوقة أو معلبة",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "tomato-canned",
+          "name": "طماطم معلبة مقطعة",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصلة مفرومة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزرة مقطعة مكعبات صغيرة",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "celery",
+          "name": "عود كرفس مفروم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "potato",
+          "name": "بطاطس مقطعة مكعبات",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "zucchini",
+          "name": "كوسة مقطعة مكعبات",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "green-beans",
+          "name": "فاصوليا خضراء مقطعة",
+          "amount": 150,
+          "unit": "جرام"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم مفرومة",
+          "amount": 3,
+          "unit": "فص"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "pasta",
+          "name": "مكرونة صغيرة (Ditalini)",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "broth",
+          "name": "مرق خضار أو ماء",
+          "amount": 1.5,
+          "unit": "لتر"
+        },
+        {
+          "id": "basil",
+          "name": "ورق ريحان طازج",
+          "amount": 6,
+          "unit": "ورقة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُعدّل في نهاية الطهي لأن المرق والمعلبات مملحة"
+        }
       ],
       "steps": [
         {
@@ -640,7 +1252,11 @@
           "duration": 3
         }
       ],
-      "tags": ["شوربة", "خضار", "نباتي"],
+      "tags": [
+        "شوربة",
+        "خضار",
+        "نباتي"
+      ],
       "notes": "المينستروني تصبح أطيب في اليوم التالي؛ احفظها في الثلاجة ثلاثة أيام وأضف قليل من المرق عند التسخين."
     },
     {
@@ -656,16 +1272,76 @@
       "totalTime": 15,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "mozzarella", "name": "جبنة موزاريلا طازجة (Fior di Latte أو Bufala)", "amount": 400, "unit": "جرام" },
-        { "id": "tomato", "name": "طماطم ناضجة كبيرة", "amount": 4, "unit": "حبة" },
-        { "id": "basil", "name": "ورق ريحان طازج", "amount": 20, "unit": "ورقة" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز", "amount": 4, "unit": "ملعقة كبيرة" },
-        { "id": "bread", "name": "خبز إيطالي (Ciabatta) مقطّع شرائح", "amount": 8, "unit": "قرص", "optional": true },
-        { "id": "garlic", "name": "فص توم لفرك الخبز", "amount": 1, "unit": "فص", "optional": true },
-        { "id": "oregano", "name": "أوريجانو مجفف", "amount": 0.5, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "balsamic", "name": "بلسميك أو كريمة بلسميك", "amount": 1, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "salt", "name": "ملح خشن (Fleur de Sel)", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُرشّ في اللحظة الأخيرة فقط ولا يتبع عدد الأفراد" },
-        { "id": "black-pepper", "name": "فلفل أسود مطحون", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "رشة خفيفة على الوجه قبل التقديم" }
+        {
+          "id": "mozzarella",
+          "name": "جبنة موزاريلا طازجة (Fior di Latte أو Bufala)",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم ناضجة كبيرة",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "basil",
+          "name": "ورق ريحان طازج",
+          "amount": 20,
+          "unit": "ورقة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bread",
+          "name": "خبز إيطالي (Ciabatta) مقطّع شرائح",
+          "amount": 8,
+          "unit": "قرص",
+          "optional": true
+        },
+        {
+          "id": "garlic",
+          "name": "فص توم لفرك الخبز",
+          "amount": 1,
+          "unit": "فص",
+          "optional": true
+        },
+        {
+          "id": "oregano",
+          "name": "أوريجانو مجفف",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "balsamic",
+          "name": "بلسميك أو كريمة بلسميك",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح خشن (Fleur de Sel)",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُرشّ في اللحظة الأخيرة فقط ولا يتبع عدد الأفراد"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "رشة خفيفة على الوجه قبل التقديم"
+        }
       ],
       "steps": [
         {
@@ -697,7 +1373,11 @@
           "tip": "لا تحفظ السلطة في الثلاجة؛ برودة الطماطم تقتل نكهتها ورائحتها."
         }
       ],
-      "tags": ["سلطة", "صيف", "سريع"],
+      "tags": [
+        "سلطة",
+        "صيف",
+        "سريع"
+      ],
       "notes": "استخدم طماطم بحرارة الغرفة دائماً، ولو أردت نسخة ألذ فاترك السلطة خمس دقائق فقط قبل التقديم لتتجانس النكهات."
     },
     {
@@ -713,16 +1393,72 @@
       "totalTime": 40,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "mascarpone", "name": "جبنة مسكربوني (Mascarpone)", "amount": 500, "unit": "جرام" },
-        { "id": "ladyfingers", "name": "بسكويت سافوياردي (Savoiardi)", "amount": 300, "unit": "جرام" },
-        { "id": "eggs", "name": "بيض طازج بحرارة الغرفة", "amount": 4, "unit": "حبة" },
-        { "id": "sugar", "name": "سكر ناعم", "amount": 0.75, "unit": "كوب" },
-        { "id": "coffee", "name": "قهوة إسبريسو قوية مبردة", "amount": 2, "unit": "كوب" },
-        { "id": "cocoa", "name": "كاكاو خام غير محلّى للرش", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "cream", "name": "كريمة خفق", "amount": 1, "unit": "كوب", "optional": true, "note": "تضاف لثبات أكبر ونسخة أخف من البيض" },
-        { "id": "chocolate", "name": "شوكولاتة داكنة مبشورة", "amount": 50, "unit": "جرام", "optional": true },
-        { "id": "vanilla", "name": "خلاصة فانيليا", "amount": 1, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "salt", "name": "رشة ملح لخفق البياض", "amount": 1, "unit": "رشة", "scale": false, "note": "رشة واحدة ثابتة تكفي لتثبيت البياض مهما كان عدد الأفراد" }
+        {
+          "id": "mascarpone",
+          "name": "جبنة مسكربوني (Mascarpone)",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "ladyfingers",
+          "name": "بسكويت سافوياردي (Savoiardi)",
+          "amount": 300,
+          "unit": "جرام"
+        },
+        {
+          "id": "eggs",
+          "name": "بيض طازج بحرارة الغرفة",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر ناعم",
+          "amount": 0.75,
+          "unit": "كوب"
+        },
+        {
+          "id": "coffee",
+          "name": "قهوة إسبريسو قوية مبردة",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "cocoa",
+          "name": "كاكاو خام غير محلّى للرش",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "cream",
+          "name": "كريمة خفق",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true,
+          "note": "تضاف لثبات أكبر ونسخة أخف من البيض"
+        },
+        {
+          "id": "chocolate",
+          "name": "شوكولاتة داكنة مبشورة",
+          "amount": 50,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "vanilla",
+          "name": "خلاصة فانيليا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "رشة ملح لخفق البياض",
+          "amount": 1,
+          "unit": "رشة",
+          "scale": false,
+          "note": "رشة واحدة ثابتة تكفي لتثبيت البياض مهما كان عدد الأفراد"
+        }
       ],
       "steps": [
         {
@@ -773,7 +1509,11 @@
           "tip": "التبريد هنا خارج الوقت الفعلي للتحضير؛ رشّ الكاكاو بعد التبريد فقط، وإلا امتصته الكريمة واختفى شكله."
         }
       ],
-      "tags": ["حلويات", "قهوة", "بلا فرن"],
+      "tags": [
+        "حلويات",
+        "قهوة",
+        "بلا فرن"
+      ],
       "notes": "وقت التحضير لا يشمل ٤ ساعات تبريد في الثلاجة (تُحسب خارج الجلسة). احفظ التيراميسو في الثلاجة يومين كحد أقصى، ويمكن استخدام بسكويت سادة بدل السافوياردي."
     },
     {
@@ -789,16 +1529,73 @@
       "totalTime": 20,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "cream", "name": "كريمة طبخ كاملة الدسم", "amount": 1, "unit": "لتر" },
-        { "id": "milk", "name": "لبن كامل الدسم", "amount": 1, "unit": "كوب" },
-        { "id": "sugar", "name": "سكر", "amount": 0.75, "unit": "كوب" },
-        { "id": "gelatin", "name": "جلاتين بودرة (Gelatina)", "amount": 10, "unit": "جرام" },
-        { "id": "vanilla", "name": "خلاصة فانيليا أو عود فانيليا", "amount": 2, "unit": "ملعقة صغيرة" },
-        { "id": "berries", "name": "صوص فراولة أو توت للتقديم", "amount": 1.5, "unit": "كوب", "optional": true },
-        { "id": "lemon", "name": "عصير ليمون", "amount": 1, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "mint", "name": "ورق نعناع للتزيين", "amount": 6, "unit": "ورقة", "optional": true },
-        { "id": "water", "name": "ماء بارد لتذويب الجلاتين", "amount": 3, "unit": "ملعقة كبيرة", "scale": false, "note": "كمية ثابتة لتذويب الجلاتين ولا تتضاعف مع عدد الأفراد" },
-        { "id": "salt", "name": "رشة ملح", "amount": 1, "unit": "رشة", "scale": false, "note": "رشة واحدة ثابتة تُبرز طعم الكريمة مهما كانت الكمية" }
+        {
+          "id": "cream",
+          "name": "كريمة طبخ كاملة الدسم",
+          "amount": 1,
+          "unit": "لتر"
+        },
+        {
+          "id": "milk",
+          "name": "لبن كامل الدسم",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر",
+          "amount": 0.75,
+          "unit": "كوب"
+        },
+        {
+          "id": "gelatin",
+          "name": "جلاتين بودرة (Gelatina)",
+          "amount": 10,
+          "unit": "جرام"
+        },
+        {
+          "id": "vanilla",
+          "name": "خلاصة فانيليا أو عود فانيليا",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "berries",
+          "name": "صوص فراولة أو توت للتقديم",
+          "amount": 1.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "lemon",
+          "name": "عصير ليمون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "mint",
+          "name": "ورق نعناع للتزيين",
+          "amount": 6,
+          "unit": "ورقة",
+          "optional": true
+        },
+        {
+          "id": "water",
+          "name": "ماء بارد لتذويب الجلاتين",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": false,
+          "note": "كمية ثابتة لتذويب الجلاتين ولا تتضاعف مع عدد الأفراد"
+        },
+        {
+          "id": "salt",
+          "name": "رشة ملح",
+          "amount": 1,
+          "unit": "رشة",
+          "scale": false,
+          "note": "رشة واحدة ثابتة تُبرز طعم الكريمة مهما كانت الكمية"
+        }
       ],
       "steps": [
         {
@@ -838,7 +1635,11 @@
           "tip": "لو التصقت البانا كوتا بالقالب، أعد غمسه في الماء الساخن ثانيتين فقط ولا تهزّه بعنف."
         }
       ],
-      "tags": ["حلويات", "بارد", "سريع"],
+      "tags": [
+        "حلويات",
+        "بارد",
+        "سريع"
+      ],
       "notes": "وقت التحضير لا يشمل ٤ ساعات تبريد في الثلاجة (تُحسب خارج الجلسة)؛ لو استخدمت الجلاتين في صفائح، استخدم ٤ صفائح تعادل ١٠ جرام، ولنسخة أخف استبدل كوباً من الكريمة باللبن."
     },
     {
@@ -854,16 +1655,72 @@
       "totalTime": 170,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "flour", "name": "دقيق قوي (Manitoba) أو دقيق خبز", "amount": 500, "unit": "جرام" },
-        { "id": "water", "name": "ماء فاتر", "amount": 375, "unit": "مل", "note": "نسبة الترطيب ٧٥٪ من وزن الدقيق وهي التي تعطي الفوكاتشا قوامها الإسفنجي" },
-        { "id": "yeast", "name": "خميرة فورية جافة", "amount": 7, "unit": "جرام", "scale": false, "note": "الخميرة لا تتضاعف خطياً مع الأفراد؛ زيادتها تعطي طعم خميرة قوياً" },
-        { "id": "honey", "name": "عسل أو سكر", "amount": 1, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "salt", "name": "ملح ناعم", "amount": 10, "unit": "جرام", "note": "نسبة ٢٪ من وزن الدقيق" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز للعجين", "amount": 4, "unit": "ملعقة كبيرة" },
-        { "id": "olive-oil-top", "name": "زيت زيتون للتزيين", "amount": 4, "unit": "ملعقة كبيرة" },
-        { "id": "rosemary", "name": "روزماري (إكليل الجبل) طازج مفروم", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "sea-salt", "name": "ملح خشن (Fleur de Sel) للوجه", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "cherry-tomato", "name": "طماطم شيري مقطعة نصفين", "amount": 200, "unit": "جرام", "optional": true }
+        {
+          "id": "flour",
+          "name": "دقيق قوي (Manitoba) أو دقيق خبز",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "water",
+          "name": "ماء فاتر",
+          "amount": 375,
+          "unit": "مل",
+          "note": "نسبة الترطيب ٧٥٪ من وزن الدقيق وهي التي تعطي الفوكاتشا قوامها الإسفنجي"
+        },
+        {
+          "id": "yeast",
+          "name": "خميرة فورية جافة",
+          "amount": 7,
+          "unit": "جرام",
+          "scale": false,
+          "note": "الخميرة لا تتضاعف خطياً مع الأفراد؛ زيادتها تعطي طعم خميرة قوياً"
+        },
+        {
+          "id": "honey",
+          "name": "عسل أو سكر",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح ناعم",
+          "amount": 10,
+          "unit": "جرام",
+          "note": "نسبة ٢٪ من وزن الدقيق"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز للعجين",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "olive-oil-top",
+          "name": "زيت زيتون للتزيين",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "rosemary",
+          "name": "روزماري (إكليل الجبل) طازج مفروم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "sea-salt",
+          "name": "ملح خشن (Fleur de Sel) للوجه",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cherry-tomato",
+          "name": "طماطم شيري مقطعة نصفين",
+          "amount": 200,
+          "unit": "جرام",
+          "optional": true
+        }
       ],
       "steps": [
         {
@@ -909,7 +1766,11 @@
           "tip": "ضع الفوكاتشا على شبكة لا على صينية؛ البخار المحتجز يلين قاعها المقرمش."
         }
       ],
-      "tags": ["مخبوزات", "عجين", "زيت زيتون"],
+      "tags": [
+        "مخبوزات",
+        "عجين",
+        "زيت زيتون"
+      ],
       "notes": "الوقت الإجمالي يشمل ساعتين ونصف من التخمير والراحة؛ أفضل نتيجة تأتي من تخمير العجين في الثلاجة ٢٤ ساعة، أخرجه ساعتين قبل الفرد، ويمكن تجميد الفوكاتشا المخبوزة وإعادة تسخينها."
     },
     {
@@ -925,16 +1786,75 @@
       "totalTime": 25,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "bread", "name": "خبز إيطالي (Ciabatta أو Pane Pugliese)", "amount": 8, "unit": "قرص" },
-        { "id": "tomato", "name": "طماطم ناضجة جامدة", "amount": 500, "unit": "جرام" },
-        { "id": "garlic", "name": "فصوص توم لفرك الخبز", "amount": 2, "unit": "فص" },
-        { "id": "basil", "name": "ورق ريحان طازج ممزق باليد", "amount": 12, "unit": "ورقة" },
-        { "id": "olive-oil", "name": "زيت زيتون بكر ممتاز", "amount": 4, "unit": "ملعقة كبيرة" },
-        { "id": "mozzarella", "name": "جبنة موزاريلا طازجة مقطعة مكعبات صغيرة", "amount": 150, "unit": "جرام", "optional": true },
-        { "id": "balsamic", "name": "بلسميك", "amount": 1, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "oregano", "name": "أوريجانو مجفف", "amount": 0.5, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "salt", "name": "ملح خشن", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "يُضاف للطماطم قبل التقديم بدقائق فقط" },
-        { "id": "black-pepper", "name": "فلفل أسود مطحون", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false, "note": "رشة على الوجه قبل التقديم مباشرة" }
+        {
+          "id": "bread",
+          "name": "خبز إيطالي (Ciabatta أو Pane Pugliese)",
+          "amount": 8,
+          "unit": "قرص"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم ناضجة جامدة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم لفرك الخبز",
+          "amount": 2,
+          "unit": "فص"
+        },
+        {
+          "id": "basil",
+          "name": "ورق ريحان طازج ممزق باليد",
+          "amount": 12,
+          "unit": "ورقة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "mozzarella",
+          "name": "جبنة موزاريلا طازجة مقطعة مكعبات صغيرة",
+          "amount": 150,
+          "unit": "جرام",
+          "optional": true
+        },
+        {
+          "id": "balsamic",
+          "name": "بلسميك",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "oregano",
+          "name": "أوريجانو مجفف",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح خشن",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "يُضاف للطماطم قبل التقديم بدقائق فقط"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "رشة على الوجه قبل التقديم مباشرة"
+        }
       ],
       "steps": [
         {
@@ -974,8 +1894,4211 @@
           "tip": "البروسكيتا لا تنتظر؛ جهّزها في آخر لحظة قبل الجلوس على المائدة."
         }
       ],
-      "tags": ["مقبلات", "سريع", "خبز"],
+      "tags": [
+        "مقبلات",
+        "سريع",
+        "خبز"
+      ],
       "notes": "استخدم طماطم جامدة قليلة السائل وأفضل خبز متوفر؛ لو استخدمت خبزاً طرياً حمّصه أكثر ليصمد أمام الطماطم."
+    },
+    {
+      "id": "bc650-castagnole",
+      "name": "كاستاغنولي",
+      "nameEn": "Castagnole",
+      "cuisine": "إيطالي",
+      "category": "حلوى",
+      "description": "كرات/قطع عجين مقلية تُحلى بالسكر أو العسل وفق المصدر.",
+      "servings": 15,
+      "prepTime": 10,
+      "cookTime": 5,
+      "totalTime": 15,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-castagnole-ing-1",
+          "name": "بيض",
+          "amount": 5,
+          "unit": "حبة",
+          "display": null,
+          "label": "5 eggs"
+        },
+        {
+          "id": "bc650-castagnole-ing-2",
+          "name": "سكر",
+          "amount": 5,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "5 tablespoons sugar"
+        },
+        {
+          "id": "bc650-castagnole-ing-3",
+          "name": "حليب",
+          "amount": 1,
+          "unit": "كأس",
+          "display": null,
+          "label": "1 glass milk"
+        },
+        {
+          "id": "bc650-castagnole-ing-4",
+          "name": "زيت زيتون",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "3 tablespoons olive oil"
+        },
+        {
+          "id": "bc650-castagnole-ing-5",
+          "name": "دقيق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "flour؛ بلا كمية"
+        },
+        {
+          "id": "bc650-castagnole-ing-6",
+          "name": "خميرة فورية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "instant yeast؛ بلا كمية"
+        },
+        {
+          "id": "bc650-castagnole-ing-7",
+          "name": "زيت أو شحم للقلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "oil or lard"
+        },
+        {
+          "id": "bc650-castagnole-ing-8",
+          "name": "ميسترا (اختياري)",
+          "amount": 0.5,
+          "unit": "كأس",
+          "optional": true,
+          "display": null,
+          "label": "half a glass mistrà (optional)"
+        },
+        {
+          "id": "bc650-castagnole-ing-9",
+          "name": "عسل (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "honey (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلطي البيض والسكر والحليب والدقيق والخميرة وميسترا، واعجني لتكوين عجينة لينة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "افرديها إلى سماكة نحو 1.5 سم.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطعيها مربعات طول ضلعها نحو 5 سم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اقليها نحو 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "جففيها وحليها بالسكر أو العسل.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حلوى"
+      ],
+      "notes": "المقادير والأزمنة والحصص من المصدر. مقدار الدقيق والخميرة وزيت/شحم القلي غير محدد؛ glass بقيت كما وردت دون تحويل. المصدر كرر ترقيم الخطوة 1؛ أُعيد ترقيم الخطوات تسلسليًا دون تغييرها. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/castagnole.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 8de7db201a259dda73d4a34171f86962faae71090d90dbba94ba9fd9a780380c.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-corn-polenta",
+      "name": "عصيدة بولينتا الذرة",
+      "nameEn": "Corn polenta",
+      "cuisine": "إيطالي",
+      "category": "طبق جانبي",
+      "description": "دقيق ذرة مطهو بالماء حتى يثخن؛ يصف المصدر اختلاف القوام والاستخدامات بين المناطق الإيطالية.",
+      "servings": 4,
+      "prepTime": 60,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-corn-polenta-ing-1",
+          "name": "دقيق ذرة مناسب للبولينتا",
+          "amount": 500,
+          "unit": "جرام",
+          "display": null,
+          "label": "500 g corn flour؛ المصدر يحذر من أن ليس كل أنواع الذرة مناسبة"
+        },
+        {
+          "id": "bc650-corn-polenta-ing-2",
+          "name": "ماء",
+          "amount": 3,
+          "unit": "لتر",
+          "display": null,
+          "label": "3 l water؛ مذكور في الطريقة فقط"
+        },
+        {
+          "id": "bc650-corn-polenta-ing-3",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "salt؛ مذكور بالطريقة بلا مقدار"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "صبي الدقيق في 3 لترات من الماء البارد وحرّكي بمضرب حتى تختفي التكتلات.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني الخليط حتى يغلي مع التحريك ببطء بملعقة كبيرة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اطهي على نار منخفضة نحو ساعة مع التحريك كثيرًا. إذا زاد التماسك وأصبح كثيفًا جدًا فأضيفي ماءً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "تبليه بالملح.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "المصدر يذكر التحضير ساعة و4 حصص، كما يذكر في الطريقة طهيًا نحو ساعة؛ لم يُسجل الزمن نفسه مرتين كإجمالي. مقدار الملح أو الماء الإضافي غير محدد. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/corn-polenta.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 ff056b29aca73870065109ba20a694e40b1eb62db5173aa45b0344bdaf5e1344.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-caesar-salad",
+      "name": "سلطة سيزر",
+      "nameEn": "Caesar Salad",
+      "cuisine": "إيطالي",
+      "category": "سلطة",
+      "description": "سلطة روماني مع تتبيلة سيزر والخبز المحمص والبارميزان.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-caesar-salad-ing-1",
+          "name": "خس روماني",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Romaine Lettuce؛ رأس كامل بحسب الطريقة"
+        },
+        {
+          "id": "bc650-caesar-salad-ing-2",
+          "name": "جبن بارميزان مبشور",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Grated Parmesan Cheese"
+        },
+        {
+          "id": "bc650-caesar-salad-ing-3",
+          "name": "خبز محمص مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Croutons"
+        },
+        {
+          "id": "bc650-caesar-salad-ing-4",
+          "name": "تتبيلة سلطة سيزر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Caesar Salad Dressing"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "أزيلي قاعدة رأس الخس واغسليه جيدًا بالماء ثم جففيه بالكامل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "بعد جفاف الخس تمامًا، ضعيه في وعاء خلط مع تتبيلة السيزر وقلبيه حتى تغطي الأوراق كلها.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي الخبز المحمص.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ابشري البارميزان فوق السلطة وقدميها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "سلطة"
+      ],
+      "notes": "المصدر لم يحدد المقادير أو الحصص أو الأزمنة. وسم المصدر إيطالي؛ لا ينسب أصلًا تاريخيًا أضيق من ذلك. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/caesar-salad.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 2f5fd138a8583305bfb6ad0fd040be2c9d3c22b541652c517bea877a31d39b46.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "fiw650-51521",
+      "name": "كانيلوني إيطالي",
+      "nameEn": "Italian Cannelloni",
+      "cuisine": "إيطالي",
+      "category": "أطباق رئيسية",
+      "description": "أوراق كانيلوني محشوة بخليط الطماطم والكوسا والريكوتا ومغطاة بصلصة الطماطم.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": 30,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "أوراق معكرونة كانيلوني Latina",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير مذكورة",
+          "id": "fiw650-51521-i0"
+        },
+        {
+          "name": "صلصة معكرونة نابوليتانا أو صلصة طماطم أخرى",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير مذكورة؛ يحفظ خيار المصدر",
+          "id": "fiw650-51521-i1"
+        },
+        {
+          "name": "كوسا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير مذكورة",
+          "id": "fiw650-51521-i2"
+        },
+        {
+          "name": "جبن ريكوتا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير مذكورة",
+          "id": "fiw650-51521-i3"
+        },
+        {
+          "name": "جبن بارميزان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير مذكورة",
+          "id": "fiw650-51521-i4"
+        },
+        {
+          "name": "طماطم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير مذكورة",
+          "id": "fiw650-51521-i5"
+        },
+        {
+          "name": "بصل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير مذكورة",
+          "id": "fiw650-51521-i6"
+        }
+      ],
+      "steps": [
+        {
+          "text": "قطّع الطماطم والكوسا والبصل وشوّحها حتى تلين وتتسبك، ثم أضف بعض الريكوتا. قسّم أوراق المعكرونة، وضع بعض الخليط على ورقة ولفها أسطوانياً. كرر ذلك لبقية الأوراق وصفّها في طبق فرن بحيث يكون موضع الإغلاق إلى الأسفل. اسكب صلصة المعكرونة فوقها. اخبز 30 دقيقة عند 180°م ثم قدّم.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "معكرونة",
+        "مطبخ إيطالي"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/HXLZ3TPK/italian-cannelloni — SHA-256: 70582fc7069db2a9a91349eb36297476eec5ab7273d73bf9cb36774398e45f04 — CC BY 3.0. جميع الكميات غير مذكورة في المصدر؛ زمن الخَبز وحرارته مذكوران صراحة."
+    },
+    {
+      "id": "fiw650-51545",
+      "name": "بسكوتي إيطالي تقليدي",
+      "nameEn": "Traditional Italian Biscotti",
+      "cuisine": "إيطالي",
+      "category": "حلويات",
+      "description": "بسكوتي باللوز واليانسون يُقطّع ويعاد خبزه حتى يتحمر.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "بيض كبير",
+          "amount": 6,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51545-i0",
+          "display": null
+        },
+        {
+          "name": "دقيق",
+          "amount": 3,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51545-i1",
+          "display": null
+        },
+        {
+          "name": "سكر",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51545-i2",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "رشة؛ مقدار غير معياري",
+          "id": "fiw650-51545-i3"
+        },
+        {
+          "name": "بيكنج باودر",
+          "amount": 3,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51545-i4",
+          "display": null
+        },
+        {
+          "name": "أنيسيت (مشروب/نكهة اليانسون)",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": "هوية المكوّن غير مفصلة بالمصدر",
+          "id": "fiw650-51545-i5",
+          "display": null
+        },
+        {
+          "name": "دهن نباتي للتقصير",
+          "amount": 0.75,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51545-i6",
+          "display": null
+        },
+        {
+          "name": "لوز مفروم",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51545-i7",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "اعجن جميع المكونات في وعاء حتى تمتزج، وأضف دقيقاً إذا كان العجين لزجاً. رش صينية الخَبز بالدقيق وشكّل العجين كتلة غير مرتفعة أو عريضة جداً. اخبز على 350°F حتى يتشقق السطح وينضج القاع. أخرجها وقطّعها شرائح مائلة، ثم أعد الشرائح إلى الصينية واخبزها حتى تتحمر مع قلب كل قطعة مرة. أخرجها وانقلها إلى شبك التبريد واتركها تبرد تماماً.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "بسكوت",
+        "لوز",
+        "مطبخ إيطالي"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/HXX67J8X/traditional-italian-biscotti — SHA-256: 89ef844f6b6a334f16ede4b3d7cd39e44c44222bec5f5bc64ee35d03f23c9896 — CC BY 3.0. الحرارة منقولة كما وردت؛ المصدر لم يحدد مدة الخَبز."
+    },
+    {
+      "id": "fiw650-51557",
+      "name": "ضلوع بقري على الطريقة الإيطالية",
+      "nameEn": "Italian-style Beef Short Ribs",
+      "cuisine": "إيطالي",
+      "category": "أطباق رئيسية",
+      "description": "ضلوع بقري محمرة ومطهية بالفرن مع الطماطم والبصل والأعشاب.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "ضلوع بقري قصيرة",
+          "amount": 3.5,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51557-i0",
+          "display": null
+        },
+        {
+          "name": "بصل إسباني أو أبيض شرائح رفيعة",
+          "amount": 1,
+          "unit": "حبة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "يحفظ البديل",
+          "id": "fiw650-51557-i1",
+          "display": null
+        },
+        {
+          "name": "طماطم كاملة معلبة مصفاة ومفرومة",
+          "amount": 28,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": "علبة واحدة",
+          "id": "fiw650-51557-i2",
+          "display": null
+        },
+        {
+          "name": "صلصة طماطم",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51557-i3",
+          "display": null
+        },
+        {
+          "name": "ملح وفلفل وثوم مهروس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "للتتبيل حسب الذوق؛ دون مقدار",
+          "id": "fiw650-51557-i4"
+        },
+        {
+          "name": "أوريغانو",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51557-i5",
+          "display": null
+        },
+        {
+          "name": "بقدونس",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51557-i6",
+          "display": null
+        },
+        {
+          "name": "خل نبيذ",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51557-i7",
+          "display": null
+        },
+        {
+          "name": "زيت نباتي",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "المصدر يستخدم ملعقتين في البداية والباقي لاحقاً",
+          "id": "fiw650-51557-i8",
+          "display": null
+        },
+        {
+          "name": "ورق غار",
+          "amount": 1,
+          "unit": "ورقة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51557-i9",
+          "display": null
+        },
+        {
+          "name": "بابريكا (مذكورة في الطريقة فقط)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "لم ترد ضمن قائمة المكونات؛ تذكر الطريقة رشها على البصل دون مقدار",
+          "id": "fiw650-51557-i10"
+        }
+      ],
+      "steps": [
+        {
+          "text": "سخّن الفرن إلى 350°F. سخّن ملعقتين كبيرتين من الزيت في قدر فرن على نار متوسطة عالية. عندما يسخن الزيت، حمّر الضلوع نحو 3 دقائق لكل جانب. تبّلها بالملح والفلفل والثوم المهروس ثم ارفعها جانباً. اسكب الزيت المتبقي في القدر، وعندما يسخن أضف البصل وشوّحه 3–4 دقائق على نار متوسطة. رش البصل بالبابريكا والبقدونس والأوريغانو والخل، وواصل الطهو 2–3 دقائق. قلّب الطماطم المفرومة وصلصة الطماطم، وتبّل حسب الذوق، ثم أعد الضلوع إلى القدر وأضف ورق الغار. غطّ القدر واطهه في الفرن على 350°F مدة ساعة ونصف. عند انتهاء الطهو أزل الدهن الزائد.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "لحم بقري",
+        "ضلوع",
+        "مطبخ إيطالي"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/HY3NKXZ6/italian-style-beef-short-ribs — SHA-256: 0da77708ad0a426ddd507d97c83335df7aab1fd9145fc5d9145afff6590c112a — CC BY 3.0. يحفظ ترتيب الخطوات والحرارة والأزمنة؛ كمية الزيت المفصلة في الطريقة ملعقتان أولاً ثم الباقي من الإجمالي المذكور."
+    },
+    {
+      "id": "bc650-chicken-pasta-casserole",
+      "name": "طاجن الدجاج والمعكرونة",
+      "nameEn": "Chicken Pasta Casserole",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "طاجن معكرونة ودجاج وطماطم وموزاريلا مع غطاء بارميزان وفتات الخبز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-1",
+          "name": "معكرونة كوع أو بيني",
+          "amount": 16,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-2",
+          "name": "صدر دجاج نيئ مكعبات",
+          "amount": 24,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-3",
+          "name": "موزاريلا مبشورة",
+          "amount": 9,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-4",
+          "name": "بارميزان مبشور",
+          "amount": 1.5,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-5",
+          "name": "فتات خبز",
+          "amount": 1.5,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-6",
+          "name": "طماطم مكعبات",
+          "amount": 16,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-7",
+          "name": "قليل من الزيت والزبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Some oil and butter"
+        },
+        {
+          "id": "bc650-chicken-pasta-casserole-ing-8",
+          "name": "مزيد من الموزاريلا والبارميزان اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "(Optional) More mozzarella and parmesan for fans of cheese."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخني الفرن إلى 400°F واطهي الدجاج بالزيت حتى ينضج.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اطهي المعكرونة أقل من المعتاد نحو 7–8 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخلطي الدجاج والمعكرونة والطماطم والموزاريلا في طبق طاجن. غطي الوجه بالبارميزان وفتات الخبز ووزعي قليلًا من الزبدة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخبزي 22–25 دقيقة حتى يصبح الوجه ذهبيًا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-pasta-casserole.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3fbe40f2efb453ad26f7090267098374ca9229b89735a2d92a31419b7a7036c0"
+    },
+    {
+      "id": "fiw650-51614",
+      "name": "فلفل حلو محشي بالسجق الإيطالي",
+      "nameEn": "Italian Sausage Stuffed Bell Peppers",
+      "cuisine": "إيطالي",
+      "category": "أطباق رئيسية",
+      "description": "أنصاف فلفل محشوة بالسجق والأرز وفتات الخبز والأعشاب.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "فلفل حلو",
+          "amount": 5,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i0",
+          "display": null
+        },
+        {
+          "name": "قطع سجق على الطريقة الإيطالية",
+          "amount": 10,
+          "unit": "قطعة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i1",
+          "display": null
+        },
+        {
+          "name": "فصوص ثوم مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "4–5 فصوص، نطاق المصدر",
+          "id": "fiw650-51614-i2"
+        },
+        {
+          "name": "شرائح خبز جاودار كبيرة ممزقة",
+          "amount": 5,
+          "unit": "شريحة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i3",
+          "display": null
+        },
+        {
+          "name": "بقدونس إيطالي",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i4",
+          "display": null
+        },
+        {
+          "name": "طماطم مجففة بالشمس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "3–4 قطع، نطاق المصدر",
+          "id": "fiw650-51614-i5"
+        },
+        {
+          "name": "طماطم كبيرة مكعبات",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i6",
+          "display": null
+        },
+        {
+          "name": "أرز مطهو",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i7",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i8",
+          "display": null
+        },
+        {
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i9",
+          "display": null
+        },
+        {
+          "name": "رقائق فلفل أحمر",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i10",
+          "display": null
+        },
+        {
+          "name": "مسحوق ثوم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51614-i11",
+          "display": null
+        },
+        {
+          "name": "جبن رومانو أو بارميزان مبشور",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير محددة",
+          "id": "fiw650-51614-i12"
+        },
+        {
+          "name": "زيت زيتون للرش",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "3–4 ملاعق كبيرة، نطاق المصدر",
+          "id": "fiw650-51614-i13"
+        }
+      ],
+      "steps": [
+        {
+          "text": "اقسم الفلفل الحلو إلى نصفين وأزل العروق والبذور. اطه الأرز حسب التعليمات واتركه جانباً. أخرج السجق من غلافه. سخّن مقلاة كبيرة على حرارة متوسطة منخفضة مع ملعقة أو ملعقتين زيت زيتون، وأضف السجق والطماطم المكعبة وشوّحهما حتى ينضج السجق. اطحن الخبز الممزق والبقدونس والثوم والطماطم المجففة بمحضر الطعام حتى يصبح الخليط مثل فتات الخبز. أضفه إلى السجق والطماطم، ثم أضف الأرز المطهو والتوابل وقلّب. سخّن الفرن إلى 350°F. احشُ كل نصف فلفل بملعقة صغيرة وضعه في طبق فرن. ابشر رومانو أو بارميزان فوق كل نصف ورش زيت الزيتون. اخبز 25–30 دقيقة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "فلفل محشو",
+        "سجق",
+        "مطبخ إيطالي"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/HZCP8PP6/italian-sausage-stuffed-bell-peppers — SHA-256 للاستخراج: 438aac67d361a41dac4c8cfde255b0da0907600d22290d9b7ddf2651ff9491bd — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-51848",
+      "name": "خرشوف إيطالي مطهو على البخار",
+      "nameEn": "Italian Steamed Artichokes",
+      "cuisine": "إيطالي",
+      "category": "مقبلات",
+      "description": "خرشوف يطهى بالبخار مع الثوم وورق الغار والأعشاب المجففة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "خرشوف كبير",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": "نحو رطل واحد بحسب المصدر",
+          "id": "fiw650-51848-i0",
+          "display": null
+        },
+        {
+          "name": "ثوم مقطع شرائح رقيقة",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51848-i1",
+          "display": null
+        },
+        {
+          "name": "ورق غار",
+          "amount": 1,
+          "unit": "ورقة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51848-i2",
+          "display": null
+        },
+        {
+          "name": "بذور كزبرة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51848-i3",
+          "display": null
+        },
+        {
+          "name": "أوريغانو مجفف",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51848-i4",
+          "display": null
+        },
+        {
+          "name": "ريحان مجفف",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51848-i5",
+          "display": null
+        },
+        {
+          "name": "ماء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "يكفي لارتفاع نصف الخرشف في القدر",
+          "id": "fiw650-51848-i6"
+        }
+      ],
+      "steps": [
+        {
+          "text": "قص أطراف الأوراق الشائكة. أدخل شرائح الثوم بين أوراق الخرشف وضعه في قدر متوسط. أضف ماءً يصل إلى نصف ارتفاعه، وضع ورقة الغار في الماء. اسحق بذور الكزبرة والأوريغانو والريحان معاً وانثرها فوق الخرشف. اطهه على نار متوسطة 30 دقيقة أو حتى تنفصل الأوراق بسهولة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "خرشوف"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/J5VBFYJB/italian-steamed-artichokes — SHA-256 للاستخراج: c7ff8a41b80241bca744ab0fba44f84f3c14923e6808a78a9ff3da03cbe7f901 — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-51916",
+      "name": "يخنة الفاصولياء والسجق الإيطالية",
+      "nameEn": "Italian Bean and Sausage Stew",
+      "cuisine": "إيطالي",
+      "category": "أطباق رئيسية",
+      "description": "يخنة سجق وفاصولياء حمراء وطماطم وخضار بصلصة متبلة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 6,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "سجق إيطالي",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51916-i0",
+          "display": null
+        },
+        {
+          "name": "بصل متوسط مقطع مكعبات ¾ بوصة",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51916-i1",
+          "display": null
+        },
+        {
+          "name": "ثوم مفروم",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51916-i2",
+          "display": null
+        },
+        {
+          "name": "طماطم برقوق إيطالية معلبة بوزن 28 أونصة",
+          "amount": 1,
+          "unit": "علبة",
+          "scale": false,
+          "optional": false,
+          "note": "مقطعة قطعاً بحجم اللقمة وغير مصفاة",
+          "id": "fiw650-51916-i3"
+        },
+        {
+          "name": "فاصولياء كِدني معلبة بوزن 16 أونصة",
+          "amount": 1,
+          "unit": "علبة",
+          "scale": false,
+          "optional": false,
+          "note": "مغسولة ومصفاة",
+          "id": "fiw650-51916-i4"
+        },
+        {
+          "name": "صلصة بيكانتِه",
+          "amount": 0.6666667,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51916-i5",
+          "display": null
+        },
+        {
+          "name": "ريحان مجفف مفتت",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51916-i6",
+          "display": null
+        },
+        {
+          "name": "أوريغانو مجفف مفتت",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51916-i7",
+          "display": null
+        },
+        {
+          "name": "فلفل أخضر كبير مقطع",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51916-i8",
+          "display": null
+        },
+        {
+          "name": "كوسا متوسطة شرائح نصف بوصة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": "تقطع الشرائح أنصافاً أو أرباعاً حسب الرغبة",
+          "id": "fiw650-51916-i9",
+          "display": null
+        },
+        {
+          "name": "نشا ذرة مذاب في ماء",
+          "amount": 1,
+          "unit": "ملعقة كبيرة لكل منهما",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51916-i10",
+          "display": null
+        },
+        {
+          "name": "جبن بارميزان مبشور",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": true,
+          "note": null,
+          "id": "fiw650-51916-i11",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "قطّع السجق إلى قطع ¾ بوصة وأزل الغلاف. اطهه في مقلاة 12 بوصة على نار متوسطة منخفضة حتى يتحمر قليلاً، نحو 4 دقائق. أضف البصل والثوم واطههما نحو 3 دقائق حتى يختفي اللون الوردي من السجق، ثم صفّ الدهن. أضف الطماطم والفاصولياء وصلصة بيكانتِه والريحان والأوريغانو. اترك الخليط يغلي ثم خفف النار واتركه 15 دقيقة. أضف الفلفل الأخضر والكوسا وخليط النشا، وواصل الطهي 5 دقائق أو حتى تلين الخضار وتثخن الصلصة. رش الجبن وقدّم مع صلصة إضافية إن رغبت. ينتج نحو 8½ أكواب/6 حصص.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "يخنة",
+        "فاصولياء"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/J76JRJRG/italian-bean-and-sausage-stew — SHA-256 للاستخراج: f1440202e62780b8f0f5229a17e6626f6248fbcdb95e5c8c90b74a5064e0b5ee — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-52028",
+      "name": "برغر لحم الخنزير الإيطالي",
+      "nameEn": "Italian Style Pork Burgers",
+      "cuisine": "إيطالي",
+      "category": "أطباق رئيسية",
+      "description": "برغر من لحم خنزير مفروم مع الثوم والطماطم المجففة والجبن الروماني وقشر الليمون.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "خاصرة خنزير منزوعة العظم",
+          "amount": 3,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": "تقطع مكعبات",
+          "id": "fiw650-52028-i0",
+          "display": null
+        },
+        {
+          "name": "ثوم",
+          "amount": 4,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52028-i1",
+          "display": null
+        },
+        {
+          "name": "طماطم مجففة بالشمس",
+          "amount": 5,
+          "unit": "قطعة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52028-i2",
+          "display": null
+        },
+        {
+          "name": "جبن رومانو مبشور",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52028-i3",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52028-i4",
+          "display": null
+        },
+        {
+          "name": "فلفل أسود",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52028-i5",
+          "display": null
+        },
+        {
+          "name": "قشر نصف ليمونة",
+          "amount": 0.5,
+          "unit": "حبة ليمون",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52028-i6",
+          "display": null
+        },
+        {
+          "name": "أوريغانو مجفف",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52028-i7",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "ملعقتان كبيرتان للخلط ورشة للمقلاة بحسب الطريقة",
+          "id": "fiw650-52028-i8"
+        }
+      ],
+      "steps": [
+        {
+          "text": "قطّع اللحم مكعبات وضعه في محضرة الطعام مع الثوم والطماطم المجففة، واطحن حتى يصل إلى القوام المرغوب. انقله إلى وعاء وأضف جبن رومانو وقشر الليمون والتوابل وملعقتي زيت زيتون، واعجن الخليط بيديك. شكّله أقراص برغر بالحجم المرغوب. سخّن مقلاة مع رشة زيت زيتون وضع الأقراص فيها واتركها حتى تكتسب الجهة الأولى لوناً ذهبياً قبل قلبها لإكمال الطهي.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "برغر",
+        "لحم خنزير"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JBGX5VN3/italian-style-pork-burgers — SHA-256 للاستخراج: 08ae349a72abdc2f331b00fa6175c9be65f6014cf23e3d327c5f1ef2b88450fa — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "bc650-chicken-parmesan",
+      "name": "دجاج بارميزان",
+      "nameEn": "Chicken Parmesan",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "شرائح دجاج مغطاة بالدقيق والبيض وفتات الخبز والبارميزان، ثم تُغطى بالجبن الذائب وتُقدّم مع صلصة المعكرونة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicken-parmesan-ing-1",
+          "name": "صدور دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "chicken breasts"
+        },
+        {
+          "id": "bc650-chicken-parmesan-ing-2",
+          "name": "طماطم، ويفضّل سان مارزانو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "tomatoes (San Marzano is best)"
+        },
+        {
+          "id": "bc650-chicken-parmesan-ing-3",
+          "name": "جبن موزاريلا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "mozzarella cheese"
+        },
+        {
+          "id": "bc650-chicken-parmesan-ing-4",
+          "name": "جبن بارميزان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "parmesan cheese"
+        },
+        {
+          "id": "bc650-chicken-parmesan-ing-5",
+          "name": "فتات خبز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "bread crumbs"
+        },
+        {
+          "id": "bc650-chicken-parmesan-ing-6",
+          "name": "بيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "eggs"
+        },
+        {
+          "id": "bc650-chicken-parmesan-ing-7",
+          "name": "دقيق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "flour"
+        },
+        {
+          "id": "bc650-chicken-parmesan-ing-8",
+          "name": "صلصة معكرونة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "[pasta sauce](/pasta-sauce)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقطع صدور الدجاج عرضياً إلى شرائح مسطحة قدر الإمكان.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اطرق الصدور حتى تصبح مسطحة قدر الإمكان.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ضع الدقيق والفلفل في وعاء واسع يكفي لاحتواء قطعة دجاج.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اكسر البيض في وعاء واسع آخر واخفقه.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع فتات الخبز في وعاء ثالث وأضف كمية وافرة من البارميزان المبشور.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "غطّ كل قطعة دجاج بالدقيق، ثم البيض، ثم خليط فتات الخبز.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "غطّ مقلاة بزيت الزيتون وسخّنه إلى ما قبل بدء التدخين بقليل.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اقْلِ قطع الدجاج المغطاة بالفتات، وأضف الزبدة بسخاء أثناء القلي كي لا يتبخر زيت القلي.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "انقل القطع إلى صينية مدهونة بالزيت أو الزبدة وأضف الموزاريلا والبارميزان فوقها.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "حمّرها أو اطهها فقط حتى يذوب الجبن.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "قدّم الدجاج مع صلصة المعكرونة فوقه أو تحته؛ وغالباً يقدم مع المعكرونة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-parmesan.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=011a2cdd846d2cba76544b9f3c917ef62b4b8f34ec77b806f7d45d1fd679f10f"
+    },
+    {
+      "id": "bc650-baked-mostaccioli",
+      "name": "موستاشيولي مخبوزة",
+      "nameEn": "Baked Mostaccioli",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "معكرونة موستاشيولي أو بينّي ممزوجة بصلصة فراديافولو ومغطاة بالموزاريلا ثم مخبوزة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-baked-mostaccioli-ing-1",
+          "name": "صلصة فراديافولو، 24 أونصة أو مرطبان واحد",
+          "amount": 24,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-baked-mostaccioli-ing-2",
+          "name": "علبة موستاشيولي ريغاتيه أو بينّي ريغاتيه",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 box mostaccioli rigati or penne rigate"
+        },
+        {
+          "id": "bc650-baked-mostaccioli-ing-3",
+          "name": "موزاريلا مبشورة، نحو 8 أونصات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "~8 oz shredded mozzarella cheese"
+        },
+        {
+          "id": "bc650-baked-mostaccioli-ing-4",
+          "name": "يذكر المصدر أن الجبن المبشور مسبقاً أقل مذاقاً من بشره وقت الطهي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "I've found that pre-shredded cheese doesn't taste as good as shredding it right before cooking."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغْلِ قدراً من الماء واطه المعكرونة 6 دقائق لتبقى متماسكة جداً (أل دينتي).",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضع المعكرونة والصلصة في صينية خبز أو صوانٍ واخلطهما جيداً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "غطّ المعكرونة والصلصة بكمية وافرة من الجبن المبشور حتى لا تعود المعكرونة ظاهرة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخبز عند 350°F/175°C مدة 20 دقيقة، أو عند 375°F/190°C مدة 15 دقيقة باستخدام وضع الحمل الحراري.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/baked-mostaccioli.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=51afdd393fdfa85560927a73f1238fa5b411ccc85409f51fc9fb6aa489c53817"
+    },
+    {
+      "id": "bc650-baked-pasta-with-broccoli",
+      "name": "معكرونة مخبوزة بالبروكلي والبيض والسكامورزا",
+      "nameEn": "Baked pasta with broccoli, boiled eggs and scamorza cheese",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "طبقات من المعكرونة والبروكلي والبيض المسلوق وجبن السكامورزا وصلصة البشاميل.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-baked-pasta-with-broccoli-ing-1",
+          "name": "معكرونة، 500 جم",
+          "amount": 500,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-baked-pasta-with-broccoli-ing-2",
+          "name": "بروكلي، 500 جم",
+          "amount": 500,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-baked-pasta-with-broccoli-ing-3",
+          "name": "4 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 eggs"
+        },
+        {
+          "id": "bc650-baked-pasta-with-broccoli-ing-4",
+          "name": "جبن سكامورزا، 200 جم",
+          "amount": 200,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-baked-pasta-with-broccoli-ing-5",
+          "name": "بشاميل، 400 جم",
+          "amount": 400,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-baked-pasta-with-broccoli-ing-6",
+          "name": "مريمية (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "sage (optional)"
+        },
+        {
+          "id": "bc650-baked-pasta-with-broccoli-ing-7",
+          "name": "بارميزان (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "parmesan cheese (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغْلِ الماء وأضف الملح، قبضة لكل لتر، ثم ضع المعكرونة فيه.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اسلق البروكلي والبيض 10 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أثناء الغليان قطّع السكامورزا مكعبات وجهّز صينية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضع طبقة من البشاميل ثم طبقة من المعكرونة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف طبقة من البروكلي ومكعبات السكامورزا والفلفل والملح.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "كرر طبقات البشاميل والمعكرونة والبروكلي والجبن حتى تنفد المكونات.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف أوراق المريمية على السطح إن رغبت.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "ضع الصينية في فرن مسخّن مسبقاً عند 180°C مدة 15–20 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اختم بالطهي تحت الشواية 5–10 دقائق.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/baked-pasta-with-broccoli.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=b1413079d0c3288c967ce5c8470b2c3740ac9ea729b2d21d5338f8cf598c7996"
+    },
+    {
+      "id": "bc650-cannellini-bean-salad",
+      "name": "سلطة فاصولياء كانيليني بالطماطم والجرجير",
+      "nameEn": "Cannellini Bean Salad",
+      "cuisine": "إيطالي",
+      "category": "طبق جانبي",
+      "description": "فاصولياء كانيليني مطهوة قليلاً بالطماطم والتوابل وتقدم فوق الجرجير مع قطع بروشوتو.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-cannellini-bean-salad-ing-1",
+          "name": "علبة فاصولياء كانيليني مصفاة ومغسولة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can Cannellini beans, drained and rinsed"
+        },
+        {
+          "id": "bc650-cannellini-bean-salad-ing-2",
+          "name": "ثوم مفروم، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cannellini-bean-salad-ing-3",
+          "name": "نصف بصلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1/2 onion"
+        },
+        {
+          "id": "bc650-cannellini-bean-salad-ing-4",
+          "name": "بابريكا مدخنة، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cannellini-bean-salad-ing-5",
+          "name": "كمون مطحون، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cannellini-bean-salad-ing-6",
+          "name": "علبة طماطم مكعبات، 15 أونصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 15 oz can diced tomatoes"
+        },
+        {
+          "id": "bc650-cannellini-bean-salad-ing-7",
+          "name": "رقائق بقدونس، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cannellini-bean-salad-ing-8",
+          "name": "بروشوتو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Prosciutto"
+        },
+        {
+          "id": "bc650-cannellini-bean-salad-ing-9",
+          "name": "جرجير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Arugula"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "شوّح الثوم والبصل بزيت الزيتون حتى يشف البصل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الطماطم المكعبة والتوابل والملح والفلفل حسب الذوق واتركها تغلي بهدوء 3 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الفاصولياء وتبّل حسب الذوق وامزج حتى تتجانس، ثم اطه دقيقتين إضافيتين.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قدّم فوق الجرجير وزيّن بقطع البروشوتو.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cannellini-bean-salad.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=30a35873996f0c397c16b67cd410db98555614645bb4489655bf40ac144375a3"
+    },
+    {
+      "id": "bc650-pesto-chicken-quinoa-bowls",
+      "name": "أوعية كينوا بالدجاج والبيستو",
+      "nameEn": "Pesto Chicken Quinoa Bowls",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "كينوا ببيستو مع دجاج متبل وطماطم كرزية وكوسا، وتزيّن بالريحان والبارميزان.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-1",
+          "name": "كينوا نيئة، كوب ونصف",
+          "amount": 1.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-2",
+          "name": "صدور دجاج، رطل واحد",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-3",
+          "name": "زيت زيتون، ملعقتان كبيرتان مع المزيد للمقلاة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-4",
+          "name": "عصير ليمون، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-5",
+          "name": "توابل إيطالية أو أوريغانو مجفف، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-6",
+          "name": "مسحوق ثوم أو فصان مفرومان، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-7",
+          "name": "رقائق فلفل أحمر (اختياري)، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-8",
+          "name": "طماطم كرزية، كوبان",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-9",
+          "name": "كوسة متوسطة مقطعة أرباعاً وشرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 medium zucchini, quartered and sliced"
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-10",
+          "name": "بيستو، ربع كوب مع المزيد للتقديم",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pesto-chicken-quinoa-bowls-ing-11",
+          "name": "ريحان طازج وبارميزان مبشور للتقديم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Fresh basil and grated parmesan, to serve (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغْلِ ماء مملحاً وأضف الكينوا واطه نحو 15 دقيقة حتى تلين. صفّها جيداً بمصفاة دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخفق زيت الزيتون وعصير الليمون والتوابل الإيطالية ومسحوق الثوم ورقائق الفلفل في وعاء كبير مع الملح والفلفل حسب الذوق. أضف الدجاج وقلّبه ليتغطى.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "حمّر الدجاج في مقلاة مدهونة على حرارة متوسطة عالية 5–6 دقائق لكل جانب، حتى تصل حرارته الداخلية إلى 165°F. اتركه يرتاح 5 دقائق ثم قطّعه شرائح.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قلّب الطماطم والكوسة في وعاء التتبيلة المتبقي ثم اطههما في المقلاة نفسها على حرارة متوسطة 3–4 دقائق حتى تلين الكوسة وتتفتح الطماطم.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "حرّك البيستو في الكينوا المصفاة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "كوّن الأوعية من كينوا البيستو والدجاج والخضار، وأنهِ بالمزيد من البيستو والريحان والبارميزان.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "طريقة الفرن الواردة بالمصدر: اخبز الدجاج المتبل والخضار عند 400°F مدة 20–25 دقيقة بدلاً من تحميرها. يذكر المصدر أن البقايا تحفظ 4 أيام في الثلاجة، وأن البيستو يحفظ منفصلاً.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pesto-chicken-quinoa-bowls.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=f15d851831ce0c586031412f126046cd8a70861ed12a97383f97c974dc0f1225"
+    },
+    {
+      "id": "bc650-cheesy-pasta-bake",
+      "name": "صينية معكرونة بالجبن",
+      "nameEn": "Cheesy Pasta Bake",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "معكرونة مع صلصة جبن منزلية ولحم مقدد اختياري، تُخبز حتى تتحمر.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-cheesy-pasta-bake-ing-1",
+          "name": "معكرونة، 300–400 جم (يوصي المصدر بفوسيلي دون اشتراطها)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "300-400g Pasta (Fusilli recommended but not essential)"
+        },
+        {
+          "id": "bc650-cheesy-pasta-bake-ing-2",
+          "name": "زبدة، 50 جم",
+          "amount": 50,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheesy-pasta-bake-ing-3",
+          "name": "دقيق، 100 جم",
+          "amount": 100,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheesy-pasta-bake-ing-4",
+          "name": "حليب، 200 مل",
+          "amount": 200,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheesy-pasta-bake-ing-5",
+          "name": "شيدر، 400 جم",
+          "amount": 400,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-cheesy-pasta-bake-ing-6",
+          "name": "شرائح لحم مقدد، 6 (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "6 Rashers of bacon (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ابشر الجبن.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع اللحم المقدد إلى مربعات نحو 2×2 سم.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ابدأ بطهي المعكرونة بالطريقة المشار إليها في المصدر.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ابدأ بإذابة الزبدة في قدر آخر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "بعد ذوبانها أضف الدقيق واخلط حتى يتكون معجون لا يلتصق بجوانب القدر. قد تختلف كمية الدقيق المطلوبة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الحليب ببطء مع الخلط لتجنب الكتل.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "سخّن على نار منخفضة مع التحريك حتى تثخن الصلصة؛ يقول المصدر إن الصلصة تكون جاهزة للخطوة التالية عندما لا يعود طعم الدقيق ظاهراً.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف 80% من الجبن وحرّك حتى يذوب.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "صفّ المعكرونة وضعها في صينية خبز وأضف الصلصة واخلط.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "إذا استخدمت اللحم المقدد فاقله واخلطه مع المعكرونة، مع إضافة الدهن الذي خرج منه لمزيد من النكهة.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "غطّ السطح ببقية الجبن.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "اخبز عند علامة الغاز 6 نحو 30 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cheesy-pasta-bake.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=d36a677a7be3bf918c63f682caa5ab9c6b464fba3887f9f0d38afafbbbe62bcb"
+    },
+    {
+      "id": "bc650-stuffed-vegetables",
+      "name": "خضار محشوة بفتات الخبز والبارميزان",
+      "nameEn": "Stuffed vegetables",
+      "cuisine": "إيطالي",
+      "category": "طبق جانبي",
+      "description": "طماطم وفلفل وكوسة وباذنجان تغطى بفتات الخبز والبقدونس والبارميزان ثم تخبز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-stuffed-vegetables-ing-1",
+          "name": "طماطم متوسطة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 medium-sized tomato"
+        },
+        {
+          "id": "bc650-stuffed-vegetables-ing-2",
+          "name": "فلفل حلو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 sweet pepper"
+        },
+        {
+          "id": "bc650-stuffed-vegetables-ing-3",
+          "name": "كوسة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 courgette"
+        },
+        {
+          "id": "bc650-stuffed-vegetables-ing-4",
+          "name": "باذنجانة طويلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 elongated aubergine"
+        },
+        {
+          "id": "bc650-stuffed-vegetables-ing-5",
+          "name": "فتات خبز، 100–150 جم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "100-150 g grated bread"
+        },
+        {
+          "id": "bc650-stuffed-vegetables-ing-6",
+          "name": "بارميجيانو مبشور، نحو 50 جم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "about 50 g grated Parmigiano cheese"
+        },
+        {
+          "id": "bc650-stuffed-vegetables-ing-7",
+          "name": "بقدونس طازج أو مجفف",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "parsley (fresh is best, dry is fine)"
+        },
+        {
+          "id": "bc650-stuffed-vegetables-ing-8",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "extra virgin olive oil"
+        },
+        {
+          "id": "bc650-stuffed-vegetables-ing-9",
+          "name": "ملح (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "salt (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقطع جميع الخضار إلى نصفين بالطول. يمكن إزالة بذور وبعض لب الطماطم والكوسة، لكن ليس كثيراً كي لا يبقى جلد الخضار فقط ويحترق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضع الخضار على ورق خبز في صينية.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "رش البقدونس فوقها، ويمكن إضافة قليل من الملح.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف كمية وافرة من فتات الخبز ثم رش البارميجيانو فوقه.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف ما يكفي من زيت الزيتون لترطيب كل الفتات؛ يحذر المصدر أن قلة الزيت تجعل الفتات لا يتماسك وقد يحترق.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اخبز نحو 45 دقيقة في فرن مسخن مسبقاً إلى 170°C.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/stuffed-vegetables.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=620262c2dccb689f9d38efd488b479250fa5e191803887fb7d22201db80abfb6"
+    },
+    {
+      "id": "fiw650-52309",
+      "name": "سالتيمبوكا إيطالية",
+      "nameEn": "Italian Saltimbocca",
+      "cuisine": "إيطالي",
+      "category": "أطباق رئيسية",
+      "description": "شرائح عجل رقيقة بالميرمية والبرشوتو مع صلصة النبيذ والكريمة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 4,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "شرائح عجل (2–3 أونصات للقطعة)",
+          "amount": 4,
+          "unit": "قطعة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52309-i0",
+          "display": null
+        },
+        {
+          "name": "أوراق ميرمية طازجة",
+          "amount": 8,
+          "unit": "ورقة",
+          "scale": true,
+          "optional": false,
+          "note": "حتى 12",
+          "id": "fiw650-52309-i1",
+          "display": null
+        },
+        {
+          "name": "برشوتو رقيق",
+          "amount": 4,
+          "unit": "شريحة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52309-i2",
+          "display": null
+        },
+        {
+          "name": "دقيق",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52309-i3",
+          "display": null
+        },
+        {
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-52309-i4"
+        },
+        {
+          "name": "زبدة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "نصفها أولاً والمزيد عند الحاجة",
+          "id": "fiw650-52309-i5",
+          "display": null
+        },
+        {
+          "name": "ثوم مهروس",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52309-i6",
+          "display": null
+        },
+        {
+          "name": "نبيذ أبيض جاف",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52309-i7",
+          "display": null
+        },
+        {
+          "name": "كريمة ثقيلة",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52309-i8",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "ضع كل شريحة بين ورقتي شمع وادققها حتى سماكة ⅛ بوصة. ضع ورقتين أو ثلاثاً من الميرمية فوقها واضغط شريحة برشوتو عليها. ضع الدقيق في طبق وتبّله بالملح والفلفل، وغطّ الشرائح به بخفة وانفض الفائض. أذب نصف الزبدة في مقلاة كبيرة؛ حين تفور أضف الشرائح على دفعات ورش الثوم عليها أثناء الطهي وأضف المزيد من الزبدة عند الحاجة. اطه دقيقتين لكل جانب وارفعها وأبقها دافئة. اسكب النبيذ في المقلاة واغله دقائق حتى يختزل إلى نحو ملعقتين كبيرتين. قلّب الكريمة وسخنها برفق واضبط التتبيل. رتب الشرائح في أطباق دافئة واسكب الصلصة وقدّم فوراً. بديل المصدر: لحم عجل بالليمون والريحان؛ احذف الميرمية والبرشوتو، وغطّ العجل بالدقيق المتبل واطهه كما سبق. قبل رفعه أضف عصير ليمونة وملعقتين كبيرتين ريحاناً طازجاً مفرومًا. يمكن استخدام شرائح خنزير أو ديك رومي أو دجاج بدلاً من العجل. الناتج 4 حصص.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "عجل"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JHNFJ5KT/italian-saltimbocca — SHA-256: b382854127e7431c5fe516df3284d40a3567264ead6e58fae38b2789e0d69b2c — تمت الترجمة مع حفظ المقادير والبدائل وتسلسل الخطوات؛ لا اعتماد تشغيلي أو اختبار مطبخي."
+    },
+    {
+      "id": "bc650-seafood-pasta",
+      "name": "معكرونة المأكولات البحرية بزبدة الثوم",
+      "nameEn": "Garlic Butter Seafood Pasta",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "معكرونة مع مأكولات بحرية من الاختيار وصلصة زبدة وثوم وقشدة ونبيذ أبيض وأوريغانو.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-seafood-pasta-ing-1",
+          "name": "سباغيتي أو فيتوتشيني",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "spaghetti or fettucine"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-2",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "butter"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-3",
+          "name": "قشدة كثيفة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "heavy cream"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-4",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "garlic"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-5",
+          "name": "أوريغانو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "oregano"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-6",
+          "name": "نبيذ أبيض (يوصي المصدر ببي노 غريجيو أو ساوفيغنون بلانك)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "white wine (Pinot Grigio or Sauvignon Blanc recommended)"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-7",
+          "name": "ليمون أو عصير ليمون (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "lemon/lemon juice (optional)"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-8",
+          "name": "رقائق فلفل أحمر (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "red pepper flakes (optional)"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-9",
+          "name": "مأكولات بحرية من الاختيار؛ اختر من الآتي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "seafood, choose from:"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-10",
+          "name": "بلح البحر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "mussels"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-11",
+          "name": "حبار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "squid"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-12",
+          "name": "روبيان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "shrimp"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-13",
+          "name": "محار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "clams"
+        },
+        {
+          "id": "bc650-seafood-pasta-ing-14",
+          "name": "كركند",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "lobster"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "حضّر المعكرونة حسب طريقتك؛ يوصي المصدر بطهيها أل دينتي لأنها ستواصل الطهي قليلاً عند إضافة الصلصة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أذب المأكولات البحرية أو قشّرها بحسب النوع المختار.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطّع نصف ملعقة كبيرة من الثوم إلى قطع صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "في مقلاة كبيرة على حرارة متوسطة شوّح الثوم المفروم بالملح والزبدة نحو دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف المأكولات البحرية وشوّحها. تبّل بالأوريغانو ورقائق الفلفل الأحمر والملح.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف نصف كوب قشدة كثيفة وثلث كوب نبيذ أبيض إلى المقلاة. اطه حتى تصل الصلصة إلى القوام المرغوب.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "صفّ المعكرونة التي يفترض أن تكون قد نضجت، واسكب محتويات المقلاة فوقها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/seafood-pasta.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=6fb00c912b2fa3b4e28c483fcbb49837f46c284dcf77513047c1bba9cf566d9e"
+    },
+    {
+      "id": "bc650-pasta-alla-norma",
+      "name": "باستا ألا نورما بالباذنجان",
+      "nameEn": "Pasta Alla Norma",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "سباغيتي بصلصة الطماطم والثوم والفلفل الحار مع باذنجان محمص وريحان طازج.",
+      "servings": 4,
+      "prepTime": 15,
+      "cookTime": 40,
+      "totalTime": 55,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pasta-alla-norma-ing-1",
+          "name": "3 حبات باذنجان (900 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 aubergines (900g)"
+        },
+        {
+          "id": "bc650-pasta-alla-norma-ing-2",
+          "name": "سباغيتي، 300 جم",
+          "amount": 300,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pasta-alla-norma-ing-3",
+          "name": "زيت زيتون، 100 مل",
+          "amount": 100,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pasta-alla-norma-ing-4",
+          "name": "5 فصوص ثوم مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5 garlic cloves, minced"
+        },
+        {
+          "id": "bc650-pasta-alla-norma-ing-5",
+          "name": "فلفل حار واحد (أو ملعقة صغيرة رقائق فلفل مجفف)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 chilli (or 1 tsp of dried chilli flakes)"
+        },
+        {
+          "id": "bc650-pasta-alla-norma-ing-6",
+          "name": "علبتا طماطم مقطعة، 400 جم لكل منهما",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 x 400g tinned chopped tomatoes"
+        },
+        {
+          "id": "bc650-pasta-alla-norma-ing-7",
+          "name": "أوريغانو مجفف، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pasta-alla-norma-ing-8",
+          "name": "سكر ناعم، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pasta-alla-norma-ing-9",
+          "name": "ريحان طازج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Fresh basil"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 220°C بوضع المروحة أو علامة الغاز 7.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قشّر الباذنجان بشرائط متناوبة ليبدو مخططاً كالحمار الوحشي.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطّعه عرضياً إلى شرائح بسماكة 1 سم. اخلطه في وعاء مع 75 مل زيت الزيتون ورشة جيدة من الملح والفلفل حتى يتغطى، ثم افرده على صينيتين أو ثلاث مبطنة بورق الخبز.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "حمّر الباذنجان 30–35 دقيقة حتى يصبح بنياً داكناً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أثناء ذلك ضع ملعقتين كبيرتين من زيت الزيتون في مقلاة على حرارة متوسطة عالية. أضف الثوم والفلفل الحار واقلهما دقيقة من دون حرقهما.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الطماطم المعلبة والأوريغانو والسكر ورشة ملح وفلفل. خفّض الحرارة إلى متوسطة منخفضة واطه حتى تثخن الصلصة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اطه المعكرونة حسب تعليمات العبوة حتى أل دينتي، ثم صفّها واحتفظ ببعض ماء المعكرونة.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف الباذنجان المطهو إلى الصلصة واخلط. أضف السباغيتي وتأكد من تغطيتها كلها. أضف بعض ماء المعكرونة إذا احتجت لتخفيف الصلصة، ثم ضع الريحان الطازج.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "تحقق من التتبيل وقدّم فوراً.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 15 min ؛ - 🍳 Cook time: 40 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pasta-alla-norma.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=f08eece87e75f4cba3a4b795defda7beebf929c74d97dbf5fcaed1d2223bd53c"
+    },
+    {
+      "id": "bc650-gnocchi",
+      "name": "نيوكي البطاطا",
+      "nameEn": "Gnocchi",
+      "cuisine": "إيطالي",
+      "category": "طبق جانبي",
+      "description": "عجينة بطاطا ودقيق تشكل قطع نيوكي صغيرة تسلق ثم تحمر بالزبدة والأعشاب وتقدم مع بارميجيانو ريجيانو.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-gnocchi-ing-1",
+          "name": "بطاطا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "potatoes"
+        },
+        {
+          "id": "bc650-gnocchi-ing-2",
+          "name": "دقيق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "flour"
+        },
+        {
+          "id": "bc650-gnocchi-ing-3",
+          "name": "طماطم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "tomato"
+        },
+        {
+          "id": "bc650-gnocchi-ing-4",
+          "name": "بارميزان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "parmesan"
+        },
+        {
+          "id": "bc650-gnocchi-ing-5",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "butter"
+        },
+        {
+          "id": "bc650-gnocchi-ing-6",
+          "name": "مريمية أو أوريغانو أو زعتر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "sage or oregano or thyme"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اسلق البطاطا بقشرها حتى تصبح قابلة للهرس.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اقطع البطاطا إلى نصفين واستخرجها من القشر.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اهرِسها بهراسة بطاطا مع إضافة ملح كوشير.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ابدأ بإضافة الدقيق ببطء مع الهرس والعجن حتى تختفي كتل البطاطا ويصبح الخليط كالعجين.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ابدأ بغلي ماء إضافي مع كمية كبيرة من ملح كوشير.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "رش الدقيق على سطح العمل وخذ قطعة من العجين ولفها على السطح حبلاً طويلاً سميكاً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اقطع الحبل إلى قطع صغيرة واضغط القطع بإصبعك لتكوين تجويف.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف القطع إلى الماء المغلي؛ سترتفع إلى السطح عندما تنضج.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "في مقلاة أذب الزبدة وأضف أغصان المريمية (يناسب أوريغانو أو زعتر أيضاً لكنهما أقل تقليدية). عصارة الطماطم المهروسة إضافة مناسبة كذلك.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "أضف النيوكي المطهو إلى المقلاة وحمّره بالزبدة دقيقة أو دقيقتين حتى يكتسب لوناً خفيفاً. عندما تجف المقلاة أضف ماء المعكرونة.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "قدّم النيوكي وابشر عليه بوفرة جبن بارميجيانو ريجيانو، وأضف الزينة إن رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/gnocchi.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e2b62377275f0750a8b2f7caf98149e1fac899e22e64c8de98feb0d04edf1d34"
+    },
+    {
+      "id": "bc650-spaghetti-alla-puttanesca",
+      "name": "سباغيتي ألا بوتانيسكا",
+      "nameEn": "Spaghetti alla puttanesca",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "سباغيتي بصلصة الطماطم والثوم والأنشوفة والكَبَر والزيتون والقدونس والفلفل الحار.",
+      "servings": 4,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-1",
+          "name": "قدر ماء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pot of water"
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-2",
+          "name": "سباغيتي إيطالية، 320 جم",
+          "amount": 320,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-3",
+          "name": "فصا ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 garlic cloves"
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-4",
+          "name": "كَبَر مملح، 10 جم",
+          "amount": 10,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-5",
+          "name": "أنشوفة بالزيت، 25 جم",
+          "amount": 25,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-6",
+          "name": "طماطم مقشرة للصلصة، 800 جم",
+          "amount": 800,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-7",
+          "name": "حزمة بقدونس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 bunch of parsley"
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-8",
+          "name": "زيتون غايتا، 100 جم",
+          "amount": 100,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-9",
+          "name": "فلفلان حاران مفرومان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 chopped chillies"
+        },
+        {
+          "id": "bc650-spaghetti-alla-puttanesca-ing-10",
+          "name": "رشة ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A pinch of salt"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغسل الكَبَر من الملح ثم قطّعه.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أزل نوى زيتون غايتا واسحقه.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اغسل حزمة البقدونس وافرِمها.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ابدأ طهي المعكرونة حتى تصبح أل دينتي.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اسكب الزيت وفصوص الثوم المقشرة والفلفل الحار المجفف المقطع في مقلاة كبيرة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف شرائح الأنشوفة والكَبَر.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "حمّر على حرارة متوسطة 5 دقائق مع التحريك المتكرر حتى تذوب الأنشوفة.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف الطماطم المقشرة وامزجها بملعقة واطه 10 دقائق أخرى على حرارة متوسطة.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "عندما تصبح الصلصة جاهزة أزل فصوص الثوم.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "أضف الزيتون المسحوق والبقدونس المفروم.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "صفّ السباغيتي مباشرة في المقلاة وقلّبها نصف دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "الطبق جاهز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️Prep time: ~18 min ؛ - 🍳 Cook time: 6-7 min ؛ - 🍽️Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spaghetti-alla-puttanesca.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=a4c0fb735dbdf0d49fd5971c191aaa3129a2fbf9e889037231ef925294cc3a3f"
+    },
+    {
+      "id": "fiw650-52114",
+      "name": "فوندو جبن إيطالي",
+      "nameEn": "Italian Fondue",
+      "cuisine": "إيطالي",
+      "category": "مقبلات",
+      "description": "جبن إيطالي مذاب في النبيذ الأبيض مع الثوم والأعشاب والطماطم المجففة ويقدم مع خبز وخضار.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 8,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "نبيذ أبيض جاف",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "المصدر يذكر cup دون رقم",
+          "id": "fiw650-52114-i0"
+        },
+        {
+          "name": "ثوم مهروس",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52114-i1",
+          "display": null
+        },
+        {
+          "name": "ريحان مجفف",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52114-i2",
+          "display": null
+        },
+        {
+          "name": "أوريغانو مجفف",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "المصدر يذكر teaspoon دون رقم",
+          "id": "fiw650-52114-i3"
+        },
+        {
+          "name": "فلفل أحمر مجروش",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "المصدر يذكر teaspoon دون رقم",
+          "id": "fiw650-52114-i4"
+        },
+        {
+          "name": "نشا ذرة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52114-i5",
+          "display": null
+        },
+        {
+          "name": "ماء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "المصدر يذكر cup دون رقم",
+          "id": "fiw650-52114-i6"
+        },
+        {
+          "name": "أجبان إيطالية مبشورة",
+          "amount": 2,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": "تعادل نحو 8 أكواب بالملاحظة؛ الأنواع المقترحة موزاريلا وفونتينا وبروفولوني ورومانو وبارميزان أو أسياجو",
+          "id": "fiw650-52114-i7",
+          "display": null
+        },
+        {
+          "name": "طماطم مجففة مفرومة ناعماً",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": true,
+          "note": null,
+          "id": "fiw650-52114-i8",
+          "display": null
+        },
+        {
+          "name": "خبز إيطالي مقرمش",
+          "amount": 1,
+          "unit": "رغيف",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52114-i9",
+          "display": null
+        },
+        {
+          "name": "أعواد خبز",
+          "amount": 24,
+          "unit": "عود",
+          "scale": true,
+          "optional": false,
+          "note": "المصدر يكتب دزينة 2",
+          "id": "fiw650-52114-i10",
+          "display": null
+        },
+        {
+          "name": "خضار نيئة ومبخرة مشكلة",
+          "amount": 3,
+          "unit": "كوارت",
+          "scale": true,
+          "optional": false,
+          "note": "حتى 4 كوارت؛ أمثلة الجزر الصغير والفلفل والهليون والبروكلي",
+          "id": "fiw650-52114-i11",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اسكب النبيذ في قدر وسخنه على نار منخفضة حتى يغلي بهدوء. أضف الثوم والريحان والأوريغانو والفلفل الأحمر واطه دقيقتين إضافيتين. اخلط نشا الذرة بالماء مع التحريك حتى تتكون عجينة، ثم قلّبها في النبيذ. ارفع الحرارة إلى متوسطة واطه حتى يغلي المزيج ويثخن، ثم خفف النار إلى منخفضة. أضف الجبن على دفعات كبيرة مع التحريك حتى يذوب. كرر حتى ينتهي الجبن ويصبح الخليط ناعماً، نحو 3 دقائق. قلّب الطماطم المجففة. انقل خليط الجبن إلى قدر فوندو أو طباخ بطيء وقدّمه مع الخبز والخضار. أبقه دافئاً على موقد كحولي أو في الطباخ البطيء على أقل إعداد. يذكر المصدر 8 حصص.",
+          "duration": null,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "جبن",
+        "فوندو"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JD4CSYNC/italian-fondue — SHA-256: bdebe1e28d433f6b924ca84c1979090bf4a55b987fa73c24ab2c637440741c04 — ترجمة مع حفظ تفاصيل المصدر وتسلسل الطريقة؛ لا اعتماد تشغيلي أو اختبار مطبخي.؛ وصف المطبخ السابق غير مثبت كأصل قومي: إيطالي بحسب تسمية المصدر؛ التصنيف الحالي يستند فقط لاسم البلد/الإقليم الصريح في عنوان المصدر، وإلا غير محدد."
+    },
+    {
+      "id": "bc650-aglio-e-olio",
+      "name": "سباغيتي بالثوم والزيت",
+      "nameEn": "Spaghetti aglio e olio",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "معكرونة طويلة بزيت الزيتون والثوم والفلفل الأحمر والبقدونس.",
+      "servings": 4,
+      "prepTime": null,
+      "cookTime": 15,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-aglio-e-olio-ing-1",
+          "name": "سباغيتي، رطل واحد (500 جم) أو معكرونة بشكل مشابه",
+          "amount": 1.0,
+          "unit": "رطل",
+          "scale": true,
+          "display": null,
+          "label": "1 pound (500g) spaghetti (or similarly shaped pasta)"
+        },
+        {
+          "id": "bc650-aglio-e-olio-ing-2",
+          "name": "زيت زيتون بكر ممتاز، نصف كوب (110 جم)",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-aglio-e-olio-ing-3",
+          "name": "5–6 فصوص ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5-6 cloves of garlic"
+        },
+        {
+          "id": "bc650-aglio-e-olio-ing-4",
+          "name": "رقائق فلفل أحمر، ربع ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-aglio-e-olio-ing-5",
+          "name": "حزمة بقدونس طازج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A bunch of fresh parsley"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن مقلاة كبيرة على حرارة متوسطة عالية وابدأ بطهي المعكرونة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع الثوم شرائح رفيعة أو افرمه ناعماً، وافرم البقدونس.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الزيت والثوم إلى المقلاة واطههما برفق حتى يصبح الثوم ذهبياً فاتحاً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف رقائق الفلفل وخفف الحرارة كي تتشرب الزيت نكهتها.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "عندما تنضج المعكرونة صفّها واحتفظ بما لا يقل عن كوب تقريباً من ماء الطهي.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف المعكرونة المصفاة مع قليل من ماء الطهي إلى المقلاة وقلّب بقوة حتى يساعد نشا الماء على استحلاب الصلصة وضبط قوامها.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف البقدونس في اللحظة الأخيرة للحفاظ على نضارته، واضبط التتبيل حسب الحاجة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - 🍳 Cook time: 15 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/aglio-e-olio.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=5553d40adf1595339afd576f3b352457391fb711daa989d3e8e2b488d3ab50cd"
+    },
+    {
+      "id": "bc650-spaghetti-all-amatriciana",
+      "name": "سباغيتي ألا ماتريتشيانا",
+      "nameEn": "Spaghetti all'amatriciana",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "سباغيتي بصلصة الطماطم والفلفل الحار والغوانتشالي أو اللحم المقدد، مع جبن بيكورينو رومانو.",
+      "servings": 4,
+      "prepTime": 5,
+      "cookTime": 25,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-1",
+          "name": "جبن بيكورينو رومانو، ويفضل، أو بارميزان، 1.5 أونصة (40 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pecorino romano cheese preferably or Parmesan 1.5oz (40g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-2",
+          "name": "فلفل حار طازج بالكمية المرغوبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Fresh chili pepper (as many as you'd like)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-3",
+          "name": "زيت زيتون بكر ممتاز، ربع كوب (40 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Extra virgin olive oil 1/4 cup (40g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-4",
+          "name": "غوانتشالي، ويفضل، أو لحم مقدد، 3.5 أونصة (100 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Guanciale preferably or Bacon 3.5oz (100g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-5",
+          "name": "نبيذ أبيض، ربع كوب (60 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "White wine 1/4 cup (60g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-6",
+          "name": "باساتا طماطم، 10 أونصات (300 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tomato passata 10oz (300g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-7",
+          "name": "سباغيتي أو معكرونة طويلة مشابهة، 12 أونصة (350 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Spaghetti or similar long pasta 12oz (350g)"
+        },
+        {
+          "id": "bc650-spaghetti-all-amatriciana-ing-8",
+          "name": "بيكورينو رومانو أو بارميزان إضافي (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "(optional) Extra pecorino romano or parmesan"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ابشر البيكورينو واتركه جانباً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "افرِم الفلفل الحار واتركه جانباً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطّع الغوانتشالي شرائح رفيعة واطهه في الزيت مع الفلفل المفروم نحو 3 دقائق على حرارة متوسطة عالية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف النبيذ وارفع الحرارة واطه حتى يتبخر الكحول.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ابدأ بطهي المعكرونة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "خفف الحرارة إلى متوسطة وأضف الباساتا وقليلاً من الملح وكثيراً من الفلفل. اطه نحو 15 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "عند انتهاء الصلصة صفّ المعكرونة واخلطها مع الصلصة والبيكورينو أو البارميزان، وقدّم فوراً. أضف جبناً إضافياً على الوجه إن رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 25 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spaghetti-all-amatriciana.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=7630714c82b81fbbdda0b78b25cb38fd3424549982dc87667cf8bb97d5a3371b"
+    },
+    {
+      "id": "bc650-spicy-sausage-pasta",
+      "name": "معكرونة حارة بالنقانق",
+      "nameEn": "Spicy Sausage Pasta",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "نقانق إيطالية حارة مع البصل وإكليل الجبل والنبيذ الأحمر والطماطم والكريمة ومعكرونة بينّي.",
+      "servings": 4,
+      "prepTime": 10,
+      "cookTime": 50,
+      "totalTime": 60,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-1",
+          "name": "بصلتان حمراوان مفرومتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 red onions, chopped"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-2",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-3",
+          "name": "6 نقانق إيطالية حارة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "6 spicy Italian sausages"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-4",
+          "name": "غصن إكليل جبل، أوراقه مفرومة ناعماً",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 sprig rosemary, needles finely chopped"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-5",
+          "name": "فلفلة حمراء حارة منزوعة البذور ومقطعة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 red chilli, deseeded and diced"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-6",
+          "name": "كأس كبير من النبيذ الأحمر (نحو 250 مل)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A large glass of red wine (approx. 250ml)"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-7",
+          "name": "علبتان من الطماطم البرقوقية المفرومة، 400 جم لكل منهما",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 x 400g tins chopped plum tomatoes"
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-8",
+          "name": "معكرونة، 300 جم، ويفضل بينّي",
+          "amount": 300,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-9",
+          "name": "بارميزان، 50 جم",
+          "amount": 50,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spicy-sausage-pasta-ing-10",
+          "name": "قشدة مزدوجة، 300 مل",
+          "amount": 300,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقْلِ البصل الأحمر في رشة من الزيت بمقلاة عميقة، ثم أضف لحم النقانق بعد التخلص من الأغلفة عند الحاجة. أضف إكليل الجبل والفلفل الحار.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ارفع الحرارة وفتّت لحم النقانق بملعقة خشبية. عندما يتحمر اللحم أضف النبيذ الأحمر واتركه ينقص إلى النصف.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الطماطم المفرومة واترك الصلصة مكشوفة نحو 30 دقيقة حتى تتكاثف.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اطه المعكرونة حسب تعليمات العبوة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ابشر البارميزان. صفّ المعكرونة وقلّبها في الصلصة مع البارميزان والقشدة وبعض التتبيل.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "قدّم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 50 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spicy-sausage-pasta.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=c9776a9b4b23f42202e2e790cbe63c1d12bbd1f1a6a90457f7e794d980724f79"
+    },
+    {
+      "id": "bc650-ravioli",
+      "name": "رافيولي بحشوة الريكوتا والليمون",
+      "nameEn": "Ravioli",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "عجينة باستا منزلية محشوة بالريكوتا والبيض وقشر الليمون وعصيره وجبن بيكورينو، مع خيار إضافة المأكولات البحرية.",
+      "servings": 4,
+      "prepTime": 30,
+      "cookTime": 2,
+      "totalTime": 32,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-ravioli-ing-1",
+          "name": "4 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 eggs"
+        },
+        {
+          "id": "bc650-ravioli-ing-2",
+          "name": "دقيق 00، 400 جم",
+          "amount": 400,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ravioli-ing-3",
+          "name": "رشة زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Drizzle of olive oil"
+        },
+        {
+          "id": "bc650-ravioli-ing-4",
+          "name": "ليمونة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 lemon"
+        },
+        {
+          "id": "bc650-ravioli-ing-5",
+          "name": "جبن بيكورينو رومانو مبشور، 50 جم",
+          "amount": 50,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ravioli-ing-6",
+          "name": "ريكوتا، 250 جم",
+          "amount": 250,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ravioli-ing-7",
+          "name": "بيضة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 egg"
+        },
+        {
+          "id": "bc650-ravioli-ing-8",
+          "name": "قطع أرجل أو ذيل كركند متبقية أو لحم سلطعون مفروم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chopped leftover lobster legs, lobster tail, or minced crab (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "القاعدة التقريبية للعجينة هي 100 جم دقيق وبيضة واحدة لكل شخص. يمكن استخدام طريقة البئر التقليدية أو العجانة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "للطريقة اليدوية كوّم الدقيق على سطح العمل وافتح حفرة في وسطه. اكسر البيض فيها وأضف رشة زيت زيتون. اخفق البيض بالشوكة وادمجه تدريجياً بالدقيق حتى لا يبقى بيض سائل خارج الحافة، ثم اجمع الخليط واعجنه 5–10 دقائق حتى يصبح ناعماً. أو اخلط مكونات العجين بخطاف العجانة على المستوى 4 نحو 3–5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اكشط جوانب الوعاء واعجن باليد عند الحاجة حتى تتكون كرة ناعمة. غطها بغلاف بلاستيكي وبرّدها 15–30 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "للحشوة اخلط الريكوتا والبيضة في وعاء، ثم ابشر قشر الليمون واعصره فيه. أضف المأكولات البحرية اختيارياً، وابشر البيكورينو فوق الخليط، ثم أضف الملح والفلفل حسب الذوق واخلط.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قطّع العجينة إلى أربع قطع وغطّ القطع غير المستخدمة كي لا تجف. افرد العجينة بآلة الباستا حتى تصبح رقيقة جداً، أو بالنشابة إلى شريط طويل.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "وزع ملعقة صغيرة من الحشوة على العجينة مع ترك مسافات حولها. غطها بورقة عجين ثانية أو اطو الورقة نفسها واضغط لإخراج الهواء وإحكام الحواف. بللها بالماء إن كان الدقيق يمنع الالتصاق.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اقطع بين الحشوات بسكين أو قاطع باستا. إن لم تستخدم قاطعاً فاضغط الحواف بالشوكة بإحكام حتى لا تتسرب الحشوة أو تبقى فقاعات هواء. يمكن حفظ الرافيولي على ورق شمع مرشوش بالدقيق أو تجميده.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "لطهيها ألقها في ماء مملح يغلي. تطفو عند النضج، عادة خلال 1–2 دقيقة. يقدم إصدار المأكولات البحرية مع صلصة طماطم حمراء وأعشاب، أو صلصة طماطم مع قشدة ثقيلة ورشة فلفل أحمر مجروش.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 30 min ؛ - 🍳Cook time: 2 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ravioli.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=54c6fc6fd9133f4270d6f90f1427acd9d6836ece14c1110cd3a6ce96abce77db"
+    },
+    {
+      "id": "bc650-tortellini",
+      "name": "تورتيليني بالقشدة والبيض",
+      "nameEn": "Tortellini",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "تورتيليني جاهز، ويفضل بحشوة اللحم أو السبانخ، يخلط بالقشدة والبيض وجبن اختياري.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-tortellini-ing-1",
+          "name": "تورتيليني جاهز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tortellini"
+        },
+        {
+          "id": "bc650-tortellini-ing-2",
+          "name": "بيضة أو بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-2 eggs"
+        },
+        {
+          "id": "bc650-tortellini-ing-3",
+          "name": "قشدة طبخ",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cooking cream"
+        },
+        {
+          "id": "bc650-tortellini-ing-4",
+          "name": "جبن (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cheese (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اشترِ تورتيليني، ويفضل بحشوة اللحم أو السبانخ.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اغلِ الماء ولا تضف الملح إلا بعد الغليان، ثم أضف التورتيليني واطهه 3 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "صفّ الماء مع إبقاء التورتيليني في القدر. أضف قشدة الطبخ وقلّب على حرارة متوسطة حتى تتكاثف قليلاً وتصبح كريمية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أطفئ الحرارة وأضف بيضة أو بيضتين. قلّب حتى تطهيا بحرارة المعكرونة والقدر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قدّم في طبق، وأضف الفلفل والملح حسب الحاجة والجبن المبشور اختيارياً لمزيد من القوام الكريمي.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tortellini.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=d4caa6e974791fcc74d0c437cf1ac633cc2757778ef2e958c3860166e5cd8c8f"
+    },
+    {
+      "id": "bc650-stracciatella-soup",
+      "name": "شوربة ستراتشاتيلا بالبيض",
+      "nameEn": "Stracciatella soup",
+      "cuisine": "إيطالي",
+      "category": "حساء",
+      "description": "بيض مخفوق يسكب في مرق ساخن حتى يتخثر، مع زيت زيتون اختياري.",
+      "servings": 1,
+      "prepTime": 15,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-stracciatella-soup-ing-1",
+          "name": "بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 eggs"
+        },
+        {
+          "id": "bc650-stracciatella-soup-ing-2",
+          "name": "مرق، 500 مل",
+          "amount": 500,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-stracciatella-soup-ing-3",
+          "name": "زيت زيتون (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخفق البيض في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخّن المرق حتى يغلي.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اسكب البيض في المرق من دون رفعه عن الموقد، واخفق حتى يتخثر البيض.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قدّم المرق والبيض معاً. تبّله بزيت الزيتون إن رغبت. يقترح المصدر تقديمه مع خبز محمص.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حساء"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 15 min ؛ - 🍽️ Servings: 1. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/stracciatella-soup.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=f744ff895f91f0655747d043870a131d18d3863ae180d319305612aa982012ff"
+    },
+    {
+      "id": "bc650-pasta-arrabbiata",
+      "name": "باستا أرابياتا",
+      "nameEn": "Pasta Arrabbiata",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "معكرونة بصلصة طماطم حارة بالثوم ورقائق الفلفل والبقدونس وجبن بيكورينو أو بارميزان اختياري.",
+      "servings": null,
+      "prepTime": 5,
+      "cookTime": 20,
+      "totalTime": 25,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pasta-arrabbiata-ing-1",
+          "name": "معكرونة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pasta"
+        },
+        {
+          "id": "bc650-pasta-arrabbiata-ing-2",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil"
+        },
+        {
+          "id": "bc650-pasta-arrabbiata-ing-3",
+          "name": "رقائق فلفل حار أو فلفل حار مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chilli flakes or diced chilli peppers"
+        },
+        {
+          "id": "bc650-pasta-arrabbiata-ing-4",
+          "name": "فصوص ثوم مهروسة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Crushed garlic cloves"
+        },
+        {
+          "id": "bc650-pasta-arrabbiata-ing-5",
+          "name": "طماطم مهروسة (نحو 800 جم لكل 500 جم معكرونة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Crushed tomatoes (about 800 gramms for 500 gramms of pasta)"
+        },
+        {
+          "id": "bc650-pasta-arrabbiata-ing-6",
+          "name": "بقدونس مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chopped parsley"
+        },
+        {
+          "id": "bc650-pasta-arrabbiata-ing-7",
+          "name": "بيكورينو رومانو أو بارميجيانو ريجيانو مبشور (اختياري ويوصي به المصدر بشدة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Grated Pecorino Romano or Parmigiano Reggiano (optional, but highly recommended)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ابدأ بتسخين ماء المعكرونة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخّن بضع ملاعق كبيرة من زيت الزيتون على حرارة منخفضة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اسحق عدة فصوص ثوم في الزيت وأضف رقائق الفلفل أو الفلفل الحار المقطع. اقْلِ قليلاً مع الانتباه إلى ألا يحترق الثوم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف الطماطم المهروسة مع قليل من الملح والفلفل، وارفع الحرارة إلى متوسطة واتركها تغلي برفق 10–15 دقيقة أو حتى تتكاثف.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "عندما يبدأ الماء بالغليان أضف حفنة ملح ثم المعكرونة. يوصي المصدر بأن تبقى أقل قليلاً من النضج لأنها ستكمل الطهي في الصلصة الساخنة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "عندما تقارب الصلصة الجاهزية أضف معظم البقدونس وقلّب، واحتفظ ببعضه للوجه.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "عندما تنضج المعكرونة صفّها وأضفها إلى الصلصة بعد إبعادها عن الحرارة. إذا كانت الصلصة كثيفة جداً أضف بعض ماء المعكرونة وامزج.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف قليلاً من الجبن المبشور وقلّب. قدّم مع مزيد من الجبن والبقدونس.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 20 min. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pasta-arrabbiata.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=aa13b2e75afbc73ad2c3ce9dcb5e952a5f54b49743afe0727fea1225a66a3bf8"
+    },
+    {
+      "id": "bc650-spaghetti-sauce",
+      "name": "صلصة سباغيتي بالطماطم والثوم",
+      "nameEn": "Spaghetti Sauce",
+      "cuisine": "إيطالي",
+      "category": "صلصة",
+      "description": "طماطم معلبة ومعجون طماطم وثوم مطهو ببطء في زيت الزيتون، مع ريحان ورقائق فلفل اختياريين.",
+      "servings": null,
+      "prepTime": 15,
+      "cookTime": 45,
+      "totalTime": 60,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-spaghetti-sauce-ing-1",
+          "name": "4 علب طماطم كاملة أو مكعبات، 28 أونصة لكل علبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 28 oz cans of whole or diced tomatoes"
+        },
+        {
+          "id": "bc650-spaghetti-sauce-ing-2",
+          "name": "علبة معجون طماطم، 6 أونصات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 6 oz can of tomato paste"
+        },
+        {
+          "id": "bc650-spaghetti-sauce-ing-3",
+          "name": "12 فص ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "12 garlic gloves"
+        },
+        {
+          "id": "bc650-spaghetti-sauce-ing-4",
+          "name": "زيت زيتون، ثلاثة أرباع كوب",
+          "amount": 0.75,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-spaghetti-sauce-ing-5",
+          "name": "ريحان (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "basil (optional)"
+        },
+        {
+          "id": "bc650-spaghetti-sauce-ing-6",
+          "name": "رقائق فلفل أحمر (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "red pepper flakes (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قشّر الثوم وافرمه.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخّن نصف كوب من زيت الزيتون في قدر كبير على حرارة منخفضة إلى متوسطة منخفضة. أضف الثوم واطهه حتى يصبح ذهبياً وتفوح رائحته.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف معجون الطماطم وعلب الطماطم الأربع وارفعها إلى غليان هادئ. أضف رقائق الفلفل الآن إن رغبت.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اطه مكشوفاً 45 دقيقة مع التحريك من حين لآخر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف رشة ملح وربع كوب زيت الزيتون المتبقي والريحان إن استخدمته.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "صلصة"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 15 min ؛ - 🍳 Cook time: 45 min ؛ - 🍽️ Servings: 10+. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spaghetti-sauce.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3d15155baf2224b90932c979bec2064e6540b76ba8386ff3d224adadc7511a2d"
+    },
+    {
+      "id": "bc650-frittata",
+      "name": "فريتاتا بالخضار والبيض",
+      "nameEn": "Frittata",
+      "cuisine": "إيطالي",
+      "category": "طبق رئيسي",
+      "description": "طبق بيض إيطالي غني يطهى في مقلاة صالحة للفرن مع البصل والفلفل والكريمة، مع شرائح لحم وجبن اختياريين.",
+      "servings": null,
+      "prepTime": 10,
+      "cookTime": 30,
+      "totalTime": 40,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-frittata-ing-1",
+          "name": "بيض، 4–6",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4-6 Eggs"
+        },
+        {
+          "id": "bc650-frittata-ing-2",
+          "name": "نصف بصلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1/2 Onion"
+        },
+        {
+          "id": "bc650-frittata-ing-3",
+          "name": "فلفل رومي، حبة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Bell Pepper"
+        },
+        {
+          "id": "bc650-frittata-ing-4",
+          "name": "كريمة دسمة، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-frittata-ing-5",
+          "name": "لحم مقطع شرائح رفيعة اختياري (بروسكيوتو أو دجاج أو ستيك ساندويتش)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Thinly sliced meat (prosciutto, shaved chicken, sandwich steak, etc.) (Optional)"
+        },
+        {
+          "id": "bc650-frittata-ing-6",
+          "name": "جبن مبشور من اختيارك، اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Shredded cheese of choice (Optional)"
+        },
+        {
+          "id": "bc650-frittata-ing-7",
+          "name": "زيت للقلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Dice peppers and onions and saute in an oven safe pan at medium heat."
+        },
+        {
+          "id": "bc650-frittata-ing-8",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Beat eggs, cream, salt, and pepper together in a bowl."
+        },
+        {
+          "id": "bc650-frittata-ing-9",
+          "name": "فلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Beat eggs, cream, salt, and pepper together in a bowl."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع الفلفل والبصل إلى مكعبات وشوحهما في مقلاة صالحة للفرن على حرارة متوسطة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف اللحم إلى المقلاة واضبط الفرن على الشواء المنخفض.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخفق البيض والكريمة والملح والفلفل في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف خليط البيض إلى المقلاة وقلّب حتى يتوزع بالتساوي.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اطه خليط البيض والخضار في المقلاة حتى يبدأ البيض بالتماسك وتبتعد الحواف عن الجوانب، ثم انقل المقلاة إلى الفرن.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أبقها في الفرن حتى تتماسك تماماً. يمكن وضع الجبن المبشور فوقها وإعادتها إلى الفرن حتى يذوب، نحو دقيقتين إضافيتين.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اقلبها من المقلاة واتركها تبرد إلى حرارة الغرفة حتى تستقر. يقترح المصدر السبانخ أو الطماطم أو الفطر أو البروكلي راب كخضار بديلة، مع تقليل عصير الطماطم كيلا يصبح الخليط مائياً.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 30 min ؛ - 🍽️ Servings:4-6. المصدر يذكر 4–6 حصص، و10 دقائق للتحضير و30 دقيقة للطهي. درجة حرارة الفرن غير محددة. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/frittata.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=231a71777c1effe3f2e625e65c2aa31738a01598156c788e28a29478022a0d86"
+    },
+    {
+      "id": "bc650-no-knead-pizza-dough",
+      "name": "عجين بيتزا بلا عجن",
+      "nameEn": "No-knead pizza dough",
+      "cuisine": "إيطالي",
+      "category": "عجين",
+      "description": "عجين بيتزا من الدقيق والخميرة الجافة والملح وزيت الزيتون والماء الفاتر، يترك محكماً في درجة حرارة الغرفة حتى يتضاعف حجمه.",
+      "servings": null,
+      "prepTime": 5,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-no-knead-pizza-dough-ing-1",
+          "name": "دقيق، 200 جم",
+          "amount": 200,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-no-knead-pizza-dough-ing-2",
+          "name": "خميرة فورية جافة، 2 جم",
+          "amount": 2,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-no-knead-pizza-dough-ing-3",
+          "name": "ملح، 5 جم",
+          "amount": 5,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-no-knead-pizza-dough-ing-4",
+          "name": "زيت زيتون، 5 جم",
+          "amount": 5,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-no-knead-pizza-dough-ing-5",
+          "name": "ماء فاتر، 140 جم",
+          "amount": 140,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلط المكونات الجافة في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف زيت الزيتون والماء وامزج. لا حاجة إلى استخدام اليدين أو عجن الخليط.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "غط الوعاء بإحكام واتركه في درجة حرارة الغرفة 7 ساعات على الأقل وحتى 24 ساعة؛ ينبغي أن يزداد حجمه كثيراً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "يمكن حفظ العجين في الثلاجة بضعة أيام. يقترح المصدر مضاعفة أو تثليث المقادير لتحضير أكثر من بيتزا بالجهد نفسه.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "عجين"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 7-24 hours ؛ - 🍽️ Servings: 1 pizza. المصدر يذكر أنها تكفي بيتزا واحدة بقطر 11 بوصة في مقلاة حديد، مع 5 دقائق تحضير ووقت تخمير مدرج تحت وقت الطهي بنطاق 7–24 ساعة؛ تركت مدة الطهي الكلية null بسبب النطاق. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/no-knead-pizza-dough.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=0900f244ae4b2e58aec57a989a081238df3c00f496776ef65e3c8c5570b4bd93"
+    },
+    {
+      "id": "bc650-bolognese-sauce",
+      "name": "صلصة بولونيز",
+      "nameEn": "Bolognese Sauce",
+      "cuisine": "إيطالي",
+      "category": "صلصة",
+      "description": "صلصة طماطم مطهوة ببطء مع الجزر والكرفس والبصل ومزيج من اللحم البقري والخنزير والعجل وبانسيتا اختيارية.",
+      "servings": null,
+      "prepTime": 45,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-bolognese-sauce-ing-1",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "extra virgin olive oil"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-2",
+          "name": "جزر، 2",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 carrots"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-3",
+          "name": "عودا كرفس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 celery sticks"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-4",
+          "name": "بصلة كبيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 large onion"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-5",
+          "name": "فصا ثوم (اختياري وغير تقليدي)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 garlic cloves (optional, but not traditional)"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-6",
+          "name": "بانسيتا، 200 جم (اختياري)",
+          "amount": 200.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "200 grams pancetta (optional)"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-7",
+          "name": "لحم بقري مفروم، 300 جم",
+          "amount": 300.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "300 grams beef mince"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-8",
+          "name": "لحم خنزير مفروم، 350 جم",
+          "amount": 350.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "350 grams pork mince"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-9",
+          "name": "لحم عجل مفروم، 350 جم (يمكن استبداله بالخنزير عند عدم توفره)",
+          "amount": 350.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "350 grams veal mince (if you cant find veal replace with pork)"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-10",
+          "name": "معجون طماطم مركز، 140 جم",
+          "amount": 140.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "140 grams concentrated tomato paste"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-11",
+          "name": "طماطم مكعبات، 690 جم",
+          "amount": 690.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "690 grams diced tomatoes"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-12",
+          "name": "ماء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "water"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-13",
+          "name": "علبة طماطم مقشرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 can peeled tomatoes"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-14",
+          "name": "نبيذ، كأس أو كأسين",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1-2 glasses wine (whatever you have open)"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-15",
+          "name": "حليب، كأس واحد (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 glass of milk (optional)"
+        },
+        {
+          "id": "bc650-bolognese-sauce-ing-16",
+          "name": "مرق لحم بقري أو خضار، كأس واحد (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 glass of beef/vegetable stock (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع الجزر والكرفس والبصل والبانسيتا ناعماً؛ ويمكن خلطها لتسريع التحضير إذا كان الخلاط يتحمل ذلك.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخّن قدراً كبيراً على حرارة متوسطة منخفضة، وأضف زيت زيتون يكفي لتغطية القاع.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الخضار والبانسيتا وقلّبها ببطء نحو 10 دقائق حتى تفوح رائحتها وتلين.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "إذا استخدمت الثوم فأضفه الآن واطهه دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف اللحوم المفرومة وفتتها بملعقة إلى كتل صغيرة جداً بحجم حبة الأرز تقريباً، وحرّك حتى تنضج جزئياً ويتغير لونها إلى الرمادي.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف النبيذ بما يكفي لإزالة ما التصق بقاع القدر، ويمكن إضافة قليل أكثر للنكهة. حرّك حتى يتبخر تماماً. إذا كنت تستخدم المرق فأضفه في هذه المرحلة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "عندما يجف القدر نسبياً أضف معجون الطماطم واطهه دقيقة لإزالة طعمه المعدني الخفيف.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف الطماطم المعلبة والمقشرة وفتتها بالملعقة. أضف الطماطم المكعبة، ثم املأ عبوتها ماءً ورجها وأضف الماء؛ كرر ذلك مع علبة الطماطم المقشرة.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "خفف الحرارة إلى أدنى مستوى وغطّ القدر جزئياً.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "اترك الصلصة على نار هادئة لأطول مدة ممكنة، ويفضل أربع ساعات على الأقل. إذا جفت كثيراً أضف مزيداً من الماء حتى لا تحترق.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "عندما تصبح كثيفة ومركزة بحيث لا يتجاوز السائل مستوى اللحم، أضف كأس الحليب إن رغبت واتركها 10 دقائق أخرى ثم قدمها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "صلصة"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️ Prep time: 45 min ؛ - 🍳 Cook time: at least 4 hours. يذكر المصدر 45 دقيقة تحضيراً ومدة طهي لا تقل عن 4 ساعات، وليس مدة نهائية دقيقة؛ لذلك cookTime وtotalTime غير محددين. كأس النبيذ ومقادير الماء والزيت غير محددة الحجم في المصدر. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/bolognese-sauce.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e8580124febc6325cde947aeea87b2fadb323b836735c15c3709b1e327033fc9"
     }
   ]
 }

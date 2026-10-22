@@ -1,0 +1,3777 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+  "recipes": [
+    {
+      "recipeId": "bc650-aelplermagronen",
+      "sourceTitle": "Älplermagronen (Alpine macaroni)",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/aelplermagronen.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/aelplermagronen.md",
+      "snapshotSHA256": "dbb4dc6a5f1405bfb619c4fba26d4ce9372203803d8a7e300433cee6858d316d",
+      "sourceAuthor": "alexander-bocken",
+      "sourceTags": [
+        "swiss",
+        "pork",
+        "potato",
+        "pasta"
+      ],
+      "sourceIngredientLines": [
+        "~150g (1/3 lb) bacon cubes",
+        "3 onions (medium size)",
+        "400g (15 oz) potatoes (firm/waxy)",
+        "1 - 2L (1/4 - 1/2 gal) milk",
+        "400g (15 oz) macaroni (dry weight)",
+        "~150g (1/3 lb) medium soft cheese. Appenzeller works best. Gruyère would be my go-to alternative.",
+        "a jar of apple sauce"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-aelplermagronen-ing-1",
+          "arabicName": "مكعبات لحم مقدد، نحو 150 جم (⅓ رطل)",
+          "candidateDisplay": "~150g (1/3 lb) bacon cubes",
+          "sourceIngredientIndex": 0,
+          "sourceText": "~150g (1/3 lb) bacon cubes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-aelplermagronen-ing-2",
+          "arabicName": "3 بصلات متوسطة",
+          "candidateDisplay": "3 onions (medium size)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "3 onions (medium size)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-aelplermagronen-ing-3",
+          "arabicName": "بطاطا شمعية متماسكة، 400 جم (15 أونصة)",
+          "candidateDisplay": "400g (15 oz) potatoes (firm/waxy)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "400g (15 oz) potatoes (firm/waxy)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 400,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-aelplermagronen-ing-4",
+          "arabicName": "حليب، 1–2 لتر (¼–½ غالون)",
+          "candidateDisplay": "1 - 2L (1/4 - 1/2 gal) milk",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 - 2L (1/4 - 1/2 gal) milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-aelplermagronen-ing-5",
+          "arabicName": "معكرونة جافة، 400 جم (15 أونصة)",
+          "candidateDisplay": "400g (15 oz) macaroni (dry weight)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "400g (15 oz) macaroni (dry weight)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 400,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-aelplermagronen-ing-6",
+          "arabicName": "جبن متوسط الطراوة، نحو 150 جم (⅓ رطل؛ أبنزلر هو الأفضل ويقترح المصدر غرويير بديلاً)",
+          "candidateDisplay": "~150g (1/3 lb) medium soft cheese. Appenzeller works best. Gruyère would be my go-to alternative.",
+          "sourceIngredientIndex": 5,
+          "sourceText": "~150g (1/3 lb) medium soft cheese. Appenzeller works best. Gruyère would be my go-to alternative.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-aelplermagronen-ing-7",
+          "arabicName": "مرطبان صلصة تفاح",
+          "candidateDisplay": "a jar of apple sauce",
+          "sourceIngredientIndex": 6,
+          "sourceText": "a jar of apple sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Fry bacon cubes in pot (this pot will be used for everything so choose an appropriately large one).",
+        "Cut onions into half-rings and let them sweat in the same pot. Add some butter if your bacon was not fatty enough.",
+        "Peel potatoes and cut them into ~1 cm/half inch cubes.",
+        "When the onions have become sufficiently cooked, add potatoes.",
+        "Top everything with milk and let the potatoes cook for about 10 minutes.",
+        "Add macaroni and the remaining milk to cover everything. Most of the milk will be absorbed by the macaroni.",
+        "Shred your cheese.",
+        "A minute or two before the macaroni are done, add the shredded cheese into the pot. It should appear a bit too runny in the pot. While cooling it will increase in viscosity quite a bit. If the final texture is not creamy enough, it is most likely due to using the wrong cheese.",
+        "Season to taste. (Needs quite a bit of salt). Nutmeg also works well here.",
+        "Serve with apple sauce. Should be eaten together, not as a dessert."
+      ],
+      "sourceRawText": "---\ntitle: \"Älplermagronen (Alpine macaroni)\"\ndate: 2021-03-11\ntags: ['swiss', 'pork', 'potato', 'pasta']\nauthor: alexander-bocken\n---\n\n![Älplermagronen](/pix/aelplermagronen.webp)\n\nA swiss favorite, _Älplermagronen_ combines pretty much everything you have at your disposal in your alpine chalet.\nIt's the definition of comfort food for the Swiss.\n\n- 🍳 Cook time: ~30 minutes\n- 🍽️  Servings: 4\n\n## Ingredients\n\n- ~150g (1/3 lb) bacon cubes\n- 3 onions (medium size)\n- 400g (15 oz) potatoes (firm/waxy)\n- 1 - 2L (1/4 - 1/2 gal) milk\n- 400g (15 oz) macaroni (dry weight)\n- ~150g (1/3 lb) medium soft cheese. Appenzeller works best. Gruyère would be my go-to alternative.\n- a jar of apple sauce\n\nFeel free to vary these amounts, it's not like this is anything strict.\n\n## Directions\n\n1. Fry bacon cubes in pot (this pot will be used for everything so choose an appropriately large one).\n2. Cut onions into half-rings and let them sweat in the same pot. Add some butter if your bacon was not fatty enough.\n3. Peel potatoes and cut them into ~1 cm/half inch cubes.\n4. When the onions have become sufficiently cooked, add potatoes.\n5. Top everything with milk and let the potatoes cook for about 10 minutes.\n7. Add macaroni and the remaining milk to cover everything. Most of the milk will be absorbed by the macaroni.\n8. Shred your cheese.\n9. A minute or two before the macaroni are done, add the shredded cheese into the pot. It should appear a bit too runny in the pot. While cooling it will increase in viscosity quite a bit. If the final texture is not creamy enough, it is most likely due to using the wrong cheese.\n10. Season to taste. (Needs quite a bit of salt). Nutmeg also works well here.\n11. Serve with apple sauce. Should be eaten together, not as a dessert.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-babas-feta-pasta",
+      "sourceTitle": "Baba's Feta Pasta",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/babas-feta-pasta.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/babas-feta-pasta.md",
+      "snapshotSHA256": "25c0a83707ea8b42240abdbf545c954c20d88da19cfd06744e602333363266bd",
+      "sourceAuthor": "peepopoggers",
+      "sourceTags": [
+        "greek",
+        "feta",
+        "pasta",
+        "supper"
+      ],
+      "sourceIngredientLines": [
+        "Medium Sweet Onion (Finely Chopped)",
+        "Virgin olive oil (not extra-virgin)",
+        "White Sugar",
+        "3 Fresh Medium Garlic Cloves (Chopped Fine)",
+        "15-20 Kalamon/Kalamata Olives (Cut into thirds)",
+        "Whole small courgette (Cut to small pieces)",
+        "6 Medium Mushrooms (Cut smallish and small stalk)",
+        "1/2 Broccli (Chopped small)",
+        "8-10 Finely sliced cherry tomatoes",
+        "1/2 Block of feta (Washed)",
+        "1 Chicken stock (Added to 3/4 Mug boiling water)",
+        "Overfilled Teaspoon Mixed Spice",
+        "3/4 Bowls fusilli pasta",
+        "Overfilled tablespoon Creme Cheese",
+        "1/3 Mug whole milk"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-1",
+          "arabicName": "بصلة حلوة متوسطة مفرومة ناعماً",
+          "candidateDisplay": "Medium Sweet Onion (Finely Chopped)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Medium Sweet Onion (Finely Chopped)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-2",
+          "arabicName": "زيت زيتون (ليس البكر الممتاز)",
+          "candidateDisplay": "Virgin olive oil (not extra-virgin)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Virgin olive oil (not extra-virgin)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-3",
+          "arabicName": "سكر أبيض",
+          "candidateDisplay": "White Sugar",
+          "sourceIngredientIndex": 2,
+          "sourceText": "White Sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-4",
+          "arabicName": "3 فصوص ثوم طازجة متوسطة مفرومة ناعماً",
+          "candidateDisplay": "3 Fresh Medium Garlic Cloves (Chopped Fine)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "3 Fresh Medium Garlic Cloves (Chopped Fine)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-5",
+          "arabicName": "15–20 زيتونة كالامون/كالاماتا مقطعة أثلاثاً",
+          "candidateDisplay": "15-20 Kalamon/Kalamata Olives (Cut into thirds)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "15-20 Kalamon/Kalamata Olives (Cut into thirds)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-6",
+          "arabicName": "كوسة صغيرة كاملة مقطعة قطعاً صغيرة",
+          "candidateDisplay": "Whole small courgette (Cut to small pieces)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Whole small courgette (Cut to small pieces)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-7",
+          "arabicName": "6 حبات فطر متوسطة مقطعة صغيراً مع الساق",
+          "candidateDisplay": "6 Medium Mushrooms (Cut smallish and small stalk)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "6 Medium Mushrooms (Cut smallish and small stalk)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-8",
+          "arabicName": "نصف بروكلي مفروم صغيراً",
+          "candidateDisplay": "1/2 Broccli (Chopped small)",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1/2 Broccli (Chopped small)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-9",
+          "arabicName": "8–10 طماطم كرزية مقطعة شرائح رفيعة",
+          "candidateDisplay": "8-10 Finely sliced cherry tomatoes",
+          "sourceIngredientIndex": 8,
+          "sourceText": "8-10 Finely sliced cherry tomatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-10",
+          "arabicName": "نصف قالب فيتا مغسول",
+          "candidateDisplay": "1/2 Block of feta (Washed)",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1/2 Block of feta (Washed)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-11",
+          "arabicName": "مكعب مرق دجاج مذاب في ثلاثة أرباع مج طاق من الماء المغلي",
+          "candidateDisplay": "1 Chicken stock (Added to 3/4 Mug boiling water)",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1 Chicken stock (Added to 3/4 Mug boiling water)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-12",
+          "arabicName": "ملعقة شاي مكدسة من بهارات مشكلة",
+          "candidateDisplay": "Overfilled Teaspoon Mixed Spice",
+          "sourceIngredientIndex": 11,
+          "sourceText": "Overfilled Teaspoon Mixed Spice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-13",
+          "arabicName": "ثلاثة أرباع وعاء معكرونة فوسيلي",
+          "candidateDisplay": "3/4 Bowls fusilli pasta",
+          "sourceIngredientIndex": 12,
+          "sourceText": "3/4 Bowls fusilli pasta",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-14",
+          "arabicName": "ملعقة طعام مكدسة من الجبن الكريمي",
+          "candidateDisplay": "Overfilled tablespoon Creme Cheese",
+          "sourceIngredientIndex": 13,
+          "sourceText": "Overfilled tablespoon Creme Cheese",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-babas-feta-pasta-ing-15",
+          "arabicName": "ثلث مج طاق حليب كامل الدسم",
+          "candidateDisplay": "1/3 Mug whole milk",
+          "sourceIngredientIndex": 14,
+          "sourceText": "1/3 Mug whole milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Make sure to prepare & chop most ingredients before you start.",
+        "Get a small deepish pan and heat it to low-medium temperature. Add a good amount of virgin olive oil and place one of the small onion pieces into the pan. Wait until it starts to sizzle and add the rest of the onion. Mix well and make sure the temperature is not too high as it can damage ingredients. Optional: You can sprinkle some sugar over the onion to make it sweeter. Then after a few minutes, when the onion has browned/softened, add in the garlic and wait 1-2 minutes, then you can turn off heat and put it to the side for later.",
+        "Get a medium-large sized deepish pan, heat with oil and then add in the olives, courgettes and mushrooms. Sprinkle salt every now and then to enhance taste. After a few minutes when they are soft and are around the same color, then add in the onion and garlic from the smaller pan.",
+        "Wait a couple minutes and then add the broccoli and tomato slices to the mix. Wait 2-3 more minutes and then get your rinsed feta and melt it in the pan (chop to speed up).",
+        "Start [cooking the pasta](/pasta).",
+        "When the feta has nearly finished melting, add in the stock to the mix. Turn the pan temperature down slightly and then let it bubble for 5 mins (add a timer). Make sure to add the cover to the pan to keep in the flavor.",
+        "After the 5 mins timer is up, add the overfilled tablespoon creme cheese to the main mix, stir, then re-add lid.",
+        "Wait 2-3 more minutes and then you can test the sauce if you want. If you feel there is some missing, add more mixed spice or herbs such as parsley to it.",
+        "Turn down the main mix again slightly and add the 1/3 Mug of Whole milk to the mix.",
+        "Strain and serve your pasta and cover with the sauce. Enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Baba's Feta Pasta\"\ndate: 2021-03-21\ntags: ['greek', 'feta', 'pasta', 'supper']\nauthor: peepopoggers\n---\n\nGreek Pasta Recipe with sauce made out of feta, stock, cream cheese and other ingredients.\nUses mixed spice for special flavour, and is a great dinner or mid-day meal.\n\n- ⏲️ Prep time: 15-30 min\n- 🍳 Cook time: 25-30 min\n\n## Ingredients\n\nServes Around 3 People. You can scale up to 4 If you increase most quantities by +1/4.\n\n- Medium Sweet Onion (Finely Chopped)\n- Virgin olive oil (not extra-virgin)\n- White Sugar\n- 3 Fresh Medium Garlic Cloves (Chopped Fine)\n- 15-20 Kalamon/Kalamata Olives (Cut into thirds)\n- Whole small courgette (Cut to small pieces)\n- 6 Medium Mushrooms (Cut smallish and small stalk)\n- 1/2 Broccli (Chopped small)\n- 8-10 Finely sliced cherry tomatoes\n- 1/2 Block of feta (Washed)\n- 1 Chicken stock (Added to 3/4 Mug boiling water)\n- Overfilled Teaspoon Mixed Spice\n- 3/4 Bowls fusilli pasta\n- Overfilled tablespoon Creme Cheese\n- 1/3 Mug whole milk\n\n## Directions\n\nMake sure to prepare & chop most ingredients before you start.\n\n1. Get a small deepish pan and heat it to low-medium temperature. Add a good amount of virgin olive oil and place one of the small onion pieces into the pan. Wait until it starts to sizzle and add the rest of the onion. Mix well and make sure the temperature is not too high as it can damage ingredients. Optional: You can sprinkle some sugar over the onion to make it sweeter. Then after a few minutes, when the onion has browned/softened, add in the garlic and wait 1-2 minutes, then you can turn off heat and put it to the side for later.\n2. Get a medium-large sized deepish pan, heat with oil and then add in the olives, courgettes and mushrooms. Sprinkle salt every now and then to enhance taste. After a few minutes when they are soft and are around the same color, then add in the onion and garlic from the smaller pan.\n3. Wait a couple minutes and then add the broccoli and tomato slices to the mix. Wait 2-3 more minutes and then get your rinsed feta and melt it in the pan (chop to speed up).\n4. Start [cooking the pasta](/pasta).\n5. When the feta has nearly finished melting, add in the stock to the mix. Turn the pan temperature down slightly and then let it bubble for 5 mins (add a timer). Make sure to add the cover to the pan to keep in the flavor.\n6. After the 5 mins timer is up, add the overfilled tablespoon creme cheese to the main mix, stir, then re-add lid.\n7. Wait 2-3 more minutes and then you can test the sauce if you want. If you feel there is some missing, add more mixed spice or herbs such as parsley to it.\n8. Turn down the main mix again slightly and add the 1/3 Mug of Whole milk to the mix.\n9. Strain and serve your pasta and cover with the sauce. Enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-basic-meatballs",
+      "sourceTitle": "Basic Meatballs",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/basic-meatballs.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/basic-meatballs.md",
+      "snapshotSHA256": "b75d1eceb1d79d32b93893cc27d399657b93c51af61e54803425a7bb6127214e",
+      "sourceAuthor": "john-hubberts",
+      "sourceTags": [
+        "basic",
+        "italian",
+        "beef",
+        "pork"
+      ],
+      "sourceIngredientLines": [
+        "1 pound ground beef (preferably 90/10 or 93/7)",
+        "1 pound ground pork",
+        "1/2 cup italian breadcrumbs",
+        "1/3 cup milk (I use 2% but doesn't matter too much)",
+        "1/4 cup yellow onion diced (about 1/2 small yellow onion)",
+        "1 egg",
+        "1/2 cup shredded parmesan",
+        "1/4-1/2 cup chopped parsley",
+        "2 tbsp red pepper flakes",
+        "2 tbsp dried oregano",
+        "1 tbsp rosemary",
+        "1 tbsp basil",
+        "1 tbsp garlic powder",
+        "Salt and pepper to taste"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-1",
+          "arabicName": "لحم بقر مفروم، رطل واحد (يفضل 90/10 أو 93/7)",
+          "candidateDisplay": "1 pound ground beef (preferably 90/10 or 93/7)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 pound ground beef (preferably 90/10 or 93/7)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-2",
+          "arabicName": "لحم خنزير مفروم، رطل واحد",
+          "candidateDisplay": "1 pound ground pork",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 pound ground pork",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-3",
+          "arabicName": "فتات خبز إيطالي، نصف كوب",
+          "candidateDisplay": "1/2 cup italian breadcrumbs",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1/2 cup italian breadcrumbs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-4",
+          "arabicName": "حليب، ثلث كوب (يستخدم المصدر 2%)",
+          "candidateDisplay": "1/3 cup milk (I use 2% but doesn't matter too much)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1/3 cup milk (I use 2% but doesn't matter too much)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.3333333333333333,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-5",
+          "arabicName": "بصل أصفر مكعبات، ربع كوب (نحو نصف بصلة صغيرة)",
+          "candidateDisplay": "1/4 cup yellow onion diced (about 1/2 small yellow onion)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1/4 cup yellow onion diced (about 1/2 small yellow onion)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.25,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-6",
+          "arabicName": "بيضة واحدة",
+          "candidateDisplay": "1 egg",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1 egg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-7",
+          "arabicName": "بارميزان مبشور، نصف كوب",
+          "candidateDisplay": "1/2 cup shredded parmesan",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1/2 cup shredded parmesan",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-8",
+          "arabicName": "بقدونس مفروم، ربع إلى نصف كوب",
+          "candidateDisplay": "1/4-1/2 cup chopped parsley",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1/4-1/2 cup chopped parsley",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-9",
+          "arabicName": "رقائق فلفل أحمر، ملعقتان كبيرتان",
+          "candidateDisplay": "2 tbsp red pepper flakes",
+          "sourceIngredientIndex": 8,
+          "sourceText": "2 tbsp red pepper flakes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-10",
+          "arabicName": "أوريغانو مجفف، ملعقتان كبيرتان",
+          "candidateDisplay": "2 tbsp dried oregano",
+          "sourceIngredientIndex": 9,
+          "sourceText": "2 tbsp dried oregano",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-11",
+          "arabicName": "إكليل الجبل، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp rosemary",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1 tbsp rosemary",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-12",
+          "arabicName": "ريحان، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp basil",
+          "sourceIngredientIndex": 11,
+          "sourceText": "1 tbsp basil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-13",
+          "arabicName": "مسحوق ثوم، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp garlic powder",
+          "sourceIngredientIndex": 12,
+          "sourceText": "1 tbsp garlic powder",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-basic-meatballs-ing-14",
+          "arabicName": "ملح وفلفل حسب الذوق",
+          "candidateDisplay": "Salt and pepper to taste",
+          "sourceIngredientIndex": 13,
+          "sourceText": "Salt and pepper to taste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Preheat oven to 200°C/400F",
+        "In a bowl, combine all ingredients",
+        "Hand form into balls by packing with your hands and then rolling. Set aside on a baking sheet, preferably one with a cooling rack",
+        "I prefer large meatballs (larger than a golf ball) and shoot for 16-20 for 2 lbs of meat, but if you prefer smaller meatballs you can opt for as many as 48",
+        "Either halfway through the packing process or after forming all meatballs, heat a large skillet to medium-high heat",
+        "Add 1-2 tbsp of oil to the skillet (enough to evenly coat the skillet), and bring to heat",
+        "Fill the skillet with meatballs, start by browning one face, flip once at after 2-3 minutes, and then remove to the baking sheet after another 2-3 minute. Continue in batches until all meatballs have been browned",
+        "It is OK and expected for the meatballs to lose some of their spherical shape at this point",
+        "You can skip this step and go straight the oven if you want to cut corners",
+        "Transfer to the oven, and cook until the inside registers 60°C/140F on an instant read thermometer. This should be about 20 minutes for large meatballs (16 per batch), maybe 10 for small (48 per batch)",
+        "Serve with pasta or on a meatball sub"
+      ],
+      "sourceRawText": "---\ntitle: \"Basic Meatballs\"\ndate: 2021-03-25\ntags: ['basic', 'italian', 'beef', 'pork']\nauthor: john-hubberts\n---\nHybrid beef/pork meatballs perfect for spaghetti and meatballs or a meatball sub.\n\n- 🍳 Cook time: 25 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 1 pound ground beef (preferably 90/10 or 93/7)\n- 1 pound ground pork\n- 1/2 cup italian breadcrumbs\n- 1/3 cup milk (I use 2% but doesn't matter too much)\n- 1/4 cup yellow onion diced (about 1/2 small yellow onion)\n- 1 egg\n- 1/2 cup shredded parmesan\n- 1/4-1/2 cup chopped parsley\n- 2 tbsp red pepper flakes\n- 2 tbsp dried oregano\n- 1 tbsp rosemary\n- 1 tbsp basil\n- 1 tbsp garlic powder\n- Salt and pepper to taste\n\n## Directions\n\n1. Preheat oven to 200°C/400F\n1. In a bowl, combine all ingredients\n1. Hand form into balls by packing with your hands and then rolling. Set aside on a baking sheet, preferably one with a cooling rack\n    * I prefer large meatballs (larger than a golf ball) and shoot for 16-20 for 2 lbs of meat, but if you prefer smaller meatballs you can opt for as many as 48\n1. Either halfway through the packing process or after forming all meatballs, heat a large skillet to medium-high heat\n1. Add 1-2 tbsp of oil to the skillet (enough to evenly coat the skillet), and bring to heat\n1. Fill the skillet with meatballs, start by browning one face, flip once at after 2-3 minutes, and then remove to the baking sheet after another 2-3 minute. Continue in batches until all meatballs have been browned\n    * It is OK and expected for the meatballs to lose some of their spherical shape at this point\n    * You can skip this step and go straight the oven if you want to cut corners\n1. Transfer to the oven, and cook until the inside registers 60°C/140F on an instant read thermometer. This should be about 20 minutes for large meatballs (16 per batch), maybe 10 for small (48 per batch)\n1. Serve with pasta or on a meatball sub\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-broiled-trevally",
+      "sourceTitle": "Broiled Trevally",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/broiled-trevally.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/broiled-trevally.md",
+      "snapshotSHA256": "b0cc4bae470185c8bf1f5d3ba79dac20a8adee3162f9eb80a7f7f6434aa350ab",
+      "sourceAuthor": "oq-olarte",
+      "sourceTags": [
+        "fish",
+        "cheesefare"
+      ],
+      "sourceIngredientLines": [
+        "giant trevally",
+        "eggplants",
+        "squash (or zucchini)",
+        "carrots",
+        "onion",
+        "garlic",
+        "ginger",
+        "tomatoes",
+        "bay leaf",
+        "olive oil",
+        "thyme",
+        "basil",
+        "butter"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-1",
+          "arabicName": "سمكة تريفالي عملاقة",
+          "candidateDisplay": "giant trevally",
+          "sourceIngredientIndex": 0,
+          "sourceText": "giant trevally",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-2",
+          "arabicName": "باذنجان",
+          "candidateDisplay": "eggplants",
+          "sourceIngredientIndex": 1,
+          "sourceText": "eggplants",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-3",
+          "arabicName": "قرع أو كوسة",
+          "candidateDisplay": "squash (or zucchini)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "squash (or zucchini)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-4",
+          "arabicName": "جزر",
+          "candidateDisplay": "carrots",
+          "sourceIngredientIndex": 3,
+          "sourceText": "carrots",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-5",
+          "arabicName": "بصل",
+          "candidateDisplay": "onion",
+          "sourceIngredientIndex": 4,
+          "sourceText": "onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-6",
+          "arabicName": "ثوم",
+          "candidateDisplay": "garlic",
+          "sourceIngredientIndex": 5,
+          "sourceText": "garlic",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-7",
+          "arabicName": "زنجبيل",
+          "candidateDisplay": "ginger",
+          "sourceIngredientIndex": 6,
+          "sourceText": "ginger",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-8",
+          "arabicName": "طماطم",
+          "candidateDisplay": "tomatoes",
+          "sourceIngredientIndex": 7,
+          "sourceText": "tomatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-9",
+          "arabicName": "ورق غار",
+          "candidateDisplay": "bay leaf",
+          "sourceIngredientIndex": 8,
+          "sourceText": "bay leaf",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-10",
+          "arabicName": "زيت زيتون",
+          "candidateDisplay": "olive oil",
+          "sourceIngredientIndex": 9,
+          "sourceText": "olive oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-11",
+          "arabicName": "زعتر",
+          "candidateDisplay": "thyme",
+          "sourceIngredientIndex": 10,
+          "sourceText": "thyme",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-12",
+          "arabicName": "ريحان",
+          "candidateDisplay": "basil",
+          "sourceIngredientIndex": 11,
+          "sourceText": "basil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-trevally-ing-13",
+          "arabicName": "زبدة",
+          "candidateDisplay": "butter",
+          "sourceIngredientIndex": 12,
+          "sourceText": "butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Dice carrots, eggplant, squash, tomatoes and onions. Place these on a pan.",
+        "Put basil, thyme, bay leaf, salt, and pepper on each of the fish's side. Place the fish above the veggies.",
+        "Crush garlic and ginger (with mortar and pestle, of course) and place this in and around the fish.",
+        "Give it all a good splash of olive oil.",
+        "Cover the pan and set to medium-low fire, until everything looks cooked.",
+        "Flip the fish on the other side, just to make sure that it's properly cooked.",
+        "Check the doneness of the squash: if it's cooked, everything is.",
+        "Let everything set for 5 mins. before serving."
+      ],
+      "sourceRawText": "---\ntitle: \"Broiled Trevally\"\ndate: 2021-03-10\ntags: ['fish', 'cheesefare']\nauthor: oq-olarte\n---\n\nWell, it's actually a *giant* trevally, and if you have seen one, that fish looks ugly.\nSo here's a recipe to make it look---and taste!---more appealing.\n\n## Ingredients\n- giant trevally\n- eggplants\n- squash (or zucchini)\n- carrots\n- onion\n- garlic\n- ginger\n- tomatoes\n- bay leaf\n- olive oil\n- thyme\n- basil\n- butter\n\n## Directions\n1. Dice carrots, eggplant, squash, tomatoes and onions. Place these on a pan.\n2. Put basil, thyme, bay leaf, salt, and pepper on each of the fish's side. Place the fish above the veggies.\n3. Crush garlic and ginger (with mortar and pestle, of course) and place this in and around the fish.\n4. Give it all a good splash of olive oil.\n5. Cover the pan and set to medium-low fire, until everything looks cooked.\n6. Flip the fish on the other side, just to make sure that it's properly cooked.\n7. Check the doneness of the squash: if it's cooked, everything is.\n8. Let everything set for 5 mins. before serving.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-broiled-venison-steaks",
+      "sourceTitle": "Broiled Venison Steaks",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/broiled-venison-steaks.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/broiled-venison-steaks.md",
+      "snapshotSHA256": "fb8e8fd2753fd98d41530bf2b7e2853a50b60b9b862eefbcb6023b01166b2095",
+      "sourceAuthor": "\"Miss Leslie\"",
+      "sourceTags": [
+        "venison",
+        "meat"
+      ],
+      "sourceIngredientLines": [
+        "venison",
+        "butter",
+        "wine",
+        "jelly (cranberry, peach, or grape)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-broiled-venison-steaks-ing-1",
+          "arabicName": "لحم غزال",
+          "candidateDisplay": "venison",
+          "sourceIngredientIndex": 0,
+          "sourceText": "venison",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-venison-steaks-ing-2",
+          "arabicName": "زبدة",
+          "candidateDisplay": "butter",
+          "sourceIngredientIndex": 1,
+          "sourceText": "butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-venison-steaks-ing-3",
+          "arabicName": "نبيذ",
+          "candidateDisplay": "wine",
+          "sourceIngredientIndex": 2,
+          "sourceText": "wine",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-broiled-venison-steaks-ing-4",
+          "arabicName": "صلصة توت بري أو خوخ أو جيلي عنب",
+          "candidateDisplay": "jelly (cranberry, peach, or grape)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "jelly (cranberry, peach, or grape)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Cut the steaks not quite an inch thick.",
+        "Trim them nicely, and season them with a little black pepper and salt.",
+        "Have ready, over a bed of clear bright hot coals from a wood fire (or a stove), a gridiron with grooved bars to catch the gravy.",
+        "Put down the steaks, and when one side is quite done turn the other, and broil that. (Venison should always be very thoroughly done.)",
+        "Before you take up the steaks, lay a bit of nice fresh butter upon each.",
+        "Take them up on a hot dish, and keep them warm.",
+        "Pour off the gravy into a small saucepan. Give it a boil over the fire, and skim off all the fat from the surface.",
+        "Stir into it some nice wine, and serve up with the steaks a deep dish of cranberry, or peach sauce, or a large cup of grape jelly."
+      ],
+      "sourceRawText": "---\ntitle: \"Broiled Venison Steaks\"\ndate: 1857-03-11\ntags: ['venison', 'meat']\nauthor: \"Miss Leslie\"\n---\n\n## Ingredients\n\n- venison\n- butter\n- wine\n- jelly (cranberry, peach, or grape)\n\n## Directions\n\n1. Cut the steaks not quite an inch thick.\n2. Trim them nicely, and season them with a little black pepper and salt.\n3. Have ready, over a bed of clear bright hot coals from a wood fire (or a stove), a gridiron with grooved bars to catch the gravy.\n4. Put down the steaks, and when one side is quite done turn the other, and broil that. (Venison should always be very thoroughly done.)\n5. Before you take up the steaks, lay a bit of nice fresh butter upon each.\n6. Take them up on a hot dish, and keep them warm.\n7. Pour off the gravy into a small saucepan. Give it a boil over the fire, and skim off all the fat from the surface.\n8. Stir into it some nice wine, and serve up with the steaks a deep dish of cranberry, or peach sauce, or a large cup of grape jelly.",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-ceviche",
+      "sourceTitle": "Ceviche",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ceviche.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/ceviche.md",
+      "snapshotSHA256": "88a2ec17c1297bf0c409ff1e7ca25cc6a81fbcc023b0d91e1920b16962510e99",
+      "sourceAuthor": "jacob-smith",
+      "sourceTags": [
+        "seafood",
+        "peruvian"
+      ],
+      "sourceIngredientLines": [
+        "Seafood",
+        "Red Onion",
+        "Lime Juice"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-ceviche-ing-1",
+          "arabicName": "مأكولات بحرية من اختيارك",
+          "candidateDisplay": "Seafood",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Seafood",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-ceviche-ing-2",
+          "arabicName": "بصل أحمر",
+          "candidateDisplay": "Red Onion",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Red Onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-ceviche-ing-3",
+          "arabicName": "عصير ليمون أخضر",
+          "candidateDisplay": "Lime Juice",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Lime Juice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Slice your onion as thinly as you can then let them all sit in a bowl of cold water for a while. Soaking your onion slices like this will make it so that their flavor is not as strong so that it won't overpower everything.",
+        "While your onion is soaking cut your chosen seafood into cubes. Ceviche can be made with any type of seafood but fish with white meat native to South America, or things like shrimp and octopus are best. Season your cubed seafood generously with salt and pepper and place in a bowl.",
+        "Squeeze the juice of several limes onto your seafood, remember when shopping for limes the softer ones will have the most juice. You want to get good coverage over all your meat but it is important to remember that there is such a thing as too much lime.",
+        "Add the onion slices then cover and let sit in the fridge. You can get away with eating it after only an hour but ceviche gets better as it ages so it may be best to have more patience and let it sit overnight."
+      ],
+      "sourceRawText": "---\ntitle: \"Ceviche\"\ntags: ['seafood', 'peruvian']\nauthor: jacob-smith\ndate: 2022-04-16\n---\n\n![tilapia ceviche on rice](/pix/ceviche.webp)\n\nCeviche is a South American dish which originated in Peru. The following recipe will only cover\nthe bare minimum ingredients, so feel free to experiment by adding things like garlic, ginger, peppers\ntomatoes, cilantro, other citrus juices, and anything else you feel might taste good in there.\n\n- ⏲️ Prep time: 10 min\n\n## Ingredients\n\n- Seafood\n- Red Onion\n- Lime Juice\n\n## Directions\n\n1.  Slice your onion as thinly as you can then let them all sit in a\n    bowl of cold water for a while. Soaking your onion slices like this\n    will make it so that their flavor is not as strong so that it won't\n    overpower everything.\n2.  While your onion is soaking cut your chosen seafood into cubes.\n    Ceviche can be made with any type of seafood but fish with white\n    meat native to South America, or things like shrimp and octopus are best. Season your cubed seafood generously with salt\n    and pepper and place in a bowl.\n3.  Squeeze the juice of several limes onto your seafood, remember when\n    shopping for limes the softer ones will have the most juice. You\n    want to get good coverage over all your meat but it is important to\n    remember that there is such a thing as too much lime.\n4.  Add the onion slices then cover and let sit in the fridge. You can\n    get away with eating it after only an hour but ceviche gets better\n    as it ages so it may be best to have more patience and let it sit\n    overnight.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-cheesy-meatballs",
+      "sourceTitle": "Cheesy Meatballs with Tomato Sauce",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cheesy-meatballs.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/cheesy-meatballs.md",
+      "snapshotSHA256": "ff8b117cd2c6d7ead034e8c92bfddf950ac1bd595c110cec17b9d3b5d8591de9",
+      "sourceAuthor": "yaroslav-smirnov",
+      "sourceTags": [
+        "beef",
+        "cheese"
+      ],
+      "sourceIngredientLines": [
+        "300-400g of ground beef meat",
+        "1/4 of an onion",
+        "~70g of cheese; I have made with different cheese types, but usually I use",
+        "Parsley",
+        "1-2 garlic cloves",
+        "1 egg",
+        "~1/5 metric cups (~50ml) of bread crumbs",
+        "250ml of water",
+        "8 spoonfuls of tomato paste",
+        "Oregano",
+        "Basil",
+        "Black pepper"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-1",
+          "arabicName": "لحم بقر مفروم، 300–400 جم",
+          "candidateDisplay": "300-400g of ground beef meat",
+          "sourceIngredientIndex": 0,
+          "sourceText": "300-400g of ground beef meat",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-2",
+          "arabicName": "ربع بصلة",
+          "candidateDisplay": "1/4 of an onion",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1/4 of an onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-3",
+          "arabicName": "جبن، نحو 70 جم؛ يستخدم المصدر أنواعاً مختلفة",
+          "candidateDisplay": "~70g of cheese; I have made with different cheese types, but usually I use",
+          "sourceIngredientIndex": 2,
+          "sourceText": "~70g of cheese; I have made with different cheese types, but usually I use",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-4",
+          "arabicName": "بقدونس",
+          "candidateDisplay": "Parsley",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Parsley",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-5",
+          "arabicName": "فص أو فصا ثوم",
+          "candidateDisplay": "1-2 garlic cloves",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1-2 garlic cloves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-6",
+          "arabicName": "بيضة واحدة",
+          "candidateDisplay": "1 egg",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1 egg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-7",
+          "arabicName": "فتات خبز، نحو خُمس كوب متري (50 مل)",
+          "candidateDisplay": "~1/5 metric cups (~50ml) of bread crumbs",
+          "sourceIngredientIndex": 6,
+          "sourceText": "~1/5 metric cups (~50ml) of bread crumbs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-8",
+          "arabicName": "ماء، 250 مل",
+          "candidateDisplay": "250ml of water",
+          "sourceIngredientIndex": 7,
+          "sourceText": "250ml of water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 250,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-9",
+          "arabicName": "معجون طماطم، 8 ملاعق",
+          "candidateDisplay": "8 spoonfuls of tomato paste",
+          "sourceIngredientIndex": 8,
+          "sourceText": "8 spoonfuls of tomato paste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-10",
+          "arabicName": "أوريغانو",
+          "candidateDisplay": "Oregano",
+          "sourceIngredientIndex": 9,
+          "sourceText": "Oregano",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-11",
+          "arabicName": "ريحان",
+          "candidateDisplay": "Basil",
+          "sourceIngredientIndex": 10,
+          "sourceText": "Basil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cheesy-meatballs-ing-12",
+          "arabicName": "فلفل أسود",
+          "candidateDisplay": "Black pepper",
+          "sourceIngredientIndex": 11,
+          "sourceText": "Black pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Beat the egg(s) in a large bowl.",
+        "Add in the ground beef, and the bread crumbs and mix.",
+        "Chop the onion into small pieces and add it to the bowl.",
+        "Mince the garlic cloves and add to the bowl.",
+        "Dice the parsley leaves and add to the bowl.",
+        "Salt the beef mix and mix it thoroughly.",
+        "Cut the cheese into cubes. The amount of cubes you will need will depend on how many meatballs you make, which depends on how big you want to make the meatballs. You get the idea.",
+        "Take a cheese cube and wrap with enough ground meat to completely cover it. Repeat this process until you've run out of the ground beef mix.",
+        "Heat the frying pan, add some olive oil, and add the meatballs. Cook over medium heat rolling the meatballs from time to time until they are slightly brown from all sides (wait, spheres have no sides).",
+        "When the meatballs look done, pour the water and tomato paste; add the dried oregano and basil, and ground black pepper; and salt to taste.",
+        "Cook over medium-low heat for about ten minutes rolling the meatballs so that they get completely bathed in tomato sauce.",
+        "Serve with some side dish and enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Cheesy Meatballs with Tomato Sauce\"\ndate: 2021-03-12\ntags: ['beef', 'cheese']\nauthor: yaroslav-smirnov\n---\n\n![Cheesy Meatballs with Tomato Sauce](/pix/cheesy-meatballs.webp)\n\nNothing beats meat, cheese and tomato combined together to create the best\ncombination of flavors that man has created.\n\n## Ingredients\n\nThe quantities here are for about two adult portions. That is, if you are also\nmaking some side dish, like in the photo.\n\nFor the meatballs:\n\n* 300-400g of ground beef meat\n* 1/4 of an onion\n* ~70g of cheese; I have made with different cheese types, but usually I use\n  Gouda\n* Parsley\n* 1-2 garlic cloves\n* 1 egg\n* ~1/5 metric cups (~50ml) of bread crumbs\n\nFor the sauce:\n\n* 250ml of water\n* 8 spoonfuls of tomato paste\n* Oregano\n* Basil\n* Black pepper\n\n## Directions\n\n1. Beat the egg(s) in a large bowl.\n2. Add in the ground beef, and the bread crumbs and mix.\n3. Chop the onion into small pieces and add it to the bowl.\n4. Mince the garlic cloves and add to the bowl.\n5. Dice the parsley leaves and add to the bowl.\n6. Salt the beef mix and mix it thoroughly.\n7. Cut the cheese into cubes. The amount of cubes you will need will depend on\n   how many meatballs you make, which depends on how big you want to make the\n   meatballs. You get the idea.\n8. Take a cheese cube and wrap with enough ground meat to completely cover it.\n   Repeat this process until you've run out of the ground beef mix.\n9. Heat the frying pan, add some olive oil, and add the meatballs. Cook over\n   medium heat rolling the meatballs from time to time until they are slightly\n   brown from all sides (wait, spheres have no sides).\n10. When the meatballs look done, pour the water and tomato paste; add the dried\n    oregano and basil, and ground black pepper; and salt to taste.\n11. Cook over medium-low heat for about ten minutes rolling the meatballs so\n    that they get completely bathed in tomato sauce.\n12. Serve with some side dish and enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-dominican-spaghetti",
+      "sourceTitle": "Dominican Spaghetti",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/dominican-spaghetti.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/dominican-spaghetti.md",
+      "snapshotSHA256": "a16f7619f53d4407d3ce3887ed9aecf359c36b0c0aea5c171b6cf2d717afc868",
+      "sourceAuthor": "carl-zimmerman",
+      "sourceTags": [
+        "pasta",
+        "supper",
+        "dominican",
+        "cheesefare"
+      ],
+      "sourceIngredientLines": [
+        "1 box Spaghetti",
+        "1 Onion minced",
+        "1 Green Pepper minced",
+        "2 Garlic cloves minced",
+        "1 tbsp Chicken Bouillon Cube or Adobo",
+        "1 tbsp sazón",
+        "1 tbsp Tomato Paste",
+        "1 cup Tomato Sauce",
+        "1 tbsp Butter",
+        "¼ cup Evaporated Milk",
+        "2 tbsp Green Olives",
+        "1 tsp Sugar",
+        "1 cup Starchy Pasta Water"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-1",
+          "arabicName": "علبة سباغيتي واحدة",
+          "candidateDisplay": "1 box Spaghetti",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 box Spaghetti",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-2",
+          "arabicName": "بصلة مفرومة",
+          "candidateDisplay": "1 Onion minced",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 Onion minced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-3",
+          "arabicName": "فلفل أخضر مفروم",
+          "candidateDisplay": "1 Green Pepper minced",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 Green Pepper minced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-4",
+          "arabicName": "فصا ثوم مفرومان",
+          "candidateDisplay": "2 Garlic cloves minced",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 Garlic cloves minced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-5",
+          "arabicName": "مكعب مرق دجاج أو أدوبو، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp Chicken Bouillon Cube or Adobo",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 tbsp Chicken Bouillon Cube or Adobo",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-6",
+          "arabicName": "سازون، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp sazón",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1 tbsp sazón",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-7",
+          "arabicName": "معجون طماطم، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp Tomato Paste",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 tbsp Tomato Paste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-8",
+          "arabicName": "صلصة طماطم، كوب واحد",
+          "candidateDisplay": "1 cup Tomato Sauce",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 cup Tomato Sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-9",
+          "arabicName": "زبدة، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp Butter",
+          "sourceIngredientIndex": 8,
+          "sourceText": "1 tbsp Butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-10",
+          "arabicName": "حليب مبخر، ربع كوب",
+          "candidateDisplay": "¼ cup Evaporated Milk",
+          "sourceIngredientIndex": 9,
+          "sourceText": "¼ cup Evaporated Milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-11",
+          "arabicName": "زيتون أخضر، ملعقتان كبيرتان",
+          "candidateDisplay": "2 tbsp Green Olives",
+          "sourceIngredientIndex": 10,
+          "sourceText": "2 tbsp Green Olives",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-12",
+          "arabicName": "سكر، ملعقة صغيرة",
+          "candidateDisplay": "1 tsp Sugar",
+          "sourceIngredientIndex": 11,
+          "sourceText": "1 tsp Sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-dominican-spaghetti-ing-13",
+          "arabicName": "ماء نشوي من المعكرونة، كوب واحد",
+          "candidateDisplay": "1 cup Starchy Pasta Water",
+          "sourceIngredientIndex": 12,
+          "sourceText": "1 cup Starchy Pasta Water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Boil [spaghetti](/pasta).",
+        "In a separate pan, Sauté onions, peppers, and garlic until soft.",
+        "Add seasonings and black pepper to taste. Mix until well combined.",
+        "Add tomato paste, sauce, and the pasta water. Mix and let it come to a simmer. Simmer for 5 minutes.",
+        "Add evaporated milk, butter, sugar, and olives.",
+        "Taste for seasoning and heat to desired temperature.",
+        "Add spaghetti and toss into the sauce."
+      ],
+      "sourceRawText": "---\ntitle: \"Dominican Spaghetti\"\ndate: 2021-03-17\ntags: ['pasta', 'supper', 'dominican', 'cheesefare']\nauthor: carl-zimmerman\n---\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 25 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 1 box Spaghetti\n- 1 Onion minced\n- 1 Green Pepper minced\n- 2 Garlic cloves minced\n- 1 tbsp Chicken Bouillon Cube or Adobo\n- 1 tbsp sazón\n- 1 tbsp Tomato Paste\n- 1 cup Tomato Sauce\n- 1 tbsp Butter\n- ¼ cup Evaporated Milk\n- 2 tbsp Green Olives\n- 1 tsp Sugar\n- 1 cup Starchy Pasta Water\n\n## Directions\n\n1. Boil [spaghetti](/pasta).\n2. In a separate pan, Sauté onions, peppers, and garlic until soft.\n3. Add seasonings and black pepper to taste. Mix until well combined.\n4. Add tomato paste, sauce, and the pasta water. Mix and let it come to a simmer. Simmer for 5 minutes.\n5. Add evaporated milk, butter, sugar, and olives.\n6. Taste for seasoning and heat to desired temperature.\n7. Add spaghetti and toss into the sauce.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-erwtensoep",
+      "sourceTitle": "Erwtensoep (Dutch pea soup)",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/erwtensoep.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/erwtensoep.md",
+      "snapshotSHA256": "f860c1a1962b2f5901de7e292b7d458c006b5307e3eaf619bed9db8b46cd1987",
+      "sourceAuthor": "rijk",
+      "sourceTags": [
+        "dutch",
+        "soup",
+        "vegetables"
+      ],
+      "sourceIngredientLines": [
+        "7 1/2 cups / 1.75 liters water",
+        "1 1/2 cups / 300 grams peas (dried green split)",
+        "3 1/2 ounces / 100 grams pork belly (Dutch speklapjes or thick-cut bacon)",
+        "1 pork chop",
+        "1 bouillon cube (vegetable, pork or chicken)",
+        "2 ribs celery",
+        "2 to 3 carrots (peeled and sliced)",
+        "1 large potato (peeled and cubed)",
+        "1 small onion (chopped)",
+        "1 small leek (sliced)",
+        "1 cup celeriac (cubed)",
+        "1 pound sausage (chopped rookworst, smoked sausage)",
+        "Salt and pepper"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-erwtensoep-ing-1",
+          "arabicName": "ماء، 7½ أكواب / 1.75 لتر",
+          "candidateDisplay": "7 1/2 cups / 1.75 liters water",
+          "sourceIngredientIndex": 0,
+          "sourceText": "7 1/2 cups / 1.75 liters water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 7.5,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-2",
+          "arabicName": "بازلاء خضراء مجروشة جافة، 1½ كوب / 300 جم",
+          "candidateDisplay": "1 1/2 cups / 300 grams peas (dried green split)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 1/2 cups / 300 grams peas (dried green split)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1.5,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-3",
+          "arabicName": "بطن خنزير، 3½ أونصة / 100 جم (سبيكلابجيس هولندي أو لحم مقدد سميك)",
+          "candidateDisplay": "3 1/2 ounces / 100 grams pork belly (Dutch speklapjes or thick-cut bacon)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "3 1/2 ounces / 100 grams pork belly (Dutch speklapjes or thick-cut bacon)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-4",
+          "arabicName": "قطعة لحم خنزير واحدة",
+          "candidateDisplay": "1 pork chop",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 pork chop",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-5",
+          "arabicName": "مكعب مرق نباتي أو خنزير أو دجاج",
+          "candidateDisplay": "1 bouillon cube (vegetable, pork or chicken)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 bouillon cube (vegetable, pork or chicken)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-6",
+          "arabicName": "عودا كرفس",
+          "candidateDisplay": "2 ribs celery",
+          "sourceIngredientIndex": 5,
+          "sourceText": "2 ribs celery",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-7",
+          "arabicName": "2–3 جزرات مقشرة ومقطعة شرائح",
+          "candidateDisplay": "2 to 3 carrots (peeled and sliced)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "2 to 3 carrots (peeled and sliced)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-8",
+          "arabicName": "بطاطا كبيرة مقشرة ومكعبات",
+          "candidateDisplay": "1 large potato (peeled and cubed)",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 large potato (peeled and cubed)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-9",
+          "arabicName": "بصلة صغيرة مفرومة",
+          "candidateDisplay": "1 small onion (chopped)",
+          "sourceIngredientIndex": 8,
+          "sourceText": "1 small onion (chopped)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-10",
+          "arabicName": "كراثة صغيرة شرائح",
+          "candidateDisplay": "1 small leek (sliced)",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1 small leek (sliced)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-11",
+          "arabicName": "كرفس جذري مكعبات، كوب واحد",
+          "candidateDisplay": "1 cup celeriac (cubed)",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1 cup celeriac (cubed)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-12",
+          "arabicName": "نقانق مدخنة رووكورست مفرومة، رطل واحد",
+          "candidateDisplay": "1 pound sausage (chopped rookworst, smoked sausage)",
+          "sourceIngredientIndex": 11,
+          "sourceText": "1 pound sausage (chopped rookworst, smoked sausage)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-erwtensoep-ing-13",
+          "arabicName": "ملح وفلفل",
+          "candidateDisplay": "Salt and pepper",
+          "sourceIngredientIndex": 12,
+          "sourceText": "Salt and pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "In a large soup pot, bring water, split peas, pork belly or bacon, pork chop, and bouillon cube to a boil.",
+        "Reduce the heat to a simmer, cover and let cook for 45 minutes, stirring occasionally and skimming off any foam that rises to the top.",
+        "Remove the pork chop, debone, and thinly slice the meat. Set aside.",
+        "Add the celery, carrots, potato, onion, leek, and celeriac to the soup.",
+        "Return to the boil, reduce the heat to a simmer and let cook, uncovered, for another 30 minutes",
+        "Add the smoked sausage for the last 15 minutes of cooking time.",
+        "When the vegetables are tender, remove the bacon and smoked sausage, slice thinly, and set aside.",
+        "If you prefer a smooth consistency, purée the soup with a stick blender.",
+        "Season to taste with salt and pepper.",
+        "Add the meat back to the soup, setting some slices of sausage aside.",
+        "Serve in heated bowls or soup plates, garnished with slices of rookworst and chopped celery leaf. Enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Erwtensoep (Dutch pea soup)\"\ndate: 2021-03-23\ntags: ['dutch', 'soup', 'vegetables']\nauthor: rijk\n---\n\nErwtensoep, also called snert, is the Dutch version of pea soup.\nSlices of rookworst (smoked sausage) are added before serving. The soup, which is traditionally eaten during the winter, is emblematic of Dutch cuisine.\nIt is customarily served with Frisian rye bread (roggebrood) and bacon, cheese or butter.\nPancakes are sometimes served with pea soup; this dish is called snert met struif, struif referring to the pancakes.\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 90 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 7 1/2 cups / 1.75 liters water\n- 1 1/2 cups / 300 grams peas (dried green split)\n- 3 1/2 ounces / 100 grams pork belly (Dutch speklapjes or thick-cut bacon)\n- 1 pork chop\n- 1 bouillon cube (vegetable, pork or chicken)\n- 2 ribs celery\n- 2 to 3 carrots (peeled and sliced)\n- 1 large potato (peeled and cubed)\n- 1 small onion (chopped)\n- 1 small leek (sliced)\n- 1 cup celeriac (cubed)\n- 1 pound sausage (chopped rookworst, smoked sausage)\n- Salt and pepper\n\n## Directions\n\n1. In a large soup pot, bring water, split peas, pork belly or bacon, pork chop, and bouillon cube to a boil.\n2. Reduce the heat to a simmer, cover and let cook for 45 minutes, stirring occasionally and skimming off any foam that rises to the top.\n3. Remove the pork chop, debone, and thinly slice the meat. Set aside.\n4. Add the celery, carrots, potato, onion, leek, and celeriac to the soup.\n5. Return to the boil, reduce the heat to a simmer and let cook, uncovered, for another 30 minutes\n6. Add the smoked sausage for the last 15 minutes of cooking time.\n7. When the vegetables are tender, remove the bacon and smoked sausage, slice thinly, and set aside.\n8. If you prefer a smooth consistency, purée the soup with a stick blender.\n9. Season to taste with salt and pepper.\n10. Add the meat back to the soup, setting some slices of sausage aside.\n11. Serve in heated bowls or soup plates, garnished with slices of rookworst and chopped celery leaf. Enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-farci-tomatoes",
+      "sourceTitle": "Farci tomatoes",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/farci-tomatoes.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/farci-tomatoes.md",
+      "snapshotSHA256": "bbf2fd1b8855a4bfe1dfb2643cb350f120b2c8b7fbda162687bf659fba438001",
+      "sourceAuthor": "miraunpajaro",
+      "sourceTags": [
+        "french",
+        "tomato",
+        "oven"
+      ],
+      "sourceIngredientLines": [
+        "2 tomatoes per person",
+        "300g of ground beef meat",
+        "1 or 2 onions",
+        "Condiments of your choice: parsley, origan or cumin",
+        "Olive oil",
+        "Gruyere cheese",
+        "Salt and pepper",
+        "Butter (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-farci-tomatoes-ing-1",
+          "arabicName": "حبتا طماطم لكل شخص",
+          "candidateDisplay": "2 tomatoes per person",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 tomatoes per person",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-farci-tomatoes-ing-2",
+          "arabicName": "لحم بقر مفروم، 300 جم",
+          "candidateDisplay": "300g of ground beef meat",
+          "sourceIngredientIndex": 1,
+          "sourceText": "300g of ground beef meat",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 300,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-farci-tomatoes-ing-3",
+          "arabicName": "بصلة أو بصلة ونصف",
+          "candidateDisplay": "1 or 2 onions",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 or 2 onions",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-farci-tomatoes-ing-4",
+          "arabicName": "توابل من اختيارك: بقدونس أو أوريغانو أو كمون",
+          "candidateDisplay": "Condiments of your choice: parsley, origan or cumin",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Condiments of your choice: parsley, origan or cumin",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-farci-tomatoes-ing-5",
+          "arabicName": "زيت زيتون",
+          "candidateDisplay": "Olive oil",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Olive oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-farci-tomatoes-ing-6",
+          "arabicName": "جبن غرويير",
+          "candidateDisplay": "Gruyere cheese",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Gruyere cheese",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-farci-tomatoes-ing-7",
+          "arabicName": "ملح وفلفل",
+          "candidateDisplay": "Salt and pepper",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Salt and pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-farci-tomatoes-ing-8",
+          "arabicName": "زبدة (اختياري)",
+          "candidateDisplay": "Butter (optional)",
+          "sourceIngredientIndex": 7,
+          "sourceText": "Butter (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Heat the oven to 200C.",
+        "Slice the top to the tomatoes and place them in the oven tray.",
+        "Empty the tomatoes using a spoon and reserve the interior of the tomatoes in a bowl.",
+        "Mix the interior of the tomatoes with the rest of the ingredients.",
+        "Restuff the tomatoes.",
+        "Optionally add a thin layer of butter on top of the tomatoes.",
+        "Put the \"lid\" on the tomatoes.",
+        "Bake for 40 minutes in the oven.",
+        "Enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Farci tomatoes\"\ntags: ['french', 'tomato', 'oven']\ndate: 2022-07-11\nauthor: miraunpajaro\n---\n\n![Farci tomatoes](/pix/farci-tomatoes.webp)\n\nFarcies tomates with rice.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 40 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 2 tomatoes per person\n- 300g of ground beef meat\n- 1 or 2 onions\n- Condiments of your choice: parsley, origan or cumin\n- Olive oil\n- Gruyere cheese\n- Salt and pepper\n- Butter (optional)\n\n## Directions\n\n1. Heat the oven to 200C.\n2. Slice the top to the tomatoes and place them in the oven tray.\n3. Empty the tomatoes using a spoon and reserve the interior of the tomatoes in a bowl.\n4. Mix the interior of the tomatoes with the rest of the ingredients.\n5. Restuff the tomatoes.\n6. Optionally add a thin layer of butter on top of the tomatoes.\n7. Put the \"lid\" on the tomatoes.\n8. Bake for 40 minutes in the oven.\n9. Enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-flammkuchen",
+      "sourceTitle": "Flammkuchen",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/flammkuchen.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/flammkuchen.md",
+      "snapshotSHA256": "7e78253d2bf89b3f781829be9d71f0ddbd213e6dfa1da6c4e121da2ca4df46ae",
+      "sourceAuthor": "bernhard-egger",
+      "sourceTags": [
+        "french",
+        "pork",
+        "quick"
+      ],
+      "sourceIngredientLines": [
+        "400g Pizza dough (either bought or from [Pizza Dough](/pizza-dough))",
+        "1 onion (I prefer the red ones for optical reasons)",
+        "150g bacon (you can replace it with mushrooms or other vegetables)",
+        "2 big spoons of sour creme or creme fraiche"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-flammkuchen-ing-1",
+          "arabicName": "عجينة بيتزا، 400 جم، جاهزة أو محضرة من وصفة المصدر",
+          "candidateDisplay": "400g Pizza dough (either bought or from [Pizza Dough](/pizza-dough))",
+          "sourceIngredientIndex": 0,
+          "sourceText": "400g Pizza dough (either bought or from [Pizza Dough](/pizza-dough))",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 400,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-flammkuchen-ing-2",
+          "arabicName": "بصلة واحدة (يفضل المصدر الحمراء للون)",
+          "candidateDisplay": "1 onion (I prefer the red ones for optical reasons)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 onion (I prefer the red ones for optical reasons)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-flammkuchen-ing-3",
+          "arabicName": "لحم مقدد، 150 جم (يمكن استبداله بالفطر أو خضار أخرى)",
+          "candidateDisplay": "150g bacon (you can replace it with mushrooms or other vegetables)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "150g bacon (you can replace it with mushrooms or other vegetables)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 150,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-flammkuchen-ing-4",
+          "arabicName": "ملعقتان كبيرتان مكدستان من القشدة الحامضة أو كريم فريش",
+          "candidateDisplay": "2 big spoons of sour creme or creme fraiche",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 big spoons of sour creme or creme fraiche",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "we start by flattening the dough. Even if you buy thin crust that is already sold as 'super thin' you have to make it even thinner. Make it so thin that you can fill 2 baking sheets with it (yes, you will make two large flammkuchen - since they are thin you need one per person) :)  I take two pieces of  parchment paper, put the dough in between and flatten it using a bottle (e.g. wine). It has to be as thin as possible (1-2 mm).",
+        "once the dough is flat, put it on your baking tray and preheat the oven at 450 to 500 Fahrenheit (230 to 260 Celsius)",
+        "distribute the sour cream evenly (it should be a very thin layer, just barely covering the dough",
+        "cut the onion and bacon into small pieces and distribute onion, bacon/vegetables (also in small pieces) evenly",
+        "put in the oven for 10 minutes and take it out when it is getting a bit dark. The thin parts will get a bit brown",
+        "put salt and pepper",
+        "I usually take it down from the baking tray and let it cool down for 2-5 minutes before eating"
+      ],
+      "sourceRawText": "---\ntitle: \"Flammkuchen\"\ndate: 2021-03-11\ntags: ['french', 'pork', 'quick']\nauthor: bernhard-egger\n---\n\nA recipe for Flammkuchen a very thin crust pizza-like dish - it originates from Elsass, a French region close to where I grew up.\nI like the recipe because it takes 10 minutes to prepare and another 10 minutes to bake. It goes well with a green salad as a side.\n\n- 🍽️ Servings:2\n\n## Ingredients\n\n- 400g Pizza dough (either bought or from [Pizza Dough](/pizza-dough))\n- 1 onion (I prefer the red ones for optical reasons)\n- 150g bacon (you can replace it with mushrooms or other vegetables)\n- 2 big spoons of sour creme or creme fraiche\n\n## Directions\n\n1. we start by flattening the dough. Even if you buy thin crust that is already sold as 'super thin' you have to make it even thinner. Make it so thin that you can fill 2 baking sheets with it (yes, you will make two large flammkuchen - since they are thin you need one per person) :)  I take two pieces of  parchment paper, put the dough in between and flatten it using a bottle (e.g. wine). It has to be as thin as possible (1-2 mm).\n2. once the dough is flat, put it on your baking tray and preheat the oven at 450 to 500 Fahrenheit (230 to 260 Celsius)\n3. distribute the sour cream evenly (it should be a very thin layer, just barely covering the dough\n4. cut the onion and bacon into small pieces and distribute onion, bacon/vegetables (also in small pieces) evenly\n5. put in the oven for 10 minutes and take it out when it is getting a bit dark. The thin parts will get a bit brown\n6. put salt and pepper\n\nI usually take it down from the baking tray and let it cool down for 2-5 minutes before eating\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-ginataang-kalabasa",
+      "sourceTitle": "Ginataang Kalabasa",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ginataang-kalabasa.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/ginataang-kalabasa.md",
+      "snapshotSHA256": "331173b3ff5841494e5f3f679753c252f8bb65a801520e35fc4657eec5e76a4f",
+      "sourceAuthor": "jacob-smith",
+      "sourceTags": [
+        "filipino",
+        "squash"
+      ],
+      "sourceIngredientLines": [
+        "One medium sized squash that is easy to peel (butternut squash is usually best)",
+        "Two cans of coconut milk",
+        "One onion",
+        "A few cloves of garlic"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-ginataang-kalabasa-ing-1",
+          "arabicName": "قرعة متوسطة سهلة التقشير (يفضل المصدر قرع الجوز)",
+          "candidateDisplay": "One medium sized squash that is easy to peel (butternut squash is usually best)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "One medium sized squash that is easy to peel (butternut squash is usually best)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-ginataang-kalabasa-ing-2",
+          "arabicName": "علبتان حليب جوز الهند",
+          "candidateDisplay": "Two cans of coconut milk",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Two cans of coconut milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-ginataang-kalabasa-ing-3",
+          "arabicName": "بصلة واحدة",
+          "candidateDisplay": "One onion",
+          "sourceIngredientIndex": 2,
+          "sourceText": "One onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-ginataang-kalabasa-ing-4",
+          "arabicName": "بضعة فصوص ثوم",
+          "candidateDisplay": "A few cloves of garlic",
+          "sourceIngredientIndex": 3,
+          "sourceText": "A few cloves of garlic",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Remove the seeds from your squash, then peel it and chop it up into large cubes, then set aside. (The easiest way to peel the squash while raw is to cut it into strips and cut the skin off of each strip individually)",
+        "Chop your onion and garlic and cook in an oiled stock pot until translucent.",
+        "Once your onions are translucent add both cans of coconut milk to the pot along with your cubes of squash. Let simmer until squash is soft.",
+        "When your squash is soft take a potato masher and mash about half of your squash leaving the rest of it as cubes.",
+        "Take off heat and serve over rice."
+      ],
+      "sourceRawText": "---\ntitle: \"Ginataang Kalabasa\"\ndate: 2021-03-13\ntags: ['filipino', 'squash']\nauthor: jacob-smith\n---\n\nOr \"Squash in Coconut Milk\". This is a common Filipino dish.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 8\n\n## Ingredients\n\n- One medium sized squash that is easy to peel (butternut squash is usually best)\n- Two cans of coconut milk\n- One onion\n- A few cloves of garlic\n\n## Directions\n\n1. Remove the seeds from your squash, then peel it and chop it up into large cubes, then set aside. (The easiest way to peel the squash while raw is to cut it into strips and cut the skin off of each strip individually)\n2. Chop your onion and garlic and cook in an oiled stock pot until translucent.\n3. Once your onions are translucent add both cans of coconut milk to the pot along with your cubes of squash. Let simmer until squash is soft.\n4. When your squash is soft take a potato masher and mash about half of your squash leaving the rest of it as cubes.\n5. Take off heat and serve over rice.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-korv-stroganoff",
+      "sourceTitle": "Korv Stroganoff",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/korv-stroganoff.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/korv-stroganoff.md",
+      "snapshotSHA256": "494494b7ba55dadf4b2a3888823fc1f9c76e1ecc55f1b1531d05d77527bbd7f9",
+      "sourceAuthor": null,
+      "sourceTags": [
+        "swedish",
+        "quick",
+        "sausage"
+      ],
+      "sourceIngredientLines": [
+        "1/2 kg Swedish falukorv",
+        "1 yellow onion",
+        "1 tbsp olive oil",
+        "4 tbsp tomato purée",
+        "2 1/2 dl cream",
+        "1 dl milk",
+        "1 tbsp soy sauce",
+        "1 tbsp Dijon mustard"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-korv-stroganoff-ing-1",
+          "arabicName": "فالو كورف سويدي، نصف كجم",
+          "candidateDisplay": "1/2 kg Swedish falukorv",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1/2 kg Swedish falukorv",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "kg",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-korv-stroganoff-ing-2",
+          "arabicName": "بصلة صفراء واحدة",
+          "candidateDisplay": "1 yellow onion",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 yellow onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-korv-stroganoff-ing-3",
+          "arabicName": "زيت زيتون، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp olive oil",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 tbsp olive oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-korv-stroganoff-ing-4",
+          "arabicName": "هريس طماطم، 4 ملاعق كبيرة",
+          "candidateDisplay": "4 tbsp tomato purée",
+          "sourceIngredientIndex": 3,
+          "sourceText": "4 tbsp tomato purée",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 4,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-korv-stroganoff-ing-5",
+          "arabicName": "قشدة، 2½ ديسيلتر",
+          "candidateDisplay": "2 1/2 dl cream",
+          "sourceIngredientIndex": 4,
+          "sourceText": "2 1/2 dl cream",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-korv-stroganoff-ing-6",
+          "arabicName": "حليب، ديسيلتر واحد",
+          "candidateDisplay": "1 dl milk",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1 dl milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-korv-stroganoff-ing-7",
+          "arabicName": "صلصة صويا، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp soy sauce",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 tbsp soy sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-korv-stroganoff-ing-8",
+          "arabicName": "خردل ديجون، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp Dijon mustard",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 tbsp Dijon mustard",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Cut the sausage into sticks and dice the onion.",
+        "Fry the sausage and onion in oil for about ten minutes. Add the tomato purée and cook for another minute.",
+        "Stir in cream, milk, soy sauce and Dijon mustard. Let it simmer for at least five minutes.",
+        "Season to taste with plenty of pepper, and possibly salt.",
+        "Serve with boiled rice. Optionally top with freshly ground pepper and/or garnish with chopped parsley."
+      ],
+      "sourceRawText": "---\ntitle: Korv Stroganoff\ntags: ['swedish', 'quick', 'sausage']\ndate: 2022-07-16\n---\n\n![Korv Stroganoff](/pix/korv-stroganoff.webp)\n\nThis easy Swedish dish makes for a great weeknight dinner.\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 20 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 1/2 kg Swedish falukorv\n- 1 yellow onion\n- 1 tbsp olive oil\n- 4 tbsp tomato purée\n- 2 1/2 dl cream\n- 1 dl milk\n- 1 tbsp soy sauce\n- 1 tbsp Dijon mustard\n\n## Directions\n\n1. Cut the sausage into sticks and dice the onion.\n2. Fry the sausage and onion in oil for about ten minutes. Add the tomato purée and cook for another minute.\n3. Stir in cream, milk, soy sauce and Dijon mustard. Let it simmer for at least five minutes.\n4. Season to taste with plenty of pepper, and possibly salt.\n5. Serve with boiled rice. Optionally top with freshly ground pepper and/or garnish with chopped parsley.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-lentejas",
+      "sourceTitle": "Sopa de Lentejas",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/lentejas.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/lentejas.md",
+      "snapshotSHA256": "fc7e083873bf98ad43251a1210c7601b145a650229c17cebf3b81828264f3d9a",
+      "sourceAuthor": "nacchofer31",
+      "sourceTags": [
+        "spanish"
+      ],
+      "sourceIngredientLines": [
+        "1 carrot, chopped",
+        "1 green bell pepper, chopped",
+        "4 garlic cloves, minced",
+        "1 large onion, chopped",
+        "1 cup dry brown lentils, soaked overnight and drained",
+        "2 plum tomatoes, chopped",
+        "2 cups water, or as needed",
+        "1 bay leaf",
+        "1 tbsp extra-virgin olive oil",
+        "1/2 tsp of paprika",
+        "1/4 spicy chorizo (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-lentejas-ing-1",
+          "arabicName": "جزرة مفرومة",
+          "candidateDisplay": "1 carrot, chopped",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 carrot, chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-2",
+          "arabicName": "فلفل رومي أخضر مفروم",
+          "candidateDisplay": "1 green bell pepper, chopped",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 green bell pepper, chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-3",
+          "arabicName": "4 فصوص ثوم مفرومة",
+          "candidateDisplay": "4 garlic cloves, minced",
+          "sourceIngredientIndex": 2,
+          "sourceText": "4 garlic cloves, minced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-4",
+          "arabicName": "بصلة كبيرة مفرومة",
+          "candidateDisplay": "1 large onion, chopped",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 large onion, chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-5",
+          "arabicName": "عدس بني جاف منقوع طوال الليل ومصفى، كوب واحد",
+          "candidateDisplay": "1 cup dry brown lentils, soaked overnight and drained",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 cup dry brown lentils, soaked overnight and drained",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-6",
+          "arabicName": "حبتا طماطم برقوقية مفرومتان",
+          "candidateDisplay": "2 plum tomatoes, chopped",
+          "sourceIngredientIndex": 5,
+          "sourceText": "2 plum tomatoes, chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-7",
+          "arabicName": "ماء، كوبان أو حسب الحاجة",
+          "candidateDisplay": "2 cups water, or as needed",
+          "sourceIngredientIndex": 6,
+          "sourceText": "2 cups water, or as needed",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-8",
+          "arabicName": "ورقة غار واحدة",
+          "candidateDisplay": "1 bay leaf",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 bay leaf",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-9",
+          "arabicName": "زيت زيتون بكر ممتاز، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp extra-virgin olive oil",
+          "sourceIngredientIndex": 8,
+          "sourceText": "1 tbsp extra-virgin olive oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-10",
+          "arabicName": "بابريكا، نصف ملعقة صغيرة",
+          "candidateDisplay": "1/2 tsp of paprika",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1/2 tsp of paprika",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-lentejas-ing-11",
+          "arabicName": "ربع نقانق تشوريزو حارة (اختياري)",
+          "candidateDisplay": "1/4 spicy chorizo (optional)",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1/4 spicy chorizo (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Heat olive oil in a large pot over medium heat.",
+        "Add the onion, carrot, and bell pepper; cook and stir until vegetables begin to soften, about 5 minutes.",
+        "Stir in the garlic, tomatoes, chorizo and bay leaf; cook about 4 minutes.",
+        "Add lentils and water (water should be about an inch deeper than the level of the lentils).",
+        "Bring to a boil over high heat. Reduce heat to low; simmer, uncovered, until lentils are just cooked, 15 to 20 minutes."
+      ],
+      "sourceRawText": "---\ntitle: \"Sopa de Lentejas\"\ndate: 2021-03-21\ntags: ['spanish']\nauthor: nacchofer31\n---\n\n![Lentejas](/pix/lentejas.webp)\n\nTraditional-spanish dish. Typical spanish!\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 35 min\n- 🍽️ Servings: 4-6\n\n## Ingredients\n\n- 1 carrot, chopped\n- 1 green bell pepper, chopped\n- 4 garlic cloves, minced\n- 1 large onion, chopped\n- 1 cup dry brown lentils, soaked overnight and drained\n- 2 plum tomatoes, chopped\n- 2 cups water, or as needed\n- 1 bay leaf\n- 1 tbsp extra-virgin olive oil\n- 1/2 tsp of paprika\n- 1/4 spicy chorizo (optional)\n\n## Directions\n\n1. Heat olive oil in a large pot over medium heat.\n2. Add the onion, carrot, and bell pepper; cook and stir until vegetables begin to soften, about 5 minutes.\n3. Stir in the garlic, tomatoes, chorizo and bay leaf; cook about 4 minutes.\n4. Add lentils and water (water should be about an inch deeper than the level of the lentils).\n5. Bring to a boil over high heat. Reduce heat to low; simmer, uncovered, until lentils are just cooked, 15 to 20 minutes.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-long-cooked-chuck-steak",
+      "sourceTitle": "Long-cooked Chuck Steak With Vegetables",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/long-cooked-chuck-steak.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/long-cooked-chuck-steak.md",
+      "snapshotSHA256": "dd5028bf5dda13d93fe99f3700ca2ecc181ff7b991dfd721b2bbb2a5fae9cf95",
+      "sourceAuthor": "\"Emilio Müller\"",
+      "sourceTags": [
+        "beef",
+        "soup",
+        "keto"
+      ],
+      "sourceIngredientLines": [
+        "800g chuck steak.",
+        "200g tomatoes (or 400g canned chopped tomatoes).",
+        "1 fennel.",
+        "1 onion.",
+        "1/4 of a cauliflower.",
+        "50ml olive oil (Optional)."
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-long-cooked-chuck-steak-ing-1",
+          "arabicName": "ستيك كتف بقر، 800 جم",
+          "candidateDisplay": "800g chuck steak.",
+          "sourceIngredientIndex": 0,
+          "sourceText": "800g chuck steak.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 800,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-long-cooked-chuck-steak-ing-2",
+          "arabicName": "طماطم، 200 جم (أو 400 جم طماطم معلبة مفرومة)",
+          "candidateDisplay": "200g tomatoes (or 400g canned chopped tomatoes).",
+          "sourceIngredientIndex": 1,
+          "sourceText": "200g tomatoes (or 400g canned chopped tomatoes).",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 200,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-long-cooked-chuck-steak-ing-3",
+          "arabicName": "حبة شمر",
+          "candidateDisplay": "1 fennel.",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 fennel.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-long-cooked-chuck-steak-ing-4",
+          "arabicName": "بصلة واحدة",
+          "candidateDisplay": "1 onion.",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 onion.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-long-cooked-chuck-steak-ing-5",
+          "arabicName": "ربع رأس قرنبيط",
+          "candidateDisplay": "1/4 of a cauliflower.",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1/4 of a cauliflower.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-long-cooked-chuck-steak-ing-6",
+          "arabicName": "زيت زيتون، 50 مل (اختياري)",
+          "candidateDisplay": "50ml olive oil (Optional).",
+          "sourceIngredientIndex": 5,
+          "sourceText": "50ml olive oil (Optional).",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 50,
+          "acceptedUnit": "ml",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Add a little of the olive oil to the long cooker, put in the meat, and set it to high.",
+        "Chop the onion and add it.",
+        "Cut the cauliflower to sizes you prefer and add.",
+        "Chop or slice 1/3 of the fennel and add.",
+        "Crush the tomatoes and add (or add the canned chopped tomatoes).",
+        "Add the rest of the olive oil and let it be for at least 6 hours.",
+        "Serve with the rest of the fennel (chop or sliced)."
+      ],
+      "sourceRawText": "---\ntitle: Long-cooked Chuck Steak With Vegetables\ntags: ['beef', 'soup', 'keto']\ndate: 2023-04-13\nauthor: \"Emilio Müller\"\n---\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 6 hours\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 800g chuck steak.\n- 200g tomatoes (or 400g canned chopped tomatoes).\n- 1 fennel.\n- 1 onion.\n- 1/4 of a cauliflower.\n- 50ml olive oil (Optional).\n\n## Directions\n\n1. Add a little of the olive oil to the long cooker, put in the meat, and set it to high.\n2. Chop the onion and add it.\n3. Cut the cauliflower to sizes you prefer and add.\n4. Chop or slice 1/3 of the fennel and add.\n5. Crush the tomatoes and add (or add the canned chopped tomatoes).\n6. Add the rest of the olive oil and let it be for at least 6 hours.\n7. Serve with the rest of the fennel (chop or sliced).\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-maque-choux",
+      "sourceTitle": "Maque Choux",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/maque-choux.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/maque-choux.md",
+      "snapshotSHA256": "dcbea641bf4618e6f42b6fd240a272d01c19ff2910ca6b99df862e992a23ffe3",
+      "sourceAuthor": "dr-cat",
+      "sourceTags": [
+        "american",
+        "corn",
+        "fasting"
+      ],
+      "sourceIngredientLines": [
+        "A little sugar",
+        "A good bit of grease (about a handful)",
+        "Handful of chopped onion",
+        "Handful of chopped bell pepper",
+        "Eight ears of corn",
+        "Handful of chopped tomatoes",
+        "Salt & Pepper (to taste)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-maque-choux-ing-1",
+          "arabicName": "قليل من السكر",
+          "candidateDisplay": "A little sugar",
+          "sourceIngredientIndex": 0,
+          "sourceText": "A little sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-maque-choux-ing-2",
+          "arabicName": "كمية جيدة من الدهن (نحو قبضة)",
+          "candidateDisplay": "A good bit of grease (about a handful)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "A good bit of grease (about a handful)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-maque-choux-ing-3",
+          "arabicName": "قبضة بصل مفروم",
+          "candidateDisplay": "Handful of chopped onion",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Handful of chopped onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-maque-choux-ing-4",
+          "arabicName": "قبضة فلفل رومي مفروم",
+          "candidateDisplay": "Handful of chopped bell pepper",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Handful of chopped bell pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-maque-choux-ing-5",
+          "arabicName": "8 أكواز ذرة",
+          "candidateDisplay": "Eight ears of corn",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Eight ears of corn",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-maque-choux-ing-6",
+          "arabicName": "قبضة طماطم مفرومة",
+          "candidateDisplay": "Handful of chopped tomatoes",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Handful of chopped tomatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-maque-choux-ing-7",
+          "arabicName": "ملح وفلفل حسب الذوق",
+          "candidateDisplay": "Salt & Pepper (to taste)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Salt & Pepper (to taste)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Clean the corn and cut lengthwise about a thumbnail (1/4 in) from the top and scrape down using the soft end of a knife (to keep the juices).",
+        "Mix all ingredients in a bowl excluding the grease. Salt & pepper to taste.",
+        "Pour mixture into a pot with hot grease in it at low heat.",
+        "Cover pot and cook for 45 minutes, and stir as you get up for more beers.",
+        "Serve. (Serves 4-6)"
+      ],
+      "sourceRawText": "---\ntitle: \"Maque Choux\"\ndate: 2021-03-12\ntags: ['american', 'corn', 'fasting']\nauthor: dr-cat\n---\n\nAn old cajun recipe for stewed corn & tomatoes. Enjoyable at any time of year, but I love to make it on hot summer afternoons as a side to\na sausage dish. Pairs well with brown ales.\n\n## Ingredients\n\n- A little sugar\n- A good bit of grease (about a handful)\n- Handful of chopped onion\n- Handful of chopped bell pepper\n- Eight ears of corn\n- Handful of chopped tomatoes\n- Salt & Pepper (to taste)\n\n## Directions\n\n1. Clean the corn and cut lengthwise about a thumbnail (1/4 in) from the top and scrape down using the soft end of a knife (to keep the juices).\n2. Mix all ingredients in a bowl excluding the grease. Salt & pepper to taste.\n3. Pour mixture into a pot with hot grease in it at low heat.\n4. Cover pot and cook for 45 minutes, and stir as you get up for more beers.\n5. Serve. (Serves 4-6)\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-clam-chowder",
+      "sourceTitle": "Clam Chowder",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/clam-chowder.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/clam-chowder.md",
+      "snapshotSHA256": "3f1b0e42cb6267de79cd834f4af05c9dccde71b12631ed557584e251419b97c8",
+      "sourceAuthor": "\"Tim L\"",
+      "sourceTags": [
+        "seafood",
+        "stew",
+        "american"
+      ],
+      "sourceIngredientLines": [
+        "Bacon, at least enough to create at least 2 tablespoons of drippings for the base",
+        "Butter, 2 tablespoons",
+        "1 Onion, diced",
+        "3 Cloves of Garlic, minced",
+        "1/3 cup of flour",
+        "3 cups half and half",
+        "1 cup of chicken broth, other stocks likely are no issue.",
+        "1 cup of clam juice or dashi stock.",
+        "Chopped clams",
+        "Salt",
+        "Potatoes, diced"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-clam-chowder-ing-1",
+          "arabicName": "لحم مقدد يكفي لصنع ملعقتين كبيرتين على الأقل من الدهن",
+          "candidateDisplay": "Bacon, at least enough to create at least 2 tablespoons of drippings for the base",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Bacon, at least enough to create at least 2 tablespoons of drippings for the base",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-2",
+          "arabicName": "زبدة، ملعقتان كبيرتان",
+          "candidateDisplay": "Butter, 2 tablespoons",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Butter, 2 tablespoons",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-3",
+          "arabicName": "بصلة مكعبات",
+          "candidateDisplay": "1 Onion, diced",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 Onion, diced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-4",
+          "arabicName": "3 فصوص ثوم مفرومة",
+          "candidateDisplay": "3 Cloves of Garlic, minced",
+          "sourceIngredientIndex": 3,
+          "sourceText": "3 Cloves of Garlic, minced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-5",
+          "arabicName": "دقيق، ثلث كوب",
+          "candidateDisplay": "1/3 cup of flour",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1/3 cup of flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.3333333333333333,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-6",
+          "arabicName": "نصف ونصف، 3 أكواب",
+          "candidateDisplay": "3 cups half and half",
+          "sourceIngredientIndex": 5,
+          "sourceText": "3 cups half and half",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 3,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-7",
+          "arabicName": "مرق دجاج، كوب واحد (ويقول المصدر إن أنواع المرق الأخرى غالباً لا مشكلة فيها)",
+          "candidateDisplay": "1 cup of chicken broth, other stocks likely are no issue.",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 cup of chicken broth, other stocks likely are no issue.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-8",
+          "arabicName": "عصير محار أو مرق داشي، كوب واحد",
+          "candidateDisplay": "1 cup of clam juice or dashi stock.",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 cup of clam juice or dashi stock.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-9",
+          "arabicName": "محار مفروم",
+          "candidateDisplay": "Chopped clams",
+          "sourceIngredientIndex": 8,
+          "sourceText": "Chopped clams",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-10",
+          "arabicName": "ملح",
+          "candidateDisplay": "Salt",
+          "sourceIngredientIndex": 9,
+          "sourceText": "Salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-clam-chowder-ing-11",
+          "arabicName": "بطاطا مكعبات",
+          "candidateDisplay": "Potatoes, diced",
+          "sourceIngredientIndex": 10,
+          "sourceText": "Potatoes, diced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Cook bacon in stew or soup pot, remove bacon to chop up and add back in later.",
+        "Add butter and cook onions and garlic: Season as desired.",
+        "Add and cook flour.",
+        "Stir in broth, then stir in half and half.",
+        "Add dashi or clam juice, bring to gentle boil and simmer for 20 minutes.",
+        "Add potatoes and simmer till cooked, usually around 25 minutes.",
+        "Add clams, cook for about 5 minutes.",
+        "Garnish and ready to serve."
+      ],
+      "sourceRawText": "---\ntitle: \"Clam Chowder\"\ntags: ['seafood', 'stew', 'american']\ndate: 2025-10-09\nauthor: \"Tim L\"\n---\n\nBasic recipe on creating the clam chowder-base. Ingredient requirements are based on approximate minimums.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 60 min\n- 🍽️ Servings: 4-6, 3.75 QT pot.\n\n## Ingredients\n\n- Bacon, at least enough to create at least 2 tablespoons of drippings for the base\n- Butter, 2 tablespoons\n- 1 Onion, diced\n- 3 Cloves of Garlic, minced\n- 1/3 cup of flour\n- 3 cups half and half\n- 1 cup of chicken broth, other stocks likely are no issue.\n- 1 cup of clam juice or dashi stock.\n- Chopped clams\n- Salt\n- Potatoes, diced\n\n## Directions\n\n1. Cook bacon in stew or soup pot, remove bacon to chop up and add back in later.\n2. Add butter and cook onions and garlic: Season as desired.\n3. Add and cook flour.\n4. Stir in broth, then stir in half and half.\n5. Add dashi or clam juice, bring to gentle boil and simmer for 20 minutes.\n6. Add potatoes and simmer till cooked, usually around 25 minutes.\n7. Add clams, cook for about 5 minutes.\n8. Garnish and ready to serve.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-okonomiyaki",
+      "sourceTitle": "Okonomiyaki",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/okonomiyaki.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/okonomiyaki.md",
+      "snapshotSHA256": "f4f72bf9ed5ee29ff97caa1c7ea2052d8e0b2b51383e23504b0077f3a1882201",
+      "sourceAuthor": null,
+      "sourceTags": [
+        "quick",
+        "japanese"
+      ],
+      "sourceIngredientLines": [
+        "125g flour",
+        "1 egg",
+        "125ml water",
+        "Thinly sliced meat, any kind can do, sliced pork, beef, even bacon",
+        "Dashi powder or any desired seasonings",
+        "2-4 leaves cabbage",
+        "Pinch salt to taste",
+        "The following options are traditional but can be substituted with any desired toppings",
+        "Tonkatsu sauce (sometimes known as Bulldog sauce) in squirt bottle",
+        "Mayonnaise in squirt bottle",
+        "Sriacha in squirt bottle",
+        "Katsuobushi (Dried bonito flakes)",
+        "Nori (Dried roasted seaweed)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-1",
+          "arabicName": "دقيق، 125 جم",
+          "candidateDisplay": "125g flour",
+          "sourceIngredientIndex": 0,
+          "sourceText": "125g flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 125,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-2",
+          "arabicName": "بيضة واحدة",
+          "candidateDisplay": "1 egg",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 egg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-3",
+          "arabicName": "ماء، 125 مل",
+          "candidateDisplay": "125ml water",
+          "sourceIngredientIndex": 2,
+          "sourceText": "125ml water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 125,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-4",
+          "arabicName": "لحم مقطع شرائح رفيعة؛ أي نوع مثل لحم الخنزير أو البقر أو اللحم المقدد",
+          "candidateDisplay": "Thinly sliced meat, any kind can do, sliced pork, beef, even bacon",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Thinly sliced meat, any kind can do, sliced pork, beef, even bacon",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-5",
+          "arabicName": "مسحوق داشي أو توابل حسب الرغبة",
+          "candidateDisplay": "Dashi powder or any desired seasonings",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Dashi powder or any desired seasonings",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-6",
+          "arabicName": "2–4 أوراق ملفوف",
+          "candidateDisplay": "2-4 leaves cabbage",
+          "sourceIngredientIndex": 5,
+          "sourceText": "2-4 leaves cabbage",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-7",
+          "arabicName": "رشة ملح حسب الذوق",
+          "candidateDisplay": "Pinch salt to taste",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Pinch salt to taste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-8",
+          "arabicName": "صلصة تونكاتسو (تسمى أحياناً بولدوغ) في زجاجة ضغط، خيار تقليدي قابل للاستبدال",
+          "candidateDisplay": "Tonkatsu sauce (sometimes known as Bulldog sauce) in squirt bottle",
+          "sourceIngredientIndex": 8,
+          "sourceText": "Tonkatsu sauce (sometimes known as Bulldog sauce) in squirt bottle",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-9",
+          "arabicName": "مايونيز في زجاجة ضغط، خيار تقليدي قابل للاستبدال",
+          "candidateDisplay": "Mayonnaise in squirt bottle",
+          "sourceIngredientIndex": 9,
+          "sourceText": "Mayonnaise in squirt bottle",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-10",
+          "arabicName": "سريراتشا في زجاجة ضغط، خيار تقليدي قابل للاستبدال",
+          "candidateDisplay": "Sriacha in squirt bottle",
+          "sourceIngredientIndex": 10,
+          "sourceText": "Sriacha in squirt bottle",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-11",
+          "arabicName": "كاتسووبوشي، رقائق بونيتو مجفف",
+          "candidateDisplay": "Katsuobushi (Dried bonito flakes)",
+          "sourceIngredientIndex": 11,
+          "sourceText": "Katsuobushi (Dried bonito flakes)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-okonomiyaki-ing-12",
+          "arabicName": "نوري، أعشاب بحرية محمصة مجففة",
+          "candidateDisplay": "Nori (Dried roasted seaweed)",
+          "sourceIngredientIndex": 12,
+          "sourceText": "Nori (Dried roasted seaweed)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [
+        7
+      ],
+      "sourceMethodLines": [
+        "Chop cabbage into thin strips.",
+        "Whisk water and egg together in a bowl and then whisk in flour, salt, and seasonings.",
+        "Fold cabbage into batter with as few folds as possible to completely work the cabbage in.",
+        "Fry meat in a pre-heated cast-iron pan or griddle on medium-high heat until brown on one side, flip, and immediately pour batter on top after flipping.",
+        "Allow to cook for 2-3 minutes and either flip the pancake, or move under a broiler to cook the top for another 2-3 minutes.",
+        "Move pancake to a serving plate meat side up and squirt tonkatsu sauce, mayonnaise, and sriracha over the top in a zig-zag pattern",
+        "Sprinkle katsuobushi and nori on top of the sauces and the okonomiyaki is ready to serve."
+      ],
+      "sourceRawText": "---\ntitle: \"Okonomiyaki\"\ndate: 2021-04-06\ntags: ['quick', 'japanese']\n---\n\nOkonomiyaki is a Japanese savory pancake.  Instead of using air bubbles to lighten the pancake, thin strips of cabbage provide levity to the cake.  This is a very popular street food in Japan, and can be topped with all sorts of different ingredients, as \"Okonomiyaki\" roughly translates to \"Grilled how you like\".\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 1\n\n## Ingredients\n\n- 125g flour\n- 1 egg\n- 125ml water\n- Thinly sliced meat, any kind can do, sliced pork, beef, even bacon\n- Dashi powder or any desired seasonings\n- 2-4 leaves cabbage\n- Pinch salt to taste\n\n- The following options are traditional but can be substituted with any desired toppings\n  - Tonkatsu sauce (sometimes known as Bulldog sauce) in squirt bottle\n  - Mayonnaise in squirt bottle\n  - Sriacha in squirt bottle\n  - Katsuobushi (Dried bonito flakes)\n  - Nori (Dried roasted seaweed)\n\n## Directions\n\n1. Chop cabbage into thin strips.\n2. Whisk water and egg together in a bowl and then whisk in flour, salt, and seasonings.\n3. Fold cabbage into batter with as few folds as possible to completely work the cabbage in.\n4. Fry meat in a pre-heated cast-iron pan or griddle on medium-high heat until brown on one side, flip, and immediately pour batter on top after flipping.\n5. Allow to cook for 2-3 minutes and either flip the pancake, or move under a broiler to cook the top for another 2-3 minutes.\n6. Move pancake to a serving plate meat side up and squirt tonkatsu sauce, mayonnaise, and sriracha over the top in a zig-zag pattern\n7. Sprinkle katsuobushi and nori on top of the sauces and the okonomiyaki is ready to serve.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-pastitsio",
+      "sourceTitle": "Pastítsio",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pastitsio.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/pastitsio.md",
+      "snapshotSHA256": "91dc18efdb8059740317c41d7326214ad2442c32957e77b09cacf285bb5038c9",
+      "sourceAuthor": "'prox'",
+      "sourceTags": [
+        "greek",
+        "mediterranean",
+        "pasta",
+        "supper"
+      ],
+      "sourceIngredientLines": [
+        "600g penne rigate",
+        "salted water",
+        "1 large onion, finely diced",
+        "700g lean ground beef",
+        ".5 TB ground allspice",
+        ".5 TB ground cinnamon",
+        ".25 TSP ground clove (optional)",
+        "340g tomato paste",
+        "226g butter",
+        "226g flour",
+        "1L cold milk",
+        "237ml chicken stock",
+        "freshly grated nutmeg (optional)",
+        "grated cheese (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-pastitsio-ing-1",
+          "arabicName": "بينّي ريغاتيه، 600 جم",
+          "candidateDisplay": "600g penne rigate",
+          "sourceIngredientIndex": 0,
+          "sourceText": "600g penne rigate",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 600,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-2",
+          "arabicName": "ماء مملح",
+          "candidateDisplay": "salted water",
+          "sourceIngredientIndex": 1,
+          "sourceText": "salted water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-3",
+          "arabicName": "بصلة كبيرة مكعبات صغيرة",
+          "candidateDisplay": "1 large onion, finely diced",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 large onion, finely diced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-4",
+          "arabicName": "لحم بقر قليل الدهن مفروم، 700 جم",
+          "candidateDisplay": "700g lean ground beef",
+          "sourceIngredientIndex": 3,
+          "sourceText": "700g lean ground beef",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 700,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-5",
+          "arabicName": "بهار حلو مطحون، نصف ملعقة كبيرة",
+          "candidateDisplay": ".5 TB ground allspice",
+          "sourceIngredientIndex": 4,
+          "sourceText": ".5 TB ground allspice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-6",
+          "arabicName": "قرفة مطحونة، نصف ملعقة كبيرة",
+          "candidateDisplay": ".5 TB ground cinnamon",
+          "sourceIngredientIndex": 5,
+          "sourceText": ".5 TB ground cinnamon",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-7",
+          "arabicName": "قرنفل مطحون (اختياري)، ربع ملعقة صغيرة",
+          "candidateDisplay": ".25 TSP ground clove (optional)",
+          "sourceIngredientIndex": 6,
+          "sourceText": ".25 TSP ground clove (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-8",
+          "arabicName": "معجون طماطم، 340 جم",
+          "candidateDisplay": "340g tomato paste",
+          "sourceIngredientIndex": 7,
+          "sourceText": "340g tomato paste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 340,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-9",
+          "arabicName": "زبدة، 226 جم",
+          "candidateDisplay": "226g butter",
+          "sourceIngredientIndex": 8,
+          "sourceText": "226g butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 226,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-10",
+          "arabicName": "دقيق، 226 جم",
+          "candidateDisplay": "226g flour",
+          "sourceIngredientIndex": 9,
+          "sourceText": "226g flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 226,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-11",
+          "arabicName": "حليب بارد، لتر واحد",
+          "candidateDisplay": "1L cold milk",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1L cold milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-12",
+          "arabicName": "مرق دجاج، 237 مل",
+          "candidateDisplay": "237ml chicken stock",
+          "sourceIngredientIndex": 11,
+          "sourceText": "237ml chicken stock",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 237,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-13",
+          "arabicName": "جوزة الطيب مبشورة طازجة (اختياري)",
+          "candidateDisplay": "freshly grated nutmeg (optional)",
+          "sourceIngredientIndex": 12,
+          "sourceText": "freshly grated nutmeg (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pastitsio-ing-14",
+          "arabicName": "جبن مبشور (اختياري)",
+          "candidateDisplay": "grated cheese (optional)",
+          "sourceIngredientIndex": 13,
+          "sourceText": "grated cheese (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Preheat oven to 190°C",
+        "In a large pot of salted water, cook the pasta per package directions. Drain and set aside.",
+        "Cook onion in a bit of oil until soft. Add meat and cook until browned, breaking meat into small pieces.",
+        "Drain any excess grease and add spices. Stir together and cook ~30 seconds.",
+        "Mix tomato paste with enough water to create a viscous tomato sauce. Add sauce to meat and simmer 2-3 minutes before setting aside.",
+        "In a saucepan melt the butter and add the flour. Cook 2-3 mins until no longer starchy, whisking frequently. Add milk gradually and whisk continuously. Add stock and cook until sauce is thickened.  Add nutmeg and season to taste.",
+        "Add thin béchamel layer to bottom of casserole dish and assemble as follows: half pasta, all the meat sauce, 2nd half of pasta, rest of béchamel and cheese.",
+        "Bake covered for 45 minutes, removing lid last 5-10 minutes to brown top.  Let cool 15 minutes."
+      ],
+      "sourceRawText": "---\ntitle: Pastítsio\ntags: ['greek', 'mediterranean', 'pasta', 'supper']\ndate: 2022-06-17\nauthor: 'prox'\n---\n\n- ⏲️  Prep time: 15 min\n- 🍳 Cook time: 50 min\n- 🍽️ Servings: 6-8\n\n## Ingredients\n\n### Pasta layer\n\n- 600g penne rigate\n- salted water\n\n### Meat layer\n\n- 1 large onion, finely diced\n- 700g lean ground beef\n- .5 TB ground allspice\n- .5 TB ground cinnamon\n- .25 TSP ground clove (optional)\n- 340g tomato paste\n\n### Béchamel layer\n\n- 226g butter\n- 226g flour\n- 1L cold milk\n- 237ml chicken stock\n- freshly grated nutmeg (optional)\n- grated cheese (optional)\n\n## Directions\n\n1. Preheat oven to 190°C\n2. In a large pot of salted water, cook the pasta per package directions. Drain and set aside.\n3. Cook onion in a bit of oil until soft. Add meat and cook until browned, breaking meat into small pieces.\n4. Drain any excess grease and add spices. Stir together and cook ~30 seconds.\n5. Mix tomato paste with enough water to create a viscous tomato sauce. Add sauce to meat and simmer 2-3 minutes before setting aside.\n6. In a saucepan melt the butter and add the flour. Cook 2-3 mins until no longer starchy, whisking frequently. Add milk gradually and whisk continuously. Add stock and cook until sauce is thickened.  Add nutmeg and season to taste.\n7. Add thin béchamel layer to bottom of casserole dish and assemble as follows: half pasta, all the meat sauce, 2nd half of pasta, rest of béchamel and cheese.\n8. Bake covered for 45 minutes, removing lid last 5-10 minutes to brown top.  Let cool 15 minutes.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-pulpo-gallega",
+      "sourceTitle": "Pulpo a la gallega",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pulpo-gallega.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/pulpo-gallega.md",
+      "snapshotSHA256": "f2877a2f6098c141535050d895ac837e70301de6b43f3a744335f045fc5d1ad1",
+      "sourceAuthor": "\"ivn1s\"",
+      "sourceTags": [
+        "fish",
+        "spanish"
+      ],
+      "sourceIngredientLines": [
+        "1 octopus (1.7 to 2kg)",
+        "Potatoes",
+        "2 bay leaves",
+        "Sweet and spicy red pepper",
+        "Salt",
+        "oil"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-pulpo-gallega-ing-1",
+          "arabicName": "أخطبوط واحد، 1.7–2 كجم",
+          "candidateDisplay": "1 octopus (1.7 to 2kg)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 octopus (1.7 to 2kg)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pulpo-gallega-ing-2",
+          "arabicName": "بطاطا",
+          "candidateDisplay": "Potatoes",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Potatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pulpo-gallega-ing-3",
+          "arabicName": "ورقتا غار",
+          "candidateDisplay": "2 bay leaves",
+          "sourceIngredientIndex": 2,
+          "sourceText": "2 bay leaves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pulpo-gallega-ing-4",
+          "arabicName": "فلفل أحمر حلو وحار",
+          "candidateDisplay": "Sweet and spicy red pepper",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Sweet and spicy red pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pulpo-gallega-ing-5",
+          "arabicName": "ملح",
+          "candidateDisplay": "Salt",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pulpo-gallega-ing-6",
+          "arabicName": "زيت",
+          "candidateDisplay": "oil",
+          "sourceIngredientIndex": 5,
+          "sourceText": "oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Boil water along with salt and the bay leaves",
+        "Once the water is boiling, introduce the octopus 3 times by putting it on and taking it out, then let it cook for 35 to 40 minutes by puncturing it to see whether it is already soft or we need to leave it a little longer",
+        "turn off the fire and let it rest for 20 minutes more with the same water. Meanwhile we will have boiled the potatoes with skin for about 25 minutes depending on the size.",
+        "We will remove the octopus from the water and let it cool, and once it is cold, we will cut it in slices with scissors.",
+        "To assemble the dish we will laminate the potatoes by placing them at the bottom of the plate, on top and we will put the octopus slices seasoning it with salt, the sweet and spicy red pepper and a good squirt of olive oil."
+      ],
+      "sourceRawText": "---\ntitle: Pulpo a la gallega\ntags: ['fish', 'spanish']\ndate: 2022-07-13\nauthor: \"ivn1s\"\n---\n\n![pulpo a la gallega](/pix/pulpo-gallega.webp)\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 35 to 40 min\n- 🍽️ Servings:\n\n## Ingredients\n\n- 1 octopus (1.7 to 2kg)\n- Potatoes\n- 2 bay leaves\n- Sweet and spicy red pepper\n- Salt\n- oil\n\n## Directions\n\n1. Boil water along with salt and the bay leaves\n2. Once the water is boiling, introduce the octopus 3 times by putting it on and taking it out, then let it cook for 35 to 40 minutes by puncturing it to see whether it is already soft or we need to leave it a little longer\n3. turn off the fire and let it rest for 20 minutes more with the same water. Meanwhile we will have boiled the potatoes with skin for about 25 minutes depending on the size.\n4. We will remove the octopus from the water and let it cool, and once it is cold, we will cut it in slices with scissors.\n5. To assemble the dish we will laminate the potatoes by placing them at the bottom of the plate, on top and we will put the octopus slices seasoning it with salt, the sweet and spicy red pepper and a good squirt of olive oil.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-sardine-cakes",
+      "sourceTitle": "Sardine Cakes",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/sardine-cakes.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/sardine-cakes.md",
+      "snapshotSHA256": "aa38789440d6f1bd3fbc77a0b7b03576002675f97481b5606192b2f51c475a7c",
+      "sourceAuthor": "\"tom-fasano\"",
+      "sourceTags": [
+        "seafood",
+        "fish",
+        "american",
+        "spicy"
+      ],
+      "sourceIngredientLines": [
+        "2 tins sardines (~4oz)",
+        "½ cup mayonnaise",
+        "½ cup Panko breadcrumbs",
+        "2 teaspoons Old Bay seasoning",
+        "1 egg",
+        "lemon juice (optional)",
+        "½ cup plain yogurt (whole milk)",
+        "1 tablespoon sriracha",
+        "1 tablespoon Dijon mustard",
+        "1 teaspoon Worcestershire sauce",
+        "minced garlic (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-1",
+          "arabicName": "علبتا سردين (نحو 4 أونصات لكل منهما)",
+          "candidateDisplay": "2 tins sardines (~4oz)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 tins sardines (~4oz)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-2",
+          "arabicName": "مايونيز، نصف كوب",
+          "candidateDisplay": "½ cup mayonnaise",
+          "sourceIngredientIndex": 1,
+          "sourceText": "½ cup mayonnaise",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-3",
+          "arabicName": "فتات بانكو، نصف كوب",
+          "candidateDisplay": "½ cup Panko breadcrumbs",
+          "sourceIngredientIndex": 2,
+          "sourceText": "½ cup Panko breadcrumbs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-4",
+          "arabicName": "بهارات أولد باي، ملعقتان صغيرتان",
+          "candidateDisplay": "2 teaspoons Old Bay seasoning",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 teaspoons Old Bay seasoning",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "teaspoons",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-5",
+          "arabicName": "بيضة واحدة",
+          "candidateDisplay": "1 egg",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 egg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-6",
+          "arabicName": "عصير ليمون (اختياري)",
+          "candidateDisplay": "lemon juice (optional)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "lemon juice (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-7",
+          "arabicName": "زبادي سادة كامل الدسم، نصف كوب",
+          "candidateDisplay": "½ cup plain yogurt (whole milk)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "½ cup plain yogurt (whole milk)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-8",
+          "arabicName": "سريراتشا، ملعقة كبيرة",
+          "candidateDisplay": "1 tablespoon sriracha",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 tablespoon sriracha",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tablespoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-9",
+          "arabicName": "خردل ديجون، ملعقة كبيرة",
+          "candidateDisplay": "1 tablespoon Dijon mustard",
+          "sourceIngredientIndex": 8,
+          "sourceText": "1 tablespoon Dijon mustard",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tablespoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-10",
+          "arabicName": "صلصة ورشيسترشاير، ملعقة صغيرة",
+          "candidateDisplay": "1 teaspoon Worcestershire sauce",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1 teaspoon Worcestershire sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-sardine-cakes-ing-11",
+          "arabicName": "ثوم مفروم (اختياري)",
+          "candidateDisplay": "minced garlic (optional)",
+          "sourceIngredientIndex": 10,
+          "sourceText": "minced garlic (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Remove sardines from tin, reserving oil, and place fish in a mixing bowl.  Add remaining fish cake ingredients, along with the oil from one tin (about 2 TB) to the bowl.",
+        "Gently mix all the ingredients together with a fork.  Mix until incorporated, but don't purée.",
+        "Use something to scoop the fish cake mix into small balls. Flatten into small patties 2\" across, and about ½\" thick.",
+        "Set patties on a rimmed baking sheet, large cast iron pan, or casserole dish.",
+        "Refrigerate patties for about 30 minutes.",
+        "While fish cakes chill, mix together all the ingredients for the yogurt sauce.",
+        "Move oven rack to the top 3rd of the oven. Broil for 5 minutes, flip, and broil 3-5 minutes more, until cakes are golden brown.",
+        "Drizzle some lemon juice on cakes. Serve while still hot with the yogurt sauce. Enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: Sardine Cakes\ntags: ['seafood', 'fish', 'american', 'spicy']\ndate: 2022-04-16\nauthor: \"tom-fasano\"\n---\n\nCan be served with a Spicy Yogurt Sauce as Tapas or Hors D’Oeuvres.\n\n- ⏲️ Prep time: 10 min\n- 🧊 Chill time: 30 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 15\n\n## Ingredients\n\n### Sardine Fish Cakes\n\n- 2 tins sardines (~4oz)\n- ½ cup mayonnaise\n- ½ cup Panko breadcrumbs\n- 2 teaspoons Old Bay seasoning\n- 1 egg\n- lemon juice (optional)\n\n### Spicy Yogurt Sauce\n\n- ½ cup plain yogurt (whole milk)\n- 1 tablespoon sriracha\n- 1 tablespoon Dijon mustard\n- 1 teaspoon Worcestershire sauce\n- minced garlic (optional)\n\n## Directions\n\n1. Remove sardines from tin, reserving oil, and place fish in a mixing bowl.  Add remaining fish cake ingredients, along with the oil from one tin (about 2 TB) to the bowl.\n2. Gently mix all the ingredients together with a fork.  Mix until incorporated, but don't purée.\n3. Use something to scoop the fish cake mix into small balls. Flatten into small patties 2\" across, and about ½\" thick.\n4. Set patties on a rimmed baking sheet, large cast iron pan, or casserole dish.\n5. Refrigerate patties for about 30 minutes.\n6. While fish cakes chill, mix together all the ingredients for the yogurt sauce.\n7. Move oven rack to the top 3rd of the oven. Broil for 5 minutes, flip, and broil 3-5 minutes more, until cakes are golden brown.\n8. Drizzle some lemon juice on cakes. Serve while still hot with the yogurt sauce. Enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-stoemp",
+      "sourceTitle": "Stoemp",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/stoemp.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/stoemp.md",
+      "snapshotSHA256": "1220a0c42e8ab1d42c5759a6b79450f1bb646b1cbe518a6431e8cde0fe54681a",
+      "sourceAuthor": "alpo",
+      "sourceTags": [
+        "belgian",
+        "potato"
+      ],
+      "sourceIngredientLines": [
+        "500g potatoes",
+        "300g carrots",
+        "100g bacon",
+        "50g butter",
+        "100ml heavy cream",
+        "1/2 teaspoon ground nutmeg"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-stoemp-ing-1",
+          "arabicName": "بطاطا، 500 جم",
+          "candidateDisplay": "500g potatoes",
+          "sourceIngredientIndex": 0,
+          "sourceText": "500g potatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 500,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-stoemp-ing-2",
+          "arabicName": "جزر، 300 جم",
+          "candidateDisplay": "300g carrots",
+          "sourceIngredientIndex": 1,
+          "sourceText": "300g carrots",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 300,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-stoemp-ing-3",
+          "arabicName": "لحم مقدد، 100 جم",
+          "candidateDisplay": "100g bacon",
+          "sourceIngredientIndex": 2,
+          "sourceText": "100g bacon",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 100,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-stoemp-ing-4",
+          "arabicName": "زبدة، 50 جم",
+          "candidateDisplay": "50g butter",
+          "sourceIngredientIndex": 3,
+          "sourceText": "50g butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 50,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-stoemp-ing-5",
+          "arabicName": "قشدة كثيفة، 100 مل",
+          "candidateDisplay": "100ml heavy cream",
+          "sourceIngredientIndex": 4,
+          "sourceText": "100ml heavy cream",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 100,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-stoemp-ing-6",
+          "arabicName": "جوزة الطيب مطحونة، نصف ملعقة صغيرة",
+          "candidateDisplay": "1/2 teaspoon ground nutmeg",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1/2 teaspoon ground nutmeg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Cut bacon into bits.",
+        "Sauté bacon until well colored.",
+        "Peel and dice into small chunks potatoes, peel and slice carrots.",
+        "Boil for 20-25 minutes potatoes and carrots in salted water.",
+        "Drain vegetables and mash with a fork, so that the texture remains slightly chunky.",
+        "Mix with bacon bits, butter, cream, nutmeg, salt, pepper."
+      ],
+      "sourceRawText": "---\ntitle: \"Stoemp\"\ndate: 2021-03-21\ntags: ['belgian', 'potato']\nauthor: alpo\n---\n\nMashed potatoes in Belgian style\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 500g potatoes\n- 300g carrots\n- 100g bacon\n- 50g butter\n- 100ml heavy cream\n- 1/2 teaspoon ground nutmeg\n\n## Directions\n\n1. Cut bacon into bits.\n2. Sauté bacon until well colored.\n3. Peel and dice into small chunks potatoes, peel and slice carrots.\n4. Boil for 20-25 minutes potatoes and carrots in salted water.\n5. Drain vegetables and mash with a fork, so that the texture remains slightly chunky.\n6. Mix with bacon bits, butter, cream, nutmeg, salt, pepper.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-tabouleh",
+      "sourceTitle": "Tabouleh",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tabouleh.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/tabouleh.md",
+      "snapshotSHA256": "e7bc4cef98a8d95b7e50bdb48f4f2f388732972597d9ebaf078b6e320626f2e1",
+      "sourceAuthor": "joel-maxuel",
+      "sourceTags": [
+        "salad",
+        "mediterranean"
+      ],
+      "sourceIngredientLines": [
+        "2 cups Cracked Wheat (bulghur)",
+        "2 cups Very Hot Water (or as directed)",
+        "1 Cucumber, chopped",
+        "2 small Tomatoes, chopped",
+        "1 bunch Green Onions, sliced",
+        "1/2 cup Mint (fresh), chopped",
+        "2 cup Parsley (fresh), chopped",
+        "1 clove Garlic, minced",
+        "1/2 cup Lemon Juice (fresh)",
+        "3/4 cup Olive Oil",
+        "1 Tbsp Pepper",
+        "2 tsp Salt"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-tabouleh-ing-1",
+          "arabicName": "برغل خشن، كوبان",
+          "candidateDisplay": "2 cups Cracked Wheat (bulghur)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 cups Cracked Wheat (bulghur)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-2",
+          "arabicName": "ماء ساخن جداً، كوبان أو حسب التعليمات",
+          "candidateDisplay": "2 cups Very Hot Water (or as directed)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "2 cups Very Hot Water (or as directed)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-3",
+          "arabicName": "خيارة مفرومة",
+          "candidateDisplay": "1 Cucumber, chopped",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 Cucumber, chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-4",
+          "arabicName": "حبتا طماطم صغيرتان مفرومتان",
+          "candidateDisplay": "2 small Tomatoes, chopped",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 small Tomatoes, chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-5",
+          "arabicName": "حزمة بصل أخضر شرائح",
+          "candidateDisplay": "1 bunch Green Onions, sliced",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 bunch Green Onions, sliced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-6",
+          "arabicName": "نعناع طازج مفروم، نصف كوب",
+          "candidateDisplay": "1/2 cup Mint (fresh), chopped",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1/2 cup Mint (fresh), chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-7",
+          "arabicName": "بقدونس طازج مفروم، كوبان",
+          "candidateDisplay": "2 cup Parsley (fresh), chopped",
+          "sourceIngredientIndex": 6,
+          "sourceText": "2 cup Parsley (fresh), chopped",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-8",
+          "arabicName": "فص ثوم مفروم",
+          "candidateDisplay": "1 clove Garlic, minced",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 clove Garlic, minced",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-9",
+          "arabicName": "عصير ليمون طازج، نصف كوب",
+          "candidateDisplay": "1/2 cup Lemon Juice (fresh)",
+          "sourceIngredientIndex": 8,
+          "sourceText": "1/2 cup Lemon Juice (fresh)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-10",
+          "arabicName": "زيت زيتون، ثلاثة أرباع كوب",
+          "candidateDisplay": "3/4 cup Olive Oil",
+          "sourceIngredientIndex": 9,
+          "sourceText": "3/4 cup Olive Oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.75,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-11",
+          "arabicName": "فلفل، ملعقة كبيرة",
+          "candidateDisplay": "1 Tbsp Pepper",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1 Tbsp Pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-tabouleh-ing-12",
+          "arabicName": "ملح، ملعقتان صغيرتان",
+          "candidateDisplay": "2 tsp Salt",
+          "sourceIngredientIndex": 11,
+          "sourceText": "2 tsp Salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tsp",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Soak the cracked wheat in the hot water until the water is absorbed, about 30 minutes.",
+        "Drain any excess water, if necessary, and squeeze dry.",
+        "Combine the salad ingredients (all but the oil, lemon juice, salt and pepper dressing ingredients) in a medium bowl.",
+        "Mix the dressing ingredients together and stir into the salad mix",
+        "Serve chilled or at room temperature."
+      ],
+      "sourceRawText": "---\ntitle: Tabouleh\ntags: ['salad', 'mediterranean']\ndate: 2022-09-10\nauthor: joel-maxuel\n---\n\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 12\n\n## Ingredients\n\n- 2 cups Cracked Wheat (bulghur)\n- 2 cups Very Hot Water (or as directed)\n- 1 Cucumber, chopped\n- 2 small Tomatoes, chopped\n- 1 bunch Green Onions, sliced\n- 1/2 cup Mint (fresh), chopped\n- 2 cup Parsley (fresh), chopped\n- 1 clove Garlic, minced\n- 1/2 cup Lemon Juice (fresh)\n- 3/4 cup Olive Oil\n- 1 Tbsp Pepper\n- 2 tsp Salt\n\n## Directions\n\n1. Soak the cracked wheat in the hot water until the water is absorbed, about 30 minutes.\n2. Drain any excess water, if necessary, and squeeze dry.\n3. Combine the salad ingredients (all but the oil, lemon juice, salt and pepper dressing ingredients) in a medium bowl.\n4. Mix the dressing ingredients together and stir into the salad mix\n5. Serve chilled or at room temperature.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-seafood-pasta",
+      "sourceTitle": "Garlic Butter Seafood Pasta",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/seafood-pasta.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/seafood-pasta.md",
+      "snapshotSHA256": "6fb00c912b2fa3b4e28c483fcbb49837f46c284dcf77513047c1bba9cf566d9e",
+      "sourceAuthor": "nelson-morrow",
+      "sourceTags": [
+        "italian",
+        "pasta",
+        "quick",
+        "seafood",
+        "shrimp"
+      ],
+      "sourceIngredientLines": [
+        "spaghetti or fettucine",
+        "butter",
+        "heavy cream",
+        "garlic",
+        "oregano",
+        "white wine (Pinot Grigio or Sauvignon Blanc recommended)",
+        "lemon/lemon juice (optional)",
+        "red pepper flakes (optional)",
+        "seafood, choose from:",
+        "mussels",
+        "squid",
+        "shrimp",
+        "clams",
+        "lobster"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-1",
+          "arabicName": "سباغيتي أو فيتوتشيني",
+          "candidateDisplay": "spaghetti or fettucine",
+          "sourceIngredientIndex": 0,
+          "sourceText": "spaghetti or fettucine",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-2",
+          "arabicName": "زبدة",
+          "candidateDisplay": "butter",
+          "sourceIngredientIndex": 1,
+          "sourceText": "butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-3",
+          "arabicName": "قشدة كثيفة",
+          "candidateDisplay": "heavy cream",
+          "sourceIngredientIndex": 2,
+          "sourceText": "heavy cream",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-4",
+          "arabicName": "ثوم",
+          "candidateDisplay": "garlic",
+          "sourceIngredientIndex": 3,
+          "sourceText": "garlic",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-5",
+          "arabicName": "أوريغانو",
+          "candidateDisplay": "oregano",
+          "sourceIngredientIndex": 4,
+          "sourceText": "oregano",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-6",
+          "arabicName": "نبيذ أبيض (يوصي المصدر ببي노 غريجيو أو ساوفيغنون بلانك)",
+          "candidateDisplay": "white wine (Pinot Grigio or Sauvignon Blanc recommended)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "white wine (Pinot Grigio or Sauvignon Blanc recommended)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-7",
+          "arabicName": "ليمون أو عصير ليمون (اختياري)",
+          "candidateDisplay": "lemon/lemon juice (optional)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "lemon/lemon juice (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-8",
+          "arabicName": "رقائق فلفل أحمر (اختياري)",
+          "candidateDisplay": "red pepper flakes (optional)",
+          "sourceIngredientIndex": 7,
+          "sourceText": "red pepper flakes (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-9",
+          "arabicName": "مأكولات بحرية من الاختيار؛ اختر من الآتي",
+          "candidateDisplay": "seafood, choose from:",
+          "sourceIngredientIndex": 8,
+          "sourceText": "seafood, choose from:",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-10",
+          "arabicName": "بلح البحر",
+          "candidateDisplay": "mussels",
+          "sourceIngredientIndex": 9,
+          "sourceText": "mussels",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-11",
+          "arabicName": "حبار",
+          "candidateDisplay": "squid",
+          "sourceIngredientIndex": 10,
+          "sourceText": "squid",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-12",
+          "arabicName": "روبيان",
+          "candidateDisplay": "shrimp",
+          "sourceIngredientIndex": 11,
+          "sourceText": "shrimp",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-13",
+          "arabicName": "محار",
+          "candidateDisplay": "clams",
+          "sourceIngredientIndex": 12,
+          "sourceText": "clams",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-seafood-pasta-ing-14",
+          "arabicName": "كركند",
+          "candidateDisplay": "lobster",
+          "sourceIngredientIndex": 13,
+          "sourceText": "lobster",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Prepare your pasta, if you don't know how I recommend to follow [these instructions](/pasta). I choose to make mine al dente because it will continue to cook slightly once we add the sauce.",
+        "Defrost/Deshell your seafood of choice",
+        "Chop a half tablespoon of garlic into small pieces",
+        "In a large pan on medium heat, saute your chopped garlic in salt and butter for a minute or so.",
+        "Add and saute the seafood. Season with oregano, red pepper flakes and salt",
+        "Add a half cup heavy cream and a third cup of white wine to the pan. Cook until you have the consistency you want.",
+        "Drain your pasta (Which should be cooked by now) and pour contents of the pan into the pasta."
+      ],
+      "sourceRawText": "---\ntitle: \"Garlic Butter Seafood Pasta\"\ndate: 2022-07-18\ntags: ['italian', 'pasta', 'quick', 'seafood', 'shrimp']\nauthor: nelson-morrow\n---\n\nThis is a simple outline of how to cook a creamy seafood pasta with white wine butter\nsauce.\n\n- ⏲️ Prep time: 20 min\n\n## Ingredients\n\n- spaghetti or fettucine\n- butter\n- heavy cream\n- garlic\n- oregano\n- white wine (Pinot Grigio or Sauvignon Blanc recommended)\n- lemon/lemon juice (optional)\n- red pepper flakes (optional)\n- seafood, choose from:\n    - mussels\n    - squid\n    - shrimp\n    - clams\n    - lobster\n\n## Directions\n\n1. Prepare your pasta, if you don't know how I recommend to follow [these\n   instructions](/pasta). I choose to make mine al dente because it will continue to cook\n   slightly once we add the sauce.\n2. Defrost/Deshell your seafood of choice\n3. Chop a half tablespoon of garlic into small pieces\n4. In a large pan on medium heat, saute your chopped garlic in salt and butter for a\n   minute or so.\n5. Add and saute the seafood. Season with oregano, red pepper flakes and salt\n6. Add a half cup heavy cream and a third cup of white wine to the pan. Cook until you have the\n   consistency you want.\n7. Drain your pasta (Which should be cooked by now) and pour contents of the pan into the pasta.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-shakshouka",
+      "sourceTitle": "Shakshouka",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/shakshouka.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/shakshouka.md",
+      "snapshotSHA256": "e3d164f316d22537146740f587c59ef119b2a2f142a2e21b01643bd4138313da",
+      "sourceAuthor": "jakub-korsak",
+      "sourceTags": [
+        "breakfast",
+        "quick"
+      ],
+      "sourceIngredientLines": [
+        "5 small tomatoes",
+        "5 eggs",
+        "1 peeled white onion",
+        "some chives",
+        "cumin",
+        "powdered sweet pepper"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-shakshouka-ing-1",
+          "arabicName": "5 حبات طماطم صغيرة",
+          "candidateDisplay": "5 small tomatoes",
+          "sourceIngredientIndex": 0,
+          "sourceText": "5 small tomatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-shakshouka-ing-2",
+          "arabicName": "5 بيضات",
+          "candidateDisplay": "5 eggs",
+          "sourceIngredientIndex": 1,
+          "sourceText": "5 eggs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-shakshouka-ing-3",
+          "arabicName": "بصلة بيضاء مقشرة",
+          "candidateDisplay": "1 peeled white onion",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 peeled white onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-shakshouka-ing-4",
+          "arabicName": "ثوم معمر",
+          "candidateDisplay": "some chives",
+          "sourceIngredientIndex": 3,
+          "sourceText": "some chives",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-shakshouka-ing-5",
+          "arabicName": "كمون",
+          "candidateDisplay": "cumin",
+          "sourceIngredientIndex": 4,
+          "sourceText": "cumin",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-shakshouka-ing-6",
+          "arabicName": "فلفل حلو مطحون",
+          "candidateDisplay": "powdered sweet pepper",
+          "sourceIngredientIndex": 5,
+          "sourceText": "powdered sweet pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Scald the tomatoes so they are easier to peel.",
+        "Peel the tomatoes and cut into cubes",
+        "Chop the onion and glaze it on the frying pan with oil",
+        "Add tomatoes",
+        "SEASON",
+        "Stir and wait for it to get denser",
+        "Knock the eggs in",
+        "Season the eggs",
+        "Cover the pan with a lid",
+        "Cook until eggs are laid",
+        "Add chives"
+      ],
+      "sourceRawText": "---\ntitle: \"Shakshouka\"\ndate: 2021-03-29\ntags: ['breakfast', 'quick']\nauthor: jakub-korsak\n---\n\nShakshouka is a dish of eggs poached in a sauce of tomatoes, olive oil, peppers, onion and garlic, and commonly spiced with cumin, paprika, cayenne pepper, and nutmeg.\nThis recipe is a quick and simple version for a delicious breakfast.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 2\n\n![Shakshouka](/pix/shakshouka.webp)\n\n## Ingredients\n\n- 5 small tomatoes\n- 5 eggs\n- 1 peeled white onion\n- some chives\n- cumin\n- powdered sweet pepper\n\n## Directions\n\n1. Scald the tomatoes so they are easier to peel.\n2. Peel the tomatoes and cut into cubes\n3. Chop the onion and glaze it on the frying pan with oil\n4. Add tomatoes\n5. SEASON\n6. Stir and wait for it to get denser\n7. Knock the eggs in\n8. Season the eggs\n9. Cover the pan with a lid\n10. Cook until eggs are laid\n11. Add chives\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "cuisine": "أرجنتيني",
+  "cuisineSlug": "argentinian",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "bc650-oven-asado",
+      "name": "أسادو أرجنتيني بالفرن",
+      "nameEn": "Oven Asado",
+      "cuisine": "أرجنتيني",
+      "category": "طبق رئيسي",
+      "description": "أضلاع كتف بقر بالعظم تُحمّر وتُخبز مع ملح شواء خشن ثم تُترك لترتاح.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-oven-asado-ing-1",
+          "name": "أضلاع قصيرة من كتف البقر، ويفضل بالعظم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Beef chuck short ribs (bone in preferrably)"
+        },
+        {
+          "id": "bc650-oven-asado-ing-2",
+          "name": "ملح شواء سيليوسال مدعم باليود (يذكر المصدر أن حبيبات الملح الأصغر لا تعطي النتيجة نفسها)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Celusal BBQ Salt - Iodized (including the specific type of salt due to smaller salt grains not working well)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 400°F/200°C.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أخرج اللحم من الثلاجة ودعه يذوب أو يقترب من حرارة الغرفة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اختياري: اشطف طرفي اللحم لإزالة شظايا العظم المتبقية من التقطيع.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "جفف جميع جوانب اللحم بمنشفة ورقية.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ملّح كل جانب بسخاء؛ سيقطر الملح عن اللحم مع ذوبان الدهن أثناء الطهي.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "ضع اللحم على رف والعظم إلى الأسفل، وضع صينية تحته لالتقاط الدهن المتساقط.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "بعد 20 دقيقة اقلب القطع (ليصبح العظم إلى الأعلى). وبعد 20 دقيقة أخرى اقلبها ثانية.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أخرجها بعد إجمالي 40–45 دقيقة واتركها ترتاح 5–10 دقائق.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/oven-asado.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=9acdeff503543b397a0d19e01bd153510774ee07b792399918324f7bc27d4f79"
+    },
+    {
+      "id": "bc650-dulce-de-leche",
+      "name": "دولسي دي ليتشي",
+      "nameEn": "Dulce de Leche",
+      "cuisine": "أرجنتيني",
+      "category": "حلوى",
+      "description": "حليب وسكر وبيكربونات الصوديوم وفانيليا اختيارية تُطهى على نار هادئة مع التحريك حتى تصبح كثيفة كالكاسترد.",
+      "servings": null,
+      "prepTime": 5,
+      "cookTime": 180,
+      "totalTime": 185,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-dulce-de-leche-ing-1",
+          "name": "حليب، لتر واحد",
+          "amount": 1,
+          "unit": "لتر",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-dulce-de-leche-ing-2",
+          "name": "سكر، 350 جم",
+          "amount": 350.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "350 grams of sugar."
+        },
+        {
+          "id": "bc650-dulce-de-leche-ing-3",
+          "name": "بيكربونات الصوديوم، نصف ملعقة صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Half a teaspoon of baking soda."
+        },
+        {
+          "id": "bc650-dulce-de-leche-ing-4",
+          "name": "قرن فانيليا أو خلاصة فانيليا (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A vanilla bean, or essence (Optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن المكونات كلها في قدر على حرارة متوسطة مع التحريك المستمر بملعقة خشبية؛ يمكن إضافة الكرات الزجاجية الاختيارية التقليدية لمنع الالتصاق.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "بعد ذوبان السكر خفف الحرارة إلى أدنى درجة وحرّك من حين لآخر نحو ساعتين. يجب ألا يغلي؛ إن بدأ بالغليان أبعده عن النار واستمر بالتحريك، ثم أعده بعد أن تنخفض حرارته.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "عندما يزداد المزيج كثافة حرّكه بتواتر أكبر كي لا يلتصق ويحترق أو تتكون كتل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "عندما يصبح قوامه شبيهاً بالكاسترد ارفعه عن النار وحرّكه 10 دقائق حتى يبرد ويزداد كثافة. مرر إصبعك في منتصف ظهر الملعقة؛ إذا لم يلتئم الأثر يكون جاهزاً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "بعد أن يبرد ضعه في مرطبان زجاجي واحفظه في الثلاجة، أو عقّمه للحفظ.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حلوى"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 3 hours ؛ - 🍽️ Servings: An average-sized mason jar.. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/dulce-de-leche.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=f31b1acbae6fe77bc85588e3585dce7575073ea27525b08b9767d44b39e7aef2"
+    },
+    {
+      "id": "bc650-torta-frita-criolla",
+      "name": "تورتا فريتا كريولا",
+      "nameEn": "Torta Frita Criolla (Argentinian frybread)",
+      "cuisine": "أرجنتيني",
+      "category": "خبز",
+      "description": "خبز مقلي أرجنتيني من الدقيق والدهن وماء مملح، يشكل أقراصاً صغيرة مثقوبة في الوسط ويقدم ساخناً مع الأهل أو الأصدقاء.",
+      "servings": null,
+      "prepTime": 20,
+      "cookTime": 10,
+      "totalTime": 30,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-torta-frita-criolla-ing-1",
+          "name": "دقيق متعدد الاستعمالات، 1.1 رطل (نصف كجم)",
+          "amount": 1.1,
+          "unit": "رطل",
+          "scale": true,
+          "display": null,
+          "label": "1.1 pound (1/2 kilo) of all-purpose flour."
+        },
+        {
+          "id": "bc650-torta-frita-criolla-ing-2",
+          "name": "شحم أو زبدة، 4 ملاعق كبيرة",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-torta-frita-criolla-ing-3",
+          "name": "ماء، نصف كوب، مخلوط بملعقة صغيرة ملح",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-torta-frita-criolla-ing-4",
+          "name": "زيت أو دهن للقلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Oil or grease of choice for frying. (Modern Argentines use refined tallow or sunflower seed oil, but for the real gaucho way, unrefined lard or tallow is the right choice)"
+        },
+        {
+          "id": "bc650-torta-frita-criolla-ing-5",
+          "name": "سكر أو قرفة أو أعشاب وتوابل حسب الاختيار (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sugar, cinnamon, or herbs and spices of choice (Optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع الدقيق في وعاء والدهن بدرجة حرارة الغرفة في الوسط.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "افرك الدقيق والدهن بأطراف الأصابع مع إضافة ماء الملح ببطء حتى تتكون كرة عجين.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اعجن بقوة حتى تظهر فقاعات على سطح العجين.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اترك العجين يرتاح ساعة أو ساعتين، ثم شكّل كرات صغيرة بحجم قطعة كوكيز، واضغطها لتصبح أقراصاً واثقب ثقباً صغيراً في الوسط.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اقْلِ الأقراص في كمية وفيرة من الدهن حتى تصبح ذهبية. أخرجها بملعقة مثقبة وضعها في وعاء مبطن بمناشف ورقية لامتصاص الدهن الزائد.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الزينة التي تختارها؛ يذكر المصدر أنها غير ضرورية لأن الخبز غني ومشبع.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "خبز"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️ Prep time: 1h 10min or 2h 10min, (depending on how long you leave it to rest.) ؛ - 🍳Cook time: 10 minutes. ؛ - 🍽️ Servings : 10.. يصفها المصدر وجبة بعد الظهر ترتبط بتاريخ منطقة ريو دي لا بلاتا ويقترح تناولها مع الأهل أو الأصدقاء ومشروب الماتي؛ يذكر 10 حصص ووقتاً للتحضير إما ساعة و10 دقائق أو ساعتين و10 دقائق بحسب مدة الراحة، و10 دقائق للطهي. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/torta-frita-criolla.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=381976ef59687c8a70dc8ede86ae9ae877388b5c7d22e63aed7c9414d52e203d"
+    }
+  ]
+}

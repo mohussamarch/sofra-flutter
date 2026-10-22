@@ -1,5 +1,11 @@
 # Agent handoff and economical execution
 
+## Current checkpoint —22October2026 (§94)
+
+Current §94:657 actual Arabic catalog recipes (+592),63 cuisine/region/style groups;650 target met22Oct. Two built backend units: durable personal yield review and explicit atomic chosen-month-plan acceptance. Full356Flutter/analyze clean;65original/260parity; source643/1479checks. Warehouse15648/38 and bundled6648/29/6504 unchanged,acquisition0. See RECIPE-650-RESULT,CUISINES-20261022,CLAUDE-RESUME. SoleEcheckout;98%ceiling,automationPAUSED; finalcommit in external DELIVERY.json.
+
+Earlier checkpoints below are historical.
+
 ## Current checkpoint —21October2026 (§93)
 
 Catalog65/14(now11reviewed additions/10newcuisines),sourcewarehouse15648/38packs;new10103=10×1000Foodista+103Manal. Bundled6648/29packs/6504snapshots;9000warehouse-only. Sources are not culinary/nutrition/runtime approvals. Original27packs and54recipes intact;4heldcatalog candidates. Fresh47Flutter plus11finalsourcechecks,19Node,analyze clean7.5s,all10kraw/snapshot/section/dedup audit passed. See RECIPE-ROUND-20261021B;CLAUDE-RESUME;HANDOFF§93. SoleEcheckout,98%ceiling,automationPAUSED. Older counts below are historical.

@@ -1,0 +1,1525 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+  "recipes": [
+    {
+      "recipeId": "bc650-stoofvlees",
+      "sourceTitle": "Stoofvlees",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/stoofvlees.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/stoofvlees.md",
+      "snapshotSHA256": "09bdeb3937b3c6f62ebf4005d0f5ddeddbc7bb349f686c03bd3ac1d8371abf29",
+      "sourceAuthor": "yiusa",
+      "sourceTags": [
+        "beef",
+        "stew",
+        "belgian"
+      ],
+      "sourceIngredientLines": [
+        "2 Large onions",
+        "1 tablespoon butter",
+        "1kg chuck roast, cut in bite-sized pieces",
+        "2 33cl bottles of brown beer",
+        "2 bayleaves",
+        "2 twigs of thyme",
+        "1 clove (spice)",
+        "2 tablespoons of belgian apple/pear syrup (optional, ill write up a recipe for this soon)",
+        "2 teaspoons of vinegar",
+        "1 slice of bread",
+        "mustard"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-stoofvlees-ing-1",
+          "arabicName": "بصلتان كبيرتان",
+          "candidateDisplay": "2 Large onions",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 Large onions",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-2",
+          "arabicName": "زبدة، ملعقة كبيرة",
+          "candidateDisplay": "1 tablespoon butter",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 tablespoon butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tablespoon",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-3",
+          "arabicName": "لحم كتف بقري مقطع قطع لقمة، 1 كجم",
+          "candidateDisplay": "1kg chuck roast, cut in bite-sized pieces",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1kg chuck roast, cut in bite-sized pieces",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "kg",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-4",
+          "arabicName": "بيرة بنية، زجاجتان سعة كل منهما 33 سنتيلتر",
+          "candidateDisplay": "2 33cl bottles of brown beer",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 33cl bottles of brown beer",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-5",
+          "arabicName": "ورقتا غار",
+          "candidateDisplay": "2 bayleaves",
+          "sourceIngredientIndex": 4,
+          "sourceText": "2 bayleaves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-6",
+          "arabicName": "غصنا زعتر",
+          "candidateDisplay": "2 twigs of thyme",
+          "sourceIngredientIndex": 5,
+          "sourceText": "2 twigs of thyme",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-7",
+          "arabicName": "حبة قرنفل",
+          "candidateDisplay": "1 clove (spice)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 clove (spice)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-8",
+          "arabicName": "شراب تفاح أو إجاص بلجيكي، ملعقتان كبيرتان (اختياري)",
+          "candidateDisplay": "2 tablespoons of belgian apple/pear syrup (optional, ill write up a recipe for this soon)",
+          "sourceIngredientIndex": 7,
+          "sourceText": "2 tablespoons of belgian apple/pear syrup (optional, ill write up a recipe for this soon)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tablespoons",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-9",
+          "arabicName": "خل، ملعقتان صغيرتان",
+          "candidateDisplay": "2 teaspoons of vinegar",
+          "sourceIngredientIndex": 8,
+          "sourceText": "2 teaspoons of vinegar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "teaspoons",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-10",
+          "arabicName": "شريحة خبز",
+          "candidateDisplay": "1 slice of bread",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1 slice of bread",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-11",
+          "arabicName": "خردل",
+          "candidateDisplay": "mustard",
+          "sourceIngredientIndex": 10,
+          "sourceText": "mustard",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-12",
+          "arabicName": "زبدة إضافية، ملعقة كبيرة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "melt your second spoon of butter.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-13",
+          "arabicName": "ملح",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "season the meat with salt and pepper while its cooking.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-stoofvlees-ing-14",
+          "arabicName": "فلفل",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "season the meat with salt and pepper while its cooking.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "زبدة إضافية، ملعقة كبيرة",
+          "sourceText": "melt your second spoon of butter."
+        },
+        {
+          "name": "ملح",
+          "sourceText": "season the meat with salt and pepper while its cooking."
+        },
+        {
+          "name": "فلفل",
+          "sourceText": "season the meat with salt and pepper while its cooking."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Peel the onions and cut them into medium sized pieces, don't cut the onion too small.",
+        "Place a large saucepan or dutch oven on low heat and add 1 tbsp butter. Once melted add your onions, cook until translucent.",
+        "While your onions are cooking place a large frying pan on medium high heat and melt your second spoon of butter.",
+        "Fry up your beef until it has a nice brown crust, to prevent overcrowding the pan you should sear the meat in separate batches, be careful to not burn the fond on the bottom of the pan.season the meat with salt and pepper while its cooking.",
+        "When a piece of beef is done searing add it to the pot with the onions, once you're done searing all of your meat add your beer to the frying pan and use it to deglaze, scrape off all the pieces stuck to the frying pan.",
+        "Add the beer you used to deglaze to the pot with the onions and beef.",
+        "Add the bayleaf and thyme, optionally you can bind them together with some kitchen twine so they are easier to pick out later.",
+        "Add your clove and if you have it the syrup.",
+        "Take your piece of preferably brown bread and generously spread it with mustard on both sides, place it in the sauce.",
+        "let it simmer on low heat, stirring once every 10-15 minutes. when the sauce has reached your desired thickness place a lid on the pot.",
+        "The cooking time will depend on the quality of your meat, start checking the if your meat is done once its been simmering for about 2 hours.",
+        "The meat is done when the pieces hold together when gently stirring the sauce, but are easily cut with a fork or spoon.",
+        "Finish the sauce by gently stirring in the vinegar to brighten up the flavors and serve."
+      ],
+      "sourceRawText": "---\ntitle: \"Stoofvlees\"\ndate: 2021-03-21\ntags: ['beef', 'stew', 'belgian']\nauthor: yiusa\n---\n\nThis is a traditional belgian stew made with cheap, though beef cuts, beer and onions.\nTraditionally eaten with fries and chicory salad.\n\n- ⏲️ Prep time: 30 min\n- 🍳 Cook time: 2 to 4 hours\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 2 Large onions\n- 1 tablespoon butter\n- 1kg chuck roast, cut in bite-sized pieces\n- 2 33cl bottles of brown beer\n- 2 bayleaves\n- 2 twigs of thyme\n- 1 clove (spice)\n- 2 tablespoons of belgian apple/pear syrup (optional, ill write up a recipe for this soon)\n- 2 teaspoons of vinegar\n- 1 slice of bread\n- mustard\n\n## Directions\n\n1. Peel the onions and cut them into medium sized pieces, don't cut the onion too small.\n2. Place a large saucepan or dutch oven on low heat and add 1 tbsp butter. Once melted add your onions, cook until translucent.\n3. While your onions are cooking place a large frying pan on medium high heat and melt your second spoon of butter.\n4. Fry up your beef until it has a nice brown crust, to prevent overcrowding the pan you should sear the meat in separate batches, be careful to not burn the fond on the bottom of the pan.season the meat with salt and pepper while its cooking.\n5. When a piece of beef is done searing add it to the pot with the onions, once you're done searing all of your meat add your beer to the frying pan and use it to deglaze, scrape off all the pieces stuck to the frying pan.\n6. Add the beer you used to deglaze to the pot with the onions and beef.\n7. Add the bayleaf and thyme, optionally you can bind them together with some kitchen twine so they are easier to pick out later.\n8. Add your clove and if you have it the syrup.\n9. Take your piece of preferably brown bread and generously spread it with mustard on both sides, place it in the sauce.\n10. let it simmer on low heat, stirring once every 10-15 minutes. when the sauce has reached your desired thickness place a lid on the pot.\n11. The cooking time will depend on the quality of your meat, start checking the if your meat is done once its been simmering for about 2 hours.\n12. The meat is done when the pieces hold together when gently stirring the sauce, but are easily cut with a fork or spoon.\n13. Finish the sauce by gently stirring in the vinegar to brighten up the flavors and serve.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 4,
+        "prepTime": 30,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": [
+          "- ⏲️ Prep time: 30 min",
+          "- 🍳 Cook time: 2 to 4 hours",
+          "- 🍽️ Servings: 4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-tiroler-groestl",
+      "sourceTitle": "Tiroler Gröstl",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tiroler-groestl.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/tiroler-groestl.md",
+      "snapshotSHA256": "2c3961643b77c1397dc09a89494887e4859f6393245b134824f3cd46dd59ef28",
+      "sourceAuthor": "peter-wilbrink",
+      "sourceTags": [
+        "austrian",
+        "bacon",
+        "potato"
+      ],
+      "sourceIngredientLines": [
+        "1 kg / 2 lbs potatoes",
+        "2 red onions",
+        "500 g / 1 lbs porkchops",
+        "400 g / 14 ounce bacon (smoked)",
+        "5 eggs",
+        "3 cloves of garlic",
+        "Ample amount of chopped parsley",
+        "Marjoram and cumin to taste"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-1",
+          "arabicName": "بطاطا، 1 كجم أو رطلان",
+          "candidateDisplay": "1 kg / 2 lbs potatoes",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 kg / 2 lbs potatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "kg",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-2",
+          "arabicName": "بصلتان حمراوان",
+          "candidateDisplay": "2 red onions",
+          "sourceIngredientIndex": 1,
+          "sourceText": "2 red onions",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-3",
+          "arabicName": "لحم أضلاع خنزير، 500 جم أو رطل واحد",
+          "candidateDisplay": "500 g / 1 lbs porkchops",
+          "sourceIngredientIndex": 2,
+          "sourceText": "500 g / 1 lbs porkchops",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 500,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-4",
+          "arabicName": "لحم مقدد مدخن، 400 جم أو 14 أونصة",
+          "candidateDisplay": "400 g / 14 ounce bacon (smoked)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "400 g / 14 ounce bacon (smoked)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 400,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-5",
+          "arabicName": "بيض، 5",
+          "candidateDisplay": "5 eggs",
+          "sourceIngredientIndex": 4,
+          "sourceText": "5 eggs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-6",
+          "arabicName": "فصوص ثوم، 3",
+          "candidateDisplay": "3 cloves of garlic",
+          "sourceIngredientIndex": 5,
+          "sourceText": "3 cloves of garlic",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-7",
+          "arabicName": "بقدونس مفروم بكمية وافرة",
+          "candidateDisplay": "Ample amount of chopped parsley",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Ample amount of chopped parsley",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-8",
+          "arabicName": "مردقوش وكراوية حسب الذوق",
+          "candidateDisplay": "Marjoram and cumin to taste",
+          "sourceIngredientIndex": 7,
+          "sourceText": "Marjoram and cumin to taste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-tiroler-groestl-ing-9",
+          "arabicName": "زبدة للقلي وإضافة رقائق حول البطاطا",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Fry potato wedges in butter, add more butter while stirring.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "زبدة للقلي وإضافة رقائق حول البطاطا",
+          "sourceText": "Fry potato wedges in butter, add more butter while stirring."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Clean potatoes and boil with skin.",
+        "Chop onion, squeeze and mince the garlic.",
+        "Dice pork and bacon.",
+        "Slice cooked potatoes in thick wedges.",
+        "Fry potato wedges in butter, add more butter while stirring.",
+        "Add pork and bacon and bake until crispy.",
+        "Add and stir the rest of the ingredients, except eggs.",
+        "Fry the eggs separately and serve on top."
+      ],
+      "sourceRawText": "---\ntitle: \"Tiroler Gröstl\"\ndate: 2021-03-09\ntags: ['austrian', 'bacon', 'potato']\nauthor: peter-wilbrink\n---\n\n- ⏲️  Prep time: 15 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 5\n\n## Ingredients\n\n- 1 kg / 2 lbs potatoes\n- 2 red onions\n- 500 g / 1 lbs porkchops\n- 400 g / 14 ounce bacon (smoked)\n- 5 eggs\n- 3 cloves of garlic\n- Ample amount of chopped parsley\n- Marjoram and cumin to taste\n\n## Directions\n\n1. Clean potatoes and boil with skin.\n2. Chop onion, squeeze and mince the garlic.\n3. Dice pork and bacon.\n4. Slice cooked potatoes in thick wedges.\n5. Fry potato wedges in butter, add more butter while stirring.\n6. Add pork and bacon and bake until crispy.\n7. Add and stir the rest of the ingredients, except eggs.\n8. Fry the eggs separately and serve on top.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 5,
+        "prepTime": 15,
+        "cookTime": 30,
+        "totalTime": 45,
+        "sourceReported": [
+          "- ⏲️  Prep time: 15 min",
+          "- 🍳 Cook time: 30 min",
+          "- 🍽️ Servings: 5"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-stuffed-round-squash",
+      "sourceTitle": "Stuffed Round Squash",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/stuffed-round-squash.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/stuffed-round-squash.md",
+      "snapshotSHA256": "00ccc4f244fc6fe0a8bcce3d8ec50796ef44f05c64937a98c30256d186fbd539",
+      "sourceAuthor": "\"Marco Fleres\"",
+      "sourceTags": [
+        "supper",
+        "rice",
+        "vegetables",
+        "cheesefare",
+        "fasting"
+      ],
+      "sourceIngredientLines": [
+        "2 Onions",
+        "1 Carrot",
+        "4 Round squash",
+        "1 Cup of rice",
+        "100gr of Cheese (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-stuffed-round-squash-ing-1",
+          "arabicName": "بصلتان",
+          "candidateDisplay": "2 Onions",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 Onions",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stuffed-round-squash-ing-2",
+          "arabicName": "جزرة واحدة",
+          "candidateDisplay": "1 Carrot",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 Carrot",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stuffed-round-squash-ing-3",
+          "arabicName": "4 حبات قرع دائري",
+          "candidateDisplay": "4 Round squash",
+          "sourceIngredientIndex": 2,
+          "sourceText": "4 Round squash",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stuffed-round-squash-ing-4",
+          "arabicName": "أرز، كوب واحد",
+          "candidateDisplay": "1 Cup of rice",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 Cup of rice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "Cup",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stuffed-round-squash-ing-5",
+          "arabicName": "جبن، 100 جم (اختياري)",
+          "candidateDisplay": "100gr of Cheese (optional)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "100gr of Cheese (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-stuffed-round-squash-ing-6",
+          "arabicName": "زيت لدهن المقلاة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "On an oiled pan, mix the onion, carrot and squash core, and cook them for 10 minutes.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-stuffed-round-squash-ing-7",
+          "arabicName": "تتبيلة حسب الرغبة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "You may now add seasoning.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "زيت لدهن المقلاة",
+          "sourceText": "On an oiled pan, mix the onion, carrot and squash core, and cook them for 10 minutes."
+        },
+        {
+          "name": "تتبيلة حسب الرغبة",
+          "sourceText": "You may now add seasoning."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Cook the rice. This usually takes 20 minutes. In the meantime, cut the onion into small cubes, grate the carrot, and cut the squash in halves. Scoop the squash halves, and cut the core in small cubes. Save them for later.",
+        "Strain the rice and let it cool. On an oiled pan, mix the onion, carrot and squash core, and cook them for 10 minutes. You may now add seasoning.",
+        "Place the squash halves facing down on a metal griddle in the oven. Add the rice to the vegetables, stir, and cook for 10 more minutes.",
+        "Flip the squash, stuff them with cheese and the vegetables mixture, and put them again in the oven for 10 minutes at max heat.",
+        "Serve."
+      ],
+      "sourceRawText": "---\ntitle: \"Stuffed Round Squash\"\ndate: 2021-03-13\ntags: ['supper', 'rice', 'vegetables', 'cheesefare', 'fasting']\nauthor: \"Marco Fleres\"\n---\n\n![](/pix/stuffed-round-squash.webp)\n\nRound Squash, Zucchini, or Courguettes can be served as main dish (2 servings per person) or as accompaniment. The amount of squash should be adjusted according to their size. This recipe uses ones the size of a fist.\n\n- ⏲️ Prep time: 50 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 2 Onions\n- 1 Carrot\n- 4 Round squash\n- 1 Cup of rice\n- 100gr of Cheese (optional)\n\n## Directions\n\n1. Cook the rice. This usually takes 20 minutes. In the meantime, cut the onion into small cubes, grate the carrot, and cut the squash in halves. Scoop the squash halves, and cut the core in small cubes. Save them for later.\n2. Strain the rice and let it cool. On an oiled pan, mix the onion, carrot and squash core, and cook them for 10 minutes. You may now add seasoning.\n3. Place the squash halves facing down on a metal griddle in the oven. Add the rice to the vegetables, stir, and cook for 10 more minutes.\n4. Flip the squash, stuff them with cheese and the vegetables mixture, and put them again in the oven for 10 minutes at max heat.\n5. Serve.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 4,
+        "prepTime": 50,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": [
+          "- ⏲️ Prep time: 50 min",
+          "- 🍽️ Servings: 4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-spanish-tortilla",
+      "sourceTitle": "Spanish Tortilla",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spanish-tortilla.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/spanish-tortilla.md",
+      "snapshotSHA256": "22c7ba1ae36259fb3c7c1543087f1511ed0a0a211e2d3b0313665ded9ffc367c",
+      "sourceAuthor": "octopusonfire",
+      "sourceTags": [
+        "spanish",
+        "potato",
+        "eggs"
+      ],
+      "sourceIngredientLines": [
+        "8 free-range eggs",
+        "1 kg of potatoes",
+        "1 white onion",
+        "Extra virgin olive oil"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-spanish-tortilla-ing-1",
+          "arabicName": "بيض بلدي، 8",
+          "candidateDisplay": "8 free-range eggs",
+          "sourceIngredientIndex": 0,
+          "sourceText": "8 free-range eggs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-spanish-tortilla-ing-2",
+          "arabicName": "بطاطا، 1 كجم",
+          "candidateDisplay": "1 kg of potatoes",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 kg of potatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "kg",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-spanish-tortilla-ing-3",
+          "arabicName": "بصلة بيضاء واحدة",
+          "candidateDisplay": "1 white onion",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 white onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-spanish-tortilla-ing-4",
+          "arabicName": "زيت زيتون بكر ممتاز",
+          "candidateDisplay": "Extra virgin olive oil",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Extra virgin olive oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-spanish-tortilla-ing-5",
+          "arabicName": "ملح حسب الذوق",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Cut the potatoes into thin slices. Put in a bowl, add salt to taste and stir.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ملح حسب الذوق",
+          "sourceText": "Cut the potatoes into thin slices. Put in a bowl, add salt to taste and stir."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Peel, rinse and dry the potatoes.",
+        "Cut the potatoes into thin slices. Put in a bowl, add salt to taste and stir.",
+        "Put a nonstick frying pan on the fire and add enough olive oil to fry all the potato slices.",
+        "Add the potato slices already salted and let them cook for approximately 20 minutes over low heat.",
+        "While the potatoes are frying, beat the eggs in a bowl. Peel and cut the onion as finely as possible.",
+        "Add olive oil in another frying pan and slowly fry the onion until it gets a slightly golden color.",
+        "Drain the onion and add it to the bowl with the beaten egg.",
+        "Remove the potatoes from the pan with a slotted spoon, draining the oil away as much as possible, and add them to the bowl with the onion and egg.",
+        "Let the mixture rest for at least 5 minutes so all the flavors come together. Give it a very gentle stir from time to time.",
+        "Remove the oil from the pan you used to fry the potatoes. Use the pan to cook the mixture over medium-high fire for about 5 minutes.",
+        "Flip it over with the help of a big plate and cook the other side for another 5 minutes."
+      ],
+      "sourceRawText": "---\ntitle: \"Spanish Tortilla\"\ndate: 2021-03-21\ntags: ['spanish', 'potato', 'eggs']\nauthor: octopusonfire\n---\n\n![Spanish Tortilla](/pix/spanish-tortilla.webp)\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 35 min\n- 🍽️ Servings: 6\n\n## Ingredients\n\n* 8 free-range eggs\n* 1 kg of potatoes\n* 1 white onion\n* Extra virgin olive oil\n\n## Directions\n\n1. Peel, rinse and dry the potatoes.\n2. Cut the potatoes into thin slices. Put in a bowl, add salt to taste and stir.\n3. Put a nonstick frying pan on the fire and add enough olive oil to fry all the potato slices.\n4. Add the potato slices already salted and let them cook for approximately 20 minutes over low heat.\n5. While the potatoes are frying, beat the eggs in a bowl. Peel and cut the onion as finely as possible.\n6. Add olive oil in another frying pan and slowly fry the onion until it gets a slightly golden color.\n7. Drain the onion and add it to the bowl with the beaten egg.\n8. Remove the potatoes from the pan with a slotted spoon, draining the oil away as much as possible, and add them to the bowl with the onion and egg.\n9. Let the mixture rest for at least 5 minutes so all the flavors come together. Give it a very gentle stir from time to time.\n10. Remove the oil from the pan you used to fry the potatoes. Use the pan to cook the mixture over medium-high fire for about 5 minutes.\n11. Flip it over with the help of a big plate and cook the other side for another 5 minutes.\n\n## Notes\n\n* Things like the slicing of the potato, the amount of salt and how curdled is the inner part of the tortilla depend on your own taste. Don't be afraid to experiment!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 6,
+        "prepTime": 5,
+        "cookTime": 35,
+        "totalTime": 40,
+        "sourceReported": [
+          "- ⏲️ Prep time: 5 min",
+          "- 🍳 Cook time: 35 min",
+          "- 🍽️ Servings: 6"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-pasta-navy-style",
+      "sourceTitle": "Pasta Navy Style",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pasta-navy-style.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/pasta-navy-style.md",
+      "snapshotSHA256": "a676a796717ceb5b618fc0e2270f9bef44abbc3818d03b8810fa889406a067d1",
+      "sourceAuthor": "yaroslav-smirnov",
+      "sourceTags": [
+        "russian",
+        "pasta",
+        "beef"
+      ],
+      "sourceIngredientLines": [
+        "250g pasta. Usually I prefer to use fusilli or penne, but any short-cut pasta",
+        "300-400g ground beef",
+        "3-4 tomatoes",
+        "1 carrot",
+        "1/2 onion",
+        "2-3 garlic cloves",
+        "Cumin",
+        "Paprika"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-1",
+          "arabicName": "معكرونة قصيرة مثل فوسيلي أو بيني، 250 جم",
+          "candidateDisplay": "250g pasta. Usually I prefer to use fusilli or penne, but any short-cut pasta",
+          "sourceIngredientIndex": 0,
+          "sourceText": "250g pasta. Usually I prefer to use fusilli or penne, but any short-cut pasta",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 250,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-2",
+          "arabicName": "لحم بقري مفروم، 300–400 جم",
+          "candidateDisplay": "300-400g ground beef",
+          "sourceIngredientIndex": 1,
+          "sourceText": "300-400g ground beef",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-3",
+          "arabicName": "طماطم، 3–4 حبات",
+          "candidateDisplay": "3-4 tomatoes",
+          "sourceIngredientIndex": 2,
+          "sourceText": "3-4 tomatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-4",
+          "arabicName": "جزرة واحدة",
+          "candidateDisplay": "1 carrot",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 carrot",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-5",
+          "arabicName": "نصف بصلة",
+          "candidateDisplay": "1/2 onion",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1/2 onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-6",
+          "arabicName": "فصوص ثوم، 2–3",
+          "candidateDisplay": "2-3 garlic cloves",
+          "sourceIngredientIndex": 5,
+          "sourceText": "2-3 garlic cloves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-7",
+          "arabicName": "كمون",
+          "candidateDisplay": "Cumin",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Cumin",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-8",
+          "arabicName": "بابريكا",
+          "candidateDisplay": "Paprika",
+          "sourceIngredientIndex": 7,
+          "sourceText": "Paprika",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-9",
+          "arabicName": "زيت زيتون للقلي",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add olive oil to your frying pan, heat it to medium-high heat.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-10",
+          "arabicName": "ملح",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "salt it and mix it a bit with the onions in the pan.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-11",
+          "arabicName": "ملح إضافي حسب الذوق",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Salt some more to taste",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-navy-style-ing-12",
+          "arabicName": "فلفل أسود حسب الذوق",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "add some black pepper to taste",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "زيت زيتون للقلي",
+          "sourceText": "Add olive oil to your frying pan, heat it to medium-high heat."
+        },
+        {
+          "name": "ملح",
+          "sourceText": "salt it and mix it a bit with the onions in the pan."
+        },
+        {
+          "name": "ملح إضافي حسب الذوق",
+          "sourceText": "Salt some more to taste"
+        },
+        {
+          "name": "فلفل أسود حسب الذوق",
+          "sourceText": "add some black pepper to taste"
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Add olive oil to your frying pan, heat it to medium-high heat.",
+        "Chop some onions and add them to the preheated pan.",
+        "After a couple of minutes add the ground beef to the pan, salt it and mix it a bit with the onions in the pan.",
+        "When the meat is almost done, mince the garlic and add it together with the cumin and paprika to the pan.",
+        "[Cook the pasta](/pasta) in a pot until its done al dente while the beef is being cooked.",
+        "Grate the tomatoes over the pan using a grater with small-sized slots, in such a way that the tomato paste and juice falls right away from the grater to the pan.",
+        "Grate the carrot using a grater with medium-sized slots and add it to the pan.",
+        "Salt some more to taste, and add some black pepper to taste, mix.",
+        "Cook it over medium/medium-low heat for about 10-15 minutes or until the water and juices from the tomatoes have almost completely evaporated.",
+        "Once (or if) the pasta and beef is already cooked, add the pasta to the pan and cook for another couple of minutes.",
+        "Serve hot and enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Pasta Navy Style\"\ndate: 2021-03-12\ntags: ['russian', 'pasta', 'beef']\nauthor: yaroslav-smirnov\n---\n\n![Pasta Navy Style](/pix/pasta-navy-style.webp)\n\nThis is one of the three pasta dishes that I usually cook. It's a Russian pasta\nrecipe that is fast and easy to make and is quite tasty.\n\n## Ingredients\n\nHere are the ingredients for about two hearty adult portions:\n\n* 250g pasta. Usually I prefer to use fusilli or penne, but any short-cut pasta\n  should do.\n* 300-400g ground beef\n* 3-4 tomatoes\n* 1 carrot\n* 1/2 onion\n* 2-3 garlic cloves\n* Cumin\n* Paprika\n\n## Directions\n\n1. Add olive oil to your frying pan, heat it to medium-high heat.\n2. Chop some onions and add them to the preheated pan.\n3. After a couple of minutes add the ground beef to the pan, salt it and mix it\n   a bit with the onions in the pan.\n4. When the meat is almost done, mince the garlic and add it together with the\n   cumin and paprika to the pan.\n5. [Cook the pasta](/pasta) in a pot until its done al dente while the beef is being\n   cooked.\n6. Grate the tomatoes over the pan using a grater with small-sized slots, in\n   such a way that the tomato paste and juice falls right away from the grater\n   to the pan.\n7. Grate the carrot using a grater with medium-sized slots and add it to the\n   pan.\n8. Salt some more to taste, and add some black pepper to taste, mix.\n9. Cook it over medium/medium-low heat for about 10-15 minutes or until the\n   water and juices from the tomatoes have almost completely evaporated.\n10. Once (or if) the pasta and beef is already cooked, add the pasta to the pan\n   and cook for another couple of minutes.\n11. Serve hot and enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-torta-frita-criolla",
+      "sourceTitle": "Torta Frita Criolla (Argentinian frybread)",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/torta-frita-criolla.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/torta-frita-criolla.md",
+      "snapshotSHA256": "381976ef59687c8a70dc8ede86ae9ae877388b5c7d22e63aed7c9414d52e203d",
+      "sourceAuthor": "\"bernardo-slongo\"",
+      "sourceTags": [
+        "argentinian",
+        "fry",
+        "bread"
+      ],
+      "sourceIngredientLines": [
+        "1.1 pound (1/2 kilo) of all-purpose flour.",
+        "4 tablespoons of lard or butter.",
+        "1/2 cup of water mixed with a teaspoon of salt.",
+        "Oil or grease of choice for frying. (Modern Argentines use refined tallow or sunflower seed oil, but for the real gaucho way, unrefined lard or tallow is the right choice)",
+        "Sugar, cinnamon, or herbs and spices of choice (Optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-torta-frita-criolla-ing-1",
+          "arabicName": "دقيق متعدد الاستعمالات، 1.1 رطل (نصف كجم)",
+          "candidateDisplay": "1.1 pound (1/2 kilo) of all-purpose flour.",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1.1 pound (1/2 kilo) of all-purpose flour.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-torta-frita-criolla-ing-2",
+          "arabicName": "شحم أو زبدة، 4 ملاعق كبيرة",
+          "candidateDisplay": "4 tablespoons of lard or butter.",
+          "sourceIngredientIndex": 1,
+          "sourceText": "4 tablespoons of lard or butter.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 4,
+          "acceptedUnit": "tablespoons",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-torta-frita-criolla-ing-3",
+          "arabicName": "ماء، نصف كوب، مخلوط بملعقة صغيرة ملح",
+          "candidateDisplay": "1/2 cup of water mixed with a teaspoon of salt.",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1/2 cup of water mixed with a teaspoon of salt.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-torta-frita-criolla-ing-4",
+          "arabicName": "زيت أو دهن للقلي",
+          "candidateDisplay": "Oil or grease of choice for frying. (Modern Argentines use refined tallow or sunflower seed oil, but for the real gaucho way, unrefined lard or tallow is the right choice)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Oil or grease of choice for frying. (Modern Argentines use refined tallow or sunflower seed oil, but for the real gaucho way, unrefined lard or tallow is the right choice)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-torta-frita-criolla-ing-5",
+          "arabicName": "سكر أو قرفة أو أعشاب وتوابل حسب الاختيار (اختياري)",
+          "candidateDisplay": "Sugar, cinnamon, or herbs and spices of choice (Optional)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Sugar, cinnamon, or herbs and spices of choice (Optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Add the flour on a bowl, and the grease in ambient temperature in the middle.",
+        "Mix flour and grease with your fingertips, while slowly adding the salt water, until you end up with a dough ball.",
+        "Knead it energically, until the dough forms bubbles on its surface.",
+        "Let it rest for 1 or 2 hours, and then form little balls, the size you'd do for a chocolate chip cookie, smash them to a disc shape, then poke a small hole in the middle.",
+        "Fry it on abundant grease until golden brown, remove it with a perforated spoon, then put it on a bowl with paper towels to absorb excess grease.",
+        "Add garnishes, but it is not essential, due to how rich and filling the dish is."
+      ],
+      "sourceRawText": "---\ntitle: Torta Frita Criolla (Argentinian frybread)\ntags: ['argentinian', 'fry', 'bread']\ndate: 2022-06-23\nauthor: \"bernardo-slongo\"\n---\n\nA \"merienda\" (afternoon meal) that is intertwined with the history of colonization on the River Plate region. Never have it by yourself, instead with friends or family, and a cup/gourd of Mate.\n\n- ⏲️ Prep time: 1h 10min or 2h 10min, (depending on how long you leave it to rest.)\n- 🍳Cook time: 10 minutes.\n- 🍽️ Servings : 10.\n\n## Ingredients\n\n- 1.1 pound (1/2 kilo) of all-purpose flour.\n- 4 tablespoons of lard or butter.\n- 1/2 cup of water mixed with a teaspoon of salt.\n- Oil or grease of choice for frying. (Modern Argentines use refined tallow or sunflower seed oil, but for the real gaucho way, unrefined lard or tallow is the right choice)\n- Sugar, cinnamon, or herbs and spices of choice (Optional)\n\n## Directions\n\n1. Add the flour on a bowl, and the grease in ambient temperature in the middle.\n2. Mix flour and grease with your fingertips, while slowly adding the salt water, until you end up with a dough ball.\n3. Knead it energically, until the dough forms bubbles on its surface.\n4. Let it rest for 1 or 2 hours, and then form little balls, the size you'd do for a chocolate chip cookie, smash them to a disc shape, then poke a small hole in the middle.\n5. Fry it on abundant grease until golden brown, remove it with a perforated spoon, then put it on a bowl with paper towels to absorb excess grease.\n6. Add garnishes, but it is not essential, due to how rich and filling the dish is.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 20,
+        "cookTime": 10,
+        "totalTime": 30,
+        "sourceReported": [
+          "- ⏲️ Prep time: 1h 10min or 2h 10min, (depending on how long you leave it to rest.)",
+          "- 🍳Cook time: 10 minutes.",
+          "- 🍽️ Servings : 10."
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-chicharrones",
+      "sourceTitle": "Chicharrones",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicharrones.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/chicharrones.md",
+      "snapshotSHA256": "16f963e5367557ef7b8b0010f6f0f7717948e10b3f475c9ae8a8c6c7c71a7828",
+      "sourceAuthor": null,
+      "sourceTags": [
+        "mexican",
+        "pork"
+      ],
+      "sourceIngredientLines": [
+        "Pork Butt with fat",
+        "Adobo Goya all purpose",
+        "Cumin",
+        "Goya Naranja juice",
+        "Corn oil (preferred)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-chicharrones-ing-1",
+          "arabicName": "لحم كتف خنزير مع الدهن",
+          "candidateDisplay": "Pork Butt with fat",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Pork Butt with fat",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-chicharrones-ing-2",
+          "arabicName": "بهار أدوبو جويا متعدد الاستعمالات",
+          "candidateDisplay": "Adobo Goya all purpose",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Adobo Goya all purpose",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-chicharrones-ing-3",
+          "arabicName": "كمون",
+          "candidateDisplay": "Cumin",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Cumin",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "ml",
+          "scales": true,
+          "methodDerivedEvidence": "Add Cumin 1 ml"
+        },
+        {
+          "ingredientId": "bc650-chicharrones-ing-4",
+          "arabicName": "عصير نارنج جويا",
+          "candidateDisplay": "Goya Naranja juice",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Goya Naranja juice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 15,
+          "acceptedUnit": "ml",
+          "scales": true,
+          "methodDerivedEvidence": "Add Goya Naranja 15 ml"
+        },
+        {
+          "ingredientId": "bc650-chicharrones-ing-5",
+          "arabicName": "زيت ذرة مفضل للقلي",
+          "candidateDisplay": "Corn oil (preferred)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Corn oil (preferred)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-chicharrones-ing-6",
+          "arabicName": "فلفل أسود، 1 مل",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add Black pepper 1 ml",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 1,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chicharrones-ing-7",
+          "arabicName": "ملح، 5 مل",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add Salt 5 ml",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 5,
+          "acceptedUnit": "ml",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "فلفل أسود، 1 مل",
+          "sourceText": "Add Black pepper 1 ml",
+          "amount": 1,
+          "unit": "ml"
+        },
+        {
+          "name": "ملح، 5 مل",
+          "sourceText": "Add Salt 5 ml",
+          "amount": 5,
+          "unit": "ml"
+        }
+      ],
+      "methodQuantityOverrides": [
+        {
+          "sourceIndex": 2,
+          "amount": 1,
+          "unit": "ml",
+          "sourceText": "Add Cumin 1 ml"
+        },
+        {
+          "sourceIndex": 3,
+          "amount": 15,
+          "unit": "ml",
+          "sourceText": "Add Goya Naranja 15 ml"
+        }
+      ],
+      "sourceMethodLines": [
+        "Cut pork butt to around bite sized pieces with fat attached for frying and flavor.",
+        "Add Adobo Goya and spread evenly throughout the pork",
+        "Add Black pepper 1 ml",
+        "Add Cumin 1 ml",
+        "Add Salt 5 ml",
+        "Add Goya Naranja 15 ml",
+        "Rub all of it to spread the spices along the meat",
+        "Have a colander to put the Chicharonnes in after having fried it and have another pot on the bottom that has some paper inside for oil",
+        "Put it in deep dish skillet around Medium (3-4) heat cover with lid for around 30-35 mins till you see it's cooked, turning to make sure everything is cooking evenly",
+        "After it dries up at around 30-35 mins put the temperature to High (6-7) without the lid",
+        "Put some oil to make sure it doesn't stick too much",
+        "Use spoon to spin/stir and fry until a golden brown",
+        "Take out the Chicharonnes and put into the colander. You may keep some of the fried bits that come off to eat as well."
+      ],
+      "sourceRawText": "---\ntitle: \"Chicharrones\"\ndate: 2021-03-20\ntags: ['mexican', 'pork']\n---\n\n## Ingredients\n- Pork Butt with fat\n- Adobo Goya all purpose\n- Cumin\n- Goya Naranja juice\n- Corn oil (preferred)\n\n## Directions\n\n1. Cut pork butt to around bite sized pieces with fat attached for frying and flavor.\n2. Add Adobo Goya and spread evenly throughout the pork\n3. Add Black pepper 1 ml\n4. Add Cumin 1 ml\n5. Add Salt 5 ml\n6. Add Goya Naranja 15 ml\n7. Rub all of it to spread the spices along the meat\n8. Have a colander to put the Chicharonnes in after having fried it and have another pot on the bottom that has some paper inside for oil\n9. Put it in deep dish skillet around Medium (3-4) heat cover with lid for around 30-35 mins till you see it's cooked, turning to make sure everything is cooking evenly\n10. After it dries up at around 30-35 mins put the temperature to High (6-7) without the lid\n11. Put some oil to make sure it doesn't stick too much\n12. Use spoon to spin/stir and fry until a golden brown\n13. Take out the Chicharonnes and put into the colander. You may keep some of the fried bits that come off to eat as well.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-sourdough-potato-bread",
+      "sourceTitle": "Potato sourdough bread",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/sourdough-potato-bread.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/sourdough-potato-bread.md",
+      "snapshotSHA256": "88d7f6154bf81abb13f87630b5f7fdae313b3a419bb4354f8dbf126497d40884",
+      "sourceAuthor": "\"SirStart\"",
+      "sourceTags": [
+        "sourdough",
+        "bread",
+        "potato"
+      ],
+      "sourceIngredientLines": [
+        "150g boiled potatoes in there skin",
+        "350g wheat flour",
+        "50g whole rye flour",
+        "11g salt",
+        "150g water",
+        "250g sourdough"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-sourdough-potato-bread-ing-1",
+          "arabicName": "بطاطا مسلوقة بقشرها، 150 جم",
+          "candidateDisplay": "150g boiled potatoes in there skin",
+          "sourceIngredientIndex": 0,
+          "sourceText": "150g boiled potatoes in there skin",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 150,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-sourdough-potato-bread-ing-2",
+          "arabicName": "دقيق قمح، 350 جم",
+          "candidateDisplay": "350g wheat flour",
+          "sourceIngredientIndex": 1,
+          "sourceText": "350g wheat flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 350,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-sourdough-potato-bread-ing-3",
+          "arabicName": "دقيق جاودار كامل، 50 جم",
+          "candidateDisplay": "50g whole rye flour",
+          "sourceIngredientIndex": 2,
+          "sourceText": "50g whole rye flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 50,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-sourdough-potato-bread-ing-4",
+          "arabicName": "ملح، 11 جم",
+          "candidateDisplay": "11g salt",
+          "sourceIngredientIndex": 3,
+          "sourceText": "11g salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 11,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-sourdough-potato-bread-ing-5",
+          "arabicName": "ماء، 150 جم",
+          "candidateDisplay": "150g water",
+          "sourceIngredientIndex": 4,
+          "sourceText": "150g water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 150,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-sourdough-potato-bread-ing-6",
+          "arabicName": "خميرة عجين مخمر، 250 جم",
+          "candidateDisplay": "250g sourdough",
+          "sourceIngredientIndex": 5,
+          "sourceText": "250g sourdough",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 250,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Boil the potatoes",
+        "Peel of the skin of the potatoes (let them cool down a bit)",
+        "Stir all ingredients and knead them well.",
+        "Let the dough rest for 5 hours in warm (25-30°C) conditions.",
+        "Preheat the oven to 250°C.",
+        "Bake for up to 10 minute with steam.",
+        "Release the steam and turn the heat down to 220°C.",
+        "Bake for another 35 minutes"
+      ],
+      "sourceRawText": "---\ntitle: \"Potato sourdough bread\"\ndate: 2021-03-23\ntags: ['sourdough', 'bread', 'potato']\nauthor: \"SirStart\"\n---\n\n![Potato sourdough bread](/pix/sourdough-potato-bread.webp)\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 45 min\n\n## Ingredients\n\n- 150g boiled potatoes in there skin\n- 350g wheat flour\n- 50g whole rye flour\n- 11g salt\n- 150g water\n- 250g sourdough\n\n## Directions\n\n1. Boil the potatoes\n2. Peel of the skin of the potatoes (let them cool down a bit)\n3. Stir all ingredients and knead them well.\n4. Let the dough rest for 5 hours in warm (25-30°C) conditions.\n5. Preheat the oven to 250°C.\n6. Bake for up to 10 minute with steam.\n7. Release the steam and turn the heat down to 220°C.\n8. Bake for another 35 minutes\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 15,
+        "cookTime": 45,
+        "totalTime": 60,
+        "sourceReported": [
+          "- ⏲️ Prep time: 15 min",
+          "- 🍳 Cook time: 45 min"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-no-knead-pizza-dough",
+      "sourceTitle": "No-knead pizza dough",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/no-knead-pizza-dough.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/no-knead-pizza-dough.md",
+      "snapshotSHA256": "0900f244ae4b2e58aec57a989a081238df3c00f496776ef65e3c8c5570b4bd93",
+      "sourceAuthor": "brox",
+      "sourceTags": [
+        "basic",
+        "pizza",
+        "dough"
+      ],
+      "sourceIngredientLines": [
+        "200g flour",
+        "2g instant yeast (dry)",
+        "5g salt",
+        "5g olive oil",
+        "140g luke warm water"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-no-knead-pizza-dough-ing-1",
+          "arabicName": "دقيق، 200 جم",
+          "candidateDisplay": "200g flour",
+          "sourceIngredientIndex": 0,
+          "sourceText": "200g flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 200,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-no-knead-pizza-dough-ing-2",
+          "arabicName": "خميرة فورية جافة، 2 جم",
+          "candidateDisplay": "2g instant yeast (dry)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "2g instant yeast (dry)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-no-knead-pizza-dough-ing-3",
+          "arabicName": "ملح، 5 جم",
+          "candidateDisplay": "5g salt",
+          "sourceIngredientIndex": 2,
+          "sourceText": "5g salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 5,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-no-knead-pizza-dough-ing-4",
+          "arabicName": "زيت زيتون، 5 جم",
+          "candidateDisplay": "5g olive oil",
+          "sourceIngredientIndex": 3,
+          "sourceText": "5g olive oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 5,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-no-knead-pizza-dough-ing-5",
+          "arabicName": "ماء فاتر، 140 جم",
+          "candidateDisplay": "140g luke warm water",
+          "sourceIngredientIndex": 4,
+          "sourceText": "140g luke warm water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 140,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Mix dry ingredients in a bowl.",
+        "Mix in olive oil and water. No need for hands or kneading!",
+        "Cover bowl air tight, and let it sit in room temperature for at least 7 hours, and up to 24 hours. It should have dramatically increased in size.",
+        "The dough can be kept in the refrigerator for some days, so feel free to double/triple the ingredients for more pizzas for the same amount of work and time."
+      ],
+      "sourceRawText": "---\ntitle: \"No-knead pizza dough\"\ndate: 2021-03-21\ntags: ['basic', 'pizza', 'dough']\nauthor: brox\n---\n\nPerfect for pan pizza in an 11 inch iron skillet.\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 7-24 hours\n- 🍽️ Servings: 1 pizza\n\n## Ingredients\n\n- 200g flour\n- 2g instant yeast (dry)\n- 5g salt\n- 5g olive oil\n- 140g luke warm water\n\n## Directions\n\n1. Mix dry ingredients in a bowl.\n2. Mix in olive oil and water. No need for hands or kneading!\n3. Cover bowl air tight, and let it sit in room temperature for at least 7 hours, and up to 24 hours. It should have dramatically increased in size.\n4. The dough can be kept in the refrigerator for some days, so feel free to double/triple the ingredients for more pizzas for the same amount of work and time.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 5,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": [
+          "- ⏲️ Prep time: 5 min",
+          "- 🍳 Cook time: 7-24 hours",
+          "- 🍽️ Servings: 1 pizza"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-refried-beans",
+      "sourceTitle": "Refried Beans",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/refried-beans.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/refried-beans.md",
+      "snapshotSHA256": "5bb26758a62ab1dc72af4c89c3ac084e672efbbe41f3d16944d89ec56564f208",
+      "sourceAuthor": "yaroslav-smirnov",
+      "sourceTags": [
+        "mexican",
+        "beans",
+        "fasting"
+      ],
+      "sourceIngredientLines": [
+        "400-500g can of pre-cooked beans",
+        "1/4 onion",
+        "3-4 garlic cloves",
+        "Cumin",
+        "Paprika",
+        "2-4 spoonfuls butter",
+        "Cooking oil (can be olive oil)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-refried-beans-ing-1",
+          "arabicName": "فاصوليا مطهوة معلبة، 400–500 جم",
+          "candidateDisplay": "400-500g can of pre-cooked beans",
+          "sourceIngredientIndex": 0,
+          "sourceText": "400-500g can of pre-cooked beans",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-refried-beans-ing-2",
+          "arabicName": "ربع بصلة",
+          "candidateDisplay": "1/4 onion",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1/4 onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-refried-beans-ing-3",
+          "arabicName": "فصوص ثوم، 3–4",
+          "candidateDisplay": "3-4 garlic cloves",
+          "sourceIngredientIndex": 2,
+          "sourceText": "3-4 garlic cloves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-refried-beans-ing-4",
+          "arabicName": "كمون",
+          "candidateDisplay": "Cumin",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Cumin",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-refried-beans-ing-5",
+          "arabicName": "بابريكا",
+          "candidateDisplay": "Paprika",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Paprika",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-refried-beans-ing-6",
+          "arabicName": "زبدة، 2–4 ملاعق كبيرة",
+          "candidateDisplay": "2-4 spoonfuls butter",
+          "sourceIngredientIndex": 5,
+          "sourceText": "2-4 spoonfuls butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-refried-beans-ing-7",
+          "arabicName": "زيت طهي (يمكن استخدام زيت الزيتون)",
+          "candidateDisplay": "Cooking oil (can be olive oil)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Cooking oil (can be olive oil)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-refried-beans-ing-8",
+          "arabicName": "ملح حسب الذوق",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Add salt, cumin, and paprika to taste.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ملح حسب الذوق",
+          "sourceText": "Add salt, cumin, and paprika to taste."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Add the oil and the butter to the frying pan and heat to medium heat.",
+        "Chop the onion and mince the garlic.",
+        "Once the frying pan is heated, add the onion and garlic to the pan, and fry them for about 3 minutes.",
+        "Add salt, cumin, and paprika to taste. Usually I add paprika until the mix is a brownish red. Mix with your spatula, and let fry for about 5 minutes.",
+        "Open the can of beans and pour the beans into the pan. Depending on how liquid you want the refried beans to be, you can use all or just some part of the liquid inside the can. I usually get rid of some of the liquid from the can before pouring the beans.",
+        "Mash the beans and mix. Let them fry at medium-low to medium heat for about 5 to 10 minutes, mixing from time to time.",
+        "Serve, and enjoy with some totopos."
+      ],
+      "sourceRawText": "---\ntitle: \"Refried Beans\"\ndate: 2021-03-12\ntags: ['mexican', 'beans', 'fasting']\nauthor: yaroslav-smirnov\n---\n\n![Refried Beans](/pix/refried-beans.webp)\n\nOne of my favorite dishes that works either as an appetizer or side dish is\nrefried beans. A classic from Mexican cuisine, that is best eaten with some\ntotopos, or tortilla chips.\n\n## Ingredients\n\nAs usual, the ingredients here are for about two adult portions:\n\n* 400-500g can of pre-cooked beans\n* 1/4 onion\n* 3-4 garlic cloves\n* Cumin\n* Paprika\n* 2-4 spoonfuls butter\n* Cooking oil (can be olive oil)\n\n## Directions\n\n1. Add the oil and the butter to the frying pan and heat to medium heat.\n2. Chop the onion and mince the garlic.\n3. Once the frying pan is heated, add the onion and garlic to the pan, and fry\n   them for about 3 minutes.\n4. Add salt, cumin, and paprika to taste. Usually I add paprika until the mix is\n   a brownish red. Mix with your spatula, and let fry for about 5 minutes.\n5. Open the can of beans and pour the beans into the pan. Depending on how\n   liquid you want the refried beans to be, you can use all or just some part of\n   the liquid inside the can. I usually get rid of some of the liquid from the\n   can before pouring the beans.\n6. Mash the beans and mix. Let them fry at medium-low to medium heat for about 5\n   to 10 minutes, mixing from time to time.\n7. Serve, and enjoy with some totopos.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

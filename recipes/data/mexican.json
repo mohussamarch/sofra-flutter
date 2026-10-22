@@ -1,0 +1,2948 @@
+{
+  "cuisine": "مكسيكي",
+  "cuisineSlug": "mexican",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "bc650-mexican-meat-loaf",
+      "name": "رغيف لحم على الطريقة المكسيكية",
+      "nameEn": "Mexican Meat Loaf",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "رغيف لحم مفروم مع فاصوليا سوداء وصلصة سالسا وذرة.",
+      "servings": 4,
+      "prepTime": 10,
+      "cookTime": 60,
+      "totalTime": 70,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-mexican-meat-loaf-ing-1",
+          "name": "لحم بقري مفروم قليل الدهن",
+          "amount": 1,
+          "unit": "رطل",
+          "display": null,
+          "label": "1 lb Lean Ground Beef"
+        },
+        {
+          "id": "bc650-mexican-meat-loaf-ing-2",
+          "name": "فاصوليا سوداء معلبة مغسولة ومصفاة",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null,
+          "label": "1 cup Black Beans (canned), rinsed and drained"
+        },
+        {
+          "id": "bc650-mexican-meat-loaf-ing-3",
+          "name": "صلصة سالسا",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null,
+          "label": "1 cup Salsa, divided"
+        },
+        {
+          "id": "bc650-mexican-meat-loaf-ing-4",
+          "name": "ذرة مجمدة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "display": null,
+          "label": "1/2 cup Corn (frozen)"
+        },
+        {
+          "id": "bc650-mexican-meat-loaf-ing-5",
+          "name": "فتات خبز",
+          "amount": 0.5,
+          "unit": "كوب",
+          "display": null,
+          "label": "1/2 cup Bread Crumbs"
+        },
+        {
+          "id": "bc650-mexican-meat-loaf-ing-6",
+          "name": "رذاذ زيت للطبخ",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cooking Spray"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضعي كل المكونات في وعاء باستثناء رذاذ الزيت، واستخدمي ثلاثة أرباع كوب من السالسا، ثم اخلطي جيدًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "رشي قالب رغيف (نحو 5×9 بوصات) بزيت الطبخ، ثم أضيفي الخليط.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخبزي 50 إلى 60 دقيقة، ثم اتركيه 15 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "ضعي ربع كوب السالسا المتبقي على الوجه.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "المقادير والحصص والأزمنة من المصدر. الزمن المذكور للطهي 60 دقيقة، وتشرح الطريقة مجالًا قدره 50–60 دقيقة إضافة إلى راحة 15 دقيقة؛ حُفظ كلا النصين. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/mexican-meat-loaf.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 63a69de8ea151e03cb47d5647fb9e6800f8cebd9dd3b24e6981cb7d67dfbb991.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-mexican-salsa",
+      "name": "سالسا مكسيكية",
+      "nameEn": "Salsa",
+      "cuisine": "مكسيكي",
+      "category": "صلصة",
+      "description": "سالسا طماطم تُخلط وتُبرّد قبل التقديم.",
+      "servings": 14,
+      "prepTime": 5,
+      "cookTime": 0,
+      "totalTime": 5,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-mexican-salsa-ing-1",
+          "name": "طماطم",
+          "amount": 1.25,
+          "unit": "رطل",
+          "display": null,
+          "label": "1 1/4 lbs (600 grams) tomatoes"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-2",
+          "name": "طماطم معلبة",
+          "amount": 1,
+          "unit": "can (14.5 oz)",
+          "display": null,
+          "label": "1 14.5 oz (400 grams) canned tomatoes"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-3",
+          "name": "بصل أخضر",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 green onion"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-4",
+          "name": "بصلة حمراء",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 red onion"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-5",
+          "name": "فلفل هالابينو",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null,
+          "label": "1 jalapeño pepper"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-6",
+          "name": "كزبرة طازجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 handfull fresh cilantro"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-7",
+          "name": "ثوم",
+          "amount": 1,
+          "unit": "فص",
+          "display": null,
+          "label": "1 clove garlic"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-8",
+          "name": "عصير نصف لايم (اختياري)",
+          "amount": 0.5,
+          "unit": "حبة",
+          "optional": true,
+          "display": null,
+          "label": "1/2 lime, juice squeezed (optional)"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-9",
+          "name": "فلفل حار (اختياري)",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": true,
+          "display": null,
+          "label": "1 chili pepper (optional)"
+        },
+        {
+          "id": "bc650-mexican-salsa-ing-10",
+          "name": "كمون مطحون (اختياري)",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "optional": true,
+          "display": null,
+          "label": "1/4 tsp ground cumin (optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضعي جميع المكونات في محضرة الطعام وشغليها نبضات قصيرة حتى تصلي إلى درجة التقطيع المرغوبة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضعيها في الثلاجة حتى التقديم؛ مدة الحفظ القصوى أسبوع واحد بحسب المصدر.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "صلصة"
+      ],
+      "notes": "الحصص والأوقات والمقادير من المصدر. ورد للطماطم الوزن بوحدتي lb وgrams معًا في النص؛ حُفظ الاثنان كما هما دون حل اختلافهما. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/salsa.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 43c4745202ce5fd6f75f1ad6d9d48ed3c863c84bf1e68171d4c5609da41785e8.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-loaded-mexican-rice",
+      "name": "أرز مكسيكي غني",
+      "nameEn": "Loaded Mexican Rice",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "أرز على نمط تكس مكس مع الفاصوليا واللحم؛ يقول المصدر إنهما يجعلان منه حشوة بوريتو.",
+      "servings": 5,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-loaded-mexican-rice-ing-1",
+          "name": "أرز أبيض طويل الحبة غير مطبوخ",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null,
+          "label": "1 Cup uncooked long grain white rice"
+        },
+        {
+          "id": "bc650-loaded-mexican-rice-ing-2",
+          "name": "بازلاء مجمدة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "display": null,
+          "label": "1/2 Cup frozen peas"
+        },
+        {
+          "id": "bc650-loaded-mexican-rice-ing-3",
+          "name": "ذرة مجمدة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "display": null,
+          "label": "1/2 Cup frozen corn"
+        },
+        {
+          "id": "bc650-loaded-mexican-rice-ing-4",
+          "name": "فلفل أدوبو معلب مفروم",
+          "amount": 2,
+          "unit": "حبة",
+          "display": null,
+          "label": "2 Caned adobo chilies chopped"
+        },
+        {
+          "id": "bc650-loaded-mexican-rice-ing-5",
+          "name": "معجون طماطم",
+          "amount": 5,
+          "unit": "ملعقة كبيرة",
+          "display": null,
+          "label": "5 Tbsp tomato paste"
+        },
+        {
+          "id": "bc650-loaded-mexican-rice-ing-6",
+          "name": "فاصوليا سوداء أو بينتو معلبة",
+          "amount": 1,
+          "unit": "علبة",
+          "display": null,
+          "label": "1 Can of black or pinto beans"
+        },
+        {
+          "id": "bc650-loaded-mexican-rice-ing-7",
+          "name": "لحم مفروم (اختياري)",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true,
+          "display": null,
+          "label": "1/2 Cup ground meat (optional)"
+        },
+        {
+          "id": "bc650-loaded-mexican-rice-ing-8",
+          "name": "بصل مكعبات (اختياري)",
+          "amount": 0.25,
+          "unit": "حبة",
+          "optional": true,
+          "display": null,
+          "label": "1/4 Onion diced (optional)"
+        },
+        {
+          "id": "bc650-loaded-mexican-rice-ing-9",
+          "name": "زيت محايد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "neutral oil؛ مذكور بالطريقة فقط لتغطية قاع المقلاة"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اطهي الأرز وفق تعليمات الشركة المصنعة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "صبي كمية كافية من الزيت المحايد في مقلاة كبيرة لتغطية قاعها بالكامل، ثم شغلي الحرارة المتوسطة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "عندما تسخن المقلاة أضيفي الأرز وفككي التكتلات.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي معجون الطماطم والفلفل وقلبي حتى يتغطى الأرز؛ أضيفي الماء عند الحاجة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "صفي الفاصوليا وأضيفيها مع الذرة والبازلاء. أضيفي اللحم أو البصل إن رغبتِ.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اخلطي جيدًا حتى تذوب البازلاء والذرة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "قدميه ساخنًا كبوريتو أو في وعاء مع الحشوات أو الإضافات التي تختارينها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "المصدر يسمي الحصص 5 في عنوان قائمة المكونات. لا أوقات منشورة. الكمية/النوع الدقيق للفلفل كما وردت بصياغة المصدر الملتبسة. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/loaded-mexican-rice.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 8c3e7238eb2f8d561cc2a6c7cd5735e2a4e4405c9eac58a5240496f47b708b15.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-corn-salsa",
+      "name": "سالسا الذرة",
+      "nameEn": "Corn Salsa",
+      "cuisine": "مكسيكي",
+      "category": "صلصة",
+      "description": "صلصة ذرة وخضروات باردة تحفظ في الثلاجة قبل تقديمها.",
+      "servings": null,
+      "prepTime": 10,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "ingredients": [
+        {
+          "id": "bc650-corn-salsa-ing-1",
+          "name": "ذرة مجمدة مذابة",
+          "amount": 2,
+          "unit": "رطل",
+          "display": null,
+          "label": "2 pounds frozen corn, defrosted"
+        },
+        {
+          "id": "bc650-corn-salsa-ing-2",
+          "name": "بصلة حمراء مفرومة ناعمًا",
+          "amount": 0.5,
+          "unit": "حبة",
+          "display": null,
+          "label": "1/2 Red onion, finely chopped"
+        },
+        {
+          "id": "bc650-corn-salsa-ing-3",
+          "name": "فجل رفيع ومفروم",
+          "amount": 4,
+          "unit": "حبة",
+          "display": null,
+          "label": "4 Radishes, sliced thin and chopped"
+        },
+        {
+          "id": "bc650-corn-salsa-ing-4",
+          "name": "كزبرة مفرومة ناعمًا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Few pinches of Cilantro, finely chopped"
+        },
+        {
+          "id": "bc650-corn-salsa-ing-5",
+          "name": "هالابينو مفروم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "display": "1-2 Jalepenos, finely chopped (optional)"
+        },
+        {
+          "id": "bc650-corn-salsa-ing-6",
+          "name": "عصير لايم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Juice of 2-3 Limes"
+        },
+        {
+          "id": "bc650-corn-salsa-ing-7",
+          "name": "ملح وفلفل حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt and pepper, to taste"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي المكونات إلى قطع أصغر من حبات الذرة واخلطيها جيدًا. غطيها واتركيها في الثلاجة ساعة على الأقل، ويفضل طوال الليل.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "صلصة"
+      ],
+      "notes": "التحضير 10 دقائق من المصدر. وقت الطهي لم يرد؛ عبارة المصدر عن ساعة أو أكثر في الثلاجة هي مدة تبريد/انتظار وليست طهيًا. الحصص غير محددة. التغذية والحساسية غير معروفتين. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/corn-salsa.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2؛ snapshot SHA-256 5600137b1e071561156245afdbf8d1c36ee5c7dc4b1296c63f2e927470ce3ff4.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "bc650-slow-cooked-chicken-tacos",
+      "name": "تاكو الدجاج المطهو ببطء",
+      "nameEn": "Slow-cooked Chicken Tacos",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "تاكو بحشوة دجاج مطهو في قدر بطيء مع البصل والتوابل.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-slow-cooked-chicken-tacos-ing-1",
+          "name": "صدور دجاج",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "chicken breasts"
+        },
+        {
+          "id": "bc650-slow-cooked-chicken-tacos-ing-2",
+          "name": "بصلتان أو ثلاث (يفضل الأحمر)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "two or three onions (preferably red)"
+        },
+        {
+          "id": "bc650-slow-cooked-chicken-tacos-ing-3",
+          "name": "توابل أدوبو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "adobo seasoning"
+        },
+        {
+          "id": "bc650-slow-cooked-chicken-tacos-ing-4",
+          "name": "بابريكا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "paprika"
+        },
+        {
+          "id": "bc650-slow-cooked-chicken-tacos-ing-5",
+          "name": "جبن مكسيكي مبشور أو جبن مفتت",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cheese (either shredded Mexican blend or crumbling cheese)"
+        },
+        {
+          "id": "bc650-slow-cooked-chicken-tacos-ing-6",
+          "name": "تورتيلا صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "small tortillas"
+        },
+        {
+          "id": "bc650-slow-cooked-chicken-tacos-ing-7",
+          "name": "لايم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "lime"
+        },
+        {
+          "id": "bc650-slow-cooked-chicken-tacos-ing-8",
+          "name": "كزبرة وطماطم وخس وإضافات تاكو أخرى حسب الرغبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cilantro, tomato, lettuce, other desired taco contents"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي بصْلتين إلى أرباع وافرشيها في قاع القدر البطيء.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضعي صدور الدجاج فوق البصل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "تبلي محتويات القدر بوفرة بتوابل الأدوبو والبابريكا وأي توابل أخرى مرغوبة. يمكن عصر نصف اللايم عليها.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اطهي على الوضع المنخفض 8 ساعات. يمكن استخدام حرارة عالية لوقت أقصر، لكن المصدر يفضل الطهي الأبطأ.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "قطعي الطماطم والكزبرة وأي خس والبصلة الثالثة إلى مكعبات لحشوة التاكو.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "بعد نضج الدجاج، فتتيه بالشوكتين. يمكن إضافة قليل آخر من التوابل حسب الذوق أو اللون.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "ضعي الدجاج والجبن والمكونات المقطعة في التورتيلا، واعصري بقية اللايم فوقها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "طريقة المصدر ترقم القفزات بين 4 و7 و9؛ أعيد ترقيمها تسلسليًا فقط. أُبقي وقت الطهي في نص الطريقة دون حقل metadata لأن رأس المصدر لا يحدد الزمن أو الحصص. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-tacos.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=16fd1ba0fdd1f9066d15c8c41607cf13c1b726b60dd4291de97ec9de8177daa7"
+    },
+    {
+      "id": "bc650-cochinita-pibil",
+      "name": "كوتشينيتا بيبيل",
+      "nameEn": "Cochinita Pibil",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "طبق مكسيكي تقليدي من يوكاتان؛ لحم خنزير متبل بالأشيوت ويلتف بأوراق موز بحسب المصدر.",
+      "servings": null,
+      "prepTime": 30,
+      "cookTime": 90,
+      "totalTime": 120,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-cochinita-pibil-ing-1",
+          "name": "ورقتا موز ملينتان باللهب",
+          "amount": 2,
+          "unit": "ورقة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-2",
+          "name": "كتف خنزير",
+          "amount": 3.3,
+          "unit": "رطل",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-3",
+          "name": "خاصرة خنزير مع الأضلاع",
+          "amount": 1.1,
+          "unit": "رطل",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-4",
+          "name": "معجون أشيوت",
+          "amount": 7,
+          "unit": "oz",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-5",
+          "name": "عصير برتقال حامض أو خل مع عصير برتقال",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-6",
+          "name": "كمون مطحون",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-7",
+          "name": "أوريغانو مجفف",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-8",
+          "name": "فلفل أبيض مطحون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-9",
+          "name": "فلفل أسود مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-10",
+          "name": "قرفة مطحونة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-11",
+          "name": "حبوب بهار حلو مطحونة خشنًا",
+          "amount": 5,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-12",
+          "name": "ثوم مفروم",
+          "amount": 3,
+          "unit": "فص",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-13",
+          "name": "فلفل تشيلي بيكين",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-14",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt to taste"
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-15",
+          "name": "شحم خنزير",
+          "amount": 4.5,
+          "unit": "oz",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-16",
+          "name": "فجل مغسول ومفروم ناعمًا",
+          "amount": 8,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-17",
+          "name": "بصلة حمراء صغيرة مفرومة",
+          "amount": 1,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-18",
+          "name": "فلفل هابانيرو مفروم",
+          "amount": 4,
+          "unit": "حبة",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-19",
+          "name": "كزبرة مفرومة ناعمًا",
+          "amount": 0.5,
+          "unit": "كوب",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-20",
+          "name": "عصير برتقال حامض أو خل",
+          "amount": 1,
+          "unit": "كوب",
+          "display": null
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-21",
+          "name": "ملح للصلصة حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt to taste"
+        },
+        {
+          "id": "bc650-cochinita-pibil-ing-22",
+          "name": "تورتيلا طازجة للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "fresh tortillas; source method for serving"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "افرشي صينية الخَبز بأوراق الموز واتركي أطرافها تتدلى خارج الصينية، ثم ضعي اللحم عليها.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أذيبي معجون الأشيوت في عصير البرتقال الحامض وامزجيه مع التوابل. غطي اللحم جيدًا بالتتبيلة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "انقعيه في الثلاجة 8 ساعات على الأقل أو طوال الليل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "سخني الفرن إلى 350°F (175°C) واسكبي الشحم المذاب فوق اللحم المتبل.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "لفي اللحم بإحكام بأوراق الموز، وغطيه بورق الألمنيوم، واخبزيه ساعة ونصف أو حتى يصبح طريًا جدًا عند غرس الشوكة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "للصلصة، اخلطي مكوناتها واتركيها ترتاح 3 ساعات على الأقل.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "فتتي اللحم المطهو وقدميه ملفوفًا بأوراق الموز نفسها، مع الصلصة وتورتيلا طازجة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "التحضير 30 دقيقة لا يشمل 8 ساعات أو أكثر للتتبيل؛ زمن الطهي 1.5 ساعة. الحصص 8–10 بالمصدر لذا بقيت null. تكرر عصير البرتقال الحامض في قسمي اللحم والصلصة كما ورد. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cochinita-pibil.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=3a241a1cba68557d740c7c92822d9631bdcd5e76df31d567ad836acef2e3ca79؛ الإجمالي محسوب بجمع وقتي التحضير والطهي المعلنين، وليس قياسًا فعليًا أو جدول مراحل مكتملًا."
+    },
+    {
+      "id": "bc650-slow-cooked-pork-carnitas",
+      "name": "كارنيتاس لحم الخنزير المطهو ببطء",
+      "nameEn": "Slow-cooked Pork Carnitas",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "كتف خنزير مطهو ببطء ومفتت مع التوابل.",
+      "servings": null,
+      "prepTime": 15,
+      "cookTime": 510,
+      "totalTime": 525,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-1",
+          "name": "كتف خنزير منزوع العظم",
+          "amount": 2.5,
+          "unit": "رطل",
+          "display": null
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-2",
+          "name": "ثوم شرائح رفيعة",
+          "amount": 6,
+          "unit": "فص",
+          "display": null
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-3",
+          "name": "كمون",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-4",
+          "name": "سازون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-5",
+          "name": "أوريغانو مجفف",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-6",
+          "name": "مرق دجاج قليل الصوديوم",
+          "amount": 0.75,
+          "unit": "كوب",
+          "display": null
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-7",
+          "name": "فلفل تشيبوتلي بصلصة أدوبو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2-3 chipotle peppers in adobo sauce"
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-8",
+          "name": "ورق غار",
+          "amount": 2,
+          "unit": "ورقة",
+          "display": null
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-9",
+          "name": "توابل أدوبو مجففة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "display": null
+        },
+        {
+          "id": "bc650-slow-cooked-pork-carnitas-ing-10",
+          "name": "ملح كوشير وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "kosher salt and pepper؛ الطريقة فقط، بلا مقدار"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "تبلي لحم الخنزير بملح كوشير وفلفل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "في مقلاة تشويح متوسطة على حرارة متوسطة إلى عالية، حمري اللحم من جميع الجهات.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ارفعيه عن الحرارة واتركيه يبرد نحو 10 دقائق. بسكين حاد اصنعي فتحات صغيرة في اللحم وادخلي شرائح الثوم فيها قدر الإمكان.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اسكبي مرق الدجاج في قدر الطهي البطيء. أضيفي اللحم وتبليه بالكمون والأدوبو والسازون والأوريغانو، ثم أضيفي ورق الغار والفلفل التشيبوتلي.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "غطي القدر واطهي على الوضع المنخفض 8 ساعات. بعد ذلك فتتي اللحم بشوكتين وامزجيه بالعصارة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اتركيه يطهو 15–30 دقيقة إضافية.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الحصص 10–11 فتُركت null. المصدر يعلن 8 ساعات و30 دقيقة للطهي بينما الطريقة 8 ساعات ثم 15–30 دقيقة إضافية؛ حُفظت المعلومتان ولم اختر قيمة جديدة. | مصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pork-carnitas.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=6d0fe2104cebeb5273a5ec1ece188c6af6baa6c42f4b01a7b4c3825be2dc8347؛ الإجمالي محسوب بجمع وقتي التحضير والطهي المعلنين، وليس قياسًا فعليًا أو جدول مراحل مكتملًا."
+    },
+    {
+      "id": "fiw650-52212",
+      "name": "حساء الذرة المكسيكي",
+      "nameEn": "Mexican Corn Soup",
+      "cuisine": "مكسيكي",
+      "category": "شوربات",
+      "description": "حساء ذرة بالدجاج والحليب والفلفل الأخضر والجبن.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 6,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "ذرة حبات كاملة مجمدة مذابة",
+          "amount": 16,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": "عبوة واحدة",
+          "id": "fiw650-52212-i0",
+          "display": null
+        },
+        {
+          "name": "مرق دجاج",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52212-i1",
+          "display": null
+        },
+        {
+          "name": "زبدة أو مارغرين",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": "بديلان كما بالمصدر",
+          "id": "fiw650-52212-i2",
+          "display": null
+        },
+        {
+          "name": "فلفل أخضر حار مقطع معلب",
+          "amount": 4.5,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": "علبة واحدة",
+          "id": "fiw650-52212-i3",
+          "display": null
+        },
+        {
+          "name": "فص ثوم مفروم",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52212-i4",
+          "display": null
+        },
+        {
+          "name": "أوريغانو طازج مفروم ومهروس",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": "الخيار المجفف مذكور بين قوسين في الطريقة",
+          "id": "fiw650-52212-i5",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52212-i6",
+          "display": null
+        },
+        {
+          "name": "فلفل أسود مطحون",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52212-i7",
+          "display": null
+        },
+        {
+          "name": "حليب",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52212-i8",
+          "display": null
+        },
+        {
+          "name": "دجاج مطهو ومفروم",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52212-i9",
+          "display": null
+        },
+        {
+          "name": "طماطم مفرومة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52212-i10",
+          "display": null
+        },
+        {
+          "name": "جبن مونتيري جاك مبشور",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "المصدر يذكر 4 أونصات",
+          "id": "fiw650-52212-i11",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "في الخلاط امزج نصف الذرة ومرق الدجاج حتى يصبح الخليط شبه ناعم. في قدر كبير اخلط هريس الذرة وبقية الذرة والزبدة والفلفل الحار والثوم والأوريغانو والملح والفلفل (إن استخدمت الملح والفلفل). اتركه يغلي، ثم خفّض الحرارة واتركه مكشوفاً 10 دقائق. أضف الحليب والدجاج والطماطم وسخّن الخليط؛ تذكر الطريقة الأوريغانو المجفف اختيارياً رغم أن قائمة المكونات تسميه طازجاً. ارفعه عن النار وأضف الجبن وحرّك حتى يذوب. يزيّن ببقدونس طازج مفروم إذا رغبت. يذكر المصدر أن الوصفة تكفي 6.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "ذرة",
+        "دجاج",
+        "مطبخ مكسيكي"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JG6B3KT3/mexican-corn-soup — SHA-256: c5e1c83c8af440dedc33924df3727ccc6b97b96ab10ec9031b1ccf7fe55025e0 — CC BY 3.0. مردود 6 مذكور بالمصدر. يحفظ الخيار الاختياري للتزيين والطريقة."
+    },
+    {
+      "id": "bc650-chimichanga",
+      "name": "تشيميتشانغا",
+      "nameEn": "Chimichanga",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "حشوة تاكو وخضار وجبن تلف في تورتيلا كبيرة ثم تقلى.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chimichanga-ing-1",
+          "name": "لحم تاكو محضر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "[taco-meat](/taco-meat)"
+        },
+        {
+          "id": "bc650-chimichanga-ing-2",
+          "name": "بصلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Onion"
+        },
+        {
+          "id": "bc650-chimichanga-ing-3",
+          "name": "طماطم مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Diced Tomatoes"
+        },
+        {
+          "id": "bc650-chimichanga-ing-4",
+          "name": "فلفل رومي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 Bell Pepper"
+        },
+        {
+          "id": "bc650-chimichanga-ing-5",
+          "name": "تورتيلا كبيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Burrito sized tortilla"
+        },
+        {
+          "id": "bc650-chimichanga-ing-6",
+          "name": "زبادي يوناني أو قشدة حامضة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Plain Greek Yogurt or Sour Cream"
+        },
+        {
+          "id": "bc650-chimichanga-ing-7",
+          "name": "خضار إضافية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Any other vegetables you want"
+        },
+        {
+          "id": "bc650-chimichanga-ing-8",
+          "name": "جبن مبشور اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Shredded cheese of choice (Optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي الفلفل والطماطم والبصل وقلّيها. أضيفي اللحم وتبّليه واطهيه حتى يتحمر أو ينضج.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني التورتيلا وضعي قليلًا من الزبادي والجبن والحشوة على النصف السفلي.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اطوي الطرف السفلي ثم الجانبين ولفيها. اقليها بالطريقة المفضلة؛ المصدر يحيل إلى طرق أخرى.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chimichanga.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=757731fb84e31bed40181c6c58f46f0226d60e57f73df2a11b74ba821b0013b2"
+    },
+    {
+      "id": "bc650-drunken-beans",
+      "name": "فاصوليا بينتو بالبيرة",
+      "nameEn": "Drunken beans (Pintos Borrachos)",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "فاصوليا بينتو مطهوة مع البصل والثوم والطماطم والتوابل والبيرة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-drunken-beans-ing-1",
+          "name": "بصلة صفراء صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 small yellow onion"
+        },
+        {
+          "id": "bc650-drunken-beans-ing-2",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3 gloves of garlic"
+        },
+        {
+          "id": "bc650-drunken-beans-ing-3",
+          "name": "طماطم مفرومة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 tomatoes. chopped"
+        },
+        {
+          "id": "bc650-drunken-beans-ing-4",
+          "name": "ماء",
+          "amount": 4,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-5",
+          "name": "فاصوليا بينتو جافة أو معلبة",
+          "amount": 1.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-6",
+          "name": "أوريغانو",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-7",
+          "name": "كمون",
+          "amount": 0.75,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-8",
+          "name": "مسحوق فلفل حار",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-drunken-beans-ing-9",
+          "name": "بيرة أو إيل داكن",
+          "amount": 12,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "شوحي البصل ثم أضيفي الثوم واطهي قليلًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي الطماطم والماء والفاصوليا والأوريغانو والكمون والفلفل الحار والبيرة والملح وارفعيها تدريجيًا للغليان.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "خففي النار. حين تقارب الفاصوليا النضج، نحو ساعة للجافة، ارفعي الحرارة لتبخير السائل حتى تصير كاليخنة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أبعدي القدر واهرسي الفاصوليا أو اتركيها كاملة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/drunken-beans.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=bd99ef153dae5a726810802fdb1b1d1f7f0989e3037a84d1ddb74107447d5dca"
+    },
+    {
+      "id": "bc650-frijol-con-puerco",
+      "name": "فريخول كون بويركو (فاصوليا سوداء بلحم الخنزير)",
+      "nameEn": "Frijol con puerco",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "فاصوليا سوداء ولحم خنزير مطهو مع البصل والإبازوت أو الكزبرة، يقدم مع الفجل والأفوكادو والليمون وصلصة تشيلتوماتي.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-frijol-con-puerco-ing-1",
+          "name": "فاصوليا سوداء مغسولة",
+          "amount": 1,
+          "unit": "كيلو",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-2",
+          "name": "خاصرة أو أضلاع خنزير قطع 5 سم",
+          "amount": 2,
+          "unit": "كيلو",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-3",
+          "name": "بصلة بيضاء نصفان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**1 white onion** without skin cut, in half."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-4",
+          "name": "إبازوت أو كزبرة مربوطة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**4 branches of fresh _epazote_**, or **15 branches of coriander** tied with kitchen twine."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-5",
+          "name": "فجل عيدان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**8 to 10 radishes**, julienned or striped."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-6",
+          "name": "كزبرة مفرومة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-7",
+          "name": "أفوكادو مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**1 Mexican avocado**, halved, pitted, pulp cut into squares."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-8",
+          "name": "ليمون أرباع",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**4 lemons**, quartered."
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-9",
+          "name": "صلصة تشيلتوماتي اختيارية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**Yucatan style tomato sauce** or _Chiltomate_ to taste (**optional**)"
+        },
+        {
+          "id": "bc650-frijol-con-puerco-ing-10",
+          "name": "تورتيلا مكسيكية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "**Mexican tortillas**"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضعي الفاصوليا في قدر مع 6 لترات ماء واغليها 45 دقيقة والغطاء مفتوح جزئيًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضيفي لحم الخنزير والبصل والإبازوت أو الكزبرة والملح. اطهي ساعة ونصف والقدر مغطى جزئيًا حتى يطرى اللحم.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "لا تدعي المرق يجف؛ يمكن إضافة نحو 4 أكواب ماء مغلي. أطفئي النار وتحققي من التتبيل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قدميها مع الفجل والكزبرة والأفوكادو والليمون وصلصة تشيلتوماتي وفلفل هابانيرو وتورتيلا.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/frijol-con-puerco.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=d644bc3973fff900620ef6222ee00b36314149a6d0f09619de26a68241ab0f61؛ الإشارة الجغرافية من وسم المصدر: يوكاتان.؛ الإقليم محفوظ كمعلومة مصدرية، لا كتصنيف مستقل."
+    },
+    {
+      "id": "fiw650-52358",
+      "name": "لازانيا مكسيكية بلا طماطم",
+      "nameEn": "Tomato Free Mexican Lasagna",
+      "cuisine": "مكسيكي",
+      "category": "أطباق رئيسية",
+      "description": "طبقات تورتيلا الذرة وحشوة اللحم والفاصولياء والذرة مع الجبن والخضار.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": 15,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "تورتيلا ذرة صغيرة",
+          "amount": 8,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i0",
+          "display": null
+        },
+        {
+          "name": "لحم بقري مفروم قليل الدهن جداً",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i1",
+          "display": null
+        },
+        {
+          "name": "بصل صغير مكعبات",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i2",
+          "display": null
+        },
+        {
+          "name": "فصوص ثوم كبيرة مفرومة",
+          "amount": 3,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i3",
+          "display": null
+        },
+        {
+          "name": "فطر بورتوبيللو مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i4",
+          "display": null
+        },
+        {
+          "name": "فلفل أخضر حار معلب أو هالابينو",
+          "amount": 4,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": true,
+          "note": "اختيارياً استخدم هالابينو إن رغبت حرارة أكثر",
+          "id": "fiw650-52358-i5",
+          "display": null
+        },
+        {
+          "name": "فاصولياء سوداء معلبة مغسولة ومصفاة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i6",
+          "display": null
+        },
+        {
+          "name": "ذرة معلبة مصفاة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i7",
+          "display": null
+        },
+        {
+          "name": "أوريغانو",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i8",
+          "display": null
+        },
+        {
+          "name": "مسحوق فلفل حار",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i9",
+          "display": null
+        },
+        {
+          "name": "مسحوق ثوم",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i10",
+          "display": null
+        },
+        {
+          "name": "كمون",
+          "amount": 1.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i11",
+          "display": null
+        },
+        {
+          "name": "فلفل أسود مطحون طازجاً",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i12",
+          "display": null
+        },
+        {
+          "name": "ملح كوشير",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i13",
+          "display": null
+        },
+        {
+          "name": "جبن مكسيكي قليل الدسم مبشور",
+          "amount": 1.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "نصف كوب ثم 3/4 كوب للطبقتين",
+          "id": "fiw650-52358-i14",
+          "display": null
+        },
+        {
+          "name": "خس آيسبرغ مبشور",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52358-i15",
+          "display": null
+        },
+        {
+          "name": "أفوكادو مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير محددة",
+          "id": "fiw650-52358-i16"
+        },
+        {
+          "name": "قشدة حامضة للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "مذكورة بالطريقة بلا مقدار",
+          "id": "fiw650-52358-i17"
+        }
+      ],
+      "steps": [
+        {
+          "text": "سخّن الفرن إلى 350°F. رش مقلاة غير لاصقة برذاذ الطهو وسخّنها على حرارة متوسطة. أضف اللحم والبصل والفطر واطه حتى ينضج اللحم؛ صفِّ الدهن إن لزم (كاتب الوصفة لم يجد دهناً عند استخدام لحم قليل الدهن). أضف الثوم واطه دقيقة أخرى. أضف الفاصولياء والفلفل الأخضر والذرة والأوريغانو ومسحوق الفلفل ومسحوق الثوم والكمون والفلفل والملح واخلط. رش قالباً 9×13 بوصة برذاذ الطهو. افرد نصف التورتيلا في القاع، ثم نصف خليط اللحم ونصف كوب جبن. أضف بقية التورتيلا ثم خليط اللحم ورش 3/4 كوب جبن. اخبز مكشوفاً 15 دقيقة. بعد الخَبز رش الأفوكادو والخس. قطّع وقدّم مع مقدار من القشدة الحامضة فوق كل قطعة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "تورتيلا",
+        "لحم بقري",
+        "مطبخ مكسيكي"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JJNWNK2P/tomato-free-mexican-lasagna — SHA-256 للاستخراج: 4ebc8f5625036be4e76ddddf2097c35c0bf38bbc3a969cd00fb843d3d6dfc460 — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-50500",
+      "name": "صينية مكسيكية بالخضار والفاصولياء",
+      "nameEn": "Mexican Bake",
+      "cuisine": "مكسيكي",
+      "category": "أطباق رئيسية",
+      "description": "صينية خضار وفاصولياء سوداء بطبقة عجين وجبن تقدم مع كريمة الأفوكادو.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 16,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "فلفل أخضر مفروم",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i0",
+          "display": null
+        },
+        {
+          "name": "بصل أحمر مفروم",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i1",
+          "display": null
+        },
+        {
+          "name": "فلفل هالبينو صغير مفروم ناعماً",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i2",
+          "display": null
+        },
+        {
+          "name": "طماطم كبيرة منزوعة البذور ومفرومة",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i3",
+          "display": null
+        },
+        {
+          "name": "فاصولياء سوداء معلبة مغسولة ومصفاة",
+          "amount": 1,
+          "unit": "علبة",
+          "scale": true,
+          "optional": false,
+          "note": "حجم العلبة غير مذكور",
+          "id": "fiw650-50500-i4",
+          "display": null
+        },
+        {
+          "name": "مسحوق فلفل حار",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i5",
+          "display": null
+        },
+        {
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i6",
+          "display": null
+        },
+        {
+          "name": "فلفل كايين",
+          "amount": 1,
+          "unit": "رشة",
+          "scale": false,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i7"
+        },
+        {
+          "name": "عصير ليمونة صغيرة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i8",
+          "display": null
+        },
+        {
+          "name": "صلصة حارة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "رشة أو حسب الذوق",
+          "id": "fiw650-50500-i9"
+        },
+        {
+          "name": "خليط بسكويت Heart Smart",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "العلامة التجارية بالمصدر",
+          "id": "fiw650-50500-i10",
+          "display": null
+        },
+        {
+          "name": "بياض بيض كبير",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i11",
+          "display": null
+        },
+        {
+          "name": "ماء",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i12",
+          "display": null
+        },
+        {
+          "name": "شرائح جبن شيدر قليل الدسم",
+          "amount": 6,
+          "unit": "شريحة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i13",
+          "display": null
+        },
+        {
+          "name": "أفوكادو كبير مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i14",
+          "display": null
+        },
+        {
+          "name": "قشدة حامضة خفيفة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i15",
+          "display": null
+        },
+        {
+          "name": "كزبرة للتزيين",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50500-i16",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "سخّن الفرن إلى 350°F ورشّ قالباً بقياس 13×9 بوصات برذاذ الطهي. سخّن مقلاة كبيرة على نار متوسطة مرتفعة ورشها بالرذاذ، ثم أضف الفلفل والبصل وقلّبهما عشر دقائق، مع إضافة مرق الدجاج أو الماء عند الحاجة لمنع الاحتراق. ارفع المقلاة عن النار وأضف الطماطم والفاصولياء ومسحوق الفلفل والكمون والكايين وعصير الليمون والصلصة الحارة حسب الذوق. في وعاء متوسط اخلط خليط البسكويت والبيض والماء. افرد العجين طبقة رقيقة في القالب وضع الخضار فوقه، ثم رتب الجبن واخبز 20–25 دقيقة حتى يفور الجبن. اهرس الأفوكادو والقشدة الحامضة. قطّع الصينية إلى 16 قطعة وقدّمها مع خليط القشدة وزيّن بالكزبرة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "صينية",
+        "فاصولياء"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/HC5257LQ/mexican-bake — SHA-256 للاستخراج: 0e598b74fc4b4db6c8372b15e832c9419c29a0f9307e99678b08b5b57ee24a7f — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-50845",
+      "name": "رغيف لحم الديك الرومي المكسيكي",
+      "nameEn": "Mexican Turkey Meat Loaf",
+      "cuisine": "مكسيكي",
+      "category": "أطباق رئيسية",
+      "description": "رغيف ديك رومي مفروم ممزوج بصلصة الطماطم ورقائق التورتيلا وتتبيلة التاكو.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": 6,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "ديك رومي مفروم",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50845-i0",
+          "display": null
+        },
+        {
+          "name": "صلصة طماطم معلبة",
+          "amount": 1,
+          "unit": "علبة 15 أونصة",
+          "scale": false,
+          "optional": false,
+          "note": "يُحجز كوب منها جانباً بحسب الطريقة",
+          "id": "fiw650-50845-i1"
+        },
+        {
+          "name": "رقائق تورتيلا مفتتة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50845-i2",
+          "display": null
+        },
+        {
+          "name": "بصل مفروم",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50845-i3",
+          "display": null
+        },
+        {
+          "name": "فلفل أخضر مفروم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50845-i4",
+          "display": null
+        },
+        {
+          "name": "خلطة تتبيل تاكو",
+          "amount": 1,
+          "unit": "عبوة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50845-i5",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "اخلط المكونات معاً مع حجز كوب من صلصة الطماطم. اسكب الخليط في قالب رغيف 9×5 بوصات. اخبز عند 350°F مدة 45–50 دقيقة. سخّن الصلصة المحجوزة وقدّمها مع رغيف اللحم. تكفي الوصفة 6 حصص، ويذكر المصدر 290 سعرة للحصة دون مراجعة تغذوية مستقلة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "ديك رومي",
+        "رغيف لحم"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/HK7Y5VJR/mexican-turkey-meat-loaf — SHA-256 للاستخراج: f632fe73e69361bde85c816e9b2d9c00569cb3775ac079835203aaecda59393e — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "bc650-chili-con-carne",
+      "name": "تشيلي كون كارني بالفاصولياء",
+      "nameEn": "Chili Con Carne",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "لحم بقري مفروم مطهو مع الطماطم والفلفل والفاصولياء الحمراء ولمسة من الشوكولاتة الداكنة.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chili-con-carne-ing-1",
+          "name": "طماطم كاملة مقشرة معلبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Canned Whole Peeled Tomatoes"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-2",
+          "name": "فلفل أحمر حلو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Red Peppers"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-3",
+          "name": "بصل أبيض",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "White Onions"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-4",
+          "name": "فلفل حار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chili Pepper"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-5",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Garlic"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-6",
+          "name": "لحم بقري مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Ground Beef"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-7",
+          "name": "فاصولياء حمراء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Kidney Beans"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-8",
+          "name": "شوكولاتة داكنة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Dark Chocolate"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-9",
+          "name": "مسحوق فلفل حار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chili Powder"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-10",
+          "name": "معجون طماطم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tomato Paste"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-11",
+          "name": "مرق لحم (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Beef Stock (optional)"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-12",
+          "name": "زيت محايد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Neutral Oil"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-13",
+          "name": "كزبرة طازجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cilantro"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-14",
+          "name": "سكر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sugar"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-15",
+          "name": "توابل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "seasoning"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-16",
+          "name": "كمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cumin"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-17",
+          "name": "بابريكا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "paprika"
+        },
+        {
+          "id": "bc650-chili-con-carne-ing-18",
+          "name": "رقائق فلفل حار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "chili flakes"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "حمّر اللحم في قدر مع زيت محايد وفتته إلى قطع صغيرة. اترك الماء يخرج منه وأضف الملح ليساعد على إخراج المزيد؛ عندما يجف الماء ويتغير صوت القلي اتركه يكتسب لوناً بنياً داكناً، ثم ارفعه جانباً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع البصل والفلفل الأحمر والفلفل الحار، وقلّها حتى تلين وتصبح شفافة. أضف الثوم المفروم ورقائق الفلفل والبابريكا والكمون والأوريغانو.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف معجون الطماطم إلى الخضار واتركه يتحمّر.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أعد اللحم إلى الخضار.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف الطماطم الكاملة المقشرة وقليلاً من الماء أو المرق.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اترك الخليط يغلي بهدوء 45–60 دقيقة على الأقل مع التحريك من حين لآخر، وأضف سائلاً إذا جف كثيراً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف الفاصولياء الحمراء والشوكولاتة الداكنة وحرّك.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "قدّم فوق الأرز وزيّن بالكزبرة الطازجة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chili-con-carne.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=9f5a591e2c1d3d1d201ce642c725bef3906432388b11487db1e788d9842d3628"
+    },
+    {
+      "id": "bc650-pork-based-chili-con-carne",
+      "name": "تشيلي كون كارني بلحم الخنزير والتشوريزو",
+      "nameEn": "Chilli con Carne",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "لحم خنزير مفروم وتشوريزو ولحم مقدد وفاصولياء في صلصة طماطم وفلفل حار ونبيذ.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-1",
+          "name": "نقانق تشوريزو من لحم الخنزير",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chorizo pork sausage"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-2",
+          "name": "لحم خنزير مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pork mince"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-3",
+          "name": "شرائح لحم مقدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Bacon strips"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-4",
+          "name": "صلصة طماطم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tomato sauce"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-5",
+          "name": "فلفل حار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chilis"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-6",
+          "name": "فاصولياء كلوية",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Kidney beans"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-7",
+          "name": "زيت زيتون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Olive oil"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-8",
+          "name": "نبيذ",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Wine"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-9",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter"
+        },
+        {
+          "id": "bc650-pork-based-chili-con-carne-ing-10",
+          "name": "توابل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "(spices)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "بينما تسخن المقلاة قطّع الفلفل الحار والتشوريزو حسب الرغبة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخّن زيت الزيتون في المقلاة على نار عالية.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف اللحم المفروم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف الزبدة ثم اللحم المقدد.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف ثلاثة أرباع صلصة الطماطم.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الفلفل الحار والتشوريزو.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف التوابل والفاصولياء. انتظر حتى يستمر صوت فوران الصلصة المسموع نحو 40 دقيقة بحسب صياغة المصدر.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف بقية صلصة الطماطم ثم النبيذ.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "خفّض اللهب وغط المقلاة وحافظ على غليان هادئ 20–40 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pork-based-chili-con-carne.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=31dab7fd8b1798599443bb133dde9bd51a830b8816a6a2fd457a84e12f8d7e3b"
+    },
+    {
+      "id": "fiw650-52786",
+      "name": "أرز مكسيكي بالدجاج والتكيلا",
+      "nameEn": "Tequila Laced Mexican Rice and Chicken",
+      "cuisine": "مكسيكي",
+      "category": "أطباق رئيسية",
+      "description": "أرز بني مطهو مع الدجاج والذرة والفاصولياء والطماطم والتكيلا والليمون.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "بصل مفروم ناعماً",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i0",
+          "display": null
+        },
+        {
+          "name": "فلفل أحمر مفروم ناعماً",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i1",
+          "display": null
+        },
+        {
+          "name": "زيت زيتون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i2",
+          "display": null
+        },
+        {
+          "name": "ثوم مفروم",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i3",
+          "display": null
+        },
+        {
+          "name": "طماطم مكعبات مصفاة",
+          "amount": 14.5,
+          "unit": "أونصة",
+          "scale": false,
+          "optional": false,
+          "note": "علبة بحسب المصدر",
+          "id": "fiw650-52786-i4"
+        },
+        {
+          "name": "فاصولياء سوداء أو فاصولياء سوداء بوصفة كاريبية من Swanson",
+          "amount": 1,
+          "unit": "علبة",
+          "scale": false,
+          "optional": false,
+          "note": "حجم العلبة غير موضح",
+          "id": "fiw650-52786-i5"
+        },
+        {
+          "name": "حبوب ذرة مجمدة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i6",
+          "display": null
+        },
+        {
+          "name": "صدر دجاج مطهو ومفروم",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i7",
+          "display": null
+        },
+        {
+          "name": "أرز بني مطهو",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i8",
+          "display": null
+        },
+        {
+          "name": "تكيلا",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i9",
+          "display": null
+        },
+        {
+          "name": "عصير ليمون أخضر",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i10",
+          "display": null
+        },
+        {
+          "name": "مسحوق فلفل حار",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52786-i11",
+          "display": null
+        },
+        {
+          "name": "جبن شيدر قليل الدسم مبشور",
+          "amount": 8,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "يقدم فوق الحصة",
+          "id": "fiw650-52786-i12",
+          "display": null
+        },
+        {
+          "name": "قشدة حامضة خفيفة",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "للتقديم",
+          "id": "fiw650-52786-i13",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "سخّن زيت الزيتون في مقلاة كبيرة غير لاصقة على نار متوسطة. أضف البصل والفلفل الأحمر واطههما 5–6 دقائق حتى يطرَيا. أضف الثوم والطماطم المعلبة والفاصولياء والذرة والدجاج المطهو والأرز البني والتكيلا وعصير الليمون ومسحوق الفلفل الحار. اطه 5–6 دقائق. ضع فوق كل حصة الجبن والقشدة الحامضة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "أرز",
+        "دجاج"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JSLNN3HF/tequila-laced-mexican-rice-and-chicken — SHA-256: ea774d7df253550fbbf8b1d6d5eb2cec52edbce4bcd056baa700692ed9f4ec26 — تمت الترجمة مع حفظ المقادير والبدائل وتسلسل الخطوات؛ لا اعتماد تشغيلي أو اختبار مطبخي."
+    },
+    {
+      "id": "fiw650-52842",
+      "name": "كرنيتاس مكسيكية من لحم الخنزير المفتت",
+      "nameEn": "Mexican Pulled Pork Carnitas",
+      "cuisine": "مكسيكي",
+      "category": "أطباق رئيسية",
+      "description": "كتف خنزير يطهى ببطء مع البرتقال والليمون والتوابل ثم يحمّر ويقدم في تورتيلا مع إضافات.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "كتف خنزير منزوع العظم، تزال طبقة الدهن حتى ⅛ بوصة ويقطع مكعبات بوصتين",
+          "amount": 3.75,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": "المدى الأصلي 3½–4 أرطال",
+          "id": "fiw650-52842-i0",
+          "display": null
+        },
+        {
+          "name": "كمون مطحون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52842-i1",
+          "display": null
+        },
+        {
+          "name": "بصل صغير مقشر ومشطور نصفين",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52842-i2",
+          "display": null
+        },
+        {
+          "name": "ورق غار",
+          "amount": 2,
+          "unit": "ورقة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52842-i3",
+          "display": null
+        },
+        {
+          "name": "أوريغانو مجفف",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52842-i4",
+          "display": null
+        },
+        {
+          "name": "عصير ليمونة خضراء",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52842-i5",
+          "display": null
+        },
+        {
+          "name": "ماء",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52842-i6",
+          "display": null
+        },
+        {
+          "name": "برتقالة متوسطة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52842-i7",
+          "display": null
+        },
+        {
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الطريقة تنص على ملعقة صغيرة ملح ونصف ملعقة صغيرة فلفل في بداية الطبخ، ثم تعديلهما حسب الذوق",
+          "id": "fiw650-52842-i8"
+        },
+        {
+          "name": "تورتيلا ذرة دافئة 6 بوصات",
+          "amount": 18,
+          "unit": "قطعة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52842-i9",
+          "display": null
+        },
+        {
+          "name": "شرائح ليمون أخضر وبصل أبيض أو أحمر مفروم وأوراق كزبرة وفجل رقيق وقشدة حامضة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "note": "إضافات للتقديم بلا مقادير",
+          "id": "fiw650-52842-i10"
+        }
+      ],
+      "steps": [
+        {
+          "text": "اضبط رف الفرن في الثلث السفلي الأوسط وسخّن الفرن إلى 300°F. ضع لحم الخنزير والملح والفلفل والكمون والبصل وورق الغار والأوريغانو وعصير الليمون والماء في فرن هولندي كبير؛ ينبغي أن يغطي السائل اللحم بالكاد. اعصر البرتقالة في وعاء متوسط، أزل البذور (ينبغي أن ينتج نحو ثلث كوب)، ثم أضف العصير ونصفي البرتقال المستهلكين إلى القدر. اترك المزيج يغلي على نار متوسطة مرتفعة مع التحريك أحياناً. غط القدر وانقله إلى الفرن نحو ساعتين حتى يطرى اللحم ويتفتت بالشوكة، واقلب القطع مرة أثناء الطهي. أخرج القدر وشغّل الشواية. انقل اللحم بملعقة مثقبة إلى وعاء، وأزل نصفي البرتقال والبصل وورق الغار وتخلص منها دون إزالة الدهن من السائل. ضع القدر على نار مرتفعة مع الحذر من سخونة المقابض، وقلّب السائل حتى يختزل إلى صلصة كثيفة لامعة خلال 8–12 دقيقة، نحو كوب. فتت كل قطعة اللحم إلى نصفين بشوكتين واطوِ الصلصة المختزلة فيه، وتبّل حسب الذوق. افرد اللحم على شبكة داخل صينية ذات حافة أو صينية شواية، بحيث يغطي معظم سطحها. ضعه في الرف السفلي الأوسط تحت الشواية حتى يتحمر جيداً دون أن يتفحم وتقرمش الحواف، 5–8 دقائق. اقلب القطع بملعقة معدنية عريضة واشوها 5–8 دقائق أخرى حتى تتحمر وتقرمش الحواف. قدّم فوراً مع التورتيلا الدافئة والإضافات.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "كرنيتاس",
+        "لحم مفتت"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JTKXK2G8/mexican-pulled-pork-carnitas — SHA-256: dd4d01b633b4f397fb6fb92a9a7bec1212c95c7a92a6f2a62e47420f6aa1bd18 — تمت الترجمة مع حفظ المقادير والبدائل وتسلسل الخطوات؛ لا اعتماد تشغيلي أو اختبار مطبخي."
+    },
+    {
+      "id": "bc650-taco-meat",
+      "name": "حشوة لحم التاكو",
+      "nameEn": "Taco Meat",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "لحم بقري أو ديك رومي مفروم يطهى مع البصل والطماطم والتوابل حتى يتكاثف ليقدم حشوةً للتاكو.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-taco-meat-ing-1",
+          "name": "لحم بقري أو ديك رومي مفروم، رطل واحد (نحو 500 جم)",
+          "amount": 1.0,
+          "unit": "رطل",
+          "scale": true,
+          "display": null,
+          "label": "1 pound (about 500 g) ground beef or turkey"
+        },
+        {
+          "id": "bc650-taco-meat-ing-2",
+          "name": "بصلة متوسطة مفرومة ناعماً (أو مسحوق بصل، ملعقة ونصف صغيرة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 medium onion, finely chopped (or 1 1/2 teaspoon onion powder)"
+        },
+        {
+          "id": "bc650-taco-meat-ing-3",
+          "name": "طماطم متوسطة مفرومة (أو علبة صغيرة من صلصة الطماطم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 medium tomato, chopped (or 1 small can of tomato sauce)"
+        },
+        {
+          "id": "bc650-taco-meat-ing-4",
+          "name": "مسحوق تشيلي، ملعقة صغيرة (أو ثلث ملعقة صغيرة لكل من الأوريغانو والكمون ومسحوق الثوم)",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-taco-meat-ing-5",
+          "name": "أوريغانو مطحون أو أوراق، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-taco-meat-ing-6",
+          "name": "كمون، ربع ملعقة صغيرة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-taco-meat-ing-7",
+          "name": "رشة فلفل، ثمن ملعقة صغيرة أو أقل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "dash of pepper (1/8 teaspoon or less)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "حمّر اللحم والبصل معاً ثم صفّ الدهن.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف بقية المكونات إلى اللحم المحمر وقلّب جيداً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "سخّن المزيج كله جيداً. أضف مزيداً من صلصة الطماطم إذا بدا الخليط جافاً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "غط القدر واتركه على نار هادئة 20 دقيقة، أو مدة أقل إذا بدأ الخليط يجف.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/taco-meat.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=aabd13220f961c2c849f715d50d02843464921b0c15956632bf46963bf27742d"
+    },
+    {
+      "id": "bc650-guacamole",
+      "name": "غواكامولي طازج",
+      "nameEn": "Fresh Guacamole",
+      "cuisine": "مكسيكي",
+      "category": "مقبلات",
+      "description": "أفوكادو مهروس مع عصير الليمون الأخضر والطماطم والبصل والكزبرة، يقدم طازجاً.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-guacamole-ing-1",
+          "name": "حبتا أفوكادو هاس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 Hass avocados"
+        },
+        {
+          "id": "bc650-guacamole-ing-2",
+          "name": "ربع بصلة متوسطة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1/4 medium onion"
+        },
+        {
+          "id": "bc650-guacamole-ing-3",
+          "name": "حبة طماطم صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 small tomato"
+        },
+        {
+          "id": "bc650-guacamole-ing-4",
+          "name": "كزبرة طازجة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cilantro"
+        },
+        {
+          "id": "bc650-guacamole-ing-5",
+          "name": "ليمونة خضراء واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 lime"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقطع الأفوكادو إلى نصفين وافتحه وضع اللب في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اهرِس الأفوكادو وأضف عصير الليمون الأخضر ثم اخلط وواصل الهرس.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "افرِم الكزبرة والطماطم والبصل وأضفها إلى خليط الأفوكادو.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف الملح والفلفل الأسود حسب الذوق وامزج جيداً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "يؤكل طازجاً مع توتوبوس. يفضّل تناوله طازجاً لأن الأفوكادو يتأكسد سريعاً وقد يفقد لونه وقوامه خلال بضع ساعات.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "مقبلات"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/guacamole.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=a8624cd0fb6337542a4acdd8bad67cd1a02edfecfe9cd4f2af80132d6ebcd435"
+    },
+    {
+      "id": "bc650-chicharrones",
+      "name": "تشيشارونيس (قطع لحم خنزير مقلية)",
+      "nameEn": "Chicharrones",
+      "cuisine": "مكسيكي",
+      "category": "طبق رئيسي",
+      "description": "قطع لحم كتف خنزير مع الدهن تتبل بأدوبو جويا والكمون وعصير نارنج جويا، ثم تطهى مغطاة وتُحمّر على حرارة أعلى حتى تصبح ذهبية.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-chicharrones-ing-1",
+          "name": "لحم كتف خنزير مع الدهن",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Pork Butt with fat"
+        },
+        {
+          "id": "bc650-chicharrones-ing-2",
+          "name": "بهار أدوبو جويا متعدد الاستعمالات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Adobo Goya all purpose"
+        },
+        {
+          "id": "bc650-chicharrones-ing-3",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicharrones-ing-4",
+          "name": "عصير نارنج جويا",
+          "amount": 15,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicharrones-ing-5",
+          "name": "زيت ذرة مفضل للقلي",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Corn oil (preferred)"
+        },
+        {
+          "id": "bc650-chicharrones-ing-6",
+          "name": "فلفل أسود، 1 مل",
+          "amount": 1,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-chicharrones-ing-7",
+          "name": "ملح، 5 مل",
+          "amount": 5,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع لحم الكتف إلى قطع بحجم لقمة مع إبقاء الدهن متصلاً للنكهة والقلي.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف بهار أدوبو جويا ووزعه بالتساوي على اللحم.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف 1 مل فلفل أسود و1 مل كمون و5 مل ملح و15 مل عصير نارنج جويا، ثم افرك المكونات لتنتشر التوابل على اللحم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "جهز مصفاة لتجميع القطع بعد القلي وقدراً أسفلها مبطناً بورق لامتصاص الزيت.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع اللحم في مقلاة عميقة على حرارة متوسطة (3–4)، وغطها نحو 30–35 دقيقة حتى ينضج مع تقليب القطع لتطهى بالتساوي.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "بعد أن يجف اللحم عند نحو 30–35 دقيقة ارفع الحرارة إلى عالية (6–7) من دون غطاء.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف زيتاً كيلا يلتصق كثيراً. قلّب بملعقة واقل حتى يكتسب لوناً ذهبياً.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أخرج القطع إلى المصفاة. يمكن الاحتفاظ بالفتات المقلي المتساقط وأكله.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. المقادير المذكورة في الطريقة للمكونات الواردة في القائمة محفوظة ككميات مستخرجة من الطريقة في الإسناد. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicharrones.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=16f963e5367557ef7b8b0010f6f0f7717948e10b3f475c9ae8a8c6c7c71a7828"
+    },
+    {
+      "id": "bc650-refried-beans",
+      "name": "فاصوليا مكسيكية مهروسة",
+      "nameEn": "Refried Beans",
+      "cuisine": "مكسيكي",
+      "category": "طبق جانبي",
+      "description": "فاصوليا مطهوة مسبقاً تهرس في المقلاة مع البصل والثوم والكمون والبابريكا والزبدة والزيت، وتقدم مع رقائق التوتوبوس.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-refried-beans-ing-1",
+          "name": "فاصوليا مطهوة معلبة، 400–500 جم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "400-500g can of pre-cooked beans"
+        },
+        {
+          "id": "bc650-refried-beans-ing-2",
+          "name": "ربع بصلة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1/4 onion"
+        },
+        {
+          "id": "bc650-refried-beans-ing-3",
+          "name": "فصوص ثوم، 3–4",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "3-4 garlic cloves"
+        },
+        {
+          "id": "bc650-refried-beans-ing-4",
+          "name": "كمون",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cumin"
+        },
+        {
+          "id": "bc650-refried-beans-ing-5",
+          "name": "بابريكا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Paprika"
+        },
+        {
+          "id": "bc650-refried-beans-ing-6",
+          "name": "زبدة، 2–4 ملاعق كبيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2-4 spoonfuls butter"
+        },
+        {
+          "id": "bc650-refried-beans-ing-7",
+          "name": "زيت طهي (يمكن استخدام زيت الزيتون)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Cooking oil (can be olive oil)"
+        },
+        {
+          "id": "bc650-refried-beans-ing-8",
+          "name": "ملح حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Add salt, cumin, and paprika to taste."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "أضف الزيت والزبدة إلى مقلاة وسخنهما على حرارة متوسطة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "افرُم البصل والثوم ناعماً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "عندما تسخن المقلاة أضف البصل والثوم واقلهما نحو 3 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف الملح والكمون والبابريكا حسب الذوق. يذكر المصدر أنه يضيف البابريكا حتى يصبح اللون أحمر بنياً. قلّب واتركها تقلى نحو 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "افتح علبة الفاصوليا واسكبها في المقلاة. يمكن استخدام كل السائل المعلب أو بعضه بحسب القوام المرغوب؛ ويذكر المصدر أنه يتخلص عادة من جزء من السائل قبل إضافة الفاصوليا.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اهرِس الفاصوليا وامزجها. اتركها تقلى على حرارة متوسطة منخفضة إلى متوسطة 5–10 دقائق مع التقليب من حين لآخر.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "تقدم مع رقائق التوتوبوس.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق جانبي"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. المصدر يصفها طبقاً مكسيكياً ويقول إن المقادير تكفي نحو وجبتين لشخصين بالغين؛ كما يقترح تقديمها كمقبل أو طبق جانبي. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/refried-beans.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=5bb26758a62ab1dc72af4c89c3ac084e672efbbe41f3d16944d89ec56564f208"
+    }
+  ]
+}

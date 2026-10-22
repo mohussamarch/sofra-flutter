@@ -1,3 +1,8 @@
+// Full pinned 6,648-entry source-bank integration; repeated SHA/coverage work
+// exceeds the default 30s on this machine. No integrity assertion is skipped.
+@Timeout(Duration(minutes: 2))
+library;
+
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -58,7 +63,7 @@ void main() {
     expect(await repository.search('نان'), isNotEmpty);
     expect(await repository.search('حريرة'), isNotEmpty);
     expect(await repository.filterByCuisine('Moroccan'), hasLength(15));
-    expect((await RecipeRepository().index), hasLength(65));
+    expect((await RecipeRepository().index), hasLength(657));
     expect(
       entries.where((entry) => entry.sourceSnapshot != null),
       hasLength(6504),

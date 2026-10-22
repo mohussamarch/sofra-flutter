@@ -1,0 +1,51 @@
+{
+  "nextAction": "Review candidate titles and methods against the current 65-recipe catalog and prior creator-site records; integrate only verified distinct recipes.",
+  "sourcePack": "data/recipes/arabic-youtube/manal-scale-20261021b/finalpackrecipes.json",
+  "runtimeReady": 0,
+  "rightsApproved": 0,
+  "schemaVersion": 1,
+  "stage": "candidate-catalog-data; pending independent review and deduplication",
+  "chunkSize": 25,
+  "nutritionApproved": 0,
+  "ingredientAmountsRetainedRaw": true,
+  "createdAt": "2026-10-21",
+  "deduplication": "Source pack reports 0 internal duplicates; no automatic claim that candidates are distinct from existing catalog. Independent catalog-title/method review remains required.",
+  "unknownTimingCount": 108,
+  "sourceRecords": 114,
+  "metadataPolicy": "source-unknowns-v1",
+  "modernCompleteRecords": 11,
+  "knownCuisineCount": 13,
+  "chunks": 6,
+  "unknownCuisineCount": 101,
+  "excludedModernPartialRecords": 4,
+  "unknownYieldCount": 107,
+  "unknownCookTimeCount": 108,
+  "unknownTotalTimeCount": 108,
+  "candidateRecords": 114,
+  "unknownIngredientAmountCount": 207,
+  "sourceExtractHashMismatches": 0,
+  "numericIngredientAmountsAccepted": 1381,
+  "unknownPrepTimeCount": 108,
+  "manalSourceRecords": 103,
+  "modernWebsiteCompleteSourceRecords": 11,
+  "catalogTitleCollisions": [
+    {
+      "candidateId": "ma650-manal-macaroni-bechamel-20261021b",
+      "name": "مكرونة بالبشاميل",
+      "existingId": "eg-bechamel-pasta",
+      "methodComparison": "ordered source method differs; ingredients differ; treat as same-title variant pending review"
+    },
+    {
+      "candidateId": "ma650-manal-fried-kibbeh-20261021b",
+      "name": "كبة مقلية",
+      "existingId": "sh-kibbeh-kibbeh-balls",
+      "methodComparison": "ordered source method differs; ingredients differ; treat as same-title variant pending review"
+    },
+    {
+      "candidateId": "ma650-manal-fish-sayadiya-20261021b",
+      "name": "صيادية سمك",
+      "existingId": "eg-sayadeya",
+      "methodComparison": "ordered source method differs; ingredients differ; treat as same-title variant pending review"
+    }
+  ]
+}

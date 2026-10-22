@@ -1,0 +1,1435 @@
+{
+  "cuisine": "فلبيني",
+  "cuisineSlug": "filipino",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "description": "وصفة موثقة من مصدرها الأولي.",
+      "prepTime": 10.0,
+      "difficulty": "غير محدد",
+      "cuisine": "فلبيني",
+      "totalTime": 40.0,
+      "notes": "المصدر: https://panlasangpinoy.com/filipino-pancit/ | بصمة الاستخراج: 43d0c815c94e55433ddacfb10e192b353a52805b7a2f05f910619774a0e42bad | المطبخ مذكور صراحة بالمصدر (Filipino). المقادير محفوظة بنصها، والطريقة ملخصة وفق تسلسل المصدر؛ الأزمنة والحصص غير المنشورة مجهولة.",
+      "steps": [
+        {
+          "tip": null,
+          "text": "ليّني نودلز البيهون بالنقع القصير. سخّني الزيت في مقلاة واسعة وقلّبي الثوم والبصل حتى يلينَا.",
+          "passive": false,
+          "duration": null,
+          "n": 1
+        },
+        {
+          "tip": null,
+          "text": "أضيفي شرائح لحم الخنزير وقلّبيها حتى تتحمر قليلًا.",
+          "passive": false,
+          "duration": null,
+          "n": 2
+        },
+        {
+          "tip": null,
+          "text": "أضيفي صلصة الصويا وصلصة المحار والماء، واتركي المزيج يغلي ثم غطّيه واطهيه نحو عشرين دقيقة حتى يطرى اللحم.",
+          "passive": false,
+          "duration": null,
+          "n": 3
+        },
+        {
+          "tip": null,
+          "text": "أذيبي مكعب المرق، ثم أضيفي الجزر والملفوف وقلّبي لنحو دقيقة.",
+          "passive": false,
+          "duration": null,
+          "n": 4
+        },
+        {
+          "tip": null,
+          "text": "أضيفي نودلز البيهون المنقوعة والكانتُون، وقلّبي برفق حتى تلين وتمتص معظم الصلصة.",
+          "passive": false,
+          "duration": null,
+          "n": 5
+        },
+        {
+          "tip": null,
+          "text": "أضيفي البقدونس وتبّلي بالفلفل الأسود وصلصة السمك حسب الذوق.",
+          "passive": false,
+          "duration": null,
+          "n": 6
+        },
+        {
+          "tip": null,
+          "text": "غطّي المقلاة نحو ثلاث دقائق، ثم أطفئي النار وانقلي الطبق للتقديم.",
+          "passive": false,
+          "duration": null,
+          "n": 7
+        }
+      ],
+      "id": "ma650-panlasang-pinoy-filipino-pancit-20261021",
+      "ingredients": [
+        {
+          "label": "1/2 lb pancit bihon",
+          "optional": false,
+          "scale": true,
+          "unit": "رطل",
+          "name": "نودلز بانسيت بيهون",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i0",
+          "amount": 0.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/2 lb pancit canton",
+          "optional": false,
+          "scale": true,
+          "unit": "رطل",
+          "name": "نودلز بانسيت كانتون",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i1",
+          "amount": 0.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/2 lb. pork belly sliced",
+          "optional": false,
+          "scale": true,
+          "unit": "رطل",
+          "name": "بطن خنزير شرائح",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i2",
+          "amount": 0.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 cup carrot",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "جزر",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i3",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/2 small cabbage chopped",
+          "optional": false,
+          "scale": false,
+          "unit": null,
+          "name": "ملفوف صغير",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i4",
+          "amount": null,
+          "display": "1/2 small cabbage chopped",
+          "note": null
+        },
+        {
+          "label": "1 onion chopped",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "بصل مفروم",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i5",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/2 tbsp garlic minced",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة كبيرة",
+          "name": "ثوم مفروم",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i6",
+          "amount": 0.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/2 cup parsley chopped",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "بقدونس مفروم",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i7",
+          "amount": 0.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 Maggi Magic Chicken Cube",
+          "optional": false,
+          "scale": true,
+          "unit": "مكعب",
+          "name": "مكعب مرق دجاج",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i8",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/4 cup soy sauce",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "صلصة صويا",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i9",
+          "amount": 0.25,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "2 tablespoons oyster sauce",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة كبيرة",
+          "name": "صلصة محار",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i10",
+          "amount": 2.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "4 cups water",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "ماء",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i11",
+          "amount": 4.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "3 tbsp cooking oil",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة كبيرة",
+          "name": "زيت طبخ",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i12",
+          "amount": 3.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "Ground black pepper and fish sauce to taste",
+          "optional": false,
+          "scale": false,
+          "unit": null,
+          "name": "فلفل أسود مطحون وصلصة سمك",
+          "id": "ma650-panlasang-pinoy-filipino-pancit-20261021-i13",
+          "amount": null,
+          "display": "Ground black pepper and fish sauce to taste",
+          "note": null
+        }
+      ],
+      "category": "غير محدد",
+      "cookTime": 30.0,
+      "name": "بانسيت فلبيني بنودلز البيهون والكانتُون",
+      "tags": [],
+      "servings": 6,
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "description": "وصفة موثقة من مصدرها الأولي.",
+      "prepTime": 5.0,
+      "difficulty": "غير محدد",
+      "cuisine": "فلبيني",
+      "totalTime": 40.0,
+      "notes": "المصدر: https://panlasangpinoy.com/pinakbet-tagalog-recipe-knr-sc/ | بصمة الاستخراج: 3184909965f8eae954b95813a09ca3770209baabc3327bcf2510bafc376c560c | المطبخ مذكور صراحة بالمصدر (Filipino). المقادير محفوظة بنصها، والطريقة ملخصة وفق تسلسل المصدر؛ الأزمنة والحصص غير المنشورة مجهولة.",
+      "steps": [
+        {
+          "tip": null,
+          "text": "سخّني الزيت في قدر وقلّبي البصل والثوم والزنجبيل حتى يلين البصل.",
+          "passive": false,
+          "duration": null,
+          "n": 1
+        },
+        {
+          "tip": null,
+          "text": "أضيفي نصف لحم الليتشون كاوالِي وقلّبيه دقيقة.",
+          "passive": false,
+          "duration": null,
+          "n": 2
+        },
+        {
+          "tip": null,
+          "text": "أضيفي الماء واتركيه حتى يغلي.",
+          "passive": false,
+          "duration": null,
+          "n": 3
+        },
+        {
+          "tip": null,
+          "text": "أضيفي مكعب مرق الروبيان، وغطّي القدر واطهي على نار متوسطة عشرين دقيقة.",
+          "passive": false,
+          "duration": null,
+          "n": 4
+        },
+        {
+          "tip": null,
+          "text": "أضيفي الطماطم والباغونغ، واطهيهما مغطّيين ثلاث دقائق.",
+          "passive": false,
+          "duration": null,
+          "n": 5
+        },
+        {
+          "tip": null,
+          "text": "أضيفي القرع والبطاطا الحلوة واطهيهما سبع دقائق.",
+          "passive": false,
+          "duration": null,
+          "n": 6
+        },
+        {
+          "tip": null,
+          "text": "أضيفي الفاصوليا الطويلة والبامية والأمبالايا والباذنجان، واطهيها مغطّاة خمس دقائق.",
+          "passive": false,
+          "duration": null,
+          "n": 7
+        },
+        {
+          "tip": null,
+          "text": "تبّلي بالفلفل وأضيفي بقية لحم الليتشون كاوالِي؛ يذكر المصدر الطهي دون تحديد مدته.",
+          "passive": false,
+          "duration": null,
+          "n": 8
+        },
+        {
+          "tip": null,
+          "text": "انقلي الطبق إلى طبق التقديم وقدّميه.",
+          "passive": false,
+          "duration": null,
+          "n": 9
+        }
+      ],
+      "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021",
+      "ingredients": [
+        {
+          "label": "1 lb lechon kawali sliced",
+          "optional": false,
+          "scale": true,
+          "unit": "رطل",
+          "name": "ليتشون كاوالِي شرائح",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i0",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 piece Knorr Shrimp Cube",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "مكعب مرق روبيان",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i1",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "12 pieces sitaw cut into 2 inch length",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "فاصوليا طويلة (سيتاو)",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i2",
+          "amount": 12.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/2 piece kalabasa cubed",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "قرع كاباشا",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i3",
+          "amount": 0.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "12 pieces okra",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "بامية",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i4",
+          "amount": 12.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 piece Chinese eggplant sliced",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "باذنجان صيني",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i5",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 piece ampalaya sliced",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "أمبالايا (قرع مُر)",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i6",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 piece kamote cubed (optional)",
+          "optional": true,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "بطاطا حلوة",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i7",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "2 pieces tomato cubed",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "طماطم",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i8",
+          "amount": 2.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "2 thumbs ginger crushed (optional)",
+          "optional": true,
+          "scale": true,
+          "unit": "thumb",
+          "name": "زنجبيل",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i9",
+          "amount": 2.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 piece onion chopped",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "بصل",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i10",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "4 cloves garlic crushed",
+          "optional": false,
+          "scale": true,
+          "unit": "فص",
+          "name": "ثوم",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i11",
+          "amount": 4.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "2 teaspoons bagoong alamang",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة صغيرة",
+          "name": "باغونغ ألامانغ (معجون روبيان مخمّر)",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i12",
+          "amount": 2.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "2 ½ cups water",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "ماء",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i13",
+          "amount": 2.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "3 tablespoons cooking oil",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة كبيرة",
+          "name": "زيت طبخ",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i14",
+          "amount": 3.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/4 teaspoon ground black pepper",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة صغيرة",
+          "name": "فلفل أسود مطحون",
+          "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i15",
+          "amount": 0.25,
+          "display": null,
+          "note": null
+        }
+      ],
+      "category": "غير محدد",
+      "cookTime": 35.0,
+      "name": "بينكبيت تاغالوغ",
+      "tags": [],
+      "servings": 4,
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "description": "وصفة موثقة من مصدرها الأولي.",
+      "prepTime": 20.0,
+      "difficulty": "غير محدد",
+      "cuisine": "فلبيني",
+      "totalTime": 80.0,
+      "notes": "المصدر: https://panlasangpinoy.com/filipino-food-kakanin-cuchinta-kutsinta-recipe/comment-page-2/ | بصمة الاستخراج: 006d8663275ac16a42489c4d2085e95b779e28d10399622c303c552c5b380f87 | المطبخ مذكور صراحة بالمصدر (Filipino). المقادير محفوظة بنصها، والطريقة ملخصة وفق تسلسل المصدر؛ الأزمنة والحصص غير المنشورة مجهولة.",
+      "steps": [
+        {
+          "tip": null,
+          "text": "اخلطي دقيق الأرز والدقيق والسكر، ثم أضيفي الماء تدريجيًا مع التحريك.",
+          "passive": false,
+          "duration": null,
+          "n": 1
+        },
+        {
+          "tip": null,
+          "text": "أضيفي ماء اللاي وماء الأناتو المصفّى وامزجي الخليط.",
+          "passive": false,
+          "duration": null,
+          "n": 2
+        },
+        {
+          "tip": null,
+          "text": "وزّعيه في قوالب صغيرة واطهيه بالبخار حتى يتماسك، ثم قدّميه مع جوز الهند المبشور.",
+          "passive": false,
+          "duration": null,
+          "n": 3
+        }
+      ],
+      "id": "ma650-panlasang-pinoy-kutsinta-20261021",
+      "ingredients": [
+        {
+          "label": "1 1/2 cups rice flour",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "دقيق أرز",
+          "id": "ma650-panlasang-pinoy-kutsinta-20261021-i0",
+          "amount": 1.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/2 cup all-purpose flour",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "دقيق متعدد الاستعمالات",
+          "id": "ma650-panlasang-pinoy-kutsinta-20261021-i1",
+          "amount": 0.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 cup brown sugar",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "سكر بني",
+          "id": "ma650-panlasang-pinoy-kutsinta-20261021-i2",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "3 cups water",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "ماء",
+          "id": "ma650-panlasang-pinoy-kutsinta-20261021-i3",
+          "amount": 3.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 1/2 teaspoons lye water",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة صغيرة",
+          "name": "ماء قلوي للطعام",
+          "id": "ma650-panlasang-pinoy-kutsinta-20261021-i4",
+          "amount": 1.5,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "2 teaspoons annatto seeds",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة صغيرة",
+          "name": "بذور أناتو",
+          "id": "ma650-panlasang-pinoy-kutsinta-20261021-i5",
+          "amount": 2.0,
+          "display": null,
+          "note": null
+        }
+      ],
+      "category": "غير محدد",
+      "cookTime": 60.0,
+      "name": "كوتشينتا فلبينية",
+      "tags": [],
+      "servings": 6,
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "description": "وصفة موثقة من مصدرها الأولي.",
+      "prepTime": 15.0,
+      "difficulty": "غير محدد",
+      "cuisine": "فلبيني",
+      "totalTime": 27.0,
+      "notes": "المصدر: https://panlasangpinoy.com/how-to-cook-lumpia/ | بصمة الاستخراج: ddd0dd47e7a371bad72d4fc9f6622946630a6717bf33d1eb5551d793d78712d3 | المطبخ مذكور صراحة بالمصدر (Filipino). المقادير محفوظة بنصها، والطريقة ملخصة وفق تسلسل المصدر؛ الأزمنة والحصص غير المنشورة مجهولة.",
+      "steps": [
+        {
+          "tip": null,
+          "text": "اخلطي اللحم مع الجزر والبصل والتوابل والبيضة حتى يتجانس الحشو.",
+          "passive": false,
+          "duration": null,
+          "n": 1
+        },
+        {
+          "tip": null,
+          "text": "ضعي مقدارًا من الحشو على كل غلاف ولفّيه بإحكام.",
+          "passive": false,
+          "duration": null,
+          "n": 2
+        },
+        {
+          "tip": null,
+          "text": "اقلي اللفائف على دفعات في الزيت الساخن حتى تصبح ذهبية، ثم صفّيها وقدّميها.",
+          "passive": false,
+          "duration": null,
+          "n": 3
+        }
+      ],
+      "id": "ma650-panlasang-pinoy-lumpia-20261021",
+      "ingredients": [
+        {
+          "label": "1 lb ground pork",
+          "optional": false,
+          "scale": true,
+          "unit": "رطل",
+          "name": "لحم خنزير مفروم",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i0",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 small carrot",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "جزر صغير",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i1",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 medium yellow onion",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "بصل أصفر متوسط",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i2",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 teaspoon garlic powder",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة صغيرة",
+          "name": "مسحوق ثوم",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i3",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1/8 teaspoon black pepper",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة صغيرة",
+          "name": "فلفل أسود",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i4",
+          "amount": 0.125,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 teaspoon salt",
+          "optional": false,
+          "scale": true,
+          "unit": "ملعقة صغيرة",
+          "name": "ملح",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i5",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "1 egg",
+          "optional": false,
+          "scale": true,
+          "unit": "قطعة",
+          "name": "بيضة",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i6",
+          "amount": 1.0,
+          "display": null,
+          "note": null
+        },
+        {
+          "label": "20 to 25 medium lumpia wrappers",
+          "optional": false,
+          "scale": false,
+          "unit": null,
+          "name": "أغلفة لومبيا متوسطة",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i7",
+          "amount": null,
+          "display": "20 to 25 medium lumpia wrappers",
+          "note": null
+        },
+        {
+          "label": "1 1/2 cups cooking oil",
+          "optional": false,
+          "scale": true,
+          "unit": "كوب",
+          "name": "زيت طبخ",
+          "id": "ma650-panlasang-pinoy-lumpia-20261021-i8",
+          "amount": 1.5,
+          "display": null,
+          "note": null
+        }
+      ],
+      "category": "غير محدد",
+      "cookTime": 12.0,
+      "name": "لومبيا فلبينية",
+      "tags": [],
+      "servings": 4,
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "fi650-52310",
+      "name": "لفائف لومبيا الفلبينية باللحم والروبيان",
+      "nameEn": "Filipino Egg Rolls",
+      "cuisine": "فلبيني",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-52310-i0",
+          "name": "لحم خنزير أو لحم بقري مفروم",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": "بديلان كما وردا."
+        },
+        {
+          "id": "fi650-52310-i1",
+          "name": "روبيان مفروم",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i2",
+          "name": "بصل مفروم",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i3",
+          "name": "جزر مفروم",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i4",
+          "name": "ثوم مفروم",
+          "amount": 0.125,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i5",
+          "name": "ملح",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i6",
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i7",
+          "name": "بيض مخفوق",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i8",
+          "name": "صلصة محار",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i9",
+          "name": "صلصة سمك",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i10",
+          "name": "رقائق لفائف لومبيا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": "العدد غير محدد؛ يذكر المصدر مقاس 125×125 مم",
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i11",
+          "name": "زيت زيتون للتشويح",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-52310-i12",
+          "name": "زيت نباتي للقلي",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "شوّحي الثوم بزيت الزيتون حتى يصبح ذهبيًا فاتحًا، ثم أضيفي البصل وقلّبيه حتى يوشك أن يشفّ. أضيفي اللحم المفروم ورشّي الملح والفلفل، وقلّبي حتى يختفي اللون الوردي. أضيفي الجزر وصلصتي المحار والسمك واخلطي. أضيفي الروبيان واطهي حتى يصبح ورديًا، ثم أضيفي البيض وامزجيه. ارفعي المقلاة عن النار واتركي الحشوة تبرد تمامًا؛ صفّيها عند الحاجة واحتفظي بالسائل. افصلي رقائق اللومبيا بحذر. ضعي ملعقة كبيرة من الحشوة قرب الطرف السفلي مع ترك نحو بوصة، واطوي الطرف ثم الجانبين ولفّيها حتى الطرف العلوي. بلّلي الحافة بالماء لإغلاقها؛ يذكر المصدر إمكان استخدام سائل الحشوة. سخّني الزيت في مقلاة عميقة على حرارة متوسطة إلى عالية. ضعي اللفائف واحدة تلو الأخرى والوصلة إلى الأسفل، وقلّبي سريعًا كي لا تلتصق أو تنفتح. اضبطي النار لتكون الفقاعات هادئة، واقلي كل لفافة نحو 5 دقائق. أزيلي الزيت الزائد وضعيها على ورق ماص. قدّميها مع صلصة حلوة وحامضة أو صلصة خل حارة حسب اقتراح المصدر.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/JHNRHXPC/filipino-egg-rolls؛ المؤلف: Betty J Fowler، PinayInTexas؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 2806a840771592d8b736aed630c7302721074d272d4ffe72379598721dacd485؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. ترجمت الحشوة والتبريد واللف والقلي والتقديم كاملة. بديل اللحم ومقاس الورق محفوظان؛ لا عدد أوراق ولا مردود."
+    },
+    {
+      "id": "bc650-kalderetang-manok",
+      "name": "كالديـريتا الدجاج الفلبينية",
+      "nameEn": "Kalderetang Manok",
+      "cuisine": "فلبيني",
+      "category": "طبق رئيسي",
+      "description": "يخنة دجاج فلبينية بالطماطم والبطاطا والجزر ومعجون الكبدة وصلصة السمك.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-kalderetang-manok-ing-1",
+          "name": "دجاج، رطل واحد",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-2",
+          "name": "بطاطا مقطعة، حبتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 chopped potatoes"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-3",
+          "name": "جزر مقطع، حبتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 chopped carrots"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-4",
+          "name": "بصل مقطع، حبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 chopped onion"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-5",
+          "name": "فصا ثوم مفرومان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 chopped cloves of garlic"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-6",
+          "name": "طماطم مقطعة (اختياري)، حبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 chopped tomato (optional)"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-7",
+          "name": "ماء، 3 أكواب",
+          "amount": 3,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-8",
+          "name": "صلصة طماطم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tomato sauce"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-9",
+          "name": "فلفل رومي مقطع",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Chopped bell pepper"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-10",
+          "name": "بازلاء مجففة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Dried peas"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-11",
+          "name": "معجون كبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Liver spread"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-12",
+          "name": "صلصة سمك",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Fish sauce"
+        },
+        {
+          "id": "bc650-kalderetang-manok-ing-13",
+          "name": "جبن مبشور",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Grated cheese"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "شوّح البصل والثوم والطماطم الاختيارية في مقلاة بقليل من زيت الزيتون.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الدجاج واطهه حتى يتحمر، ثم أضف ملعقتين كبيرتين من الملح والفلفل. ملاحظة المصدر: تأكد من نضج الدجاج بالكامل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف صلصة السمك قبل الماء واترك الدجاج يغلي بضع دقائق، ثم أضف صلصة الطماطم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف البطاطا والجزر ومعجون الكبدة. اخلط المعجون واترك المرق يغلي حتى يثخن وتلين البطاطا والجزر. أضف الملح والفلفل إذا لزم.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف البازلاء المجففة والفلفل الرومي والجبن المبشور واطه دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اطه حتى يذوب الجبن ثم قدّم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/kalderetang-manok.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=78c84470c7e2604bb82e705b7de67f8d1ae409bed399154ad0e937768ad62285"
+    },
+    {
+      "id": "bc650-pininyahang-manok",
+      "name": "دجاج بينينياهانغ مانوك بالأناناس",
+      "nameEn": "Pininyahang Manok",
+      "cuisine": "فلبيني",
+      "category": "طبق رئيسي",
+      "description": "دجاج مطهو بعصير وقطع الأناناس والجزر والفلفل الرومي؛ يمكن إضافة الحليب المبخر لقوام كريمي.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-pininyahang-manok-ing-1",
+          "name": "دجاج مقطع لقطع التقديم، رطل واحد",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-2",
+          "name": "قطع أناناس، كوب واحد",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-3",
+          "name": "عصير أناناس، كوب واحد",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-4",
+          "name": "جزرتان مقطعتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 chopped carrots"
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-5",
+          "name": "فلفل رومي أحمر شرائح، حبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 red bell pepper, sliced"
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-6",
+          "name": "بصلة مقطعة، حبة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 chopped onion"
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-7",
+          "name": "3 فصوص ثوم مفرومة",
+          "amount": 3.0,
+          "unit": "فص",
+          "scale": true,
+          "display": null,
+          "label": "3 cloves garlic, minced"
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-8",
+          "name": "حليب مبخر (اختياري للنسخة الكريمية)، كوب واحد",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-9",
+          "name": "صلصة سمك، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-10",
+          "name": "ملح وفلفل حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Salt and pepper to taste"
+        },
+        {
+          "id": "bc650-pininyahang-manok-ing-11",
+          "name": "زيت طهي، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن زيت الطهي في مقلاة وشوّح البصل والثوم حتى تفوح رائحتهما.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف قطع الدجاج واطهها حتى تتحمر قليلاً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اسكب صلصة السمك وحرّك دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف عصير الأناناس واتركه يغلي بهدوء 15–20 دقيقة حتى يطرى الدجاج.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف الجزر وقطع الأناناس وواصل الطهي حتى تلين الخضار.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف الحليب المبخر إذا رغبت بقوام كريمي.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف الفلفل الرومي وتبّل بالملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اتركه يغلي بهدوء 3–5 دقائق أخرى وقدّمه ساخناً.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pininyahang-manok.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=4b5480e2142af0e1b7088409e6ccbea4e155ad3301948716dff914129f8a684b"
+    },
+    {
+      "id": "fi650-55072",
+      "name": "هاش اللحم المقدد الفلبيني",
+      "nameEn": "Filipino Corned Beef Hash",
+      "cuisine": "فلبيني",
+      "category": "أطباق رئيسية",
+      "description": "طريقة المصدر مترجمة إلى العربية مع حفظ المقادير والحقائق المنشورة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "fi650-55072-i0",
+          "name": "لحم بقري محفوظ ومعلب",
+          "amount": 2,
+          "unit": "علبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-55072-i1",
+          "name": "ماء لملء العلبة وإضافته؛ المقدار الدقيق غير محدد",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-55072-i2",
+          "name": "بصلة متوسطة مكعبات صغيرة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-55072-i3",
+          "name": "طماطم متوسطة مكعبات",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-55072-i4",
+          "name": "فصوص ثوم كبيرة مفرومة",
+          "amount": 3,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-55072-i5",
+          "name": "زيت نباتي أو كانولا",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-55072-i6",
+          "name": "باتيس أو صلصة سمك آسيوية أخرى",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-55072-i7",
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        },
+        {
+          "id": "fi650-55072-i8",
+          "name": "بصل أخضر، الجزء الأخضر فقط، شرائح رفيعة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "label": null,
+          "display": null,
+          "note": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "في مقلاة كبيرة وعميقة سخني الزيت على حرارة متوسطة مرتفعة. أضيفي البصل وقلّبيه حتى يطرى قليلًا. أضيفي الثوم والطماطم واطهي مع التقليب المتكرر نحو 5 دقائق حتى تذبل.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 2,
+          "text": "افتحي العلب وأضيفي اللحم كله. املئي إحدى العلب بالماء وأضيفيه إلى القدر، ثم املئي العلبة نصفها بالماء وأضيفيه أيضًا.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 3,
+          "text": "حرّكي بملعقة طويلة قوية وفتتي اللحم وامزجي المكونات حتى تصبح كاليخنة. خففي الحرارة إلى متوسطة واتركيها مكشوفة نحو 5 دقائق.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        },
+        {
+          "n": 4,
+          "text": "أضيفي الباتيس والفلفل وواصلي الطهي حتى ينخفض المزيج نحو الربع. أضيفي الجزء الأخضر من البصل وحرّكي. قدميه فوق أرز الياسمين المطهو على البخار.",
+          "duration": null,
+          "passive": false,
+          "tip": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.foodista.com/recipe/LC67N7SV/filipino-corned-beef-hash؛ المؤلف: Gorey؛ الرخصة المعلنة في السجل: CC-BY-3-0. ترجمة عربية مع توضيح/تنظيم للمقادير دون إضافة مكونات أو أزمنة أو مردود. بصمة لقطة المصدر 61851e482fe2cbbd28dd0a7b595e63d1308eac0d37885cce8a9d85e02b55eaba؛ أصل Common Pile 4fd174745182885bea01d47c8ba71b1946375898. الوصفة غير معتمدة غذائيًا أو للحساسية أو المخزون. ماء إضافة اللحم مأخوذ من العلبة نفسها، ولم يحدد المصدر مقداره بالأكواب؛ حُفظ مجهولًا. لا مردود منشور."
+    },
+    {
+      "id": "bc650-ginataang-kalabasa",
+      "name": "جيناتانغ كالاباسا بالقرع وجوز الهند",
+      "nameEn": "Ginataang Kalabasa",
+      "cuisine": "فلبيني",
+      "category": "طبق رئيسي",
+      "description": "قرع مطهو في حليب جوز الهند مع البصل والثوم ويهرس جزء منه، ويقدم فوق الأرز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-ginataang-kalabasa-ing-1",
+          "name": "قرعة متوسطة سهلة التقشير (يفضل المصدر قرع الجوز)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "One medium sized squash that is easy to peel (butternut squash is usually best)"
+        },
+        {
+          "id": "bc650-ginataang-kalabasa-ing-2",
+          "name": "علبتان حليب جوز الهند",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Two cans of coconut milk"
+        },
+        {
+          "id": "bc650-ginataang-kalabasa-ing-3",
+          "name": "بصلة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "One onion"
+        },
+        {
+          "id": "bc650-ginataang-kalabasa-ing-4",
+          "name": "بضعة فصوص ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "A few cloves of garlic"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "أزل بذور القرع ثم قشّره وقطّعه مكعبات كبيرة واتركه جانباً. أسهل طريقة للتقشير وهو نيء أن تقطعه شرائط وتزيل القشرة عن كل شريط على حدة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قطّع البصل والثوم واطههما في قدر مرق مدهون بالزيت حتى يشف البصل.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف علبتي حليب جوز الهند ومكعبات القرع. اتركه يغلي بهدوء حتى يطرى القرع.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "عندما يطرى القرع استخدم هراسة بطاطا واهرِس نحو نصفه واترك النصف الآخر مكعبات.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ارفعه عن النار وقدّمه فوق الأرز.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ginataang-kalabasa.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=331173b3ff5841494e5f3f679753c252f8bb65a801520e35fc4657eec5e76a4f"
+    }
+  ]
+}

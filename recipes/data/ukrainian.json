@@ -1,7 +1,7 @@
 {
   "cuisine": "أوكراني",
   "cuisineSlug": "ukrainian",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "recipes": [
     {
       "id": "bc-ukrainian-borscht",
@@ -130,6 +130,122 @@
       ],
       "tags": [],
       "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ukrainian-borscht.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/ukrainian-borscht.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. المصدر موسوم أوكراني وRussian؛ التصنيف الأساسي أوكراني كما يصفه النص. فُصل المرق والماء دون تحويل؛ وبقي بديل الكاتشب/صلصة الطماطم مجهول الاختيار لأن لكل بديل مقدارًا مختلفًا. optional محفوظ لكل العناصر الستة الاختيارية."
+    },
+    {
+      "id": "bc650-ukrainian-vareniki",
+      "name": "فارينيكي أوكرانية بالبطاطا والفطر",
+      "nameEn": "Ukrainian Vareniki",
+      "cuisine": "أوكراني",
+      "category": "طبق رئيسي",
+      "description": "عجين طري محشو ببطاطا مهروسة وبصل وفطر، يطوى أنصاف أقمار ويسلق.",
+      "servings": 45,
+      "prepTime": null,
+      "cookTime": 25,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-ukrainian-vareniki-ing-1",
+          "name": "بطاطا، 18 أونصة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "18 ounces potatoes"
+        },
+        {
+          "id": "bc650-ukrainian-vareniki-ing-2",
+          "name": "دقيق لجميع الاستعمالات، 3 أكواب",
+          "amount": 3,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-ukrainian-vareniki-ing-3",
+          "name": "قشدة حامضة، ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null,
+          "label": "¼ cup sour cream"
+        },
+        {
+          "id": "bc650-ukrainian-vareniki-ing-4",
+          "name": "بيكربونات الصوديوم، نصف ملعقة صغيرة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null,
+          "label": "½ teaspoon baking soda"
+        },
+        {
+          "id": "bc650-ukrainian-vareniki-ing-5",
+          "name": "ماء، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null,
+          "label": "½ cup water"
+        },
+        {
+          "id": "bc650-ukrainian-vareniki-ing-6",
+          "name": "زبدة، ربع كوب",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "display": null,
+          "label": "¼ cup butter"
+        },
+        {
+          "id": "bc650-ukrainian-vareniki-ing-7",
+          "name": "بصلتان مكعبات صغيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 onions, finely diced"
+        },
+        {
+          "id": "bc650-ukrainian-vareniki-ing-8",
+          "name": "فطر أبيض صغير مفروم ناعماً، 3½ أكواب",
+          "amount": 3.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null,
+          "label": "3 ½ cups finely chopped button mushrooms"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع البطاطا في قدر كبير واغمرها بماء مملح واتركها تغلي. خفّض الحرارة إلى متوسطة منخفضة واتركها تغلي بهدوء حتى تلين، نحو 25 دقيقة. صفّها واهرِسها وتبّل بالملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أثناء طهي البطاطا اخلط الدقيق وملعقة صغيرة ملح في وعاء كبير. اخلط القشدة الحامضة وبيكربونات الصوديوم في وعاء ثانٍ. أضف الماء إلى الدقيق وامزج، ثم أضف خليط القشدة. اعجن حتى يصبح العجين ناعماً، غطه بغلاف بلاستيكي وبرّده 10–15 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أذب الزبدة في مقلاة على حرارة متوسطة واطه البصل حتى يصبح بنياً، 5–10 دقائق. أضف الفطر واطهه حتى يتحمر، نحو 5 دقائق. أضفهما إلى البطاطا المهروسة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قسّم العجين إلى 4 أجزاء ولف كل جزء حبلاً بسماكة 1½ بوصة. اقطع الحبال قطعاً صغيرة بسماكة نصف بوصة. اضغط كل قطعة إلى دائرة صغيرة وضع ملعقة صغيرة من حشوة البطاطا في الوسط. اطو العجين نصف دائرة وأحكم إغلاق الحواف.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اغْلِ قدراً كبيراً من الماء المملح غلياناً هادئاً. أضف الفارينيكي على دفعات واطه حتى تطفو، نحو 3 دقائق، ثم اطه 2–3 دقائق أخرى. أخرجها بملعقة مثقبة وضعها في مصفاة لتصفى.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - 🍳 Cook time: 25 mins ؛ - 🍽️ Servings: 45. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ukrainian-vareniki.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=5aa09210cd9d98b23f8e0d3f19ea73071568800955081b022ea8150e28933a81"
     }
   ]
 }

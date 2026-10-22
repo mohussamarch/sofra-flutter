@@ -1,0 +1,1704 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+  "recipes": [
+    {
+      "recipeId": "bc650-apple-chicken",
+      "sourceTitle": "Apple Chicken",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/apple-chicken.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/apple-chicken.md",
+      "snapshotSHA256": "e292dee64a9b24032e9e3363607a9eaa0cdf01c13830333326c772c5c659c36d",
+      "sourceAuthor": "miraunpajaro",
+      "sourceTags": [
+        "spanish",
+        "chicken",
+        "baking",
+        "apple"
+      ],
+      "sourceIngredientLines": [
+        "Chicken breast or similar.",
+        "Onions.",
+        "Nuez moscada.",
+        "Apples.",
+        "Potatoes.",
+        "Cream or creme fraiche.",
+        "Salt.",
+        "Pepper.",
+        "One glass (33c) of wine or cognac."
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-apple-chicken-ing-1",
+          "arabicName": "صدر دجاج أو قطعة دجاج مماثلة",
+          "candidateDisplay": "Chicken breast or similar.",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Chicken breast or similar.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-2",
+          "arabicName": "بصل",
+          "candidateDisplay": "Onions.",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Onions.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-3",
+          "arabicName": "جوزة الطيب",
+          "candidateDisplay": "Nuez moscada.",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Nuez moscada.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-4",
+          "arabicName": "تفاح",
+          "candidateDisplay": "Apples.",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Apples.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-5",
+          "arabicName": "بطاطا",
+          "candidateDisplay": "Potatoes.",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Potatoes.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-6",
+          "arabicName": "كريمة أو كريمة طازجة",
+          "candidateDisplay": "Cream or creme fraiche.",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Cream or creme fraiche.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-7",
+          "arabicName": "ملح",
+          "candidateDisplay": "Salt.",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Salt.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-8",
+          "arabicName": "فلفل",
+          "candidateDisplay": "Pepper.",
+          "sourceIngredientIndex": 7,
+          "sourceText": "Pepper.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-9",
+          "arabicName": "كأس نبيذ (33 سنتيلتر) أو كونياك",
+          "candidateDisplay": "One glass (33c) of wine or cognac.",
+          "sourceIngredientIndex": 8,
+          "sourceText": "One glass (33c) of wine or cognac.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-10",
+          "arabicName": "زبدة لحشو التفاح",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "fill with nuez moscada and butter.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-chicken-ing-11",
+          "arabicName": "حليب للبطاطا المهروسة (اختياري بديل الكريمة الطازجة)",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "mush them with a fork and add milk or creme fraiche.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "زبدة لحشو التفاح",
+          "sourceText": "fill with nuez moscada and butter."
+        },
+        {
+          "name": "حليب للبطاطا المهروسة (اختياري بديل الكريمة الطازجة)",
+          "sourceText": "mush them with a fork and add milk or creme fraiche."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Heat the oven to 200C and prepare an oven tray.",
+        "Mix the chicken with nuez moscada, salt and pepper.",
+        "Remove the center of the apples, fill with nuez moscada and butter.",
+        "Put the chicken in the oven tray.",
+        "Put the chicken, onions and apple in the oven tray.",
+        "Add salt and pepper.",
+        "Cook in the oven for 40 min.",
+        "While the chicken is the oven prepare mushed potatoes. First you boil them until they are soft (keep the skin on). Once they are soft, peel them. Then mush them with a fork and add milk or creme fraiche.",
+        "Add the wine or the cognac. Cook until the chicken is well cooked.",
+        "Enjoy."
+      ],
+      "sourceRawText": "---\ntitle: \"Apple Chicken\"\ntags: ['spanish', 'chicken', 'baking', 'apple']\ndate: 2022-07-11\nauthor: miraunpajaro\n---\n\n![Applechicken](/pix/apple-chicken.webp)\nBaked chicken with apples and onions. Suprinsingly good and simple combination.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 40 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- Chicken breast or similar.\n- Onions.\n- Nuez moscada.\n- Apples.\n- Potatoes.\n- Cream or creme fraiche.\n- Salt.\n- Pepper.\n- One glass (33c) of wine or cognac.\n## Directions\n\n1. Heat the oven to 200C and prepare an oven tray.\n2. Mix the chicken with nuez moscada, salt and pepper.\n3. Remove the center of the apples, fill with nuez moscada and butter.\n4. Put the chicken in the oven tray.\n5. Put the chicken, onions and apple in the oven tray.\n6. Add salt and pepper.\n7. Cook in the oven for 40 min.\n8. While the chicken is the oven prepare mushed potatoes. First you boil them until they are soft (keep the skin on). Once they are soft, peel them. Then mush them with a fork and add milk or creme fraiche.\n9. Add the wine or the cognac. Cook until the chicken is well cooked.\n10. Enjoy.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 4,
+        "prepTime": 10,
+        "cookTime": 40,
+        "totalTime": 50,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 40 min",
+          "- 🍽️ Servings: 4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-eggroll-in-a-bowl",
+      "sourceTitle": "Egg Roll in a Bowl",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/eggroll-in-a-bowl.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/eggroll-in-a-bowl.md",
+      "snapshotSHA256": "0b24e5e6df4763f1fce38623482937ce9317f66eeb2bfd57649a94ab52654f6c",
+      "sourceAuthor": "the-birchmen",
+      "sourceTags": [
+        "quick",
+        "asian",
+        "cabbage"
+      ],
+      "sourceIngredientLines": [
+        "1 pound ground turkey",
+        "1 bag coleslaw mix",
+        "1 small onion",
+        "2-3 cloves of garlic",
+        "1 tbsp fresh ginger",
+        "1/4 cup Hoisin sauce",
+        "soy sauce",
+        "sesame oil"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-1",
+          "arabicName": "لحم ديك رومي مفروم، رطل واحد",
+          "candidateDisplay": "1 pound ground turkey",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 pound ground turkey",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-2",
+          "arabicName": "كيس مزيج ملفوف مبشور",
+          "candidateDisplay": "1 bag coleslaw mix",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 bag coleslaw mix",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-3",
+          "arabicName": "بصلة صغيرة",
+          "candidateDisplay": "1 small onion",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 small onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-4",
+          "arabicName": "فصوص ثوم، 2–3",
+          "candidateDisplay": "2-3 cloves of garlic",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2-3 cloves of garlic",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-5",
+          "arabicName": "زنجبيل طازج، ملعقة كبيرة",
+          "candidateDisplay": "1 tbsp fresh ginger",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 tbsp fresh ginger",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tbsp",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-6",
+          "arabicName": "صلصة هويسن، ربع كوب",
+          "candidateDisplay": "1/4 cup Hoisin sauce",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1/4 cup Hoisin sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.25,
+          "acceptedUnit": "cup",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-7",
+          "arabicName": "صلصة صويا",
+          "candidateDisplay": "soy sauce",
+          "sourceIngredientIndex": 6,
+          "sourceText": "soy sauce",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-8",
+          "arabicName": "زيت سمسم",
+          "candidateDisplay": "sesame oil",
+          "sourceIngredientIndex": 7,
+          "sourceText": "sesame oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-9",
+          "arabicName": "زيت طهي للقلي، ويفضل زيت الفول السوداني",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "add a few tablespoons of cooking oil, preferably peanut",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-10",
+          "arabicName": "ملح للهرس والتتبيل",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "grinding with salt under the edge of a knife.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-11",
+          "arabicName": "بيكربونات الصوديوم، ملعقة صغيرة (اختياري للنقع)",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Optional Marinade the ground turkey in 2 Tbsp of soy sauce and 1 tsp baking soda for 15 minutes",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-12",
+          "arabicName": "صلصة صويا، ملعقتان كبيرتان (اختياري للنقع)",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Optional Marinade the ground turkey in 2 Tbsp of soy sauce and 1 tsp baking soda for 15 minutes",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-13",
+          "arabicName": "صلصة فلفل حلو للتقديم",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Serve in a bowl with sweet chili sauce and green onions.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-eggroll-in-a-bowl-ing-14",
+          "arabicName": "بصل أخضر للتقديم",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Serve in a bowl with sweet chili sauce and green onions.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "زيت طهي للقلي، ويفضل زيت الفول السوداني",
+          "sourceText": "add a few tablespoons of cooking oil, preferably peanut"
+        },
+        {
+          "name": "ملح للهرس والتتبيل",
+          "sourceText": "grinding with salt under the edge of a knife."
+        },
+        {
+          "name": "بيكربونات الصوديوم، ملعقة صغيرة (اختياري للنقع)",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceText": "Optional Marinade the ground turkey in 2 Tbsp of soy sauce and 1 tsp baking soda for 15 minutes"
+        },
+        {
+          "name": "صلصة صويا، ملعقتان كبيرتان (اختياري للنقع)",
+          "amount": 2,
+          "unit": "tbsp",
+          "sourceText": "Optional Marinade the ground turkey in 2 Tbsp of soy sauce and 1 tsp baking soda for 15 minutes"
+        },
+        {
+          "name": "صلصة فلفل حلو للتقديم",
+          "sourceText": "Serve in a bowl with sweet chili sauce and green onions."
+        },
+        {
+          "name": "بصل أخضر للتقديم",
+          "sourceText": "Serve in a bowl with sweet chili sauce and green onions."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Grate or mince ginger finely. Process with the garlic cloves by grinding with salt under the edge of a knife. Finely mince the onion. **Optional** Marinade the ground turkey in 2 Tbsp of soy sauce and 1 tsp baking soda for 15 minutes to improve browning.",
+        "In a hot wok or skillet add a few tablespoons of cooking oil, preferably peanut, and a tsp of sesame oil. Add the ground turkey and cook until no longer raw seasoning with soy sauce.",
+        "Add the onion and cook until translucent and the meat is nicely browned. Add in the garlic and ginger mixture and cook for approximately 1 minute or until fragrant ensuring not to burn the garlic.",
+        "Add in the coleslaw mix and season with more soy sauce. Cook until the cabbage is just softened. Add 1/4 cup of hoisin sauce and stir to combine. Check seasoning and add salt to taste. Serve in a bowl with sweet chili sauce and green onions."
+      ],
+      "sourceRawText": "---\ntitle: \"Egg Roll in a Bowl\"\ndate: 2021-03-23\ntags: ['quick', 'asian', 'cabbage']\nauthor: the-birchmen\n---\n\nEgg rolls, but, you know, in a bowl.\n\n- ⏲️  Prep time: 10 min\n- 🍳 Cook time: 15 min\n- 🍽️  Servings: 2\n\n## Ingredients\n\n- 1 pound ground turkey\n- 1 bag coleslaw mix\n- 1 small onion\n- 2-3 cloves of garlic\n- 1 tbsp fresh ginger\n- 1/4 cup Hoisin sauce\n- soy sauce\n- sesame oil\n\n## Directions\n\n1. Grate or mince ginger finely. Process with the garlic cloves by grinding with salt under the edge of a knife. Finely mince the onion. **Optional** Marinade the ground turkey in 2 Tbsp of soy sauce and 1 tsp baking soda for 15 minutes to improve browning.\n\n2. In a hot wok or skillet add a few tablespoons of cooking oil, preferably peanut, and a tsp of sesame oil. Add the ground turkey and cook until no longer raw seasoning with soy sauce.\n\n3. Add the onion and cook until translucent and the meat is nicely browned. Add in the garlic and ginger mixture and cook for approximately 1 minute or until fragrant ensuring not to burn the garlic.\n\n4. Add in the coleslaw mix and season with more soy sauce. Cook until the cabbage is just softened. Add 1/4 cup of hoisin sauce and stir to combine. Check seasoning and add salt to taste. Serve in a bowl with sweet chili sauce and green onions.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 15,
+        "totalTime": 25,
+        "sourceReported": [
+          "- ⏲️  Prep time: 10 min",
+          "- 🍳 Cook time: 15 min",
+          "- 🍽️  Servings: 2"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-modern-borscht",
+      "sourceTitle": "Modern Borscht",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/modern-borscht.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/modern-borscht.md",
+      "snapshotSHA256": "49f1466eb2c363393cafa40900919733707e903c513da5c92db958039117cb93",
+      "sourceAuthor": "\"Skunkee\"",
+      "sourceTags": [
+        "beef",
+        "soup",
+        "russian",
+        "ukrainian"
+      ],
+      "sourceIngredientLines": [
+        "1 lb beef tenderloin, or stew meat if you are frugal",
+        "1 onion",
+        "3 carrots",
+        "2 large beets (or 3 medium beets)",
+        "4 celery shoots",
+        "2 large potatoes (Yukon Gold preferred, but any quality potatoes work)",
+        "3-4 cloves of garlic",
+        "4 cups of beef stock (or quality beef bullion such as \"Better than Bullion\" or equivalent and 4 cups water)",
+        "1/2 head of cabbage",
+        "1 heaping tbsp Cumin",
+        "1 heaping tbsp ground Coriander",
+        "1 can of diced tomatoes",
+        "3 bay leaves",
+        "Olive Oil",
+        "Butter",
+        "Fresh (or dehydrated) dill",
+        "Salt / Pepper",
+        "Sour Cream (Optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-modern-borscht-ing-1",
+          "arabicName": "لحم بقري تندرلوين أو لحم يخنة، رطل واحد",
+          "candidateDisplay": "1 lb beef tenderloin, or stew meat if you are frugal",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 lb beef tenderloin, or stew meat if you are frugal",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "lb",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-2",
+          "arabicName": "بصلة واحدة",
+          "candidateDisplay": "1 onion",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-3",
+          "arabicName": "جزر، 3",
+          "candidateDisplay": "3 carrots",
+          "sourceIngredientIndex": 2,
+          "sourceText": "3 carrots",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-4",
+          "arabicName": "شمندر كبير، 2 أو متوسط، 3",
+          "candidateDisplay": "2 large beets (or 3 medium beets)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 large beets (or 3 medium beets)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-5",
+          "arabicName": "أعواد كرفس، 4",
+          "candidateDisplay": "4 celery shoots",
+          "sourceIngredientIndex": 4,
+          "sourceText": "4 celery shoots",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-6",
+          "arabicName": "بطاطا كبيرة، 2",
+          "candidateDisplay": "2 large potatoes (Yukon Gold preferred, but any quality potatoes work)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "2 large potatoes (Yukon Gold preferred, but any quality potatoes work)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-7",
+          "arabicName": "فصوص ثوم، 3–4",
+          "candidateDisplay": "3-4 cloves of garlic",
+          "sourceIngredientIndex": 6,
+          "sourceText": "3-4 cloves of garlic",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-8",
+          "arabicName": "مرق لحم بقري، 4 أكواب (أو مكعب مرق مع 4 أكواب ماء)",
+          "candidateDisplay": "4 cups of beef stock (or quality beef bullion such as \"Better than Bullion\" or equivalent and 4 cups water)",
+          "sourceIngredientIndex": 7,
+          "sourceText": "4 cups of beef stock (or quality beef bullion such as \"Better than Bullion\" or equivalent and 4 cups water)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 4,
+          "acceptedUnit": "cups",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-9",
+          "arabicName": "نصف رأس ملفوف",
+          "candidateDisplay": "1/2 head of cabbage",
+          "sourceIngredientIndex": 8,
+          "sourceText": "1/2 head of cabbage",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-10",
+          "arabicName": "كمون مطحون، ملعقة كبيرة ممتلئة",
+          "candidateDisplay": "1 heaping tbsp Cumin",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1 heaping tbsp Cumin",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "heaping tbsp",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-11",
+          "arabicName": "كزبرة مطحونة، ملعقة كبيرة ممتلئة",
+          "candidateDisplay": "1 heaping tbsp ground Coriander",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1 heaping tbsp ground Coriander",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "heaping tbsp",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-12",
+          "arabicName": "علبة طماطم مكعبات",
+          "candidateDisplay": "1 can of diced tomatoes",
+          "sourceIngredientIndex": 11,
+          "sourceText": "1 can of diced tomatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-13",
+          "arabicName": "ورق غار، 3",
+          "candidateDisplay": "3 bay leaves",
+          "sourceIngredientIndex": 12,
+          "sourceText": "3 bay leaves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-14",
+          "arabicName": "زيت زيتون",
+          "candidateDisplay": "Olive Oil",
+          "sourceIngredientIndex": 13,
+          "sourceText": "Olive Oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-15",
+          "arabicName": "زبدة",
+          "candidateDisplay": "Butter",
+          "sourceIngredientIndex": 14,
+          "sourceText": "Butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-16",
+          "arabicName": "شبت طازج أو مجفف",
+          "candidateDisplay": "Fresh (or dehydrated) dill",
+          "sourceIngredientIndex": 15,
+          "sourceText": "Fresh (or dehydrated) dill",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-17",
+          "arabicName": "ملح وفلفل",
+          "candidateDisplay": "Salt / Pepper",
+          "sourceIngredientIndex": 16,
+          "sourceText": "Salt / Pepper",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-modern-borscht-ing-18",
+          "arabicName": "قشدة حامضة (اختياري)",
+          "candidateDisplay": "Sour Cream (Optional)",
+          "sourceIngredientIndex": 17,
+          "sourceText": "Sour Cream (Optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [],
+      "methodQuantityOverrides": [
+        {
+          "sourceIndex": 9,
+          "amount": 1,
+          "unit": "heaping tbsp"
+        },
+        {
+          "sourceIndex": 10,
+          "amount": 1,
+          "unit": "heaping tbsp"
+        }
+      ],
+      "sourceMethodLines": [
+        "Finely dice onion and garlic cloves. Set aside in large bowl 1.",
+        "Cut off beet greens. Skin carrots and beets.",
+        "Finely slice carrots and celery (2-3 mm maximum, 1/16-1/8\" maximum). Add to large bowl 1.",
+        "Shred beets using cheese grater. Or, if preferred, cut into small cubes no greater than 1x1 inch in size. Shredded beets break down better when cooked and release more flavor into the broth. Set aside in large bowl 2.",
+        "Cut beef into 1x1 inch cubes, or \"Spoon size\" cubes",
+        "*15 minutes before the end of the first simmer* - Cut potatoes into 1x1 cubes. Do not cut them too soon or the flesh will turn brown.",
+        "*After adding potatoes into the simmering mixture* - Remove outer leaf and cut head of cabbage into quarters. Then dice the quarters.",
+        "Use high heat and get the 5qt pot hot. Flick a few drops of water onto the pot and when they start \"dancing\" it is hot enough.",
+        "Coat the bottom of the pot with a thin layer of olive oil and let it heat up for about 30 seconds to 1 minute.",
+        "Sear the beef on all sides until all cubes are browned. Salt and pepper the beef to taste. It is OK if the meat sticks to the bottom of the pot. Place a strainer in large bowl 3.",
+        "Once browned, remove the beef from the pot. Place into strainer and let the juices drain.",
+        "Add the carrot/onion/celery/garlic mixture from large bowl 1 to the hot pot.",
+        "Add 1/4 to 1/3 stick of butter to this veggie mixture. Stir and agitate constantly until onions and celery are translucent and carrots begin to soften.",
+        "Add the strained meat, the beets from large bowl 2, the canned tomatoes, the beef stock, the cumin, the bay leaves, and the coriander to the pot. Stir until well blended.",
+        "Bring mixture to a boil on high heat. When a boil is achieved, reduce heat to a simmer and simmer for 60 minutes with the lid on. *REMINDER* - after 45 minutes, cube the potatoes.",
+        "After 60 minutes of simmering, add the cubed potatoes and the dill (to taste) to the mixture. Stir until well blended. Cover, and simmer for 15 minutes. *REMINDER* - during this 15 minute simmer, dice the 1/2 head of cabbage.",
+        "After 15 minutes, or until potatoes are soft, add the cabbage to the pot. Simmer for 2 minutes uncovered to heat the cabbage.",
+        "Serve. The cabbage should be hot, yet still crunchy. It will retain this crunchiness through refrigeration and re-heating due to the short heat cycle. 1-2 spoonfulls of sour cream is recommended per bowl for additional flavor."
+      ],
+      "sourceRawText": "---\ntitle: Modern Borscht\ntags: ['beef', 'soup', 'russian', 'ukrainian']\ndate: 2024-11-10\nauthor: \"Skunkee\"\n---\n\n## Description\n\nThis is a modern take on classic Eastern European Borscht. Meat is optional, but quality beef cuts are recommended and preferred.\n\n- ⏲️ Prep time: 30-45 min\n- 🍳 Cook time: 90 min\n- 🍽️ Servings: 8-10\n\n## Ingredients\n\n- 1 lb beef tenderloin, or stew meat if you are frugal\n- 1 onion\n- 3 carrots\n- 2 large beets (or 3 medium beets)\n- 4 celery shoots\n- 2 large potatoes (Yukon Gold preferred, but any quality potatoes work)\n- 3-4 cloves of garlic\n- 4 cups of beef stock (or quality beef bullion such as \"Better than Bullion\" or equivalent and 4 cups water)\n- 1/2 head of cabbage\n- 1 heaping tbsp Cumin\n- 1 heaping tbsp ground Coriander\n- 1 can of diced tomatoes\n- 3 bay leaves\n- Olive Oil\n- Butter\n- Fresh (or dehydrated) dill\n- Salt / Pepper\n- Sour Cream (Optional)\n\n## Dishes/Utensils Needed\n\n- 3 large bowls\n- 1 5 quart pot (5 litre pot) with a lid\n- 1 strainer\n\n## Prep Directions (30-45 min)\n\n1. Finely dice onion and garlic cloves. Set aside in large bowl 1.\n2. Cut off beet greens. Skin carrots and beets.\n3. Finely slice carrots and celery (2-3 mm maximum, 1/16-1/8\" maximum). Add to large bowl 1.\n4. Shred beets using cheese grater. Or, if preferred, cut into small cubes no greater than 1x1 inch in size. Shredded beets break down better when cooked and release more flavor into the broth. Set aside in large bowl 2.\n5. Cut beef into 1x1 inch cubes, or \"Spoon size\" cubes\n6. *15 minutes before the end of the first simmer* - Cut potatoes into 1x1 cubes. Do not cut them too soon or the flesh will turn brown.\n7. *After adding potatoes into the simmering mixture* - Remove outer leaf and cut head of cabbage into quarters. Then dice the quarters.\n\n## Cooking Directions (90 min)\n\n1. Use high heat and get the 5qt pot hot. Flick a few drops of water onto the pot and when they start \"dancing\" it is hot enough.\n2. Coat the bottom of the pot with a thin layer of olive oil and let it heat up for about 30 seconds to 1 minute.\n3. Sear the beef on all sides until all cubes are browned. Salt and pepper the beef to taste. It is OK if the meat sticks to the bottom of the pot. Place a strainer in large bowl 3.\n4. Once browned, remove the beef from the pot. Place into strainer and let the juices drain.\n5. Add the carrot/onion/celery/garlic mixture from large bowl 1 to the hot pot.\n6. Add 1/4 to 1/3 stick of butter to this veggie mixture. Stir and agitate constantly until onions and celery are translucent and carrots begin to soften.\n7. Add the strained meat, the beets from large bowl 2, the canned tomatoes, the beef stock, the cumin, the bay leaves, and the coriander to the pot. Stir until well blended.\n8. Bring mixture to a boil on high heat. When a boil is achieved, reduce heat to a simmer and simmer for 60 minutes with the lid on. *REMINDER* - after 45 minutes, cube the potatoes.\n9. After 60 minutes of simmering, add the cubed potatoes and the dill (to taste) to the mixture. Stir until well blended. Cover, and simmer for 15 minutes. *REMINDER* - during this 15 minute simmer, dice the 1/2 head of cabbage.\n10. After 15 minutes, or until potatoes are soft, add the cabbage to the pot. Simmer for 2 minutes uncovered to heat the cabbage.\n11. Serve. The cabbage should be hot, yet still crunchy. It will retain this crunchiness through refrigeration and re-heating due to the short heat cycle. 1-2 spoonfulls of sour cream is recommended per bowl for additional flavor.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": 90,
+        "totalTime": null,
+        "sourceReported": [
+          "- ⏲️ Prep time: 30-45 min",
+          "- 🍳 Cook time: 90 min",
+          "- 🍽️ Servings: 8-10"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-naan-bread",
+      "sourceTitle": "Naan Bread",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/naan-bread.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/naan-bread.md",
+      "snapshotSHA256": "91641f6c3000e7d65a1bef01dacdb1954963be6649e545ff3449dba83cfd27c8",
+      "sourceAuthor": "nihar-samantaray",
+      "sourceTags": [
+        "indian",
+        "bread",
+        "fasting"
+      ],
+      "sourceIngredientLines": [
+        "All-purpose flour 3 cups",
+        "Active dry yeast 1 tbsp",
+        "Sugar 2 tbsp",
+        "Warm Milk 1 cup",
+        "Butter melted 2 tbsp",
+        "Oil - little to grease",
+        "Salt - 1 1/2 teaspoons"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-naan-bread-ing-1",
+          "arabicName": "طحين متعدد الاستعمالات، 3 أكواب",
+          "candidateDisplay": "All-purpose flour 3 cups",
+          "sourceIngredientIndex": 0,
+          "sourceText": "All-purpose flour 3 cups",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-naan-bread-ing-2",
+          "arabicName": "خميرة جافة فعالة، ملعقة كبيرة",
+          "candidateDisplay": "Active dry yeast 1 tbsp",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Active dry yeast 1 tbsp",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-naan-bread-ing-3",
+          "arabicName": "سكر، ملعقتان كبيرتان",
+          "candidateDisplay": "Sugar 2 tbsp",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Sugar 2 tbsp",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-naan-bread-ing-4",
+          "arabicName": "حليب دافئ، كوب واحد",
+          "candidateDisplay": "Warm Milk 1 cup",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Warm Milk 1 cup",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-naan-bread-ing-5",
+          "arabicName": "زبدة مذابة، ملعقتان كبيرتان",
+          "candidateDisplay": "Butter melted 2 tbsp",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Butter melted 2 tbsp",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-naan-bread-ing-6",
+          "arabicName": "زيت لدهن العجين",
+          "candidateDisplay": "Oil - little to grease",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Oil - little to grease",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-naan-bread-ing-7",
+          "arabicName": "ملح، ملعقة ونصف صغيرة",
+          "candidateDisplay": "Salt - 1 1/2 teaspoons",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Salt - 1 1/2 teaspoons",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-naan-bread-ing-8",
+          "arabicName": "طحين إضافي للرش عند الحاجة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Sprinkle additional flour as needed to keep the dough from sticking to the sides.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-naan-bread-ing-9",
+          "arabicName": "طحين للرش أثناء العجن والفرد",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "sprinkle all-purpose flour, and knead until smooth.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "طحين إضافي للرش عند الحاجة",
+          "sourceText": "Sprinkle additional flour as needed to keep the dough from sticking to the sides."
+        },
+        {
+          "name": "طحين للرش أثناء العجن والفرد",
+          "sourceText": "sprinkle all-purpose flour, and knead until smooth."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Put the yeast and sugar to warm milk in a large mixing bowl and stir well. Leave it for 3-5 minutes.",
+        "Put the flour and salt into a large mixing bowl and whisk to combine.  Sprinkle additional flour as needed to keep the dough from sticking to the sides.",
+        "Once the dough is soft and ready, apply oil on it and cover it with a soft cloth. Rest it for 2–3 hours.",
+        "Knead the dough again, sprinkle all-purpose flour, and knead until smooth.",
+        "Divide dough into 4 equal pieces. Form pieces into balls. Roll out dough balls to desired thickness (about the size of a small tortilla).",
+        "Now transfer the naan to the foiled baking tray and bake in preheated at 180 C for 30-35 minutes.",
+        "After baking, brush the top with butter and cut it into four pieces and serve. Enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Naan Bread\"\ndate: 2021-03-15\ntags: ['indian', 'bread', 'fasting']\nauthor: nihar-samantaray\n---\n\n![Naan Bread](/pix/naan-bread.webp)\n\nA curry serves best with naan that is unleavened bread. Traditionally made in ‘Tandoor or clay oven' but at home, we will be making it in the oven and/or on the stovetop. Naan is not eaten solely but acts as assortments with meat, veggies, or egg items.\n\n- ⏲️ Prep time: 90 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- All-purpose flour 3 cups\n- Active dry yeast 1 tbsp\n- Sugar 2 tbsp\n- Warm Milk 1 cup\n- Butter melted 2 tbsp\n- Oil - little to grease\n- Salt - 1 1/2 teaspoons\n\n## Directions\n\n1. Put the yeast and sugar to warm milk in a large mixing bowl and stir well. Leave it for 3-5 minutes.\n2. Put the flour and salt into a large mixing bowl and whisk to combine.  Sprinkle additional flour as needed to keep the dough from sticking to the sides.\n3. Once the dough is soft and ready, apply oil on it and cover it with a soft cloth. Rest it for 2–3 hours.\n4. Knead the dough again, sprinkle all-purpose flour, and knead until smooth.\n5. Divide dough into 4 equal pieces. Form pieces into balls. Roll out dough balls to desired thickness (about the size of a small tortilla).\n6. Now transfer the naan to the foiled baking tray and bake in preheated at 180 C for 30-35 minutes.\n7. After baking, brush the top with butter and cut it into four pieces and serve. Enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 4,
+        "prepTime": 90,
+        "cookTime": 30,
+        "totalTime": 120,
+        "sourceReported": [
+          "- ⏲️ Prep time: 90 min",
+          "- 🍳 Cook time: 30 min",
+          "- 🍽️ Servings: 4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-damper",
+      "sourceTitle": "Damper",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/damper.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/damper.md",
+      "snapshotSHA256": "c19fae28a09f8f3d23638d706822003c20b90d4a2211e9d4340a8d695feaca51",
+      "sourceAuthor": "walktheearth",
+      "sourceTags": [
+        "bread",
+        "quick"
+      ],
+      "sourceIngredientLines": [
+        "4 cups self-raising flour",
+        "1 tablespoon butter, softened.",
+        "1 cup milk"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-damper-ing-1",
+          "arabicName": "طحين ذاتي التخمير، 4 أكواب",
+          "candidateDisplay": "4 cups self-raising flour",
+          "sourceIngredientIndex": 0,
+          "sourceText": "4 cups self-raising flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 4,
+          "acceptedUnit": "cups",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-damper-ing-2",
+          "arabicName": "زبدة طرية، ملعقة كبيرة",
+          "candidateDisplay": "1 tablespoon butter, softened.",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 tablespoon butter, softened.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tablespoon",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-damper-ing-3",
+          "arabicName": "حليب، كوب واحد",
+          "candidateDisplay": "1 cup milk",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 cup milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-damper-ing-4",
+          "arabicName": "ماء، نصف كوب",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "adding a half cup of water",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-damper-ing-5",
+          "arabicName": "ملح، ملعقة صغيرة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "and a teaspoon salt.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ماء، نصف كوب",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceText": "adding a half cup of water"
+        },
+        {
+          "name": "ملح، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceText": "and a teaspoon salt."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Preheat the oven to 425 degrees F (220 degrees C). Grease a baking sheet.",
+        "Mix all the ingredients together, adding a half cup of water and a teaspoon salt.",
+        "Knead the bread on a floured surface.",
+        "Put the bread into the oven for 25 minutes, then lower the temprature to 175 degrees C for 5 to 10 minutes"
+      ],
+      "sourceRawText": "---\ntitle: \"Damper\"\ndate: 2025-06-04\ntags: ['bread', 'quick']\nauthor: walktheearth\n---\nDamper is a no-yeast australian campfire bread. It is easy to scale up and down.\n- ⏲️ Prep time: 30 min\n- 🍳Cook time: 30 min\n- 🍽️ Servings: 15\n\n## Ingredients\n- 4 cups self-raising flour\n- 1 tablespoon butter, softened.\n- 1 cup milk\n## Directions\n1. Preheat the oven to 425 degrees F (220 degrees C). Grease a baking sheet.\n2. Mix all the ingredients together, adding a half cup of water and a teaspoon salt.\n3. Knead the bread on a floured surface.\n4. Put the bread into the oven for 25 minutes, then lower the temprature to 175 degrees C for 5 to 10 minutes\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 15,
+        "prepTime": 30,
+        "cookTime": 30,
+        "totalTime": 60,
+        "sourceReported": [
+          "- ⏲️ Prep time: 30 min",
+          "- 🍳Cook time: 30 min",
+          "- 🍽️ Servings: 15"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-fondue",
+      "sourceTitle": "Fondue",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/fondue.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/fondue.md",
+      "snapshotSHA256": "1a81d1b668e22c73729be7a61dbf1033d3ecc225b728c6371ed7fc84d04f6260",
+      "sourceAuthor": "sekthor",
+      "sourceTags": [
+        "swiss",
+        "cheese"
+      ],
+      "sourceIngredientLines": [
+        "1 garlic clove",
+        "4 dl (1.5 cups) white wine",
+        "800 g (1.7 lbs) swiss cheese (50/50 mix of Gruyère and Emmentaler recommended)",
+        "1 shot of kirsch (cherry brandy)",
+        "1 tsp lemon juice",
+        "1-2 tbsp starch flour",
+        "1 loaf (~800g/~1.7 lbs) of white bread",
+        "A pinch of nutmeg"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-fondue-ing-1",
+          "arabicName": "فص ثوم واحد",
+          "candidateDisplay": "1 garlic clove",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 garlic clove",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-fondue-ing-2",
+          "arabicName": "نبيذ أبيض، 4 ديسيلتر (1.5 كوب)",
+          "candidateDisplay": "4 dl (1.5 cups) white wine",
+          "sourceIngredientIndex": 1,
+          "sourceText": "4 dl (1.5 cups) white wine",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-fondue-ing-3",
+          "arabicName": "جبن سويسري، 800 جم (50/50 من غرويير وإمنتال موصى به)",
+          "candidateDisplay": "800 g (1.7 lbs) swiss cheese (50/50 mix of Gruyère and Emmentaler recommended)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "800 g (1.7 lbs) swiss cheese (50/50 mix of Gruyère and Emmentaler recommended)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 800,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-fondue-ing-4",
+          "arabicName": "جرعة واحدة من كرش (براندي الكرز)",
+          "candidateDisplay": "1 shot of kirsch (cherry brandy)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 shot of kirsch (cherry brandy)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-fondue-ing-5",
+          "arabicName": "عصير ليمون، ملعقة صغيرة",
+          "candidateDisplay": "1 tsp lemon juice",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 tsp lemon juice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-fondue-ing-6",
+          "arabicName": "طحين نشا، 1–2 ملعقة كبيرة",
+          "candidateDisplay": "1-2 tbsp starch flour",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1-2 tbsp starch flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-fondue-ing-7",
+          "arabicName": "رغيف خبز أبيض، نحو 800 جم",
+          "candidateDisplay": "1 loaf (~800g/~1.7 lbs) of white bread",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 loaf (~800g/~1.7 lbs) of white bread",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-fondue-ing-8",
+          "arabicName": "رشة جوزة الطيب",
+          "candidateDisplay": "A pinch of nutmeg",
+          "sourceIngredientIndex": 7,
+          "sourceText": "A pinch of nutmeg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-fondue-ing-9",
+          "arabicName": "فلفل للتتبيل",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Season with a bit of pepper and nutmeg.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "فلفل للتتبيل",
+          "sourceText": "Season with a bit of pepper and nutmeg."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Rub the Pot with garlic clove.",
+        "Cut bread into small squares.",
+        "Put cheese, starch, wine and lemon juice in pot and melt while stiring constantly.",
+        "Season with a bit of pepper and nutmeg.",
+        "Serve right away.",
+        "Stick bread squares on fondue fork one by one and stir them in the fondue."
+      ],
+      "sourceRawText": "---\ntitle: \"Fondue\"\ndate: 2021-03-24\ntags: ['swiss', 'cheese']\nauthor: sekthor\n---\n\nA swiss classic for cold winter dinners.\nTraditionally cooked in a \"Caquelon\" pot and served on a candle heated stove, to keep the cheese from going solid again.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 1 garlic clove\n- 4 dl (1.5 cups) white wine\n- 800 g (1.7 lbs) swiss cheese (50/50 mix of Gruyère and Emmentaler recommended)\n- 1 shot of kirsch (cherry brandy)\n- 1 tsp lemon juice\n- 1-2 tbsp starch flour\n- 1 loaf (~800g/~1.7 lbs) of white bread\n- A pinch of nutmeg\n\n## Directions\n\n1. Rub the Pot with garlic clove.\n2. Cut bread into small squares.\n3. Put cheese, starch, wine and lemon juice in pot and melt while stiring constantly.\n4. Season with a bit of pepper and nutmeg.\n5. Serve right away.\n6. Stick bread squares on fondue fork one by one and stir them in the fondue.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 4,
+        "prepTime": 10,
+        "cookTime": 30,
+        "totalTime": 40,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 30 min",
+          "- 🍽️ Servings: 4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-ginger-garlic-broccoli",
+      "sourceTitle": "Broccoli with Ginger and Garlic Sauce",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ginger-garlic-broccoli.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/ginger-garlic-broccoli.md",
+      "snapshotSHA256": "e1684bcfe8868d3d7919c0fec21ea0b9065c469f7738004785005d641b546848",
+      "sourceAuthor": "mjt91",
+      "sourceTags": [
+        "side",
+        "quick",
+        "asian",
+        "fasting"
+      ],
+      "sourceIngredientLines": [
+        "1-2 Broccoli (fresh best, frozen works too)",
+        "Minced garlic (1 tablespoon)",
+        "Minced ginger (1 tablespoon)",
+        "Sherry or regular white wine (you cook with what you drink with!) (1 tablespoon)",
+        "Soy sauce (1-2 tablespoon)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-1",
+          "arabicName": "بروكلي طازج، 1–2 (المجمد يصلح أيضاً)",
+          "candidateDisplay": "1-2 Broccoli (fresh best, frozen works too)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1-2 Broccoli (fresh best, frozen works too)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-2",
+          "arabicName": "ثوم مفروم، ملعقة كبيرة",
+          "candidateDisplay": "Minced garlic (1 tablespoon)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Minced garlic (1 tablespoon)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-3",
+          "arabicName": "زنجبيل مفروم، ملعقة كبيرة",
+          "candidateDisplay": "Minced ginger (1 tablespoon)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Minced ginger (1 tablespoon)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-4",
+          "arabicName": "شيري أو نبيذ أبيض للطبخ، ملعقة كبيرة",
+          "candidateDisplay": "Sherry or regular white wine (you cook with what you drink with!) (1 tablespoon)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Sherry or regular white wine (you cook with what you drink with!) (1 tablespoon)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-5",
+          "arabicName": "صلصة صويا، 1–2 ملعقة كبيرة",
+          "candidateDisplay": "Soy sauce (1-2 tablespoon)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Soy sauce (1-2 tablespoon)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-6",
+          "arabicName": "ماء للسلق على البخار، عمق نحو نصف بوصة (1.57 سم)",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Fill your pan (or wok) around half inch (1.57cm) with water",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-7",
+          "arabicName": "زيت، ملعقة صغيرة؛ يقترح المصدر السمسم أو زيتاً محايداً أو زيت الزيتون",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "One teaspoon of oil and saute garlic and ginger (use sesame seed oil for Asian touch, but neutral or olive oil works well too).",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-8",
+          "arabicName": "ماء دافئ أو مرق دجاج، نصف كوب (نحو 120 مل)",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "put half a cup (approx 120 ml) of warm water or chicken stock.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-9",
+          "arabicName": "سكر بني حسب الذوق",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Stir in soy sauce, brown sugar and lemon juice to your taste.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-10",
+          "arabicName": "عصير ليمون حسب الذوق",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Stir in soy sauce, brown sugar and lemon juice to your taste.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-ginger-garlic-broccoli-ing-11",
+          "arabicName": "نشا ذرة لتكثيف الصلصة",
+          "candidateDisplay": null,
+          "sourceIngredientIndex": null,
+          "sourceText": "Thicken sauce with corn starch.",
+          "mappingStatus": "method-derived ingredient; no ingredient-list index",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [
+        {
+          "name": "ماء للسلق على البخار، عمق نحو نصف بوصة (1.57 سم)",
+          "sourceText": "Fill your pan (or wok) around half inch (1.57cm) with water"
+        },
+        {
+          "name": "زيت، ملعقة صغيرة؛ يقترح المصدر السمسم أو زيتاً محايداً أو زيت الزيتون",
+          "amount": 1,
+          "unit": "tsp",
+          "sourceText": "One teaspoon of oil and saute garlic and ginger (use sesame seed oil for Asian touch, but neutral or olive oil works well too)."
+        },
+        {
+          "name": "ماء دافئ أو مرق دجاج، نصف كوب (نحو 120 مل)",
+          "amount": 0.5,
+          "unit": "cup",
+          "sourceText": "put half a cup (approx 120 ml) of warm water or chicken stock."
+        },
+        {
+          "name": "سكر بني حسب الذوق",
+          "sourceText": "Stir in soy sauce, brown sugar and lemon juice to your taste."
+        },
+        {
+          "name": "عصير ليمون حسب الذوق",
+          "sourceText": "Stir in soy sauce, brown sugar and lemon juice to your taste."
+        },
+        {
+          "name": "نشا ذرة لتكثيف الصلصة",
+          "sourceText": "Thicken sauce with corn starch."
+        }
+      ],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Cut broccoli into little flourettes (hold the broccoli upside down and cut around the stem with a pairing knife)",
+        "Fill your pan (or wok) around half inch (1.57cm) with water and bring to a rapid boil.",
+        "Put broccoli in and steam with lid on for approx. 3 minutes.",
+        "Drain broccoli and wipe pan dry.",
+        "One teaspoon of oil and saute garlic and ginger (use sesame seed oil for Asian touch, but neutral or olive oil works well too).",
+        "Deglaze with sherry, put half a cup (approx 120 ml) of warm water or chicken stock. Reduce on medium-high heat.",
+        "Stir in soy sauce, brown sugar and lemon juice to your taste.",
+        "Thicken sauce with corn starch.",
+        "Put dry cooked broccoli back in and saute for very short time (you want it nice and crunchy)."
+      ],
+      "sourceRawText": "---\ntitle: \"Broccoli with Ginger and Garlic Sauce\"\ndate: 2021-03-15\ntags: ['side', 'quick', 'asian', 'fasting']\nauthor: mjt91\n---\n\nAsian inspired broccoli dish with tasty sauce. Sauce can be used for all kinds of Asian inspired sauted vegetables.\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 2\n\n## Ingredients\n\n- 1-2 Broccoli (fresh best, frozen works too)\n- Minced garlic (1 tablespoon)\n- Minced ginger (1 tablespoon)\n- Sherry or regular white wine (you cook with what you drink with!) (1 tablespoon)\n- Soy sauce (1-2 tablespoon)\n\n## Directions\n\n1. Cut broccoli into little flourettes (hold the broccoli upside down and cut around the stem with a pairing knife)\n2. Fill your pan (or wok) around half inch (1.57cm) with water and bring to a rapid boil.\n3. Put broccoli in and steam with lid on for approx. 3 minutes.\n4. Drain broccoli and wipe pan dry.\n5. One teaspoon of oil and saute garlic and ginger (use sesame seed oil for Asian touch, but neutral or olive oil works well too).\n6. Deglaze with sherry, put half a cup (approx 120 ml) of warm water or chicken stock. Reduce on medium-high heat.\n7. Stir in soy sauce, brown sugar and lemon juice to your taste.\n8. Thicken sauce with corn starch.\n9. Put dry cooked broccoli back in and saute for very short time (you want it nice and crunchy).\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 2,
+        "prepTime": 5,
+        "cookTime": 10,
+        "totalTime": 15,
+        "sourceReported": [
+          "- ⏲️ Prep time: 5 min",
+          "- 🍳 Cook time: 10 min",
+          "- 🍽️ Servings: 2"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-bolinhos-de-coco",
+      "sourceTitle": "Bolinhos de Coco",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/bolinhos-de-coco.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/bolinhos-de-coco.md",
+      "snapshotSHA256": "c33e0ae0d9d3ad8992aaf3ed5d80fac02b280959f90940da8f0d3fec14d5ea5c",
+      "sourceAuthor": "\"Mealwhiles\"",
+      "sourceTags": [
+        "portuguese",
+        "quick",
+        "sweet",
+        "dessert",
+        "cheesefare"
+      ],
+      "sourceIngredientLines": [
+        "300 g coconut",
+        "150 g sugar",
+        "3 egg yolks",
+        "1 whole egg",
+        "Powdered sugar (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-bolinhos-de-coco-ing-1",
+          "arabicName": "جوز هند، 300 جم",
+          "candidateDisplay": "300 g coconut",
+          "sourceIngredientIndex": 0,
+          "sourceText": "300 g coconut",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 300,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-bolinhos-de-coco-ing-2",
+          "arabicName": "سكر، 150 جم",
+          "candidateDisplay": "150 g sugar",
+          "sourceIngredientIndex": 1,
+          "sourceText": "150 g sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 150,
+          "acceptedUnit": "g",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-bolinhos-de-coco-ing-3",
+          "arabicName": "صفار بيض، 3",
+          "candidateDisplay": "3 egg yolks",
+          "sourceIngredientIndex": 2,
+          "sourceText": "3 egg yolks",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-bolinhos-de-coco-ing-4",
+          "arabicName": "بيضة كاملة، 1",
+          "candidateDisplay": "1 whole egg",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 whole egg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-bolinhos-de-coco-ing-5",
+          "arabicName": "سكر بودرة (اختياري)",
+          "candidateDisplay": "Powdered sugar (optional)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Powdered sugar (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Mix the non-optional ingredients in a medium bowl.",
+        "Scoop tablespoons of the batter into a cookie sheet or cupcake pan.",
+        "Cook for around 10 minutes or until slightly brown on top.",
+        "Top with powdered sugar if desired.",
+        "Let cool and enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Bolinhos de Coco\"\ndate: 2021-03-16\ntags: ['portuguese', 'quick', 'sweet', 'dessert', 'cheesefare']\nauthor: \"Mealwhiles\"\n---\n\nThis is a Portuguese dish that translates to \"coconut cupcakes,\" though there are probably lots of equivalent dishes from other cultures.\nIts simplicity and short preparation time make it perfect for a snack or dessert.\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 10 min\n\n## Ingredients\n\n- 300 g coconut\n- 150 g sugar\n- 3 egg yolks\n- 1 whole egg\n- Powdered sugar (optional)\n\n## Directions\n\n1. Mix the non-optional ingredients in a medium bowl.\n2. Scoop tablespoons of the batter into a cookie sheet or cupcake pan.\n3. Cook for around 10 minutes or until slightly brown on top.\n4. Top with powdered sugar if desired.\n5. Let cool and enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 5,
+        "cookTime": 10,
+        "totalTime": 15,
+        "sourceReported": [
+          "- ⏲️ Prep time: 5 min",
+          "- 🍳 Cook time: 10 min"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-ayran",
+      "sourceTitle": "Ayran",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/ayran.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/ayran.md",
+      "snapshotSHA256": "217cf9775ef88d8603129ce6bc63f3f89d33245cbe35e3f4332cf35e034b1cd6",
+      "sourceAuthor": "\"Viktor\"",
+      "sourceTags": [
+        "drink",
+        "dairy",
+        "breakfast"
+      ],
+      "sourceIngredientLines": [
+        "1 part yogurt (2 parts if you prefer a creamier variety)",
+        "1 part ice-cold water",
+        "salt",
+        "mint (optional)",
+        "basil (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-ayran-ing-1",
+          "arabicName": "لبن، جزء واحد (جزآن لقوام أكثر كثافة)",
+          "candidateDisplay": "1 part yogurt (2 parts if you prefer a creamier variety)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 part yogurt (2 parts if you prefer a creamier variety)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ayran-ing-2",
+          "arabicName": "ماء شديد البرودة، جزء واحد",
+          "candidateDisplay": "1 part ice-cold water",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 part ice-cold water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ayran-ing-3",
+          "arabicName": "ملح",
+          "candidateDisplay": "salt",
+          "sourceIngredientIndex": 2,
+          "sourceText": "salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ayran-ing-4",
+          "arabicName": "نعناع مفروم (اختياري)",
+          "candidateDisplay": "mint (optional)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "mint (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-ayran-ing-5",
+          "arabicName": "ريحان مفروم (اختياري)",
+          "candidateDisplay": "basil (optional)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "basil (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Combine the yogurt and the ice-cold water.",
+        "Mix well until no clumps remain.",
+        "Add salt to taste.",
+        "The traditional way to drink it is plain, but you can add some additional flavours with chopped mint or basil."
+      ],
+      "sourceRawText": "---\ntitle: Ayran\ntags: ['drink', 'dairy', 'breakfast']\ndate: 2022-08-11\nauthor: \"Viktor\"\n---\n\nAyran, also known as doogh, is a yogurt-based drink popular in Eastern Europe and Central Asia. It is usually consumed as part of the breakfast during the summer.\n\n## Ingredients\n\n- 1 part yogurt (2 parts if you prefer a creamier variety)\n- 1 part ice-cold water\n- salt\n- mint (optional)\n- basil (optional)\n\n## Directions\n\n1. Combine the yogurt and the ice-cold water.\n2. Mix well until no clumps remain.\n3. Add salt to taste.\n4. The traditional way to drink it is plain, but you can add some additional flavours with chopped mint or basil.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-assam-tea",
+      "sourceTitle": "Assam Tea",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/assam-tea.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/assam-tea.md",
+      "snapshotSHA256": "2c5c8e37cd6e2a0f245c1ef8e44ae5b618b1bf0daa4a5b031fd6d40447ff068b",
+      "sourceAuthor": "chandra-kiran",
+      "sourceTags": [
+        "drink",
+        "quick"
+      ],
+      "sourceIngredientLines": [
+        "2 teaspoons of Assam Tea",
+        "150 ml of fresh water",
+        "Sugar (Optional)",
+        "Milk (Optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-assam-tea-ing-1",
+          "arabicName": "شاي آسام، ملعقتان صغيرتان",
+          "candidateDisplay": "2 teaspoons of Assam Tea",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 teaspoons of Assam Tea",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "teaspoons",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-assam-tea-ing-2",
+          "arabicName": "ماء عذب، 150 مل",
+          "candidateDisplay": "150 ml of fresh water",
+          "sourceIngredientIndex": 1,
+          "sourceText": "150 ml of fresh water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 150,
+          "acceptedUnit": "ml",
+          "scales": true,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-assam-tea-ing-3",
+          "arabicName": "سكر (اختياري)",
+          "candidateDisplay": "Sugar (Optional)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Sugar (Optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        },
+        {
+          "ingredientId": "bc650-assam-tea-ing-4",
+          "arabicName": "حليب (اختياري)",
+          "candidateDisplay": "Milk (Optional)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Milk (Optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false,
+          "methodDerivedEvidence": null
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "methodDerivedIngredients": [],
+      "methodQuantityOverrides": [],
+      "sourceMethodLines": [
+        "Add 150 ml of water to a small pan and bring it to boil.",
+        "Then add 2 teaspoons of tea into it and reduce the heat to low.",
+        "Strain the tea using a tea filter into a cup.",
+        "Add sugar and milk to taste."
+      ],
+      "sourceRawText": "---\ntitle: \"Assam Tea\"\ndate: 2021-03-21\ntags: ['drink', 'quick']\nauthor: chandra-kiran\n---\n\n![Assam Tea](/pix/assam-tea.webp)\n\nThis is a simple Assam tea recipe.\n\n- ⏲️ Prep time: 1 min\n- 🍳 Cook time: 5 min\n- 🍽️ Servings: 1\n\n## Ingredients\n\n- 2 teaspoons of Assam Tea\n- 150 ml of fresh water\n- Sugar (Optional)\n- Milk (Optional)\n\n## Directions\n\n1. Add 150 ml of water to a small pan and bring it to boil.\n2. Then add 2 teaspoons of tea into it and reduce the heat to low.\n3. Strain the tea using a tea filter into a cup.\n4. Add sugar and milk to taste.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 1,
+        "prepTime": 1,
+        "cookTime": 5,
+        "totalTime": 6,
+        "sourceReported": [
+          "- ⏲️ Prep time: 1 min",
+          "- 🍳 Cook time: 5 min",
+          "- 🍽️ Servings: 1"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Implemented the explicit monthly-search acceptance extension and 8 focused passing tests. Requires a current same-owner preview, evaluated eligible known-affordable option, explicit complete slot coverage, exact selected-pool mapping, and one atomic pinned-plan write. Focused Dart analysis is clean. See `monthly-acceptance-20261022.md`.

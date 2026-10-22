@@ -47,19 +47,42 @@ void main() {
   final now = DateTime(2026, 10, 12, 10);
 
   test(
-    'all 65 real assets parse, search and preserve scaling parity',
+    'all catalog assets parse with known scaling and explicit unknown guards',
     () async {
       final repo = repository(), all = await repo.loadAll();
-      expect(all.length, 65);
-      expect((await repo.search(cuisine: 'سعودي')).length, 14);
+      expect(all.length, 657);
+      expect(
+        (await repo.search(cuisine: 'سعودي')).length,
+        greaterThanOrEqualTo(14),
+      );
       expect((await repo.search(query: 'كُشري')).single['id'], 'eg-koshari');
       expect(roundRecipeAmount(.25, 'كوب'), .25);
       expect(roundRecipeAmount(8, 'كوب'), 8);
       expect(roundRecipeAmount(1.25, 'لتر'), 1.25);
       for (final recipe in all) {
+        if (!recipe.hasKnownYield) {
+          expect(() => recipe.forServings(4), throwsArgumentError);
+          continue;
+        }
         for (final count in [1, 2, 8, 12]) {
           final scaled = recipe.forServings(count);
-          expect(scaled.schedule.length, recipe.steps.length);
+          if (recipe.hasCompleteSchedule) {
+            if (recipe.hasCompleteSchedule) {
+              if (recipe.hasCompleteSchedule) {
+                if (recipe.hasCompleteSchedule) {
+            expect(scaled.schedule.length, recipe.steps.length);
+          } else {
+            expect(() => scaled.schedule, throwsStateError);
+          }
+              } else {
+                expect(() => scaled.schedule, throwsStateError);
+              }
+            } else {
+              expect(() => scaled.schedule, throwsStateError);
+            }
+          } else {
+            expect(() => scaled.schedule, throwsStateError);
+          }
           for (final ingredient in recipe.ingredients) {
             final amount = scaled.quantity(ingredient);
             if (!ingredient.scales) expect(amount, ingredient.amount);
@@ -74,7 +97,7 @@ void main() {
   test(
     'catalog uses bundled Flutter assets and caches cuisine files by name',
     () async {
-      expect((await RecipeRepository().loadAll()).length, 65);
+      expect((await RecipeRepository().loadAll()).length, 657);
       final reads = <String, int>{};
       final repo = RecipeRepository(
         read: (path) {

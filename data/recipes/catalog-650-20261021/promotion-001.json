@@ -1,0 +1,620 @@
+{
+  "at": "2026-10-21T13:02:54.179372Z",
+  "target": 650,
+  "baseline": 65,
+  "catalogCount": 193,
+  "remainingToTarget": 457,
+  "newlyPromoted": 128,
+  "groupCount": 30,
+  "namedCuisineCount": 28,
+  "sourceSnapshotChecks": 143,
+  "independentArabicNumericChecks": 1479,
+  "additionalExplicitQuantitiesParsed": 14,
+  "validationStatus": "awaiting-Flutter-integration-gate",
+  "held": [
+    {
+      "id": "ma650-manal-chicken-kabsa-20261021b",
+      "name": "كبسة الدجاج",
+      "reason": "Existing chicken kabsa; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-macaroni-bechamel-20261021b",
+      "name": "مكرونة بالبشاميل",
+      "reason": "Existing bechamel pasta; source variant held outside new-dish target.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-fried-kibbeh-20261021b",
+      "name": "كبة مقلية",
+      "reason": "Existing fried kibbeh; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-grape-leaves-olive-oil-20261021b",
+      "name": "ورق العنب بالزيت",
+      "reason": "Existing grape leaves; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-chicken-shawarma-20261021b",
+      "name": "شاورما الدجاج",
+      "reason": "Existing chicken shawarma; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-lasagna-mushroom-20261021b",
+      "name": "لازانيا باللحم والمشروم",
+      "reason": "Existing lasagna; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-luxury-maamoul-20261021b",
+      "name": "المعمول الفاخر",
+      "reason": "Existing maamoul; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-simple-chicken-biryani-20261021b",
+      "name": "برياني الدجاج البسيط",
+      "reason": "Same batch already contains chicken biryani; simpler variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-rice-pudding-20261021b",
+      "name": "أرز بالحليب",
+      "reason": "Existing rice pudding; semantic duplicate held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-fish-sayadiya-20261021b",
+      "name": "صيادية سمك",
+      "reason": "Existing sayadiya; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-umm-ali-puff-pastry-20261021b",
+      "name": "ام علي",
+      "reason": "Same batch contains OmAli; pastry variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-tiramisu-mold-20261021b",
+      "name": "قالب التيراميسو",
+      "reason": "Existing tiramisu; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-okra-stew-20261021b",
+      "name": "البامية",
+      "reason": "Existing okra stew; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-05.json"
+    },
+    {
+      "id": "ma650-balkan-lunchbox-bosnian-tepsijas-20261021",
+      "name": "خبز الصاج البوسني تيبسياش",
+      "reason": "Source omits liquid identity in yeast activation; held for source clarification.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "bc650-tiramisu",
+      "name": "تيراميسو",
+      "reason": "Existing tiramisu; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    }
+  ],
+  "promoted": [
+    {
+      "id": "ma650-manal-muhammara-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-coconut-lemon-bars-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-om-ali-kulaj-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-qataif-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-pizza-pies-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-custard-luqaimat-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-chicken-biryani-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-petit-four-mixed-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-chicken-shakriyeh-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-date-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-spinach-pies-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-shishbarak-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-daily-orange-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-chicken-cream-soup-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-creme-caramel-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-kudu-chicken-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-chocolate-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-pastries-mixed-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-daily-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-lentil-soup-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-strawberry-tart-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-banana-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-chocolate-qidra-qadir-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-roast-chicken-bag-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-kofta-tahini-tray-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-donuts-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-syrian-sfiha-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-maidam-fish-rice-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-namoura-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-baked-grouper-fillet-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-samosak-various-fillings-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-simple-sponge-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-pizza-tray-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-kunafa-cream-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-saudi-maamoul-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-cheese-honeycomb-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-creme-caramel-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-chicken-potato-garlic-lemon-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-upside-down-pineapple-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-whole-baked-fish-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-meat-biryani-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-chicken-potato-tray-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-meat-kabsa-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-pan-fried-salad-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-chicken-liver-pomegranate-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-vanilla-cupcakes-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-homemade-pasta-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-freekeh-fluffy-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-chicken-curry-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-vanilla-milk-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-cinnamon-biscuits-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-ayesh-saraya-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-yogurt-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-roast-chicken-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-zainab-fingers-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-bukhari-rice-chicken-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-cheese-pastries-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-stuffed-zucchini-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-chicken-mushroom-cream-soup-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-cold-cheesecake-dessert-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-white-chicken-soup-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-kibbeh-yogurt-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-almond-english-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-chocolate-chip-cookies-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-freekeh-chicken-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-crispy-chicken-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-muhallabia-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-chicken-ouzi-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-kibbeh-tray-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-chicken-oat-soup-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-zucchini-yogurt-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-chicken-tomato-jareesh-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-arabic-shawarma-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-white-bean-stew-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-bukhari-rice-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-ghraybeh-pistachio-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-walnut-qatayef-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-ashta-cream-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-san-sebastian-cheesecake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-mini-ors-akeeli-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-fish-shrimp-sayadiya-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-hot-chicken-curry-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-lemon-cake-lemon-sauce-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-quick-chocolate-brownies-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-coconut-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-striped-cake-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-orange-milk-pudding-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-sweetened-milk-basbousa-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-lamb-shanks-qudra-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-05.json"
+    },
+    {
+      "id": "ma650-manal-basima-coconut-20261021b",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-05.json"
+    },
+    {
+      "id": "ma650-dina-macki-tuna-dried-lime-zaatar-cinnamon-stew",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-dina-macki-paplo-omani-balochi-lemon-fish-curry",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-amjaad-al-hussain-oxtail-yemeni-marag",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-amjaad-al-hussain-yemeni-chicken-in-marag",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-panlasang-pinoy-filipino-pancit-20261021",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-panlasang-pinoy-pinakbet-tagalog-20261021",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-panlasang-pinoy-kutsinta-20261021",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-panlasang-pinoy-lumpia-20261021",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-balkan-lunchbox-bosnian-egg-drop-soup-20261021",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "ma650-yowangdu-tibetan-thue-20261021",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "bc650-spicy-mayo",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-miso-soup",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-fish-curry",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-turmeric-flatbread",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-turkish-yogurt-soup",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-indian-tea",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-teriyaki-beef",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-pho-soup",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-mexican-meat-loaf",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-chorizo-chickpea-soup",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-castagnole",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-mexican-salsa",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-zarangollo",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-menemen",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-pineapple-lentil-curry",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-spanish-lentil-soup",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-red-lentil-dahl",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-loaded-mexican-rice",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-beef-and-broccoli",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-corn-polenta",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-onion-raitha",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-miso-ginger-pork",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-corn-salsa",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "bc650-caesar-salad",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "fi650-51470",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista/chunk-001.json"
+    },
+    {
+      "id": "fi650-51541",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista/chunk-001.json"
+    },
+    {
+      "id": "fi650-52472",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista/chunk-001.json"
+    },
+    {
+      "id": "fi650-51482",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista/chunk-001.json"
+    }
+  ]
+}

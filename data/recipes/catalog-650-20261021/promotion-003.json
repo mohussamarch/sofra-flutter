@@ -1,0 +1,380 @@
+{
+  "at": "2026-10-21T13:17:02.582830Z",
+  "target": 650,
+  "baseline": 65,
+  "catalogCount": 322,
+  "remainingToTarget": 328,
+  "newlyPromoted": 65,
+  "groupCount": 47,
+  "namedCuisineCount": 45,
+  "sourceSnapshotChecks": 273,
+  "independentArabicNumericChecks": 1479,
+  "additionalExplicitQuantitiesParsed": 5,
+  "validationStatus": "awaiting-Flutter-integration-gate",
+  "held": [
+    {
+      "id": "ma650-manal-chicken-kabsa-20261021b",
+      "name": "كبسة الدجاج",
+      "reason": "Existing chicken kabsa; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-macaroni-bechamel-20261021b",
+      "name": "مكرونة بالبشاميل",
+      "reason": "Existing bechamel pasta; source variant held outside new-dish target.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-fried-kibbeh-20261021b",
+      "name": "كبة مقلية",
+      "reason": "Existing fried kibbeh; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-grape-leaves-olive-oil-20261021b",
+      "name": "ورق العنب بالزيت",
+      "reason": "Existing grape leaves; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-chicken-shawarma-20261021b",
+      "name": "شاورما الدجاج",
+      "reason": "Existing chicken shawarma; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-lasagna-mushroom-20261021b",
+      "name": "لازانيا باللحم والمشروم",
+      "reason": "Existing lasagna; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-01.json"
+    },
+    {
+      "id": "ma650-manal-luxury-maamoul-20261021b",
+      "name": "المعمول الفاخر",
+      "reason": "Existing maamoul; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-simple-chicken-biryani-20261021b",
+      "name": "برياني الدجاج البسيط",
+      "reason": "Same batch already contains chicken biryani; simpler variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-rice-pudding-20261021b",
+      "name": "أرز بالحليب",
+      "reason": "Existing rice pudding; semantic duplicate held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-fish-sayadiya-20261021b",
+      "name": "صيادية سمك",
+      "reason": "Existing sayadiya; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-02.json"
+    },
+    {
+      "id": "ma650-manal-umm-ali-puff-pastry-20261021b",
+      "name": "ام علي",
+      "reason": "Same batch contains OmAli; pastry variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-03.json"
+    },
+    {
+      "id": "ma650-manal-tiramisu-mold-20261021b",
+      "name": "قالب التيراميسو",
+      "reason": "Existing tiramisu; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-04.json"
+    },
+    {
+      "id": "ma650-manal-okra-stew-20261021b",
+      "name": "البامية",
+      "reason": "Existing okra stew; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/manal-chunk-05.json"
+    },
+    {
+      "id": "ma650-balkan-lunchbox-bosnian-tepsijas-20261021",
+      "name": "خبز الصاج البوسني تيبسياش",
+      "reason": "Source omits liquid identity in yeast activation; held for source clarification.",
+      "candidateFile": "data/recipes/catalog-650-20261021/arabic/modern-complete-chunk-06.json"
+    },
+    {
+      "id": "bc650-tiramisu",
+      "name": "تيراميسو",
+      "reason": "Existing tiramisu; variant held.",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-001.json"
+    },
+    {
+      "id": "fi650-52472",
+      "name": "تبولة لبنانية بالبقدونس والبرغل",
+      "reason": "Existing tabbouleh; Lebanese source variant held outside the650distinct-recipe target.",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista/chunk-001.json"
+    }
+  ],
+  "promoted": [
+    {
+      "id": "bc650-galinha-caipira",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-guobaorou",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-honey-garlic-chicken",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-lemon-and-oregano-chicken-traybake",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-marinated-pork-steaks",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-pan-seared-chicken",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-portuguese-creamy-cod",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-portuguese-steak-with-beer-sauce",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-pulled-rabbit",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-rabbit-onions",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-scouse",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-shepherds-pie",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-shrimp-creole",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-sticky-porkchops",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-stir-fried-chicken-with-an-orange-sauce",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-baked-salmon",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-baked-trout",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-cheddar-crusted-chicken",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-chicken-biscuit-potpie",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-chicken-pasta-casserole",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-chicken-wings",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-chimichanga",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-drunken-beans",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-fajitas",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "bc650-frijol-con-puerco",
+      "candidateFile": "data/recipes/catalog-650-20261021/based/chunk-003.json"
+    },
+    {
+      "id": "fiw650-59618",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-57172",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-54373",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-51061",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-53113",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-53946",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-50297",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-52063",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-53704",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-52358",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-51614",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-50319",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-60479",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-57298",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-57139",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-53820",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-53072",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-58503",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-50336",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-52384",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-002.json"
+    },
+    {
+      "id": "fiw650-55821",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-56698",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-50500",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-51848",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-52762",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-57387",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-58514",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-52264",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-51916",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-57629",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-51125",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-52412",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-50845",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-58254",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-59025",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-57804",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-57675",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-59171",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-50366",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    },
+    {
+      "id": "fiw650-52028",
+      "candidateFile": "data/recipes/catalog-650-20261021/foodista-world/chunk-003.json"
+    }
+  ],
+  "withdrawnPriorPromotion": [
+    {
+      "id": "fi650-52472",
+      "reason": "Existing tabbouleh; Lebanese source variant held outside the650distinct-recipe target."
+    }
+  ]
+}

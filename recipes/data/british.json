@@ -1,0 +1,649 @@
+{
+  "cuisine": "بريطاني",
+  "cuisineSlug": "british",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "bc650-scouse",
+      "name": "سكاوس (يخنة لحم وخضار) ",
+      "nameEn": "Scouse",
+      "cuisine": "بريطاني",
+      "category": "طبق رئيسي",
+      "description": "لحم بقري مفروم وخضروات جذرية مطهوة بمرق اللحم ومكثفة بحبيبات المرق.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-scouse-ing-1",
+          "name": "لحم بقري مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "beef mince"
+        },
+        {
+          "id": "bc650-scouse-ing-2",
+          "name": "بصلة بيضاء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "a white onion"
+        },
+        {
+          "id": "bc650-scouse-ing-3",
+          "name": "ثوم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "garlic"
+        },
+        {
+          "id": "bc650-scouse-ing-4",
+          "name": "ورق غار",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "bayleaf"
+        },
+        {
+          "id": "bc650-scouse-ing-5",
+          "name": "بطاطس",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "potatoes"
+        },
+        {
+          "id": "bc650-scouse-ing-6",
+          "name": "جزر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "carrots"
+        },
+        {
+          "id": "bc650-scouse-ing-7",
+          "name": "مرق بقري نحو نصف لتر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "beef stock ~1 pint"
+        },
+        {
+          "id": "bc650-scouse-ing-8",
+          "name": "حبيبات صلصة مرق بقري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "beef gravy granules"
+        },
+        {
+          "id": "bc650-scouse-ing-9",
+          "name": "جزر أبيض اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "parsnips(optional)"
+        },
+        {
+          "id": "bc650-scouse-ing-10",
+          "name": "لفت سويدي اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "swede(optional)"
+        },
+        {
+          "id": "bc650-scouse-ing-11",
+          "name": "ملفوف اختياري",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "cabbage(optional)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطعي البصل والثوم ناعمًا. قطعي الجزر والبطاطس والجزر الأبيض و/أو اللفت السويدي إلى قطع متساوية.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اقلي البصل بقليل من الزيت في قدر عميق حتى يحمر، ثم اقلي الثوم سريعًا حتى تفوح رائحته.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضيفي اللحم المفروم كتلة واحدة وحمريه، واقلبيه لتحمير الجانب الآخر قبل تفتيته.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "بعد أن يتحمر اللحم جيدًا اسكبي مرق اللحم. أضيفي الخضروات الجذرية وورق الغار والملح والفلفل بوفرة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اتركيها تغلي نحو نصف ساعة وأزيلي ورق الغار. أضيفي الملفوف في منتصف المدة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "قلبي حبيبات صلصة المرق حتى تصلي إلى السماكة المطلوبة ثم قدميها.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/scouse.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=a6b0a4ff3fb853344d4ce7629e754cb5527dabf7317b44f5086fd0a1b433a8f1"
+    },
+    {
+      "id": "bc650-shepherds-pie",
+      "name": "فطيرة الراعي",
+      "nameEn": "Shepherd's Pie",
+      "cuisine": "بريطاني",
+      "category": "طبق رئيسي",
+      "description": "لحم ضأن مفروم مع البصل والجزر والبازلاء في المرق، يغطى بهريس البطاطس ويخبز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-shepherds-pie-ing-1",
+          "name": "بطاطس دقيقية",
+          "amount": 600.0,
+          "unit": "جرام",
+          "scale": true,
+          "display": null,
+          "label": "600 grams (g) of mealy/floury potatoes"
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-2",
+          "name": "بصل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 onions"
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-3",
+          "name": "جزر",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 carrots"
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-4",
+          "name": "زيت",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-5",
+          "name": "لحم ضأن مفروم",
+          "amount": 800,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-6",
+          "name": "بازلاء مجمدة",
+          "amount": 100,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-7",
+          "name": "معجون طماطم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-8",
+          "name": "مرق بقري",
+          "amount": 300,
+          "unit": "ملليلتر",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-9",
+          "name": "بابريكا حلوة أو مدخنة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-10",
+          "name": "زبدة",
+          "amount": 30,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-11",
+          "name": "حليب",
+          "amount": 200,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-shepherds-pie-ing-12",
+          "name": "رشة جوزة الطيب",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 pinch of nutmeg"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قشري البطاطس وقطعيها مكعبات واسلقيها في ماء مملح 20 دقيقة. قشري البصل والجزر وقطعيهما مكعبات صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخني الزيت في مقلاة واقلي اللحم حتى يتفتت. أضيفي البصل والجزر والبازلاء ومعجون الطماطم والمرق وقلبي، ثم تبلي بالبابريكا والفلفل والملح.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "صفي البطاطس واهرسيها بالزبدة. أضيفي الحليب وجوزة الطيب وقلبي حتى تصبح كريمية.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "سخني الفرن إلى 200°C وادهني طبق طاجن بالزبدة. ضعي خليط اللحم ثم وزعي فوقه البطاطس المهروسة. اخبزي 30–40 دقيقة.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات الأصلية محفوظة بنصها دون تحويل رقمي؛ بيانات الحصص والأزمنة غير المحددة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/shepherds-pie.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=0501443bed4cff749f3645f6d25d0753248d29c03c44d9120acb047454efb30b"
+    },
+    {
+      "id": "bc650-beef-wellington",
+      "name": "بيف ويلينغتون",
+      "nameEn": "Beef Wellington",
+      "cuisine": "بريطاني",
+      "category": "طبق رئيسي",
+      "description": "فيليه بقر محمّر يلف بالفطر المهروس واللحم المقدد وعجينة مورقة ثم يُخبز.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-beef-wellington-ing-1",
+          "name": "فيليه بقر، رطل واحد",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-beef-wellington-ing-2",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Extra Virgin Olive Oil"
+        },
+        {
+          "id": "bc650-beef-wellington-ing-3",
+          "name": "فطر، رطل واحد",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-beef-wellington-ing-4",
+          "name": "شرائح لحم خنزير رفيعة، 4",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 Thinly Cut Slices of Ham"
+        },
+        {
+          "id": "bc650-beef-wellington-ing-5",
+          "name": "خردل أصفر، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-beef-wellington-ing-6",
+          "name": "عجينة مورقة، 7 أونصات",
+          "amount": 7,
+          "unit": "oz",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-beef-wellington-ing-7",
+          "name": "صفارا بيض مخفوقان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 Egg Yolks Beaten"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "تبّل الفيليه بالملح والفلفل الأسود.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "في مقلاة مدهونة جيداً على نار عالية حمّر الفيليه من كل الجهات بما فيها الأطراف. لوصفة متوسطة النضج لا تطهه بالكامل، بل حمّره فقط؛ ولدرجة استواء أعلى زد الطهي هنا. ارفعه إلى طبق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ادهن الفيليه بالخردل الأصفر فور إخراجه من المقلاة كي تمتصه نكهة اللحم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "افرُم الفطر في محضرة الطعام. انقل المهروس إلى مقلاة على نار متوسطة عالية واطهه حتى يخرج رطوبته ويتبخر السائل، ثم ارفعه ليبرد.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "افرد شرائح اللحم المقدد على غلاف بلاستيكي ووزع خليط الفطر فوقها. ضع الفيليه في الوسط ولفه بإحكام على شكل أسطوانة، وأحكم الأطراف ثم برده 20 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "سخّن الفرن إلى 302°F/150°C.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "على سطح مرشوش بالدقيق افرد العجينة المورقة بما يكفي لاحتواء الفيليه مع ترك قليل زائد. أخرج اللفة من الغلاف وضعها وسط العجينة وادهن الحواف بصفار البيض.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "ضع اللفة في صينية خبز وادهن سطحها المكشوف بالبيض. يمكن تخديش السطح بالسكين للزينة من دون قطعه، وتبّله بملح خشن.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اخبز عند 302°F/105°C مدة 35–42 دقيقة حتى تحمر العجينة. اتركه يرتاح نحو 10 دقائق ثم قطّعه شرائح بسماكة بوصة/2.54 سم.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/beef-wellington.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=992b13bf1975f3753dbd5e120d05da1ae0edb1afab9ef893d552aad4df2aab5c"
+    },
+    {
+      "id": "bc650-full-english-breakfast",
+      "name": "إفطار إنجليزي كامل",
+      "nameEn": "Full English Breakfast",
+      "cuisine": "بريطاني",
+      "category": "إفطار",
+      "description": "نقانق ولحم مقدد وبيض وفاصولياء مخبوزة وطماطم وفطر وخبز محمص تقدم حصصاً منفصلة في الطبق.",
+      "servings": 2,
+      "prepTime": null,
+      "cookTime": 40,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-full-english-breakfast-ing-1",
+          "name": "4 نقانق نيئة (النقانق الإنجليزية للأصالة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 raw sausages (English sausages to be authentic)"
+        },
+        {
+          "id": "bc650-full-english-breakfast-ing-2",
+          "name": "4 شرائح لحم مقدد (الظهر الإنجليزي للأصالة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 slices of bacon (English back bacon to be authentic)"
+        },
+        {
+          "id": "bc650-full-english-breakfast-ing-3",
+          "name": "بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 eggs"
+        },
+        {
+          "id": "bc650-full-english-breakfast-ing-4",
+          "name": "نصف علبة فاصولياء مخبوزة (200 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "half a tin (200g) of baked beans"
+        },
+        {
+          "id": "bc650-full-english-breakfast-ing-5",
+          "name": "شريحتا خبز",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 slices of bread"
+        },
+        {
+          "id": "bc650-full-english-breakfast-ing-6",
+          "name": "حبة طماطم كبيرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 large tomato"
+        },
+        {
+          "id": "bc650-full-english-breakfast-ing-7",
+          "name": "فطر صغير، نصف كوب (120 جم)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "half a cup (120g) of button mushrooms"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن مسبقاً إلى 250°C أو 480°F.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "حضّر الفطر بقص أطراف السيقان الخشبية وغسله في مصفاة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "حضّر الطماطم بقص الساق وقطعها نصفين.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اكسر البيض في وعاء واخفقه حتى يتجانس.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع النقانق في صينية الفرن وابدأ طهيها 15 دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "ضع اللحم المقدد في مقلاة باردة وابدأ طهيه على حرارة عالية.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "عندما يقرمش أحد الجانبين اقلبه وحمّر الجانب الآخر، ثم انقله إلى طبق عليه مناديل ورقية لتصفيته.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "إذا مرت 15 دقيقة أخرج النقانق واقلبها لتتحمر من الجهة الأخرى.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اضبط المقلاة على حرارة متوسطة واطه البيض المخفوق فيها.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "عندما يتماسك بعض خثاره ادفعه إلى جانب المقلاة وضع الطماطم فيها والجانب المقطوع إلى الأسفل لتحميره.",
+          "duration": null
+        },
+        {
+          "n": 11,
+          "text": "أضف الفطر إلى المقلاة نفسها.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "ضع الفاصولياء المخبوزة في قدر على حرارة متوسطة. تصبح جاهزة عندما تبدأ بالغليان الهادئ.",
+          "duration": null
+        },
+        {
+          "n": 13,
+          "text": "حمّص الخبز حسب رغبتك.",
+          "duration": null
+        },
+        {
+          "n": 14,
+          "text": "إذا مرت نصف ساعة أخرج النقانق من الفرن.",
+          "duration": null
+        },
+        {
+          "n": 15,
+          "text": "رتّب كل مكون في حصة منفصلة على الطبق.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "إفطار"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - 🍳 Cook time: 40 min ؛ - 🍽️ Servings: 2. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/full-english-breakfast.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=70d56612b589839a068aaf2fff6cbed48d85f65a1336a30efab8aca0d2b6d8a1"
+    },
+    {
+      "id": "fiw650-50609",
+      "name": "فتات التفاح البريطاني التقليدي",
+      "nameEn": "Traditional British Apple Crumble",
+      "cuisine": "بريطاني",
+      "category": "حلويات",
+      "description": "تفاح مطهو يغطى بفتات الدقيق والزبدة والسكر ويخبز حتى يذهب لونه إلى الذهبي.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": 40,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "دقيق عادي منخول",
+          "amount": 8,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": "225 غراماً بحسب المصدر",
+          "id": "fiw650-50609-i0",
+          "display": null
+        },
+        {
+          "name": "زبدة بدرجة حرارة الغرفة مقطعة",
+          "amount": 4,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": "يذكر السطر أيضاً 110 غراماً كتحويل، ونحافظ على التعارض النصي",
+          "id": "fiw650-50609-i1",
+          "display": null
+        },
+        {
+          "name": "سكر",
+          "amount": 3,
+          "unit": "أونصة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-50609-i2",
+          "display": null
+        },
+        {
+          "name": "تفاح مقشر ومنزوع القلب",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": "يورد المصدر 500 غرام أيضاً؛ صنف Bramley مقترح وليس ضرورياً",
+          "id": "fiw650-50609-i3",
+          "display": null
+        },
+        {
+          "name": "سكر إضافي للتفاح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "note": "2/3 ملاعق كبيرة بحسب المصدر؛ وحدة/عدد غير محكم، اختياري مع التفاح العادي",
+          "id": "fiw650-50609-i4"
+        },
+        {
+          "name": "ماء للتفاح",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "مذكور في الطريقة لا القائمة",
+          "id": "fiw650-50609-i5",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى علامة الغاز 4/350°F/180°C. ضع الدقيق والزبدة والسكر في محضرة الطعام واخلط حتى يشبه الخليط الفتات. إن لم تتوفر محضرة، ضع الدقيق في وعاء كبير وافرك الزبدة فيه بخفة بأطراف الأصابع. عندما يصبح مفتتاً أضف السكر وامزج جيداً. قشر التفاح وانزع قلبه وضعه في قدر مع السكر الاختياري وثلاث ملاعق كبيرة ماء، وسخنه على نار معتدلة حتى يلين ويصبح مهروساً قليلاً. ضع التفاح المطهو في طبق فرن وانثر فوقه خليط الفتات. اخبز 40 دقيقة حتى يصبح السطح ذهبياً. قدّم مع الكريمة أو الكاسترد.",
+          "duration": null,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "تفاح"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/HF5B3JNF/traditional-british-apple-crumble — SHA-256: 595d01dca333ed433e9a8d4da23a7f2b13357d44822f721ea63d7e94922fb3a3 — أزيلت عناوين الأقسام وتعليمة تسخين الفرن من قائمة المكونات؛ أضيفت 3 ملاعق كبيرة ماء المذكورة في الطريقة، وحُفظت كمية السكر الاختيارية المبهمة دون تحويل."
+    }
+  ]
+}

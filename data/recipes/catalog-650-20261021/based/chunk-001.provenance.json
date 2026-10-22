@@ -1,0 +1,4327 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+  "recipes": [
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "Mayonnaise؛ بحسب النسبة في الطريقة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "mayonnaise",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-spicy-mayo-ing-1",
+          "arabicName": "مايونيز",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "chili sauce (e.g Sriracha)؛ بحسب النسبة في الطريقة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "chili sauce (e.g Sriracha)",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-spicy-mayo-ing-2",
+          "arabicName": "صلصة فلفل حار مثل سريراتشا",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Sesame oil؛ ملعقة كبيرة لكل كوب مايونيز",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "sesame oil",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-spicy-mayo-ing-3",
+          "arabicName": "زيت سمسم",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Spicy Mayo\"\ndate: 2021-03-30\ntags: ['basic', 'sauce', 'japanese']\nauthor: \"scary90\"",
+      "sourceRawText": "---\ntitle: \"Spicy Mayo\"\ndate: 2021-03-30\ntags: ['basic', 'sauce', 'japanese']\nauthor: \"scary90\"\n---\n\nA simple sauce that is at almost every sushi bar in the United States.\n\n- ⏲️ Prep time: 3 min\n\n## Ingredients\n\n- chili sauce (e.g Sriracha)\n- mayonnaise\n- sesame oil\n\n## Directions\n\n1. Add 2 parts mayonnaise to 1 part chili sauce in a bowl.\n2. Add 1 tbsp of sesame oil for every cup of mayonnaise you use.\n3. Mix all of the ingredients together, and taste test it for more chili sauce or mayonnaise.\n\n## Note\n\nThis is just a basic guide, adapt this recipe to your liking.\n",
+      "snapshotSHA256": "fa00ac59899a23c405d875a661b5d6f35faab1d346f0568ac65b1fbc1feffb25",
+      "recipeId": "bc650-spicy-mayo",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Spicy Mayo",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "\"scary90\"",
+      "sourcePath": "content/spicy-mayo.md",
+      "sourceIngredientLines": [
+        "chili sauce (e.g Sriracha)",
+        "mayonnaise",
+        "sesame oil"
+      ],
+      "sourceTags": [
+        "basic",
+        "sauce",
+        "japanese"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spicy-mayo.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": null,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": 3,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Add 2 parts mayonnaise to 1 part chili sauce in a bowl.",
+          "sourceLineNumbers": [
+            20
+          ]
+        },
+        {
+          "text": "Add 1 tbsp of sesame oil for every cup of mayonnaise you use.",
+          "sourceLineNumbers": [
+            21
+          ]
+        },
+        {
+          "text": "Mix all of the ingredients together, and taste test it for more chili sauce or mayonnaise.",
+          "sourceLineNumbers": [
+            22
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "993842c937d764a51c89a99395f5ac726f96d2f033a71a551069dec3a0156297"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "dashi stock",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "dashi stock",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-soup-ing-1",
+          "arabicName": "مرق داشي",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "miso paste",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "miso paste",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-soup-ing-2",
+          "arabicName": "معجون ميسو",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "tofu (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "tofu(optional)",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-soup-ing-3",
+          "arabicName": "توفو (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "seaweed (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "seaweed(optional)",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-soup-ing-4",
+          "arabicName": "أعشاب بحرية (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "green onion (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "green onion(optional)",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-soup-ing-5",
+          "arabicName": "بصل أخضر (اختياري)",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Miso-soup\"\ndate: 2021-03-23\ntags: ['japanese', 'soup']\nauthor: yakatan",
+      "sourceRawText": "---\ntitle: \"Miso-soup\"\ndate: 2021-03-23\ntags: ['japanese', 'soup']\nauthor: yakatan\n---\n\nMiso-soup is Japanese traditional home cooking.\n\n## Ingredients\n\n- dashi stock\n- miso paste\n- tofu(optional)\n- seaweed(optional)\n- green onion(optional)\n\n## Directions\n\n1. put about half of the water in the pot and bring the water to a boil.\n2. put the dashi stock in the pot.\n3. if you use tofu or seaweed, cut the ingredients into bite-sized pieces, place the ingredients in the pot and bring to a boil.\n4. Melt the miso in the water and bring the water to a boil.\n6. serve into small bowls.\n7. if you use green onion, slice them and put in a small bowls.\n",
+      "snapshotSHA256": "4b2fcbfbe4400579b3e7d36873c529a5fa7d88301b694d89f5fa4253c1e0493f",
+      "recipeId": "bc650-miso-soup",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Miso-soup",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "yakatan",
+      "sourcePath": "content/miso-soup.md",
+      "sourceIngredientLines": [
+        "dashi stock",
+        "miso paste",
+        "tofu(optional)",
+        "seaweed(optional)",
+        "green onion(optional)"
+      ],
+      "sourceTags": [
+        "japanese",
+        "soup"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/miso-soup.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": null,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": null,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "put about half of the water in the pot and bring the water to a boil.",
+          "sourceLineNumbers": [
+            20
+          ]
+        },
+        {
+          "text": "put the dashi stock in the pot.",
+          "sourceLineNumbers": [
+            21
+          ]
+        },
+        {
+          "text": "if you use tofu or seaweed, cut the ingredients into bite-sized pieces, place the ingredients in the pot and bring to a boil.",
+          "sourceLineNumbers": [
+            22
+          ]
+        },
+        {
+          "text": "Melt the miso in the water and bring the water to a boil.",
+          "sourceLineNumbers": [
+            23
+          ]
+        },
+        {
+          "text": "serve into small bowls.",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "if you use green onion, slice them and put in a small bowls.",
+          "sourceLineNumbers": [
+            25
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "d1d0bd39995bef3c579db438011acd0e2cc4e2cf76cdfdb3790a56e09510e9f5"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "3T neutral oil",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "3T neutral oil",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 3,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-1",
+          "arabicName": "زيت محايد النكهة",
+          "acceptedUnit": "T"
+        },
+        {
+          "candidateDisplay": "1 onion",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 onion",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-2",
+          "arabicName": "بصلة",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 red onion",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 red onion",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-3",
+          "arabicName": "بصلة حمراء",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "2 cloves of garlic",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 cloves of garlic",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-4",
+          "arabicName": "ثوم",
+          "acceptedUnit": "cloves"
+        },
+        {
+          "candidateDisplay": "4cm ginger",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4cm ginger",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-5",
+          "arabicName": "زنجبيل",
+          "acceptedUnit": "cm"
+        },
+        {
+          "candidateDisplay": "1 red pepper",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 red pepper",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-6",
+          "arabicName": "فلفل أحمر",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1t curry powder",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1t curry powder",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-7",
+          "arabicName": "مسحوق كاري",
+          "acceptedUnit": "t"
+        },
+        {
+          "candidateDisplay": "250g green beans",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "250g green beans",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": 250,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-8",
+          "arabicName": "فاصوليا خضراء",
+          "acceptedUnit": "g"
+        },
+        {
+          "candidateDisplay": "4 tomatoes",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 tomatoes",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-9",
+          "arabicName": "طماطم",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "200ml fish broth",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "200ml fish broth",
+          "sourceIngredientIndex": 9,
+          "acceptedAmount": 200,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-10",
+          "arabicName": "مرق سمك",
+          "acceptedUnit": "ml"
+        },
+        {
+          "candidateDisplay": "200ml coconut milk",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "200ml coconut milk",
+          "sourceIngredientIndex": 10,
+          "acceptedAmount": 200,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-11",
+          "arabicName": "حليب جوز الهند",
+          "acceptedUnit": "ml"
+        },
+        {
+          "candidateDisplay": "400g fish fillet (white fish)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "400g fish fillet (white fish)",
+          "sourceIngredientIndex": 11,
+          "acceptedAmount": 400,
+          "scales": true,
+          "ingredientId": "bc650-fish-curry-ing-12",
+          "arabicName": "فيليه سمك أبيض",
+          "acceptedUnit": "g"
+        }
+      ],
+      "sourceFrontMatter": "title: \"Fish Curry\"\ndate: 2021-03-15\ntags: ['thai', 'fish']\nauthor: thijs-wester",
+      "sourceRawText": "---\ntitle: \"Fish Curry\"\ndate: 2021-03-15\ntags: ['thai', 'fish']\nauthor: thijs-wester\n---\n\nBest served with white rice\n\n- 🍳 Cook time: 30 min\n- 🍽️ Servings:5\n\n## Ingredients\n- 3T neutral oil\n- 1 onion\n- 1 red onion\n- 2 cloves of garlic\n- 4cm ginger\n- 1 red pepper\n- 1t curry powder\n- 250g green beans\n- 4 tomatoes\n- 200ml fish broth\n- 200ml coconut milk\n- 400g fish fillet (white fish)\n\n## Directions\n1. Boil green beans for 10 minutes\n2. Cut onions, tomato, garlic and fish.\n3. Heat oil on a wok and sauté the onion and garlic\n4. Add beans, tomato, broth and spices and boil for 6 minutes\n5. Add coconut milk, fish and pepper (whole) and boil for an additional 6 minutes.\n",
+      "snapshotSHA256": "1573b06322bc4faff959608f169665e5113e533e7d7ec80e6c20ec42dc4e19c0",
+      "recipeId": "bc650-fish-curry",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Fish Curry",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "thijs-wester",
+      "sourcePath": "content/fish-curry.md",
+      "sourceIngredientLines": [
+        "3T neutral oil",
+        "1 onion",
+        "1 red onion",
+        "2 cloves of garlic",
+        "4cm ginger",
+        "1 red pepper",
+        "1t curry powder",
+        "250g green beans",
+        "4 tomatoes",
+        "200ml fish broth",
+        "200ml coconut milk",
+        "400g fish fillet (white fish)"
+      ],
+      "sourceTags": [
+        "thai",
+        "fish"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/fish-curry.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": 5,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 30,
+        "prepTime": null,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Boil green beans for 10 minutes",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "Cut onions, tomato, garlic and fish.",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "Heat oil on a wok and sauté the onion and garlic",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "Add beans, tomato, broth and spices and boil for 6 minutes",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "Add coconut milk, fish and pepper (whole) and boil for an additional 6 minutes.",
+          "sourceLineNumbers": [
+            32
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "4918e1de0b861a8458dad7f1555342cf4e0e41652ffa4fc84efe6d33e1b40024"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "1 cup Wheat Flour (white or whole)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup Wheat Flour (white or whole)",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-turmeric-flatbread-ing-1",
+          "arabicName": "دقيق قمح أبيض أو كامل",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "1/2 Tbsp Ground Turmeric",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 Tbsp Ground Turmeric",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-turmeric-flatbread-ing-2",
+          "arabicName": "كركم مطحون",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "1/2 tsp Kosher Salt",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 tsp Kosher Salt",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-turmeric-flatbread-ing-3",
+          "arabicName": "ملح كوشير",
+          "acceptedUnit": "tsp"
+        },
+        {
+          "candidateDisplay": "1/4 tsp Baking Powder",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/4 tsp Baking Powder",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 0.25,
+          "scales": true,
+          "ingredientId": "bc650-turmeric-flatbread-ing-4",
+          "arabicName": "بيكنج باودر",
+          "acceptedUnit": "tsp"
+        },
+        {
+          "candidateDisplay": "2 Tbsp Olive Oil",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 Tbsp Olive Oil",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-turmeric-flatbread-ing-5",
+          "arabicName": "زيت زيتون",
+          "acceptedUnit": "Tbsp"
+        }
+      ],
+      "sourceFrontMatter": "title: Turmeric Flatbread\ntags: ['bread', 'turkish']\ndate: 2022-08-09\nauthor: joel-maxuel",
+      "sourceRawText": "---\ntitle: Turmeric Flatbread\ntags: ['bread', 'turkish']\ndate: 2022-08-09\nauthor: joel-maxuel\n---\n\nA great companion to Turkish Red Lentil Soup.\n\n- ⏲️ Prep time: 20 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 1 cup Wheat Flour (white or whole)\n- 1/2 Tbsp Ground Turmeric\n- 1/2 tsp Kosher Salt\n- 1/4 tsp Baking Powder\n- 2 Tbsp Olive Oil\n\n## Directions\n\n1. Combine flour, turmeric, salt and baking powder.\n2. Stir in 1/3 cup water and the olive oil.\n3. Knead until smooth (1-2 min). Cover and set aside 15 minutes.\n4. Cut the dough into 4 pieces; flatten each into a 6-inch round.\n5. Cook one at a time in an oiled skillet over medium-high heat, flip when browned (2 mins).\n",
+      "snapshotSHA256": "36adc9c75087fb403ec40895f879eb3d6f479123aab1e6f25d622be558b4a442",
+      "recipeId": "bc650-turmeric-flatbread",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Turmeric Flatbread",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "joel-maxuel",
+      "sourcePath": "content/turmeric-flatbread.md",
+      "sourceIngredientLines": [
+        "1 cup Wheat Flour (white or whole)",
+        "1/2 Tbsp Ground Turmeric",
+        "1/2 tsp Kosher Salt",
+        "1/4 tsp Baking Powder",
+        "2 Tbsp Olive Oil"
+      ],
+      "sourceTags": [
+        "bread",
+        "turkish"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/turmeric-flatbread.md",
+      "catalogKnownUnknown": {
+        "totalTime": 30,
+        "servings": 4,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 10,
+        "prepTime": 20,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Combine flour, turmeric, salt and baking powder.",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "Stir in 1/3 cup water and the olive oil.",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "Knead until smooth (1-2 min). Cover and set aside 15 minutes.",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "Cut the dough into 4 pieces; flatten each into a 6-inch round.",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "Cook one at a time in an oiled skillet over medium-high heat, flip when browned (2 mins).",
+          "sourceLineNumbers": [
+            28
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "f0c6d4ded412e2ffa56b6717e35d927058155eb1179097118054f979c63bbc8a"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "yogurt؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "yogurt",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-turkish-yogurt-soup-ing-1",
+          "arabicName": "زبادي",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1/3 cup rice",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/3 cup rice",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 0.3333333333,
+          "scales": true,
+          "ingredientId": "bc650-turkish-yogurt-soup-ing-2",
+          "arabicName": "أرز",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "2 tablespoon flour",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 tablespoon flour",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-turkish-yogurt-soup-ing-3",
+          "arabicName": "دقيق",
+          "acceptedUnit": "tablespoon"
+        },
+        {
+          "candidateDisplay": "1 egg yolk",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 egg yolk",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-turkish-yogurt-soup-ing-4",
+          "arabicName": "صفار بيضة",
+          "acceptedUnit": "صفار"
+        },
+        {
+          "candidateDisplay": "butter؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "butter",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-turkish-yogurt-soup-ing-5",
+          "arabicName": "زبدة",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "dried mint؛ مذكور في الطريقة فقط، والكمية غير محددة",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-turkish-yogurt-soup-ing-6",
+          "arabicName": "نعناع مجفف",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "salt؛ الكمية غير محددة",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-turkish-yogurt-soup-ing-7",
+          "arabicName": "ملح",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Turkish Yogurt Soup\"\ndate: 2021-03-24\ntags: ['turkish', 'rice', 'soup']\nauthor: digi",
+      "sourceRawText": "---\ntitle: \"Turkish Yogurt Soup\"\ndate: 2021-03-24\ntags: ['turkish', 'rice', 'soup']\nauthor: digi\n---\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 35 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- yogurt\n- 1/3 cup rice\n- 2 tablespoon flour\n- 1 egg yolk\n- butter\n\n## Directions\n\n1. wash the rice\n2. put water in the pot and wait for water to boil\n3. add some salt and rice\n4. wait for 15 minutes\n5. mix yogurt, egg and flour and salt in a different bowl\n6. add water from the soup and mix by warming\n7. when the rice is soft, add the yogurt mixture to the soup and mix quickly\n8. cut down the heat, wait for 15 minutes\n9. for the sauce, simply melt the butter in a separate small pan and stir in the dried mint\n10. add sauteed dried mint to the soup and stir well\n11. serve warm\n",
+      "snapshotSHA256": "8bd375b940cf02379d2967e7cf6f6c089134ad03f1114963f626ab7880031153",
+      "recipeId": "bc650-turkish-yogurt-soup",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Turkish Yogurt Soup",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "digi",
+      "sourcePath": "content/turkish-yogurt-soup.md",
+      "sourceIngredientLines": [
+        "yogurt",
+        "1/3 cup rice",
+        "2 tablespoon flour",
+        "1 egg yolk",
+        "butter"
+      ],
+      "sourceTags": [
+        "turkish",
+        "rice",
+        "soup"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/turkish-yogurt-soup.md",
+      "catalogKnownUnknown": {
+        "totalTime": 50,
+        "servings": 4,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 35,
+        "prepTime": 15,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "wash the rice",
+          "sourceLineNumbers": [
+            22
+          ]
+        },
+        {
+          "text": "put water in the pot and wait for water to boil",
+          "sourceLineNumbers": [
+            23
+          ]
+        },
+        {
+          "text": "add some salt and rice",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "wait for 15 minutes",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "mix yogurt, egg and flour and salt in a different bowl",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "add water from the soup and mix by warming",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "when the rice is soft, add the yogurt mixture to the soup and mix quickly",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "cut down the heat, wait for 15 minutes",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "for the sauce, simply melt the butter in a separate small pan and stir in the dried mint",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "add sauteed dried mint to the soup and stir well",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "serve warm",
+          "sourceLineNumbers": [
+            32
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "0292361544e0e1b764fab39317a7eca12e34fbc5b0d27040ffd20d3f18966dd1"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "8 g fresh ginger",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "8 g fresh ginger",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 8,
+          "scales": true,
+          "ingredientId": "bc650-indian-tea-ing-1",
+          "arabicName": "زنجبيل طازج",
+          "acceptedUnit": "g"
+        },
+        {
+          "candidateDisplay": "10 cardamom seeds",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "10 cardamom seeds",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 10,
+          "scales": true,
+          "ingredientId": "bc650-indian-tea-ing-2",
+          "arabicName": "حبوب هيل",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "1.5 cup milk",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1.5 cup milk",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1.5,
+          "scales": true,
+          "ingredientId": "bc650-indian-tea-ing-3",
+          "arabicName": "حليب",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "2 tablespoon black tea",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 tablespoon black tea",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-indian-tea-ing-4",
+          "arabicName": "شاي أسود",
+          "acceptedUnit": "tablespoon"
+        },
+        {
+          "candidateDisplay": "ملعقة صغيرة لكل كوب، مذكورة بالطريقة لا قائمة المكونات",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-indian-tea-ing-5",
+          "arabicName": "سكر",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1 l water؛ مذكور بالطريقة فقط",
+          "mappingStatus": "method-only-amount; see complete source method",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-indian-tea-ing-6",
+          "arabicName": "ماء",
+          "acceptedUnit": "l"
+        }
+      ],
+      "sourceFrontMatter": "title: Indian tea\ntags: ['drink', 'easy', 'indian', 'milk', 'traditional']\ndate: 2026-02-14\nauthor: \"pestanzul\"",
+      "sourceRawText": "---\ntitle: Indian tea\ntags: ['drink', 'easy', 'indian', 'milk', 'traditional']\ndate: 2026-02-14\nauthor: \"pestanzul\"\n---\n\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\nThe quantities below are approximate and should be adjusted according to your taste.\n\n- 8 g fresh ginger\n- 10 cardamom seeds\n- 1.5 cup milk\n- 2 tablespoon black tea\n\n## Directions\n\n1. Peel off the ginger and cut it to small pieces.\n2. Crush ginger and cardamom seeds.\n3. Bring 1 l water to boiling.\n4. Turn off the stove.\n5. Add ginger, cardamom seeds, black tea and milk to the water and cover the pot.\n6. Wait 5-10 minutes for infusion.\n7. Serve with a teaspoon sugar per cup.\n   You may want to sieve, or wait for the particles to precipitate to the bottom of the cups.\n",
+      "snapshotSHA256": "121f46ec34e15ae3a39484f96586afb038a74ae6ada7ca59f466503e59e1e93c",
+      "recipeId": "bc650-indian-tea",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Indian tea",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "\"pestanzul\"",
+      "sourcePath": "content/indian-tea.md",
+      "sourceIngredientLines": [
+        "8 g fresh ginger",
+        "10 cardamom seeds",
+        "1.5 cup milk",
+        "2 tablespoon black tea"
+      ],
+      "sourceTags": [
+        "drink",
+        "easy",
+        "indian",
+        "milk",
+        "traditional"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/indian-tea.md",
+      "catalogKnownUnknown": {
+        "totalTime": 15,
+        "servings": 4,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 10,
+        "prepTime": 5,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Peel off the ginger and cut it to small pieces.",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "Crush ginger and cardamom seeds.",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "Bring 1 l water to boiling.",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "Turn off the stove.",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "Add ginger, cardamom seeds, black tea and milk to the water and cover the pot.",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "Wait 5-10 minutes for infusion.",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "Serve with a teaspoon sugar per cup. You may want to sieve, or wait for the particles to precipitate to the bottom of the cups.",
+          "sourceLineNumbers": [
+            30,
+            31
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "f8a80668d94830483a7acfe6e7b71ed7b32f44ab49126432fd7466ae1dadb26a"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "2 dL water",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 dL water",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-teriyaki-beef-ing-1",
+          "arabicName": "ماء",
+          "acceptedUnit": "dL"
+        },
+        {
+          "candidateDisplay": "2 tbsp cornstarch",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 tbsp cornstarch",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-teriyaki-beef-ing-2",
+          "arabicName": "نشا الذرة",
+          "acceptedUnit": "tbsp"
+        },
+        {
+          "candidateDisplay": "1 tbsp honey",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 tbsp honey",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-teriyaki-beef-ing-3",
+          "arabicName": "عسل",
+          "acceptedUnit": "tbsp"
+        },
+        {
+          "candidateDisplay": "1/4 tsp ginger",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/4 tsp ginger",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 0.25,
+          "scales": true,
+          "ingredientId": "bc650-teriyaki-beef-ing-4",
+          "arabicName": "زنجبيل",
+          "acceptedUnit": "tsp"
+        },
+        {
+          "candidateDisplay": "3 tbsp soy sauce",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "3 tbsp soy sauce",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 3,
+          "scales": true,
+          "ingredientId": "bc650-teriyaki-beef-ing-5",
+          "arabicName": "صلصة صويا",
+          "acceptedUnit": "tbsp"
+        },
+        {
+          "candidateDisplay": "Sesame oil؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Sesame oil",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-6",
+          "arabicName": "زيت سمسم",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Beef slices or strips؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Beef slices or strips",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-7",
+          "arabicName": "شرائح أو شرائط لحم بقري",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Carrot, sliced (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Carrot, sliced (optional)",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-8",
+          "arabicName": "جزر مقطع (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Broccoli, florets (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Broccoli, florets (optional)",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-9",
+          "arabicName": "بروكلي مقطع زهرات (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Baby corn (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Baby corn (optional)",
+          "sourceIngredientIndex": 9,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-10",
+          "arabicName": "ذرة صغيرة (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Water chestnut, sliced (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Water chestnut, sliced (optional)",
+          "sourceIngredientIndex": 10,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-11",
+          "arabicName": "كستناء ماء مقطعة (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Bean sprouts (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Bean sprouts (optional)",
+          "sourceIngredientIndex": 11,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-12",
+          "arabicName": "براعم فاصوليا (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Chili pepper, diced (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Chili pepper, diced (optional)",
+          "sourceIngredientIndex": 12,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-13",
+          "arabicName": "فلفل حار مكعبات (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Noodles or rice؛ للتقديم بلا كمية",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Noodles or rice",
+          "sourceIngredientIndex": 13,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-teriyaki-beef-ing-14",
+          "arabicName": "نودلز أو أرز",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: Teriyaki Beef Wok\ntags: ['beef', 'asian', 'noodles']\ndate: 2022-08-20\nauthor: \"Lars Henrik Bolstad\"",
+      "sourceRawText": "---\ntitle: Teriyaki Beef Wok\ntags: ['beef', 'asian', 'noodles']\ndate: 2022-08-20\nauthor: \"Lars Henrik Bolstad\"\n---\n\n![Teriyaki Beef Wok](/pix/teriyaki-beef.webp)\n\nIf you have no wok, a regular pan will suffice.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 15 min\n- 🍽️ Servings: 2\n\n## Ingredients\n\n- 2 dL water\n- 2 tbsp cornstarch\n- 1 tbsp honey\n- 1/4 tsp ginger\n- 3 tbsp soy sauce\n- Sesame oil\n- Beef slices or strips\n- Carrot, sliced (optional)\n- Broccoli, florets (optional)\n- Baby corn (optional)\n- Water chestnut, sliced (optional)\n- Bean sprouts (optional)\n- Chili pepper, diced (optional)\n- Noodles or rice\n\n## Directions\n\n1. Whisk water, cornstarch, honey, ginger and soy sauce. Set aside.\n2. Heat some sesame oil to medium heat in a wok and brown the beef.\n3. Move the beef aside, add sesame oil and vegetables to the wok at high heat.\n4. Mix everything in the wok and heat.\n",
+      "snapshotSHA256": "454d3cdef7938f7d1cea577b8ee820020cabe066c879e028b00e4b40e7be644c",
+      "recipeId": "bc650-teriyaki-beef",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Teriyaki Beef Wok",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "\"Lars Henrik Bolstad\"",
+      "sourcePath": "content/teriyaki-beef.md",
+      "sourceIngredientLines": [
+        "2 dL water",
+        "2 tbsp cornstarch",
+        "1 tbsp honey",
+        "1/4 tsp ginger",
+        "3 tbsp soy sauce",
+        "Sesame oil",
+        "Beef slices or strips",
+        "Carrot, sliced (optional)",
+        "Broccoli, florets (optional)",
+        "Baby corn (optional)",
+        "Water chestnut, sliced (optional)",
+        "Bean sprouts (optional)",
+        "Chili pepper, diced (optional)",
+        "Noodles or rice"
+      ],
+      "sourceTags": [
+        "beef",
+        "asian",
+        "noodles"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/teriyaki-beef.md",
+      "catalogKnownUnknown": {
+        "totalTime": 25,
+        "servings": 2,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 15,
+        "prepTime": 10,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Whisk water, cornstarch, honey, ginger and soy sauce. Set aside.",
+          "sourceLineNumbers": [
+            35
+          ]
+        },
+        {
+          "text": "Heat some sesame oil to medium heat in a wok and brown the beef.",
+          "sourceLineNumbers": [
+            36
+          ]
+        },
+        {
+          "text": "Move the beef aside, add sesame oil and vegetables to the wok at high heat.",
+          "sourceLineNumbers": [
+            37
+          ]
+        },
+        {
+          "text": "Mix everything in the wok and heat.",
+          "sourceLineNumbers": [
+            38
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "94a3ec9e789974483301d25bc572f9b83f2578da746183f9754baca0d31b15eb"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "Garlic (4-8 large cloves)؛ من 4 إلى 8 فصوص",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Garlic (4-8 large cloves)",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-1",
+          "arabicName": "ثوم كبير",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Spring Onions؛ بلا كمية",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Spring Onions",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-2",
+          "arabicName": "بصل أخضر",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Cardamom Seeds (10 or so)؛ نحو 10",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Cardamom Seeds (10 or so)",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-3",
+          "arabicName": "حبوب هيل",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Star Anise (4-5)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Star Anise (4-5)",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-4",
+          "arabicName": "يانسون نجمي",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Ginger؛ بلا كمية",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Ginger",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-5",
+          "arabicName": "زنجبيل",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Cinnamon Sticks (3-5 sticks)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Cinnamon Sticks (3-5 sticks)",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-6",
+          "arabicName": "أعواد قرفة",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Diced Beef (300g)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Diced Beef (300g)",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 300,
+          "scales": true,
+          "ingredientId": "bc650-pho-soup-ing-7",
+          "arabicName": "لحم بقري مكعبات",
+          "acceptedUnit": "g"
+        },
+        {
+          "candidateDisplay": "Beef Bones with marrow (3x)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Beef Bones with marrow (3x)",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": 3,
+          "scales": true,
+          "ingredientId": "bc650-pho-soup-ing-8",
+          "arabicName": "عظام بقري بنخاع",
+          "acceptedUnit": "عظام"
+        },
+        {
+          "candidateDisplay": "Beef bouillon cubes (1-3)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Beef bouillon cubes (1-3)",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-9",
+          "arabicName": "مكعبات مرق بقري",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Coriander (to taste)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Coriander (to taste)",
+          "sourceIngredientIndex": 9,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-10",
+          "arabicName": "كزبرة",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1 Lime (to taste)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 Lime (to taste)",
+          "sourceIngredientIndex": 10,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-pho-soup-ing-11",
+          "arabicName": "لايم",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "Fish/Oyster Sauce؛ خياران",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Fish/Oyster Sauce",
+          "sourceIngredientIndex": 11,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-12",
+          "arabicName": "صلصة سمك أو محار",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Honey or Brown Sugar؛ بديلان",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Honey or Brown Sugar",
+          "sourceIngredientIndex": 12,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-13",
+          "arabicName": "عسل أو سكر بني",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Rice noodles؛ بلا كمية",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Rice noodles",
+          "sourceIngredientIndex": 13,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pho-soup-ing-14",
+          "arabicName": "نودلز أرز",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Pho Soup\"\ndate: 2021-03-23\ntags: ['vietnamese', 'beef']\nauthor: jon-burga",
+      "sourceRawText": "---\ntitle: \"Pho Soup\"\ndate: 2021-03-23\ntags: ['vietnamese', 'beef']\nauthor: jon-burga\n---\n\n![Based Beef Pho](/pix/pho-soup.webp)\n\nVietnamese Pho Soup is a tea-like, beef based soup with a flavor profile that differentiates it from the traditional Western palette. This recipe is designed to be as easy to make as possible, while simultaneously being as based as possible.\n\n- ⏲️ Prep time: 20 min\n- 🍳 Cook time: 2 hours\n- 🍽️ Servings:4\n\n## Ingredients\n\n- Garlic (4-8 large cloves)\n- Spring Onions\n- Cardamom Seeds (10 or so)\n- Star Anise (4-5)\n- Ginger\n- Cinnamon Sticks (3-5 sticks)\n- Diced Beef (300g)\n- Beef Bones with marrow (3x)\n- Beef bouillon cubes (1-3)\n- Coriander (to taste)\n- 1 Lime (to taste)\n- Fish/Oyster Sauce\n- Honey or Brown Sugar\n- Rice noodles\n\n## Directions\n\n1. Heat your oven and place the spices (garlic, cardamom seeds, cinnamon sticks, star anise and ginger) on a tray and bake them until browned or decently toasted.\n2. Boil bones until you remove most of the scum, and transfer the spices from the oven into the pot. Life will be easier if you can place the spices in a tea strainer of sorts, otherwise, it's not the worst thing in the world fishing them out later on.\n3. Add beef bouillon cubes, diced beef, fish/oyster sauce, and honey/sugar, then simmer for a couple hours with the lid on.\n4. Cook the rice noodles (should only take a few minutes, just until the texture is al dente enough).\n5. Once the broth is done cooking, fish out the spices that you added at step 2. It's worth doing this rather than accidentally chewing on a bit of star anise, trust me.\n6. Cut up coriander and spring onions as garnish.\n7. Add rice noodles to bowl, followed by the broth and its contents, followed by the garnish. This can be made and eaten within 1 hour if you want it quickly, but typically with broths the longer you simmer the tastier it'll be.\n",
+      "snapshotSHA256": "3621b617023771367acf862eee7018d85c7c39612da492a0354098e7e09ca84b",
+      "recipeId": "bc650-pho-soup",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Pho Soup",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "jon-burga",
+      "sourcePath": "content/pho-soup.md",
+      "sourceIngredientLines": [
+        "Garlic (4-8 large cloves)",
+        "Spring Onions",
+        "Cardamom Seeds (10 or so)",
+        "Star Anise (4-5)",
+        "Ginger",
+        "Cinnamon Sticks (3-5 sticks)",
+        "Diced Beef (300g)",
+        "Beef Bones with marrow (3x)",
+        "Beef bouillon cubes (1-3)",
+        "Coriander (to taste)",
+        "1 Lime (to taste)",
+        "Fish/Oyster Sauce",
+        "Honey or Brown Sugar",
+        "Rice noodles"
+      ],
+      "sourceTags": [
+        "vietnamese",
+        "beef"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pho-soup.md",
+      "catalogKnownUnknown": {
+        "totalTime": 140,
+        "servings": 4,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 120,
+        "prepTime": 20,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Heat your oven and place the spices (garlic, cardamom seeds, cinnamon sticks, star anise and ginger) on a tray and bake them until browned or decently toasted.",
+          "sourceLineNumbers": [
+            35
+          ]
+        },
+        {
+          "text": "Boil bones until you remove most of the scum, and transfer the spices from the oven into the pot. Life will be easier if you can place the spices in a tea strainer of sorts, otherwise, it's not the worst thing in the world fishing them out later on.",
+          "sourceLineNumbers": [
+            36
+          ]
+        },
+        {
+          "text": "Add beef bouillon cubes, diced beef, fish/oyster sauce, and honey/sugar, then simmer for a couple hours with the lid on.",
+          "sourceLineNumbers": [
+            37
+          ]
+        },
+        {
+          "text": "Cook the rice noodles (should only take a few minutes, just until the texture is al dente enough).",
+          "sourceLineNumbers": [
+            38
+          ]
+        },
+        {
+          "text": "Once the broth is done cooking, fish out the spices that you added at step 2. It's worth doing this rather than accidentally chewing on a bit of star anise, trust me.",
+          "sourceLineNumbers": [
+            39
+          ]
+        },
+        {
+          "text": "Cut up coriander and spring onions as garnish.",
+          "sourceLineNumbers": [
+            40
+          ]
+        },
+        {
+          "text": "Add rice noodles to bowl, followed by the broth and its contents, followed by the garnish. This can be made and eaten within 1 hour if you want it quickly, but typically with broths the longer you simmer the tastier it'll be.",
+          "sourceLineNumbers": [
+            41
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "5705f59053d5c297265a66ca6281a1f6d0c19924d3f7d43fdbec4593c84ba531"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "1 lb Lean Ground Beef",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 lb Lean Ground Beef",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-meat-loaf-ing-1",
+          "arabicName": "لحم بقري مفروم قليل الدهن",
+          "acceptedUnit": "lb"
+        },
+        {
+          "candidateDisplay": "1 cup Black Beans (canned), rinsed and drained",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup Black Beans (canned), rinsed and drained",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-meat-loaf-ing-2",
+          "arabicName": "فاصوليا سوداء معلبة مغسولة ومصفاة",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "1 cup Salsa, divided",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup Salsa, divided",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-meat-loaf-ing-3",
+          "arabicName": "صلصة سالسا",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "1/2 cup Corn (frozen)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 cup Corn (frozen)",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-mexican-meat-loaf-ing-4",
+          "arabicName": "ذرة مجمدة",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "1/2 cup Bread Crumbs",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 cup Bread Crumbs",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-mexican-meat-loaf-ing-5",
+          "arabicName": "فتات خبز",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "Cooking Spray",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Cooking Spray",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-mexican-meat-loaf-ing-6",
+          "arabicName": "رذاذ زيت للطبخ",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: Mexican Meat Loaf\ntags: ['beef', 'baking', 'mexican', 'american']\ndate: 2022-09-10\nauthor: joel-maxuel",
+      "sourceRawText": "---\ntitle: Mexican Meat Loaf\ntags: ['beef', 'baking', 'mexican', 'american']\ndate: 2022-09-10\nauthor: joel-maxuel\n---\n\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 60 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 1 lb Lean Ground Beef\n- 1 cup Black Beans (canned), rinsed and drained\n- 1 cup Salsa, divided\n- 1/2 cup Corn (frozen)\n- 1/2 cup Bread Crumbs\n- Cooking Spray\n\n## Directions\n\n1. In bowl, place all ingredients except spray and using 3/4 cup of the salsa - mix well.\n2. Spray a loaf pan (approx. 5\"x9\"), and add above mix.\n3. Bake for 50 to 60 minutes - sit 15 minutes.\n4. Top with last 1/4 cup of salsa.\n",
+      "snapshotSHA256": "63a69de8ea151e03cb47d5647fb9e6800f8cebd9dd3b24e6981cb7d67dfbb991",
+      "recipeId": "bc650-mexican-meat-loaf",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Mexican Meat Loaf",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "joel-maxuel",
+      "sourcePath": "content/mexican-meat-loaf.md",
+      "sourceIngredientLines": [
+        "1 lb Lean Ground Beef",
+        "1 cup Black Beans (canned), rinsed and drained",
+        "1 cup Salsa, divided",
+        "1/2 cup Corn (frozen)",
+        "1/2 cup Bread Crumbs",
+        "Cooking Spray"
+      ],
+      "sourceTags": [
+        "beef",
+        "baking",
+        "mexican",
+        "american"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/mexican-meat-loaf.md",
+      "catalogKnownUnknown": {
+        "totalTime": 70,
+        "servings": 4,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 60,
+        "prepTime": 10,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "In bowl, place all ingredients except spray and using 3/4 cup of the salsa - mix well.",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "Spray a loaf pan (approx. 5\"x9\"), and add above mix.",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "Bake for 50 to 60 minutes - sit 15 minutes.",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "Top with last 1/4 cup of salsa.",
+          "sourceLineNumbers": [
+            27
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "828dae84b944bfc57b78834e5742cc23bd5396915d7f2f03b93a0e97780f0d12"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "Chorizo Sausage(s)؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Chorizo Sausage(s)",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-chorizo-chickpea-soup-ing-1",
+          "arabicName": "نقانق كوريزو",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "2 Garlic cloves",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 Garlic cloves",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-chorizo-chickpea-soup-ing-2",
+          "arabicName": "ثوم",
+          "acceptedUnit": "cloves"
+        },
+        {
+          "candidateDisplay": "Ginger؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Ginger",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-chorizo-chickpea-soup-ing-3",
+          "arabicName": "زنجبيل",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Paprika, 2 Tsp",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Paprika, 2 Tsp",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-chorizo-chickpea-soup-ing-4",
+          "arabicName": "بابريكا",
+          "acceptedUnit": "Tsp"
+        },
+        {
+          "candidateDisplay": "Cumin, Parsley؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Cumin, Parsley",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-chorizo-chickpea-soup-ing-5",
+          "arabicName": "كمون وبقدونس",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Juice from whole Lemon",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Juice from whole Lemon",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-chorizo-chickpea-soup-ing-6",
+          "arabicName": "عصير ليمونة كاملة",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "Chickpeas, 400g ( drained )",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Chickpeas, 400g ( drained )",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 400,
+          "scales": true,
+          "ingredientId": "bc650-chorizo-chickpea-soup-ing-7",
+          "arabicName": "حمص مصفى",
+          "acceptedUnit": "g"
+        },
+        {
+          "candidateDisplay": "Butter and sunflower oil, for frying",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Butter and sunflower oil, for frying",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-chorizo-chickpea-soup-ing-8",
+          "arabicName": "زبدة وزيت دوار الشمس للقلي",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Chorizo & Chickpea Soup\"\ndate: 2021-05-08\ntags: ['pork', 'soup', 'spanish', 'quick']\nauthor: siggines",
+      "sourceRawText": "---\ntitle: \"Chorizo & Chickpea Soup\"\ndate: 2021-05-08\ntags: ['pork', 'soup', 'spanish', 'quick']\nauthor: siggines\n---\n\nRecommend serving with corn bread.\n\n- 🍳 Cook time: 10-15 min\n\n## Ingredients\n\n- Chorizo Sausage(s)\n- 2 Garlic cloves\n- Ginger\n- Paprika, 2 Tsp\n- Cumin, Parsley\n- Juice from whole Lemon\n- Chickpeas, 400g ( drained )\n- Butter and sunflower oil, for frying\n\n## Directions\n\n1. Fry the sliced Chorizo in butter, along-with diced Ginger and Garlic. Add oil after a couple mins.\n2. Pour in Lemon-juice, Chickpeas, and Cumin & Paprika. Then 100ml of water.\n3. Allow to boil for 5 or so min. Add Parsley and then salt to taste.\n",
+      "snapshotSHA256": "28ad592a7e43c532dc2f64c456f3b71bda111a4b53bb52fdffbd7d9f68ce0ecd",
+      "recipeId": "bc650-chorizo-chickpea-soup",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Chorizo & Chickpea Soup",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "siggines",
+      "sourcePath": "content/chorizo-and-chickpea-soup.md",
+      "sourceIngredientLines": [
+        "Chorizo Sausage(s)",
+        "2 Garlic cloves",
+        "Ginger",
+        "Paprika, 2 Tsp",
+        "Cumin, Parsley",
+        "Juice from whole Lemon",
+        "Chickpeas, 400g ( drained )",
+        "Butter and sunflower oil, for frying"
+      ],
+      "sourceTags": [
+        "pork",
+        "soup",
+        "spanish",
+        "quick"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chorizo-and-chickpea-soup.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": null,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": null,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Fry the sliced Chorizo in butter, along-with diced Ginger and Garlic. Add oil after a couple mins.",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "Pour in Lemon-juice, Chickpeas, and Cumin & Paprika. Then 100ml of water.",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "Allow to boil for 5 or so min. Add Parsley and then salt to taste.",
+          "sourceLineNumbers": [
+            27
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "41bccdd5c3add3e0f5dc261c3d4462f8b06673cf4f32cfebe87d0a9f727f0ac1"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "5 eggs",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "5 eggs",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 5,
+          "scales": true,
+          "ingredientId": "bc650-castagnole-ing-1",
+          "arabicName": "بيض",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "5 tablespoons sugar",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "5 tablespoons sugar",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 5,
+          "scales": true,
+          "ingredientId": "bc650-castagnole-ing-2",
+          "arabicName": "سكر",
+          "acceptedUnit": "tablespoons"
+        },
+        {
+          "candidateDisplay": "1 glass milk",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 glass milk",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-castagnole-ing-3",
+          "arabicName": "حليب",
+          "acceptedUnit": "glass"
+        },
+        {
+          "candidateDisplay": "3 tablespoons olive oil",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "3 tablespoons olive oil",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 3,
+          "scales": true,
+          "ingredientId": "bc650-castagnole-ing-4",
+          "arabicName": "زيت زيتون",
+          "acceptedUnit": "tablespoons"
+        },
+        {
+          "candidateDisplay": "flour؛ بلا كمية",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "flour",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-castagnole-ing-5",
+          "arabicName": "دقيق",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "instant yeast؛ بلا كمية",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "instant yeast",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-castagnole-ing-6",
+          "arabicName": "خميرة فورية",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "oil or lard",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "oil or lard",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-castagnole-ing-7",
+          "arabicName": "زيت أو شحم للقلي",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "half a glass mistrà (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "half a glass mistrà (optional)",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-castagnole-ing-8",
+          "arabicName": "ميسترا (اختياري)",
+          "acceptedUnit": "glass"
+        },
+        {
+          "candidateDisplay": "honey (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "honey (optional)",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-castagnole-ing-9",
+          "arabicName": "عسل (اختياري)",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: Castagnole\ntags: ['fry', 'italian', 'sweet', 'traditional']\ndate: 2026-02-14\nauthor: \"pestanzul\"",
+      "sourceRawText": "---\ntitle: Castagnole\ntags: ['fry', 'italian', 'sweet', 'traditional']\ndate: 2026-02-14\nauthor: \"pestanzul\"\n---\n\n![Castagnole](/pix/castagnole.webp)\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 5 min\n- 🍽️ Servings: 15\n\n## Ingredients\n\n- 5 eggs\n- 5 tablespoons sugar\n- 1 glass milk\n- 3 tablespoons olive oil\n- flour\n- instant yeast\n- oil or lard\n- half a glass mistrà (optional)\n- honey (optional)\n\n## Directions\n\n1. Mix eggs, sugar, milk, flour, yeast and mistrà and knead them in a soft dough.\n1. Roll out to about 1.5 cm thick.\n1. Cut it to squares about 5 cm long.\n1. Fry them for about 5 minutes.\n1. Dry them and sweeten with sugar or honey.\n",
+      "snapshotSHA256": "8de7db201a259dda73d4a34171f86962faae71090d90dbba94ba9fd9a780380c",
+      "recipeId": "bc650-castagnole",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Castagnole",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "\"pestanzul\"",
+      "sourcePath": "content/castagnole.md",
+      "sourceIngredientLines": [
+        "5 eggs",
+        "5 tablespoons sugar",
+        "1 glass milk",
+        "3 tablespoons olive oil",
+        "flour",
+        "instant yeast",
+        "oil or lard",
+        "half a glass mistrà (optional)",
+        "honey (optional)"
+      ],
+      "sourceTags": [
+        "fry",
+        "italian",
+        "sweet",
+        "traditional"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/castagnole.md",
+      "catalogKnownUnknown": {
+        "totalTime": 15,
+        "servings": 15,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 5,
+        "prepTime": 10,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Mix eggs, sugar, milk, flour, yeast and mistrà and knead them in a soft dough.",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "Roll out to about 1.5 cm thick.",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "Cut it to squares about 5 cm long.",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "Fry them for about 5 minutes.",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "Dry them and sweeten with sugar or honey.",
+          "sourceLineNumbers": [
+            32
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "c783688c345113d3c6407bcc26ea430fee09db92151832794392c5b43a20acaf"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "1 1/4 lbs (600 grams) tomatoes",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 1/4 lbs (600 grams) tomatoes",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 1.25,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-1",
+          "arabicName": "طماطم",
+          "acceptedUnit": "lb"
+        },
+        {
+          "candidateDisplay": "1 14.5 oz (400 grams) canned tomatoes",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 14.5 oz (400 grams) canned tomatoes",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-2",
+          "arabicName": "طماطم معلبة",
+          "acceptedUnit": "can (14.5 oz)"
+        },
+        {
+          "candidateDisplay": "1 green onion",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 green onion",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-3",
+          "arabicName": "بصل أخضر",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 red onion",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 red onion",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-4",
+          "arabicName": "بصلة حمراء",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 jalapeño pepper",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 jalapeño pepper",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-5",
+          "arabicName": "فلفل هالابينو",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 handfull fresh cilantro",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 handfull fresh cilantro",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-mexican-salsa-ing-6",
+          "arabicName": "كزبرة طازجة",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1 clove garlic",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 clove garlic",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-7",
+          "arabicName": "ثوم",
+          "acceptedUnit": "clove"
+        },
+        {
+          "candidateDisplay": "1/2 lime, juice squeezed (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 lime, juice squeezed (optional)",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-8",
+          "arabicName": "عصير نصف لايم (اختياري)",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 chili pepper (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 chili pepper (optional)",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-9",
+          "arabicName": "فلفل حار (اختياري)",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1/4 tsp ground cumin (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/4 tsp ground cumin (optional)",
+          "sourceIngredientIndex": 9,
+          "acceptedAmount": 0.25,
+          "scales": true,
+          "ingredientId": "bc650-mexican-salsa-ing-10",
+          "arabicName": "كمون مطحون (اختياري)",
+          "acceptedUnit": "tsp"
+        }
+      ],
+      "sourceFrontMatter": "title: \"Salsa\"\ntags: ['quick', 'basic', 'mexican', 'tomato']\ndate: 2022-04-16\nauthor: \"Lars Henrik Bolstad\"",
+      "sourceRawText": "---\ntitle: \"Salsa\"\ntags: ['quick', 'basic', 'mexican', 'tomato']\ndate: 2022-04-16\nauthor: \"Lars Henrik Bolstad\"\n---\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 0 min\n- 🍽️ Servings: 14\n\n## Ingredients\n\n- 1 1/4 lbs (600 grams) tomatoes\n- 1 14.5 oz (400 grams) canned tomatoes\n- 1 green onion\n- 1 red onion\n- 1 jalapeño pepper\n- 1 handfull fresh cilantro\n- 1 clove garlic\n- 1/2 lime, juice squeezed (optional)\n- 1 chili pepper (optional)\n- 1/4 tsp ground cumin (optional)\n\n## Directions\n\n1. Add all ingredients to a food processor and burst shortly for desired degree of chunkyness.\n2. Refrigerate until consumption. (max 1 week)\n",
+      "snapshotSHA256": "43c4745202ce5fd6f75f1ad6d9d48ed3c863c84bf1e68171d4c5609da41785e8",
+      "recipeId": "bc650-mexican-salsa",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Salsa",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "\"Lars Henrik Bolstad\"",
+      "sourcePath": "content/salsa.md",
+      "sourceIngredientLines": [
+        "1 1/4 lbs (600 grams) tomatoes",
+        "1 14.5 oz (400 grams) canned tomatoes",
+        "1 green onion",
+        "1 red onion",
+        "1 jalapeño pepper",
+        "1 handfull fresh cilantro",
+        "1 clove garlic",
+        "1/2 lime, juice squeezed (optional)",
+        "1 chili pepper (optional)",
+        "1/4 tsp ground cumin (optional)"
+      ],
+      "sourceTags": [
+        "quick",
+        "basic",
+        "mexican",
+        "tomato"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/salsa.md",
+      "catalogKnownUnknown": {
+        "totalTime": 5,
+        "servings": 14,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 0,
+        "prepTime": 5,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Add all ingredients to a food processor and burst shortly for desired degree of chunkyness.",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "Refrigerate until consumption. (max 1 week)",
+          "sourceLineNumbers": [
+            28
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "b4db14ab743fe6b06008dc6bc2ecb050e732966a28e93feda6fa5b314e9cbd24"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "1 White onion",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 White onion",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-zarangollo-ing-1",
+          "arabicName": "بصلة بيضاء",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 Eggplant",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 Eggplant",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-zarangollo-ing-2",
+          "arabicName": "باذنجان",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "Olive oil؛ كمية تكفي لتغطية الخضار بالكاد في المقلاة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Olive oil",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-zarangollo-ing-3",
+          "arabicName": "زيت زيتون",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Egg (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Egg (optional)",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-zarangollo-ing-4",
+          "arabicName": "بيضة (اختياري)",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Zarangollo\"\ndate: 2021-03-22\ntags: ['spanish', 'mediterranean', 'side', 'quick']\nauthor: enrique95",
+      "sourceRawText": "---\ntitle: \"Zarangollo\"\ndate: 2021-03-22\ntags: ['spanish', 'mediterranean', 'side', 'quick']\nauthor: enrique95\n---\n\nSimple veggie starter/side dish from Murcia (Southeastern Spain)\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 10-15 min\n- 🍽️ Servings: 2\n\n## Ingredients\n\n- 1 White onion\n- 1 Eggplant\n- Olive oil\n- Egg (optional)\n\n## Directions\n\n1. Cut onion in julienne (a third or half of an onion ring)\n2. Cut the eggplant in slices or chunks that can fit in a teaspoon\n3. Add oil to a pan (not a shallow one, wide and a bit deep is ideal if you have one) until it barely covers the vegetables\n4. Cook and stir in medium heat until they are tender, caramelized and translucent\n5. Kick up the heat to give them a crispy touch, but not for long\n6. (Optional) Turn off the heat and crack open an egg on top\n7. (Optional) Let the residual heat cook the egg. If it breaks just scramble it, the recipe doesn't call for anything fancy\n8. You can serve the dish with that oil (provided it is not burnt) or keep it for cooking other stuff\n",
+      "snapshotSHA256": "988d345e5739443f6e67f2a820166d8b6171b8487215edda6c705e88a9aea522",
+      "recipeId": "bc650-zarangollo",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Zarangollo",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "enrique95",
+      "sourcePath": "content/zarangollo.md",
+      "sourceIngredientLines": [
+        "1 White onion",
+        "1 Eggplant",
+        "Olive oil",
+        "Egg (optional)"
+      ],
+      "sourceTags": [
+        "spanish",
+        "mediterranean",
+        "side",
+        "quick"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/zarangollo.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": 2,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": 5,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Cut onion in julienne (a third or half of an onion ring)",
+          "sourceLineNumbers": [
+            23
+          ]
+        },
+        {
+          "text": "Cut the eggplant in slices or chunks that can fit in a teaspoon",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "Add oil to a pan (not a shallow one, wide and a bit deep is ideal if you have one) until it barely covers the vegetables",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "Cook and stir in medium heat until they are tender, caramelized and translucent",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "Kick up the heat to give them a crispy touch, but not for long",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "(Optional) Turn off the heat and crack open an egg on top",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "(Optional) Let the residual heat cook the egg. If it breaks just scramble it, the recipe doesn't call for anything fancy",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "You can serve the dish with that oil (provided it is not burnt) or keep it for cooking other stuff",
+          "sourceLineNumbers": [
+            30
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "57abd978af80cb6ad64b70b7ab7abc5363203a1494aaf34a494f4d268b0a2088"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "4 green peppers",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 green peppers",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-menemen-ing-1",
+          "arabicName": "فلفل أخضر",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "4 tomatoes",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 tomatoes",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-menemen-ing-2",
+          "arabicName": "طماطم",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "4 eggs",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 eggs",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-menemen-ing-3",
+          "arabicName": "بيض",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "2 onions",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 onions",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-menemen-ing-4",
+          "arabicName": "بصل",
+          "acceptedUnit": "حبتان"
+        },
+        {
+          "candidateDisplay": "butter؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "butter",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-menemen-ing-5",
+          "arabicName": "زبدة",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1 tsp of thyme (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 tsp of thyme (optional)",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-menemen-ing-6",
+          "arabicName": "زعتر (اختياري)",
+          "acceptedUnit": "tsp"
+        },
+        {
+          "candidateDisplay": "1 tsp of paprika (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 tsp of paprika (optional)",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-menemen-ing-7",
+          "arabicName": "بابريكا (اختياري)",
+          "acceptedUnit": "tsp"
+        },
+        {
+          "candidateDisplay": "salt؛ مذكور في الطريقة فقط، بلا مقدار",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-menemen-ing-8",
+          "arabicName": "ملح",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Menemen\"\ndate: 2022-12-04\ntags: ['turkish', 'breakfast']\nauthor: furkan",
+      "sourceRawText": "---\ntitle: \"Menemen\"\ndate: 2022-12-04\ntags: ['turkish', 'breakfast']\nauthor: furkan\n---\n\n![Menemen](/pix/menemen.webp)\n- Prep time: 10 min\n- Cook time: 15 min\n- Servings: 3\n\n## Ingredients\n\n- 4 green peppers\n- 4 tomatoes\n- 4 eggs\n- 2 onions\n- butter\n- 1 tsp of thyme (optional)\n- 1 tsp of paprika (optional)\n\n## Directions\n\n1. Boil some water and put the tomatoes in it and leave them for a couple of minutes\n2. Chop the onions and peppers into small pieces\n3. Take the tomatoes out of the water and peel them off\n4. Chop the tomatoes into 4 or 6 pieces\n5. Put the butter on the pan and wait till it's melted\n6. Put onions and peppers on the pan\n7. You can add some salt (it will make them a little crispy) and stir till the onions are starting to get brown\n8. Add tomatoes and start mashing them with a spoon\n9. When the tomatoes are all mushed-up, add the eggs and seasonings\n10. Stir some more untill everything is mixed up well\n11. Cover up the pan so eggs don't stay raw on the top\n12. It should be ready in 2 or 3 minutes.\n",
+      "snapshotSHA256": "58ae757d23d52317f03dd39ec08148016bfcfa146338dd43b6f9e2522b790c58",
+      "recipeId": "bc650-menemen",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Menemen",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "furkan",
+      "sourcePath": "content/menemen.md",
+      "sourceIngredientLines": [
+        "4 green peppers",
+        "4 tomatoes",
+        "4 eggs",
+        "2 onions",
+        "butter",
+        "1 tsp of thyme (optional)",
+        "1 tsp of paprika (optional)"
+      ],
+      "sourceTags": [
+        "turkish",
+        "breakfast"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/menemen.md",
+      "catalogKnownUnknown": {
+        "totalTime": 25,
+        "servings": 3,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 15,
+        "prepTime": 10,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Boil some water and put the tomatoes in it and leave them for a couple of minutes",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "Chop the onions and peppers into small pieces",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "Take the tomatoes out of the water and peel them off",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "Chop the tomatoes into 4 or 6 pieces",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "Put the butter on the pan and wait till it's melted",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "Put onions and peppers on the pan",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "You can add some salt (it will make them a little crispy) and stir till the onions are starting to get brown",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "Add tomatoes and start mashing them with a spoon",
+          "sourceLineNumbers": [
+            32
+          ]
+        },
+        {
+          "text": "When the tomatoes are all mushed-up, add the eggs and seasonings",
+          "sourceLineNumbers": [
+            33
+          ]
+        },
+        {
+          "text": "Stir some more untill everything is mixed up well",
+          "sourceLineNumbers": [
+            34
+          ]
+        },
+        {
+          "text": "Cover up the pan so eggs don't stay raw on the top",
+          "sourceLineNumbers": [
+            35
+          ]
+        },
+        {
+          "text": "It should be ready in 2 or 3 minutes.",
+          "sourceLineNumbers": [
+            36
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "828925b8a7fbfe5d6288248867262069233947adb96d0d5b62d63ceb8fd3589e"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "1 cup dried red lentils, rinsed",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup dried red lentils, rinsed",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-1",
+          "arabicName": "عدس أحمر جاف مغسول",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "1 tbsp olive oil",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 tbsp olive oil",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-2",
+          "arabicName": "زيت زيتون",
+          "acceptedUnit": "tbsp"
+        },
+        {
+          "candidateDisplay": "1 onion, diced",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 onion, diced",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-3",
+          "arabicName": "بصلة مكعبات",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "2 cloves garlic, minced",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 cloves garlic, minced",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-4",
+          "arabicName": "ثوم مفروم",
+          "acceptedUnit": "cloves"
+        },
+        {
+          "candidateDisplay": "1 tbsp curry powder",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 tbsp curry powder",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-5",
+          "arabicName": "مسحوق كاري",
+          "acceptedUnit": "tbsp"
+        },
+        {
+          "candidateDisplay": "1 can (14oz) diced tomatoes",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 can (14oz) diced tomatoes",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-6",
+          "arabicName": "طماطم مكعبات معلبة",
+          "acceptedUnit": "علبة 14oz"
+        },
+        {
+          "candidateDisplay": "1 can pineapple chunks, drained",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 can pineapple chunks, drained",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-7",
+          "arabicName": "قطع أناناس مصفاة معلبة",
+          "acceptedUnit": "علبة"
+        },
+        {
+          "candidateDisplay": "1 can coconut milk",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 can coconut milk",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-8",
+          "arabicName": "حليب جوز الهند",
+          "acceptedUnit": "علبة"
+        },
+        {
+          "candidateDisplay": "2 cups vegetable broth",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 cups vegetable broth",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-9",
+          "arabicName": "مرق خضار",
+          "acceptedUnit": "cups"
+        },
+        {
+          "candidateDisplay": "cooked rice, for serving",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "cooked rice, for serving",
+          "sourceIngredientIndex": 9,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-10",
+          "arabicName": "أرز مطبوخ للتقديم",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "salt and pepper؛ مذكوران في الطريقة بلا مقدار",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-pineapple-lentil-curry-ing-11",
+          "arabicName": "ملح وفلفل",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: Pineapple Lentil Curry\ntags: ['indian', 'lentil', 'curry', 'coconut', 'spicy', 'fasting']\ndate: 2025-05-17\nauthor: haywalk",
+      "sourceRawText": "---\ntitle: Pineapple Lentil Curry\ntags: ['indian', 'lentil', 'curry', 'coconut', 'spicy', 'fasting']\ndate: 2025-05-17\nauthor: haywalk\n---\n\n![Pineapple Lentil Curry](/pix/pineapple-lentil-curry.webp)\n\nEasy, cheap curry that serves *at least* 6. You will have leftovers!\n\n- ⏲️ Prep time: ~10 min\n- 🍳 Cook time: 25-30 min\n- 🍽️ Servings: 6 (at least)\n\n## Ingredients\n\n- 1 cup dried red lentils, rinsed\n- 1 tbsp olive oil\n- 1 onion, diced\n- 2 cloves garlic, minced\n- 1 tbsp curry powder\n- 1 can (14oz) diced tomatoes\n- 1 can pineapple chunks, drained\n- 1 can coconut milk\n- 2 cups vegetable broth\n- cooked rice, for serving\n\n## Directions\n\n1. Heat oil in a large pot over medium heat.\n2. Add onion and garlic. Sauté about 5 minutes, until soft.\n3. Stir in curry powder and cook about 1 minute, until fragrant.\n4. Add all other ingredients. Stir well.\n5. Bring to a boil and then reduce to a simmer. Cover and cook for 25-30 minutes, stirring occasionally, until lentils are soft.\n6. Season with salt and pepper.\n7. Serve over rice.\n\n",
+      "snapshotSHA256": "e89a50777271ffedc9dfe8129ecc63cb1cbd1a7fba2d38a16818fd1dc103e18e",
+      "recipeId": "bc650-pineapple-lentil-curry",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Pineapple Lentil Curry",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "haywalk",
+      "sourcePath": "content/pineapple-lentil-curry.md",
+      "sourceIngredientLines": [
+        "1 cup dried red lentils, rinsed",
+        "1 tbsp olive oil",
+        "1 onion, diced",
+        "2 cloves garlic, minced",
+        "1 tbsp curry powder",
+        "1 can (14oz) diced tomatoes",
+        "1 can pineapple chunks, drained",
+        "1 can coconut milk",
+        "2 cups vegetable broth",
+        "cooked rice, for serving"
+      ],
+      "sourceTags": [
+        "indian",
+        "lentil",
+        "curry",
+        "coconut",
+        "spicy",
+        "fasting"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pineapple-lentil-curry.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": null,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": null,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Heat oil in a large pot over medium heat.",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "Add onion and garlic. Sauté about 5 minutes, until soft.",
+          "sourceLineNumbers": [
+            32
+          ]
+        },
+        {
+          "text": "Stir in curry powder and cook about 1 minute, until fragrant.",
+          "sourceLineNumbers": [
+            33
+          ]
+        },
+        {
+          "text": "Add all other ingredients. Stir well.",
+          "sourceLineNumbers": [
+            34
+          ]
+        },
+        {
+          "text": "Bring to a boil and then reduce to a simmer. Cover and cook for 25-30 minutes, stirring occasionally, until lentils are soft.",
+          "sourceLineNumbers": [
+            35
+          ]
+        },
+        {
+          "text": "Season with salt and pepper.",
+          "sourceLineNumbers": [
+            36
+          ]
+        },
+        {
+          "text": "Serve over rice.",
+          "sourceLineNumbers": [
+            37
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "e3566e4922a05839959c000f7c8a6fc81728186e3cba2c2c973afcdd283bf8b1"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "1 carrot, chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 carrot, chopped",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-1",
+          "arabicName": "جزر مفروم",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 green bell pepper, chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 green bell pepper, chopped",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-2",
+          "arabicName": "فلفل رومي أخضر مفروم",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "4 garlic cloves, minced",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 garlic cloves, minced",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-3",
+          "arabicName": "ثوم مفروم",
+          "acceptedUnit": "cloves"
+        },
+        {
+          "candidateDisplay": "1 large onion, chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 large onion, chopped",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-4",
+          "arabicName": "بصلة كبيرة مفرومة",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 cup dry brown lentils, soaked overnight and drained",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup dry brown lentils, soaked overnight and drained",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-5",
+          "arabicName": "عدس بني جاف منقوع ليلة ومصفى",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "2 plum tomatoes, chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 plum tomatoes, chopped",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-6",
+          "arabicName": "طماطم برقوقية مفرومة",
+          "acceptedUnit": "حبتان"
+        },
+        {
+          "candidateDisplay": "2 cups water, or as needed",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 cups water, or as needed",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-7",
+          "arabicName": "ماء",
+          "acceptedUnit": "cups"
+        },
+        {
+          "candidateDisplay": "1 bay leaf",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 bay leaf",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-8",
+          "arabicName": "ورقة غار",
+          "acceptedUnit": "ورقة"
+        },
+        {
+          "candidateDisplay": "1 tbsp extra-virgin olive oil",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 tbsp extra-virgin olive oil",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-9",
+          "arabicName": "زيت زيتون بكر ممتاز",
+          "acceptedUnit": "tbsp"
+        },
+        {
+          "candidateDisplay": "1/2 tsp of paprika",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 tsp of paprika",
+          "sourceIngredientIndex": 9,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-10",
+          "arabicName": "بابريكا",
+          "acceptedUnit": "tsp"
+        },
+        {
+          "candidateDisplay": "1/4 spicy chorizo (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/4 spicy chorizo (optional)",
+          "sourceIngredientIndex": 10,
+          "acceptedAmount": 0.25,
+          "scales": true,
+          "ingredientId": "bc650-spanish-lentil-soup-ing-11",
+          "arabicName": "كوريزو حار (اختياري)",
+          "acceptedUnit": "حبة"
+        }
+      ],
+      "sourceFrontMatter": "title: \"Sopa de Lentejas\"\ndate: 2021-03-21\ntags: ['spanish']\nauthor: nacchofer31",
+      "sourceRawText": "---\ntitle: \"Sopa de Lentejas\"\ndate: 2021-03-21\ntags: ['spanish']\nauthor: nacchofer31\n---\n\n![Lentejas](/pix/lentejas.webp)\n\nTraditional-spanish dish. Typical spanish!\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 35 min\n- 🍽️ Servings: 4-6\n\n## Ingredients\n\n- 1 carrot, chopped\n- 1 green bell pepper, chopped\n- 4 garlic cloves, minced\n- 1 large onion, chopped\n- 1 cup dry brown lentils, soaked overnight and drained\n- 2 plum tomatoes, chopped\n- 2 cups water, or as needed\n- 1 bay leaf\n- 1 tbsp extra-virgin olive oil\n- 1/2 tsp of paprika\n- 1/4 spicy chorizo (optional)\n\n## Directions\n\n1. Heat olive oil in a large pot over medium heat.\n2. Add the onion, carrot, and bell pepper; cook and stir until vegetables begin to soften, about 5 minutes.\n3. Stir in the garlic, tomatoes, chorizo and bay leaf; cook about 4 minutes.\n4. Add lentils and water (water should be about an inch deeper than the level of the lentils).\n5. Bring to a boil over high heat. Reduce heat to low; simmer, uncovered, until lentils are just cooked, 15 to 20 minutes.\n",
+      "snapshotSHA256": "fc7e083873bf98ad43251a1210c7601b145a650229c17cebf3b81828264f3d9a",
+      "recipeId": "bc650-spanish-lentil-soup",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Sopa de Lentejas",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "nacchofer31",
+      "sourcePath": "content/lentejas.md",
+      "sourceIngredientLines": [
+        "1 carrot, chopped",
+        "1 green bell pepper, chopped",
+        "4 garlic cloves, minced",
+        "1 large onion, chopped",
+        "1 cup dry brown lentils, soaked overnight and drained",
+        "2 plum tomatoes, chopped",
+        "2 cups water, or as needed",
+        "1 bay leaf",
+        "1 tbsp extra-virgin olive oil",
+        "1/2 tsp of paprika",
+        "1/4 spicy chorizo (optional)"
+      ],
+      "sourceTags": [
+        "spanish"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/lentejas.md",
+      "catalogKnownUnknown": {
+        "totalTime": 40,
+        "servings": null,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 35,
+        "prepTime": 5,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Heat olive oil in a large pot over medium heat.",
+          "sourceLineNumbers": [
+            32
+          ]
+        },
+        {
+          "text": "Add the onion, carrot, and bell pepper; cook and stir until vegetables begin to soften, about 5 minutes.",
+          "sourceLineNumbers": [
+            33
+          ]
+        },
+        {
+          "text": "Stir in the garlic, tomatoes, chorizo and bay leaf; cook about 4 minutes.",
+          "sourceLineNumbers": [
+            34
+          ]
+        },
+        {
+          "text": "Add lentils and water (water should be about an inch deeper than the level of the lentils).",
+          "sourceLineNumbers": [
+            35
+          ]
+        },
+        {
+          "text": "Bring to a boil over high heat. Reduce heat to low; simmer, uncovered, until lentils are just cooked, 15 to 20 minutes.",
+          "sourceLineNumbers": [
+            36
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "f454abb5da7a8967cb3d10644fe5f7f5d0ee66102d4ccfa341615cc3a1d41fc7"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "3 Tbsp Olive Oil",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "3 Tbsp Olive Oil",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 3,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-1",
+          "arabicName": "زيت زيتون",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "1 medium Yellow Onion",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 medium Yellow Onion",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-2",
+          "arabicName": "بصلة صفراء متوسطة",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 Tbsp Fresh Ginger, grated",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 Tbsp Fresh Ginger, grated",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-3",
+          "arabicName": "زنجبيل طازج مبشور",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "4 Garlic Cloves, minced",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 Garlic Cloves, minced",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-4",
+          "arabicName": "ثوم مفروم",
+          "acceptedUnit": "cloves"
+        },
+        {
+          "candidateDisplay": "2 Tbsp Yellow Curry (mild madras)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 Tbsp Yellow Curry (mild madras)",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-5",
+          "arabicName": "كاري أصفر (مادراس خفيف)",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "1 tsp Sea Salt",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 tsp Sea Salt",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-6",
+          "arabicName": "ملح بحري",
+          "acceptedUnit": "tsp"
+        },
+        {
+          "candidateDisplay": "1 cup dried Red Lentils",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup dried Red Lentils",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-7",
+          "arabicName": "عدس أحمر جاف",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "4 - 5 cups Water",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 - 5 cups Water",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-red-lentil-dahl-ing-8",
+          "arabicName": "ماء",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "5 Plum Tomatoes, chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "5 Plum Tomatoes, chopped",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": 5,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-9",
+          "arabicName": "طماطم برقوقية مفرومة",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "juice of 1 Lemon",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "juice of 1 Lemon",
+          "sourceIngredientIndex": 9,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-10",
+          "arabicName": "عصير ليمونة",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "1 cup Fresh Cilantro, chopped and lightly packed",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup Fresh Cilantro, chopped and lightly packed",
+          "sourceIngredientIndex": 10,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-11",
+          "arabicName": "كزبرة طازجة مفرومة ومعبأة بخفة",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "Dried Red Chili's or cayenne pepper, to taste",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Dried Red Chili's or cayenne pepper, to taste",
+          "sourceIngredientIndex": 11,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-red-lentil-dahl-ing-12",
+          "arabicName": "فلفل أحمر مجفف أو فلفل كايين",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1/4 tsp Ground Cinnamon",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/4 tsp Ground Cinnamon",
+          "sourceIngredientIndex": 12,
+          "acceptedAmount": 0.25,
+          "scales": true,
+          "ingredientId": "bc650-red-lentil-dahl-ing-13",
+          "arabicName": "قرفة مطحونة",
+          "acceptedUnit": "tsp"
+        }
+      ],
+      "sourceFrontMatter": "title: Red Lentil Dahl\ntags: ['indian', 'curry', 'tomato', 'vegetables']\ndate: 2022-08-04\nauthor: joel-maxuel",
+      "sourceRawText": "---\ntitle: Red Lentil Dahl\ntags: ['indian', 'curry', 'tomato', 'vegetables']\ndate: 2022-08-04\nauthor: joel-maxuel\n---\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 50 min\n- 🍽️ Servings: 6\n\n## Ingredients\n\n- 3 Tbsp Olive Oil\n- 1 medium Yellow Onion\n- 1 Tbsp Fresh Ginger, grated\n- 4 Garlic Cloves, minced\n- 2 Tbsp Yellow Curry (mild madras)\n- 1 tsp Sea Salt\n- 1 cup dried Red Lentils\n- 4 - 5 cups Water\n- 5 Plum Tomatoes, chopped\n- juice of 1 Lemon\n- 1 cup Fresh Cilantro, chopped and lightly packed\n- Dried Red Chili's or cayenne pepper, to taste\n- 1/4 tsp Ground Cinnamon\n\n## Directions\n\n1. Heat oil in a soup pot and saute onions for 5 minutes.\n2. Add garlic and ginger and saute 5 more minutes.\n3. Add spices and salt, saute 5 minutes more.\n4. Add 4 cups of water and stir.  Add tomatoes and lentils. Bring to a boil and then lower the heat a bit and simmer for 20 minutes.\n5. Add the lemon juice and cilantro and more water if it's too thick.  Simmer 10 more minutes, or until lentils are completely tender. This may take a while.\n",
+      "snapshotSHA256": "1e413434e9f35e70c2a0071464fb1bce236e4eb381636e6d5060c16c9a99a1d5",
+      "recipeId": "bc650-red-lentil-dahl",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Red Lentil Dahl",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "joel-maxuel",
+      "sourcePath": "content/red-lentil-dahl.md",
+      "sourceIngredientLines": [
+        "3 Tbsp Olive Oil",
+        "1 medium Yellow Onion",
+        "1 Tbsp Fresh Ginger, grated",
+        "4 Garlic Cloves, minced",
+        "2 Tbsp Yellow Curry (mild madras)",
+        "1 tsp Sea Salt",
+        "1 cup dried Red Lentils",
+        "4 - 5 cups Water",
+        "5 Plum Tomatoes, chopped",
+        "juice of 1 Lemon",
+        "1 cup Fresh Cilantro, chopped and lightly packed",
+        "Dried Red Chili's or cayenne pepper, to taste",
+        "1/4 tsp Ground Cinnamon"
+      ],
+      "sourceTags": [
+        "indian",
+        "curry",
+        "tomato",
+        "vegetables"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/red-lentil-dahl.md",
+      "catalogKnownUnknown": {
+        "totalTime": 60,
+        "servings": 6,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 50,
+        "prepTime": 10,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Heat oil in a soup pot and saute onions for 5 minutes.",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "Add garlic and ginger and saute 5 more minutes.",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "Add spices and salt, saute 5 minutes more.",
+          "sourceLineNumbers": [
+            32
+          ]
+        },
+        {
+          "text": "Add 4 cups of water and stir.  Add tomatoes and lentils. Bring to a boil and then lower the heat a bit and simmer for 20 minutes.",
+          "sourceLineNumbers": [
+            33
+          ]
+        },
+        {
+          "text": "Add the lemon juice and cilantro and more water if it's too thick.  Simmer 10 more minutes, or until lentils are completely tender. This may take a while.",
+          "sourceLineNumbers": [
+            34
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "a0dd96577df60b391b5044437ca3b8681aadcd74864961a436cc3b20f08adb78"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "1 Cup uncooked long grain white rice",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 Cup uncooked long grain white rice",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-1",
+          "arabicName": "أرز أبيض طويل الحبة غير مطبوخ",
+          "acceptedUnit": "Cup"
+        },
+        {
+          "candidateDisplay": "1/2 Cup frozen peas",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 Cup frozen peas",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-2",
+          "arabicName": "بازلاء مجمدة",
+          "acceptedUnit": "Cup"
+        },
+        {
+          "candidateDisplay": "1/2 Cup frozen corn",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 Cup frozen corn",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-3",
+          "arabicName": "ذرة مجمدة",
+          "acceptedUnit": "Cup"
+        },
+        {
+          "candidateDisplay": "2 Caned adobo chilies chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 Caned adobo chilies chopped",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-4",
+          "arabicName": "فلفل أدوبو معلب مفروم",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "5 Tbsp tomato paste",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "5 Tbsp tomato paste",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 5,
+          "scales": true,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-5",
+          "arabicName": "معجون طماطم",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "1 Can of black or pinto beans",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 Can of black or pinto beans",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-6",
+          "arabicName": "فاصوليا سوداء أو بينتو معلبة",
+          "acceptedUnit": "علبة"
+        },
+        {
+          "candidateDisplay": "1/2 Cup ground meat (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 Cup ground meat (optional)",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-7",
+          "arabicName": "لحم مفروم (اختياري)",
+          "acceptedUnit": "Cup"
+        },
+        {
+          "candidateDisplay": "1/4 Onion diced (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/4 Onion diced (optional)",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": 0.25,
+          "scales": true,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-8",
+          "arabicName": "بصل مكعبات (اختياري)",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "neutral oil؛ مذكور بالطريقة فقط لتغطية قاع المقلاة",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-loaded-mexican-rice-ing-9",
+          "arabicName": "زيت محايد",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Loaded Mexican Rice\"\ndate: 2021-03-21\ntags: ['rice', 'mexican', 'american']\nauthor: mr-mip",
+      "sourceRawText": "---\ntitle: \"Loaded Mexican Rice\"\ndate: 2021-03-21\ntags: ['rice', 'mexican', 'american']\nauthor: mr-mip\n---\n\nA tex-mex style mexican rice with beans and meat. Adding the beans and meat take it from a side\ndish to good good burrito filling.\n\n## Ingredients\n\n5 serving\n\n* 1 Cup uncooked long grain white rice\n* 1/2 Cup frozen peas\n* 1/2 Cup frozen corn\n* 2 Caned adobo chilies chopped\n* 5 Tbsp tomato paste\n* 1 Can of black or pinto beans\n* 1/2 Cup ground meat (optional)\n* 1/4 Onion diced (optional)\n\n## Directions\n\n1. Cook rice per manufactures instructions.\n2. Pore enough neutral oil in a large pan to cover the bottom entirely, and turn on to medium heat.\n3. Once pan is hot add rice, brake up the rice to ensue there are no clumps.\n4. Add tomato paste and chilies to the pan, mix until rice is coated add water if needed.\n5. Strain and add the beans, corn, and peas; if you are adding meat and or onion do so now.\n6. Mix well, ensue peas and corn thaw.\n7. Serve hot as either a burrito or bowl with your choice of fillings/toppings.\n",
+      "snapshotSHA256": "8c3e7238eb2f8d561cc2a6c7cd5735e2a4e4405c9eac58a5240496f47b708b15",
+      "recipeId": "bc650-loaded-mexican-rice",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Loaded Mexican Rice",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "mr-mip",
+      "sourcePath": "content/loaded-mexican-rice.md",
+      "sourceIngredientLines": [
+        "1 Cup uncooked long grain white rice",
+        "1/2 Cup frozen peas",
+        "1/2 Cup frozen corn",
+        "2 Caned adobo chilies chopped",
+        "5 Tbsp tomato paste",
+        "1 Can of black or pinto beans",
+        "1/2 Cup ground meat (optional)",
+        "1/4 Onion diced (optional)"
+      ],
+      "sourceTags": [
+        "rice",
+        "mexican",
+        "american"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/loaded-mexican-rice.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": 5,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": null,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Cook rice per manufactures instructions.",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "Pore enough neutral oil in a large pan to cover the bottom entirely, and turn on to medium heat.",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "Once pan is hot add rice, brake up the rice to ensue there are no clumps.",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "Add tomato paste and chilies to the pan, mix until rice is coated add water if needed.",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "Strain and add the beans, corn, and peas; if you are adding meat and or onion do so now.",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "Mix well, ensue peas and corn thaw.",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "Serve hot as either a burrito or bowl with your choice of fillings/toppings.",
+          "sourceLineNumbers": [
+            32
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "144efca233a2af3576e0bbd5f409d200d041792a94148976ee37d5d1a4d8196a"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "1/2 lb Beef, cut into strips",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 lb Beef, cut into strips",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-1",
+          "arabicName": "لحم بقري شرائح",
+          "acceptedUnit": "lb"
+        },
+        {
+          "candidateDisplay": "2 Tbsp Vegetable Oil",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 Tbsp Vegetable Oil",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-2",
+          "arabicName": "زيت نباتي",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "1 Tbsp Ginger, minced",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 Tbsp Ginger, minced",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-3",
+          "arabicName": "زنجبيل مفروم",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "2 cloves Garlic, minced",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 cloves Garlic, minced",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-4",
+          "arabicName": "ثوم مفروم",
+          "acceptedUnit": "cloves"
+        },
+        {
+          "candidateDisplay": "1 cup Carrots, sliced",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup Carrots, sliced",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-5",
+          "arabicName": "جزر شرائح",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "Snow Peas",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Snow Peas",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-beef-and-broccoli-ing-6",
+          "arabicName": "بازلاء سكرية",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Bean Sprouts",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Bean Sprouts",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-beef-and-broccoli-ing-7",
+          "arabicName": "براعم فاصوليا",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1 cup Broccoli Pieces",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 cup Broccoli Pieces",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-8",
+          "arabicName": "قطع بروكلي",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "1/2 cup Beef Bouillon",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 cup Beef Bouillon",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-9",
+          "arabicName": "مرق لحم بقري",
+          "acceptedUnit": "cup"
+        },
+        {
+          "candidateDisplay": "1 Tbsp Corn starch",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 Tbsp Corn starch",
+          "sourceIngredientIndex": 9,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-10",
+          "arabicName": "نشا ذرة",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "1 Tbsp Soy Sauce",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1 Tbsp Soy Sauce",
+          "sourceIngredientIndex": 10,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-11",
+          "arabicName": "صلصة صويا",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "2 Tbsp water؛ مذكور بالطريقة فقط",
+          "mappingStatus": "method-only-amount; see complete source method",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-beef-and-broccoli-ing-12",
+          "arabicName": "ماء",
+          "acceptedUnit": "Tbsp"
+        },
+        {
+          "candidateDisplay": "salt and pepper؛ مذكوران بالطريقة فقط",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-beef-and-broccoli-ing-13",
+          "arabicName": "ملح وفلفل",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "rice؛ مذكور بالطريقة فقط",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-beef-and-broccoli-ing-14",
+          "arabicName": "أرز للتقديم",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: Beef and Broccoli\ntags: ['beef', 'asian', 'rice']\ndate: 2022-09-10\nauthor: joel-maxuel",
+      "sourceRawText": "---\ntitle: Beef and Broccoli\ntags: ['beef', 'asian', 'rice']\ndate: 2022-09-10\nauthor: joel-maxuel\n---\n\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 20 min\n- 🍽️ Servings: 3\n\n## Ingredients\n\n- 1/2 lb Beef, cut into strips\n- 2 Tbsp Vegetable Oil\n- 1 Tbsp Ginger, minced\n- 2 cloves Garlic, minced\n- 1 cup Carrots, sliced\n- Snow Peas\n- Bean Sprouts\n- 1 cup Broccoli Pieces\n- 1/2 cup Beef Bouillon\n- 1 Tbsp Corn starch\n- 1 Tbsp Soy Sauce\n\n## Directions\n\n1. Heat oil, add beef and stir-fry until meat is browned and push to sides of pan.\n2. Add broccoli and carrots. Cover and steam vegetables until they are only slightly crunchy.\n3. Remove vegetables to a bowl. Add bouillon, salt and pepper to meat.\n4. Combine corn starch, 2 Tbsp water, and soy sauce. Add to meat to thicken sauce.\n5. Add vegetables and heat. Serve over rice.\n",
+      "snapshotSHA256": "456c9d3303dbbf814d610beca0f0f4305d1a2c5aa246d4dfd066a9c54e4175ae",
+      "recipeId": "bc650-beef-and-broccoli",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Beef and Broccoli",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "joel-maxuel",
+      "sourcePath": "content/beef-and-broccoli.md",
+      "sourceIngredientLines": [
+        "1/2 lb Beef, cut into strips",
+        "2 Tbsp Vegetable Oil",
+        "1 Tbsp Ginger, minced",
+        "2 cloves Garlic, minced",
+        "1 cup Carrots, sliced",
+        "Snow Peas",
+        "Bean Sprouts",
+        "1 cup Broccoli Pieces",
+        "1/2 cup Beef Bouillon",
+        "1 Tbsp Corn starch",
+        "1 Tbsp Soy Sauce"
+      ],
+      "sourceTags": [
+        "beef",
+        "asian",
+        "rice"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/beef-and-broccoli.md",
+      "catalogKnownUnknown": {
+        "totalTime": 35,
+        "servings": 3,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 20,
+        "prepTime": 15,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Heat oil, add beef and stir-fry until meat is browned and push to sides of pan.",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "Add broccoli and carrots. Cover and steam vegetables until they are only slightly crunchy.",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "Remove vegetables to a bowl. Add bouillon, salt and pepper to meat.",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "Combine corn starch, 2 Tbsp water, and soy sauce. Add to meat to thicken sauce.",
+          "sourceLineNumbers": [
+            32
+          ]
+        },
+        {
+          "text": "Add vegetables and heat. Serve over rice.",
+          "sourceLineNumbers": [
+            33
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "3464871116906546020624e900051e230d18de51a9507826488d7d102833a16f"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "4 eggs",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 eggs",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-tiramisu-ing-1",
+          "arabicName": "بيض",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "100 g sugar",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "100 g sugar",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 100,
+          "scales": true,
+          "ingredientId": "bc650-tiramisu-ing-2",
+          "arabicName": "سكر",
+          "acceptedUnit": "g"
+        },
+        {
+          "candidateDisplay": "500 g mascarpone",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "500 g mascarpone",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 500,
+          "scales": true,
+          "ingredientId": "bc650-tiramisu-ing-3",
+          "arabicName": "جبن ماسكاربوني",
+          "acceptedUnit": "g"
+        },
+        {
+          "candidateDisplay": "300 g savoiardi biscuits",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "300 g savoiardi biscuits",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": 300,
+          "scales": true,
+          "ingredientId": "bc650-tiramisu-ing-4",
+          "arabicName": "بسكويت سافوياردي",
+          "acceptedUnit": "g"
+        },
+        {
+          "candidateDisplay": "coffee at room temperature؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "coffee at room temperature",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-tiramisu-ing-5",
+          "arabicName": "قهوة بدرجة حرارة الغرفة",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "cocoa powder؛ الكمية غير محددة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "cocoa powder",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-tiramisu-ing-6",
+          "arabicName": "مسحوق كاكاو",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: Tiramisù\ntags: ['dessert', 'italian', 'sweet']\ndate: 2025-09-25\nauthor: \"pestanzul\"",
+      "sourceRawText": "---\ntitle: Tiramisù\ntags: ['dessert', 'italian', 'sweet']\ndate: 2025-09-25\nauthor: \"pestanzul\"\n---\n\n![Tiramisù](/pix/tiramisu.webp)\n\n- ⏲️ Prep time: 20 min\n- 🍽️ Servings: 8\n\n## Ingredients\n\n- 4 eggs\n- 100 g sugar\n- 500 g mascarpone\n- 300 g savoiardi biscuits\n- coffee at room temperature\n- cocoa powder\n\n## Directions\n\n1. Separate albumen and yolks and beat the latter with the sugar in a bowl.\n2. Add the mascarpone and stir until uniform.\n3. In another bowl, beat the albumens until stiff.\n4. Add beaten albumens to the mascarpone cream gradually, stirring gently to not destroy the foam.\n5. Cover the bottom of a baking tray with a layer of cream.\n6. Cover it with a layer of savoiardi biscuits soaked in coffee.\n7. Add another layer of cream, then another of coffee-soaked savoiardi.\n   Savoiardi of the second layer should be orthogonal to those of the first, so that the structure is more solid and slices collapse less when they are moved.\n8. Add one last layer of cream.\n9. Sprinkle cocoa powder on top.\n10. Store in the fridge for three hours.\n",
+      "snapshotSHA256": "34eea63f7823b7b10952798a9e41b539b0ae008907149b310e5750aa4a04ee63",
+      "recipeId": "bc650-tiramisu",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Tiramisù",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "\"pestanzul\"",
+      "sourcePath": "content/tiramisu.md",
+      "sourceIngredientLines": [
+        "4 eggs",
+        "100 g sugar",
+        "500 g mascarpone",
+        "300 g savoiardi biscuits",
+        "coffee at room temperature",
+        "cocoa powder"
+      ],
+      "sourceTags": [
+        "dessert",
+        "italian",
+        "sweet"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tiramisu.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": 8,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": 20,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Separate albumen and yolks and beat the latter with the sugar in a bowl.",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "Add the mascarpone and stir until uniform.",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "In another bowl, beat the albumens until stiff.",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "Add beaten albumens to the mascarpone cream gradually, stirring gently to not destroy the foam.",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "Cover the bottom of a baking tray with a layer of cream.",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "Cover it with a layer of savoiardi biscuits soaked in coffee.",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "Add another layer of cream, then another of coffee-soaked savoiardi. Savoiardi of the second layer should be orthogonal to those of the first, so that the structure is more solid and slices collapse less when they are moved.",
+          "sourceLineNumbers": [
+            30,
+            31
+          ]
+        },
+        {
+          "text": "Add one last layer of cream.",
+          "sourceLineNumbers": [
+            32
+          ]
+        },
+        {
+          "text": "Sprinkle cocoa powder on top.",
+          "sourceLineNumbers": [
+            33
+          ]
+        },
+        {
+          "text": "Store in the fridge for three hours.",
+          "sourceLineNumbers": [
+            34
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "3e2ea8aee9148b555aac2f26c7ebfa4f2e4810867dfbdbc792dd94378de25009"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "500 g corn flour؛ المصدر يحذر من أن ليس كل أنواع الذرة مناسبة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "500 g corn flour.",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 500,
+          "scales": true,
+          "ingredientId": "bc650-corn-polenta-ing-1",
+          "arabicName": "دقيق ذرة مناسب للبولينتا",
+          "acceptedUnit": "g"
+        },
+        {
+          "candidateDisplay": "3 l water؛ مذكور في الطريقة فقط",
+          "mappingStatus": "method-only-amount; see complete source method",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": 3,
+          "scales": true,
+          "ingredientId": "bc650-corn-polenta-ing-2",
+          "arabicName": "ماء",
+          "acceptedUnit": "l"
+        },
+        {
+          "candidateDisplay": "salt؛ مذكور بالطريقة بلا مقدار",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-corn-polenta-ing-3",
+          "arabicName": "ملح",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: Corn polenta\ntags: ['corn', 'fasting', 'italian', 'side']\ndate: 2025-12-15\nauthor: \"pestanzul\"",
+      "sourceRawText": "---\ntitle: Corn polenta\ntags: ['corn', 'fasting', 'italian', 'side']\ndate: 2025-12-15\nauthor: \"pestanzul\"\n---\n\nPolenta is basically cereal flour boiled in water until thick.\nIt was a common peasant dish in many areas of Italy, thus many versions exist,\nvarying in consistency (from almost liquid to thick enough to make slices) and\ncereals used.\n\nPolenta is not to be eaten alone; instead, it may be served in a variety of\nways:\n\n- as a side dish, often with meat\n- with a side dish, like peas\n- with a sauce, such as meat sauce or tomato sauce\n- transformed in a main dish melting in it a slice of a savoury cheese\n\n&nbsp;\n\n- ⏲️ Prep time: 1 h\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 500 g corn flour.\n  Consider that not all corns are suitable for polenta.\n\n## Directions\n\n1. Pour all the flour in 3 l fresh water and stir with a whip until no lumps\n   remain.\n2. Heat until boiling, stirring slowly with a big spoon.\n3. Cook on low fire for about 1 hour.\n   Stir _very often_.\n   If it thickens too much, add water.\n4. Season with salt.\n",
+      "snapshotSHA256": "ff056b29aca73870065109ba20a694e40b1eb62db5173aa45b0344bdaf5e1344",
+      "recipeId": "bc650-corn-polenta",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Corn polenta",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "\"pestanzul\"",
+      "sourcePath": "content/corn-polenta.md",
+      "sourceIngredientLines": [
+        "500 g corn flour."
+      ],
+      "sourceTags": [
+        "corn",
+        "fasting",
+        "italian",
+        "side"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/corn-polenta.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": 4,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": 60,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Pour all the flour in 3 l fresh water and stir with a whip until no lumps remain.",
+          "sourceLineNumbers": [
+            33,
+            34
+          ]
+        },
+        {
+          "text": "Heat until boiling, stirring slowly with a big spoon.",
+          "sourceLineNumbers": [
+            35
+          ]
+        },
+        {
+          "text": "Cook on low fire for about 1 hour. Stir _very often_. If it thickens too much, add water.",
+          "sourceLineNumbers": [
+            36,
+            37,
+            38
+          ]
+        },
+        {
+          "text": "Season with salt.",
+          "sourceLineNumbers": [
+            39
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "69b655afb3bdc4232fed17d36d9568e28ceb743cf179d6516f9e611892bb2d17"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "500 gm of Greek Yogurt",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "500 gm of Greek Yogurt",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 500,
+          "scales": true,
+          "ingredientId": "bc650-onion-raitha-ing-1",
+          "arabicName": "زبادي يوناني",
+          "acceptedUnit": "gm"
+        },
+        {
+          "candidateDisplay": "One Red onion",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "One Red onion",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-onion-raitha-ing-2",
+          "arabicName": "بصلة حمراء",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "50 gm of Cucumber",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "50 gm of Cucumber",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 50,
+          "scales": true,
+          "ingredientId": "bc650-onion-raitha-ing-3",
+          "arabicName": "خيار",
+          "acceptedUnit": "gm"
+        },
+        {
+          "candidateDisplay": "Sprigs of Mint",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Sprigs of Mint",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-onion-raitha-ing-4",
+          "arabicName": "أغصان نعناع",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Dash of Honey",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Dash of Honey",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-onion-raitha-ing-5",
+          "arabicName": "قليل من العسل",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Hint of Chilli Powder (Spicy option)/ Hint of sugar (Sweet option)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Hint of Chilli Powder (Spicy option)/ Hint of sugar (Sweet option)",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-onion-raitha-ing-6",
+          "arabicName": "رشة مسحوق فلفل حار أو سكر (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1 tsp salt؛ مذكور في الطريقة فقط",
+          "mappingStatus": "method-only-amount; see complete source method",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": 1,
+          "scales": true,
+          "ingredientId": "bc650-onion-raitha-ing-7",
+          "arabicName": "ملح",
+          "acceptedUnit": "tsp"
+        }
+      ],
+      "sourceFrontMatter": "title: \"Onion Raitha (Indian Tzatziki)\"\ndate: 2021-03-21\ntags: ['quick', 'sauce', 'indian']\nauthor: ram-pari",
+      "sourceRawText": "---\ntitle: \"Onion Raitha (Indian Tzatziki)\"\ndate: 2021-03-21\ntags: ['quick', 'sauce', 'indian']\nauthor: ram-pari\n---\n\nRaitha is an yogurt-based Indian style sauce that goes great with rice dishes such as Pilau and Biriyani. It's quite similar to\na greek Tzatziki and is quick and quite easy to make. It's great especially with super spicy indian dishes as it\nprovides as a sweet and cooling effect.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 2 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 500 gm of Greek Yogurt\n- One Red onion\n- 50 gm of Cucumber\n- Sprigs of Mint\n- Dash of Honey\n- Hint of Chilli Powder (Spicy option)/ Hint of sugar (Sweet option)\n\n## Directions\n\n1. Chop the onion into tiny cubes (0.5-1cm or 3/8 inches sized cubes)\n2. Slice the cucumber into tiny strips (Julienne). Hand crush the mint.\n3. Prep the serving bowl with yogurt and add the onions and cucumber.\n4. Add the mint, honey, 1 tsp of salt and the sugar/chilli powder (Depending on the sweet/spicy choice)\n5. Mix well and serve. Garnish with additional mint as required.\n",
+      "snapshotSHA256": "5eb25ab7f5b3144889e948bc0391caa8acd1778b2e301557476ff3b2e3e1cf28",
+      "recipeId": "bc650-onion-raitha",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Onion Raitha (Indian Tzatziki)",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "ram-pari",
+      "sourcePath": "content/onion-raitha.md",
+      "sourceIngredientLines": [
+        "500 gm of Greek Yogurt",
+        "One Red onion",
+        "50 gm of Cucumber",
+        "Sprigs of Mint",
+        "Dash of Honey",
+        "Hint of Chilli Powder (Spicy option)/ Hint of sugar (Sweet option)"
+      ],
+      "sourceTags": [
+        "quick",
+        "sauce",
+        "indian"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/onion-raitha.md",
+      "catalogKnownUnknown": {
+        "totalTime": 12,
+        "servings": 4,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": 2,
+        "prepTime": 10,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Chop the onion into tiny cubes (0.5-1cm or 3/8 inches sized cubes)",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "Slice the cucumber into tiny strips (Julienne). Hand crush the mint.",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "Prep the serving bowl with yogurt and add the onions and cucumber.",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "Add the mint, honey, 1 tsp of salt and the sugar/chilli powder (Depending on the sweet/spicy choice)",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "Mix well and serve. Garnish with additional mint as required.",
+          "sourceLineNumbers": [
+            31
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "13ea14bc81be993c9e6749572e998eb580024ac68fc1fbd36ddd08a58b2b6187"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "ground pork",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "ground pork",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-1",
+          "arabicName": "لحم خنزير مفروم",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "sushi rice",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "sushi rice",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-2",
+          "arabicName": "أرز سوشي",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "green onion",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "green onion",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-3",
+          "arabicName": "بصل أخضر",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "fresh ginger",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "fresh ginger",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-4",
+          "arabicName": "زنجبيل طازج",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "miso paste",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "miso paste",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-5",
+          "arabicName": "معجون ميسو",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "pickled daikon",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "pickled daikon",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-6",
+          "arabicName": "دايكون مخلل",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "zucchini or bok choy",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "zucchini or bok choy",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-7",
+          "arabicName": "كوسا أو بوك تشوي",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "sesame oil (or olive oil)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "sesame oil (or olive oil)",
+          "sourceIngredientIndex": 7,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-8",
+          "arabicName": "زيت سمسم أو زيت زيتون",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "broth (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "broth (optional)",
+          "sourceIngredientIndex": 8,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-9",
+          "arabicName": "مرق (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "rice vinegar, sugar, water؛ مذكورة في الطريقة للمحلول",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-10",
+          "arabicName": "خل أرز وسكر وماء للمحلول المخلل",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Sriracha or crushed red pepper are great",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-11",
+          "arabicName": "سريراتشا أو فلفل أحمر مجروش (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "salt and pepper؛ مذكوران بالطريقة بلا مقادير",
+          "mappingStatus": "method-only or source-quantity-unknown",
+          "sourceText": null,
+          "sourceIngredientIndex": null,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-miso-ginger-pork-ing-12",
+          "arabicName": "ملح وفلفل",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Miso Ginger Pork\"\ndate: 2021-03-11\ntags: ['japanese', 'pork']\nauthor: jon-paul-uritis",
+      "sourceRawText": "---\ntitle: \"Miso Ginger Pork\"\ndate: 2021-03-11\ntags: ['japanese', 'pork']\nauthor: jon-paul-uritis\n---\n\n## Ingredients\n\n- ground pork\n- sushi rice\n- green onion\n- fresh ginger\n- miso paste\n- pickled daikon\n- zucchini or bok choy\n- sesame oil (or olive oil)\n- broth (optional)\n\n## Directions\n\n1. cook sushi rice\n2. slice daikon, and pickle in a quick brine (rice vinegar, sugar, water)\n3. dice white parts of green onion, mince green ends for garnish\n4. mince fresh ginger\n5. chop zucchini or bok choy into half inch (1-1.5 cm) chunks\n6. heat up 2 tablespoons sesame oil\n7. break up and brown ground pork till almost cooked through\n8. salt and pepper the pork\n9. add 1/2 cup to 1 cup (250-500 mL) water or broth\n10. add white parts of green onion and ginger\n11. add miso paste to taste\n12. simmer stirring occasionally\n13. add zucchini or bok choy, cook al dente\n14. serve pork & veggies over bed of rice, garnish with green onion\n15. (optional) add some spice! Sriracha or crushed red pepper are great.\n",
+      "snapshotSHA256": "7c66f40748e48ff108fa7411821fef3b749085044b547d7cc00fd34a403bacc0",
+      "recipeId": "bc650-miso-ginger-pork",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Miso Ginger Pork",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "jon-paul-uritis",
+      "sourcePath": "content/miso-ginger-pork.md",
+      "sourceIngredientLines": [
+        "ground pork",
+        "sushi rice",
+        "green onion",
+        "fresh ginger",
+        "miso paste",
+        "pickled daikon",
+        "zucchini or bok choy",
+        "sesame oil (or olive oil)",
+        "broth (optional)"
+      ],
+      "sourceTags": [
+        "japanese",
+        "pork"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/miso-ginger-pork.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": null,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": null,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "cook sushi rice",
+          "sourceLineNumbers": [
+            22
+          ]
+        },
+        {
+          "text": "slice daikon, and pickle in a quick brine (rice vinegar, sugar, water)",
+          "sourceLineNumbers": [
+            23
+          ]
+        },
+        {
+          "text": "dice white parts of green onion, mince green ends for garnish",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "mince fresh ginger",
+          "sourceLineNumbers": [
+            25
+          ]
+        },
+        {
+          "text": "chop zucchini or bok choy into half inch (1-1.5 cm) chunks",
+          "sourceLineNumbers": [
+            26
+          ]
+        },
+        {
+          "text": "heat up 2 tablespoons sesame oil",
+          "sourceLineNumbers": [
+            27
+          ]
+        },
+        {
+          "text": "break up and brown ground pork till almost cooked through",
+          "sourceLineNumbers": [
+            28
+          ]
+        },
+        {
+          "text": "salt and pepper the pork",
+          "sourceLineNumbers": [
+            29
+          ]
+        },
+        {
+          "text": "add 1/2 cup to 1 cup (250-500 mL) water or broth",
+          "sourceLineNumbers": [
+            30
+          ]
+        },
+        {
+          "text": "add white parts of green onion and ginger",
+          "sourceLineNumbers": [
+            31
+          ]
+        },
+        {
+          "text": "add miso paste to taste",
+          "sourceLineNumbers": [
+            32
+          ]
+        },
+        {
+          "text": "simmer stirring occasionally",
+          "sourceLineNumbers": [
+            33
+          ]
+        },
+        {
+          "text": "add zucchini or bok choy, cook al dente",
+          "sourceLineNumbers": [
+            34
+          ]
+        },
+        {
+          "text": "serve pork & veggies over bed of rice, garnish with green onion",
+          "sourceLineNumbers": [
+            35
+          ]
+        },
+        {
+          "text": "(optional) add some spice! Sriracha or crushed red pepper are great.",
+          "sourceLineNumbers": [
+            36
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "be0a15e875d6680a72cec79103db7b67d1ba827ef5eddb08a4a785ef83c20f7a"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "2 pounds frozen corn, defrosted",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "2 pounds frozen corn, defrosted",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": 2,
+          "scales": true,
+          "ingredientId": "bc650-corn-salsa-ing-1",
+          "arabicName": "ذرة مجمدة مذابة",
+          "acceptedUnit": "pounds"
+        },
+        {
+          "candidateDisplay": "1/2 Red onion, finely chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1/2 Red onion, finely chopped",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": 0.5,
+          "scales": true,
+          "ingredientId": "bc650-corn-salsa-ing-2",
+          "arabicName": "بصلة حمراء مفرومة ناعمًا",
+          "acceptedUnit": "حبة"
+        },
+        {
+          "candidateDisplay": "4 Radishes, sliced thin and chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "4 Radishes, sliced thin and chopped",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": 4,
+          "scales": true,
+          "ingredientId": "bc650-corn-salsa-ing-3",
+          "arabicName": "فجل رفيع ومفروم",
+          "acceptedUnit": "حبات"
+        },
+        {
+          "candidateDisplay": "Few pinches of Cilantro, finely chopped",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Few pinches of Cilantro, finely chopped",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-corn-salsa-ing-4",
+          "arabicName": "كزبرة مفرومة ناعمًا",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "1-2 Jalepenos, finely chopped (optional)",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "1-2 Jalepenos, finely chopped (optional)",
+          "sourceIngredientIndex": 4,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-corn-salsa-ing-5",
+          "arabicName": "هالابينو مفروم (اختياري)",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Juice of 2-3 Limes",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Juice of 2-3 Limes",
+          "sourceIngredientIndex": 5,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-corn-salsa-ing-6",
+          "arabicName": "عصير لايم",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Salt and pepper, to taste",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Salt and pepper, to taste",
+          "sourceIngredientIndex": 6,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-corn-salsa-ing-7",
+          "arabicName": "ملح وفلفل حسب الذوق",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Corn Salsa\"\ndate: 2021-03-23\ntags: ['sauce', 'mexican']\nauthor: joe-powerhouse",
+      "sourceRawText": "---\ntitle: \"Corn Salsa\"\ndate: 2021-03-23\ntags: ['sauce', 'mexican']\nauthor: joe-powerhouse\n---\n\n- ⏲️ Prep time: 10 Minutes\n- 🍳 Cook time: 1 Hour+ in fridge\n\n## Ingredients\n\n- 2 pounds frozen corn, defrosted\n- 1/2 Red onion, finely chopped\n- 4 Radishes, sliced thin and chopped\n- Few pinches of Cilantro, finely chopped\n- 1-2 Jalepenos, finely chopped (optional)\n- Juice of 2-3 Limes\n- Salt and pepper, to taste\n\n## Directions\n\n1. Chop everything to pieces smaller than the corn kernels. Mix well and let sit covered in the fridge for at least an hour, even better overnight.\n",
+      "snapshotSHA256": "5600137b1e071561156245afdbf8d1c36ee5c7dc4b1296c63f2e927470ce3ff4",
+      "recipeId": "bc650-corn-salsa",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Corn Salsa",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "joe-powerhouse",
+      "sourcePath": "content/corn-salsa.md",
+      "sourceIngredientLines": [
+        "2 pounds frozen corn, defrosted",
+        "1/2 Red onion, finely chopped",
+        "4 Radishes, sliced thin and chopped",
+        "Few pinches of Cilantro, finely chopped",
+        "1-2 Jalepenos, finely chopped (optional)",
+        "Juice of 2-3 Limes",
+        "Salt and pepper, to taste"
+      ],
+      "sourceTags": [
+        "sauce",
+        "mexican"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/corn-salsa.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": null,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": 10,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Chop everything to pieces smaller than the corn kernels. Mix well and let sit covered in the fridge for at least an hour, even better overnight.",
+          "sourceLineNumbers": [
+            23
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "2a20f5a5f6f4aa8ba14493232cb50ab0745cbc5ab0e48e27a626203a41ab2d65"
+    },
+    {
+      "sourceRevisionTimestamp": "2026-09-09T09:51:41+03:00",
+      "ingredientCrosswalk": [
+        {
+          "candidateDisplay": "Romaine Lettuce؛ رأس كامل بحسب الطريقة",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Romaine Lettuce",
+          "sourceIngredientIndex": 0,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-caesar-salad-ing-1",
+          "arabicName": "خس روماني",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Grated Parmesan Cheese",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Grated Parmesan Cheese",
+          "sourceIngredientIndex": 1,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-caesar-salad-ing-2",
+          "arabicName": "جبن بارميزان مبشور",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Croutons",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Croutons",
+          "sourceIngredientIndex": 2,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-caesar-salad-ing-3",
+          "arabicName": "خبز محمص مكعبات",
+          "acceptedUnit": null
+        },
+        {
+          "candidateDisplay": "Caesar Salad Dressing",
+          "mappingStatus": "explicit-index-matched-to-preserved-source-text",
+          "sourceText": "Caesar Salad Dressing",
+          "sourceIngredientIndex": 3,
+          "acceptedAmount": null,
+          "scales": false,
+          "ingredientId": "bc650-caesar-salad-ing-4",
+          "arabicName": "تتبيلة سلطة سيزر",
+          "acceptedUnit": null
+        }
+      ],
+      "sourceFrontMatter": "title: \"Caesar Salad\"\ndate: 2021-03-11\ntags: ['italian', 'salad', 'cheesefare']\nauthor: \"gucko\"",
+      "sourceRawText": "---\ntitle: \"Caesar Salad\"\ndate: 2021-03-11\ntags: ['italian', 'salad', 'cheesefare']\nauthor: \"gucko\"\n---\n\n![caesar_salad](/pix/csalad.webp)\n\nCaesar Salad is an easy and delicious meal for lunch or dinner.\n\n## Ingredients\n\n- Romaine Lettuce\n- Grated Parmesan Cheese\n- Croutons\n- Caesar Salad Dressing\n\n## Directions\n\n1. Prepare a whole head of Romaine Lettuce by chopping off the root and rising thoroughly with water.  Dry completely.\n2. Once the lettuce is fully dry, put in a mixing bowl with lettuce and the Caesar Salad dressing.  Toss to cover each leaf completely.\n3. Add croutons.\n4. Grate Parmesan over salad.\n5. Eat with hands.\n",
+      "snapshotSHA256": "2f5fd138a8583305bfb6ad0fd040be2c9d3c22b541652c517bea877a31d39b46",
+      "recipeId": "bc650-caesar-salad",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceTitle": "Caesar Salad",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "sourceAuthor": "\"gucko\"",
+      "sourcePath": "content/caesar-salad.md",
+      "sourceIngredientLines": [
+        "Romaine Lettuce",
+        "Grated Parmesan Cheese",
+        "Croutons",
+        "Caesar Salad Dressing"
+      ],
+      "sourceTags": [
+        "italian",
+        "salad",
+        "cheesefare"
+      ],
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/caesar-salad.md",
+      "catalogKnownUnknown": {
+        "totalTime": null,
+        "servings": null,
+        "sourceDataIsCookingValidated": false,
+        "cookTime": null,
+        "prepTime": null,
+        "medicalRules": null,
+        "nutrition": null,
+        "metadataPolicy": "source-unknowns-v1"
+      },
+      "licenseName": "Publisher public-domain declaration; repository Unlicense",
+      "sourceMethodLines": [
+        {
+          "text": "Prepare a whole head of Romaine Lettuce by chopping off the root and rising thoroughly with water.  Dry completely.",
+          "sourceLineNumbers": [
+            21
+          ]
+        },
+        {
+          "text": "Once the lettuce is fully dry, put in a mixing bowl with lettuce and the Caesar Salad dressing.  Toss to cover each leaf completely.",
+          "sourceLineNumbers": [
+            22
+          ]
+        },
+        {
+          "text": "Add croutons.",
+          "sourceLineNumbers": [
+            23
+          ]
+        },
+        {
+          "text": "Grate Parmesan over salad.",
+          "sourceLineNumbers": [
+            24
+          ]
+        },
+        {
+          "text": "Eat with hands.",
+          "sourceLineNumbers": [
+            25
+          ]
+        }
+      ],
+      "sourceId": "based-cooking",
+      "sourceFileSHA256": "f702f61d1981c915997843bbcda230c5d283c1409a991cb553286bc79874a27f"
+    }
+  ],
+  "group": "based-catalog-review-001",
+  "recordCount": 25
+}

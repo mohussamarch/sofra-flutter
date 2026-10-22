@@ -1,7 +1,7 @@
 {
   "cuisine": "مصري",
   "cuisineSlug": "egyptian",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "recipes": [
     {
       "id": "eg-koshari",
@@ -16,20 +16,97 @@
       "totalTime": 65,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "rice", "name": "أرز مصري", "amount": 1.5, "unit": "كوب" },
-        { "id": "brown-lentils", "name": "عدس بني", "amount": 1, "unit": "كوب" },
-        { "id": "elbow-pasta", "name": "مكرونة صغيرة (قلم)", "amount": 1.5, "unit": "كوب" },
-        { "id": "onion", "name": "بصل متوسط", "amount": 3, "unit": "حبة", "scale": false, "note": "٢ للتحمير و١ للصوص" },
-        { "id": "garlic", "name": "فصوص توم", "amount": 6, "unit": "فص" },
-        { "id": "tomato-paste", "name": "صلصة طماطم مركزة", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "tomato", "name": "طماطم مبشورة أو مفرومة", "amount": 3, "unit": "حبة" },
-        { "id": "vinegar", "name": "خل", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "cumin", "name": "كمون", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "coriander", "name": "كزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "chili", "name": "شطة", "amount": 0.5, "unit": "ملعقة صغيرة", "optional": true, "note": "مرنة حسب الرغبة" },
-        { "id": "oil", "name": "زيت للتحمير", "amount": 2, "unit": "كوب", "note": "يُصفّى ويُعاد استخدامه" },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false },
-        { "id": "water", "name": "ماء لسلق العدس والمكرونة", "amount": 8, "unit": "كوب" }
+        {
+          "id": "rice",
+          "name": "أرز مصري",
+          "amount": 1.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "brown-lentils",
+          "name": "عدس بني",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "elbow-pasta",
+          "name": "مكرونة صغيرة (قلم)",
+          "amount": 1.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "onion",
+          "name": "بصل متوسط",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": false,
+          "note": "٢ للتحمير و١ للصوص"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم",
+          "amount": 6,
+          "unit": "فص"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم مركزة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مبشورة أو مفرومة",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "vinegar",
+          "name": "خل",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "chili",
+          "name": "شطة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true,
+          "note": "مرنة حسب الرغبة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت للتحمير",
+          "amount": 2,
+          "unit": "كوب",
+          "note": "يُصفّى ويُعاد استخدامه"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "water",
+          "name": "ماء لسلق العدس والمكرونة",
+          "amount": 8,
+          "unit": "كوب"
+        }
       ],
       "steps": [
         {
@@ -75,7 +152,11 @@
           "duration": 5
         }
       ],
-      "tags": ["شارع مصري", "نباتي", "غني بالبروتين"],
+      "tags": [
+        "شارع مصري",
+        "نباتي",
+        "غني بالبروتين"
+      ],
       "notes": "لعمل الدقة: اهرس ٣ فصوص توم مع ملح وكمون، وأضف ٣ ملاعق خل و٤ ملاعق ماء وملعقة زيت."
     },
     {
@@ -91,18 +172,84 @@
       "totalTime": 90,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "chicken", "name": "فرخة مقطّعة أو صدور", "amount": 1, "unit": "كيلو", "note": "أو ٤ قطع فراخ بالجلد" },
-        { "id": "molokhia", "name": "ملوخية خضراء مفرومة (طازة أو مجمدة)", "amount": 500, "unit": "جرام" },
-        { "id": "onion", "name": "بصل متوسط", "amount": 2, "unit": "حبة" },
-        { "id": "garlic", "name": "فصوص توم", "amount": 8, "unit": "فص" },
-        { "id": "coriander", "name": "كزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "cardamom", "name": "حبهان", "amount": 4, "unit": "حبة", "optional": true },
-        { "id": "bay-leaf", "name": "ورق لاورا", "amount": 1, "unit": "ورقة", "optional": true },
-        { "id": "ghee", "name": "سمنة أو زبدة", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "rice", "name": "أرز مصري", "amount": 2, "unit": "كوب" },
-        { "id": "vermicelli", "name": "شعرية", "amount": 0.25, "unit": "كوب", "optional": true },
-        { "id": "vinegar", "name": "خل أو ليمون", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "chicken",
+          "name": "فرخة مقطّعة أو صدور",
+          "amount": 1,
+          "unit": "كيلو",
+          "note": "أو ٤ قطع فراخ بالجلد"
+        },
+        {
+          "id": "molokhia",
+          "name": "ملوخية خضراء مفرومة (طازة أو مجمدة)",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل متوسط",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم",
+          "amount": 8,
+          "unit": "فص"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cardamom",
+          "name": "حبهان",
+          "amount": 4,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "bay-leaf",
+          "name": "ورق لاورا",
+          "amount": 1,
+          "unit": "ورقة",
+          "optional": true
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة أو زبدة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "rice",
+          "name": "أرز مصري",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "vermicelli",
+          "name": "شعرية",
+          "amount": 0.25,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "vinegar",
+          "name": "خل أو ليمون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -145,7 +292,11 @@
           "duration": 5
         }
       ],
-      "tags": ["أكل بيتي", "شوربة", "تقليدي"],
+      "tags": [
+        "أكل بيتي",
+        "شوربة",
+        "تقليدي"
+      ],
       "notes": "لو استخدمت ملوخية مجمدة، أضفها للشوربة المغلية مباشرة دون تقليب زائد حتى لا تتكتل."
     },
     {
@@ -161,16 +312,70 @@
       "totalTime": 70,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "penne", "name": "مكرونة بنّة أو قلم", "amount": 500, "unit": "جرام" },
-        { "id": "beef", "name": "لحمة مفرومة", "amount": 500, "unit": "جرام" },
-        { "id": "onion", "name": "بصل متوسط", "amount": 1, "unit": "حبة" },
-        { "id": "butter", "name": "زبدة أو سمنة", "amount": 4, "unit": "ملعقة كبيرة" },
-        { "id": "flour", "name": "دقيق", "amount": 4, "unit": "ملعقة كبيرة" },
-        { "id": "milk", "name": "لبن", "amount": 4, "unit": "كوب" },
-        { "id": "cheese", "name": "جبنة رومي أو موزاريلا مبشورة", "amount": 1, "unit": "كوب" },
-        { "id": "nutmeg", "name": "جوزة الطيب", "amount": 0.25, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "tomato-paste", "name": "صلصة طماطم", "amount": 1, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "penne",
+          "name": "مكرونة بنّة أو قلم",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "beef",
+          "name": "لحمة مفرومة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل متوسط",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "butter",
+          "name": "زبدة أو سمنة",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "flour",
+          "name": "دقيق",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "milk",
+          "name": "لبن",
+          "amount": 4,
+          "unit": "كوب"
+        },
+        {
+          "id": "cheese",
+          "name": "جبنة رومي أو موزاريلا مبشورة",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "nutmeg",
+          "name": "جوزة الطيب",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -218,7 +423,11 @@
           "tip": "شغّل الشواية في آخر ٥ دقائق للون ذهبي."
         }
       ],
-      "tags": ["فرن", "عزومة", "أكل بيتي"],
+      "tags": [
+        "فرن",
+        "عزومة",
+        "أكل بيتي"
+      ],
       "notes": "للتجميد: جهّز الصينية قبل الخبز وغلّفها واتركها في الفريزر حتى شهر."
     },
     {
@@ -234,19 +443,87 @@
       "totalTime": 100,
       "difficulty": "متقدم",
       "ingredients": [
-        { "id": "zucchini", "name": "كوسة متوسطة", "amount": 1, "unit": "كيلو" },
-        { "id": "eggplant", "name": "باذنجان صغير (بيتنجان عروسة)", "amount": 500, "unit": "جرام" },
-        { "id": "pepper", "name": "فلفل رومي صغير", "amount": 6, "unit": "حبة" },
-        { "id": "rice", "name": "أرز مصري مغسول ومصفّى", "amount": 2, "unit": "كوب" },
-        { "id": "onion", "name": "بصلة مفرومة ناعم", "amount": 1, "unit": "حبة" },
-        { "id": "parsley", "name": "بقدونس مفروم", "amount": 1, "unit": "كوب" },
-        { "id": "dill", "name": "شبت مفروم", "amount": 0.5, "unit": "كوب" },
-        { "id": "cilantro", "name": "كزبرة خضراء مفرومة", "amount": 0.5, "unit": "كوب" },
-        { "id": "tomato-paste", "name": "صلصة طماطم", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "ghee", "name": "سمنة", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "vinegar", "name": "خل", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "mint", "name": "نعناع ناشف", "amount": 0.5, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "zucchini",
+          "name": "كوسة متوسطة",
+          "amount": 1,
+          "unit": "كيلو"
+        },
+        {
+          "id": "eggplant",
+          "name": "باذنجان صغير (بيتنجان عروسة)",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "pepper",
+          "name": "فلفل رومي صغير",
+          "amount": 6,
+          "unit": "حبة"
+        },
+        {
+          "id": "rice",
+          "name": "أرز مصري مغسول ومصفّى",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "onion",
+          "name": "بصلة مفرومة ناعم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس مفروم",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "dill",
+          "name": "شبت مفروم",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "cilantro",
+          "name": "كزبرة خضراء مفرومة",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "vinegar",
+          "name": "خل",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "mint",
+          "name": "نعناع ناشف",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -289,7 +566,11 @@
           "duration": 10
         }
       ],
-      "tags": ["خضار", "أكل بيتي", "طبق تقليدي"],
+      "tags": [
+        "خضار",
+        "أكل بيتي",
+        "طبق تقليدي"
+      ],
       "notes": "يمكن استخدام نفس الحشو مع ورق العنب أو الكرنب مع زيادة السمنة قليلاً."
     },
     {
@@ -305,16 +586,70 @@
       "totalTime": 80,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "lamb", "name": "لحمة ضاني بالعظم أو فراخ", "amount": 750, "unit": "جرام" },
-        { "id": "rice", "name": "أرز مصري", "amount": 2, "unit": "كوب" },
-        { "id": "bread", "name": "خبز بلدي أو عيش سوري مقطّع ومحمّص", "amount": 3, "unit": "رغيف" },
-        { "id": "garlic", "name": "فصوص توم", "amount": 8, "unit": "فص" },
-        { "id": "vinegar", "name": "خل", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "tomato-paste", "name": "صلصة طماطم", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "ghee", "name": "سمنة", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "cardamom", "name": "حبهان", "amount": 4, "unit": "حبة", "optional": true },
-        { "id": "bay-leaf", "name": "ورق لاورا", "amount": 1, "unit": "ورقة", "optional": true },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "lamb",
+          "name": "لحمة ضاني بالعظم أو فراخ",
+          "amount": 750,
+          "unit": "جرام"
+        },
+        {
+          "id": "rice",
+          "name": "أرز مصري",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "bread",
+          "name": "خبز بلدي أو عيش سوري مقطّع ومحمّص",
+          "amount": 3,
+          "unit": "رغيف"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم",
+          "amount": 8,
+          "unit": "فص"
+        },
+        {
+          "id": "vinegar",
+          "name": "خل",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "cardamom",
+          "name": "حبهان",
+          "amount": 4,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "bay-leaf",
+          "name": "ورق لاورا",
+          "amount": 1,
+          "unit": "ورقة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -352,7 +687,11 @@
           "tip": "قدّم الطبق فوراً حتى لا يذوب الخبز."
         }
       ],
-      "tags": ["عزومة", "عيد", "طبق تقليدي"],
+      "tags": [
+        "عزومة",
+        "عيد",
+        "طبق تقليدي"
+      ],
       "notes": "استخدم الشوربة الأصلية في الطبق لتعطيك الطعم الكامل؛ لا تستبدلها بماء."
     },
     {
@@ -368,15 +707,65 @@
       "totalTime": 45,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "fava", "name": "فول مدمس (معلّب أو منقوع)", "amount": 3, "unit": "كوب" },
-        { "id": "garlic", "name": "فصوص توم", "amount": 3, "unit": "فص" },
-        { "id": "lemon", "name": "ليمون", "amount": 1, "unit": "حبة" },
-        { "id": "olive-oil", "name": "زيت زيتون", "amount": 3, "unit": "ملعقة كبيرة" },
-        { "id": "cumin", "name": "كمون", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "tomato", "name": "طماطم مقطّعة", "amount": 2, "unit": "حبة", "optional": true },
-        { "id": "tahini", "name": "طحينة", "amount": 2, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "chili", "name": "شطة", "amount": 0.5, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "salt", "name": "ملح", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "fava",
+          "name": "فول مدمس (معلّب أو منقوع)",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم",
+          "amount": 3,
+          "unit": "فص"
+        },
+        {
+          "id": "lemon",
+          "name": "ليمون",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مقطّعة",
+          "amount": 2,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "tahini",
+          "name": "طحينة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "chili",
+          "name": "شطة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -407,7 +796,11 @@
           "duration": 3
         }
       ],
-      "tags": ["فطار", "نباتي", "سريع"],
+      "tags": [
+        "فطار",
+        "نباتي",
+        "سريع"
+      ],
       "notes": "لو بتستخدم الفول الناشف، اسلقه كمية أكبر واحتفظ بالفائض في الفريزر مع ماء التسوية."
     },
     {
@@ -423,17 +816,77 @@
       "totalTime": 50,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "fava", "name": "فول مدشوش منقوع (بدون قشر)", "amount": 3, "unit": "كوب" },
-        { "id": "onion", "name": "بصلة متوسطة", "amount": 1, "unit": "حبة" },
-        { "id": "garlic", "name": "فصوص توم", "amount": 4, "unit": "فص" },
-        { "id": "leek", "name": "كراث أو بصلة خضراء", "amount": 2, "unit": "عود" },
-        { "id": "parsley", "name": "بقدونس", "amount": 1, "unit": "كوب" },
-        { "id": "cilantro", "name": "كزبرة خضراء", "amount": 1, "unit": "كوب" },
-        { "id": "baking-soda", "name": "بيكنج صودا", "amount": 1, "unit": "ملعقة صغيرة", "scale": false, "note": "تُضاف قبل التحمير مباشرة" },
-        { "id": "sesame", "name": "سمسم", "amount": 2, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "cumin", "name": "كمون وكزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "oil", "name": "زيت للتحمير", "amount": 3, "unit": "كوب" },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "fava",
+          "name": "فول مدشوش منقوع (بدون قشر)",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "onion",
+          "name": "بصلة متوسطة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم",
+          "amount": 4,
+          "unit": "فص"
+        },
+        {
+          "id": "leek",
+          "name": "كراث أو بصلة خضراء",
+          "amount": 2,
+          "unit": "عود"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "cilantro",
+          "name": "كزبرة خضراء",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "baking-soda",
+          "name": "بيكنج صودا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": false,
+          "note": "تُضاف قبل التحمير مباشرة"
+        },
+        {
+          "id": "sesame",
+          "name": "سمسم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "cumin",
+          "name": "كمون وكزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت للتحمير",
+          "amount": 3,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -474,7 +927,11 @@
           "duration": 3
         }
       ],
-      "tags": ["فطار", "نباتي", "شارع مصري"],
+      "tags": [
+        "فطار",
+        "نباتي",
+        "شارع مصري"
+      ],
       "notes": "يمكن تجميد الخليط نفسه قبل التشكيل حتى شهر، وتشكيله بعد الذوبان مباشرة."
     },
     {
@@ -490,15 +947,64 @@
       "totalTime": 50,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "bread", "name": "عيش بلدي أو خبز عربي كبير", "amount": 4, "unit": "رغيف" },
-        { "id": "beef", "name": "لحمة مفرومة ناعم", "amount": 500, "unit": "جرام" },
-        { "id": "onion", "name": "بصل مفروم ناعم", "amount": 2, "unit": "حبة" },
-        { "id": "pepper", "name": "فلفل أخضر حار مفروم", "amount": 1, "unit": "حبة", "optional": true },
-        { "id": "ghee", "name": "سمنة أو زيت", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "cumin", "name": "كمون", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "coriander", "name": "كزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "paprika", "name": "بابريكا", "amount": 1, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "bread",
+          "name": "عيش بلدي أو خبز عربي كبير",
+          "amount": 4,
+          "unit": "رغيف"
+        },
+        {
+          "id": "beef",
+          "name": "لحمة مفرومة ناعم",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم ناعم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "pepper",
+          "name": "فلفل أخضر حار مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة أو زيت",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "paprika",
+          "name": "بابريكا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -529,7 +1035,11 @@
           "duration": 2
         }
       ],
-      "tags": ["سريع", "شارع مصري", "أكل بيتي"],
+      "tags": [
+        "سريع",
+        "شارع مصري",
+        "أكل بيتي"
+      ],
       "notes": "لحمة الضاني تعطي طعماً أقوى، ويمكن استخدام لحمة الفراخ المفرومة لنسخة أخف."
     },
     {
@@ -545,14 +1055,58 @@
       "totalTime": 45,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "rice", "name": "أرز مصري أو أرز حلواني", "amount": 0.5, "unit": "كوب" },
-        { "id": "milk", "name": "لبن كامل الدسم", "amount": 4, "unit": "كوب" },
-        { "id": "sugar", "name": "سكر", "amount": 0.5, "unit": "كوب" },
-        { "id": "cream", "name": "كريمة طبخ أو قشطة", "amount": 0.5, "unit": "كوب", "optional": true },
-        { "id": "vanilla", "name": "فانيليا", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "rose-water", "name": "ماء ورد", "amount": 1, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "nuts", "name": "مكسرات (فستق أو لوز) للتزيين", "amount": 3, "unit": "ملعقة كبيرة", "optional": true },
-        { "id": "cinnamon", "name": "قرفة", "amount": 0.5, "unit": "ملعقة صغيرة", "optional": true }
+        {
+          "id": "rice",
+          "name": "أرز مصري أو أرز حلواني",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "milk",
+          "name": "لبن كامل الدسم",
+          "amount": 4,
+          "unit": "كوب"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "cream",
+          "name": "كريمة طبخ أو قشطة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "vanilla",
+          "name": "فانيليا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "rose-water",
+          "name": "ماء ورد",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "nuts",
+          "name": "مكسرات (فستق أو لوز) للتزيين",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        }
       ],
       "steps": [
         {
@@ -583,7 +1137,11 @@
           "duration": 5
         }
       ],
-      "tags": ["حلويات", "سهل", "أكل بيتي"],
+      "tags": [
+        "حلويات",
+        "سهل",
+        "أكل بيتي"
+      ],
       "notes": "القوام يثقل عند التبريد؛ قدّم اللبن الساخن على الرز البارد عند التقديم لضبط القوام."
     },
     {
@@ -599,24 +1157,82 @@
       "totalTime": 50,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "semolina", "name": "سمولينا (دقيق بسبوسة)", "amount": 2, "unit": "كوب" },
-        { "id": "yogurt", "name": "زبادي", "amount": 1, "unit": "كوب" },
-        { "id": "sugar", "name": "سكر", "amount": 1, "unit": "كوب" },
-        { "id": "butter", "name": "زبدة مذابة", "amount": 0.5, "unit": "كوب" },
-        { "id": "coconut", "name": "جوز هند ناعم", "amount": 0.5, "unit": "كوب", "optional": true },
-        { "id": "baking-powder", "name": "بيكنج بودر", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "vanilla", "name": "فانيليا", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "nuts", "name": "لوز أو بندق للتزيين", "amount": 12, "unit": "حبة", "optional": true },
-        { "id": "syrup-sugar", "name": "سكر للشربات", "amount": 1.5, "unit": "كوب" },
-        { "id": "syrup-water", "name": "ماء للشربات", "amount": 1.5, "unit": "كوب" },
-        { "id": "lemon", "name": "عصير ليمون للشربات", "amount": 1, "unit": "ملعقة صغيرة" }
+        {
+          "id": "semolina",
+          "name": "سمولينا (دقيق بسبوسة)",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "yogurt",
+          "name": "زبادي",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "butter",
+          "name": "زبدة مذابة",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "coconut",
+          "name": "جوز هند ناعم",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "baking-powder",
+          "name": "بيكنج بودر",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "vanilla",
+          "name": "فانيليا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "nuts",
+          "name": "لوز أو بندق للتزيين",
+          "amount": 12,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "syrup-sugar",
+          "name": "سكر للشربات",
+          "amount": 1.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "syrup-water",
+          "name": "ماء للشربات",
+          "amount": 1.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "lemon",
+          "name": "عصير ليمون للشربات",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        }
       ],
       "steps": [
         {
           "n": 1,
           "text": "حضّر الشربات أولاً: اغلي السكر والماء ٧ دقائق، ثم أضف عصير الليمون واتركه يبرد تماماً.",
           "duration": 10,
-          "passive": true,          "tip": "الشربات البارد على البسبوسة الساخنة هو قاعدة النجاح."
+          "passive": true,
+          "tip": "الشربات البارد على البسبوسة الساخنة هو قاعدة النجاح."
         },
         {
           "n": 2,
@@ -643,7 +1259,11 @@
           "tip": "لا تسكب الشربات كله مرة واحدة؛ وزّعه على مراحل حتى يتشرب."
         }
       ],
-      "tags": ["حلويات", "شربات", "عزومة"],
+      "tags": [
+        "حلويات",
+        "شربات",
+        "عزومة"
+      ],
       "notes": "لزيادة الطراوة أضف ملعقتين من القشطة أو اللبن الرائب للخليط."
     },
     {
@@ -659,16 +1279,69 @@
       "totalTime": 55,
       "difficulty": "متوسط",
       "ingredients": [
-        { "id": "fish", "name": "سمك بوري أو بلطي أو قاروص", "amount": 1.5, "unit": "كيلو" },
-        { "id": "rice", "name": "أرز مصري", "amount": 2.5, "unit": "كوب" },
-        { "id": "onion", "name": "بصل مقطّع شرائح رقيقة", "amount": 4, "unit": "حبة" },
-        { "id": "cumin", "name": "كمون", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "coriander", "name": "كزبرة ناشفة", "amount": 1, "unit": "ملعقة صغيرة" },
-        { "id": "turmeric", "name": "كركم", "amount": 0.5, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "lemon", "name": "ليمون", "amount": 2, "unit": "حبة" },
-        { "id": "flour", "name": "دقيق لتمويج السمك", "amount": 0.5, "unit": "كوب" },
-        { "id": "oil", "name": "زيت للتحمير", "amount": 2, "unit": "كوب" },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "fish",
+          "name": "سمك بوري أو بلطي أو قاروص",
+          "amount": 1.5,
+          "unit": "كيلو"
+        },
+        {
+          "id": "rice",
+          "name": "أرز مصري",
+          "amount": 2.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مقطّع شرائح رقيقة",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "turmeric",
+          "name": "كركم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "lemon",
+          "name": "ليمون",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "flour",
+          "name": "دقيق لتمويج السمك",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "oil",
+          "name": "زيت للتحمير",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -708,7 +1381,11 @@
           "tip": "قدّمه مع سلطة الطحينة أو الدقة."
         }
       ],
-      "tags": ["سمك", "أكل بحري", "طبق تقليدي"],
+      "tags": [
+        "سمك",
+        "أكل بحري",
+        "طبق تقليدي"
+      ],
       "notes": "لو استخدمت سمكاً كاملأً، اترك الرأس في المرق ليعطي الطعم الأصلي."
     },
     {
@@ -724,16 +1401,70 @@
       "totalTime": 40,
       "difficulty": "سهل",
       "ingredients": [
-        { "id": "pasta", "name": "مكرونة سباجيتي أو بنّة", "amount": 500, "unit": "جرام" },
-        { "id": "beef", "name": "لحمة مفرومة", "amount": 400, "unit": "جرام" },
-        { "id": "onion", "name": "بصلة مفرومة", "amount": 1, "unit": "حبة" },
-        { "id": "garlic", "name": "فصوص توم مفرومة", "amount": 4, "unit": "فص" },
-        { "id": "tomato", "name": "طماطم مبشورة أو معلّبة", "amount": 4, "unit": "كوب" },
-        { "id": "tomato-paste", "name": "صلصة طماطم مركزة", "amount": 1, "unit": "ملعقة كبيرة" },
-        { "id": "oil", "name": "زيت زيتون", "amount": 2, "unit": "ملعقة كبيرة" },
-        { "id": "oregano", "name": "أوريجانو أو ريحان ناشف", "amount": 1, "unit": "ملعقة صغيرة", "optional": true },
-        { "id": "cheese", "name": "جبنة رومي أو بارميزان مبشورة", "amount": 0.5, "unit": "كوب", "optional": true },
-        { "id": "salt", "name": "ملح وفلفل أسود", "amount": null, "unit": null, "label": "حسب الرغبة", "scale": false }
+        {
+          "id": "pasta",
+          "name": "مكرونة سباجيتي أو بنّة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "beef",
+          "name": "لحمة مفرومة",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصلة مفرومة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "فصوص توم مفرومة",
+          "amount": 4,
+          "unit": "فص"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مبشورة أو معلّبة",
+          "amount": 4,
+          "unit": "كوب"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم مركزة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "oregano",
+          "name": "أوريجانو أو ريحان ناشف",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        },
+        {
+          "id": "cheese",
+          "name": "جبنة رومي أو بارميزان مبشورة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
       ],
       "steps": [
         {
@@ -769,8 +1500,123 @@
           "duration": 4
         }
       ],
-      "tags": ["سريع", "أكل بيتي", "مكرونة"],
+      "tags": [
+        "سريع",
+        "أكل بيتي",
+        "مكرونة"
+      ],
       "notes": "يمكن استخدام لحمة فراخ مفرومة أو سجق حسب المتوفر في البيت."
+    },
+    {
+      "id": "bc650-egyptian-lentils",
+      "name": "عدس مصري بالأرز والمعكرونة",
+      "nameEn": "Egyptian Lentils",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "description": "عدس مع أرز ومعكرونة قصيرة وصلصة فلفل وطماطم وليمون، يزين بالبصل المحمر.",
+      "servings": 5,
+      "prepTime": 5,
+      "cookTime": 40,
+      "totalTime": 45,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-egyptian-lentils-ing-1",
+          "name": "عدس، كوب واحد",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-egyptian-lentils-ing-2",
+          "name": "معكرونة إلبو قصيرة، كوب واحد",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-egyptian-lentils-ing-3",
+          "name": "حبتا فلفل طازج حار أو حلو",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 Fresh Chili or Bell Peppers"
+        },
+        {
+          "id": "bc650-egyptian-lentils-ing-4",
+          "name": "عصير ليمون أخضر، ملعقتان كبيرتان",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-egyptian-lentils-ing-5",
+          "name": "أرز عادي، كوب ونصف",
+          "amount": 1.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-egyptian-lentils-ing-6",
+          "name": "زيت، 3 ملاعق كبيرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-egyptian-lentils-ing-7",
+          "name": "حبتا طماطم متوسطتان مفرومتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 medium Tomatoes, chopped"
+        },
+        {
+          "id": "bc650-egyptian-lentils-ing-8",
+          "name": "بصلة كبيرة مقطعة مكعبات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 large Onion, diced"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع العدس في قدر واغمره بالماء بارتفاع بوصة أو أكثر. ارفعه إلى الغليان على نار عالية، ثم خفف النار واتركه مغطى حتى يطرى، نحو 35 دقيقة. صفّه وانقله إلى وعاء كبير.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اغل 3 أكواب من الماء وأضف الأرز. خفف النار وغطه 20 دقيقة، ثم قلّبه بالشوكة وأضفه إلى العدس.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اغل لترين من الماء وأضف المعكرونة حتى تطرى، ثم أضفها إلى العدس.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "في مقلاة صغيرة سخّن ملعقة كبيرة من الزيت واقل الفلفل المفروم ناعماً دقيقتين. أضف الطماطم ونصف كوب ماء، واترك المزيج يغلي ثم خفف النار 5 دقائق. أضف عصير الليمون واطوِ الصلصة مع العدس.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "في مقلاة أخرى سخّن ملعقتي الزيت المتبقيتين واقل البصل حتى يحمر. زيّن به خليط العدس.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 40 min ؛ - 🍽️ Servings: 5. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/egyptian-lentils.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=0a7cb9f1325155c723609817dc3ec66210027baffb290296792b5dc3fa524168"
     }
   ]
 }

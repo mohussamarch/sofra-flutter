@@ -1,7 +1,7 @@
 {
   "cuisine": "مجري",
   "cuisineSlug": "hungarian",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "recipes": [
     {
       "id": "bc-chicken-paprikash",
@@ -102,6 +102,774 @@
       ],
       "tags": [],
       "notes": "المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chicken-paprikash.md؛ revision 9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2، المسار content/chicken-paprikash.md. يعلن الناشر أن محتوى المستودع ضمن الملك العام، ويضم المستودع Unlicense؛ ترجمة عربية وتجميع للطريقة فقط. التغذية غير معروفة. إضافة سلامة مستقلة، خارج نص الوصفة الأصلي: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart؛ تحققت في 2026-10-21 من صف All Poultry. لا فحص طبخ فعلي ولا تغذية معتمدة."
+    },
+    {
+      "id": "fiw650-51061",
+      "name": "دجاج هنغاري بالبابريكا",
+      "nameEn": "Hungarian Chicken",
+      "cuisine": "مجري",
+      "category": "أطباق رئيسية",
+      "description": "دجاج مغطى بالدقيق ومطهو بصلصة الطماطم والبابريكا والقشدة الحامضة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "دقيق",
+          "amount": 6,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51061-i0",
+          "display": null
+        },
+        {
+          "name": "دجاجة للشوي أو التحميص مقطعة قطع تقديم",
+          "amount": 1,
+          "unit": "دجاجة",
+          "scale": false,
+          "optional": false,
+          "note": "الطريقة تصفها بأنها نحو 3.5 رطل؛ الحجم تقريبي",
+          "id": "fiw650-51061-i1"
+        },
+        {
+          "name": "بصل مفروم خشناً",
+          "amount": 1,
+          "unit": "حبة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51061-i2",
+          "display": null
+        },
+        {
+          "name": "بابريكا",
+          "amount": 1.5,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51061-i3",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51061-i4",
+          "display": null
+        },
+        {
+          "name": "مرق دجاج",
+          "amount": 0.6666666667,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "ثلثا كوب",
+          "id": "fiw650-51061-i5",
+          "display": null
+        },
+        {
+          "name": "نودلز بيض بالزبدة والبقدونس للتقديم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "الكمية غير محددة",
+          "id": "fiw650-51061-i6"
+        },
+        {
+          "name": "ملح وفلفل",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-51061-i7"
+        },
+        {
+          "name": "زبدة أو مارغرين، مقسمة",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51061-i8",
+          "display": null
+        },
+        {
+          "name": "عصير طماطم",
+          "amount": 0.6666666667,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "ثلثا كوب",
+          "id": "fiw650-51061-i9",
+          "display": null
+        },
+        {
+          "name": "سكر",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51061-i10",
+          "display": null
+        },
+        {
+          "name": "ورق غار",
+          "amount": 1,
+          "unit": "ورقة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-51061-i11",
+          "display": null
+        },
+        {
+          "name": "قشدة حامضة",
+          "amount": 0.6666666667,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "ثلثا كوب",
+          "id": "fiw650-51061-i12",
+          "display": null
+        },
+        {
+          "name": "فلفل أخضر مفروم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "ورد بالطريقة فقط بلا مقدار",
+          "id": "fiw650-51061-i13"
+        },
+        {
+          "name": "ملح كوشير لمحلول التمليح",
+          "amount": 0.25,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "ورد بالطريقة فقط",
+          "id": "fiw650-51061-i14",
+          "display": null
+        },
+        {
+          "name": "ماء لمحلول التمليح",
+          "amount": 1,
+          "unit": "كوارت",
+          "scale": true,
+          "optional": false,
+          "note": "ورد بالطريقة فقط",
+          "id": "fiw650-51061-i15",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "لتمليح الدجاج بالمحلول: اشطفه جيداً. أذب ربع كوب ملح كوشير في كوارت ماء. ضع الدجاج في كيس قابل للإغلاق، أضف المحلول وأغلقه وبرّده نحو 30 دقيقة. ذوّب ملعقة كبيرة من الزبدة في مقلاة كبيرة على نار متوسطة وشوّح البصل حتى يشف. ارفع المقلاة عن النار وأضف البابريكا مع الحرص ألا تحترق. أخرج الدجاج واشطفه جيداً بماء صافٍ وجففه بمناشف ورقية. تبّله بالملح والفلفل وأضفه للمقلاة وقلّبه مع البصل والبابريكا. أضف الفلفل الأخضر. أعد المقلاة للنار وأضف من المرق ما يكفي لمنع الاحتراق، واتركه يغلي ثم غطه واطهه 45–60 دقيقة أو حتى يطرى الدجاج. ارفعه إلى طبق وأبقِه دافئاً. خفّض الحرارة وأزل ورق الغار وحرّك القشدة الحامضة. سخّن 2–3 دقائق دون غليان. اسكب الصلصة فوق الدجاج والنودلز وقدّم فوراً.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "دجاج",
+        "بابريكا",
+        "مطبخ هنغاري"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/HNVXQF6G/hungarian-chicken — SHA-256 للاستخراج: ce728ab5001011968e039b28f3718033dddc9da09c5aefe0bfbe6f80168528a0 — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-53072",
+      "name": "غولاش لحم الخنزير الهنغاري",
+      "nameEn": "Hungarian Pork Goulash",
+      "cuisine": "مجري",
+      "category": "أطباق رئيسية",
+      "description": "قطع كتف خنزير مطهوة مع البابريكا والكراوية ومخلل الملفوف والقشدة الحامضة.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "كتف خنزير قليل الدهن منزوع العظم مكعبات بوصة واحدة",
+          "amount": 1.25,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53072-i0",
+          "display": null
+        },
+        {
+          "name": "دقيق",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53072-i1",
+          "display": null
+        },
+        {
+          "name": "زبدة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53072-i2",
+          "display": null
+        },
+        {
+          "name": "بصل كبير مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53072-i3",
+          "display": null
+        },
+        {
+          "name": "بابريكا",
+          "amount": 4,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": "أو حسب الذوق",
+          "id": "fiw650-53072-i4",
+          "display": null
+        },
+        {
+          "name": "بذور كراوية مجروشة قليلاً",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53072-i5",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53072-i6",
+          "display": null
+        },
+        {
+          "name": "ماء ساخن",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53072-i7",
+          "display": null
+        },
+        {
+          "name": "ملفوف مخلل مصفى",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": "نحو 1¾ كوب حسب المصدر",
+          "id": "fiw650-53072-i8",
+          "display": null
+        },
+        {
+          "name": "قشدة حامضة",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-53072-i9",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "غلّف قطع اللحم بالدقيق. في قدر هولندي على نار متوسطة حمّر اللحم جيداً بالزبدة. أضف البصل وقلّبه نحو 10 دقائق أو حتى يشف. أضف البابريكا والكراوية والملح والماء. غطّ القدر واتركه على نار هادئة مع التحريك أحياناً 45 دقيقة أو حتى يطرى اللحم. أضف مخلل الملفوف واتركه 10 دقائق. أضف القشدة الحامضة وحرّك حتى تسخن. يقدم على طبق حسب المصدر (العبارة الأخيرة مبتورة). للميكروويف: ضع اللحم المغطى بالدقيق في طبق كبير مع الزبدة والبصل. غطّه واطهه على حرارة عالية 10 دقائق. أضف البابريكا والكراوية والملح ونصف كوب ماء ساخن. غطّه واطهه على حرارة متوسطة، مع التقليب بعد 12 دقيقة، 25 دقيقة أو حتى يطرى اللحم. أضف مخلل الملفوف واطهه على حرارة منخفضة 4 دقائق، ثم أضف القشدة الحامضة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "غولاش",
+        "لحم",
+        "مطبخ هنغاري"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JYXN5LR7/hungarian-pork-goulash — SHA-256 للاستخراج: b5edf1b568e30e1ba18234641b2fd6f15cef68d5563919e543a4e1d4fdf4dcba — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-59025",
+      "name": "حساء هنغاري بالخضار والشعير",
+      "nameEn": "Hungarian Soup",
+      "cuisine": "مجري",
+      "category": "شوربات",
+      "description": "حساء شعير وبازلاء مجروشة وخضار مع النبيذ وعصير خضار وتكثيف بالرو.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "ماء",
+          "amount": 3,
+          "unit": "كوارت",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i0",
+          "display": null
+        },
+        {
+          "name": "بطاطس كبيرة متماسكة",
+          "amount": 2,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i1",
+          "display": null
+        },
+        {
+          "name": "جزر",
+          "amount": 4,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i2",
+          "display": null
+        },
+        {
+          "name": "بصل صغير",
+          "amount": 3,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i3",
+          "display": null
+        },
+        {
+          "name": "كرفس",
+          "amount": 2,
+          "unit": "عود",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i4",
+          "display": null
+        },
+        {
+          "name": "شعير",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i5",
+          "display": null
+        },
+        {
+          "name": "بازلاء خضراء مجففة ومشقوقة",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i6",
+          "display": null
+        },
+        {
+          "name": "فلفل أسود مطحون طازج",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i7",
+          "display": null
+        },
+        {
+          "name": "ملح متبل بالأعشاب",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i8",
+          "display": null
+        },
+        {
+          "name": "زبدة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": "مقسمة بين الحساء والرو",
+          "id": "fiw650-59025-i9",
+          "display": null
+        },
+        {
+          "name": "نبيذ أبيض",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "Sauterne أو Chardonnay بحسب المصدر",
+          "id": "fiw650-59025-i10",
+          "display": null
+        },
+        {
+          "name": "دخان سائل",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i11",
+          "display": null
+        },
+        {
+          "name": "عصير خضار V-8 أو مرق خضار",
+          "amount": 2,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": "السطر الأصلي مبتور بعد إشارة إلى مرق من طبخ سابق",
+          "id": "fiw650-59025-i12",
+          "display": null
+        },
+        {
+          "name": "صلصة تاباسكو",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i13",
+          "display": null
+        },
+        {
+          "name": "دقيق للرو",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-59025-i14",
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "text": "حضّر الخضار؛ افرم البصل والكرفس ناعماً واترك البطاطس والجزر قطعاً كبيرة نسبياً. اغلِ الشعير والبازلاء في الماء غلياناً قوياً. أضف الخضار والنبيذ والتوابل واتركها على نار هادئة حتى يطرى الشعير وجميع الخضار جداً، نحو ساعتين إلى ساعتين ونصف. قبل التقديم بنحو 30 دقيقة أضف عصير V-8 أو مرق الخضار وروّاً محضراً من الزبدة والدقيق. راقب الحساء وهو يثخن كي لا يلتصق بالقدر.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "شوربة",
+        "شعير"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/NVN6JNBV/hungarian-soup — SHA-256 للاستخراج: 7b825133e51f19cadfcbc7c8fc9bd07a96577be618ca1b439287ed9d15de008d — ترجم الاسم والمكونات والطريقة مع حفظ المقادير والبدائل والتسلسل؛ لا ادعاء باختبار مطبخي أو اعتماد تشغيلي."
+    },
+    {
+      "id": "fiw650-60596",
+      "name": "بطاطس بابريكاش هنغارية بالسجق المدخن",
+      "nameEn": "Hungarian Paprikas Potatoes",
+      "cuisine": "مجري",
+      "category": "أطباق رئيسية",
+      "description": "بطاطس مطهوة مع البصل والفلفل والطماطم والبابريكا وسجق مدخن اختياري الكمية.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "بطاطس",
+          "amount": 2,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-60596-i0",
+          "display": null
+        },
+        {
+          "name": "فلفل أخضر",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-60596-i1",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "حسب الذوق",
+          "id": "fiw650-60596-i2"
+        },
+        {
+          "name": "بابريكا حلوة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-60596-i3",
+          "display": null
+        },
+        {
+          "name": "زيت",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-60596-i4",
+          "display": null
+        },
+        {
+          "name": "سجق هنغاري كولباز أو كيلباسا مدخن شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": true,
+          "note": "2 أو 3 أكواب أو حسب الرغبة كما في المصدر؛ نطاق غير محدد التركيب",
+          "id": "fiw650-60596-i5"
+        },
+        {
+          "name": "بصل",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-60596-i6",
+          "display": null
+        },
+        {
+          "name": "ثوم",
+          "amount": 1,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-60596-i7",
+          "display": null
+        },
+        {
+          "name": "طماطم طازجة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-60596-i8",
+          "display": null
+        },
+        {
+          "name": "ماء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "كمية قليلة ثم ما يكفي لتغطية البطاطس",
+          "id": "fiw650-60596-i9"
+        }
+      ],
+      "steps": [
+        {
+          "text": "افرِم البصل ناعماً وشوّحه مغطى بالزيت حتى يذهب لونه إلى الذهبي. أضف البابريكا وقليلاً من الماء. أضف الثوم والطماطم والفلفل الأخضر والملح، وغطّ القدر واتركه على نار هادئة نصف ساعة. قشّر البطاطس وقطّعها أرباعاً وأضفها مع ماء إضافي يكفي لتغطيتها. واصل الطهي حتى تلين البطاطس. أضف شرائح السجق المدخن واطه خمس دقائق أخرى على نار هادئة.",
+          "duration": null,
+          "n": 1,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "بطاطس",
+        "بابريكا"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/PWK6QY84/potatoes-paprikas-potatoes-hungarian-by-laszlo — SHA-256: e26325e57060ef102af2c2f4a75288f87de2527337a2151e673e005e3607f4b4 — تمت الترجمة مع حفظ المقادير والبدائل وتسلسل الخطوات؛ لا اعتماد تشغيلي أو اختبار مطبخي."
+    },
+    {
+      "id": "fiw650-52303",
+      "name": "ملفوف محشي هنغاري",
+      "nameEn": "Hungarian Stuffed Cabbage",
+      "cuisine": "مجري",
+      "category": "أطباق رئيسية",
+      "description": "أوراق ملفوف محشوة بخليط اللحم المفروم والأرز وتطهى مع مخلل الملفوف وصلصة الطماطم.",
+      "difficulty": "غير محدد بالمصدر",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": 90,
+      "totalTime": null,
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "name": "رأس ملفوف كبير",
+          "amount": 1,
+          "unit": "رأس",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i0",
+          "display": null
+        },
+        {
+          "name": "لحم بقري مفروم",
+          "amount": 1,
+          "unit": "رطل",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i1",
+          "display": null
+        },
+        {
+          "name": "بصل متوسط مفروم",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i2",
+          "display": null
+        },
+        {
+          "name": "أرز نيئ",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i3",
+          "display": null
+        },
+        {
+          "name": "فصوص ثوم طازجة صغيرة",
+          "amount": 2,
+          "unit": "فص",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i4",
+          "display": null
+        },
+        {
+          "name": "ملح",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i5",
+          "display": null
+        },
+        {
+          "name": "فلفل",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i6",
+          "display": null
+        },
+        {
+          "name": "بصل كبير مكعبات للصلصة",
+          "amount": 1,
+          "unit": "حبة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i7",
+          "display": null
+        },
+        {
+          "name": "دهن نباتي",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i8",
+          "display": null
+        },
+        {
+          "name": "معجون طماطم",
+          "amount": 2,
+          "unit": "ملعقة كبيرة ممتلئة",
+          "scale": true,
+          "optional": false,
+          "note": null,
+          "id": "fiw650-52303-i9",
+          "display": null
+        },
+        {
+          "name": "مخلل ملفوف، مغسول قليلاً",
+          "amount": 1,
+          "unit": "مرطبان",
+          "scale": false,
+          "optional": false,
+          "note": "حجم المرطبان غير مذكور",
+          "id": "fiw650-52303-i10"
+        },
+        {
+          "name": "ماء",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "optional": false,
+          "note": "يكفي لتغطية اللفائف",
+          "id": "fiw650-52303-i11"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "انزع قلب الملفوف واغسله ثم اطهه في قدر كبير من الماء المغلي عشر دقائق. ارفعه عن النار واتركه 10–15 دقيقة لتلين الأوراق. اخلط اللحم المفروم والبصل والأرز والثوم والملح والفلفل جيداً؛ يقول المصدر «اطه ثم صفّ الدهن» قبل لف الحشوة، فنحافظ على ترتيب عبارته دون إعادة تفسير. افصل أوراق الملفوف بحرص مع إبقائها كاملة. ضع ملعقة من خليط اللحم عند قاعدة كل ورقة ولفها برفق كي يتمدد الأرز. في قدر كبير اطه البصل المقطع بالدهن حتى يصبح ذهبياً. أضف معجون الطماطم ومخلل الملفوف. رتب لفائف الملفوف في القدر واسكب ماءً يكفي لتغطيتها. غط القدر واتركه على نار هادئة ساعة ونصف.",
+          "duration": null,
+          "passive": false
+        }
+      ],
+      "tags": [
+        "ملفوف",
+        "لحم مفروم"
+      ],
+      "notes": "المصدر: https://www.foodista.com/recipe/JHLMYJ3X/stuffed-cabbage-hungarian-by-laszlo — SHA-256: 8a3903031c9af99d033b742b717856b3e8bdf2c6a6334d5f3cc9dc4df5e2f8d1 — ترجمة مع حفظ تفاصيل المصدر وتسلسل الطريقة؛ لا اعتماد تشغيلي أو اختبار مطبخي.؛ وصف المطبخ السابق غير مثبت كأصل قومي: هنغاري؛ التصنيف الحالي يستند فقط لاسم البلد/الإقليم الصريح في عنوان المصدر، وإلا غير محدد."
     }
   ]
 }

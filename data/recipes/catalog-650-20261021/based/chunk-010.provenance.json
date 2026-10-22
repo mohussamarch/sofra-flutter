@@ -1,0 +1,3147 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+  "recipes": [
+    {
+      "recipeId": "bc650-pasta-arrabbiata",
+      "sourceTitle": "Pasta Arrabbiata",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/pasta-arrabbiata.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/pasta-arrabbiata.md",
+      "snapshotSHA256": "aa13b2e75afbc73ad2c3ce9dcb5e952a5f54b49743afe0727fea1225a66a3bf8",
+      "sourceAuthor": "\"klisurovi4\"",
+      "sourceTags": [
+        "pasta",
+        "quick",
+        "italian"
+      ],
+      "sourceIngredientLines": [
+        "Pasta",
+        "Olive oil",
+        "Chilli flakes or diced chilli peppers",
+        "Crushed garlic cloves",
+        "Crushed tomatoes (about 800 gramms for 500 gramms of pasta)",
+        "Chopped parsley",
+        "Grated Pecorino Romano or Parmigiano Reggiano (optional, but highly recommended)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-pasta-arrabbiata-ing-1",
+          "arabicName": "معكرونة",
+          "candidateDisplay": "Pasta",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Pasta",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-arrabbiata-ing-2",
+          "arabicName": "زيت زيتون",
+          "candidateDisplay": "Olive oil",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Olive oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-arrabbiata-ing-3",
+          "arabicName": "رقائق فلفل حار أو فلفل حار مكعبات",
+          "candidateDisplay": "Chilli flakes or diced chilli peppers",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Chilli flakes or diced chilli peppers",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-arrabbiata-ing-4",
+          "arabicName": "فصوص ثوم مهروسة",
+          "candidateDisplay": "Crushed garlic cloves",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Crushed garlic cloves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-arrabbiata-ing-5",
+          "arabicName": "طماطم مهروسة (نحو 800 جم لكل 500 جم معكرونة)",
+          "candidateDisplay": "Crushed tomatoes (about 800 gramms for 500 gramms of pasta)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Crushed tomatoes (about 800 gramms for 500 gramms of pasta)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-arrabbiata-ing-6",
+          "arabicName": "بقدونس مفروم",
+          "candidateDisplay": "Chopped parsley",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Chopped parsley",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-pasta-arrabbiata-ing-7",
+          "arabicName": "بيكورينو رومانو أو بارميجيانو ريجيانو مبشور (اختياري ويوصي به المصدر بشدة)",
+          "candidateDisplay": "Grated Pecorino Romano or Parmigiano Reggiano (optional, but highly recommended)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Grated Pecorino Romano or Parmigiano Reggiano (optional, but highly recommended)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Start heating up water for the pasta.",
+        "Heat up a few tablespoons of olive oil over low heat.",
+        "Crush several cloves of garlic into the olive oil, add the chilli flakes or chilli peppers and fry them for a short time, while being careful not to burn the garlic.",
+        "Add your crushed tomatoes, together with some salt and pepper, increase the heat to medium and let simmer for 10-15 minutes or until it looks nicely thickened.",
+        "When the water starts boiling, put a handful of salt into it and then your pasta of choice. Ideally leave the pasta slightly undercooked, because it will go in the hot sauce and finish cooking there.",
+        "When the sauce is almost ready, add most of your chopped parsley and stir it around. Save some to top the dish later.",
+        "When the pasta is ready (ideally at the same time as the sauce or slightly later), strain it and add it to the sauce, which should be off the heat. If the sauce looks a bit too thick, add some of the pasta water. Mix well.",
+        "Add some of the grated cheese of your choice and stir it in.",
+        "Serve with some more grated cheese and chopped parsley on top."
+      ],
+      "sourceRawText": "---\ntitle: Pasta Arrabbiata\ntags: ['pasta', 'quick', 'italian']\ndate: 2022-06-21\nauthor: \"klisurovi4\"\n---\n\n![arrabiata](/pix/pasta-arrabbiata.webp)\n\n- ⏲️ Prep time: 5 min\n- 🍳 Cook time: 20 min\n\n## Ingredients\n\n- Pasta\n- Olive oil\n- Chilli flakes or diced chilli peppers\n- Crushed garlic cloves\n- Crushed tomatoes (about 800 gramms for 500 gramms of pasta)\n- Chopped parsley\n- Grated Pecorino Romano or Parmigiano Reggiano (optional, but highly recommended)\n\n## Directions\n\n1. Start heating up water for the pasta.\n2. Heat up a few tablespoons of olive oil over low heat.\n3. Crush several cloves of garlic into the olive oil, add the chilli flakes or chilli peppers and fry them for a short time, while being careful not to burn the garlic.\n4. Add your crushed tomatoes, together with some salt and pepper, increase the heat to medium and let simmer for 10-15 minutes or until it looks nicely thickened.\n5. When the water starts boiling, put a handful of salt into it and then your pasta of choice. Ideally leave the pasta slightly undercooked, because it will go in the hot sauce and finish cooking there.\n6. When the sauce is almost ready, add most of your chopped parsley and stir it around. Save some to top the dish later.\n8. When the pasta is ready (ideally at the same time as the sauce or slightly later), strain it and add it to the sauce, which should be off the heat. If the sauce looks a bit too thick, add some of the pasta water. Mix well.\n9. Add some of the grated cheese of your choice and stir it in.\n10. Serve with some more grated cheese and chopped parsley on top.",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 5,
+        "cookTime": 20,
+        "totalTime": 25,
+        "sourceReported": [
+          "- ⏲️ Prep time: 5 min",
+          "- 🍳 Cook time: 20 min"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-taco-meat",
+      "sourceTitle": "Taco Meat",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/taco-meat.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/taco-meat.md",
+      "snapshotSHA256": "aabd13220f961c2c849f715d50d02843464921b0c15956632bf46963bf27742d",
+      "sourceAuthor": "elias-howell",
+      "sourceTags": [
+        "mexican",
+        "beef"
+      ],
+      "sourceIngredientLines": [
+        "1 pound (about 500 g) ground beef or turkey",
+        "1 medium onion, finely chopped (or 1 1/2 teaspoon onion powder)",
+        "1 medium tomato, chopped (or 1 small can of tomato sauce)",
+        "1 teaspoon chili powder (or 1/3 teaspoon each oregano, cumin, garlic powder)",
+        "1 teaspoon oregano (ground or leaf)",
+        "1/4 teaspoon cumin",
+        "dash of pepper (1/8 teaspoon or less)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-taco-meat-ing-1",
+          "arabicName": "لحم بقري أو ديك رومي مفروم، رطل واحد (نحو 500 جم)",
+          "candidateDisplay": "1 pound (about 500 g) ground beef or turkey",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 pound (about 500 g) ground beef or turkey",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-taco-meat-ing-2",
+          "arabicName": "بصلة متوسطة مفرومة ناعماً (أو مسحوق بصل، ملعقة ونصف صغيرة)",
+          "candidateDisplay": "1 medium onion, finely chopped (or 1 1/2 teaspoon onion powder)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 medium onion, finely chopped (or 1 1/2 teaspoon onion powder)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-taco-meat-ing-3",
+          "arabicName": "طماطم متوسطة مفرومة (أو علبة صغيرة من صلصة الطماطم)",
+          "candidateDisplay": "1 medium tomato, chopped (or 1 small can of tomato sauce)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 medium tomato, chopped (or 1 small can of tomato sauce)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-taco-meat-ing-4",
+          "arabicName": "مسحوق تشيلي، ملعقة صغيرة (أو ثلث ملعقة صغيرة لكل من الأوريغانو والكمون ومسحوق الثوم)",
+          "candidateDisplay": "1 teaspoon chili powder (or 1/3 teaspoon each oregano, cumin, garlic powder)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 teaspoon chili powder (or 1/3 teaspoon each oregano, cumin, garlic powder)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-taco-meat-ing-5",
+          "arabicName": "أوريغانو مطحون أو أوراق، ملعقة صغيرة",
+          "candidateDisplay": "1 teaspoon oregano (ground or leaf)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 teaspoon oregano (ground or leaf)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-taco-meat-ing-6",
+          "arabicName": "كمون، ربع ملعقة صغيرة",
+          "candidateDisplay": "1/4 teaspoon cumin",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1/4 teaspoon cumin",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.25,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-taco-meat-ing-7",
+          "arabicName": "رشة فلفل، ثمن ملعقة صغيرة أو أقل",
+          "candidateDisplay": "dash of pepper (1/8 teaspoon or less)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "dash of pepper (1/8 teaspoon or less)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Brown beef and onion together. Drain grease.",
+        "Add the rest of the ingredients to the browned meat.",
+        "Stir well.",
+        "Heat this mixture thoroughly.",
+        "Add more tomato sauce if the mixture is dry.",
+        "Cover and simmer for 20 minutes, or less if the mixture begins to dry out."
+      ],
+      "sourceRawText": "---\ntitle: \"Taco Meat\"\ndate: 2021-03-12\ntags: ['mexican', 'beef']\nauthor: elias-howell\n---\n\n## Ingredients\n\n- 1 pound (about 500 g) ground beef or turkey\n- 1 medium onion, finely chopped (or 1 1/2 teaspoon onion powder)\n- 1 medium tomato, chopped (or 1 small can of tomato sauce)\n- 1 teaspoon chili powder (or 1/3 teaspoon each oregano, cumin, garlic powder)\n- 1 teaspoon oregano (ground or leaf)\n- 1/4 teaspoon cumin\n- dash of pepper (1/8 teaspoon or less)\n\n## Directions\n\n1. Brown beef and onion together. Drain grease.\n2. Add the rest of the ingredients to the browned meat.\n3. Stir well.\n4. Heat this mixture thoroughly.\n5. Add more tomato sauce if the mixture is dry.\n6. Cover and simmer for 20 minutes, or less if the mixture begins to dry out.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-spaghetti-sauce",
+      "sourceTitle": "Spaghetti Sauce",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/spaghetti-sauce.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/spaghetti-sauce.md",
+      "snapshotSHA256": "3d15155baf2224b90932c979bec2064e6540b76ba8386ff3d224adadc7511a2d",
+      "sourceAuthor": "\"Jimmy B\"",
+      "sourceTags": [
+        "tomato",
+        "sauce",
+        "fasting",
+        "pasta",
+        "italian"
+      ],
+      "sourceIngredientLines": [
+        "4 28 oz cans of whole or diced tomatoes",
+        "1 6 oz can of tomato paste",
+        "12 garlic gloves",
+        "3/4 cup of olive oil",
+        "basil (optional)",
+        "red pepper flakes (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-spaghetti-sauce-ing-1",
+          "arabicName": "4 علب طماطم كاملة أو مكعبات، 28 أونصة لكل علبة",
+          "candidateDisplay": "4 28 oz cans of whole or diced tomatoes",
+          "sourceIngredientIndex": 0,
+          "sourceText": "4 28 oz cans of whole or diced tomatoes",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-spaghetti-sauce-ing-2",
+          "arabicName": "علبة معجون طماطم، 6 أونصات",
+          "candidateDisplay": "1 6 oz can of tomato paste",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 6 oz can of tomato paste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-spaghetti-sauce-ing-3",
+          "arabicName": "12 فص ثوم",
+          "candidateDisplay": "12 garlic gloves",
+          "sourceIngredientIndex": 2,
+          "sourceText": "12 garlic gloves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-spaghetti-sauce-ing-4",
+          "arabicName": "زيت زيتون، ثلاثة أرباع كوب",
+          "candidateDisplay": "3/4 cup of olive oil",
+          "sourceIngredientIndex": 3,
+          "sourceText": "3/4 cup of olive oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.75,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-spaghetti-sauce-ing-5",
+          "arabicName": "ريحان (اختياري)",
+          "candidateDisplay": "basil (optional)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "basil (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-spaghetti-sauce-ing-6",
+          "arabicName": "رقائق فلفل أحمر (اختياري)",
+          "candidateDisplay": "red pepper flakes (optional)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "red pepper flakes (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Peel and mince garlic.",
+        "Heat 1/2 a cup of olive oil in a large pot (high-low to low-medium heat), and heat the garlic until golden and fragrant.",
+        "Add the tomato paste and 4 cans of tomatos and bring to a simmer. If adding red pepper flakes add them now.",
+        "Cook uncovered for 45 minutes, stirring occasionally.",
+        "Add a pinch of salt, the remaining 1/4 cup of olive oil, and basil if you are adding that.",
+        "\\n"
+      ],
+      "sourceRawText": "---\ntitle: Spaghetti Sauce\ntags: ['tomato', 'sauce', 'fasting', 'pasta', 'italian']\ndate: 2025-01-02\nauthor: \"Jimmy B\"\n---\n\n\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 45 min\n- 🍽️ Servings: 10+\n\n## Ingredients\n\n- 4 28 oz cans of whole or diced tomatoes\n- 1 6 oz can of tomato paste\n- 12 garlic gloves\n- 3/4 cup of olive oil\n- basil (optional)\n- red pepper flakes (optional)\n\n## Directions\n\n1. Peel and mince garlic.\n2. Heat 1/2 a cup of olive oil in a large pot (high-low to low-medium heat), and heat the garlic until golden and fragrant.\n3. Add the tomato paste and 4 cans of tomatos and bring to a simmer. If adding red pepper flakes add them now.\n4. Cook uncovered for 45 minutes, stirring occasionally.\n5. Add a pinch of salt, the remaining 1/4 cup of olive oil, and basil if you are adding that.\n\n\\n\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 15,
+        "cookTime": 45,
+        "totalTime": 60,
+        "sourceReported": [
+          "- ⏲️ Prep time: 15 min",
+          "- 🍳 Cook time: 45 min",
+          "- 🍽️ Servings: 10+"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-quickbreakfastspaghetti",
+      "sourceTitle": "Quick Breakfast Spaghetti",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/quickbreakfastspaghetti.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/quickbreakfastspaghetti.md",
+      "snapshotSHA256": "5ec9331930f6658a54c369ae3ebd339bea0f627bd0e8935d6eb0e2e296eb2e4b",
+      "sourceAuthor": "sadoon-albader",
+      "sourceTags": [
+        "breakfast",
+        "pasta"
+      ],
+      "sourceIngredientLines": [
+        "Spaghetti (any kind you prefer)",
+        "Ground spices (I like to use cumin, turmeric, paprika, and garlic)",
+        "Tomato Paste/Sauce (preferably one with basil and without preservative)",
+        "Extra Virgin Olive Oil"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-quickbreakfastspaghetti-ing-1",
+          "arabicName": "سباغيتي من النوع المرغوب",
+          "candidateDisplay": "Spaghetti (any kind you prefer)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Spaghetti (any kind you prefer)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-quickbreakfastspaghetti-ing-2",
+          "arabicName": "توابل مطحونة؛ يقترح المصدر كموناً وكركماً وبابريكا وثوماً",
+          "candidateDisplay": "Ground spices (I like to use cumin, turmeric, paprika, and garlic)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Ground spices (I like to use cumin, turmeric, paprika, and garlic)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-quickbreakfastspaghetti-ing-3",
+          "arabicName": "معجون أو صلصة طماطم، ويفضل ما يحتوي ريحاناً وخالياً من المواد الحافظة",
+          "candidateDisplay": "Tomato Paste/Sauce (preferably one with basil and without preservative)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Tomato Paste/Sauce (preferably one with basil and without preservative)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-quickbreakfastspaghetti-ing-4",
+          "arabicName": "زيت زيتون بكر ممتاز",
+          "candidateDisplay": "Extra Virgin Olive Oil",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Extra Virgin Olive Oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Boil some water fully and prepare a pot.",
+        "While the water is boiling, add all your spices in the pot with the spaghetti on top.",
+        "Pour the boiled water on the spaghetti to make it soft so you can immerse it fully in the water.",
+        "Mix thoroughly the water with the spices and salt and pepper if needed.",
+        "Place the pot on the stove, keep it boiling, and stir every minute or two for 8 minutes.",
+        "It should take no more than 8 minutes, but you can check if it is fully cooked by tasting one piece at a time.",
+        "Once it is fully cooked, strain the water from the pot and keep the spaghetti in.",
+        "Before placing it back on the stove, add and mix a generous amount of olive oil. Now's the time to add bacon or turkey if you are also using that.",
+        "While stirring the spaghetti, add your tomato sauce or paste and keep mixing for a minute and avoid letting it stick to the boiler.",
+        "Pour the spaghetti out in your favorite bowl and enjoy!"
+      ],
+      "sourceRawText": "---\ntitle: \"Quick Breakfast Spaghetti\"\ndate: 2021-03-13\ntags: ['breakfast', 'pasta']\nauthor: sadoon-albader\n---\n\nA quick breakfast spaghetti recipe that covers a healthy amount of carbs, fat, and spices. Eggs\nand/or bacon can be added to cover some protein, you should cook those while the boiler is cooking\nthe spaghetti for time efficiency.\n\n## Ingredients\n\n- Spaghetti (any kind you prefer)\n- Ground spices (I like to use cumin, turmeric, paprika, and garlic)\n- Tomato Paste/Sauce (preferably one with basil and without preservative)\n- Extra Virgin Olive Oil\n\n## Directions\n\n1. Boil some water fully and prepare a pot.\n2. While the water is boiling, add all your spices in the pot with the spaghetti on top.\n3. Pour the boiled water on the spaghetti to make it soft so you can immerse it fully in the water.\n4. Mix thoroughly the water with the spices and salt and pepper if needed.\n5. Place the pot on the stove, keep it boiling, and stir every minute or two for 8 minutes.\n6. It should take no more than 8 minutes, but you can check if it is fully cooked by tasting one piece at a time.\n7. Once it is fully cooked, strain the water from the pot and keep the spaghetti in.\n8. Before placing it back on the stove, add and mix a generous amount of olive oil. Now's the time to add bacon or turkey if you are also using that.\n9. While stirring the spaghetti, add your tomato sauce or paste and keep mixing for a minute and avoid letting it stick to the boiler.\n10. Pour the spaghetti out in your favorite bowl and enjoy!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-simple-pasta-cream-sauce",
+      "sourceTitle": "Simple Creamy Pasta Sauce",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/simple-pasta-cream-sauce.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/simple-pasta-cream-sauce.md",
+      "snapshotSHA256": "8d397b36bbcf22981270a96f6d5811c95550f1f34f5e84d3dc4f4fbb11f85a22",
+      "sourceAuthor": "\"herzeleid02\"",
+      "sourceTags": [
+        "basic",
+        "quick",
+        "sauce",
+        "pasta"
+      ],
+      "sourceIngredientLines": [
+        "Dairy liquid cream (10%+ fat recommended)",
+        "Flour (Wheat flour recommended)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-simple-pasta-cream-sauce-ing-1",
+          "arabicName": "قشدة ألبان سائلة (يوصي المصدر بنسبة دهن 10% أو أكثر)",
+          "candidateDisplay": "Dairy liquid cream (10%+ fat recommended)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Dairy liquid cream (10%+ fat recommended)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-simple-pasta-cream-sauce-ing-2",
+          "arabicName": "دقيق (يوصي المصدر بدقيق القمح)",
+          "candidateDisplay": "Flour (Wheat flour recommended)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Flour (Wheat flour recommended)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Add 1 teaspoon of flour into a saucepan.",
+        "Pour ~60ml(2fl oz|1/4 cup) of cream into a saucepan.",
+        "Stir and turn on maximum heat.",
+        "Keep stirring until it becomes thick. If the sauce is too liquid, add more flour, if the sauce is too solid (like a uncooked pancake), add more cream.",
+        "Mix the sauce with the pasta."
+      ],
+      "sourceRawText": "---\ntitle: \"Simple Creamy Pasta Sauce\"\ndate: 2021-03-23\ntags: ['basic', 'quick', 'sauce', 'pasta']\nauthor: \"herzeleid02\"\n---\n\n- ⏲️  Prep time: 2 min\n- 🍳  Cook time: 3 mins\n- 🍽️  Servings: 1\n\n## Ingredients\n\n- Dairy liquid cream (10%+ fat recommended)\n- Flour (Wheat flour recommended)\n\n## Directions\n\n 1. Add 1 teaspoon of flour into a saucepan.\n 2. Pour ~60ml(2fl oz|1/4 cup) of cream into a saucepan.\n 3. Stir and turn on maximum heat.\n 4. Keep stirring until it becomes thick.\n If the sauce is too liquid, add more flour, if the sauce is too solid (like a uncooked pancake), add more cream.\n 5. Mix the sauce with the pasta.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 1,
+        "prepTime": 2,
+        "cookTime": 3,
+        "totalTime": 5,
+        "sourceReported": [
+          "- ⏲️  Prep time: 2 min",
+          "- 🍳  Cook time: 3 mins",
+          "- 🍽️  Servings: 1"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-beijinho",
+      "sourceTitle": "Beijinho",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/beijinho.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/beijinho.md",
+      "snapshotSHA256": "82b62995d9f9c8279079c5aecb62d6f297728599960452c0328201386b30e3aa",
+      "sourceAuthor": "\"Georis Samuel\"",
+      "sourceTags": [
+        "dessert",
+        "coconut",
+        "traditional",
+        "brazilian"
+      ],
+      "sourceIngredientLines": [
+        "A can of sweetened condensed milk (395g)",
+        "Unsalted butter (30g)",
+        "Table cream (200g)",
+        "Unsweetened Shredded Coconut (80g)",
+        "Cloves (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-beijinho-ing-1",
+          "arabicName": "علبة حليب مكثف محلى، 395 جم",
+          "candidateDisplay": "A can of sweetened condensed milk (395g)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "A can of sweetened condensed milk (395g)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-beijinho-ing-2",
+          "arabicName": "زبدة غير مملحة، 30 جم",
+          "candidateDisplay": "Unsalted butter (30g)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Unsalted butter (30g)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-beijinho-ing-3",
+          "arabicName": "قشدة مائدة، 200 جم",
+          "candidateDisplay": "Table cream (200g)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Table cream (200g)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-beijinho-ing-4",
+          "arabicName": "جوز هند مبشور غير محلى، 80 جم",
+          "candidateDisplay": "Unsweetened Shredded Coconut (80g)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Unsweetened Shredded Coconut (80g)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-beijinho-ing-5",
+          "arabicName": "قرنفل (اختياري)",
+          "candidateDisplay": "Cloves (optional)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Cloves (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Mix the sweetened condensed milk, the butter, the table cream, 30g of coconut and a pinch of salt in a saucepan;",
+        "On medium-low heat, stir constantly until it thickens.",
+        "The right point it's when you use the spatula through the mixture and create a 'path' that takes a while to close.",
+        "Turn off the stove, put the dessert on a plate and cover it with plastic wrap",
+        "Take it to the refrigerator and let it cool",
+        "Grease your hands with butter and make small balls with the mixture you just prepared (the size of each ball is on you, I recommend 18g each);",
+        "Roll the balls in the rest of the shredded coconut, place them into small paper cups, and, traditionally, we stick a clove on the top."
+      ],
+      "sourceRawText": "---\ntitle: Beijinho\ntags: ['dessert', 'coconut', 'traditional', 'brazilian']\ndate: 2024-10-15\nauthor: \"Georis Samuel\"\n---\n\n![Beijinho](/pix/beijinho.webp)\n\nA variation of the famous \"Brigadeiro\" that is made using coconut and that's really delicious\n\n- ⏲️ Prep time: 90 min (cooling time + roolling the balls)\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 27 (approximately)\n\n## Ingredients\n\n- A can of sweetened condensed milk (395g)\n- Unsalted butter (30g)\n- Table cream (200g)\n- Unsweetened Shredded Coconut (80g)\n- Cloves (optional)\n\n## Directions\n\n1. Mix the sweetened condensed milk, the butter, the table cream, 30g of coconut and a pinch of salt in a saucepan;\n2. On medium-low heat, stir constantly until it thickens.\n3. The right point it's when you use the spatula through the mixture and create a 'path' that takes a while to close.\n4. Turn off the stove, put the dessert on a plate and cover it with plastic wrap\n5. Take it to the refrigerator and let it cool\n6. Grease your hands with butter and make small balls with the mixture you just prepared (the size of each ball is on you, I recommend 18g each);\n7. Roll the balls in the rest of the shredded coconut, place them into small paper cups, and, traditionally, we stick a clove on the top.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 90,
+        "cookTime": 10,
+        "totalTime": 100,
+        "sourceReported": [
+          "- ⏲️ Prep time: 90 min (cooling time + roolling the balls)",
+          "- 🍳 Cook time: 10 min",
+          "- 🍽️ Servings: 27 (approximately)"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-greek-easter-cookies",
+      "sourceTitle": "Greek Easter Cookies",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/greek-easter-cookies.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/greek-easter-cookies.md",
+      "snapshotSHA256": "7301478158a7b3e818eeb90f22f289c5b449a4761061fe75dd2494a2ef51580b",
+      "sourceAuthor": "\"Rufflikerex\"",
+      "sourceTags": [
+        "dessert",
+        "cookies",
+        "snack",
+        "greek",
+        "easter"
+      ],
+      "sourceIngredientLines": [
+        "1 lb of unsalted butter",
+        "3 cups of sugar",
+        "10 eggs",
+        "6 tsps baking powder",
+        "2 tsps baker’s ammonium",
+        "1 pinch of baking soda",
+        "2 tsp powder vanilla",
+        "Zest of 3 oranges",
+        "Zest of 2 lemons",
+        "1/2 cup orange juice",
+        "1 cup warmed milk",
+        "1 egg yolk whisked to brush cookies",
+        "Enough flour to make a soft pliable dough (about 9 cups or a bit more)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-1",
+          "arabicName": "زبدة غير مملحة، رطل واحد",
+          "candidateDisplay": "1 lb of unsalted butter",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 lb of unsalted butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "lb",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-2",
+          "arabicName": "سكر، 3 أكواب",
+          "candidateDisplay": "3 cups of sugar",
+          "sourceIngredientIndex": 1,
+          "sourceText": "3 cups of sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 3,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-3",
+          "arabicName": "10 بيضات",
+          "candidateDisplay": "10 eggs",
+          "sourceIngredientIndex": 2,
+          "sourceText": "10 eggs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-4",
+          "arabicName": "بيكنج باودر، 6 ملاعق صغيرة",
+          "candidateDisplay": "6 tsps baking powder",
+          "sourceIngredientIndex": 3,
+          "sourceText": "6 tsps baking powder",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-5",
+          "arabicName": "أمونيوم الخباز، ملعقتان صغيرتان",
+          "candidateDisplay": "2 tsps baker’s ammonium",
+          "sourceIngredientIndex": 4,
+          "sourceText": "2 tsps baker’s ammonium",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-6",
+          "arabicName": "رشة بيكربونات صوديوم",
+          "candidateDisplay": "1 pinch of baking soda",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1 pinch of baking soda",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-7",
+          "arabicName": "فانيليا مسحوقة، ملعقتان صغيرتان",
+          "candidateDisplay": "2 tsp powder vanilla",
+          "sourceIngredientIndex": 6,
+          "sourceText": "2 tsp powder vanilla",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-8",
+          "arabicName": "قشر 3 برتقالات مبشور",
+          "candidateDisplay": "Zest of 3 oranges",
+          "sourceIngredientIndex": 7,
+          "sourceText": "Zest of 3 oranges",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-9",
+          "arabicName": "قشر ليمونتين مبشور",
+          "candidateDisplay": "Zest of 2 lemons",
+          "sourceIngredientIndex": 8,
+          "sourceText": "Zest of 2 lemons",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-10",
+          "arabicName": "عصير برتقال، نصف كوب",
+          "candidateDisplay": "1/2 cup orange juice",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1/2 cup orange juice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-11",
+          "arabicName": "حليب دافئ، كوب واحد",
+          "candidateDisplay": "1 cup warmed milk",
+          "sourceIngredientIndex": 10,
+          "sourceText": "1 cup warmed milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-12",
+          "arabicName": "صفار بيضة مخفوق لدهن الكعك",
+          "candidateDisplay": "1 egg yolk whisked to brush cookies",
+          "sourceIngredientIndex": 11,
+          "sourceText": "1 egg yolk whisked to brush cookies",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-greek-easter-cookies-ing-13",
+          "arabicName": "دقيق يكفي لعجين طري مرن (نحو 9 أكواب أو أكثر قليلاً)",
+          "candidateDisplay": "Enough flour to make a soft pliable dough (about 9 cups or a bit more)",
+          "sourceIngredientIndex": 12,
+          "sourceText": "Enough flour to make a soft pliable dough (about 9 cups or a bit more)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Cream butter and sugar together until fluffy.  Add eggs one at a time and blend well between each.",
+        "Add ammonium to the warmed milk and add to the butter, sugar, and egg mixture.",
+        "Start adding flour to the wet mixture and at this time also add the baking powder, vanilla, lemon/orange zest, salt and orange juice.",
+        "Mix well and start adding flour slowly until you are able to roll the dough easily between your hands. (This is a big batch, if your mixer can’t handle the volume, then knead by hand).",
+        "Form dough in a ball and place in a big bowl.  Let it rest for about 30 minutes, cover it with saran wrap and keep in oven or draft free area.",
+        "Line pans with parchment paper.",
+        "Form dough by hand in ½ inch thick 3 inch long strips and then twist together or any shape you like.  If the dough is sticky dip hands in oil.",
+        "Brush with beaten egg yolks and bake at 350F for about 20 minutes or 325F convection.  Watch carefully as they can burn easily!"
+      ],
+      "sourceRawText": "---\ntitle: \"Greek Easter Cookies\"\ndate: 2021-03-21\ntags: ['dessert', 'cookies', 'snack', 'greek', 'easter']\nauthor: \"Rufflikerex\"\n---\n\nA very simple, delicious, and traditional greek recipe for easter cookies.\n\n- ⏲️ Prep time: 30-45 min\n- 🍳 Cook time: 18-22 min\n- 🍽️ Servings: Five-dozen individual cookies\n\n## Ingredients\n\n- 1 lb of unsalted butter\n- 3 cups of sugar\n- 10 eggs\n- 6 tsps baking powder\n- 2 tsps baker’s ammonium\n- 1 pinch of baking soda\n- 2 tsp powder vanilla\n- Zest of 3 oranges\n- Zest of 2 lemons\n- 1/2 cup orange juice\n- 1 cup warmed milk\n- 1 egg yolk whisked to brush cookies\n- Enough flour to make a soft pliable dough (about 9 cups or a bit more)\n\n## Directions\n\n1. Cream butter and sugar together until fluffy.  Add eggs one at a time and blend well between each.\n2. Add ammonium to the warmed milk and add to the butter, sugar, and egg mixture.\n3. Start adding flour to the wet mixture and at this time also add the baking powder, vanilla, lemon/orange zest, salt and orange juice.\n4. Mix well and start adding flour slowly until you are able to roll the dough easily between your hands. (This is a big batch, if your mixer can’t handle the volume, then knead by hand).\n5. Form dough in a ball and place in a big bowl.  Let it rest for about 30 minutes, cover it with saran wrap and keep in oven or draft free area.\n6. Line pans with parchment paper.\n7. Form dough by hand in ½ inch thick 3 inch long strips and then twist together or any shape you like.  If the dough is sticky dip hands in oil.\n8. Brush with beaten egg yolks and bake at 350F for about 20 minutes or 325F convection.  Watch carefully as they can burn easily!\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": [
+          "- ⏲️ Prep time: 30-45 min",
+          "- 🍳 Cook time: 18-22 min",
+          "- 🍽️ Servings: Five-dozen individual cookies"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-chocolate-chip-cookies",
+      "sourceTitle": "Chocolate Chip Cookies ",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chocolate-chip-cookies.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/chocolate-chip-cookies.md",
+      "snapshotSHA256": "cbeb617a6e4549662f770fe33cf54bd0ec5cd828b7bf089c881ce978c961c527",
+      "sourceAuthor": "mfed3",
+      "sourceTags": [
+        "dessert",
+        "cookies",
+        "sweet",
+        "chocolate"
+      ],
+      "sourceIngredientLines": [
+        "230 g melted butter (2 sticks)",
+        "330 g bread flour",
+        "5 g salt",
+        "5 g baking soda",
+        "100-200 g white sugar",
+        "100-200 g brown sugar",
+        "1 egg",
+        "15 g milk",
+        "5 g vanilla",
+        "225 g 50-70% dark chocolate chips or semi-sweet milk chocolate chips"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-1",
+          "arabicName": "زبدة مذابة، 230 جم (قالبان)",
+          "candidateDisplay": "230 g melted butter (2 sticks)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "230 g melted butter (2 sticks)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 230,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-2",
+          "arabicName": "دقيق خبز، 330 جم",
+          "candidateDisplay": "330 g bread flour",
+          "sourceIngredientIndex": 1,
+          "sourceText": "330 g bread flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 330,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-3",
+          "arabicName": "ملح، 5 جم",
+          "candidateDisplay": "5 g salt",
+          "sourceIngredientIndex": 2,
+          "sourceText": "5 g salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 5,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-4",
+          "arabicName": "بيكربونات الصوديوم، 5 جم",
+          "candidateDisplay": "5 g baking soda",
+          "sourceIngredientIndex": 3,
+          "sourceText": "5 g baking soda",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 5,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-5",
+          "arabicName": "سكر أبيض، 100–200 جم",
+          "candidateDisplay": "100-200 g white sugar",
+          "sourceIngredientIndex": 4,
+          "sourceText": "100-200 g white sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-6",
+          "arabicName": "سكر بني، 100–200 جم",
+          "candidateDisplay": "100-200 g brown sugar",
+          "sourceIngredientIndex": 5,
+          "sourceText": "100-200 g brown sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-7",
+          "arabicName": "بيضة واحدة",
+          "candidateDisplay": "1 egg",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 egg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-8",
+          "arabicName": "حليب، 15 جم",
+          "candidateDisplay": "15 g milk",
+          "sourceIngredientIndex": 7,
+          "sourceText": "15 g milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 15,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-9",
+          "arabicName": "فانيليا، 5 جم",
+          "candidateDisplay": "5 g vanilla",
+          "sourceIngredientIndex": 8,
+          "sourceText": "5 g vanilla",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 5,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate-chip-cookies-ing-10",
+          "arabicName": "رقائق شوكولاتة داكنة 50–70% أو شوكولاتة شبه حلوة، 225 جم",
+          "candidateDisplay": "225 g 50-70% dark chocolate chips or semi-sweet milk chocolate chips",
+          "sourceIngredientIndex": 9,
+          "sourceText": "225 g 50-70% dark chocolate chips or semi-sweet milk chocolate chips",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 225,
+          "acceptedUnit": "g",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Preheat oven to 375°F",
+        "Mix the flour, baking soda, and salt in a bowl",
+        "Using a mixer or whisk, beat the butter, sugar, eggs, vanilla and milk in a separate bowl for a few mins",
+        "Combine and stir in the dry ingredients, then the chocolate chips",
+        "Use an ice cream scooper or spoon to make uniform balls of cookie dough to the size you like and evenly space them out on a parchment paper lined baking sheet (you may need more than one sheet depending on the size of the cookies)",
+        "Bake in the oven one baking sheet at a time for around 8-10 minutes, taking them out when they start to brown",
+        "Cool for a few minutes then put them on a cooling rack"
+      ],
+      "sourceRawText": "---\ntitle: \"Chocolate Chip Cookies \"\ndate: 2021-05-13\ntags: ['dessert', 'cookies', 'sweet', 'chocolate']\nauthor: mfed3\n---\n\n![Chocolate Chip Cookies](/pix/chocolate-chip-cookies.webp)\n\n- ⏲️ Prep time: 10 min\n- 🍳Cook time: 10 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 230 g melted butter (2 sticks)\n- 330 g bread flour\n- 5 g salt\n- 5 g baking soda\n- 100-200 g white sugar\n- 100-200 g brown sugar\n- 1 egg\n- 15 g milk\n- 5 g vanilla\n- 225 g 50-70% dark chocolate chips or semi-sweet milk chocolate chips\n\n## Directions\n\n1. Preheat oven to 375°F\n2. Mix the flour, baking soda, and salt in a bowl\n3. Using a mixer or whisk, beat the butter, sugar, eggs, vanilla and milk in a separate bowl for a few mins\n4. Combine and stir in the dry ingredients, then the chocolate chips\n5. Use an ice cream scooper or spoon to make uniform balls of cookie dough to the size you like and evenly space them out on a parchment paper lined baking sheet (you may need more than one sheet depending on the size of the cookies)\n6. Bake in the oven one baking sheet at a time for around 8-10 minutes, taking them out when they start to brown\n7. Cool for a few minutes then put them on a cooling rack\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 4,
+        "prepTime": 10,
+        "cookTime": 10,
+        "totalTime": 20,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳Cook time: 10 min",
+          "- 🍽️ Servings: 4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-butter-biscuits",
+      "sourceTitle": "Butter Biscuits",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/butter-biscuits.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/butter-biscuits.md",
+      "snapshotSHA256": "c2e7b3da35c7da90e893bdb588987e56e6e76e87c138ce3130bb365bf76ba57f",
+      "sourceAuthor": "\"Miss Leslie\"",
+      "sourceTags": [
+        "biscuit",
+        "basic"
+      ],
+      "sourceIngredientLines": [
+        "Half a pound of butter.",
+        "Two pounds of flour, sifted",
+        "Half a pint of milk, or cold water.",
+        "A salt-spoonful of salt."
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-butter-biscuits-ing-1",
+          "arabicName": "زبدة، نصف رطل",
+          "candidateDisplay": "Half a pound of butter.",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Half a pound of butter.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-butter-biscuits-ing-2",
+          "arabicName": "دقيق منخول، رطلان",
+          "candidateDisplay": "Two pounds of flour, sifted",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Two pounds of flour, sifted",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-butter-biscuits-ing-3",
+          "arabicName": "حليب أو ماء بارد، نصف باينت",
+          "candidateDisplay": "Half a pint of milk, or cold water.",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Half a pint of milk, or cold water.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-butter-biscuits-ing-4",
+          "arabicName": "ملح، ملعقة ملح صغيرة",
+          "candidateDisplay": "A salt-spoonful of salt.",
+          "sourceIngredientIndex": 3,
+          "sourceText": "A salt-spoonful of salt.",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Cut up the butter in the flour, and put the salt to it. Wet it to a stiff dough with the milk or water. Mix it well with a knife.",
+        "Throw some flour on the paste-board, take the dough out of the pan, and knead it very well.",
+        "Roll it out into a large thick sheet, and beat it very hard on both sides with the rolling-pin. Beat it a long time.",
+        "Cut it out with a tin, or cup, into small round thick cakes. Beat each cake on both sides, with the rolling-pin. Prick them, with a fork. Put them in buttered pans, and bake them of a light brown in a slow oven."
+      ],
+      "sourceRawText": "---\ntitle: \"Butter Biscuits\"\ntags: ['biscuit', 'basic']\ndate: 1832-01-01\nauthor: \"Miss Leslie\"\n---\n\n## Ingredients\n\n- Half a pound of butter.\n- Two pounds of flour, sifted\n- Half a pint of milk, or cold water.\n- A salt-spoonful of salt.\n\n## Directions\n\n1. Cut up the butter in the flour, and put the salt to it. Wet it to a stiff dough with the milk or water. Mix it well with a knife.\n2. Throw some flour on the paste-board, take the dough out of the pan, and knead it very well.\n3. Roll it out into a large thick sheet, and beat it very hard on both sides with the rolling-pin. Beat it a long time.\n4. Cut it out with a tin, or cup, into small round thick cakes. Beat each cake on both sides, with the rolling-pin. Prick them, with a fork. Put them in buttered pans, and bake them of a light brown in a slow oven.",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-cinnamon-biscuits",
+      "sourceTitle": "Brown Butter Cinnamon Sugar Biscuits",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cinnamon-biscuits.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/cinnamon-biscuits.md",
+      "snapshotSHA256": "d291e6199f01cf402fbb34b8642024140b8fdca5da4b24e42ae2368179837488",
+      "sourceAuthor": "walktheearth",
+      "sourceTags": [
+        "biscuit",
+        "dessert",
+        "breakfast",
+        "pastry"
+      ],
+      "sourceIngredientLines": [
+        "1 stick (½ cup / 113g) unsalted butter",
+        "2 cups (250g) all-purpose flour, plus extra for dusting",
+        "2 tablespoons (25g) granulated sugar",
+        "2½ teaspoons (12g) baking powder",
+        "1 teaspoon (6g) fine sea salt",
+        "½ tablespoon (4g) ground cinnamon",
+        "½ cup + 2 tablespoons (150ml) cold whole milk",
+        "4 tablespoons (½ stick / 57g) unsalted butter (for glaze)",
+        "¼ cup (50g) granulated sugar (for glaze)",
+        "1 teaspoon (3g) ground cinnamon (for glaze)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-1",
+          "arabicName": "زبدة غير مملحة، قالب واحد (نصف كوب أو 113 جم)",
+          "candidateDisplay": "1 stick (½ cup / 113g) unsalted butter",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 stick (½ cup / 113g) unsalted butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-2",
+          "arabicName": "دقيق لجميع الاستعمالات، كوبان (250 جم) مع دقيق إضافي للنثر",
+          "candidateDisplay": "2 cups (250g) all-purpose flour, plus extra for dusting",
+          "sourceIngredientIndex": 1,
+          "sourceText": "2 cups (250g) all-purpose flour, plus extra for dusting",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-3",
+          "arabicName": "سكر حبيبي، ملعقتان كبيرتان (25 جم)",
+          "candidateDisplay": "2 tablespoons (25g) granulated sugar",
+          "sourceIngredientIndex": 2,
+          "sourceText": "2 tablespoons (25g) granulated sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tablespoons",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-4",
+          "arabicName": "بيكنج باودر، ملعقتان ونصف صغيرتان (12 جم)",
+          "candidateDisplay": "2½ teaspoons (12g) baking powder",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2½ teaspoons (12g) baking powder",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-5",
+          "arabicName": "ملح بحري ناعم، ملعقة صغيرة (6 جم)",
+          "candidateDisplay": "1 teaspoon (6g) fine sea salt",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 teaspoon (6g) fine sea salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-6",
+          "arabicName": "قرفة مطحونة، نصف ملعقة كبيرة (4 جم)",
+          "candidateDisplay": "½ tablespoon (4g) ground cinnamon",
+          "sourceIngredientIndex": 5,
+          "sourceText": "½ tablespoon (4g) ground cinnamon",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-7",
+          "arabicName": "حليب كامل الدسم بارد، نصف كوب وملعقتان كبيرتان (150 مل)",
+          "candidateDisplay": "½ cup + 2 tablespoons (150ml) cold whole milk",
+          "sourceIngredientIndex": 6,
+          "sourceText": "½ cup + 2 tablespoons (150ml) cold whole milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-8",
+          "arabicName": "زبدة غير مملحة للتزجيج، 4 ملاعق كبيرة (نصف قالب أو 57 جم)",
+          "candidateDisplay": "4 tablespoons (½ stick / 57g) unsalted butter (for glaze)",
+          "sourceIngredientIndex": 7,
+          "sourceText": "4 tablespoons (½ stick / 57g) unsalted butter (for glaze)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 4,
+          "acceptedUnit": "tablespoons",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-9",
+          "arabicName": "سكر حبيبي للتزجيج، ربع كوب (50 جم)",
+          "candidateDisplay": "¼ cup (50g) granulated sugar (for glaze)",
+          "sourceIngredientIndex": 8,
+          "sourceText": "¼ cup (50g) granulated sugar (for glaze)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cinnamon-biscuits-ing-10",
+          "arabicName": "قرفة مطحونة للتزجيج، ملعقة صغيرة (3 جم)",
+          "candidateDisplay": "1 teaspoon (3g) ground cinnamon (for glaze)",
+          "sourceIngredientIndex": 9,
+          "sourceText": "1 teaspoon (3g) ground cinnamon (for glaze)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "In a saucepan, melt 1 stick of butter over medium heat. Swirl until it foams, turns golden brown, and smells nutty. Pour into a bowl and refrigerate until solid and cold (30-45 minutes).",
+        "In a large bowl, whisk together the flour, 2 tablespoons sugar, baking powder, salt, and ½ tablespoon cinnamon.",
+        "Cut the cold browned butter into cubes. Using a pastry cutter or your fingers, work it into the flour mixture until it resembles coarse crumbs.",
+        "Make a well in the center and pour in the cold milk. Gently stir with a fork until a shaggy dough forms.",
+        "Turn dough onto a floured surface. Gently knead 4-5 times, then press into a rectangle. Fold the dough into thirds like a letter. Rotate 90 degrees, press out, and repeat the folding process 3 more times.",
+        "After the final fold, shape dough into a 1-inch thick square. Trim off the edges with a floured knife, then cut into 9 equal squares. Gather scraps and shape into 1-2 more biscuits.",
+        "Preheat oven to 425°F (218°C). Place biscuits close together in a buttered skillet or on a parchment-lined sheet.",
+        "Bake for 18-22 minutes, until tops are golden brown.",
+        "While biscuits bake, melt the 4 tablespoons of butter for the glaze. Mix ¼ cup sugar with 1 teaspoon cinnamon in a small bowl.",
+        "As soon as biscuits come out of the oven, brush tops liberally with melted butter, then immediately sprinkle or dip in the cinnamon sugar mixture. Serve warm."
+      ],
+      "sourceRawText": "---\ntitle: Brown Butter Cinnamon Sugar Biscuits\ntags: ['biscuit', 'dessert', 'breakfast', 'pastry']\ndate: 2023-10-26\nauthor: walktheearth\n---\n\nFlaky, tender biscuits infused with nutty brown butter and layered with cinnamon sugar, finished with a glossy cinnamon butter glaze.\n\n- ⏲️ Prep time: 20 min\n- 🍳 Cook time: 20 min\n- 🍽️ Servings: 9-10 biscuits\n\n## Ingredients\n\n- 1 stick (½ cup / 113g) unsalted butter\n- 2 cups (250g) all-purpose flour, plus extra for dusting\n- 2 tablespoons (25g) granulated sugar\n- 2½ teaspoons (12g) baking powder\n- 1 teaspoon (6g) fine sea salt\n- ½ tablespoon (4g) ground cinnamon\n- ½ cup + 2 tablespoons (150ml) cold whole milk\n- 4 tablespoons (½ stick / 57g) unsalted butter (for glaze)\n- ¼ cup (50g) granulated sugar (for glaze)\n- 1 teaspoon (3g) ground cinnamon (for glaze)\n\n## Directions\n\n1. In a saucepan, melt 1 stick of butter over medium heat. Swirl until it foams, turns golden brown, and smells nutty. Pour into a bowl and refrigerate until solid and cold (30-45 minutes).\n2. In a large bowl, whisk together the flour, 2 tablespoons sugar, baking powder, salt, and ½ tablespoon cinnamon.\n3. Cut the cold browned butter into cubes. Using a pastry cutter or your fingers, work it into the flour mixture until it resembles coarse crumbs.\n4. Make a well in the center and pour in the cold milk. Gently stir with a fork until a shaggy dough forms.\n5. Turn dough onto a floured surface. Gently knead 4-5 times, then press into a rectangle. Fold the dough into thirds like a letter. Rotate 90 degrees, press out, and repeat the folding process 3 more times.\n6. After the final fold, shape dough into a 1-inch thick square. Trim off the edges with a floured knife, then cut into 9 equal squares. Gather scraps and shape into 1-2 more biscuits.\n7. Preheat oven to 425°F (218°C). Place biscuits close together in a buttered skillet or on a parchment-lined sheet.\n8. Bake for 18-22 minutes, until tops are golden brown.\n9. While biscuits bake, melt the 4 tablespoons of butter for the glaze. Mix ¼ cup sugar with 1 teaspoon cinnamon in a small bowl.\n10. As soon as biscuits come out of the oven, brush tops liberally with melted butter, then immediately sprinkle or dip in the cinnamon sugar mixture. Serve warm.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 20,
+        "cookTime": 20,
+        "totalTime": 40,
+        "sourceReported": [
+          "- ⏲️ Prep time: 20 min",
+          "- 🍳 Cook time: 20 min",
+          "- 🍽️ Servings: 9-10 biscuits"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-creme-brulee",
+      "sourceTitle": "Crème brûlée",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/creme-brulee.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/creme-brulee.md",
+      "snapshotSHA256": "1253f1fd2595bf6c93136e48fb11fd7b9c4b2aa9cbfe026dadd6325533f7fd66",
+      "sourceAuthor": "\"jan-kremer\"",
+      "sourceTags": [
+        "dessert",
+        "french"
+      ],
+      "sourceIngredientLines": [
+        "400 ml high fat cream",
+        "140 ml whole milk",
+        "85 g sugar (preferred brown)",
+        "5 egg yolk",
+        "1 vanilla bean (mark, optionally essence)",
+        "Lemon peel, rubbed",
+        "Sugar for the top crust"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-creme-brulee-ing-1",
+          "arabicName": "قشدة عالية الدسم، 400 مل",
+          "candidateDisplay": "400 ml high fat cream",
+          "sourceIngredientIndex": 0,
+          "sourceText": "400 ml high fat cream",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 400,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-creme-brulee-ing-2",
+          "arabicName": "حليب كامل الدسم، 140 مل",
+          "candidateDisplay": "140 ml whole milk",
+          "sourceIngredientIndex": 1,
+          "sourceText": "140 ml whole milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 140,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-creme-brulee-ing-3",
+          "arabicName": "سكر (يفضل البني)، 85 جم",
+          "candidateDisplay": "85 g sugar (preferred brown)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "85 g sugar (preferred brown)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 85,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-creme-brulee-ing-4",
+          "arabicName": "5 صفارات بيض",
+          "candidateDisplay": "5 egg yolk",
+          "sourceIngredientIndex": 3,
+          "sourceText": "5 egg yolk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-creme-brulee-ing-5",
+          "arabicName": "قرن فانيليا واحد أو خلاصة (اختيارياً)",
+          "candidateDisplay": "1 vanilla bean (mark, optionally essence)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 vanilla bean (mark, optionally essence)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-creme-brulee-ing-6",
+          "arabicName": "قشر ليمون مبشور",
+          "candidateDisplay": "Lemon peel, rubbed",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Lemon peel, rubbed",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-creme-brulee-ing-7",
+          "arabicName": "سكر لقشرة الوجه",
+          "candidateDisplay": "Sugar for the top crust",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Sugar for the top crust",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Mix cream, milk and yolks.",
+        "Add sugar, vanilla and lemon.",
+        "Let rest for at least 30 min (optionally over night)",
+        "Pour into 4-6 fireproof ramekins.",
+        "Pre-heat oven to 150°C and put the grease pan on the middle rail.",
+        "Put the ramekins onto the grease pan and fill it with boiling water.",
+        "Let the crème cook for 55 min.",
+        "Let the ramekins cool down to room temperature and put them in the fridge for at least 2 hours.",
+        "Spread a teaspoon of sugar onto each ramekin.",
+        "Use a blowtorch to flambé the sugar. Alternatively the grill of your oven may work too."
+      ],
+      "sourceRawText": "---\ntitle: Crème brûlée\ntags: ['dessert', 'french']\ndate: 2023-04-11\nauthor: \"jan-kremer\"\n---\n\n- ⏲️  Prep time: 20 min\n- ⏳ Rest time: 4 hour\n- 🍳 Cook time: 30 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 400 ml high fat cream\n- 140 ml whole milk\n- 85 g sugar (preferred brown)\n- 5 egg yolk\n- 1 vanilla bean (mark, optionally essence)\n- Lemon peel, rubbed\n- Sugar for the top crust\n\n## Directions\n\n1. Mix cream, milk and yolks.\n2. Add sugar, vanilla and lemon.\n3. Let rest for at least 30 min (optionally over night)\n4. Pour into 4-6 fireproof ramekins.\n5. Pre-heat oven to 150°C and put the grease pan on the middle rail.\n6. Put the ramekins onto the grease pan and fill it with boiling water.\n7. Let the crème cook for 55 min.\n8. Let the ramekins cool down to room temperature and put them in the fridge for at least 2 hours.\n9. Spread a teaspoon of sugar onto each ramekin.\n10. Use a blowtorch to flambé the sugar. Alternatively the grill of your oven may work too.\n\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 4,
+        "prepTime": 20,
+        "cookTime": 30,
+        "totalTime": 50,
+        "sourceReported": [
+          "- ⏲️  Prep time: 20 min",
+          "- 🍳 Cook time: 30 min",
+          "- 🍽️ Servings: 4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-chocolate_cake",
+      "sourceTitle": "Chocolate Cake",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/chocolate_cake.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/chocolate_cake.md",
+      "snapshotSHA256": "99a7d594f5a024c4d9be1198603538e6ddbc1b8172fe38cdfa651bb93a6c3682",
+      "sourceAuthor": "\"segf00lt\"",
+      "sourceTags": [
+        "chocolate",
+        "cake",
+        "coffee"
+      ],
+      "sourceIngredientLines": [
+        "100g (or 3/4 cup) of Flour",
+        "150g (or 1/2 cup) of Butter",
+        "100g (or 3/4 cup) of Cocoa",
+        "300g (or 1 cup) of Sugar",
+        "100ml of Coffee",
+        "6 Eggs",
+        "2 tea spoons of Baking Powder"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-chocolate_cake-ing-1",
+          "arabicName": "دقيق، 100 جم أو ثلاثة أرباع كوب",
+          "candidateDisplay": "100g (or 3/4 cup) of Flour",
+          "sourceIngredientIndex": 0,
+          "sourceText": "100g (or 3/4 cup) of Flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 100,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate_cake-ing-2",
+          "arabicName": "زبدة، 150 جم أو نصف كوب",
+          "candidateDisplay": "150g (or 1/2 cup) of Butter",
+          "sourceIngredientIndex": 1,
+          "sourceText": "150g (or 1/2 cup) of Butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 150,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate_cake-ing-3",
+          "arabicName": "كاكاو، 100 جم أو ثلاثة أرباع كوب",
+          "candidateDisplay": "100g (or 3/4 cup) of Cocoa",
+          "sourceIngredientIndex": 2,
+          "sourceText": "100g (or 3/4 cup) of Cocoa",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 100,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate_cake-ing-4",
+          "arabicName": "سكر، 300 جم أو كوب واحد",
+          "candidateDisplay": "300g (or 1 cup) of Sugar",
+          "sourceIngredientIndex": 3,
+          "sourceText": "300g (or 1 cup) of Sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 300,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate_cake-ing-5",
+          "arabicName": "قهوة، 100 مل",
+          "candidateDisplay": "100ml of Coffee",
+          "sourceIngredientIndex": 4,
+          "sourceText": "100ml of Coffee",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 100,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-chocolate_cake-ing-6",
+          "arabicName": "6 بيضات",
+          "candidateDisplay": "6 Eggs",
+          "sourceIngredientIndex": 5,
+          "sourceText": "6 Eggs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-chocolate_cake-ing-7",
+          "arabicName": "بيكنج باودر، ملعقتان صغيرتان",
+          "candidateDisplay": "2 tea spoons of Baking Powder",
+          "sourceIngredientIndex": 6,
+          "sourceText": "2 tea spoons of Baking Powder",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Melt the sugar with the coffee in a Bain Marie (a larger pan of water with a smaller pan containing the ingredients inside it).",
+        "Break the eggs separate yolks from whites in different containers.",
+        "Melt butter in sugar coffee Bain Marie.",
+        "Whisk whites 'till they froth.",
+        "Pour cocoa into Bain Marie and mix well.",
+        "Preheat the oven (180 &#176;C).",
+        "Pour the yolks into the Bain Marie, mix well.",
+        "Pour the mixture in the Bain Marie into the bowl with the whites.",
+        "Sieve the flour and baking powder into the bowl with the whites.",
+        "Mix everything in the bowl in a folding manner.",
+        "Butter the baking pan and pour in the mixture.",
+        "Leave in oven for 45 min. If after 45 min the cake hasn't come away from the sides of the pan leave for another 10 min."
+      ],
+      "sourceRawText": "---\ntitle: Chocolate Cake\ntags: ['chocolate', 'cake', 'coffee']\ndate: 2022-12-31\nauthor: \"segf00lt\"\n---\n\n![chocolate cake](/pix/chocolate_cake.webp)\nThis ought to be the default chocolate cake.\n\n- ⏲️ Prep time: 40 min\n- 🍳 Cook time: 45 min to 1 hour\n- 🍽️ Servings: 12\n\n## Ingredients\n\n- 100g (or 3/4 cup) of Flour\n- 150g (or 1/2 cup) of Butter\n- 100g (or 3/4 cup) of Cocoa\n- 300g (or 1 cup) of Sugar\n- 100ml of Coffee\n- 6 Eggs\n- 2 tea spoons of Baking Powder\n\n## Directions\n\n1. Melt the sugar with the coffee in a Bain Marie\n   (a larger pan of water with a smaller pan containing the ingredients inside it).\n2. Break the eggs separate yolks from whites in different containers.\n3. Melt butter in sugar coffee Bain Marie.\n4. Whisk whites 'till they froth.\n5. Pour cocoa into Bain Marie and mix well.\n6. Preheat the oven (180 &#176;C).\n7. Pour the yolks into the Bain Marie, mix well.\n8. Pour the mixture in the Bain Marie into the bowl with the whites.\n9. Sieve the flour and baking powder into the bowl with the whites.\n10. Mix everything in the bowl in a folding manner.\n11. Butter the baking pan and pour in the mixture.\n12. Leave in oven for 45 min. If after 45 min the cake hasn't come away from the sides\n    of the pan leave for another 10 min.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 12,
+        "prepTime": 40,
+        "cookTime": 105,
+        "totalTime": 145,
+        "sourceReported": [
+          "- ⏲️ Prep time: 40 min",
+          "- 🍳 Cook time: 45 min to 1 hour",
+          "- 🍽️ Servings: 12"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-banana-oatmeal-cookies",
+      "sourceTitle": "Banana and oatmeal cookies",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/banana-oatmeal-cookies.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/banana-oatmeal-cookies.md",
+      "snapshotSHA256": "5d2bba49d7b2db8ecc7263af94f9f5507eddb3d49f1e78e2b1bea002ad5700ec",
+      "sourceAuthor": "\"Éric G.\"",
+      "sourceTags": [
+        "snack",
+        "quick",
+        "dessert",
+        "cookies"
+      ],
+      "sourceIngredientLines": [
+        "2 ripe bananas (250 g/9 oz peeled)",
+        "100g (3.5 oz) of oatmeal",
+        "1 table spoon of cinnamon powder (optional)",
+        "1 table spoon of honey (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-banana-oatmeal-cookies-ing-1",
+          "arabicName": "موزتان ناضجتان (250 جم أو 9 أونصات بعد التقشير)",
+          "candidateDisplay": "2 ripe bananas (250 g/9 oz peeled)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 ripe bananas (250 g/9 oz peeled)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-banana-oatmeal-cookies-ing-2",
+          "arabicName": "شوفان، 100 جم (3.5 أونصات)",
+          "candidateDisplay": "100g (3.5 oz) of oatmeal",
+          "sourceIngredientIndex": 1,
+          "sourceText": "100g (3.5 oz) of oatmeal",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 100,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-banana-oatmeal-cookies-ing-3",
+          "arabicName": "قرفة مطحونة، ملعقة كبيرة (اختياري)",
+          "candidateDisplay": "1 table spoon of cinnamon powder (optional)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 table spoon of cinnamon powder (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-banana-oatmeal-cookies-ing-4",
+          "arabicName": "عسل، ملعقة كبيرة (اختياري)",
+          "candidateDisplay": "1 table spoon of honey (optional)",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 table spoon of honey (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Pre-heat the oven to 180°C (350°F)",
+        "Peel the bananas and squash them not too finely in a bowl.",
+        "Incorporate the oatmeal.",
+        "Incorporate cinnamon powder and/or honey (optional).",
+        "On the oven tray, place parchment paper and form discs of the mix, each around 8 cm (3 in)",
+        "Cook with rotating heat for around 20 minutes, until outside becomes golden and slightly crispy.",
+        "Eat warm or cold. Can be kept a couple of days in a sealed container."
+      ],
+      "sourceRawText": "---\ntitle: Banana and oatmeal cookies\ntags: ['snack', 'quick', 'dessert', 'cookies']\ndate: 2022-07-12\nauthor: \"Éric G.\"\n---\n\n- ⏲️ Prep time: 3 min\n- 🍳 Cook time: 20 min\n- 🍽️ Serving : 3\n\n![Banana and oatmeal cookies](/pix/banana-oatmeal-cookies.webp \"Banana and oatmeal cookies\")\n\n## Ingredients\n\n- 2 ripe bananas (250 g/9 oz peeled)\n- 100g (3.5 oz) of oatmeal\n- 1 table spoon of cinnamon powder (optional)\n- 1 table spoon of honey (optional)\n\n## Directions\n\n1. Pre-heat the oven to 180°C (350°F)\n2. Peel the bananas and squash them not too finely in a bowl.\n3. Incorporate the oatmeal.\n4. Incorporate cinnamon powder and/or honey (optional).\n5. On the oven tray, place parchment paper and form discs of the mix, each around 8 cm (3 in)\n6. Cook with rotating heat for around 20 minutes, until outside becomes golden and slightly crispy.\n7. Eat warm or cold. Can be kept a couple of days in a sealed container.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 3,
+        "cookTime": 20,
+        "totalTime": 23,
+        "sourceReported": [
+          "- ⏲️ Prep time: 3 min",
+          "- 🍳 Cook time: 20 min"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-apple-pie",
+      "sourceTitle": "Apple Pie",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/apple-pie.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/apple-pie.md",
+      "snapshotSHA256": "b875a7f7842d58edf75ab97872d765b2dfd69cb648301813637d93692937bd08",
+      "sourceAuthor": "mfed3",
+      "sourceTags": [
+        "dessert",
+        "pie",
+        "sweet",
+        "apple"
+      ],
+      "sourceIngredientLines": [
+        "900 g (4-5) golden delicious apples",
+        "15 g (1 tbsp) lemon juice",
+        "50 g white sugar",
+        "65 g brown sugar",
+        "5 g (1 tsp) cinnamon",
+        "1-2 g nutmeg",
+        "15 g cornstarch",
+        "15 g ice water",
+        "226 g (2 sticks) cold butter, cut into slices",
+        "350 g flour",
+        "5 g salt",
+        "30 g white sugar",
+        "225 g butter",
+        "50-100 ml ice water",
+        "1 egg (optional)",
+        "15 g water (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-apple-pie-ing-1",
+          "arabicName": "تفاح غولدن ديليشس، 900 جم (4–5 حبات)",
+          "candidateDisplay": "900 g (4-5) golden delicious apples",
+          "sourceIngredientIndex": 0,
+          "sourceText": "900 g (4-5) golden delicious apples",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 900,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-2",
+          "arabicName": "عصير ليمون، 15 جم (ملعقة كبيرة)",
+          "candidateDisplay": "15 g (1 tbsp) lemon juice",
+          "sourceIngredientIndex": 1,
+          "sourceText": "15 g (1 tbsp) lemon juice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 15,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-3",
+          "arabicName": "سكر أبيض، 50 جم",
+          "candidateDisplay": "50 g white sugar",
+          "sourceIngredientIndex": 2,
+          "sourceText": "50 g white sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 50,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-4",
+          "arabicName": "سكر بني، 65 جم",
+          "candidateDisplay": "65 g brown sugar",
+          "sourceIngredientIndex": 3,
+          "sourceText": "65 g brown sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 65,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-5",
+          "arabicName": "قرفة، 5 جم (ملعقة صغيرة)",
+          "candidateDisplay": "5 g (1 tsp) cinnamon",
+          "sourceIngredientIndex": 4,
+          "sourceText": "5 g (1 tsp) cinnamon",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 5,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-6",
+          "arabicName": "جوزة الطيب، 1–2 جم",
+          "candidateDisplay": "1-2 g nutmeg",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1-2 g nutmeg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-7",
+          "arabicName": "نشا ذرة، 15 جم",
+          "candidateDisplay": "15 g cornstarch",
+          "sourceIngredientIndex": 6,
+          "sourceText": "15 g cornstarch",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 15,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-8",
+          "arabicName": "ماء مثلج، 15 جم",
+          "candidateDisplay": "15 g ice water",
+          "sourceIngredientIndex": 7,
+          "sourceText": "15 g ice water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 15,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-9",
+          "arabicName": "زبدة باردة شرائح، 226 جم (قالبان)",
+          "candidateDisplay": "226 g (2 sticks) cold butter, cut into slices",
+          "sourceIngredientIndex": 8,
+          "sourceText": "226 g (2 sticks) cold butter, cut into slices",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 226,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-10",
+          "arabicName": "دقيق، 350 جم",
+          "candidateDisplay": "350 g flour",
+          "sourceIngredientIndex": 9,
+          "sourceText": "350 g flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 350,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-11",
+          "arabicName": "ملح، 5 جم",
+          "candidateDisplay": "5 g salt",
+          "sourceIngredientIndex": 10,
+          "sourceText": "5 g salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 5,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-12",
+          "arabicName": "سكر أبيض، 30 جم",
+          "candidateDisplay": "30 g white sugar",
+          "sourceIngredientIndex": 11,
+          "sourceText": "30 g white sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 30,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-13",
+          "arabicName": "زبدة، 225 جم",
+          "candidateDisplay": "225 g butter",
+          "sourceIngredientIndex": 12,
+          "sourceText": "225 g butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 225,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-14",
+          "arabicName": "ماء مثلج، 50–100 مل",
+          "candidateDisplay": "50-100 ml ice water",
+          "sourceIngredientIndex": 13,
+          "sourceText": "50-100 ml ice water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-15",
+          "arabicName": "بيضة واحدة (اختياري)",
+          "candidateDisplay": "1 egg (optional)",
+          "sourceIngredientIndex": 14,
+          "sourceText": "1 egg (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-pie-ing-16",
+          "arabicName": "ماء، 15 جم (اختياري)",
+          "candidateDisplay": "15 g water (optional)",
+          "sourceIngredientIndex": 15,
+          "sourceText": "15 g water (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 15,
+          "acceptedUnit": "g",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Peel and cut the apples into 1-2 inch strips",
+        "Put the apples in a bowl and mix in the lemon juice, sugar, cinnamon, nutmeg, and cornstarch and let it sit for 15 mins to release water",
+        "Transfer the filling mixture to a sauce pan and reduce the liquid over medium to low heat for around 15 mins, stirring regularly, then turn off the gas",
+        "While the filling is sitting / reducing, start the crust by putting the flour, salt, sugar, and pieces of butter in a food processor",
+        "Run the food processor until it resembles a coarse sand (5-10 seconds) then start dripping in the ice water until the mixture starts to chunk together",
+        "You'll know when it's done if you can pinch the dough with your hand and it sticks together",
+        "Preheat oven to 350°F then start making the pie crust",
+        "Cut the dough in half and roll both halves out with a rolling pin until they are big enough to cover your pie pan (around 9 inch diameter)",
+        "Put the bottom half dough into the pie pan and cut off the excess dough with a knife",
+        "Dump the sauce pan full of the filling into the pie pan and even it out",
+        "Cover the pie filling with the top dough and fold over and tuck in the excess crust",
+        "Use a fork or your fingers to pinch down the top crust to the bottom crust so you don't have air gaps",
+        "Optionally you can now brush on the egg wash to make the crust get a shiny golden brown color when it cooks",
+        "Cut a few slits in the top crust with a knife to give it a nice design and allow for air to release",
+        "Bake 45 minutes at 350°F or until the crust is brown to your liking and the apples are bubbling inside"
+      ],
+      "sourceRawText": "---\ntitle: \"Apple Pie\"\ndate: 2021-05-13\ntags: ['dessert', 'pie', 'sweet', 'apple']\nauthor: mfed3\n---\n\n![Apple Pie](/pix/apple-pie.webp)\n\n- ⏲️ Prep time: 30 min\n- 🍳Cook time: 45 min\n- 🍽️ Servings: 8\n\n## Ingredients\n\n### Filling\n\n- 900 g (4-5) golden delicious apples\n- 15 g (1 tbsp) lemon juice\n- 50 g white sugar\n- 65 g brown sugar\n- 5 g (1 tsp) cinnamon\n- 1-2 g nutmeg\n- 15 g cornstarch\n- 15 g ice water\n- 226 g (2 sticks) cold butter, cut into slices\n\n### Crust\n\n- 350 g flour\n- 5 g salt\n- 30 g white sugar\n- 225 g butter\n- 50-100 ml ice water\n\n### Egg Wash\n\n- 1 egg (optional)\n- 15 g water (optional)\n\n## Directions\n\n1. Peel and cut the apples into 1-2 inch strips\n2. Put the apples in a bowl and mix in the lemon juice, sugar, cinnamon, nutmeg, and cornstarch and let it sit for 15 mins to release water\n3. Transfer the filling mixture to a sauce pan and reduce the liquid over medium to low heat for around 15 mins, stirring regularly, then turn off the gas\n4. While the filling is sitting / reducing, start the crust by putting the flour, salt, sugar, and pieces of butter in a food processor\n5. Run the food processor until it resembles a coarse sand (5-10 seconds) then start dripping in the ice water until the mixture starts to chunk together\n6. You'll know when it's done if you can pinch the dough with your hand and it sticks together\n7. Preheat oven to 350°F then start making the pie crust\n8.  Cut the dough in half and roll both halves out with a rolling pin until they are big enough to cover your pie pan (around 9 inch diameter)\n9.  Put the bottom half dough into the pie pan and cut off the excess dough with a knife\n10. Dump the sauce pan full of the filling into the pie pan and even it out\n11. Cover the pie filling with the top dough and fold over and tuck in the excess crust\n12. Use a fork or your fingers to pinch down the top crust to the bottom crust so you don't have air gaps\n13. Optionally you can now brush on the egg wash to make the crust get a shiny golden brown color when it cooks\n14. Cut a few slits in the top crust with a knife to give it a nice design and allow for air to release\n15. Bake 45 minutes at 350°F or until the crust is brown to your liking and the apples are bubbling inside\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 8,
+        "prepTime": 30,
+        "cookTime": 45,
+        "totalTime": 75,
+        "sourceReported": [
+          "- ⏲️ Prep time: 30 min",
+          "- 🍳Cook time: 45 min",
+          "- 🍽️ Servings: 8"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-apple-strudel",
+      "sourceTitle": "Apple strudel",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/apple-strudel.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/apple-strudel.md",
+      "snapshotSHA256": "f0267f168855c173503495b38dce8c5c38e84d8085e8615081c7b73554efb56f",
+      "sourceAuthor": "\"Lorenzo Iuri\"",
+      "sourceTags": [
+        "dessert",
+        "breakfast"
+      ],
+      "sourceIngredientLines": [
+        "Puff pastry",
+        "Apricot jam (about 300 g | 10 oz)",
+        "3 apples",
+        "Ground cinnamon",
+        "Breadcrumbs / crushed cookies",
+        "Butter (optional)",
+        "Powdered sugar (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-apple-strudel-ing-1",
+          "arabicName": "عجينة مورقة",
+          "candidateDisplay": "Puff pastry",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Puff pastry",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-strudel-ing-2",
+          "arabicName": "مربى مشمش، نحو 300 جم (10 أونصات)",
+          "candidateDisplay": "Apricot jam (about 300 g | 10 oz)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Apricot jam (about 300 g | 10 oz)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-strudel-ing-3",
+          "arabicName": "3 تفاحات",
+          "candidateDisplay": "3 apples",
+          "sourceIngredientIndex": 2,
+          "sourceText": "3 apples",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-strudel-ing-4",
+          "arabicName": "قرفة مطحونة",
+          "candidateDisplay": "Ground cinnamon",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Ground cinnamon",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-strudel-ing-5",
+          "arabicName": "فتات خبز أو بسكويت مطحون",
+          "candidateDisplay": "Breadcrumbs / crushed cookies",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Breadcrumbs / crushed cookies",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-strudel-ing-6",
+          "arabicName": "زبدة (اختيارية)",
+          "candidateDisplay": "Butter (optional)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "Butter (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-apple-strudel-ing-7",
+          "arabicName": "سكر بودرة (اختياري)",
+          "candidateDisplay": "Powdered sugar (optional)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "Powdered sugar (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Peel and cut the apples in thin slices.",
+        "Roll out the puff pastry with a rolling pin.",
+        "Spread the jam over the puff pastry with a spoon.",
+        "Arrange the apple slices over the jam.",
+        "Sprinkle with cinnamon and breadcrumbs.",
+        "Cut tiny pieces of butter and arrange them over the apple slices.",
+        "Roll the puff pastry edges over, overlapping them.",
+        "Bake for around 40 minutes at 180°C (360° F).",
+        "Cover with powdered sugar."
+      ],
+      "sourceRawText": "---\ntitle: \"Apple strudel\"\ndate: 2021-03-22\ntags: ['dessert', 'breakfast']\nauthor: \"Lorenzo Iuri\"\n---\n\n![apple-strudel-1](/pix/apple-strudel.webp)\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 40 min\n- 🍽️ Servings: 6\n\n## Ingredients\n\n- Puff pastry\n- Apricot jam (about 300 g | 10 oz)\n- 3 apples\n- Ground cinnamon\n- Breadcrumbs / crushed cookies\n- Butter (optional)\n- Powdered sugar (optional)\n\n## Directions\n\n1. Peel and cut the apples in thin slices.\n2. Roll out the puff pastry with a rolling pin.\n3. Spread the jam over the puff pastry with a spoon.\n4. Arrange the apple slices over the jam.\n5. Sprinkle with cinnamon and breadcrumbs.\n6. Cut tiny pieces of butter and arrange them over the apple slices.\n7. Roll the puff pastry edges over, overlapping them.\n8. Bake for around 40 minutes at 180°C (360° F).\n9. Cover with powdered sugar.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 6,
+        "prepTime": 10,
+        "cookTime": 40,
+        "totalTime": 50,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 40 min",
+          "- 🍽️ Servings: 6"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-kettlecorn",
+      "sourceTitle": "Kettle Corn",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/kettlecorn.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/kettlecorn.md",
+      "snapshotSHA256": "98ae90d0322960e4bf3887b8e59191923eab05a5bd2a4c260d382f1225bc9603",
+      "sourceAuthor": "\"MMOOBB\"",
+      "sourceTags": [
+        "snack",
+        "sweet",
+        "quick"
+      ],
+      "sourceIngredientLines": [
+        "2 tablespoons vegetable oil, or oil of your choice",
+        "1/4 cup of popcorn kernels",
+        "2 tablespoons of sugar (brown sugar works too)",
+        "salt to taste"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-kettlecorn-ing-1",
+          "arabicName": "زيت نباتي أو زيت من اختيارك، ملعقتان كبيرتان",
+          "candidateDisplay": "2 tablespoons vegetable oil, or oil of your choice",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 tablespoons vegetable oil, or oil of your choice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tablespoons",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-kettlecorn-ing-2",
+          "arabicName": "حبوب فشار، ربع كوب",
+          "candidateDisplay": "1/4 cup of popcorn kernels",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1/4 cup of popcorn kernels",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.25,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-kettlecorn-ing-3",
+          "arabicName": "سكر، ملعقتان كبيرتان (يمكن استعمال السكر البني)",
+          "candidateDisplay": "2 tablespoons of sugar (brown sugar works too)",
+          "sourceIngredientIndex": 2,
+          "sourceText": "2 tablespoons of sugar (brown sugar works too)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tablespoons",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-kettlecorn-ing-4",
+          "arabicName": "ملح حسب الذوق",
+          "candidateDisplay": "salt to taste",
+          "sourceIngredientIndex": 3,
+          "sourceText": "salt to taste",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Add oil into your saucepan and 3 popcorn kernels.",
+        "Cover with lid and set stove to medium-high heat.",
+        "Once all 3 kernels pop, add in the rest of your kernels and shake to coat in oil. Pour sugar directly onto the kernels.",
+        "Shake the pot for 3 seconds, rest for 3 seconds, and repeat till the kernels start to pop steadily. Depending on your stove, you may need to lift the pot to shake.",
+        "Once kernels start popping, shake pot every 1-2 seconds.",
+        "**Important**. Once you no longer hear pops for about 3 seconds, immediately transfer into a bowl to avoid burning."
+      ],
+      "sourceRawText": "---\ntitle: Kettle Corn\ntags: ['snack', 'sweet', 'quick']\ndate: 2022-07-02\nauthor: \"MMOOBB\"\n---\n\n![Kettle Corn](/pix/kettlecorn.webp \"Kettle Corn made with brown sugar\")\n\nRecipe can be expanded or contracted to your needs. I personally divide the recipe in half to fit my 2 quart saucepan (recipe calls for a 3 quart). I recommend using Orville Redenbacher's popcorn kernels, as they are specifically formulated to pop consistently. Follow these directions precisely, and I will guarantee you will have no burnt or unpopped kernels.\n\n- ⏲️ Prep time: 2 min\n- 🍳 Cook time: 5 min\n- 🍽️ Serving 14\n\n## Ingredients\n\n- 2 tablespoons vegetable oil, or oil of your choice\n- 1/4 cup of popcorn kernels\n- 2 tablespoons of sugar (brown sugar works too)\n- salt to taste\n\n## Directions\n\n1. Add oil into your saucepan and 3 popcorn kernels.\n2. Cover with lid and set stove to medium-high heat.\n3. Once all 3 kernels pop, add in the rest of your kernels and shake to coat in oil. Pour sugar directly onto the kernels.\n4. Shake the pot for 3 seconds, rest for 3 seconds, and repeat till the kernels start to pop steadily. Depending on your stove, you may need to lift the pot to shake.\n5. Once kernels start popping, shake pot every 1-2 seconds.\n6. **Important**. Once you no longer hear pops for about 3 seconds, immediately transfer into a bowl to avoid burning.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 2,
+        "cookTime": 5,
+        "totalTime": 7,
+        "sourceReported": [
+          "- ⏲️ Prep time: 2 min",
+          "- 🍳 Cook time: 5 min"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-kaiserschmarrn",
+      "sourceTitle": "Kaiserschmarrn",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/kaiserschmarrn.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/kaiserschmarrn.md",
+      "snapshotSHA256": "29da5b4e9595937ba2835eae2cba06404e3874e12a456f7c52384e7f7632e146",
+      "sourceAuthor": "\"Felix Steiner\"",
+      "sourceTags": [
+        "sweets",
+        "sweet",
+        "german",
+        "austrian"
+      ],
+      "sourceIngredientLines": [
+        "200g flour",
+        "30g sugar",
+        "4 eggs",
+        "300ml milk",
+        "40g butter",
+        "30g raisins (optional)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-kaiserschmarrn-ing-1",
+          "arabicName": "دقيق، 200 جم",
+          "candidateDisplay": "200g flour",
+          "sourceIngredientIndex": 0,
+          "sourceText": "200g flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 200,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-kaiserschmarrn-ing-2",
+          "arabicName": "سكر، 30 جم",
+          "candidateDisplay": "30g sugar",
+          "sourceIngredientIndex": 1,
+          "sourceText": "30g sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 30,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-kaiserschmarrn-ing-3",
+          "arabicName": "4 بيضات",
+          "candidateDisplay": "4 eggs",
+          "sourceIngredientIndex": 2,
+          "sourceText": "4 eggs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-kaiserschmarrn-ing-4",
+          "arabicName": "حليب، 300 مل",
+          "candidateDisplay": "300ml milk",
+          "sourceIngredientIndex": 3,
+          "sourceText": "300ml milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 300,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-kaiserschmarrn-ing-5",
+          "arabicName": "زبدة، 40 جم",
+          "candidateDisplay": "40g butter",
+          "sourceIngredientIndex": 4,
+          "sourceText": "40g butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 40,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-kaiserschmarrn-ing-6",
+          "arabicName": "زبيب، 30 جم (اختياري)",
+          "candidateDisplay": "30g raisins (optional)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "30g raisins (optional)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 30,
+          "acceptedUnit": "g",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Separate the egg whites and yolks.",
+        "Put the egg yolks, flour, sugar, pinch of salt, and milk in a bowl and stir until the clumps are gone.",
+        "Beat the egg whites to stiff peaks in a different bowl and then add to the other bowl.",
+        "Melt the butter in a flat pan on high heat and then add the dough. Heat up on both sides.",
+        "Put the pan in the preheated oven (180°C hot air setting) for around 10 minutes or until lightly browned.",
+        "Cut up the dough with a spatula into bite-sized pieces.",
+        "Sprinkle some sugar on top (add raisins here)."
+      ],
+      "sourceRawText": "---\ntitle: Kaiserschmarrn\ntags: ['sweets', 'sweet', 'german', 'austrian']\ndate: 2023-04-30\nauthor: \"Felix Steiner\"\n---\n\nA very recognizable and simple sweet dish from the mountainous regions of Austria, southern Germany and northern Italy.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 3\n\n## Ingredients\n\n- 200g flour\n- 30g sugar\n- 4 eggs\n- 300ml milk\n- 40g butter\n- 30g raisins (optional)\n\n## Directions\n\n1. Separate the egg whites and yolks.\n2. Put the egg yolks, flour, sugar, pinch of salt, and milk in a bowl and stir until the clumps are gone.\n3. Beat the egg whites to stiff peaks in a different bowl and then add to the other bowl.\n4. Melt the butter in a flat pan on high heat and then add the dough. Heat up on both sides.\n5. Put the pan in the preheated oven (180°C hot air setting) for around 10 minutes or until lightly browned.\n6. Cut up the dough with a spatula into bite-sized pieces.\n7. Sprinkle some sugar on top (add raisins here).\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 3,
+        "prepTime": 10,
+        "cookTime": 10,
+        "totalTime": 20,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 10 min",
+          "- 🍽️ Servings: 3"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-coconut-flour-bread",
+      "sourceTitle": "Keto Coconut Bread",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/coconut-flour-bread.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/coconut-flour-bread.md",
+      "snapshotSHA256": "29ce2081a95db9d9040420c99a1995ab035f9d36c1ccd5657ce80821f833abe5",
+      "sourceAuthor": "\"luis-fernando-maschietto-junior\"",
+      "sourceTags": [
+        "bread",
+        "coconut",
+        "baking",
+        "keto",
+        "bariatric"
+      ],
+      "sourceIngredientLines": [
+        "6 Medium Eggs (or 5 Extra Large)",
+        "1 Tbsp Coconut Oil",
+        "¾ cup Coconut Flour",
+        "1 tsp Baking Powder",
+        "Pinch of Salt",
+        "½ tsp or less of Xanthan Gum (optional, to have a more stick bread)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-coconut-flour-bread-ing-1",
+          "arabicName": "6 بيضات متوسطة أو 5 كبيرة جداً",
+          "candidateDisplay": "6 Medium Eggs (or 5 Extra Large)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "6 Medium Eggs (or 5 Extra Large)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-coconut-flour-bread-ing-2",
+          "arabicName": "زيت جوز الهند، ملعقة كبيرة",
+          "candidateDisplay": "1 Tbsp Coconut Oil",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 Tbsp Coconut Oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-coconut-flour-bread-ing-3",
+          "arabicName": "دقيق جوز الهند، ثلاثة أرباع كوب",
+          "candidateDisplay": "¾ cup Coconut Flour",
+          "sourceIngredientIndex": 2,
+          "sourceText": "¾ cup Coconut Flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-coconut-flour-bread-ing-4",
+          "arabicName": "بيكنج باودر، ملعقة صغيرة",
+          "candidateDisplay": "1 tsp Baking Powder",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1 tsp Baking Powder",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-coconut-flour-bread-ing-5",
+          "arabicName": "رشة ملح",
+          "candidateDisplay": "Pinch of Salt",
+          "sourceIngredientIndex": 4,
+          "sourceText": "Pinch of Salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-coconut-flour-bread-ing-6",
+          "arabicName": "صمغ زانثان، نصف ملعقة صغيرة أو أقل (اختياري ليصبح الخبز أكثر تماسكاً)",
+          "candidateDisplay": "½ tsp or less of Xanthan Gum (optional, to have a more stick bread)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "½ tsp or less of Xanthan Gum (optional, to have a more stick bread)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Mix all dry ingredients in a big bowl.",
+        "Add the whole eggs and the coconut oil.",
+        "Mix well with a spoon until it gets thick. You can add extra coconut flour if you feel it is too liquid.",
+        "Pre-heat your oven to 350°F (175°C).",
+        "Pour the dough evenly into a Bread/Loaf form (coated with butter or parchment paper) and cook for 35 to 45 min.",
+        "After cooking, remove it from the oven and let it sit while it cools down.",
+        "Some variations can be done, like using butter instead of coconut oil or adding pumpkin pure to the mix and having a cake-like texture."
+      ],
+      "sourceRawText": "---\ntitle: Keto Coconut Bread\ntags: ['bread', 'coconut', 'baking', 'keto', 'bariatric']\ndate: 2022-11-16\nauthor: \"luis-fernando-maschietto-junior\"\n---\n![keto-coconut-bread](/pix/coconutbread-lufemas.webp)\n\nI created this recipe looking for a bread alternative not using any grains, processed sugar and processed oils.\nIt is sitting between bread and cake feel and my wife loved it. I used pasture-raised eggs to my recipe, just because it is more nutritious. But regular eggs should be fine.\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 45 min\n- 🍽️ Servings: 12\n\n## Ingredients\n\n- 6 Medium Eggs (or 5 Extra Large)\n- 1 Tbsp Coconut Oil\n- ¾ cup Coconut Flour\n- 1 tsp Baking Powder\n- Pinch of Salt\n- ½ tsp or less of Xanthan Gum (optional, to have a more stick bread)\n\n## Directions\n\n1. Mix all dry ingredients in a big bowl.\n2. Add the whole eggs and the coconut oil.\n3. Mix well with a spoon until it gets thick. You can add extra coconut flour if you feel it is too liquid.\n4. Pre-heat your oven to 350°F (175°C).\n5. Pour the dough evenly into a Bread/Loaf form (coated with butter or parchment paper) and cook for 35 to 45 min.\n6. After cooking, remove it from the oven and let it sit while it cools down.\n7. Some variations can be done, like using butter instead of coconut oil or adding pumpkin pure to the mix and having a cake-like texture.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 12,
+        "prepTime": 10,
+        "cookTime": 45,
+        "totalTime": 55,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 45 min",
+          "- 🍽️ Servings: 12"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-guacamole",
+      "sourceTitle": "Fresh Guacamole",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/guacamole.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/guacamole.md",
+      "snapshotSHA256": "a8624cd0fb6337542a4acdd8bad67cd1a02edfecfe9cd4f2af80132d6ebcd435",
+      "sourceAuthor": "yaroslav-smirnov",
+      "sourceTags": [
+        "mexican",
+        "spread",
+        "snack",
+        "fasting"
+      ],
+      "sourceIngredientLines": [
+        "2 Hass avocados",
+        "1/4 medium onion",
+        "1 small tomato",
+        "Cilantro",
+        "1 lime"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-guacamole-ing-1",
+          "arabicName": "حبتا أفوكادو هاس",
+          "candidateDisplay": "2 Hass avocados",
+          "sourceIngredientIndex": 0,
+          "sourceText": "2 Hass avocados",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-guacamole-ing-2",
+          "arabicName": "ربع بصلة متوسطة",
+          "candidateDisplay": "1/4 medium onion",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1/4 medium onion",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-guacamole-ing-3",
+          "arabicName": "حبة طماطم صغيرة",
+          "candidateDisplay": "1 small tomato",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 small tomato",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-guacamole-ing-4",
+          "arabicName": "كزبرة طازجة",
+          "candidateDisplay": "Cilantro",
+          "sourceIngredientIndex": 3,
+          "sourceText": "Cilantro",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-guacamole-ing-5",
+          "arabicName": "ليمونة خضراء واحدة",
+          "candidateDisplay": "1 lime",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 lime",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Cut the avocados in half, open them and place the pulp in a bowl.",
+        "Mash the avocados, add lime juice, mix and mash some more.",
+        "Mince the cilantro, tomato and onion and add them to the avocado mix.",
+        "Add salt and black pepper to taste and mix thoroughly.",
+        "Enjoy fresh with some totopos!",
+        "This recipe is best consumed fresh, since the avocado oxidizes pretty fast and might lose its appetizing color and texture in just some hours."
+      ],
+      "sourceRawText": "---\ntitle: \"Fresh Guacamole\"\ndate: 2021-03-12\ntags: ['mexican', 'spread', 'snack', 'fasting']\nauthor: yaroslav-smirnov\n---\n\n![Fresh Guacamole](/pix/guacamole.webp)\n\nA nice recipe that functions as a delicious and fresh appetizer, best eaten with\nsome totopos corn chips, especially in a hot summer day.\n\n## Ingredients\n\nHere are the ingredients for about two adult portions:\n\n* 2 Hass avocados\n* 1/4 medium onion\n* 1 small tomato\n* Cilantro\n* 1 lime\n\nAnd of course, some totopos to eat with.\n\n## Directions\n\n1. Cut the avocados in half, open them and place the pulp in a bowl.\n2. Mash the avocados, add lime juice, mix and mash some more.\n3. Mince the cilantro, tomato and onion and add them to the avocado mix.\n4. Add salt and black pepper to taste and mix thoroughly.\n5. Enjoy fresh with some totopos!\n\nThis recipe is best consumed fresh, since the avocado oxidizes pretty fast and\nmight lose its appetizing color and texture in just some hours.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-croutons",
+      "sourceTitle": "Croutons",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/croutons.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/croutons.md",
+      "snapshotSHA256": "61608760967ed62ac48a737c3f6e1c556b5bb0791c830ddbaa433935b7c17a08",
+      "sourceAuthor": "\"gucko\"",
+      "sourceTags": [
+        "basic",
+        "french",
+        "salad",
+        "fasting"
+      ],
+      "sourceIngredientLines": [
+        "Hearty White Bread",
+        "Extra Virgin Olive Oil",
+        "Spices"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-croutons-ing-1",
+          "arabicName": "خبز أبيض متين",
+          "candidateDisplay": "Hearty White Bread",
+          "sourceIngredientIndex": 0,
+          "sourceText": "Hearty White Bread",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-croutons-ing-2",
+          "arabicName": "زيت زيتون بكر ممتاز",
+          "candidateDisplay": "Extra Virgin Olive Oil",
+          "sourceIngredientIndex": 1,
+          "sourceText": "Extra Virgin Olive Oil",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-croutons-ing-3",
+          "arabicName": "توابل",
+          "candidateDisplay": "Spices",
+          "sourceIngredientIndex": 2,
+          "sourceText": "Spices",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Preheat oven to 350°F (roughly 180°C).  Gently cut slices of white bread into squares with a chef's knife.  One to two slices is usually enough for one person.",
+        "In a large bowl combine olive oil, spices, and bread squares and gently mix to thoroughly season bread.  Spices can be anything but I recommend oregano, paprika, black pepper, garlic powder or freshly minced garlic, and a small pinch of cayenne.",
+        "Spread seasoned bread squares large face down onto a baking sheet evenly and put in oven for 6-8 minutes.  Once the bread has crisped flip each square and put back in oven for another 6-8 minutes or until crispy throughout.",
+        "Once fully baked, let rest until cool.  These can be eaten immediately or saved in a sandwich bag for later."
+      ],
+      "sourceRawText": "---\ntitle: \"Croutons\"\ndate: 2021-03-11\ntags: ['basic', 'french', 'salad', 'fasting']\nauthor: \"gucko\"\n---\n\n![croutons](/pix/croutons.webp)\n\nCroutons are an essential addition to many salads.  They are delicious and easy to make at home.\n\n## Ingredients\n\n- Hearty White Bread\n- Extra Virgin Olive Oil\n- Spices\n\n## Directions\n\n1. Preheat oven to 350°F (roughly 180°C).  Gently cut slices of white bread into squares with a chef's knife.  One to two slices is usually enough for one person.\n2. In a large bowl combine olive oil, spices, and bread squares and gently mix to thoroughly season bread.  Spices can be anything but I recommend oregano, paprika, black pepper, garlic powder or freshly minced garlic, and a small pinch of cayenne.\n3. Spread seasoned bread squares large face down onto a baking sheet evenly and put in oven for 6-8 minutes.  Once the bread has crisped flip each square and put back in oven for another 6-8 minutes or until crispy throughout.\n4. Once fully baked, let rest until cool.  These can be eaten immediately or saved in a sandwich bag for later.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-gluehwein",
+      "sourceTitle": "Glühwein - mulled wine",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/gluehwein.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/gluehwein.md",
+      "snapshotSHA256": "97707d74a6fd08872f33ae3b7a5c569852278fe705849d1413bef7a7220aa0ce",
+      "sourceAuthor": "bernhard-egger",
+      "sourceTags": [
+        "drink",
+        "quick",
+        "swiss",
+        "german",
+        "french"
+      ],
+      "sourceIngredientLines": [
+        "300 ml Cassis-Juice (Johannesbeer), if you can't find it you can replace it with another juice, I did it e.g. with cranberry pomegranate juice",
+        "1 bottle 700ml red wine (I prefer Primitivo/Zinfandel), don't buy a cheap cooking wine, you want to drink it :)",
+        "50 g Sugar",
+        "25 g Raisins",
+        "1 orange",
+        "1 cinamon bark",
+        "1 spoon ginger powder (or a bit of fresh ginger)",
+        "1 spoon cloves",
+        "5 star anise",
+        "if you don't have the spices you can also just throw in sweet cinamon tea bags instead (or similar), they contain most spices - I took 6 teabags for 1 litre"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-gluehwein-ing-1",
+          "arabicName": "عصير كشمش أسود، 300 مل؛ ويمكن استبداله بعصير آخر مثل التوت البري والرمان",
+          "candidateDisplay": "300 ml Cassis-Juice (Johannesbeer), if you can't find it you can replace it with another juice, I did it e.g. with cranberry pomegranate juice",
+          "sourceIngredientIndex": 0,
+          "sourceText": "300 ml Cassis-Juice (Johannesbeer), if you can't find it you can replace it with another juice, I did it e.g. with cranberry pomegranate juice",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 300,
+          "acceptedUnit": "ml",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-2",
+          "arabicName": "زجاجة نبيذ أحمر، 700 مل؛ يفضل المصدر برميميتيفو/زينفاندل",
+          "candidateDisplay": "1 bottle 700ml red wine (I prefer Primitivo/Zinfandel), don't buy a cheap cooking wine, you want to drink it :)",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 bottle 700ml red wine (I prefer Primitivo/Zinfandel), don't buy a cheap cooking wine, you want to drink it :)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-3",
+          "arabicName": "سكر، 50 جم",
+          "candidateDisplay": "50 g Sugar",
+          "sourceIngredientIndex": 2,
+          "sourceText": "50 g Sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 50,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-4",
+          "arabicName": "زبيب، 25 جم",
+          "candidateDisplay": "25 g Raisins",
+          "sourceIngredientIndex": 3,
+          "sourceText": "25 g Raisins",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 25,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-5",
+          "arabicName": "برتقالة واحدة",
+          "candidateDisplay": "1 orange",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1 orange",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-6",
+          "arabicName": "عود قرفة واحد",
+          "candidateDisplay": "1 cinamon bark",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1 cinamon bark",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-7",
+          "arabicName": "ملعقة من مسحوق الزنجبيل أو قليل من الزنجبيل الطازج",
+          "candidateDisplay": "1 spoon ginger powder (or a bit of fresh ginger)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "1 spoon ginger powder (or a bit of fresh ginger)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-8",
+          "arabicName": "ملعقة قرنفل",
+          "candidateDisplay": "1 spoon cloves",
+          "sourceIngredientIndex": 7,
+          "sourceText": "1 spoon cloves",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-9",
+          "arabicName": "5 حبات يانسون نجمي",
+          "candidateDisplay": "5 star anise",
+          "sourceIngredientIndex": 8,
+          "sourceText": "5 star anise",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-gluehwein-ing-10",
+          "arabicName": "يمكن استبدال التوابل بأكياس شاي قرفة حلوة أو مشابهة؛ استخدم المصدر 6 أكياس لكل لتر",
+          "candidateDisplay": "if you don't have the spices you can also just throw in sweet cinamon tea bags instead (or similar), they contain most spices - I took 6 teabags for 1 litre",
+          "sourceIngredientIndex": 9,
+          "sourceText": "if you don't have the spices you can also just throw in sweet cinamon tea bags instead (or similar), they contain most spices - I took 6 teabags for 1 litre",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "cut the orange in nice looking pieces (since they are mainly decoration)",
+        "throw everything in a pot",
+        "warm up (don't boil)",
+        "enjoy"
+      ],
+      "sourceRawText": "---\ntitle: \"Glühwein - mulled wine\"\ndate: 2021-03-19\ntags: ['drink', 'quick', 'swiss', 'german', 'french']\nauthor: bernhard-egger\n---\n\nA recipe for Glühwein/mulled wine a beverage you can find at almost every European christmas market. This recipe is my favorite one - optimized for flavor rather than alcohol content (it still kicks in).\n\n- 🍽️ Servings:1-4\n\n## Ingredients\n\nfor 1 liter of Glühwein\n\n- 300 ml Cassis-Juice (Johannesbeer), if you can't find it you can replace it with another juice, I did it e.g. with cranberry pomegranate juice\n- 1 bottle 700ml red wine (I prefer Primitivo/Zinfandel), don't buy a cheap cooking wine, you want to drink it :)\n- 50 g Sugar\n- 25 g Raisins\n- 1 orange\n- 1 cinamon bark\n- 1 spoon ginger powder (or a bit of fresh ginger)\n- 1 spoon cloves\n- 5 star anise\n- if you don't have the spices you can also just throw in sweet cinamon tea bags instead (or similar), they contain most spices - I took 6 teabags for 1 litre\n\n## Directions\n\n1. cut the orange in nice looking pieces (since they are mainly decoration)\n2. throw everything in a pot\n3. warm up (don't boil)\n4. enjoy\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": [
+          "- 🍽️ Servings:1-4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-butter-cake",
+      "sourceTitle": "Butter Cake",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/butter-cake.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/butter-cake.md",
+      "snapshotSHA256": "8421afb62951de1a7677dfcdf890eaba75fe39e3f09f9c1c5870a5774b6c9e32",
+      "sourceAuthor": "\"Michael\"",
+      "sourceTags": [
+        "dessert",
+        "sweet",
+        "snack"
+      ],
+      "sourceIngredientLines": [
+        "250g unsalted butter (warm to room temperature first)",
+        "130g caster sugar",
+        "1tsp vanilla extract",
+        "4 egg yolks",
+        "200g sifted self-raising flour (use as little as 180g for a **moister** texture)",
+        "60mL milk",
+        "(optional) 30g cocoa powder (for a marbled appearance)",
+        "50g caster sugar",
+        "Egg whites separated from the yolks above"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-butter-cake-ing-1",
+          "arabicName": "زبدة غير مملحة بدرجة حرارة الغرفة، 250 جم",
+          "candidateDisplay": "250g unsalted butter (warm to room temperature first)",
+          "sourceIngredientIndex": 0,
+          "sourceText": "250g unsalted butter (warm to room temperature first)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 250,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-butter-cake-ing-2",
+          "arabicName": "سكر ناعم، 130 جم",
+          "candidateDisplay": "130g caster sugar",
+          "sourceIngredientIndex": 1,
+          "sourceText": "130g caster sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 130,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-butter-cake-ing-3",
+          "arabicName": "خلاصة فانيليا، ملعقة صغيرة",
+          "candidateDisplay": "1tsp vanilla extract",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1tsp vanilla extract",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-butter-cake-ing-4",
+          "arabicName": "4 صفارات بيض",
+          "candidateDisplay": "4 egg yolks",
+          "sourceIngredientIndex": 3,
+          "sourceText": "4 egg yolks",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-butter-cake-ing-5",
+          "arabicName": "دقيق ذاتي التخمير منخول، 200 جم (يمكن تقليله إلى 180 جم لقوام أطرى)",
+          "candidateDisplay": "200g sifted self-raising flour (use as little as 180g for a **moister** texture)",
+          "sourceIngredientIndex": 4,
+          "sourceText": "200g sifted self-raising flour (use as little as 180g for a **moister** texture)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 200,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-butter-cake-ing-6",
+          "arabicName": "حليب، 60 مل",
+          "candidateDisplay": "60mL milk",
+          "sourceIngredientIndex": 5,
+          "sourceText": "60mL milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 60,
+          "acceptedUnit": "mL",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-butter-cake-ing-7",
+          "arabicName": "كاكاو، 30 جم (اختياري للمظهر الرخامي)",
+          "candidateDisplay": "(optional) 30g cocoa powder (for a marbled appearance)",
+          "sourceIngredientIndex": 6,
+          "sourceText": "(optional) 30g cocoa powder (for a marbled appearance)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-butter-cake-ing-8",
+          "arabicName": "سكر ناعم، 50 جم",
+          "candidateDisplay": "50g caster sugar",
+          "sourceIngredientIndex": 7,
+          "sourceText": "50g caster sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 50,
+          "acceptedUnit": "g",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-butter-cake-ing-9",
+          "arabicName": "بياض البيض المفصول من الصفارات المذكورة",
+          "candidateDisplay": "Egg whites separated from the yolks above",
+          "sourceIngredientIndex": 8,
+          "sourceText": "Egg whites separated from the yolks above",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Beat butter, sugar, and vanilla extract until incorporated.",
+        "Beat in egg yolks *one at a time*.",
+        "Beat in half of the sifted flour, then the milk. Take care not to overwork the gluten after the flour is added. You may well find that manually stirring in the flour yields better results.",
+        "Beat or stir in the remainder of the flour until *just* incorporated.",
+        "(optional) Separate approximately one-third of the batter and mix in with it cocoa powder.",
+        "To make the meringue, beat egg whites at high speed while gradually adding sugar until firm peaks form.",
+        "Fold the meringue into the batter. If you have done the fifth optional step, then you'll need to portion out approximately one-third of the meringue for the cocoa batter, and the remainder for the normal one.",
+        "Pour the batter(s) into a cake tin, and tap it on the countertop to get rid of any large air pockets.",
+        "(optional) For the marbled appearance, run a skewer or chopstick through the batter a few times. Do not overdo this lest you end up with a homogenously light brown cake rather than a yellow cake with dark brown streaks.",
+        "Bake at 175°C/350°F (conventional non-fan-forced) for 40-60min depending on the resulting batter thickness in your specific cake tin. Just keep an eye on it and you'll be fine; test its doneness by inserting a skewer and seeing whether it comes out clean."
+      ],
+      "sourceRawText": "---\ntitle: Butter Cake\ntags: ['dessert', 'sweet', 'snack']\ndate: 2024-08-25\nauthor: \"Michael\"\n---\n\n⏲️ Prep time: 10 min\n🍳 Cook time: 50 min\n🍽️ Servings: 8-10\n\n## Ingredients\n\nFor steps 1-5:\n- 250g unsalted butter (warm to room temperature first)\n- 130g caster sugar\n- 1tsp vanilla extract\n- 4 egg yolks\n- 200g sifted self-raising flour (use as little as 180g for a **moister** texture)\n- 60mL milk\n- (optional) 30g cocoa powder (for a marbled appearance)\n\nFor the meringue in step 6:\n- 50g caster sugar\n- Egg whites separated from the yolks above\n\n## Directions\n\n1. Beat butter, sugar, and vanilla extract until incorporated.\n2. Beat in egg yolks *one at a time*.\n3. Beat in half of the sifted flour, then the milk. Take care not to overwork the gluten after the flour is added. You may well find that manually stirring in the flour yields better results.\n4. Beat or stir in the remainder of the flour until *just* incorporated.\n5. (optional) Separate approximately one-third of the batter and mix in with it cocoa powder.\n6. To make the meringue, beat egg whites at high speed while gradually adding sugar until firm peaks form.\n7. Fold the meringue into the batter. If you have done the fifth optional step, then you'll need to portion out approximately one-third of the meringue for the cocoa batter, and the remainder for the normal one.\n8. Pour the batter(s) into a cake tin, and tap it on the countertop to get rid of any large air pockets.\n9. (optional) For the marbled appearance, run a skewer or chopstick through the batter a few times. Do not overdo this lest you end up with a homogenously light brown cake rather than a yellow cake with dark brown streaks.\n10. Bake at 175°C/350°F (conventional non-fan-forced) for 40-60min depending on the resulting batter thickness in your specific cake tin. Just keep an eye on it and you'll be fine; test its doneness by inserting a skewer and seeing whether it comes out clean.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 10,
+        "cookTime": 50,
+        "totalTime": 60,
+        "sourceReported": [
+          "⏲️ Prep time: 10 min",
+          "🍳 Cook time: 50 min",
+          "🍽️ Servings: 8-10"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-cinnamon-waffles",
+      "sourceTitle": "Cinnamon Waffles",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/cinnamon-waffles.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/cinnamon-waffles.md",
+      "snapshotSHA256": "101bd8b7b2f5814a55d4a9ff6d6fb37d2e4692e9af3cb91fabef7b5e2c784fef",
+      "sourceAuthor": "\"Pennsylvania Dutch Cooking\"",
+      "sourceTags": [
+        "cookies",
+        "baking",
+        "dutch",
+        "pennsylvania"
+      ],
+      "sourceIngredientLines": [
+        "1/2 lb butter",
+        "1 cup sugar",
+        "2 tsp cinnamon",
+        "3 eggs",
+        "flour"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-cinnamon-waffles-ing-1",
+          "arabicName": "زبدة، نصف رطل",
+          "candidateDisplay": "1/2 lb butter",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1/2 lb butter",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "lb",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-cinnamon-waffles-ing-2",
+          "arabicName": "سكر، كوب واحد",
+          "candidateDisplay": "1 cup sugar",
+          "sourceIngredientIndex": 1,
+          "sourceText": "1 cup sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "cup",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-cinnamon-waffles-ing-3",
+          "arabicName": "قرفة، ملعقتان صغيرتان",
+          "candidateDisplay": "2 tsp cinnamon",
+          "sourceIngredientIndex": 2,
+          "sourceText": "2 tsp cinnamon",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-cinnamon-waffles-ing-4",
+          "arabicName": "3 بيضات",
+          "candidateDisplay": "3 eggs",
+          "sourceIngredientIndex": 3,
+          "sourceText": "3 eggs",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-cinnamon-waffles-ing-5",
+          "arabicName": "دقيق يكفي لعجين طري",
+          "candidateDisplay": "flour",
+          "sourceIngredientIndex": 4,
+          "sourceText": "flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Cream the butter and sugar.",
+        "Beat in the eggs 1 at a time and add cinnamon.",
+        "Work in enough flour to make a soft dough.",
+        "Form into small balls.",
+        "Place several in a hot waffle iron, suitably spaced, press down top and bake."
+      ],
+      "sourceRawText": "---\ntitle: Cinnamon Waffles\ntags: ['cookies', 'baking', 'dutch', 'pennsylvania']\ndate: 2008-09-08\nauthor: \"Pennsylvania Dutch Cooking\"\n---\n\nThis is a cinnamon waffle recipe. This is an old recipe which the “dutch” brought over from Germany.\n\n- ⏲️ Prep time: 15 min\n- 🍳 Cook time: 10 hours\n\n## Ingredients\n\n- 1/2 lb butter\n- 1 cup sugar\n- 2 tsp cinnamon\n- 3 eggs\n- flour\n\n## Directions\n\n1. Cream the butter and sugar.\n2. Beat in the eggs 1 at a time and add cinnamon.\n3. Work in enough flour to make a soft dough.\n4. Form into small balls.\n5. Place several in a hot waffle iron, suitably spaced, press down top and bake.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": 15,
+        "cookTime": 600,
+        "totalTime": 615,
+        "sourceReported": [
+          "- ⏲️ Prep time: 15 min",
+          "- 🍳 Cook time: 10 hours"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-bread",
+      "sourceTitle": "Bread",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/bread.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/bread.md",
+      "snapshotSHA256": "9c32571bb14ddd919bf2298b619306c3b550ab03cf3f3deaa98397f934fdadf0",
+      "sourceAuthor": "alex-selimov",
+      "sourceTags": [
+        "basic",
+        "bread",
+        "fasting"
+      ],
+      "sourceIngredientLines": [
+        "1 1/2 cups warm water",
+        "2 and 1/4 teaspoons Active Dry Yeast",
+        "1 Tsp sugar",
+        "2 Tbsp  maple syrup, agave, or honey",
+        "1/2 Tbsp salt",
+        "3 3/4 cups Unbleached All-Purpose Flour (plus more for rolling / dusting)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-bread-ing-1",
+          "arabicName": "ماء دافئ، كوب ونصف",
+          "candidateDisplay": "1 1/2 cups warm water",
+          "sourceIngredientIndex": 0,
+          "sourceText": "1 1/2 cups warm water",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1.5,
+          "acceptedUnit": "cups",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-bread-ing-2",
+          "arabicName": "خميرة جافة نشطة، ملعقتان وربع صغيرتان",
+          "candidateDisplay": "2 and 1/4 teaspoons Active Dry Yeast",
+          "sourceIngredientIndex": 1,
+          "sourceText": "2 and 1/4 teaspoons Active Dry Yeast",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-bread-ing-3",
+          "arabicName": "سكر، ملعقة صغيرة",
+          "candidateDisplay": "1 Tsp sugar",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 Tsp sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 1,
+          "acceptedUnit": "Tsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-bread-ing-4",
+          "arabicName": "شراب قيقب أو أغاف أو عسل، ملعقتان كبيرتان",
+          "candidateDisplay": "2 Tbsp  maple syrup, agave, or honey",
+          "sourceIngredientIndex": 3,
+          "sourceText": "2 Tbsp  maple syrup, agave, or honey",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-bread-ing-5",
+          "arabicName": "ملح، نصف ملعقة كبيرة",
+          "candidateDisplay": "1/2 Tbsp salt",
+          "sourceIngredientIndex": 4,
+          "sourceText": "1/2 Tbsp salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 0.5,
+          "acceptedUnit": "Tbsp",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-bread-ing-6",
+          "arabicName": "دقيق غير مبيض لجميع الاستعمالات، 3¾ أكواب مع المزيد للفرد والنثر",
+          "candidateDisplay": "3 3/4 cups Unbleached All-Purpose Flour (plus more for rolling / dusting)",
+          "sourceIngredientIndex": 5,
+          "sourceText": "3 3/4 cups Unbleached All-Purpose Flour (plus more for rolling / dusting)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 3.75,
+          "acceptedUnit": "cups",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Proof the yeast. To do this warm 1/4 cup water to about bath water heat (110 degrees F, 43 degrees C) add active dry yeast and 1 Tsp sugar. Let sit for about 10 minutes, mixture should at least be doubled in size after waiting.",
+        "Combine rest of water, yeast mixture, maple syrup (or other sweetener), salt, and flour in a large mixing bowl and stir. The result will be a sticky, rough dough. Use a spoon to stir until well combined and when it can no longer do the job, knead and turn it in the bowl with your hands.",
+        "Lift the dough out and lightly grease the bowl with nonstick spray or olive oil. Cover and let rise for 2 hours at room temperature.",
+        "Transfer dough to a lightly floured work surface and knead until dough is elastic. Rule of thumb is 10 minutes of kneading.",
+        "Place seam-side down in a lightly greased loaf pan or baking sheet. Loosely cover with plastic wrap and let rest for 45-60 minutes.",
+        "Preheat oven to 425 degrees F (218 C)* toward the end of the dough resting time and place a metal pan (NOT glass, Pyrex, or ceramic) on the lowest oven rack. Also have 1 cup of hot water ready.",
+        "When the oven is preheated, slash the bread 2 or 3 times with a knife, making a cut about ½-inch deep.",
+        "Place in oven on middle rack. Then carefully pour hot water into the shallow pan on the rack beneath. Expect it to bubble and steam; then close oven door quickly.",
+        "Bake the bread for 26 to 35 minutes, or until deep golden brown and risen. Tapping the top of the loaf should produce a hollow sound.",
+        "Remove the bread from the oven and let rest in the pan for 5 minutes. Then carefully remove from pan and transfer to a cooling rack to cool. Let it cool completely before slicing for best results (otherwise it can be doughy in the middle).",
+        "Store leftovers in a plastic bag at room temperature for up to a few days. Transfer to freezer for longer term storage."
+      ],
+      "sourceRawText": "---\ntitle: \"Bread\"\ndate: 2021-03-10\ntags: ['basic', 'bread', 'fasting']\nauthor: alex-selimov\n---\n\n![Finished bread in its baking mold](/pix/bread.webp)\n\nThis is a recipe for a basic loaf of bread. The dough itself can be used however. I've made buns, rolls, and whole bread loafs using this same exact dough every time without a problem. Eat within 3 days as it will probably be going stale around then (as bread without preservatives and other junk should).\n\n## Ingredients\n\n* 1 1/2 cups warm water\n* 2 and 1/4 teaspoons Active Dry Yeast\n* 1 Tsp sugar\n* 2 Tbsp  maple syrup, agave, or honey\n* 1/2 Tbsp salt\n* 3 3/4 cups Unbleached All-Purpose Flour (plus more for rolling / dusting)\n\n## Directions\n\n1. Proof the yeast. To do this warm 1/4 cup water to about bath water heat (110 degrees F, 43 degrees C) add active dry yeast and 1 Tsp sugar. Let sit for about 10 minutes, mixture should at least be doubled in size after waiting.\n1. Combine rest of water, yeast mixture, maple syrup (or other sweetener), salt, and flour in a large mixing bowl and stir. The result will be a sticky, rough dough. Use a spoon to stir until well combined and when it can no longer do the job, knead and turn it in the bowl with your hands.\n2. Lift the dough out and lightly grease the bowl with nonstick spray or olive oil. Cover and let rise for 2 hours at room temperature.\n3. Transfer dough to a lightly floured work surface and knead until dough is elastic. Rule of thumb is 10 minutes of kneading.\n4. Place seam-side down in a lightly greased loaf pan or baking sheet. Loosely cover with plastic wrap and let rest for 45-60 minutes.\n5. Preheat oven to 425 degrees F (218 C)* toward the end of the dough resting time and place a metal pan (NOT glass, Pyrex, or ceramic) on the lowest oven rack. Also have 1 cup of hot water ready.\n6. When the oven is preheated, slash the bread 2 or 3 times with a knife, making a cut about ½-inch deep.\n7. Place in oven on middle rack. Then carefully pour hot water into the shallow pan on the rack beneath. Expect it to bubble and steam; then close oven door quickly.\n8. Bake the bread for 26 to 35 minutes, or until deep golden brown and risen. Tapping the top of the loaf should produce a hollow sound.\n9. Remove the bread from the oven and let rest in the pan for 5 minutes. Then carefully remove from pan and transfer to a cooling rack to cool. Let it cool completely before slicing for best results (otherwise it can be doughy in the middle).\n10. Store leftovers in a plastic bag at room temperature for up to a few days. Transfer to freezer for longer term storage.\n\n## Notes\n\n* Instant yeast is not recommended as you can't easily tell if the bread will come to life.\n* For whole wheat version use 2 cups of whole wheat bread and 1 and 3/4 cup unbleached all purpose flour.\n* Add sunflower seeds and/or rolled oats for extra flavor/grains.\n* For buns or rolls divide dough into smaller pieces before second rest. Shape them and then let the dough rest. Recommended lowering oven temperature to 350 F and not using water as those will result in a hard crust and potentially dry interior.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": null,
+        "prepTime": null,
+        "cookTime": null,
+        "totalTime": null,
+        "sourceReported": []
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "recipeId": "bc650-oaty-pancakes",
+      "sourceTitle": "Oaty Pancakes",
+      "sourceUrl": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/oaty-pancakes.md",
+      "sourceRevision": "9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2",
+      "sourceRevisionTimestamp": "2026-09-09T08:51:41+02:00",
+      "sourcePath": "content/oaty-pancakes.md",
+      "snapshotSHA256": "118951124eeb21338a3ef3289edcafdaffe04a5744b3ac4f9eded5f52c98b1a9",
+      "sourceAuthor": "\"Puremana\"",
+      "sourceTags": [
+        "breakfast",
+        "quick",
+        "sweet",
+        "pancake",
+        "cheesefare"
+      ],
+      "sourceIngredientLines": [
+        "3⁄4 cup milk",
+        "3⁄4 cup rolled oats",
+        "1 egg",
+        "1⁄2 teaspoon salt",
+        "2-3 tablespoon sugar",
+        "1⁄2 cup flour",
+        "2 teaspoon baking powder",
+        "2 teaspoon baking soda",
+        "25g butter (melted)"
+      ],
+      "ingredientCrosswalk": [
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-1",
+          "arabicName": "حليب، ثلاثة أرباع كوب",
+          "candidateDisplay": "3⁄4 cup milk",
+          "sourceIngredientIndex": 0,
+          "sourceText": "3⁄4 cup milk",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-2",
+          "arabicName": "شوفان ملفوف، ثلاثة أرباع كوب",
+          "candidateDisplay": "3⁄4 cup rolled oats",
+          "sourceIngredientIndex": 1,
+          "sourceText": "3⁄4 cup rolled oats",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-3",
+          "arabicName": "بيضة واحدة",
+          "candidateDisplay": "1 egg",
+          "sourceIngredientIndex": 2,
+          "sourceText": "1 egg",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-4",
+          "arabicName": "ملح، نصف ملعقة صغيرة",
+          "candidateDisplay": "1⁄2 teaspoon salt",
+          "sourceIngredientIndex": 3,
+          "sourceText": "1⁄2 teaspoon salt",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-5",
+          "arabicName": "سكر، ملعقتان إلى 3 ملاعق كبيرة",
+          "candidateDisplay": "2-3 tablespoon sugar",
+          "sourceIngredientIndex": 4,
+          "sourceText": "2-3 tablespoon sugar",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-6",
+          "arabicName": "دقيق، نصف كوب",
+          "candidateDisplay": "1⁄2 cup flour",
+          "sourceIngredientIndex": 5,
+          "sourceText": "1⁄2 cup flour",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": null,
+          "acceptedUnit": null,
+          "scales": false
+        },
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-7",
+          "arabicName": "بيكنج باودر، ملعقتان صغيرتان",
+          "candidateDisplay": "2 teaspoon baking powder",
+          "sourceIngredientIndex": 6,
+          "sourceText": "2 teaspoon baking powder",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-8",
+          "arabicName": "بيكربونات الصوديوم، ملعقتان صغيرتان",
+          "candidateDisplay": "2 teaspoon baking soda",
+          "sourceIngredientIndex": 7,
+          "sourceText": "2 teaspoon baking soda",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 2,
+          "acceptedUnit": "teaspoon",
+          "scales": true
+        },
+        {
+          "ingredientId": "bc650-oaty-pancakes-ing-9",
+          "arabicName": "زبدة مذابة، 25 جم",
+          "candidateDisplay": "25g butter (melted)",
+          "sourceIngredientIndex": 8,
+          "sourceText": "25g butter (melted)",
+          "mappingStatus": "explicit source index matched to preserved source text",
+          "acceptedAmount": 25,
+          "acceptedUnit": "g",
+          "scales": true
+        }
+      ],
+      "unmappedSourceIngredientIndices": [],
+      "sourceMethodLines": [
+        "Pour milk over rolled oats. Add remaining ingredients.",
+        "Mix with fork (or in a food processor) just enough to combine ingredients.",
+        "Put spoonfuls of mixture onto preheated, greased or sprayed griddle or fry pan. Turn spoon for round pancakes.",
+        "Turn pancakes as soon as bubbles form and burst in the middle. Slide thin metal blade under pancake and flip over. Second side is cooked when centre springs back.",
+        "Put a dab of butter on cooked surface of several pancakes.",
+        "Pile up so butter is between pancakes. Pour syrup over before serving.",
+        "Serve Oaty pancakes for breakfast or brunch, with juice or coffee. Pour syrup over the pile of buttered pancakes and serve bacon or sausages alongside if you like."
+      ],
+      "sourceRawText": "---\ntitle: \"Oaty Pancakes\"\ndate: 2021-03-13\ntags: ['breakfast', 'quick', 'sweet', 'pancake', 'cheesefare']\nauthor: \"Puremana\"\n---\n\n- ⏲️ Prep time: 10 min\n- 🍳 Cook time: 10 min\n- 🍽️ Servings: 4\n\n## Ingredients\n\n- 3⁄4 cup milk\n- 3⁄4 cup rolled oats\n- 1 egg\n- 1⁄2 teaspoon salt\n- 2-3 tablespoon sugar\n- 1⁄2 cup flour\n- 2 teaspoon baking powder\n- 2 teaspoon baking soda\n- 25g butter (melted)\n\n## Directions\n\n1. Pour milk over rolled oats. Add remaining ingredients.\n2. Mix with fork (or in a food processor) just enough to\ncombine ingredients.\n3. Put spoonfuls of mixture onto preheated, greased or\nsprayed griddle or fry pan. Turn spoon for round\npancakes.\n4. Turn pancakes as soon as bubbles form and\nburst in the middle. Slide thin metal blade under\npancake and flip over. Second side is cooked when\ncentre springs back.\n5. Put a dab of butter on cooked surface of several\npancakes.\n6. Pile up so butter is between pancakes. Pour\nsyrup over before serving.\n7. Serve Oaty pancakes for breakfast or brunch, with juice\nor coffee. Pour syrup over the pile of buttered pancakes\nand serve bacon or sausages alongside if you like.\n",
+      "publisherRightsEvidence": "https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/README.md",
+      "catalogKnownUnknown": {
+        "servings": 4,
+        "prepTime": 10,
+        "cookTime": 10,
+        "totalTime": 20,
+        "sourceReported": [
+          "- ⏲️ Prep time: 10 min",
+          "- 🍳 Cook time: 10 min",
+          "- 🍽️ Servings: 4"
+        ]
+      },
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

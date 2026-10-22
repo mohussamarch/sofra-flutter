@@ -1,0 +1,210 @@
+{
+  "cuisine": "أسترالي",
+  "cuisineSlug": "australian",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "bc650-aussie-snags",
+      "name": "نقانق أسترالية مشوية على الخبز",
+      "nameEn": "Aussie Snags (sausage sizzle)",
+      "cuisine": "أسترالي",
+      "category": "طبق رئيسي",
+      "description": "نقانق رفيعة مشوية تقدم على خبز أبيض مع بصل محمر وصلصة طماطم وخردل اختياري.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-aussie-snags-ing-1",
+          "name": "نقانق رفيعة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Sausages (thin)"
+        },
+        {
+          "id": "bc650-aussie-snags-ing-2",
+          "name": "بصل (4 جم لكل نقانق)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Onions (4g per sausage)"
+        },
+        {
+          "id": "bc650-aussie-snags-ing-3",
+          "name": "صلصة طماطم",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Tomato sauce"
+        },
+        {
+          "id": "bc650-aussie-snags-ing-4",
+          "name": "خردل (اختياري)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Mustard (optional)"
+        },
+        {
+          "id": "bc650-aussie-snags-ing-5",
+          "name": "خبز أبيض مقطع شرائح",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "White sliced bread"
+        },
+        {
+          "id": "bc650-aussie-snags-ing-6",
+          "name": "زبدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Butter"
+        },
+        {
+          "id": "bc650-aussie-snags-ing-7",
+          "name": "زيت",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Oil"
+        },
+        {
+          "id": "bc650-aussie-snags-ing-8",
+          "name": "رقائق خشب (اختيارية، للوقود والنكهة المدخنة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Wood chips (optional, fuel for smokey flavour)"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع البصل إلى حلقات.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضع النقانق على الشواية واقلبها مرة كل 5 دقائق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الزيت الذي تختاره إلى سطح الشواء الساخن ثم أضف البصل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قلّب البصل بالملقط حتى يصبح ذهبياً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "عندما يصبح البصل ذهبياً أطفئ سطح الشواء.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "عندما تنضج النقانق ادهن الخبز بالزبدة ثم ضع البصل والنقانق؛ ويمكن شق النقانق اختيارياً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف صلصة الطماطم في النهاية.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة غير المثبتة متروكة null. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/aussie-snags.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=eed5755c1101cc245e3089d94e0c48ece1aa898c7c15a5eb9d8d00c10ebd874a"
+    },
+    {
+      "id": "bc650-damper",
+      "name": "خبز دامبر الأسترالي",
+      "nameEn": "Damper",
+      "cuisine": "أسترالي",
+      "category": "خبز",
+      "description": "خبز مخيم أسترالي سريع من طحين ذاتي التخمير والحليب والزبدة، بلا خميرة.",
+      "servings": 15,
+      "prepTime": 30,
+      "cookTime": 30,
+      "totalTime": 60,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-damper-ing-1",
+          "name": "طحين ذاتي التخمير، 4 أكواب",
+          "amount": 4,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-damper-ing-2",
+          "name": "زبدة طرية، ملعقة كبيرة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-damper-ing-3",
+          "name": "حليب، كوب واحد",
+          "amount": 1,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-damper-ing-4",
+          "name": "ماء، نصف كوب",
+          "amount": 0.5,
+          "unit": "كوب",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-damper-ing-5",
+          "name": "ملح، ملعقة صغيرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن إلى 425°F (220°م) وادهن صينية خبز.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلط المكونات وأضف نصف كوب ماء وملعقة صغيرة ملح كما تذكر الطريقة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اعجن العجين على سطح مرشوش بالطحين.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخبز 25 دقيقة، ثم اخفض الحرارة إلى 175°م واخبزه 5–10 دقائق أخرى.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "خبز"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️ Prep time: 30 min ؛ - 🍳Cook time: 30 min ؛ - 🍽️ Servings: 15. المصدر يذكر 30 دقيقة تحضير و30 دقيقة طهي و15 حصة؛ الطريقة تفصل 25 دقيقة ثم 5–10 دقائق إضافية في فرن 175°م، لذا حفظت المدة المعلنة مع تفصيلها في الخطوات. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/damper.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=c19fae28a09f8f3d23638d706822003c20b90d4a2211e9d4340a8d695feaca51"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'recipe_catalog.dart';
+import 'recipe_yield_review.dart';
 import 'imported_recipe_candidate.dart';
 import 'personal_recipe_finalization.dart';
 
@@ -306,6 +307,46 @@ RecipeRevision buildIngredientSplitRevision({
   );
 }
 
+RecipeRevision buildRecipeYieldRevision({
+  required RecipeRevision source,
+  required int baseServings,
+  required String variantId,
+  required String revision,
+  required String reviewNote,
+  required DateTime reviewedAt,
+  required bool acknowledgeWholeRecipeYield,
+}) {
+  if (!acknowledgeWholeRecipeYield ||
+      variantId.trim().isEmpty ||
+      variantId == source.variantId) {
+    throw ArgumentError(
+      'Explicit whole-recipe yield review and new personal identity required',
+    );
+  }
+  final review = RecipeYieldReview(
+    acknowledgeWholeRecipeYield: acknowledgeWholeRecipeYield,
+    sourceRevisionKey: source.key,
+    sourceSnapshotVersion: recipeSnapshotVersion(source.recipe),
+    baseServings: baseServings,
+    note: reviewNote,
+    reviewedAt: reviewedAt,
+  );
+  return RecipeRevision(
+    familyId: source.familyId,
+    revision: revision,
+    kind: RecipeRevisionKind.personal,
+    recipe: CatalogRecipe.fromJson({
+      ...source.recipe.toJson(),
+      'id': variantId,
+      'servings': baseServings,
+    }),
+    parentKey: source.key,
+    region: source.region,
+    method: source.method,
+    yieldReview: review,
+  );
+}
+
 /// A complete immutable revision: no live inheritance of ingredients or steps.
 class RecipeRevision {
   RecipeRevision({
@@ -318,6 +359,7 @@ class RecipeRevision {
     this.method,
     this.ingredientSplitReview,
     this.ingredientChoiceReview,
+    this.yieldReview,
     this.sourceImportReview,
     this.authoredReview,
   }) : recipe = CatalogRecipe.fromJson(recipe.toJson()) {
@@ -340,6 +382,17 @@ class RecipeRevision {
             ingredientSplitReview != null)) {
       throw ArgumentError(
         'Choice review must reference its personal revision parent and cannot also split',
+      );
+    }
+    if (yieldReview != null &&
+        (kind != RecipeRevisionKind.personal ||
+            parentKey != yieldReview!.sourceRevisionKey ||
+            ingredientSplitReview != null ||
+            ingredientChoiceReview != null ||
+            sourceImportReview != null ||
+            authoredReview != null)) {
+      throw ArgumentError(
+        'Yield review must be the sole review of its personal parent',
       );
     }
     if (kind == RecipeRevisionKind.imported) {
@@ -394,6 +447,7 @@ class RecipeRevision {
   final String? parentKey, region, method;
   final IngredientSplitReview? ingredientSplitReview;
   final IngredientChoiceReview? ingredientChoiceReview;
+  final RecipeYieldReview? yieldReview;
   final SourceRecipeImportReview? sourceImportReview;
   final PersonalRecipeFinalization? authoredReview;
   String get variantId => recipe.id;
@@ -407,6 +461,7 @@ class RecipeRevision {
     'parentKey': parentKey,
     'ingredientSplitReview': ingredientSplitReview?.toJson(),
     'ingredientChoiceReview': ingredientChoiceReview?.toJson(),
+    if (yieldReview != null) 'yieldReview': yieldReview!.toJson(),
     'sourceImportReview': sourceImportReview?.toJson(),
     'authoredReview': authoredReview?.toJson(),
     'region': region,
@@ -433,6 +488,11 @@ class RecipeRevision {
           ? null
           : IngredientChoiceReview.fromJson(
               Map<String, dynamic>.from(j['ingredientChoiceReview'] as Map),
+            ),
+      yieldReview: j['yieldReview'] == null
+          ? null
+          : RecipeYieldReview.fromJson(
+              Map<String, dynamic>.from(j['yieldReview'] as Map),
             ),
       authoredReview: j['authoredReview'] == null
           ? null
@@ -537,6 +597,27 @@ class RecipeBook {
         throw const FormatException(
           'Unreviewed changes outside ingredient choice',
         );
+      }
+    }
+    for (final revision in this.revisions.values) {
+      final review = revision.yieldReview;
+      if (review == null) continue;
+      final source = this.revisions[review.sourceRevisionKey]!;
+      if (review.sourceSnapshotVersion !=
+              recipeSnapshotVersion(source.recipe) ||
+          revision.variantId == source.variantId ||
+          revision.region != source.region ||
+          revision.method != source.method) {
+        throw const FormatException('Stale or invalid reviewed yield source');
+      }
+      final expected = CatalogRecipe.fromJson({
+        ...source.recipe.toJson(),
+        'id': revision.variantId,
+        'servings': review.baseServings,
+      });
+      if (jsonEncode(expected.toJson()) !=
+          jsonEncode(revision.recipe.toJson())) {
+        throw const FormatException('Unreviewed changes outside recipe yield');
       }
     }
     for (final e in this.active.entries) {

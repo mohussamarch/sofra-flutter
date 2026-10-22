@@ -1,0 +1,352 @@
+{
+  "cuisine": "نمساوي",
+  "cuisineSlug": "austrian",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "bc650-schnitzel",
+      "name": "شنيتسل لحم العجل",
+      "nameEn": "Schnitzel",
+      "cuisine": "نمساوي",
+      "category": "طبق رئيسي",
+      "description": "شرائح لحم عجل رقيقة مغلفة بالدقيق والبيض وفتات الخبز، تقلى بالزبدة وتقدم مع الليمون.",
+      "servings": 4,
+      "prepTime": 15,
+      "cookTime": 6,
+      "totalTime": 21,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-schnitzel-ing-1",
+          "name": "4 شرائح لحم عجل (نحو 150 جم للقطعة)",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 veal cutlets (1 ~ 150g)"
+        },
+        {
+          "id": "bc650-schnitzel-ing-2",
+          "name": "بيضتان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 eggs"
+        },
+        {
+          "id": "bc650-schnitzel-ing-3",
+          "name": "ليمونة واحدة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "1 lemon"
+        },
+        {
+          "id": "bc650-schnitzel-ing-4",
+          "name": "دقيق، 100 جم",
+          "amount": 100,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-schnitzel-ing-5",
+          "name": "فتات خبز، 150 جم",
+          "amount": 150,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-schnitzel-ing-6",
+          "name": "زبدة، 100 جم (أو الأفضل زبدة مصفاة)",
+          "amount": 100,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "جهّز 3 أوعية: واحداً للدقيق، وآخر للبيض المخفوق، وثالثاً لفتات الخبز المتبل بالملح والبابريكا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اغسل لحم العجل وجففه برفق بمنشفة مطبخ.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ضع اللحم على لوح واطرقه بمطرقة تطرية أو نشابة حتى يصبح سمكه 0.5 سم؛ يذكر المصدر أن طرقه يجعله طرياً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "تبّل اللحم بالملح والفلفل على الجانبين واغمسه بالتتابع في الأوعية الثلاثة: الدقيق ثم البيض ثم فتات الخبز.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أذب الزبدة في مقلاة عميقة؛ انتبه ألا ترتفع حرارتها كثيراً كي لا تتحول إلى اللون البني.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اقْلِ لحم العجل حتى يصبح ذهبياً بنياً، نحو 3 دقائق لكل جانب مثلاً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "قدّم مع قطعة ليمون.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 15 min ؛ - 🍳 Cook time: 6 min ؛ - 🍽️ Servings: 4. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/schnitzel.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=e7f3d361b0e64ebec775a4b3909186ef53248b130ef21ec317178165f56cbdd2"
+    },
+    {
+      "id": "bc650-kaiserschmarrn",
+      "name": "كايسرشمّارن النمساوي",
+      "nameEn": "Kaiserschmarrn",
+      "cuisine": "نمساوي",
+      "category": "حلوى",
+      "description": "عجين خفيف من الدقيق والسكر والبيض والحليب والزبدة يخبز في مقلاة ثم يقطع قطعاً صغيرة ويرش بالسكر والزبيب الاختياري.",
+      "servings": 3,
+      "prepTime": 10,
+      "cookTime": 10,
+      "totalTime": 20,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-kaiserschmarrn-ing-1",
+          "name": "دقيق، 200 جم",
+          "amount": 200,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-kaiserschmarrn-ing-2",
+          "name": "سكر، 30 جم",
+          "amount": 30,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-kaiserschmarrn-ing-3",
+          "name": "4 بيضات",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "4 eggs"
+        },
+        {
+          "id": "bc650-kaiserschmarrn-ing-4",
+          "name": "حليب، 300 مل",
+          "amount": 300,
+          "unit": "مل",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-kaiserschmarrn-ing-5",
+          "name": "زبدة، 40 جم",
+          "amount": 40,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-kaiserschmarrn-ing-6",
+          "name": "زبيب، 30 جم (اختياري)",
+          "amount": 30,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "افصل بياض البيض عن الصفار.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ضع الصفار والدقيق والسكر ورشة ملح والحليب في وعاء وقلّب حتى تختفي التكتلات.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخفق بياض البيض في وعاء آخر حتى تتكون قمم ثابتة، ثم أضفه إلى الخليط الأول.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أذب الزبدة في مقلاة مسطحة على حرارة عالية، ثم أضف العجين واطهه على الجانبين.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ضع المقلاة في فرن مسخن مسبقاً إلى 180°C على إعداد الهواء الساخن نحو 10 دقائق أو حتى يتحمر قليلاً.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "قطّع العجين بملعقة مسطحة إلى قطع بحجم اللقمة.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "رش السكر على الوجه وأضف الزبيب هنا إن استخدمته.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "حلوى"
+      ],
+      "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 10 min ؛ - 🍳 Cook time: 10 min ؛ - 🍽️ Servings: 3. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/kaiserschmarrn.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=29da5b4e9595937ba2835eae2cba06404e3874e12a456f7c52384e7f7632e146"
+    },
+    {
+      "id": "bc650-tiroler-groestl",
+      "name": "تيرولر غروستل",
+      "nameEn": "Tiroler Gröstl",
+      "cuisine": "نمساوي",
+      "category": "طبق رئيسي",
+      "description": "مقلاة نمساوية من البطاطا المطهوة والبصل ولحم الخنزير المقدد مع البيض المقلي على الوجه والبقدونس والأعشاب.",
+      "servings": 5,
+      "prepTime": 15,
+      "cookTime": 30,
+      "totalTime": 45,
+      "difficulty": "غير محدد بالمصدر",
+      "metadataPolicy": "source-unknowns-v1",
+      "ingredients": [
+        {
+          "id": "bc650-tiroler-groestl-ing-1",
+          "name": "بطاطا، 1 كجم أو رطلان",
+          "amount": 1,
+          "unit": "كيلو",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tiroler-groestl-ing-2",
+          "name": "بصلتان حمراوان",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "2 red onions"
+        },
+        {
+          "id": "bc650-tiroler-groestl-ing-3",
+          "name": "لحم أضلاع خنزير، 500 جم أو رطل واحد",
+          "amount": 500,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tiroler-groestl-ing-4",
+          "name": "لحم مقدد مدخن، 400 جم أو 14 أونصة",
+          "amount": 400,
+          "unit": "جرام",
+          "scale": true,
+          "display": null
+        },
+        {
+          "id": "bc650-tiroler-groestl-ing-5",
+          "name": "بيض، 5",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "5 eggs"
+        },
+        {
+          "id": "bc650-tiroler-groestl-ing-6",
+          "name": "فصوص ثوم، 3",
+          "amount": 3.0,
+          "unit": "فص",
+          "scale": true,
+          "display": null,
+          "label": "3 cloves of garlic"
+        },
+        {
+          "id": "bc650-tiroler-groestl-ing-7",
+          "name": "بقدونس مفروم بكمية وافرة",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Ample amount of chopped parsley"
+        },
+        {
+          "id": "bc650-tiroler-groestl-ing-8",
+          "name": "مردقوش وكراوية حسب الذوق",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Marjoram and cumin to taste"
+        },
+        {
+          "id": "bc650-tiroler-groestl-ing-9",
+          "name": "زبدة للقلي وإضافة رقائق حول البطاطا",
+          "amount": null,
+          "unit": null,
+          "scale": false,
+          "display": "Fry potato wedges in butter, add more butter while stirring."
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "نظف البطاطا واسلقها بقشرها.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "افرُم البصل واهرِس الثوم.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "قطّع لحم الخنزير ولحم المقدد إلى مكعبات.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "قطّع البطاطا المطهوة شرائح سميكة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اقْلِ شرائح البطاطا بالزبدة، وأضف مزيداً منها أثناء التقليب.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "أضف لحم الخنزير ولحم المقدد واطههما حتى يقرمشا.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف بقية المكونات وقلّب، باستثناء البيض.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "اقْلِ البيض على حدة وقدمه فوق الطبق.",
+          "duration": null
+        }
+      ],
+      "tags": [
+        "طبق رئيسي"
+      ],
+      "notes": "القيم غير المحددة أو غير القابلة للتمثيل بدقة متروكة null؛ العناصر المستخرجة من الطريقة موسومة في الإسناد. بيانات المصدر: - ⏲️  Prep time: 15 min ؛ - 🍳 Cook time: 30 min ؛ - 🍽️ Servings: 5. المصدر يذكر 15 دقيقة للتحضير و30 دقيقة للطهي و5 حصص. لا يحدد كمية الزبدة. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/tiroler-groestl.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=2c3961643b77c1397dc09a89494887e4859f6393245b134824f3cd46dd59ef28"
+    }
+  ]
+}
