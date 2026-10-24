@@ -31,6 +31,7 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
     final store = TestStore();
+    final recipes = await warmRecipes(tester);
     Widget app(Map<String, dynamic>? data) => MaterialApp(
       theme: ThemeData(
         snackBarTheme: const SnackBarThemeData(
@@ -39,7 +40,7 @@ void main() {
       ),
       home: Directionality(
         textDirection: TextDirection.rtl,
-        child: SofraHome(store: store, initialData: data),
+        child: SofraHome(store: store, initialData: data, recipes: recipes),
       ),
     );
     await tester.pumpWidget(app(null));
@@ -48,11 +49,16 @@ void main() {
     await tester.pumpAndSettle();
     final before = jsonEncode(store.data);
     expect(store.data!['name'], 'مريم');
-    expect(store.data!['planned'], isNull);
-    final rice = (store.data!['stock'] as List).singleWhere(
-      (s) => s['id'] == 'rice',
+    final kitchen = store.data!['kitchen'] as Map;
+    final onion = (kitchen['inventory'] as List).singleWhere(
+      (s) => s['ingredientId'] == 'onion',
     );
-    expect(rice['quantity'], 100);
+    expect(onion['quantity'], 0);
+    final cooked = (kitchen['history'] as List).single as Map;
+    expect(cooked['recipeId'], 'eg-koshari');
+    expect(cooked['cost'], isNull);
+    expect(cooked['untrackedStockLines'], isNotEmpty);
+    expect((kitchen['plans'] as List).single['completed'], isTrue);
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(app(await store.load()));
     await tester.pumpAndSettle();
@@ -67,7 +73,11 @@ void main() {
     tester,
   ) async {
     final store = TestStore()..fail = true;
-    await tester.pumpWidget(MaterialApp(home: SofraHome(store: store)));
+    await tester.pumpWidget(
+      MaterialApp(
+        home: SofraHome(store: store, recipes: await warmRecipes(tester)),
+      ),
+    );
     await tester.pumpAndSettle();
     await tapKey(tester, 'onboarding-next');
     await tester.enterText(find.byKey(const ValueKey('field-name')), 'اختبار');
@@ -111,7 +121,11 @@ void main() {
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
       final store = TestStore();
-      await tester.pumpWidget(MaterialApp(home: SofraHome(store: store)));
+      await tester.pumpWidget(
+        MaterialApp(
+          home: SofraHome(store: store, recipes: await warmRecipes(tester)),
+        ),
+      );
       await tester.pumpAndSettle();
       await tester.ensureVisible(find.byKey(const ValueKey('field-country')));
       await tester.tap(find.byKey(const ValueKey('field-country')));

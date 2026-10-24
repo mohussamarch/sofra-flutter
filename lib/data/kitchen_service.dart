@@ -166,11 +166,42 @@ class KitchenService {
     _root = _clone(root);
   }
 
-  Future<void> _write(void Function(Map<String, dynamic>) change) {
+  static const _reservedRootKeys = {'kitchen', 'schema', 'country'};
+
+  /// App-level root fields (profile, preferences) stored beside `kitchen`.
+  Map<String, dynamic> get rootFields {
+    if (_root == null) throw StateError('Load before use');
+    return _clone({
+      for (final e in _root!.entries)
+        if (!_reservedRootKeys.contains(e.key)) e.key: e.value,
+    });
+  }
+
+  /// Writes root fields through the same ordered, atomic save path so the
+  /// app has exactly one writer. A null value removes the key.
+  Future<void> saveRootFields(Map<String, Object?> values) {
+    final bad = values.keys.where(_reservedRootKeys.contains);
+    if (bad.isNotEmpty) throw ArgumentError('Reserved root keys: $bad');
+    final copy = jsonDecode(jsonEncode(values)) as Map<String, dynamic>;
+    return _writeRoot((root) {
+      for (final e in copy.entries) {
+        if (e.value == null) {
+          root.remove(e.key);
+        } else {
+          root[e.key] = e.value;
+        }
+      }
+    });
+  }
+
+  Future<void> _write(void Function(Map<String, dynamic>) change) =>
+      _writeRoot((root) => change(root['kitchen'] as Map<String, dynamic>));
+
+  Future<void> _writeRoot(void Function(Map<String, dynamic>) change) {
     final result = _tail.then((_) async {
       if (_root == null) throw StateError('Load before saving');
       final next = _clone(_root!);
-      change(next['kitchen'] as Map<String, dynamic>);
+      change(next);
       if (jsonEncode(next) == jsonEncode(_root)) return;
       next['country'] = (next['kitchen'] as Map)['country'];
       // Firestore's current state document has a hard size limit. Keep margin
@@ -1727,6 +1758,7 @@ class KitchenService {
     Set<int> omitUnmeasuredLines = const {},
     Map<String, IngredientUse> measuredUses = const {},
     Set<String> omitUnmeasured = const {},
+    Set<int> untrackedStockLines = const {},
     List<UnitRule> rules = const [],
     DateTime? cookedAt,
     double? cookedYieldGrams,
@@ -1780,7 +1812,20 @@ class KitchenService {
     )) {
       throw ArgumentError('Invalid or conflicting actual cooking line');
     }
+    // Lines the cook explicitly keeps out of stock tracking (water, salt, an
+    // ingredient never recorded). Still cooked: nutrition keeps them, but no
+    // deduction happens and the cost becomes unknown rather than understated.
+    if (untrackedStockLines.any(
+      (i) =>
+          !validLine(i) ||
+          omitUnmeasuredLines.contains(i) ||
+          measuredUsesByLine.containsKey(i) ||
+          submittedActual.containsKey(i),
+    )) {
+      throw ArgumentError('Invalid or conflicting untracked stock line');
+    }
     final uses = <IngredientUse>[];
+    final untracked = <int>{};
     final sourceEstimates = <int, RecipeFoodSelection>{};
     final preparationEstimates = <int, RecipeFoodSelection>{};
     final actualMeasured = <int, IngredientUse>{};
@@ -1794,6 +1839,10 @@ class KitchenService {
           continue;
         }
         selectedOptionalLines.add(i);
+      }
+      if (untrackedStockLines.contains(i)) {
+        untracked.add(i);
+        continue;
       }
       final quantity = scaled.quantity(ingredient);
       if (quantity == null &&
@@ -1907,7 +1956,7 @@ class KitchenService {
         throw StateError('Insufficient stock or unresolved units');
       }
       var total = 0.0;
-      final unknown = <String>[];
+      final unknown = <String>[for (final i in untracked) rows[i].id];
       for (final use in uses) {
         final value = _cost(k, use, rules);
         if (value == null) {
@@ -1975,6 +2024,7 @@ class KitchenService {
         'selectedOptional': optionalIds.toList(),
         'selectedOptionalLines': selectedOptionalLines.toList(),
         'omittedUnmeasuredLines': omittedLines.toList(),
+        'untrackedStockLines': (untracked.toList()..sort()),
         'estimatedSourceMeasureLines': sourceEstimates.keys.toList(),
         'actualMeasuredLines': actualMeasured.keys.toList(),
         'estimatedPreparationLines': preparationEstimates.keys.toList(),
