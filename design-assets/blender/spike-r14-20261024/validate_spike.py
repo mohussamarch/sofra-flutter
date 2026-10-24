@@ -15,8 +15,17 @@ pixels=np.asarray(Image.open(p/'id_mask.png').convert('RGB'));assert len(np.uniq
 for k,h in s['hotspots'].items():
  assert h['color']==manifest['idColors'][k] and h['visiblePixelCount']>10
  b=h['bbox'];assert 0<=b['x']<1440 and 0<=b['y']<1440 and b['x']+b['width']<=1440 and b['y']+b['height']<=1440
-for name,sha in s['sourceHashes'].items():assert hashlib.sha256((root/'design-assets/blender/kitchen-options-r14-20261024'/name).read_bytes()).hexdigest()==sha
+source_binaries_available=True
+retention_path=root/'design-assets/blender/current/retention.json'
+retention=json.loads(retention_path.read_text(encoding='utf-8-sig')) if retention_path.exists() else {}
+pruned={str(Path(x['path']).resolve()).casefold() for x in retention.get('deleted',[])}
+for name,sha in s['sourceHashes'].items():
+ source=root/'design-assets/blender/kitchen-options-r14-20261024'/name
+ if source.exists():assert hashlib.sha256(source.read_bytes()).hexdigest()==sha
+ else:
+  assert str(source.resolve()).casefold() in pruned, 'Missing source without authorized retention receipt'
+  source_binaries_available=False
 for name in ['window_mask.png','beam_mask_morning.png','beam_mask_golden.png']:assert Image.open(p/name).size==(1440,1440)
 assert len((root/'docs/STATUS.md').read_text(encoding='utf-8-sig').splitlines())<40
 assert len((root/'docs/handoff/codex.md').read_text(encoding='utf-8-sig').splitlines())<150
-print(json.dumps({'passed':True,'mediaFiles':24,'doorFrames':16,'categoricalIds':7,'cameraModesAligned':3,'totalPackageBytes':sum(f.stat().st_size for f in p.iterdir() if f.is_file()),'sourceHashesMatch':True,'mobileTested':False}))
+print(json.dumps({'passed':True,'mediaFiles':24,'doorFrames':16,'categoricalIds':7,'cameraModesAligned':3,'totalPackageBytes':sum(f.stat().st_size for f in p.iterdir() if f.is_file()),'sourceBinariesAvailable':source_binaries_available,'sourceHashesMatch':True if source_binaries_available else None,'historicalSourceHashesRetained':True,'mobileTested':False}))
