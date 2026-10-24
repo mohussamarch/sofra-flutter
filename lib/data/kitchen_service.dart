@@ -68,10 +68,27 @@ class MonthlyBudgetSearchPreview {
 /// One state owner for the future UI. Writes are atomic and published only after
 /// the existing local/Firestore store succeeds; stale cloud writes still fail.
 class KitchenService {
-  KitchenService(this.store, this.recipes, {this.legacyUnits = const {}});
+  KitchenService(
+    this.store,
+    this.recipes, {
+    this.legacyUnits = const {},
+    String Function(String rawId)? stockIdOf,
+  }) : stockIdOf = stockIdOf ?? _identity;
   final StateStore store;
   final RecipeRepository recipes;
   final Map<String, String> legacyUnits;
+
+  /// Maps a recipe line's raw ingredient ID to the stock/price identity used
+  /// for deduction, cost and consumed history. Line validation keeps raw IDs.
+  final String Function(String rawId) stockIdOf;
+  static String _identity(String rawId) => rawId;
+  IngredientUse _stockUse(IngredientUse use) {
+    final id = stockIdOf(use.ingredientId);
+    return id == use.ingredientId
+        ? use
+        : IngredientUse(id, use.quantity, use.unit);
+  }
+
   Map<String, dynamic>? _root;
   Future<void> _tail = Future.value();
   Map<String, dynamic> get snapshot {
@@ -130,6 +147,9 @@ class KitchenService {
     }
     for (final row in kitchen['inventory'] as List) {
       InventoryLot.fromJson(Map<String, dynamic>.from(row as Map));
+    }
+    for (final row in kitchen['unitRules'] as List? ?? const []) {
+      UnitRule.fromJson(Map<String, dynamic>.from(row as Map));
     }
     for (final row in kitchen['members'] as List) {
       HouseholdMember.fromJson(Map<String, dynamic>.from(row as Map));
@@ -1260,6 +1280,65 @@ class KitchenService {
       plans.where((p) => CalendarRange(date, mode).includes(p.date)).toList()
         ..sort((a, b) => a.date.compareTo(b.date));
 
+  static List<UnitRule> _storedRules(Map<String, dynamic> k) => [
+    for (final row in k['unitRules'] as List? ?? const [])
+      UnitRule.fromJson(Map<String, dynamic>.from(row as Map)),
+  ];
+
+  /// Explicit rules first so they win over a stored rule for the same key.
+  static List<UnitRule> _mergedRules(
+    Map<String, dynamic> k,
+    List<UnitRule> explicit,
+  ) {
+    String key(UnitRule r) => '${r.ingredientId}\u0000${r.from}\u0000${r.to}';
+    final given = explicit.map(key).toSet();
+    return [
+      ...explicit,
+      ..._storedRules(k).where((r) => !given.contains(key(r))),
+    ];
+  }
+
+  /// User-entered per-ingredient conversions (e.g. 1 cup rice = 200 g).
+  List<UnitRule> get unitRules => List.unmodifiable(_storedRules(snapshot));
+
+  /// Replaces any stored rule with the same ingredientId/from/to.
+  Future<void> saveUnitRule(UnitRule rule) {
+    if (rule.ingredientId.trim().isEmpty ||
+        rule.from.isEmpty ||
+        rule.to.isEmpty ||
+        rule.from == rule.to) {
+      throw ArgumentError('Invalid unit rule');
+    }
+    final row = UnitRule(
+      rule.ingredientId,
+      rule.from,
+      rule.to,
+      rule.factor,
+    ).toJson();
+    return _write((k) {
+      final list = (k['unitRules'] as List?) ?? <dynamic>[];
+      list.removeWhere(
+        (v) =>
+            v['ingredientId'] == row['ingredientId'] &&
+            v['from'] == row['from'] &&
+            v['to'] == row['to'],
+      );
+      list.add(row);
+      k['unitRules'] = list;
+    });
+  }
+
+  Future<void> removeUnitRule(String ingredientId, String from, String to) {
+    final a = Units.canonical(from), b = Units.canonical(to);
+    return _write((k) {
+      final list = k['unitRules'] as List?;
+      list?.removeWhere(
+        (v) =>
+            v['ingredientId'] == ingredientId && v['from'] == a && v['to'] == b,
+      );
+    });
+  }
+
   Future<void> savePrice(MarketPrice price, {required bool userOverride}) =>
       _write((k) {
         final list = k['prices'] as List;
@@ -1315,8 +1394,10 @@ class KitchenService {
     return null;
   }
 
-  double? estimatedCost(IngredientUse use, {List<UnitRule> rules = const []}) =>
-      _cost(snapshot, use, rules);
+  double? estimatedCost(IngredientUse use, {List<UnitRule> rules = const []}) {
+    final k = snapshot;
+    return _cost(k, _stockUse(use), _mergedRules(k, rules));
+  }
 
   // Shared by plan and advisory previews so explicit line decisions, scaling
   // and unknown requirements retain identical semantics.
@@ -1347,11 +1428,13 @@ class KitchenService {
       final quantity = scaled.quantity(ingredient);
       final explicit = measuredLines[line];
       if (explicit != null) {
-        uses.add(explicit);
+        uses.add(_stockUse(explicit));
       } else if (quantity == null) {
         unresolved.add('${meal.id}:$line:${ingredient.id}');
       } else {
-        uses.add(IngredientUse(ingredient.id, quantity, ingredient.unit!));
+        uses.add(
+          _stockUse(IngredientUse(ingredient.id, quantity, ingredient.unit!)),
+        );
       }
     }
     return MonthlyBudgetMeal(
@@ -1386,6 +1469,7 @@ class KitchenService {
     }
     await _tail;
     final k = snapshot;
+    final allRules = _mergedRules(k, ownedRules);
     final guard = jsonEncode(k);
     final allPlans = (k['plans'] as List)
         .map(
@@ -1427,8 +1511,8 @@ class KitchenService {
                 InventoryLot.fromJson(Map<String, dynamic>.from(row as Map)),
           )
           .toList(),
-      rules: ownedRules,
-      estimateCost: (use) => _cost(k, use, ownedRules),
+      rules: allRules,
+      estimateCost: (use) => _cost(k, use, allRules),
       unresolvedRequirements: unresolved,
     );
   }
@@ -1491,6 +1575,7 @@ class KitchenService {
     }
     await _tail;
     final k = snapshot;
+    final allRules = _mergedRules(k, ownedRules);
     final guard = jsonEncode(k);
     final budgets = (k['budgets'] as List)
         .where((row) => row['id'] == budgetId)
@@ -1528,7 +1613,7 @@ class KitchenService {
     return compareMonthlyBudgetChoices(
       period: period,
       options: resolved,
-      rules: ownedRules,
+      rules: allRules,
       stock: (k['inventory'] as List)
           .map(
             (row) =>
@@ -1540,7 +1625,7 @@ class KitchenService {
             (row) => MoneyEntry.fromJson(Map<String, dynamic>.from(row as Map)),
           )
           .toList(),
-      estimateCost: (_, use) => _cost(k, use, ownedRules),
+      estimateCost: (_, use) => _cost(k, use, allRules),
     );
   }
 
@@ -1629,6 +1714,7 @@ class KitchenService {
     }
     await _tail;
     final k = snapshot;
+    final allRules = _mergedRules(k, ownedRules);
     final guard = jsonEncode(k);
     final budgets = (k['budgets'] as List)
         .where((row) => row['id'] == budgetId)
@@ -1698,7 +1784,7 @@ class KitchenService {
       recipePreferences: preferences,
       requiredSlots: ownedRequiredSlots,
       candidateRecipeIds: recipeIdentities,
-      rules: ownedRules,
+      rules: allRules,
       stock: (k['inventory'] as List)
           .map(
             (row) =>
@@ -1710,7 +1796,7 @@ class KitchenService {
             (row) => MoneyEntry.fromJson(Map<String, dynamic>.from(row as Map)),
           )
           .toList(),
-      estimateCost: (_, use) => _cost(k, use, ownedRules),
+      estimateCost: (_, use) => _cost(k, use, allRules),
     );
     return MonthlyBudgetSearchPreview._(
       search: result,
@@ -1951,14 +2037,18 @@ class KitchenService {
             (v) => InventoryLot.fromJson(Map<String, dynamic>.from(v as Map)),
           )
           .toList();
-      final assessment = assessStock(uses, stock, rules: rules);
+      final allRules = _mergedRules(k, rules);
+      final stockUses = uses.map(_stockUse).toList();
+      final assessment = assessStock(stockUses, stock, rules: allRules);
       if (!assessment.canCook) {
         throw StateError('Insufficient stock or unresolved units');
       }
       var total = 0.0;
-      final unknown = <String>[for (final i in untracked) rows[i].id];
-      for (final use in uses) {
-        final value = _cost(k, use, rules);
+      final unknown = <String>[
+        for (final i in untracked) stockIdOf(rows[i].id),
+      ];
+      for (final use in stockUses) {
+        final value = _cost(k, use, allRules);
         if (value == null) {
           unknown.add(use.ingredientId);
         } else {
@@ -2019,7 +2109,7 @@ class KitchenService {
         'cookedAt': (cookedAt ?? DateTime.now()).toIso8601String(),
         'country': k['country'],
         'currency': MarketProfile.fromCode(k['country'] as String).currency,
-        'consumed': uses.map((v) => v.toJson()).toList(),
+        'consumed': stockUses.map((v) => v.toJson()).toList(),
         'omittedUnmeasured': omitUnmeasured.toList(),
         'selectedOptional': optionalIds.toList(),
         'selectedOptionalLines': selectedOptionalLines.toList(),

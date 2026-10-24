@@ -130,29 +130,91 @@ class UnitRule {
   }
   final String ingredientId, from, to;
   final double factor;
+  Map<String, dynamic> toJson() => {
+    'ingredientId': ingredientId,
+    'from': from,
+    'to': to,
+    'factor': factor,
+  };
+  factory UnitRule.fromJson(Map<String, dynamic> v) => UnitRule(
+    v['ingredientId'] as String,
+    v['from'] as String,
+    v['to'] as String,
+    (v['factor'] as num).toDouble(),
+  );
 }
 
 class Units {
-  static String canonical(String unit) =>
-      const {
-        'جم': 'g',
-        'جرام': 'g',
-        'g': 'g',
-        'كيلو': 'kg',
-        'كجم': 'kg',
-        'kg': 'kg',
-        'مل': 'ml',
-        'ml': 'ml',
-        'لتر': 'l',
-        'l': 'l',
-        'حبة': 'count',
-        'حبات': 'count',
-        'count': 'count',
-      }[unit.trim()] ??
-      unit.trim();
+  static const _synonyms = {
+    'جم': 'g',
+    'جرام': 'g',
+    'غرام': 'g',
+    'grams': 'g',
+    'gram': 'g',
+    'g': 'g',
+    'كيلو': 'kg',
+    'كجم': 'kg',
+    'كيلوغرام': 'kg',
+    'كيلوجرام': 'kg',
+    'kg': 'kg',
+    'مل': 'ml',
+    'مللي': 'ml',
+    'ملليلتر': 'ml',
+    'مليلتر': 'ml',
+    'ml': 'ml',
+    'لتر': 'l',
+    'l': 'l',
+    'ديسيلتر': 'dl',
+    'dl': 'dl',
+    'ملعقة كبيرة': 'tbsp',
+    'م.ك': 'tbsp',
+    'T': 'tbsp',
+    'tbsp': 'tbsp',
+    'tablespoon': 'tbsp',
+    'tablespoons': 'tbsp',
+    'ملعقة صغيرة': 'tsp',
+    'م.ص': 'tsp',
+    't': 'tsp',
+    'tsp': 'tsp',
+    'teaspoon': 'tsp',
+    'teaspoons': 'tsp',
+    'كوب': 'cup',
+    'أكواب': 'cup',
+    'cup': 'cup',
+    'cups': 'cup',
+    'رطل': 'lb',
+    'lb': 'lb',
+    'pound': 'lb',
+    'pounds': 'lb',
+    'أونصة': 'oz',
+    'أونصات': 'oz',
+    'oz': 'oz',
+    'ounce': 'oz',
+    'ounces': 'oz',
+    'كوارت': 'qt',
+    'qt': 'qt',
+    'باينت': 'pt',
+    'pt': 'pt',
+    'حبة': 'count',
+    'حبات': 'count',
+    'count': 'count',
+  };
+  static String canonical(String unit) => _synonyms[unit.trim()] ?? unit.trim();
+
+  /// Definitional factors only (exact by definition, never density guesses):
+  /// cup is the 240 ml measuring cup, oz is the weight ounce. Volume and
+  /// weight stay separate dimensions; crossing them needs an explicit rule.
   static (String, double) _base(String unit) => switch (canonical(unit)) {
     'kg' => ('g', 1000),
+    'lb' => ('g', 453.59237),
+    'oz' => ('g', 28.349523125),
     'l' => ('ml', 1000),
+    'dl' => ('ml', 100),
+    'cup' => ('ml', 240),
+    'tbsp' => ('ml', 15),
+    'tsp' => ('ml', 5),
+    'qt' => ('ml', 946.352946),
+    'pt' => ('ml', 473.176473),
     final v => (v, 1),
   };
   static double? convert(

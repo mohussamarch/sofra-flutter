@@ -126,7 +126,9 @@ void main() {
         id: 'lot-w',
         ingredientId: 'water',
         quantity: 500,
-        unit: 'ml',
+        // Weight stock vs a cup line stays unresolved (cup→ml is now a
+        // definitional 240 ml conversion; volume→weight needs a rule).
+        unit: 'g',
         zone: StorageZone.pantry,
       ),
       newPurchase: false,
