@@ -1,0 +1,291 @@
+{
+  "schema": "sofra.scene/1",
+  "sceneId": "kitchen",
+  "revision": "r14-spike",
+  "approved": false,
+  "_note": "Bootstrap written by Claude from Codex spike-r14 data (scene.json/manifest.json) on 2026-10-25. Codex owns this file from now on.",
+  "canvas": {
+    "width": 1440,
+    "height": 1440
+  },
+  "lightingModes": [
+    {
+      "id": "morning",
+      "image": "spike-r14/base_morning.webp"
+    },
+    {
+      "id": "golden",
+      "image": "spike-r14/base_golden.webp"
+    },
+    {
+      "id": "night",
+      "image": "spike-r14/base_night.webp"
+    }
+  ],
+  "idMask": "spike-r14/id_mask.png",
+  "hotspots": [
+    {
+      "id": "fridge",
+      "color": "#FF0000",
+      "bounds": [
+        932,
+        463,
+        307,
+        480
+      ]
+    },
+    {
+      "id": "freezer",
+      "color": "#00FF00",
+      "bounds": [
+        1002,
+        535,
+        132,
+        177
+      ]
+    },
+    {
+      "id": "pantry",
+      "color": "#0000FF",
+      "bounds": [
+        199,
+        488,
+        178,
+        437
+      ]
+    },
+    {
+      "id": "stove",
+      "color": "#FFFF00",
+      "bounds": [
+        804,
+        525,
+        198,
+        270
+      ]
+    },
+    {
+      "id": "sink",
+      "color": "#FF00FF",
+      "bounds": [
+        477,
+        505,
+        142,
+        116
+      ]
+    },
+    {
+      "id": "window",
+      "color": "#00FFFF",
+      "bounds": [
+        407,
+        264,
+        192,
+        305
+      ]
+    },
+    {
+      "id": "shelves",
+      "color": "#FFFFFF",
+      "bounds": [
+        674,
+        189,
+        133,
+        196
+      ]
+    }
+  ],
+  "masks": {
+    "window": "spike-r14/window_mask.png",
+    "beam": {
+      "morning": "spike-r14/beam_mask_morning.png",
+      "golden": "spike-r14/beam_mask_golden.png"
+    }
+  },
+  "points": {
+    "ceilingLamp": [
+      720,
+      465.53
+    ],
+    "fridgeDoorPivot": [
+      999.94,
+      873.31
+    ]
+  },
+  "rects": {
+    "window": [
+      425,
+      296,
+      148,
+      234
+    ]
+  },
+  "doors": [
+    {
+      "id": "fridge",
+      "hotspot": "fridge",
+      "rect": [
+        844,
+        447,
+        411,
+        540
+      ],
+      "framesByMode": {
+        "morning": [
+          "spike-r14/fridge_door_morning_00.webp",
+          "spike-r14/fridge_door_morning_01.webp",
+          "spike-r14/fridge_door_morning_02.webp",
+          "spike-r14/fridge_door_morning_03.webp",
+          "spike-r14/fridge_door_morning_04.webp",
+          "spike-r14/fridge_door_morning_05.webp",
+          "spike-r14/fridge_door_morning_06.webp",
+          "spike-r14/fridge_door_morning_07.webp",
+          "spike-r14/fridge_door_morning_08.webp",
+          "spike-r14/fridge_door_morning_09.webp",
+          "spike-r14/fridge_door_morning_10.webp",
+          "spike-r14/fridge_door_morning_11.webp",
+          "spike-r14/fridge_door_morning_12.webp",
+          "spike-r14/fridge_door_morning_13.webp",
+          "spike-r14/fridge_door_morning_14.webp",
+          "spike-r14/fridge_door_morning_15.webp"
+        ]
+      }
+    }
+  ],
+  "details": [
+    {
+      "id": "fridgeCloseup",
+      "rect": [
+        695.69,
+        408.93,
+        648,
+        648
+      ],
+      "imagesByMode": {
+        "morning": "spike-r14/fridge_closeup_morning.webp"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "spike-r14/base_morning.webp",
+      "bytes": 66948,
+      "sha256": "6d0bba57b884ed579d43fe4d4c1379f73621f527675bdb9ebe38ba7c6adb5e3b"
+    },
+    {
+      "path": "spike-r14/base_golden.webp",
+      "bytes": 65824,
+      "sha256": "dcd30a019707964501e7366b0202bbd52fe98748f7b92aeee7fcdb5758d7e5c7"
+    },
+    {
+      "path": "spike-r14/base_night.webp",
+      "bytes": 43556,
+      "sha256": "808c5b852fe2e1f7578be2e9c72415c47cc56e7144812f919bc4adbb44321b7d"
+    },
+    {
+      "path": "spike-r14/fridge_closeup_morning.webp",
+      "bytes": 64366,
+      "sha256": "3312adc8176b236881ba2dc158aa90db8a567577d18cf606661923dc2d1acc59"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_00.webp",
+      "bytes": 13504,
+      "sha256": "d4e36b6598e8aaba129b4f45b1281d76d6d5a4de469ac29f8b15bf4f7d017083"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_01.webp",
+      "bytes": 13760,
+      "sha256": "d2523214b92dd33c9809f8814302f210aea2e0c51d8c3552a7770bd981097cf4"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_02.webp",
+      "bytes": 13490,
+      "sha256": "91f1629ab8536f27e418def6320c02be75088acff85908a9984f057a5806fefd"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_03.webp",
+      "bytes": 13420,
+      "sha256": "0159ebb0918763316dc32d7aba7c64481438da0ab6df4d9a77443a98e10cd9a1"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_04.webp",
+      "bytes": 13404,
+      "sha256": "b00c6583289eb6b02ee37db6a3f39e5b48cb34efc4ea40de55fe827d4518069c"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_05.webp",
+      "bytes": 13326,
+      "sha256": "434b423e4ed7440184e73c68dfe200f01676643a8d97e81ef892f8ce687876d6"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_06.webp",
+      "bytes": 13296,
+      "sha256": "00e02c88af1b6f76255e00d261f29836ad6b5b8ed4f8a5c0143fe9c5edcac4ff"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_07.webp",
+      "bytes": 12984,
+      "sha256": "099bbf9cba088e3967305fb84355730d20e742684a121742cb1b11056cc55d2b"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_08.webp",
+      "bytes": 13212,
+      "sha256": "f9daaf93e4c4929e65eed77a46d5223eb17c1f1b9f35e95d1a718afa4cfb46c9"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_09.webp",
+      "bytes": 13264,
+      "sha256": "0793afc62cf27feb054c65d8a83438790a3aad1044e48c046f11b0b6f529589b"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_10.webp",
+      "bytes": 13008,
+      "sha256": "567b4666b2d9e14bec2b19117a80f8a5282e776a22ae1270716639b436b794a1"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_11.webp",
+      "bytes": 12862,
+      "sha256": "dd67fd3d49500abb84944ece7c66ec07abbf5c24c8ccf7fd12338315a5de0646"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_12.webp",
+      "bytes": 12644,
+      "sha256": "affbf62295e5080ece6c85db4d3f541ec9c1f770456e91afc2548ca434d1a723"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_13.webp",
+      "bytes": 12620,
+      "sha256": "6559886fb85a5d329b126e594da2afe66b53ce9324108e8f7f6c96ff49194201"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_14.webp",
+      "bytes": 12082,
+      "sha256": "d45907d24a45a41d63fcb27577a247d5eb71bc0e410d6f7d6f3b069107835d26"
+    },
+    {
+      "path": "spike-r14/fridge_door_morning_15.webp",
+      "bytes": 12128,
+      "sha256": "6bb3e475ba40b6add7aae572771604e5041736cc78e8da6abb242aab435bba65"
+    },
+    {
+      "path": "spike-r14/id_mask.png",
+      "bytes": 12792,
+      "sha256": "3e0c9451ef0f737732e8271553380a0dd00ad9fe4295468bf0e6e88dc8397f54"
+    },
+    {
+      "path": "spike-r14/window_mask.png",
+      "bytes": 2882,
+      "sha256": "8d16f7089dd07db3c5ed389efd9f8896f6f563207e1c62cbb98efe306cea971a"
+    },
+    {
+      "path": "spike-r14/beam_mask_morning.png",
+      "bytes": 99862,
+      "sha256": "b684fa8138d1014e6d19b86403dd5450154ba1407bbcdd719ef89d2d594d1096"
+    },
+    {
+      "path": "spike-r14/beam_mask_golden.png",
+      "bytes": 115335,
+      "sha256": "ae644496700408130e0a5509e2e9605a85673fb9d0f1b46c94e36fcccae5e238"
+    }
+  ]
+}
