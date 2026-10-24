@@ -24,7 +24,10 @@ void main() {
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
-      await tester.pumpWidget(TabkhaApp(recipes: await warmRecipes(tester)));
+      await tester.pumpWidget(TabkhaApp(
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+        ));
       await tester.pumpAndSettle();
       await exerciseDemoFlow(tester);
       expect(tester.takeException(), isNull);
@@ -41,7 +44,10 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
     addTearDown(tester.view.resetViewInsets);
     addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
-    await tester.pumpWidget(TabkhaApp(recipes: await warmRecipes(tester)));
+    await tester.pumpWidget(TabkhaApp(
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+        ));
     await tester.pumpAndSettle();
     await tapKey(tester, 'onboarding-next');
     DepthButton nextButton() => tester.widget<DepthButton>(

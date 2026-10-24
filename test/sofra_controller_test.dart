@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tabkha_demo/app/sofra_controller.dart';
 import 'package:tabkha_demo/data/kitchen_service.dart';
@@ -119,6 +121,7 @@ void main() {
     final c = SofraController(
       store: store,
       recipes: f.repository(value: threeLines()),
+      readAsset: (path) => File(path).readAsString(),
     );
     await c.load();
     await c.kitchen.addStock(
@@ -146,5 +149,37 @@ void main() {
     expect(check.lines.first.status, LineStock.inStock);
     expect(c.kitchen.snapshot['purchases'], isEmpty);
     expect(c.ingredientName('sample'), 'عينة');
+  });
+
+  test('recipe lines use directory stock ids and saved unit rules', () async {
+    final recipe = CatalogRecipe.fromJson({
+      ...f.recipe().toJson(),
+      'ingredients': [
+        {
+          'id': 'bc-arroz-chaufa-ing-1',
+          'name': 'أرز',
+          'amount': 1,
+          'unit': 'كوب',
+        },
+      ],
+    });
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(value: recipe),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    await c.load();
+    expect(c.stockId('bc-arroz-chaufa-ing-1'), 'rice');
+    expect(c.ingredientName('rice'), 'رز');
+    await c.addIngredient('rice', 1, 'كيلو', StorageZone.pantry);
+    await c.addIngredient('rice', 500, 'جم', StorageZone.pantry);
+    expect(c.stock.single.quantity, 1.5, reason: 'g merges into the kg lot');
+    final scaled = (await c.recipes.get('fixture')).forServings(2);
+    expect(c.checkStock(scaled).lines.single.status, LineStock.unresolved);
+    expect(c.stockUnit('rice'), 'kg');
+    expect(await c.saveUnitRule('rice', 'كوب', 'g', 200), isTrue);
+    final line = c.checkStock(scaled).lines.single;
+    expect(line.status, LineStock.inStock);
+    expect(c.kitchen.unitRules.single.factor, 200);
   });
 }

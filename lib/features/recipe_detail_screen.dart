@@ -266,8 +266,79 @@ class _IngredientRow extends StatelessWidget {
   final String amount;
   final CookingLine? line;
 
+  /// Asks "1 cup of rice = ? g" and saves it as this ingredient's own rule.
+  Future<void> _defineRule(BuildContext context) async {
+    final c = SofraScope.controllerOf(context);
+    final nav = SofraScope.navOf(context);
+    final id = c.stockId(ingredient.id);
+    final from = ingredient.unit!;
+    final to = c.stockUnit(id)!;
+    final name = c.ingredientName(id);
+    var input = '';
+    final form = GlobalKey<FormState>();
+    final factor = await showDialog<double>(
+      context: context,
+      builder: (ctx) => Directionality(
+        textDirection: TextDirection.rtl,
+        child: AlertDialog(
+          title: const Text('حدد التحويل'),
+          content: Form(
+            key: form,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('1 ${unitLabel(from)} من $name = كام ${unitLabel(to)}؟'),
+                const SizedBox(height: 4),
+                const Text(
+                  'اكتب القياس من مطبخك. هيتحفظ للمكوّن ده بس.',
+                  style: TextStyle(fontSize: 12, color: Sofra.muted),
+                ),
+                TextFormField(
+                  key: const ValueKey('unit-rule-factor'),
+                  autofocus: true,
+                  onChanged: (value) => input = value,
+                  keyboardType: const TextInputType.numberWithOptions(
+                    decimal: true,
+                  ),
+                  decoration: InputDecoration(suffixText: unitLabel(to)),
+                  validator: (value) {
+                    final q = double.tryParse(value ?? '');
+                    return q == null || !q.isFinite || q <= 0
+                        ? 'اكتب رقم أكبر من صفر'
+                        : null;
+                  },
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('إلغاء'),
+            ),
+            TextButton(
+              key: const ValueKey('unit-rule-save'),
+              onPressed: () {
+                if (form.currentState!.validate()) {
+                  Navigator.pop(ctx, double.parse(input));
+                }
+              },
+              child: const Text('حفظ'),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (factor == null) return;
+    if (await c.saveUnitRule(id, from, to, factor)) {
+      nav.notify('اتحفظ: 1 ${unitLabel(from)} $name = ${formatAmount(factor)} ${unitLabel(to)}');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final c = SofraScope.controllerOf(context);
     final (icon, color, status) = switch (line?.status) {
       LineStock.inStock => (
         Icons.check_circle_rounded,
@@ -318,6 +389,18 @@ class _IngredientRow extends StatelessWidget {
                     Text(
                       ingredient.note!,
                       style: const TextStyle(fontSize: 11, color: Sofra.muted),
+                    ),
+                  if (line?.status == LineStock.unresolved &&
+                      ingredient.unit != null &&
+                      c.stockUnit(c.stockId(ingredient.id)) != null)
+                    Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: TextButton.icon(
+                        key: ValueKey('unit-rule-${line!.index}'),
+                        onPressed: () => _defineRule(context),
+                        icon: const Icon(Icons.straighten_rounded, size: 16),
+                        label: const Text('حدد التحويل'),
+                      ),
                     ),
                 ],
               ),

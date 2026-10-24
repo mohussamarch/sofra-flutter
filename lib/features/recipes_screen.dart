@@ -183,7 +183,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
     return {
       for (final r in all)
         if (r.ingredients
-                .where((i) => !i.optional && have.contains(i.id))
+                .where((i) => !i.optional && have.contains(c.stockId(i.id)))
                 .length >=
             2)
           r.id,

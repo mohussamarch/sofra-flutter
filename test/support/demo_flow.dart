@@ -42,6 +42,19 @@ Future<RecipeRepository> warmRecipes(WidgetTester tester) async {
   return RecipeRepository(read: (path) async => files[path]!);
 }
 
+/// Ingredient directory files read from disk, served inside the test zone.
+Future<Future<String> Function(String)> warmAssets(WidgetTester tester) async {
+  final files = (await tester.runAsync(() async {
+    return {
+      for (final name in ['vocabulary.json', 'directory.json'])
+        'data/ingredients/$name': await File(
+          'data/ingredients/$name',
+        ).readAsString(),
+    };
+  }))!;
+  return (path) async => files[path]!;
+}
+
 Future<void> completeOnboarding(WidgetTester tester) async {
   await tapKey(tester, 'onboarding-next');
   await tester.enterText(find.byKey(const ValueKey('field-name')), 'مريم');
@@ -67,6 +80,10 @@ Future<void> exerciseDemoFlow(WidgetTester tester) async {
   expect(stockQuantity(tester, 'onion'), contains('2'));
   await tapKey(tester, 'add-ingredients');
   await tapKey(tester, 'add-stock-onion');
+  await tapKey(tester, 'add-stock-open-rice');
+  await tester.enterText(find.byKey(const ValueKey('add-amount')), '250');
+  await tapKey(tester, 'add-unit-g');
+  await tapKey(tester, 'add-stock-save');
   await tapKey(tester, 'add-stock-done');
   await tapKey(tester, 'nav-recipes');
   await tester.enterText(find.byKey(const ValueKey('recipe-search')), 'كشري');
@@ -96,5 +113,5 @@ Future<void> exerciseDemoFlow(WidgetTester tester) async {
   expect(find.byKey(const ValueKey('cooking-success')), findsOneWidget);
   await tapKey(tester, 'after-cooking-kitchen');
   expect(find.byKey(const ValueKey('stock-quantity-onion')), findsNothing);
-  expect(stockQuantity(tester, 'rice'), contains('500'));
+  expect(stockQuantity(tester, 'rice'), contains('750'));
 }

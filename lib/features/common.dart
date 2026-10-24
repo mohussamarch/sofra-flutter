@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
 import '../domain/recipe_catalog.dart';
 import '../ui/design.dart';
@@ -104,7 +105,12 @@ String zoneName(StorageZone value) => switch (value) {
 };
 
 IconData categoryIcon(String? category) => switch (category) {
-  'خضار' => Icons.eco_outlined,
+  'خضار' || 'فاكهة' => Icons.eco_outlined,
+  'توابل' => Icons.spa_outlined,
+  'زيوت' || 'صوصات' => Icons.water_drop_outlined,
+  'مخبوزات' => Icons.bakery_dining_outlined,
+  'بقوليات' || 'مكسرات' => Icons.grain_rounded,
+  'مشروبات' => Icons.local_cafe_outlined,
   'بروتين' => Icons.egg_alt_outlined,
   'حبوب' => Icons.grain_rounded,
   'ألبان' => Icons.local_drink_outlined,
@@ -112,6 +118,29 @@ IconData categoryIcon(String? category) => switch (category) {
 };
 
 String formatAmount(double value) => recipeNumber(value);
+
+/// Arabic label for a canonical unit; counted units are already Arabic.
+String unitLabel(String? unit) => switch (unit == null ? null : Units.canonical(unit)) {
+  null => '',
+  'g' => 'جم',
+  'kg' => 'كيلو',
+  'ml' => 'مل',
+  'l' => 'لتر',
+  'count' => 'حبة',
+  'cup' => 'كوب',
+  'tbsp' => 'ملعقة كبيرة',
+  'tsp' => 'ملعقة صغيرة',
+  'lb' => 'رطل',
+  'oz' => 'أونصة',
+  'qt' => 'كوارت',
+  'pt' => 'باينت',
+  'dl' => 'ديسيلتر',
+  final other => other,
+};
+
+/// "عندك 3 حبة" style amount with an Arabic unit.
+String amountLabel(double value, String? unit) =>
+    '${formatAmount(value)} ${unitLabel(unit)}'.trim();
 
 /// Minutes from the catalog may be unknown; never shown as zero.
 String minutesLabel(Object? minutes) =>

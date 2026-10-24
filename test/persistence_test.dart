@@ -32,6 +32,7 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
     final store = TestStore();
     final recipes = await warmRecipes(tester);
+    final assets = await warmAssets(tester);
     Widget app(Map<String, dynamic>? data) => MaterialApp(
       theme: ThemeData(
         snackBarTheme: const SnackBarThemeData(
@@ -40,7 +41,12 @@ void main() {
       ),
       home: Directionality(
         textDirection: TextDirection.rtl,
-        child: SofraHome(store: store, initialData: data, recipes: recipes),
+        child: SofraHome(
+          store: store,
+          initialData: data,
+          recipes: recipes,
+          readAsset: assets,
+        ),
       ),
     );
     await tester.pumpWidget(app(null));
@@ -75,7 +81,11 @@ void main() {
     final store = TestStore()..fail = true;
     await tester.pumpWidget(
       MaterialApp(
-        home: SofraHome(store: store, recipes: await warmRecipes(tester)),
+        home: SofraHome(
+          store: store,
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+        ),
       ),
     );
     await tester.pumpAndSettle();
@@ -123,7 +133,11 @@ void main() {
       final store = TestStore();
       await tester.pumpWidget(
         MaterialApp(
-          home: SofraHome(store: store, recipes: await warmRecipes(tester)),
+          home: SofraHome(
+          store: store,
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+        ),
         ),
       );
       await tester.pumpAndSettle();

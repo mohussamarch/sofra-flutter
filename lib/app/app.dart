@@ -8,9 +8,15 @@ import 'home_shell.dart';
 export 'home_shell.dart' show SofraHome;
 
 class TabkhaApp extends StatelessWidget {
-  const TabkhaApp({super.key, this.persistent = false, this.recipes});
+  const TabkhaApp({
+    super.key,
+    this.persistent = false,
+    this.recipes,
+    this.readAsset,
+  });
   final bool persistent;
   final RecipeRepository? recipes;
+  final Future<String> Function(String path)? readAsset;
 
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -68,8 +74,9 @@ class TabkhaApp extends StatelessWidget {
               initialData: data,
               signOut: signOut,
               recipes: recipes,
+              readAsset: readAsset,
             ),
           )
-        : SofraHome(recipes: recipes),
+        : SofraHome(recipes: recipes, readAsset: readAsset),
   );
 }

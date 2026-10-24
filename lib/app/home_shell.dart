@@ -26,6 +26,7 @@ class SofraHome extends StatefulWidget {
     this.initialData,
     this.signOut,
     this.recipes,
+    this.readAsset,
   });
   final StateStore? store;
   final Map<String, dynamic>? initialData;
@@ -33,6 +34,9 @@ class SofraHome extends StatefulWidget {
 
   /// Injectable for tests; defaults to the bundled catalog.
   final RecipeRepository? recipes;
+
+  /// Injectable asset reader (ingredient directory); defaults to rootBundle.
+  final Future<String> Function(String path)? readAsset;
 
   @override
   State<SofraHome> createState() => _SofraHomeState();
@@ -43,6 +47,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     store: widget.store,
     initialData: widget.initialData,
     recipes: widget.recipes,
+    readAsset: widget.readAsset,
   );
   final name = TextEditingController();
   final house = TextEditingController();

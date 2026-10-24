@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 import '../data/demo_data.dart';
 import '../data/kitchen_service.dart';
 import '../data/recipe_repository.dart';
 import '../data/state_store.dart';
+import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/market_profile.dart';
 import '../domain/models.dart';
@@ -161,20 +163,30 @@ class SofraController extends ChangeNotifier {
     StateStore? store,
     Map<String, dynamic>? initialData,
     RecipeRepository? recipes,
+    Future<String> Function(String path)? readAsset,
   }) : persistent = store != null,
-       recipes = recipes ?? RecipeRepository() {
+       recipes = recipes ?? RecipeRepository(),
+       _readAsset = readAsset ?? rootBundle.loadString {
     kitchen = KitchenService(
       store ?? _MemoryStore(initialData),
       this.recipes,
       legacyUnits: {
         for (final e in demoIngredients.entries) e.key: e.value.unit,
       },
+      stockIdOf: stockId,
     );
   }
 
   final bool persistent;
   final RecipeRepository recipes;
+  final Future<String> Function(String path) _readAsset;
   late final KitchenService kitchen;
+
+  /// Canonical ingredient vocabulary; recipe lines map to it for stock.
+  IngredientDirectory? directory;
+
+  /// Stock identity of a recipe ingredient ID (identity until loaded).
+  String stockId(String rawId) => directory?.stockId(rawId) ?? rawId;
 
   bool ready = false;
   Object? loadError;
@@ -194,6 +206,7 @@ class SofraController extends ChangeNotifier {
 
   Future<void> load() async {
     try {
+      directory ??= await IngredientDirectory.load(_readAsset);
       await kitchen.load();
       final root = kitchen.rootFields;
       profile = Profile.fromRoot(root);
@@ -254,10 +267,36 @@ class SofraController extends ChangeNotifier {
       kitchen.inventory.where((l) => l.quantity != 0).toList();
 
   String ingredientName(String id) =>
-      demoIngredients[id]?.name ?? _labels[id] ?? id.replaceAll('-', ' ');
+      directory?.entry(id)?.name ??
+      demoIngredients[id]?.name ??
+      _labels[id] ??
+      id.replaceAll('-', ' ');
 
-  Future<void> addIngredient(Ingredient ingredient, double amount) =>
-      _addAmount(ingredient.id, amount, ingredient.unit, ingredient.zone);
+  String? category(String id) =>
+      directory?.entry(id)?.category ?? demoIngredients[id]?.category;
+
+  /// Adds to stock as something the user already has (not a purchase).
+  Future<void> addIngredient(
+    String ingredientId,
+    double amount,
+    String unit,
+    StorageZone zone,
+  ) => _addAmount(ingredientId, amount, unit, zone);
+
+  /// Quick "+" step in an entry's default unit.
+  static double quickStep(String unit) => switch (Units.canonical(unit)) {
+    'g' || 'ml' => 100,
+    _ => 1,
+  };
+
+  double? _convert(double amount, String from, String to, String id) =>
+      Units.convert(
+        amount,
+        from,
+        to,
+        ingredientId: id,
+        rules: kitchen.unitRules,
+      );
 
   Future<void> _addAmount(
     String ingredientId,
@@ -265,21 +304,17 @@ class SofraController extends ChangeNotifier {
     String unit,
     StorageZone zone,
   ) => _save(() async {
+    // Merge into a lot in the same place when the units convert exactly.
     final same = kitchen.inventory.where(
       (l) =>
           l.ingredientId == ingredientId &&
           l.zone == zone &&
           l.quantity != null &&
-          Units.canonical(l.unit) == Units.canonical(unit),
+          _convert(1, unit, l.unit, ingredientId) != null,
     );
     if (same.isNotEmpty) {
       final lot = same.first;
-      final added = Units.convert(
-        amount,
-        unit,
-        lot.unit,
-        ingredientId: ingredientId,
-      )!;
+      final added = _convert(amount, unit, lot.unit, ingredientId)!;
       await kitchen.setStockQuantity(lot.id, lot.quantity! + added);
     } else {
       await kitchen.addStock(
@@ -300,9 +335,28 @@ class SofraController extends ChangeNotifier {
 
   Future<void> loadSample() async {
     for (final item in demoStarterStock) {
-      await addIngredient(demoIngredients[item.ingredientId]!, item.quantity);
+      await addIngredient(
+        item.ingredientId,
+        item.quantity,
+        demoIngredients[item.ingredientId]!.unit,
+        item.zone,
+      );
     }
   }
+
+  /// Saves "1 [from] of this ingredient = [factor] [to]", entered by the user.
+  Future<bool> saveUnitRule(
+    String ingredientId,
+    String from,
+    String to,
+    double factor,
+  ) => _save(() => kitchen.saveUnitRule(UnitRule(ingredientId, from, to, factor)));
+
+  /// Unit of the first stock lot with a known quantity, if any.
+  String? stockUnit(String ingredientId) => kitchen.inventory
+      .where((l) => l.ingredientId == ingredientId && l.quantity != null)
+      .map((l) => l.unit)
+      .firstOrNull;
 
   /// Records the missing amounts as stock the user says they now have. No
   /// price is invented: this is not logged as a purchase.
@@ -310,17 +364,22 @@ class SofraController extends ChangeNotifier {
     final labels = <String, String>{};
     for (final line in check.where(LineStock.missing)) {
       final i = line.ingredient;
-      labels.putIfAbsent(i.id, () => i.name);
+      final id = stockId(i.id);
+      labels.putIfAbsent(id, () => i.name);
       await _addAmount(
-        i.id,
+        id,
         line.missing!,
         i.unit!,
-        demoIngredients[i.id]?.zone ?? StorageZone.pantry,
+        directory?.entry(id)?.zone ??
+            demoIngredients[id]?.zone ??
+            StorageZone.pantry,
       );
     }
     final unknown = {
       for (final e in labels.entries)
-        if (!demoIngredients.containsKey(e.key) && _labels[e.key] != e.value)
+        if (directory?.entry(e.key) == null &&
+            !demoIngredients.containsKey(e.key) &&
+            _labels[e.key] != e.value)
           e.key: e.value,
     };
     if (unknown.isNotEmpty) {
@@ -414,12 +473,13 @@ class SofraController extends ChangeNotifier {
       } else if (ingredient.unit == null || quantity <= 0) {
         lines.add(CookingLine(i, ingredient, quantity, LineStock.unresolved));
       } else {
-        final use = IngredientUse(ingredient.id, quantity, ingredient.unit!);
-        final result = assessStock([use], after);
+        final id = stockId(ingredient.id);
+        final use = IngredientUse(id, quantity, ingredient.unit!);
+        final result = assessStock([use], after, rules: kitchen.unitRules);
         if (result.canCook) {
           after = result.after;
           lines.add(CookingLine(i, ingredient, quantity, LineStock.inStock));
-        } else if (result.unresolved.contains(ingredient.id)) {
+        } else if (result.unresolved.contains(id)) {
           lines.add(CookingLine(i, ingredient, quantity, LineStock.unresolved));
         } else {
           lines.add(
