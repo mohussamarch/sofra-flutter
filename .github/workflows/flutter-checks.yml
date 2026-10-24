@@ -94,6 +94,14 @@ jobs:
         with:
           name: sofra-samsung-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+      - name: Build 2.5D kitchen scene spike APK
+        run: |
+          flutter build apk --release --target-platform android-arm64 -t lib/main_scene_spike.dart
+          mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/sofra-scene-spike.apk
+      - uses: actions/upload-artifact@v7
+        with:
+          name: sofra-scene-spike-apk
+          path: build/app/outputs/flutter-apk/sofra-scene-spike.apk
 
   firestore-rules:
     runs-on: ubuntu-latest
