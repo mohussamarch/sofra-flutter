@@ -6,48 +6,19 @@ import 'package:flutter/rendering.dart';
 import 'scene_assets.dart';
 
 /// Placeholder "alive kitchen" effects drawn in canvas space over the base:
-/// dust in the sunbeam, birds behind the window, a breathing night lamp.
+/// birds behind the window and a breathing night lamp. Dust in the sunbeam
+/// waits for a rendered loop from Blender (CPU dots looked fake).
 /// Codex sprites replace the vector birds once the contract adds them.
 class SceneAmbience {
-  SceneAmbience(this.scene, {int seed = 7}) : _random = math.Random(seed) {
-    for (final e in scene.beams.entries) {
-      _beamPoints[e.key] = e.value.brightPoints(.3);
-    }
-  }
+  SceneAmbience(this.scene, {int seed = 7}) : _random = math.Random(seed);
 
   final LoadedScene scene;
   final math.Random _random;
-  final _beamPoints = <String, List<ui.Offset>>{};
-  final _motes = <_Mote>[];
   final _birds = <_Bird>[];
-  double _lastSeconds = 0, _nextBird = 4;
-
-  static const _moteCount = 45;
+  double _nextBird = 4;
 
   /// Advances the simulation to [seconds] since start.
   void tick(double seconds, Map<String, double> weights) {
-    final dt = (seconds - _lastSeconds).clamp(0, .1).toDouble();
-    _lastSeconds = seconds;
-    final sunMode = _dominantBeamMode(weights);
-    final points = sunMode == null ? null : _beamPoints[sunMode];
-    if (points != null && points.isNotEmpty) {
-      while (_motes.length < _moteCount) {
-        _motes.add(_spawnMote(points, seconds, warmStart: _motes.isEmpty));
-      }
-    }
-    for (var i = _motes.length - 1; i >= 0; i--) {
-      final m = _motes[i];
-      m.position +=
-          m.velocity * dt +
-          ui.Offset(math.sin(seconds * m.wobble + m.phase) * 3 * dt, 0);
-      if (seconds - m.born > m.life) {
-        if (points == null || points.isEmpty) {
-          _motes.removeAt(i);
-        } else {
-          _motes[i] = _spawnMote(points, seconds);
-        }
-      }
-    }
     final window = scene.manifest.rects['window'];
     if (window != null && seconds >= _nextBird) {
       _nextBird = seconds + 7 + _random.nextDouble() * 14;
@@ -66,47 +37,8 @@ class SceneAmbience {
     _birds.removeWhere((b) => seconds - b.born > 8);
   }
 
-  String? _dominantBeamMode(Map<String, double> weights) {
-    String? best;
-    var bestWeight = 0.0;
-    weights.forEach((mode, w) {
-      if (scene.beams.containsKey(mode) && w > bestWeight) {
-        best = mode;
-        bestWeight = w;
-      }
-    });
-    return best;
-  }
-
-  _Mote _spawnMote(
-    List<ui.Offset> points,
-    double now, {
-    bool warmStart = false,
-  }) {
-    final base = points[_random.nextInt(points.length)];
-    final life = 6 + _random.nextDouble() * 7;
-    return _Mote(
-      position:
-          base +
-          ui.Offset(
-            (_random.nextDouble() - .5) * 12,
-            (_random.nextDouble() - .5) * 12,
-          ),
-      velocity: ui.Offset(
-        (_random.nextDouble() - .5) * 6,
-        -2 - _random.nextDouble() * 5,
-      ),
-      born: warmStart ? now - _random.nextDouble() * life : now,
-      life: life,
-      radius: 1.2 + _random.nextDouble() * 1.8,
-      wobble: .6 + _random.nextDouble(),
-      phase: _random.nextDouble() * math.pi * 2,
-    );
-  }
-
   void paint(Canvas canvas, double seconds, Map<String, double> weights) {
     _paintLamp(canvas, seconds, weights['night'] ?? 0);
-    _paintMotes(canvas, seconds, weights);
     _paintBirds(canvas, seconds, 1 - (weights['night'] ?? 0));
   }
 
@@ -126,25 +58,6 @@ class SceneAmbience {
           const Color(0x00FFD9A0),
         ]),
     );
-  }
-
-  void _paintMotes(Canvas canvas, double seconds, Map<String, double> weights) {
-    var sun = 0.0;
-    weights.forEach((mode, w) {
-      if (scene.beams.containsKey(mode)) sun += w;
-    });
-    final sampler = scene.beams[_dominantBeamMode(weights)];
-    if (sun <= .01 || sampler == null) return;
-    final paint = Paint()..blendMode = BlendMode.plus;
-    for (final m in _motes) {
-      final age = (seconds - m.born) / m.life;
-      final fade = math.sin(age.clamp(0, 1) * math.pi);
-      final light = sampler.at(m.position);
-      final alpha = (sun * fade * light * .5).clamp(0, 1).toDouble();
-      if (alpha < .02) continue;
-      paint.color = const Color(0xFFFFF1C9).withValues(alpha: alpha);
-      canvas.drawCircle(m.position, m.radius, paint);
-    }
   }
 
   void _paintBirds(Canvas canvas, double seconds, double day) {
@@ -186,21 +99,6 @@ class SceneAmbience {
     );
     canvas.restore();
   }
-}
-
-class _Mote {
-  _Mote({
-    required this.position,
-    required this.velocity,
-    required this.born,
-    required this.life,
-    required this.radius,
-    required this.wobble,
-    required this.phase,
-  });
-  ui.Offset position;
-  final ui.Offset velocity;
-  final double born, life, radius, wobble, phase;
 }
 
 class _Bird {
