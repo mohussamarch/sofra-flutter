@@ -1,0 +1,55 @@
+{
+  "revision": 12,
+  "source_sha256": "5bd3ccb6dcdc57e49a8a3792cd156d8610bb85be736f2dfcfe3d3a2da60d7b10",
+  "unified_cabinet_material": "r12_unified_jade",
+  "wall_material": "r12_warm_butter_wall",
+  "grate_tube_diameter_m": 0.012,
+  "white_enamel_hob_replaced_by_metal": true,
+  "five_burners_retained": true,
+  "lower_fridge_handle_raised_m": 0.2,
+  "curtain": "replaced soft subdivided drape with fabric ties",
+  "accessories": [
+    "herb",
+    "2storagejars",
+    "2mugs",
+    "spooncrock",
+    "citrusbowl"
+  ],
+  "footprint_m": [
+    3.9,
+    3.9
+  ],
+  "visual_approval_pending": true,
+  "runtime_implemented": false,
+  "night": {
+    "type": "SPOT",
+    "watts": 160,
+    "cone_degrees": 100,
+    "edge_blend": 0.8,
+    "radius_m": 0.16,
+    "color": [
+      1,
+      0.87,
+      0.68
+    ],
+    "under_cabinet_LED": false,
+    "initial_60W_preview_replaced_as_too_dark": true
+  },
+  "saved_checks": [
+    {
+      "mode": "morning",
+      "blend_reopened": true,
+      "feet_connected": 12,
+      "blend_sha256": "3bcc47cb21ebbd01a6239c290bb0650c654f3467a3218a77ae1bf9136339e07b",
+      "png_sha256": "d51afacd23e6bf86f6f267cb79f8eb4ace52a056d4a013844d400cd9af508aa2"
+    },
+    {
+      "mode": "night",
+      "blend_reopened": true,
+      "feet_connected": 12,
+      "blend_sha256": "3c1786eef97e2b94950d3845fc43adf0db5cc983ae125f705ef1f17c8ee5671f",
+      "png_sha256": "f09be3d8c21c782985fb96c4478dfb0e67ec72c42dba64b57349f5475b32fc6d"
+    }
+  ],
+  "grate_foot_contact_corrected_before_delivery": true
+}

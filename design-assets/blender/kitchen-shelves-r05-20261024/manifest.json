@@ -1,0 +1,118 @@
+{
+  "revision": 5,
+  "blender": "5.2.3 LTS",
+  "base_sha256": "20fbc43d59971bf910659b9cbf4e5b2e8ff516ce5dee9ff4e829b21698aa349d",
+  "footprint_m": [
+    4.2,
+    4.2
+  ],
+  "sill": {
+    "thickness_m": 0.025,
+    "overall_depth_m": 0.1,
+    "projection_into_room_m": 0.075
+  },
+  "open_shelves": {
+    "levels": 3,
+    "boards": 6,
+    "root": "open_corner_shelves_root",
+    "window_clearance_m": 0.06,
+    "decoration_slots": [
+      {
+        "id": "decor_shelf_01_back_anchor",
+        "level": 1,
+        "side": "back",
+        "position_m": [
+          0.43,
+          4.02,
+          1.6375000000000002
+        ],
+        "suggested_envelope_m": [
+          0.2,
+          0.2,
+          0.27
+        ]
+      },
+      {
+        "id": "decor_shelf_01_left_anchor",
+        "level": 1,
+        "side": "left",
+        "position_m": [
+          0.16,
+          3.7,
+          1.6375000000000002
+        ],
+        "suggested_envelope_m": [
+          0.2,
+          0.2,
+          0.27
+        ]
+      },
+      {
+        "id": "decor_shelf_02_back_anchor",
+        "level": 2,
+        "side": "back",
+        "position_m": [
+          0.43,
+          4.02,
+          1.9875
+        ],
+        "suggested_envelope_m": [
+          0.2,
+          0.2,
+          0.27
+        ]
+      },
+      {
+        "id": "decor_shelf_02_left_anchor",
+        "level": 2,
+        "side": "left",
+        "position_m": [
+          0.16,
+          3.7,
+          1.9875
+        ],
+        "suggested_envelope_m": [
+          0.2,
+          0.2,
+          0.27
+        ]
+      },
+      {
+        "id": "decor_shelf_03_back_anchor",
+        "level": 3,
+        "side": "back",
+        "position_m": [
+          0.43,
+          4.02,
+          2.3375
+        ],
+        "suggested_envelope_m": [
+          0.2,
+          0.2,
+          0.27
+        ]
+      },
+      {
+        "id": "decor_shelf_03_left_anchor",
+        "level": 3,
+        "side": "left",
+        "position_m": [
+          0.16,
+          3.7,
+          2.3375
+        ],
+        "suggested_envelope_m": [
+          0.2,
+          0.2,
+          0.27
+        ]
+      }
+    ]
+  },
+  "future_user_request": "Users can later place selected decoration/plants, including earnable items, on open shelves.",
+  "rewards_rules_decided": false,
+  "reward_system_implemented": false,
+  "app_customization_implemented": false,
+  "style_selected": null,
+  "visual_approval_pending": true
+}

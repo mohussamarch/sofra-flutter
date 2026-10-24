@@ -1,0 +1,259 @@
+{
+  "revision": 13,
+  "source_sha256": "3bcc47cb21ebbd01a6239c290bb0650c654f3467a3218a77ae1bf9136339e07b",
+  "continuous_wall_nonmanifold_edges": 0,
+  "base_outer_dimensions_m": [
+    4.14,
+    4.14
+  ],
+  "interior_square_m": 3.9,
+  "hood_top_open": true,
+  "duct_wall_mm": 10,
+  "cotton_translucency": 0.25,
+  "curtain_billow_removed": true,
+  "cabinet": "muted faded teal with gentle procedural timber grain",
+  "outlet_plates": 3,
+  "fridge_stickers_and_note": true,
+  "sun_direction": [
+    0.8609181046485901,
+    0.20662033557891846,
+    -0.4648957848548889
+  ],
+  "sun_angle_degrees": 7,
+  "sun_energy": 24,
+  "window_diffuse_watts": 180,
+  "outside_garden_camera_only": true,
+  "subtle_compositor_glow": true,
+  "visual_approval_pending": true,
+  "runtime_implemented": false,
+  "night": {
+    "watts": 200,
+    "power_increase_percent": 25,
+    "cone_degrees": 100,
+    "edge_blend": 0.8,
+    "shadow_radius_m": 0.24,
+    "LED": false
+  },
+  "saved_source_checks": [
+    {
+      "mode": "morning",
+      "blend_reopened": true,
+      "manifold_continuous_walls": true,
+      "hood_open_ray_hit": "hood",
+      "hood_ray_z": 1.7300000190734863,
+      "curtain_depth_range_m": 0.024,
+      "outdoor_nonlighting_visibility_verified": true,
+      "corner_alignment_error_px": 4.172325134277344e-05,
+      "morning_ray_hits": [
+        {
+          "aperture_yz": [
+            1.85,
+            1.32
+          ],
+          "object": "tile_4_4",
+          "hit": [
+            2.5385186672210693,
+            2.4304444789886475,
+            0.013999943621456623
+          ]
+        },
+        {
+          "aperture_yz": [
+            1.85,
+            1.5
+          ],
+          "object": "tile_4_4",
+          "hit": [
+            2.871851682662964,
+            2.510444402694702,
+            0.013999943621456623
+          ]
+        },
+        {
+          "aperture_yz": [
+            1.85,
+            1.95
+          ],
+          "object": "border_right_4",
+          "hit": [
+            3.7051851749420166,
+            2.710444450378418,
+            0.013999943621456623
+          ]
+        },
+        {
+          "aperture_yz": [
+            1.85,
+            2.15
+          ],
+          "object": "enclosure_right_wall",
+          "hit": [
+            3.9000003337860107,
+            2.757200002670288,
+            0.10879993438720703
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.05,
+            1.32
+          ],
+          "object": "tile_4_4",
+          "hit": [
+            2.5385186672210693,
+            2.6304445266723633,
+            0.013999943621456623
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.05,
+            1.5
+          ],
+          "object": "tile_4_4",
+          "hit": [
+            2.871851682662964,
+            2.710444450378418,
+            0.013999943621456623
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.05,
+            1.95
+          ],
+          "object": "fridge_door",
+          "hit": [
+            3.2429168224334717,
+            2.799499988555908,
+            0.26362472772598267
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.05,
+            2.15
+          ],
+          "object": "fridge_door",
+          "hit": [
+            3.2429168224334717,
+            2.799499988555908,
+            0.4636247754096985
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.25,
+            1.32
+          ],
+          "object": "tile_4_4",
+          "hit": [
+            2.5385184288024902,
+            2.8304443359375,
+            0.014000062830746174
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.25,
+            1.5
+          ],
+          "object": "fridge_door",
+          "hit": [
+            2.7251482009887695,
+            2.8752355575561523,
+            0.09321987628936768
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.25,
+            1.95
+          ],
+          "object": "fridge_door",
+          "hit": [
+            2.7251484394073486,
+            2.8752355575561523,
+            0.5432196259498596
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.25,
+            2.15
+          ],
+          "object": "fridge_door",
+          "hit": [
+            2.7251482009887695,
+            2.8752355575561523,
+            0.7432199120521545
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.5,
+            1.32
+          ],
+          "object": "oven_dark_glass",
+          "hit": [
+            1.9700002670288086,
+            2.944000005722046,
+            0.32099995017051697
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.5,
+            1.5
+          ],
+          "object": "oven_bar_handle",
+          "hit": [
+            1.6349700689315796,
+            2.8635928630828857,
+            0.6819161772727966
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.5,
+            1.95
+          ],
+          "object": "cabinet_fridge_buffer_600_front",
+          "hit": [
+            2.157536506652832,
+            2.989008903503418,
+            0.8497302532196045
+          ]
+        },
+        {
+          "aperture_yz": [
+            2.5,
+            2.15
+          ],
+          "object": "curtain_panel_rear",
+          "hit": [
+            0.13555558025836945,
+            2.5037333965301514,
+            2.1416001319885254
+          ]
+        }
+      ],
+      "blend_sha256": "d1200b41b900585868079f7d3ec9c14483b0182fbd9029a98d28e91d315a63dc",
+      "png_sha256": "dbad8c103f7b1cc769c263a7b97c177c5e6d5323013614ae1c7579405bb08bea"
+    },
+    {
+      "mode": "night",
+      "blend_reopened": true,
+      "manifold_continuous_walls": true,
+      "hood_open_ray_hit": "hood",
+      "hood_ray_z": 1.7300000190734863,
+      "curtain_depth_range_m": 0.024,
+      "outdoor_nonlighting_visibility_verified": true,
+      "corner_alignment_error_px": 4.172325134277344e-05,
+      "morning_ray_hits": [],
+      "blend_sha256": "4964e8e017bc29b01fa8a4be37d666a28ce516c472545b928caecc45f056c7c3",
+      "png_sha256": "966849b2e9394253d89bc8e0b0f25814d19d209ad47397ea60a8ad277f6cfce4"
+    }
+  ],
+  "preview_parent_scale_issue_fixed_before_delivery": true
+}

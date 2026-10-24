@@ -58,3 +58,16 @@ node_modules/
 /data/recipes/modern-scale-20261021b-bulk/normalized-recipes.json
 /data/recipes/modern-scale-20261021b-arabic/source-extracts/
 /data/recipes/modern-scale-20261021b-arabic/recipes.json
+
+# Local visual sources: publish only scripts and review metadata.
+/design-assets/**/*
+!/design-assets/**/
+!/design-assets/**/*.py
+!/design-assets/**/*.mjs
+!/design-assets/**/*.md
+!/design-assets/**/*.json
+!/design-assets/**/*.html
+design-assets/**/*.blend
+design-assets/**/*.blend1
+design-assets/**/renders/
+design-assets/**/qa-*.png

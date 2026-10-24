@@ -1,0 +1,418 @@
+{
+  "revision": 14,
+  "variants": 15,
+  "expected_renders": 45,
+  "completed_renders": 45,
+  "review_only": true,
+  "approved": false,
+  "runtime_clock_implemented": false,
+  "combination_cross_product_validated": false,
+  "results": [
+    {
+      "variant": "base",
+      "label_ar": "الأساس",
+      "mode": "morning",
+      "file": "renders/base--morning.png",
+      "width": 1400,
+      "samples": 512,
+      "sha256": "95fd732cc85a7c6cdb3e44c7ebdf9e2e832ff48047ad753361990dcd3b5d00bd"
+    },
+    {
+      "variant": "base",
+      "label_ar": "الأساس",
+      "mode": "night",
+      "file": "renders/base--night.png",
+      "width": 1400,
+      "samples": 192,
+      "sha256": "944b07e787ffbbdcfbbd234e6a7909c3f62aa1ae940c6c7ed76727433ce3ccfa"
+    },
+    {
+      "variant": "base",
+      "label_ar": "الأساس",
+      "mode": "golden",
+      "file": "renders/base--golden.png",
+      "width": 1400,
+      "samples": 512,
+      "sha256": "d8a0af09fb4c660bc3717237468ca41536c5aa35eb448fdb76f5380a8b29d6d2"
+    },
+    {
+      "variant": "microwave",
+      "label_ar": "ميكروويف الركن",
+      "mode": "morning",
+      "file": "renders/microwave--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "94d865a3d8ce3e9138496824888d69f6ec7ee0526dffd01846528fdf975531c8"
+    },
+    {
+      "variant": "microwave",
+      "label_ar": "ميكروويف الركن",
+      "mode": "night",
+      "file": "renders/microwave--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "4742996101e47469174393c98f7ce150cd5fd52ba18c9e43b4200371b7db554b"
+    },
+    {
+      "variant": "microwave",
+      "label_ar": "ميكروويف الركن",
+      "mode": "golden",
+      "file": "renders/microwave--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "083fca630d44a2a270b66428d931f9d44d6d3869254d43e914ed3ad021397e63"
+    },
+    {
+      "variant": "double_fridge",
+      "label_ar": "تلاجة معدن بابين",
+      "mode": "morning",
+      "file": "renders/double_fridge--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "ace8ca9f44b1f4ba98ddd8473eba3244e3defe832f266bcb1680ad0e292d77c7"
+    },
+    {
+      "variant": "double_fridge",
+      "label_ar": "تلاجة معدن بابين",
+      "mode": "night",
+      "file": "renders/double_fridge--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "e930a58d26062047090e399cf54a75dfe016b9cb390c77ff1072fbaa28b13a68"
+    },
+    {
+      "variant": "double_fridge",
+      "label_ar": "تلاجة معدن بابين",
+      "mode": "golden",
+      "file": "renders/double_fridge--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "29da0e26fbaa92e9f203bd3ee1ff383986dda3df963892843b97b481042197a7"
+    },
+    {
+      "variant": "palette_coral",
+      "label_ar": "دواليب باستيل مرجاني",
+      "mode": "morning",
+      "file": "renders/palette_coral--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "4a8af7acae1c98fdf0abf58b8b4517f5404e2f573fb088bd5e272f25f5287d3c"
+    },
+    {
+      "variant": "palette_coral",
+      "label_ar": "دواليب باستيل مرجاني",
+      "mode": "night",
+      "file": "renders/palette_coral--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "89fda93bd62ca219c26e87bef3f6c4728bbfc8113e745f442abf816792456e24"
+    },
+    {
+      "variant": "palette_coral",
+      "label_ar": "دواليب باستيل مرجاني",
+      "mode": "golden",
+      "file": "renders/palette_coral--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "ebff542b542856d3a00665dd95a1aa538092440ab2fc808cabbdf75e1cd20af2"
+    },
+    {
+      "variant": "palette_blue",
+      "label_ar": "دواليب باستيل أزرق",
+      "mode": "morning",
+      "file": "renders/palette_blue--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "33a86433de91de5e3b92e955d013d474d2d5871e9508ed7b34d7fb875ca5da70"
+    },
+    {
+      "variant": "palette_blue",
+      "label_ar": "دواليب باستيل أزرق",
+      "mode": "night",
+      "file": "renders/palette_blue--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "3cdf9723e04080c413878b9268daa6425a79f422576d45f3ccd0880793a9044f"
+    },
+    {
+      "variant": "palette_blue",
+      "label_ar": "دواليب باستيل أزرق",
+      "mode": "golden",
+      "file": "renders/palette_blue--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "24f33d6231829aed150cbfae850df050a05ed6e93931469ce84b49e4395b9030"
+    },
+    {
+      "variant": "palette_lilac",
+      "label_ar": "دواليب باستيل ليلكي",
+      "mode": "morning",
+      "file": "renders/palette_lilac--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "02b26593b7a590ec99e8d08083ec20ebea1c0c1f6a53aa53de70ee8229192810"
+    },
+    {
+      "variant": "palette_lilac",
+      "label_ar": "دواليب باستيل ليلكي",
+      "mode": "night",
+      "file": "renders/palette_lilac--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "725ba5977ff148ac00f653f52514d3f2202614e5b7d69612414053ce86003515"
+    },
+    {
+      "variant": "palette_lilac",
+      "label_ar": "دواليب باستيل ليلكي",
+      "mode": "golden",
+      "file": "renders/palette_lilac--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "87eb86e8cc1cedb2e7fe85cfa34531cc16d243ff1c6b86e0f5231d84370395ff"
+    },
+    {
+      "variant": "hanging_plants",
+      "label_ar": "زرع متدلّي",
+      "mode": "morning",
+      "file": "renders/hanging_plants--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "f033252c657a9aae7db1c243233979877c00eb5d6ad4e8a96ca641e776fbfa39"
+    },
+    {
+      "variant": "hanging_plants",
+      "label_ar": "زرع متدلّي",
+      "mode": "night",
+      "file": "renders/hanging_plants--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "1eb2360704ee2ac2f7c9b1190f3b6d958a6ba7192bb93a457e062ce043fbd80d"
+    },
+    {
+      "variant": "hanging_plants",
+      "label_ar": "زرع متدلّي",
+      "mode": "golden",
+      "file": "renders/hanging_plants--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "59e6d611678c481c3c2e54456f8a35c89d457916dcf9b8e36bb2042a499859b3"
+    },
+    {
+      "variant": "curtain_blue",
+      "label_ar": "كاروهات أزرق",
+      "mode": "morning",
+      "file": "renders/curtain_blue--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "9d1c3300ca5b177d71acda8c8d6c83b3d2949c6ac49dc37382c9d94fe1187c66"
+    },
+    {
+      "variant": "curtain_blue",
+      "label_ar": "كاروهات أزرق",
+      "mode": "night",
+      "file": "renders/curtain_blue--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "ecd34779d5a88342d5bd69f9c51821beb0bbbb6f553947f4a8964bb7e3cab708"
+    },
+    {
+      "variant": "curtain_blue",
+      "label_ar": "كاروهات أزرق",
+      "mode": "golden",
+      "file": "renders/curtain_blue--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "1ec18645f3b37c138c73130f6ca601aaf96e142bbce82ba7d39e3f0384a327cb"
+    },
+    {
+      "variant": "white_blind",
+      "label_ar": "ستارة مكتبية بيضاء",
+      "mode": "morning",
+      "file": "renders/white_blind--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "3b7761a9561f21b5ca912c997bc21ac956b91f0ccb8138a337d213a9c81920de"
+    },
+    {
+      "variant": "white_blind",
+      "label_ar": "ستارة مكتبية بيضاء",
+      "mode": "night",
+      "file": "renders/white_blind--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "7f9c1b41d6efd5dc9971be5e1c63f7431104140a23aa75bcc7e2f50d6a088e9b"
+    },
+    {
+      "variant": "white_blind",
+      "label_ar": "ستارة مكتبية بيضاء",
+      "mode": "golden",
+      "file": "renders/white_blind--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "858569e33721400880ba06a1360166e362ffd7592754bf8fbb42dc017ebd3c31"
+    },
+    {
+      "variant": "no_curtain",
+      "label_ar": "بدون ستارة",
+      "mode": "morning",
+      "file": "renders/no_curtain--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "cd8d3282dbc24f73bee8eea52f5dcdf88c42f9b5d03b80f71155bec184118446"
+    },
+    {
+      "variant": "no_curtain",
+      "label_ar": "بدون ستارة",
+      "mode": "night",
+      "file": "renders/no_curtain--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "1d47afa9fde472688a8769dda3439016c6db83a93a73025c8dc3de55cf7eee59"
+    },
+    {
+      "variant": "no_curtain",
+      "label_ar": "بدون ستارة",
+      "mode": "golden",
+      "file": "renders/no_curtain--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "0a597275c79a2e735345e93b7fb7cdbd3497a95476a85b0ad4683b695013e6c8"
+    },
+    {
+      "variant": "rug_persian",
+      "label_ar": "سجادة فارسية داكنة",
+      "mode": "morning",
+      "file": "renders/rug_persian--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "7c2d948e1bbaeaaa69dfe51b473c6d47293932af42d312ffe78125ff80d8e982"
+    },
+    {
+      "variant": "rug_persian",
+      "label_ar": "سجادة فارسية داكنة",
+      "mode": "night",
+      "file": "renders/rug_persian--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "5632c0909ae1e57ddc9ad22efabcb654e96bbf02ed4435c4f6e1f9e4e5d43614"
+    },
+    {
+      "variant": "rug_persian",
+      "label_ar": "سجادة فارسية داكنة",
+      "mode": "golden",
+      "file": "renders/rug_persian--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "ab95e65c9989dc83266df5da23aec6408f2f2791c7a96925052bae95cf5d7b63"
+    },
+    {
+      "variant": "rug_teal",
+      "label_ar": "سجادة معينات تركواز",
+      "mode": "morning",
+      "file": "renders/rug_teal--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "72086fcf9a321246aefdcd87c3ddb8dd5ae9b0e63aab4050253b0f79ab0b3489"
+    },
+    {
+      "variant": "rug_teal",
+      "label_ar": "سجادة معينات تركواز",
+      "mode": "night",
+      "file": "renders/rug_teal--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "6495c1fc0c19b1221e7e52adcdc1c7e32dafbfd69b1f4a246a14851a592d316d"
+    },
+    {
+      "variant": "rug_teal",
+      "label_ar": "سجادة معينات تركواز",
+      "mode": "golden",
+      "file": "renders/rug_teal--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "ffa0df74abba234f2c18ef9d1f73db9fdb5580dfc616b8b9f16f6dbc6a03336c"
+    },
+    {
+      "variant": "rug_ochre",
+      "label_ar": "سجادة زهور خردلي",
+      "mode": "morning",
+      "file": "renders/rug_ochre--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "1eb28fe945537dc65a2d265f4a99760ce2d43e39aca34c900a03aeb088cd3589"
+    },
+    {
+      "variant": "rug_ochre",
+      "label_ar": "سجادة زهور خردلي",
+      "mode": "night",
+      "file": "renders/rug_ochre--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "952886201450af47bba94e7c475fc56dfff46a374b0006cda216662847063e12"
+    },
+    {
+      "variant": "rug_ochre",
+      "label_ar": "سجادة زهور خردلي",
+      "mode": "golden",
+      "file": "renders/rug_ochre--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "a35099bfcdd77325355aba2936d1c717d264fa739fe22ffa45241017b750e891"
+    },
+    {
+      "variant": "builtin",
+      "label_ar": "مسطح وفرن بلت إن",
+      "mode": "morning",
+      "file": "renders/builtin--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "52a98fa1df0d182e2ac9a011bef57be595a4cd81693e6c90873583b2d9aa8fbc"
+    },
+    {
+      "variant": "builtin",
+      "label_ar": "مسطح وفرن بلت إن",
+      "mode": "night",
+      "file": "renders/builtin--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "66221aa08b937781d2b00e3c207ea1f1b8cf4cee82b7712c47ce5907f1891da4"
+    },
+    {
+      "variant": "builtin",
+      "label_ar": "مسطح وفرن بلت إن",
+      "mode": "golden",
+      "file": "renders/builtin--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "f23637d85c00a8e264d43f830f304ef58fba30e729a5a2a9df75df7253ffbee3"
+    },
+    {
+      "variant": "table_chairs",
+      "label_ar": "ترابيزة و3 كراسي",
+      "mode": "morning",
+      "file": "renders/table_chairs--morning.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "5341354a0a218682d802a970a134352d528643768b8246ac19a5567a2f8950d1"
+    },
+    {
+      "variant": "table_chairs",
+      "label_ar": "ترابيزة و3 كراسي",
+      "mode": "night",
+      "file": "renders/table_chairs--night.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "79c25f9ff5d86bdc316ef7d5feee9480d072330c29c384c4aebce14b6d12dce7"
+    },
+    {
+      "variant": "table_chairs",
+      "label_ar": "ترابيزة و3 كراسي",
+      "mode": "golden",
+      "file": "renders/table_chairs--golden.png",
+      "width": 900,
+      "samples": 160,
+      "sha256": "dfbedc56335bb87cdb0a0ab420129effd96a6573368337805ad01370819c295a"
+    }
+  ],
+  "rug_coplanar_motif_overlap_corrected": true
+}

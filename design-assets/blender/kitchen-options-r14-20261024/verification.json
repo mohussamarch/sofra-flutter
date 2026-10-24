@@ -1,0 +1,98 @@
+{
+  "revision": 14,
+  "render_pairs_checked": 45,
+  "variants": 15,
+  "base_source_checks": [
+    {
+      "mode": "morning",
+      "source_reopened": true,
+      "large_wall_normal_error_degrees": 0.0,
+      "left_socket_window_gap_m": 0.1549999475479127,
+      "duct_top_m": 2.3299999237060547,
+      "sink_open": true,
+      "source_sha256": "4340f66b11571e64a35e3957f8a661acf11d19d1cfe096fafa074cb12af7f928"
+    },
+    {
+      "mode": "night",
+      "source_reopened": true,
+      "large_wall_normal_error_degrees": 0.0,
+      "left_socket_window_gap_m": 0.1549999475479127,
+      "duct_top_m": 2.3299999237060547,
+      "sink_open": true,
+      "source_sha256": "dbb188e3105ca7ec5866ec3146c5ad901e176cba26721db5468eed9511952c84"
+    },
+    {
+      "mode": "golden",
+      "source_reopened": true,
+      "large_wall_normal_error_degrees": 0.0,
+      "left_socket_window_gap_m": 0.1549999475479127,
+      "duct_top_m": 2.3299999237060547,
+      "sink_open": true,
+      "source_sha256": "a222185c72ed88fe93f483dfb1dde0bee5fe51315523d23e691b383420bfe868"
+    }
+  ],
+  "option_source_checks": [
+    {
+      "variant": "palette_coral",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "palette_blue",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "palette_lilac",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "curtain_blue",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "microwave",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "double_fridge",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "hanging_plants",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "white_blind",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "no_curtain",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "rug_persian",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "rug_teal",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "rug_ochre",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "builtin",
+      "selected_source_checks_passed": true
+    },
+    {
+      "variant": "table_chairs",
+      "selected_source_checks_passed": true
+    }
+  ],
+  "fixed_camera_all_modes": true,
+  "wall_shading_diagnosis": "Planar face normals verified; no broken polygon claim. Coplanar grid dissolved and unnecessary weighted normals removed. Remaining physical shadows require user visual review.",
+  "all_combinations_validated": false,
+  "approved": false,
+  "runtime_clock_logic_implemented": false,
+  "harvest_or_app_export_done": false
+}

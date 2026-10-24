@@ -1,0 +1,412 @@
+{
+  "spike": true,
+  "sourceRevision": "r14",
+  "resolution": [
+    1440,
+    1440
+  ],
+  "pixelOrigin": "top-left",
+  "cameraByMode": {
+    "morning": {
+      "type": "ORTHO",
+      "ortho_scale": 7.0,
+      "matrixWorld": [
+        [
+          0.7071067690849304,
+          -0.4082484245300293,
+          0.5773501992225647,
+          9.949999809265137
+        ],
+        [
+          0.7071067690849304,
+          0.40824824571609497,
+          -0.5773502588272095,
+          -6.349999904632568
+        ],
+        [
+          1.1763476237547366e-07,
+          0.8164965510368347,
+          0.5773503184318542,
+          9.119999885559082
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lensShift": [
+        0.0,
+        0.0
+      ]
+    },
+    "golden": {
+      "type": "ORTHO",
+      "ortho_scale": 7.0,
+      "matrixWorld": [
+        [
+          0.7071067690849304,
+          -0.4082484245300293,
+          0.5773501992225647,
+          9.949999809265137
+        ],
+        [
+          0.7071067690849304,
+          0.40824824571609497,
+          -0.5773502588272095,
+          -6.349999904632568
+        ],
+        [
+          1.1763476237547366e-07,
+          0.8164965510368347,
+          0.5773503184318542,
+          9.119999885559082
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lensShift": [
+        0.0,
+        0.0
+      ]
+    },
+    "night": {
+      "type": "ORTHO",
+      "ortho_scale": 7.0,
+      "matrixWorld": [
+        [
+          0.7071067690849304,
+          -0.4082484245300293,
+          0.5773501992225647,
+          9.949999809265137
+        ],
+        [
+          0.7071067690849304,
+          0.40824824571609497,
+          -0.5773502588272095,
+          -6.349999904632568
+        ],
+        [
+          1.1763476237547366e-07,
+          0.8164965510368347,
+          0.5773503184318542,
+          9.119999885559082
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lensShift": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "sourceHashes": {
+    "base-morning.blend": "4340f66b11571e64a35e3957f8a661acf11d19d1cfe096fafa074cb12af7f928",
+    "base-golden.blend": "a222185c72ed88fe93f483dfb1dde0bee5fe51315523d23e691b383420bfe868",
+    "base-night.blend": "dbb188e3105ca7ec5866ec3146c5ad901e176cba26721db5468eed9511952c84"
+  },
+  "idColors": {
+    "fridge": [
+      255,
+      0,
+      0
+    ],
+    "freezer": [
+      0,
+      255,
+      0
+    ],
+    "pantry": [
+      0,
+      0,
+      255
+    ],
+    "stove": [
+      255,
+      255,
+      0
+    ],
+    "sink": [
+      255,
+      0,
+      255
+    ],
+    "window": [
+      0,
+      255,
+      255
+    ],
+    "shelves": [
+      255,
+      255,
+      255
+    ]
+  },
+  "projectedHotspots": {
+    "fridge": {
+      "x": 931,
+      "y": 458,
+      "width": 312,
+      "height": 487
+    },
+    "freezer": {
+      "x": 999,
+      "y": 531,
+      "width": 137,
+      "height": 185
+    },
+    "pantry": {
+      "x": 196,
+      "y": 483,
+      "width": 182,
+      "height": 447
+    },
+    "stove": {
+      "x": 802,
+      "y": 523,
+      "width": 224,
+      "height": 279
+    },
+    "sink": {
+      "x": 472,
+      "y": 497,
+      "width": 153,
+      "height": 157
+    },
+    "window": {
+      "x": 403,
+      "y": 259,
+      "width": 205,
+      "height": 312
+    },
+    "shelves": {
+      "x": 673,
+      "y": 187,
+      "width": 135,
+      "height": 202
+    }
+  },
+  "ceilingLampPixel": [
+    719.9999141693115,
+    465.5327796936035
+  ],
+  "fridgeDoor": {
+    "frames": 16,
+    "anglesDegrees": [
+      0.0,
+      6.666666666666667,
+      13.333333333333334,
+      20.0,
+      26.666666666666668,
+      33.333333333333336,
+      40.0,
+      46.666666666666664,
+      53.333333333333336,
+      60.0,
+      66.66666666666667,
+      73.33333333333333,
+      80.0,
+      86.66666666666667,
+      93.33333333333333,
+      100.0
+    ],
+    "rotationAxis": "world-Z",
+    "rotationSign": -1,
+    "pivotWorld": [
+      2.7250001430511475,
+      2.799499988555908,
+      0.019999980926513672
+    ],
+    "pivotPixel": [
+      999.9414253234863,
+      873.3098745346069
+    ],
+    "cropRect": {
+      "x": 844,
+      "y": 447,
+      "width": 411,
+      "height": 540
+    },
+    "composition": "opaque cropped full-scene patches; replace entire crop rectangle, not a transparent door overlay",
+    "interior": "existing solid r14 body only; interior design deferred",
+    "cropRoundingPixels": [
+      0,
+      -1
+    ],
+    "encodedFrameSize": [
+      411,
+      540
+    ],
+    "requestedRenderBorderRect": {
+      "x": 844,
+      "y": 446,
+      "width": 411,
+      "height": 541
+    },
+    "closedFrameAlignmentMeanAbsoluteError": 1.6695127487182617
+  },
+  "fridgeCloseupCamera": {
+    "type": "ORTHO",
+    "ortho_scale": 3.15,
+    "matrixWorld": [
+      [
+        0.7071067690849304,
+        -0.4082484245300293,
+        0.5773501992225647,
+        7.360485553741455
+      ],
+      [
+        0.7071067690849304,
+        0.40824824571609497,
+        -0.5773502588272095,
+        -1.7002546787261963
+      ],
+      [
+        1.1763476237547366e-07,
+        0.8164965510368347,
+        0.5773503184318542,
+        5.4233717918396
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "resolution": [
+      1440,
+      1440
+    ]
+  },
+  "curtainsDeferred": "The r14 cotton is translucent and its shadows are baked into the base. An animatable RGBA layer needs matching clean plates and shadow separation; postponed for this performance spike as allowed by user. No fake curtain overlay supplied.",
+  "lightGroupsDeferred": "Optional EXR light groups omitted from the minimal mobile performance spike; no raw EXR upload.",
+  "beamMaskMethod": "Sun-only Cycles scattering plus white floor, other geometry black occluders, normalized grayscale; technical mask, not a production motion/shadow contract.",
+  "hotspots": {
+    "fridge": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "hex": "#FF0000",
+      "bbox": {
+        "x": 932,
+        "y": 463,
+        "width": 307,
+        "height": 480
+      },
+      "visiblePixelCount": 92369
+    },
+    "freezer": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "hex": "#00FF00",
+      "bbox": {
+        "x": 1002,
+        "y": 535,
+        "width": 132,
+        "height": 177
+      },
+      "visiblePixelCount": 14986
+    },
+    "pantry": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "hex": "#0000FF",
+      "bbox": {
+        "x": 199,
+        "y": 488,
+        "width": 178,
+        "height": 437
+      },
+      "visiblePixelCount": 69409
+    },
+    "stove": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "hex": "#FFFF00",
+      "bbox": {
+        "x": 804,
+        "y": 525,
+        "width": 198,
+        "height": 270
+      },
+      "visiblePixelCount": 31504
+    },
+    "sink": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "hex": "#FF00FF",
+      "bbox": {
+        "x": 477,
+        "y": 505,
+        "width": 142,
+        "height": 116
+      },
+      "visiblePixelCount": 7242
+    },
+    "window": {
+      "color": [
+        0,
+        255,
+        255
+      ],
+      "hex": "#00FFFF",
+      "bbox": {
+        "x": 407,
+        "y": 264,
+        "width": 192,
+        "height": 305
+      },
+      "visiblePixelCount": 26275
+    },
+    "shelves": {
+      "color": [
+        255,
+        255,
+        255
+      ],
+      "hex": "#FFFFFF",
+      "bbox": {
+        "x": 674,
+        "y": 189,
+        "width": 133,
+        "height": 196
+      },
+      "visiblePixelCount": 10367
+    }
+  },
+  "windowRect": {
+    "x": 425,
+    "y": 296,
+    "width": 148,
+    "height": 234
+  },
+  "idMaskMethod": "Categorical object-ID emission render, one sample, minimum pixel filter, snapped to exact8color binary RGB palette with no dithering/antialiasing in final PNG.",
+  "geometryCompositorEffects": false,
+  "mobileTested": false,
+  "productionContract": false
+}

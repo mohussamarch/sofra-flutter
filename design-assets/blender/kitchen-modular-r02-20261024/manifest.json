@@ -1,0 +1,165 @@
+{
+  "revision": 2,
+  "stage": "composition-only",
+  "blender": "5.2.3 LTS",
+  "module_m": 0.6,
+  "depth_m": 0.6,
+  "room_m": [
+    4.2,
+    3.6
+  ],
+  "camera": {
+    "id": "cam_kitchen_iso",
+    "projection": "orthographic",
+    "target": [
+      2.0999999046325684,
+      1.7999999523162842,
+      1.100000023841858
+    ],
+    "offset": [
+      8,
+      -8,
+      8
+    ],
+    "azimuth_deg": 45,
+    "elevation_deg": 35.26438968
+  },
+  "base_modules": [
+    {
+      "id": "cabinet_fridge_buffer_600",
+      "center_m": [
+        3.0,
+        3.3
+      ],
+      "width_m": 0.6,
+      "depth_m": 0.6,
+      "side": "back"
+    },
+    {
+      "id": "cabinet_prep_600",
+      "center_m": [
+        1.5,
+        3.3
+      ],
+      "width_m": 0.6,
+      "depth_m": 0.6,
+      "side": "back"
+    },
+    {
+      "id": "cabinet_back_600",
+      "center_m": [
+        0.9,
+        3.3
+      ],
+      "width_m": 0.6,
+      "depth_m": 0.6,
+      "side": "back"
+    },
+    {
+      "id": "cabinet_corner_600",
+      "center_m": [
+        0.3,
+        3.3
+      ],
+      "width_m": 0.6,
+      "depth_m": 0.6,
+      "side": "left"
+    },
+    {
+      "id": "cabinet_left_rear_600",
+      "center_m": [
+        0.3,
+        2.7
+      ],
+      "width_m": 0.6,
+      "depth_m": 0.6,
+      "side": "left"
+    },
+    {
+      "id": "cabinet_sink_600",
+      "center_m": [
+        0.3,
+        2.1
+      ],
+      "width_m": 0.6,
+      "depth_m": 0.6,
+      "side": "left"
+    },
+    {
+      "id": "cabinet_left_front_600",
+      "center_m": [
+        0.3,
+        1.5
+      ],
+      "width_m": 0.6,
+      "depth_m": 0.6,
+      "side": "left"
+    },
+    {
+      "id": "cabinet_left_end_600",
+      "center_m": [
+        0.3,
+        0.9
+      ],
+      "width_m": 0.6,
+      "depth_m": 0.6,
+      "side": "left"
+    }
+  ],
+  "appliance_bays": [
+    {
+      "id": "range_slot_900",
+      "width_m": 0.9,
+      "depth_m": 0.6
+    },
+    {
+      "id": "fridge_slot_900",
+      "width_m": 0.9,
+      "depth_m": 0.72
+    },
+    {
+      "id": "pantry_slot_600",
+      "width_m": 0.6,
+      "depth_m": 0.6
+    }
+  ],
+  "window": {
+    "wall": "left",
+    "center_y_m": 2.1,
+    "opening_y_m": [
+      1.35,
+      2.85
+    ],
+    "opening_z_m": [
+      1.1,
+      2.4
+    ]
+  },
+  "sink_center_y_m": 2.1,
+  "pantry_y_max_m": 0.6,
+  "future_customization": {
+    "implemented_in_app": false,
+    "requested": [
+      "fridge sizes and models",
+      "freestanding or built-in hob/oven with continued cabinets",
+      "cabinet colors and styles",
+      "floor materials",
+      "window size and curtain",
+      "optional backsplash",
+      "optional under-cabinet LED"
+    ],
+    "style_choices": {
+      "classic": "requested",
+      "sleek_modern": "requested",
+      "third": "undecided; propose shaker"
+    }
+  },
+  "animation_implemented": false,
+  "runtime_test": false,
+  "notes": [
+    "Room dimensions are composition proposal, not user real kitchen.",
+    "600mm generic module; fridge depth is explicit720mm exception, range width900mm.",
+    "Parent roots/material names provide authoring structure only; no working app customization yet.",
+    "GLB lighting differs from Blender; validate renderer later."
+  ]
+}

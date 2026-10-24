@@ -1,3 +1,14 @@
+# Active ownership —24October2026 (supersedes historical scope notes)
+
+- Sole checkout E:\work\SOFRA\app. Read docs/STATUS.md first, then docs/OWNERSHIP.md and only the relevant owner handoff.
+- Codex owns design-assets/**, assets/scenes/** images/manifests, docs/design/**; all Blender/renders/masks, screen visual design and motion design. Do not edit lib/**, test/**, pubspec.yaml or any Dart.
+- Claude owns lib/**, test/**, integration_test/**, pubspec.yaml, tool/**, docs/SCENE-CONTRACT.md, docs/dev/**; all runtime/Flutter/KitchenService integration, animation implementation/tests/APK. Do not edit design-assets, Blender files or scripts.
+- Claude authors SCENE-CONTRACT. Codex fills assets/scenes/kitchen/manifest.json exactly to that contract; change requests go in docs/design/CONTRACT-REQUESTS.md. Until then spike metadata is explicitly provisional.
+- Owner handoffs: docs/handoff/codex.md and docs/handoff/claude.md (<150lines). Shared STATUS <40readable Arabic lines, each edits only their own status. Old HANDOFF archived byte-for-byte under docs/archive/HANDOFF-until-20261024.md.
+- Pull main before starting, commit/push finished owned files before handoff, verify clean HEAD=origin/main. Do not overwrite another owner's unpushed work. User explicitly authorized this migration's shared-doc/.gitignore/AGENTS edits and spike publication.
+- Heavy .blend/rawrenders stay local on E and ignored; Git accepts scripts/review metadata plus final lightweight spike assets only. No external backups/uploads without permission. No GLB/atlas.
+- Current visual review r15 is NOT approved; do not polish while user finishes comments. Frozen r14 technical spike is explicitly authorized before final visual approval. Future final harvest waits for approval.
+- All questions use selection boxes. Only sofra-c03a1 Firebase is authorized, no billing; this migration does not modify Firebase. Preserve historical food/source/licence rules below.
 # Agent handoff and economical execution
 
 ## Current checkpoint —22October2026 (§95)
@@ -26,7 +37,7 @@ Current§91:4530 source records/23packs/4504snapshots;planning54/4 unchanged. Fo
 ## Start
 
 1. Read `docs/STATUS.md` first; keep it under 50 lines.
-2. Search `docs/HANDOFF.md` for the relevant topic, then read only that section and the source files needed for the task.
+2. Read the relevant short `docs/handoff/codex.md` or `docs/handoff/claude.md`; search the historical archive only when necessary, then read only that section and the source files needed for the task.
 3. Check the current diff before editing. Treat previous test results as historical evidence, not proof of later changes.
 
 ## During work
@@ -38,7 +49,7 @@ Current§91:4530 source records/23packs/4504snapshots;planning54/4 unchanged. Fo
 
 ## Before finishing or handing work off
 
-- Update `docs/HANDOFF.md`: objective, changes and file paths, decisions and reasons, verification actually run and results, unresolved issues, and exact next action.
+- Update only your short owner handoff: objective, changes and file paths, decisions and reasons, verification actually run and results, unresolved issues, and exact next action.
 - Update `docs/STATUS.md`: current stage, latest completed work, blocker, and next action, with pointers to relevant handoff sections.
 - Record important findings, not raw transcripts, repeated plans, full logs, credentials, or tokens.
 - A delegated agent reports its handoff entry to the coordinator; the coordinator consolidates the shared summary to avoid concurrent edits.
@@ -54,7 +65,7 @@ Current§91:4530 source records/23packs/4504snapshots;planning54/4 unchanged. Fo
 
 - Select one checkout per work session and record its absolute path in the handoff. GitHub `origin/main` is the reference. Current selected checkout: `E:\work\SOFRA\app`; the Codex checkout is an inactive snapshot. Do not edit both independently.
 - Before delivery, commit all completed changes and push them to `origin main`; verify clean status and matching local/remote commits. Keep unfinished work on a named branch and record it. Do not leave uncommitted work.
-- Update `docs/STATUS.md` and relevant `docs/HANDOFF.md` sections with changes and paths, decisions/reasons, checks actually run/results, open issues and the exact next action. Historical results must be labelled as historical.
+- Update `docs/STATUS.md` and your short owner handoff with changes and paths, decisions/reasons, checks actually run/results, open issues and the exact next action. Historical results must be labelled as historical.
 - When working in the E checkout, also update `E:\work\SOFRA\STATUS.md`, `HANDOFF.md` and `DELIVERY.json` outside Git. Record the final pushed commit hash there after committing the tracked handoff. The tracked handoff records its base commit and points to this final receipt to avoid a self-referential hash.
 - End the handoff with the commit information and whether preview servers remain running: port, process identity, source checkout and restart command, or explicitly closed. Inspect the owning process before stopping it.
 - For every newly built APK, record filename/version, source commit, SHA256, absolute location, actual S24 Ultra test status and actual Drive upload status. Do not label a previous APK as newly built or tested.
@@ -62,9 +73,8 @@ Current§91:4530 source records/23packs/4504snapshots;planning54/4 unchanged. Fo
 - Explicitly record any changed user decisions, including audio, image generation, kitchen/fridge geometry or inventory deduction. Preserve existing decisions unless the user changes them.
 - Never write credentials, passwords, tokens or private keys into handoff files or source control.
 
-## Current scope — backend first
+## Backend integration invariants
 
-- User now asks to complete missing logic without redesigning interfaces; the visual UI will be built elsewhere. Only the subsequently requested functional UI changes are authorized here: male/hijab correction and ordering, general language and EG/SA selection, removing Home from bottom navigation with entry inside Today/Kitchen, a day/week/month meal calendar, and explicit new-purchase selection.
 - Backend integration guide: docs/BACKEND-API.md. Use KitchenService as the single state owner in the new UI; do not run legacy UI and new backend writers over the same state simultaneously.
 - Financial decisions are explicit in docs/MONEY-RULES.md: budget covers new purchases only; user override before average; alert and suggest without automatic plan edits; explicit purchase toggle; confirmed history prices frozen; no automatic monthly carryover.
 - Do not invent current prices, nutrition or medical rules. Nutrition core and sourced banks are authorized/implemented: docs/FOOD-DATA-ARCHITECTURE.md. Recipe/label review coverage, price sources, automatic budget generation and alternatives remain incomplete. Missing data stays unknown.
@@ -75,7 +85,7 @@ Current§91:4530 source records/23packs/4504snapshots;planning54/4 unchanged. Fo
 - Food API: docs/FOOD-DATA-ARCHITECTURE.md. Keep USDA CC0 and OFF ODbL/DbCL banks separate; preserve provenance, unknowns, exact form/basis and distinct nutrient definitions.
 - Recipe selections are explicit per revision and line.54recipes have605review lines and0fully verified bindings.197 generic identity proposals across53recipes now load through RecipeReferenceRepository; see docs/RECIPE-REFERENCES.md. Explicit acceptance/choices, blocked compounds, exact snapshot/source guards and separate ingredient-input estimates are mandatory. Legacy/demo UI does not gain nutrition automatically.
 - KitchenService remains the only state owner; cooking freezes nutrition without automatic intake. Preserve append-only corrections and850KBguard. No Firebase migration/billing occurred.
-- Blender brief: docs/BLENDER-DESIGN-BRIEF.md. No models/renderer built or thread created. Renderer requires a small asset test onS24Ultra. No UI redesign/audio/image generation authorized by this brief.
+- Blender design and rendering are owned by Codex; runtime implementation and S24 Ultra testing are owned by Claude. See docs/OWNERSHIP.md.
 
 ## Continuous food bank work
 
@@ -83,7 +93,7 @@ Current§91:4530 source records/23packs/4504snapshots;planning54/4 unchanged. Fo
 
 ## Nutrition summary display
 
-- User-approved summary: energyKcal, protein, totalSugars, fibre, fat, in this order, via primaryDisplayNutrients. Show total fat once; retain all49nutrient fields for future detail. Missing values remain unknown. Do not redesign UI here.
+- User-approved summary: energyKcal, protein, totalSugars, fibre, fat, in this order, via primaryDisplayNutrients. Show total fat once; retain all49nutrient fields for future detail. Missing values remain unknown.
 
 ## Recipe revisions and generated cache
 

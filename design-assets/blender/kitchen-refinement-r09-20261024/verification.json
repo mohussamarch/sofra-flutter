@@ -1,0 +1,122 @@
+{
+  "blender": "5.2.3 LTS",
+  "source_sha256": "1e8dbaaec8d4a463c0ce8a2f5079cea1f6cc1a844ccf54afdfc9aa86b728356b",
+  "footprint_m": [
+    3.6,
+    3.6
+  ],
+  "module_count": [
+    6,
+    6
+  ],
+  "samples": {
+    "morning_golden": 512,
+    "night_ceiling": 96
+  },
+  "reports": [
+    {
+      "mode": "morning_golden",
+      "blend_reopened": true,
+      "lights": [
+        {
+          "name": "window_diffuse_daylight",
+          "type": "AREA",
+          "energy": 30.0
+        },
+        {
+          "name": "window_golden_sun",
+          "type": "SUN",
+          "energy": 10.5
+        }
+      ],
+      "closed_envelope_objects": [
+        "enclosure_front_wall",
+        "enclosure_right_wall",
+        "enclosure_ceiling"
+      ],
+      "envelope_camera_only_cutaway": true,
+      "noncamera_world_illumination": 0,
+      "camera_position": [
+        9.800000190734863,
+        -6.199999809265137,
+        9.100000381469727
+      ],
+      "camera_rotation": [
+        0.9553165435791016,
+        -1.1763476237547366e-07,
+        0.7853981852531433
+      ],
+      "exposure": 0,
+      "sun_ray_hit": "fridge_door_handle",
+      "sun_ray_hit_position": [
+        3.444999933242798,
+        2.7758750915527344,
+        0.6129999756813049
+      ],
+      "sun_floor_hit_position": [
+        3.4700000286102295,
+        2.631999969482422,
+        0.013999943621456623
+      ],
+      "png_bytes": 2134573
+    },
+    {
+      "mode": "night_ceiling",
+      "blend_reopened": true,
+      "lights": [
+        {
+          "name": "ceiling_only_warm_light",
+          "type": "AREA",
+          "energy": 60.0
+        }
+      ],
+      "closed_envelope_objects": [
+        "enclosure_front_wall",
+        "enclosure_right_wall",
+        "enclosure_ceiling"
+      ],
+      "envelope_camera_only_cutaway": true,
+      "noncamera_world_illumination": 0,
+      "camera_position": [
+        9.800000190734863,
+        -6.199999809265137,
+        9.100000381469727
+      ],
+      "camera_rotation": [
+        0.9553165435791016,
+        -1.1763476237547366e-07,
+        0.7853981852531433
+      ],
+      "exposure": 0,
+      "sun_ray_hit": null,
+      "sun_ray_hit_position": null,
+      "sun_floor_hit_position": null,
+      "png_bytes": 2110313
+    }
+  ],
+  "art_directed_lighting": true,
+  "sun_time_or_geolocation_claim": false,
+  "no_extra_LED_hood_studio_lights": true,
+  "runtime_lighting_implemented": false,
+  "visual_approval_pending": true,
+  "saved_source_checks": [
+    {
+      "mode": "morning_golden",
+      "saved_light_sources_match": true,
+      "enclosure_shadow_and_bounce_visible": true,
+      "camera_only_cutaway": true,
+      "world_illumination_zero": true,
+      "png_sha256": "6d6c46ba7f878ca29264771f2b08cdc1583a2386562559bc769be54f044d6635",
+      "blend_sha256": "6c1fe930d4d4950fec1c29d2af4b6899c5ecfbf6e0035a4984e4d54270109673"
+    },
+    {
+      "mode": "night_ceiling",
+      "saved_light_sources_match": true,
+      "enclosure_shadow_and_bounce_visible": true,
+      "camera_only_cutaway": true,
+      "world_illumination_zero": true,
+      "png_sha256": "d3fb3db71b0c65153fed24ed44d2b2473e554c2eb09e15e5994f320a48a26141",
+      "blend_sha256": "6325985af4279c5558b0dc74cc347a266aad2e00850dcf580b648a783ba0e2af"
+    }
+  ]
+}

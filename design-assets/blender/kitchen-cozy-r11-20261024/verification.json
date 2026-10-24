@@ -1,0 +1,178 @@
+{
+  "revision": 11,
+  "blender": "5.2.3 LTS",
+  "base_sha256": "9bf016635605cddae9453ff09ecc354ccb53a1a29853b54907f50fa889c7afb4",
+  "footprint_m": [
+    3.9,
+    3.9
+  ],
+  "full_modules_600mm_retained": 36,
+  "end_extensions_m": 0.3,
+  "future_fridge_slot_width_m": 1.2,
+  "cornices_removed": [
+    "curtain_panel_front",
+    "curtain_panel_rear",
+    "preparation_board",
+    "upper_buffer_600_classic_cornice_lower",
+    "upper_buffer_600_classic_cornice_top",
+    "upper_prep_600_classic_cornice_lower",
+    "upper_prep_600_classic_cornice_top"
+  ],
+  "curtain": "curved tieback, straight lower fall",
+  "hood_metallic": 0.8,
+  "sun_direction": [
+    0.8228849768638611,
+    0.09874619543552399,
+    -0.5595617890357971
+  ],
+  "sun_energy": 16.0,
+  "sun_floor_hits": [
+    {
+      "object": "tile_3_3",
+      "position": [
+        2.0258822441101074,
+        2.0287058353424072,
+        0.014000062830746174
+      ]
+    },
+    {
+      "object": "tile_3_3",
+      "position": [
+        2.3052940368652344,
+        2.0622353553771973,
+        0.014000062830746174
+      ]
+    },
+    {
+      "object": "tile_4_3",
+      "position": [
+        2.9670591354370117,
+        2.1416471004486084,
+        0.013999705202877522
+      ]
+    },
+    {
+      "object": "tile_5_3",
+      "position": [
+        3.261176347732544,
+        2.176941156387329,
+        0.013999824412167072
+      ]
+    },
+    {
+      "object": "tile_3_3",
+      "position": [
+        2.0258824825286865,
+        2.2787058353424072,
+        0.013999943621456623
+      ]
+    },
+    {
+      "object": "tile_3_3",
+      "position": [
+        2.3052940368652344,
+        2.3122353553771973,
+        0.014000062830746174
+      ]
+    },
+    {
+      "object": "tile_4_3",
+      "position": [
+        2.9670588970184326,
+        2.3916471004486084,
+        0.013999943621456623
+      ]
+    },
+    {
+      "object": "tile_5_4",
+      "position": [
+        3.261176109313965,
+        2.426941156387329,
+        0.014000062830746174
+      ]
+    },
+    {
+      "object": "tile_3_4",
+      "position": [
+        2.0258822441101074,
+        2.5287058353424072,
+        0.014000062830746174
+      ]
+    },
+    {
+      "object": "tile_3_4",
+      "position": [
+        2.3052945137023926,
+        2.5622353553771973,
+        0.013999824412167072
+      ]
+    },
+    {
+      "object": "tile_4_4",
+      "position": [
+        2.9670588970184326,
+        2.6416471004486084,
+        0.013999943621456623
+      ]
+    },
+    {
+      "object": "tile_5_4",
+      "position": [
+        3.261176347732544,
+        2.676941156387329,
+        0.013999824412167072
+      ]
+    },
+    {
+      "object": "tile_3_4",
+      "position": [
+        2.0258824825286865,
+        2.7787058353424072,
+        0.013999943621456623
+      ]
+    },
+    {
+      "object": "tile_3_4",
+      "position": [
+        2.3052940368652344,
+        2.8122353553771973,
+        0.013999943621456623
+      ]
+    }
+  ],
+  "corner_alignment_error_px": 4.172325134277344e-05,
+  "exposure": 0.4,
+  "window_diffuse_watts": 180,
+  "light_sources": [
+    "window_golden_sun",
+    "window_diffuse_daylight"
+  ],
+  "visual_approval_pending": true,
+  "runtime_implemented": false,
+  "night_render_updated": true,
+  "night_ceiling_watts": 8,
+  "night_diffuser_diameter_m": 1.0,
+  "future_LED_built": false,
+  "saved_source_checks": [
+    {
+      "mode": "morning",
+      "blend_reopened": true,
+      "blend_sha256": "5bd3ccb6dcdc57e49a8a3792cd156d8610bb85be736f2dfcfe3d3a2da60d7b10",
+      "png_sha256": "b9778567333ee0aa6537a0d0f79eeaa920281a96faf9d033c3d41e23dffb8487",
+      "lights": {
+        "window_diffuse_daylight": 180.0,
+        "window_golden_sun": 16.0
+      }
+    },
+    {
+      "mode": "night",
+      "blend_reopened": true,
+      "blend_sha256": "b085c167fe412199c88090682e63c13910c1f441c62ad79ce381e4a1cac91e16",
+      "png_sha256": "df3d7fb416a79a0a3f3caa1c272a8001448cd975bb10731ef88aca3a1228ce28",
+      "lights": {
+        "ceiling_only_warm_light": 8.0
+      }
+    }
+  ],
+  "night_exposure": 0
+}

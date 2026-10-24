@@ -1,0 +1,21 @@
+{
+  "stage": "composition-only",
+  "blender": "4.5.9 LTS",
+  "units": "meters",
+  "camera": "cam_kitchen_iso",
+  "source": "build_blockout.py",
+  "external_assets": [],
+  "gameplay": false,
+  "flutter_integrated": false,
+  "animation_implemented": false,
+  "hotspots": [
+    "hotspot_fridge",
+    "hotspot_freezer",
+    "hotspot_pantry"
+  ],
+  "notes": [
+    "GLB lighting will differ; no runtime renderer selected.",
+    "Door meshes have independent hinge origins; no opening animation in this blockout.",
+    "Review layout and perspective before details."
+  ]
+}
