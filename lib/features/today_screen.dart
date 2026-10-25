@@ -11,6 +11,7 @@ import '../scene/scene_assets.dart';
 import '../scene/scene_lighting.dart';
 import '../ui/design.dart';
 import 'common.dart';
+import 'fridge_motion.dart';
 import 'kitchen_screen.dart';
 import 'recipes_screen.dart';
 import 'table_screen.dart';
@@ -45,6 +46,9 @@ class _TodayScreenState extends State<TodayScreen> {
   LightingSchedule schedule = LightingSchedule.provisional();
   Map<String, double> weights = const {'morning': 1};
 
+  /// Pre-rendered fridge moves per lighting mode (null: not rendered yet).
+  final motions = <String, Future<FridgeMotion?>>{};
+
   @override
   void initState() {
     super.initState();
@@ -71,7 +75,9 @@ class _TodayScreenState extends State<TodayScreen> {
   }
 
   void _tick() {
-    if (mounted) setState(() => weights = schedule.weightsAtTime(DateTime.now()));
+    if (!mounted) return;
+    setState(() => weights = schedule.weightsAtTime(DateTime.now()));
+    if (loaded != null) _prepareMotion();
   }
 
   void _onScene() => setState(() {});
@@ -105,6 +111,21 @@ class _TodayScreenState extends State<TodayScreen> {
 
   bool get _dark => (weights['night'] ?? 0) > .5;
 
+  String get _mode =>
+      weights.entries.reduce((a, b) => a.value >= b.value ? a : b).key;
+
+  /// Ready motion for the current lighting, without waiting for one to load.
+  FridgeMotion? _readyMotion;
+
+  void _prepareMotion() {
+    final mode = _mode;
+    motions
+        .putIfAbsent(mode, () => FridgeMotion.load(mode))
+        .then((m) {
+          if (mounted && mode == _mode) _readyMotion = m;
+        });
+  }
+
   Future<void> _openZone(StorageZone zone) async {
     await ZoneStockSheet.show(context, zone);
     scene.close();
@@ -113,6 +134,9 @@ class _TodayScreenState extends State<TodayScreen> {
   void _onHotspot(String id) {
     final nav = SofraScope.navOf(context);
     switch (id) {
+      case 'fridge' when _readyMotion != null:
+        final (top, bottom) = _tone;
+        _readyMotion!.play(context, top: top, bottom: bottom);
       case 'pantry' || 'shelves':
         _openZone(StorageZone.pantry);
       case 'freezer':
@@ -200,6 +224,7 @@ class _TodayScreenState extends State<TodayScreen> {
           controller: scene,
           schedule: schedule,
           onHotspotTap: _onHotspot,
+          shouldOpenDoor: (door) => !(door == 'fridge' && _readyMotion != null),
           onDoorOpened: (_) => _openZone(StorageZone.fridge),
         ),
         edge,

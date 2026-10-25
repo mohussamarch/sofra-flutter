@@ -51,6 +51,7 @@ class KitchenScene extends StatefulWidget {
     this.onDoorOpened,
     this.onDoorClosed,
     this.ambience = true,
+    this.shouldOpenDoor,
   });
 
   final LoadedScene scene;
@@ -66,6 +67,9 @@ class KitchenScene extends StatefulWidget {
   /// Any hotspot tap, including ones that also open a door.
   final ValueChanged<String>? onHotspotTap;
   final ValueChanged<String>? onDoorOpened;
+
+  /// Lets the host take over a door (e.g. a pre-rendered camera move).
+  final bool Function(String doorId)? shouldOpenDoor;
   final ValueChanged<String>? onDoorClosed;
   final bool ambience;
 
@@ -217,7 +221,9 @@ class _KitchenSceneState extends State<KitchenScene>
     widget.onHotspotTap?.call(id);
     _flash(id);
     final door = _manifest.doorFor(id);
-    if (door != null) _open(door.id);
+    if (door != null && (widget.shouldOpenDoor?.call(door.id) ?? true)) {
+      _open(door.id);
+    }
   }
 
   Future<void> _flash(String id) async {
