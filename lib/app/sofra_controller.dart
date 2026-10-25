@@ -306,11 +306,12 @@ class SofraController extends ChangeNotifier {
   String amountText(String id, double amount, String unit) =>
       '${recipeNumber(amount)} ${unitName(id, unit, amount: amount)}';
 
-  /// The user's own weight for one [unit] of this ingredient, in grams.
-  double? weightOf(String id, String unit) {
+  /// The user's own measure of one [unit] of this ingredient, in [to]
+  /// (grams or millilitres).
+  double? measureOf(String id, String unit, [String to = 'g']) {
     final from = Units.canonical(unit);
     for (final r in kitchen.unitRules) {
-      if (r.ingredientId == id && r.from == from && r.to == 'g') {
+      if (r.ingredientId == id && r.from == from && r.to == to) {
         return r.factor;
       }
     }

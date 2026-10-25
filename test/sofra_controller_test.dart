@@ -151,6 +151,40 @@ void main() {
     expect(c.ingredientName('sample'), 'عينة');
   });
 
+  test('counted stock uses piece names and the user piece weight', () async {
+    final recipe = CatalogRecipe.fromJson({
+      ...f.recipe().toJson(),
+      'ingredients': [
+        {'id': 'chicken', 'name': 'دجاج', 'amount': 500, 'unit': 'جرام'},
+      ],
+    });
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(value: recipe),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    await c.load();
+    final chicken = c.directory!.entry('chicken')!;
+    expect(chicken.units.first, 'count');
+    expect(chicken.units, contains('kg'));
+    expect(c.directory!.entry('arugula')!.units.first, 'ربطة');
+    expect(c.directory!.entry('chicken-breast')!.units, ['kg', 'g']);
+    expect(c.amountText('chicken', 3, 'count'), '3 فراخ');
+    expect(c.amountText('chicken', 1, 'count'), '1 فرخة');
+    expect(c.amountText('chicken', 1.5, 'kg'), '1½ كيلو');
+
+    await c.addIngredient('chicken', 2, 'count', StorageZone.freezer);
+    final scaled = (await c.recipes.get('fixture')).forServings(2);
+    expect(
+      c.checkStock(scaled).lines.single.status,
+      LineStock.unresolved,
+      reason: 'no weight is assumed for a whole chicken',
+    );
+    await c.saveUnitRule('chicken', 'count', 'g', 1200);
+    expect(c.measureOf('chicken', 'count'), 1200);
+    expect(c.checkStock(scaled).lines.single.status, LineStock.inStock);
+  });
+
   test('recipe lines use directory stock ids and saved unit rules', () async {
     final recipe = CatalogRecipe.fromJson({
       ...f.recipe().toJson(),

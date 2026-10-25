@@ -550,14 +550,20 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
     return q == null || !q.isFinite || q <= 0 ? null : q;
   }
 
-  /// A piece or bunch can carry the user's own weight, so recipes in grams
-  /// can use it. Only offered when the ingredient is also kept by weight.
-  bool get _asksWeight =>
-      !const {'g', 'kg', 'ml', 'l'}.contains(unit) &&
-      units.any((u) => u == 'g' || u == 'kg');
+  /// A piece, bunch or container can carry the user's own measure (grams, or
+  /// millilitres for liquids), so recipes in those units can use it.
+  String? get _measure {
+    if (const {'g', 'kg', 'ml', 'l'}.contains(unit)) return null;
+    if (units.any((u) => u == 'g' || u == 'kg')) return 'g';
+    if (units.any((u) => u == 'ml' || u == 'l')) return 'ml';
+    return null;
+  }
+
+  bool get _asksWeight => _measure != null;
 
   void _fillWeight() {
-    final w = widget.controller.weightOf(widget.entry.id, unit);
+    final m = _measure;
+    final w = m == null ? null : widget.controller.measureOf(widget.entry.id, unit, m);
     weight.text = w == null ? '' : formatAmount(w);
   }
 
@@ -572,8 +578,9 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
     });
     if (error != null || weightError != null) return;
     final c = widget.controller;
-    if (_asksWeight && w != null && w != c.weightOf(widget.entry.id, unit)) {
-      await c.saveUnitRule(widget.entry.id, unit, 'g', w);
+    final m = _measure;
+    if (m != null && w != null && w != c.measureOf(widget.entry.id, unit, m)) {
+      await c.saveUnitRule(widget.entry.id, unit, m, w);
     }
     await c.addIngredient(widget.entry.id, q!, unit, zone);
     if (mounted) Navigator.pop(context, true);
@@ -641,9 +648,10 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
                   decimal: true,
                 ),
                 decoration: InputDecoration(
-                  labelText: 'الـ${c.unitName(id, unit)} الواحدة كام جرام؟ (اختياري)',
-                  helperText: 'من ميزانك أو العبوة. بيساعد في الوصفات اللي بالجرام.',
-                  suffixText: 'جم',
+                  labelText:
+                      'كام ${_measure == 'g' ? 'جرام' : 'مل'} في الـ${c.unitName(id, unit)}؟ (اختياري)',
+                  helperText: 'من ميزانك أو المكتوب على العبوة. بيساعد في الوصفات.',
+                  suffixText: _measure == 'g' ? 'جم' : 'مل',
                   errorText: weightError,
                 ),
               ),
