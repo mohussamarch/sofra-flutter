@@ -1,79 +1,58 @@
 import 'dart:async';
-import 'dart:ui' as ui show Image, PictureRecorder;
-import 'dart:ui' show lerpDouble;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 
 import '../app/scope.dart';
 import '../domain/models.dart';
-import '../scene/kitchen_scene.dart';
-import '../scene/scene_assets.dart';
 import '../scene/scene_lighting.dart';
+import '../scene3d/kitchen_3d.dart';
 import '../ui/design.dart';
-import 'fridge_motion.dart';
 import 'common.dart';
 import 'recipe_book.dart';
 import 'shelf_wheel.dart';
 import 'table_screen.dart';
 
-const kitchenManifest = 'assets/scenes/kitchen/manifest.json';
-
 /// What the home kitchen is showing: the room, the recipe book floating over
 /// it, or the camera at the dining table with the meals.
 enum HomeMode { kitchen, recipes, table }
 
-/// Page tones per lighting mode (top, bottom).
 /// Page light per lighting mode: (glow behind the kitchen, dark edge). The
-/// room sits in a pool of warm light and its cut walls sink into the dark.
+/// room sits in a pool of warm light and its edges sink into the dark.
 const _tones = {
   'morning': (Color(0xFF4B3B2B), Color(0xFF110D0A)),
   'golden': (Color(0xFF573A28), Color(0xFF130C08)),
   'night': (Color(0xFF26323F), Color(0xFF07090D)),
 };
 
-/// The room inside the 1440px render: its centre and width. The room is
-/// framed to the screen's width, the empty render margin falls off-screen.
-const _roomCenter = Offset(720, 695);
-const _roomWidth = 1204.0;
-const _roomHeight = 1175.0;
-
-/// The room's outline in the render (measured on the keyed base).
-const _roomOutline = [
-  Offset(720, 108),
-  Offset(1321, 455),
-  Offset(1321, 935),
-  Offset(720, 1283),
-  Offset(117, 935),
-  Offset(117, 455),
+/// Tappable places in the 3D kitchen, as boxes in Blender metres (z up),
+/// measured on `kitchen-morning.blend`, with room in front for handles and
+/// knobs (the floor is excluded by height). Upper zones first: the freezer sits
+/// on the fridge.
+const _zones = <(String, List<double>, List<double>)>[
+  ('freezer', [2.68, 2.50, 1.38], [3.62, 3.64, 2.12]),
+  ('fridge', [2.68, 2.50, 0.06], [3.62, 3.64, 1.38]),
+  ('pantry', [-0.05, -0.05, 0.0], [0.72, 0.65, 2.12]),
+  ('shelves', [-0.05, 3.20, 1.55], [0.65, 3.64, 2.38]),
+  ('stove', [1.16, 2.50, 0.06], [2.14, 3.64, 0.95]),
 ];
 
-/// Soft mask following the room's outline, drawn a little inside it and
-/// blurred, so walls and floor dissolve before their cut edges.
-Future<ui.Image> _roomFadeMask() {
-  const size = 512;
-  const k = size / 1440;
-  final recorder = ui.PictureRecorder();
-  final canvas = Canvas(recorder);
-  final path = Path()
-    ..addPolygon([
-      for (final p in _roomOutline) (_roomCenter + (p - _roomCenter) * .9) * k,
-    ], true);
-  canvas.drawPath(
-    path,
-    Paint()
-      ..color = Colors.white
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, size * .03),
-  );
-  return recorder.endRecording().toImage(size, size);
+String? _zoneAt(KitchenPoint p) {
+  for (final (id, lo, hi) in _zones) {
+    if (p.x >= lo[0] &&
+        p.x <= hi[0] &&
+        p.y >= lo[1] &&
+        p.y <= hi[1] &&
+        p.z >= lo[2] &&
+        p.z <= hi[2]) {
+      return id;
+    }
+  }
+  return null;
 }
 
-/// Floor point the camera moves to for the table (render pixels).
-const _tableFocus = Offset(720, 1010);
-
-/// The whole home: the Blender kitchen as a clean floating diorama, the four
-/// corner circles, the recipe book and the table, all on one stage so the
-/// room never reloads between them.
+/// The whole home: the kitchen as a real-time 3D room, the four corner
+/// circles, the recipe book and the table, all on one stage so the room never
+/// reloads between them.
 class TodayScreen extends StatefulWidget {
   const TodayScreen({
     super.key,
@@ -82,105 +61,48 @@ class TodayScreen extends StatefulWidget {
   });
   final HomeMode mode;
 
-  /// Off in widget tests: the scene decodes images and runs ambient timers.
+  /// Off in widget tests, where no WebView exists.
   final bool showScene;
   @override
   State<TodayScreen> createState() => _TodayScreenState();
 }
 
 class _TodayScreenState extends State<TodayScreen> {
-  final scene = KitchenSceneController();
-  LoadedScene? loaded;
-  Object? sceneError;
+  final viewer = Kitchen3DController();
   Timer? clock;
-  LightingSchedule schedule = LightingSchedule.provisional();
+  final schedule = LightingSchedule.provisional();
   Map<String, double> weights = const {'morning': 1};
-  final motions = <String, Future<FridgeMotion?>>{};
-
-  /// Motions ready for the current lighting, by compartment.
-  final _readyMotion = <StorageZone, FridgeMotion>{};
 
   @override
   void initState() {
     super.initState();
-    scene.addListener(_onScene);
     _tick();
     clock = Timer.periodic(const Duration(minutes: 1), (_) => _tick());
-    if (widget.showScene) {
-      _load();
-      _roomFadeMask().then((m) {
-        if (mounted) {
-          setState(() => roomMask = m);
-        } else {
-          m.dispose();
-        }
-      });
-    }
   }
 
-  ui.Image? roomMask;
-
-  Future<void> _load() async {
-    try {
-      final s = await LoadedScene.load(
-        rootBundle,
-        kitchenManifest,
-        keyBackdrop: true,
-      );
-      if (!mounted) return s.dispose();
-      setState(() {
-        loaded = s;
-        schedule = LightingSchedule.provisional().restrictTo(
-          s.manifest.lightingModes.map((m) => m.id),
-        );
-      });
-      _tick();
-    } catch (e) {
-      if (mounted) setState(() => sceneError = e);
+  @override
+  void didUpdateWidget(TodayScreen old) {
+    super.didUpdateWidget(old);
+    if (old.mode == widget.mode) return;
+    if (widget.mode == HomeMode.table) {
+      viewer.table();
+    } else {
+      viewer.overview();
     }
   }
 
   void _tick() {
     if (!mounted) return;
     setState(() => weights = schedule.weightsAtTime(DateTime.now()));
-    if (loaded != null) _prepareMotion();
   }
-
-  String get _mode =>
-      weights.entries.reduce((a, b) => a.value >= b.value ? a : b).key;
-
-  void _prepareMotion() {
-    final mode = _mode;
-    for (final zone in const [StorageZone.fridge, StorageZone.freezer]) {
-      motions
-          .putIfAbsent(
-            '$mode/${zone.name}',
-            () => FridgeMotion.load(mode, zone),
-          )
-          .then((m) {
-            if (!mounted || mode != _mode) return;
-            if (m == null) {
-              _readyMotion.remove(zone);
-            } else {
-              _readyMotion[zone] = m;
-            }
-          });
-    }
-  }
-
-  void _onScene() => setState(() {});
 
   @override
   void dispose() {
     clock?.cancel();
-    scene.removeListener(_onScene);
-    scene.dispose();
-    loaded?.dispose();
-    roomMask?.dispose();
     super.dispose();
   }
 
-  /// The lighting weights mix the per-mode tones like the scene mixes renders.
+  /// The lighting weights mix the per-mode tones.
   (Color, Color) get _tone {
     Color mix(Color Function((Color, Color)) pick) {
       var r = .0, g = .0, b = .0, total = .0;
@@ -203,13 +125,16 @@ class _TodayScreenState extends State<TodayScreen> {
     return (mix((t) => t.$1), mix((t) => t.$2));
   }
 
-  Future<void> _openZone(StorageZone zone) async {
+  Future<void> _openZone(StorageZone zone, {bool overDoor = false}) {
     final nav = SofraScope.navOf(context);
-    await showShelves(
+    return showShelves(
       context,
       title: zoneName(zone),
       items: (context) => zoneShelfItems(context, zone),
       empty: 'ضيف اللي عندك هنا، وهنقولك تطبخ إيه منه.',
+      // Over an open fridge the room stays visible behind the shelves.
+      barrier: overDoor ? const Color(0x990D0A08) : null,
+      width: overDoor ? .72 : 1,
       onAdd: () {
         Navigator.pop(context);
         nav.openAddStock();
@@ -219,7 +144,16 @@ class _TodayScreenState extends State<TodayScreen> {
         nav.goTab(AppTab.kitchen);
       },
     );
-    scene.close();
+  }
+
+  /// The camera turns to the fridge (or freezer), the door swings open, the
+  /// shelves come up; closing them shuts the door and returns to the room.
+  Future<void> _openFridge(StorageZone zone) async {
+    await viewer.open(freezer: zone == StorageZone.freezer);
+    await Future<void>.delayed(const Duration(milliseconds: 1100));
+    if (!mounted) return;
+    await _openZone(zone, overDoor: true);
+    viewer.close();
   }
 
   /// The microwave holds what can be warmed up again.
@@ -250,14 +184,12 @@ class _TodayScreenState extends State<TodayScreen> {
   void _onHotspot(String id) {
     if (widget.mode != HomeMode.kitchen) return;
     switch (id) {
-      case 'fridge' when _readyMotion[StorageZone.fridge] != null:
-        _readyMotion[StorageZone.fridge]!.play(context, background: _tone.$2);
-      case 'freezer' when _readyMotion[StorageZone.freezer] != null:
-        _readyMotion[StorageZone.freezer]!.play(context, background: _tone.$2);
+      case 'fridge':
+        _openFridge(StorageZone.fridge);
+      case 'freezer':
+        _openFridge(StorageZone.freezer);
       case 'pantry' || 'shelves':
         _openZone(StorageZone.pantry);
-      case 'freezer':
-        _openZone(StorageZone.freezer);
       case 'microwave':
         _openLeftovers();
       case 'oven' || 'stove':
@@ -276,17 +208,6 @@ class _TodayScreenState extends State<TodayScreen> {
         final head = media.padding.top + 48;
         final foot = media.padding.bottom + 112;
         final room = box.maxHeight - head - foot;
-        final fitWidth = box.maxWidth * 1.04 / _roomWidth;
-        final fitHeight = room / _roomHeight;
-        final k = fitWidth < fitHeight ? fitWidth : fitHeight;
-        final side = 1440 * k;
-        final centre = Offset(box.maxWidth / 2, head + room / 2);
-        final stage = Rect.fromLTWH(
-          centre.dx - _roomCenter.dx * k,
-          centre.dy - _roomCenter.dy * k,
-          side,
-          side,
-        );
         final kitchen = widget.mode == HomeMode.kitchen;
         // Circles sit in the screen's corners, clear of the room.
         Widget circle(
@@ -310,46 +231,44 @@ class _TodayScreenState extends State<TodayScreen> {
             onTap: () => nav.goTab(tab),
           ),
         );
-        final glowAt = Alignment(
-          stage.center.dx / box.maxWidth * 2 - 1,
-          stage.center.dy / box.maxHeight * 2 - 1,
-        );
         return AnimatedContainer(
           duration: const Duration(seconds: 2),
           decoration: BoxDecoration(
             gradient: RadialGradient(
-              center: glowAt,
-              radius: side * .8 / box.maxWidth.clamp(1, box.maxHeight),
+              center: Alignment(0, (head + room / 2) / box.maxHeight * 2 - 1),
+              radius: .75,
               colors: [top, bottom],
             ),
           ),
           child: Stack(
             children: [
-              Positioned.fromRect(
-                rect: stage,
-                child: TweenAnimationBuilder<double>(
-                  tween: Tween(end: widget.mode == HomeMode.table ? 1 : 0),
-                  duration: Sofra.motion(context) * 2,
-                  curve: Sofra.calmCurve,
-                  builder: (context, t, child) {
-                    final focus = _tableFocus * k;
-                    final s = lerpDouble(1, 2.3, t)!;
-                    final target = Offset.lerp(
-                      focus,
-                      Offset(box.maxWidth / 2, head + room * .2) -
-                          stage.topLeft,
-                      t,
-                    )!;
-                    return Transform(
-                      transform: Matrix4.identity()
-                        ..translateByDouble(target.dx, target.dy, 0, 1)
-                        ..scaleByDouble(s, s, 1, 1)
-                        ..translateByDouble(-focus.dx, -focus.dy, 0, 1),
-                      child: child,
-                    );
-                  },
-                  child: _stage(),
-                ),
+              Positioned(
+                left: 0,
+                right: 0,
+                top: head,
+                bottom: foot,
+                child: widget.showScene
+                    ? Kitchen3D(
+                        id: 'home-kitchen',
+                        controller: viewer,
+                        vignette: true,
+                        zoom: false,
+                        background: Colors.transparent,
+                        onTap: (p) {
+                          final zone = _zoneAt(p);
+                          if (zone != null) _onHotspot(zone);
+                        },
+                      )
+                    // No viewer (tests): the stock page is one tap away.
+                    : Center(
+                        child: IconButton.filledTonal(
+                          key: const ValueKey('open-stock'),
+                          iconSize: 48,
+                          tooltip: 'خزين مطبخي',
+                          onPressed: () => nav.goTab(AppTab.kitchen),
+                          icon: const Icon(Icons.kitchen_outlined),
+                        ),
+                      ),
               ),
               circle(
                 true,
@@ -388,11 +307,11 @@ class _TodayScreenState extends State<TodayScreen> {
                 left: 0,
                 right: 0,
                 height: 48,
-                // The zoomed table fills the top; the line steps aside.
+                // The table view fills the top; the line steps aside.
                 child: AnimatedOpacity(
                   opacity: widget.mode == HomeMode.table ? 0 : 1,
                   duration: Sofra.motion(context, false),
-                  child: _TopLine(ink: ink),
+                  child: const _TopLine(ink: ink),
                 ),
               ),
               if (widget.mode == HomeMode.table)
@@ -408,51 +327,6 @@ class _TodayScreenState extends State<TodayScreen> {
           ),
         );
       },
-    );
-  }
-
-  /// The diorama, its outer walls and floor fading out into the page so no
-  /// cut edge shows.
-  Widget _stage() {
-    final s = loaded;
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        if (s != null && roomMask != null)
-          ShaderMask(
-            blendMode: BlendMode.dstIn,
-            shaderCallback: (rect) => ImageShader(
-              roomMask!,
-              TileMode.clamp,
-              TileMode.clamp,
-              (Matrix4.translationValues(rect.left, rect.top, 0)
-                    ..scaleByDouble(rect.width / 512, rect.height / 512, 1, 1))
-                  .storage,
-            ),
-            child: KitchenScene(
-              scene: s,
-              controller: scene,
-              schedule: schedule,
-              ambience: widget.mode == HomeMode.kitchen,
-              onHotspotTap: _onHotspot,
-              onDoorOpened: (_) => _openZone(StorageZone.fridge),
-              shouldOpenDoor: (door) =>
-                  widget.mode == HomeMode.kitchen &&
-                  !_readyMotion.keys.any((z) => z.name == door),
-            ),
-          )
-        else if (sceneError != null || !widget.showScene)
-          // No render to tap: the stock page is still one tap away.
-          Center(
-            child: IconButton.filledTonal(
-              key: const ValueKey('open-stock'),
-              iconSize: 48,
-              tooltip: 'خزين مطبخي',
-              onPressed: () => SofraScope.navOf(context).goTab(AppTab.kitchen),
-              icon: const Icon(Icons.kitchen_outlined),
-            ),
-          ),
-      ],
     );
   }
 }

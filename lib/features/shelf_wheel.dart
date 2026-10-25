@@ -64,12 +64,14 @@ Future<void> showShelves(
   String empty = 'لسه فاضي.',
   VoidCallback? onAdd,
   VoidCallback? onAll,
+  Color? barrier,
+  double width = 1,
 }) {
   final scope = SofraScope.of(context);
   return Navigator.of(context).push(
     PageRouteBuilder<void>(
       opaque: false,
-      barrierColor: const Color(0xE60D0A08),
+      barrierColor: barrier ?? const Color(0xE60D0A08),
       transitionDuration: Sofra.motion(context),
       reverseTransitionDuration: Sofra.motion(context, true),
       pageBuilder: (_, _, _) => SofraScope(
@@ -82,6 +84,7 @@ Future<void> showShelves(
             empty: empty,
             onAdd: onAdd,
             onAll: onAll,
+            width: width,
             onClose: () => Navigator.pop(context),
           ),
         ),
