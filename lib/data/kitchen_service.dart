@@ -103,6 +103,11 @@ class KitchenService {
       (v) => InventoryLot.fromJson(Map<String, dynamic>.from(v as Map)),
     ),
   );
+  List<LeftoverDish> get leftovers => List.unmodifiable(
+    ((snapshot['leftovers'] as List?) ?? const []).map(
+      (v) => LeftoverDish.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+  );
   List<PlannedMeal> get plans => List.unmodifiable(
     (snapshot['plans'] as List).map(
       (v) => PlannedMeal.fromJson(Map<String, dynamic>.from(v as Map)),

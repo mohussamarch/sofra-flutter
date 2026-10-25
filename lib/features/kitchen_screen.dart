@@ -135,110 +135,6 @@ class _KitchenScreenState extends State<KitchenScreen> {
 
 /// What is inside one storage place, shown over the open fridge or pantry.
 /// Opened as a modal sheet, so it carries its own scope.
-class ZoneStockSheet extends StatelessWidget {
-  const ZoneStockSheet({super.key, required this.zone});
-  final StorageZone zone;
-
-  static Future<void> show(BuildContext context, StorageZone zone) {
-    final scope = SofraScope.of(context);
-    return showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      barrierColor: Colors.black.withValues(alpha: .12),
-      builder: (_) => SofraScope(
-        controller: scope.notifier!,
-        nav: scope.nav,
-        child: Directionality(
-          textDirection: TextDirection.rtl,
-          child: ZoneStockSheet(zone: zone),
-        ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final c = SofraScope.controllerOf(context);
-    final nav = SofraScope.navOf(context);
-    final lots = c.stock.where((l) => l.zone == zone).toList();
-    return DraggableScrollableSheet(
-      expand: false,
-      initialChildSize: .55,
-      minChildSize: .3,
-      maxChildSize: .9,
-      builder: (context, scroll) => ListView(
-        key: ValueKey('zone-sheet-${zone.name}'),
-        controller: scroll,
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 28),
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      zoneName(zone),
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                    Text(
-                      countText(
-                        lots.length,
-                        'حاجة',
-                        'حاجتين',
-                        'حاجات',
-                        empty: 'لسه فاضي',
-                      ),
-                      style: const TextStyle(color: Sofra.muted),
-                    ),
-                  ],
-                ),
-              ),
-              IconButton.filledTonal(
-                key: ValueKey('zone-add-${zone.name}'),
-                tooltip: 'إضافة',
-                onPressed: () {
-                  Navigator.pop(context);
-                  nav.openAddStock();
-                },
-                icon: const Icon(Icons.add_rounded),
-              ),
-            ],
-          ),
-          const SizedBox(height: 4),
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: TextButton.icon(
-              key: const ValueKey('zone-all-stock'),
-              onPressed: () {
-                Navigator.pop(context);
-                nav.goTab(AppTab.kitchen);
-              },
-              icon: const Icon(Icons.inventory_2_outlined, size: 18),
-              label: const Text('كل الخزين'),
-            ),
-          ),
-          const SizedBox(height: 8),
-          if (lots.isEmpty)
-            const Surface(
-              border: true,
-              child: Text(
-                'ضيف اللي عندك هنا، وهنقولك تطبخ إيه منه.',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Sofra.muted),
-              ),
-            )
-          else
-            for (final lot in lots) _StockRow(lot),
-        ],
-      ),
-    );
-  }
-}
-
 class _StockRow extends StatelessWidget {
   const _StockRow(this.lot);
   final InventoryLot lot;
@@ -295,7 +191,7 @@ class _StockRow extends StatelessWidget {
             ),
             IconButton(
               tooltip: 'تعديل $name',
-              onPressed: () => _edit(context, name),
+              onPressed: () => editStockQuantity(context, lot),
               icon: const Icon(
                 Icons.edit_outlined,
                 size: 18,
@@ -307,60 +203,60 @@ class _StockRow extends StatelessWidget {
       ),
     );
   }
+}
 
-  Future<void> _edit(BuildContext context, String name) async {
-    final c = SofraScope.controllerOf(context);
-    final nav = SofraScope.navOf(context);
-    var input = lot.quantity == null ? '' : formatAmount(lot.quantity!);
-    final form = GlobalKey<FormState>();
-    final result = await showDialog<double>(
-      context: context,
-      builder: (ctx) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: AlertDialog(
-          title: Text('كمية $name'),
-          content: Form(
-            key: form,
-            child: TextFormField(
-              initialValue: input,
-              onChanged: (value) => input = value,
-              validator: (value) {
-                final q = double.tryParse(value ?? '');
-                return q == null || !q.isFinite || q < 0
-                    ? 'اكتب رقم صحيح يساوي 0 أو أكتر'
-                    : null;
-              },
-              autofocus: true,
-              keyboardType: const TextInputType.numberWithOptions(
-                decimal: true,
-              ),
-              decoration: InputDecoration(
-                labelText: 'الكمية (${c.unitName(lot.ingredientId, lot.unit)})',
-                helperText: 'اكتب 0 لو خلص',
-              ),
+/// Asks for a lot's new quantity; 0 marks it used up.
+Future<void> editStockQuantity(BuildContext context, InventoryLot lot) async {
+  final c = SofraScope.controllerOf(context);
+  final name = c.ingredientName(lot.ingredientId);
+  final nav = SofraScope.navOf(context);
+  var input = lot.quantity == null ? '' : formatAmount(lot.quantity!);
+  final form = GlobalKey<FormState>();
+  final result = await showDialog<double>(
+    context: context,
+    builder: (ctx) => Directionality(
+      textDirection: TextDirection.rtl,
+      child: AlertDialog(
+        title: Text('كمية $name'),
+        content: Form(
+          key: form,
+          child: TextFormField(
+            initialValue: input,
+            onChanged: (value) => input = value,
+            validator: (value) {
+              final q = double.tryParse(value ?? '');
+              return q == null || !q.isFinite || q < 0
+                  ? 'اكتب رقم صحيح يساوي 0 أو أكتر'
+                  : null;
+            },
+            autofocus: true,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            decoration: InputDecoration(
+              labelText: 'الكمية (${c.unitName(lot.ingredientId, lot.unit)})',
+              helperText: 'اكتب 0 لو خلص',
             ),
           ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: const Text('إلغاء'),
-            ),
-            TextButton(
-              onPressed: () {
-                if (form.currentState!.validate()) {
-                  Navigator.pop(ctx, double.parse(input));
-                }
-              },
-              child: const Text('حفظ'),
-            ),
-          ],
         ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('إلغاء'),
+          ),
+          TextButton(
+            onPressed: () {
+              if (form.currentState!.validate()) {
+                Navigator.pop(ctx, double.parse(input));
+              }
+            },
+            child: const Text('حفظ'),
+          ),
+        ],
       ),
-    );
-    if (result == null) return;
-    await c.setQuantity(lot.id, result);
-    nav.notify('اتحدثت كمية $name');
-  }
+    ),
+  );
+  if (result == null) return;
+  await c.setQuantity(lot.id, result);
+  nav.notify('اتحدثت كمية $name');
 }
 
 /// Adds existing stock from the ingredient directory (not a purchase: no

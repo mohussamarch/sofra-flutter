@@ -266,6 +266,10 @@ class SofraController extends ChangeNotifier {
   List<InventoryLot> get stock =>
       kitchen.inventory.where((l) => l.quantity != 0).toList();
 
+  /// Cooked dishes put away with servings left.
+  List<LeftoverDish> get leftovers =>
+      kitchen.leftovers.where((d) => d.servings > 0).toList();
+
   String ingredientName(String id) =>
       directory?.entry(id)?.name ??
       demoIngredients[id]?.name ??

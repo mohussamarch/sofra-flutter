@@ -347,6 +347,10 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   /// Tapping the open mode again returns to the kitchen.
   Widget _bottomNav(SofraController c) {
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
+    // Over the dark kitchen the glass turns smoky and the ink light.
+    final dark = _homeTabs.contains(tab);
+    final ink = dark ? Colors.white : Sofra.ink;
+    final accent = dark ? Sofra.yellow : Sofra.greenDark;
     Widget item(
       AppTab target,
       String key,
@@ -377,7 +381,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                       backgroundColor: Sofra.orange,
                       child: Icon(
                         active ? on : off,
-                        color: active ? Sofra.greenDark : Sofra.ink,
+                        color: active ? accent : ink,
                         size: 24,
                       ),
                     ),
@@ -387,9 +391,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: active ? FontWeight.w800 : FontWeight.w600,
-                        color: active
-                            ? Sofra.greenDark
-                            : Sofra.ink.withValues(alpha: .7),
+                        color: active ? accent : ink.withValues(alpha: .7),
                       ),
                     ),
                   ],
@@ -407,6 +409,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
         width: 300,
         child: LiquidGlass(
           radius: 34,
+          dark: dark,
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
           child: Row(
             children: [

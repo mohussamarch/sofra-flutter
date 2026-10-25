@@ -8,7 +8,7 @@ import '../app/scope.dart';
 import '../domain/models.dart';
 import '../scene/frame_player.dart';
 import '../ui/design.dart';
-import 'kitchen_screen.dart';
+import 'shelf_wheel.dart';
 
 /// Codex's r18 review sidecar: the camera turns to face the fridge in
 /// one-point perspective, then the door opens (`cameraMoves` from contract 1.1).
@@ -87,21 +87,22 @@ class _FridgeJourney extends StatefulWidget {
 class _FridgeJourneyState extends State<_FridgeJourney> {
   late int target = widget.motion.frames.length - 1;
   int frame = 0;
-  bool closing = false;
+  bool closing = false, shelves = false;
 
   Future<void> _arrived(int index) async {
     if (index == 0 && closing) {
       if (mounted) Navigator.pop(context);
       return;
     }
-    if (index != widget.motion.frames.length - 1) return;
-    await ZoneStockSheet.show(context, StorageZone.fridge);
-    if (!mounted) return;
-    setState(() {
-      closing = true;
-      target = 0;
-    });
+    if (index != widget.motion.frames.length - 1 || closing) return;
+    setState(() => shelves = true);
   }
+
+  void _close() => setState(() {
+    shelves = false;
+    closing = true;
+    target = 0;
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -112,8 +113,7 @@ class _FridgeJourneyState extends State<_FridgeJourney> {
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, _) {
-        if (!didPop && !closing) setState(() => closing = true);
-        if (!didPop) setState(() => target = 0);
+        if (!didPop) _close();
       },
       child: ColoredBox(
         color: widget.bottom,
@@ -141,6 +141,33 @@ class _FridgeJourneyState extends State<_FridgeJourney> {
                   ),
                 ),
               ),
+            IgnorePointer(
+              ignoring: !shelves,
+              child: AnimatedOpacity(
+                opacity: shelves ? 1 : 0,
+                duration: Sofra.motion(context),
+                child: DecoratedBox(
+                  decoration: const BoxDecoration(color: Color(0x40000000)),
+                  child: ShelfWheel(
+                    title: 'التلاجة',
+                    width: .66,
+                    items: zoneShelfItems(context, StorageZone.fridge),
+                    empty: 'التلاجة فاضية. ضيف اللي عندك وهنقولك تطبخ إيه.',
+                    onAdd: () {
+                      final nav = SofraScope.navOf(context);
+                      Navigator.pop(context);
+                      nav.openAddStock();
+                    },
+                    onAll: () {
+                      final nav = SofraScope.navOf(context);
+                      Navigator.pop(context);
+                      nav.goTab(AppTab.kitchen);
+                    },
+                    onClose: _close,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

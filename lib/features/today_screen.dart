@@ -11,8 +11,9 @@ import '../scene/scene_assets.dart';
 import '../scene/scene_lighting.dart';
 import '../ui/design.dart';
 import 'fridge_motion.dart';
-import 'kitchen_screen.dart';
+import 'common.dart';
 import 'recipes_screen.dart';
+import 'shelf_wheel.dart';
 import 'table_screen.dart';
 
 const kitchenManifest = 'assets/scenes/kitchen/manifest.json';
@@ -22,10 +23,12 @@ const kitchenManifest = 'assets/scenes/kitchen/manifest.json';
 enum HomeMode { kitchen, recipes, table }
 
 /// Page tones per lighting mode (top, bottom).
+/// Page light per lighting mode: (glow behind the kitchen, dark edge). The
+/// room sits in a pool of warm light and its cut walls sink into the dark.
 const _tones = {
-  'morning': (Color(0xFFF8F2E8), Color(0xFFEDE1CF)),
-  'golden': (Color(0xFFF7E9D8), Color(0xFFE9D0B2)),
-  'night': (Color(0xFF2C3540), Color(0xFF1C2229)),
+  'morning': (Color(0xFF4B3B2B), Color(0xFF110D0A)),
+  'golden': (Color(0xFF573A28), Color(0xFF130C08)),
+  'night': (Color(0xFF26323F), Color(0xFF07090D)),
 };
 
 /// Empty corners of the 1440px render, where the four circles sit
@@ -144,16 +147,52 @@ class _TodayScreenState extends State<TodayScreen> {
     return (mix((t) => t.$1), mix((t) => t.$2));
   }
 
-  bool get _dark => (weights['night'] ?? 0) > .5;
-
   Future<void> _openZone(StorageZone zone) async {
-    await ZoneStockSheet.show(context, zone);
+    final nav = SofraScope.navOf(context);
+    await showShelves(
+      context,
+      title: zoneName(zone),
+      items: (context) => zoneShelfItems(context, zone),
+      empty: 'ضيف اللي عندك هنا، وهنقولك تطبخ إيه منه.',
+      onAdd: () {
+        Navigator.pop(context);
+        nav.openAddStock();
+      },
+      onAll: () {
+        Navigator.pop(context);
+        nav.goTab(AppTab.kitchen);
+      },
+    );
     scene.close();
+  }
+
+  /// The microwave holds what can be warmed up again.
+  Future<void> _openLeftovers() => showShelves(
+    context,
+    title: 'بواقي الأكل',
+    items: leftoverShelfItems,
+    empty: 'مفيش بواقي متسجلة. لما تطبخ وتفضل حاجة، هتلاقيها هنا تسخنها.',
+  );
+
+  /// The oven shows what's coming up; the full plan lives on the table.
+  Future<void> _openPlans() {
+    final scope = SofraScope.of(context);
+    return showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (_) => SofraScope(
+        controller: scope.notifier!,
+        nav: scope.nav,
+        child: const Directionality(
+          textDirection: TextDirection.rtl,
+          child: _PlansSheet(),
+        ),
+      ),
+    );
   }
 
   void _onHotspot(String id) {
     if (widget.mode != HomeMode.kitchen) return;
-    final nav = SofraScope.navOf(context);
     switch (id) {
       case 'fridge' when _readyMotion != null:
         final (top, bottom) = _tone;
@@ -162,8 +201,10 @@ class _TodayScreenState extends State<TodayScreen> {
         _openZone(StorageZone.pantry);
       case 'freezer':
         _openZone(StorageZone.freezer);
-      case 'stove':
-        nav.goTab(AppTab.table);
+      case 'microwave':
+        _openLeftovers();
+      case 'oven' || 'stove':
+        _openPlans();
     }
   }
 
@@ -171,7 +212,7 @@ class _TodayScreenState extends State<TodayScreen> {
   Widget build(BuildContext context) {
     final (top, bottom) = _tone;
     final media = MediaQuery.of(context);
-    final ink = _dark ? Colors.white : Sofra.ink;
+    const ink = Colors.white;
     final nav = SofraScope.navOf(context);
     return LayoutBuilder(
       builder: (context, box) {
@@ -202,17 +243,21 @@ class _TodayScreenState extends State<TodayScreen> {
             id: key,
             icon: icon,
             label: label,
-            dark: _dark,
+            dark: true,
             visible: kitchen,
             onTap: () => nav.goTab(tab),
           ),
         );
+        final glowAt = Alignment(
+          stage.center.dx / box.maxWidth * 2 - 1,
+          stage.center.dy / box.maxHeight * 2 - 1,
+        );
         return AnimatedContainer(
           duration: const Duration(seconds: 2),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+            gradient: RadialGradient(
+              center: glowAt,
+              radius: side * .8 / box.maxWidth.clamp(1, box.maxHeight),
               colors: [top, bottom],
             ),
           ),
@@ -299,24 +344,33 @@ class _TodayScreenState extends State<TodayScreen> {
     );
   }
 
-  /// The diorama with a soft floor shadow beneath it.
+  /// The diorama, its outer walls and floor fading out into the page so no
+  /// cut edge shows.
   Widget _stage() {
     final s = loaded;
     return Stack(
       fit: StackFit.expand,
       children: [
-        const IgnorePointer(child: CustomPaint(painter: _DioramaShadow())),
         if (s != null)
-          KitchenScene(
-            scene: s,
-            controller: scene,
-            schedule: schedule,
-            ambience: widget.mode == HomeMode.kitchen,
-            onHotspotTap: _onHotspot,
-            onDoorOpened: (_) => _openZone(StorageZone.fridge),
-            shouldOpenDoor: (door) =>
-                widget.mode == HomeMode.kitchen &&
-                !(door == 'fridge' && _readyMotion != null),
+          ShaderMask(
+            blendMode: BlendMode.dstIn,
+            shaderCallback: (rect) => const RadialGradient(
+              center: Alignment(0, .06),
+              radius: .5,
+              colors: [Colors.white, Colors.white, Colors.transparent],
+              stops: [0, .5, .94],
+            ).createShader(rect),
+            child: KitchenScene(
+              scene: s,
+              controller: scene,
+              schedule: schedule,
+              ambience: widget.mode == HomeMode.kitchen,
+              onHotspotTap: _onHotspot,
+              onDoorOpened: (_) => _openZone(StorageZone.fridge),
+              shouldOpenDoor: (door) =>
+                  widget.mode == HomeMode.kitchen &&
+                  !(door == 'fridge' && _readyMotion != null),
+            ),
           )
         else if (sceneError != null || !widget.showScene)
           // No render to tap: the stock page is still one tap away.
@@ -332,35 +386,6 @@ class _TodayScreenState extends State<TodayScreen> {
       ],
     );
   }
-}
-
-/// Grounding shadow under the room's floor slab, so the diorama sits on the
-/// page instead of hovering (render pixels, 1440 canvas).
-class _DioramaShadow extends CustomPainter {
-  const _DioramaShadow();
-  @override
-  void paint(Canvas canvas, Size size) {
-    final k = size.width / 1440;
-    final floor = Path()
-      ..addPolygon([
-        for (final p in const [
-          Offset(140, 930),
-          Offset(720, 1270),
-          Offset(1300, 930),
-          Offset(720, 1120),
-        ])
-          p * k,
-      ], true);
-    canvas.drawPath(
-      floor.shift(Offset(0, 34 * k)),
-      Paint()
-        ..color = const Color(0xFF3B2A18).withValues(alpha: .22)
-        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 34 * k),
-    );
-  }
-
-  @override
-  bool shouldRepaint(_DioramaShadow old) => false;
 }
 
 /// Greeting small on the start side, the account's name centred.
@@ -665,4 +690,59 @@ class _Flourish extends StatelessWidget {
       Container(width: 60, height: 1, color: Paper.ink.withValues(alpha: .35)),
     ],
   );
+}
+
+class _PlansSheet extends StatelessWidget {
+  const _PlansSheet();
+  @override
+  Widget build(BuildContext context) {
+    final c = SofraScope.controllerOf(context);
+    final nav = SofraScope.navOf(context);
+    final meals = c
+        .upcoming(DateTime.now())
+        .where((m) => !m.completed)
+        .toList();
+    return DraggableScrollableSheet(
+      expand: false,
+      initialChildSize: .55,
+      maxChildSize: .9,
+      builder: (context, scroll) => ListView(
+        key: const ValueKey('plans-sheet'),
+        controller: scroll,
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 28),
+        children: [
+          Row(
+            children: [
+              const Expanded(
+                child: Text(
+                  'الأكلات الجاية',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                ),
+              ),
+              TextButton(
+                key: const ValueKey('plans-open-table'),
+                onPressed: () {
+                  Navigator.pop(context);
+                  nav.goTab(AppTab.table);
+                },
+                child: const Text('كل الخطط'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          if (meals.isEmpty)
+            const Text(
+              'مفيش أكلات متخططة. اختار من كتاب الوصفات.',
+              style: TextStyle(color: Sofra.muted),
+            )
+          else
+            for (final m in meals)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: PlannedMealCard(m, compact: true),
+              ),
+        ],
+      ),
+    );
+  }
 }
