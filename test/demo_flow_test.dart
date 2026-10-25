@@ -27,6 +27,7 @@ void main() {
       await tester.pumpWidget(TabkhaApp(
           recipes: await warmRecipes(tester),
           readAsset: await warmAssets(tester),
+          showScene: false,
         ));
       await tester.pumpAndSettle();
       await exerciseDemoFlow(tester);
@@ -47,6 +48,7 @@ void main() {
     await tester.pumpWidget(TabkhaApp(
           recipes: await warmRecipes(tester),
           readAsset: await warmAssets(tester),
+          showScene: false,
         ));
     await tester.pumpAndSettle();
     await tapKey(tester, 'onboarding-next');

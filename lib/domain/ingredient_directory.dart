@@ -14,11 +14,26 @@ class IngredientEntry {
     required this.defaultUnit,
     required this.aliases,
     required this.zone,
-  });
+    List<String>? stockUnits,
+    this.pieceName,
+    this.piecePlural,
+  }) : stockUnits = stockUnits ?? const [];
 
   final String id, name, category, defaultUnit;
   final List<String> aliases;
   final StorageZone zone;
+
+  /// Units people keep this in at home, most natural first ("ربطة", "count",
+  /// "kg"...). Never empty once loaded: falls back to [defaultUnit].
+  final List<String> stockUnits;
+
+  /// Arabic name of one piece when [stockUnits] has "count" ("فرخة").
+  final String? pieceName;
+
+  /// Plural after 3–10 ("فراخ").
+  final String? piecePlural;
+
+  List<String> get units => stockUnits.isEmpty ? [defaultUnit] : stockUnits;
 
   factory IngredientEntry.fromJson(Map<String, Object?> json) {
     String text(String key) {
@@ -38,6 +53,19 @@ class IngredientEntry {
     if (aliases is! List || aliases.any((a) => a is! String)) {
       throw FormatException('Ingredient aliases must be strings', json);
     }
+    final stock = json['stockUnits'];
+    if (stock != null &&
+        (stock is! List || stock.isEmpty || stock.any((u) => u is! String))) {
+      throw FormatException('Ingredient stockUnits must be strings', json);
+    }
+    final piece = json['pieceName'];
+    if (piece != null && (piece is! String || piece.trim().isEmpty)) {
+      throw FormatException('Ingredient pieceName must be text', json);
+    }
+    final plural = json['piecePlural'];
+    if (plural != null && (plural is! String || plural.trim().isEmpty)) {
+      throw FormatException('Ingredient piecePlural must be text', json);
+    }
     return IngredientEntry(
       id: text('id'),
       name: text('name'),
@@ -45,6 +73,11 @@ class IngredientEntry {
       defaultUnit: text('defaultUnit'),
       aliases: List.unmodifiable(aliases.cast<String>()),
       zone: zone.single,
+      stockUnits: stock == null
+          ? null
+          : List.unmodifiable((stock as List).cast<String>()),
+      pieceName: piece as String?,
+      piecePlural: plural as String?,
     );
   }
 }

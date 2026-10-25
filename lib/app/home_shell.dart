@@ -27,6 +27,7 @@ class SofraHome extends StatefulWidget {
     this.signOut,
     this.recipes,
     this.readAsset,
+    this.showScene = true,
   });
   final StateStore? store;
   final Map<String, dynamic>? initialData;
@@ -37,6 +38,9 @@ class SofraHome extends StatefulWidget {
 
   /// Injectable asset reader (ingredient directory); defaults to rootBundle.
   final Future<String> Function(String path)? readAsset;
+
+  /// The Blender kitchen on the home tab; off in widget tests.
+  final bool showScene;
 
   @override
   State<SofraHome> createState() => _SofraHomeState();
@@ -144,28 +148,41 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           controller: c,
           nav: this,
           child: Scaffold(
-            backgroundColor: const Color(0xFFEDF0E8),
+            backgroundColor: Sofra.sand,
             body: Center(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 480),
                 child: Material(
                   color: Sofra.cream,
-                  child: SafeArea(
-                    child: Column(
-                      children: [
-                        if (c.saveError != null)
-                          MaterialBanner(
-                            content: Text(c.saveError!),
-                            actions: [
-                              TextButton(
-                                onPressed: c.retrySave,
-                                child: const Text('إعادة الحفظ'),
+                  child: Stack(
+                    children: [
+                      SafeArea(
+                        top: !_fullBleed(c),
+                        bottom: false,
+                        child: Column(
+                          children: [
+                            if (c.saveError != null)
+                              MaterialBanner(
+                                content: Text(c.saveError!),
+                                actions: [
+                                  TextButton(
+                                    onPressed: c.retrySave,
+                                    child: const Text('إعادة الحفظ'),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                        Expanded(child: _body(c)),
-                      ],
-                    ),
+                            Expanded(child: _body(c)),
+                          ],
+                        ),
+                      ),
+                      if (_showsNav(c))
+                        Positioned(
+                          left: 16,
+                          right: 16,
+                          bottom: MediaQuery.paddingOf(context).bottom + 12,
+                          child: _bottomNav(c),
+                        ),
+                    ],
                   ),
                 ),
               ),
@@ -175,6 +192,15 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
       );
     },
   );
+
+  bool _ready(SofraController c) =>
+      c.loadError == null && c.ready && c.profile.onboarded;
+
+  /// The home kitchen paints under the status bar.
+  bool _fullBleed(SofraController c) =>
+      _ready(c) && view == _View.tabs && tab == AppTab.today;
+
+  bool _showsNav(SofraController c) => _ready(c) && view == _View.tabs;
 
   Widget _body(SofraController c) {
     if (c.loadError != null) {
@@ -207,7 +233,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     }
     return Column(
       children: [
-        _header(c),
+        if (!_fullBleed(c)) _header(c),
         Expanded(
           child: AnimatedSwitcher(
             duration: Sofra.motion(context),
@@ -221,7 +247,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                   onDone: () => cookingMeal = null,
                 ),
                 _View.tabs => switch (tab) {
-                  AppTab.today => const TodayScreen(),
+                  AppTab.today => TodayScreen(showScene: widget.showScene),
                   AppTab.kitchen => const KitchenScreen(),
                   AppTab.recipes => const RecipesScreen(),
                   AppTab.table => const TableScreen(),
@@ -231,7 +257,6 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
             ),
           ),
         ),
-        if (view == _View.tabs) _bottomNav(c),
       ],
     );
   }
@@ -343,68 +368,65 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
 
   Widget _bottomNav(SofraController c) {
     const icons = [
-      Icons.home_rounded,
-      Icons.kitchen_rounded,
-      Icons.menu_book_rounded,
-      Icons.restaurant_rounded,
+      (Icons.home_outlined, Icons.home_rounded),
+      (Icons.kitchen_outlined, Icons.kitchen_rounded),
+      (Icons.menu_book_outlined, Icons.menu_book_rounded),
+      (Icons.restaurant_outlined, Icons.restaurant_rounded),
     ];
-    final labels = [c.market.today, 'مطبخي', 'وصفات', 'السفرة'];
+    final labels = ['البيت', 'مطبخي', 'وصفات', 'السفرة'];
     const keys = ['today', 'fridge', 'recipes', 'table'];
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
-    return Container(
-      padding: const EdgeInsets.fromLTRB(10, 10, 10, 8),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        border: Border(top: BorderSide(color: Sofra.line)),
-      ),
+    return Glass(
+      radius: Sofra.r28,
+      opacity: .82,
+      padding: const EdgeInsets.all(6),
       child: Row(
         children: List.generate(4, (index) {
           final active = tab.index == index;
           return Expanded(
             child: Semantics(
               selected: active,
-              child: InkWell(
-                key: ValueKey('nav-${keys[index]}'),
-                borderRadius: BorderRadius.circular(16),
-                onTap: () => goTab(AppTab.values[index]),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      AnimatedContainer(
-                        duration: Sofra.motion(context, true),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 5,
-                        ),
-                        decoration: BoxDecoration(
-                          color: active ? Sofra.mint : Colors.transparent,
-                          borderRadius: BorderRadius.circular(13),
-                        ),
-                        child: Badge(
+              button: true,
+              label: labels[index],
+              child: PressScale(
+                child: InkWell(
+                  key: ValueKey('nav-${keys[index]}'),
+                  borderRadius: BorderRadius.circular(Sofra.r22),
+                  onTap: () => goTab(AppTab.values[index]),
+                  child: AnimatedContainer(
+                    duration: Sofra.motion(context, true),
+                    curve: Sofra.quickCurve,
+                    padding: const EdgeInsets.symmetric(vertical: 9),
+                    decoration: BoxDecoration(
+                      color: active ? Sofra.mint : Colors.transparent,
+                      borderRadius: BorderRadius.circular(Sofra.r22),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Badge(
                           isLabelVisible: index == 3 && hasPlan,
                           smallSize: 7,
                           backgroundColor: Sofra.orange,
                           child: Icon(
-                            icons[index],
+                            active ? icons[index].$2 : icons[index].$1,
                             color: active ? Sofra.greenDark : Sofra.muted,
                             size: 23,
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        labels[index],
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: active
-                              ? FontWeight.w800
-                              : FontWeight.w500,
-                          color: active ? Sofra.greenDark : Sofra.muted,
+                        const SizedBox(height: 3),
+                        Text(
+                          labels[index],
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: active
+                                ? FontWeight.w800
+                                : FontWeight.w600,
+                            color: active ? Sofra.greenDark : Sofra.muted,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

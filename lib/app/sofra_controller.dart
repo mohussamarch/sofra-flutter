@@ -289,6 +289,34 @@ class SofraController extends ChangeNotifier {
     _ => 1,
   };
 
+  /// Unit name for this ingredient: a counted piece uses its own word
+  /// ("فرخة" rather than "حبة").
+  String unitName(String id, String unit, {double amount = 1}) {
+    final e = directory?.entry(id);
+    if (Units.canonical(unit) == 'count' && e?.pieceName != null) {
+      final n = amount.roundToDouble() == amount ? amount.toInt() : null;
+      return n != null && n >= 3 && n <= 10
+          ? e!.piecePlural ?? e.pieceName!
+          : e!.pieceName!;
+    }
+    return Units.label(unit);
+  }
+
+  /// "3 فراخ", "1.5 كيلو".
+  String amountText(String id, double amount, String unit) =>
+      '${recipeNumber(amount)} ${unitName(id, unit, amount: amount)}';
+
+  /// The user's own weight for one [unit] of this ingredient, in grams.
+  double? weightOf(String id, String unit) {
+    final from = Units.canonical(unit);
+    for (final r in kitchen.unitRules) {
+      if (r.ingredientId == id && r.from == from && r.to == 'g') {
+        return r.factor;
+      }
+    }
+    return null;
+  }
+
   double? _convert(double amount, String from, String to, String id) =>
       Units.convert(
         amount,

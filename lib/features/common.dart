@@ -11,7 +11,7 @@ class ScreenBody extends StatelessWidget {
     super.key,
     required this.children,
     this.footer,
-    this.padding = const EdgeInsets.fromLTRB(20, 4, 20, 28),
+    this.padding = const EdgeInsets.fromLTRB(20, 4, 20, 120),
   });
   final List<Widget> children;
   final Widget? footer;
@@ -119,24 +119,23 @@ IconData categoryIcon(String? category) => switch (category) {
 
 String formatAmount(double value) => recipeNumber(value);
 
-/// Arabic label for a canonical unit; counted units are already Arabic.
-String unitLabel(String? unit) => switch (unit == null ? null : Units.canonical(unit)) {
-  null => '',
-  'g' => 'جم',
-  'kg' => 'كيلو',
-  'ml' => 'مل',
-  'l' => 'لتر',
-  'count' => 'حبة',
-  'cup' => 'كوب',
-  'tbsp' => 'ملعقة كبيرة',
-  'tsp' => 'ملعقة صغيرة',
-  'lb' => 'رطل',
-  'oz' => 'أونصة',
-  'qt' => 'كوارت',
-  'pt' => 'باينت',
-  'dl' => 'ديسيلتر',
-  final other => other,
+/// Arabic count phrase: "حاجة واحدة", "حاجتين", "3 حاجات", "11 حاجة".
+String countText(
+  int n,
+  String one,
+  String two,
+  String few, {
+  String empty = '',
+}) => switch (n) {
+  0 => empty,
+  1 => '$one واحدة',
+  2 => two,
+  >= 3 && <= 10 => '$n $few',
+  _ => '$n $one',
 };
+
+/// Arabic label for a canonical unit; counted units are already Arabic.
+String unitLabel(String? unit) => unit == null ? '' : Units.label(unit);
 
 /// "عندك 3 حبة" style amount with an Arabic unit.
 String amountLabel(double value, String? unit) =>

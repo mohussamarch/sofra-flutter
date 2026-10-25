@@ -1,27 +1,85 @@
+import 'dart:ui' show ImageFilter;
+
 import 'package:flutter/material.dart';
 
+/// Sofra design tokens. The palette comes from the Blender kitchen itself:
+/// sage cabinets, cream walls, warm floor tiles and the terracotta curtain.
 abstract final class Sofra {
-  static const ink = Color(0xFF243F36);
-  static const muted = Color(0xFF657469);
-  static const green = Color(0xFF278459);
-  static const greenDark = Color(0xFF196846);
-  static const mint = Color(0xFFE7F3E6);
-  static const cream = Color(0xFFFFFCF5);
-  static const line = Color(0xFFE7EADF);
-  static const orange = Color(0xFFEF8358);
-  static const peach = Color(0xFFFFEBDD);
-  static const yellow = Color(0xFFFFDA78);
-  static const quick = Duration(milliseconds: 180);
-  static const calm = Duration(milliseconds: 380);
+  static const ink = Color(0xFF2B3830);
+  static const muted = Color(0xFF6B766E);
+  static const green = Color(0xFF3F6B52);
+  static const greenDark = Color(0xFF2E5240);
+  static const sage = Color(0xFF8AA591);
+  static const mint = Color(0xFFE5EDE5);
+  static const cream = Color(0xFFFAF6EF);
+  static const sand = Color(0xFFF1E8DA);
+  static const line = Color(0xFFE6DFD2);
+  static const orange = Color(0xFFCF6747);
+  static const peach = Color(0xFFF7E4D8);
+  static const yellow = Color(0xFFF1D58C);
+
+  /// Corner radius scale; nothing outside it.
+  static const r12 = 12.0, r16 = 16.0, r22 = 22.0, r28 = 28.0;
+
+  /// Named springs: quick for presses and tabs, calm for pages and sheets.
+  static const quick = Duration(milliseconds: 220);
+  static const calm = Duration(milliseconds: 450);
+  static const quickCurve = Curves.easeOutCubic;
+  static const calmCurve = Curves.easeInOutCubic;
   static Duration motion(BuildContext context, [bool quick = false]) =>
       MediaQuery.disableAnimationsOf(context)
       ? Duration.zero
       : quick
       ? Sofra.quick
       : calm;
+
+  /// Soft two-layer shadow tinted with the ink, never a hard edge.
+  static List<BoxShadow> shadow([double lift = 1]) => [
+    BoxShadow(
+      color: ink.withValues(alpha: .05 * lift),
+      blurRadius: 28 * lift,
+      offset: Offset(0, 12 * lift),
+    ),
+    BoxShadow(
+      color: ink.withValues(alpha: .04),
+      blurRadius: 3,
+      offset: const Offset(0, 1),
+    ),
+  ];
 }
 
-class DepthButton extends StatefulWidget {
+/// Shrinks to 0.97 while pressed and springs back (its resting state).
+class PressScale extends StatefulWidget {
+  const PressScale({super.key, required this.child, this.enabled = true});
+  final Widget child;
+  final bool enabled;
+  @override
+  State<PressScale> createState() => _PressScaleState();
+}
+
+class _PressScaleState extends State<PressScale> {
+  bool down = false;
+  void _set(bool value) {
+    if (widget.enabled && down != value) setState(() => down = value);
+  }
+
+  @override
+  Widget build(BuildContext context) => Listener(
+    onPointerDown: (_) => _set(true),
+    onPointerUp: (_) => _set(false),
+    onPointerCancel: (_) => _set(false),
+    child: AnimatedScale(
+      scale: down ? .97 : 1,
+      duration: MediaQuery.disableAnimationsOf(context)
+          ? Duration.zero
+          : Duration(milliseconds: down ? 90 : 220),
+      curve: Sofra.quickCurve,
+      child: widget.child,
+    ),
+  );
+}
+
+class DepthButton extends StatelessWidget {
   const DepthButton({
     super.key,
     required this.label,
@@ -35,89 +93,66 @@ class DepthButton extends StatefulWidget {
   final bool secondary;
   final bool compact;
   final IconData? icon;
-  @override
-  State<DepthButton> createState() => _DepthButtonState();
-}
-
-class _DepthButtonState extends State<DepthButton> {
-  bool pressed = false;
-  void setPressed(bool value) {
-    if (pressed != value) setState(() => pressed = value);
-  }
-
-  @override
-  void didUpdateWidget(covariant DepthButton oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.onPressed == null) pressed = false;
-  }
 
   @override
   Widget build(BuildContext context) {
-    final enabled = widget.onPressed != null;
+    final enabled = onPressed != null;
     final face = !enabled
         ? Sofra.line
-        : widget.secondary
+        : secondary
         ? Colors.white
         : Sofra.green;
-    final edge = !enabled
-        ? const Color(0xFFD5DCCF)
-        : widget.secondary
-        ? const Color(0xFFD8E1D4)
-        : Sofra.greenDark;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 5),
-      child: AnimatedContainer(
-        duration: MediaQuery.disableAnimationsOf(context)
-            ? Duration.zero
-            : Duration(milliseconds: pressed ? 80 : 180),
-        curve: Curves.easeOutCubic,
-        transform: Matrix4.translationValues(0, pressed ? 4 : 0, 0),
+    final ink = !enabled
+        ? Sofra.muted
+        : secondary
+        ? Sofra.ink
+        : Colors.white;
+    final radius = BorderRadius.circular(Sofra.r16);
+    return PressScale(
+      enabled: enabled,
+      child: DecoratedBox(
         decoration: BoxDecoration(
           color: face,
-          borderRadius: BorderRadius.circular(18),
-          border: widget.secondary
-              ? Border.all(color: Sofra.line, width: 1.5)
+          borderRadius: radius,
+          boxShadow: enabled
+              ? secondary
+                    ? Sofra.shadow(.6)
+                    : [
+                        BoxShadow(
+                          color: Sofra.green.withValues(alpha: .28),
+                          blurRadius: 18,
+                          offset: const Offset(0, 8),
+                        ),
+                      ]
               : null,
-          boxShadow: [
-            BoxShadow(color: edge, offset: Offset(0, pressed ? 1 : 5)),
-          ],
         ),
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: widget.onPressed,
-            onHighlightChanged: setPressed,
-            borderRadius: BorderRadius.circular(18),
+            onTap: onPressed,
+            borderRadius: radius,
             child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: widget.compact ? 48 : 56),
+              constraints: BoxConstraints(minHeight: compact ? 48 : 56),
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: widget.compact ? 14 : 20,
+                  horizontal: compact ? 14 : 20,
                   vertical: 12,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (widget.icon != null) ...[
-                      Icon(
-                        widget.icon,
-                        size: 21,
-                        color: widget.secondary ? Sofra.ink : Colors.white,
-                      ),
+                    if (icon != null) ...[
+                      Icon(icon, size: 20, color: ink),
                       const SizedBox(width: 8),
                     ],
                     Flexible(
                       child: Text(
-                        widget.label,
+                        label,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontWeight: FontWeight.w800,
-                          fontSize: widget.compact ? 14 : 16,
-                          color: !enabled
-                              ? Sofra.muted
-                              : widget.secondary
-                              ? Sofra.ink
-                              : Colors.white,
+                          fontSize: compact ? 14 : 16,
+                          color: ink,
                         ),
                       ),
                     ),
@@ -143,23 +178,52 @@ class Surface extends StatelessWidget {
   final Widget child;
   final Color color;
   final EdgeInsetsGeometry padding;
+
+  /// A flat, quieter card (no lift) for secondary content.
   final bool border;
   @override
   Widget build(BuildContext context) => Container(
     padding: padding,
     decoration: BoxDecoration(
-      color: color,
-      borderRadius: BorderRadius.circular(24),
-      border: border ? Border.all(color: Sofra.line, width: 1.5) : null,
-      boxShadow: [
-        BoxShadow(
-          color: Sofra.ink.withValues(alpha: .035),
-          blurRadius: 22,
-          offset: const Offset(0, 8),
-        ),
-      ],
+      color: border ? Sofra.sand.withValues(alpha: .6) : color,
+      borderRadius: BorderRadius.circular(Sofra.r22),
+      boxShadow: border ? null : Sofra.shadow(),
     ),
     child: Material(type: MaterialType.transparency, child: child),
+  );
+}
+
+/// Frosted translucent panel for things floating over the kitchen scene.
+class Glass extends StatelessWidget {
+  const Glass({
+    super.key,
+    required this.child,
+    this.radius = Sofra.r22,
+    this.padding = EdgeInsets.zero,
+    this.tint = Colors.white,
+    this.opacity = .72,
+  });
+  final Widget child;
+  final double radius;
+  final EdgeInsetsGeometry padding;
+  final Color tint;
+  final double opacity;
+  @override
+  Widget build(BuildContext context) => DecoratedBox(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(radius),
+      boxShadow: Sofra.shadow(.8),
+    ),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(radius),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+        child: ColoredBox(
+          color: tint.withValues(alpha: opacity),
+          child: Padding(padding: padding, child: child),
+        ),
+      ),
+    ),
   );
 }
 
@@ -178,69 +242,83 @@ class ChoiceTile extends StatelessWidget {
   final VoidCallback onTap;
   final IconData icon;
   @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(bottom: 12),
-    child: Semantics(
-      selected: selected,
-      child: Material(
-        color: selected ? Sofra.mint : Colors.white,
-        borderRadius: BorderRadius.circular(18),
-        child: InkWell(
-          onTap: onTap,
-          borderRadius: BorderRadius.circular(18),
+  Widget build(BuildContext context) {
+    final radius = BorderRadius.circular(Sofra.r16);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Semantics(
+        selected: selected,
+        child: PressScale(
           child: AnimatedContainer(
             duration: Sofra.motion(context, true),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+            curve: Sofra.quickCurve,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
-              border: Border.all(
-                color: selected ? Sofra.green : Sofra.line,
-                width: 2,
-              ),
+              color: selected ? Sofra.mint : Colors.white,
+              borderRadius: radius,
+              boxShadow: selected ? null : Sofra.shadow(.5),
             ),
-            child: Row(
-              children: [
-                Icon(
-                  icon,
-                  color: selected ? Sofra.greenDark : Sofra.muted,
-                  size: 26,
-                ),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: onTap,
+                borderRadius: radius,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 15,
+                  ),
+                  child: Row(
                     children: [
-                      Text(
-                        title,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w800,
-                          fontSize: 16,
+                      Icon(
+                        icon,
+                        color: selected ? Sofra.greenDark : Sofra.muted,
+                        size: 24,
+                      ),
+                      const SizedBox(width: 14),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              title,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w800,
+                                fontSize: 16,
+                              ),
+                            ),
+                            if (subtitle != null)
+                              Text(
+                                subtitle!,
+                                style: const TextStyle(
+                                  color: Sofra.muted,
+                                  fontSize: 12,
+                                ),
+                              ),
+                          ],
                         ),
                       ),
-                      if (subtitle != null)
-                        Text(
-                          subtitle!,
-                          style: const TextStyle(
-                            color: Sofra.muted,
-                            fontSize: 12,
-                          ),
+                      const SizedBox(width: 8),
+                      AnimatedSwitcher(
+                        duration: Sofra.motion(context, true),
+                        child: Icon(
+                          selected
+                              ? Icons.check_circle_rounded
+                              : Icons.circle_outlined,
+                          key: ValueKey(selected),
+                          color: selected ? Sofra.green : Sofra.line,
+                          size: 23,
                         ),
+                      ),
                     ],
                   ),
                 ),
-                const SizedBox(width: 8),
-                Icon(
-                  selected ? Icons.check_circle_rounded : Icons.circle_outlined,
-                  color: selected ? Sofra.green : const Color(0xFFD5DBCF),
-                  size: 23,
-                ),
-              ],
+              ),
             ),
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class SoftTag extends StatelessWidget {
@@ -257,10 +335,10 @@ class SoftTag extends StatelessWidget {
   final IconData? icon;
   @override
   Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
     decoration: BoxDecoration(
       color: color,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(Sofra.r12),
     ),
     child: Row(
       mainAxisSize: MainAxisSize.min,
@@ -291,17 +369,28 @@ class SectionTitle extends StatelessWidget {
   final VoidCallback? onAction;
   @override
   Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(top: 24, bottom: 12),
+    padding: const EdgeInsets.only(top: 26, bottom: 10),
     child: Row(
       children: [
         Expanded(
           child: Text(
             title,
-            style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
+            style: const TextStyle(
+              fontWeight: FontWeight.w800,
+              fontSize: 19,
+              letterSpacing: -.2,
+            ),
           ),
         ),
         if (action != null)
-          TextButton(onPressed: onAction, child: Text(action!)),
+          TextButton(
+            onPressed: onAction,
+            style: TextButton.styleFrom(foregroundColor: Sofra.green),
+            child: Text(
+              action!,
+              style: const TextStyle(fontWeight: FontWeight.w700),
+            ),
+          ),
       ],
     ),
   );
@@ -318,27 +407,47 @@ class Counter extends StatelessWidget {
   final int max;
   final ValueChanged<int> onChanged;
   @override
-  Widget build(BuildContext context) => Row(
-    mainAxisSize: MainAxisSize.min,
-    children: [
-      IconButton.filledTonal(
-        onPressed: value < max ? () => onChanged(value + 1) : null,
-        icon: const Icon(Icons.add_rounded),
-        tooltip: 'زيادة العدد',
-      ),
-      SizedBox(
-        width: 50,
-        child: Text(
-          '$value',
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.all(4),
+    decoration: BoxDecoration(
+      color: Sofra.sand,
+      borderRadius: BorderRadius.circular(Sofra.r16),
+    ),
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _step(Icons.add_rounded, 'زيادة العدد', value < max ? value + 1 : null),
+        SizedBox(
+          width: 46,
+          child: AnimatedSwitcher(
+            duration: Sofra.motion(context, true),
+            child: Text(
+              '$value',
+              key: ValueKey(value),
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
+            ),
+          ),
         ),
+        _step(
+          Icons.remove_rounded,
+          'تقليل العدد',
+          value > 1 ? value - 1 : null,
+        ),
+      ],
+    ),
+  );
+
+  Widget _step(IconData icon, String tip, int? next) => IconButton(
+    onPressed: next == null ? null : () => onChanged(next),
+    tooltip: tip,
+    style: IconButton.styleFrom(
+      backgroundColor: next == null ? Colors.transparent : Colors.white,
+      minimumSize: const Size(44, 44),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(Sofra.r12),
       ),
-      IconButton.filledTonal(
-        onPressed: value > 1 ? () => onChanged(value - 1) : null,
-        icon: const Icon(Icons.remove_rounded),
-        tooltip: 'تقليل العدد',
-      ),
-    ],
+    ),
+    icon: Icon(icon, color: next == null ? Sofra.line : Sofra.ink),
   );
 }

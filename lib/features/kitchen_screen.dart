@@ -133,6 +133,93 @@ class _KitchenScreenState extends State<KitchenScreen> {
   }
 }
 
+/// What is inside one storage place, shown over the open fridge or pantry.
+/// Opened as a modal sheet, so it carries its own scope.
+class ZoneStockSheet extends StatelessWidget {
+  const ZoneStockSheet({super.key, required this.zone});
+  final StorageZone zone;
+
+  static Future<void> show(BuildContext context, StorageZone zone) {
+    final scope = SofraScope.of(context);
+    return showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      barrierColor: Colors.black.withValues(alpha: .12),
+      builder: (_) => SofraScope(
+        controller: scope.notifier!,
+        nav: scope.nav,
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: ZoneStockSheet(zone: zone),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final c = SofraScope.controllerOf(context);
+    final nav = SofraScope.navOf(context);
+    final lots = c.stock.where((l) => l.zone == zone).toList();
+    return DraggableScrollableSheet(
+      expand: false,
+      initialChildSize: .55,
+      minChildSize: .3,
+      maxChildSize: .9,
+      builder: (context, scroll) => ListView(
+        key: ValueKey('zone-sheet-${zone.name}'),
+        controller: scroll,
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 28),
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      zoneName(zone),
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    Text(
+                      countText(lots.length, 'حاجة', 'حاجتين', 'حاجات', empty: 'لسه فاضي'),
+                      style: const TextStyle(color: Sofra.muted),
+                    ),
+                  ],
+                ),
+              ),
+              IconButton.filledTonal(
+                key: ValueKey('zone-add-${zone.name}'),
+                tooltip: 'إضافة',
+                onPressed: () {
+                  Navigator.pop(context);
+                  nav.openAddStock();
+                },
+                icon: const Icon(Icons.add_rounded),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          if (lots.isEmpty)
+            const Surface(
+              border: true,
+              child: Text(
+                'ضيف اللي عندك هنا، وهنقولك تطبخ إيه منه.',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Sofra.muted),
+              ),
+            )
+          else
+            for (final lot in lots) _StockRow(lot),
+        ],
+      ),
+    );
+  }
+}
+
 class _StockRow extends StatelessWidget {
   const _StockRow(this.lot);
   final InventoryLot lot;
@@ -183,7 +270,7 @@ class _StockRow extends StatelessWidget {
             Text(
               lot.quantity == null
                   ? 'كمية غير محددة'
-                  : amountLabel(lot.quantity!, lot.unit),
+                  : c.amountText(lot.ingredientId, lot.quantity!, lot.unit),
               key: ValueKey('stock-quantity-${lot.ingredientId}'),
               style: const TextStyle(fontWeight: FontWeight.w700),
             ),
@@ -229,7 +316,7 @@ class _StockRow extends StatelessWidget {
                 decimal: true,
               ),
               decoration: InputDecoration(
-                labelText: 'الكمية (${unitLabel(lot.unit)})',
+                labelText: 'الكمية (${c.unitName(lot.ingredientId, lot.unit)})',
                 helperText: 'اكتب 0 لو خلص',
               ),
             ),
@@ -365,7 +452,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                         ),
                       ),
                       Text(
-                        '+${amountLabel(SofraController.quickStep(e.defaultUnit), e.defaultUnit)}',
+                        '+${c.amountText(e.id, SofraController.quickStep(e.defaultUnit), e.defaultUnit)}',
                         style: const TextStyle(
                           fontSize: 12,
                           color: Sofra.muted,
@@ -415,7 +502,8 @@ class _AddStockScreenState extends State<AddStockScreen> {
       }
     }
     if (totals.isEmpty) return null;
-    final parts = totals.entries.map((t) => amountLabel(t.value, t.key));
+    final c = SofraScope.controllerOf(context);
+    final parts = totals.entries.map((t) => c.amountText(id, t.value, t.key));
     return 'عندك ${parts.join(' + ')}';
   }
 }
@@ -430,31 +518,71 @@ class _AddAmountSheet extends StatefulWidget {
 }
 
 class _AddAmountSheetState extends State<_AddAmountSheet> {
-  static const common = ['g', 'kg', 'ml', 'l', 'count', 'cup', 'tbsp', 'tsp'];
-  late String unit = Units.canonical(widget.entry.defaultUnit);
+  /// Older vocabularies without stockUnits still offer the basic measures.
+  static const fallback = ['g', 'kg', 'ml', 'l', 'count'];
+  late final List<String> units = {
+    for (final u in widget.entry.stockUnits.isEmpty
+        ? [widget.entry.defaultUnit, ...fallback]
+        : widget.entry.stockUnits)
+      Units.canonical(u),
+  }.toList();
+  late String unit = units.first;
   late StorageZone zone = widget.entry.zone;
   final amount = TextEditingController();
-  String? error;
+  final weight = TextEditingController();
+  String? error, weightError;
+
+  @override
+  void initState() {
+    super.initState();
+    _fillWeight();
+  }
 
   @override
   void dispose() {
     amount.dispose();
+    weight.dispose();
     super.dispose();
   }
 
+  static double? _number(String text) {
+    final q = double.tryParse(text.trim().replaceAll('٫', '.'));
+    return q == null || !q.isFinite || q <= 0 ? null : q;
+  }
+
+  /// A piece or bunch can carry the user's own weight, so recipes in grams
+  /// can use it. Only offered when the ingredient is also kept by weight.
+  bool get _asksWeight =>
+      !const {'g', 'kg', 'ml', 'l'}.contains(unit) &&
+      units.any((u) => u == 'g' || u == 'kg');
+
+  void _fillWeight() {
+    final w = widget.controller.weightOf(widget.entry.id, unit);
+    weight.text = w == null ? '' : formatAmount(w);
+  }
+
   Future<void> _save() async {
-    final q = double.tryParse(amount.text.trim().replaceAll('٫', '.'));
-    if (q == null || !q.isFinite || q <= 0) {
-      setState(() => error = 'اكتب كمية أكبر من صفر');
-      return;
+    final q = _number(amount.text);
+    final w = weight.text.trim().isEmpty ? null : _number(weight.text);
+    setState(() {
+      error = q == null ? 'اكتب كمية أكبر من صفر' : null;
+      weightError = _asksWeight && weight.text.trim().isNotEmpty && w == null
+          ? 'اكتب وزن أكبر من صفر أو سيبها فاضية'
+          : null;
+    });
+    if (error != null || weightError != null) return;
+    final c = widget.controller;
+    if (_asksWeight && w != null && w != c.weightOf(widget.entry.id, unit)) {
+      await c.saveUnitRule(widget.entry.id, unit, 'g', w);
     }
-    await widget.controller.addIngredient(widget.entry.id, q, unit, zone);
+    await c.addIngredient(widget.entry.id, q!, unit, zone);
     if (mounted) Navigator.pop(context, true);
   }
 
   @override
   Widget build(BuildContext context) {
-    final units = {Units.canonical(widget.entry.defaultUnit), ...common};
+    final c = widget.controller;
+    final id = widget.entry.id;
     return Padding(
       padding: EdgeInsets.fromLTRB(
         20,
@@ -495,20 +623,31 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
                 for (final u in units)
                   ChoiceChip(
                     key: ValueKey('add-unit-$u'),
-                    label: Text(unitLabel(u)),
+                    label: Text(c.unitName(id, u)),
                     selected: unit == u,
-                    onSelected: (_) => setState(() => unit = u),
+                    onSelected: (_) => setState(() {
+                      unit = u;
+                      _fillWeight();
+                    }),
                   ),
               ],
             ),
-            if (unit == 'cup')
-              const Padding(
-                padding: EdgeInsets.only(top: 6),
-                child: Text(
-                  'الكوب هنا كوب قياس = 240 مل.',
-                  style: TextStyle(fontSize: 12, color: Sofra.muted),
+            if (_asksWeight) ...[
+              const SizedBox(height: 14),
+              TextField(
+                key: const ValueKey('add-piece-weight'),
+                controller: weight,
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
+                ),
+                decoration: InputDecoration(
+                  labelText: 'الـ${c.unitName(id, unit)} الواحدة كام جرام؟ (اختياري)',
+                  helperText: 'من ميزانك أو العبوة. بيساعد في الوصفات اللي بالجرام.',
+                  suffixText: 'جم',
+                  errorText: weightError,
                 ),
               ),
+            ],
             const SizedBox(height: 14),
             const Text('مكانه', style: TextStyle(fontWeight: FontWeight.w700)),
             const SizedBox(height: 6),

@@ -46,6 +46,7 @@ void main() {
           initialData: data,
           recipes: recipes,
           readAsset: assets,
+          showScene: false,
         ),
       ),
     );
@@ -85,6 +86,7 @@ void main() {
           store: store,
           recipes: await warmRecipes(tester),
           readAsset: await warmAssets(tester),
+          showScene: false,
         ),
       ),
     );
@@ -137,6 +139,7 @@ void main() {
           store: store,
           recipes: await warmRecipes(tester),
           readAsset: await warmAssets(tester),
+          showScene: false,
         ),
         ),
       );
@@ -150,8 +153,7 @@ void main() {
       expect(store.data!['country'], 'SA');
       expect(find.byKey(const ValueKey('nav-profile')), findsNothing);
       expect(find.byKey(const ValueKey('open-home-settings')), findsOneWidget);
-      expect(find.text('وش بنطبخ اليوم؟'), findsOneWidget);
-      expect(find.text('اليوم'), findsOneWidget);
+      expect(find.text('على سفرة اليوم'), findsOneWidget);
       await tapKey(tester, 'open-home-settings');
       expect(find.text('مريم'), findsWidgets);
     },

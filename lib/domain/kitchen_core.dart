@@ -145,6 +145,24 @@ class UnitRule {
 }
 
 class Units {
+  /// Arabic label for a canonical unit; counted units are already Arabic.
+  static String label(String unit) => switch (canonical(unit)) {
+    'g' => 'جم',
+    'kg' => 'كيلو',
+    'ml' => 'مل',
+    'l' => 'لتر',
+    'count' => 'حبة',
+    'cup' => 'كوب',
+    'tbsp' => 'ملعقة كبيرة',
+    'tsp' => 'ملعقة صغيرة',
+    'lb' => 'رطل',
+    'oz' => 'أونصة',
+    'qt' => 'كوارت',
+    'pt' => 'باينت',
+    'dl' => 'ديسيلتر',
+    final other => other,
+  };
+
   static const _synonyms = {
     'جم': 'g',
     'جرام': 'g',
