@@ -5,6 +5,7 @@ import test from 'node:test';
 import {
   buildDirectory,
   matchName,
+  stockUnitValues,
   validateVocabulary,
   vocabularyFile,
 } from './build-directory.mjs';
@@ -54,4 +55,53 @@ test('catalog-only aliases are excluded from search aliases', () => {
   const potato = vocabulary.find((e) => e.id === 'potato');
   assert.ok(potato.matchAliases.includes('بطاطا'));
   assert.ok(!potato.aliases.includes('بطاطا'));
+});
+
+const byId = (id) => vocabulary.find((e) => e.id === id);
+const entry = (extra) => ({
+  id: 'x',
+  name: 'اكس',
+  aliases: [],
+  zone: 'pantry',
+  category: 'أخرى',
+  defaultUnit: 'g',
+  stockUnits: ['g'],
+  ...extra,
+});
+const rejects = (extra, pattern) =>
+  assert.throws(() => validateVocabulary([entry(extra)]), pattern);
+
+test('stock units are validated', () => {
+  assert.doesNotThrow(() => validateVocabulary([entry({})]));
+  rejects({stockUnits: undefined}, /stockUnits/);
+  rejects({stockUnits: []}, /stockUnits/);
+  rejects({stockUnits: ['g', 'cup']}, /bad stock unit cup/);
+  rejects({stockUnits: ['g', 'g']}, /duplicate stock unit/);
+  rejects({defaultUnit: 'kg'}, /defaultUnit must equal/);
+  rejects({defaultUnit: 'count', stockUnits: ['count']}, /count needs pieceName/);
+  rejects({defaultUnit: 'count', stockUnits: ['count'], pieceName: 'حبة'}, /count needs piecePlural/);
+  rejects({pieceName: 'حبة'}, /pieceName without count/);
+  rejects({piecePlural: 'حبات'}, /piecePlural without count/);
+  assert.doesNotThrow(() =>
+    validateVocabulary([
+      entry({defaultUnit: 'count', stockUnits: ['count'], pieceName: 'حبة', piecePlural: 'حبات'}),
+    ]),
+  );
+  assert.ok(stockUnitValues.includes('ربطة') && !stockUnitValues.includes('cup'));
+});
+
+test('every ingredient has the units a home kitchen keeps it in', () => {
+  assert.deepEqual(byId('arugula').stockUnits.slice(0, 1), ['ربطة']);
+  const chicken = byId('chicken');
+  assert.ok(chicken.stockUnits.includes('count') && chicken.stockUnits.includes('kg'));
+  assert.equal(chicken.pieceName, 'فرخة');
+  assert.equal(chicken.piecePlural, 'فراخ');
+  assert.deepEqual(byId('chicken-breast').stockUnits, ['kg', 'g']);
+  assert.equal(byId('chicken-breast').pieceName, undefined);
+  assert.equal(byId('eggs').stockUnits[0], 'count');
+  assert.equal(byId('eggs').pieceName, 'بيضة');
+  const onion = byId('onion');
+  assert.ok(onion.stockUnits.includes('count') && onion.stockUnits.includes('kg'));
+  assert.equal(onion.pieceName, 'بصلة');
+  for (const e of vocabulary) assert.equal(e.defaultUnit, e.stockUnits[0], e.id);
 });
