@@ -182,15 +182,25 @@ class Surface extends StatelessWidget {
   /// A flat, quieter card (no lift) for secondary content.
   final bool border;
   @override
-  Widget build(BuildContext context) => Container(
-    padding: padding,
-    decoration: BoxDecoration(
-      color: border ? Sofra.sand.withValues(alpha: .6) : color,
-      borderRadius: BorderRadius.circular(Sofra.r22),
-      boxShadow: border ? null : Sofra.shadow(),
-    ),
-    child: Material(type: MaterialType.transparency, child: child),
-  );
+  Widget build(BuildContext context) {
+    final paper = Paper.isOn(context);
+    return Container(
+      padding: padding,
+      decoration: BoxDecoration(
+        color: paper
+            ? const Color(0x33FFF9EC)
+            : border
+            ? Sofra.sand.withValues(alpha: .6)
+            : color,
+        borderRadius: BorderRadius.circular(Sofra.r22),
+        border: paper
+            ? Border.all(color: Paper.ink.withValues(alpha: .12))
+            : null,
+        boxShadow: border || paper ? null : Sofra.shadow(),
+      ),
+      child: Material(type: MaterialType.transparency, child: child),
+    );
+  }
 }
 
 /// Frosted translucent panel for things floating over the kitchen scene.
@@ -450,4 +460,162 @@ class Counter extends StatelessWidget {
     ),
     icon: Icon(icon, color: next == null ? Sofra.line : Sofra.ink),
   );
+}
+
+/// Apple-style liquid glass: strong blur, a bright rim and a soft inner sheen.
+class LiquidGlass extends StatelessWidget {
+  const LiquidGlass({
+    super.key,
+    required this.child,
+    this.radius = Sofra.r28,
+    this.padding = EdgeInsets.zero,
+    this.dark = false,
+  });
+  final Widget child;
+  final double radius;
+  final EdgeInsetsGeometry padding;
+  final bool dark;
+  @override
+  Widget build(BuildContext context) {
+    final shape = BorderRadius.circular(radius);
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        borderRadius: shape,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: dark ? .3 : .12),
+            blurRadius: 30,
+            offset: const Offset(0, 14),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: shape,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              borderRadius: shape,
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: dark
+                    ? [
+                        Colors.white.withValues(alpha: .16),
+                        Colors.white.withValues(alpha: .06),
+                      ]
+                    : [
+                        Colors.white.withValues(alpha: .62),
+                        Colors.white.withValues(alpha: .38),
+                      ],
+              ),
+              border: Border.all(
+                color: Colors.white.withValues(alpha: dark ? .22 : .7),
+                width: 1,
+              ),
+            ),
+            child: Padding(padding: padding, child: child),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Marks a subtree as drawn on aged recipe-book paper; cards soften to it.
+class Paper extends InheritedWidget {
+  const Paper({super.key, required super.child});
+  static bool isOn(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<Paper>() != null;
+  @override
+  bool updateShouldNotify(Paper old) => false;
+
+  static const ink = Color(0xFF4A3A28);
+  static const tone = Color(0xFFEBDDBF);
+}
+
+/// Old sepia page: warm base, fibres, foxing spots, burnt edges and the
+/// spine's shadow on the start (right in Arabic) side.
+class PaperPainter extends CustomPainter {
+  const PaperPainter({this.seed = 7});
+  final int seed;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rect = Offset.zero & size;
+    canvas.drawRect(
+      rect,
+      Paint()
+        ..shader = const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFFF0E4C8), Paper.tone, Color(0xFFE3D1AA)],
+        ).createShader(rect),
+    );
+    var state = seed;
+    double next() {
+      state = (state * 1103515245 + 12345) & 0x7fffffff;
+      return state / 0x7fffffff;
+    }
+
+    final fibre = Paint()
+      ..strokeWidth = .6
+      ..strokeCap = StrokeCap.round;
+    for (var i = 0; i < 260; i++) {
+      final p = Offset(next() * size.width, next() * size.height);
+      final a = next() * 3.1416;
+      final l = 4 + next() * 10;
+      fibre.color = const Color(0xFF8A6A3C)
+          .withValues(alpha: .05 + next() * .06);
+      canvas.drawLine(p, p + Offset.fromDirection(a, l), fibre);
+    }
+    final speck = Paint();
+    for (var i = 0; i < 900; i++) {
+      speck.color = const Color(0xFF7A5A30)
+          .withValues(alpha: .03 + next() * .05);
+      canvas.drawCircle(
+        Offset(next() * size.width, next() * size.height),
+        .4 + next() * .9,
+        speck,
+      );
+    }
+    final fox = Paint()
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
+    for (var i = 0; i < 7; i++) {
+      fox.color = const Color(0xFFB08850).withValues(alpha: .06 + next() * .05);
+      canvas.drawCircle(
+        Offset(next() * size.width, next() * size.height),
+        14 + next() * 26,
+        fox,
+      );
+    }
+    canvas.drawRect(
+      rect,
+      Paint()
+        ..shader = RadialGradient(
+          radius: .95,
+          colors: [
+            Colors.transparent,
+            const Color(0xFF8B6533).withValues(alpha: .1),
+            const Color(0xFF6B4A22).withValues(alpha: .28),
+          ],
+          stops: const [.55, .82, 1],
+        ).createShader(rect),
+    );
+    canvas.drawRect(
+      Rect.fromLTWH(size.width - 26, 0, 26, size.height),
+      Paint()
+        ..shader = LinearGradient(
+          begin: Alignment.centerRight,
+          end: Alignment.centerLeft,
+          colors: [
+            const Color(0xFF5A3D1A).withValues(alpha: .22),
+            Colors.transparent,
+          ],
+        ).createShader(Rect.fromLTWH(size.width - 26, 0, 26, size.height)),
+    );
+  }
+
+  @override
+  bool shouldRepaint(PaperPainter old) => old.seed != seed;
 }

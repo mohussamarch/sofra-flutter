@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import '../data/recipe_repository.dart';
 import '../data/state_store.dart';
 import '../domain/kitchen_core.dart';
-import '../domain/market_profile.dart';
+import '../features/community_screen.dart';
 import '../features/cooking_screen.dart';
 import '../features/kitchen_screen.dart';
 import '../features/onboarding_screen.dart';
 import '../features/profile_screen.dart';
 import '../features/recipe_detail_screen.dart';
-import '../features/recipes_screen.dart';
-import '../features/table_screen.dart';
 import '../features/today_screen.dart';
 import '../ui/design.dart';
 import 'scope.dart';
@@ -196,9 +194,11 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   bool _ready(SofraController c) =>
       c.loadError == null && c.ready && c.profile.onboarded;
 
+  static const _homeTabs = {AppTab.today, AppTab.recipes, AppTab.table};
+
   /// The home kitchen paints under the status bar.
   bool _fullBleed(SofraController c) =>
-      _ready(c) && view == _View.tabs && tab == AppTab.today;
+      _ready(c) && view == _View.tabs && _homeTabs.contains(tab);
 
   bool _showsNav(SofraController c) => _ready(c) && view == _View.tabs;
 
@@ -238,7 +238,11 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           child: AnimatedSwitcher(
             duration: Sofra.motion(context),
             child: KeyedSubtree(
-              key: ValueKey('$tab-$view-$recipeId-${cookingMeal?.id}'),
+              key: ValueKey(
+                view == _View.tabs && _homeTabs.contains(tab)
+                    ? 'home'
+                    : '$tab-$view-$recipeId-${cookingMeal?.id}',
+              ),
               child: switch (view) {
                 _View.addStock => const AddStockScreen(),
                 _View.recipe => RecipeDetailScreen(recipeId: recipeId!),
@@ -247,11 +251,18 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                   onDone: () => cookingMeal = null,
                 ),
                 _View.tabs => switch (tab) {
-                  AppTab.today => TodayScreen(showScene: widget.showScene),
+                  AppTab.today || AppTab.recipes || AppTab.table => TodayScreen(
+                    mode: switch (tab) {
+                      AppTab.recipes => HomeMode.recipes,
+                      AppTab.table => HomeMode.table,
+                      _ => HomeMode.kitchen,
+                    },
+                    showScene: widget.showScene,
+                  ),
                   AppTab.kitchen => const KitchenScreen(),
-                  AppTab.recipes => const RecipesScreen(),
-                  AppTab.table => const TableScreen(),
-                  AppTab.profile => ProfileScreen(signOut: widget.signOut),
+                  AppTab.profile => const ProfileScreen(),
+                  AppTab.settings => SettingsScreen(signOut: widget.signOut),
+                  AppTab.community => const CommunityScreen(),
                 },
               },
             ),
@@ -307,132 +318,138 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
         ),
       );
     }
-    final egypt = c.market.country == MarketCountry.egypt;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 16, 20, 12),
+      padding: const EdgeInsets.fromLTRB(12, 8, 16, 6),
       child: Row(
         children: [
-          Container(
-            width: 42,
-            height: 42,
-            decoration: BoxDecoration(
-              color: Sofra.mint,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: const Icon(
-              Icons.restaurant_rounded,
-              color: Sofra.green,
-              size: 23,
-            ),
+          IconButton(
+            key: const ValueKey('page-back'),
+            onPressed: () => goTab(AppTab.today),
+            icon: const Icon(Icons.arrow_back_rounded),
+            tooltip: 'المطبخ',
           ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  tab == AppTab.today
-                      ? 'أهلًا يا ${c.profile.displayName}'
-                      : c.profile.houseName,
-                  style: const TextStyle(fontSize: 13, color: Sofra.muted),
-                ),
-                Text(
-                  switch (tab) {
-                    AppTab.today =>
-                      egypt ? 'نطبخ إيه النهارده؟' : 'وش بنطبخ اليوم؟',
-                    AppTab.kitchen => 'مطبخك بخير',
-                    AppTab.recipes => 'وصفات على ذوقك',
-                    AppTab.table => 'لمّة سفرتك',
-                    AppTab.profile => 'بيتي وتفضيلاتي',
-                  },
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          if (tab == AppTab.today || tab == AppTab.kitchen)
-            IconButton(
-              key: const ValueKey('open-home-settings'),
-              onPressed: () => goTab(AppTab.profile),
-              tooltip: 'بيتي',
-              style: IconButton.styleFrom(backgroundColor: Sofra.peach),
-              icon: const Icon(Icons.face_rounded, color: Color(0xFF995333)),
-            ),
+          Text(switch (tab) {
+            AppTab.kitchen => 'مطبخي',
+            AppTab.profile => 'بروفايلي',
+            AppTab.settings => 'الإعدادات',
+            AppTab.community => 'مجتمع سفرة',
+            _ => '',
+          }, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
         ],
       ),
     );
   }
 
+  /// Liquid-glass bar: recipe book (right), home (centre), table (left).
+  /// Tapping the open mode again returns to the kitchen.
   Widget _bottomNav(SofraController c) {
-    const icons = [
-      (Icons.home_outlined, Icons.home_rounded),
-      (Icons.kitchen_outlined, Icons.kitchen_rounded),
-      (Icons.menu_book_outlined, Icons.menu_book_rounded),
-      (Icons.restaurant_outlined, Icons.restaurant_rounded),
-    ];
-    final labels = ['البيت', 'مطبخي', 'وصفات', 'السفرة'];
-    const keys = ['today', 'fridge', 'recipes', 'table'];
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
-    return Glass(
-      radius: Sofra.r28,
-      opacity: .82,
-      padding: const EdgeInsets.all(6),
-      child: Row(
-        children: List.generate(4, (index) {
-          final active = tab.index == index;
-          return Expanded(
-            child: Semantics(
-              selected: active,
-              button: true,
-              label: labels[index],
-              child: PressScale(
-                child: InkWell(
-                  key: ValueKey('nav-${keys[index]}'),
-                  borderRadius: BorderRadius.circular(Sofra.r22),
-                  onTap: () => goTab(AppTab.values[index]),
-                  child: AnimatedContainer(
-                    duration: Sofra.motion(context, true),
-                    curve: Sofra.quickCurve,
-                    padding: const EdgeInsets.symmetric(vertical: 9),
-                    decoration: BoxDecoration(
-                      color: active ? Sofra.mint : Colors.transparent,
-                      borderRadius: BorderRadius.circular(Sofra.r22),
+    Widget item(
+      AppTab target,
+      String key,
+      IconData off,
+      IconData on,
+      String label, {
+      bool badge = false,
+    }) {
+      final active = tab == target;
+      return Expanded(
+        child: Semantics(
+          selected: active,
+          button: true,
+          label: label,
+          child: PressScale(
+            child: InkWell(
+              key: ValueKey('nav-$key'),
+              borderRadius: BorderRadius.circular(Sofra.r22),
+              onTap: () => goTab(active ? AppTab.today : target),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Badge(
+                      isLabelVisible: badge,
+                      smallSize: 7,
+                      backgroundColor: Sofra.orange,
+                      child: Icon(
+                        active ? on : off,
+                        color: active ? Sofra.greenDark : Sofra.ink,
+                        size: 24,
+                      ),
                     ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Badge(
-                          isLabelVisible: index == 3 && hasPlan,
-                          smallSize: 7,
-                          backgroundColor: Sofra.orange,
-                          child: Icon(
-                            active ? icons[index].$2 : icons[index].$1,
-                            color: active ? Sofra.greenDark : Sofra.muted,
-                            size: 23,
-                          ),
+                    const SizedBox(height: 3),
+                    Text(
+                      label,
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: active ? FontWeight.w800 : FontWeight.w600,
+                        color: active
+                            ? Sofra.greenDark
+                            : Sofra.ink.withValues(alpha: .7),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    final home = tab == AppTab.today;
+    return Center(
+      child: SizedBox(
+        width: 300,
+        child: LiquidGlass(
+          radius: 34,
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+          child: Row(
+            children: [
+              item(
+                AppTab.recipes,
+                'recipes',
+                Icons.menu_book_outlined,
+                Icons.menu_book_rounded,
+                'الوصفات',
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 6),
+                child: PressScale(
+                  child: Material(
+                    color: home
+                        ? Sofra.green
+                        : Colors.white.withValues(alpha: .7),
+                    shape: const CircleBorder(),
+                    child: InkWell(
+                      key: const ValueKey('nav-today'),
+                      customBorder: const CircleBorder(),
+                      onTap: () => goTab(AppTab.today),
+                      child: SizedBox.square(
+                        dimension: 56,
+                        child: Icon(
+                          home ? Icons.home_rounded : Icons.home_outlined,
+                          color: home ? Colors.white : Sofra.ink,
+                          size: 27,
+                          semanticLabel: 'المطبخ',
                         ),
-                        const SizedBox(height: 3),
-                        Text(
-                          labels[index],
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: active
-                                ? FontWeight.w800
-                                : FontWeight.w600,
-                            color: active ? Sofra.greenDark : Sofra.muted,
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          );
-        }),
+              item(
+                AppTab.table,
+                'table',
+                Icons.table_restaurant_outlined,
+                Icons.table_restaurant_rounded,
+                'السفرة',
+                badge: hasPlan,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

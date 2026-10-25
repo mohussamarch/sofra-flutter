@@ -24,11 +24,13 @@ void main() {
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
-      await tester.pumpWidget(TabkhaApp(
+      await tester.pumpWidget(
+        TabkhaApp(
           recipes: await warmRecipes(tester),
           readAsset: await warmAssets(tester),
           showScene: false,
-        ));
+        ),
+      );
       await tester.pumpAndSettle();
       await exerciseDemoFlow(tester);
       expect(tester.takeException(), isNull);
@@ -45,11 +47,13 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
     addTearDown(tester.view.resetViewInsets);
     addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
-    await tester.pumpWidget(TabkhaApp(
-          recipes: await warmRecipes(tester),
-          readAsset: await warmAssets(tester),
-          showScene: false,
-        ));
+    await tester.pumpWidget(
+      TabkhaApp(
+        recipes: await warmRecipes(tester),
+        readAsset: await warmAssets(tester),
+        showScene: false,
+      ),
+    );
     await tester.pumpAndSettle();
     await tapKey(tester, 'onboarding-next');
     DepthButton nextButton() => tester.widget<DepthButton>(
@@ -70,7 +74,10 @@ void main() {
     for (var i = 0; i < 5; i++) {
       await tapKey(tester, 'onboarding-next');
     }
-    for (final tab in ['fridge', 'recipes', 'table', 'today']) {
+    for (final circle in ['kitchen', 'profile', 'settings', 'community']) {
+      await openCorner(tester, circle);
+    }
+    for (final tab in ['recipes', 'table', 'today']) {
       await tapKey(tester, 'nav-$tab');
     }
     expect(tester.takeException(), isNull);

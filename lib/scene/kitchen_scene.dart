@@ -302,14 +302,15 @@ class _KitchenSceneState extends State<KitchenScene>
   }
 
   Color _background() {
-    var r = 0.0, g = 0.0, b = 0.0;
+    var r = 0.0, g = 0.0, b = 0.0, a = 0.0;
     _weights.forEach((mode, w) {
       final c = widget.scene.backgrounds[mode]!;
       r += c.r * w;
       g += c.g * w;
       b += c.b * w;
+      a += c.a * w;
     });
-    return Color.from(alpha: 1, red: r, green: g, blue: b);
+    return Color.from(alpha: a, red: r, green: g, blue: b);
   }
 
   @override

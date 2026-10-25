@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:ui' as ui;
 
@@ -31,6 +32,73 @@ class MaskSampler {
             (y + .5) / height * canvas.height,
           ),
   ];
+}
+
+/// Makes the flat render backdrop transparent, in place. Flood-fills from the
+/// image border over pixels within [tolerance] (sum of channel differences)
+/// of the corner colour, so room pixels of a similar tone are never touched;
+/// pixels bordering the fill fade by distance to soften the edge.
+void keyOutBackdrop(
+  Uint8List rgba,
+  int width,
+  int height, {
+  int tolerance = 14,
+}) {
+  // A render that already has an alpha backdrop needs no keying.
+  if (rgba[3] == 0) return;
+  final kr = rgba[0], kg = rgba[1], kb = rgba[2];
+  int dist(int p) =>
+      (rgba[p * 4] - kr).abs() +
+      (rgba[p * 4 + 1] - kg).abs() +
+      (rgba[p * 4 + 2] - kb).abs();
+  final keyed = Uint8List(width * height);
+  final stack = <int>[];
+  void seed(int p) {
+    if (keyed[p] == 0 && dist(p) <= tolerance) {
+      keyed[p] = 1;
+      stack.add(p);
+    }
+  }
+
+  for (var x = 0; x < width; x++) {
+    seed(x);
+    seed((height - 1) * width + x);
+  }
+  for (var y = 0; y < height; y++) {
+    seed(y * width);
+    seed(y * width + width - 1);
+  }
+  while (stack.isNotEmpty) {
+    final p = stack.removeLast();
+    final x = p % width, y = p ~/ width;
+    if (x > 0) seed(p - 1);
+    if (x < width - 1) seed(p + 1);
+    if (y > 0) seed(p - width);
+    if (y < height - 1) seed(p + width);
+  }
+  const soft = 30;
+  for (var p = 0; p < keyed.length; p++) {
+    if (keyed[p] == 1) {
+      // Engine pixels are premultiplied: a clear pixel must carry no colour.
+      rgba[p * 4] = rgba[p * 4 + 1] = rgba[p * 4 + 2] = rgba[p * 4 + 3] = 0;
+      continue;
+    }
+    final x = p % width, y = p ~/ width;
+    final edge =
+        (x > 0 && keyed[p - 1] == 1) ||
+        (x < width - 1 && keyed[p + 1] == 1) ||
+        (y > 0 && keyed[p - width] == 1) ||
+        (y < height - 1 && keyed[p + width] == 1);
+    if (!edge) continue;
+    final d = dist(p);
+    if (d < tolerance + soft) {
+      final alpha = (255 * (d - tolerance) / soft).round().clamp(0, 255);
+      for (var ch = 0; ch < 3; ch++) {
+        rgba[p * 4 + ch] = rgba[p * 4 + ch] * alpha ~/ 255;
+      }
+      rgba[p * 4 + 3] = alpha;
+    }
+  }
 }
 
 /// Decoded scene ready to paint. Call [dispose] when the scene leaves.
@@ -86,10 +154,13 @@ class LoadedScene {
 
   /// Loads `assets/scenes/<id>/manifest.json` and decodes what the viewer
   /// paints. Beam masks are sampled at [maskSampleWidth] px wide.
+  /// With [keyBackdrop] the render's flat backdrop becomes transparent, so
+  /// the room floats over whatever the host paints behind it.
   static Future<LoadedScene> load(
     AssetBundle bundle,
     String manifestAsset, {
     int maskSampleWidth = 240,
+    bool keyBackdrop = false,
   }) async {
     final manifest = await loadManifest(bundle, manifestAsset);
     final dir = manifestAsset.substring(0, manifestAsset.lastIndexOf('/') + 1);
@@ -115,6 +186,22 @@ class LoadedScene {
     for (final mode in manifest.lightingModes) {
       final i = await image(mode.image);
       _checkSize(i, canvas, mode.image);
+      if (keyBackdrop) {
+        final px = await rgba(i);
+        keyOutBackdrop(px, i.width, i.height);
+        final keyed = Completer<ui.Image>();
+        ui.decodeImageFromPixels(
+          px,
+          i.width,
+          i.height,
+          ui.PixelFormat.rgba8888,
+          keyed.complete,
+        );
+        bases[mode.id] = await keyed.future;
+        i.dispose();
+        backgrounds[mode.id] = const ui.Color(0x00000000);
+        continue;
+      }
       bases[mode.id] = i;
       // Corner of a tiny decode: the backdrop colour outside the room.
       final tiny = await image(mode.image, width: 8);

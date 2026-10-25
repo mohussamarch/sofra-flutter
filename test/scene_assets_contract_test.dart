@@ -108,4 +108,20 @@ void main() {
     expect(controller.phase, DoorPhase.closed);
     expect(closed, ['fridge']);
   });
+
+  test('backdrop key clears only the colour connected to the border', () {
+    // 5×5: grey backdrop, a dark ring, and a grey pixel inside the ring.
+    final rgba = Uint8List(5 * 5 * 4);
+    for (var p = 0; p < 25; p++) {
+      final x = p % 5, y = p ~/ 5;
+      final ring = x >= 1 && x <= 3 && y >= 1 && y <= 3 && p != 12;
+      rgba.setAll(p * 4, ring ? [10, 10, 10, 255] : [200, 200, 200, 255]);
+    }
+    keyOutBackdrop(rgba, 5, 5);
+    List<int> px(int p) => rgba.sublist(p * 4, p * 4 + 4);
+    expect(px(0), [0, 0, 0, 0]);
+    expect(px(24), [0, 0, 0, 0]);
+    expect(px(6), [10, 10, 10, 255]);
+    expect(px(12), [200, 200, 200, 255]);
+  });
 }

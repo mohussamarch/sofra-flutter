@@ -47,12 +47,17 @@ Future<Future<String> Function(String)> warmAssets(WidgetTester tester) async {
   final files = (await tester.runAsync(() async {
     return {
       for (final name in ['vocabulary.json', 'directory.json'])
-        'data/ingredients/$name': await File(
-          'data/ingredients/$name',
-        ).readAsString(),
+        'data/ingredients/$name': await File('data/ingredients/$name')
+            .readAsString(),
     };
   }))!;
   return (path) async => files[path]!;
+}
+
+/// Back to the home kitchen, then one of its corner circles.
+Future<void> openCorner(WidgetTester tester, String circle) async {
+  await tapKey(tester, 'nav-today');
+  await tapKey(tester, 'circle-$circle');
 }
 
 Future<void> completeOnboarding(WidgetTester tester) async {
@@ -74,7 +79,7 @@ String stockQuantity(WidgetTester tester, String id) =>
 /// units or unmeasured, so only the onions are deducted.
 Future<void> exerciseDemoFlow(WidgetTester tester) async {
   await completeOnboarding(tester);
-  await tapKey(tester, 'nav-fridge');
+  await openCorner(tester, 'kitchen');
   await tapKey(tester, 'add-sample-stock');
   expect(stockQuantity(tester, 'rice'), contains('500'));
   expect(stockQuantity(tester, 'onion'), contains('2'));
@@ -94,9 +99,9 @@ Future<void> exerciseDemoFlow(WidgetTester tester) async {
   await tapKey(tester, 'plan-confirm');
 
   // Planning reserves no inventory.
-  await tapKey(tester, 'nav-fridge');
+  await openCorner(tester, 'kitchen');
   expect(stockQuantity(tester, 'onion'), contains('3'));
-  await tapKey(tester, 'open-home-settings');
+  await openCorner(tester, 'profile');
   expect(find.textContaining('مريم'), findsWidgets);
   await tapKey(tester, 'nav-table');
   await tapKeyPrefix(tester, 'start-cooking-');

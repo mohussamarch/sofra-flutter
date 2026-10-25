@@ -379,7 +379,9 @@ class SofraController extends ChangeNotifier {
     String from,
     String to,
     double factor,
-  ) => _save(() => kitchen.saveUnitRule(UnitRule(ingredientId, from, to, factor)));
+  ) => _save(
+    () => kitchen.saveUnitRule(UnitRule(ingredientId, from, to, factor)),
+  );
 
   /// Unit of the first stock lot with a known quantity, if any.
   String? stockUnit(String ingredientId) => kitchen.inventory

@@ -332,7 +332,9 @@ class _IngredientRow extends StatelessWidget {
     );
     if (factor == null) return;
     if (await c.saveUnitRule(id, from, to, factor)) {
-      nav.notify('اتحفظ: 1 ${unitLabel(from)} $name = ${formatAmount(factor)} ${unitLabel(to)}');
+      nav.notify(
+        'اتحفظ: 1 ${unitLabel(from)} $name = ${formatAmount(factor)} ${unitLabel(to)}',
+      );
     }
   }
 

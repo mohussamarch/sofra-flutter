@@ -24,10 +24,11 @@ class FridgeMotion {
   /// Frames for [mode], or null when that lighting has not been rendered yet.
   static Future<FridgeMotion?> load(String mode) async {
     try {
-      final json =
-          jsonDecode(await rootBundle.loadString(fridgeMotionSidecar))
-              as Map<String, dynamic>;
-      final move = (json['cameraMoves'] as List).cast<Map<String, dynamic>>()
+      final json = jsonDecode(
+        await rootBundle.loadString(fridgeMotionSidecar),
+      ) as Map<String, dynamic>;
+      final move = (json['cameraMoves'] as List)
+          .cast<Map<String, dynamic>>()
           .firstWhere((m) => m['hotspot'] == 'fridge');
       final approach = (move['approachByMode'] as Map)[mode] as List?;
       final door = (move['doorByMode'] as Map)[mode] as List?;
@@ -36,7 +37,9 @@ class FridgeMotion {
       final frames = <Uint8List>[];
       for (final path in [...approach, ...door].cast<String>()) {
         final data = await rootBundle.load('$dir$path');
-        frames.add(data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes));
+        frames.add(
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
+        );
       }
       return FridgeMotion._(frames, approach.length);
     } catch (_) {
@@ -46,7 +49,11 @@ class FridgeMotion {
 
   /// Full-screen journey: approach and open, show the fridge's contents, then
   /// play back to the kitchen when the sheet closes.
-  Future<void> play(BuildContext context, {required Color top, required Color bottom}) {
+  Future<void> play(
+    BuildContext context, {
+    required Color top,
+    required Color bottom,
+  }) {
     final scope = SofraScope.of(context);
     return Navigator.of(context).push(
       PageRouteBuilder<void>(
@@ -66,7 +73,11 @@ class FridgeMotion {
 }
 
 class _FridgeJourney extends StatefulWidget {
-  const _FridgeJourney({required this.motion, required this.top, required this.bottom});
+  const _FridgeJourney({
+    required this.motion,
+    required this.top,
+    required this.bottom,
+  });
   final FridgeMotion motion;
   final Color top, bottom;
   @override
@@ -123,7 +134,10 @@ class _FridgeJourneyState extends State<_FridgeJourney> {
                 child: Opacity(
                   opacity: edge,
                   child: CustomPaint(
-                    painter: _FrameEdgeFade(top: widget.top, bottom: widget.bottom),
+                    painter: _FrameEdgeFade(
+                      top: widget.top,
+                      bottom: widget.bottom,
+                    ),
                   ),
                 ),
               ),
@@ -180,5 +194,6 @@ class _FrameEdgeFade extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_FrameEdgeFade old) => old.top != top || old.bottom != bottom;
+  bool shouldRepaint(_FrameEdgeFade old) =>
+      old.top != top || old.bottom != bottom;
 }

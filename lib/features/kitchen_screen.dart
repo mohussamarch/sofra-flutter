@@ -185,7 +185,13 @@ class ZoneStockSheet extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      countText(lots.length, 'حاجة', 'حاجتين', 'حاجات', empty: 'لسه فاضي'),
+                      countText(
+                        lots.length,
+                        'حاجة',
+                        'حاجتين',
+                        'حاجات',
+                        empty: 'لسه فاضي',
+                      ),
                       style: const TextStyle(color: Sofra.muted),
                     ),
                   ],
@@ -521,9 +527,10 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
   /// Older vocabularies without stockUnits still offer the basic measures.
   static const fallback = ['g', 'kg', 'ml', 'l', 'count'];
   late final List<String> units = {
-    for (final u in widget.entry.stockUnits.isEmpty
-        ? [widget.entry.defaultUnit, ...fallback]
-        : widget.entry.stockUnits)
+    for (final u
+        in widget.entry.stockUnits.isEmpty
+            ? [widget.entry.defaultUnit, ...fallback]
+            : widget.entry.stockUnits)
       Units.canonical(u),
   }.toList();
   late String unit = units.first;
@@ -563,7 +570,9 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
 
   void _fillWeight() {
     final m = _measure;
-    final w = m == null ? null : widget.controller.measureOf(widget.entry.id, unit, m);
+    final w = m == null
+        ? null
+        : widget.controller.measureOf(widget.entry.id, unit, m);
     weight.text = w == null ? '' : formatAmount(w);
   }
 
@@ -650,7 +659,8 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
                 decoration: InputDecoration(
                   labelText:
                       'كام ${_measure == 'g' ? 'جرام' : 'مل'} في الـ${c.unitName(id, unit)}؟ (اختياري)',
-                  helperText: 'من ميزانك أو المكتوب على العبوة. بيساعد في الوصفات.',
+                  helperText:
+                      'من ميزانك أو المكتوب على العبوة. بيساعد في الوصفات.',
                   suffixText: _measure == 'g' ? 'جم' : 'مل',
                   errorText: weightError,
                 ),

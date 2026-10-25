@@ -7,9 +7,10 @@ import '../ui/illustrations.dart';
 import 'common.dart';
 import 'onboarding_screen.dart';
 
+/// "بروفايلي": the household, its taste and allergies. App settings live in
+/// [SettingsScreen].
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key, this.signOut});
-  final Future<void> Function()? signOut;
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +72,6 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 12),
-              const CountryPicker(),
             ],
           ),
         ),
@@ -118,6 +117,30 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(height: 24),
+        DepthButton(
+          secondary: true,
+          label: 'راجع بيانات البيت',
+          onPressed: () => nav.editOnboarding(1),
+        ),
+      ],
+    );
+  }
+}
+
+/// "الإعدادات": country, motion, saving and the account.
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key, this.signOut});
+  final Future<void> Function()? signOut;
+
+  @override
+  Widget build(BuildContext context) {
+    final c = SofraScope.controllerOf(context);
+    final p = c.profile;
+    return ScreenBody(
+      children: [
+        const SectionTitle('البلد والعملة'),
+        const Surface(child: CountryPicker()),
         const SectionTitle('راحتك في التطبيق'),
         Surface(
           child: SwitchListTile.adaptive(
@@ -157,11 +180,6 @@ class ProfileScreen extends StatelessWidget {
             ),
           const SizedBox(height: 12),
         ],
-        DepthButton(
-          secondary: true,
-          label: 'راجع بيانات البيت',
-          onPressed: () => nav.editOnboarding(1),
-        ),
         const SizedBox(height: 22),
         const Center(
           child: Text(

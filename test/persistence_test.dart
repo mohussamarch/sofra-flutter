@@ -69,8 +69,8 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(app(await store.load()));
     await tester.pumpAndSettle();
-    expect(find.byKey(const ValueKey('nav-fridge')), findsOneWidget);
-    await tapKey(tester, 'open-home-settings');
+    expect(find.byKey(const ValueKey('circle-kitchen')), findsOneWidget);
+    await openCorner(tester, 'profile');
     expect(find.text('مريم'), findsWidgets);
     expect(jsonEncode(store.data), before);
     expect(tester.takeException(), isNull);
@@ -136,11 +136,11 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: SofraHome(
-          store: store,
-          recipes: await warmRecipes(tester),
-          readAsset: await warmAssets(tester),
-          showScene: false,
-        ),
+            store: store,
+            recipes: await warmRecipes(tester),
+            readAsset: await warmAssets(tester),
+            showScene: false,
+          ),
         ),
       );
       await tester.pumpAndSettle();
@@ -151,10 +151,10 @@ void main() {
       await tester.pumpAndSettle();
       await completeOnboarding(tester);
       expect(store.data!['country'], 'SA');
-      expect(find.byKey(const ValueKey('nav-profile')), findsNothing);
-      expect(find.byKey(const ValueKey('open-home-settings')), findsOneWidget);
+      expect(find.byKey(const ValueKey('circle-profile')), findsOneWidget);
+      await tapKey(tester, 'nav-table');
       expect(find.text('على سفرة اليوم'), findsOneWidget);
-      await tapKey(tester, 'open-home-settings');
+      await openCorner(tester, 'profile');
       expect(find.text('مريم'), findsWidgets);
     },
   );
