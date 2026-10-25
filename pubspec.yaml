@@ -39,6 +39,8 @@ dependencies:
   firebase_auth: ^6.7.0
   cloud_firestore: ^6.10.0
   shared_preferences: ^2.5.6
+  model_viewer_plus: ^1.10.0
+  webview_flutter: ^4.14.1
 
 dev_dependencies:
   flutter_test:
@@ -67,10 +69,10 @@ flutter:
   assets:
     - assets/scenes/kitchen/
     - assets/scenes/kitchen/spike-r14/
-    - assets/ui/
-    - assets/scenes/kitchen/moves/fridge/morning/
-    - assets/scenes/kitchen/moves/fridge/golden/
-    - assets/scenes/kitchen/moves/fridge/night/
+    - assets/spike3d/
+    - assets/scenes/kitchen/fridge-v2/cream/morning/
+    - assets/scenes/kitchen/fridge-v2/cream/golden/
+    - assets/scenes/kitchen/fridge-v2/cream/night/
     - recipes/data/
     - data/nutrition/
     - data/usda/
@@ -1154,11 +1156,6 @@ flutter:
           weight: 700
         - asset: assets/fonts/Tajawal-ExtraBold.ttf
           weight: 800
-    - family: Amiri
-      fonts:
-        - asset: assets/fonts/Amiri-Regular.ttf
-        - asset: assets/fonts/Amiri-Bold.ttf
-          weight: 700
     - family: ArefRuqaa
       fonts:
         - asset: assets/fonts/ArefRuqaa-Bold.ttf

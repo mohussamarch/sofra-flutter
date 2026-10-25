@@ -4,6 +4,7 @@ import '../data/recipe_repository.dart';
 import '../ui/design.dart';
 import '../ui/session_gate.dart';
 import 'home_shell.dart';
+import '../ui/phone_frame.dart';
 
 export 'home_shell.dart' show SofraHome;
 
@@ -25,8 +26,10 @@ class TabkhaApp extends StatelessWidget {
     debugShowCheckedModeBanner: false,
     title: 'سفرة',
     theme: _theme,
-    builder: (context, child) =>
-        Directionality(textDirection: TextDirection.rtl, child: child!),
+    builder: (context, child) => Directionality(
+      textDirection: TextDirection.rtl,
+      child: PhoneFrame(child: child!),
+    ),
     home: persistent
         ? SessionGate(
             builder: (store, data, signOut) => SofraHome(

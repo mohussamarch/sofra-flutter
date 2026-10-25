@@ -264,7 +264,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                   AppTab.profile => const ProfileScreen(),
                   AppTab.settings => SettingsScreen(signOut: widget.signOut),
                   AppTab.community => const CommunityScreen(),
-                  AppTab.style => const KitchenStyleScreen(),
+                  AppTab.style => KitchenStyleScreen(show3d: widget.showScene),
                 },
               },
             ),

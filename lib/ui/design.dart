@@ -522,7 +522,7 @@ class LiquidGlass extends StatelessWidget {
   }
 }
 
-/// Marks a subtree as drawn on aged recipe-book paper; cards soften to it.
+/// Marks a subtree as drawn on the recipe book's page; cards soften to it.
 class Paper extends InheritedWidget {
   const Paper({super.key, required super.child});
   static bool isOn(BuildContext context) =>
@@ -530,7 +530,7 @@ class Paper extends InheritedWidget {
   @override
   bool updateShouldNotify(Paper old) => false;
 
-  static const ink = Color(0xFF4A3A28);
+  static const ink = Color(0xFF3A2416);
   static const tone = Color(0xFFEBDDBF);
 }
 

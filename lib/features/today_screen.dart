@@ -96,7 +96,9 @@ class _TodayScreenState extends State<TodayScreen> {
   LightingSchedule schedule = LightingSchedule.provisional();
   Map<String, double> weights = const {'morning': 1};
   final motions = <String, Future<FridgeMotion?>>{};
-  FridgeMotion? _readyMotion;
+
+  /// Motions ready for the current lighting, by compartment.
+  final _readyMotion = <StorageZone, FridgeMotion>{};
 
   @override
   void initState() {
@@ -149,9 +151,21 @@ class _TodayScreenState extends State<TodayScreen> {
 
   void _prepareMotion() {
     final mode = _mode;
-    motions.putIfAbsent(mode, () => FridgeMotion.load(mode)).then((m) {
-      if (mounted && mode == _mode) _readyMotion = m;
-    });
+    for (final zone in const [StorageZone.fridge, StorageZone.freezer]) {
+      motions
+          .putIfAbsent(
+            '$mode/${zone.name}',
+            () => FridgeMotion.load(mode, zone),
+          )
+          .then((m) {
+            if (!mounted || mode != _mode) return;
+            if (m == null) {
+              _readyMotion.remove(zone);
+            } else {
+              _readyMotion[zone] = m;
+            }
+          });
+    }
   }
 
   void _onScene() => setState(() {});
@@ -236,9 +250,10 @@ class _TodayScreenState extends State<TodayScreen> {
   void _onHotspot(String id) {
     if (widget.mode != HomeMode.kitchen) return;
     switch (id) {
-      case 'fridge' when _readyMotion != null:
-        final (top, bottom) = _tone;
-        _readyMotion!.play(context, top: top, bottom: bottom);
+      case 'fridge' when _readyMotion[StorageZone.fridge] != null:
+        _readyMotion[StorageZone.fridge]!.play(context, background: _tone.$2);
+      case 'freezer' when _readyMotion[StorageZone.freezer] != null:
+        _readyMotion[StorageZone.freezer]!.play(context, background: _tone.$2);
       case 'pantry' || 'shelves':
         _openZone(StorageZone.pantry);
       case 'freezer':
@@ -423,7 +438,7 @@ class _TodayScreenState extends State<TodayScreen> {
               onDoorOpened: (_) => _openZone(StorageZone.fridge),
               shouldOpenDoor: (door) =>
                   widget.mode == HomeMode.kitchen &&
-                  !(door == 'fridge' && _readyMotion != null),
+                  !_readyMotion.keys.any((z) => z.name == door),
             ),
           )
         else if (sceneError != null || !widget.showScene)

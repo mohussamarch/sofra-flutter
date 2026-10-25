@@ -8,30 +8,37 @@ import '../app/scope.dart';
 import '../domain/models.dart';
 import '../scene/frame_player.dart';
 import '../ui/design.dart';
+import 'common.dart';
 import 'shelf_wheel.dart';
 
-/// Codex's r18 review sidecar: the camera turns to face the fridge in
-/// one-point perspective, then the door opens (`cameraMoves` from contract 1.1).
-const fridgeMotionSidecar = 'assets/scenes/kitchen/fridge-motion-spike.json';
+/// Codex's r19 review sidecar: separate fridge and freezer tracks per
+/// lighting, appliance-only RGBA frames (the kitchen is not in them), the
+/// camera closing in and the one door opening.
+const fridgeMotionSidecar = 'assets/scenes/kitchen/fridge-v2-review.json';
 
 class FridgeMotion {
-  FridgeMotion._(this.frames, this.approach);
+  FridgeMotion._(this.frames, this.zone);
 
   /// Approach frames then door frames, still compressed.
   final List<Uint8List> frames;
-  final int approach;
 
-  /// Frames for [mode], or null when that lighting has not been rendered yet.
-  static Future<FridgeMotion?> load(String mode) async {
+  /// Which compartment opens: [StorageZone.fridge] or [StorageZone.freezer].
+  final StorageZone zone;
+
+  /// Frames for [zone] in [mode] (cream model), or null when missing.
+  static Future<FridgeMotion?> load(String mode, StorageZone zone) async {
     try {
       final json = jsonDecode(
         await rootBundle.loadString(fridgeMotionSidecar),
       ) as Map<String, dynamic>;
-      final move = (json['cameraMoves'] as List)
+      final track = (json['tracks'] as List)
           .cast<Map<String, dynamic>>()
-          .firstWhere((m) => m['hotspot'] == 'fridge');
-      final approach = (move['approachByMode'] as Map)[mode] as List?;
-      final door = (move['doorByMode'] as Map)[mode] as List?;
+          .firstWhere(
+            (t) => t['model'] == 'cream' && t['compartment'] == zone.name,
+          );
+      final clip = (track['modes'] as Map)[mode] as Map?;
+      final approach = clip?['approach'] as List?;
+      final door = clip?['door'] as List?;
       if (approach == null || door == null) return null;
       const dir = 'assets/scenes/kitchen/';
       final frames = <Uint8List>[];
@@ -41,19 +48,15 @@ class FridgeMotion {
           data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
         );
       }
-      return FridgeMotion._(frames, approach.length);
+      return FridgeMotion._(frames, zone);
     } catch (_) {
       return null; // Missing or partial pack: the scene's own zoom is used.
     }
   }
 
-  /// Full-screen journey: approach and open, show the fridge's contents, then
-  /// play back to the kitchen when the sheet closes.
-  Future<void> play(
-    BuildContext context, {
-    required Color top,
-    required Color bottom,
-  }) {
+  /// Full-screen journey: approach and open over the page's dark tone, show
+  /// the compartment's shelves, then play back to the kitchen.
+  Future<void> play(BuildContext context, {required Color background}) {
     final scope = SofraScope.of(context);
     return Navigator.of(context).push(
       PageRouteBuilder<void>(
@@ -63,7 +66,7 @@ class FridgeMotion {
         pageBuilder: (_, _, _) => SofraScope(
           controller: scope.notifier!,
           nav: scope.nav,
-          child: _FridgeJourney(motion: this, top: top, bottom: bottom),
+          child: _FridgeJourney(motion: this, background: background),
         ),
         transitionsBuilder: (_, animation, _, child) =>
             FadeTransition(opacity: animation, child: child),
@@ -73,20 +76,15 @@ class FridgeMotion {
 }
 
 class _FridgeJourney extends StatefulWidget {
-  const _FridgeJourney({
-    required this.motion,
-    required this.top,
-    required this.bottom,
-  });
+  const _FridgeJourney({required this.motion, required this.background});
   final FridgeMotion motion;
-  final Color top, bottom;
+  final Color background;
   @override
   State<_FridgeJourney> createState() => _FridgeJourneyState();
 }
 
 class _FridgeJourneyState extends State<_FridgeJourney> {
   late int target = widget.motion.frames.length - 1;
-  int frame = 0;
   bool closing = false, shelves = false;
 
   Future<void> _arrived(int index) async {
@@ -107,16 +105,14 @@ class _FridgeJourneyState extends State<_FridgeJourney> {
   @override
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context);
-    // The first frames still show the render's backdrop; the page tone fades
-    // over it exactly like on the home screen, then lifts as the camera turns.
-    final edge = (1 - frame / 8).clamp(0.0, 1.0);
+    final zone = widget.motion.zone;
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, _) {
         if (!didPop) _close();
       },
       child: ColoredBox(
-        color: widget.bottom,
+        color: widget.background,
         child: Stack(
           fit: StackFit.expand,
           children: [
@@ -126,21 +122,8 @@ class _FridgeJourneyState extends State<_FridgeJourney> {
               decodeWidth: (media.size.width * media.devicePixelRatio)
                   .clamp(360, 1080)
                   .round(),
-              onFrame: (i) => setState(() => frame = i),
               onArrived: _arrived,
             ),
-            if (edge > 0)
-              IgnorePointer(
-                child: Opacity(
-                  opacity: edge,
-                  child: CustomPaint(
-                    painter: _FrameEdgeFade(
-                      top: widget.top,
-                      bottom: widget.bottom,
-                    ),
-                  ),
-                ),
-              ),
             IgnorePointer(
               ignoring: !shelves,
               child: AnimatedOpacity(
@@ -149,10 +132,10 @@ class _FridgeJourneyState extends State<_FridgeJourney> {
                 child: DecoratedBox(
                   decoration: const BoxDecoration(color: Color(0x40000000)),
                   child: ShelfWheel(
-                    title: 'التلاجة',
+                    title: zoneName(zone),
                     width: .66,
-                    items: zoneShelfItems(context, StorageZone.fridge),
-                    empty: 'التلاجة فاضية. ضيف اللي عندك وهنقولك تطبخ إيه.',
+                    items: zoneShelfItems(context, zone),
+                    empty: 'فاضي. ضيف اللي عندك وهنقولك تطبخ إيه.',
                     onAdd: () {
                       final nav = SofraScope.navOf(context);
                       Navigator.pop(context);
@@ -173,54 +156,4 @@ class _FridgeJourneyState extends State<_FridgeJourney> {
       ),
     );
   }
-}
-
-/// Feathered cut-out around the room in the move's first frame (1080×2340),
-/// mapped with the same cover fit as the frames.
-class _FrameEdgeFade extends CustomPainter {
-  _FrameEdgeFade({required this.top, required this.bottom});
-  final Color top, bottom;
-
-  static const _frame = Size(1080, 2340);
-  static const _room = [
-    Offset(538, 800),
-    Offset(945, 1020),
-    Offset(945, 1295),
-    Offset(538, 1515),
-    Offset(131, 1295),
-    Offset(131, 1020),
-  ];
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final k = size.width / _frame.width > size.height / _frame.height
-        ? size.width / _frame.width
-        : size.height / _frame.height;
-    final origin = Offset(
-      (size.width - _frame.width * k) / 2,
-      (size.height - _frame.height * k) / 2,
-    );
-    final bounds = Offset.zero & size;
-    canvas.saveLayer(bounds, Paint());
-    canvas.drawRect(
-      bounds,
-      Paint()
-        ..shader = LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [top, bottom],
-        ).createShader(bounds),
-    );
-    canvas.drawPath(
-      Path()..addPolygon([for (final p in _room) origin + p * k], true),
-      Paint()
-        ..blendMode = BlendMode.dstOut
-        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 36 * k),
-    );
-    canvas.restore();
-  }
-
-  @override
-  bool shouldRepaint(_FrameEdgeFade old) =>
-      old.top != top || old.bottom != bottom;
 }

@@ -123,19 +123,12 @@ class RecipeCard extends StatelessWidget {
   }
 }
 
-/// A recipe written into the old book: a sepia sketch in an inked oval, the
-/// name in book type and its details on one line, ruled off below.
+/// A recipe inside the cartoon book: a white card with the book's outline,
+/// the dish drawing in an outlined circle, the name and one line of details.
 class _PaperEntry extends StatelessWidget {
   const _PaperEntry({required this.row, required this.saved});
   final Map<String, dynamic> row;
   final bool saved;
-
-  static const _sepia = ColorFilter.matrix([
-    .393, .769, .189, 0, 0, //
-    .349, .686, .168, 0, 0, //
-    .272, .534, .131, 0, 0, //
-    0, 0, 0, .85, 0,
-  ]);
 
   @override
   Widget build(BuildContext context) {
@@ -147,104 +140,86 @@ class _PaperEntry extends StatelessWidget {
       minutesLabel(row['totalTime']),
       if (row['difficulty'] != null) '${row['difficulty']}',
     ].join(' · ');
-    return InkWell(
-      key: ValueKey('recipe-$id'),
-      onTap: () => nav.openRecipe(id),
-      borderRadius: BorderRadius.circular(Sofra.r12),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12),
-            child: Row(
-              children: [
-                Container(
-                  width: 78,
-                  height: 78,
-                  decoration: ShapeDecoration(
-                    shape: OvalBorder(
-                      side: BorderSide(
-                        color: Paper.ink.withValues(alpha: .55),
-                        width: 1.2,
-                      ),
+    final shape = RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(Sofra.r16),
+      side: const BorderSide(color: Paper.ink, width: 2),
+    );
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: PressScale(
+        child: Material(
+          color: Colors.white,
+          shape: shape,
+          child: InkWell(
+            key: ValueKey('recipe-$id'),
+            customBorder: shape,
+            onTap: () => nav.openRecipe(id),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 4, 10),
+              child: Row(
+                children: [
+                  Container(
+                    width: 64,
+                    height: 64,
+                    decoration: BoxDecoration(
+                      color: artKind(id).isEven
+                          ? const Color(0xFFFFE7B8)
+                          : const Color(0xFFDDEFD9),
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Paper.ink, width: 2),
+                    ),
+                    child: ClipOval(
+                      child: MealArt(kind: artKind(id), size: 60),
                     ),
                   ),
-                  padding: const EdgeInsets.all(5),
-                  child: ClipOval(
-                    child: ColorFiltered(
-                      colorFilter: _sepia,
-                      child: MealArt(kind: artKind(id), size: 68),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '${row['name']}',
-                        style: const TextStyle(
-                          fontFamily: 'Amiri',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 21,
-                          height: 1.3,
-                          color: Paper.ink,
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '${row['name']}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w800,
+                            fontSize: 17,
+                            color: Paper.ink,
+                          ),
                         ),
-                      ),
-                      Text(
-                        details,
-                        style: TextStyle(
-                          fontFamily: 'Amiri',
-                          fontSize: 14,
-                          color: Paper.ink.withValues(alpha: .7),
+                        const SizedBox(height: 2),
+                        Text(
+                          details,
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Paper.ink.withValues(alpha: .65),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  tooltip: saved ? 'إلغاء الحفظ' : 'حفظ الوصفة',
-                  onPressed: () => c.updateProfile(
-                    (p) => p.copyWith(
-                      saved: saved
-                          ? ({...p.saved}..remove(id))
-                          : {...p.saved, id},
+                      ],
                     ),
                   ),
-                  icon: Icon(
-                    saved
-                        ? Icons.bookmark_rounded
-                        : Icons.bookmark_border_rounded,
-                    color: saved ? const Color(0xFF8E2A22) : Paper.ink,
+                  IconButton(
+                    tooltip: saved ? 'إلغاء الحفظ' : 'حفظ الوصفة',
+                    onPressed: () => c.updateProfile(
+                      (p) => p.copyWith(
+                        saved: saved
+                            ? ({...p.saved}..remove(id))
+                            : {...p.saved, id},
+                      ),
+                    ),
+                    icon: Icon(
+                      saved
+                          ? Icons.bookmark_rounded
+                          : Icons.bookmark_border_rounded,
+                      color: saved ? const Color(0xFFD9534F) : Paper.ink,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-          const SizedBox(
-            height: 6,
-            width: double.infinity,
-            child: CustomPaint(painter: _InkRule()),
-          ),
-        ],
+        ),
       ),
     );
   }
-}
-
-/// A dotted pen line between entries.
-class _InkRule extends CustomPainter {
-  const _InkRule();
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = Paper.ink.withValues(alpha: .35);
-    for (var x = 0.0; x < size.width; x += 6) {
-      canvas.drawCircle(Offset(x, size.height / 2), .9, paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(_InkRule old) => false;
 }
 
 class RecipesScreen extends StatefulWidget {
