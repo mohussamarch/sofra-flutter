@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui' as ui show Image, PictureRecorder;
 import 'dart:ui' show lerpDouble;
 
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ import '../scene/scene_lighting.dart';
 import '../ui/design.dart';
 import 'fridge_motion.dart';
 import 'common.dart';
-import 'recipes_screen.dart';
+import 'recipe_book.dart';
 import 'shelf_wheel.dart';
 import 'table_screen.dart';
 
@@ -31,12 +32,41 @@ const _tones = {
   'night': (Color(0xFF26323F), Color(0xFF07090D)),
 };
 
-/// Empty corners of the 1440px render, where the four circles sit
-/// (start = right in Arabic).
-const _topStart = Offset(1250, 130);
-const _topEnd = Offset(190, 130);
-const _bottomStart = Offset(1250, 1250);
-const _bottomEnd = Offset(190, 1250);
+/// The room inside the 1440px render: its centre and width. The room is
+/// framed to the screen's width, the empty render margin falls off-screen.
+const _roomCenter = Offset(720, 695);
+const _roomWidth = 1204.0;
+const _roomHeight = 1175.0;
+
+/// The room's outline in the render (measured on the keyed base).
+const _roomOutline = [
+  Offset(720, 108),
+  Offset(1321, 455),
+  Offset(1321, 935),
+  Offset(720, 1283),
+  Offset(117, 935),
+  Offset(117, 455),
+];
+
+/// Soft mask following the room's outline, drawn a little inside it and
+/// blurred, so walls and floor dissolve before their cut edges.
+Future<ui.Image> _roomFadeMask() {
+  const size = 512;
+  const k = size / 1440;
+  final recorder = ui.PictureRecorder();
+  final canvas = Canvas(recorder);
+  final path = Path()
+    ..addPolygon([
+      for (final p in _roomOutline) (_roomCenter + (p - _roomCenter) * .9) * k,
+    ], true);
+  canvas.drawPath(
+    path,
+    Paint()
+      ..color = Colors.white
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, size * .03),
+  );
+  return recorder.endRecording().toImage(size, size);
+}
 
 /// Floor point the camera moves to for the table (render pixels).
 const _tableFocus = Offset(720, 1010);
@@ -74,8 +104,19 @@ class _TodayScreenState extends State<TodayScreen> {
     scene.addListener(_onScene);
     _tick();
     clock = Timer.periodic(const Duration(minutes: 1), (_) => _tick());
-    if (widget.showScene) _load();
+    if (widget.showScene) {
+      _load();
+      _roomFadeMask().then((m) {
+        if (mounted) {
+          setState(() => roomMask = m);
+        } else {
+          m.dispose();
+        }
+      });
+    }
   }
+
+  ui.Image? roomMask;
 
   Future<void> _load() async {
     try {
@@ -121,6 +162,7 @@ class _TodayScreenState extends State<TodayScreen> {
     scene.removeListener(_onScene);
     scene.dispose();
     loaded?.dispose();
+    roomMask?.dispose();
     super.dispose();
   }
 
@@ -217,27 +259,32 @@ class _TodayScreenState extends State<TodayScreen> {
     return LayoutBuilder(
       builder: (context, box) {
         final head = media.padding.top + 48;
-        final foot = media.padding.bottom + 96;
+        final foot = media.padding.bottom + 112;
         final room = box.maxHeight - head - foot;
-        final side = (box.maxWidth * .94).clamp(0.0, room * .9);
+        final fitWidth = box.maxWidth * 1.04 / _roomWidth;
+        final fitHeight = room / _roomHeight;
+        final k = fitWidth < fitHeight ? fitWidth : fitHeight;
+        final side = 1440 * k;
+        final centre = Offset(box.maxWidth / 2, head + room / 2);
         final stage = Rect.fromLTWH(
-          (box.maxWidth - side) / 2,
-          head + (room - side) / 2,
+          centre.dx - _roomCenter.dx * k,
+          centre.dy - _roomCenter.dy * k,
           side,
           side,
         );
-        final k = side / 1440;
-        Offset at(Offset canvas) => stage.topLeft + canvas * k;
         final kitchen = widget.mode == HomeMode.kitchen;
+        // Circles sit in the screen's corners, clear of the room.
         Widget circle(
-          Offset point,
+          bool top,
+          bool start,
           String key,
           IconData icon,
           String label,
           AppTab tab,
-        ) => Positioned(
-          left: at(point).dx - 40,
-          top: at(point).dy - 30,
+        ) => PositionedDirectional(
+          start: start ? 10 : null,
+          end: start ? null : 10,
+          top: top ? head : head + room - 78,
           width: 80,
           child: _CornerCircle(
             id: key,
@@ -274,7 +321,8 @@ class _TodayScreenState extends State<TodayScreen> {
                     final s = lerpDouble(1, 2.3, t)!;
                     final target = Offset.lerp(
                       focus,
-                      Offset(side / 2, side * .22),
+                      Offset(box.maxWidth / 2, head + room * .2) -
+                          stage.topLeft,
                       t,
                     )!;
                     return Transform(
@@ -289,28 +337,32 @@ class _TodayScreenState extends State<TodayScreen> {
                 ),
               ),
               circle(
-                _topStart,
+                true,
+                true,
                 'circle-profile',
                 Icons.person_outline_rounded,
                 'بروفايلي',
                 AppTab.profile,
               ),
               circle(
-                _topEnd,
+                true,
+                false,
                 'circle-settings',
                 Icons.settings_outlined,
                 'الإعدادات',
                 AppTab.settings,
               ),
               circle(
-                _bottomEnd,
+                false,
+                false,
                 'circle-community',
                 Icons.diversity_3_outlined,
                 'مجتمع سفرة',
                 AppTab.community,
               ),
               circle(
-                _bottomStart,
+                false,
+                true,
                 'circle-style',
                 Icons.format_paint_outlined,
                 'شكل المطبخ',
@@ -336,7 +388,7 @@ class _TodayScreenState extends State<TodayScreen> {
                   bottom: foot,
                   child: const _MealCards(),
                 ),
-              _RecipeBook(open: widget.mode == HomeMode.recipes, top: head),
+              RecipeBook(open: widget.mode == HomeMode.recipes, top: head),
             ],
           ),
         );
@@ -351,15 +403,17 @@ class _TodayScreenState extends State<TodayScreen> {
     return Stack(
       fit: StackFit.expand,
       children: [
-        if (s != null)
+        if (s != null && roomMask != null)
           ShaderMask(
             blendMode: BlendMode.dstIn,
-            shaderCallback: (rect) => const RadialGradient(
-              center: Alignment(0, .06),
-              radius: .5,
-              colors: [Colors.white, Colors.white, Colors.transparent],
-              stops: [0, .5, .94],
-            ).createShader(rect),
+            shaderCallback: (rect) => ImageShader(
+              roomMask!,
+              TileMode.clamp,
+              TileMode.clamp,
+              (Matrix4.translationValues(rect.left, rect.top, 0)
+                    ..scaleByDouble(rect.width / 512, rect.height / 512, 1, 1))
+                  .storage,
+            ),
             child: KitchenScene(
               scene: s,
               controller: scene,
@@ -594,102 +648,6 @@ class _MealCardsState extends State<_MealCards> {
       ],
     );
   }
-}
-
-/// The recipe book: an old sepia page that slides up over the kitchen.
-class _RecipeBook extends StatelessWidget {
-  const _RecipeBook({required this.open, required this.top});
-  final bool open;
-  final double top;
-  @override
-  Widget build(BuildContext context) {
-    final bottom = MediaQuery.paddingOf(context).bottom + 84;
-    return Positioned(
-      left: 10,
-      right: 10,
-      top: top,
-      bottom: bottom,
-      child: IgnorePointer(
-        ignoring: !open,
-        child: AnimatedSlide(
-          offset: open ? Offset.zero : const Offset(0, 1.15),
-          duration: Sofra.motion(context),
-          curve: Curves.easeOutCubic,
-          child: AnimatedOpacity(
-            opacity: open ? 1 : 0,
-            duration: Sofra.motion(context, true),
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Sofra.r22),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF3B2A18).withValues(alpha: .35),
-                    blurRadius: 30,
-                    offset: const Offset(0, 16),
-                  ),
-                ],
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(Sofra.r22),
-                child: CustomPaint(
-                  painter: const PaperPainter(),
-                  child: open
-                      ? const Paper(
-                          child: DefaultTextStyle(
-                            style: TextStyle(
-                              color: Paper.ink,
-                              fontFamily: 'Tajawal',
-                              fontSize: 15,
-                            ),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.fromLTRB(20, 18, 20, 4),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'كتاب الوصفات',
-                                        style: TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w800,
-                                        ),
-                                      ),
-                                      SizedBox(height: 6),
-                                      _Flourish(),
-                                    ],
-                                  ),
-                                ),
-                                Expanded(child: RecipesScreen()),
-                              ],
-                            ),
-                          ),
-                        )
-                      : const SizedBox.expand(),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-/// Thin ornamental rule under the book's title.
-class _Flourish extends StatelessWidget {
-  const _Flourish();
-  @override
-  Widget build(BuildContext context) => Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Container(width: 60, height: 1, color: Paper.ink.withValues(alpha: .35)),
-      const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8),
-        child: Icon(Icons.spa_outlined, size: 14, color: Paper.ink),
-      ),
-      Container(width: 60, height: 1, color: Paper.ink.withValues(alpha: .35)),
-    ],
-  );
 }
 
 class _PlansSheet extends StatelessWidget {

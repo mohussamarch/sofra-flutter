@@ -371,7 +371,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
               borderRadius: BorderRadius.circular(Sofra.r22),
               onTap: () => goTab(active ? AppTab.today : target),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8),
+                padding: const EdgeInsets.symmetric(vertical: 11),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -382,14 +382,14 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                       child: Icon(
                         active ? on : off,
                         color: active ? accent : ink,
-                        size: 24,
+                        size: 28,
                       ),
                     ),
-                    const SizedBox(height: 3),
+                    const SizedBox(height: 4),
                     Text(
                       label,
                       style: TextStyle(
-                        fontSize: 11,
+                        fontSize: 13,
                         fontWeight: active ? FontWeight.w800 : FontWeight.w600,
                         color: active ? accent : ink.withValues(alpha: .7),
                       ),
@@ -406,9 +406,9 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     final home = tab == AppTab.today;
     return Center(
       child: SizedBox(
-        width: 300,
+        width: (MediaQuery.sizeOf(context).width - 32).clamp(0, 440),
         child: LiquidGlass(
-          radius: 34,
+          radius: 40,
           dark: dark,
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
           child: Row(
@@ -433,11 +433,11 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                       customBorder: const CircleBorder(),
                       onTap: () => goTab(AppTab.today),
                       child: SizedBox.square(
-                        dimension: 56,
+                        dimension: 66,
                         child: Icon(
                           home ? Icons.home_rounded : Icons.home_outlined,
                           color: home ? Colors.white : Sofra.ink,
-                          size: 27,
+                          size: 31,
                           semanticLabel: 'المطبخ',
                         ),
                       ),
