@@ -179,6 +179,30 @@ export function cleanStages(name) {
   return {literal, light, states, desc, ground, canned, fresh, options: alternative ? options : []};
 }
 
+/**
+ * Units a person keeps an ingredient in at home: canonical units plus the
+ * Arabic container/piece words. Recipe measures (cup, spoon) never apply.
+ */
+export const stockUnitValues = Object.freeze([
+  'g', 'kg', 'ml', 'l', 'count',
+  'ربطة', 'علبة', 'كيس', 'زجاجة', 'برطمان', 'عبوة', 'رغيف', 'فص', 'رأس', 'قرن', 'عود',
+  'ورقة', 'كرتونة', 'باكو',
+]);
+const stockUnitSet = new Set(stockUnitValues);
+
+function validateStockUnits(e) {
+  const units = e.stockUnits;
+  need(Array.isArray(units) && units.length > 0, `${e.id}: stockUnits must be a non-empty list`);
+  for (const u of units) need(stockUnitSet.has(u), `${e.id}: bad stock unit ${u}`);
+  need(new Set(units).size === units.length, `${e.id}: duplicate stock unit`);
+  need(e.defaultUnit === units[0], `${e.id}: defaultUnit must equal stockUnits[0]`);
+  const counted = units.includes('count');
+  for (const k of ['pieceName', 'piecePlural']) {
+    if (counted) need(typeof e[k] === 'string' && e[k].trim(), `${e.id}: count needs ${k}`);
+    else need(e[k] === undefined, `${e.id}: ${k} without count`);
+  }
+}
+
 export function validateVocabulary(vocabulary) {
   need(Array.isArray(vocabulary) && vocabulary.length > 0, 'Vocabulary must be a non-empty array');
   const ids = new Set();
@@ -191,6 +215,7 @@ export function validateVocabulary(vocabulary) {
       need(typeof e[k] === 'string' && e[k].trim(), `${e.id}: missing ${k}`);
     }
     need(zones.has(e.zone), `${e.id}: bad zone ${e.zone}`);
+    validateStockUnits(e);
     need(Array.isArray(e.aliases), `${e.id}: aliases must be a list`);
     need(e.matchAliases === undefined || Array.isArray(e.matchAliases), `${e.id}: bad matchAliases`);
     need(
