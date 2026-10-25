@@ -14,9 +14,10 @@ import 'js_runner.dart';
 typedef KitchenPoint = ({double x, double y, double z});
 
 /// The Blender kitchen as a real-time model (`assets/spike3d/kitchen.glb`,
-/// exported by `tool/scene3d/export_glb.py`). Cabinet colours change live and
-/// the fridge opens in place, with no render per option. Lighting is the
-/// viewer's neutral environment, not the baked Cycles light yet.
+/// made by `tool/scene3d/bake_light.py`): the Cycles light of the render is
+/// baked into vertex colours, each material keeps its own colour, so cabinet
+/// colours still change live and the fridge opens in place, with no render per
+/// option. The baked light already holds the shading, hence no extra shadow.
 class Kitchen3D extends StatefulWidget {
   const Kitchen3D({
     super.key,
@@ -180,8 +181,8 @@ class _Kitchen3DState extends State<Kitchen3D> {
     disableZoom: !widget.zoom,
     interactionPrompt: InteractionPrompt.none,
     environmentImage: 'neutral',
-    exposure: 1.05,
-    shadowIntensity: .6,
+    exposure: 2.1,
+    shadowIntensity: 0,
     debugLogging: false,
     javascriptChannels: {
       JavascriptChannel(
