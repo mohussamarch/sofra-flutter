@@ -266,10 +266,10 @@ class _TodayScreenState extends State<TodayScreen> {
               ),
               circle(
                 _bottomStart,
-                'circle-kitchen',
-                Icons.kitchen_outlined,
-                'مطبخي',
-                AppTab.kitchen,
+                'circle-style',
+                Icons.format_paint_outlined,
+                'شكل المطبخ',
+                AppTab.style,
               ),
               Positioned(
                 top: media.padding.top,
@@ -318,8 +318,17 @@ class _TodayScreenState extends State<TodayScreen> {
                 widget.mode == HomeMode.kitchen &&
                 !(door == 'fridge' && _readyMotion != null),
           )
-        else if (sceneError != null)
-          const Center(child: Icon(Icons.kitchen_outlined, size: 64)),
+        else if (sceneError != null || !widget.showScene)
+          // No render to tap: the stock page is still one tap away.
+          Center(
+            child: IconButton.filledTonal(
+              key: const ValueKey('open-stock'),
+              iconSize: 48,
+              tooltip: 'خزين مطبخي',
+              onPressed: () => SofraScope.navOf(context).goTab(AppTab.kitchen),
+              icon: const Icon(Icons.kitchen_outlined),
+            ),
+          ),
       ],
     );
   }

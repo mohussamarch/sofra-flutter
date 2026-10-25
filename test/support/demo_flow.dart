@@ -60,6 +60,12 @@ Future<void> openCorner(WidgetTester tester, String circle) async {
   await tapKey(tester, 'circle-$circle');
 }
 
+/// The stock page, through the kitchen (no render in tests, so its stand-in).
+Future<void> openStock(WidgetTester tester) async {
+  await tapKey(tester, 'nav-today');
+  await tapKey(tester, 'open-stock');
+}
+
 Future<void> completeOnboarding(WidgetTester tester) async {
   await tapKey(tester, 'onboarding-next');
   await tester.enterText(find.byKey(const ValueKey('field-name')), 'مريم');
@@ -79,7 +85,7 @@ String stockQuantity(WidgetTester tester, String id) =>
 /// units or unmeasured, so only the onions are deducted.
 Future<void> exerciseDemoFlow(WidgetTester tester) async {
   await completeOnboarding(tester);
-  await openCorner(tester, 'kitchen');
+  await openStock(tester);
   await tapKey(tester, 'add-sample-stock');
   expect(stockQuantity(tester, 'rice'), contains('500'));
   expect(stockQuantity(tester, 'onion'), contains('2'));
@@ -99,7 +105,7 @@ Future<void> exerciseDemoFlow(WidgetTester tester) async {
   await tapKey(tester, 'plan-confirm');
 
   // Planning reserves no inventory.
-  await openCorner(tester, 'kitchen');
+  await openStock(tester);
   expect(stockQuantity(tester, 'onion'), contains('3'));
   await openCorner(tester, 'profile');
   expect(find.textContaining('مريم'), findsWidgets);

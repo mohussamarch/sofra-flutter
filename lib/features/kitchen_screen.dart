@@ -208,7 +208,20 @@ class ZoneStockSheet extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 4),
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: TextButton.icon(
+              key: const ValueKey('zone-all-stock'),
+              onPressed: () {
+                Navigator.pop(context);
+                nav.goTab(AppTab.kitchen);
+              },
+              icon: const Icon(Icons.inventory_2_outlined, size: 18),
+              label: const Text('كل الخزين'),
+            ),
+          ),
+          const SizedBox(height: 8),
           if (lots.isEmpty)
             const Surface(
               border: true,

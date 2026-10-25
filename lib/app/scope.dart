@@ -5,7 +5,16 @@ import 'sofra_controller.dart';
 
 /// today, recipes and table are the home kitchen's three modes; the others
 /// are pages opened from its corner circles.
-enum AppTab { today, kitchen, recipes, table, profile, settings, community }
+enum AppTab {
+  today,
+  kitchen,
+  recipes,
+  table,
+  profile,
+  settings,
+  community,
+  style,
+}
 
 /// Navigation the screens may request from the shell.
 abstract class SofraNav {

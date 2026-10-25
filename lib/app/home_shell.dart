@@ -6,6 +6,7 @@ import '../domain/kitchen_core.dart';
 import '../features/community_screen.dart';
 import '../features/cooking_screen.dart';
 import '../features/kitchen_screen.dart';
+import '../features/kitchen_style_screen.dart';
 import '../features/onboarding_screen.dart';
 import '../features/profile_screen.dart';
 import '../features/recipe_detail_screen.dart';
@@ -263,6 +264,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                   AppTab.profile => const ProfileScreen(),
                   AppTab.settings => SettingsScreen(signOut: widget.signOut),
                   AppTab.community => const CommunityScreen(),
+                  AppTab.style => const KitchenStyleScreen(),
                 },
               },
             ),
@@ -333,6 +335,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
             AppTab.profile => 'بروفايلي',
             AppTab.settings => 'الإعدادات',
             AppTab.community => 'مجتمع سفرة',
+            AppTab.style => 'شكل المطبخ',
             _ => '',
           }, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
         ],

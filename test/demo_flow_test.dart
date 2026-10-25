@@ -74,9 +74,10 @@ void main() {
     for (var i = 0; i < 5; i++) {
       await tapKey(tester, 'onboarding-next');
     }
-    for (final circle in ['kitchen', 'profile', 'settings', 'community']) {
+    for (final circle in ['style', 'profile', 'settings', 'community']) {
       await openCorner(tester, circle);
     }
+    await openStock(tester);
     for (final tab in ['recipes', 'table', 'today']) {
       await tapKey(tester, 'nav-$tab');
     }

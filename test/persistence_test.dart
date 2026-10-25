@@ -69,7 +69,7 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(app(await store.load()));
     await tester.pumpAndSettle();
-    expect(find.byKey(const ValueKey('circle-kitchen')), findsOneWidget);
+    expect(find.byKey(const ValueKey('circle-style')), findsOneWidget);
     await openCorner(tester, 'profile');
     expect(find.text('مريم'), findsWidgets);
     expect(jsonEncode(store.data), before);
