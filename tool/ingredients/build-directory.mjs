@@ -47,7 +47,8 @@ const quantityLead = new RegExp(
       'كوب', 'كوبان', 'كوبين', 'اكواب', 'رشه', 'رشتان', 'حبه', 'حبات', 'حبتان', 'حبتين',
       'فص', 'فصوص', 'فصين', 'قطعه', 'قطع', 'علبه', 'علب', 'كيلو', 'جرام', 'غرام', 'مل',
       'لتر', 'عودا', 'فصا', 'فصان', 'راس', 'رؤوس', 'حفنه', 'باقه', 'حزمه', 'ربطه', 'عود', 'اعواد', 'عودان', 'رطل', 'اونصه',
-      'شريحه', 'شرائح', 'نصف', 'ربع', 'قليل من', 'بعض',
+      'شريحه', 'شرائح', 'نصف', 'ربع', 'قليل من', 'بعض', 'انصاف', 'ارباع', 'اوتاد',
+      'اغصان', 'عرق', 'عروق', 'زهيرات', 'حبتا', 'حبتان', 'بضع', 'بضعه', 'من', 'رغيف', 'رغيفان',
     ].join('|') +
     ')(?: |$)',
 );
@@ -58,7 +59,10 @@ const purposeWords = new Set(
     'لسلق', 'لدهن', 'لفرك', 'لخلطه', 'لتمويج', 'لرش', 'لعجينه', 'لماء', 'لخفق',
     'لتذويب', 'لحشو', 'لتزيين', 'لتقديم', 'لقلي', 'لطهي', 'لعمل', 'لتحمير', 'لنقع',
     'لتغطيه', 'لتتبيل', 'لصوص', 'لصلصه', 'لعجن', 'لشربات', 'حسب', 'عند', 'اختياري',
-    'اختياريه', 'بالعظم', 'بدون', 'دون', 'المقدار',
+    'اختياريه', 'بالعظم', 'بدون', 'دون', 'المقدار', 'المصدر', 'يذكر', 'مكون', 'لكل',
+    'بحجم', 'بدرجه', 'بطول', 'بعرض', 'العدد', 'مع', 'يفضل', 'ويفضل', 'مثل', 'بكميه',
+    'في', 'الجزء', 'الاجزاء', 'بالجزاين', 'لا', 'ثم', 'منزوع', 'منزوعه', 'ومنزوع',
+    'ومنزوعه', 'والجلد', 'بمكبس', 'بالابعاد', 'يقسم', 'منزوعا', 'سريعا',
   ].map(normKey),
 );
 
@@ -74,6 +78,19 @@ const descriptorWords = new Set(
     'مجروش', 'مجروشه', 'مقلي', 'مقليه', 'مشوي', 'مشويه', 'ممزق', 'باليد', 'الي', 'او',
     'معصور', 'معصوره', 'منظف', 'منظفه', 'طازجا', 'مخفوق', 'مخفوقه', 'جيدا', 'قليلا',
     'مفرومان', 'مقطعتان', 'منخول', 'مفتت', 'مفتته', 'مقشور', 'مقشوره',
+    'بوصه', 'بوصات', 'بوصتين', 'بوصتان', 'سم', 'ارباعا', 'نصفين', 'مقسوم', 'مقسومه',
+    'شرائط', 'قطعا', 'دوائر', 'طوليه', 'طوليا', 'مائله', 'مائل', 'قطريا', 'مبروش',
+    'مبروشه', 'عضوي', 'عضويه', 'مكعبه',
+    'مجمد', 'مجمده', 'مذابه', 'مملح', 'مملحه', 'غير', 'ممتلئ', 'نحو',
+    'حوالي', 'الطازج', 'الطازجه', 'بجلده', 'بجلدها', 'بالجلد', 'رفيع', 'رفيعه',
+    'انصاف', 'مقطعه', 'مقطوع', 'مقطوعه',
+    'مصفاه', 'مسلوقه', 'مشرح', 'مشرحه', 'مخلي', 'مخليه',
+    'متساويه', 'متوسطتان', 'متوسطتين', 'كبيرتين', 'صغيرتين', 'صغيرات',
+    'مكعبات', 'شرائح', 'جيده', 'جيد', 'النوعيه', 'عاليه', 'الجوده', 'مفرومتان',
+    'مفرومتين', 'مبشورتان', 'مخفوقتان', 'مهروسان', 'متماسك', 'متماسكه', 'مضغوط',
+    'خفيف', 'خفيفه', 'بخفه', 'زهيرات', 'عيدان', 'عيدانا', 'ساده', 'مفروك', 'مفروكه',
+    'مقسمه', 'مقطعان', 'ورقي', 'عاديه', 'عادي', 'نيئ', 'نيئه', 'شمعيه', 'شمعي',
+    'دافئه', 'مفضل', 'اطوال', 'مسخن', 'مبشوران',
   ].map(normKey),
 );
 const descriptorPhrases = [
@@ -82,6 +99,11 @@ const descriptorPhrases = [
   'بدون عظم', 'درجه حراره الغرفه',
 ].map(normKey);
 const groundWords = new Set(['مطحون', 'مطحونه'].map(normKey));
+const stateWords = new Set(
+  ['طازج', 'طازجه', 'طازجا', 'مطحون', 'مطحونه', 'مفروم', 'مفرومه'].map(normKey),
+);
+// A bunch or sprigs of something is the fresh herb ("حزمة كزبرة").
+const freshLead = /^(?:حزمه|باقه|ربطه|اغصان|غصن|عرق|عروق|اوراق) /;
 
 // Amount words that never change which product a line names, wherever they sit.
 const amountWords = new Set(
@@ -90,6 +112,10 @@ const amountWords = new Set(
     'صغيرتان', 'كوب', 'اكواب', 'كوبان', 'واحد', 'واحده', 'نصف', 'ربع', 'ثلث', 'ونصف',
     'رشه', 'رطل', 'رطلان', 'ارطال', 'لتر', 'اونصه', 'اونصات', 'اضافي', 'اضافيه', '⁄',
     'ورقتان', 'تقريبا', 'فقط',
+    'اثنان', 'اثنين', 'ثلاث', 'ثلاثه', 'اربع', 'اربعه', 'خمس', 'خمسه', 'ست', 'سته',
+    'سبع', 'ثماني', 'عشر', 'حبتا', 'حبتان', 'حبتين', 'حبه', 'حبات', 'كميه', 'مقدار',
+    'ثمن', 'اقل', 'اكثر', 'حزمه', 'ربطه', 'باقه', 'حفنه', 'اوتاد', 'اغصان', 'عرق',
+    'عروق', 'قرون', 'كاس', 'ديسيلتر', 'سنتيلتر',
   ].map(normKey),
 );
 
@@ -138,12 +164,19 @@ export function cleanStages(name) {
   // otherwise the line offers two different products and stays unmatched.
   const words = desc.split(' ');
   const or = words.indexOf('او');
-  const alternative = or >= 0 && dropWords(words.slice(or + 1).join(' '), descriptorWords) !== '';
+  const options = or >= 0 ? desc.split(' او ').map((o) => dropWords(o, descriptorWords)) : [];
+  const alternative = or >= 0 && options.slice(1).some((o) => o !== '');
   desc = alternative ? '' : dropWords(desc, descriptorWords);
+  // The product name plus one stated form at a time ("كزبره طازجه").
+  const said = alternative ? [] : light.split(' ').filter((w) => stateWords.has(w));
+  const forms = new Set(said.map((w) => w.replace(/(?:ا|ه)?$/, 'ه')));
+  const states = desc ? [...forms].map((w) => `${desc} ${w}`) : [];
+  if (or >= 0 && !alternative && !desc) desc = options[0];
   const ground = desc && dropWords(desc, groundWords);
   // A leading "علبة" marks a canned product ("علبة طماطم مقشرة").
   const canned = /^(?:علبه|علب|علبتا|علبتان) /.test(literal);
-  return {literal, light, desc, ground, canned};
+  const fresh = freshLead.test(literal);
+  return {literal, light, states, desc, ground, canned, fresh, options: alternative ? options : []};
 }
 
 export function validateVocabulary(vocabulary) {
@@ -159,7 +192,12 @@ export function validateVocabulary(vocabulary) {
     }
     need(zones.has(e.zone), `${e.id}: bad zone ${e.zone}`);
     need(Array.isArray(e.aliases), `${e.id}: aliases must be a list`);
-    for (const term of [e.name, ...e.aliases]) {
+    need(e.matchAliases === undefined || Array.isArray(e.matchAliases), `${e.id}: bad matchAliases`);
+    need(
+      e.matchExcludeCuisines === undefined || (e.matchAliases && Array.isArray(e.matchExcludeCuisines)),
+      `${e.id}: matchExcludeCuisines needs matchAliases`,
+    );
+    for (const term of [e.name, ...e.aliases, ...(e.matchAliases ?? [])]) {
       const key = normKey(term);
       need(key, `${e.id}: empty alias`);
       const owner = keys.get(key);
@@ -173,14 +211,44 @@ export function validateVocabulary(vocabulary) {
 /** Category whose entries are the ground form, so "مطحون" may be dropped. */
 export const groundCategory = 'توابل';
 
-export function matchName(name, keys, categories) {
-  const {literal, light, desc, ground, canned} = cleanStages(name);
-  for (const stage of [literal, light, desc]) {
-    const id = stage && ((canned && keys.get(`${stage} معلبه`)) || keys.get(stage));
+/** Leading "ال" on a one-word name ("السكر"). */
+function withoutArticle(stage) {
+  return stage && !stage.includes(' ') && stage.startsWith('ال') && stage.length > 4
+    ? stage.slice(2)
+    : '';
+}
+
+/**
+ * [blocked] holds catalog-only alias keys that must not apply to this line
+ * (a regional word whose meaning differs in the line's cuisine).
+ */
+export function matchName(name, keys, categories, blocked = new Set()) {
+  const {literal, light, states, desc, ground, canned, fresh, options} = cleanStages(name);
+  const get = (k) => (k && !blocked.has(k) ? keys.get(k) : undefined);
+  for (const stage of [literal, light, ...states, desc, withoutArticle(desc)]) {
+    const id =
+      stage &&
+      ((canned && get(`${stage} معلبه`)) || (fresh && get(`${stage} طازجه`)) || get(stage));
     if (id) return id;
   }
-  const id = ground && ground !== desc ? keys.get(ground) : undefined;
+  if (options.length > 1) {
+    // Every option must resolve, and all to one entry.
+    const ids = new Set(options.map((o) => matchName(o, keys, categories, blocked)));
+    return ids.size === 1 && !ids.has(null) ? [...ids][0] : null;
+  }
+  const id = ground && ground !== desc ? get(ground) : undefined;
   return id && categories.get(id) === groundCategory ? id : null;
+}
+
+/** Alias key → cuisines where that catalog-only alias must not match. */
+export function cuisineBlocks(vocabulary) {
+  const blocks = new Map();
+  for (const e of vocabulary) {
+    for (const term of e.matchAliases ?? []) {
+      blocks.set(normKey(term), new Set(e.matchExcludeCuisines ?? []));
+    }
+  }
+  return blocks;
 }
 
 export async function loadActiveLines(read) {
@@ -195,7 +263,7 @@ export async function loadActiveLines(read) {
       if (!ids.has(recipe.id)) continue;
       for (const i of recipe.ingredients ?? []) {
         need(typeof i.id === 'string' && typeof i.name === 'string', `Bad line in ${recipe.id}`);
-        lines.push({id: i.id, name: i.name, recipe: recipe.id});
+        lines.push({id: i.id, name: i.name, recipe: recipe.id, cuisine: recipe.cuisine ?? null});
       }
     }
   }
@@ -219,6 +287,9 @@ export function buildDirectory(vocabularyText, lines) {
   const keys = validateVocabulary(vocabulary);
   const vocabIds = new Set(vocabulary.map((e) => e.id));
   const categories = new Map(vocabulary.map((e) => [e.id, e.category]));
+  const blocks = cuisineBlocks(vocabulary);
+  const blockedFor = (line) =>
+    new Set([...blocks].filter(([, cuisines]) => cuisines.has(line.cuisine)).map(([k]) => k));
   const byRaw = new Map();
   for (const line of lines) {
     if (!byRaw.has(line.id)) byRaw.set(line.id, []);
@@ -231,7 +302,9 @@ export function buildDirectory(vocabularyText, lines) {
       idMap[rawId] = rawId;
       continue;
     }
-    const targets = new Set(rawLines.map((l) => matchName(l.name, keys, categories)));
+    const targets = new Set(
+      rawLines.map((l) => matchName(l.name, keys, categories, blockedFor(l))),
+    );
     if (targets.size === 1 && !targets.has(null)) {
       idMap[rawId] = [...targets][0];
     } else {

@@ -40,7 +40,7 @@ void main() {
   test('vocabulary ids are unique and in range', () {
     final ids = directory.entries.map((e) => e.id).toList();
     expect(ids.toSet(), hasLength(ids.length));
-    expect(ids.length, inInclusiveRange(150, 250));
+    expect(ids.length, inInclusiveRange(150, 400));
   });
 
   test('no name or alias is shared by two entries', () {
