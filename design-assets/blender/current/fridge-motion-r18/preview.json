@@ -1,0 +1,378 @@
+{
+  "revision": "r18-fridge-motion-review",
+  "approved": false,
+  "frameSize": [
+    1080,
+    2340
+  ],
+  "approachCount": 30,
+  "doorCount": 14,
+  "timingMs": {
+    "approach": 60,
+    "door": 75
+  },
+  "modes": {
+    "morning": {
+      "approach": [
+        "frames/morning/approach_000.webp",
+        "frames/morning/approach_001.webp",
+        "frames/morning/approach_002.webp",
+        "frames/morning/approach_003.webp",
+        "frames/morning/approach_004.webp",
+        "frames/morning/approach_005.webp",
+        "frames/morning/approach_006.webp",
+        "frames/morning/approach_007.webp",
+        "frames/morning/approach_008.webp",
+        "frames/morning/approach_009.webp",
+        "frames/morning/approach_010.webp",
+        "frames/morning/approach_011.webp",
+        "frames/morning/approach_012.webp",
+        "frames/morning/approach_013.webp",
+        "frames/morning/approach_014.webp",
+        "frames/morning/approach_015.webp",
+        "frames/morning/approach_016.webp",
+        "frames/morning/approach_017.webp",
+        "frames/morning/approach_018.webp",
+        "frames/morning/approach_019.webp",
+        "frames/morning/approach_020.webp",
+        "frames/morning/approach_021.webp",
+        "frames/morning/approach_022.webp",
+        "frames/morning/approach_023.webp",
+        "frames/morning/approach_024.webp",
+        "frames/morning/approach_025.webp",
+        "frames/morning/approach_026.webp",
+        "frames/morning/approach_027.webp",
+        "frames/morning/approach_028.webp",
+        "frames/morning/approach_029.webp"
+      ],
+      "door": [
+        "frames/morning/door_000.webp",
+        "frames/morning/door_001.webp",
+        "frames/morning/door_002.webp",
+        "frames/morning/door_003.webp",
+        "frames/morning/door_004.webp",
+        "frames/morning/door_005.webp",
+        "frames/morning/door_006.webp",
+        "frames/morning/door_007.webp",
+        "frames/morning/door_008.webp",
+        "frames/morning/door_009.webp",
+        "frames/morning/door_010.webp",
+        "frames/morning/door_011.webp",
+        "frames/morning/door_012.webp",
+        "frames/morning/door_013.webp"
+      ]
+    },
+    "golden": {
+      "approach": [
+        "frames/golden/approach_000.webp",
+        "frames/golden/approach_001.webp",
+        "frames/golden/approach_002.webp",
+        "frames/golden/approach_003.webp",
+        "frames/golden/approach_004.webp",
+        "frames/golden/approach_005.webp",
+        "frames/golden/approach_006.webp",
+        "frames/golden/approach_007.webp",
+        "frames/golden/approach_008.webp",
+        "frames/golden/approach_009.webp",
+        "frames/golden/approach_010.webp",
+        "frames/golden/approach_011.webp",
+        "frames/golden/approach_012.webp",
+        "frames/golden/approach_013.webp",
+        "frames/golden/approach_014.webp",
+        "frames/golden/approach_015.webp",
+        "frames/golden/approach_016.webp",
+        "frames/golden/approach_017.webp",
+        "frames/golden/approach_018.webp",
+        "frames/golden/approach_019.webp",
+        "frames/golden/approach_020.webp",
+        "frames/golden/approach_021.webp",
+        "frames/golden/approach_022.webp",
+        "frames/golden/approach_023.webp",
+        "frames/golden/approach_024.webp",
+        "frames/golden/approach_025.webp",
+        "frames/golden/approach_026.webp",
+        "frames/golden/approach_027.webp",
+        "frames/golden/approach_028.webp",
+        "frames/golden/approach_029.webp"
+      ],
+      "door": [
+        "frames/golden/door_000.webp",
+        "frames/golden/door_001.webp",
+        "frames/golden/door_002.webp",
+        "frames/golden/door_003.webp",
+        "frames/golden/door_004.webp",
+        "frames/golden/door_005.webp",
+        "frames/golden/door_006.webp",
+        "frames/golden/door_007.webp",
+        "frames/golden/door_008.webp",
+        "frames/golden/door_009.webp",
+        "frames/golden/door_010.webp",
+        "frames/golden/door_011.webp",
+        "frames/golden/door_012.webp",
+        "frames/golden/door_013.webp"
+      ]
+    },
+    "night": {
+      "approach": [
+        "frames/night/approach_000.webp",
+        "frames/night/approach_001.webp",
+        "frames/night/approach_002.webp",
+        "frames/night/approach_003.webp",
+        "frames/night/approach_004.webp",
+        "frames/night/approach_005.webp",
+        "frames/night/approach_006.webp",
+        "frames/night/approach_007.webp",
+        "frames/night/approach_008.webp",
+        "frames/night/approach_009.webp",
+        "frames/night/approach_010.webp",
+        "frames/night/approach_011.webp",
+        "frames/night/approach_012.webp",
+        "frames/night/approach_013.webp",
+        "frames/night/approach_014.webp",
+        "frames/night/approach_015.webp",
+        "frames/night/approach_016.webp",
+        "frames/night/approach_017.webp",
+        "frames/night/approach_018.webp",
+        "frames/night/approach_019.webp",
+        "frames/night/approach_020.webp",
+        "frames/night/approach_021.webp",
+        "frames/night/approach_022.webp",
+        "frames/night/approach_023.webp",
+        "frames/night/approach_024.webp",
+        "frames/night/approach_025.webp",
+        "frames/night/approach_026.webp",
+        "frames/night/approach_027.webp",
+        "frames/night/approach_028.webp",
+        "frames/night/approach_029.webp"
+      ],
+      "door": [
+        "frames/night/door_000.webp",
+        "frames/night/door_001.webp",
+        "frames/night/door_002.webp",
+        "frames/night/door_003.webp",
+        "frames/night/door_004.webp",
+        "frames/night/door_005.webp",
+        "frames/night/door_006.webp",
+        "frames/night/door_007.webp",
+        "frames/night/door_008.webp",
+        "frames/night/door_009.webp",
+        "frames/night/door_010.webp",
+        "frames/night/door_011.webp",
+        "frames/night/door_012.webp",
+        "frames/night/door_013.webp"
+      ]
+    }
+  },
+  "shelves": {
+    "canvas": [
+      1080,
+      2340
+    ],
+    "coordinateOrigin": "top-left pixels",
+    "rows": [
+      {
+        "id": "produce",
+        "corners": [
+          [
+            274.58,
+            1554.48
+          ],
+          [
+            805.42,
+            1554.48
+          ],
+          [
+            805.42,
+            1713.731
+          ],
+          [
+            274.58,
+            1713.731
+          ]
+        ],
+        "anchors": [
+          [
+            335.248,
+            1675.814
+          ],
+          [
+            471.749,
+            1675.814
+          ],
+          [
+            608.251,
+            1675.814
+          ],
+          [
+            744.752,
+            1675.814
+          ]
+        ],
+        "compartment": "fridge"
+      },
+      {
+        "id": "lower",
+        "corners": [
+          [
+            274.58,
+            1289.06
+          ],
+          [
+            805.42,
+            1289.06
+          ],
+          [
+            805.42,
+            1505.187
+          ],
+          [
+            274.58,
+            1505.187
+          ]
+        ],
+        "anchors": [
+          [
+            335.248,
+            1467.27
+          ],
+          [
+            471.749,
+            1467.27
+          ],
+          [
+            608.251,
+            1467.27
+          ],
+          [
+            744.752,
+            1467.27
+          ]
+        ],
+        "compartment": "fridge"
+      },
+      {
+        "id": "middle",
+        "corners": [
+          [
+            274.58,
+            1031.224
+          ],
+          [
+            805.42,
+            1031.224
+          ],
+          [
+            805.42,
+            1239.768
+          ],
+          [
+            274.58,
+            1239.768
+          ]
+        ],
+        "anchors": [
+          [
+            335.248,
+            1201.851
+          ],
+          [
+            471.749,
+            1201.851
+          ],
+          [
+            608.251,
+            1201.851
+          ],
+          [
+            744.752,
+            1201.851
+          ]
+        ],
+        "compartment": "fridge"
+      },
+      {
+        "id": "upper",
+        "corners": [
+          [
+            274.58,
+            811.305
+          ],
+          [
+            805.42,
+            811.305
+          ],
+          [
+            805.42,
+            981.932
+          ],
+          [
+            274.58,
+            981.932
+          ]
+        ],
+        "anchors": [
+          [
+            335.248,
+            944.014
+          ],
+          [
+            471.749,
+            944.014
+          ],
+          [
+            608.251,
+            944.014
+          ],
+          [
+            744.752,
+            944.014
+          ]
+        ],
+        "compartment": "fridge"
+      },
+      {
+        "id": "freezer",
+        "corners": [
+          [
+            274.58,
+            325.966
+          ],
+          [
+            805.42,
+            325.966
+          ],
+          [
+            805.42,
+            712.72
+          ],
+          [
+            274.58,
+            712.72
+          ]
+        ],
+        "anchors": [
+          [
+            335.248,
+            674.803
+          ],
+          [
+            471.749,
+            674.803
+          ],
+          [
+            608.251,
+            674.803
+          ],
+          [
+            744.752,
+            674.803
+          ]
+        ],
+        "compartment": "freezer"
+      }
+    ],
+    "inventoryBaked": false,
+    "bottomUiReserveFraction": 0.18
+  },
+  "webpQuality": 80
+}

@@ -1,0 +1,57 @@
+{
+  "result": "FRIDGE_MOTION_PASS",
+  "nativeFrames": 132,
+  "modes": [
+    "morning",
+    "golden",
+    "night"
+  ],
+  "dimensions": [
+    1080,
+    2340
+  ],
+  "masterFiles": 3,
+  "canonicalManifestUnchanged": true,
+  "emptyInventory": true,
+  "nativeGeometryAlpha": true,
+  "transparentFrameCount": 132,
+  "matchingTransparentBases": 3,
+  "baseDimensions": [
+    1080,
+    1080
+  ],
+  "cameraMatricesAligned": true,
+  "shelfCoordinatesAligned": true,
+  "sourceHashesMatch": true,
+  "maximumFrameBytes": 69758,
+  "totalBytes": 5748552,
+  "continuity": [
+    {
+      "mode": "morning",
+      "maximumMeanPixelChange": 22.905,
+      "approachDoorSeamExact": true
+    },
+    {
+      "mode": "golden",
+      "maximumMeanPixelChange": 26.016,
+      "approachDoorSeamExact": true
+    },
+    {
+      "mode": "night",
+      "maximumMeanPixelChange": 20.146,
+      "approachDoorSeamExact": true
+    }
+  ],
+  "budget": {
+    "combinedCoreTargetBytes": 4000000,
+    "existingSpikeBytes": 701633,
+    "withinCombinedCoreTarget": false,
+    "requiresRuntimeBudgetDecision": false,
+    "motionExcludedFromCoreBudget": true,
+    "deferredLoadingRequired": true,
+    "decisionEvidence": "Claude handoff C2C-004: motion excluded from4MB;one mode loaded on demand"
+  },
+  "visualApproval": false,
+  "runtimeIntegrated": false,
+  "deviceTested": false
+}

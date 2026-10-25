@@ -1,0 +1,1024 @@
+{
+  "schema": "sofra.scene.motion-review/1",
+  "sceneId": "kitchen",
+  "revision": "r18-fridge-motion-review",
+  "approved": false,
+  "cameraMoves": [
+    {
+      "id": "fridgeApproach",
+      "hotspot": "fridge",
+      "frameSize": [
+        1080,
+        2340
+      ],
+      "approachByMode": {
+        "morning": [
+          "moves/fridge/morning/approach_000.webp",
+          "moves/fridge/morning/approach_001.webp",
+          "moves/fridge/morning/approach_002.webp",
+          "moves/fridge/morning/approach_003.webp",
+          "moves/fridge/morning/approach_004.webp",
+          "moves/fridge/morning/approach_005.webp",
+          "moves/fridge/morning/approach_006.webp",
+          "moves/fridge/morning/approach_007.webp",
+          "moves/fridge/morning/approach_008.webp",
+          "moves/fridge/morning/approach_009.webp",
+          "moves/fridge/morning/approach_010.webp",
+          "moves/fridge/morning/approach_011.webp",
+          "moves/fridge/morning/approach_012.webp",
+          "moves/fridge/morning/approach_013.webp",
+          "moves/fridge/morning/approach_014.webp",
+          "moves/fridge/morning/approach_015.webp",
+          "moves/fridge/morning/approach_016.webp",
+          "moves/fridge/morning/approach_017.webp",
+          "moves/fridge/morning/approach_018.webp",
+          "moves/fridge/morning/approach_019.webp",
+          "moves/fridge/morning/approach_020.webp",
+          "moves/fridge/morning/approach_021.webp",
+          "moves/fridge/morning/approach_022.webp",
+          "moves/fridge/morning/approach_023.webp",
+          "moves/fridge/morning/approach_024.webp",
+          "moves/fridge/morning/approach_025.webp",
+          "moves/fridge/morning/approach_026.webp",
+          "moves/fridge/morning/approach_027.webp",
+          "moves/fridge/morning/approach_028.webp",
+          "moves/fridge/morning/approach_029.webp"
+        ],
+        "golden": [
+          "moves/fridge/golden/approach_000.webp",
+          "moves/fridge/golden/approach_001.webp",
+          "moves/fridge/golden/approach_002.webp",
+          "moves/fridge/golden/approach_003.webp",
+          "moves/fridge/golden/approach_004.webp",
+          "moves/fridge/golden/approach_005.webp",
+          "moves/fridge/golden/approach_006.webp",
+          "moves/fridge/golden/approach_007.webp",
+          "moves/fridge/golden/approach_008.webp",
+          "moves/fridge/golden/approach_009.webp",
+          "moves/fridge/golden/approach_010.webp",
+          "moves/fridge/golden/approach_011.webp",
+          "moves/fridge/golden/approach_012.webp",
+          "moves/fridge/golden/approach_013.webp",
+          "moves/fridge/golden/approach_014.webp",
+          "moves/fridge/golden/approach_015.webp",
+          "moves/fridge/golden/approach_016.webp",
+          "moves/fridge/golden/approach_017.webp",
+          "moves/fridge/golden/approach_018.webp",
+          "moves/fridge/golden/approach_019.webp",
+          "moves/fridge/golden/approach_020.webp",
+          "moves/fridge/golden/approach_021.webp",
+          "moves/fridge/golden/approach_022.webp",
+          "moves/fridge/golden/approach_023.webp",
+          "moves/fridge/golden/approach_024.webp",
+          "moves/fridge/golden/approach_025.webp",
+          "moves/fridge/golden/approach_026.webp",
+          "moves/fridge/golden/approach_027.webp",
+          "moves/fridge/golden/approach_028.webp",
+          "moves/fridge/golden/approach_029.webp"
+        ],
+        "night": [
+          "moves/fridge/night/approach_000.webp",
+          "moves/fridge/night/approach_001.webp",
+          "moves/fridge/night/approach_002.webp",
+          "moves/fridge/night/approach_003.webp",
+          "moves/fridge/night/approach_004.webp",
+          "moves/fridge/night/approach_005.webp",
+          "moves/fridge/night/approach_006.webp",
+          "moves/fridge/night/approach_007.webp",
+          "moves/fridge/night/approach_008.webp",
+          "moves/fridge/night/approach_009.webp",
+          "moves/fridge/night/approach_010.webp",
+          "moves/fridge/night/approach_011.webp",
+          "moves/fridge/night/approach_012.webp",
+          "moves/fridge/night/approach_013.webp",
+          "moves/fridge/night/approach_014.webp",
+          "moves/fridge/night/approach_015.webp",
+          "moves/fridge/night/approach_016.webp",
+          "moves/fridge/night/approach_017.webp",
+          "moves/fridge/night/approach_018.webp",
+          "moves/fridge/night/approach_019.webp",
+          "moves/fridge/night/approach_020.webp",
+          "moves/fridge/night/approach_021.webp",
+          "moves/fridge/night/approach_022.webp",
+          "moves/fridge/night/approach_023.webp",
+          "moves/fridge/night/approach_024.webp",
+          "moves/fridge/night/approach_025.webp",
+          "moves/fridge/night/approach_026.webp",
+          "moves/fridge/night/approach_027.webp",
+          "moves/fridge/night/approach_028.webp",
+          "moves/fridge/night/approach_029.webp"
+        ]
+      },
+      "doorByMode": {
+        "morning": [
+          "moves/fridge/morning/door_000.webp",
+          "moves/fridge/morning/door_001.webp",
+          "moves/fridge/morning/door_002.webp",
+          "moves/fridge/morning/door_003.webp",
+          "moves/fridge/morning/door_004.webp",
+          "moves/fridge/morning/door_005.webp",
+          "moves/fridge/morning/door_006.webp",
+          "moves/fridge/morning/door_007.webp",
+          "moves/fridge/morning/door_008.webp",
+          "moves/fridge/morning/door_009.webp",
+          "moves/fridge/morning/door_010.webp",
+          "moves/fridge/morning/door_011.webp",
+          "moves/fridge/morning/door_012.webp",
+          "moves/fridge/morning/door_013.webp"
+        ],
+        "golden": [
+          "moves/fridge/golden/door_000.webp",
+          "moves/fridge/golden/door_001.webp",
+          "moves/fridge/golden/door_002.webp",
+          "moves/fridge/golden/door_003.webp",
+          "moves/fridge/golden/door_004.webp",
+          "moves/fridge/golden/door_005.webp",
+          "moves/fridge/golden/door_006.webp",
+          "moves/fridge/golden/door_007.webp",
+          "moves/fridge/golden/door_008.webp",
+          "moves/fridge/golden/door_009.webp",
+          "moves/fridge/golden/door_010.webp",
+          "moves/fridge/golden/door_011.webp",
+          "moves/fridge/golden/door_012.webp",
+          "moves/fridge/golden/door_013.webp"
+        ],
+        "night": [
+          "moves/fridge/night/door_000.webp",
+          "moves/fridge/night/door_001.webp",
+          "moves/fridge/night/door_002.webp",
+          "moves/fridge/night/door_003.webp",
+          "moves/fridge/night/door_004.webp",
+          "moves/fridge/night/door_005.webp",
+          "moves/fridge/night/door_006.webp",
+          "moves/fridge/night/door_007.webp",
+          "moves/fridge/night/door_008.webp",
+          "moves/fridge/night/door_009.webp",
+          "moves/fridge/night/door_010.webp",
+          "moves/fridge/night/door_011.webp",
+          "moves/fridge/night/door_012.webp",
+          "moves/fridge/night/door_013.webp"
+        ]
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "moves/fridge/morning/approach_000.webp",
+      "bytes": 47918,
+      "sha256": "4e1bacf569a5f47ca6e2739e4bdc35427f60d6c67045c1a2c9255cc889ce303f",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_001.webp",
+      "bytes": 48398,
+      "sha256": "7c62d0c931d5bbf3f94b2faa51d9c227a31d781219dafa09aaa896b9cfadebbd",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_002.webp",
+      "bytes": 48734,
+      "sha256": "30099ad9d35af5f94c352e4acedb3cf15acfc3505afef7e1b41d94cddbea2771",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_003.webp",
+      "bytes": 49942,
+      "sha256": "ec68278f6ba2469c956a9b89d7e2e6b710a30a5f8d255a519ea7c45d37fb280d",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_004.webp",
+      "bytes": 51826,
+      "sha256": "698b1457a5939c58d2d27040e383e0e619a15a53bbe42f52d601927d6bade6c6",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_005.webp",
+      "bytes": 53918,
+      "sha256": "a9e99120a8c92561e0575f3ee7379295d726871bfb4f8fc5d1f0860a031eec3b",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_006.webp",
+      "bytes": 55926,
+      "sha256": "1f8b9f28a474e354ddcd23474d85e67fe65e17f0c8bdc58ae8abcb197324033c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_007.webp",
+      "bytes": 59158,
+      "sha256": "7f79ad005ad0925e83556c1baaab5e7461348a5d7828f3232013f55225c41132",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_008.webp",
+      "bytes": 61514,
+      "sha256": "60a851c237e6706a1d9d027ac48159784abe2c12f34d122587cebd2f7e454791",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_009.webp",
+      "bytes": 65664,
+      "sha256": "124c55a9ac36f36334dd2b31eebfd094a35afb4d0ac63a9e6b3ddbdea868f1cc",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_010.webp",
+      "bytes": 68966,
+      "sha256": "3ea7a54f6f7d712de87b07b81f5c19df32d89bf9f21538fc19fb6d937be856b8",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_011.webp",
+      "bytes": 68688,
+      "sha256": "6f1b3687d1b2ebe08a4bffc7e71f07f3dedc28876ec4538cfc58a14b4842d05e",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_012.webp",
+      "bytes": 67856,
+      "sha256": "b6db41edf5f7331ceb9d02bf90a3c1546c0c5630704718e349b9b08b57b42829",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_013.webp",
+      "bytes": 66040,
+      "sha256": "55c6c81b4456cff7ddd7e2b57f896eb5f69309920c996f1f1b1f0761ee64caad",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_014.webp",
+      "bytes": 65982,
+      "sha256": "fccb7839dec72805917828bfc5d7dfe02c658e6028226b6478e08ccd23f1119c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_015.webp",
+      "bytes": 65494,
+      "sha256": "62227f4e55e60f5bfb4036c568b6d6e139098b8092de0a9b2f8dd87075668ee7",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_016.webp",
+      "bytes": 65988,
+      "sha256": "3ec91ba84f51cfb90bf2adef399cbce0e60b9a9d683cf3e9fdec74b00f950a5a",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_017.webp",
+      "bytes": 65648,
+      "sha256": "82a758e9a254fd317e1374918b8e5fd7214c192e5562e85db74ed2b987ef8805",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_018.webp",
+      "bytes": 58144,
+      "sha256": "ed6203e728fe3e6af6cff7fd4feba03e6e823ec2f42a2a06c6540099f12de034",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_019.webp",
+      "bytes": 50216,
+      "sha256": "214ee5a6d75d4244b3cb7b37c9b79549e65cd650f4286dbc7b18077e14614cf3",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_020.webp",
+      "bytes": 45512,
+      "sha256": "a9320133cabd6d70b234d1d3ec8d49ddc0038f6fcf63ea97ead1516de8c2a3ac",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_021.webp",
+      "bytes": 42110,
+      "sha256": "5fcc1f02fa588ca0ff64d9a121608f450ecfcb64281128c07989145a4b49a26d",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_022.webp",
+      "bytes": 39034,
+      "sha256": "b15d139a474000734612280e9c4481ebdde0834e1d5bc4186e985559192079a5",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_023.webp",
+      "bytes": 38006,
+      "sha256": "0c8730f0f8e89c5b0e61e6c397ee90be4ab0f91b9021e4c900435dfd028a29c5",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_024.webp",
+      "bytes": 35206,
+      "sha256": "9d83025880cf6331b3998cee1dc0b05571d82d7e29ca22de42b1e15ebfe23b95",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_025.webp",
+      "bytes": 32038,
+      "sha256": "fc2462bff572bab7996b8d82dffd8b84bfe5ae78c6b58840c211fa5ec3ebff84",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_026.webp",
+      "bytes": 30018,
+      "sha256": "390a5b81559bbc1ed2d2e3c4099fd15a2b1ac53249b18f84fb57431a35527803",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_027.webp",
+      "bytes": 30356,
+      "sha256": "729ea19b3b76b4c301d3ed6664bd64e5f683d5ea409f768c846a723d23e8e60b",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_028.webp",
+      "bytes": 29282,
+      "sha256": "ab66d671783b60f5aaa418175473fb94b6071a7b962fd2018ad4c9060ff20188",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/approach_029.webp",
+      "bytes": 29104,
+      "sha256": "f1ba8be19142b8ca01d1dd951c78d78644f2978ac40c774178d8dd8fa9728f73",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_000.webp",
+      "bytes": 29104,
+      "sha256": "f1ba8be19142b8ca01d1dd951c78d78644f2978ac40c774178d8dd8fa9728f73",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_001.webp",
+      "bytes": 29706,
+      "sha256": "c9be7a50ec6ef4be7f092c0c5d329a58d1cde5bd1f3aa3446c69662364a9b257",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_002.webp",
+      "bytes": 30646,
+      "sha256": "299a84e01084af0060ae01749799c7c4440a2d7f9ebf6f14e45577ab2c584380",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_003.webp",
+      "bytes": 30644,
+      "sha256": "629d31e07d312625e9445ee57747043d6c5e770a10c2fb903d752b6ce2412fe4",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_004.webp",
+      "bytes": 30784,
+      "sha256": "50a805a4d9af59a7795a275f300ff753e3d538eca6cc214aa62fe3e0249872a6",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_005.webp",
+      "bytes": 31260,
+      "sha256": "19b80491e5a81455b44df819bed3ca0cc25de66a868bbd6d0ad0b914f71b14a2",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_006.webp",
+      "bytes": 33350,
+      "sha256": "f6a789890d243d1dff9832b16dd43ae143388480139b3c994e5291f52c11f8cf",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_007.webp",
+      "bytes": 36282,
+      "sha256": "1dff73f9d1832b914cdfab7bbc4f25884a358930ba39b2c1dcca2e7f8baf7b29",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_008.webp",
+      "bytes": 38762,
+      "sha256": "af648b20a9513d3639ba154bddc475fce5df21ea88053efb3407152e88460f9c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_009.webp",
+      "bytes": 38524,
+      "sha256": "5d5f3597f66d6d0c6d4ca105c43483d1d5eea9deaed70b79c2ffbd9bc4e03f80",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_010.webp",
+      "bytes": 41442,
+      "sha256": "79701e47f0df3f1033e43aebb5e9b803c25444aac50536bc61449b44bb6b0660",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_011.webp",
+      "bytes": 42774,
+      "sha256": "1e5eff2447d9520289c86856e4fb45dc7743b459e6b3146b9dfd92a2d67b03c4",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_012.webp",
+      "bytes": 42416,
+      "sha256": "8cda2b6910d037a0b778d3956524471b6a4373a032c69d340dadfb448828098e",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/morning/door_013.webp",
+      "bytes": 42148,
+      "sha256": "70c24273a270508c151ad851dc80775ea702a2ac30a85e4c0a5033413c2793da",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_000.webp",
+      "bytes": 47888,
+      "sha256": "1e57c62dd86867be81e850ec9a645134b8082e0d8d34b05867c57af8c69c09c0",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_001.webp",
+      "bytes": 47668,
+      "sha256": "b2d5a67dd4b881433ec91f28fa65fb0aa535b1741f1496a8bbe9e8d9b2135b75",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_002.webp",
+      "bytes": 48184,
+      "sha256": "2383cade601df8ab6f1d2053991cc4a04f11959a5e26f50580e17e729e3c5df6",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_003.webp",
+      "bytes": 49332,
+      "sha256": "c90b44f4b1e14010d646a0b485955be7b519aa28763c760de8e022841c082330",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_004.webp",
+      "bytes": 51320,
+      "sha256": "69c57c6eef6fa50f5af7d5dd0447c27a8dd8d7875697675b6392f0dbf4183280",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_005.webp",
+      "bytes": 52918,
+      "sha256": "0ed5febcefd80093007f2fe9ef54d48ef876dfbaea16b43ec4fcfe2eb0198905",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_006.webp",
+      "bytes": 55076,
+      "sha256": "8ca8b12150c2352ae868dbc88bb009aabe3ac86204788fc26439efd82ab89251",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_007.webp",
+      "bytes": 58192,
+      "sha256": "44d79a735b336f0250e01732b18f094e2d53f1f81cc015ba38aed23e5fdfc97d",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_008.webp",
+      "bytes": 60432,
+      "sha256": "b8acf02fb72b0a67a06911051a6bf776691e5289028bbdc89bba9205db55d87c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_009.webp",
+      "bytes": 64324,
+      "sha256": "c306c58ec7b1c8825ff45f1e4c1999b6ac3d4963e236792ea3262a8ad69c5b3c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_010.webp",
+      "bytes": 69758,
+      "sha256": "93a550b4d8c14e83ad07a255c4641618ccf9fabd4fd95348c0332043697c723b",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_011.webp",
+      "bytes": 66604,
+      "sha256": "2c75950213c6659f89f59d9c751b0a67e8f6069ab737b180193f34d6260a1023",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_012.webp",
+      "bytes": 66028,
+      "sha256": "b69a497fe23e884ca38d6248652d262352da96a616b133fc0fe522d637656198",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_013.webp",
+      "bytes": 64276,
+      "sha256": "545d73f63cb9d20f05fca75ecea777d25e2bca5ea463bcb1085f6f5ee69708ab",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_014.webp",
+      "bytes": 64368,
+      "sha256": "9d04592a8dbb46e30ff39a3a902c01ed33e377c5171c1df358c17033436ccc03",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_015.webp",
+      "bytes": 64254,
+      "sha256": "95a59653698c6304ebe28406344f46262a5071ccd3f4180b5bb6a98ba0093b85",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_016.webp",
+      "bytes": 64990,
+      "sha256": "ccc0ce4266017294b1488d5ab8111f770caa46b1ca6e1fbec09810f583319e4f",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_017.webp",
+      "bytes": 64908,
+      "sha256": "027a04a0efb7e0ac0b69fc58ce598a40eb9075d70f0e2b372eb2efcb2769be22",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_018.webp",
+      "bytes": 58368,
+      "sha256": "6eb021bca25dfa64d11d00661f7a4181459d0ce8213085caedcd34eec486ad1a",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_019.webp",
+      "bytes": 51986,
+      "sha256": "2ebc5941f2b598fe77c4c9d12d3a54dd8b4aa4900e619865321ec9d25b628f2a",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_020.webp",
+      "bytes": 48556,
+      "sha256": "63d9b2ca7711063eac221aee697931b0bd315e7d0738441fd662f350cd6b70d1",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_021.webp",
+      "bytes": 45910,
+      "sha256": "74aae61371ddde714b30d054c487da78652590a25dd0524cdde7ae48970e983c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_022.webp",
+      "bytes": 42750,
+      "sha256": "3107c2bc0ea3a2fae356a7e7f4e88567c281484ffe237f1878ae11cbc8f9aba1",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_023.webp",
+      "bytes": 41334,
+      "sha256": "f8b7567a2475f9df71069572f4959663d653e79a5b8a5af8e10f00cab1747ee6",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_024.webp",
+      "bytes": 39920,
+      "sha256": "8d6d923067d58d82496be8a13ddde5e82c27694f87033de0eb3ea375c15ef123",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_025.webp",
+      "bytes": 36198,
+      "sha256": "19fff11af60638653dd1654fe11bccc6d9c33076cbf116db25bbf0876d14cc9c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_026.webp",
+      "bytes": 33812,
+      "sha256": "3471f017896acec4ddd19dae921f638d55bd835381a87f3bceb5fb607dafe53b",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_027.webp",
+      "bytes": 34830,
+      "sha256": "b4a286e92efd7c4440a6607aaac03ce883fa6c4ec1fd5d2d891a77101aab497f",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_028.webp",
+      "bytes": 33920,
+      "sha256": "3df932457ec96c2fa3120d1b371a26a41fc40a1221adfe2372a78b415f728173",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/approach_029.webp",
+      "bytes": 33420,
+      "sha256": "ec86218b9aa64f7a6fbffcb1b99dc230c5f206f224d3a31ac844d6548c3f0ad0",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_000.webp",
+      "bytes": 33420,
+      "sha256": "ec86218b9aa64f7a6fbffcb1b99dc230c5f206f224d3a31ac844d6548c3f0ad0",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_001.webp",
+      "bytes": 33876,
+      "sha256": "b00591f621eab6146e17d6b1b1e97f0c7827e82e37cfadd711d683efc9027175",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_002.webp",
+      "bytes": 34678,
+      "sha256": "5ddb2d523673f10c1cad48c07315f9705fc052c5599da819598c63523c765996",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_003.webp",
+      "bytes": 35500,
+      "sha256": "8dda6b1e8727d005d1d420fbf22945d51cd6aeb20e0de284b688874ef8290bf0",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_004.webp",
+      "bytes": 35438,
+      "sha256": "e11909072818e63453eda874948f1d4471fad88563f39e0582879b88742ee9c6",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_005.webp",
+      "bytes": 36692,
+      "sha256": "a3ac4b23e52207e0f8eeba7471d9e1d17885b652a4fccf362b1603af6c290615",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_006.webp",
+      "bytes": 40130,
+      "sha256": "5b36dd2d725314f0f2273e0df740d480e2d1f01a893c89ad294f0249bbf0533c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_007.webp",
+      "bytes": 43062,
+      "sha256": "06267f94aa29db4b95665049bbffe5b4ab76eada27b790a513f78bdbc902c637",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_008.webp",
+      "bytes": 46004,
+      "sha256": "86207d0dfda9a3557ba73a06cea0e6e67a969a438209dd086ef0a41ec9215556",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_009.webp",
+      "bytes": 45204,
+      "sha256": "1887d4e19fd6e7813bd57b8f821d7deedd917a4176ee5d47e41e20af574ffd09",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_010.webp",
+      "bytes": 48126,
+      "sha256": "6aa1d351bfc459cd51fda12053f00231541b277674802be9367e872635118b24",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_011.webp",
+      "bytes": 48846,
+      "sha256": "2cda1483bf76d920ed397d3ce5df7201736554d4506744e935e638873ad4be02",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_012.webp",
+      "bytes": 50242,
+      "sha256": "ab8e6ab46d384ac07c53305e593295d8a31edf1b483754e1ffbd4f2daafaecce",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/golden/door_013.webp",
+      "bytes": 49832,
+      "sha256": "8511c4ab83b39781ff75409143aa58ab85a0c7dc484fc9465918e257d35c377c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_000.webp",
+      "bytes": 35426,
+      "sha256": "0f7866ff2caa2a8f91d25e94bee263efd14e605f0cedd236164ccdf4557f063b",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_001.webp",
+      "bytes": 35266,
+      "sha256": "5e9c200af7030ac4b6f4924db1453fba73379d3fa1eca6c52a3cb7d56bb1ad9c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_002.webp",
+      "bytes": 36230,
+      "sha256": "40d707ef31446cb82e236591fc39996e5f558e2b5a92da5b30a19d0267210c00",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_003.webp",
+      "bytes": 37184,
+      "sha256": "f9071feeaab9373269cfd2fd3634a74ae41b1bde5c9e1663589fb2e775ecb0bd",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_004.webp",
+      "bytes": 38278,
+      "sha256": "8bccfe73e820cc53263818621a4f2317d7afba9a4795fa3c626c42aa21463e44",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_005.webp",
+      "bytes": 39530,
+      "sha256": "c9c5cdc6b585162ffaaf9d1994a6570de083a13fd79ad26fe3ca69ef3790a93d",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_006.webp",
+      "bytes": 41084,
+      "sha256": "227fb2100ef354395877f0fd60d54f9d387ca05308e70e99404ce11bd8e7b3b8",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_007.webp",
+      "bytes": 43556,
+      "sha256": "e7739a19d32ca1fa84b74f85cc30f5ec15bc633406aebe98d4fa4c5001f50af4",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_008.webp",
+      "bytes": 45598,
+      "sha256": "a61a7b35bff85231cfdd6f88dba2273e4b0a5235654d055a4118a0bce6228675",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_009.webp",
+      "bytes": 47974,
+      "sha256": "fce24a5281310e7b998f87f5d32cbdecdf38c203b313d9286f830b11830a2d80",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_010.webp",
+      "bytes": 50548,
+      "sha256": "cc4787eef2a10f8483dae8c9e08c4208003dc8be0bdadf814fd7417ae7d36a44",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_011.webp",
+      "bytes": 51062,
+      "sha256": "a3ceeac0789fdaa5ff381b2a7596764edeb089a44414142d45b0b05e5a99dee4",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_012.webp",
+      "bytes": 50116,
+      "sha256": "ef3f723e0e6f42090666401b264af7515597da9ee85764f3fb28e23b091be6a7",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_013.webp",
+      "bytes": 48934,
+      "sha256": "10a3944c56355b2b914559fdec143c449953e023bddcd224e7d91c91acfe762a",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_014.webp",
+      "bytes": 49024,
+      "sha256": "42a610255f83c31d9ebb1d2104deb1cf27cdc79cdbca67f6f7d116bbb19df665",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_015.webp",
+      "bytes": 49282,
+      "sha256": "dbe7ff028713f83e148969c239b65582a1c4a7d26d8071cd3a2f95141088ce2d",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_016.webp",
+      "bytes": 50182,
+      "sha256": "e11c2bab8e8fdcc22359a179b239e58700c1bca14b764d9b1be23ad6bf901de5",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_017.webp",
+      "bytes": 50012,
+      "sha256": "b70f33f1962c2ef1251d4ee83b1273e7d76d35fca85f69b10cf2fc17d4270ba9",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_018.webp",
+      "bytes": 46382,
+      "sha256": "3b1d5ad4b8317efd6151151909ba73974f682a6998b5ed177c63136d9d16b2b2",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_019.webp",
+      "bytes": 41458,
+      "sha256": "1f486653d915df0e734f3e6d594da6f04e4a013156e0424b48a9eda6bb3687d9",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_020.webp",
+      "bytes": 38044,
+      "sha256": "09acb68725058ffa43871ccd209eea0718e99a61440ecdecde3b3ad18c4fe8da",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_021.webp",
+      "bytes": 34682,
+      "sha256": "c20987552815f0ea226879b8f4f5d5635d96674804d5f9ad3bb98674e2a8d54e",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_022.webp",
+      "bytes": 31714,
+      "sha256": "b5d4e197eed3d9a606429353d778da5ccab701f1d2fcdf1598cba4b133934da9",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_023.webp",
+      "bytes": 30094,
+      "sha256": "fdc414339f4c90bfb08b8de1cdc51dbd1b0247c8dcc99534893ca0066b06b170",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_024.webp",
+      "bytes": 27048,
+      "sha256": "829e3c899002c7a418cfc6d5d2adce21a81214b10c077b08c6f04cfd0a0a6747",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_025.webp",
+      "bytes": 24530,
+      "sha256": "fd59be3f2f34d0a1d19490a08204bcdeae3352db953abda290808c8ebd0fed82",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_026.webp",
+      "bytes": 22516,
+      "sha256": "72f330454c635df86296cd82fd37bc404f7ec93774dcec8002ae40c62fbbe28e",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_027.webp",
+      "bytes": 23098,
+      "sha256": "c84457fdda56e276ab33fb9b7f55d3cb6010bea2b93f47f8a1e422349e5d9881",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_028.webp",
+      "bytes": 22958,
+      "sha256": "2a6fdc1b92eb524784dacdb57779eb9707f106d5f6d18780f59bb44575934ffd",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/approach_029.webp",
+      "bytes": 22814,
+      "sha256": "b2b1677ae92917c9cbb11abbe31751577c32fb42c643d86216089190597e4d48",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_000.webp",
+      "bytes": 22814,
+      "sha256": "b2b1677ae92917c9cbb11abbe31751577c32fb42c643d86216089190597e4d48",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_001.webp",
+      "bytes": 23432,
+      "sha256": "65b3eab04cd12b09f8666aa6fe5c3e4de8cdaddf05f23c5845fa979104d36811",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_002.webp",
+      "bytes": 24286,
+      "sha256": "12845ca03781d0d4aeaf5cf240bc4b9ce5358bc73c59ed1a1357298296c8062c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_003.webp",
+      "bytes": 25242,
+      "sha256": "454cf8de12cdd1e3567485829b62af1b382bd90e5d62a8b00298739537fa4ece",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_004.webp",
+      "bytes": 25980,
+      "sha256": "acfc505622d5f180f703c2452b6b0ec990dd6f13bb8c6eb208f0217ce985f54c",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_005.webp",
+      "bytes": 26198,
+      "sha256": "2d94cb7cbb3bdfc1751c5276e3c8013697cd80c42afe1c64c26e0d7516880b1b",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_006.webp",
+      "bytes": 28612,
+      "sha256": "3a2e1d6d1376ecc332c11ecf1841b3755d1dd4b2f7a4e64c56f1f02513e3d78b",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_007.webp",
+      "bytes": 29724,
+      "sha256": "90917d5699b6debea4e24948e35a55c5e0561942863d2f530231b673525a3603",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_008.webp",
+      "bytes": 31924,
+      "sha256": "8a01f130ef934cb816d41d9595d87c5b4b8f9fc898aa3781a5a6110c31137f08",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_009.webp",
+      "bytes": 31450,
+      "sha256": "c3c01af03da8f7d5552277d7b17dfa3dbb29cd2773c0370a7b96e46741df9083",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_010.webp",
+      "bytes": 33470,
+      "sha256": "9ece8bc805595f7fd04122aef60e0430555058a3b95d46347f64674d2e1dfca5",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_011.webp",
+      "bytes": 34168,
+      "sha256": "4ae8b08cc3b579dd75e5528d085a5d8366c3f757006ee1e9843fad0b8c792602",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_012.webp",
+      "bytes": 34648,
+      "sha256": "d4705c812dfe57ba5822fd2d401268079c1f2a465cf67143c1c0f921e5b0458b",
+      "quality": 80
+    },
+    {
+      "path": "moves/fridge/night/door_013.webp",
+      "bytes": 34878,
+      "sha256": "7cdb6ff2cd264befb80e8876ae05a7addac047731b9a6001f466523410cf9ce7",
+      "quality": 80
+    }
+  ],
+  "totalBytes": 5748552,
+  "minimumWebpQuality": 80,
+  "budget": {
+    "combinedCoreTargetBytes": 4000000,
+    "existingSpikeBytes": 701633,
+    "withinCombinedCoreTarget": false,
+    "requiresRuntimeBudgetDecision": false,
+    "motionExcludedFromCoreBudget": true,
+    "deferredLoadingRequired": true,
+    "decisionEvidence": "Claude handoff C2C-004: motion excluded from4MB;one mode loaded on demand"
+  },
+  "runtimeIntegrated": false,
+  "runtimeIntegrationEvidence": "Claude reports local morning browser spike;full3-mode alpha package is not yet verified in runtime by Codex",
+  "alphaMethod": "Blender Cycles transparent-film geometry matte; opaque emission material override; volume meshes hidden; no RGB color key",
+  "nativeAlphaManifest": "design-assets/blender/current/fridge-motion-r18/alpha-manifest.json",
+  "baseReview": {
+    "morning": {
+      "path": "base-r18/morning.webp",
+      "size": [
+        1080,
+        1080
+      ],
+      "bytes": 41976,
+      "sha256": "996c806782a140e48336fbfb19bf14d9387c81c28164b48b7982d3a560ed79b0",
+      "approved": false
+    },
+    "golden": {
+      "path": "base-r18/golden.webp",
+      "size": [
+        1080,
+        1080
+      ],
+      "bytes": 42322,
+      "sha256": "e17e1b9355968513c7cd1ef4dc515c7b229170dba091414392672042858bfa8f",
+      "approved": false
+    },
+    "night": {
+      "path": "base-r18/night.webp",
+      "size": [
+        1080,
+        1080
+      ],
+      "bytes": 30402,
+      "sha256": "50c947d95d67c3cbc4581d2a16effea61a178ff5597145b1f41a1963c59f1f3c",
+      "approved": false
+    }
+  },
+  "sourceMasters": [
+    {
+      "mode": "morning",
+      "file": "kitchen-morning.blend",
+      "sha256": "87c2110c0819ecc020852e5bb871477d441f6a90084142ea20230f48fa07fef6"
+    },
+    {
+      "mode": "golden",
+      "file": "kitchen-golden.blend",
+      "sha256": "87c1732bb4cd16a9dbdab6ae3130dc062d5df3bcc60b1c651ddf99b1b0d4a1be"
+    },
+    {
+      "mode": "night",
+      "file": "kitchen-night.blend",
+      "sha256": "c05a4c97be90059eca27a5da43afba14762a59894175c7e12ba1ef745b4b1f7c"
+    }
+  ],
+  "interior": "Empty modeled shelves and drawers;inventory is not baked into frames",
+  "notes": "Technical review sidecar for Claude;canonical kitchen manifest is unchanged. Add moves/fridge/<mode>/ and base-r18/ to pubspec. Claude accepted deferred loading of one mode outside core4MB. The1080square transparent bases are a technical reference;coordinate canonical masks/canvas before replacement. Alpha comes from native Blender geometry mattes and backdrop edge unmatting;no RGB color key. No final visual approval."
+}
