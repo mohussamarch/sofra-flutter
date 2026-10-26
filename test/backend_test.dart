@@ -50,7 +50,7 @@ void main() {
     'all catalog assets parse with known scaling and explicit unknown guards',
     () async {
       final repo = repository(), all = await repo.loadAll();
-      expect(all.length, 446);
+      expect(all.length, 363);
       expect(
         (await repo.search(cuisine: 'سعودي')).length,
         greaterThanOrEqualTo(14),
@@ -85,7 +85,7 @@ void main() {
   test(
     'catalog uses bundled Flutter assets and caches cuisine files by name',
     () async {
-      expect((await RecipeRepository().loadAll()).length, 446);
+      expect((await RecipeRepository().loadAll()).length, 363);
       final reads = <String, int>{};
       final repo = RecipeRepository(
         read: (path) {

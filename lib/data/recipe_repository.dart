@@ -42,6 +42,8 @@ class RecipeRepository {
 
   static bool _held(Map<String, dynamic> row) =>
       row['catalogStatus'] == 'held-cuisine' ||
+      // Needs pork or alcohol: off the catalog by the owner's decision.
+      row['catalogStatus'] == 'held-content' ||
       row['cuisine'] is! String ||
       !hasConcreteCuisine(row['cuisine'] as String);
 

@@ -12,14 +12,11 @@ void main() {
   const added = {
     'bc-tzatziki': 'يوناني',
     'bc-chicken-paprikash': 'مجري',
-    'bc-baked-rice': 'إسباني',
     'bc-chicken-in-red-wine-vinegar-sauce': 'فرنسي',
-    'bc-cheesy-ham-and-potato-bake': 'فنلندي',
     'bc-tarte-merengada': 'برتغالي',
     'bc-ukrainian-borscht': 'أوكراني',
     'bc-tajine': 'تونسي',
     'bc-tarta-de-santiago': 'إسباني',
-    'bc-zurich-sytle-meat-saute': 'سويسري',
     'bc-arroz-chaufa': 'بيروفي',
   };
 
@@ -29,8 +26,9 @@ void main() {
       final all = (await repo.loadAll())
           .where((r) => r.metadataPolicy == null)
           .toList();
-      expect(all, hasLength(65));
-      expect(all.map((r) => r.cuisine).toSet(), hasLength(14));
+      // 65 minus three needing pork or alcohol (content policy, 26 October).
+      expect(all, hasLength(62));
+      expect(all.map((r) => r.cuisine).toSet(), hasLength(12));
       for (final pair in added.entries) {
         final recipe = await repo.get(pair.key);
         expect(recipe.cuisine, pair.value);
