@@ -166,6 +166,8 @@ class _CookingScreenState extends State<CookingScreen> {
         ),
       ),
       const SizedBox(height: 24),
+      _LeftoversCard(name: r.name, maxServings: widget.meal.servings),
+      const SizedBox(height: 16),
       DepthButton(
         key: const ValueKey('after-cooking-kitchen'),
         label: 'شوف اللي فاضل في مطبخك',
@@ -178,6 +180,90 @@ class _CookingScreenState extends State<CookingScreen> {
   );
 }
 
+/// "Anything left?" after cooking: the servings go to the fridge as a covered
+/// dish, and the microwave offers them later.
+class _LeftoversCard extends StatefulWidget {
+  const _LeftoversCard({required this.name, required this.maxServings});
+  final String name;
+  final int maxServings;
+  @override
+  State<_LeftoversCard> createState() => _LeftoversCardState();
+}
+
+class _LeftoversCardState extends State<_LeftoversCard> {
+  double servings = 0;
+  bool saved = false;
+
+  @override
+  Widget build(BuildContext context) {
+    if (saved) {
+      return Surface(
+        color: Sofra.mint,
+        child: Text(
+          'حطينا ${formatAmount(servings)} حصة في التلاجة، هتلاقيها في الميكروويف لما تحب تسخنها.',
+          key: const ValueKey('leftovers-saved'),
+          textAlign: TextAlign.center,
+        ),
+      );
+    }
+    Widget step(String key, IconData icon, double by) => IconButton.filledTonal(
+      key: ValueKey(key),
+      icon: Icon(icon),
+      onPressed: () => setState(
+        () =>
+            servings = (servings + by).clamp(0, widget.maxServings.toDouble()),
+      ),
+    );
+    return Surface(
+      child: Column(
+        children: [
+          const Text(
+            'فضل أكل؟',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+          ),
+          const SizedBox(height: 4),
+          const Text(
+            'سجّله ونحطه في التلاجة عشان تسخنه بعدين.',
+            style: TextStyle(color: Sofra.muted, fontSize: 13),
+          ),
+          const SizedBox(height: 12),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              step('leftover-less', Icons.remove_rounded, -.5),
+              SizedBox(
+                width: 96,
+                child: Text(
+                  '${formatAmount(servings)} حصة',
+                  key: const ValueKey('leftover-servings'),
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+              step('leftover-more', Icons.add_rounded, .5),
+            ],
+          ),
+          const SizedBox(height: 8),
+          FilledButton(
+            key: const ValueKey('save-leftovers'),
+            onPressed: servings <= 0
+                ? null
+                : () async {
+                    final ok = await SofraScope.controllerOf(context)
+                        .saveLeftovers(widget.name, servings);
+                    if (ok && mounted) setState(() => saved = true);
+                  },
+            child: const Text('حطه في التلاجة'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _ConfirmSheet extends StatelessWidget {
   const _ConfirmSheet({required this.check});
   final CookingCheck check;
@@ -185,13 +271,16 @@ class _ConfirmSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final deduct = check.where(LineStock.inStock).toList();
+    final partial = check.lines.where((l) => l.partial).toList();
     final kept = [
-      ...check.where(LineStock.missing),
+      ...check.where(LineStock.missing).where((l) => !l.partial),
       ...check.where(LineStock.unresolved),
     ];
     final unmeasured = check.where(LineStock.unmeasured).toList();
     String amount(CookingLine l) => l.quantity == null
         ? ''
+        : l.partial
+        ? 'عندك ${formatAmount(l.quantity! - l.missing!)} من ${formatAmount(l.quantity!)} ${l.ingredient.unit ?? ''}'
         : '${formatAmount(l.quantity!)} ${l.ingredient.unit ?? ''}';
     Widget group(
       String title,
@@ -214,7 +303,13 @@ class _ConfirmSheet extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 3),
               child: Row(
                 children: [
-                  Expanded(child: Text(l.ingredient.name)),
+                  Expanded(
+                    child: Text(
+                      l.stockId == null
+                          ? l.ingredient.name
+                          : '${l.ingredient.name} · هنستخدم ${SofraScope.controllerOf(context).ingredientName(l.stockId!)}',
+                    ),
+                  ),
                   Text(amount(l), style: const TextStyle(color: Sofra.muted)),
                 ],
               ),
@@ -241,6 +336,13 @@ class _ConfirmSheet extends StatelessWidget {
                   'هيتخصم',
                   'موجود عندك بنفس الوحدة',
                   deduct,
+                  Sofra.greenDark,
+                ),
+              if (partial.isNotEmpty)
+                group(
+                  'هيتخصم اللي عندك بس',
+                  'الباقي ناقص؛ لو جبته من برّه مش محتاج تسجله.',
+                  partial,
                   Sofra.greenDark,
                 ),
               if (kept.isNotEmpty)

@@ -85,7 +85,12 @@ class IngredientEntry {
 /// Canonical ingredient vocabulary plus the generated rawId -> canonicalId
 /// map (`tool/ingredients/build-directory.mjs`). Used for kitchen stock only.
 class IngredientDirectory {
-  IngredientDirectory._(this._entries, this._byId, this._idMap);
+  IngredientDirectory._(
+    this._entries,
+    this._byId,
+    this._idMap, [
+    this._alternatives = const {},
+  ]);
 
   static const vocabularyPath = 'data/ingredients/vocabulary.json';
   static const directoryPath = 'data/ingredients/directory.json';
@@ -93,6 +98,7 @@ class IngredientDirectory {
   final List<IngredientEntry> _entries;
   final Map<String, IngredientEntry> _byId;
   final Map<String, String> _idMap;
+  final Map<String, List<String>> _alternatives;
 
   static Future<IngredientDirectory> load(
     Future<String> Function(String path) read,
@@ -153,10 +159,26 @@ class IngredientDirectory {
       }
       idMap[key] = value;
     }
+    final alternatives = <String, List<String>>{};
+    final altRaw = directory['alternatives'] ?? const <String, Object?>{};
+    if (altRaw is! Map<String, Object?>) {
+      throw const FormatException('Ingredient alternatives must be a map');
+    }
+    for (final MapEntry(:key, :value) in altRaw.entries) {
+      if (value is! List ||
+          value.length < 2 ||
+          value.any((id) => id is! String || !byId.containsKey(id)) ||
+          value.toSet().length != value.length ||
+          idMap[key] != value.first) {
+        throw FormatException('alternatives["$key"] is invalid');
+      }
+      alternatives[key] = List.unmodifiable(value.cast<String>());
+    }
     return IngredientDirectory._(
       List.unmodifiable(entries),
       Map.unmodifiable(byId),
       Map.unmodifiable(idMap),
+      Map.unmodifiable(alternatives),
     );
   }
 
@@ -166,6 +188,11 @@ class IngredientDirectory {
 
   /// The stock identity for a recipe line's ingredient id.
   String stockId(String rawId) => _idMap[rawId] ?? rawId;
+
+  /// Stock identities a line accepts, preferred first: "زبدة أو مارجرين"
+  /// takes either; most lines take only [stockId].
+  List<String> stockOptions(String rawId) =>
+      _alternatives[rawId] ?? [stockId(rawId)];
 
   /// Arabic-normalized substring search over names and aliases. Name matches
   /// come before alias-only matches (exact before partial within each);

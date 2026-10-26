@@ -73,7 +73,10 @@ class KitchenService {
     this.recipes, {
     this.legacyUnits = const {},
     String Function(String rawId)? stockIdOf,
-  }) : stockIdOf = stockIdOf ?? _identity;
+    List<String> Function(String rawId)? stockOptionsOf,
+  }) : stockIdOf = stockIdOf ?? _identity,
+       stockOptionsOf =
+           stockOptionsOf ?? ((id) => [(stockIdOf ?? _identity)(id)]);
   final StateStore store;
   final RecipeRepository recipes;
   final Map<String, String> legacyUnits;
@@ -82,6 +85,9 @@ class KitchenService {
   /// for deduction, cost and consumed history. Line validation keeps raw IDs.
   final String Function(String rawId) stockIdOf;
   static String _identity(String rawId) => rawId;
+
+  /// Stock identities a line accepts ("A أو B"); the first is [stockIdOf].
+  final List<String> Function(String rawId) stockOptionsOf;
   IngredientUse _stockUse(IngredientUse use) {
     final id = stockIdOf(use.ingredientId);
     return id == use.ingredientId
@@ -1850,6 +1856,8 @@ class KitchenService {
     Map<String, IngredientUse> measuredUses = const {},
     Set<String> omitUnmeasured = const {},
     Set<int> untrackedStockLines = const {},
+    Map<int, String> stockChoiceByLine = const {},
+    Set<int> partialStockLines = const {},
     List<UnitRule> rules = const [],
     DateTime? cookedAt,
     double? cookedYieldGrams,
@@ -1915,7 +1923,25 @@ class KitchenService {
     )) {
       throw ArgumentError('Invalid or conflicting untracked stock line');
     }
+    for (final MapEntry(key: i, value: id) in stockChoiceByLine.entries) {
+      if (i < 0 ||
+          i >= rows.length ||
+          untrackedStockLines.contains(i) ||
+          !stockOptionsOf(rows[i].id).contains(id)) {
+        throw ArgumentError('Invalid stock choice for line $i');
+      }
+    }
+    if (partialStockLines.any(
+      (i) => i < 0 || i >= rows.length || untrackedStockLines.contains(i),
+    )) {
+      throw ArgumentError('Invalid partial stock line');
+    }
     final uses = <IngredientUse>[];
+    // Stock identity per use when the line names a chosen alternative.
+    final chosen = <int, String>{};
+    // Uses whose deduction stops at what is in stock (the rest was bought or
+    // went without); nutrition still follows the recipe amount.
+    final partial = <int>{};
     final untracked = <int>{};
     final sourceEstimates = <int, RecipeFoodSelection>{};
     final preparationEstimates = <int, RecipeFoodSelection>{};
@@ -1980,6 +2006,8 @@ class KitchenService {
         if (explicit.ingredientId != ingredient.id) {
           throw ArgumentError('Actual ingredient mismatch');
         }
+        if (stockChoiceByLine[i] case final id?) chosen[uses.length] = id;
+        if (partialStockLines.contains(i)) partial.add(uses.length);
         uses.add(explicit);
         actualMeasured[i] = explicit;
       } else {
@@ -1996,6 +2024,8 @@ class KitchenService {
             estimate.value * (ingredient.scales ? scaled.factor : 1),
             'g',
           );
+          if (stockChoiceByLine[i] case final id?) chosen[uses.length] = id;
+          if (partialStockLines.contains(i)) partial.add(uses.length);
           uses.add(use);
           sourceEstimates[i] = binding!;
         } else if (quantity == null) {
@@ -2003,6 +2033,8 @@ class KitchenService {
             'Review unmeasured recipe line $i: ${ingredient.id}',
           );
         } else {
+          if (stockChoiceByLine[i] case final id?) chosen[uses.length] = id;
+          if (partialStockLines.contains(i)) partial.add(uses.length);
           uses.add(IngredientUse(ingredient.id, quantity, ingredient.unit!));
         }
       }
@@ -2043,8 +2075,21 @@ class KitchenService {
           )
           .toList();
       final allRules = _mergedRules(k, rules);
-      final stockUses = uses.map(_stockUse).toList();
-      final assessment = assessStock(stockUses, stock, rules: allRules);
+      final stockUses = [
+        for (final (j, use) in uses.indexed)
+          if (chosen[j] case final id?)
+            IngredientUse(id, use.quantity, use.unit)
+          else
+            _stockUse(use),
+      ];
+      final assessment = assessStock(
+        [
+          for (final (j, use) in stockUses.indexed)
+            if (!partial.contains(j)) use,
+        ],
+        stock,
+        rules: allRules,
+      );
       if (!assessment.canCook) {
         throw StateError('Insufficient stock or unresolved units');
       }
@@ -2052,15 +2097,39 @@ class KitchenService {
       final unknown = <String>[
         for (final i in untracked) stockIdOf(rows[i].id),
       ];
-      for (final use in stockUses) {
-        final value = _cost(k, use, allRules);
+      var after = assessment.after;
+      final consumed = <IngredientUse>[];
+      for (final (j, use) in stockUses.indexed) {
+        var taken = use;
+        if (partial.contains(j)) {
+          final part = assessStock([use], after, rules: allRules);
+          after = part.after;
+          final short = part.missing.firstOrNull?.quantity ?? 0;
+          if (short >= use.quantity - 1e-9) {
+            unknown.add(use.ingredientId);
+            continue;
+          }
+          taken = IngredientUse(
+            use.ingredientId,
+            use.quantity - short,
+            use.unit,
+          );
+          // What was bought or skipped for the rest has no recorded price.
+          if (short > 1e-9) {
+            unknown.add(use.ingredientId);
+            consumed.add(taken);
+            continue;
+          }
+        }
+        consumed.add(taken);
+        final value = _cost(k, taken, allRules);
         if (value == null) {
           unknown.add(use.ingredientId);
         } else {
           total += value;
         }
       }
-      k['inventory'] = assessment.after.map((v) => v.toJson()).toList();
+      k['inventory'] = after.map((v) => v.toJson()).toList();
       if (revision.kind == RecipeRevisionKind.catalog) {
         k['recipeBook'] = _registerCatalog(_recipeBook(k), revision).toJson();
       }
@@ -2114,7 +2183,7 @@ class KitchenService {
         'cookedAt': (cookedAt ?? DateTime.now()).toIso8601String(),
         'country': k['country'],
         'currency': MarketProfile.fromCode(k['country'] as String).currency,
-        'consumed': stockUses.map((v) => v.toJson()).toList(),
+        'consumed': consumed.map((v) => v.toJson()).toList(),
         'omittedUnmeasured': omitUnmeasured.toList(),
         'selectedOptional': optionalIds.toList(),
         'selectedOptionalLines': selectedOptionalLines.toList(),

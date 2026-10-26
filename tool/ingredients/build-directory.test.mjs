@@ -3,6 +3,7 @@ import {readFile} from 'node:fs/promises';
 import test from 'node:test';
 
 import {
+  alternativesFor,
   buildDirectory,
   matchName,
   stockUnitValues,
@@ -29,6 +30,19 @@ test('alternatives collapse only when every option is the same product', () => {
   assert.equal(match('زبدة أو مارغرين'), null);
   assert.equal(match('لحم بقري أو دجاج أو روبيان'), null);
   assert.equal(match('ثوم مفروم أو مسحوق ثوم'), null);
+});
+
+test('different products offered as options become stock alternatives', () => {
+  const alt = (name) => alternativesFor(name, keys, categories);
+  assert.deepEqual(alt('زبدة أو مارغرين'), ['butter', 'margarine']);
+  assert.deepEqual(alt('ثوم مفروم أو مسحوق ثوم'), ['garlic', 'garlic-powder']);
+  assert.equal(alt('بيضة أو بيضتان'), null, 'one product is not a choice');
+  assert.equal(alt('زبدة'), null);
+  const {directory} = buildDirectory(vocabularyText, [
+    {id: 'raw-butter', name: 'زبدة أو مارغرين', recipe: 'a', cuisine: 'مصري'},
+  ]);
+  assert.equal(directory.idMap['raw-butter'], 'butter');
+  assert.deepEqual(directory.alternatives['raw-butter'], ['butter', 'margarine']);
 });
 
 test('preparation words never change the product, cooked forms stay apart', () => {

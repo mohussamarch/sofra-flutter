@@ -44,4 +44,47 @@ void main() {
     expect(tapped, ['a']);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets('shelves narrow by category and by name', (tester) async {
+    ShelfItem item(String id, String label, String group) => ShelfItem(
+      id: id,
+      art: const Text('🥕'),
+      label: label,
+      amount: '1',
+      group: group,
+    );
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: ShelfWheel(
+            title: 'التلاجة',
+            items: [
+              item('carrot', 'جزر', 'خضار'),
+              item('tomato', 'طماطم', 'خضار'),
+              item('milk', 'لبن', 'ألبان'),
+              item('leftover-x', 'كشري', 'بواقي'),
+            ],
+            onClose: () {},
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+    Finder shelf(String id) => find.byKey(ValueKey('shelf-item-$id'));
+    await tester.tap(find.byKey(const ValueKey('shelves-group-خضار')));
+    await tester.pump();
+    expect(shelf('carrot'), findsOneWidget);
+    expect(shelf('milk'), findsNothing);
+    await tester.tap(find.byKey(const ValueKey('shelves-group-all')));
+    await tester.tap(find.byKey(const ValueKey('shelves-search')));
+    await tester.pump();
+    await tester.enterText(find.byKey(const ValueKey('shelves-query')), 'كشرى');
+    await tester.pump();
+    expect(shelf('leftover-x'), findsOneWidget, reason: 'ى and ي match');
+    expect(shelf('carrot'), findsNothing);
+    await tester.enterText(find.byKey(const ValueKey('shelves-query')), 'زيت');
+    await tester.pump();
+    expect(find.text('مفيش حاجة بالاسم ده هنا.'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 }

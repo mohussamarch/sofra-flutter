@@ -95,7 +95,7 @@ const descriptorWords = new Set(
 );
 const descriptorPhrases = [
   'كامل الدسم', 'كامله الدسم', 'قليل الدسم', 'قليله الدسم', 'منزوع العظم', 'منزوعه العظم',
-  'منزوع الجلد', 'منزوعه الجلد', 'منزوع البذور', 'منزوعه البذور', 'بدون جلد',
+  'منزوع الجلد', 'منزوعه الجلد', 'خالي الدسم', 'خاليه الدسم', 'منزوع البذور', 'منزوعه البذور', 'بدون جلد',
   'بدون عظم', 'درجه حراره الغرفه',
 ].map(normKey);
 const groundWords = new Set(['مطحون', 'مطحونه'].map(normKey));
@@ -265,6 +265,20 @@ export function matchName(name, keys, categories, blocked = new Set()) {
   return id && categories.get(id) === groundCategory ? id : null;
 }
 
+/**
+ * "A أو B" naming different products: every option's entry, in the line's
+ * order, when each one resolves and there are at least two. The first is the
+ * default stock identity; cooking may use any of them.
+ */
+export function alternativesFor(name, keys, categories, blocked = new Set()) {
+  const {options} = cleanStages(name);
+  if (options.length < 2) return null;
+  const ids = options.map((o) => matchName(o, keys, categories, blocked));
+  if (ids.includes(null)) return null;
+  const unique = [...new Set(ids)];
+  return unique.length > 1 ? unique : null;
+}
+
 /** Alias key → cuisines where that catalog-only alias must not match. */
 export function cuisineBlocks(vocabulary) {
   const blocks = new Map();
@@ -321,6 +335,7 @@ export function buildDirectory(vocabularyText, lines) {
     byRaw.get(line.id).push(line);
   }
   const idMap = {};
+  const alternatives = {};
   const unmappedNames = new Map();
   for (const [rawId, rawLines] of byRaw) {
     if (vocabIds.has(rawId)) {
@@ -330,8 +345,17 @@ export function buildDirectory(vocabularyText, lines) {
     const targets = new Set(
       rawLines.map((l) => matchName(l.name, keys, categories, blockedFor(l))),
     );
+    const choices = new Set(
+      rawLines.map((l) =>
+        JSON.stringify(alternativesFor(l.name, keys, categories, blockedFor(l))),
+      ),
+    );
     if (targets.size === 1 && !targets.has(null)) {
       idMap[rawId] = [...targets][0];
+    } else if (choices.size === 1 && !choices.has('null')) {
+      const ids = JSON.parse([...choices][0]);
+      idMap[rawId] = ids[0];
+      alternatives[rawId] = ids;
     } else {
       for (const l of rawLines) {
         const key = cleanStages(l.name).ground;
@@ -344,12 +368,14 @@ export function buildDirectory(vocabularyText, lines) {
     version: 1,
     vocabularySha256: sha256(vocabularyText),
     idMap,
+    alternatives,
     unmapped: byRaw.size - Object.keys(idMap).length,
     stats: {
       lines: lines.length,
       mappedLines,
       rawIds: byRaw.size,
       mappedRawIds: Object.keys(idMap).length,
+      alternativeRawIds: Object.keys(alternatives).length,
     },
   });
   return {directory, unmappedNames, vocabularySize: vocabulary.length};

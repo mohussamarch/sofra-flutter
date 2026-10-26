@@ -216,4 +216,124 @@ void main() {
     expect(line.status, LineStock.inStock);
     expect(c.kitchen.unitRules.single.factor, 200);
   });
+  test(
+    'leftovers are saved after cooking and eaten from the microwave',
+    () async {
+      final c = SofraController(
+        store: f.Store(),
+        recipes: f.repository(value: threeLines()),
+        readAsset: (path) => File(path).readAsString(),
+      );
+      await c.load();
+      expect(await c.saveLeftovers('كشري', 0), isTrue);
+      expect(c.leftovers, isEmpty, reason: 'nothing left, nothing saved');
+      expect(
+        await c.saveLeftovers('كشري', 1.5, on: DateTime(2026, 10, 26)),
+        isTrue,
+      );
+      final dish = c.leftovers.single;
+      expect(dish.servings, 1.5);
+      expect(dish.preparedOn, '2026-10-26');
+      expect(await c.eatLeftover(dish.id, 1), isTrue);
+      expect(c.leftovers.single.servings, .5);
+      expect(
+        await c.eatLeftover(dish.id, 1),
+        isFalse,
+        reason: 'only half left',
+      );
+      expect(c.leftovers.single.servings, .5);
+      expect(await c.eatLeftover(dish.id, .5), isTrue);
+      expect(c.leftovers, isEmpty, reason: 'an empty dish leaves the fridge');
+    },
+  );
+  test('a line offering two products deducts the chosen one', () async {
+    final k = KitchenService(
+      f.Store(),
+      f.repository(value: threeLines()),
+      stockOptionsOf: (id) => id == 'sample' ? ['sample', 'other'] : [id],
+    );
+    await k.load();
+    await k.addStock(
+      InventoryLot(
+        id: 'lot-o',
+        ingredientId: 'other',
+        quantity: 500,
+        unit: 'g',
+        zone: StorageZone.pantry,
+      ),
+      newPurchase: false,
+    );
+    await k.plan(
+      PlannedMeal(
+        id: 'm1',
+        date: '2026-10-25',
+        slot: 'lunch',
+        recipeId: 'fixture',
+        servings: 2,
+      ),
+    );
+    await expectLater(
+      k.confirmCooking(
+        'm1',
+        'op-bad',
+        untrackedStockLines: {1},
+        omitUnmeasuredLines: {2},
+        stockChoiceByLine: {0: 'water'},
+      ),
+      throwsArgumentError,
+      reason: 'water is not one of the line options',
+    );
+    final record = await k.confirmCooking(
+      'm1',
+      'op-1',
+      untrackedStockLines: {1},
+      omitUnmeasuredLines: {2},
+      stockChoiceByLine: {0: 'other'},
+    );
+    expect((record['consumed'] as List).single['ingredientId'], 'other');
+    expect(k.inventory.single.quantity, 300);
+  });
+  test('a partly stocked line uses up what there is', () async {
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(value: threeLines()),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    await c.load();
+    final k = c.kitchen;
+    await k.addStock(
+      InventoryLot(
+        id: 'lot-a',
+        ingredientId: 'sample',
+        quantity: 150,
+        unit: 'g',
+        zone: StorageZone.pantry,
+      ),
+      newPurchase: false,
+    );
+    await k.plan(
+      PlannedMeal(
+        id: 'm1',
+        date: '2026-10-25',
+        slot: 'lunch',
+        recipeId: 'fixture',
+        servings: 2,
+      ),
+    );
+    final meal = k.plans.single;
+    final check = await c.checkPlan(meal);
+    final line = check.lines.first;
+    expect(line.status, LineStock.missing);
+    expect(line.missing, 50);
+    expect(line.partial, isTrue);
+    expect(check.lines[1].partial, isFalse, reason: 'no water at all');
+    final record = await c.cook(meal, check, 'op-1');
+    expect(record, isNotNull);
+    expect(k.inventory.single.quantity, 0);
+    final used = (record!['consumed'] as List).single;
+    expect(used['ingredientId'], 'sample');
+    expect(used['quantity'], 150);
+    expect(record['cost'], isNull);
+    expect(record['unpricedIngredients'], contains('sample'));
+  });
 }

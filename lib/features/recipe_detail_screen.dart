@@ -55,7 +55,11 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     final people = servings ?? c.profile.servings;
     final scaled = known ? planning.forServings(people) : null;
     final check = scaled == null ? null : c.checkStock(scaled);
-    final allergy = allergyMatches(source, c.profile.allergies);
+    final allergy = allergyMatches(
+      source,
+      c.profile.allergies,
+      names: c.stockNames,
+    );
     return ScreenBody(
       footer: DepthButton(
         key: const ValueKey('plan-meal'),
@@ -131,7 +135,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               padding: const EdgeInsets.all(16),
               child: Text(
                 allergy.isNotEmpty
-                    ? 'خد بالك: في مكوّن اسمه فيه «${allergy.join('، ')}» من الحساسية المسجّلة. المطابقة بالاسم بس، راجع المكونات بنفسك.'
+                    ? 'خد بالك: ${allergy.entries.map((e) => '«${e.key}» في ${e.value.join('، ')}').join('؛ ')}. المطابقة بالاسم بس، راجع المكونات والعبوات بنفسك.'
                     : 'راجع مكونات الوصفة والعبوات مع الحساسية المسجّلة: ${c.profile.allergies.join('، ')}.',
                 style: const TextStyle(fontSize: 12, color: Color(0xFF79513D)),
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
 import '../domain/recipe_catalog.dart';
@@ -148,12 +149,30 @@ String minutesLabel(Object? minutes) =>
 /// Stable illustration choice for a recipe without real photos yet.
 int artKind(String id) => id.codeUnits.fold(0, (a, b) => a + b) % 4;
 
-/// Name-only match against the user's allergy notes. It is a reminder to
-/// read the ingredients, never a safety guarantee.
-List<String> allergyMatches(CatalogRecipe recipe, Set<String> allergies) => [
-  for (final a in allergies)
-    if (recipe.ingredients.any((i) => i.name.contains(a))) a,
-];
+/// Name-only match against the user's allergy notes: each note with the
+/// recipe lines whose name, or a name of the kitchen ingredient the line maps
+/// to ([names]), contains it (alef/ta marbuta/ya forms alike). It is a
+/// reminder to read the ingredients, never a safety guarantee: a group word
+/// like "ألبان" does not find cheese unless a name says so.
+Map<String, List<String>> allergyMatches(
+  CatalogRecipe recipe,
+  Set<String> allergies, {
+  Iterable<String> Function(CatalogIngredient line)? names,
+}) {
+  final found = <String, List<String>>{};
+  for (final a in allergies) {
+    final key = IngredientDirectory.normalizeArabic(a);
+    if (key.isEmpty) continue;
+    for (final line in recipe.ingredients) {
+      final hit = [
+        line.name,
+        ...?names?.call(line),
+      ].any((n) => IngredientDirectory.normalizeArabic(n).contains(key));
+      if (hit) (found[a] ??= []).add(line.name);
+    }
+  }
+  return found;
+}
 
 class LoadingBlock extends StatelessWidget {
   const LoadingBlock({super.key});

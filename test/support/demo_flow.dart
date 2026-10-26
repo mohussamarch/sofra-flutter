@@ -122,6 +122,14 @@ Future<void> exerciseDemoFlow(WidgetTester tester) async {
   expect(find.text('مش هيتخصم'), findsOneWidget);
   await tapKey(tester, 'confirm-cooking');
   expect(find.byKey(const ValueKey('cooking-success')), findsOneWidget);
+  // One and a half servings are left and go to the fridge.
+  await tapKey(tester, 'leftover-more');
+  await tapKey(tester, 'leftover-more');
+  await tapKey(tester, 'leftover-more');
+  await tapKey(tester, 'leftover-less');
+  expect(find.text('1 حصة'), findsOneWidget);
+  await tapKey(tester, 'save-leftovers');
+  expect(find.byKey(const ValueKey('leftovers-saved')), findsOneWidget);
   await tapKey(tester, 'after-cooking-kitchen');
   expect(find.byKey(const ValueKey('stock-quantity-onion')), findsNothing);
   expect(stockQuantity(tester, 'rice'), contains('750'));

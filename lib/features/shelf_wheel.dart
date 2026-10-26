@@ -3,6 +3,8 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
+import '../domain/ingredient_directory.dart';
+import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
 import '../domain/recipe_catalog.dart' show recipeNumber;
 import '../ui/design.dart';
@@ -18,11 +20,15 @@ class ShelfItem {
     required this.label,
     required this.amount,
     this.onTap,
+    this.group,
   });
   final String id;
   final Widget art;
   final String label, amount;
   final VoidCallback? onTap;
+
+  /// Category the shelves can be narrowed to ("خضار", "ألبان", "بواقي").
+  final String? group;
 }
 
 /// What a storage zone holds, three to a shelf; the fridge also keeps the
@@ -41,6 +47,7 @@ List<ShelfItem> zoneShelfItems(BuildContext context, StorageZone zone) {
             ? 'كمية مش محددة'
             : c.amountText(lot.ingredientId, lot.quantity!, lot.unit),
         onTap: () => editStockQuantity(context, lot),
+        group: c.category(lot.ingredientId) ?? 'أخرى',
       ),
     if (zone == StorageZone.fridge) ...leftoverShelfItems(context),
   ];
@@ -53,8 +60,69 @@ List<ShelfItem> leftoverShelfItems(BuildContext context) => [
       art: CoveredDish(variant: i % 3),
       label: dish.name,
       amount: '${recipeNumber(dish.servings)} حصة',
+      onTap: () => _warmUp(context, dish),
+      group: 'بواقي',
     ),
 ];
+
+/// How much of a leftover dish was warmed up and eaten.
+Future<void> _warmUp(BuildContext context, LeftoverDish dish) async {
+  final c = SofraScope.controllerOf(context);
+  var eat = dish.servings < 1 ? dish.servings : 1.0;
+  final ok = await showDialog<bool>(
+    context: context,
+    builder: (ctx) => Directionality(
+      textDirection: TextDirection.rtl,
+      child: StatefulBuilder(
+        builder: (ctx, set) {
+          Widget step(String key, IconData icon, double by) => IconButton(
+            key: ValueKey(key),
+            icon: Icon(icon),
+            onPressed: () =>
+                set(() => eat = (eat + by).clamp(.5, dish.servings)),
+          );
+          return AlertDialog(
+            title: Text(dish.name),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text('سخّنت كام حصة؟'),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    step('eat-less', Icons.remove_rounded, -.5),
+                    Text(
+                      '${recipeNumber(eat)} من ${recipeNumber(dish.servings)}',
+                      key: const ValueKey('eat-servings'),
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    step('eat-more', Icons.add_rounded, .5),
+                  ],
+                ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: const Text('لسه'),
+              ),
+              FilledButton(
+                key: const ValueKey('eat-leftover'),
+                onPressed: () => Navigator.pop(ctx, true),
+                child: const Text('سخّنت وأكلت'),
+              ),
+            ],
+          );
+        },
+      ),
+    ),
+  );
+  if (ok == true) await c.eatLeftover(dish.id, eat);
+}
 
 /// Full-screen shelves for a place in the kitchen, over a dark backdrop.
 Future<void> showShelves(
@@ -136,6 +204,76 @@ class _ShelfWheelState extends State<ShelfWheel>
   );
   final wheel = FixedExtentScrollController();
   static const _extent = 176.0;
+  String query = '';
+  String? group;
+  bool searching = false;
+
+  List<ShelfItem> get _shown {
+    final q = IngredientDirectory.normalizeArabic(query);
+    return [
+      for (final item in widget.items)
+        if ((group == null || item.group == group) &&
+            (q.isEmpty ||
+                IngredientDirectory.normalizeArabic(item.label).contains(q)))
+          item,
+    ];
+  }
+
+  void _filter(VoidCallback change) {
+    setState(change);
+    if (wheel.hasClients) wheel.jumpToItem(0);
+  }
+
+  /// Search field and category chips; only worth showing past one shelf.
+  Widget _filters() {
+    final groups = <String>{
+      for (final item in widget.items)
+        if (item.group != null) item.group!,
+    }.toList();
+    Widget chip(String key, String label, String? value) => Padding(
+      padding: const EdgeInsetsDirectional.only(end: 6),
+      child: ChoiceChip(
+        key: ValueKey(key),
+        label: Text(label),
+        selected: group == value,
+        onSelected: (_) => _filter(() => group = value),
+      ),
+    );
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+      child: Column(
+        children: [
+          if (searching)
+            LiquidGlass(
+              radius: 20,
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: TextField(
+                key: const ValueKey('shelves-query'),
+                autofocus: true,
+                decoration: const InputDecoration(
+                  hintText: 'دوّر على حاجة',
+                  border: InputBorder.none,
+                  icon: Icon(Icons.search_rounded),
+                ),
+                onChanged: (v) => _filter(() => query = v),
+              ),
+            ),
+          if (groups.length > 1)
+            SizedBox(
+              height: 44,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.only(top: 6),
+                children: [
+                  chip('shelves-group-all', 'الكل', null),
+                  for (final g in groups) chip('shelves-group-$g', g, g),
+                ],
+              ),
+            ),
+        ],
+      ),
+    );
+  }
 
   /// The wheel's viewport doesn't hit-test its children, so taps are placed
   /// here: the centred shelf opens the item under the finger (three columns,
@@ -177,7 +315,8 @@ class _ShelfWheelState extends State<ShelfWheel>
 
   @override
   Widget build(BuildContext context) {
-    final items = widget.items;
+    final items = _shown;
+    final filtered = items.length != widget.items.length;
     final shelves = [
       for (var i = 0; i < items.length; i += 3)
         items.sublist(i, math.min(i + 3, items.length)),
@@ -214,7 +353,7 @@ class _ShelfWheelState extends State<ShelfWheel>
                             ),
                             Text(
                               countText(
-                                items.length,
+                                widget.items.length,
                                 'حاجة',
                                 'حاجتين',
                                 'حاجات',
@@ -228,6 +367,20 @@ class _ShelfWheelState extends State<ShelfWheel>
                           ],
                         ),
                       ),
+                      if (widget.items.length > 3)
+                        IconButton(
+                          key: const ValueKey('shelves-search'),
+                          tooltip: 'بحث',
+                          onPressed: () => _filter(() {
+                            searching = !searching;
+                            if (!searching) query = '';
+                          }),
+                          icon: Icon(
+                            searching
+                                ? Icons.search_off_rounded
+                                : Icons.search_rounded,
+                          ),
+                        ),
                       if (widget.onAdd != null)
                         IconButton(
                           key: const ValueKey('shelves-add'),
@@ -252,6 +405,7 @@ class _ShelfWheelState extends State<ShelfWheel>
                   ),
                 ),
               ),
+              if (widget.items.length > 3) _filters(),
               Expanded(
                 child: shelves.isEmpty
                     ? Center(
@@ -260,7 +414,10 @@ class _ShelfWheelState extends State<ShelfWheel>
                           child: LiquidGlass(
                             padding: const EdgeInsets.all(20),
                             child: Text(
-                              widget.empty,
+                              filtered
+                                  ? 'مفيش حاجة بالاسم ده هنا.'
+                                  : widget.empty,
+                              key: const ValueKey('shelves-empty'),
                               textAlign: TextAlign.center,
                             ),
                           ),

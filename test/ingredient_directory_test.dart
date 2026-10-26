@@ -109,6 +109,17 @@ void main() {
     expect(directory.stockId('olive-oil'), 'olive-oil');
   });
 
+  test('lines offering two products accept either in stock', () {
+    final text = File(IngredientDirectory.directoryPath).readAsStringSync();
+    final alternatives =
+        (jsonDecode(text) as Map)['alternatives'] as Map<String, dynamic>;
+    expect(alternatives, isNotEmpty);
+    final MapEntry(:key, :value) = alternatives.entries.first;
+    expect(directory.stockOptions(key), value);
+    expect(directory.stockId(key), (value as List).first);
+    expect(directory.stockOptions('onion'), ['onion']);
+  });
+
   test('unknown raw ids fall back to themselves', () {
     expect(directory.stockId('no-such-raw-id'), 'no-such-raw-id');
   });

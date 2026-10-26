@@ -122,6 +122,7 @@ class CookingLine {
     this.quantity,
     this.status, {
     this.missing,
+    this.stockId,
   });
   final int index;
   final CatalogIngredient ingredient;
@@ -130,7 +131,18 @@ class CookingLine {
 
   /// Amount still needed in the recipe unit, for [LineStock.missing].
   final double? missing;
+
+  /// The stock identity used when the line offers alternatives and a later
+  /// one is the one in stock; null means the line's own identity.
+  final String? stockId;
   bool get deducts => status == LineStock.inStock;
+
+  /// Missing, but part of it is in stock and gets used.
+  bool get partial =>
+      status == LineStock.missing &&
+      quantity != null &&
+      missing != null &&
+      missing! < quantity! - 1e-9;
 }
 
 /// Per-line preview used by the table and the cooking confirmation sheet.
@@ -174,6 +186,7 @@ class SofraController extends ChangeNotifier {
         for (final e in demoIngredients.entries) e.key: e.value.unit,
       },
       stockIdOf: stockId,
+      stockOptionsOf: stockOptions,
     );
   }
 
@@ -187,6 +200,19 @@ class SofraController extends ChangeNotifier {
 
   /// Stock identity of a recipe ingredient ID (identity until loaded).
   String stockId(String rawId) => directory?.stockId(rawId) ?? rawId;
+
+  /// Names of the kitchen ingredients a recipe line maps to, for allergy
+  /// reminders.
+  Iterable<String> stockNames(CatalogIngredient line) sync* {
+    for (final id in stockOptions(line.id)) {
+      final entry = directory?.entry(id);
+      if (entry != null) yield* [entry.name, ...entry.aliases];
+    }
+  }
+
+  /// Stock identities a recipe line accepts, preferred first.
+  List<String> stockOptions(String rawId) =>
+      directory?.stockOptions(rawId) ?? [rawId];
 
   bool ready = false;
   Object? loadError;
@@ -269,6 +295,25 @@ class SofraController extends ChangeNotifier {
   /// Cooked dishes put away with servings left.
   List<LeftoverDish> get leftovers =>
       kitchen.leftovers.where((d) => d.servings > 0).toList();
+
+  /// Puts what is left of a cooked meal in the fridge as covered dishes.
+  Future<bool> saveLeftovers(String name, double servings, {DateTime? on}) {
+    if (servings <= 0) return Future.value(true);
+    return _save(
+      () => kitchen.saveLeftover(
+        LeftoverDish(
+          id: newId('leftover'),
+          name: name,
+          servings: servings,
+          preparedOn: localDay(on ?? DateTime.now()),
+        ),
+      ),
+    );
+  }
+
+  /// Warmed up and eaten: takes [servings] off a leftover dish.
+  Future<bool> eatLeftover(String id, double servings) =>
+      _save(() => kitchen.consumeLeftover(id, servings));
 
   String ingredientName(String id) =>
       directory?.entry(id)?.name ??
@@ -508,22 +553,45 @@ class SofraController extends ChangeNotifier {
       } else if (ingredient.unit == null || quantity <= 0) {
         lines.add(CookingLine(i, ingredient, quantity, LineStock.unresolved));
       } else {
-        final id = stockId(ingredient.id);
-        final use = IngredientUse(id, quantity, ingredient.unit!);
-        final result = assessStock([use], after, rules: kitchen.unitRules);
-        if (result.canCook) {
-          after = result.after;
-          lines.add(CookingLine(i, ingredient, quantity, LineStock.inStock));
+        final options = stockOptions(ingredient.id);
+        final id = options.first;
+        StockAssessment assess(String id) => assessStock(
+          [IngredientUse(id, quantity, ingredient.unit!)],
+          after,
+          rules: kitchen.unitRules,
+        );
+        final result = assess(id);
+        final other = result.canCook
+            ? null
+            : options
+                  .skip(1)
+                  .map((o) => (o, assess(o)))
+                  .where((r) => r.$2.canCook)
+                  .firstOrNull;
+        if (result.canCook || other != null) {
+          after = (other?.$2 ?? result).after;
+          lines.add(
+            CookingLine(
+              i,
+              ingredient,
+              quantity,
+              LineStock.inStock,
+              stockId: other?.$1,
+            ),
+          );
         } else if (result.unresolved.contains(id)) {
           lines.add(CookingLine(i, ingredient, quantity, LineStock.unresolved));
         } else {
+          final short = result.missing.single.quantity;
+          // Some is in stock: that part is used up, the rest is missing.
+          if (short < quantity - 1e-9) after = result.after;
           lines.add(
             CookingLine(
               i,
               ingredient,
               quantity,
               LineStock.missing,
-              missing: result.missing.single.quantity,
+              missing: short,
             ),
           );
         }
@@ -537,8 +605,9 @@ class SofraController extends ChangeNotifier {
     return checkStock(recipe.forServings(meal.servings));
   }
 
-  /// Confirms cooking: in-stock lines are deducted; missing/unresolved lines
-  /// are explicitly kept out of stock, unmeasured lines are omitted.
+  /// Confirms cooking: in-stock lines are deducted, partly stocked lines use
+  /// up what there is; missing/unresolved lines are explicitly kept out of
+  /// stock, unmeasured lines are omitted.
   Future<Map<String, dynamic>?> cook(
     PlannedMeal meal,
     CookingCheck check,
@@ -554,9 +623,17 @@ class SofraController extends ChangeNotifier {
         },
         untrackedStockLines: {
           for (final l in check.lines)
-            if (l.status == LineStock.missing ||
+            if ((l.status == LineStock.missing && !l.partial) ||
                 l.status == LineStock.unresolved)
               l.index,
+        },
+        partialStockLines: {
+          for (final l in check.lines)
+            if (l.partial) l.index,
+        },
+        stockChoiceByLine: {
+          for (final l in check.lines)
+            if (l.stockId != null) l.index: l.stockId!,
         },
       );
     });
