@@ -79,9 +79,17 @@ class TableScreen extends StatelessWidget {
 }
 
 class PlannedMealCard extends StatefulWidget {
-  const PlannedMealCard(this.meal, {super.key, this.compact = false});
+  const PlannedMealCard(
+    this.meal, {
+    super.key,
+    this.compact = false,
+    this.glass = false,
+  });
   final PlannedMeal meal;
   final bool compact;
+
+  /// Frosted glass over the 3D table instead of a white card.
+  final bool glass;
   @override
   State<PlannedMealCard> createState() => _PlannedMealCardState();
 }
@@ -114,7 +122,7 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
     final nav = SofraScope.navOf(context);
     final m = widget.meal;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 14),
+      padding: EdgeInsets.only(bottom: widget.glass ? 0 : 14),
       child: FutureBuilder<(String, CookingCheck)>(
         future: _data(c),
         builder: (context, snap) {
@@ -128,20 +136,27 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
           final unresolved = check.where(LineStock.unresolved).length;
           final unmeasured = check.where(LineStock.unmeasured).length;
           final inStock = check.where(LineStock.inStock).length;
-          return Surface(
-            color: m.completed ? Sofra.mint : Colors.white,
-            child: Column(
+          Widget card(Widget child) => widget.glass
+              ? LiquidGlass(padding: const EdgeInsets.all(18), child: child)
+              : Surface(
+                  color: m.completed ? Sofra.mint : Colors.white,
+                  child: child,
+                );
+          return card(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                // Wraps: on a narrow glass card the tag drops under the name.
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 6,
+                  crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Expanded(
-                      child: Text(
-                        title,
-                        style: const TextStyle(
-                          fontSize: 19,
-                          fontWeight: FontWeight.w800,
-                        ),
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
                     SoftTag('${slotLabel(m.slot)} · ${m.servings} أفراد'),
@@ -192,9 +207,12 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                             ),
                             const SizedBox(width: 8),
                             Expanded(child: Text(l.ingredient.name)),
-                            Text(
-                              '${formatAmount(l.missing!)} ${l.ingredient.unit}',
-                              style: const TextStyle(color: Sofra.muted),
+                            Flexible(
+                              child: Text(
+                                '${formatAmount(l.missing!)} ${l.ingredient.unit}',
+                                textAlign: TextAlign.end,
+                                style: const TextStyle(color: Sofra.muted),
+                              ),
                             ),
                           ],
                         ),

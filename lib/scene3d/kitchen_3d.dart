@@ -48,6 +48,8 @@ class Kitchen3D extends StatefulWidget {
 }
 
 /// Drives the viewer: camera shots, door animations and cabinet colour.
+/// The camera moves in three scenes only: the isometric overview, the zoom
+/// to the table and the turn to the fridge or microwave.
 class Kitchen3DController {
   WebViewController? _web;
   String _id = 'kitchen3d';
@@ -62,7 +64,8 @@ class Kitchen3DController {
 
   static const _home =
       "mv.cameraTarget='auto auto auto';"
-      "mv.cameraOrbit='45deg 58deg auto';mv.fieldOfView='11.5deg';";
+      "mv.cameraOrbit='45deg 58deg auto';mv.fieldOfView='11.5deg';"
+      "if(mv.__mask)mv.style.maskImage=mv.style.webkitMaskImage=mv.__mask;";
 
   /// The isometric overview.
   Future<void> overview() => _run(_home);
@@ -86,12 +89,22 @@ class Kitchen3DController {
     "$_home",
   );
 
-  /// Seated at the head of the dining table (Blender x 2.2–3.8,
-  /// y −0.2–1.4, top about 0.75 m): eyes about 1.1 m up, looking along the
-  /// table toward the stove and fridge.
+  /// Seated at the far end of the dining table, eyes about 1.4 m up,
+  /// looking across it into the corner: window on the left, stove on the
+  /// right (the owner's reference shot). The move from the isometric
+  /// overview is the zoom.
   Future<void> table() => _run(
-    "mv.cameraTarget='3m 0.8m -0.8m';"
-    "mv.cameraOrbit='0deg 72deg 1.0m';mv.fieldOfView='60deg';",
+    "mv.cameraTarget='0.9m 1.05m -2.4m';"
+    "mv.cameraOrbit='45deg 85deg 3.8m';mv.fieldOfView='48deg';"
+    // Seated, the room fills the screen: no edge fade.
+    "mv.style.maskImage=mv.style.webkitMaskImage='none';",
+  );
+
+  /// Turns to the microwave on the back counter. The model has no microwave
+  /// door yet (asked of Codex), so this is a camera move only.
+  Future<void> microwave() => _run(
+    "mv.cameraTarget='1m 1.08m -3.3m';"
+    "mv.cameraOrbit='15deg 80deg 2.1m';mv.fieldOfView='45deg';",
   );
 
   /// Repaints every cabinet in [color]; null restores the rendered colour.
@@ -150,7 +163,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
   /// edge fade. Drags (scrolling past the view) are not taps.
   String get _hookJs {
     final fade = widget.vignette
-        ? "mv.style.webkitMaskImage=mv.style.maskImage="
+        ? "mv.__mask=mv.style.webkitMaskImage=mv.style.maskImage="
               "'radial-gradient(ellipse 52% 40% at 50% 50%,#000 58%,transparent 100%)';"
         : '';
     return "(function(){const mv=document.querySelector('#${widget.id}');"

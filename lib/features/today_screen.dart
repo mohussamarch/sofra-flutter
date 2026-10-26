@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
@@ -82,7 +83,18 @@ class _TodayScreenState extends State<TodayScreen> {
     super.initState();
     _tick();
     clock = Timer.periodic(const Duration(minutes: 1), (_) => _tick());
+    // Opened straight on the table (after planning a meal): zoom in once the
+    // model is up. The shot does nothing before that, so keep asking a while.
+    if (widget.mode == HomeMode.table) {
+      var tries = 0;
+      _arrive = Timer.periodic(const Duration(milliseconds: 400), (t) {
+        if (++tries > 12 || widget.mode != HomeMode.table) t.cancel();
+        if (widget.mode == HomeMode.table) viewer.table();
+      });
+    }
   }
+
+  Timer? _arrive;
 
   @override
   void didUpdateWidget(TodayScreen old) {
@@ -103,6 +115,7 @@ class _TodayScreenState extends State<TodayScreen> {
   @override
   void dispose() {
     clock?.cancel();
+    _arrive?.cancel();
     super.dispose();
   }
 
@@ -161,12 +174,18 @@ class _TodayScreenState extends State<TodayScreen> {
   }
 
   /// The microwave holds what can be warmed up again.
-  Future<void> _openLeftovers() => showShelves(
-    context,
-    title: 'بواقي الأكل',
-    items: leftoverShelfItems,
-    empty: 'مفيش بواقي متسجلة. لما تطبخ وتفضل حاجة، هتلاقيها هنا تسخنها.',
-  );
+  Future<void> _openLeftovers() async {
+    viewer.microwave();
+    await Future<void>.delayed(const Duration(milliseconds: 900));
+    if (!mounted) return;
+    await showShelves(
+      context,
+      title: 'بواقي الأكل',
+      items: leftoverShelfItems,
+      empty: 'مفيش بواقي متسجلة. لما تطبخ وتفضل حاجة، هتلاقيها هنا تسخنها.',
+    );
+    if (mounted && widget.mode == HomeMode.kitchen) viewer.overview();
+  }
 
   /// The oven shows what's coming up; the full plan lives on the table.
   Future<void> _openPlans() {
@@ -324,9 +343,9 @@ class _TodayScreenState extends State<TodayScreen> {
                 Positioned(
                   left: 0,
                   right: 0,
-                  top: head + room * .36,
-                  bottom: foot,
-                  child: const _MealCards(),
+                  top: media.padding.top + 8,
+                  height: head - media.padding.top + room * .6,
+                  child: _MealCards(night: (weights['night'] ?? 0) > .5),
                 ),
               RecipeBook(open: widget.mode == HomeMode.recipes, top: head),
             ],
@@ -449,19 +468,34 @@ class _CornerCircle extends StatelessWidget {
   }
 }
 
-/// The table's meals as floating 2D panels: the centred one sharp, its
-/// neighbours turned slightly away and faded, swiped side to side.
+/// The table's meals as liquid-glass cards standing over the table, swiped
+/// side to side: the centred one faces you, its neighbours swing back like
+/// the room's side walls. At night a soft LED pool lights them from above
+/// once the camera has settled.
 class _MealCards extends StatefulWidget {
-  const _MealCards();
+  const _MealCards({required this.night});
+  final bool night;
   @override
   State<_MealCards> createState() => _MealCardsState();
 }
 
 class _MealCardsState extends State<_MealCards> {
-  final pages = PageController(viewportFraction: .78);
+  final pages = PageController(viewportFraction: .66);
+  bool settled = false;
+  Timer? _settle;
+
+  @override
+  void initState() {
+    super.initState();
+    // The LED comes on after the zoom (about the camera's travel time).
+    _settle = Timer(const Duration(milliseconds: 1400), () {
+      if (mounted) setState(() => settled = true);
+    });
+  }
 
   @override
   void dispose() {
+    _settle?.cancel();
     pages.dispose();
     super.dispose();
   }
@@ -470,6 +504,7 @@ class _MealCardsState extends State<_MealCards> {
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
+    final rtl = Directionality.of(context) == TextDirection.rtl;
     final meals = c
         .upcoming(DateTime.now())
         .where((m) => !m.completed)
@@ -505,7 +540,8 @@ class _MealCardsState extends State<_MealCards> {
               ),
             ),
           ]
-        : [for (final m in meals) PlannedMealCard(m)];
+        : [for (final m in meals) PlannedMealCard(m, glass: true)];
+    final led = widget.night && settled;
     return Column(
       children: [
         Text(
@@ -539,40 +575,77 @@ class _MealCardsState extends State<_MealCards> {
         ),
         const SizedBox(height: 4),
         Expanded(
-          child: PageView.builder(
-            controller: pages,
-            itemCount: cards.length,
-            itemBuilder: (context, i) => AnimatedBuilder(
-              animation: pages,
-              builder: (context, child) {
-                final page = pages.hasClients && pages.position.haveDimensions
-                    ? pages.page ?? 0
-                    : 0.0;
-                final d = (page - i).clamp(-1.0, 1.0);
-                final s = 1 - d.abs() * .1;
-                // Cards lie on the table seen from the seat: tipped back
-                // a little, the side ones further away.
-                return Opacity(
-                  opacity: 1 - d.abs() * .5,
-                  child: Transform(
-                    alignment: Alignment.bottomCenter,
-                    transform: Matrix4.identity()
-                      ..setEntry(3, 2, .0012)
-                      ..rotateX(-.32 - d.abs() * .12)
-                      ..rotateY(d * .3)
-                      ..scaleByDouble(s, s, 1, 1),
-                    child: child,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              // Soft LED pool hanging over the table: brightest just above
+              // the cards, fading down onto the tabletop.
+              Positioned.fill(
+                child: IgnorePointer(
+                  child: AnimatedOpacity(
+                    key: const ValueKey('table-led'),
+                    opacity: led ? 1 : 0,
+                    duration: const Duration(milliseconds: 900),
+                    curve: Curves.easeOut,
+                    child: const DecoratedBox(
+                      decoration: BoxDecoration(
+                        gradient: RadialGradient(
+                          center: Alignment(0, -1.05),
+                          radius: 1.1,
+                          colors: [
+                            Color(0x66FFE3B3),
+                            Color(0x26FFD18A),
+                            Color(0x00FFD18A),
+                          ],
+                          stops: [0, .45, 1],
+                        ),
+                      ),
+                    ),
                   ),
-                );
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: SingleChildScrollView(child: cards[i]),
                 ),
               ),
-            ),
+              PageView.builder(
+                controller: pages,
+                // Mouse drags too, so the web preview swipes like a phone.
+                scrollBehavior: ScrollConfiguration.of(context)
+                    .copyWith(dragDevices: PointerDeviceKind.values.toSet()),
+                itemCount: cards.length,
+                itemBuilder: (context, i) => AnimatedBuilder(
+                  animation: pages,
+                  builder: (context, child) {
+                    final page =
+                        pages.hasClients && pages.position.haveDimensions
+                        ? pages.page ?? 0
+                        : 0.0;
+                    // Which side of the screen the card sits on: +1 right.
+                    final x = (rtl ? page - i : i - page).clamp(-1.0, 1.0);
+                    final s = 1 - x.abs() * .08;
+                    return Opacity(
+                      opacity: 1 - x.abs() * .25,
+                      child: Transform(
+                        // Hinged on the inner edge, outer edge toward you.
+                        alignment: Alignment(-x, 0),
+                        transform: Matrix4.identity()
+                          ..setEntry(3, 2, .0016)
+                          ..rotateY(x * .85)
+                          ..scaleByDouble(s, s, 1, 1),
+                        child: child,
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 6,
+                      vertical: 8,
+                    ),
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SingleChildScrollView(child: cards[i]),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ],

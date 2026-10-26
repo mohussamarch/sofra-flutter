@@ -362,8 +362,9 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     );
   }
 
-  /// Liquid-glass bar: recipe book (right), home (centre), table (left).
-  /// Tapping the open mode again returns to the kitchen.
+  /// Liquid-glass bar of three: recipe book, table, community. The kitchen
+  /// has no button of its own: it is what's behind them, and tapping the
+  /// open one again returns to it.
   Widget _bottomNav(SofraController c) {
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
     // Over the dark kitchen the glass turns smoky and the ink light.
@@ -380,40 +381,45 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     }) {
       final active = tab == target;
       return Expanded(
-        child: Semantics(
-          selected: active,
-          button: true,
-          label: label,
-          child: PressScale(
-            child: InkWell(
-              key: ValueKey('nav-$key'),
-              borderRadius: BorderRadius.circular(Sofra.r22),
-              onTap: () => goTab(active ? AppTab.today : target),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 11),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Badge(
-                      isLabelVisible: badge,
-                      smallSize: 7,
-                      backgroundColor: Sofra.orange,
-                      child: Icon(
-                        active ? on : off,
-                        color: active ? accent : ink,
-                        size: 28,
+        child: KeyedSubtree(
+          key: active ? const ValueKey('nav-active') : null,
+          child: Semantics(
+            selected: active,
+            button: true,
+            label: label,
+            child: PressScale(
+              child: InkWell(
+                key: ValueKey('nav-$key'),
+                borderRadius: BorderRadius.circular(Sofra.r22),
+                onTap: () => goTab(active ? AppTab.today : target),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 11),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Badge(
+                        isLabelVisible: badge,
+                        smallSize: 7,
+                        backgroundColor: Sofra.orange,
+                        child: Icon(
+                          active ? on : off,
+                          color: active ? accent : ink,
+                          size: 28,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      label,
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: active ? FontWeight.w800 : FontWeight.w600,
-                        color: active ? accent : ink.withValues(alpha: .7),
+                      const SizedBox(height: 4),
+                      Text(
+                        label,
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: active
+                              ? FontWeight.w800
+                              : FontWeight.w600,
+                          color: active ? accent : ink.withValues(alpha: .7),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -422,7 +428,6 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
       );
     }
 
-    final home = tab == AppTab.today;
     return Center(
       child: SizedBox(
         width: (MediaQuery.sizeOf(context).width - 32).clamp(0, 440),
@@ -439,31 +444,6 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                 Icons.menu_book_rounded,
                 'الوصفات',
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: PressScale(
-                  child: Material(
-                    color: home
-                        ? Sofra.green
-                        : Colors.white.withValues(alpha: .7),
-                    shape: const CircleBorder(),
-                    child: InkWell(
-                      key: const ValueKey('nav-today'),
-                      customBorder: const CircleBorder(),
-                      onTap: () => goTab(AppTab.today),
-                      child: SizedBox.square(
-                        dimension: 66,
-                        child: Icon(
-                          home ? Icons.home_rounded : Icons.home_outlined,
-                          color: home ? Colors.white : Sofra.ink,
-                          size: 31,
-                          semanticLabel: 'المطبخ',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
               item(
                 AppTab.table,
                 'table',
@@ -471,6 +451,13 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                 Icons.table_restaurant_rounded,
                 'السفرة',
                 badge: hasPlan,
+              ),
+              item(
+                AppTab.community,
+                'community',
+                Icons.diversity_3_outlined,
+                Icons.diversity_3_rounded,
+                'المجتمع',
               ),
             ],
           ),

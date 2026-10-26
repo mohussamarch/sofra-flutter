@@ -210,10 +210,20 @@ class _ShelfWheelState extends State<ShelfWheel>
   String? group;
   bool searching = false;
 
+  /// Shelves sorted by kind (one category per run) or by what went in last.
+  bool byKind = true;
+
   List<ShelfItem> get _shown {
     final q = IngredientDirectory.normalizeArabic(query);
+    final order = byKind
+        ? ([...widget.items.indexed]..sort((a, b) {
+                final g = (a.$2.group ?? '').compareTo(b.$2.group ?? '');
+                return g != 0 ? g : a.$1.compareTo(b.$1);
+              }))
+              .map((e) => e.$2)
+        : widget.items.reversed;
     return [
-      for (final item in widget.items)
+      for (final item in order)
         if ((group == null || item.group == group) &&
             (q.isEmpty ||
                 IngredientDirectory.normalizeArabic(item.label).contains(q)))
@@ -267,6 +277,15 @@ class _ShelfWheelState extends State<ShelfWheel>
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(top: 6),
                 children: [
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 6),
+                    child: ActionChip(
+                      key: const ValueKey('shelves-order'),
+                      avatar: const Icon(Icons.swap_vert_rounded, size: 18),
+                      label: Text(byKind ? 'حسب النوع' : 'آخر ما وُضع'),
+                      onPressed: () => _filter(() => byKind = !byKind),
+                    ),
+                  ),
                   chip('shelves-group-all', 'الكل', null),
                   for (final g in groups) chip('shelves-group-$g', g, g),
                 ],
@@ -434,9 +453,9 @@ class _ShelfWheelState extends State<ShelfWheel>
                               key: const ValueKey('shelf-wheel'),
                               controller: wheel,
                               itemExtent: _extent,
-                              diameterRatio: 2.4,
-                              perspective: .0025,
-                              overAndUnderCenterOpacity: .55,
+                              diameterRatio: 1.6,
+                              perspective: .003,
+                              overAndUnderCenterOpacity: .35,
                               physics: const FixedExtentScrollPhysics(),
                               children: [
                                 for (final (i, shelf) in shelves.indexed)

@@ -59,15 +59,25 @@ Future<Future<String> Function(String)> warmAssets(WidgetTester tester) async {
   return (path) async => files[path]!;
 }
 
+/// Back to the home kitchen: a page's back arrow, or the open tab again.
+Future<void> goHome(WidgetTester tester) async {
+  for (final key in ['page-back', 'nav-active']) {
+    if (find.byKey(ValueKey(key)).evaluate().isNotEmpty) {
+      await tapKey(tester, key);
+      return;
+    }
+  }
+}
+
 /// Back to the home kitchen, then one of its corner circles.
 Future<void> openCorner(WidgetTester tester, String circle) async {
-  await tapKey(tester, 'nav-today');
+  await goHome(tester);
   await tapKey(tester, 'circle-$circle');
 }
 
 /// The stock page, through the kitchen (no render in tests, so its stand-in).
 Future<void> openStock(WidgetTester tester) async {
-  await tapKey(tester, 'nav-today');
+  await goHome(tester);
   await tapKey(tester, 'open-stock');
 }
 
@@ -79,7 +89,7 @@ Future<void> completeOnboarding(WidgetTester tester) async {
   for (var i = 0; i < 5; i++) {
     await tapKey(tester, 'onboarding-next');
   }
-  expect(find.byKey(const ValueKey('nav-today')), findsOneWidget);
+  expect(find.byKey(const ValueKey('nav-recipes')), findsOneWidget);
 }
 
 String stockQuantity(WidgetTester tester, String id) =>
