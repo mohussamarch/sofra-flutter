@@ -6,7 +6,7 @@
       "name": "مصري",
       "slug": "egyptian",
       "file": "egyptian.json",
-      "count": 28
+      "count": 30
     },
     {
       "name": "شامي",
@@ -102,7 +102,7 @@
       "name": "يمني",
       "slug": "yemeni",
       "file": "yemeni.json",
-      "count": 3
+      "count": 4
     },
     {
       "name": "فلبيني",
@@ -210,7 +210,7 @@
       "name": "مغربي",
       "slug": "moroccan",
       "file": "moroccan.json",
-      "count": 12
+      "count": 13
     },
     {
       "name": "ماليزي",
@@ -396,7 +396,7 @@
       "name": "فلسطيني",
       "slug": "palestinian",
       "file": "palestinian.json",
-      "count": 2
+      "count": 3
     },
     {
       "name": "أردني",
@@ -12757,6 +12757,86 @@
       "file": "greek.json",
       "catalogStatus": "active",
       "cuisineGroup": "greek"
+    },
+    {
+      "id": "ar-tajine-dajaj-zaytoun-akhdar",
+      "name": "طاجين الدجاج بالزيتون الأخضر",
+      "nameEn": "Chicken tagine with green olives",
+      "cuisine": "مغربي",
+      "category": "أطباق رئيسية",
+      "servings": 4,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 17,
+      "stepCount": 7,
+      "file": "moroccan.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "moroccan"
+    },
+    {
+      "id": "ar-fatta-dajaj-zabadi-hummus",
+      "name": "فتة الدجاج بالزبادي والحمص",
+      "nameEn": "Chicken fatteh with yogurt sauce and chickpeas",
+      "cuisine": "مصري",
+      "category": "أطباق رئيسية",
+      "servings": 5,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 11,
+      "stepCount": 6,
+      "file": "egyptian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "egyptian"
+    },
+    {
+      "id": "ar-maftoul-filastini-dajaj",
+      "name": "مفتول فلسطيني بالدجاج",
+      "nameEn": "Palestinian maftoul with chicken and chickpeas",
+      "cuisine": "فلسطيني",
+      "category": "أطباق رئيسية",
+      "servings": 8,
+      "totalTime": 180,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 17,
+      "stepCount": 8,
+      "file": "palestinian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "levantine"
+    },
+    {
+      "id": "ar-mandi-yamani-dajaj",
+      "name": "مندي دجاج يمني",
+      "nameEn": "Yemeni chicken mandi",
+      "cuisine": "يمني",
+      "category": "أطباق رئيسية",
+      "servings": 6,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 18,
+      "stepCount": 8,
+      "file": "yemeni.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "ar-fatta-lahm-bidoon-salsa",
+      "name": "فتة لحم بدون صلصة",
+      "nameEn": "Egyptian lamb fatteh without tomato sauce",
+      "cuisine": "مصري",
+      "category": "أطباق رئيسية",
+      "servings": 6,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 10,
+      "stepCount": 5,
+      "file": "egyptian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "egyptian"
     }
   ],
   "cuisineGroups": [
@@ -12768,7 +12848,7 @@
       ],
       "kind": "primary",
       "order": 1,
-      "count": 28
+      "count": 30
     },
     {
       "id": "saudi",
@@ -12791,7 +12871,7 @@
       ],
       "kind": "primary",
       "order": 3,
-      "count": 27
+      "count": 28
     },
     {
       "id": "moroccan",
@@ -12801,7 +12881,7 @@
       ],
       "kind": "primary",
       "order": 4,
-      "count": 12
+      "count": 13
     },
     {
       "id": "italian",
@@ -12968,7 +13048,7 @@
       ],
       "kind": "secondary",
       "order": null,
-      "count": 125
+      "count": 126
     }
   ],
   "cuisinePolicy": {

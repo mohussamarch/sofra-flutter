@@ -21,6 +21,23 @@ class PhoneFrame extends StatelessWidget {
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context);
     if (!kIsWeb || _onPhone) return child;
+    // A short window (e.g. a side pane) would shrink the frame until text is
+    // unreadable; show the app at real size in a phone-wide column instead.
+    if (media.size.height < 640) {
+      final width = media.size.width.clamp(0, screen.width).toDouble();
+      return ColoredBox(
+        color: const Color(0xFFE9E5DF),
+        child: Center(
+          child: SizedBox(
+            width: width,
+            child: MediaQuery(
+              data: media.copyWith(size: Size(width, media.size.height)),
+              child: child,
+            ),
+          ),
+        ),
+      );
+    }
     final inner = media.copyWith(
       size: screen,
       padding: safe,

@@ -146,7 +146,7 @@ void main() {
   test('all catalog recipes round-trip complete snapshot content', () async {
     final recipes = await RecipeRepository(read: (p) => File(p).readAsString())
         .loadAll(includeHeld: true);
-    expect(recipes.length, 702);
+    expect(recipes.length, 707);
     for (final r in recipes) {
       final saved = r.toJson();
       final restored = CatalogRecipe.fromJson(saved);
