@@ -13,7 +13,7 @@ void main() {
       final repo = repository();
       final active = await repo.index;
       final retained = await repo.retainedIndex;
-      expect(retained, hasLength(657));
+      expect(retained, hasLength(687));
       expect(active.length, lessThan(retained.length));
       for (final row in active) {
         expect(row['catalogStatus'], 'active');

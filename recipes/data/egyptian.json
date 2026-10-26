@@ -1617,6 +1617,2022 @@
         "طبق رئيسي"
       ],
       "notes": "الكميات غير المطَبّعة محفوظة بنص المصدر؛ الحصص والأزمنة التي لا يمكن تمثيلها بدقة متروكة null. بيانات المصدر: - ⏲️ Prep time: 5 min ؛ - 🍳 Cook time: 40 min ؛ - 🍽️ Servings: 5. المصدر: https://github.com/LukeSmithxyz/based.cooking/blob/9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2/content/egyptian-lentils.md ؛ revision=9d4a31a040eedd61e4fb608cb0c114ff9a7c4dd2 ؛ snapshotSHA256=0a7cb9f1325155c723609817dc3ec66210027baffb290296792b5dc3fa524168"
+    },
+    {
+      "id": "eg-bamya-bel-lahma",
+      "name": "بامية باللحمة",
+      "nameEn": "Bamya (Okra and Meat Stew)",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "description": "يخنة بامية صغيرة مع قطع لحم الضأن الطرية في صلصة طماطم بالليمون.",
+      "servings": 8,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "lamb",
+          "name": "لحم ضأن بالعظم للتسبيك",
+          "amount": 2,
+          "unit": "رطل",
+          "note": "يمكن استبداله بلحم بقري أو ماعز؛ لو بدون عظم 1–1.5 رطل"
+        },
+        {
+          "id": "salt",
+          "name": "ملح خشن",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة أو زيت محايد",
+          "amount": 1.5,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل أصفر أو أبيض مفروم (متوسط)",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 5,
+          "unit": "فص"
+        },
+        {
+          "id": "bay-leaf",
+          "name": "ورق لورا",
+          "amount": 1,
+          "unit": "ورقة"
+        },
+        {
+          "id": "seven-spice",
+          "name": "بهارات مشكلة (سبع بهارات)",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "note": "بديل المصدر: 1 ملعقة صغيرة بهار حلو + ½ كزبرة ناشفة + ½ حبهان"
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة",
+          "amount": 0.2,
+          "unit": "ملعقة صغيرة",
+          "note": "مكتوبة 1/5 ملعقة صغيرة في المصدر"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 5,
+          "unit": "كوب"
+        },
+        {
+          "id": "okra",
+          "name": "بامية صغيرة مجمدة (زيرو)",
+          "amount": 2,
+          "unit": "علبة",
+          "note": "عبوتان إجماليهما 28 أونصة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم (معجون)",
+          "amount": 5,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "lemon",
+          "name": "ليمون (عصيره)",
+          "amount": 1,
+          "unit": "حبة"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "تبّل قطع اللحم بكمية وفيرة من الملح.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "سخّن السمنة في حلة كبيرة ثقيلة القاع، ثم حمّر اللحم على نار عالية على دفعات حتى يتلون من كل الجهات، وارفعه جانباً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخفض النار لمتوسطة وقلّب البصل المفروم حتى يذبل.",
+          "duration": 5
+        },
+        {
+          "n": 4,
+          "text": "أعد اللحم للحلة وأضف الثوم والبهارات وورق اللورا وقلّب حتى تفوح الرائحة.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "صب الماء واتركه يغلي، ثم غطِّ الحلة واتركها على نار هادئة حتى يطرى اللحم تماماً.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 6,
+          "text": "قلّب معجون الطماطم جيداً في المرق، ثم أضف البامية المجمدة وقلّب برفق.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "ارفع النار حتى الغليان ثم غطِّ واتركها على نار هادئة حتى تنضج البامية.",
+          "duration": 25,
+          "passive": true
+        },
+        {
+          "n": 8,
+          "text": "أضف عصير الليمون وعدّل الملح، ثم غطِّ واتركها ٥–١٠ دقائق لتتجانس النكهات.",
+          "duration": 5,
+          "passive": true
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://amwhatieat.com/bamya-okra-and-meat-stew/ | الموقع: amwhatieat.com | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-shorbet-ads",
+      "name": "شوربة عدس مصري",
+      "nameEn": "Egyptian Red Lentil Soup (Shorbat Ads)",
+      "cuisine": "مصري",
+      "category": "شوربة",
+      "description": "شوربة عدس أصفر ناعمة بالخضار والكمون تُقدَّم بالليمون والعيش المحمص.",
+      "servings": 6,
+      "prepTime": 5,
+      "cookTime": 35,
+      "totalTime": 40,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون أو زيت محايد",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "note": "نطاق المصدر 2–3، من 2 لـ 3"
+        },
+        {
+          "id": "onion",
+          "name": "بصل أبيض أو أصفر متوسط مقطع خشن",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مقطع خشن",
+          "amount": 6,
+          "unit": "فص"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم متوسطة مقطعة خشن",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزر متوسط مقطع خشن",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم (معجون)",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون مطحون",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "paprika",
+          "name": "بابريكا",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cayenne",
+          "name": "فلفل كايين",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true,
+          "note": "أو حسب الرغبة"
+        },
+        {
+          "id": "red-lentils",
+          "name": "عدس أصفر (أحمر) مغسول",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "water",
+          "name": "ماء أو مرق",
+          "amount": 7,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح خشن",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "note": "النصف لو ملح طعام ناعم، ويُزاد حسب الذوق"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون طازج",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "lemon",
+          "name": "ليمون (عصير، مقسم للطبخ والتقديم)",
+          "amount": 2,
+          "unit": "حبة",
+          "note": "نطاق المصدر 2–3، من 2 لـ 3"
+        },
+        {
+          "id": "pita-bread",
+          "name": "عيش شامي للتحميص",
+          "amount": 2,
+          "unit": "حبة",
+          "optional": true,
+          "note": "أو رغيف لبناني رقيق كبير واحد"
+        },
+        {
+          "id": "salt",
+          "name": "ملح للعيش المحمص",
+          "amount": 1,
+          "unit": "رشة",
+          "optional": true
+        },
+        {
+          "id": "oil",
+          "name": "زيت لدهن العيش",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        },
+        {
+          "id": "cumin",
+          "name": "كمون أو سماق أو زعتر للعيش",
+          "amount": 1,
+          "unit": "رشة",
+          "optional": true
+        },
+        {
+          "id": "yogurt",
+          "name": "زبادي للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس أو كزبرة خضراء مفرومة للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الزيت في حلة كبيرة على نار متوسطة إلى عالية وقلّب البصل حتى يطرى.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الجزر وقلّبه دقائق حتى يتحمر قليلاً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الطماطم ومعجون الطماطم والثوم والتوابل وقلّب حتى يتكرمل المعجون.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف العدس المغسول وقلّب، ثم صب الماء أو المرق مع الملح واتركه يغلي.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "غطِّ الحلة واخفض النار واتركها حتى يصبح العدس والخضار طريين جداً.",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 6,
+          "text": "اتركها تبرد قليلاً ثم اضربها بالخلاط حتى تنعم.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف عصير ليمونة واحدة وعدّل الملح والليمون والقوام حسب ذوقك، وقدّمها ساخنة.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "للعيش المحمص: سخّن الفرن على 200°م، قطّع العيش مربعات صغيرة، قلّبها مع الزيت والملح، واخبزها على صينية مبطنة حتى تتحمص مع المراقبة.",
+          "duration": 10
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://amwhatieat.com/egyptian-red-lentil-soup-shorbat-ads/ | الموقع: amwhatieat.com | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-fasolia-khadra-bel-lahma",
+      "name": "فاصوليا خضراء باللحمة",
+      "nameEn": "Fasolia (Egyptian Green Bean Stew)",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "description": "فاصوليا خضراء مطبوخة مع اللحم والجزر في صلصة طماطم متبلة.",
+      "servings": 4,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة",
+          "note": "نطاق المصدر 2–3، من 2 لـ 3"
+        },
+        {
+          "id": "beef",
+          "name": "لحم للتسبيك (ماعز أو ضأن أو بقري)",
+          "amount": 1,
+          "unit": "رطل"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "onion",
+          "name": "بصل صغير مفروم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 3,
+          "unit": "فص",
+          "note": "نطاق المصدر 3–4، من 3 لـ 4"
+        },
+        {
+          "id": "allspice",
+          "name": "بهار حلو",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "aleppo-pepper",
+          "name": "فلفل حلبي",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم (معجون)",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم مقطعة",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزر شرائح",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "green-beans",
+          "name": "فاصوليا خضراء منظفة ومقطعة",
+          "amount": 3,
+          "unit": "كوب",
+          "note": "نطاق المصدر 3–4 أكواب (حوالي ¾–1 رطل)، من 3 لـ 4"
+        },
+        {
+          "id": "lemon",
+          "name": "ليمون (عصير)",
+          "amount": 0.5,
+          "unit": "حبة"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن زيت الزيتون في حلة على نار متوسطة إلى عالية.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "تبّل اللحم بالملح والفلفل وحمّره من كل الجهات.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف البصل والتوابل واخفض النار لمتوسطة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "عندما يذبل البصل أضف الثوم وقلّب باستمرار.",
+          "duration": 2
+        },
+        {
+          "n": 5,
+          "text": "أضف معجون الطماطم وواصل التقليب بضع دقائق، ثم أضف الطماطم والجزر.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "صب حوالي كوبين ماء حتى يغطي اللحم، واتركه يغلي ثم غطِّ واطهه على نار هادئة حتى يطرى اللحم جداً (المدة تختلف حسب القطعية).",
+          "duration": 90,
+          "passive": true
+        },
+        {
+          "n": 7,
+          "text": "تذوّق وعدّل التتبيل، ثم أضف الفاصوليا وغطِّ حتى تطرى دون أن تتهرى.",
+          "duration": 10,
+          "passive": true
+        },
+        {
+          "n": 8,
+          "text": "اعصر الليمون فوق اليخنة وقدّمها مع الرز الأبيض أو الرز بالشعرية.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://amwhatieat.com/egyptian-style-green-bean-stew/ | الموقع: amwhatieat.com | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-salata-baladi",
+      "name": "سلطة بلدي",
+      "nameEn": "Salata Baladi (Egyptian Salad)",
+      "cuisine": "مصري",
+      "category": "سلطة",
+      "description": "سلطة خيار وطماطم وبصل مقطعة صغيرة بالليمون وزيت الزيتون.",
+      "servings": 4,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "cucumber",
+          "name": "خيار صغير",
+          "amount": 2,
+          "unit": "حبة",
+          "note": "أو ما يعادله من نوع آخر"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم صغيرة متماسكة",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل أحمر أو أصفر متوسط",
+          "amount": 0.5,
+          "unit": "حبة"
+        },
+        {
+          "id": "parsley",
+          "name": "أوراق بقدونس وسيقانه الطرية",
+          "amount": 1,
+          "unit": "حفنة"
+        },
+        {
+          "id": "lemon",
+          "name": "ليمون (عصير)",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "cumin",
+          "name": "كمون أو سماق أو فلفل حلبي أو كايين",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "قطّع الخيار والطماطم والبصل مكعبات صغيرة وافرم البقدونس.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "قلّب الخضار مع عصير الليمون وزيت الزيتون مباشرة في الطبق.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "تبّل بالملح والفلفل مع التذوق، وأضف الكمون أو السماق أو الشطة إن رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://amwhatieat.com/salata-baladi-egyptian-salad/ | الموقع: amwhatieat.com | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-beid-bel-basterma",
+      "name": "بيض بالبسطرمة",
+      "nameEn": "Beid bel Basturma (Eggs with Basturma)",
+      "cuisine": "مصري",
+      "category": "فطار",
+      "description": "بيض مقلّب مع قطع البسطرمة المحمرة في السمنة لفطار سريع.",
+      "servings": 2,
+      "prepTime": 3,
+      "cookTime": 7,
+      "totalTime": 10,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "ghee",
+          "name": "سمنة أو زبدة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "basturma",
+          "name": "بسطرمة",
+          "amount": 5,
+          "unit": "شريحة",
+          "note": "نطاق المصدر 5–6 شرائح، من 5 لـ 6"
+        },
+        {
+          "id": "eggs",
+          "name": "بيض كبير",
+          "amount": 4,
+          "unit": "حبة"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخفق البيض جيداً في وعاء، وقطّع البسطرمة قطعاً صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "ذوّب السمنة في مقلاة غير لاصقة على نار متوسطة إلى عالية وأضف البسطرمة مع التقليب المستمر حتى تتقرمش وتتحمر بهاراتها.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اخفض النار لمتوسطة وأضف البيض وقلّبه حتى يقارب النضج مع بقاء طراوة خفيفة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "انقله إلى طبق وقدّمه مع العيش والمقبلات.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://amwhatieat.com/eggs-with-basturma/ | الموقع: amwhatieat.com | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-kebda-eskandarani",
+      "name": "كبدة إسكندراني",
+      "nameEn": "Kebda Eskandarani (Alexandrian Liver)",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "description": "شرائح كبدة بقري متبلة بالكمون والثوم ومقلية مع الفلفل الرومي والليمون.",
+      "servings": 4,
+      "prepTime": 5,
+      "cookTime": 15,
+      "totalTime": 20,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "liver",
+          "name": "كبدة بقري مقطعة قطعاً بطول 2 بوصة",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل متوسط مقسوم نصفين",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 3,
+          "unit": "فص"
+        },
+        {
+          "id": "bell-pepper",
+          "name": "فلفل رومي أخضر كبير مقطع",
+          "amount": 1,
+          "unit": "حبة",
+          "note": "يُحجز ربع كوب منه للتقليب في النهاية"
+        },
+        {
+          "id": "bell-pepper",
+          "name": "فلفل رومي أحمر مقطع",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "lemon-juice",
+          "name": "عصير ليمون",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "note": "ويُزاد عند التقديم حسب الرغبة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس مفروم للتزيين",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اهرس الفلفل الأخضر (عدا الربع كوب المحجوز) مع البصل في محضّر الطعام حتى يصبح مثل البيوريه.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلط البيوريه مع شرائح الكبدة، ثم أضف الثوم والكمون والملح والفلفل الأسود وقلّب برفق واتركها ترتاح قليلاً.",
+          "duration": 5,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "سخّن زيت الزيتون في مقلاة، ثم أضف الكبدة المتبلة واتركها تتحمر دون تقليب حتى لا تتفتت.",
+          "duration": 10
+        },
+        {
+          "n": 4,
+          "text": "أضف الفلفل الرومي المقطع وعصير الليمون وقلّب برفق واتركها على النار قليلاً.",
+          "duration": 5
+        },
+        {
+          "n": 5,
+          "text": "عدّل الملح والفلفل والليمون، وزيّن بالبقدونس إن رغبت، وقدّمها مع العيش البلدي أو الرز.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://theodehlicious.com/kebda-eskandarani/ | الموقع: The Odehlicious | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-mesaqaa-bel-lahma",
+      "name": "مسقعة باللحمة المفرومة",
+      "nameEn": "Egyptian Moussaka (Mesaqa'a)",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "description": "طبقات باذنجان مخبوز مع صلصة لحم مفروم بالطماطم والفلفل بدون بشاميل.",
+      "servings": 12,
+      "prepTime": 20,
+      "cookTime": 40,
+      "totalTime": 60,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "eggplant",
+          "name": "باذنجان رومي صغير مقطع شرائح ¼ بوصة",
+          "amount": 3,
+          "unit": "حبة",
+          "note": "حوالي 2 رطل"
+        },
+        {
+          "id": "salt",
+          "name": "ملح خشن",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "onion",
+          "name": "بصل أصفر كبير",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bell-pepper",
+          "name": "فلفل رومي أخضر",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم كبير",
+          "amount": 3,
+          "unit": "فص",
+          "note": "نطاق المصدر 3–4، من 3 لـ 4"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "beef",
+          "name": "لحم بقري مفروم قليل الدهن",
+          "amount": 1,
+          "unit": "رطل"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "paprika",
+          "name": "بابريكا حلوة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "chili-flakes",
+          "name": "شطة مجروشة أو فلفل حلبي",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "tomato-canned",
+          "name": "طماطم معلبة كاملة بعصيرها",
+          "amount": 1,
+          "unit": "علبة",
+          "note": "علبة 28 أونصة"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس طازج مفروم",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "pine-nuts",
+          "name": "صنوبر أو شرائح لوز",
+          "amount": 0.25,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "pita-bread",
+          "name": "عيش شامي أو رز للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن على 400°ف (حوالي 200°م) وادهن صينية بقليل من الزيت.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "رش شرائح الباذنجان بالملح وافردها في طبقة واحدة واتركها بينما تجهّز باقي المكونات.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "قطّع البصل والفلفل خشناً وافرم الثوم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "جفّف الباذنجان من الماء والملح الزائد، وادهنه جيداً بزيت الزيتون، ورصّه في الصينية واخبزه حتى يبدأ في الطراوة دون أن ينضج تماماً.",
+          "duration": 20
+        },
+        {
+          "n": 5,
+          "text": "في هذه الأثناء سخّن حوالي ملعقتين زيت في مقلاة كبيرة، وقلّب البصل والفلفل والثوم مع رشة ملح حتى يطروا قليلاً.",
+          "duration": 5
+        },
+        {
+          "n": 6,
+          "text": "أضف اللحم المفروم وفكّكه بالملعقة حتى يتحمر تماماً (٧–١٠ دقائق)، وصفِّ الدهن الزائد إن لزم، ثم تبّل بالكزبرة والبابريكا والشطة والفلفل.",
+          "duration": 7
+        },
+        {
+          "n": 7,
+          "text": "أضف الطماطم بعصيرها مع ثلث كوب ماء واهرسها قليلاً، واتركها تغلي ثم اخفض النار حتى ينتهي خبز الباذنجان، وعدّل الملح.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 8,
+          "text": "في صينية 9×13 مدهونة رص نصف الباذنجان ثم نصف الصلصة، وكرر بالباقي، ورش قليلاً من الزيت.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اخبزها في الفرن ثم انقلها تحت الشواية دقائق قليلة حتى يتلون الوجه مع المراقبة.",
+          "duration": 20
+        },
+        {
+          "n": 10,
+          "text": "زيّنها بالبقدونس والمكسرات وقدّمها ساخنة أو دافئة مع العيش أو الرز.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.themediterraneandish.com/egyptian-moussaka/ | الموقع: The Mediterranean Dish | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-beid-mezalil",
+      "name": "بيض مزغلل (بيض مسلوق مقلي)",
+      "nameEn": "Beid Meza'lil (Egyptian Fried Boiled Eggs)",
+      "cuisine": "مصري",
+      "category": "فطار",
+      "description": "بيض مسلوق مقشر يُقلى في السمنة حتى يتقرمش بياضه ويصير ذهبياً.",
+      "servings": 6,
+      "prepTime": 5,
+      "cookTime": 12,
+      "totalTime": 17,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "eggs",
+          "name": "بيض كبير",
+          "amount": 6,
+          "unit": "حبة",
+          "note": "ويمكن الزيادة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح خشن",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة أو زبدة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "optional": true
+        },
+        {
+          "id": "cucumber",
+          "name": "خضار مقطعة أو سلطة خيار وطماطم للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        },
+        {
+          "id": "black-olives",
+          "name": "زيتون كالاماتا للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        },
+        {
+          "id": "feta",
+          "name": "جبنة فيتا للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "رص البيض في طبقة واحدة في حلة وغطّه بالماء بارتفاع بوصة على الأقل، وأضف نحو نصف ملعقة صغيرة ملح ورشة خل.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اترك الماء يغلي بقوة ثم أطفئ النار وغطِّ الحلة واترك البيض ١٠–١٢ دقيقة ثم صفّه.",
+          "duration": 10,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "مرّر البيض تحت ماء بارد وقشّره، ثم تبّله من كل الجهات بالملح والفلفل.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "سخّن السمنة مع قليل من زيت الزيتون في مقلاة غير لاصقة على نار متوسطة إلى عالية، وضع البيض كاملاً بحذر وقلّبه حتى يتقرمش البياض ويتحمر من كل الجهات (يُفضل استخدام غطاء واقٍ من الرذاذ).",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ارفعه بمصفاة وقدّمه فوراً، ويمكن تقديمه مع السلطة والزيتون والجبنة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.themediterraneandish.com/egyptian-fried-boiled-eggs-recipe/ | الموقع: The Mediterranean Dish | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-bessara",
+      "name": "بصارة",
+      "nameEn": "Bissara (Egyptian Fava Bean Dip)",
+      "cuisine": "مصري",
+      "category": "مقبلات",
+      "description": "فول مدشوش مهروس مع الشبت والبقدونس والكزبرة ومزين بالبصل المحمر.",
+      "servings": 6,
+      "prepTime": 10,
+      "cookTime": 25,
+      "totalTime": 35,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "split-fava",
+          "name": "فول مدشوش جاف (أو فاصوليا بيضاء جافة)",
+          "amount": 1.25,
+          "unit": "كوب",
+          "note": "8 أونصات"
+        },
+        {
+          "id": "onion",
+          "name": "بصل متوسط مقشر ومقطع أرباعاً",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مقشر",
+          "amount": 3,
+          "unit": "فص"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 3,
+          "unit": "كوب",
+          "note": "ويُزاد إن لزم"
+        },
+        {
+          "id": "dill",
+          "name": "شبت طازج بأعواده الطرية (كوب مضغوط)",
+          "amount": 1,
+          "unit": "كوب",
+          "note": "1 أونصة"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس طازج بأعواده الطرية (كوب مضغوط)",
+          "amount": 1,
+          "unit": "كوب",
+          "note": "1 أونصة"
+        },
+        {
+          "id": "cilantro",
+          "name": "كزبرة خضراء بأعوادها الطرية (كوب مضغوط)",
+          "amount": 1,
+          "unit": "كوب",
+          "note": "1 أونصة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح ناعم",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون طازج",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 3,
+          "unit": "ملعقة كبيرة",
+          "note": "مقسم: 1 للبصارة و2 لتحمير الشالوت"
+        },
+        {
+          "id": "shallot",
+          "name": "بصل شالوت شرائح رفيعة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "aleppo-pepper",
+          "name": "فلفل حلبي",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "انقع الفول المدشوش في الماء طوال الليل، ثم تخلص من ماء النقع واشطفه.",
+          "duration": 480,
+          "passive": true
+        },
+        {
+          "n": 2,
+          "text": "ضع الفول مع البصل والثوم والماء في حلة متوسطة (زد الماء ليغطي الفول إن لزم)، واتركه يغلي على نار عالية ثم اخفض النار واتركه يطهى حتى يطرى مع بقاء قوام خفيف، وزد بضع دقائق إن لزم.",
+          "duration": 12,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "أضف الأعشاب الطازجة كلها وقلّب واتركها تطهى.",
+          "duration": 5,
+          "passive": true
+        },
+        {
+          "n": 4,
+          "text": "اهرس الخليط بالخلاط اليدوي حتى يصبح بيوريه كثيفاً متجانساً، ثم أضف الملح والفلفل وملعقة زيت وتذوّق وعدّل.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "سخّن ملعقتي الزيت الباقيتين في مقلاة على نار متوسطة، وحمّر الشالوت ببطء مع التقليب المستمر حتى يتكرمل.",
+          "duration": 5
+        },
+        {
+          "n": 6,
+          "text": "اسكب البصارة في طبق التقديم، ورش الفلفل الحلبي على الوجه، وزيّنها بالشالوت المحمر، وقدّمها دافئة أو باردة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.themediterraneandish.com/egyptian-fava-bean-dip-bissara/ | الموقع: The Mediterranean Dish | الوقت الإجمالي في المصدر 515 دقيقة | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-goulash-bel-lahma",
+      "name": "جلاش باللحمة المفرومة",
+      "nameEn": "Egyptian Goulash (Phyllo Meat Pie)",
+      "cuisine": "مصري",
+      "category": "مخبوزات",
+      "description": "طبقات رقائق الجلاش المقرمشة محشوة باللحم المفروم المتبل ومسقية بخليط البيض واللبن.",
+      "servings": 12,
+      "prepTime": 25,
+      "cookTime": 45,
+      "totalTime": 70,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "phyllo",
+          "name": "عجينة جلاش (فيلو) مجمدة، مذابة في عبوتها",
+          "amount": 16,
+          "unit": "أونصة",
+          "note": "عبوة 16 أونصة"
+        },
+        {
+          "id": "eggs",
+          "name": "بيض مخفوق في كوب اللبن",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "milk",
+          "name": "لبن",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز لدهن الطبقات",
+          "amount": 1,
+          "unit": "كوب",
+          "note": "أو ½ كوب زيت زيتون مع ½ كوب زبدة مذابة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "beef",
+          "name": "لحم بقري مفروم قليل الدهن",
+          "amount": 1.5,
+          "unit": "رطل"
+        },
+        {
+          "id": "seven-spice",
+          "name": "بهارات مشكلة",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "garlic-powder",
+          "name": "ثوم بودرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن على 350°ف (حوالي 175°م)، وضع رقائق الجلاش المذابة بين فوطتين مبللتين قليلاً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "للحشو: سخّن ملعقة زيت في مقلاة كبيرة غير لاصقة، وقلّب البصل قليلاً ثم أضف اللحم حتى يتحمر تماماً، وصفِّ الدهن ثم أضف البهارات وقلّب وارفعه عن النار.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "ادهن صينية بحجم 9.5×13 بوصة، وافرد ٣–٤ رقائق مع ثني الأطراف الزائدة وادهن الوجه بالزيت بسخاء، وكرر حتى تستخدم نصف الرقائق.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "افرد حشو اللحم بالتساوي، ثم كمّل باقي الرقائق بنفس الطريقة حتى تنتهي.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "ادهن الوجه بالزيت، وقطّع الجلاش بسكين حاد إلى ١٢ مربعاً.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "تبّل خليط البيض واللبن بالملح والفلفل واسكبه بالتساوي على الوجه.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اخبزه على الرف الأوسط ٣٠–٤٥ دقيقة حتى يتقرمش ويصبح ذهبياً، مع المراقبة حتى لا يحترق، وقدّمه دافئاً مع سلطة.",
+          "duration": 30,
+          "passive": true
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.themediterraneandish.com/phyllo-meat-pie-recipe-egyptian-goulash/ | الموقع: The Mediterranean Dish | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-kofta-gambari",
+      "name": "كفتة جمبري",
+      "nameEn": "Egyptian Shrimp Fritters (Shrimp Kofta)",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "description": "أقراص جمبري مفروم بالأعشاب والتوابل مقلية حتى تصبح مقرمشة.",
+      "servings": 4,
+      "prepTime": 20,
+      "cookTime": 10,
+      "totalTime": 30,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "onion",
+          "name": "بصل أصفر صغير مقطع أرباعاً",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس بلدي طازج (أوراق وأعواد طرية)",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "dill",
+          "name": "شبت طازج",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم كبير",
+          "amount": 4,
+          "unit": "فص"
+        },
+        {
+          "id": "shrimp",
+          "name": "جمبري صغير مقشر ومنظف بدون ذيل",
+          "amount": 1,
+          "unit": "رطل",
+          "note": "يُذاب إن كان مجمداً"
+        },
+        {
+          "id": "salt",
+          "name": "ملح خشن",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون طازج",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة مطحونة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "paprika",
+          "name": "بابريكا حلوة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "aleppo-pepper",
+          "name": "فلفل حلبي",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "chickpea-flour",
+          "name": "دقيق حمص",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "eggs",
+          "name": "بيض كبير",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت بذر العنب أو زيت محايد للقلي",
+          "amount": 0.5,
+          "unit": "كوب",
+          "note": "ويُزاد حسب الحاجة"
+        },
+        {
+          "id": "lemon",
+          "name": "شرائح ليمون للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "tahini-sauce",
+          "name": "صوص طحينة للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        },
+        {
+          "id": "tzatziki",
+          "name": "صوص زبادي بالخيار (تزاتزيكي) للتقديم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع البصل والبقدونس والشبت والثوم في محضّر الطعام واضغط عدة مرات حتى يتفرم البصل ناعماً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الجمبري مع نحو ¾ ملعقة صغيرة من كل من الملح والفلفل الأسود، ثم الكزبرة والكمون والبابريكا والفلفل الحلبي، واضغط حتى يصبح الخليط مثل عجينة الكفتة الطرية.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "انقل الخليط إلى وعاء وأضف دقيق الحمص والبيض وقلّب بملعقة خشب حتى يتجانس.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "سخّن الزيت في مقلاة كبيرة على نار متوسطة إلى عالية، وضع ملاعق من الخليط (حوالي ملعقتين كبيرتين لكل قرص) على دفعات دون زحام، وحمّر الوجهين (٣–٤ دقائق إجمالاً). يخرج حوالي ١٦ قرصاً.",
+          "duration": 3
+        },
+        {
+          "n": 5,
+          "text": "صفّها على ورق مطبخ، وقدّمها ساخنة مع الليمون والصوص المفضل.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.themediterraneandish.com/shrimp-fritters/ | الموقع: The Mediterranean Dish | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-saniyet-batates-bel-lahma",
+      "name": "صينية بطاطس باللحمة المفرومة",
+      "nameEn": "Egyptian-Style Potato Casserole",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "description": "صينية بطاطس وجزر وفلفل في الفرن مغطاة بصلصة لحم مفروم بالطماطم.",
+      "servings": 6,
+      "prepTime": 15,
+      "cookTime": 70,
+      "totalTime": 85,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز (للصلصة)",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل أصفر مفروم",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 3,
+          "unit": "فص"
+        },
+        {
+          "id": "beef",
+          "name": "لحم بقري مفروم قليل الدهن (أو ديك رومي مفروم)",
+          "amount": 1,
+          "unit": "رطل"
+        },
+        {
+          "id": "allspice",
+          "name": "بهار حلو مطحون (للصلصة)",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة (للصلصة)",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "paprika",
+          "name": "بابريكا حلوة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل للصلصة",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "tomato-canned",
+          "name": "طماطم مقشرة معلبة",
+          "amount": 1,
+          "unit": "علبة",
+          "note": "علبة 28 أونصة"
+        },
+        {
+          "id": "water",
+          "name": "ماء (للصلصة)",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "potato",
+          "name": "بطاطس صفراء مقشرة ومقطعة أصابع عريضة",
+          "amount": 1.5,
+          "unit": "رطل"
+        },
+        {
+          "id": "carrot",
+          "name": "جزر كبير مقشر ومقطع قطعاً بطول 2 بوصة",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "bell-pepper",
+          "name": "فلفل رومي أخضر شرائح عريضة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح وفلفل للبطاطس",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "allspice",
+          "name": "بهار حلو (للبطاطس)",
+          "amount": 0.75,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة (للبطاطس)",
+          "amount": 0.75,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء (للصينية)",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "الخطوات تذكر حوالي ¾ كوب"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس طازج مفروم",
+          "amount": 0.5,
+          "unit": "كوب"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الفرن على 375°ف (حوالي 190°م).",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "للصلصة: سخّن الزيت في مقلاة كبيرة وقلّب البصل حتى يصير شفافاً، ثم أضف الثوم نحو نصف دقيقة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف اللحم المفروم وفكّكه بالملعقة وتبّله بالتوابل والملح والفلفل وقلّبه حتى يتحمر تماماً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف الطماطم والماء واهرس الطماطم قليلاً، واتركها تغلي ثم اخفض النار وغطِّها واتركها تتسبك، ثم عدّل الملح.",
+          "duration": 10,
+          "passive": true
+        },
+        {
+          "n": 5,
+          "text": "في صينية 9×13 رص البطاطس والجزر والفلفل، وتبّلها بالملح والفلفل والبهار الحلو والكزبرة وقلّبها، ثم أضف حوالي ¾ كوب ماء وغطِّها بصلصة اللحم.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "غطِّ الصينية بورق ألومنيوم واخبزها نحو ٣٠ دقيقة.",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 7,
+          "text": "اكشفها واخبزها ١٠–١٥ دقيقة أخرى حتى تطرى البطاطس، ثم رش البقدونس وقدّمها مع الرز إن رغبت.",
+          "duration": 10,
+          "passive": true
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.themediterraneandish.com/easy-potato-casserole-recipe-egyptian-style/ | الموقع: The Mediterranean Dish | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-bisella-bel-gazar",
+      "name": "بسلة بالجزر",
+      "nameEn": "Egyptian Peas and Carrots Stew",
+      "cuisine": "مصري",
+      "category": "طبق رئيسي",
+      "description": "يخنة بسلة وجزر نباتية سريعة في صلصة طماطم متبلة بالكزبرة.",
+      "servings": 4,
+      "prepTime": 5,
+      "cookTime": 25,
+      "totalTime": 30,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "الخطوات تذكر ملعقتين كبيرتين للتشويح ورشة للتقديم"
+        },
+        {
+          "id": "onion",
+          "name": "بصل أصفر متوسط مفروم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 1,
+          "unit": "فص"
+        },
+        {
+          "id": "carrot",
+          "name": "جزر مقطع مكعبات صغيرة",
+          "amount": 3,
+          "unit": "حبة"
+        },
+        {
+          "id": "peas",
+          "name": "بسلة مجمدة",
+          "amount": 1,
+          "unit": "رطل"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "paprika",
+          "name": "بابريكا حلوة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "tomato-sauce",
+          "name": "صوص طماطم معلب",
+          "amount": 1,
+          "unit": "علبة",
+          "note": "علبة 15 أونصة"
+        },
+        {
+          "id": "vegetable-stock",
+          "name": "مرق خضار",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس طازج للتزيين",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        },
+        {
+          "id": "jalapeno",
+          "name": "شرائح هالابينو للتزيين",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن ملعقتين زيت زيتون في حلة متوسطة على نار متوسطة إلى عالية، وقلّب البصل حتى يصير شفافاً.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف الثوم والجزر والبسلة ورشة ملح والتوابل وقلّب حتى تفوح الرائحة.",
+          "duration": 5
+        },
+        {
+          "n": 3,
+          "text": "أضف المرق وصوص الطماطم وارفع النار واتركها تغلي.",
+          "duration": 5
+        },
+        {
+          "n": 4,
+          "text": "اخفض النار لمتوسطة وغطِّ الحلة واتركها تتسبك مع التقليب من وقت لآخر حتى تنضج الخضار دون أن تتهرى، ثم عدّل التتبيل.",
+          "duration": 15,
+          "passive": true
+        },
+        {
+          "n": 5,
+          "text": "اسكبها في أطباق ورش عليها زيت الزيتون والبقدونس والهالابينو إن رغبت، وقدّمها مع العيش أو الرز.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.themediterraneandish.com/egyptian-vegan-stew-peas-carrots/ | الموقع: The Mediterranean Dish | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-ghorayeba",
+      "name": "غريبة مصرية",
+      "nameEn": "Egyptian Ghorayebah (Butter Cookies)",
+      "cuisine": "مصري",
+      "category": "حلويات",
+      "description": "كوكيز سمنة وسكر بودرة ودقيق تذوب في الفم بدون بيض.",
+      "servings": 35,
+      "prepTime": 10,
+      "cookTime": 15,
+      "totalTime": 25,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 1,
+          "unit": "كوب",
+          "note": "195 جرام"
+        },
+        {
+          "id": "powdered-sugar",
+          "name": "سكر بودرة منخول",
+          "amount": 0.5,
+          "unit": "كوب",
+          "note": "63.77 جرام، وكمية إضافية للرش"
+        },
+        {
+          "id": "baking-powder",
+          "name": "بيكنج باودر",
+          "amount": 0.125,
+          "unit": "ملعقة صغيرة",
+          "note": "أقل قليلاً من ⅛ ملعقة صغيرة (0.5 جرام)"
+        },
+        {
+          "id": "flour",
+          "name": "دقيق متعدد الاستخدامات منخول",
+          "amount": 2,
+          "unit": "كوب",
+          "note": "240 جرام"
+        },
+        {
+          "id": "almonds",
+          "name": "لوز شرائح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true,
+          "note": "حفنة"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخفق السمنة بالمضرب الكهربائي على سرعة منخفضة حتى تصبح خفيفة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف السكر البودرة واخفق مع رفع السرعة تدريجياً حتى يصبح الخليط ناعماً ومنفوشاً.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف البيكنج باودر ونصف الدقيق واعجن باليد، ثم الباقي حتى تتكون عجينة طرية جداً.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "غطِّ العجينة وضعها في الثلاجة لتتماسك قليلاً، وسخّن الفرن على 350°ف (حوالي 175°م) وجهّز صينية بورق زبدة.",
+          "duration": 20,
+          "passive": true
+        },
+        {
+          "n": 5,
+          "text": "شكّل كرات صغيرة بحجم حبة عين الجمل (نصف ملعقة كبيرة وافرة) واضغطها برفق دون تسطيح، ورصّها متباعدة، وضع شريحة لوز على بعضها.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "اخبزها ١٢–١٥ دقيقة حتى تتماسك ويتلون قاعها قليلاً مع بقاء الوجه فاتحاً.",
+          "duration": 12,
+          "passive": true
+        },
+        {
+          "n": 7,
+          "text": "لا تلمسها حتى تبرد تماماً لأنها تتفتت، ثم رش عليها السكر البودرة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.themediterraneandish.com/melt-in-mouth-butter-cookies-egyptian-ghorayebah/ | الموقع: The Mediterranean Dish | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-feteer-meshaltet-bel-loz",
+      "name": "فطير مشلتت باللوز والصنوبر",
+      "nameEn": "Egyptian Feteer Meshaltet with Almond and Pine Nuts",
+      "cuisine": "مصري",
+      "category": "مخبوزات",
+      "description": "فطير مشلتت رقيق الطبقات بالسمنة محشو بخليط اللوز والصنوبر والسكر.",
+      "servings": 2,
+      "prepTime": 50,
+      "cookTime": 15,
+      "totalTime": 65,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "دقيق متعدد الاستخدامات",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر (للعجين)",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء بارد",
+          "amount": 0.5,
+          "unit": "كوب",
+          "note": "تقريباً"
+        },
+        {
+          "id": "oil",
+          "name": "زيت لتغطية العجين",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "ghee",
+          "name": "سمنة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت لدهن سطح العمل واليدين",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "almonds",
+          "name": "لوز",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "pine-nuts",
+          "name": "صنوبر",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر (للحشو)",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "powdered-sugar",
+          "name": "سكر بودرة للرش",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        },
+        {
+          "id": "qeshta",
+          "name": "قشطة أو دبس تمر أو عسل أو طحينة للتغميس",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اطحن اللوز والصنوبر مع السكر طحناً خشناً دون إفراط حتى لا تخرج زيتها.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اخلط الدقيق والملح والسكر، وأضف الماء البارد واعجن حتى تصبح العجينة طرية ولزجة قليلاً (٥–١٠ دقائق).",
+          "duration": 5
+        },
+        {
+          "n": 3,
+          "text": "قسّم العجينة إلى ست كرات، وغطّها بالزيت واتركها مغطاة في مكان بارد ٢٠–٣٠ دقيقة.",
+          "duration": 20,
+          "passive": true
+        },
+        {
+          "n": 4,
+          "text": "افرد كل كرة على سطح مدهون حتى تصبح رقيقة جداً، وادهنها بالسمنة، وضع الحشو واطوها مربعاً، ثم لفّها داخل رقاقة أخرى رقيقة واتركها في الثلاجة. كرر بباقي العجين.",
+          "duration": 20,
+          "passive": true
+        },
+        {
+          "n": 5,
+          "text": "سخّن الفرن على أعلى درجة، واضغط الفطيرة المبردة في صينية مدهونة قطرها ٤–٦ بوصات حتى يصبح سمكها نحو ربع بوصة، واخبزها ٥ دقائق لكل وجه حتى تتحمر وتتقرمش.",
+          "duration": 10
+        },
+        {
+          "n": 6,
+          "text": "بديلاً عن الفرن: حمّرها في مقلاة بقليل من الزيت على نار هادئة إلى متوسطة حتى يتحمر الوجهان.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "قدّمها مع القشطة أو دبس التمر أو العسل أو الطحينة، ورش السكر البودرة إن رغبت.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://butfirstchai.com/wprm_print/egyptian-feteer-meshaltet-with-almond-and-pine-nuts | الموقع: But First Chai | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
     }
   ]
 }

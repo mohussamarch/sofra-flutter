@@ -1,0 +1,313 @@
+{
+  "cuisine": "أردني",
+  "cuisineSlug": "jordanian",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "lg-mansaf",
+      "name": "منسف أردني",
+      "nameEn": "Jordanian Mansaf",
+      "cuisine": "أردني",
+      "category": "طبق رئيسي",
+      "description": "لحم ضأن مطهو في صلصة الجميد يقدّم فوق الأرز الأصفر وخبز الشراك مع اللوز المحمص.",
+      "servings": 4,
+      "prepTime": 20,
+      "cookTime": 80,
+      "totalTime": 100,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "lamb",
+          "name": "لحم ضأن أو غنم بالعظم",
+          "amount": 1,
+          "unit": "كيلو"
+        },
+        {
+          "id": "onion",
+          "name": "بصل كبير مقطع قطعاً كبيرة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل أخضر",
+          "amount": 3,
+          "unit": "حبة",
+          "note": "3 إلى 5 حبات"
+        },
+        {
+          "id": "bay-leaf",
+          "name": "ورق لورا",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "ghee",
+          "name": "سمن",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء لتغطية اللحم",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "jameed",
+          "name": "جميد سائل (لبن جميد)",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون طازج",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "yogurt",
+          "name": "زبادي مخفوق",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "ghee",
+          "name": "سمن للأرز",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل أخضر للأرز",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "basmati-rice",
+          "name": "أرز بسمتي مغسول ومنقوع 20 إلى 30 دقيقة",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "turmeric",
+          "name": "كركم",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء ساخن لطهي الأرز",
+          "amount": 4,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "almonds",
+          "name": "لوز شرائح أو كامل محمص قليلاً",
+          "amount": 0.33,
+          "unit": "كوب",
+          "note": "ثلث كوب"
+        },
+        {
+          "id": "shrak-bread",
+          "name": "خبز شراك",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "optional": true,
+          "note": "كمية تكفي لتغطية طبق التقديم"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع كل مكونات المرق في قدر عميق كبير واتركها حتى تغلي غلياناً كاملاً، وأزل الرغوة التي تتكون على السطح.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "اترك اللحم يغلي حتى ينضج بالكاد.",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "ارفع اللحم جانباً، ثم صفِّ المرق وتخلّص من البقايا الصلبة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أعد المرق إلى قدر نظيف مع الجميد السائل والزبادي المخفوق والفلفل الأسود، وقلّب باستمرار على نار هادئة إلى متوسطة حتى لا يتقطع، وأضف الملح إذا احتاج.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أعد اللحم إلى الصلصة واتركه على نار هادئة حتى تثقل الصلصة وتغلّف اللحم ويصبح طرياً ينفصل عن العظم.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 6,
+          "text": "للأرز: سخّن السمن في قدر سميك القاع، وأضف الهيل والأرز المصفّى والكركم وقلّب حتى تتغلف الحبات بالسمن.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف الماء الساخن والملح واتركه يغلي، ثم خفّف النار حتى يتشرب الأرز معظم الماء.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 8,
+          "text": "قلّب الأرز مرة واحدة، وغطّه بورق قصدير أو فوطة ثم بغطاء ثقيل واتركه على النار، ثم ارفعه واتركه يرتاح مغطى 15 دقيقة.",
+          "duration": 5,
+          "passive": true
+        },
+        {
+          "n": 9,
+          "text": "غطِّ طبق تقديم كبير بخبز الشراك، ثم افرد الأرز فوقه ورتّب اللحم واسكب معظم صلصة الجميد على الطبق.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "رشّ اللوز المحمص، وقدّم باقي الصلصة في وعاء جانبي مع سلطة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://butfirstchai.com/wprm_print/jordanian-mansaf-lamb-meat-cooked-in-jameed-sauce | الموقع: But First Chai | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "lg-galayet-bandora-lahma",
+      "name": "قلاية بندورة باللحمة",
+      "nameEn": "Beef Galayet Bandora",
+      "cuisine": "أردني",
+      "category": "طبق رئيسي",
+      "description": "شرائح لحم رقيقة وبطاطس تطهى في صلصة طماطم بالكمون والبهار والقرفة.",
+      "servings": 4,
+      "prepTime": 5,
+      "cookTime": 20,
+      "totalTime": 25,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "beef",
+          "name": "لحم بقري مقطع شرائح رفيعة",
+          "amount": 300,
+          "unit": "جرام"
+        },
+        {
+          "id": "potato",
+          "name": "بطاطس كبيرة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل كبير",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "tomato-canned",
+          "name": "طماطم معلبة",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "allspice",
+          "name": "بهار حلو",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن زيت الزيتون في مقلاة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "عندما يسخن الزيت أضف البصل وقلّبه بضع دقائق حتى يطرى.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف شرائح اللحم وشوّحها.",
+          "duration": 5
+        },
+        {
+          "n": 4,
+          "text": "أضف الطماطم المعلبة المهروسة مع القرفة والكمون والبهار الحلو وقلّب جيداً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف البطاطس المقطعة وقلّبها مع الصلصة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "غطِّ المقلاة واتركها على نار هادئة حتى تثقل الصلصة.",
+          "duration": 10,
+          "passive": true
+        },
+        {
+          "n": 7,
+          "text": "تبّل بالملح والفلفل الأسود، ثم أطفئ النار وقدّمها مع الأرز أو الخبز.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://theodehlicious.com/wprm_print/beef-galayet-bandora | الموقع: Theodehlicious | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ void main() {
   test('retained extracted recipes keep source content independently of cuisine admission', () async {
     final repo = RecipeRepository(read: (p) => File(p).readAsString());
     final all = await repo.loadAll(includeHeld: true);
-    expect(all.length, 657);
+    expect(all.length, 687);
     for (final id in [
       'ma650-manal-muhammara-20261021b',
       'ma650-dina-macki-paplo-omani-balochi-lemon-fish-curry',

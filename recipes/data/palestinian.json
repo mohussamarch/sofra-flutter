@@ -1,0 +1,413 @@
+{
+  "cuisine": "فلسطيني",
+  "cuisineSlug": "palestinian",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "lg-musakhan-rolls",
+      "name": "مسخن دجاج (لفائف)",
+      "nameEn": "Palestinian Chicken Musakhan",
+      "cuisine": "فلسطيني",
+      "category": "طبق رئيسي",
+      "description": "دجاج مفتت مع بصل مقلي بزيت الزيتون والسماق والصنوبر، ملفوف بخبز المرقوق ومحمّر في الفرن.",
+      "servings": 5,
+      "prepTime": 90,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "chicken",
+          "name": "دجاج (أفخاذ وصدور)",
+          "amount": 1.5,
+          "unit": "كيلو"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 6,
+          "unit": "كوب",
+          "note": "1500 مل"
+        },
+        {
+          "id": "onion",
+          "name": "بصل كبير مقطع شرائح رفيعة",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل صغير",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "markouk-bread",
+          "name": "خبز مرقوق",
+          "amount": 5,
+          "unit": "حبة",
+          "note": "كل رغيف مقطع 4 قطع"
+        },
+        {
+          "id": "sumac",
+          "name": "سماق",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 0.2,
+          "unit": "كوب",
+          "note": "خُمس كوب كما في المصدر"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "pine-nuts",
+          "name": "صنوبر محمص",
+          "amount": 0.5,
+          "unit": "كوب"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع الدجاج في الماء مع الملح والفلفل والبصلة الصغيرة واتركه حتى يغلي، وأزل الرغوة عن السطح.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "خفّف النار واترك الدجاج يطهى حتى ينضج تماماً.",
+          "duration": 45,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "اترك الدجاج يبرد، ثم انزع العظم وفتّت اللحم.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اقلِ شرائح البصل في زيت الزيتون حتى تأخذ لوناً ذهبياً.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "أضف الملح والفلفل والصنوبر والسماق والدجاج المفتت، وقلّب الخليط على النار قليلاً.",
+          "duration": 2
+        },
+        {
+          "n": 6,
+          "text": "ضع قليلاً من الحشوة في وسط كل قطعة خبز ولفّها، ثم ادهن وجهها بزيت الزيتون.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "اخبز اللفائف في فرن على حرارة 175 درجة حتى تصبح مقرمشة ومحمّرة.",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 8,
+          "text": "قدّمها ساخنة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://food-heritage.org/palestinian-chicken-musakhan/ | الموقع: Food Heritage Foundation | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "lg-qidreh",
+      "name": "قدرة فلسطينية",
+      "nameEn": "Palestinian Qidreh (Spiced Lamb and Rice)",
+      "cuisine": "فلسطيني",
+      "category": "طبق رئيسي",
+      "description": "أرز بسمتي بالحمص والثوم والسمن يطهى في مرق اللحم المتبل مع قطع كتف الضأن.",
+      "servings": 4,
+      "prepTime": 60,
+      "cookTime": 30,
+      "totalTime": 90,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "lamb",
+          "name": "قطع كتف ضأن بالعظم",
+          "amount": 6,
+          "unit": "حبة",
+          "note": "حوالي 4 أرطال"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون بكر ممتاز",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "ghee",
+          "name": "سمن للمرق",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل كبير",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم كامل للمرق",
+          "amount": 5,
+          "unit": "فص"
+        },
+        {
+          "id": "bay-leaf",
+          "name": "ورق لورا",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل حب للمرق",
+          "amount": 5,
+          "unit": "حبة"
+        },
+        {
+          "id": "cinnamon",
+          "name": "عود قرفة للمرق",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "peppercorns",
+          "name": "فلفل أسود حب",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cloves",
+          "name": "قرنفل حب",
+          "amount": 5,
+          "unit": "حبة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "seven-spice",
+          "name": "سبع بهارات للمرق",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة مطحونة للمرق",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "garlic-powder",
+          "name": "ثوم بودرة للمرق",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل مطحون للمرق",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح للمرق",
+          "amount": 2,
+          "unit": "ملعقة صغيرة",
+          "note": "أو حسب الرغبة"
+        },
+        {
+          "id": "basmati-rice",
+          "name": "أرز بسمتي مغسول عدة مرات",
+          "amount": 1.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "canned-chickpeas",
+          "name": "حمص معلب مغسول ومصفى",
+          "amount": 1,
+          "unit": "علبة",
+          "note": "علبة 15 أونصة"
+        },
+        {
+          "id": "ghee",
+          "name": "سمن للأرز",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم كامل للأرز",
+          "amount": 8,
+          "unit": "فص",
+          "note": "8 إلى 12 فصاً حسب الرغبة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل متوسط مفروم ناعم",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "seven-spice",
+          "name": "سبع بهارات للأرز",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "turmeric",
+          "name": "كركم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة مطحونة للأرز",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "garlic-powder",
+          "name": "ثوم بودرة للأرز",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "onion-powder",
+          "name": "بصل بودرة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل مطحون للأرز",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل حب للأرز",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "beef-bouillon",
+          "name": "مرق لحم بودرة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cinnamon",
+          "name": "عود قرفة للأرز",
+          "amount": 1,
+          "unit": "حبة",
+          "optional": true
+        },
+        {
+          "id": "salt",
+          "name": "ملح للأرز",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "lamb-broth",
+          "name": "مرق اللحم المحفوظ",
+          "amount": 3,
+          "unit": "كوب"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن الزيت والسمن في قدر وشوّح البصل والثوم حتى تفوح رائحتهما.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف قطع اللحم وحمّرها حتى يختفي اللون الوردي ويصبح لونها بنياً فاتحاً، ثم أضف البهارات الكاملة والمطحونة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "اغمر اللحم بالماء واتركه يغلي بقوة، وأزل الرغوة، ثم غطِّ القدر وخفّف النار إلى متوسطة منخفضة.",
+          "duration": 5
+        },
+        {
+          "n": 4,
+          "text": "اترك اللحم يطهى من ساعة إلى ساعتين حتى يطرى (الكتف يحتاج نحو ساعة ونصف).",
+          "duration": 60,
+          "passive": true
+        },
+        {
+          "n": 5,
+          "text": "ارفع اللحم، ثم صفِّ المرق واحفظه.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "للأرز: سخّن السمن في قدر على نار متوسطة إلى عالية، وشوّح البصل المفروم وفصوص الثوم حتى يتحمر البصل ويأخذ الثوم لوناً خفيفاً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "أضف الحمص المصفى وقلّبه حتى يسخن.",
+          "duration": 2
+        },
+        {
+          "n": 8,
+          "text": "أضف الأرز والبهارات المطحونة والكاملة ومرق اللحم البودرة وقلّب جيداً، ثم رتّب اللحم المطهو فوقه.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "اسكب المرق الساخن واتركه يغلي بقوة حتى يصل السائل إلى سطح الأرز.",
+          "duration": 5
+        },
+        {
+          "n": 10,
+          "text": "غطِّ القدر وخفّف النار إلى هادئة حتى يتشرب الأرز المرق وينفش.",
+          "duration": 15,
+          "passive": true
+        },
+        {
+          "n": 11,
+          "text": "قدّم القدرة ساخنة، ويمكن تزيينها حسب الرغبة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://falasteenifoodie.com/wprm_print/65606 | الموقع: Falasteeni Foodie | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

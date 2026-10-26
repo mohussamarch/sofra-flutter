@@ -1,0 +1,175 @@
+{
+  "cuisine": "كويتي",
+  "cuisineSlug": "kuwaiti",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "lg-majboos-dajaj",
+      "name": "مجبوس دجاج",
+      "nameEn": "Chicken Majboos",
+      "cuisine": "كويتي",
+      "category": "طبق رئيسي",
+      "description": "أرز بسمتي مطبوخ في مرق الدجاج باللومي والبهارات مع قطع دجاج مقلية مقرمشة.",
+      "servings": 6,
+      "prepTime": 10,
+      "cookTime": 60,
+      "totalTime": 70,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "basmati-rice",
+          "name": "أرز بسمتي",
+          "amount": 2.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "chicken",
+          "name": "قطع دجاج (أفخاذ وأوراك وأجنحة)",
+          "amount": 10,
+          "unit": "حبة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم",
+          "amount": 5,
+          "unit": "فص"
+        },
+        {
+          "id": "water",
+          "name": "ماء لسلق الدجاج",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "water",
+          "name": "ماء إضافي إذا لم يكفِ المرق لطهي الأرز",
+          "amount": 1,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "loomi",
+          "name": "لومي",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "bay-leaf",
+          "name": "ورق لورا",
+          "amount": 6,
+          "unit": "حبة"
+        },
+        {
+          "id": "cloves",
+          "name": "قرنفل",
+          "amount": 6,
+          "unit": "حبة"
+        },
+        {
+          "id": "cardamom",
+          "name": "هيل حب",
+          "amount": 5,
+          "unit": "حبة",
+          "note": "5 إلى 6 حبات"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة مطحونة",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "curry-powder",
+          "name": "كاري",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة مطحونة",
+          "amount": 0.75,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "turmeric",
+          "name": "كركم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "ضع الدجاج في قدر واغمره بالماء واتركه حتى يغلي، مع إزالة الدهون والرغوة عن السطح.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف البهارات والبصل والثوم واتركه على نار هادئة حتى يطرى الدجاج، وأضف الملح والفلفل قبل إطفاء النار بدقائق.",
+          "duration": 45,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "ارفع الدجاج، ثم صفِّ المرق وتخلّص من البصل والثوم وباقي البهارات الصلبة.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "انقع الأرز في ماء دافئ مسبقاً ثم صفّه.",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 5,
+          "text": "أضف الأرز إلى المرق، وزد الماء إن لم يكفِ، واتركه حتى ينضج.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 6,
+          "text": "أثناء طهي الأرز اقلِ قطع الدجاج في مقلاة منفصلة حتى يتحمر سطحها ويصبح مقرمشاً.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "عندما يقترب الأرز من النضج ضع الدجاج المقلي فوقه، ثم قدّمه كما هو أو بعد تقليبه.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://theodehlicious.com/chicken-majboos-recipe/ | الموقع: Theodehlicious | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

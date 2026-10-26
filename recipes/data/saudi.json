@@ -2049,7 +2049,7 @@
           "name": "بيكنج باودر",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2071,7 +2071,7 @@
           "name": "هيل ناعم",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2115,7 +2115,7 @@
           "name": "كبيرة بيض",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2126,9 +2126,207 @@
           "name": "فانيليا، سائلة",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         }
       ],
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "lg-mutazeez",
+      "name": "مطازيز",
+      "nameEn": "Mataziz (Saudi Dough and Lamb Stew)",
+      "cuisine": "سعودي",
+      "category": "طبق رئيسي",
+      "description": "يخنة نجدية من لحم الغنم والخضار باللومي تطهى فيها أقراص رقيقة من عجين القمح الكامل.",
+      "servings": 6,
+      "prepTime": null,
+      "cookTime": null,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "oil",
+          "name": "زيت نباتي",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "lamb",
+          "name": "لحم كتف غنم",
+          "amount": 500,
+          "unit": "جرام"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مفروم ناعم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "hot-pepper",
+          "name": "قرن فلفل حار",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم متوسطة مبشورة",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "معجون طماطم",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "mixed-spices",
+          "name": "بهارات مشكلة",
+          "amount": 2,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": 0.75,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "loomi",
+          "name": "لومي",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 2,
+          "unit": "لتر"
+        },
+        {
+          "id": "cauliflower",
+          "name": "زهيرات قرنبيط كبيرة",
+          "amount": 4,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot",
+          "name": "جزر متوسط مقشر ومقطع",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "eggplant",
+          "name": "باذنجان مقشر ومقطع مكعبات",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "zucchini",
+          "name": "كوسا كبيرة مقطعة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "cilantro",
+          "name": "كزبرة طازجة مفرومة للتزيين",
+          "amount": 0.5,
+          "unit": "كوب",
+          "optional": true
+        },
+        {
+          "id": "whole-wheat-flour",
+          "name": "دقيق قمح كامل",
+          "amount": 2,
+          "unit": "كوب"
+        },
+        {
+          "id": "oil",
+          "name": "زيت دوار الشمس للعجين",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء دافئ للعجين",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اقلِ البصل في الزيت، ثم أضف اللحم والفلفل الأسود والملح والبهارات والفلفل الحار.",
+          "duration": 5
+        },
+        {
+          "n": 2,
+          "text": "قلّب اللحم دقيقة، ثم غطِّ القدر واتركه 5 دقائق، وأضف قليلاً من الماء إن التصقت البهارات بالقاع.",
+          "duration": 6
+        },
+        {
+          "n": 3,
+          "text": "أضف معجون الطماطم والطماطم المبشورة وقلّب دقيقة أخرى.",
+          "duration": 1
+        },
+        {
+          "n": 4,
+          "text": "أضف اللومي و1.5 لتر من الماء واتركه يغلي، ثم غطِّ القدر وخفّف النار.",
+          "duration": 60,
+          "passive": true
+        },
+        {
+          "n": 5,
+          "text": "للعجين: اخلط الدقيق والزيت مع الماء الدافئ تدريجياً حتى تتماسك العجينة.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "غطِّ العجينة بغلاف بلاستيكي واتركها ترتاح.",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 7,
+          "text": "افرد العجين رقيقاً على سطح مدهون بالزيت وقطّعه أقراصاً دائرية.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "أضف نصف لتر الماء الباقي إلى اليخنة وأعدها للغليان، ثم أضف القرنبيط والجزر وأدخل أقراص العجين تدريجياً.",
+          "duration": null
+        },
+        {
+          "n": 9,
+          "text": "قلّب برفق، وغطِّ القدر واتركه على نار هادئة.",
+          "duration": 20,
+          "passive": true
+        },
+        {
+          "n": 10,
+          "text": "أضف الباذنجان والكوسا واتركها على النار حتى تنضج.",
+          "duration": 20,
+          "passive": true
+        },
+        {
+          "n": 11,
+          "text": "قدّم المطازيز ساخنة وزيّنها بالكزبرة المفرومة إن أحببت.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.webteb.com/diet/recipes/المطازيز_769 | الموقع: ويب طب | الوقت الإجمالي في المصدر 140 دقيقة | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
       "metadataPolicy": "source-unknowns-v1"
     }
   ]
