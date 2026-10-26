@@ -90,8 +90,8 @@ class Kitchen3DController {
   /// y −0.2–1.4, top about 0.75 m): eyes about 1.1 m up, looking along the
   /// table toward the stove and fridge.
   Future<void> table() => _run(
-    "mv.cameraTarget='3m 0.82m -0.6m';"
-    "mv.cameraOrbit='0deg 72deg 1.02m';mv.fieldOfView='62deg';",
+    "mv.cameraTarget='3m 0.8m -0.8m';"
+    "mv.cameraOrbit='0deg 72deg 1.0m';mv.fieldOfView='60deg';",
   );
 
   /// Repaints every cabinet in [color]; null restores the rendered colour.
