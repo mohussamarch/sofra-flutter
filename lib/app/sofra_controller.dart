@@ -360,6 +360,8 @@ class SofraController extends ChangeNotifier {
     required Map<(int, String), List<String>> menu,
     int? servings,
     bool omitUnmeasured = false,
+    bool keepPlanned = false,
+    DateTime? today,
     int maxEvaluations = 4000,
   }) async {
     final start = DateTime(month.year, month.month);
@@ -396,11 +398,28 @@ class SofraController extends ChangeNotifier {
       maxCandidatesPerSlot: 2,
       acknowledgeRecipeEligibility: true,
     );
+    // Days already gone are not planned; with [keepPlanned] neither are the
+    // meals the user already put on the table.
+    final from = localDay(today ?? DateTime.now());
+    final taken = {
+      if (keepPlanned)
+        for (final p in kitchen.plans) (p.date, p.slot),
+    };
+    bool open(String date, String slot) =>
+        date.compareTo(from) >= 0 && !taken.contains((date, slot));
+    final openPools = {
+      for (final e in pools.pools.entries)
+        if (open(e.value.first.date, e.value.first.slot)) e.key: e.value,
+    };
+    if (openPools.isEmpty) throw StateError('No open days left this month');
     final preview = await kitchen.searchMonthlyBudgetChoices(
       budget.id,
-      pools: pools.pools,
+      pools: openPools,
       maxEvaluations: maxEvaluations,
-      requiredSlots: pools.requiredSlots,
+      requiredSlots: [
+        for (final s in pools.requiredSlots)
+          if (open(s.date, s.slot)) s,
+      ],
       omitUnmeasuredLines: omitUnmeasured,
     );
     final unmeasured = <String>{};
@@ -424,9 +443,25 @@ class SofraController extends ChangeNotifier {
   }
 
   /// Writes the month's meals from the cheapest affordable option.
-  Future<bool> acceptMonth(MonthPlan plan) {
+  /// Meals already on the table on the days and meals [plan] would fill.
+  List<PlannedMeal> monthConflicts(MonthPlan plan) {
+    final slots = {
+      for (final pool in plan.preview.candidatesByPool.values)
+        for (final m in pool.values) (m.date, m.slot),
+    };
+    return [
+      for (final p in kitchen.plans)
+        if (slots.contains((p.date, p.slot))) p,
+    ];
+  }
+
+  /// Writes the month's meals from the cheapest affordable option. With
+  /// [replace], uncooked meals already on those days come off the table
+  /// once the month is saved; cooked ones stay as history.
+  Future<bool> acceptMonth(MonthPlan plan, {bool replace = false}) {
     final best = plan.best;
     if (best == null) return Future.value(false);
+    final old = replace ? monthConflicts(plan) : const <PlannedMeal>[];
     return _save(() async {
       await kitchen.acceptMonthlyBudgetSearchOption(
         plan.preview,
@@ -436,6 +471,9 @@ class SofraController extends ChangeNotifier {
             pool: newId('meal'),
         },
       );
+      for (final p in old) {
+        if (!p.completed) await kitchen.removePlan(p.id);
+      }
     });
   }
 
@@ -471,7 +509,16 @@ class SofraController extends ChangeNotifier {
       kitchen.leftovers.where((d) => d.servings > 0).toList();
 
   /// Puts what is left of a cooked meal in the fridge as covered dishes.
-  Future<bool> saveLeftovers(String name, double servings, {DateTime? on}) {
+  /// Leftovers whose reminder day has come.
+  List<LeftoverDish> leftoversDue(DateTime today) =>
+      leftovers.where((d) => d.dueOn(today)).toList();
+
+  Future<bool> saveLeftovers(
+    String name,
+    double servings, {
+    DateTime? on,
+    int? remindAfterDays,
+  }) {
     if (servings <= 0) return Future.value(true);
     return _save(
       () => kitchen.saveLeftover(
@@ -480,6 +527,7 @@ class SofraController extends ChangeNotifier {
           name: name,
           servings: servings,
           preparedOn: localDay(on ?? DateTime.now()),
+          remindAfterDays: remindAfterDays,
         ),
       ),
     );
@@ -652,17 +700,50 @@ class SofraController extends ChangeNotifier {
       ]);
 
   /// The user bought these: they go into stock, each in its usual place.
-  /// No price is invented, so nothing is logged as a purchase.
-  Future<void> addBought(Iterable<IngredientUse> bought) async {
+  /// With what they say they paid ([paid], optional per item) it is logged as
+  /// a purchase against the budget and kept as their price for next time;
+  /// without it no price is invented and nothing is logged.
+  Future<void> addBought(
+    Iterable<IngredientUse> bought, {
+    Map<IngredientUse, double> paid = const {},
+  }) async {
     for (final use in bought) {
-      await _addAmount(
-        use.ingredientId,
-        use.quantity,
-        use.unit,
-        directory?.entry(use.ingredientId)?.zone ??
-            demoIngredients[use.ingredientId]?.zone ??
-            StorageZone.pantry,
-      );
+      final zone =
+          directory?.entry(use.ingredientId)?.zone ??
+          demoIngredients[use.ingredientId]?.zone ??
+          StorageZone.pantry;
+      final amount = paid[use];
+      if (amount == null) {
+        await _addAmount(use.ingredientId, use.quantity, use.unit, zone);
+        continue;
+      }
+      final now = DateTime.now();
+      await _save(() async {
+        await kitchen.addStock(
+          InventoryLot(
+            id: newId('lot'),
+            ingredientId: use.ingredientId,
+            quantity: use.quantity,
+            unit: use.unit,
+            zone: zone,
+          ),
+          newPurchase: true,
+          paid: amount,
+          purchasedAt: now,
+        );
+        await kitchen.savePrice(
+          MarketPrice(
+            country: kitchen.market.country,
+            ingredientId: use.ingredientId,
+            unit: use.unit,
+            quantity: use.quantity,
+            amount: amount,
+            recordedAt: now,
+            source: 'user-purchase',
+          ),
+          userOverride: true,
+        );
+      });
     }
   }
 

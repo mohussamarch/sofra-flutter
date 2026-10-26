@@ -425,26 +425,44 @@ class LeftoverDish {
     required this.name,
     required this.servings,
     required this.preparedOn,
+    this.remindAfterDays,
   }) {
     requireAmount(servings, zero: true);
-    if (id.isEmpty || name.trim().isEmpty) {
+    if (id.isEmpty ||
+        name.trim().isEmpty ||
+        (remindAfterDays != null && remindAfterDays! < 1)) {
       throw ArgumentError('Invalid leftover');
     }
     parseDay(preparedOn);
   }
   final String id, name, preparedOn;
   final double servings;
+
+  /// Days after cooking the user wants to be reminded of it; null: never.
+  final int? remindAfterDays;
+
+  /// The day the reminder is due, when one was asked for.
+  DateTime? get remindOn => remindAfterDays == null
+      ? null
+      : parseDay(preparedOn).add(Duration(days: remindAfterDays!));
+
+  bool dueOn(DateTime day) =>
+      remindOn != null &&
+      !DateTime(day.year, day.month, day.day).isBefore(remindOn!);
+
   Map<String, dynamic> toJson() => {
     'id': id,
     'name': name,
     'servings': servings,
     'preparedOn': preparedOn,
+    if (remindAfterDays != null) 'remindAfterDays': remindAfterDays,
   };
   factory LeftoverDish.fromJson(Map<String, dynamic> v) => LeftoverDish(
     id: v['id'] as String,
     name: v['name'] as String,
     servings: (v['servings'] as num).toDouble(),
     preparedOn: v['preparedOn'] as String,
+    remindAfterDays: v['remindAfterDays'] as int?,
   );
 }
 

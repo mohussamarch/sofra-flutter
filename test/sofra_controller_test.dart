@@ -392,6 +392,33 @@ void main() {
     final saved = c.kitchen.plans.where((p) => p.date.startsWith('2027-02'));
     expect(saved, hasLength(28));
     expect(saved.every((p) => p.slot == 'lunch' && p.servings == 2), isTrue);
+
+    // Planning the same month again: it asks, then keeps or replaces.
+    await expectLater(
+      c.previewMonth(
+        month: february,
+        limit: 100000,
+        menu: menu,
+        servings: 2,
+        omitUnmeasured: true,
+        keepPlanned: true,
+      ),
+      throwsStateError,
+      reason: 'every day already has its lunch',
+    );
+    final again = await c.previewMonth(
+      month: february,
+      limit: 100000,
+      menu: menu,
+      servings: 2,
+      omitUnmeasured: true,
+    );
+    expect(c.monthConflicts(again), hasLength(28));
+    expect(await c.acceptMonth(again, replace: true), isTrue);
+    expect(
+      c.kitchen.plans.where((p) => p.date.startsWith('2027-02')),
+      hasLength(28),
+    );
   });
   test('a recipe the user writes is planned and cooked from stock', () async {
     final c = SofraController(
@@ -467,4 +494,44 @@ void main() {
     expect(sourced.containsKey(NutrientId.fat), isFalse);
     expect(await c.portionNutrition(meals['unsourced']!), isNull);
   });
+  test('a leftover reminds on the day the user chose', () async {
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(value: threeLines()),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    await c.load();
+    await c.saveLeftovers(
+      'كشري',
+      2,
+      on: DateTime(2026, 10, 26),
+      remindAfterDays: 2,
+    );
+    await c.saveLeftovers('رز', 1, on: DateTime(2026, 10, 26));
+    expect(c.leftoversDue(DateTime(2026, 10, 27)), isEmpty);
+    expect(c.leftoversDue(DateTime(2026, 10, 28, 9)).single.name, 'كشري');
+    final again = LeftoverDish.fromJson(c.leftovers.first.toJson());
+    expect(again.remindAfterDays, 2);
+    expect(c.leftovers.last.toJson().containsKey('remindAfterDays'), isFalse);
+  });
+  test(
+    'bought items log a purchase only when the user says what they paid',
+    () async {
+      final c = SofraController(
+        store: f.Store(),
+        recipes: f.repository(value: threeLines()),
+        readAsset: (path) => File(path).readAsString(),
+      );
+      await c.load();
+      final rice = IngredientUse('rice', 1, 'kg');
+      final salt = IngredientUse('salt', 500, 'g');
+      await c.addBought([rice, salt], paid: {rice: 60});
+      final purchases = c.kitchen.snapshot['purchases'] as List;
+      expect(purchases, hasLength(1));
+      expect(purchases.single['amount'], 60);
+      expect(c.kitchen.inventory.map((l) => l.ingredientId), ['rice', 'salt']);
+      final prices = c.kitchen.snapshot['prices'] as List;
+      expect(prices.single['ingredientId'], 'rice');
+    },
+  );
 }

@@ -194,6 +194,9 @@ class _LeftoversCardState extends State<_LeftoversCard> {
   double servings = 0;
   bool saved = false;
 
+  /// Days until the reminder; null: no reminder.
+  int? remind = 2;
+
   @override
   Widget build(BuildContext context) {
     if (saved) {
@@ -247,13 +250,41 @@ class _LeftoversCardState extends State<_LeftoversCard> {
             ],
           ),
           const SizedBox(height: 8),
+          const Text(
+            'فكّرني بيها بعد',
+            style: TextStyle(color: Sofra.muted, fontSize: 13),
+          ),
+          Wrap(
+            spacing: 6,
+            alignment: WrapAlignment.center,
+            children: [
+              for (final d in const [null, 1, 2, 3, 4, 5])
+                ChoiceChip(
+                  key: ValueKey('leftover-remind-${d ?? 0}'),
+                  label: Text(
+                    d == null
+                        ? 'من غير'
+                        : d == 1
+                        ? 'يوم'
+                        : '$d أيام',
+                  ),
+                  selected: remind == d,
+                  onSelected: (_) => setState(() => remind = d),
+                ),
+            ],
+          ),
+          const SizedBox(height: 8),
           FilledButton(
             key: const ValueKey('save-leftovers'),
             onPressed: servings <= 0
                 ? null
                 : () async {
                     final ok = await SofraScope.controllerOf(context)
-                        .saveLeftovers(widget.name, servings);
+                        .saveLeftovers(
+                          widget.name,
+                          servings,
+                          remindAfterDays: remind,
+                        );
                     if (ok && mounted) setState(() => saved = true);
                   },
             child: const Text('حطه في التلاجة'),

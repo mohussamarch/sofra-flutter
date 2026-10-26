@@ -59,7 +59,9 @@ List<ShelfItem> leftoverShelfItems(BuildContext context) => [
       id: 'leftover-${dish.id}',
       art: CoveredDish(variant: i % 3),
       label: dish.name,
-      amount: '${recipeNumber(dish.servings)} حصة',
+      amount: dish.dueOn(DateTime.now())
+          ? '${recipeNumber(dish.servings)} حصة · جه معادها'
+          : '${recipeNumber(dish.servings)} حصة',
       onTap: () => _warmUp(context, dish),
       group: 'بواقي',
     ),

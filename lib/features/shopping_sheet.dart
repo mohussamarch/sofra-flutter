@@ -34,6 +34,15 @@ class ShoppingSheet extends StatefulWidget {
 class _ShoppingSheetState extends State<ShoppingSheet> {
   Future<PurchaseForecast>? list;
   final bought = <int>{};
+  final paid = <int, TextEditingController>{};
+
+  @override
+  void dispose() {
+    for (final t in paid.values) {
+      t.dispose();
+    }
+    super.dispose();
+  }
 
   @override
   void didChangeDependencies() {
@@ -98,12 +107,34 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                             () => v! ? bought.add(i) : bought.remove(i),
                           ),
                           title: Text(c.ingredientName(p.use.ingredientId)),
-                          subtitle: Text(
-                            c.amountText(
-                              p.use.ingredientId,
-                              p.use.quantity,
-                              p.use.unit,
-                            ),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                c.amountText(
+                                  p.use.ingredientId,
+                                  p.use.quantity,
+                                  p.use.unit,
+                                ),
+                              ),
+                              if (bought.contains(i))
+                                TextField(
+                                  key: ValueKey(
+                                    'shopping-paid-${p.use.ingredientId}',
+                                  ),
+                                  controller: paid[i] ??=
+                                      TextEditingController(),
+                                  keyboardType:
+                                      const TextInputType.numberWithOptions(
+                                        decimal: true,
+                                      ),
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    hintText: 'دفعت كام؟ (اختياري)',
+                                    suffixText: money,
+                                  ),
+                                ),
+                            ],
                           ),
                           secondary: Text(
                             p.estimatedCost == null
@@ -147,9 +178,17 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                       onPressed: bought.isEmpty
                           ? null
                           : () async {
-                              await c.addBought([
-                                for (final i in bought) items[i].use,
-                              ]);
+                              await c.addBought(
+                                [for (final i in bought) items[i].use],
+                                paid: {
+                                  for (final i in bought)
+                                    if (double.tryParse(
+                                          paid[i]?.text.trim() ?? '',
+                                        )
+                                        case final v? when v >= 0)
+                                      items[i].use: v,
+                                },
+                              );
                               if (context.mounted) Navigator.pop(context);
                             },
                     ),

@@ -50,6 +50,9 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
   bool nextMonth = false;
   Set<String> slots = {'lunch'};
   bool omitUnmeasured = true;
+
+  /// Leave the meals already on the table and fill the other days only.
+  bool keepPlanned = false;
   final menu = <(int, String), List<String>>{};
   Future<List<Map<String, dynamic>>>? index;
   MonthPlan? plan;
@@ -89,6 +92,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
     change();
     plan = null;
     error = null;
+    keepPlanned = false;
   });
 
   Future<void> _calculate() async {
@@ -102,6 +106,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
         limit: _limit!,
         menu: _activeMenu,
         omitUnmeasured: omitUnmeasured,
+        keepPlanned: keepPlanned,
       );
       if (mounted) setState(() => plan = result);
     } catch (_) {
@@ -116,8 +121,50 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
   }
 
   Future<void> _accept() async {
+    var replace = false;
+    final conflicts = c.monthConflicts(plan!);
+    if (conflicts.isNotEmpty) {
+      final choice = await showDialog<String>(
+        context: context,
+        builder: (ctx) => Directionality(
+          textDirection: TextDirection.rtl,
+          child: AlertDialog(
+            title: const Text('فيه أيام عليها أكل'),
+            content: Text(
+              'فيه ${conflicts.length} وجبة متخططة في نفس الأيام. نعمل إيه فيهم؟',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: const Text('لسه'),
+              ),
+              TextButton(
+                key: const ValueKey('month-replace'),
+                onPressed: () => Navigator.pop(ctx, 'replace'),
+                child: const Text('استبدلها'),
+              ),
+              FilledButton(
+                key: const ValueKey('month-keep'),
+                onPressed: () => Navigator.pop(ctx, 'keep'),
+                child: const Text('سيب الموجود'),
+              ),
+            ],
+          ),
+        ),
+      );
+      if (choice == null || !mounted) return;
+      if (choice == 'keep') {
+        // The other days are priced again on their own.
+        keepPlanned = true;
+        await _calculate();
+        if (plan?.outcome != MonthlyBudgetSearchOutcome.affordableFound) {
+          return;
+        }
+      }
+      replace = choice == 'replace';
+    }
     setState(() => busy = true);
-    final ok = await c.acceptMonth(plan!);
+    final ok = await c.acceptMonth(plan!, replace: replace);
     if (!mounted) return;
     setState(() => busy = false);
     if (ok) {

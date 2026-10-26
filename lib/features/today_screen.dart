@@ -317,7 +317,7 @@ class _TodayScreenState extends State<TodayScreen> {
                 child: AnimatedOpacity(
                   opacity: widget.mode == HomeMode.table ? 0 : 1,
                   duration: Sofra.motion(context, false),
-                  child: const _TopLine(ink: ink),
+                  child: _TopLine(ink: ink, onLeftovers: _openLeftovers),
                 ),
               ),
               if (widget.mode == HomeMode.table)
@@ -339,8 +339,11 @@ class _TodayScreenState extends State<TodayScreen> {
 
 /// Greeting small on the start side, the account's name centred.
 class _TopLine extends StatelessWidget {
-  const _TopLine({required this.ink});
+  const _TopLine({required this.ink, this.onLeftovers});
   final Color ink;
+
+  /// Opens the leftovers, for the due reminder.
+  final VoidCallback? onLeftovers;
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
@@ -369,6 +372,16 @@ class _TopLine extends StatelessWidget {
             style: TextStyle(fontSize: 12, color: ink.withValues(alpha: .62)),
           ),
         ),
+        if (c.leftoversDue(DateTime.now()) case final due when due.isNotEmpty)
+          PositionedDirectional(
+            end: 12,
+            child: ActionChip(
+              key: const ValueKey('leftovers-due'),
+              avatar: const Icon(Icons.microwave_outlined, size: 16),
+              label: Text('بواقي جه معادها: ${due.length}'),
+              onPressed: onLeftovers,
+            ),
+          ),
       ],
     );
   }
