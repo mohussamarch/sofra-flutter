@@ -3,11 +3,13 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tabkha_demo/app/sofra_controller.dart';
 import 'package:tabkha_demo/data/kitchen_service.dart';
+import 'package:tabkha_demo/domain/food_nutrition.dart';
 import 'package:tabkha_demo/domain/kitchen_core.dart';
 import 'package:tabkha_demo/domain/models.dart';
 import 'package:tabkha_demo/domain/monthly_budget_search.dart';
 import 'package:tabkha_demo/domain/recipe_catalog.dart';
 
+import 'personal_recipe_publication_test.dart' as pub;
 import 'recipe_variants_test.dart' as f;
 
 // Synthetic two-line recipe: one gram line, one count line, one unmeasured.
@@ -390,5 +392,79 @@ void main() {
     final saved = c.kitchen.plans.where((p) => p.date.startsWith('2027-02'));
     expect(saved, hasLength(28));
     expect(saved.every((p) => p.slot == 'lunch' && p.servings == 2), isTrue);
+  });
+  test('a recipe the user writes is planned and cooked from stock', () async {
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(value: threeLines()),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    await c.load();
+    Future<String?> create(String cuisine) => c.createMyRecipe(
+      name: 'رز بالشعرية بتاعنا',
+      servings: 2,
+      cuisine: cuisine,
+      prepMinutes: 5,
+      cookMinutes: 20,
+      category: 'أطباق رئيسية',
+      description: 'زي ما بنعمله في البيت',
+      difficulty: 'سهل',
+      lines: const [
+        MyRecipeLine('rice', 'رز', amount: 200, unit: 'g'),
+        MyRecipeLine('salt', 'ملح'),
+      ],
+      steps: const [('حمّر الشعرية وضيف الرز', 5), ('سيبه يستوي', 20)],
+    );
+    expect(() => create('غير محدد'), throwsArgumentError);
+    final id = await create('مصري');
+    expect(id, isNotNull);
+    expect(c.myRecipes.single.variantId, id);
+    expect(c.myRecipes.single.recipe.name, 'رز بالشعرية بتاعنا');
+
+    await c.kitchen.addStock(
+      InventoryLot(
+        id: 'lot-r',
+        ingredientId: 'rice',
+        quantity: 1,
+        unit: 'kg',
+        zone: StorageZone.pantry,
+      ),
+      newPurchase: false,
+    );
+    expect(
+      await c.planMeal(
+        id!,
+        day: DateTime(2026, 10, 26),
+        slot: 'lunch',
+        servings: 4,
+      ),
+      isTrue,
+    );
+    final meal = c.kitchen.plans.single;
+    final check = await c.checkPlan(meal);
+    expect(check.lines.first.status, LineStock.inStock);
+    expect(check.lines.last.status, LineStock.unmeasured);
+    expect(await c.cook(meal, check, 'op-mine'), isNotNull);
+    expect(c.kitchen.inventory.single.quantity, closeTo(.6, 1e-9));
+  });
+  test('portion nutrition shows only fully sourced values', () async {
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    await c.load();
+    final d = pub.draft();
+    await pub.save(c.kitchen, d);
+    final r = await c.kitchen.finalizePersonalRecipe(pub.review(d));
+    await c.kitchen.plan(f.plan('sourced', r.variantId));
+    await c.kitchen.plan(f.plan('unsourced', 'fixture'));
+    final meals = {for (final m in c.kitchen.plans) m.id: m};
+    // 100 g of a 200 kcal / 10 g protein per 100 g food, two portions.
+    final sourced = await c.portionNutrition(meals['sourced']!);
+    expect(sourced![NutrientId.energyKcal], 100);
+    expect(sourced[NutrientId.protein], 5);
+    expect(sourced.containsKey(NutrientId.fat), isFalse);
+    expect(await c.portionNutrition(meals['unsourced']!), isNull);
   });
 }

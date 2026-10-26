@@ -70,6 +70,20 @@ void main() {
     expect(find.byKey(const ValueKey('month-budget')), findsNothing);
     expect(find.byKey(const ValueKey('open-month-plan')), findsOneWidget);
     expect(find.textContaining('كشري'), findsWidgets);
+
+    // The week's shopping list comes from those meals, after the stock.
+    await tapKey(tester, 'open-shopping');
+    expect(find.byKey(const ValueKey('shopping-total')), findsOneWidget);
+    final first = find.byWidgetPredicate(
+      (w) =>
+          w is CheckboxListTile &&
+          (w.key! as ValueKey<String>).value.startsWith('shopping-'),
+    );
+    expect(first, findsWidgets);
+    await tester.tap(first.first);
+    await tester.pumpAndSettle();
+    await tapKey(tester, 'shopping-bought');
+    expect(find.byKey(const ValueKey('shopping-total')), findsNothing);
     expect(tester.takeException(), isNull);
   });
 }

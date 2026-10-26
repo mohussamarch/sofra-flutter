@@ -5,6 +5,7 @@ import '../app/sofra_controller.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'my_recipe_screen.dart';
 
 /// Card for one catalog index row (no full recipe load needed).
 class RecipeCard extends StatelessWidget {
@@ -306,7 +307,9 @@ class _RecipesScreenState extends State<RecipesScreen> {
             prefixIcon: Icon(Icons.search_rounded),
           ),
         ),
-        const SizedBox(height: 14),
+        const SizedBox(height: 10),
+        const MyRecipesStrip(),
+        const SizedBox(height: 10),
         FutureBuilder<List<Map<String, dynamic>>>(
           future: c.recipes.cuisineGroups,
           builder: (context, snap) {

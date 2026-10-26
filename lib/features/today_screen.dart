@@ -11,6 +11,7 @@ import 'common.dart';
 import 'month_plan_screen.dart';
 import 'recipe_book.dart';
 import 'shelf_wheel.dart';
+import 'shopping_sheet.dart';
 import 'table_screen.dart';
 
 /// What the home kitchen is showing: the room, the recipe book floating over
@@ -500,12 +501,24 @@ class _MealCardsState extends State<_MealCards> {
             shadows: [Shadow(color: Colors.black38, blurRadius: 12)],
           ),
         ),
-        TextButton.icon(
-          key: const ValueKey('open-month-plan'),
-          style: TextButton.styleFrom(foregroundColor: Colors.white),
-          onPressed: () => openMonthPlan(context),
-          icon: const Icon(Icons.calendar_month_outlined, size: 20),
-          label: const Text('خطط الشهر كله'),
+        Wrap(
+          alignment: WrapAlignment.center,
+          children: [
+            TextButton.icon(
+              key: const ValueKey('open-month-plan'),
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              onPressed: () => openMonthPlan(context),
+              icon: const Icon(Icons.calendar_month_outlined, size: 20),
+              label: const Text('خطة الشهر'),
+            ),
+            TextButton.icon(
+              key: const ValueKey('open-shopping'),
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              onPressed: () => openShopping(context),
+              icon: const Icon(Icons.shopping_basket_outlined, size: 20),
+              label: const Text('قائمة الشراء'),
+            ),
+          ],
         ),
         const SizedBox(height: 4),
         Expanded(

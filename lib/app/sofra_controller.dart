@@ -13,6 +13,11 @@ import '../domain/market_profile.dart';
 import '../domain/models.dart';
 import '../domain/monthly_budget_choices.dart';
 import '../domain/monthly_budget_search.dart';
+import '../domain/food_nutrition.dart';
+import '../domain/personal_recipe_draft.dart';
+import '../domain/personal_recipe_finalization.dart';
+import '../domain/purchase_forecast.dart';
+import '../domain/recipe_variants.dart';
 import '../domain/recipe_catalog.dart';
 
 /// Household preferences kept beside `kitchen` in the same state document.
@@ -183,6 +188,17 @@ class MonthPlan {
       ...a.forecast.unresolvedStock,
     },
   };
+}
+
+/// One ingredient of a recipe the user writes: a kitchen ingredient and an
+/// amount they state, or no amount ("حسب الرغبة"), which never scales.
+class MyRecipeLine {
+  const MyRecipeLine(this.stockId, this.name, {this.amount, this.unit});
+  final String stockId, name;
+  final double? amount;
+
+  /// g, kg, ml, l or count.
+  final String? unit;
 }
 
 /// Per-line preview used by the table and the cooking confirmation sheet.
@@ -624,6 +640,143 @@ class SofraController extends ChangeNotifier {
       _labels = {..._labels, ...unknown};
       await _save(() => kitchen.saveRootFields({'ingredientLabels': _labels}));
     }
+  }
+
+  /// What to buy for the uncooked meals of the coming [days], after what is
+  /// already in stock (allocated once across all of them), with the user's
+  /// prices where known.
+  Future<PurchaseForecast> shoppingList(DateTime from, {int days = 7}) =>
+      kitchen.previewPurchases([
+        for (final m in upcoming(from, days: days))
+          if (!m.completed) m.id,
+      ]);
+
+  /// The user bought these: they go into stock, each in its usual place.
+  /// No price is invented, so nothing is logged as a purchase.
+  Future<void> addBought(Iterable<IngredientUse> bought) async {
+    for (final use in bought) {
+      await _addAmount(
+        use.ingredientId,
+        use.quantity,
+        use.unit,
+        directory?.entry(use.ingredientId)?.zone ??
+            demoIngredients[use.ingredientId]?.zone ??
+            StorageZone.pantry,
+      );
+    }
+  }
+
+  /// Energy and macronutrients per portion of a planned meal, only those
+  /// whose every ingredient has a sourced food value; null when even energy
+  /// is incomplete (most catalog recipes have no food bindings yet).
+  Future<Map<NutrientId, double>?> portionNutrition(PlannedMeal meal) async {
+    final RecipeNutritionResult result;
+    try {
+      result = await kitchen.previewNutrition(meal.id);
+    } on Object {
+      return null;
+    }
+    final energy = result.perPortion[NutrientId.energyKcal]?.value;
+    if (energy == null) return null;
+    return {
+      NutrientId.energyKcal: energy,
+      for (final id in const [
+        NutrientId.protein,
+        NutrientId.carbohydrate,
+        NutrientId.fat,
+      ])
+        id: ?result.perPortion[id]?.value,
+    };
+  }
+
+  // ---- The user's own recipes ----------------------------------------------
+
+  /// Recipes the user wrote, newest publication of each.
+  List<RecipeRevision> get myRecipes => [
+    for (final r in kitchen.recipeBook.revisions.values)
+      if (r.kind == RecipeRevisionKind.authored &&
+          kitchen.recipeBook.active[r.variantId] == r.key)
+        r,
+  ];
+
+  /// Saves and publishes a recipe the user wrote, so it can be planned and
+  /// cooked like any other. Every amount, time and step is theirs; nutrition
+  /// stays unknown (no food is matched). Returns its recipe id, or null when
+  /// saving failed.
+  Future<String?> createMyRecipe({
+    required String name,
+    required int servings,
+    required String cuisine,
+    required int prepMinutes,
+    required int cookMinutes,
+    required String category,
+    required String description,
+    required String difficulty,
+    required List<MyRecipeLine> lines,
+    required List<(String, double)> steps,
+  }) async {
+    if (!RecipeRepository.hasConcreteCuisine(cuisine.trim())) {
+      throw ArgumentError('Name a specific cuisine');
+    }
+    const units = {
+      'g': FoodQuantityUnit.g,
+      'kg': FoodQuantityUnit.kg,
+      'ml': FoodQuantityUnit.ml,
+      'l': FoodQuantityUnit.l,
+      'count': FoodQuantityUnit.count,
+    };
+    final now = DateTime.now().toUtc();
+    final draft = PersonalRecipeDraft(
+      id: newId('mine'),
+      revision: 'v1',
+      name: name.trim(),
+      servings: servings.toDouble(),
+      createdAt: now,
+      cuisine: cuisine.trim(),
+      prepMinutes: prepMinutes,
+      cookMinutes: cookMinutes,
+      instructions: [for (final (text, _) in steps) text.trim()],
+      lines: [
+        for (final (i, l) in lines.indexed)
+          PersonalRecipeLine(
+            id: 'line-$i',
+            name: l.name,
+            scales: l.amount != null,
+            input: RecipeFoodInput(
+              ingredientId: 'line-$i',
+              food: null,
+              amount: l.amount == null
+                  ? null
+                  : FoodAmount(value: l.amount!, unit: units[l.unit]!),
+              amountForm: FoodForm.asSold,
+              preparedForm: FoodForm.asSold,
+            ),
+          ),
+      ],
+    );
+    final review = PersonalRecipeFinalization(
+      draft: draft,
+      category: category.trim(),
+      description: description.trim(),
+      difficulty: difficulty.trim(),
+      stepMinutes: [for (final (_, minutes) in steps) minutes],
+      ingredientIds: {for (final (i, l) in lines.indexed) 'line-$i': l.stockId},
+      reviewNote: 'كتبها المستخدم بنفسه',
+      reviewedAt: now,
+      acknowledgeInstructionsAndInputs: true,
+      acknowledgeNutritionIncomplete: true,
+    );
+    String? id;
+    final ok = await _save(() async {
+      await kitchen.savePersonalRecipeDraft(
+        draft,
+        acknowledgeInputsReviewed: true,
+        reviewNote: 'كتبها المستخدم بنفسه',
+        reviewedAt: now,
+      );
+      id = (await kitchen.finalizePersonalRecipe(review)).variantId;
+    });
+    return ok ? id : null;
   }
 
   // ---- Recipes and planning ----------------------------------------------

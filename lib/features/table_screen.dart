@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
 import '../app/sofra_controller.dart';
+import '../domain/food_nutrition.dart';
 import '../domain/kitchen_core.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
@@ -176,6 +177,7 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                         ),
                     ],
                   ),
+                  _Nutrition(meal: m),
                   if (missing.isNotEmpty) ...[
                     const SizedBox(height: 12),
                     for (final l in missing)
@@ -227,4 +229,46 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
       ),
     );
   }
+}
+
+/// Per-portion energy and macros, shown only when every ingredient has a
+/// sourced value; otherwise nothing, never a partial guess.
+class _Nutrition extends StatefulWidget {
+  const _Nutrition({required this.meal});
+  final PlannedMeal meal;
+  @override
+  State<_Nutrition> createState() => _NutritionState();
+}
+
+class _NutritionState extends State<_Nutrition> {
+  Future<Map<NutrientId, double>?>? values;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    values ??= SofraScope.controllerOf(context).portionNutrition(widget.meal);
+  }
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<Map<NutrientId, double>?>(
+    future: values,
+    builder: (context, snap) {
+      final v = snap.data;
+      if (v == null) return const SizedBox.shrink();
+      String g(NutrientId id, String label) => v[id] == null
+          ? ''
+          : ' · $label ${formatAmount(v[id]!.roundToDouble())} جم';
+      return Padding(
+        key: ValueKey('nutrition-${widget.meal.id}'),
+        padding: const EdgeInsets.only(top: 10),
+        child: Text(
+          'للفرد: ${formatAmount(v[NutrientId.energyKcal]!.roundToDouble())} سعر'
+          '${g(NutrientId.protein, 'بروتين')}'
+          '${g(NutrientId.carbohydrate, 'كربوهيدرات')}'
+          '${g(NutrientId.fat, 'دهون')}',
+          style: const TextStyle(color: Sofra.muted, fontSize: 13),
+        ),
+      );
+    },
+  );
 }
