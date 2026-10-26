@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>خريطة سفرة</title>
+<style>
+:root{--bg:#f7f3ea;--card:#fff;--ink:#2b2622;--muted:#7a7068;--line:#e4dccd;
+--done:#2e6b4f;--done-bg:#e3f0e8;--dev:#b8860b;--dev-bg:#f7edd2;--wait:#a23b2a;--wait-bg:#f6e0dc;--todo:#6b6b6b;--todo-bg:#ececec;--codex:#2f5d8c;--codex-bg:#dfe8f2}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1916;--card:#26231f;--ink:#efe9df;--muted:#a59b90;--line:#3a352f;
+--done-bg:#1f3a2c;--dev-bg:#3d3216;--wait-bg:#41221d;--todo-bg:#333;--codex-bg:#1f3046;--done:#7fc7a1;--dev:#e2b84d;--wait:#ee8b7a;--todo:#bbb;--codex:#8db6e3}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,sans-serif;line-height:1.6}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+h1{margin:0 0 4px;font-size:28px}h2{margin:36px 0 12px;font-size:21px}
+.sub{color:var(--muted);margin:0 0 18px}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 18px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:99px;font-size:13px;font-weight:600}
+.pill i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.done{background:var(--done-bg);color:var(--done)}.done i{background:var(--done)}
+.dev{background:var(--dev-bg);color:var(--dev)}.dev i{background:var(--dev)}
+.wait{background:var(--wait-bg);color:var(--wait)}.wait i{background:var(--wait)}
+.todo{background:var(--todo-bg);color:var(--todo)}.todo i{background:var(--todo)}
+.codex{background:var(--codex-bg);color:var(--codex)}.codex i{background:var(--codex)}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.area{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.area h3{margin:0 0 8px;font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.area ul{margin:0;padding:0 18px 0 0}.area li{margin:3px 0;font-size:14px}
+.area li b{font-weight:700}
+.center{background:var(--ink);color:var(--bg);border-radius:16px;padding:16px;text-align:center;margin-bottom:14px}
+.center b{font-size:22px}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:14px}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
+th{background:var(--line)}
+.nums{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.num{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.num b{display:block;font-size:26px}.num span{color:var(--muted);font-size:13px}
+code{background:var(--line);padding:1px 5px;border-radius:5px;font-size:12px}
+</style>
+</head>
+<body>
+<main>
+<h1>خريطة سفرة: وصلنا لفين</h1>
+<p class="sub">آخر تحديث: 26 أكتوبر 2026، بعد نشر قواعد Firestore وصفحة المجتمع الجديدة. كل اللي هنا من الكود والاختبارات الفعلية.</p>
+
+<div class="nums">
+  <div class="num"><b>449</b><span>اختبار ناجح، و analyze نضيف</span></div>
+  <div class="num"><b>408</b><span>وصفة نشطة (من 702 محفوظة)</span></div>
+  <div class="num"><b>83</b><span>وصفة متشالة (خنزير/كحول)</span></div>
+  <div class="num"><b>334</b><span>مكوّن في القاموس، وبيربط 83% من سطور الوصفات</span></div>
+  <div class="num"><b>2378</b><span>منتج مصر/السعودية للباركود</span></div>
+  <div class="num"><b>0</b><span>تجارب على S24 لسه</span></div>
+</div>
+
+<div class="legend">
+  <span class="pill done"><i></i>معمول ومتختبر</span>
+  <span class="pill dev"><i></i>معمول، ومحتاج تجربة على الموبايل</span>
+  <span class="pill wait"><i></i>مستني قرارك</span>
+  <span class="pill todo"><i></i>لسه</span>
+  <span class="pill codex"><i></i>عند Codex (الفيجوال)</span>
+</div>
+
+<h2>الخريطة</h2>
+<div class="center"><b>سفرة</b><br>مطبخ البيت: الخزين، الوصفات، الخطة، الشراء، الطبخ، والناس</div>
+<div class="map">
+  <div class="area"><h3>المطبخ والخزين <span class="pill done"><i></i></span></h3><ul>
+    <li>إضافة مكوّنات بالبحث والوحدة، والرفوف بأقسام</li>
+    <li>وحدات الخزين: ربطة، عدد، وزن، وتحويل يحدده المستخدم</li>
+    <li>البدائل «A أو B» بتتخصم من الموجود</li>
+    <li><span class="pill dev"><i></i>باركود</span> مسح، وبعدين تختار المكوّن ويتفتكر</li></ul></div>
+  <div class="area"><h3>الوصفات <span class="pill done"><i></i></span></h3><ul>
+    <li>408 وصفة في 15 مطبخ أساسي، وبحث وفلاتر</li>
+    <li>«وصفة من عندي»: تتخطط وتتطبخ</li>
+    <li>مستورد الوصفات من المصادر بقواعد صارمة</li>
+    <li><span class="pill dev"><i></i>شغال</span> وكيل بيدوّر على وصفات عربية</li>
+    <li><span class="pill todo"><i></i>صور</span> مكتبة صور الأكلات جاهزة وفاضية</li></ul></div>
+  <div class="area"><h3>التخطيط والشراء <span class="pill done"><i></i></span></h3><ul>
+    <li>السفرة: وجبات اليوم والأسبوع</li>
+    <li>خطة الشهر: ميزانية وأسعارك، وبتسأل قبل ما تستبدل</li>
+    <li>قائمة الشراء من الخزين، وبتتبعت على واتساب</li>
+    <li>«اشتريته» بيضيف للخزين، والسعر اختياري</li></ul></div>
+  <div class="area"><h3>الطبخ <span class="pill done"><i></i></span></h3><ul>
+    <li>خطوات الطبخ، وتأكيد بيخصم من الخزين</li>
+    <li>جزء من مكوّن: «جبت الباقي» أو «طبخت بأقل»</li>
+    <li>البواقي في التلاجة بتذكير بعد كام يوم</li></ul></div>
+  <div class="area"><h3>التغذية والحساسية <span class="pill done"><i></i></span></h3><ul>
+    <li>تنبيه حساسية بأسماء المكوّن وبدايله</li>
+    <li>التغذية بتظهر بس لما كل المكونات يكون ليها مصدر</li>
+    <li><span class="pill todo"><i></i>تغطية</span> ربط المكوّنات ببنوك التغذية لسه قليل</li></ul></div>
+  <div class="area"><h3>التذكيرات <span class="pill dev"><i></i></span></h3><ul>
+    <li>قبل الوجبة، بمواعيدك انت</li>
+    <li>البواقي في يومها</li>
+    <li>«خلص من المطبخ» بعد الطبخ</li></ul></div>
+  <div class="area"><h3>المجتمع <span class="pill dev"><i></i></span></h3><ul>
+    <li>شكل يوتيوب: chips وقصص نص 24 ساعة</li>
+    <li>دوائر شيفات يوتيوب متأكدين منهم (4)</li>
+    <li>وصفات البيوت بكروت كبيرة، ونجوم وتعليقات</li>
+    <li>أسعار منطقتي (من بيتين أو أكتر)، وتحدي الأسبوع</li>
+    <li><span class="pill wait"><i></i>قاعدة القصص</span> لسه متنشرتش</li></ul></div>
+  <div class="area"><h3>المطبخ المشترك <span class="pill dev"><i></i></span></h3><ul>
+    <li>مطبخ واحد للبيت كله، بكود دعوة صالح أسبوع</li>
+    <li>الرجوع لمطبخك الشخصي</li>
+    <li>القواعد منشورة على sofra-c03a1</li>
+    <li><span class="pill todo"><i></i>لسه</span> تجربة بحسابين على موبايلين</li></ul></div>
+  <div class="area"><h3>الحساب والسحابة <span class="pill done"><i></i></span></h3><ul>
+    <li>تسجيل دخول Firebase وحفظ بالـrevision</li>
+    <li>من غير حساب: محفوظ على الجهاز، والمجتمع معاينة</li>
+    <li><span class="pill wait"><i></i>صور</span> رفع الصور محتاج قرار (Blaze أو بديل مجاني)</li></ul></div>
+  <div class="area"><h3>المطبخ 3D والفيجوال <span class="pill codex"><i></i></span></h3><ul>
+    <li>المطبخ بيتعرض والترابيزة بتفتح السفرة</li>
+    <li>R22 اترفض، وخطة R23 محفوظة (غرفة مقفولة، وبوابات جودة)</li>
+    <li>حركة التلاجة r18 متوصلة، ومستنية الفريمات</li></ul></div>
+</div>
+
+<h2>مستني قرارك</h2>
+<table>
+  <tr><th>الموضوع</th><th>ليه</th></tr>
+  <tr><td>نشر قاعدة القصص</td><td>القصص على الموبايل مرفوضة لحد ما تتنشر. قلت تجرب المعاينة الأول.</td></tr>
+  <tr><td>رفع صور الأكل</td><td>Firebase Storage محتاج Blaze (billing). البديل المجاني: صور صغيرة جوه Firestore.</td></tr>
+  <tr><td>«أحمد وجدي» و«آية السيد»</td><td>ما لقيتلهمش قناة مؤكدة. ابعت اللينك وهضيفهم.</td></tr>
+  <tr><td>الرفع على GitHub</td><td>كل الشغل في commits لوكال، زي ما طلبت.</td></tr>
+</table>
+
+<h2>الجاي</h2>
+<table>
+  <tr><th>#</th><th>الخطوة</th><th>محتاجة</th></tr>
+  <tr><td>1</td><td>تجربة APK على S24: الكاميرا، والإشعارات، والمطبخ المشترك بحسابين</td><td>موبايلك</td></tr>
+  <tr><td>2</td><td>استيراد وصفات الوكيل العربية بعد ما يخلص</td><td>تلقائي</td></tr>
+  <tr><td>3</td><td>صاحب المطبخ يشيل عضو، وحذف وصفة مشتركة</td><td>كود</td></tr>
+  <tr><td>4</td><td>ربط مكوّنات أكتر بالتغذية</td><td>كود وبيانات</td></tr>
+  <tr><td>5</td><td>الصور (بعد قرارك)</td><td>قرار</td></tr>
+</table>
+
+<h2>آخر نسخ</h2>
+<table>
+  <tr><th>النسخة</th><th>فين</th></tr>
+  <tr><td>APK</td><td><code>E:\work\SOFRA\deliverables\sofra-20261026-community-feed-4791063d.apk</code></td></tr>
+  <tr><td>معاينة الويب</td><td><code>http://localhost:8893</code> (على الكمبيوتر ده، من غير حساب)</td></tr>
+  <tr><td>تفاصيل الكود</td><td><code>docs/handoff/claude.md</code></td></tr>
+</table>
+</main>
+</body>
+</html>
