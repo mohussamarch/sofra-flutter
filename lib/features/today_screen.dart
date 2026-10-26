@@ -324,7 +324,7 @@ class _TodayScreenState extends State<TodayScreen> {
                 Positioned(
                   left: 0,
                   right: 0,
-                  top: head + room * .3,
+                  top: head + room * .36,
                   bottom: foot,
                   child: const _MealCards(),
                 ),
@@ -550,13 +550,16 @@ class _MealCardsState extends State<_MealCards> {
                     : 0.0;
                 final d = (page - i).clamp(-1.0, 1.0);
                 final s = 1 - d.abs() * .1;
+                // Cards lie on the table seen from the seat: tipped back
+                // a little, the side ones further away.
                 return Opacity(
                   opacity: 1 - d.abs() * .5,
                   child: Transform(
-                    alignment: Alignment.center,
+                    alignment: Alignment.bottomCenter,
                     transform: Matrix4.identity()
                       ..setEntry(3, 2, .0012)
-                      ..rotateY(d * .35)
+                      ..rotateX(-.32 - d.abs() * .12)
+                      ..rotateY(d * .3)
                       ..scaleByDouble(s, s, 1, 1),
                     child: child,
                   ),

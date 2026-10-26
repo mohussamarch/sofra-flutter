@@ -26,7 +26,7 @@ class Kitchen3D extends StatefulWidget {
     this.onTap,
     this.vignette = false,
     this.background = const Color(0xFF15100C),
-    this.zoom = true,
+    this.zoom = false,
   });
   final Kitchen3DController controller;
 
@@ -39,6 +39,8 @@ class Kitchen3D extends StatefulWidget {
   /// Fades the room's edges into the page.
   final bool vignette;
   final Color background;
+
+  /// Kept for callers; the camera is fixed, so it has no effect.
   final bool zoom;
 
   @override
@@ -84,10 +86,12 @@ class Kitchen3DController {
     "$_home",
   );
 
-  /// Closer and lower, over the dining table (Blender x 2.2–3.8, y −0.2–1.4).
+  /// Seated at the head of the dining table (Blender x 2.2–3.8,
+  /// y −0.2–1.4, top about 0.75 m): eyes about 1.1 m up, looking along the
+  /// table toward the stove and fridge.
   Future<void> table() => _run(
-    "mv.cameraTarget='3m 0.75m -0.6m';"
-    "mv.cameraOrbit='45deg 62deg 4.2m';mv.fieldOfView='30deg';",
+    "mv.cameraTarget='3m 0.82m -0.6m';"
+    "mv.cameraOrbit='0deg 72deg 1.02m';mv.fieldOfView='62deg';",
   );
 
   /// Repaints every cabinet in [color]; null restores the rendered colour.
@@ -143,7 +147,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
   }
 
   /// Idempotent: forwards taps (glTF y-up to Blender z-up) and applies the
-  /// edge fade. Drags that orbit the camera are not taps.
+  /// edge fade. Drags (scrolling past the view) are not taps.
   String get _hookJs {
     final fade = widget.vignette
         ? "mv.style.webkitMaskImage=mv.style.maskImage="
@@ -173,11 +177,15 @@ class _Kitchen3DState extends State<Kitchen3D> {
     cameraOrbit: '45deg 58deg auto',
     fieldOfView: '11.5deg',
     minFieldOfView: '10deg',
-    minCameraOrbit: '-10deg 20deg 1m',
-    maxCameraOrbit: '100deg 88deg auto',
-    cameraControls: true,
+    maxFieldOfView: '70deg',
+    minCameraOrbit: 'auto auto 0.3m',
+    maxCameraOrbit: 'auto 100deg auto',
+    // Fixed shots only: the room is not something to spin around like a
+    // game. The app moves the camera (overview, fridge, table); taps still
+    // reach the zones.
+    cameraControls: false,
     disablePan: true,
-    disableZoom: !widget.zoom,
+    disableZoom: true,
     interactionPrompt: InteractionPrompt.none,
     environmentImage: 'neutral',
     exposure: 2.1,
