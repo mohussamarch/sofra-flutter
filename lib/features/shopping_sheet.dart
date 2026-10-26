@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:share_plus/share_plus.dart';
+
 import '../app/scope.dart';
 import '../domain/market_profile.dart';
 import '../domain/purchase_forecast.dart';
@@ -75,11 +77,29 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 4),
-                  child: Text(
-                    'قائمة الشراء للأسبوع',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 12, 8, 0),
+                  child: Row(
+                    children: [
+                      const Expanded(
+                        child: Text(
+                          'قائمة الشراء للأسبوع',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                      if (items.isNotEmpty)
+                        IconButton(
+                          key: const ValueKey('shopping-share'),
+                          tooltip: 'ابعتها (واتساب وغيره)',
+                          onPressed: () => SharePlus.instance.share(
+                            ShareParams(text: c.shoppingText(f)),
+                          ),
+                          icon: const Icon(Icons.share_outlined),
+                        ),
+                    ],
                   ),
                 ),
                 Padding(

@@ -7,6 +7,7 @@ import 'package:tabkha_demo/domain/food_nutrition.dart';
 import 'package:tabkha_demo/domain/kitchen_core.dart';
 import 'package:tabkha_demo/domain/models.dart';
 import 'package:tabkha_demo/domain/monthly_budget_search.dart';
+import 'package:tabkha_demo/domain/purchase_forecast.dart';
 import 'package:tabkha_demo/domain/recipe_catalog.dart';
 
 import 'personal_recipe_publication_test.dart' as pub;
@@ -532,6 +533,72 @@ void main() {
       expect(c.kitchen.inventory.map((l) => l.ingredientId), ['rice', 'salt']);
       final prices = c.kitchen.snapshot['prices'] as List;
       expect(prices.single['ingredientId'], 'rice');
+    },
+  );
+  test('the shopping list reads as one line per item to share', () async {
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(value: threeLines()),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    await c.load();
+    final text = c.shoppingText(
+      PurchaseForecast(
+        purchases: [
+          ForecastPurchase(IngredientUse('rice', 1, 'kg'), null),
+          ForecastPurchase(IngredientUse('salt', 500, 'g'), 5),
+        ],
+        knownPurchaseSubtotal: 5,
+        purchaseTotal: null,
+        knownConsumptionSubtotal: 0,
+        consumptionTotal: null,
+        unresolvedRequirements: {},
+        unresolvedStock: {},
+        unpricedPurchases: {'rice'},
+        unpricedConsumption: {},
+      ),
+    );
+    final lines = text.split('\n');
+    expect(lines, hasLength(3));
+    expect(lines.first, 'قائمة الشراء من سفرة:');
+    expect(lines[1], startsWith('- ${c.ingredientName('rice')}: '));
+    expect(lines[2], startsWith('- ${c.ingredientName('salt')}: '));
+  });
+  test(
+    'cooking with less records the smaller amount as what was used',
+    () async {
+      final c = SofraController(
+        store: f.Store(),
+        recipes: f.repository(value: threeLines()),
+        readAsset: (path) => File(path).readAsString(),
+      );
+      await c.load();
+      await c.kitchen.addStock(
+        InventoryLot(
+          id: 'lot-a',
+          ingredientId: 'sample',
+          quantity: 150,
+          unit: 'g',
+          zone: StorageZone.pantry,
+        ),
+        newPurchase: false,
+      );
+      await c.kitchen.plan(
+        PlannedMeal(
+          id: 'm1',
+          date: '2026-10-25',
+          slot: 'lunch',
+          recipeId: 'fixture',
+          servings: 2,
+        ),
+      );
+      final meal = c.kitchen.plans.single;
+      final check = await c.checkPlan(meal);
+      final record = await c.cook(meal, check, 'op-less', cookedLess: {0});
+      expect(record, isNotNull);
+      expect(c.kitchen.inventory.single.quantity, 0);
+      expect((record!['consumed'] as List).single['quantity'], 150);
+      expect(record['partialStockLines'] ?? const [], isNot(contains(0)));
     },
   );
 }

@@ -127,7 +127,7 @@ class _CookingScreenState extends State<CookingScreen> {
   Future<void> _confirm(CatalogRecipe r) async {
     final c = SofraScope.controllerOf(context);
     final check = c.checkStock(r.forServings(widget.meal.servings));
-    final ok = await showModalBottomSheet<bool>(
+    final cookedLess = await showModalBottomSheet<Set<int>>(
       context: context,
       isScrollControlled: true,
       builder: (ctx) => Directionality(
@@ -135,9 +135,14 @@ class _CookingScreenState extends State<CookingScreen> {
         child: _ConfirmSheet(check: check),
       ),
     );
-    if (ok != true || !mounted) return;
+    if (cookedLess == null || !mounted) return;
     setState(() => busy = true);
-    final record = await c.cook(widget.meal, check, operationId);
+    final record = await c.cook(
+      widget.meal,
+      check,
+      operationId,
+      cookedLess: cookedLess,
+    );
     if (!mounted) return;
     setState(() {
       busy = false;
@@ -295,12 +300,21 @@ class _LeftoversCardState extends State<_LeftoversCard> {
   }
 }
 
-class _ConfirmSheet extends StatelessWidget {
+/// Returns the partly stocked lines the user cooked with less of (empty when
+/// they bought the rest), or null when they go back.
+class _ConfirmSheet extends StatefulWidget {
   const _ConfirmSheet({required this.check});
   final CookingCheck check;
+  @override
+  State<_ConfirmSheet> createState() => _ConfirmSheetState();
+}
+
+class _ConfirmSheetState extends State<_ConfirmSheet> {
+  final cookedLess = <int>{};
 
   @override
   Widget build(BuildContext context) {
+    final check = widget.check;
     final deduct = check.where(LineStock.inStock).toList();
     final partial = check.lines.where((l) => l.partial).toList();
     final kept = [
@@ -329,7 +343,7 @@ class _ConfirmSheet extends StatelessWidget {
           ),
           Text(note, style: const TextStyle(fontSize: 11, color: Sofra.muted)),
           const SizedBox(height: 6),
-          for (final l in lines)
+          for (final l in lines) ...[
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 3),
               child: Row(
@@ -345,6 +359,26 @@ class _ConfirmSheet extends StatelessWidget {
                 ],
               ),
             ),
+            if (l.partial)
+              Wrap(
+                spacing: 6,
+                children: [
+                  ChoiceChip(
+                    key: ValueKey('partial-bought-${l.index}'),
+                    label: const Text('جبت الباقي'),
+                    selected: !cookedLess.contains(l.index),
+                    onSelected: (_) =>
+                        setState(() => cookedLess.remove(l.index)),
+                  ),
+                  ChoiceChip(
+                    key: ValueKey('partial-less-${l.index}'),
+                    label: const Text('طبخت بأقل'),
+                    selected: cookedLess.contains(l.index),
+                    onSelected: (_) => setState(() => cookedLess.add(l.index)),
+                  ),
+                ],
+              ),
+          ],
         ],
       ),
     );
@@ -371,8 +405,8 @@ class _ConfirmSheet extends StatelessWidget {
                 ),
               if (partial.isNotEmpty)
                 group(
-                  'هيتخصم اللي عندك بس',
-                  'الباقي ناقص؛ لو جبته من برّه مش محتاج تسجله.',
+                  'عندك جزء بس',
+                  'جبت الباقي من برّه، ولا طبخت باللي عندك؟ في الحالتين اللي عندك هيتخصم.',
                   partial,
                   Sofra.greenDark,
                 ),
@@ -394,10 +428,10 @@ class _ConfirmSheet extends StatelessWidget {
               DepthButton(
                 key: const ValueKey('confirm-cooking'),
                 label: 'تأكيد',
-                onPressed: () => Navigator.pop(context, true),
+                onPressed: () => Navigator.pop(context, {...cookedLess}),
               ),
               TextButton(
-                onPressed: () => Navigator.pop(context, false),
+                onPressed: () => Navigator.pop(context),
                 child: const Text('لسه'),
               ),
             ],

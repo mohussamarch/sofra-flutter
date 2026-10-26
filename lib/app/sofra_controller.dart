@@ -699,6 +699,13 @@ class SofraController extends ChangeNotifier {
           if (!m.completed) m.id,
       ]);
 
+  /// The shopping list as plain text to send (WhatsApp or any app).
+  String shoppingText(PurchaseForecast list) => [
+    'قائمة الشراء من سفرة:',
+    for (final p in list.purchases)
+      '- ${ingredientName(p.use.ingredientId)}: ${amountText(p.use.ingredientId, p.use.quantity, p.use.unit)}',
+  ].join('\n');
+
   /// The user bought these: they go into stock, each in its usual place.
   /// With what they say they paid ([paid], optional per item) it is logged as
   /// a purchase against the budget and kept as their price for next time;
@@ -1000,11 +1007,19 @@ class SofraController extends ChangeNotifier {
   /// Confirms cooking: in-stock lines are deducted, partly stocked lines use
   /// up what there is; missing/unresolved lines are explicitly kept out of
   /// stock, unmeasured lines are omitted.
+  /// [cookedLess]: partly stocked lines the user cooked with only what they
+  /// had, so the meal used (and its nutrition counts) that smaller amount;
+  /// the other partly stocked lines were topped up from outside.
   Future<Map<String, dynamic>?> cook(
     PlannedMeal meal,
     CookingCheck check,
-    String operationId,
-  ) async {
+    String operationId, {
+    Set<int> cookedLess = const {},
+  }) async {
+    final less = {
+      for (final l in check.lines)
+        if (l.partial && cookedLess.contains(l.index)) l.index: l,
+    };
     Map<String, dynamic>? record;
     final ok = await _save(() async {
       record = await kitchen.confirmCooking(
@@ -1021,7 +1036,15 @@ class SofraController extends ChangeNotifier {
         },
         partialStockLines: {
           for (final l in check.lines)
-            if (l.partial) l.index,
+            if (l.partial && !less.containsKey(l.index)) l.index,
+        },
+        actualUsesByLine: {
+          for (final MapEntry(key: i, value: l) in less.entries)
+            i: IngredientUse(
+              l.ingredient.id,
+              l.quantity! - l.missing!,
+              l.ingredient.unit!,
+            ),
         },
         stockChoiceByLine: {
           for (final l in check.lines)
