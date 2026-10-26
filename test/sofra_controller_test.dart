@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:tabkha_demo/app/reminders.dart';
 import 'package:tabkha_demo/app/sofra_controller.dart';
 import 'package:tabkha_demo/data/kitchen_service.dart';
 import 'package:tabkha_demo/domain/food_nutrition.dart';
@@ -567,7 +568,9 @@ void main() {
   test(
     'cooking with less records the smaller amount as what was used',
     () async {
+      final sink = SilentReminders();
       final c = SofraController(
+        reminders: sink,
         store: f.Store(),
         recipes: f.repository(value: threeLines()),
         readAsset: (path) => File(path).readAsString(),
@@ -599,6 +602,8 @@ void main() {
       expect(c.kitchen.inventory.single.quantity, 0);
       expect((record!['consumed'] as List).single['quantity'], 150);
       expect(record['partialStockLines'] ?? const [], isNot(contains(0)));
+      // It used the last of it: the ran-out notice goes to the phone.
+      expect(sink.shown.single.$1, 'خلص من المطبخ');
     },
   );
 }

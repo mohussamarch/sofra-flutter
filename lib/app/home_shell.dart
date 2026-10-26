@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
 import '../data/recipe_repository.dart';
@@ -12,6 +13,7 @@ import '../features/profile_screen.dart';
 import '../features/recipe_detail_screen.dart';
 import '../features/today_screen.dart';
 import '../ui/design.dart';
+import 'reminders.dart';
 import 'scope.dart';
 import 'sofra_controller.dart';
 
@@ -27,6 +29,7 @@ class SofraHome extends StatefulWidget {
     this.recipes,
     this.readAsset,
     this.showScene = true,
+    this.reminders,
   });
   final StateStore? store;
   final Map<String, dynamic>? initialData;
@@ -41,6 +44,9 @@ class SofraHome extends StatefulWidget {
   /// The Blender kitchen on the home tab; off in widget tests.
   final bool showScene;
 
+  /// Injectable for tests; phone notifications by default.
+  final ReminderSink? reminders;
+
   @override
   State<SofraHome> createState() => _SofraHomeState();
 }
@@ -51,6 +57,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     initialData: widget.initialData,
     recipes: widget.recipes,
     readAsset: widget.readAsset,
+    reminders: widget.reminders ?? (kIsWeb ? null : LocalReminders()),
   );
   final name = TextEditingController();
   final house = TextEditingController();

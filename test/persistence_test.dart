@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:tabkha_demo/app/reminders.dart';
 import 'package:tabkha_demo/data/state_store.dart';
 import 'package:tabkha_demo/main.dart';
 
@@ -158,6 +159,35 @@ void main() {
       expect(find.text('مريم'), findsWidgets);
     },
   );
+  testWidgets('reminder choices in settings are saved', (tester) async {
+    tester.view.physicalSize = const Size(430, 932);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final store = TestStore();
+    final sink = SilentReminders();
+    await tester.pumpWidget(
+      MaterialApp(
+        home: SofraHome(
+          store: store,
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+          showScene: false,
+          reminders: sink,
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await completeOnboarding(tester);
+    await openCorner(tester, 'settings');
+    expect(find.text('من غير تذكير'), findsNWidgets(3));
+    await tapKey(tester, 'reminder-before-60');
+    await tapKey(tester, 'reminder-stock');
+    expect(store.data!['remindBefore'], 60);
+    expect(store.data!['stockAlerts'], isFalse);
+    // No meal time set yet, so nothing is scheduled.
+    expect(sink.scheduled, isEmpty);
+  });
 }
 
 class DelayedStore extends TestStore {

@@ -6,6 +6,7 @@ import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
 import 'onboarding_screen.dart';
+import 'reminder_settings.dart';
 
 /// "بروفايلي": the household, its taste and allergies. App settings live in
 /// [SettingsScreen].
@@ -158,6 +159,8 @@ class SettingsScreen extends StatelessWidget {
                 c.updateProfile((p) => p.copyWith(reduceMotion: v)),
           ),
         ),
+        const SectionTitle('التذكيرات'),
+        const ReminderSettings(),
         const SizedBox(height: 24),
         if (c.persistent) ...[
           Center(

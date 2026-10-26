@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -19,6 +20,8 @@ import '../domain/personal_recipe_finalization.dart';
 import '../domain/purchase_forecast.dart';
 import '../domain/recipe_variants.dart';
 import '../domain/recipe_catalog.dart';
+import 'reminders.dart';
+import 'scope.dart' show mealSlots;
 
 /// Household preferences kept beside `kitchen` in the same state document.
 class Profile {
@@ -33,6 +36,9 @@ class Profile {
     this.saved = const {},
     this.quickMeals = true,
     this.reduceMotion = false,
+    this.mealTimes = const {},
+    this.remindBefore = 30,
+    this.stockAlerts = true,
   });
 
   final String name, house;
@@ -42,6 +48,16 @@ class Profile {
   /// Cuisine group IDs from the catalog (e.g. `egyptian`).
   final Set<String> cuisines;
   final Set<String> allergies, meals, saved;
+
+  /// Meal slot -> minutes after midnight, as the user set them. A slot with
+  /// no time gets no meal reminder.
+  final Map<String, int> mealTimes;
+
+  /// Minutes before a meal's time to remind.
+  final int remindBefore;
+
+  /// Notify when cooking uses up an ingredient.
+  final bool stockAlerts;
 
   String get displayName => name.trim().isEmpty ? 'صاحب السفرة' : name.trim();
   String get houseName =>
@@ -58,6 +74,9 @@ class Profile {
     Set<String>? saved,
     bool? quickMeals,
     bool? reduceMotion,
+    Map<String, int>? mealTimes,
+    int? remindBefore,
+    bool? stockAlerts,
   }) => Profile(
     name: name ?? this.name,
     house: house ?? this.house,
@@ -69,6 +88,9 @@ class Profile {
     saved: saved ?? this.saved,
     quickMeals: quickMeals ?? this.quickMeals,
     reduceMotion: reduceMotion ?? this.reduceMotion,
+    mealTimes: mealTimes ?? this.mealTimes,
+    remindBefore: remindBefore ?? this.remindBefore,
+    stockAlerts: stockAlerts ?? this.stockAlerts,
   );
 
   static const _legacyCuisines = {
@@ -89,6 +111,9 @@ class Profile {
     'saved': saved.toList(),
     'quickMeals': quickMeals,
     'reduceMotion': reduceMotion,
+    'mealTimes': mealTimes,
+    'remindBefore': remindBefore,
+    'stockAlerts': stockAlerts,
   };
 
   factory Profile.fromRoot(Map<String, dynamic> root) {
@@ -115,6 +140,19 @@ class Profile {
       saved: strings('saved', const {}),
       quickMeals: root['quickMeals'] != false,
       reduceMotion: root['reduceMotion'] == true,
+      mealTimes: {
+        for (final e in ((root['mealTimes'] as Map?) ?? const {}).entries)
+          if (e.key is String &&
+              e.value is num &&
+              e.value >= 0 &&
+              e.value < 1440)
+            e.key as String: (e.value as num).toInt(),
+      },
+      remindBefore: ((root['remindBefore'] as num?)?.toInt() ?? 30).clamp(
+        0,
+        240,
+      ),
+      stockAlerts: root['stockAlerts'] != false,
     );
   }
 }
@@ -232,7 +270,9 @@ class SofraController extends ChangeNotifier {
     Map<String, dynamic>? initialData,
     RecipeRepository? recipes,
     Future<String> Function(String path)? readAsset,
+    ReminderSink? reminders,
   }) : persistent = store != null,
+       reminders = reminders ?? SilentReminders(),
        recipes = recipes ?? RecipeRepository(),
        _readAsset = readAsset ?? rootBundle.loadString {
     kitchen = KitchenService(
@@ -250,6 +290,9 @@ class SofraController extends ChangeNotifier {
   final RecipeRepository recipes;
   final Future<String> Function(String path) _readAsset;
   late final KitchenService kitchen;
+
+  /// Phone notifications (silent in tests).
+  final ReminderSink reminders;
 
   /// Canonical ingredient vocabulary; recipe lines map to it for stock.
   IngredientDirectory? directory;
@@ -302,6 +345,30 @@ class SofraController extends ChangeNotifier {
       loadError = e;
     }
     notifyListeners();
+    if (ready) unawaited(syncReminders());
+  }
+
+  /// Reschedules the coming week's meal and leftover reminders.
+  Future<void> syncReminders({DateTime? now}) async {
+    final titles = <String, String>{};
+    for (final m in kitchen.plans.where((m) => !m.completed)) {
+      try {
+        titles[m.id] = await planTitle(m);
+      } catch (_) {
+        titles[m.id] = 'وجبة';
+      }
+    }
+    await reminders.replaceScheduled(
+      upcomingReminders(
+        now: now ?? DateTime.now(),
+        mealTimes: profile.mealTimes,
+        before: profile.remindBefore,
+        meals: kitchen.plans,
+        titleOf: (m) => titles[m.id] ?? 'وجبة',
+        slotName: (s) => mealSlots[s] ?? s,
+        leftovers: leftovers,
+      ),
+    );
   }
 
   /// Runs one write; on failure keeps it for [retrySave] and shows the banner.
@@ -314,6 +381,7 @@ class SofraController extends ChangeNotifier {
       _retry = null;
       saving = false;
       notifyListeners();
+      unawaited(syncReminders());
       return true;
     } catch (e) {
       _retry = write;
@@ -1021,6 +1089,7 @@ class SofraController extends ChangeNotifier {
         if (l.partial && cookedLess.contains(l.index)) l.index: l,
     };
     Map<String, dynamic>? record;
+    final before = kitchen.inventory;
     final ok = await _save(() async {
       record = await kitchen.confirmCooking(
         meal.id,
@@ -1052,6 +1121,17 @@ class SofraController extends ChangeNotifier {
         },
       );
     });
+    if (ok && profile.stockAlerts) {
+      final out = ranOut(before, kitchen.inventory);
+      if (out.isNotEmpty) {
+        unawaited(
+          reminders.showNow(
+            'خلص من المطبخ',
+            '${out.map(ingredientName).join('، ')}. ضيفهم لقائمة الشراء.',
+          ),
+        );
+      }
+    }
     return ok ? record : null;
   }
 }
