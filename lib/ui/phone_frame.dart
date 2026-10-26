@@ -23,7 +23,7 @@ class PhoneFrame extends StatelessWidget {
     if (!kIsWeb || _onPhone) return child;
     // A short window (e.g. a side pane) would shrink the frame until text is
     // unreadable; show the app at real size in a phone-wide column instead.
-    if (media.size.height < 640) {
+    if (media.size.height < 800) {
       final width = media.size.width.clamp(0, screen.width).toDouble();
       return ColoredBox(
         color: const Color(0xFFE9E5DF),
