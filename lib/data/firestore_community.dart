@@ -23,8 +23,15 @@ class FirestoreCommunity implements CommunityBackend {
   static DateTime? _time(Object? v) => v is Timestamp ? v.toDate() : null;
 
   @override
-  Future<String?> membership() async =>
-      (await _membership.get()).data()?['kitchenId'] as String?;
+  Future<String?> membership() async {
+    try {
+      return (await _membership.get()).data()?['kitchenId'] as String?;
+    } on FirebaseException catch (e) {
+      // Rules without shared kitchens (not yet deployed): personal kitchen.
+      if (e.code == 'permission-denied') return null;
+      rethrow;
+    }
+  }
 
   @override
   Future<SharedKitchen> kitchen(String kitchenId) async {
