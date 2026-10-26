@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حالة سفرة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f1e6; --card:#fffaf2; --ink:#3a2416; --muted:#8a7464; --line:#eadcc6;
+  --green:#3f6b4f; --green-bg:#e3efe4; --amber:#a3622a; --amber-bg:#f8e7d2;
+  --blue:#3c5a78; --blue-bg:#e2eaf3; --red:#a6463c; --red-bg:#f6e0dc;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17120e; --card:#211a14; --ink:#f1e6d8; --muted:#a8937f; --line:#3a2e24;
+    --green:#8fc59f; --green-bg:#1f3326; --amber:#e3a86c; --amber-bg:#3a2a18;
+    --blue:#9ab8d8; --blue-bg:#1d2a38; --red:#e39a90; --red-bg:#3a201c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17120e; --card:#211a14; --ink:#f1e6d8; --muted:#a8937f; --line:#3a2e24;
+  --green:#8fc59f; --green-bg:#1f3326; --amber:#e3a86c; --amber-bg:#3a2a18;
+  --blue:#9ab8d8; --blue-bg:#1d2a38; --red:#e39a90; --red-bg:#3a201c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Tajawal,system-ui,sans-serif;line-height:1.7}
+main{max-width:980px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:34px;margin:0 0 4px;font-weight:800}
+h2{font-size:23px;margin:40px 0 12px;font-weight:800}
+.sub{color:var(--muted);margin:0 0 20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.stat b{display:block;font-size:28px;font-weight:800}
+.stat span{color:var(--muted);font-size:14px}
+.table{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.row{display:grid;grid-template-columns:1.1fr 2fr auto;gap:12px;padding:12px 16px;border-top:1px solid var(--line);align-items:start}
+.row:first-child{border-top:0}
+.row.head{background:color-mix(in srgb,var(--line) 45%,transparent);font-weight:700;font-size:14px;color:var(--muted)}
+.row .what{font-weight:700}
+.row .how{color:var(--ink);font-size:15px}
+.tag{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+.done{background:var(--green-bg);color:var(--green)}
+.claude{background:var(--blue-bg);color:var(--blue)}
+.codex{background:var(--amber-bg);color:var(--amber)}
+.you{background:var(--red-bg);color:var(--red)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin-top:12px}
+.note ul{margin:6px 0 0;padding-inline-start:20px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin-bottom:12px}
+.q h3{margin:0 0 4px;font-size:17px}
+.q p{margin:0 0 10px;color:var(--muted);font-size:14px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{border:1px solid var(--line);border-radius:12px;padding:6px 12px;font-size:14px;cursor:pointer;user-select:none}
+.opts input{display:none}
+.opts input:checked+span{color:var(--green);font-weight:700}
+.opts label:has(input:checked){border-color:var(--green);background:var(--green-bg)}
+.copy{margin-top:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+button{font-family:inherit;font-size:15px;font-weight:700;border:0;border-radius:14px;padding:10px 18px;background:var(--green);color:var(--card);cursor:pointer}
+#copied{color:var(--muted);font-size:14px}
+textarea{width:100%;min-height:90px;margin-top:10px;font-family:inherit;font-size:14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px}
+.flow span{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 10px}
+.flow i{color:var(--muted);font-style:normal}
+@media (max-width:640px){
+  .row{grid-template-columns:1fr;gap:4px}
+  .row.head{display:none}
+  h1{font-size:28px}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>حالة سفرة</h1>
+<p class="sub">26 أكتوبر 2026 · اللي اتعمل، واللي ناقص، وأسئلة محتاج إجابتك عليها</p>
+
+<div class="stats">
+  <div class="stat"><b>422</b><span>اختبار ناجح</span></div>
+  <div class="stat"><b>78.5%</b><span>من سطور الوصفات مربوطة بالمخزون</span></div>
+  <div class="stat"><b>446</b><span>وصفة فعّالة في الكتالوج</span></div>
+  <div class="stat"><b>محلي</b><span>آخر 3 commits لسه ما اترفعوش</span></div>
+</div>
+
+<h2>اتعمل</h2>
+<div class="table">
+  <div class="row head"><div>الجزء</div><div>إيه اللي بيحصل</div><div>الحالة</div></div>
+  <div class="row"><div class="what">المطبخ 3D</div><div class="how">الرئيسية مطبخ ثلاثي الأبعاد بإضاءة Blender متخبّزة. التلاجة والفريزر بيفتحوا مكانهم، والضغط على الدولاب والفرن والميكروويف بيفتح محتواهم. لون الدواليب بيتغير مباشرة.</div><div><span class="tag done">شغال</span></div></div>
+  <div class="row"><div class="what">التلاجة من جوه</div><div class="how">عجلة رفوف، والمكونات طايرة فوق الرف والكمية تحتها، والبواقي أطباق مقفولة. فيها فلتر بالأقسام وبحث بالعربي.</div><div><span class="tag done">شغال</span></div></div>
+  <div class="row"><div class="what">المخزون والوحدات</div><div class="how">قاموس 334 مكوّن، وتحويلات ثابتة، وتحويل يحدده المستخدم لكل مكوّن، ووحدات خزين (ربطة/عدد/وزن).</div><div><span class="tag done">شغال</span></div></div>
+  <div class="row"><div class="what">الطبخ والخصم</div><div class="how">خطوة بخطوة، وبعدين تأكيد الخصم. السطر اللي فيه «زبدة أو مارجرين» بيخصم الموجود منهم. لو عندك جزء من الكمية بيتخصم الجزء ده.</div><div><span class="tag done">جديد</span></div></div>
+  <div class="row"><div class="what">البواقي</div><div class="how">بعد الطبخ: «فضل أكل؟» والباقي بيتحفظ طبق في التلاجة. من الميكروويف بتسجل «سخّنت وأكلت».</div><div><span class="tag done">جديد</span></div></div>
+  <div class="row"><div class="what">السفرة</div><div class="how">كروت الوجبات الجاية، وكل كارت فيه حالة المخزون، وفيه التغذية بس لو كل المكونات ليها مصدر.</div><div><span class="tag done">شغال</span></div></div>
+  <div class="row"><div class="what">خطة الشهر</div><div class="how">ميزانية، ومنيو أسبوع بأكلة أو اتنين في كل خانة، وبيحسب الشهر بأسعارك ويقولك تكلفته. الاعتماد بيكتب وجبات الشهر على السفرة.</div><div><span class="tag done">جديد</span></div></div>
+  <div class="row"><div class="what">قائمة الشراء</div><div class="how">الناقص للأسبوع بعد المخزون، والسعر لو مسجّل. «اشتريته» بيدخّله المطبخ.</div><div><span class="tag done">جديد</span></div></div>
+  <div class="row"><div class="what">وصفة من عندي</div><div class="how">بتكتب المكونات والكميات والخطوات، وبعدها تخططها وتطبخها زي أي وصفة.</div><div><span class="tag done">جديد</span></div></div>
+  <div class="row"><div class="what">الحساسية</div><div class="how">تنبيه لما اسم مكوّن، أو اسم المكوّن في القاموس، يطابق اللي سجلته. تذكير بس، مش ضمان.</div><div><span class="tag done">جديد</span></div></div>
+  <div class="row"><div class="what">كتاب الوصفات</div><div class="how">كتاب كرتوني بسيط، وجواه البحث والمطابخ و«من الموجود» و«وصفاتي».</div><div><span class="tag done">شغال</span></div></div>
+  <div class="row"><div class="what">قالب الموبايل</div><div class="how">على الكمبيوتر بيظهر في إطار iPhone 16 Pro حقيقي (402×874).</div><div><span class="tag done">شغال</span></div></div>
+  <div class="row"><div class="what">التشغيل لوكال</div><div class="how">نسخة ويب ونسخة APK بيتبنوا على الجهاز من غير GitHub. آخر APK: Sofra-logic-fcbc7aa0.</div><div><span class="tag done">شغال</span></div></div>
+</div>
+
+<h2>ناقص</h2>
+<div class="table">
+  <div class="row head"><div>الجزء</div><div>الناقص</div><div>عند مين</div></div>
+  <div class="row"><div class="what">التجربة على الموبايل</div><div class="how">النسخ كلها لسه ما اتجربتش على الـS24، والمطبخ 3D جوه WebView أندرويد ما اتأكدش.</div><div><span class="tag you">إنت</span></div></div>
+  <div class="row"><div class="what">جودة الـ3D</div><div class="how">التصدير الرسمي: إضاءة هجينة نضيفة، وخامات حقيقية (خشب، معدن، زجاج)، وأجزاء منفصلة، وكاميرات بأسماء. إنت رفضت شكل R20، والبحث R21 جاهز ومستني التنفيذ.</div><div><span class="tag codex">Codex</span></div></div>
+  <div class="row"><div class="what">طلباتك على المطبخ</div><div class="how">توحيد ارتفاع الأفياش ونقلها، وسماء أوسع تتغير مع الوقت ونجوم بالليل، وزرع بعمق برّه الشباك.</div><div><span class="tag codex">Codex</span></div></div>
+  <div class="row"><div class="what">شكل المطبخ</div><div class="how">الستارة والسجادة والترابيزة لسه مش اختيارات حية. محتاجين يبقوا أجزاء منفصلة في الـGLB، وأنا أربطهم.</div><div><span class="tag codex">Codex</span> <span class="tag claude">Claude</span></div></div>
+  <div class="row"><div class="what">رسومات المكونات</div><div class="how">حاليًا إيموجي مؤقت. مستني 256×256 بنفس معرّفات القاموس، وأطباق البواقي بتلات أشكال.</div><div><span class="tag codex">Codex</span></div></div>
+  <div class="row"><div class="what">الإضاءة حسب الوقت في الـ3D</div><div class="how">الصبح بس متخبّز. العصر والليل محتاجين خرائط من Codex.</div><div><span class="tag codex">Codex</span></div></div>
+  <div class="row"><div class="what">الكاميرا والباركود</div><div class="how">صلاحيات الكاميرا، وقراءة الباركود، ومراجعة الفاتورة قبل الحفظ. لازم يتجرب على جهاز.</div><div><span class="tag claude">Claude</span></div></div>
+  <div class="row"><div class="what">مجتمع سفرة</div><div class="how">الصفحة فاضية. محتاج قرارك هيبقى فيها إيه (شوف الأسئلة تحت).</div><div><span class="tag you">إنت</span> <span class="tag claude">Claude</span></div></div>
+  <div class="row"><div class="what">التغذية للكتالوج</div><div class="how">أغلب الوصفات مكوناتها مش مربوطة بمصدر غذائي، فالقيم مش بتظهر. الربط بيتعمل مكوّن مكوّن وبمراجعة.</div><div><span class="tag claude">Claude</span> <span class="tag you">موافقتك</span></div></div>
+  <div class="row"><div class="what">أدلة الحساسية</div><div class="how">15 مقترح من مصادر رسمية مستنيين موافقتك قبل ما نستخدم «مجموعات» زي «ألبان».</div><div><span class="tag you">إنت</span></div></div>
+  <div class="row"><div class="what">باقي القاموس</div><div class="how">21.5% من السطور لسه مش مربوطة. أغلبها «ملح وفلفل» مع بعض، و«فلفل» من غير ما يتحدد نوعه، وخنزير وكحول (سايبهم عن قصد).</div><div><span class="tag claude">Claude</span></div></div>
+  <div class="row"><div class="what">الأسعار</div><div class="how">مفيش أسعار في التطبيق غير اللي إنت بتكتبها. مصدر أسعار حي لسه مش موجود.</div><div><span class="tag you">إنت</span></div></div>
+</div>
+
+<h2>الـ3D: Codex وصل فين</h2>
+<div class="note">
+  <ul>
+    <li><b>R20:</b> عيّنة مقارنة إضاءة (ديناميكية مقابل هجينة) على Three.js، بالترابيزة والكراسي الأربعة والميكروويف. الحجم 11.4MB و228 ألف مثلث، يعني فوق الميزانية (8MB و150 ألف). إنت اخترت الهجينة ورفضت شكل الصورة.</li>
+    <li><b>R21:</b> بحث بس من غير تنفيذ. حدد أسباب القبح: tone mapping مختلف عن Blender (ACES بدل AgX)، وظلال حادة، وشمس الشباك اتبدلت بكشاف، والخامات اتشالت تفاصيلها (normal)، والزجاج مبسّط، وخريطة إضاءة واحدة لكل المطبخ. 3DGS ممكن يتجرب على الأجزاء الثابتة بس.</li>
+    <li><b>مفيش ملف Blender جديد:</b> المصادر التلاتة زي ما هي، والجولتين محليتين من غير رفع.</li>
+    <li><b>عندي في التطبيق:</b> حدّثت المطبخ وطلّعت الترابيزة والكراسي والميكروويف اللي كانوا مستخبيين في Blender. الضغط على الترابيزة بيفتح السفرة، والميكروويف بيفتح البواقي.</li>
+  </ul>
+</div>
+
+<h2>إزاي الأجزاء مربوطة ببعض</h2>
+<div class="note flow">
+  <span>المطبخ 3D</span><i>←</i><span>التلاجة/الفريزر/الدولاب = المخزون</span><i>←</i><span>«من الموجود» في الكتاب</span><i>←</i><span>السفرة (خطة)</span><i>←</i><span>قائمة الشراء</span><i>←</i><span>الطبخ = خصم</span><i>←</i><span>البواقي في التلاجة والميكروويف</span>
+</div>
+<div class="note flow">
+  <span>الميزانية</span><i>←</i><span>خطة الشهر</span><i>←</i><span>أسعارك</span><i>←</i><span>تكلفة الشهر</span><i>←</i><span>وجبات على السفرة</span>
+</div>
+
+<h2>أسئلة السيناريوهات والربط</h2>
+<p class="sub">اختار في كل سؤال، وبعدين اضغط «انسخ إجاباتي» والزقها لي في الشات.</p>
+
+<form id="qs">
+<div class="q"><h3>1. البواقي تفضل قد إيه؟</h3><p>دلوقتي بتفضل لحد ما تسجل إنك أكلتها.</p>
+<div class="opts">
+<label><input type="radio" name="q1" value="تفضل لحد ما أسجلها"><span>تفضل لحد ما أسجلها</span></label>
+<label><input type="radio" name="q1" value="تفكرني بعد عدد أيام أنا أحدده"><span>تفكرني بعد عدد أيام أنا أحدده</span></label>
+<label><input type="radio" name="q1" value="تتشال لوحدها بعد أيام أحددها"><span>تتشال لوحدها بعد أيام أحددها</span></label>
+</div></div>
+
+<div class="q"><h3>2. لما أعلّم «اشتريته» في قائمة الشراء</h3><p>دلوقتي بيدخل المخزون من غير سعر، فمش بيتحسب من الميزانية.</p>
+<div class="opts">
+<label><input type="radio" name="q2" value="يسألني دفعت كام ويحسبه من الميزانية"><span>يسألني دفعت كام ويحسبه من الميزانية</span></label>
+<label><input type="radio" name="q2" value="يدخل المخزون بس"><span>يدخل المخزون بس</span></label>
+<label><input type="radio" name="q2" value="يسألني السعر اختياري"><span>يسأل عن السعر، والإجابة اختيارية</span></label>
+</div></div>
+
+<div class="q"><h3>3. خطة الشهر وفيه أيام عليها أكل متخطط</h3>
+<div class="opts">
+<label><input type="radio" name="q3" value="سيب الموجود واملا الفاضي بس"><span>سيب الموجود واملا الفاضي بس</span></label>
+<label><input type="radio" name="q3" value="استبدل اللي لسه ما اتطبخش"><span>استبدل اللي لسه ما اتطبخش</span></label>
+<label><input type="radio" name="q3" value="اسألني كل مرة"><span>اسألني كل مرة</span></label>
+</div></div>
+
+<div class="q"><h3>4. لو عندي جزء من مكوّن بس وأنا بطبخ</h3><p>دلوقتي بيخصم اللي عندك ويعتبر الباقي اتجاب من برّه.</p>
+<div class="opts">
+<label><input type="radio" name="q4" value="يخصم الموجود زي دلوقتي"><span>يخصم الموجود زي دلوقتي</span></label>
+<label><input type="radio" name="q4" value="يسألني جبت الباقي ولا طبخت بأقل"><span>يسألني: جبت الباقي ولا طبخت بأقل؟</span></label>
+</div></div>
+
+<div class="q"><h3>5. الحساسية لما تطابق وصفة</h3>
+<div class="opts">
+<label><input type="radio" name="q5" value="تنبيه بس زي دلوقتي"><span>تنبيه بس زي دلوقتي</span></label>
+<label><input type="radio" name="q5" value="تتخفى من الكتاب ومن الشهر"><span>تتخفى من الكتاب ومن الشهر</span></label>
+<label><input type="radio" name="q5" value="متتخططش إلا بتأكيد"><span>متتخططش إلا بتأكيد</span></label>
+</div></div>
+
+<div class="q"><h3>6. مجتمع سفرة يبقى فيه إيه؟</h3><p>تقدر تختار أكتر من حاجة.</p>
+<div class="opts">
+<label><input type="checkbox" name="q6" value="مشاركة وصفاتي"><span>مشاركة وصفاتي</span></label>
+<label><input type="checkbox" name="q6" value="صور الأكل اللي طبخته"><span>صور الأكل اللي طبخته</span></label>
+<label><input type="checkbox" name="q6" value="أسعار من الناس في منطقتي"><span>أسعار من الناس في منطقتي</span></label>
+<label><input type="checkbox" name="q6" value="تقييم وتعليقات على الوصفات"><span>تقييم وتعليقات</span></label>
+<label><input type="checkbox" name="q6" value="تحديات أسبوعية"><span>تحديات أسبوعية</span></label>
+</div></div>
+
+<div class="q"><h3>7. البيت كله يشارك نفس المطبخ؟</h3><p>يعني اتنين على حسابين يشوفوا نفس المخزون والسفرة.</p>
+<div class="opts">
+<label><input type="radio" name="q7" value="أيوه مطبخ مشترك بدعوة"><span>أيوه، مطبخ مشترك بدعوة</span></label>
+<label><input type="radio" name="q7" value="لا حساب واحد للبيت"><span>لا، حساب واحد للبيت</span></label>
+<label><input type="radio" name="q7" value="بعدين"><span>بعدين</span></label>
+</div></div>
+
+<div class="q"><h3>8. قائمة الشراء تتبعت فين؟</h3>
+<div class="opts">
+<label><input type="checkbox" name="q8" value="مشاركة نص على واتساب"><span>نص على واتساب</span></label>
+<label><input type="checkbox" name="q8" value="تطبيقات التوصيل"><span>تطبيقات التوصيل</span></label>
+<label><input type="checkbox" name="q8" value="جوه التطبيق بس"><span>جوه التطبيق بس</span></label>
+</div></div>
+
+<div class="q"><h3>9. الكاميرا نبدأ بإيه؟</h3>
+<div class="opts">
+<label><input type="radio" name="q9" value="باركود المنتج"><span>باركود المنتج</span></label>
+<label><input type="radio" name="q9" value="صورة الفاتورة"><span>صورة الفاتورة</span></label>
+<label><input type="radio" name="q9" value="صورة الأكل نفسه"><span>صورة الأكل نفسه</span></label>
+</div></div>
+
+<div class="q"><h3>10. تذكيرات؟</h3>
+<div class="opts">
+<label><input type="checkbox" name="q10" value="قبل ميعاد الوجبة"><span>قبل ميعاد الوجبة</span></label>
+<label><input type="checkbox" name="q10" value="لما مكوّن يخلص"><span>لما مكوّن يخلص</span></label>
+<label><input type="checkbox" name="q10" value="قبل يوم الشراء"><span>قبل يوم الشراء</span></label>
+<label><input type="checkbox" name="q10" value="مفيش تذكيرات"><span>مفيش</span></label>
+</div></div>
+
+<div class="q"><h3>11. الضغط على الترابيزة في المطبخ 3D</h3>
+<div class="opts">
+<label><input type="radio" name="q11" value="يفتح السفرة"><span>يفتح السفرة</span></label>
+<label><input type="radio" name="q11" value="يفتح وجبة النهارده علطول"><span>يفتح وجبة النهارده علطول</span></label>
+</div></div>
+
+<div class="q"><h3>12. مكونات «خنزير» و«كحول» في وصفات الكتالوج</h3>
+<div class="opts">
+<label><input type="radio" name="q12" value="شيل الوصفات دي من الكتالوج"><span>شيل الوصفات دي من الكتالوج</span></label>
+<label><input type="radio" name="q12" value="خليها واربط مكوناتها"><span>خليها واربط مكوناتها</span></label>
+<label><input type="radio" name="q12" value="خليها مخفية بفلتر"><span>خليها مستخبية ورا فلتر</span></label>
+</div></div>
+</form>
+
+<div class="copy">
+  <button type="button" id="copy">انسخ إجاباتي</button>
+  <span id="copied"></span>
+</div>
+<textarea id="out" readonly placeholder="إجاباتك هتظهر هنا"></textarea>
+</main>
+<script>
+const form=document.getElementById('qs'),out=document.getElementById('out');
+function collect(){
+  const lines=[];
+  form.querySelectorAll('.q').forEach(q=>{
+    const title=q.querySelector('h3').textContent;
+    const vals=[...q.querySelectorAll('input:checked')].map(i=>i.value);
+    if(vals.length)lines.push(title+': '+vals.join('، '));
+  });
+  out.value=lines.join('\n');
+  return out.value;
+}
+form.addEventListener('change',collect);
+document.getElementById('copy').addEventListener('click',async()=>{
+  const text=collect();
+  try{await navigator.clipboard.writeText(text);document.getElementById('copied').textContent='اتنسخ ✓';}
+  catch(e){out.select();document.getElementById('copied').textContent='انسخ النص من المربع';}
+});
+</script>
+</body>
+</html>

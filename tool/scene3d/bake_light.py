@@ -21,6 +21,29 @@ out = sys.argv[sys.argv.index("--") + 1]
 scene = bpy.context.scene
 EDGE = 0.07  # metres between vertices on big surfaces
 
+# The dining table with its chairs and the microwave are part of the home
+# kitchen; the masters keep them hidden as options.
+for o in scene.objects:
+    if o.get("option_group") in {"table_chairs", "microwave"}:
+        o.hide_render = False
+        o.hide_set(False)
+
+
+def bounds(group):
+    pts = [
+        o.matrix_world @ v.co
+        for o in scene.objects
+        if o.get("option_group") == group and o.type == "MESH"
+        for v in o.data.vertices
+    ]
+    lo = [round(min(p[i] for p in pts), 3) for i in range(3)]
+    hi = [round(max(p[i] for p in pts), 3) for i in range(3)]
+    print("BOUNDS", group, lo, hi)
+
+
+bounds("table_chairs")
+bounds("microwave")
+
 # Same selection as export_glb.py: what the camera sees.
 visible = [
     o

@@ -36,6 +36,8 @@ const _zones = <(String, List<double>, List<double>)>[
   ('pantry', [-0.05, -0.05, 0.0], [0.72, 0.65, 2.12]),
   ('shelves', [-0.05, 3.20, 1.55], [0.65, 3.64, 2.38]),
   ('stove', [1.16, 2.50, 0.06], [2.14, 3.64, 0.95]),
+  ('microwave', [0.0, 2.70, 0.88], [0.85, 3.64, 1.35]),
+  ('table', [2.15, -0.25, 0.0], [3.85, 1.45, 1.2]),
 ];
 
 String? _zoneAt(KitchenPoint p) {
@@ -194,6 +196,8 @@ class _TodayScreenState extends State<TodayScreen> {
         _openZone(StorageZone.pantry);
       case 'microwave':
         _openLeftovers();
+      case 'table':
+        SofraScope.navOf(context).goTab(AppTab.table);
       case 'oven' || 'stove':
         _openPlans();
     }

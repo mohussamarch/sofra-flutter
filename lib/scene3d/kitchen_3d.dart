@@ -84,11 +84,10 @@ class Kitchen3DController {
     "$_home",
   );
 
-  /// Closer and lower, over the middle of the floor where the dining table
-  /// stands (Codex is adding it to the scene).
+  /// Closer and lower, over the dining table (Blender x 2.2–3.8, y −0.2–1.4).
   Future<void> table() => _run(
-    "mv.cameraTarget='1.95m 0.5m -1.65m';"
-    "mv.cameraOrbit='45deg 66deg 3.4m';mv.fieldOfView='30deg';",
+    "mv.cameraTarget='3m 0.75m -0.6m';"
+    "mv.cameraOrbit='45deg 62deg 4.2m';mv.fieldOfView='30deg';",
   );
 
   /// Repaints every cabinet in [color]; null restores the rendered colour.
