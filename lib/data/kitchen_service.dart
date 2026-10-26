@@ -97,6 +97,14 @@ class KitchenService {
 
   Map<String, dynamic>? _root;
   Future<void> _tail = Future.value();
+
+  /// The whole state document (kitchen and root fields), for moving it to
+  /// a shared kitchen.
+  Map<String, dynamic> get document {
+    if (_root == null) throw StateError('Load before use');
+    return _clone(_root!);
+  }
+
   Map<String, dynamic> get snapshot {
     if (_root == null) throw StateError('Load before use');
     return _clone(_root!['kitchen'] as Map<String, dynamic>);

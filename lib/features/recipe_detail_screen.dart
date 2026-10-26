@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
 import '../app/sofra_controller.dart';
+import '../data/recipe_photo_library.dart';
 import '../domain/recipe_catalog.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
@@ -67,10 +68,40 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         onPressed: known ? () => _plan(people) : null,
       ),
       children: [
-        Surface(
-          color: const Color(0xFFF0EDD8),
-          padding: const EdgeInsets.all(12),
-          child: Center(child: MealArt(kind: artKind(source.id), size: 260)),
+        FutureBuilder<List<RecipePhoto>>(
+          future: c.photosOf(source.id),
+          builder: (context, snap) {
+            final photo = snap.data?.firstOrNull;
+            if (photo == null) {
+              return Surface(
+                color: const Color(0xFFF0EDD8),
+                padding: const EdgeInsets.all(12),
+                child: Center(
+                  child: MealArt(kind: artKind(source.id), size: 260),
+                ),
+              );
+            }
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(22),
+                  child: AspectRatio(
+                    aspectRatio: 4 / 3,
+                    child: Image.asset(
+                      photo.asset,
+                      key: const ValueKey('recipe-photo'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Text(
+                  'الصورة: ${photo.credit} · ${photo.licence}',
+                  style: const TextStyle(color: Sofra.muted, fontSize: 11),
+                ),
+              ],
+            );
+          },
         ),
         const SizedBox(height: 22),
         Text(

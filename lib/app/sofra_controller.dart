@@ -4,8 +4,10 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import '../data/community_backend.dart';
 import '../data/demo_data.dart';
 import '../data/food_repository.dart';
+import '../data/recipe_photo_library.dart';
 import '../data/kitchen_service.dart';
 import '../data/recipe_repository.dart';
 import '../data/state_store.dart';
@@ -15,6 +17,7 @@ import '../domain/market_profile.dart';
 import '../domain/models.dart';
 import '../domain/monthly_budget_choices.dart';
 import '../domain/monthly_budget_search.dart';
+import '../domain/community.dart';
 import '../domain/food_nutrition.dart';
 import '../domain/personal_recipe_draft.dart';
 import '../domain/personal_recipe_finalization.dart';
@@ -40,6 +43,7 @@ class Profile {
     this.mealTimes = const {},
     this.remindBefore = 30,
     this.stockAlerts = true,
+    this.area = '',
   });
 
   final String name, house;
@@ -60,6 +64,9 @@ class Profile {
   /// Notify when cooking uses up an ingredient.
   final bool stockAlerts;
 
+  /// City or district the user typed, for prices from people nearby.
+  final String area;
+
   String get displayName => name.trim().isEmpty ? 'صاحب السفرة' : name.trim();
   String get houseName =>
       house.trim().isEmpty ? 'بيت $displayName' : house.trim();
@@ -78,6 +85,7 @@ class Profile {
     Map<String, int>? mealTimes,
     int? remindBefore,
     bool? stockAlerts,
+    String? area,
   }) => Profile(
     name: name ?? this.name,
     house: house ?? this.house,
@@ -92,6 +100,7 @@ class Profile {
     mealTimes: mealTimes ?? this.mealTimes,
     remindBefore: remindBefore ?? this.remindBefore,
     stockAlerts: stockAlerts ?? this.stockAlerts,
+    area: area ?? this.area,
   );
 
   static const _legacyCuisines = {
@@ -115,6 +124,7 @@ class Profile {
     'mealTimes': mealTimes,
     'remindBefore': remindBefore,
     'stockAlerts': stockAlerts,
+    'area': area,
   };
 
   factory Profile.fromRoot(Map<String, dynamic> root) {
@@ -154,6 +164,7 @@ class Profile {
         240,
       ),
       stockAlerts: root['stockAlerts'] != false,
+      area: root['area'] as String? ?? '',
     );
   }
 }
@@ -287,6 +298,8 @@ class SofraController extends ChangeNotifier {
     RecipeRepository? recipes,
     Future<String> Function(String path)? readAsset,
     ReminderSink? reminders,
+    this.community,
+    this.reopen,
   }) : persistent = store != null,
        reminders = reminders ?? SilentReminders(),
        recipes = recipes ?? RecipeRepository(),
@@ -309,6 +322,12 @@ class SofraController extends ChangeNotifier {
 
   /// Phone notifications (silent in tests).
   final ReminderSink reminders;
+
+  /// Shared kitchen and community; null when not signed in (local mode).
+  final CommunityBackend? community;
+
+  /// Reopens the session after joining or leaving a shared kitchen.
+  final VoidCallback? reopen;
 
   /// Canonical ingredient vocabulary; recipe lines map to it for stock.
   IngredientDirectory? directory;
@@ -345,6 +364,18 @@ class SofraController extends ChangeNotifier {
   /// Barcode -> stock ingredient, as the user linked them.
   Map<String, String> _barcodes = {};
   late final FoodRepository foods = FoodRepository(read: _readAsset);
+
+  /// Licensed dish photos bundled with the app (empty until added).
+  late final RecipePhotoLibrary photos = RecipePhotoLibrary(read: _readAsset);
+
+  /// A dish's photos; none when the library is missing or unreadable.
+  Future<List<RecipePhoto>> photosOf(String recipeId) async {
+    try {
+      return await photos.photosOf(recipeId);
+    } catch (_) {
+      return const [];
+    }
+  }
 
   /// Looks a barcode up in the bundled Egypt/Saudi product bank and the
   /// user's own links. Nothing is guessed from the product name.
@@ -606,8 +637,9 @@ class SofraController extends ChangeNotifier {
     String ingredientId,
     double quantity,
     String unit,
-    double amount,
-  ) => _save(
+    double amount, {
+    String source = 'user',
+  }) => _save(
     () => kitchen.savePrice(
       MarketPrice(
         country: kitchen.market.country,
@@ -616,7 +648,7 @@ class SofraController extends ChangeNotifier {
         quantity: quantity,
         amount: amount,
         recordedAt: DateTime.now(),
-        source: 'user',
+        source: source,
       ),
       userOverride: true,
     ),
@@ -1189,5 +1221,141 @@ class SofraController extends ChangeNotifier {
       }
     }
     return ok ? record : null;
+  }
+
+  // ---- Shared kitchen and community --------------------------------------
+
+  CommunityBackend get _community =>
+      community ?? (throw StateError('Sign in to use the community'));
+
+  /// Moves this kitchen into a new shared kitchen others can join.
+  Future<String> shareKitchen() async {
+    final id = await _community.createSharedKitchen(
+      kitchen.document,
+      profile.displayName,
+    );
+    reopen?.call();
+    return id;
+  }
+
+  Future<String> joinKitchen(String code) async {
+    final id = await _community.joinKitchen(code, profile.displayName);
+    reopen?.call();
+    return id;
+  }
+
+  Future<void> leaveKitchen(String kitchenId) async {
+    await _community.leaveKitchen(kitchenId);
+    reopen?.call();
+  }
+
+  /// Publishes one of the user's own recipes as they wrote it.
+  Future<SharedRecipe> shareMyRecipe(RecipeRevision revision) async {
+    final r = revision.recipe;
+    final shared = SharedRecipe(
+      id: '${_community.uid}-${r.id}'.replaceAll(
+        RegExp(r'[^A-Za-z0-9_-]'),
+        '-',
+      ),
+      authorUid: _community.uid,
+      authorName: profile.displayName,
+      title: r.name,
+      cuisine: r.cuisine,
+      servings: r.servings ?? (throw ArgumentError("Recipe has no servings")),
+      lines: [
+        for (final l in r.ingredients)
+          SharedLine(
+            l.name,
+            amount: l.amount,
+            unit: l.amount == null ? null : l.unit,
+          ),
+      ],
+      steps: [for (final st in r.steps) st.text],
+    );
+    await _community.shareRecipe(shared);
+    return shared;
+  }
+
+  Future<void> rateRecipe(String recipeId, int stars, String comment) =>
+      _community.rate(
+        recipeId,
+        Rating(
+          uid: _community.uid,
+          name: profile.displayName,
+          stars: stars,
+          comment: comment,
+        ),
+      );
+
+  /// Prices the user typed or paid, newest per ingredient and unit.
+  List<MarketPrice> get myPrices {
+    final country = kitchen.market.country;
+    return [
+      for (final v in (kitchen.snapshot['prices'] as List).cast<Map>())
+        if (v['country'] == country.name &&
+            v['override'] == true &&
+            (v['source'] as String).startsWith('user'))
+          MarketPrice(
+            country: country,
+            ingredientId: v['ingredientId'] as String,
+            unit: v['unit'] as String,
+            quantity: (v['quantity'] as num).toDouble(),
+            amount: (v['amount'] as num).toDouble(),
+            recordedAt: DateTime.parse(v['date'] as String),
+            source: v['source'] as String,
+          ),
+    ];
+  }
+
+  /// Shares one of the user's prices with people in their area.
+  Future<void> sharePrice(MarketPrice price) => _community.reportPrice(
+    PriceReport(
+      uid: _community.uid,
+      country: market.code,
+      area: profile.area,
+      ingredientId: price.ingredientId,
+      quantity: price.quantity,
+      unit: price.unit,
+      amount: price.amount,
+      paidOn: price.recordedAt,
+    ),
+  );
+
+  /// Area prices per (ingredient, unit), where at least two households
+  /// reported one.
+  Future<Map<(String, String), AreaPrice>> areaPrices({DateTime? today}) async {
+    if (profile.area.trim().isEmpty) return const {};
+    final reports = await _community.areaReports(market.code, profile.area);
+    final result = <(String, String), AreaPrice>{};
+    for (final key in {for (final r in reports) (r.ingredientId, r.unit)}) {
+      final p = areaPrice(
+        reports,
+        ingredientId: key.$1,
+        unit: key.$2,
+        today: today ?? DateTime.now(),
+      );
+      if (p != null) result[key] = p;
+    }
+    return result;
+  }
+
+  /// Cooked meals as (date, recipe) pairs, for challenges.
+  List<(String, String)> get cookedMeals => [
+    for (final m in kitchen.plans)
+      if (m.completed) (m.date, m.recipeId),
+  ];
+
+  /// Saves this week's progress on the shared leaderboard.
+  Future<ChallengeEntry> joinChallenge({DateTime? today}) async {
+    final day = today ?? DateTime.now();
+    final c = challengeFor(day);
+    final entry = ChallengeEntry(
+      uid: _community.uid,
+      name: profile.houseName,
+      progress: challengeProgress(c, day, cookedMeals).clamp(0, 100),
+      goal: c.goal,
+    );
+    await _community.saveChallengeEntry(weekKey(day), entry);
+    return entry;
   }
 }

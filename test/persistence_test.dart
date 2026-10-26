@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tabkha_demo/app/reminders.dart';
+import 'package:tabkha_demo/data/community_backend.dart';
 import 'package:tabkha_demo/data/state_store.dart';
 import 'package:tabkha_demo/features/barcode_scan.dart';
 import 'package:tabkha_demo/main.dart';
@@ -242,6 +243,82 @@ void main() {
     await tapKey(tester, 'barcode-manual-go');
     expect(find.byKey(const ValueKey('scan-search')), findsNothing);
     expect(find.byKey(const ValueKey('add-amount')), findsOneWidget);
+  });
+  testWidgets('community: join a kitchen by code, then the other parts', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(430, 932);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final server = MemoryServer();
+    final owner = MemoryCommunity(server, 'alice');
+    final kid = await owner.createSharedKitchen(const {'schema': 1}, 'Alice');
+    final code = await owner.createInvite(kid);
+    var reopened = 0;
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: ThemeData(
+          snackBarTheme: const SnackBarThemeData(
+            behavior: SnackBarBehavior.floating,
+          ),
+        ),
+        home: SofraHome(
+          store: TestStore(),
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+          showScene: false,
+          reminders: SilentReminders(),
+          community: MemoryCommunity(server, 'bob'),
+          reopen: () => reopened++,
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await completeOnboarding(tester);
+    await openCorner(tester, 'community');
+    expect(find.byKey(const ValueKey('kitchen-share')), findsOneWidget);
+    await tester.enterText(find.byKey(const ValueKey('kitchen-code')), 'nope');
+    await tapKey(tester, 'kitchen-join');
+    expect(find.byKey(const ValueKey('kitchen-error')), findsOneWidget);
+    await tester.enterText(find.byKey(const ValueKey('kitchen-code')), code);
+    await tapKey(tester, 'kitchen-join');
+    expect(reopened, 1);
+    expect(server.kitchens[kid]!['members'], ['alice', 'bob']);
+    await tapKey(tester, 'community-recipes');
+    expect(
+      find.byKey(const ValueKey('community-recipes-empty')),
+      findsOneWidget,
+    );
+    await tapKey(tester, 'community-prices');
+    expect(find.text('اكتب منطقتك الأول.'), findsOneWidget);
+    await tapKey(tester, 'community-challenge');
+    await tapKey(tester, 'challenge-join');
+    expect(find.byKey(const ValueKey('challenge-entry-bob')), findsOneWidget);
+  });
+
+  testWidgets('community without an account says it needs one', (tester) async {
+    tester.view.physicalSize = const Size(430, 932);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(
+      MaterialApp(
+        home: SofraHome(
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+          showScene: false,
+          reminders: SilentReminders(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await completeOnboarding(tester);
+    await openCorner(tester, 'community');
+    expect(
+      find.byKey(const ValueKey('community-needs-account')),
+      findsOneWidget,
+    );
   });
 }
 

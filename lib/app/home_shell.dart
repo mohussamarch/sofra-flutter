@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
+import '../data/community_backend.dart';
 import '../data/recipe_repository.dart';
 import '../data/state_store.dart';
 import '../domain/kitchen_core.dart';
@@ -30,6 +31,8 @@ class SofraHome extends StatefulWidget {
     this.readAsset,
     this.showScene = true,
     this.reminders,
+    this.community,
+    this.reopen,
   });
   final StateStore? store;
   final Map<String, dynamic>? initialData;
@@ -47,6 +50,10 @@ class SofraHome extends StatefulWidget {
   /// Injectable for tests; phone notifications by default.
   final ReminderSink? reminders;
 
+  /// Shared kitchen and community; null in local mode.
+  final CommunityBackend? community;
+  final VoidCallback? reopen;
+
   @override
   State<SofraHome> createState() => _SofraHomeState();
 }
@@ -58,6 +65,8 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     recipes: widget.recipes,
     readAsset: widget.readAsset,
     reminders: widget.reminders ?? (kIsWeb ? null : LocalReminders()),
+    community: widget.community,
+    reopen: widget.reopen,
   );
   final name = TextEditingController();
   final house = TextEditingController();

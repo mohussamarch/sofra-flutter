@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import '../data/community_backend.dart';
+import '../data/firestore_community.dart';
 import '../data/state_store.dart';
 import '../firebase_options.dart';
 import 'design.dart';
@@ -11,7 +13,16 @@ typedef SessionBuilder = Widget Function(
   StateStore store,
   Map<String, dynamic>? initialData,
   Future<void> Function()? signOut,
+  SessionLinks? links,
 );
+
+/// What a signed-in session adds: the community backend and a way to
+/// reopen after joining or leaving a shared kitchen.
+class SessionLinks {
+  const SessionLinks(this.community, this.reopen);
+  final CommunityBackend community;
+  final VoidCallback reopen;
+}
 
 class SessionGate extends StatefulWidget {
   const SessionGate({super.key, required this.builder});
@@ -52,13 +63,62 @@ class _SessionGateState extends State<SessionGate> {
           }
           final user = auth.data;
           if (user == null) return const SignInPage();
-          return LoadedSession(
+          return _KitchenSession(
             key: ValueKey(user.uid),
-            store: CloudStateStore(FirebaseFirestore.instance, user.uid),
+            uid: user.uid,
             builder: widget.builder,
-            signOut: FirebaseAuth.instance.signOut,
           );
         },
+      );
+    },
+  );
+}
+
+/// Opens the shared kitchen when the account belongs to one, else the
+/// personal kitchen; reopens after joining or leaving.
+class _KitchenSession extends StatefulWidget {
+  const _KitchenSession({super.key, required this.uid, required this.builder});
+  final String uid;
+  final SessionBuilder builder;
+  @override
+  State<_KitchenSession> createState() => _KitchenSessionState();
+}
+
+class _KitchenSessionState extends State<_KitchenSession> {
+  late final community = FirestoreCommunity(
+    FirebaseFirestore.instance,
+    widget.uid,
+  );
+  late Future<String?> kitchenId = community.membership();
+  var opened = 0;
+
+  void reopen() => setState(() {
+    opened++;
+    kitchenId = community.membership();
+  });
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<String?>(
+    future: kitchenId,
+    builder: (context, snap) {
+      if (snap.connectionState != ConnectionState.done) {
+        return const LoadingSession();
+      }
+      if (snap.hasError) {
+        return SessionError(
+          onRetry: reopen,
+          signOut: FirebaseAuth.instance.signOut,
+        );
+      }
+      final id = snap.data;
+      return LoadedSession(
+        key: ValueKey('${id ?? 'personal'}-$opened'),
+        store: id == null
+            ? CloudStateStore(FirebaseFirestore.instance, widget.uid)
+            : CloudStateStore.shared(FirebaseFirestore.instance, id),
+        builder: widget.builder,
+        signOut: FirebaseAuth.instance.signOut,
+        links: SessionLinks(community, reopen),
       );
     },
   );
@@ -70,10 +130,12 @@ class LoadedSession extends StatefulWidget {
     required this.store,
     required this.builder,
     this.signOut,
+    this.links,
   });
   final StateStore store;
   final SessionBuilder builder;
   final Future<void> Function()? signOut;
+  final SessionLinks? links;
   @override
   State<LoadedSession> createState() => _LoadedSessionState();
 }
@@ -94,7 +156,7 @@ class _LoadedSessionState extends State<LoadedSession> {
           signOut: widget.signOut,
         );
       }
-      return widget.builder(store, snapshot.data, widget.signOut);
+      return widget.builder(store, snapshot.data, widget.signOut, widget.links);
     },
   );
 }

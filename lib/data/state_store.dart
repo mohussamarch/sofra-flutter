@@ -35,13 +35,19 @@ class StateConflict implements Exception {}
 
 class CloudStateStore implements StateStore {
   CloudStateStore(FirebaseFirestore firestore, String uid)
-    : document = firestore.doc('users/$uid/state/current');
+    : document = firestore.doc('users/$uid/state/current'),
+      label = 'محفوظ في حسابك';
+
+  /// A kitchen shared by invitation; every member reads and writes it.
+  CloudStateStore.shared(FirebaseFirestore firestore, String kitchenId)
+    : document = firestore.doc('kitchens/$kitchenId/state/current'),
+      label = 'محفوظ في المطبخ المشترك';
 
   final DocumentReference<Map<String, dynamic>> document;
   int? _revision;
 
   @override
-  String get label => 'محفوظ في حسابك';
+  final String label;
 
   @override
   Future<Map<String, dynamic>?> load() async {

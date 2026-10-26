@@ -32,11 +32,13 @@ class TabkhaApp extends StatelessWidget {
     ),
     home: persistent
         ? SessionGate(
-            builder: (store, data, signOut) => SofraHome(
+            builder: (store, data, signOut, links) => SofraHome(
               key: ObjectKey(store),
               store: store,
               initialData: data,
               signOut: signOut,
+              community: links?.community,
+              reopen: links?.reopen,
               recipes: recipes,
               readAsset: readAsset,
               showScene: showScene,
