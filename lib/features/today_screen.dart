@@ -8,6 +8,7 @@ import '../scene/scene_lighting.dart';
 import '../scene3d/kitchen_3d.dart';
 import '../ui/design.dart';
 import 'common.dart';
+import 'month_plan_screen.dart';
 import 'recipe_book.dart';
 import 'shelf_wheel.dart';
 import 'table_screen.dart';
@@ -499,7 +500,14 @@ class _MealCardsState extends State<_MealCards> {
             shadows: [Shadow(color: Colors.black38, blurRadius: 12)],
           ),
         ),
-        const SizedBox(height: 12),
+        TextButton.icon(
+          key: const ValueKey('open-month-plan'),
+          style: TextButton.styleFrom(foregroundColor: Colors.white),
+          onPressed: () => openMonthPlan(context),
+          icon: const Icon(Icons.calendar_month_outlined, size: 20),
+          label: const Text('خطط الشهر كله'),
+        ),
+        const SizedBox(height: 4),
         Expanded(
           child: PageView.builder(
             controller: pages,

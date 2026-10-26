@@ -11,6 +11,8 @@ import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/market_profile.dart';
 import '../domain/models.dart';
+import '../domain/monthly_budget_choices.dart';
+import '../domain/monthly_budget_search.dart';
 import '../domain/recipe_catalog.dart';
 
 /// Household preferences kept beside `kitchen` in the same state document.
@@ -143,6 +145,44 @@ class CookingLine {
       quantity != null &&
       missing != null &&
       missing! < quantity! - 1e-9;
+}
+
+/// A priced month: the user's weekly menu repeated over a calendar month,
+/// checked against their budget with their own prices. Nothing is saved
+/// until [SofraController.acceptMonth].
+class MonthPlan {
+  MonthPlan._(this.budget, this.preview, this.unmeasured);
+  final BudgetPeriod budget;
+  final MonthlyBudgetSearchPreview preview;
+
+  /// Lines without an amount the user chose to leave out of the cost
+  /// ("ملح حسب الرغبة"); empty when they were kept (and the cost unknown).
+  final Set<String> unmeasured;
+
+  MonthlyBudgetSearchResult get search => preview.search;
+  MonthlyBudgetSearchOutcome get outcome => search.outcome;
+
+  /// Cheapest option whose purchases fit the budget.
+  MonthlyBudgetAssessment? get best => search.bestKnownAffordable;
+
+  /// Cheapest fully priced option, affordable or not.
+  MonthlyBudgetAssessment? get cheapest => search.eligibleRanked.firstOrNull;
+
+  /// What still needs a price before the month can be judged, as
+  /// stock id -> the unit the purchase is in.
+  Map<String, String> get unpriced => {
+    for (final a in search.comparison.unranked)
+      for (final p in a.forecast.purchases)
+        if (p.estimatedCost == null) p.use.ingredientId: p.use.unit,
+  };
+
+  /// Stock that is kept in a unit the recipes can't be converted to.
+  Set<String> get unresolved => {
+    for (final a in search.comparison.assessments) ...{
+      ...a.forecast.unresolvedRequirements,
+      ...a.forecast.unresolvedStock,
+    },
+  };
 }
 
 /// Per-line preview used by the table and the cooking confirmation sheet.
@@ -285,6 +325,124 @@ class SofraController extends ChangeNotifier {
 
   Future<void> setCountry(MarketCountry country) =>
       _save(() => kitchen.setCountry(country));
+
+  // ---- Month plan ---------------------------------------------------------
+
+  /// Recipes the month can use: ones whose yield is known (in the source
+  /// or reviewed by the user), so servings can be scaled.
+  bool canPlanMonth(Map<String, dynamic> indexRow) =>
+      indexRow['servings'] != null ||
+      planningId(indexRow['id'] as String) != indexRow['id'];
+
+  /// Saves the month's budget, repeats [menu] (weekday 1..7 and slot -> one
+  /// or two recipe ids, every weekday filled for every slot) over the month,
+  /// and prices it. A second recipe in a cell is a cheaper alternative the
+  /// search may pick instead.
+  Future<MonthPlan> previewMonth({
+    required DateTime month,
+    required double limit,
+    required Map<(int, String), List<String>> menu,
+    int? servings,
+    bool omitUnmeasured = false,
+    int maxEvaluations = 4000,
+  }) async {
+    final start = DateTime(month.year, month.month);
+    final budget = BudgetPeriod(
+      id: 'budget-${localDay(start).substring(0, 7)}',
+      start: localDay(start),
+      end: localDay(DateTime(month.year, month.month + 1)),
+      limit: limit,
+      country: kitchen.market.country,
+    );
+    await kitchen.saveBudget(budget);
+    final slots = {for (final (_, slot) in menu.keys) slot}.toList();
+    final people = servings ?? profile.servings;
+    final template = [
+      for (final MapEntry(key: (weekday, slot), value: ids) in menu.entries)
+        WeeklyRecipeSlot(
+          weekday: weekday,
+          slot: slot,
+          choices: [
+            for (final (i, id) in ids.indexed)
+              RecipePoolChoice(
+                id: '$weekday-$slot-$i',
+                recipeId: planningId(id),
+                servings: people,
+              ),
+          ],
+        ),
+    ];
+    final pools = await kitchen.generateMonthlyCandidatePools(
+      budget.id,
+      weeklyTemplate: template,
+      requiredDailySlots: slots,
+      maxPools: 31 * slots.length,
+      maxCandidatesPerSlot: 2,
+      acknowledgeRecipeEligibility: true,
+    );
+    final preview = await kitchen.searchMonthlyBudgetChoices(
+      budget.id,
+      pools: pools.pools,
+      maxEvaluations: maxEvaluations,
+      requiredSlots: pools.requiredSlots,
+      omitUnmeasuredLines: omitUnmeasured,
+    );
+    final unmeasured = <String>{};
+    if (omitUnmeasured) {
+      final meals = {
+        for (final pool in preview.candidatesByPool.values)
+          for (final meal in pool.values) meal.recipeRevisionKey: meal,
+      };
+      for (final meal in meals.values) {
+        final r =
+            kitchen.recipeBook.revisions[meal.recipeRevisionKey]?.recipe ??
+            await recipes.get(meal.recipeId);
+        for (final line in r.ingredients) {
+          if (!line.optional && line.amount == null) {
+            unmeasured.add(line.name);
+          }
+        }
+      }
+    }
+    return MonthPlan._(budget, preview, unmeasured);
+  }
+
+  /// Writes the month's meals from the cheapest affordable option.
+  Future<bool> acceptMonth(MonthPlan plan) {
+    final best = plan.best;
+    if (best == null) return Future.value(false);
+    return _save(() async {
+      await kitchen.acceptMonthlyBudgetSearchOption(
+        plan.preview,
+        optionId: best.option.id,
+        planIdsByPool: {
+          for (final pool in plan.preview.candidatesByPool.keys)
+            pool: newId('meal'),
+        },
+      );
+    });
+  }
+
+  /// A price the user typed: [amount] for [quantity] [unit] of a stock item.
+  Future<bool> setUserPrice(
+    String ingredientId,
+    double quantity,
+    String unit,
+    double amount,
+  ) => _save(
+    () => kitchen.savePrice(
+      MarketPrice(
+        country: kitchen.market.country,
+        ingredientId: ingredientId,
+        unit: unit,
+        quantity: quantity,
+        amount: amount,
+        recordedAt: DateTime.now(),
+        source: 'user',
+      ),
+      userOverride: true,
+    ),
+  );
 
   // ---- Inventory ----------------------------------------------------------
 

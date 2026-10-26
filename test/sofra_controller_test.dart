@@ -5,6 +5,7 @@ import 'package:tabkha_demo/app/sofra_controller.dart';
 import 'package:tabkha_demo/data/kitchen_service.dart';
 import 'package:tabkha_demo/domain/kitchen_core.dart';
 import 'package:tabkha_demo/domain/models.dart';
+import 'package:tabkha_demo/domain/monthly_budget_search.dart';
 import 'package:tabkha_demo/domain/recipe_catalog.dart';
 
 import 'recipe_variants_test.dart' as f;
@@ -335,5 +336,59 @@ void main() {
     expect(used['quantity'], 150);
     expect(record['cost'], isNull);
     expect(record['unpricedIngredients'], contains('sample'));
+  });
+  test('a weekly menu is priced over the month and saved on accept', () async {
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(value: threeLines()),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    await c.load();
+    final menu = {
+      for (var day = 1; day <= 7; day++) (day, 'lunch'): ['fixture'],
+    };
+    final february = DateTime(2027, 2, 10);
+    var plan = await c.previewMonth(
+      month: february,
+      limit: 1000,
+      menu: menu,
+      servings: 2,
+    );
+    expect(plan.budget.start, '2027-02-01');
+    expect(plan.budget.end, '2027-03-01');
+    expect(plan.outcome, MonthlyBudgetSearchOutcome.indeterminate);
+    expect(plan.unpriced.keys, containsAll(['sample', 'water']));
+    expect(await c.acceptMonth(plan), isFalse, reason: 'no known total');
+    expect(plan.unmeasured, isEmpty);
+
+    for (final MapEntry(key: id, value: unit) in plan.unpriced.entries) {
+      expect(await c.setUserPrice(id, 1, unit, 1), isTrue);
+    }
+    plan = await c.previewMonth(
+      month: february,
+      limit: 1,
+      menu: menu,
+      servings: 2,
+      omitUnmeasured: true,
+    );
+    expect(plan.unmeasured, {'ملح'});
+    expect(
+      plan.outcome,
+      MonthlyBudgetSearchOutcome.noAffordableInSuppliedPools,
+    );
+    expect(plan.cheapest!.overrun, greaterThan(0));
+
+    plan = await c.previewMonth(
+      month: february,
+      limit: 100000,
+      menu: menu,
+      servings: 2,
+      omitUnmeasured: true,
+    );
+    expect(plan.outcome, MonthlyBudgetSearchOutcome.affordableFound);
+    expect(await c.acceptMonth(plan), isTrue);
+    final saved = c.kitchen.plans.where((p) => p.date.startsWith('2027-02'));
+    expect(saved, hasLength(28));
+    expect(saved.every((p) => p.slot == 'lunch' && p.servings == 2), isTrue);
   });
 }

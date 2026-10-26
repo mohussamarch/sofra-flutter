@@ -1418,6 +1418,7 @@ class KitchenService {
     String? candidateId,
     Set<int> optionalLines = const {},
     Map<int, IngredientUse> measuredLines = const {},
+    bool omitUnmeasured = false,
   }) {
     final scaled = revision.recipe.forServings(meal.servings);
     final rows = scaled.recipe.ingredients;
@@ -1441,6 +1442,7 @@ class KitchenService {
       if (explicit != null) {
         uses.add(_stockUse(explicit));
       } else if (quantity == null) {
+        if (omitUnmeasured) continue;
         unresolved.add('${meal.id}:$line:${ingredient.id}');
       } else {
         uses.add(
@@ -1648,6 +1650,9 @@ class KitchenService {
   /// options still consume the cap and retain separate financial evidence.
   /// Optional requiredSlots names caller-required date/slot pairs only; no
   /// daily pattern or household-member coverage is inferred.
+  /// [omitUnmeasuredLines] is the caller's explicit choice to leave lines
+  /// without an amount ("to taste") out of the cost instead of making every
+  /// option's total unknown.
   Future<MonthlyBudgetSearchPreview> searchMonthlyBudgetChoices(
     String budgetId, {
     required Map<String, List<PlannedMeal>> pools,
@@ -1657,6 +1662,7 @@ class KitchenService {
     List<UnitRule> rules = const [],
     Map<String, Map<String, Set<int>>> optionalLinesByPool = const {},
     Map<String, Map<String, Map<int, IngredientUse>>> measuredByPool = const {},
+    bool omitUnmeasuredLines = false,
   }) async {
     final preferences = recipePreferences == null
         ? null
@@ -1771,6 +1777,7 @@ class KitchenService {
             candidateId: meal.id,
             optionalLines: optionals[pool.key]?[meal.id] ?? const {},
             measuredLines: measurements[pool.key]?[meal.id] ?? const {},
+            omitUnmeasured: omitUnmeasuredLines,
           ),
         );
         pinned[meal.id] = meal.withRecipeRevision(revision.key);
