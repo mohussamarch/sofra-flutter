@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tabkha_demo/app/reminders.dart';
 import 'package:tabkha_demo/data/state_store.dart';
+import 'package:tabkha_demo/features/barcode_scan.dart';
 import 'package:tabkha_demo/main.dart';
 
 import 'support/demo_flow.dart';
@@ -187,6 +188,60 @@ void main() {
     expect(store.data!['stockAlerts'], isFalse);
     // No meal time set yet, so nothing is scheduled.
     expect(sink.scheduled, isEmpty);
+  });
+  testWidgets('a scanned code is linked once, then goes straight to amount', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(430, 932);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    scanWithCamera = false;
+    addTearDown(() => scanWithCamera = true);
+    final store = TestStore();
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: ThemeData(
+          snackBarTheme: const SnackBarThemeData(
+            behavior: SnackBarBehavior.floating,
+          ),
+        ),
+        home: SofraHome(
+          store: store,
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+          showScene: false,
+          reminders: SilentReminders(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await completeOnboarding(tester);
+    await openStock(tester);
+    await tapKey(tester, 'add-ingredients');
+    await tapKey(tester, 'add-stock-scan');
+    await tester.enterText(
+      find.byKey(const ValueKey('barcode-manual')),
+      '6220000000001',
+    );
+    await tapKey(tester, 'barcode-manual-go');
+    expect(find.text('المنتج ده مش في بياناتنا لسه'), findsOneWidget);
+    await tester.enterText(find.byKey(const ValueKey('scan-search')), 'رز');
+    await tester.pumpAndSettle();
+    await tapKey(tester, 'scan-pick-rice');
+    expect(store.data!['barcodeLinks'], {'6220000000001': 'rice'});
+    await tester.enterText(find.byKey(const ValueKey('add-amount')), '250');
+    await tapKey(tester, 'add-unit-g');
+    await tapKey(tester, 'add-stock-save');
+
+    await tapKey(tester, 'add-stock-scan');
+    await tester.enterText(
+      find.byKey(const ValueKey('barcode-manual')),
+      '6220000000001',
+    );
+    await tapKey(tester, 'barcode-manual-go');
+    expect(find.byKey(const ValueKey('scan-search')), findsNothing);
+    expect(find.byKey(const ValueKey('add-amount')), findsOneWidget);
   });
 }
 

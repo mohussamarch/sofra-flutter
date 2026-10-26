@@ -8,6 +8,7 @@ import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
+import 'barcode_scan.dart';
 import 'common.dart';
 
 /// Inventory by storage zone, read from KitchenService lots.
@@ -310,14 +311,27 @@ class _AddStockScreenState extends State<AddStockScreen> {
           style: TextStyle(color: Sofra.muted),
         ),
         const SizedBox(height: 20),
-        TextField(
-          key: const ValueKey('add-stock-search'),
-          controller: search,
-          onChanged: (_) => setState(() {}),
-          decoration: const InputDecoration(
-            hintText: 'دوّر على مكوّن',
-            prefixIcon: Icon(Icons.search_rounded),
-          ),
+        Row(
+          children: [
+            Expanded(
+              child: TextField(
+                key: const ValueKey('add-stock-search'),
+                controller: search,
+                onChanged: (_) => setState(() {}),
+                decoration: const InputDecoration(
+                  hintText: 'دوّر على مكوّن',
+                  prefixIcon: Icon(Icons.search_rounded),
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            IconButton.filledTonal(
+              key: const ValueKey('add-stock-scan'),
+              tooltip: 'امسح باركود',
+              onPressed: c.directory == null ? null : () => _scan(context),
+              icon: const Icon(Icons.qr_code_scanner_rounded),
+            ),
+          ],
         ),
         const SizedBox(height: 18),
         if (c.directory == null)
@@ -392,6 +406,26 @@ class _AddStockScreenState extends State<AddStockScreen> {
           ),
       ],
     );
+  }
+
+  /// Barcode -> the ingredient linked before, or the user picks one (and it
+  /// is remembered) -> the usual amount sheet.
+  Future<void> _scan(BuildContext context) async {
+    final c = SofraScope.controllerOf(context);
+    final code = await scanBarcode(context);
+    if (code == null || !context.mounted) return;
+    final product = await c.lookupBarcode(code);
+    if (!context.mounted) return;
+    var entry = product.ingredientId == null
+        ? null
+        : c.directory!.entry(product.ingredientId!);
+    if (entry == null) {
+      entry = await pickIngredientFor(context, product, c.directory!);
+      if (entry == null || !context.mounted) return;
+      await c.linkBarcode(code, entry.id);
+      if (!context.mounted) return;
+    }
+    await _openSheet(context, entry);
   }
 
   Future<void> _openSheet(BuildContext context, IngredientEntry e) async {

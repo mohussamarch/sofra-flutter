@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../data/demo_data.dart';
+import '../data/food_repository.dart';
 import '../data/kitchen_service.dart';
 import '../data/recipe_repository.dart';
 import '../data/state_store.dart';
@@ -155,6 +156,21 @@ class Profile {
       stockAlerts: root['stockAlerts'] != false,
     );
   }
+}
+
+/// What a scanned barcode is: the bundled product record when there is one,
+/// and the kitchen ingredient the user linked it to before.
+class ScannedProduct {
+  const ScannedProduct(
+    this.code, {
+    this.name,
+    this.brand,
+    this.packageLabel,
+    this.ingredientId,
+  });
+  final String code;
+  final String? name, brand, packageLabel, ingredientId;
+  bool get known => name != null;
 }
 
 /// Stock status of one recipe line against the current inventory.
@@ -326,6 +342,42 @@ class SofraController extends ChangeNotifier {
       '$prefix-${DateTime.now().microsecondsSinceEpoch}-${_seq++}';
   Map<String, String> _labels = {};
 
+  /// Barcode -> stock ingredient, as the user linked them.
+  Map<String, String> _barcodes = {};
+  late final FoodRepository foods = FoodRepository(read: _readAsset);
+
+  /// Looks a barcode up in the bundled Egypt/Saudi product bank and the
+  /// user's own links. Nothing is guessed from the product name.
+  Future<ScannedProduct> lookupBarcode(String raw) async {
+    final code = raw.trim();
+    Map<String, dynamic>? row;
+    try {
+      row = (await foods.products())
+          .where((p) => p['barcode'] == code)
+          .firstOrNull;
+    } catch (_) {
+      // The bank failed to load; the user's link still works.
+    }
+    String? text(Object? v) =>
+        v is String && v.trim().isNotEmpty ? v.trim() : null;
+    final names = row?['names'] as Map?;
+    return ScannedProduct(
+      code,
+      name: names == null
+          ? null
+          : text(names['ar']) ?? text(names['original']) ?? text(names['en']),
+      brand: text(row?['brands']),
+      packageLabel: text((row?['package'] as Map?)?['label']),
+      ingredientId: _barcodes[code],
+    );
+  }
+
+  /// Remembers which ingredient a barcode is, for the next scan.
+  Future<void> linkBarcode(String code, String ingredientId) {
+    _barcodes = {..._barcodes, code.trim(): ingredientId};
+    return _save(() => kitchen.saveRootFields({'barcodeLinks': _barcodes}));
+  }
+
   String get storeLabel => kitchen.store.label;
   MarketProfile get market => kitchen.market;
 
@@ -338,6 +390,10 @@ class SofraController extends ChangeNotifier {
       _labels = {
         for (final e in ((root['ingredientLabels'] as Map?) ?? {}).entries)
           e.key as String: e.value as String,
+      };
+      _barcodes = {
+        for (final e in ((root['barcodeLinks'] as Map?) ?? {}).entries)
+          if (e.value is String) e.key as String: e.value as String,
       };
       ready = true;
       loadError = null;

@@ -536,6 +536,32 @@ void main() {
       expect(prices.single['ingredientId'], 'rice');
     },
   );
+  test(
+    'a scanned barcode shows the bundled product and the saved link',
+    () async {
+      final store = f.Store();
+      final c = SofraController(
+        store: store,
+        recipes: f.repository(value: threeLines()),
+        readAsset: (path) => File(path).readAsString(),
+      );
+      await c.load();
+      final known = await c.lookupBarcode(' 00004008 ');
+      expect(known.name, contains('Chocolate'));
+      expect(known.brand, 'Patchi');
+      expect(known.ingredientId, isNull);
+      final unknown = await c.lookupBarcode('6220000000001');
+      expect(unknown.known, isFalse);
+      await c.linkBarcode('6220000000001', 'rice');
+      final again = SofraController(
+        store: store,
+        recipes: f.repository(value: threeLines()),
+        readAsset: (path) => File(path).readAsString(),
+      );
+      await again.load();
+      expect((await again.lookupBarcode('6220000000001')).ingredientId, 'rice');
+    },
+  );
   test('the shopping list reads as one line per item to share', () async {
     final c = SofraController(
       store: f.Store(),
