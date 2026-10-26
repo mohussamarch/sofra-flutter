@@ -49,6 +49,11 @@ Future<Future<String> Function(String)> warmAssets(WidgetTester tester) async {
       for (final name in ['vocabulary.json', 'directory.json'])
         'data/ingredients/$name': await File('data/ingredients/$name')
             .readAsString(),
+      for (final path in [
+        'assets/community/creators.json',
+        'assets/recipe-photos/manifest.json',
+      ])
+        path: await File(path).readAsString(),
     };
   }))!;
   return (path) async => files[path]!;

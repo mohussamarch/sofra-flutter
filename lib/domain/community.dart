@@ -416,3 +416,99 @@ class SharedKitchen {
 
   String nameOf(String uid) => names[uid] ?? 'فرد من البيت';
 }
+
+// ---- Stories ----------------------------------------------------------------
+
+/// How long a story stays up.
+const storyLife = Duration(hours: 24);
+
+/// A short text story from a household (no video). Photos join later
+/// through the same [PhotoRef] slot as shared recipes.
+class Story {
+  Story({
+    required this.id,
+    required this.uid,
+    required String name,
+    required String text,
+    String? dish,
+    required this.createdAt,
+    this.colorIndex = 0,
+    List<PhotoRef> photos = const [],
+  }) : name = _text(name, 60, 'name'),
+       text = _text(text, 200, 'story'),
+       dish = dish == null || dish.trim().isEmpty
+           ? null
+           : _text(dish, 80, 'dish'),
+       photos = List.unmodifiable(photos) {
+    if (id.isEmpty || uid.isEmpty || colorIndex < 0 || colorIndex > 7) {
+      throw ArgumentError('Invalid story');
+    }
+  }
+  final String id, uid, name, text;
+  final String? dish;
+  final DateTime createdAt;
+  final int colorIndex;
+  final List<PhotoRef> photos;
+
+  DateTime get expiresAt => createdAt.add(storyLife);
+  bool liveAt(DateTime now) => now.isBefore(expiresAt);
+
+  Map<String, Object?> toJson() => {
+    'uid': uid,
+    'name': name,
+    'text': text,
+    'dish': ?dish,
+    'color': colorIndex,
+    'photos': [for (final p in photos) p.toJson()],
+  };
+
+  factory Story.fromJson(
+    String id,
+    Map<String, dynamic> j,
+    DateTime createdAt,
+  ) => Story(
+    id: id,
+    uid: j['uid'] as String,
+    name: j['name'] as String,
+    text: j['text'] as String,
+    dish: j['dish'] as String?,
+    colorIndex: (j['color'] as num?)?.toInt() ?? 0,
+    photos: _photos(j['photos']),
+    createdAt: createdAt,
+  );
+}
+
+/// Live stories grouped by household, newest household first, each
+/// household's stories oldest first (the order they are watched in).
+List<List<Story>> storyRings(List<Story> stories, DateTime now) {
+  final by = <String, List<Story>>{};
+  for (final s in stories.where((s) => s.liveAt(now))) {
+    (by[s.uid] ??= []).add(s);
+  }
+  final rings = [
+    for (final list in by.values)
+      list..sort((a, b) => a.createdAt.compareTo(b.createdAt)),
+  ]..sort((a, b) => b.last.createdAt.compareTo(a.last.createdAt));
+  return rings;
+}
+
+/// A cooking channel suggested in the community (verified official channel).
+class Creator {
+  const Creator(this.id, this.name, this.short, this.channelUrl, this.country);
+  final String id, name, short, channelUrl;
+  final String? country;
+
+  factory Creator.fromJson(Map<String, dynamic> j) {
+    final url = j['channelUrl'] as String;
+    if (!url.startsWith('https://www.youtube.com/')) {
+      throw FormatException('Not a YouTube channel: $url');
+    }
+    return Creator(
+      j['id'] as String,
+      j['name'] as String,
+      j['short'] as String,
+      url,
+      j['country'] as String?,
+    );
+  }
+}

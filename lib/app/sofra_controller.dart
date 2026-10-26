@@ -300,6 +300,7 @@ class SofraController extends ChangeNotifier {
     ReminderSink? reminders,
     this.community,
     this.reopen,
+    this.communityPreview = false,
   }) : persistent = store != null,
        reminders = reminders ?? SilentReminders(),
        recipes = recipes ?? RecipeRepository(),
@@ -328,6 +329,33 @@ class SofraController extends ChangeNotifier {
 
   /// Reopens the session after joining or leaving a shared kitchen.
   final VoidCallback? reopen;
+
+  /// The community runs on this device only (no account): nothing reaches
+  /// other people.
+  final bool communityPreview;
+
+  /// Verified Arab cooking channels suggested in the community.
+  Future<List<Creator>> creators() async {
+    try {
+      final json = jsonDecode(
+        await _readAsset('assets/community/creators.json'),
+      ) as Map<String, dynamic>;
+      return [
+        for (final c in json['creators'] as List)
+          Creator.fromJson(Map<String, dynamic>.from(c as Map)),
+      ];
+    } catch (_) {
+      return const [];
+    }
+  }
+
+  Future<Story> postStory(String text, {String? dish, int colorIndex = 0}) =>
+      _community.postStory(
+        name: profile.houseName,
+        text: text,
+        dish: dish,
+        colorIndex: colorIndex,
+      );
 
   /// Canonical ingredient vocabulary; recipe lines map to it for stock.
   IngredientDirectory? directory;

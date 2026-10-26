@@ -124,3 +124,20 @@ test('community recipes, ratings, prices and challenge entries', async () => {
   await assertSucceeds(setDoc(doc(db('bob'), 'challenges/2026-10-24/entries/bob'), entry));
   await assertSucceeds(getDocs(collection(db('alice'), 'challenges/2026-10-24/entries')));
 });
+
+test('stories: own, short, text-only, gone within a day', async () => {
+  await env.clearFirestore();
+  const story = (uid, extra = {}) => ({
+    uid, name: 'بيت بوب', text: 'عملنا ملوخية النهارده', dish: 'ملوخية', color: 2, photos: [],
+    createdAt: serverTimestamp(), expiresAt: Timestamp.fromMillis(Date.now() + 23 * 3600000), ...extra,
+  });
+  await assertFails(addDoc(collection(db(null), 'stories'), story('bob')));
+  await assertFails(addDoc(collection(db('bob'), 'stories'), story('alice')));
+  await assertFails(addDoc(collection(db('bob'), 'stories'), story('bob', { expiresAt: inDays(3) })));
+  await assertFails(addDoc(collection(db('bob'), 'stories'), story('bob', { text: 'x'.repeat(201) })));
+  await assertFails(addDoc(collection(db('bob'), 'stories'), story('bob', { photos: [{ path: 'photos/bob/a.webp', by: 'bob' }] })));
+  const ref = await assertSucceeds(addDoc(collection(db('bob'), 'stories'), story('bob')));
+  await assertSucceeds(getDocs(query(collection(db('alice'), 'stories'), where('expiresAt', '>', Timestamp.now()))));
+  await assertFails(deleteDoc(doc(db('alice'), `stories/${ref.id}`)));
+  await assertSucceeds(deleteDoc(doc(db('bob'), `stories/${ref.id}`)));
+});

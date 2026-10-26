@@ -35,6 +35,17 @@ abstract class CommunityBackend {
   Future<List<PriceReport>> areaReports(String country, String area);
   Future<void> saveChallengeEntry(String week, ChallengeEntry entry);
   Future<List<ChallengeEntry>> challengeEntries(String week);
+
+  /// Posts a story (its id and time are set here); returns it.
+  Future<Story> postStory({
+    required String name,
+    required String text,
+    String? dish,
+    int colorIndex = 0,
+  });
+
+  /// Stories posted in the last day.
+  Future<List<Story>> liveStories();
 }
 
 String newInviteCode([Random? random]) {
@@ -58,6 +69,7 @@ class MemoryServer {
   final ratings = <String, Map<String, Rating>>{};
   final prices = <PriceReport>[];
   final entries = <String, Map<String, ChallengeEntry>>{};
+  final stories = <Story>[];
   DateTime Function() clock = DateTime.now;
   var _seq = 0;
 }
@@ -176,4 +188,30 @@ class MemoryCommunity implements CommunityBackend {
   @override
   Future<List<ChallengeEntry>> challengeEntries(String week) async =>
       (server.entries[week] ?? const {}).values.toList();
+
+  @override
+  Future<Story> postStory({
+    required String name,
+    required String text,
+    String? dish,
+    int colorIndex = 0,
+  }) async {
+    final story = Story(
+      id: 's${server._seq++}',
+      uid: uid,
+      name: name,
+      text: text,
+      dish: dish,
+      colorIndex: colorIndex,
+      createdAt: server.clock(),
+    );
+    server.stories.add(story);
+    return story;
+  }
+
+  @override
+  Future<List<Story>> liveStories() async => [
+    for (final s in server.stories)
+      if (s.liveAt(server.clock())) s,
+  ];
 }

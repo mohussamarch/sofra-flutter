@@ -151,6 +151,27 @@ service cloud.firestore {
       allow update: if false;
     }
 
+    // Text stories that last a day. Photos stay empty until a store is approved.
+    match /stories/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.keys().hasAll(['uid', 'name', 'text', 'color', 'photos', 'createdAt', 'expiresAt'])
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'text', 'dish', 'color', 'photos', 'createdAt', 'expiresAt'])
+        && request.resource.data.uid == me()
+        && text(request.resource.data.name, 60)
+        && text(request.resource.data.text, 200)
+        && (!('dish' in request.resource.data) || text(request.resource.data.dish, 80))
+        && request.resource.data.color is int
+        && request.resource.data.color >= 0 && request.resource.data.color <= 7
+        && request.resource.data.photos is list && request.resource.data.photos.size() == 0
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.expiresAt is timestamp
+        && request.resource.data.expiresAt > request.time
+        && request.resource.data.expiresAt <= request.time + duration.value(25, 'h');
+      allow delete: if signedIn() && resource.data.uid == me();
+      allow update: if false;
+    }
+
     // Weekly challenge leaderboard; each household writes its own line.
     match /challenges/{week}/entries/{uid} {
       allow read: if signedIn();

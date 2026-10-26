@@ -39,6 +39,7 @@ class TabkhaApp extends StatelessWidget {
               signOut: signOut,
               community: links?.community,
               reopen: links?.reopen,
+              communityPreview: links?.preview ?? false,
               recipes: recipes,
               readAsset: readAsset,
               showScene: showScene,

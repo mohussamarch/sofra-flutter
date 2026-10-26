@@ -277,6 +277,35 @@ void main() {
     await tester.pumpAndSettle();
     await completeOnboarding(tester);
     await openCorner(tester, 'community');
+    // Home first: story ring to add, creator circles, empty feed.
+    expect(find.byKey(const ValueKey('story-add')), findsOneWidget);
+    expect(find.byKey(const ValueKey('creator-manal-alalem')), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('community-recipes-empty')),
+      findsOneWidget,
+    );
+    await tapKey(tester, 'story-add');
+    await tester.enterText(
+      find.byKey(const ValueKey('story-text')),
+      'عملنا ملوخية',
+    );
+    await tester.pumpAndSettle();
+    await tapKey(tester, 'story-color-3');
+    await tapKey(tester, 'story-post');
+    expect(server.stories.single.text, 'عملنا ملوخية');
+    // The viewer runs a timer, so step frames instead of settling.
+    await tester.tap(find.byKey(const ValueKey('story-ring-bob')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
+    expect(find.text('عملنا ملوخية'), findsWidgets);
+    expect(find.byKey(const ValueKey('story-text-shown')), findsOneWidget);
+    await tester.tap(find.byKey(const ValueKey('story-close')));
+    await tester.pumpAndSettle();
+    await tapKey(tester, 'creator-manal-alalem');
+    expect(find.byKey(const ValueKey('creator-name')), findsOneWidget);
+    await tester.tapAt(const Offset(10, 10));
+    await tester.pumpAndSettle();
+    await tapKey(tester, 'community-kitchen');
     expect(find.byKey(const ValueKey('kitchen-share')), findsOneWidget);
     await tester.enterText(find.byKey(const ValueKey('kitchen-code')), 'nope');
     await tapKey(tester, 'kitchen-join');
@@ -285,11 +314,6 @@ void main() {
     await tapKey(tester, 'kitchen-join');
     expect(reopened, 1);
     expect(server.kitchens[kid]!['members'], ['alice', 'bob']);
-    await tapKey(tester, 'community-recipes');
-    expect(
-      find.byKey(const ValueKey('community-recipes-empty')),
-      findsOneWidget,
-    );
     await tapKey(tester, 'community-prices');
     expect(find.text('اكتب منطقتك الأول.'), findsOneWidget);
     await tapKey(tester, 'community-challenge');

@@ -33,6 +33,7 @@ class SofraHome extends StatefulWidget {
     this.reminders,
     this.community,
     this.reopen,
+    this.communityPreview = false,
   });
   final StateStore? store;
   final Map<String, dynamic>? initialData;
@@ -53,6 +54,7 @@ class SofraHome extends StatefulWidget {
   /// Shared kitchen and community; null in local mode.
   final CommunityBackend? community;
   final VoidCallback? reopen;
+  final bool communityPreview;
 
   @override
   State<SofraHome> createState() => _SofraHomeState();
@@ -67,6 +69,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     reminders: widget.reminders ?? (kIsWeb ? null : LocalReminders()),
     community: widget.community,
     reopen: widget.reopen,
+    communityPreview: widget.communityPreview,
   );
   final name = TextEditingController();
   final house = TextEditingController();

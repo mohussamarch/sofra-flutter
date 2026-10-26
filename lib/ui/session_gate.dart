@@ -19,9 +19,12 @@ typedef SessionBuilder = Widget Function(
 /// What a signed-in session adds: the community backend and a way to
 /// reopen after joining or leaving a shared kitchen.
 class SessionLinks {
-  const SessionLinks(this.community, this.reopen);
+  const SessionLinks(this.community, this.reopen, {this.preview = false});
   final CommunityBackend community;
   final VoidCallback reopen;
+
+  /// On-device community without an account (nothing is shared).
+  final bool preview;
 }
 
 class SessionGate extends StatefulWidget {
@@ -53,7 +56,15 @@ class _SessionGateState extends State<SessionGate> {
         return SessionError(onRetry: () => setState(() => ready = configure()));
       }
       if (!firebaseConfigured) {
-        return LoadedSession(store: LocalStateStore(), builder: widget.builder);
+        return LoadedSession(
+          store: LocalStateStore(),
+          builder: widget.builder,
+          links: SessionLinks(
+            MemoryCommunity(MemoryServer(), 'this-device'),
+            () {},
+            preview: true,
+          ),
+        );
       }
       return StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),

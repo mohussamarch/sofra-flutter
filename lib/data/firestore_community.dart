@@ -11,6 +11,7 @@ import 'community_backend.dart';
 /// - `communityRecipes/{id}` and `.../ratings/{uid}`
 /// - `priceReports/{id}`
 /// - `challenges/{week}/entries/{uid}`
+/// - `stories/{id}` (expiresAt one day after createdAt)
 class FirestoreCommunity implements CommunityBackend {
   FirestoreCommunity(this.db, this.uid);
   final FirebaseFirestore db;
@@ -167,6 +168,50 @@ class FirestoreCommunity implements CommunityBackend {
   Future<void> saveChallengeEntry(String week, ChallengeEntry entry) => db
       .doc('challenges/$week/entries/$uid')
       .set({...entry.toJson(), 'at': FieldValue.serverTimestamp()});
+
+  @override
+  Future<Story> postStory({
+    required String name,
+    required String text,
+    String? dish,
+    int colorIndex = 0,
+  }) async {
+    final ref = db.collection('stories').doc();
+    final now = DateTime.now();
+    final story = Story(
+      id: ref.id,
+      uid: uid,
+      name: name,
+      text: text,
+      dish: dish,
+      colorIndex: colorIndex,
+      createdAt: now,
+    );
+    await ref.set({
+      ...story.toJson(),
+      'createdAt': FieldValue.serverTimestamp(),
+      'expiresAt': Timestamp.fromDate(now.add(storyLife)),
+    });
+    return story;
+  }
+
+  @override
+  Future<List<Story>> liveStories() async {
+    final q = await db
+        .collection('stories')
+        .where('expiresAt', isGreaterThan: Timestamp.now())
+        .orderBy('expiresAt')
+        .limit(200)
+        .get();
+    return [
+      for (final d in q.docs)
+        Story.fromJson(
+          d.id,
+          d.data(),
+          _time(d.data()['createdAt']) ?? DateTime.now(),
+        ),
+    ];
+  }
 
   @override
   Future<List<ChallengeEntry>> challengeEntries(String week) async {

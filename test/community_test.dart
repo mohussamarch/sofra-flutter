@@ -199,6 +199,52 @@ void main() {
     );
   });
 
+  test('stories last a day and are grouped per household', () async {
+    final server = MemoryServer();
+    var now = DateTime(2026, 10, 26, 9);
+    server.clock = () => now;
+    final a = MemoryCommunity(server, 'a'), b = MemoryCommunity(server, 'b');
+    await a.postStory(name: 'بيت أ', text: 'فطار', colorIndex: 1);
+    now = now.add(const Duration(hours: 2));
+    await b.postStory(name: 'بيت ب', text: 'غدا', dish: 'ملوخية');
+    now = now.add(const Duration(hours: 1));
+    await a.postStory(name: 'بيت أ', text: 'عشا');
+    final rings = storyRings(await a.liveStories(), now);
+    expect(rings.map((r) => r.first.uid), ['a', 'b']);
+    expect(rings.first.map((s) => s.text), ['فطار', 'عشا']);
+    now = now.add(const Duration(hours: 22));
+    expect((await a.liveStories()).map((s) => s.text), ['غدا', 'عشا']);
+    expect(
+      () => Story(id: 'x', uid: 'a', name: 'n', text: ' ', createdAt: now),
+      throwsArgumentError,
+    );
+  });
+
+  test('suggested channels come from the verified list', () async {
+    final c = SofraController(
+      store: f.Store(),
+      recipes: f.repository(value: threeLines()),
+      readAsset: (path) => File(path).readAsString(),
+    );
+    final creators = await c.creators();
+    expect(creators.map((x) => x.id), contains('manal-alalem'));
+    expect(
+      creators.every(
+        (x) => x.channelUrl.startsWith('https://www.youtube.com/'),
+      ),
+      isTrue,
+    );
+    expect(
+      () => Creator.fromJson({
+        'id': 'x',
+        'name': 'x',
+        'short': 'x',
+        'channelUrl': 'https://evil.example',
+      }),
+      throwsFormatException,
+    );
+  });
+
   test('without an account the community actions are refused', () async {
     final c = SofraController(
       store: f.Store(),
