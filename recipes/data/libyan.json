@@ -1,0 +1,174 @@
+{
+  "cuisine": "ليبي",
+  "cuisineSlug": "libyan",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "mw-mbakbaka",
+      "name": "مبكبكة ليبية",
+      "nameEn": "Libyan Mbakbaka",
+      "cuisine": "ليبي",
+      "category": "طبق رئيسي",
+      "description": "مكرونة ليبية حارة تُطهى مباشرة في مرق اللحم والطماطم المتبل حتى تتشرب الصلصة.",
+      "servings": 4,
+      "prepTime": 15,
+      "cookTime": 50,
+      "totalTime": 65,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "beef",
+          "name": "مكعبات لحم بقري أو ضاني",
+          "amount": 400,
+          "unit": "جرام"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم (معجون)",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل كبير مقطع شرائح رفيعة",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "hot-pepper",
+          "name": "فلفل أخضر حار",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم",
+          "amount": 4,
+          "unit": "فص"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم متوسطة مهروسة (بيوريه)",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "bell-pepper",
+          "name": "فلفل رومي أخضر مفروم",
+          "amount": 0.25,
+          "unit": "حبة"
+        },
+        {
+          "id": "pasta",
+          "name": "مكرونة ديتاليني ريجاتي غير مطبوخة",
+          "amount": 211,
+          "unit": "جرام",
+          "note": "حوالي 2 كوب"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة مطحونة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "turmeric",
+          "name": "كركم",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود مطحون",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة مطحونة",
+          "amount": 0.125,
+          "unit": "ملعقة صغيرة",
+          "note": "⅛ ملعقة صغيرة"
+        },
+        {
+          "id": "garlic-powder",
+          "name": "ثوم بودرة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "water",
+          "name": "ماء مغلي",
+          "amount": 5,
+          "unit": "كوب"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن زيت الزيتون في قدر واسع وضع مكعبات اللحم حتى تظهر عليها بقع محمرة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "أضف شرائح البصل وقلّب حتى تصبح شفافة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الثوم والفلفل الحار وقلّب دقيقة، ثم أضف الطماطم المهروسة.",
+          "duration": 1
+        },
+        {
+          "n": 4,
+          "text": "اترك الطماطم تطهى قليلًا مع التقليب.",
+          "duration": 2
+        },
+        {
+          "n": 5,
+          "text": "أضف معجون الطماطم والبهارات والملح وقلّب على نار متوسطة هادئة.",
+          "duration": 2
+        },
+        {
+          "n": 6,
+          "text": "أضف الفلفل الرومي وقلّب دقيقة.",
+          "duration": 1
+        },
+        {
+          "n": 7,
+          "text": "صب الماء المغلي واترك اللحم يطهى على نار متوسطة حتى ينضج (30–40 دقيقة).",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 8,
+          "text": "بعد نضج اللحم أضف المكرونة واتركها تنضج في المرق (16–18 دقيقة).",
+          "duration": 16,
+          "passive": true
+        },
+        {
+          "n": 9,
+          "text": "قدّمها ساخنة مع سلطة أو خبز.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.munatycooking.com/libyan-mbakbaka/ | الموقع: Munaty Cooking | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}

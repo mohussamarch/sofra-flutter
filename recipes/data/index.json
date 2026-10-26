@@ -30,7 +30,7 @@
       "name": "يوناني",
       "slug": "greek",
       "file": "greek.json",
-      "count": 17
+      "count": 18
     },
     {
       "name": "مجري",
@@ -72,7 +72,7 @@
       "name": "تونسي",
       "slug": "tunisian",
       "file": "tunisian.json",
-      "count": 1
+      "count": 2
     },
     {
       "name": "سويسري",
@@ -138,13 +138,13 @@
       "name": "تركي",
       "slug": "turkish",
       "file": "turkish.json",
-      "count": 12
+      "count": 14
     },
     {
       "name": "هندي",
       "slug": "indian",
       "file": "indian.json",
-      "count": 22
+      "count": 23
     },
     {
       "name": "عالمي متنوع",
@@ -186,7 +186,7 @@
       "name": "إندونيسي",
       "slug": "indonesian",
       "file": "indonesian.json",
-      "count": 2
+      "count": 3
     },
     {
       "name": "أيرلندي",
@@ -204,19 +204,19 @@
       "name": "باكستاني",
       "slug": "pakistani",
       "file": "pakistani.json",
-      "count": 3
+      "count": 4
     },
     {
       "name": "مغربي",
       "slug": "moroccan",
       "file": "moroccan.json",
-      "count": 9
+      "count": 12
     },
     {
       "name": "ماليزي",
       "slug": "malaysian",
       "file": "malaysian.json",
-      "count": 0
+      "count": 1
     },
     {
       "name": "برازيلي",
@@ -403,6 +403,24 @@
       "slug": "jordanian",
       "file": "jordanian.json",
       "count": 2
+    },
+    {
+      "name": "جزائري",
+      "slug": "algerian",
+      "file": "algerian.json",
+      "count": 2
+    },
+    {
+      "name": "ليبي",
+      "slug": "libyan",
+      "file": "libyan.json",
+      "count": 1
+    },
+    {
+      "name": "سوداني",
+      "slug": "sudanese",
+      "file": "sudanese.json",
+      "count": 1
     }
   ],
   "categories": [
@@ -12499,6 +12517,246 @@
       "file": "saudi.json",
       "catalogStatus": "active",
       "cuisineGroup": "saudi"
+    },
+    {
+      "id": "mw-harira",
+      "name": "حريرة مغربية",
+      "nameEn": "Moroccan Harira Soup",
+      "cuisine": "مغربي",
+      "category": "شوربة",
+      "servings": 4,
+      "totalTime": 70,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 20,
+      "stepCount": 6,
+      "file": "moroccan.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "moroccan"
+    },
+    {
+      "id": "mw-zaalouk",
+      "name": "زعلوك",
+      "nameEn": "Moroccan Zaalouk (Eggplant and Tomato Salad)",
+      "cuisine": "مغربي",
+      "category": "سلطة",
+      "servings": 4,
+      "totalTime": 60,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 13,
+      "stepCount": 6,
+      "file": "moroccan.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "moroccan"
+    },
+    {
+      "id": "mw-loubia-bel-kamoun",
+      "name": "لوبيا بالكمون جزائرية",
+      "nameEn": "Algerian Butter Bean Stew (Loubia Bel Kamoun)",
+      "cuisine": "جزائري",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 70,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 8,
+      "stepCount": 6,
+      "file": "algerian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "mw-kefta-mkaouara",
+      "name": "طاجين كفتة بالطماطم والبيض (كفتة مقاورة)",
+      "nameEn": "Moroccan Kefta Mkaouara (Meatball Tagine with Tomato Sauce)",
+      "cuisine": "مغربي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 70,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 26,
+      "stepCount": 10,
+      "file": "moroccan.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "moroccan"
+    },
+    {
+      "id": "mw-lablabi",
+      "name": "لبلابي تونسي",
+      "nameEn": "Tunisian Lablabi (Spiced Chickpea and Bread Soup)",
+      "cuisine": "تونسي",
+      "category": "شوربة",
+      "servings": 6,
+      "totalTime": 100,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 21,
+      "stepCount": 6,
+      "file": "tunisian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "mw-chorba-frik",
+      "name": "شربة فريك جزائرية",
+      "nameEn": "Chorba Frik (Algerian Lamb and Freekeh Soup)",
+      "cuisine": "جزائري",
+      "category": "شوربة",
+      "servings": 2,
+      "totalTime": 85,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 15,
+      "stepCount": 8,
+      "file": "algerian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "mw-mbakbaka",
+      "name": "مبكبكة ليبية",
+      "nameEn": "Libyan Mbakbaka",
+      "cuisine": "ليبي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 65,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 16,
+      "stepCount": 9,
+      "file": "libyan.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "mw-salatat-dakwa",
+      "name": "سلطة الدكوة السودانية",
+      "nameEn": "Salatat Dakwa (Sudanese Peanut Salad)",
+      "cuisine": "سوداني",
+      "category": "سلطة",
+      "servings": 4,
+      "totalTime": null,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 11,
+      "stepCount": 5,
+      "file": "sudanese.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "mw-karniyarik",
+      "name": "قرني يارق (باذنجان محشي باللحم المفروم)",
+      "nameEn": "Karnıyarık (Turkish Stuffed Aubergines)",
+      "cuisine": "تركي",
+      "category": "طبق رئيسي",
+      "servings": 6,
+      "totalTime": 90,
+      "difficulty": "متوسط",
+      "tags": [],
+      "ingredientCount": 13,
+      "stepCount": 9,
+      "file": "turkish.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "turkish"
+    },
+    {
+      "id": "mw-lahmacun",
+      "name": "لحم بعجين تركي (لحمجون)",
+      "nameEn": "Turkish Lahmacun",
+      "cuisine": "تركي",
+      "category": "مخبوزات",
+      "servings": 4,
+      "totalTime": 50,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 23,
+      "stepCount": 8,
+      "file": "turkish.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "turkish"
+    },
+    {
+      "id": "mw-chana-masala",
+      "name": "تشانا ماسالا (حمص بالماسالا)",
+      "nameEn": "Chana Masala (Chickpea Masala)",
+      "cuisine": "هندي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 50,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 20,
+      "stepCount": 12,
+      "file": "indian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "indian"
+    },
+    {
+      "id": "mw-chicken-karahi",
+      "name": "دجاج كراهي باكستاني",
+      "nameEn": "Pakistani Chicken Karahi",
+      "cuisine": "باكستاني",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 30,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 14,
+      "stepCount": 9,
+      "file": "pakistani.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "mw-nasi-lemak",
+      "name": "ناسي لماك ماليزي",
+      "nameEn": "Malaysian Nasi Lemak (Coconut Rice with Sambal)",
+      "cuisine": "ماليزي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 120,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 23,
+      "stepCount": 11,
+      "file": "malaysian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "mw-nasi-goreng",
+      "name": "ناسي غورينغ (أرز مقلي إندونيسي)",
+      "nameEn": "Nasi Goreng (Indonesian Fried Rice)",
+      "cuisine": "إندونيسي",
+      "category": "طبق رئيسي",
+      "servings": 4,
+      "totalTime": 20,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 15,
+      "stepCount": 6,
+      "file": "indonesian.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "other"
+    },
+    {
+      "id": "mw-spanakopita",
+      "name": "سباناكوبيتا (فطيرة السبانخ والفيتا اليونانية)",
+      "nameEn": "Greek Spanakopita",
+      "cuisine": "يوناني",
+      "category": "مخبوزات",
+      "servings": 12,
+      "totalTime": 55,
+      "difficulty": "غير محدد",
+      "tags": [],
+      "ingredientCount": 15,
+      "stepCount": 10,
+      "file": "greek.json",
+      "catalogStatus": "active",
+      "cuisineGroup": "greek"
     }
   ],
   "cuisineGroups": [
@@ -12543,7 +12801,7 @@
       ],
       "kind": "primary",
       "order": 4,
-      "count": 9
+      "count": 12
     },
     {
       "id": "italian",
@@ -12573,7 +12831,7 @@
       ],
       "kind": "primary",
       "order": 7,
-      "count": 17
+      "count": 18
     },
     {
       "id": "spanish",
@@ -12593,7 +12851,7 @@
       ],
       "kind": "primary",
       "order": 9,
-      "count": 12
+      "count": 14
     },
     {
       "id": "chinese",
@@ -12624,7 +12882,7 @@
       ],
       "kind": "primary",
       "order": 12,
-      "count": 22
+      "count": 23
     },
     {
       "id": "thai",
@@ -12703,11 +12961,14 @@
         "هولندي",
         "يمني",
         "إماراتي",
-        "كويتي"
+        "كويتي",
+        "جزائري",
+        "ليبي",
+        "سوداني"
       ],
       "kind": "secondary",
       "order": null,
-      "count": 117
+      "count": 125
     }
   ],
   "cuisinePolicy": {

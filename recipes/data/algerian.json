@@ -1,0 +1,266 @@
+{
+  "cuisine": "جزائري",
+  "cuisineSlug": "algerian",
+  "version": "1.2.0",
+  "recipes": [
+    {
+      "id": "mw-loubia-bel-kamoun",
+      "name": "لوبيا بالكمون جزائرية",
+      "nameEn": "Algerian Butter Bean Stew (Loubia Bel Kamoun)",
+      "cuisine": "جزائري",
+      "category": "طبق رئيسي",
+      "description": "يخنة جزائرية بسيطة من الفاصوليا البيضاء الكبيرة في صلصة طماطم بالثوم والكمون (الدرسة).",
+      "servings": 4,
+      "prepTime": 10,
+      "cookTime": 60,
+      "totalTime": 70,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "white-beans",
+          "name": "فاصوليا بيضاء كبيرة (زبدية/ليما) مجففة",
+          "amount": 500,
+          "unit": "جرام",
+          "note": "أو 750 جرام معلبة كبديل"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم",
+          "amount": 6,
+          "unit": "فص"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cumin",
+          "name": "كمون مطحون",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم (معجون)",
+          "amount": 1,
+          "unit": "ملعقة كبيرة",
+          "note": "ملعقة كبيرة ممتلئة"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 4,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "bay-leaf",
+          "name": "ورق لورا",
+          "amount": 1,
+          "unit": "ورقة"
+        },
+        {
+          "id": "water",
+          "name": "ماء مغلي",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "انقع الفاصوليا المجففة عدة ساعات، أو اغسل المعلبة وصفّها.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 2,
+          "text": "اطبخ الفاصوليا المنقوعة في قدر الضغط حتى تطرى.",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "اهرس الثوم مع الكمون والملح حتى يصبح معجونًا ناعمًا (الدرسة)، وخففه بقليل من الماء.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "سخّن زيت الزيتون مع ورقة اللورا، ثم أضف معجون الطماطم والدرسة وقلّب حتى ينفصل الزيت.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "صب الماء المغلي ثم أضف الفاصوليا، واتركها تغلي بهدوء حتى تتكثف الصلصة وتطرى الحبوب.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 6,
+          "text": "تذوّق واضبط الملح أو الكمون أو معجون الطماطم حسب الحاجة، وقدّمها ساخنة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.amourdecuisine.fr/en/article-algerian-butter-bean-stew-loubia-bel-kamoun.html | الموقع: Amour de cuisine | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "mw-chorba-frik",
+      "name": "شربة فريك جزائرية",
+      "nameEn": "Chorba Frik (Algerian Lamb and Freekeh Soup)",
+      "cuisine": "جزائري",
+      "category": "شوربة",
+      "description": "شوربة جزائرية بلحم الضأن والفريك والحمص في مرق طماطم متبل بالنعناع والقرفة.",
+      "servings": 2,
+      "prepTime": 10,
+      "cookTime": 75,
+      "totalTime": 85,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "freekeh",
+          "name": "فريك",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "onion",
+          "name": "بصل صغير",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "lamb",
+          "name": "لحم ضاني مقطع مكعبات",
+          "amount": 6,
+          "unit": "أونصة"
+        },
+        {
+          "id": "tomato",
+          "name": "طماطم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "cilantro",
+          "name": "كزبرة خضراء",
+          "amount": 1,
+          "unit": "حفنة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت نباتي",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "paprika",
+          "name": "بابريكا",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة ناشفة مطحونة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "cinnamon",
+          "name": "قرفة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "dried-mint",
+          "name": "نعناع ناشف",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "note": "يُضبط لاحقًا حسب الرغبة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة",
+          "note": "يُضبط لاحقًا حسب الرغبة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "صلصة طماطم (معجون)",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "water",
+          "name": "ماء",
+          "amount": 4,
+          "unit": "كوب"
+        },
+        {
+          "id": "chickpeas",
+          "name": "حمص (معلب أو مجفف منقوع)",
+          "amount": 0.5,
+          "unit": "كوب"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اغسل الفريك بماء بارد وانزع أي حبيبات داكنة غريبة، ثم صفِّه واتركه جانبًا.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "افرم البصل ناعمًا وقطّع اللحم مكعبات صغيرة، وابشر الطماطم بعد قسمها نصفين لتأخذ لبها وتتخلص من القشر، وافرم الكزبرة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "سخّن الزيت في قدر متوسط على نار متوسطة وقلّب البصل بضع دقائق حتى يطرى، ثم أضف اللحم وحمّره بهدوء من كل الجهات.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "أضف البهارات الجافة والنعناع والملح والفلفل وقلّب دقيقة.",
+          "duration": 1
+        },
+        {
+          "n": 5,
+          "text": "أضف الكزبرة ومعجون الطماطم والطماطم المبشورة ثم الماء، وأضف الحمص الآن إن كان مجففًا ومنقوعًا.",
+          "duration": null
+        },
+        {
+          "n": 6,
+          "text": "غطِّ القدر واتركه حتى يبدأ في الغليان، ثم اخفض النار واتركه يغلي بهدوء حتى يطرى اللحم (45 دقيقة إلى ساعة).",
+          "duration": 45,
+          "passive": true
+        },
+        {
+          "n": 7,
+          "text": "أضف الفريك والحمص المعلب إن استخدمته، وغطِّ القدر حتى ينضج الفريك.",
+          "duration": 15,
+          "passive": true
+        },
+        {
+          "n": 8,
+          "text": "قدّمها ساخنة مع قليل من الكزبرة المفرومة على الوجه.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.carolinescooking.com/chorba-frik/ | الموقع: Caroline's Cooking | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    }
+  ]
+}
