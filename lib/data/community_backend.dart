@@ -124,10 +124,10 @@ class MemoryCommunity implements CommunityBackend {
     final code = normalizeInvite(raw);
     final invite = server.invites[code];
     if (!validInvite(code) || invite == null) {
-      throw const InviteProblem('الكود ده مش موجود.');
+      throw const InviteProblem('هذا الرمز غير موجود.');
     }
     if (!invite.$2.isAfter(server.clock())) {
-      throw const InviteProblem('الكود ده خلص. اطلب كود جديد.');
+      throw const InviteProblem('انتهت صلاحية هذا الرمز. اطلب رمزًا جديدًا.');
     }
     final k = server.kitchens[invite.$1]!;
     final members = k['members'] as List;

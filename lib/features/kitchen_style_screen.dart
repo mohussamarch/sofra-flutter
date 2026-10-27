@@ -16,7 +16,7 @@ class KitchenStyleScreen extends StatefulWidget {
   static const pending = [
     (id: 'curtain', name: 'الستارة', icon: Icons.curtains_outlined),
     (id: 'rug', name: 'السجادة', icon: Icons.texture_rounded),
-    (id: 'table', name: 'الترابيزة', icon: Icons.table_restaurant_outlined),
+    (id: 'table', name: 'الطاولة', icon: Icons.table_restaurant_outlined),
   ];
 
   /// Cabinet colours; null is the colour of the Blender render.
@@ -68,10 +68,10 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
           children: [
             for (final (i, label) in const [
               'المطبخ كله',
-              'افتح التلاجة',
+              'افتح الثلاجة',
               'افتح الفريزر',
             ].indexed)
-              ChoiceChip(
+              SofraChip(
                 key: ValueKey('style-shot-$i'),
                 label: Text(label),
                 selected: shot == i,
@@ -116,7 +116,7 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
                 ),
               ),
               const Text(
-                'جاية في المطبخ 3D',
+                'قريبًا',
                 style: TextStyle(color: Sofra.muted, fontSize: 13),
               ),
             ],

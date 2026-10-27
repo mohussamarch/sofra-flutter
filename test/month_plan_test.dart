@@ -33,7 +33,7 @@ void main() {
     );
     await tester.pumpAndSettle();
     await tapKey(tester, 'month-pick-eg-koshari');
-    await tester.tap(find.text('كمّل الأيام الفاضية'));
+    await tester.tap(find.text('أكمل الأيام الفارغة'));
     await tester.pumpAndSettle();
     await tapKey(tester, 'month-calc');
     expect(find.byKey(const ValueKey('month-unknown')), findsOneWidget);

@@ -44,7 +44,7 @@ List<ShelfItem> zoneShelfItems(BuildContext context, StorageZone zone) {
         ),
         label: c.ingredientName(lot.ingredientId),
         amount: lot.quantity == null
-            ? 'كمية مش محددة'
+            ? 'كمية غير محددة'
             : c.amountText(lot.ingredientId, lot.quantity!, lot.unit),
         onTap: () => editStockQuantity(context, lot),
         group: c.category(lot.ingredientId) ?? 'أخرى',
@@ -60,7 +60,7 @@ List<ShelfItem> leftoverShelfItems(BuildContext context) => [
       art: CoveredDish(variant: i % 3),
       label: dish.name,
       amount: dish.dueOn(DateTime.now())
-          ? '${recipeNumber(dish.servings)} حصة · جه معادها'
+          ? '${recipeNumber(dish.servings)} حصة · حان موعدها'
           : '${recipeNumber(dish.servings)} حصة',
       onTap: () => _warmUp(context, dish),
       group: 'بواقي',
@@ -88,7 +88,7 @@ Future<void> _warmUp(BuildContext context, LeftoverDish dish) async {
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Text('سخّنت كام حصة؟'),
+                const Text('كم حصة سخّنت؟'),
                 const SizedBox(height: 8),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -110,7 +110,7 @@ Future<void> _warmUp(BuildContext context, LeftoverDish dish) async {
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(ctx, false),
-                child: const Text('لسه'),
+                child: const Text('ليس بعد'),
               ),
               FilledButton(
                 key: const ValueKey('eat-leftover'),
@@ -127,15 +127,28 @@ Future<void> _warmUp(BuildContext context, LeftoverDish dish) async {
 }
 
 /// Full-screen shelves for a place in the kitchen, over a dark backdrop.
+/// The empty, lit fridge seen from the front (Codex R24, CL2C-002/1): the
+/// body stays still as a backdrop and only the shelves turn inside its walls.
+/// Bounds are the inner walls as shares of the 768×1024 image, top-left.
+const fridgeInteriorBounds = (
+  left: .3347,
+  right: .6653,
+  top: .1571,
+  bottom: .7662,
+);
+String fridgeInterior(String lighting) =>
+    'assets/scenes/kitchen/fridge-interior-r24/cream-$lighting.png';
+
 Future<void> showShelves(
   BuildContext context, {
   required String title,
   required List<ShelfItem> Function(BuildContext) items,
-  String empty = 'لسه فاضي.',
+  String empty = 'فارغ حتى الآن.',
   VoidCallback? onAdd,
   VoidCallback? onAll,
   Color? barrier,
   double width = 1,
+  String? interior,
 }) {
   final scope = SofraScope.of(context);
   return Navigator.of(context).push(
@@ -148,15 +161,46 @@ Future<void> showShelves(
         controller: scope.notifier!,
         nav: scope.nav,
         child: Builder(
-          builder: (context) => ShelfWheel(
-            title: title,
-            items: items(context),
-            empty: empty,
-            onAdd: onAdd,
-            onAll: onAll,
-            width: width,
-            onClose: () => Navigator.pop(context),
-          ),
+          builder: (context) {
+            Widget wheel(double share) => ShelfWheel(
+              title: title,
+              items: items(context),
+              empty: empty,
+              onAdd: onAdd,
+              onAll: onAll,
+              width: share,
+              onClose: () => Navigator.pop(context),
+            );
+            if (interior == null) return wheel(width);
+            return LayoutBuilder(
+              builder: (context, box) {
+                // Scale the render so its inner walls span most of the
+                // screen, then centre the interior; shelves fill between.
+                const b = fridgeInteriorBounds;
+                final scale = [
+                  box.maxWidth * .9 / (768 * (b.right - b.left)),
+                  box.maxHeight * .78 / (1024 * (b.bottom - b.top)),
+                ].reduce((x, y) => x < y ? x : y);
+                final w = 768 * scale, h = 1024 * scale;
+                final inner = w * (b.right - b.left);
+                return Stack(
+                  children: [
+                    Positioned(
+                      key: const ValueKey('fridge-interior'),
+                      left: box.maxWidth / 2 - w * (b.left + b.right) / 2,
+                      top: box.maxHeight * .56 - h * (b.top + b.bottom) / 2,
+                      width: w,
+                      height: h,
+                      child: IgnorePointer(
+                        child: Image.asset(interior, fit: BoxFit.fill),
+                      ),
+                    ),
+                    Positioned.fill(child: wheel(inner / box.maxWidth)),
+                  ],
+                );
+              },
+            );
+          },
         ),
       ),
       transitionsBuilder: (_, animation, _, child) => FadeTransition(
@@ -178,7 +222,7 @@ class ShelfWheel extends StatefulWidget {
     required this.title,
     required this.items,
     required this.onClose,
-    this.empty = 'لسه فاضي.',
+    this.empty = 'فارغ حتى الآن.',
     this.onAdd,
     this.onAll,
     this.width = 1,
@@ -244,7 +288,7 @@ class _ShelfWheelState extends State<ShelfWheel>
     }.toList();
     Widget chip(String key, String label, String? value) => Padding(
       padding: const EdgeInsetsDirectional.only(end: 6),
-      child: ChoiceChip(
+      child: SofraChip(
         key: ValueKey(key),
         label: Text(label),
         selected: group == value,
@@ -263,7 +307,7 @@ class _ShelfWheelState extends State<ShelfWheel>
                 key: const ValueKey('shelves-query'),
                 autofocus: true,
                 decoration: const InputDecoration(
-                  hintText: 'دوّر على حاجة',
+                  hintText: 'ابحث عن شيء',
                   border: InputBorder.none,
                   icon: Icon(Icons.search_rounded),
                 ),
@@ -279,7 +323,7 @@ class _ShelfWheelState extends State<ShelfWheel>
                 children: [
                   Padding(
                     padding: const EdgeInsetsDirectional.only(end: 6),
-                    child: ActionChip(
+                    child: SofraChip(
                       key: const ValueKey('shelves-order'),
                       avatar: const Icon(Icons.swap_vert_rounded, size: 18),
                       label: Text(byKind ? 'حسب النوع' : 'آخر ما وُضع'),
@@ -375,10 +419,10 @@ class _ShelfWheelState extends State<ShelfWheel>
                             Text(
                               countText(
                                 widget.items.length,
-                                'حاجة',
-                                'حاجتين',
-                                'حاجات',
-                                empty: 'فاضي',
+                                'شيء',
+                                'شيئان',
+                                'أشياء',
+                                empty: 'فارغ',
                               ),
                               style: const TextStyle(
                                 color: Sofra.muted,
@@ -412,13 +456,13 @@ class _ShelfWheelState extends State<ShelfWheel>
                       if (widget.onAll != null)
                         IconButton(
                           key: const ValueKey('shelves-all'),
-                          tooltip: 'كل الخزين',
+                          tooltip: 'كل المخزون',
                           onPressed: widget.onAll,
                           icon: const Icon(Icons.inventory_2_outlined),
                         ),
                       IconButton(
                         key: const ValueKey('shelves-close'),
-                        tooltip: 'قفل',
+                        tooltip: 'إغلاق',
                         onPressed: widget.onClose,
                         icon: const Icon(Icons.close_rounded),
                       ),
@@ -436,7 +480,7 @@ class _ShelfWheelState extends State<ShelfWheel>
                             padding: const EdgeInsets.all(20),
                             child: Text(
                               filtered
-                                  ? 'مفيش حاجة بالاسم ده هنا.'
+                                  ? 'لا يوجد شيء بهذا الاسم هنا.'
                                   : widget.empty,
                               key: const ValueKey('shelves-empty'),
                               textAlign: TextAlign.center,

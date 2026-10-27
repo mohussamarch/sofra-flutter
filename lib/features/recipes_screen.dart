@@ -139,17 +139,20 @@ class _PaperEntry extends StatelessWidget {
     final details = [
       '${row['cuisine']}',
       minutesLabel(row['totalTime']),
-      if (row['difficulty'] != null) '${row['difficulty']}',
+      // "Not stated by the source" is noise on a list row; say nothing.
+      if (row['difficulty'] != null &&
+          !'${row['difficulty']}'.startsWith('غير محدد'))
+        '${row['difficulty']}',
     ].join(' · ');
     final shape = RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(Sofra.r16),
-      side: const BorderSide(color: Paper.ink, width: 2),
+      side: BorderSide(color: Paper.ink.withValues(alpha: .12)),
     );
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: PressScale(
         child: Material(
-          color: Colors.white,
+          color: Sofra.surface,
           shape: shape,
           child: InkWell(
             key: ValueKey('recipe-$id'),
@@ -164,10 +167,9 @@ class _PaperEntry extends StatelessWidget {
                     height: 64,
                     decoration: BoxDecoration(
                       color: artKind(id).isEven
-                          ? const Color(0xFFFFE7B8)
-                          : const Color(0xFFDDEFD9),
+                          ? Sofra.accentTint
+                          : Sofra.okTint,
                       shape: BoxShape.circle,
-                      border: Border.all(color: Paper.ink, width: 2),
                     ),
                     child: ClipOval(
                       child: MealArt(kind: artKind(id), size: 60),
@@ -178,21 +180,11 @@ class _PaperEntry extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          '${row['name']}',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 17,
-                            color: Paper.ink,
-                          ),
-                        ),
+                        Text('${row['name']}', style: Sofra.heading(18)),
                         const SizedBox(height: 2),
                         Text(
                           details,
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Paper.ink.withValues(alpha: .65),
-                          ),
+                          style: TextStyle(fontSize: 13, color: Sofra.muted),
                         ),
                       ],
                     ),
@@ -210,7 +202,7 @@ class _PaperEntry extends StatelessWidget {
                       saved
                           ? Icons.bookmark_rounded
                           : Icons.bookmark_border_rounded,
-                      color: saved ? const Color(0xFFD9534F) : Paper.ink,
+                      color: saved ? Sofra.accent : Sofra.muted,
                     ),
                   ),
                 ],
@@ -303,7 +295,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
           controller: search,
           onChanged: (_) => _refresh(),
           decoration: const InputDecoration(
-            hintText: 'نفسك في أكلة إيه؟',
+            hintText: 'ابحث عن وصفة',
             prefixIcon: Icon(Icons.search_rounded),
           ),
         ),
@@ -323,7 +315,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  ChoiceChip(
+                  SofraChip(
                     label: const Text('كل المطابخ'),
                     selected: group == null,
                     onSelected: (_) {
@@ -334,7 +326,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   for (final g in groups)
                     Padding(
                       padding: const EdgeInsetsDirectional.only(start: 8),
-                      child: ChoiceChip(
+                      child: SofraChip(
                         label: Text('${g['name']} · ${g['count']}'),
                         selected: group == g['id'],
                         onSelected: (_) {
@@ -349,28 +341,31 @@ class _RecipesScreenState extends State<RecipesScreen> {
           },
         ),
         const SizedBox(height: 10),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            for (final f in _filters)
-              ChoiceChip(
-                label: Text(f),
-                selected: filter == f,
-                selectedColor: Sofra.mint,
-                onSelected: (_) => setState(() {
-                  filter = f;
-                  limit = _page;
-                }),
-              ),
-          ],
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              for (final f in _filters)
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(end: 8),
+                  child: SofraChip(
+                    label: Text(f),
+                    selected: filter == f,
+                    onSelected: (_) => setState(() {
+                      filter = f;
+                      limit = _page;
+                    }),
+                  ),
+                ),
+            ],
+          ),
         ),
         const SizedBox(height: 20),
         FutureBuilder<List<Object>>(
           future: _view,
           builder: (context, snap) {
             if (snap.hasError) {
-              return const ErrorBlock('تعذّر تحميل الوصفات. جرّب تاني.');
+              return const ErrorBlock('تعذّر تحميل الوصفات. حاول مرة أخرى.');
             }
             final data = snap.data;
             if (data == null) return const LoadingBlock();
@@ -419,7 +414,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                       children: [
                         const ChefArt(size: 170, compact: true),
                         const Text(
-                          'ندوّر على حاجة تانية؟',
+                          'نبحث عن شيء آخر؟',
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.w800,
@@ -448,7 +443,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   DepthButton(
                     secondary: true,
                     label:
-                        'اعرض ${rows.length - shown.length > _page ? _page : rows.length - shown.length} كمان',
+                        'اعرض ${rows.length - shown.length > _page ? _page : rows.length - shown.length} أخرى',
                     onPressed: () => setState(() => limit += _page),
                   ),
               ],

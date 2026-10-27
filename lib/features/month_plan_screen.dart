@@ -11,9 +11,9 @@ import 'common.dart';
 /// (DateTime.weekday numbers).
 const _week = [
   (6, 'السبت'),
-  (7, 'الحد'),
-  (1, 'الاتنين'),
-  (2, 'التلات'),
+  (7, 'الأحد'),
+  (1, 'الاثنين'),
+  (2, 'الثلاثاء'),
   (3, 'الأربع'),
   (4, 'الخميس'),
   (5, 'الجمعة'),
@@ -112,7 +112,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
     } catch (_) {
       if (mounted) {
         setState(
-          () => error = 'معرفناش نحسب الخطة دي. راجع الأكلات وجرب تاني.',
+          () => error = 'تعذّر حساب هذه الخطة. راجع الأكلات وحاول مرة أخرى.',
         );
       }
     } finally {
@@ -129,14 +129,14 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
         builder: (ctx) => Directionality(
           textDirection: TextDirection.rtl,
           child: AlertDialog(
-            title: const Text('فيه أيام عليها أكل'),
+            title: const Text('توجد أيام عليها أكل'),
             content: Text(
-              'فيه ${conflicts.length} وجبة متخططة في نفس الأيام. نعمل إيه فيهم؟',
+              'توجد ${conflicts.length} وجبة مخططة في الأيام نفسها. ماذا نفعل بها؟',
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(ctx),
-                child: const Text('لسه'),
+                child: const Text('ليس بعد'),
               ),
               TextButton(
                 key: const ValueKey('month-replace'),
@@ -146,7 +146,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
               FilledButton(
                 key: const ValueKey('month-keep'),
                 onPressed: () => Navigator.pop(ctx, 'keep'),
-                child: const Text('سيب الموجود'),
+                child: const Text('أبقِ الموجود'),
               ),
             ],
           ),
@@ -170,10 +170,10 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
     if (ok) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('الخطة اتحطت على السفرة.')));
+      ).showSnackBar(const SnackBar(content: Text('أُضيفت الخطة إلى السفرة.')));
       Navigator.pop(context);
     } else {
-      setState(() => error = 'الخطة متحفظتش. احسبها تاني وجرب.');
+      setState(() => error = 'لم تُحفظ الخطة. احسبها مرة أخرى.');
     }
   }
 
@@ -234,12 +234,12 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
             footer: plan?.outcome == MonthlyBudgetSearchOutcome.affordableFound
                 ? DepthButton(
                     key: const ValueKey('month-accept'),
-                    label: 'حط الخطة على السفرة',
+                    label: 'ضع الخطة على السفرة',
                     onPressed: busy ? null : _accept,
                   )
                 : DepthButton(
                     key: const ValueKey('month-calc'),
-                    label: busy ? 'بنحسب…' : 'احسب الشهر',
+                    label: busy ? 'جارٍ الحساب…' : 'احسب الشهر',
                     onPressed: _ready && !busy ? _calculate : null,
                   ),
             children: [
@@ -247,15 +247,15 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
               Wrap(
                 spacing: 8,
                 children: [
-                  ChoiceChip(
+                  SofraChip(
                     key: const ValueKey('month-this'),
-                    label: const Text('الشهر ده'),
+                    label: const Text('هذا الشهر'),
                     selected: !nextMonth,
                     onSelected: (_) => _changed(() => nextMonth = false),
                   ),
-                  ChoiceChip(
+                  SofraChip(
                     key: const ValueKey('month-next'),
-                    label: const Text('الشهر الجاي'),
+                    label: const Text('الشهر القادم'),
                     selected: nextMonth,
                     onSelected: (_) => _changed(() => nextMonth = true),
                   ),
@@ -274,7 +274,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                 ),
                 onChanged: (_) => _changed(() {}),
               ),
-              const SectionTitle('الوجبات اللي هنخططها'),
+              const SectionTitle('الوجبات التي سنخطط لها'),
               Wrap(
                 spacing: 8,
                 children: [
@@ -296,11 +296,11 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
               ),
               SectionTitle(
                 'منيو الأسبوع',
-                action: 'كمّل الأيام الفاضية',
+                action: 'أكمل الأيام الفارغة',
                 onAction: _fillWeek,
               ),
               const Text(
-                'الأسبوع ده هيتكرر طول الشهر. تقدر تحط أكلتين في نفس الخانة، ونختار الأوفر.',
+                'يتكرر هذا الأسبوع طوال الشهر. يمكنك وضع أكلتين في الخانة نفسها، ونختار الأوفر.',
                 style: TextStyle(color: Sofra.muted, fontSize: 13),
               ),
               const SizedBox(height: 8),
@@ -344,9 +344,9 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                 contentPadding: EdgeInsets.zero,
                 value: omitUnmeasured,
                 onChanged: (v) => _changed(() => omitUnmeasured = v),
-                title: const Text('سيب الحاجات اللي من غير كمية برّه الحساب'),
+                title: const Text('استبعد الأشياء التي ليس لها كمية من الحساب'),
                 subtitle: const Text(
-                  'زي «ملح حسب الرغبة». لو قفلتها، التكلفة هتفضل غير معروفة.',
+                  'مثل «ملح حسب الرغبة». إذا أوقفتها، ستبقى التكلفة غير معروفة.',
                 ),
               ),
               if (error != null)
@@ -395,7 +395,7 @@ class _Cell extends StatelessWidget {
                 style: const TextStyle(fontSize: 11, color: Sofra.muted),
               ),
               if (names.isEmpty)
-                const Text('+ اختار', style: TextStyle(color: Sofra.muted))
+                const Text('+ اختر', style: TextStyle(color: Sofra.muted))
               else
                 for (final (i, n) in names.indexed)
                   Text(
@@ -450,7 +450,7 @@ class _RecipePickerState extends State<_RecipePicker> {
               child: TextField(
                 key: const ValueKey('month-pick-search'),
                 decoration: const InputDecoration(
-                  hintText: 'دوّر على أكلة',
+                  hintText: 'ابحث عن أكلة',
                   prefixIcon: Icon(Icons.search_rounded),
                 ),
                 onChanged: (v) => setState(() => query = v),
@@ -502,7 +502,7 @@ class _Result extends StatelessWidget {
             icon: Icons.check_circle_outline_rounded,
             color: Sofra.greenDark,
             text:
-                'الشهر ده هيكلفك شراء حوالي ${amount(best.forecast.purchaseTotal!)}، ويفضل من الميزانية ${amount(best.remainingAfterPurchases!)}.',
+                'يكلّفك هذا الشهر شراء نحو ${amount(best.forecast.purchaseTotal!)}، ويتبقى من الميزانية ${amount(best.remainingAfterPurchases!)}.',
           ),
         );
       case MonthlyBudgetSearchOutcome.noAffordableInSuppliedPools:
@@ -513,7 +513,7 @@ class _Result extends StatelessWidget {
             icon: Icons.warning_amber_rounded,
             color: const Color(0xFF995333),
             text:
-                'أوفر اختيار بيعدّي الميزانية بـ ${amount(cheapest.overrun!)}. جرب أكلات أوفر أو ضيف بديل في كام خانة.',
+                'أوفر اختيار يتجاوز الميزانية بـ ${amount(cheapest.overrun!)}. جرّب أكلات أوفر أو أضف بديلًا في بعض الخانات.',
           ),
         );
       case MonthlyBudgetSearchOutcome.indeterminate:
@@ -522,17 +522,17 @@ class _Result extends StatelessWidget {
             key: ValueKey('month-unknown'),
             icon: Icons.help_outline_rounded,
             color: Sofra.muted,
-            text: 'لسه مش عارفين التكلفة كلها.',
+            text: 'التكلفة الكاملة غير معروفة بعد.',
           ),
         );
     }
     final unpriced = plan.unpriced;
     if (unpriced.isNotEmpty) {
       children
-        ..add(const SectionTitle('سجّل أسعار دي'))
+        ..add(const SectionTitle('سجّل هذه الأسعار'))
         ..add(
           const Text(
-            'بسعرك انت، من آخر مرة اشتريت. مش هنخمّن أسعار.',
+            'بسعرك أنت، من آخر مرة اشتريت. لا نخمّن الأسعار.',
             style: TextStyle(color: Sofra.muted, fontSize: 13),
           ),
         );
@@ -556,7 +556,7 @@ class _Result extends StatelessWidget {
         const _Line(
           icon: Icons.straighten_rounded,
           color: Sofra.muted,
-          text: 'فيه مكونات متسجلة بوحدة مش بتتحول لوحدة الوصفة. حدد التحويل من صفحة الخزين.',
+          text: 'بعض المكونات مسجّلة بوحدة لا تتحول إلى وحدة الوصفة. حدد التحويل من صفحة المخزون.',
         ),
       );
     }
@@ -566,7 +566,7 @@ class _Result extends StatelessWidget {
           icon: Icons.info_outline_rounded,
           color: Sofra.muted,
           text:
-              'جربنا ${comparison.assessments.length} توليفة بس من البدائل؛ ممكن يكون فيه أوفر.',
+              'جرّبنا ${comparison.assessments.length} توليفة فقط من البدائل؛ قد توجد أوفر منها.',
         ),
       );
     }
@@ -575,7 +575,7 @@ class _Result extends StatelessWidget {
         _Line(
           icon: Icons.info_outline_rounded,
           color: Sofra.muted,
-          text: 'مش محسوب: ${plan.unmeasured.take(8).join('، ')}.',
+          text: 'غير محسوب: ${plan.unmeasured.take(8).join('، ')}.',
         ),
       );
     }

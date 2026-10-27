@@ -24,7 +24,7 @@ class MyRecipesStrip extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          ActionChip(
+          SofraChip(
             key: const ValueKey('my-recipe-new'),
             avatar: const Icon(Icons.edit_note_rounded, size: 18),
             label: const Text('وصفة من عندي'),
@@ -33,7 +33,7 @@ class MyRecipesStrip extends StatelessWidget {
           for (final r in mine)
             Padding(
               padding: const EdgeInsetsDirectional.only(start: 8),
-              child: ActionChip(
+              child: SofraChip(
                 key: ValueKey('my-recipe-${r.variantId}'),
                 avatar: const Icon(Icons.bookmark_rounded, size: 16),
                 label: Text(r.recipe.name),
@@ -91,13 +91,13 @@ Future<void> _planMine(BuildContext context, RecipeRevision r) async {
                 Wrap(
                   spacing: 8,
                   children: [
-                    ChoiceChip(
+                    SofraChip(
                       label: Text(c.market.today),
                       selected: !tomorrow,
                       onSelected: (_) => set(() => tomorrow = false),
                     ),
-                    ChoiceChip(
-                      label: const Text('بكرة'),
+                    SofraChip(
+                      label: const Text('غدًا'),
                       selected: tomorrow,
                       onSelected: (_) => set(() => tomorrow = true),
                     ),
@@ -108,7 +108,7 @@ Future<void> _planMine(BuildContext context, RecipeRevision r) async {
                   children: [
                     for (final MapEntry(key: s, value: label)
                         in mealSlots.entries)
-                      ChoiceChip(
+                      SofraChip(
                         label: Text(label),
                         selected: slot == s,
                         onSelected: (_) => set(() => slot = s),
@@ -118,7 +118,7 @@ Future<void> _planMine(BuildContext context, RecipeRevision r) async {
                 const SizedBox(height: 16),
                 DepthButton(
                   key: const ValueKey('my-recipe-plan'),
-                  label: 'حطها على السفرة',
+                  label: 'ضعها على السفرة',
                   onPressed: () => Navigator.pop(ctx, true),
                 ),
               ],
@@ -138,7 +138,7 @@ Future<void> _planMine(BuildContext context, RecipeRevision r) async {
   );
   if (planned && context.mounted) {
     ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('اتحطت على السفرة.')));
+        .showSnackBar(const SnackBar(content: Text('أُضيفت إلى السفرة.')));
   }
 }
 
@@ -244,15 +244,15 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
       );
       if (!mounted) return;
       if (id == null) {
-        setState(() => error = 'الوصفة متحفظتش. جرب تاني.');
+        setState(() => error = 'لم تُحفظ الوصفة. حاول مرة أخرى.');
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('الوصفة اتحفظت في وصفاتك.')),
+          const SnackBar(content: Text('حُفظت الوصفة في وصفاتك.')),
         );
         Navigator.pop(context);
       }
     } on ArgumentError {
-      setState(() => error = 'اكتب مطبخ محدد للوصفة، زي «مصري».');
+      setState(() => error = 'اكتب مطبخًا محددًا للوصفة، مثل «مصري».');
     } finally {
       if (mounted) setState(() => busy = false);
     }
@@ -271,7 +271,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
       body: ScreenBody(
         footer: DepthButton(
           key: const ValueKey('my-recipe-save'),
-          label: busy ? 'بنحفظ…' : 'احفظ الوصفة',
+          label: busy ? 'جارٍ الحفظ…' : 'احفظ الوصفة',
           onPressed: _ready && !busy ? _save : null,
         ),
         children: [
@@ -299,7 +299,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
             spacing: 6,
             children: [
               for (final k in _cuisines)
-                ActionChip(
+                SofraChip(
                   label: Text(k),
                   onPressed: () => setState(() => cuisine.text = k),
                 ),
@@ -334,7 +334,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
           const SizedBox(height: 10),
           Row(
             children: [
-              const Expanded(child: Text('بتكفي كام فرد؟')),
+              const Expanded(child: Text('تكفي كم فردًا؟')),
               IconButton(
                 onPressed: servings > 1
                     ? () => setState(() => servings--)
@@ -358,7 +358,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
             spacing: 6,
             children: [
               for (final k in _categories)
-                ChoiceChip(
+                SofraChip(
                   label: Text(k),
                   selected: category == k,
                   onSelected: (_) => setState(() => category = k),
@@ -369,7 +369,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
             spacing: 6,
             children: [
               for (final k in _levels)
-                ChoiceChip(
+                SofraChip(
                   label: Text(k),
                   selected: difficulty == k,
                   onSelected: (_) => setState(() => difficulty = k),
@@ -413,7 +413,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                       ),
                     ),
                   IconButton(
-                    tooltip: l.measured ? 'من غير كمية' : 'بكمية',
+                    tooltip: l.measured ? 'دون كمية' : 'بكمية',
                     onPressed: () => setState(() => l.measured = !l.measured),
                     icon: Icon(
                       l.measured
@@ -423,7 +423,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                     ),
                   ),
                   IconButton(
-                    tooltip: 'شيل',
+                    tooltip: 'احذف',
                     onPressed: () => setState(() => lines.removeAt(i)),
                     icon: const Icon(Icons.close_rounded, size: 20),
                   ),
@@ -453,7 +453,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                       controller: s.text,
                       onChanged: touch,
                       maxLines: null,
-                      decoration: const InputDecoration(hintText: 'هتعمل إيه'),
+                      decoration: const InputDecoration(hintText: 'ماذا ستفعل'),
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -476,7 +476,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
             ),
           const SizedBox(height: 8),
           const Text(
-            'القيم الغذائية مش هتتحسب للوصفة دي لحد ما نربط مكوناتها بمصدر.',
+            'لن تُحسب القيم الغذائية لهذه الوصفة حتى تُربط مكوناتها بمصدر.',
             style: TextStyle(color: Sofra.muted, fontSize: 12),
           ),
         ],
@@ -511,7 +511,7 @@ class _IngredientPickerState extends State<_IngredientPicker> {
                 key: const ValueKey('my-recipe-ingredient-search'),
                 autofocus: true,
                 decoration: const InputDecoration(
-                  hintText: 'دوّر على مكوّن',
+                  hintText: 'ابحث عن مكوّن',
                   prefixIcon: Icon(Icons.search_rounded),
                 ),
                 onChanged: (v) => setState(() => query = v),

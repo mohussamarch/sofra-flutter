@@ -19,7 +19,7 @@ class ChefArt extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Semantics(
     label: celebrate
-        ? 'شيف سفرة مبسوط وجاهز للطبخ'
+        ? 'شيف سفرة سعيد وجاهز للطبخ'
         : 'شيف سفرة، طماطماية مرحة بقبعة شيف',
     image: true,
     child: TweenAnimationBuilder<double>(

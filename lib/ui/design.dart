@@ -2,21 +2,45 @@ import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
 
-/// Sofra design tokens. The palette comes from the Blender kitchen itself:
-/// sage cabinets, cream walls, warm floor tiles and the terracotta curtain.
+/// Sofra design tokens, direction A (warm editorial, chosen by the owner):
+/// paper background, warm ink, one terracotta accent for actions.
 abstract final class Sofra {
-  static const ink = Color(0xFF2B3830);
-  static const muted = Color(0xFF6B766E);
-  static const green = Color(0xFF3F6B52);
-  static const greenDark = Color(0xFF2E5240);
-  static const sage = Color(0xFF8AA591);
-  static const mint = Color(0xFFE5EDE5);
-  static const cream = Color(0xFFFAF6EF);
-  static const sand = Color(0xFFF1E8DA);
-  static const line = Color(0xFFE6DFD2);
-  static const orange = Color(0xFFCF6747);
-  static const peach = Color(0xFFF7E4D8);
-  static const yellow = Color(0xFFF1D58C);
+  static const ink = Color(0xFF2A211B);
+  static const muted = Color(0xFF7A6C60);
+  static const accent = Color(0xFFB4522F);
+  static const accentDark = Color(0xFF8E3F23);
+  static const accentTint = Color(0xFFF4E4D9);
+  static const paper = Color(0xFFF7F1E6);
+  static const surface = Color(0xFFFFFDF8);
+
+  /// Meaning only: done / in stock, and missing / needs attention.
+  static const ok = Color(0xFF4E7356);
+  static const okTint = Color(0xFFE7EEE4);
+  static const warn = Color(0xFF9A5B1C);
+  static const warnTint = Color(0xFFF6E7D2);
+
+  // Older role names, kept so every screen moves to direction A at once.
+  static const green = accent;
+  static const greenDark = accentDark;
+  static const sage = Color(0xFFD6B7A2);
+  static const mint = accentTint;
+  static const cream = paper;
+  static const sand = Color(0xFFEFE6D7);
+  static const line = Color(0xFFE5DACA);
+  static const orange = warn;
+  static const peach = warnTint;
+  static const yellow = Color(0xFFE9C77B);
+
+  /// Headings: El Messiri. Body text uses the theme's IBM Plex Sans Arabic.
+  static const display = 'ElMessiri';
+  static TextStyle heading(double size, {Color color = ink}) => TextStyle(
+    fontFamily: display,
+    fontSize: size,
+    height: 1.3,
+    fontWeight: FontWeight.w700,
+    fontVariations: const [FontVariation('wght', 700)],
+    color: color,
+  );
 
   /// Corner radius scale; nothing outside it.
   static const r12 = 12.0, r16 = 16.0, r22 = 22.0, r28 = 28.0;
@@ -382,16 +406,7 @@ class SectionTitle extends StatelessWidget {
     padding: const EdgeInsets.only(top: 26, bottom: 10),
     child: Row(
       children: [
-        Expanded(
-          child: Text(
-            title,
-            style: const TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 19,
-              letterSpacing: -.2,
-            ),
-          ),
-        ),
+        Expanded(child: Text(title, style: Sofra.heading(20))),
         if (action != null)
           TextButton(
             onPressed: onAction,
@@ -470,11 +485,15 @@ class LiquidGlass extends StatelessWidget {
     this.radius = Sofra.r28,
     this.padding = EdgeInsets.zero,
     this.dark = false,
+    this.strong = false,
   });
   final Widget child;
   final double radius;
   final EdgeInsetsGeometry padding;
   final bool dark;
+
+  /// Nearly opaque frosting, for text that must read over a bright scene.
+  final bool strong;
   @override
   Widget build(BuildContext context) {
     final shape = BorderRadius.circular(radius);
@@ -505,8 +524,8 @@ class LiquidGlass extends StatelessWidget {
                         Colors.white.withValues(alpha: .06),
                       ]
                     : [
-                        Colors.white.withValues(alpha: .62),
-                        Colors.white.withValues(alpha: .38),
+                        Sofra.surface.withValues(alpha: strong ? .9 : .62),
+                        Sofra.surface.withValues(alpha: strong ? .8 : .38),
                       ],
               ),
               border: Border.all(
@@ -618,4 +637,106 @@ class PaperPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(PaperPainter old) => old.seed != seed;
+}
+
+/// A selectable pill: accent tint when selected, paper surface otherwise.
+/// Drop-in for ChoiceChip, whose label clipped Arabic text in this app.
+class SofraChip extends StatelessWidget {
+  const SofraChip({
+    super.key,
+    required this.label,
+    this.selected = false,
+    this.onSelected,
+    this.onPressed,
+    this.backgroundColor,
+    this.avatar,
+    this.selectedColor,
+    this.labelStyle,
+    this.showCheckmark = false,
+    this.padding,
+  });
+  final Widget label;
+  final bool selected;
+  final ValueChanged<bool>? onSelected;
+
+  /// For an action pill (no selection), like ActionChip.
+  final VoidCallback? onPressed;
+  final Color? backgroundColor;
+  final Widget? avatar;
+  final Color? selectedColor;
+  final TextStyle? labelStyle;
+  final bool showCheckmark;
+  final EdgeInsetsGeometry? padding;
+
+  @override
+  Widget build(BuildContext context) {
+    final radius = BorderRadius.circular(Sofra.r12);
+    final enabled = onSelected != null || onPressed != null;
+    return Semantics(
+      button: true,
+      selected: selected,
+      enabled: enabled,
+      child: PressScale(
+        enabled: enabled,
+        child: AnimatedContainer(
+          duration: Sofra.motion(context, true),
+          curve: Sofra.quickCurve,
+          decoration: BoxDecoration(
+            color: selected
+                ? (selectedColor ?? Sofra.accentTint)
+                : (backgroundColor ?? Sofra.surface),
+            borderRadius: radius,
+            border: Border.all(
+              color: selected
+                  ? Sofra.accent.withValues(alpha: .35)
+                  : Sofra.line,
+            ),
+          ),
+          child: Material(
+            type: MaterialType.transparency,
+            child: InkWell(
+              borderRadius: radius,
+              onTap:
+                  onPressed ??
+                  (onSelected == null ? null : () => onSelected!(!selected)),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minHeight: 40),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 14),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (avatar != null) ...[
+                        IconTheme.merge(
+                          data: IconThemeData(
+                            size: 18,
+                            color: selected ? Sofra.accentDark : Sofra.muted,
+                          ),
+                          child: avatar!,
+                        ),
+                        const SizedBox(width: 6),
+                      ],
+                      Flexible(
+                        child: DefaultTextStyle.merge(
+                          style: TextStyle(
+                            fontSize: 14,
+                            height: 1.3,
+                            fontWeight: selected
+                                ? FontWeight.w600
+                                : FontWeight.w500,
+                            color: selected ? Sofra.accentDark : Sofra.ink,
+                          ).merge(labelStyle),
+                          child: label,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

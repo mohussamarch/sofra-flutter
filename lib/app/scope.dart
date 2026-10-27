@@ -45,5 +45,5 @@ class SofraScope extends InheritedNotifier<SofraController> {
 }
 
 /// Meal slots stored by KitchenService, with their Arabic labels.
-const mealSlots = {'breakfast': 'فطار', 'lunch': 'غدا', 'dinner': 'عشا'};
+const mealSlots = {'breakfast': 'فطار', 'lunch': 'غداء', 'dinner': 'عشاء'};
 String slotLabel(String slot) => mealSlots[slot] ?? slot;

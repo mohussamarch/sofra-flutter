@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import '../ui/design.dart';
 import 'recipes_screen.dart';
 
-/// Cartoon book colours: flat fills and one dark outline, no texture or glow.
+/// Book colours on direction A: a warm leather cover, paper pages and a
+/// thin ink outline (the cartoon line, quieter), no texture or glow.
 abstract final class Book {
-  static const ink = Color(0xFF3A2416);
-  static const cover = Color(0xFF9A6240);
-  static const page = Color(0xFFFFF4DC);
-  static const pageEdge = Color(0xFFF2DFB4);
-  static const ribbon = Color(0xFFD9534F);
-  static const marker = Color(0xFFF6C453);
-  static const line = 2.5;
+  static const ink = Sofra.ink;
+  static const cover = Color(0xFF7A4A33);
+  static const page = Sofra.surface;
+  static const pageEdge = Sofra.sand;
+  static const ribbon = Sofra.accent;
+  static const marker = Sofra.accentTint;
+  static const line = 1.5;
 }
 
 BoxDecoration _outlined(Color fill, double radius) => BoxDecoration(
@@ -120,7 +121,7 @@ class _Page extends StatelessWidget {
     final base = Theme.of(context);
     final outline = OutlineInputBorder(
       borderRadius: BorderRadius.circular(Sofra.r16),
-      borderSide: const BorderSide(color: Book.ink, width: 2),
+      borderSide: BorderSide(color: Book.ink.withValues(alpha: .25)),
     );
     final theme = base.copyWith(
       iconTheme: const IconThemeData(color: Book.ink),
@@ -139,10 +140,11 @@ class _Page extends StatelessWidget {
               ? Book.marker
               : Colors.white,
         ),
-        side: const BorderSide(color: Book.ink, width: 2),
+        side: BorderSide(color: Book.ink.withValues(alpha: .18)),
         labelStyle: const TextStyle(
           color: Book.ink,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w600,
+          height: 1.2,
         ),
       ),
     );
@@ -161,7 +163,7 @@ class _Page extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Book.pageEdge,
                 border: BorderDirectional(
-                  end: BorderSide(color: Book.ink, width: 2),
+                  end: BorderSide(color: Book.ink, width: Book.line),
                 ),
               ),
             ),
@@ -170,7 +172,7 @@ class _Page extends StatelessWidget {
             data: theme,
             child: const Paper(
               child: DefaultTextStyle(
-                style: TextStyle(color: Book.ink, fontSize: 15),
+                style: TextStyle(color: Book.ink, fontSize: 15, height: 1.6),
                 child: Padding(
                   padding: EdgeInsetsDirectional.only(start: 18),
                   child: Column(
@@ -215,7 +217,7 @@ class _Rule extends StatelessWidget {
         decoration: BoxDecoration(
           color: Book.marker,
           shape: BoxShape.circle,
-          border: Border.all(color: Book.ink, width: 2),
+          border: Border.all(color: Book.ink, width: Book.line),
         ),
       ),
       Container(width: 48, height: Book.line, color: Book.ink),

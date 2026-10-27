@@ -39,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      'كل بيت له طعم.. ودي سفرتك',
+                      'لكل بيت طعمه، وهذه سفرتك',
                       style: TextStyle(color: Sofra.muted, fontSize: 12),
                     ),
                   ],
@@ -102,13 +102,13 @@ class ProfileScreen extends StatelessWidget {
             children: [
               Text(
                 p.allergies.isEmpty
-                    ? 'مفيش حساسية مسجّلة'
+                    ? 'لا توجد حساسية مسجّلة'
                     : p.allergies.join('، '),
                 style: const TextStyle(fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 8),
               const Text(
-                'بتظهر كتنبيه بالاسم بس، ولازم تراجع المكونات بنفسك.',
+                'تظهر كتنبيه بالاسم فقط، ويجب أن تراجع المكونات بنفسك.',
                 style: TextStyle(fontSize: 12, color: Sofra.muted),
               ),
               TextButton(
@@ -151,7 +151,7 @@ class SettingsScreen extends StatelessWidget {
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
             ),
             subtitle: const Text(
-              'انتقالات أهدى من غير ارتداد',
+              'انتقالات أهدأ دون ارتداد',
               style: TextStyle(fontSize: 11),
             ),
             value: p.reduceMotion,
@@ -168,7 +168,7 @@ class SettingsScreen extends StatelessWidget {
               c.saving
                   ? 'جاري حفظ التغييرات…'
                   : c.saveError != null
-                  ? 'في تغييرات لم تُحفظ'
+                  ? 'توجد تغييرات لم تُحفظ'
                   : c.storeLabel,
               key: const ValueKey('save-status'),
               textAlign: TextAlign.center,
@@ -186,7 +186,7 @@ class SettingsScreen extends StatelessWidget {
         const SizedBox(height: 22),
         const Center(
           child: Text(
-            'سفرة  ·  معمول بحب للبيوت',
+            'سفرة · صُنع بحب للبيوت',
             style: TextStyle(color: Sofra.muted, fontSize: 12),
           ),
         ),

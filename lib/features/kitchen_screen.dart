@@ -44,7 +44,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                     Text(
                       stock.isEmpty
                           ? 'مكان صغير.. لخير كتير'
-                          : '${stock.length} مكونات مستنية طبخة',
+                          : '${stock.length} مكونات تنتظر طبخة',
                       style: const TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.w800,
@@ -52,7 +52,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                     ),
                     const SizedBox(height: 5),
                     const Text(
-                      'التلاجة والفريزر ودولاب المطبخ، في مكان واحد.',
+                      'الثلاجة والفريزر ودولاب المطبخ، في مكان واحد.',
                       style: TextStyle(fontSize: 13, color: Sofra.muted),
                     ),
                   ],
@@ -73,13 +73,13 @@ class _KitchenScreenState extends State<KitchenScreen> {
           spacing: 8,
           runSpacing: 8,
           children: [
-            ChoiceChip(
+            SofraChip(
               label: const Text('الكل'),
               selected: zone == null,
               onSelected: (_) => setState(() => zone = null),
             ),
             for (final z in StorageZone.values)
-              ChoiceChip(
+              SofraChip(
                 label: Text(zoneName(z)),
                 selected: zone == z,
                 onSelected: (_) => setState(() => zone = z),
@@ -94,7 +94,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
               children: [
                 const ChefArt(size: 165, compact: true),
                 Text(
-                  stock.isEmpty ? 'لسه بنتعرف على مطبخك' : 'الرف ده لسه فاضي',
+                  stock.isEmpty ? 'ما زلنا نتعرف على مطبخك' : 'هذا الرف فارغ',
                   style: const TextStyle(
                     fontSize: 21,
                     fontWeight: FontWeight.w800,
@@ -102,7 +102,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'ضيف كام مكوّن كبداية. مش محتاجين جرد كامل عشان نبدأ.',
+                  'أضف بعض المكونات كبداية. لا نحتاج إلى جرد كامل للبدء.',
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Sofra.muted, fontSize: 14),
                 ),
@@ -120,13 +120,13 @@ class _KitchenScreenState extends State<KitchenScreen> {
               secondary: true,
               onPressed: () async {
                 await c.loadSample();
-                nav.notify('اتضافت مكونات تجريبية لمطبخك');
+                nav.notify('أُضيفت مكونات تجريبية إلى مطبخك');
               },
             ),
           ),
         const SizedBox(height: 14),
         noteText(
-          'الكميات بتتخصم لما تأكد إن الطبخة خلصت، مش وقت اختيار الوصفة.',
+          'تُخصم الكميات عند تأكيد انتهاء الطبخ، لا عند اختيار الوصفة.',
           align: TextAlign.center,
         ),
       ],
@@ -227,14 +227,14 @@ Future<void> editStockQuantity(BuildContext context, InventoryLot lot) async {
             validator: (value) {
               final q = double.tryParse(value ?? '');
               return q == null || !q.isFinite || q < 0
-                  ? 'اكتب رقم صحيح يساوي 0 أو أكتر'
+                  ? 'اكتب عددًا صحيحًا يساوي 0 أو أكثر'
                   : null;
             },
             autofocus: true,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
             decoration: InputDecoration(
               labelText: 'الكمية (${c.unitName(lot.ingredientId, lot.unit)})',
-              helperText: 'اكتب 0 لو خلص',
+              helperText: 'اكتب 0 إذا نفد',
             ),
           ),
         ),
@@ -257,7 +257,7 @@ Future<void> editStockQuantity(BuildContext context, InventoryLot lot) async {
   );
   if (result == null) return;
   await c.setQuantity(lot.id, result);
-  nav.notify('اتحدثت كمية $name');
+  nav.notify('حُدّثت كمية $name');
 }
 
 /// Adds existing stock from the ingredient directory (not a purchase: no
@@ -297,17 +297,17 @@ class _AddStockScreenState extends State<AddStockScreen> {
     return ScreenBody(
       footer: DepthButton(
         key: const ValueKey('add-stock-done'),
-        label: 'تمام، شوف مطبخي',
+        label: 'تم، اعرض مطبخي',
         onPressed: () => nav.goTab(AppTab.kitchen),
       ),
       children: [
         const Text(
-          'إيه الموجود عندك؟',
+          'ماذا يوجد عندك؟',
           style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 8),
         const Text(
-          'اضغط + لإضافة سريعة، أو اضغط على المكوّن تكتب الكمية والوحدة.',
+          'اضغط + لإضافة سريعة، أو اضغط على المكوّن لكتابة الكمية والوحدة.',
           style: TextStyle(color: Sofra.muted),
         ),
         const SizedBox(height: 20),
@@ -319,7 +319,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                 controller: search,
                 onChanged: (_) => setState(() {}),
                 decoration: const InputDecoration(
-                  hintText: 'دوّر على مكوّن',
+                  hintText: 'ابحث عن مكوّن',
                   prefixIcon: Icon(Icons.search_rounded),
                 ),
               ),
@@ -339,7 +339,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
         else if (items.isEmpty)
           const Padding(
             padding: EdgeInsets.all(24),
-            child: Text('المكوّن مش في القائمة لسه. جرّب اسم تاني.'),
+            child: Text('المكوّن غير موجود في القائمة. جرّب اسمًا آخر.'),
           ),
         for (final e in items)
           Padding(
@@ -440,7 +440,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
         child: _AddAmountSheet(entry: e, controller: c),
       ),
     );
-    if (added == true) nav.notify('اتضاف ${e.name} لمطبخك');
+    if (added == true) nav.notify('أُضيف ${e.name} إلى مطبخك');
   }
 
   String? _have(List<InventoryLot> stock, String id) {
@@ -525,7 +525,7 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
     setState(() {
       error = q == null ? 'اكتب كمية أكبر من صفر' : null;
       weightError = _asksWeight && weight.text.trim().isNotEmpty && w == null
-          ? 'اكتب وزن أكبر من صفر أو سيبها فاضية'
+          ? 'اكتب وزنًا أكبر من صفر أو اتركها فارغة'
           : null;
     });
     if (error != null || weightError != null) return;
@@ -580,7 +580,7 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
               runSpacing: 8,
               children: [
                 for (final u in units)
-                  ChoiceChip(
+                  SofraChip(
                     key: ValueKey('add-unit-$u'),
                     label: Text(c.unitName(id, u)),
                     selected: unit == u,
@@ -603,7 +603,7 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
                   labelText:
                       'كام ${_measure == 'g' ? 'جرام' : 'مل'} في الـ${c.unitName(id, unit)}؟ (اختياري)',
                   helperText:
-                      'من ميزانك أو المكتوب على العبوة. بيساعد في الوصفات.',
+                      'من ميزانك أو المكتوب على العبوة. يفيد في الوصفات.',
                   suffixText: _measure == 'g' ? 'جم' : 'مل',
                   errorText: weightError,
                 ),
@@ -616,7 +616,7 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
               spacing: 8,
               children: [
                 for (final z in StorageZone.values)
-                  ChoiceChip(
+                  SofraChip(
                     key: ValueKey('add-zone-${z.name}'),
                     label: Text(zoneName(z)),
                     selected: zone == z,
@@ -627,7 +627,7 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
             const SizedBox(height: 20),
             DepthButton(
               key: const ValueKey('add-stock-save'),
-              label: 'ضيفه لمطبخي',
+              label: 'أضفه إلى مطبخي',
               onPressed: _save,
             ),
           ],

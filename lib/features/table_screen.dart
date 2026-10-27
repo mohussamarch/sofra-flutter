@@ -24,7 +24,7 @@ class TableScreen extends StatelessWidget {
           const Center(child: ChefArt(size: 250)),
           const Center(
             child: Text(
-              'سفرة حلوة تستاهل اللمّة',
+              'سفرة تستحق اللمّة',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
             ),
@@ -32,14 +32,14 @@ class TableScreen extends StatelessWidget {
           const SizedBox(height: 12),
           const Center(
             child: Text(
-              'اختار أكلة، وهنشوف الناقص قبل ما نبدأ.',
+              'اختر أكلة، وسنعرض الناقص قبل البدء.',
               textAlign: TextAlign.center,
               style: TextStyle(color: Sofra.muted, fontSize: 16),
             ),
           ),
           const SizedBox(height: 28),
           DepthButton(
-            label: 'اختار طبخة للسفرة',
+            label: 'اختر طبخة للسفرة',
             onPressed: () => nav.goTab(AppTab.recipes),
           ),
         ],
@@ -55,7 +55,7 @@ class TableScreen extends StatelessWidget {
       children: [
         const SizedBox(height: 8),
         const Text(
-          'السفرة الأيام الجاية',
+          'السفرة في الأيام القادمة',
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 27),
         ),
         for (final e in byDay.entries) ...[
@@ -63,14 +63,14 @@ class TableScreen extends StatelessWidget {
             e.key == today
                 ? c.market.today
                 : e.key == tomorrow
-                ? 'بكرة'
+                ? 'غدًا'
                 : e.key,
           ),
           for (final m in e.value) PlannedMealCard(m, key: ValueKey(m.id)),
         ],
         const SizedBox(height: 16),
         noteText(
-          'اختيار الوجبة ما بيخصمش المخزون. الخصم بعد تأكيد إن الطبخة خلصت.',
+          'اختيار الوجبة لا يخصم من المخزون. يتم الخصم بعد تأكيد انتهاء الطبخ.',
           align: TextAlign.center,
         ),
       ],
@@ -127,7 +127,7 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
         future: _data(c),
         builder: (context, snap) {
           if (snap.hasError) {
-            return const ErrorBlock('تعذّر تحميل وصفة الوجبة دي.');
+            return const ErrorBlock('تعذّر تحميل وصفة هذه الوجبة.');
           }
           final d = snap.data;
           if (d == null) return const LoadingBlock();
@@ -137,7 +137,11 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
           final unmeasured = check.where(LineStock.unmeasured).length;
           final inStock = check.where(LineStock.inStock).length;
           Widget card(Widget child) => widget.glass
-              ? LiquidGlass(padding: const EdgeInsets.all(18), child: child)
+              ? LiquidGlass(
+                  strong: true,
+                  padding: const EdgeInsets.all(18),
+                  child: child,
+                )
               : Surface(
                   color: m.completed ? Sofra.mint : Colors.white,
                   child: child,
@@ -164,14 +168,14 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                 ),
                 if (m.completed) ...[
                   const SizedBox(height: 10),
-                  const SoftTag('اتطبخت', icon: Icons.check_circle_rounded),
+                  const SoftTag('طُبخت', icon: Icons.check_circle_rounded),
                 ] else if (!widget.compact) ...[
                   const SizedBox(height: 12),
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
                     children: [
-                      SoftTag('$inStock موجودين', icon: Icons.check_rounded),
+                      SoftTag('$inStock متوفر', icon: Icons.check_rounded),
                       if (missing.isNotEmpty)
                         SoftTag(
                           'ناقص ${missing.length}',
@@ -186,7 +190,7 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                         ),
                       if (unmeasured > 0)
                         SoftTag(
-                          '$unmeasured مش مقاسين',
+                          '$unmeasured دون مقدار',
                           color: Sofra.cream,
                           ink: Sofra.muted,
                         ),
@@ -195,7 +199,8 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                   _Nutrition(meal: m),
                   if (missing.isNotEmpty) ...[
                     const SizedBox(height: 12),
-                    for (final l in missing)
+                    for (final l
+                        in widget.glass ? const <CookingLine>[] : missing)
                       Padding(
                         padding: const EdgeInsets.only(bottom: 6),
                         child: Row(
@@ -221,23 +226,23 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                       key: ValueKey('add-missing-${m.id}'),
                       compact: true,
                       secondary: true,
-                      label: 'جبت الناقص · ضيفه للمخزون',
+                      label: 'اشتريت الناقص · أضفه للمخزون',
                       onPressed: () async {
                         await c.addMissing(check);
-                        nav.notify('الناقص اتضاف للمخزون بالكمية المطلوبة');
+                        nav.notify('أُضيف الناقص إلى المخزون بالكمية المطلوبة');
                       },
                     ),
                   ],
                   const SizedBox(height: 10),
                   DepthButton(
                     key: ValueKey('start-cooking-${m.id}'),
-                    label: 'يلا نطبخ',
+                    label: 'ابدأ الطبخ',
                     icon: Icons.soup_kitchen_rounded,
                     onPressed: () => nav.startCooking(m),
                   ),
                   TextButton(
                     onPressed: () => c.removePlan(m.id),
-                    child: const Text('شيل الوجبة من السفرة'),
+                    child: const Text('احذف الوجبة من السفرة'),
                   ),
                 ],
               ],

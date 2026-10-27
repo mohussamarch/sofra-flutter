@@ -42,7 +42,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
               ])
                 Padding(
                   padding: const EdgeInsetsDirectional.only(end: 8),
-                  child: ChoiceChip(
+                  child: SofraChip(
                     key: ValueKey('community-${p.name}'),
                     label: Text(label),
                     selected: part == p,
@@ -63,7 +63,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
           const Padding(
             padding: EdgeInsets.only(bottom: 12),
             child: Text(
-              'معاينة على الجهاز: اللي بتنشره هنا مش بيوصل لحد، وبيتمسح لما تقفل.',
+              'معاينة على الجهاز: ما تنشره هنا لا يصل لأحد، ويُحذف عند الإغلاق.',
               key: ValueKey('community-preview'),
               style: TextStyle(color: Sofra.muted, fontSize: 12),
             ),
@@ -90,7 +90,7 @@ class _NeedsAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const Surface(
     child: Text(
-      'الجزء ده محتاج حساب. النسخة دي محفوظة على الجهاز بس.',
+      'هذا الجزء يحتاج إلى حساب. هذه النسخة محفوظة على الجهاز فقط.',
       key: ValueKey('community-needs-account'),
       textAlign: TextAlign.center,
       style: TextStyle(color: Sofra.muted),
@@ -99,7 +99,7 @@ class _NeedsAccount extends StatelessWidget {
 }
 
 String _problem(Object e) =>
-    e is InviteProblem ? e.message : 'حصلت مشكلة في الاتصال. جرب تاني.';
+    e is InviteProblem ? e.message : 'حدثت مشكلة في الاتصال. حاول مرة أخرى.';
 
 /// Story and avatar colours (index stored with each story).
 const storyColors = [
@@ -273,14 +273,14 @@ class _HomeState extends State<_Home> {
             future: feed,
             builder: (context, snap) {
               if (snap.hasError) {
-                return const ErrorBlock('معرفناش نجيب الوصفات. جرب تاني.');
+                return const ErrorBlock('تعذّر جلب الوصفات. حاول مرة أخرى.');
               }
               final items = snap.data;
               if (items == null) return const LoadingBlock();
               if (items.isEmpty) {
                 return const Surface(
                   child: Text(
-                    'لسه محدش شارك وصفة. ابدأ انت بوصفة من «وصفة من عندي».',
+                    'لم يشارك أحد وصفة بعد. ابدأ أنت من «وصفة من عندي».',
                     key: ValueKey('community-recipes-empty'),
                   ),
                 );
@@ -431,10 +431,10 @@ Future<bool> _pickToShare(BuildContext context, SofraController c) async {
   final r = c.myRecipes[pick];
   try {
     await c.shareMyRecipe(r);
-    nav.notify('اتشاركت ${r.recipe.name}');
+    nav.notify('شُوركت ${r.recipe.name}');
     return true;
   } catch (_) {
-    nav.notify('معرفناش نشاركها. جرب تاني.');
+    nav.notify('تعذّرت المشاركة. حاول مرة أخرى.');
     return false;
   }
 }
@@ -622,7 +622,7 @@ class _StoryComposerState extends State<_StoryComposer> {
             borderRadius: BorderRadius.circular(18),
           ),
           child: Text(
-            text.text.isEmpty ? 'طبخت إيه النهارده؟' : text.text,
+            text.text.isEmpty ? 'ماذا طبخت اليوم؟' : text.text,
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.white,
@@ -801,7 +801,7 @@ class _StoryViewerState extends State<_StoryViewer>
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          '${s.name} · ${ago.inHours > 0 ? 'من ${ago.inHours} ساعة' : 'دلوقتي'}',
+                          '${s.name} · ${ago.inHours > 0 ? 'من ${ago.inHours} ساعة' : 'الآن'}',
                           style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
@@ -916,7 +916,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
           return const LoadingBlock();
         }
         if (snap.hasError) {
-          return ErrorBlock('معرفناش نفتح بيانات المطبخ. جرب تاني.');
+          return ErrorBlock('تعذّر فتح بيانات المطبخ. حاول مرة أخرى.');
         }
         final k = snap.data;
         return Column(
@@ -925,13 +925,13 @@ class _SharedKitchenState extends State<_SharedKitchen> {
             if (k == null) ...[
               const Surface(
                 child: Text(
-                  'خلّي البيت كله على مطبخ واحد: نفس الخزين، ونفس الخطة، ونفس قائمة الشراء. اللي في مطبخك دلوقتي هو اللي هيتشارك.',
+                  'اجمع البيت كله على مطبخ واحد: المخزون نفسه، والخطة نفسها، وقائمة الشراء نفسها. ما في مطبخك الآن هو ما ستتم مشاركته.',
                 ),
               ),
               const SizedBox(height: 12),
               DepthButton(
                 key: const ValueKey('kitchen-share'),
-                label: 'اعمل مطبخ مشترك',
+                label: 'أنشئ مطبخًا مشتركًا',
                 onPressed: busy ? null : () => _run(() => c.shareKitchen()),
               ),
               const SizedBox(height: 20),
@@ -952,7 +952,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
               ),
               const SizedBox(height: 6),
               const Text(
-                'لما تدخل مطبخ مشترك، مطبخك الشخصي بيفضل محفوظ وترجعله لما تخرج.',
+                'عند دخولك مطبخًا مشتركًا، يبقى مطبخك الشخصي محفوظًا وتعود إليه عند الخروج.',
                 style: TextStyle(color: Sofra.muted, fontSize: 12),
               ),
             ] else ...[
@@ -981,7 +981,9 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                 Surface(
                   child: Column(
                     children: [
-                      const Text('ابعت الكود ده لأهل البيت (صالح أسبوع):'),
+                      const Text(
+                        'أرسل هذا الرمز لأهل البيت (صالح لمدة أسبوع):',
+                      ),
                       SelectableText(
                         invite!,
                         key: const ValueKey('kitchen-invite-code'),
@@ -996,7 +998,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                 ),
               DepthButton(
                 key: const ValueKey('kitchen-invite'),
-                label: 'اعمل كود دعوة',
+                label: 'أنشئ رمز دعوة',
                 onPressed: busy
                     ? null
                     : () => _run(() async {
@@ -1007,7 +1009,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
               TextButton(
                 key: const ValueKey('kitchen-leave'),
                 onPressed: busy ? null : () => _run(() => c.leaveKitchen(k.id)),
-                child: const Text('ارجع لمطبخي الشخصي'),
+                child: const Text('العودة إلى مطبخي الشخصي'),
               ),
             ],
             if (error != null)
@@ -1092,7 +1094,7 @@ class _RecipeSheetState extends State<_RecipeSheet> {
                 children: [
                   Text(
                     avg == null
-                        ? 'لسه محدش قيّمها.'
+                        ? 'لم يقيّمها أحد بعد.'
                         : '${avg.toStringAsFixed(1)} من 5 (${list.length})',
                     key: const ValueKey('community-rating-average'),
                   ),
@@ -1185,7 +1187,7 @@ class _PricesState extends State<_Prices> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const Text(
-          'منطقتك (المدينة أو الحي). بنعرض السعر بس لما بيتين أو أكتر يشاركوه.',
+          'منطقتك (المدينة أو الحي). نعرض السعر فقط عندما يشاركه بيتان أو أكثر.',
           style: TextStyle(color: Sofra.muted, fontSize: 12),
         ),
         Row(
@@ -1214,19 +1216,19 @@ class _PricesState extends State<_Prices> {
         ),
         const SectionTitle('أسعار الناس في منطقتك'),
         if (!hasArea)
-          const Text('اكتب منطقتك الأول.')
+          const Text('اكتب منطقتك أولًا.')
         else
           FutureBuilder<Map<(String, String), AreaPrice>>(
             future: prices,
             builder: (context, snap) {
               if (snap.hasError) {
-                return const ErrorBlock('معرفناش نجيب الأسعار. جرب تاني.');
+                return const ErrorBlock('تعذّر جلب الأسعار. حاول مرة أخرى.');
               }
               final map = snap.data;
               if (map == null) return const LoadingBlock();
               if (map.isEmpty) {
                 return const Text(
-                  'لسه مفيش أسعار كفاية في منطقتك.',
+                  'لا توجد أسعار كافية في منطقتك بعد.',
                   key: ValueKey('area-prices-empty'),
                 );
               }
@@ -1251,7 +1253,7 @@ class _PricesState extends State<_Prices> {
                             source: 'user-community',
                           );
                           if (context.mounted) {
-                            SofraScope.navOf(context).notify('اتحفظ كسعرك');
+                            SofraScope.navOf(context).notify('حُفظ كسعرك');
                           }
                         },
                         child: const Text('استخدمه'),
@@ -1264,7 +1266,7 @@ class _PricesState extends State<_Prices> {
         const SectionTitle('شارك أسعارك'),
         if (c.myPrices.isEmpty)
           const Text(
-            'الأسعار اللي بتكتبها أو بتدفعها هتظهر هنا.',
+            'تظهر هنا الأسعار التي تكتبها أو تدفعها.',
             style: TextStyle(color: Sofra.muted),
           ),
         for (final p in c.myPrices)
@@ -1338,7 +1340,7 @@ class _ChallengeState extends State<_Challenge> {
               ),
               const SizedBox(height: 6),
               Text(
-                'إنت عملت $progress من ${ch.goal}',
+                'أنجزت $progress من ${ch.goal}',
                 key: const ValueKey('challenge-progress'),
               ),
             ],
@@ -1360,11 +1362,13 @@ class _ChallengeState extends State<_Challenge> {
           future: board,
           builder: (context, snap) {
             if (snap.hasError) {
-              return const ErrorBlock('معرفناش نجيب اللوحة. جرب تاني.');
+              return const ErrorBlock('تعذّر جلب اللوحة. حاول مرة أخرى.');
             }
             final list = snap.data;
             if (list == null) return const LoadingBlock();
-            if (list.isEmpty) return const Text('لسه محدش سجّل الأسبوع ده.');
+            if (list.isEmpty) {
+              return const Text('لم يسجّل أحد هذا الأسبوع بعد.');
+            }
             final sorted = [...list]
               ..sort((a, b) => b.progress.compareTo(a.progress));
             return Column(

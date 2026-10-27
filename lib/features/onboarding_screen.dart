@@ -78,8 +78,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   'سفرة',
                   style: TextStyle(fontSize: 27, fontWeight: FontWeight.w800),
                 ),
+                SizedBox(width: 12),
                 Spacer(),
-                SoftTag('من البيت.. للبيت', color: Sofra.peach, ink: Sofra.ink),
+                Flexible(
+                  flex: 3,
+                  child: SoftTag(
+                    'من البيت.. للبيت',
+                    color: Sofra.peach,
+                    ink: Sofra.ink,
+                  ),
+                ),
               ],
             ),
           )
@@ -134,10 +142,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 DepthButton(
                   key: const ValueKey('onboarding-next'),
                   label: step == 0
-                      ? 'يلا نجهّز سفرتك'
+                      ? 'لنجهّز سفرتك'
                       : step == 5
                       ? 'افتح سفرتي'
-                      : 'كمّل',
+                      : 'متابعة',
                   onPressed: step == 1 && widget.name.text.trim().isEmpty
                       ? null
                       : () {
@@ -153,8 +161,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   step == 0
                       ? 'خطوات صغيرة.. وطبخ أسهل كل يوم'
                       : step == 5
-                      ? 'تقدر تعدّل اختياراتك من «بيتي» في أي وقت'
-                      : 'على راحتك، تقدر ترجع وتغيّر أي اختيار',
+                      ? 'يمكنك تعديل اختياراتك من «بيتي» في أي وقت'
+                      : 'على راحتك، يمكنك الرجوع وتغيير أي اختيار',
                   textAlign: TextAlign.center,
                   style: const TextStyle(fontSize: 11, color: Sofra.muted),
                 ),
@@ -183,13 +191,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ChefArt(size: 290),
             SizedBox(height: 18),
             SoftTag(
-              'أهلًا بيك في سفرة',
+              'أهلًا بك في سفرة',
               color: Sofra.peach,
               ink: Color(0xFF995333),
             ),
             SizedBox(height: 18),
             Text(
-              'كل اللي في بيتك،\nيعمل أكلة حلوة.',
+              'كل ما في بيتك\nيصنع أكلة طيبة.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 34,
@@ -200,7 +208,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             SizedBox(height: 14),
             Text(
-              'نعرف الموجود، نفكّر سوا، ونطبخ على قدّنا.\nمن غير حيرة «هناكل إيه النهاردة؟»',
+              'نعرف الموجود، ونفكّر معًا، ونطبخ على قدرنا.\nدون حيرة «ماذا نأكل اليوم؟»',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Sofra.muted, height: 1.6),
             ),
@@ -213,8 +221,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             introBlock(
-              'نتعرف الأول؟',
-              'الاسم المناسب لك، واسم البيت لو حابب. مناسب لشخص واحد أو أكتر.',
+              'نتعرّف أولًا؟',
+              'الاسم المناسب لك، واسم البيت إن أردت. يصلح لشخص واحد أو أكثر.',
               icon: Icons.waving_hand_outlined,
             ),
             const SizedBox(height: 24),
@@ -234,7 +242,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             const SizedBox(height: 20),
             const Text(
-              'اسم البيت  ·  اختياري',
+              'اسم البيت · اختياري',
               style: TextStyle(fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 8),
@@ -256,8 +264,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             introBlock(
-              'كام حد على السفرة؟',
-              'هنظبط كميات الوصفات على عددكم، وتقدر تغيّره لكل طبخة.',
+              'كم شخصًا على السفرة؟',
+              'سنضبط كميات الوصفات على عددكم، ويمكنك تغييره لكل طبخة.',
               icon: Icons.groups_outlined,
             ),
             const SizedBox(height: 24),
@@ -278,12 +286,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ],
               ),
             ),
-            const SectionTitle('غالبًا بتطبخوا إيه في البيت؟'),
+            const SectionTitle('ماذا تطبخون في البيت غالبًا؟'),
             Wrap(
               spacing: 10,
               runSpacing: 10,
               children: [
-                for (final meal in const ['فطار', 'غدا', 'عشا'])
+                for (final meal in const ['فطار', 'غداء', 'عشاء'])
                   FilterChip(
                     label: Text(meal),
                     selected: p.meals.contains(meal),
@@ -301,8 +309,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             introBlock(
-              'طعم البيت عندك إيه؟',
-              'اختار المطابخ اللي بتحبوها، ممكن أكتر من مطبخ.',
+              'ما طعم البيت عندك؟',
+              'اختر المطابخ التي تحبونها، ويمكن اختيار أكثر من مطبخ.',
               icon: Icons.restaurant_menu_rounded,
             ),
             const SizedBox(height: 24),
@@ -311,11 +319,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             SwitchListTile.adaptive(
               contentPadding: EdgeInsets.zero,
               title: const Text(
-                'بحب الأكلات السريعة',
+                'أفضّل الأكلات السريعة',
                 style: TextStyle(fontWeight: FontWeight.w700),
               ),
               subtitle: const Text(
-                'خلّي الوصفات القصيرة تظهر الأول',
+                'اعرض الوصفات القصيرة أولًا',
                 style: TextStyle(fontSize: 12),
               ),
               value: p.quickMeals,
@@ -343,8 +351,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             introBlock(
-              'في حاجة ناخد بالنا منها؟',
-              'لو عندكم حساسية من مكوّن، سجّلها هنا. الخطوة دي اختيارية.',
+              'هل هناك ما يجب الانتباه إليه؟',
+              'إذا كانت لديكم حساسية من مكوّن، سجّلها هنا. هذه الخطوة اختيارية.',
               icon: Icons.favorite_border_rounded,
             ),
             const SizedBox(height: 22),
@@ -353,7 +361,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               controller: allergySearch,
               onChanged: (_) => setState(() {}),
               decoration: const InputDecoration(
-                hintText: 'دوّر على مكوّن أو اكتب اسمه',
+                hintText: 'ابحث عن مكوّن أو اكتب اسمه',
                 prefixIcon: Icon(Icons.search_rounded),
               ),
             ),
@@ -395,7 +403,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               color: Sofra.peach,
               padding: EdgeInsets.all(16),
               child: Text(
-                'هننبهك لما اسم مكوّن في الوصفة يطابق اللي سجلته. راجع كل وصفة وعبوات المكونات بنفسك؛ التنبيه مش ضمان إن الأكل خالي من مسببات الحساسية.',
+                'سننبهك عندما يطابق اسم مكوّن في الوصفة ما سجلته. راجع كل وصفة وعبوات المكونات بنفسك؛ التنبيه ليس ضمانًا لخلو الأكل من مسببات الحساسية.',
                 style: TextStyle(fontSize: 12, color: Color(0xFF79513D)),
               ),
             ),
@@ -407,7 +415,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             const SizedBox(height: 12),
             const ChefArt(size: 250, celebrate: true),
             Text(
-              'يا أهلًا يا ${p.displayName}!',
+              'أهلًا ${p.displayName}!',
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
             ),

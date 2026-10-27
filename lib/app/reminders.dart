@@ -46,7 +46,7 @@ class LocalReminders implements ReminderSink {
     android: AndroidNotificationDetails(
       'sofra-reminders',
       'تذكيرات سفرة',
-      channelDescription: 'ميعاد الأكل، البواقي، والحاجات اللي خلصت',
+      channelDescription: 'مواعيد الأكل، والبواقي، والأشياء التي نفدت',
     ),
   );
 
@@ -164,8 +164,8 @@ List<Reminder> upcomingReminders({
           Reminder(
             _id('leftover-${d.id}'),
             when,
-            'بواقي ${d.name} في التلاجة',
-            'فاضل ${_servings(d.servings)}. سخّنها النهارده.',
+            'بواقي ${d.name} في الثلاجة',
+            'تبقّى ${_servings(d.servings)}. سخّنها اليوم.',
           ),
         );
       }

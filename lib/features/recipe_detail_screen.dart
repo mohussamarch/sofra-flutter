@@ -41,7 +41,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         builder: (context, snap) {
           if (snap.hasError) {
             return const ScreenBody(
-              children: [ErrorBlock('تعذّر فتح الوصفة. ارجع وجرّب تاني.')],
+              children: [ErrorBlock('تعذّر فتح الوصفة. ارجع وحاول مرة أخرى.')],
             );
           }
           final data = snap.data;
@@ -139,11 +139,11 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'هنطبخ لكام حد؟',
+                        'نطبخ لكم شخصًا؟',
                         style: TextStyle(fontWeight: FontWeight.w800),
                       ),
                       Text(
-                        'الكميات بتتظبط لوحدها',
+                        'تُضبط الكميات تلقائيًا',
                         style: TextStyle(fontSize: 11, color: Sofra.muted),
                       ),
                     ],
@@ -166,13 +166,13 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               padding: const EdgeInsets.all(16),
               child: Text(
                 allergy.isNotEmpty
-                    ? 'خد بالك: ${allergy.entries.map((e) => '«${e.key}» في ${e.value.join('، ')}').join('؛ ')}. المطابقة بالاسم بس، راجع المكونات والعبوات بنفسك.'
+                    ? 'انتبه: ${allergy.entries.map((e) => '«${e.key}» في ${e.value.join('، ')}').join('؛ ')}. المطابقة بالاسم بس، راجع المكونات والعبوات بنفسك.'
                     : 'راجع مكونات الوصفة والعبوات مع الحساسية المسجّلة: ${c.profile.allergies.join('، ')}.',
                 style: const TextStyle(fontSize: 12, color: Color(0xFF79513D)),
               ),
             ),
           ),
-        SectionTitle(known ? 'المكونات على قدّكم' : 'المكونات زي المصدر'),
+        SectionTitle(known ? 'المكونات على قدركم' : 'المكونات كما في المصدر'),
         for (var i = 0; i < source.ingredients.length; i++)
           _IngredientRow(
             ingredient: (scaled?.recipe ?? source).ingredients[i],
@@ -210,7 +210,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           ),
         const SizedBox(height: 8),
         noteText(
-          'الأسعار والقيم الغذائية مش بتظهر هنا لحد ما تتراجع من مصادرها. الكميات من المصدر.',
+          'لا تظهر الأسعار والقيم الغذائية هنا حتى تُراجع من مصادرها. الكميات من المصدر.',
         ),
       ],
     );
@@ -228,12 +228,12 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          'المصدر مش كاتب الوصفة دي بتكفي كام فرد',
+          'لم يذكر المصدر عدد من تكفيهم هذه الوصفة',
           style: TextStyle(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 6),
         const Text(
-          'عشان نظبط الكميات ونحطها على السفرة، قولنا الوصفة كلها تقريبًا تكفي كام فرد. الوصفة الأصلية مش هتتغير.',
+          'لنضبط الكميات ونضعها على السفرة، أخبرنا كم فردًا تكفي الوصفة كلها تقريبًا. الوصفة الأصلية لن تتغير.',
           style: TextStyle(fontSize: 12, color: Sofra.muted),
         ),
         const SizedBox(height: 12),
@@ -280,13 +280,13 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     );
     if (!ok) return;
     nav.goTab(AppTab.table);
-    nav.notify('الوجبة على السفرة.. والمخزون لسه زي ما هو');
+    nav.notify('الوجبة على السفرة، والمخزون لم يتغير');
   }
 
   String _defaultSlot() {
     final meals = c.profile.meals;
-    if (meals.contains('غدا')) return 'lunch';
-    if (meals.contains('عشا')) return 'dinner';
+    if (meals.contains('غداء')) return 'lunch';
+    if (meals.contains('عشاء')) return 'dinner';
     return 'breakfast';
   }
 }
@@ -323,10 +323,10 @@ class _IngredientRow extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('1 ${unitLabel(from)} من $name = كام ${unitLabel(to)}؟'),
+                Text('1 ${unitLabel(from)} من $name = كم ${unitLabel(to)}؟'),
                 const SizedBox(height: 4),
                 const Text(
-                  'اكتب القياس من مطبخك. هيتحفظ للمكوّن ده بس.',
+                  'اكتب القياس من مطبخك. سيُحفظ لهذا المكوّن فقط.',
                   style: TextStyle(fontSize: 12, color: Sofra.muted),
                 ),
                 TextFormField(
@@ -340,7 +340,7 @@ class _IngredientRow extends StatelessWidget {
                   validator: (value) {
                     final q = double.tryParse(value ?? '');
                     return q == null || !q.isFinite || q <= 0
-                        ? 'اكتب رقم أكبر من صفر'
+                        ? 'اكتب رقمًا أكبر من صفر'
                         : null;
                   },
                 ),
@@ -368,7 +368,7 @@ class _IngredientRow extends StatelessWidget {
     if (factor == null) return;
     if (await c.saveUnitRule(id, from, to, factor)) {
       nav.notify(
-        'اتحفظ: 1 ${unitLabel(from)} $name = ${formatAmount(factor)} ${unitLabel(to)}',
+        'حُفظ: 1 ${unitLabel(from)} $name = ${formatAmount(factor)} ${unitLabel(to)}',
       );
     }
   }
@@ -392,7 +392,7 @@ class _IngredientRow extends StatelessWidget {
         Sofra.muted,
         'الوحدة مختلفة عن المخزون',
       ),
-      LineStock.unmeasured => (Icons.remove_rounded, Sofra.muted, 'مش مقاس'),
+      LineStock.unmeasured => (Icons.remove_rounded, Sofra.muted, 'دون مقدار'),
       LineStock.optional => (Icons.remove_rounded, Sofra.muted, 'اختياري'),
       null => (Icons.circle_outlined, Sofra.muted, null),
     };
@@ -473,7 +473,7 @@ class _PlanSheetState extends State<_PlanSheet> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'نحطها على سفرة إمتى؟',
+              'متى نضعها على السفرة؟',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 16),
@@ -481,11 +481,11 @@ class _PlanSheetState extends State<_PlanSheet> {
               spacing: 8,
               children: [
                 for (final (i, label) in const [
-                  (0, 'النهارده'),
-                  (1, 'بكرة'),
-                  (2, 'بعد بكرة'),
+                  (0, 'اليوم'),
+                  (1, 'غدًا'),
+                  (2, 'بعد غد'),
                 ])
-                  ChoiceChip(
+                  SofraChip(
                     label: Text(label),
                     selected: day == i,
                     onSelected: (_) => setState(() => day = i),
@@ -497,7 +497,7 @@ class _PlanSheetState extends State<_PlanSheet> {
               spacing: 8,
               children: [
                 for (final e in mealSlots.entries)
-                  ChoiceChip(
+                  SofraChip(
                     label: Text(e.value),
                     selected: slot == e.key,
                     onSelected: (_) => setState(() => slot = e.key),
@@ -507,7 +507,7 @@ class _PlanSheetState extends State<_PlanSheet> {
             const SizedBox(height: 20),
             DepthButton(
               key: const ValueKey('plan-confirm'),
-              label: 'تمام',
+              label: 'تم',
               onPressed: () => Navigator.pop(context, (
                 DateTime(today.year, today.month, today.day + day),
                 slot,

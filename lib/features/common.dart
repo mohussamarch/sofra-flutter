@@ -100,7 +100,7 @@ Widget noteText(String text, {TextAlign align = TextAlign.start}) => Text(
 );
 
 String zoneName(StorageZone value) => switch (value) {
-  StorageZone.fridge => 'التلاجة',
+  StorageZone.fridge => 'الثلاجة',
   StorageZone.freezer => 'الفريزر',
   StorageZone.pantry => 'الدولاب',
 };

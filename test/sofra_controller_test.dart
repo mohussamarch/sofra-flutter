@@ -629,7 +629,7 @@ void main() {
       expect((record!['consumed'] as List).single['quantity'], 150);
       expect(record['partialStockLines'] ?? const [], isNot(contains(0)));
       // It used the last of it: the ran-out notice goes to the phone.
-      expect(sink.shown.single.$1, 'خلص من المطبخ');
+      expect(sink.shown.single.$1, 'نفد من المطبخ');
     },
   );
 }

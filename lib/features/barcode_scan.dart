@@ -59,7 +59,7 @@ class _ScanPageState extends State<_ScanPage> {
                   child: Padding(
                     padding: EdgeInsets.all(24),
                     child: Text(
-                      'الكاميرا مش متاحة. اسمح بيها من إعدادات الموبايل، أو اكتب الرقم تحت.',
+                      'الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف، أو اكتب الرقم بالأسفل.',
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -76,7 +76,7 @@ class _ScanPageState extends State<_ScanPage> {
                     controller: typed,
                     keyboardType: TextInputType.number,
                     decoration: const InputDecoration(
-                      hintText: 'أو اكتب الرقم اللي تحت الباركود',
+                      hintText: 'أو اكتب الرقم الموجود تحت الباركود',
                     ),
                     onSubmitted: _finish,
                   ),
@@ -84,7 +84,7 @@ class _ScanPageState extends State<_ScanPage> {
                 const SizedBox(width: 8),
                 IconButton.filled(
                   key: const ValueKey('barcode-manual-go'),
-                  tooltip: 'دوّر',
+                  tooltip: 'ابحث',
                   onPressed: () => _finish(typed.text),
                   icon: const Icon(Icons.arrow_back_rounded),
                 ),
@@ -152,7 +152,7 @@ class _PickSheetState extends State<_PickSheet> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              p.known ? p.name! : 'المنتج ده مش في بياناتنا لسه',
+              p.known ? p.name! : 'هذا المنتج غير موجود في بياناتنا بعد',
               key: const ValueKey('scan-product-name'),
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
             ),
@@ -165,7 +165,7 @@ class _PickSheetState extends State<_PickSheet> {
               style: const TextStyle(color: Sofra.muted, fontSize: 12),
             ),
             const SizedBox(height: 12),
-            const Text('ده أنهي مكوّن في مطبخك؟ هنفتكره المرة الجاية.'),
+            const Text('أي مكوّن في مطبخك هذا؟ سنتذكره في المرة القادمة.'),
             const SizedBox(height: 8),
             TextField(
               key: const ValueKey('scan-search'),

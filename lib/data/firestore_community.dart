@@ -80,12 +80,12 @@ class FirestoreCommunity implements CommunityBackend {
   @override
   Future<String> joinKitchen(String raw, String name) async {
     final code = normalizeInvite(raw);
-    if (!validInvite(code)) throw const InviteProblem('الكود ده مش موجود.');
+    if (!validInvite(code)) throw const InviteProblem('هذا الرمز غير موجود.');
     final invite = (await db.doc('invites/$code').get()).data();
-    if (invite == null) throw const InviteProblem('الكود ده مش موجود.');
+    if (invite == null) throw const InviteProblem('هذا الرمز غير موجود.');
     final expires = _time(invite['expiresAt']);
     if (expires == null || !expires.isAfter(DateTime.now())) {
-      throw const InviteProblem('الكود ده خلص. اطلب كود جديد.');
+      throw const InviteProblem('انتهت صلاحية هذا الرمز. اطلب رمزًا جديدًا.');
     }
     final kitchenId = invite['kitchenId'] as String;
     await db.doc('kitchens/$kitchenId').update({

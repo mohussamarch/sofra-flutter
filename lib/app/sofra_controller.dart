@@ -36,7 +36,7 @@ class Profile {
     this.servings = 4,
     this.cuisines = const {'egyptian'},
     this.allergies = const {},
-    this.meals = const {'غدا', 'عشا'},
+    this.meals = const {'غداء', 'عشاء'},
     this.saved = const {},
     this.quickMeals = true,
     this.reduceMotion = false,
@@ -147,7 +147,7 @@ class Profile {
       servings: ((root['servings'] as num?)?.toInt() ?? 4).clamp(1, 12),
       cuisines: groups,
       allergies: strings('allergies', const {}),
-      meals: strings('meals', const {'غدا', 'عشا'}),
+      meals: strings('meals', const {'غداء', 'عشاء'}),
       saved: strings('saved', const {}),
       quickMeals: root['quickMeals'] != false,
       reduceMotion: root['reduceMotion'] == true,
@@ -502,8 +502,8 @@ class SofraController extends ChangeNotifier {
       _retry = write;
       saving = false;
       saveError = e is StateConflict
-          ? 'بيانات حسابك اتغيرت على جهاز تاني. اقفل وافتح التطبيق لتحميل آخر نسخة؛ التعديلات هنا لم تُحفظ.'
-          : 'آخر تعديل لسه متحفظش. راجع الاتصال وجرب الحفظ تاني قبل الخروج.';
+          ? 'تغيّرت بيانات حسابك على جهاز آخر. أغلق التطبيق وافتحه لتحميل آخر نسخة؛ التعديلات هنا لم تُحفظ.'
+          : 'لم يُحفظ آخر تعديل. تحقق من الاتصال وأعد الحفظ قبل الخروج.';
       notifyListeners();
       return false;
     }
@@ -1242,7 +1242,7 @@ class SofraController extends ChangeNotifier {
       if (out.isNotEmpty) {
         unawaited(
           reminders.showNow(
-            'خلص من المطبخ',
+            'نفد من المطبخ',
             '${out.map(ingredientName).join('، ')}. ضيفهم لقائمة الشراء.',
           ),
         );

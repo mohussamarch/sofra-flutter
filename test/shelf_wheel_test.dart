@@ -18,7 +18,7 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: ShelfWheel(
-            title: 'التلاجة',
+            title: 'الثلاجة',
             items: [
               for (final id in ['a', 'b', 'c', 'd']) item(id),
               const ShelfItem(
@@ -57,7 +57,7 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: ShelfWheel(
-            title: 'التلاجة',
+            title: 'الثلاجة',
             items: [
               item('carrot', 'جزر', 'خضار'),
               item('tomato', 'طماطم', 'خضار'),
@@ -84,7 +84,7 @@ void main() {
     expect(shelf('carrot'), findsNothing);
     await tester.enterText(find.byKey(const ValueKey('shelves-query')), 'زيت');
     await tester.pump();
-    expect(find.text('مفيش حاجة بالاسم ده هنا.'), findsOneWidget);
+    expect(find.text('لا يوجد شيء بهذا الاسم هنا.'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }

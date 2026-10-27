@@ -192,7 +192,7 @@ class SessionError extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              'مش قادرين نفتح بياناتك دلوقتي. راجع الاتصال وجرب تاني.',
+              'لا يمكن فتح بياناتك الآن. تحقق من الاتصال وحاول مرة أخرى.',
             ),
             const SizedBox(height: 20),
             FilledButton(
@@ -247,7 +247,8 @@ class _SignInPageState extends State<SignInPage> {
         await auth.sendPasswordResetEmail(email: email.text.trim());
         if (mounted) {
           setState(
-            () => message = 'لو البريد مسجّل، هيوصلك رابط استعادة كلمة المرور.',
+            () => message =
+                'إذا كان البريد مسجّلًا، سيصلك رابط استعادة كلمة المرور.',
           );
         }
       } else if (creating) {
@@ -265,19 +266,23 @@ class _SignInPageState extends State<SignInPage> {
       if (mounted) {
         setState(
           () => message = switch (error.code) {
-            'network-request-failed' => 'راجع اتصال الإنترنت وجرب تاني.',
-            'too-many-requests' => 'محاولات كتير. استنى شوية وجرب تاني.',
-            'weak-password' => 'اختار كلمة مرور أقوى.',
+            'network-request-failed' =>
+              'تحقق من اتصال الإنترنت وحاول مرة أخرى.',
+            'too-many-requests' =>
+              'محاولات كثيرة. انتظر قليلًا ثم حاول مرة أخرى.',
+            'weak-password' => 'اختر كلمة مرور أقوى.',
             'email-already-in-use' => 'البريد مسجّل بالفعل. جرّب تسجيل الدخول.',
             'invalid-email' => 'راجع كتابة البريد الإلكتروني.',
             'operation-not-allowed' =>
-              'تسجيل الحساب غير متاح حاليًا. جرب لاحقًا.',
+              'إنشاء الحساب غير متاح حاليًا. حاول لاحقًا.',
             _ => 'تعذر الدخول. راجع البريد وكلمة المرور أو استعد حسابك.',
           },
         );
       }
     } catch (_) {
-      if (mounted) setState(() => message = 'تعذر إكمال الطلب. جرب مرة تانية.');
+      if (mounted) {
+        setState(() => message = 'تعذّر إكمال الطلب. حاول مرة أخرى.');
+      }
     } finally {
       if (mounted) setState(() => busy = false);
     }
@@ -304,7 +309,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      creating ? 'اعملي حساب لسفرتك' : 'أهلًا بيكي في سُفرة',
+                      creating ? 'أنشئ حسابًا لسفرتك' : 'أهلًا بك في سفرة',
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontSize: 26,
@@ -349,7 +354,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       validator: (v) => (v ?? '').length >= 6
                           ? null
-                          : 'كلمة المرور 6 حروف على الأقل',
+                          : 'كلمة المرور 6 أحرف على الأقل',
                       onFieldSubmitted: (_) => submit(),
                     ),
                     if (message != null)
@@ -383,7 +388,7 @@ class _SignInPageState extends State<SignInPage> {
                               message = null;
                             }),
                       child: Text(
-                        creating ? 'عندي حساب بالفعل' : 'أول مرة؟ اعملي حساب',
+                        creating ? 'عندي حساب بالفعل' : 'أول مرة؟ أنشئ حسابًا',
                       ),
                     ),
                     if (!creating)

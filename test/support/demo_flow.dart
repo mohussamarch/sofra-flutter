@@ -72,7 +72,11 @@ Future<void> goHome(WidgetTester tester) async {
 /// Back to the home kitchen, then one of its corner circles.
 Future<void> openCorner(WidgetTester tester, String circle) async {
   await goHome(tester);
-  await tapKey(tester, 'circle-$circle');
+  // Community moved from a kitchen corner to the bottom bar.
+  await tapKey(
+    tester,
+    circle == 'community' ? 'nav-community' : 'circle-$circle',
+  );
 }
 
 /// The stock page, through the kitchen (no render in tests, so its stand-in).
@@ -133,8 +137,8 @@ Future<void> exerciseDemoFlow(WidgetTester tester) async {
     await tapKey(tester, 'next-cooking-step');
   }
   await tapKey(tester, 'finish-cooking');
-  expect(find.text('هيتخصم'), findsOneWidget);
-  expect(find.text('مش هيتخصم'), findsOneWidget);
+  expect(find.text('سيُخصم'), findsOneWidget);
+  expect(find.text('لن يُخصم'), findsOneWidget);
   await tapKey(tester, 'confirm-cooking');
   expect(find.byKey(const ValueKey('cooking-success')), findsOneWidget);
   // One and a half servings are left and go to the fridge.

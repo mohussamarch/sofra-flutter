@@ -60,7 +60,7 @@ final _field = OutlineInputBorder(
 
 final _theme = ThemeData(
   useMaterial3: true,
-  fontFamily: 'Tajawal',
+  fontFamily: 'IBMPlexSansArabic',
   scaffoldBackgroundColor: Sofra.cream,
   splashFactory: InkSparkle.splashFactory,
   colorScheme: ColorScheme.fromSeed(
@@ -71,13 +71,18 @@ final _theme = ThemeData(
     surface: Sofra.cream,
   ),
   textTheme: const TextTheme(
-    bodyMedium: TextStyle(color: Sofra.ink, fontSize: 15, height: 1.45),
-    bodyLarge: TextStyle(color: Sofra.ink, fontSize: 16, height: 1.45),
-    titleLarge: TextStyle(color: Sofra.ink, fontWeight: FontWeight.w800),
+    bodyMedium: TextStyle(color: Sofra.ink, fontSize: 15, height: 1.6),
+    bodyLarge: TextStyle(color: Sofra.ink, fontSize: 16, height: 1.6),
+    titleLarge: TextStyle(
+      fontFamily: Sofra.display,
+      color: Sofra.ink,
+      fontWeight: FontWeight.w700,
+      fontVariations: [FontVariation('wght', 700)],
+    ),
   ),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: Colors.white,
+    fillColor: Sofra.surface,
     contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
     hintStyle: const TextStyle(color: Sofra.muted),
     border: _field,
@@ -90,8 +95,8 @@ final _theme = ThemeData(
     ),
   ),
   chipTheme: ChipThemeData(
-    backgroundColor: Colors.white,
-    selectedColor: Sofra.mint,
+    backgroundColor: Sofra.surface,
+    selectedColor: Sofra.accentTint,
     side: BorderSide.none,
     labelStyle: const TextStyle(fontWeight: FontWeight.w700, color: Sofra.ink),
     shape: RoundedRectangleBorder(

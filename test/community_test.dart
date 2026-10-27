@@ -206,14 +206,14 @@ void main() {
     final a = MemoryCommunity(server, 'a'), b = MemoryCommunity(server, 'b');
     await a.postStory(name: 'بيت أ', text: 'فطار', colorIndex: 1);
     now = now.add(const Duration(hours: 2));
-    await b.postStory(name: 'بيت ب', text: 'غدا', dish: 'ملوخية');
+    await b.postStory(name: 'بيت ب', text: 'غداء', dish: 'ملوخية');
     now = now.add(const Duration(hours: 1));
-    await a.postStory(name: 'بيت أ', text: 'عشا');
+    await a.postStory(name: 'بيت أ', text: 'عشاء');
     final rings = storyRings(await a.liveStories(), now);
     expect(rings.map((r) => r.first.uid), ['a', 'b']);
-    expect(rings.first.map((s) => s.text), ['فطار', 'عشا']);
+    expect(rings.first.map((s) => s.text), ['فطار', 'عشاء']);
     now = now.add(const Duration(hours: 22));
-    expect((await a.liveStories()).map((s) => s.text), ['غدا', 'عشا']);
+    expect((await a.liveStories()).map((s) => s.text), ['غداء', 'عشاء']);
     expect(
       () => Story(id: 'x', uid: 'a', name: 'n', text: ' ', createdAt: now),
       throwsArgumentError,

@@ -74,6 +74,7 @@ flutter:
   assets:
     - assets/scenes/kitchen/
     - assets/scenes/kitchen/spike-r14/
+    - assets/scenes/kitchen/fridge-interior-r24/
     - assets/spike3d/
     - assets/recipe-photos/
     - assets/community/
@@ -1150,6 +1151,19 @@ flutter:
     - data/recipes/curated-local/foodista-scale-20261021b/source-snapshots/52434.json
 
   fonts:
+    - family: IBMPlexSansArabic
+      fonts:
+        - asset: assets/fonts/IBMPlexSansArabic-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/IBMPlexSansArabic-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/IBMPlexSansArabic-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/IBMPlexSansArabic-Bold.ttf
+          weight: 700
+    - family: ElMessiri
+      fonts:
+        - asset: assets/fonts/ElMessiri.ttf
     - family: Tajawal
       fonts:
         - asset: assets/fonts/Tajawal-Regular.ttf

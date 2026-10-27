@@ -182,7 +182,7 @@ void main() {
     await tester.pumpAndSettle();
     await completeOnboarding(tester);
     await openCorner(tester, 'settings');
-    expect(find.text('من غير تذكير'), findsNWidgets(3));
+    expect(find.text('دون تذكير'), findsNWidgets(3));
     await tapKey(tester, 'reminder-before-60');
     await tapKey(tester, 'reminder-stock');
     expect(store.data!['remindBefore'], 60);
@@ -226,7 +226,7 @@ void main() {
       '6220000000001',
     );
     await tapKey(tester, 'barcode-manual-go');
-    expect(find.text('المنتج ده مش في بياناتنا لسه'), findsOneWidget);
+    expect(find.text('هذا المنتج غير موجود في بياناتنا بعد'), findsOneWidget);
     await tester.enterText(find.byKey(const ValueKey('scan-search')), 'رز');
     await tester.pumpAndSettle();
     await tapKey(tester, 'scan-pick-rice');
@@ -315,7 +315,7 @@ void main() {
     expect(reopened, 1);
     expect(server.kitchens[kid]!['members'], ['alice', 'bob']);
     await tapKey(tester, 'community-prices');
-    expect(find.text('اكتب منطقتك الأول.'), findsOneWidget);
+    expect(find.text('اكتب منطقتك أولًا.'), findsOneWidget);
     await tapKey(tester, 'community-challenge');
     await tapKey(tester, 'challenge-join');
     expect(find.byKey(const ValueKey('challenge-entry-bob')), findsOneWidget);

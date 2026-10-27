@@ -231,12 +231,12 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
             mainAxisSize: MainAxisSize.min,
             children: [
               const Text(
-                'تعذّر تحميل بيانات البيت. بياناتك ما اتمسحتش.',
+                'تعذّر تحميل بيانات البيت. بياناتك لم تُحذف.',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 16),
-              DepthButton(label: 'جرّب تاني', onPressed: c.load),
+              DepthButton(label: 'حاول مرة أخرى', onPressed: c.load),
             ],
           ),
         ),
@@ -309,8 +309,8 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
               child: Text(
                 switch (view) {
                   _View.addStock => 'نزوّد الخير',
-                  _View.recipe => 'وصفة على قدّك',
-                  _ => 'نطبخ سوا',
+                  _View.recipe => 'وصفة على قدرك',
+                  _ => 'نطبخ معًا',
                 },
                 style: const TextStyle(
                   fontWeight: FontWeight.w800,
@@ -367,10 +367,10 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   /// open one again returns to it.
   Widget _bottomNav(SofraController c) {
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
-    // Over the dark kitchen the glass turns smoky and the ink light.
-    final dark = _homeTabs.contains(tab);
-    final ink = dark ? Colors.white : Sofra.ink;
-    final accent = dark ? Sofra.yellow : Sofra.greenDark;
+    // One light glass bar everywhere, the open tab in the accent.
+    const dark = false;
+    const ink = Sofra.ink;
+    const accent = Sofra.accent;
     Widget item(
       AppTab target,
       String key,

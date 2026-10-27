@@ -7,8 +7,8 @@ class MarketProfile {
   String get locale => country == MarketCountry.egypt ? 'ar-EG' : 'ar-SA';
   String get currency => country == MarketCountry.egypt ? 'EGP' : 'SAR';
   String get currencyLabel => country == MarketCountry.egypt ? 'ج.م' : 'ر.س';
-  String get today => country == MarketCountry.egypt ? 'النهارده' : 'اليوم';
-  String get fridge => country == MarketCountry.egypt ? 'التلاجة' : 'الثلاجة';
+  String get today => country == MarketCountry.egypt ? 'اليوم' : 'اليوم';
+  String get fridge => country == MarketCountry.egypt ? 'الثلاجة' : 'الثلاجة';
   static MarketProfile fromCode(String? code) =>
       MarketProfile(code == 'SA' ? MarketCountry.saudi : MarketCountry.egypt);
 }

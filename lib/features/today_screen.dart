@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
+import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
 import '../scene/scene_lighting.dart';
 import '../scene3d/kitchen_3d.dart';
@@ -22,8 +23,8 @@ enum HomeMode { kitchen, recipes, table }
 /// Page light per lighting mode: (glow behind the kitchen, dark edge). The
 /// room sits in a pool of warm light and its edges sink into the dark.
 const _tones = {
-  'morning': (Color(0xFF4B3B2B), Color(0xFF110D0A)),
-  'golden': (Color(0xFF573A28), Color(0xFF130C08)),
+  'morning': (Color(0xFFFCF8F0), Color(0xFFE8DAC3)),
+  'golden': (Color(0xFFF8E9D4), Color(0xFFD9BF9C)),
   'night': (Color(0xFF26323F), Color(0xFF07090D)),
 };
 
@@ -142,16 +143,24 @@ class _TodayScreenState extends State<TodayScreen> {
     return (mix((t) => t.$1), mix((t) => t.$2));
   }
 
+  /// The lighting mode carrying the most weight now.
+  String get _lighting =>
+      weights.entries.reduce((a, b) => a.value >= b.value ? a : b).key;
+
   Future<void> _openZone(StorageZone zone, {bool overDoor = false}) {
     final nav = SofraScope.navOf(context);
     return showShelves(
       context,
       title: zoneName(zone),
       items: (context) => zoneShelfItems(context, zone),
-      empty: 'ضيف اللي عندك هنا، وهنقولك تطبخ إيه منه.',
+      empty: 'أضف ما عندك هنا، وسنقترح ما تطبخه منه.',
       // Over an open fridge the room stays visible behind the shelves.
       barrier: overDoor ? const Color(0x990D0A08) : null,
       width: overDoor ? .72 : 1,
+      // The fridge keeps its lit body still behind the turning shelves.
+      interior: overDoor && zone == StorageZone.fridge
+          ? fridgeInterior(_lighting)
+          : null,
       onAdd: () {
         Navigator.pop(context);
         nav.openAddStock();
@@ -182,7 +191,7 @@ class _TodayScreenState extends State<TodayScreen> {
       context,
       title: 'بواقي الأكل',
       items: leftoverShelfItems,
-      empty: 'مفيش بواقي متسجلة. لما تطبخ وتفضل حاجة، هتلاقيها هنا تسخنها.',
+      empty: 'لا توجد بواقٍ مسجّلة. عندما تطبخ ويتبقى شيء، ستجده هنا لتسخينه.',
     );
     if (mounted && widget.mode == HomeMode.kitchen) viewer.overview();
   }
@@ -226,7 +235,9 @@ class _TodayScreenState extends State<TodayScreen> {
   Widget build(BuildContext context) {
     final (top, bottom) = _tone;
     final media = MediaQuery.of(context);
-    const ink = Colors.white;
+    // Paper by day, the dark room at night: the ink follows the page.
+    final dark = top.computeLuminance() < .25;
+    final ink = dark ? Colors.white : Sofra.ink;
     final nav = SofraScope.navOf(context);
     return LayoutBuilder(
       builder: (context, box) {
@@ -234,28 +245,6 @@ class _TodayScreenState extends State<TodayScreen> {
         final foot = media.padding.bottom + 112;
         final room = box.maxHeight - head - foot;
         final kitchen = widget.mode == HomeMode.kitchen;
-        // Circles sit in the screen's corners, clear of the room.
-        Widget circle(
-          bool top,
-          bool start,
-          String key,
-          IconData icon,
-          String label,
-          AppTab tab,
-        ) => PositionedDirectional(
-          start: start ? 10 : null,
-          end: start ? null : 10,
-          top: top ? head : head + room - 78,
-          width: 80,
-          child: _CornerCircle(
-            id: key,
-            icon: icon,
-            label: label,
-            dark: true,
-            visible: kitchen,
-            onTap: () => nav.goTab(tab),
-          ),
-        );
         return AnimatedContainer(
           duration: const Duration(seconds: 2),
           decoration: BoxDecoration(
@@ -289,54 +278,43 @@ class _TodayScreenState extends State<TodayScreen> {
                         child: IconButton.filledTonal(
                           key: const ValueKey('open-stock'),
                           iconSize: 48,
-                          tooltip: 'خزين مطبخي',
+                          tooltip: 'مخزون مطبخي',
                           onPressed: () => nav.goTab(AppTab.kitchen),
                           icon: const Icon(Icons.kitchen_outlined),
                         ),
                       ),
-              ),
-              circle(
-                true,
-                true,
-                'circle-profile',
-                Icons.person_outline_rounded,
-                'بروفايلي',
-                AppTab.profile,
-              ),
-              circle(
-                true,
-                false,
-                'circle-settings',
-                Icons.settings_outlined,
-                'الإعدادات',
-                AppTab.settings,
-              ),
-              circle(
-                false,
-                false,
-                'circle-community',
-                Icons.diversity_3_outlined,
-                'مجتمع سفرة',
-                AppTab.community,
-              ),
-              circle(
-                false,
-                true,
-                'circle-style',
-                Icons.format_paint_outlined,
-                'شكل المطبخ',
-                AppTab.style,
               ),
               Positioned(
                 top: media.padding.top,
                 left: 0,
                 right: 0,
                 height: 48,
-                // The table view fills the top; the line steps aside.
-                child: AnimatedOpacity(
-                  opacity: widget.mode == HomeMode.table ? 0 : 1,
-                  duration: Sofra.motion(context, false),
-                  child: _TopLine(ink: ink, onLeftovers: _openLeftovers),
+                // Only over the room: the book and the table fill the top.
+                child: IgnorePointer(
+                  ignoring: !kitchen,
+                  child: AnimatedOpacity(
+                    opacity: kitchen ? 1 : 0,
+                    duration: Sofra.motion(context, true),
+                    child: _TopBar(ink: ink, dark: dark),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 16,
+                right: 16,
+                bottom: foot - 8,
+                child: IgnorePointer(
+                  ignoring: !kitchen,
+                  child: AnimatedSlide(
+                    offset: kitchen ? Offset.zero : const Offset(0, .3),
+                    duration: Sofra.motion(context),
+                    curve: Sofra.calmCurve,
+                    child: AnimatedOpacity(
+                      opacity: kitchen ? 1 : 0,
+                      duration: Sofra.motion(context, true),
+                      child: _TodayCard(onLeftovers: _openLeftovers),
+                    ),
+                  ),
                 ),
               ),
               if (widget.mode == HomeMode.table)
@@ -356,113 +334,208 @@ class _TodayScreenState extends State<TodayScreen> {
   }
 }
 
-/// Greeting small on the start side, the account's name centred.
-class _TopLine extends StatelessWidget {
-  const _TopLine({required this.ink, this.onLeftovers});
+/// Greeting and the account's name on the start side; the kitchen's own
+/// places (style, settings, profile) as quiet icons on the end side.
+class _TopBar extends StatelessWidget {
+  const _TopBar({required this.ink, required this.dark});
   final Color ink;
-
-  /// Opens the leftovers, for the due reminder.
-  final VoidCallback? onLeftovers;
+  final bool dark;
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final nav = SofraScope.navOf(context);
     final hour = DateTime.now().hour;
     final greeting = hour < 12
         ? 'صباح الخير'
         : hour < 18
         ? 'نهارك سعيد'
         : 'مساء الخير';
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Text(
-          c.profile.displayName,
-          style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.w800,
-            color: ink,
-            letterSpacing: -.2,
-          ),
-        ),
-        PositionedDirectional(
-          start: 20,
-          child: Text(
-            greeting,
-            style: TextStyle(fontSize: 12, color: ink.withValues(alpha: .62)),
-          ),
-        ),
-        if (c.leftoversDue(DateTime.now()) case final due when due.isNotEmpty)
-          PositionedDirectional(
-            end: 12,
-            child: ActionChip(
-              key: const ValueKey('leftovers-due'),
-              avatar: const Icon(Icons.microwave_outlined, size: 16),
-              label: Text('بواقي جه معادها: ${due.length}'),
-              onPressed: onLeftovers,
+    Widget icon(String key, IconData glyph, String tip, AppTab tab) => Padding(
+      padding: const EdgeInsetsDirectional.only(start: 8),
+      child: PressScale(
+        child: LiquidGlass(
+          radius: 22,
+          dark: dark,
+          child: SizedBox.square(
+            dimension: 44,
+            child: IconButton(
+              key: ValueKey(key),
+              tooltip: tip,
+              onPressed: () => nav.goTab(tab),
+              icon: Icon(glyph, color: ink, size: 21),
             ),
           ),
-      ],
+        ),
+      ),
+    );
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Row(
+        children: [
+          Expanded(
+            // Large system text shrinks to fit the bar instead of spilling.
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: AlignmentDirectional.centerStart,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    greeting,
+                    style: TextStyle(
+                      fontSize: 12,
+                      height: 1.3,
+                      color: ink.withValues(alpha: .65),
+                    ),
+                  ),
+                  Text(
+                    c.profile.displayName,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Sofra.heading(19, color: ink),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          icon(
+            'circle-style',
+            Icons.format_paint_outlined,
+            'شكل المطبخ',
+            AppTab.style,
+          ),
+          icon(
+            'circle-settings',
+            Icons.settings_outlined,
+            'الإعدادات',
+            AppTab.settings,
+          ),
+          icon(
+            'circle-profile',
+            Icons.person_outline_rounded,
+            'بروفايلي',
+            AppTab.profile,
+          ),
+        ],
+      ),
     );
   }
 }
 
-class _CornerCircle extends StatelessWidget {
-  const _CornerCircle({
-    required this.id,
-    required this.icon,
-    required this.label,
-    required this.dark,
-    required this.visible,
-    required this.onTap,
-  });
-  final String id;
-  final IconData icon;
-  final String label;
-  final bool dark, visible;
-  final VoidCallback onTap;
+/// What to do now, under the room: the next meal on the table with one
+/// action (cook it), or, with nothing planned, a way to pick one. The stock
+/// is always one tap away here, since the fridge alone is easy to miss.
+class _TodayCard extends StatelessWidget {
+  const _TodayCard({this.onLeftovers});
+
+  /// Opens the leftovers, for the due reminder.
+  final VoidCallback? onLeftovers;
+
   @override
   Widget build(BuildContext context) {
-    final ink = dark ? Colors.white : Sofra.ink;
-    return IgnorePointer(
-      ignoring: !visible,
-      child: AnimatedOpacity(
-        opacity: visible ? 1 : 0,
-        duration: Sofra.motion(context),
-        curve: Sofra.calmCurve,
-        child: AnimatedScale(
-          scale: visible ? 1 : .8,
-          duration: Sofra.motion(context),
-          curve: Sofra.calmCurve,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              PressScale(
-                child: LiquidGlass(
-                  radius: 26,
-                  dark: dark,
-                  child: SizedBox.square(
-                    dimension: 52,
-                    child: IconButton(
-                      key: ValueKey(id),
-                      onPressed: onTap,
-                      tooltip: label,
-                      icon: Icon(icon, color: ink, size: 23),
-                    ),
+    final c = SofraScope.controllerOf(context);
+    final nav = SofraScope.navOf(context);
+    final now = DateTime.now();
+    final next = c.upcoming(now).where((m) => !m.completed).firstOrNull;
+    final due = c.leftoversDue(now);
+    final today = localDay(now);
+    String when(PlannedMeal m) {
+      final day = m.date == today
+          ? 'اليوم'
+          : m.date == localDay(now.add(const Duration(days: 1)))
+          ? 'غدًا'
+          : m.date;
+      return '${slotLabel(m.slot)} · $day';
+    }
+
+    final stock = DepthButton(
+      key: const ValueKey('today-stock'),
+      compact: true,
+      secondary: true,
+      icon: Icons.kitchen_outlined,
+      label: 'المخزون',
+      onPressed: () => nav.goTab(AppTab.kitchen),
+    );
+    return Container(
+      key: const ValueKey('today-card'),
+      padding: const EdgeInsets.fromLTRB(18, 16, 18, 16),
+      decoration: BoxDecoration(
+        color: Sofra.surface,
+        borderRadius: BorderRadius.circular(Sofra.r22),
+        boxShadow: Sofra.shadow(),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (due.isNotEmpty) ...[
+            SofraChip(
+              key: const ValueKey('leftovers-due'),
+              avatar: const Icon(Icons.microwave_outlined, size: 16),
+              label: Text('بواقٍ حان موعدها: ${due.length}'),
+              backgroundColor: Sofra.warnTint,
+              onPressed: onLeftovers,
+            ),
+            const SizedBox(height: 8),
+          ],
+          if (next == null) ...[
+            Text('ماذا نطبخ اليوم؟', style: Sofra.heading(20)),
+            const SizedBox(height: 4),
+            const Text(
+              'اختر وصفة، ونعرض لك الناقص من مطبخك قبل البدء.',
+              style: TextStyle(color: Sofra.muted, fontSize: 14),
+            ),
+            const SizedBox(height: 14),
+            Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: DepthButton(
+                    key: const ValueKey('today-pick'),
+                    compact: true,
+                    icon: Icons.menu_book_outlined,
+                    label: 'اختر وصفة',
+                    onPressed: () => nav.goTab(AppTab.recipes),
                   ),
                 ),
+                const SizedBox(width: 8),
+                Expanded(flex: 2, child: stock),
+              ],
+            ),
+          ] else ...[
+            Text(
+              'التالي على السفرة · ${when(next)}',
+              style: const TextStyle(color: Sofra.muted, fontSize: 13),
+            ),
+            FutureBuilder<String>(
+              future: c.planTitle(next),
+              builder: (context, snap) => Text(
+                snap.data ?? '…',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Sofra.heading(21),
               ),
-              const SizedBox(height: 5),
-              Text(
-                label,
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.w700,
-                  color: ink.withValues(alpha: .75),
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: DepthButton(
+                    key: const ValueKey('today-cook'),
+                    compact: true,
+                    icon: Icons.soup_kitchen_outlined,
+                    label: 'ابدأ الطبخ',
+                    onPressed: () => nav.startCooking(next),
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ),
+                const SizedBox(width: 8),
+                Expanded(flex: 2, child: stock),
+              ],
+            ),
+          ],
+        ],
       ),
     );
   }
@@ -519,12 +592,12 @@ class _MealCardsState extends State<_MealCards> {
                   const Icon(Icons.restaurant_outlined, size: 34),
                   const SizedBox(height: 10),
                   const Text(
-                    'السفرة لسه فاضية',
+                    'السفرة فارغة',
                     style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800),
                   ),
                   const SizedBox(height: 6),
                   const Text(
-                    'افتح كتاب الوصفات واختار أكلة نحطها هنا.',
+                    'افتح كتاب الوصفات واختر أكلة لتظهر هنا.',
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Sofra.muted),
                   ),
@@ -676,7 +749,7 @@ class _PlansSheet extends StatelessWidget {
             children: [
               const Expanded(
                 child: Text(
-                  'الأكلات الجاية',
+                  'الأكلات القادمة',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
                 ),
               ),
@@ -693,7 +766,7 @@ class _PlansSheet extends StatelessWidget {
           const SizedBox(height: 12),
           if (meals.isEmpty)
             const Text(
-              'مفيش أكلات متخططة. اختار من كتاب الوصفات.',
+              'لا توجد أكلات مخططة. اختر من كتاب الوصفات.',
               style: TextStyle(color: Sofra.muted),
             )
           else

@@ -23,7 +23,7 @@ class ReminderSettings extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'ميعاد كل وجبة عندك، علشان نفكرك قبلها.',
+            'موعد كل وجبة عندك، لنذكّرك قبلها.',
             style: TextStyle(fontSize: 12, color: Sofra.muted),
           ),
           for (final MapEntry(key: slot, value: name) in mealSlots.entries)
@@ -33,14 +33,14 @@ class ReminderSettings extends StatelessWidget {
               title: Text(name),
               subtitle: Text(
                 p.mealTimes[slot] == null
-                    ? 'من غير تذكير'
+                    ? 'دون تذكير'
                     : timeText(p.mealTimes[slot]!),
               ),
               trailing: p.mealTimes[slot] == null
                   ? const Icon(Icons.add_alarm_outlined)
                   : IconButton(
                       key: ValueKey('reminder-clear-$slot'),
-                      tooltip: 'شيل التذكير',
+                      tooltip: 'احذف التذكير',
                       icon: const Icon(Icons.alarm_off_outlined),
                       onPressed: () => c.updateProfile(
                         (p) => p.copyWith(
@@ -52,7 +52,7 @@ class ReminderSettings extends StatelessWidget {
                 final current = p.mealTimes[slot];
                 final picked = await showTimePicker(
                   context: context,
-                  helpText: 'ميعاد $name',
+                  helpText: 'موعد $name',
                   initialTime: current == null
                       ? TimeOfDay.now()
                       : TimeOfDay(hour: current ~/ 60, minute: current % 60),
@@ -69,12 +69,12 @@ class ReminderSettings extends StatelessWidget {
               },
             ),
           const SizedBox(height: 4),
-          const Text('فكرني قبلها بـ', style: TextStyle(fontSize: 13)),
+          const Text('ذكّرني قبلها بـ', style: TextStyle(fontSize: 13)),
           Wrap(
             spacing: 8,
             children: [
               for (final m in const [15, 30, 60, 90])
-                ChoiceChip(
+                SofraChip(
                   key: ValueKey('reminder-before-$m'),
                   label: Text('$m دقيقة'),
                   selected: p.remindBefore == m,
@@ -86,9 +86,9 @@ class ReminderSettings extends StatelessWidget {
           SwitchListTile.adaptive(
             key: const ValueKey('reminder-stock'),
             contentPadding: EdgeInsets.zero,
-            title: const Text('لما مكوّن يخلص'),
+            title: const Text('عندما ينفد مكوّن'),
             subtitle: const Text(
-              'تنبيه بعد الطبخ لو استخدمت آخر حاجة في الخزين',
+              'تنبيه بعد الطبخ إذا استخدمت آخر ما في المخزون',
               style: TextStyle(fontSize: 11),
             ),
             value: p.stockAlerts,

@@ -67,7 +67,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
             if (snap.hasError) {
               return const Padding(
                 padding: EdgeInsets.all(20),
-                child: ErrorBlock('معرفناش نجهز القائمة. جرب تاني.'),
+                child: ErrorBlock('تعذّر تجهيز القائمة. حاول مرة أخرى.'),
               );
             }
             final f = snap.data;
@@ -93,7 +93,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                       if (items.isNotEmpty)
                         IconButton(
                           key: const ValueKey('shopping-share'),
-                          tooltip: 'ابعتها (واتساب وغيره)',
+                          tooltip: 'أرسلها (واتساب وغيره)',
                           onPressed: () => SharePlus.instance.share(
                             ShareParams(text: c.shoppingText(f)),
                           ),
@@ -106,10 +106,10 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     items.isEmpty
-                        ? 'مش ناقصك حاجة للأكلات المتخططة.'
+                        ? 'لا ينقصك شيء للأكلات المخططة.'
                         : f.purchaseTotal != null
                         ? 'حوالي ${formatAmount(f.purchaseTotal!.roundToDouble())} $money بأسعارك.'
-                        : 'المعروف سعره: ${formatAmount(f.knownPurchaseSubtotal.roundToDouble())} $money، وفيه حاجات من غير سعر.',
+                        : 'المعروف سعره: ${formatAmount(f.knownPurchaseSubtotal.roundToDouble())} $money، وبعض الأشياء دون سعر.',
                     key: const ValueKey('shopping-total'),
                     style: const TextStyle(color: Sofra.muted),
                   ),
@@ -150,7 +150,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                                       ),
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    hintText: 'دفعت كام؟ (اختياري)',
+                                    hintText: 'كم دفعت؟ (اختياري)',
                                     suffixText: money,
                                   ),
                                 ),
@@ -166,7 +166,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
                           child: Text(
-                            'فيه ${f.unresolvedRequirements.length} سطر من غير كمية (زي «حسب الرغبة») مش في القائمة.',
+                            'يوجد ${f.unresolvedRequirements.length} سطر دون كمية (مثل «حسب الرغبة») خارج القائمة.',
                             style: const TextStyle(
                               color: Sofra.muted,
                               fontSize: 12,
@@ -177,7 +177,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
                           child: Text(
-                            'وحدة الخزين لـ ${f.unresolvedStock.map(c.ingredientName).join('، ')} مش بتتحول لوحدة الوصفة؛ راجعها في الخزين.',
+                            'وحدة المخزون لـ ${f.unresolvedStock.map(c.ingredientName).join('، ')} لا تتحول إلى وحدة الوصفة؛ راجعها في المخزون.',
                             style: const TextStyle(
                               color: Sofra.muted,
                               fontSize: 12,
@@ -193,8 +193,8 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                     child: DepthButton(
                       key: const ValueKey('shopping-bought'),
                       label: bought.isEmpty
-                          ? 'علّم اللي اشتريته'
-                          : 'حط اللي اشتريته في المطبخ',
+                          ? 'علّم ما اشتريته'
+                          : 'ضع ما اشتريته في المطبخ',
                       onPressed: bought.isEmpty
                           ? null
                           : () async {
