@@ -9,11 +9,12 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import 'js_runner.dart';
 
-/// Which kitchen the viewer loads. `r24` (the default, an experiment the
-/// owner asked for) is Codex's R24 detail review model (`review-detail.glb`,
-/// six 1024 material pages on UV0): about 25MB, PBR materials,
-/// the Cycles bounce light as a lightmap on UV1 and hinged doors, not yet
-/// sized or tested for phones. `spike` is the light vertex-baked model.
+/// Which kitchen the viewer loads. `r24` (the default) is Codex's R25
+/// mobile export of the R24 kitchen (`kitchen-mobile.glb`: 7.2MB Draco,
+/// ~148k triangles, 768px colour / 512px normal pages on UV0, the Cycles
+/// bounce light as a lightmap on UV1, hinged doors and the fridge, freezer
+/// and microwave clips). Not yet tested on a phone or visually approved.
+/// `spike` is the older vertex-baked model.
 /// Build with `--dart-define=SOFRA_KITCHEN=spike` to go back.
 const kitchenModel = String.fromEnvironment(
   'SOFRA_KITCHEN',
@@ -115,8 +116,15 @@ class Kitchen3DController {
   );
 
   /// R24 only: swaps the probe and bounce lightmap to the time of day.
-  Future<void> lighting(String mode) =>
-      _r24 ? _run("mv.__light&&mv.__light('$mode');") : Future.value();
+  /// Kept on the element even before the model loads, so the first light
+  /// is the right one.
+  Future<void> lighting(String mode) => _r24
+      ? runViewerJs(
+          "(function(){const mv=document.querySelector('#$_id');if(!mv)return;"
+          "mv.__mode='$mode';if(mv.loaded&&mv.__light)mv.__light('$mode');})();",
+          _web,
+        )
+      : Future.value();
 
   /// At the near corner of the dining table, eyes about 1.55 m up, looking
   /// across it into the kitchen: table and vase low in front, window left,
@@ -261,7 +269,9 @@ class _Kitchen3DState extends State<Kitchen3D> {
         "if(mv.animationName==='microwave_open'&&mv.currentTime>0){"
         "mv.timeScale=-1;mv.play({repetitions:1});setTimeout(()=>{mv.pause();"
         "mv.timeScale=1;mv.currentTime=0;},1300);}};"
-        "mv.__light(mv.__mode||'morning');};"
+        // No mode from the app yet: the hour, on the app's lighting schedule.
+        "const h=new Date().getHours()+new Date().getMinutes()/60;"
+        "mv.__light(mv.__mode||(h>=18.5||h<5?'night':h<6.5||h>=16.5?'golden':'morning'));};"
         "if(mv.loaded)go();else mv.addEventListener('load',go,{once:true});";
   }
 
