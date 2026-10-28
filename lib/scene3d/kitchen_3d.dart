@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import 'asset_server.dart';
 import 'js_runner.dart';
 
 /// Which kitchen the viewer loads. `r24` (the default) is Codex's R25
@@ -170,6 +171,9 @@ double _linear(double c) =>
 class _Kitchen3DState extends State<Kitchen3D> {
   Timer? _setup;
 
+  /// Where the viewer fetches lighting files; null until known.
+  String? _assetBase;
+
   String get _channel => 'SofraKitchen_${widget.id}';
 
   @override
@@ -178,9 +182,12 @@ class _Kitchen3DState extends State<Kitchen3D> {
     widget.controller._id = widget.id;
     registerViewerChannel(_channel, _message);
     // The element appears a little after the widget; hook it up once found.
+    if (_r24) viewerAssetBase().then((b) => _assetBase = b);
     var tries = 0;
     _setup = Timer.periodic(const Duration(milliseconds: 400), (t) {
-      if (++tries > 40) t.cancel();
+      if (++tries > 60) t.cancel();
+      // R24 needs the lighting files' address before hooking up.
+      if (_r24 && _assetBase == null) return;
       runViewerJs(_hookJs, widget.controller._web);
     });
   }
@@ -225,7 +232,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
   /// adds the door helpers. model-viewer keeps three.js private, so this
   /// reaches its scene through the element's `scene` symbol (experiment).
   String get _r24Js {
-    final base = kIsWeb ? 'assets/assets/spike3d/r24' : 'assets/spike3d/r24';
+    final base = '$_assetBase/assets/spike3d/r24';
     final scales = _bounceScale.entries
         .map((e) => "${e.key}:${e.value}")
         .join(',');
@@ -252,7 +259,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
         "m.lightMapIntensity=S[mode]*Math.PI;m.needsUpdate=true;}"
         "sc.queueRender&&sc.queueRender();};"
         "if(maps[mode])return use(maps[mode]);const img=new Image();"
-        "img.onload=()=>{const t=new Tex(img);t.flipY=false;t.channel=1;"
+        "img.crossOrigin='anonymous';img.onload=()=>{const t=new Tex(img);t.flipY=false;t.channel=1;"
         "t.colorSpace='srgb';t.needsUpdate=true;maps[mode]=t;use(t);};"
         "img.src='$base/bounce-'+mode+'.png';};"
         "const swing=(name,to)=>{const o=sc.getObjectByName(name);if(!o)return;"
@@ -302,11 +309,9 @@ class _Kitchen3DState extends State<Kitchen3D> {
     disablePan: true,
     disableZoom: true,
     interactionPrompt: InteractionPrompt.none,
-    environmentImage: _r24
-        ? (kIsWeb
-              ? 'assets/assets/spike3d/r24/probe-morning.hdr'
-              : 'assets/spike3d/r24/probe-morning.hdr')
-        : 'neutral',
+    // R24 swaps in its probe HDR once loaded (`lighting`); the phone's
+    // WebView can only reach those files through the asset server.
+    environmentImage: 'neutral',
     exposure: _r24 ? .8 : 2.1,
     shadowIntensity: 0,
     debugLogging: false,
