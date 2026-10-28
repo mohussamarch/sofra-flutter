@@ -467,3 +467,5 @@ APK: `E:\work\SOFRA\deliverables\sofra-20261026-community-2843ab99.apk`
 - APK af197a9f (Android loading fix, before options): deliverables/sofra-20261028-r25-android3d-af197a9f.apk,
   SHA256 4db57246af9839a44b9d96500d1fc93ea3fc997b1d1ba40be0079c7ef5caf3e8.
 - Open: the fridge shelf backdrop image is the cream fridge's, also shown for the double fridge.
+- APK f0c0c0b2 (options + Android loading fix): deliverables/sofra-20261028-r25-options-f0c0c0b2.apk,
+  SHA256 b2436af7354050896a275a0f2f3bd6dcb76f88072e1c83496f6eb6604ceb39c0. Not yet tested on the S24.
