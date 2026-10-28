@@ -111,6 +111,7 @@ class _TodayScreenState extends State<TodayScreen> {
   void _tick() {
     if (!mounted) return;
     setState(() => weights = schedule.weightsAtTime(DateTime.now()));
+    viewer.lighting(_lighting);
   }
 
   @override
@@ -191,6 +192,8 @@ class _TodayScreenState extends State<TodayScreen> {
       context,
       title: 'بواقي الأكل',
       items: leftoverShelfItems,
+      // A lighter veil: the open microwave stays visible behind.
+      barrier: const Color(0x990D0A08),
       empty: 'لا توجد بواقٍ مسجّلة. عندما تطبخ ويتبقى شيء، ستجده هنا لتسخينه.',
     );
     if (mounted && widget.mode == HomeMode.kitchen) viewer.overview();

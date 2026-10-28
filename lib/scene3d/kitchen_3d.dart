@@ -9,6 +9,21 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import 'js_runner.dart';
 
+/// Which kitchen the viewer loads. `r24` (the default, an experiment the
+/// owner asked for) is Codex's R24 review model: about 26MB, PBR materials,
+/// the Cycles bounce light as a lightmap on UV1 and hinged doors, not yet
+/// sized or tested for phones. `spike` is the light vertex-baked model.
+/// Build with `--dart-define=SOFRA_KITCHEN=spike` to go back.
+const kitchenModel = String.fromEnvironment(
+  'SOFRA_KITCHEN',
+  defaultValue: 'r24',
+);
+bool get _r24 => kitchenModel == 'r24';
+
+/// Bounce lightmap scale per lighting mode, printed by
+/// `tool/scene3d/bounce_to_png.py` when it wrote the PNGs.
+const _bounceScale = {'morning': 1.5039, 'golden': .9639, 'night': .2241};
+
 /// A point in the kitchen in Blender's coordinates (metres, z up), the same
 /// space the zones are measured in.
 typedef KitchenPoint = ({double x, double y, double z});
@@ -62,9 +77,15 @@ class Kitchen3DController {
     _web,
   );
 
-  static const _home =
-      "mv.cameraTarget='auto auto auto';"
-      "mv.cameraOrbit='45deg 58deg auto';mv.fieldOfView='11.5deg';"
+  // R24 carries the garden and sky outside the window, so 'auto' would frame
+  // those too: the room's own centre and distance instead.
+  static final _homeTarget = _r24 ? '1.76m 1.26m -1.65m' : 'auto auto auto';
+  static final _homeOrbit = _r24 ? '45deg 58deg 34m' : '45deg 58deg auto';
+
+  static final _home =
+      "${_r24 ? 'mv.__shut&&mv.__shut();' : ''}"
+      "mv.cameraTarget='$_homeTarget';"
+      "mv.cameraOrbit='$_homeOrbit';mv.fieldOfView='11.5deg';"
       "if(mv.__mask)mv.style.maskImage=mv.style.webkitMaskImage=mv.__mask;";
 
   /// The isometric overview.
@@ -75,19 +96,26 @@ class Kitchen3DController {
     "mv.cameraTarget='3.15m ${freezer ? '1.7m' : '0.95m'} -2.9m';"
     "mv.cameraOrbit='0deg ${freezer ? '78deg' : '84deg'} 4.4m';"
     "mv.fieldOfView='40deg';"
-    "mv.timeScale=1;"
-    "mv.animationName='${freezer ? 'freezer_open' : 'fridge_open'}';"
-    "mv.currentTime=0;mv.play({repetitions:1});",
+    "${_r24 ? "mv.__door&&mv.__door('r18_${freezer ? 'freezer' : 'fridge'}_hinge',-1.75);" : "mv.timeScale=1;"
+              "mv.animationName='${freezer ? 'freezer_open' : 'fridge_open'}';"
+              "mv.currentTime=0;mv.play({repetitions:1});"}",
   );
 
   /// Swings the open door shut while the camera goes back to the overview.
   Future<void> close() => _run(
-    "if(mv.animationName){mv.timeScale=-1;mv.currentTime=mv.duration;"
-    "mv.play({repetitions:1});}"
-    // Reverse play is not reliable everywhere: make sure the door ends shut.
-    "setTimeout(()=>{mv.pause();mv.timeScale=1;mv.currentTime=0;},1200);"
-    "$_home",
+    _r24
+        ? "mv.__shut&&mv.__shut();$_home"
+        : "if(mv.animationName){mv.timeScale=-1;mv.currentTime=mv.duration;"
+              "mv.play({repetitions:1});}"
+              // Reverse play is not reliable everywhere: make sure the door
+              // ends shut.
+              "setTimeout(()=>{mv.pause();mv.timeScale=1;mv.currentTime=0;},1200);"
+              "$_home",
   );
+
+  /// R24 only: swaps the probe and bounce lightmap to the time of day.
+  Future<void> lighting(String mode) =>
+      _r24 ? _run("mv.__light&&mv.__light('$mode');") : Future.value();
 
   /// Seated at the far end of the dining table, eyes about 1.4 m up,
   /// looking across it into the corner: window on the left, stove on the
@@ -100,11 +128,14 @@ class Kitchen3DController {
     "mv.style.maskImage=mv.style.webkitMaskImage='none';",
   );
 
-  /// Turns to the microwave on the back counter. The model has no microwave
-  /// door yet (asked of Codex), so this is a camera move only.
+  /// Turns to the microwave on the back counter; on R24 its door opens too
+  /// (`microwave_open`). The overview shuts it again.
   Future<void> microwave() => _run(
-    "mv.cameraTarget='1m 1.08m -3.3m';"
-    "mv.cameraOrbit='15deg 80deg 2.1m';mv.fieldOfView='45deg';",
+    // R24 moved it onto the counter by the window (`microwave_root`).
+    "${_r24 ? "mv.cameraTarget='0.48m 1.07m -3.1m';mv.cameraOrbit='10deg 82deg 1.7m';" : "mv.cameraTarget='1m 1.08m -3.3m';mv.cameraOrbit='15deg 80deg 2.1m';"}"
+    "mv.fieldOfView='45deg';"
+    "${_r24 ? "mv.timeScale=1;mv.animationName='microwave_open';"
+              "mv.currentTime=0;mv.play({repetitions:1});" : ''}",
   );
 
   /// Repaints every cabinet in [color]; null restores the rendered colour.
@@ -167,7 +198,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
               "'radial-gradient(ellipse 52% 40% at 50% 50%,#000 58%,transparent 100%)';"
         : '';
     return "(function(){const mv=document.querySelector('#${widget.id}');"
-        "if(!mv||mv.__sofra)return;mv.__sofra=1;$fade"
+        "if(!mv||mv.__sofra)return;mv.__sofra=1;$fade${_r24 ? _r24Js : ''}"
         "let down=null;"
         "mv.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY];});"
         "mv.addEventListener('click',e=>{"
@@ -178,16 +209,70 @@ class _Kitchen3DState extends State<Kitchen3D> {
         "})();";
   }
 
+  /// R24 setup, run once per viewer after load: hides the review-only
+  /// shadow catchers and the outdoor trees, puts the bounce lightmap on UV1
+  /// of the baked (non-metal, non-glass) materials like Codex's viewer, and
+  /// adds the door helpers. model-viewer keeps three.js private, so this
+  /// reaches its scene through the element's `scene` symbol (experiment).
+  String get _r24Js {
+    final base = kIsWeb ? 'assets/assets/spike3d/r24' : 'assets/spike3d/r24';
+    final scales = _bounceScale.entries
+        .map((e) => "${e.key}:${e.value}")
+        .join(',');
+    return "mv.setAttribute('tone-mapping','agx');"
+        "const go=()=>{const k=Object.getOwnPropertySymbols(mv)"
+        ".find(x=>x.description==='scene');const sc=k&&mv[k];if(!sc)return;"
+        "const baked=[],gone=[];let Tex=null;"
+        "sc.traverse(o=>{if(!o.isMesh)return;const u=o.userData||{};"
+        "if(u.reviewShadowOnly||u.r22_large_sky_backdrop||o.name.startsWith('r22_exterior_')||"
+        "o.name.startsWith('exterior_')){gone.push(o);return;}"
+        "for(const m of [].concat(o.material)){if(m.map&&!Tex)Tex=m.map.constructor;"
+        "if(!u.reviewDynamic&&m.isMeshStandardMaterial&&m.metalness<.65&&"
+        "!(m.transmission>.05)){"
+        "if(o.geometry.attributes.uv&&!o.geometry.attributes.uv1)"
+        "o.geometry.setAttribute('uv1',o.geometry.attributes.uv.clone());"
+        "baked.push(m);}}});"
+        // Removed, not hidden: the garden and sky would still size the
+        // framing and push the near plane past the table.
+        "gone.forEach(o=>o.parent.remove(o));mv.updateFraming();"
+        "const S={$scales},maps={};"
+        "mv.__light=mode=>{mv.environmentImage='$base/probe-'+mode+'.hdr';"
+        "if(!Tex)return;const use=t=>{for(const m of baked){m.lightMap=t;"
+        "m.lightMapIntensity=S[mode]*Math.PI;m.needsUpdate=true;}"
+        "sc.queueRender&&sc.queueRender();};"
+        "if(maps[mode])return use(maps[mode]);const img=new Image();"
+        "img.onload=()=>{const t=new Tex(img);t.flipY=false;t.channel=1;"
+        "t.colorSpace='srgb';t.needsUpdate=true;maps[mode]=t;use(t);};"
+        "img.src='$base/bounce-'+mode+'.png';};"
+        "const swing=(name,to)=>{const o=sc.getObjectByName(name);if(!o)return;"
+        "const from=o.rotation.y,t0=performance.now();const step=t=>{"
+        "const f=Math.min(1,(t-t0)/900),e=1-Math.pow(1-f,3);"
+        "o.rotation.y=from+(to-from)*e;sc.queueRender&&sc.queueRender();"
+        "if(f<1)requestAnimationFrame(step);};requestAnimationFrame(step);};"
+        "mv.__door=swing;"
+        "mv.__shut=()=>{swing('r18_fridge_hinge',0);swing('r18_freezer_hinge',0);"
+        "if(mv.animationName==='microwave_open'&&mv.currentTime>0){"
+        "mv.timeScale=-1;mv.play({repetitions:1});setTimeout(()=>{mv.pause();"
+        "mv.timeScale=1;mv.currentTime=0;},1300);}};"
+        "mv.__light(mv.__mode||'morning');};"
+        "if(mv.loaded)go();else mv.addEventListener('load',go,{once:true});";
+  }
+
   @override
   Widget build(BuildContext context) => ModelViewer(
     id: widget.id,
     // The web serves Flutter assets one folder deeper.
-    src: kIsWeb
+    src: _r24
+        ? (kIsWeb
+              ? 'assets/assets/spike3d/r24/kitchen.glb'
+              : 'assets/spike3d/r24/kitchen.glb')
+        : kIsWeb
         ? 'assets/assets/spike3d/kitchen.glb'
         : 'assets/spike3d/kitchen.glb',
     alt: 'المطبخ ثلاثي الأبعاد',
     backgroundColor: widget.background,
-    cameraOrbit: '45deg 58deg auto',
+    cameraTarget: Kitchen3DController._homeTarget,
+    cameraOrbit: Kitchen3DController._homeOrbit,
     fieldOfView: '11.5deg',
     minFieldOfView: '10deg',
     maxFieldOfView: '70deg',
@@ -200,8 +285,12 @@ class _Kitchen3DState extends State<Kitchen3D> {
     disablePan: true,
     disableZoom: true,
     interactionPrompt: InteractionPrompt.none,
-    environmentImage: 'neutral',
-    exposure: 2.1,
+    environmentImage: _r24
+        ? (kIsWeb
+              ? 'assets/assets/spike3d/r24/probe-morning.hdr'
+              : 'assets/spike3d/r24/probe-morning.hdr')
+        : 'neutral',
+    exposure: _r24 ? .8 : 2.1,
     shadowIntensity: 0,
     debugLogging: false,
     javascriptChannels: {

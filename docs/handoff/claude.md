@@ -420,3 +420,21 @@ APK: `E:\work\SOFRA\deliverables\sofra-20261026-community-2843ab99.apk`
 - **الفحوص:** 449 اختبار ناجحين، وanalyze نضيف، واتجرب على الويب بمقاس 390.
   - صور قبل وبعد في `E:\shots\sofra-redesign\app\`.
   - ما اتجربش على S24.
+
+### تجربة R24 التقيلة في التطبيق (28 أكتوبر، بطلب المستخدم)
+- **`kitchenModel`** في `lib/scene3d/kitchen_3d.dart` قيمته الافتراضية `r24`. الملفات في `assets/spike3d/r24/`:
+  - `kitchen.glb`: نسخة من `review.glb`، حوالي 26MB؛
+  - `probe-*.hdr`: الإضاءة البيئية لكل وقت؛
+  - `bounce-*.png`: الـbounce lightmap، 2048 و8 بت، وبيطلّعها `tool/scene3d/bounce_to_png.py`، والـscale متسجل في `_bounceScale`.
+  - للرجوع للموديل القديم: `--dart-define=SOFRA_KITCHEN=spike`.
+- **الربط بـmodel-viewer:**
+  - بيوصل لمشهد three.js من الـsymbol اسمه `scene`، ودي API داخلية.
+  - بيشيل الجنينة والسما والـshadow catchers، وبعدها `updateFraming`.
+  - بيحط الـlightmap على UV1 لنفس الخامات اللي عارض Codex بيحطها عليها.
+  - أبواب التلاجة والفريزر بتلف من `r18_*_hinge`، والميكروويف بيشغّل `microwave_open`.
+  - اللقطة العامة بقيم ثابتة: target `1.76m 1.26m -1.65m` وorbit `45deg 58deg 34m`. لقطة الميكروويف على `microwave_root`.
+- **ناقص عن عارض Codex:**
+  - مفيش شمس ولا ظلال مباشرة، لأن model-viewer مفيهوش أضواء.
+  - مفيش لمبة جوه التلاجة.
+  - الـIBL مش متشال فوق الـbounce، فالشكل أفتح وأمسح.
+- **حدود:** ما اتجربش على S24، والحجم والذاكرة مش مقاسين. الـAPK هيكبر حوالي 33MB.
