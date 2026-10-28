@@ -10,7 +10,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'js_runner.dart';
 
 /// Which kitchen the viewer loads. `r24` (the default, an experiment the
-/// owner asked for) is Codex's R24 review model: about 26MB, PBR materials,
+/// owner asked for) is Codex's R24 detail review model (`review-detail.glb`,
+/// six 1024 material pages on UV0): about 25MB, PBR materials,
 /// the Cycles bounce light as a lightmap on UV1 and hinged doors, not yet
 /// sized or tested for phones. `spike` is the light vertex-baked model.
 /// Build with `--dart-define=SOFRA_KITCHEN=spike` to go back.
@@ -223,11 +224,12 @@ class _Kitchen3DState extends State<Kitchen3D> {
     return "mv.setAttribute('tone-mapping','agx');"
         "const go=()=>{const k=Object.getOwnPropertySymbols(mv)"
         ".find(x=>x.description==='scene');const sc=k&&mv[k];if(!sc)return;"
-        "const baked=[],gone=[];let Tex=null;"
+        "const baked=[],gone=[],lamps=[];let Tex=null;"
         "sc.traverse(o=>{if(!o.isMesh)return;const u=o.userData||{};"
         "if(u.reviewShadowOnly||u.r22_large_sky_backdrop||o.name.startsWith('r22_exterior_')||"
         "o.name.startsWith('exterior_')){gone.push(o);return;}"
         "for(const m of [].concat(o.material)){if(m.map&&!Tex)Tex=m.map.constructor;"
+        "if(m.name==='r18_fridge_lamp_diffuser'&&!lamps.includes(m)){m.emissiveIntensity=0;lamps.push(m);}"
         "if(!u.reviewDynamic&&m.isMeshStandardMaterial&&m.metalness<.65&&"
         "!(m.transmission>.05)){"
         "if(o.geometry.attributes.uv&&!o.geometry.attributes.uv1)"
@@ -248,7 +250,11 @@ class _Kitchen3DState extends State<Kitchen3D> {
         "const swing=(name,to)=>{const o=sc.getObjectByName(name);if(!o)return;"
         "const from=o.rotation.y,t0=performance.now();const step=t=>{"
         "const f=Math.min(1,(t-t0)/900),e=1-Math.pow(1-f,3);"
-        "o.rotation.y=from+(to-from)*e;sc.queueRender&&sc.queueRender();"
+        "o.rotation.y=from+(to-from)*e;"
+        // The fridge lamp follows the door angle (off shut, full by ~20°).
+        "const a=Math.abs(o.rotation.y),l=Math.min(1,Math.max(0,(a-.035)/.315));"
+        "for(const m of lamps)m.emissiveIntensity=1.5*l*l*(3-2*l);"
+        "sc.queueRender&&sc.queueRender();"
         "if(f<1)requestAnimationFrame(step);};requestAnimationFrame(step);};"
         "mv.__door=swing;"
         "mv.__shut=()=>{swing('r18_fridge_hinge',0);swing('r18_freezer_hinge',0);"
