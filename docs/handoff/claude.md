@@ -451,3 +451,19 @@ APK: `E:\work\SOFRA\deliverables\sofra-20261026-community-2843ab99.apk`
   - اتبنى على GitHub Actions، run رقم 40724208522، من commit `571972de` (arm64 release، وبإعدادات Firebase بتاعة Android).
   - الحجم 92,473,563 بايت. SHA256: `0e9d8cf4280420dc7d60f61e4ad0ab37369b78217a9799dbbb0af9c5d3fa749c`.
   - ما اتجربش على S24 لسه، وما اترفعش على Drive.
+
+## 2026-10-28 — Kitchen options wired (R24 options library on R25 mobile)
+
+- `assets/spike3d/r24/kitchen.glb` = R25 kitchen-mobile.glb + `realtime-r24/r23-options.glb`
+  (textures 2048→1024), merged with gltf-transform (`tool/scene3d/merge_options.sh`), Draco, 7.7 MB.
+- Options have no TEXCOORD_1 → the viewer lightmaps only meshes with `uv1` (probe light on options).
+- Visibility follows Codex's `r23-options.mjs record()`, meshes only (the merged scene root carries
+  `cabinet_style: classic_option_unapproved`). Applied before `updateFraming()`, which briefly
+  detaches the model.
+- `Profile.kitchenLook` (style, fridge, range, rug, curtain, plants, cane, cabinet hex) persists the
+  choices; KitchenStyleScreen has real selectors (no «قريبًا»); home kitchen shows the same look.
+- Double fridge opens both doors (r19 left −, right +); cabinet colour applies to classic only.
+- Profile migrates legacy meal names غدا/عشا → غداء/عشاء.
+- APK af197a9f (Android loading fix, before options): deliverables/sofra-20261028-r25-android3d-af197a9f.apk,
+  SHA256 4db57246af9839a44b9d96500d1fc93ea3fc997b1d1ba40be0079c7ef5caf3e8.
+- Open: the fridge shelf backdrop image is the cream fridge's, also shown for the double fridge.

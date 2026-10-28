@@ -1,30 +1,71 @@
 import 'package:flutter/material.dart';
 
+import '../app/scope.dart';
 import '../scene3d/kitchen_3d.dart';
 import '../ui/design.dart';
 import 'common.dart';
 
-/// "شكل المطبخ": the kitchen's swappable parts. The cabinet colour already
-/// changes live on the real-time 3D kitchen (engine spike); curtain, rug and
-/// table become 3D options once Codex exports them as separate parts.
+/// "شكل المطبخ": the kitchen's swappable parts, Codex's R24 options library
+/// (cabinet style, fridge, range, rug, curtain, plants, cane) plus the
+/// classic cabinet colour. Choices are saved in [Profile.kitchenLook] and
+/// dress the home kitchen too.
 class KitchenStyleScreen extends StatefulWidget {
   const KitchenStyleScreen({super.key, this.show3d = true});
 
   /// Off in widget tests, where no WebView exists.
   final bool show3d;
 
-  static const pending = [
-    (id: 'curtain', name: 'الستارة', icon: Icons.curtains_outlined),
-    (id: 'rug', name: 'السجادة', icon: Icons.texture_rounded),
-    (id: 'table', name: 'الطاولة', icon: Icons.table_restaurant_outlined),
-  ];
+  /// Each group's choices, the first being the base kitchen. Values are the
+  /// option names in Codex's model (r23-options.mjs).
+  static const groups =
+      <({String id, String name, List<(String, String)> items})>[
+        (
+          id: 'style',
+          name: 'طراز الخزائن',
+          items: [
+            ('classic', 'كلاسيكي'),
+            ('modern', 'عصري'),
+            ('japandi', 'ياباندي'),
+          ],
+        ),
+        (
+          id: 'fridge',
+          name: 'الثلاجة',
+          items: [('default', 'كريمية قديمة'), ('double', 'معدنية ببابين')],
+        ),
+        (
+          id: 'range',
+          name: 'الموقد',
+          items: [('default', 'موقد مستقل'), ('builtin', 'سطح وفرن مدمجان')],
+        ),
+        (
+          id: 'rug',
+          name: 'السجادة',
+          items: [
+            ('none', 'بلا سجادة'),
+            ('rug_persian', 'حمراء منقوشة'),
+            ('rug_teal', 'زرقاء حديثة'),
+            ('rug_ochre', 'كليم دافئ'),
+          ],
+        ),
+        (
+          id: 'curtain',
+          name: 'الستارة',
+          items: [
+            ('gingham', 'قماش مربعات'),
+            ('white_blind', 'شرائح بيضاء'),
+            ('none', 'بلا ستارة'),
+          ],
+        ),
+      ];
 
-  /// Cabinet colours; null is the colour of the Blender render.
-  static const cabinetColors = <(String, Color?)>[
+  /// Cabinet colours (hex, as saved); null is the colour of the render.
+  /// The colour is the classic painted timber's, so it shows on classic only.
+  static const cabinetColors = <(String, String?)>[
     ('الأصلي', null),
-    ('كريمي', Color(0xFFE9DFC8)),
-    ('أزرق رمادي', Color(0xFF7D93A3)),
-    ('تيراكوتا', Color(0xFFC0705A)),
+    ('كريمي', 'E9DFC8'),
+    ('أزرق رمادي', '7D93A3'),
+    ('تيراكوتا', 'C0705A'),
   ];
 
   @override
@@ -34,7 +75,6 @@ class KitchenStyleScreen extends StatefulWidget {
 class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
   final viewer = Kitchen3DController();
   var shot = 0;
-  var cabinet = 0;
 
   void _shot(int i) {
     setState(() => shot = i);
@@ -48,84 +88,122 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
     }
   }
 
-  void _cabinet(int i) {
-    setState(() => cabinet = i);
-    viewer.cabinets(KitchenStyleScreen.cabinetColors[i].$2);
+  /// Saves one choice; null removes it (back to the base kitchen).
+  void _set(String key, String? value) {
+    // A fridge swap shuts the old one's doors first.
+    if (key == 'fridge' && shot != 0) _shot(0);
+    SofraScope.controllerOf(context).updateProfile(
+      (p) => p.copyWith(
+        kitchenLook: {
+          for (final e in p.kitchenLook.entries)
+            if (e.key != key) e.key: e.value,
+          key: ?value,
+        },
+      ),
+    );
   }
 
   @override
-  Widget build(BuildContext context) => ScreenBody(
-    children: [
-      const SizedBox(height: 4),
-      if (widget.show3d) ...[
-        ClipRRect(
-          borderRadius: BorderRadius.circular(Sofra.r22),
-          child: SizedBox(height: 380, child: Kitchen3D(controller: viewer)),
-        ),
-        const SizedBox(height: 12),
+  Widget build(BuildContext context) {
+    final look = SofraScope.controllerOf(context).profile.kitchenLook;
+    final style = look['style'] ?? 'classic';
+    return ScreenBody(
+      children: [
+        const SizedBox(height: 4),
+        if (widget.show3d) ...[
+          ClipRRect(
+            borderRadius: BorderRadius.circular(Sofra.r22),
+            child: SizedBox(
+              height: 380,
+              child: Kitchen3D(controller: viewer, look: look),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Wrap(
+            spacing: 8,
+            children: [
+              for (final (i, label) in [
+                'المطبخ كله',
+                'افتح الثلاجة',
+                // The double fridge opens both doors either way.
+                if (look['fridge'] != 'double') 'افتح الفريزر',
+              ].indexed)
+                SofraChip(
+                  key: ValueKey('style-shot-$i'),
+                  label: Text(label),
+                  selected: shot == i,
+                  onSelected: (_) => _shot(i),
+                ),
+            ],
+          ),
+          const SizedBox(height: 20),
+        ],
+        for (final g in KitchenStyleScreen.groups) ...[
+          SectionTitle(g.name),
+          const SizedBox(height: 10),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final (i, (value, label)) in g.items.indexed)
+                SofraChip(
+                  key: ValueKey('look-${g.id}-$value'),
+                  label: Text(label),
+                  selected: (look[g.id] ?? g.items.first.$1) == value,
+                  onSelected: (_) => _set(g.id, i == 0 ? null : value),
+                ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          if (g.id == 'style' && style == 'classic') ...[
+            const SectionTitle('لون الخزائن'),
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                for (final (i, (name, hex))
+                    in KitchenStyleScreen.cabinetColors.indexed)
+                  Expanded(
+                    child: _Swatch(
+                      key: ValueKey('style-cabinet-$i'),
+                      name: name,
+                      color: hex == null
+                          ? const Color(0xFF9DB8A0)
+                          : Color(int.parse('FF$hex', radix: 16)),
+                      selected: look['cabinet'] == hex,
+                      onTap: () => _set('cabinet', hex),
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 20),
+          ],
+        ],
+        const SectionTitle('إضافات'),
+        const SizedBox(height: 10),
         Wrap(
           spacing: 8,
+          runSpacing: 8,
           children: [
-            for (final (i, label) in const [
-              'المطبخ كله',
-              'افتح الثلاجة',
-              'افتح الفريزر',
-            ].indexed)
+            SofraChip(
+              key: const ValueKey('look-plants'),
+              label: const Text('نباتات معلقة'),
+              selected: look['plants'] == '1',
+              onSelected: (on) => _set('plants', on ? '1' : null),
+            ),
+            // Cane panels belong to the japandi cabinets.
+            if (style == 'japandi')
               SofraChip(
-                key: ValueKey('style-shot-$i'),
-                label: Text(label),
-                selected: shot == i,
-                onSelected: (_) => _shot(i),
+                key: const ValueKey('look-cane'),
+                label: const Text('أبواب خيزران'),
+                selected: look['cane'] == '1',
+                onSelected: (on) => _set('cane', on ? '1' : null),
               ),
           ],
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 24),
       ],
-      const SectionTitle('لون الدواليب'),
-      const SizedBox(height: 10),
-      Row(
-        children: [
-          for (final (i, (name, color))
-              in KitchenStyleScreen.cabinetColors.indexed)
-            Expanded(
-              child: _Swatch(
-                key: ValueKey('style-cabinet-$i'),
-                name: name,
-                color: color ?? const Color(0xFF9DB8A0),
-                selected: cabinet == i,
-                onTap: () => _cabinet(i),
-              ),
-            ),
-        ],
-      ),
-      const SizedBox(height: 24),
-      for (final g in KitchenStyleScreen.pending) ...[
-        Surface(
-          key: ValueKey('style-group-${g.id}'),
-          child: Row(
-            children: [
-              Icon(g.icon, color: Sofra.greenDark),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Text(
-                  g.name,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-              const Text(
-                'قريبًا',
-                style: TextStyle(color: Sofra.muted, fontSize: 13),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 12),
-      ],
-    ],
-  );
+    );
+  }
 }
 
 class _Swatch extends StatelessWidget {

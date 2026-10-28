@@ -76,6 +76,29 @@ void main() {
     await openCorner(tester, 'profile');
     expect(find.text('مريم'), findsWidgets);
     expect(jsonEncode(store.data), before);
+
+    // The kitchen's look is saved with the profile.
+    await openCorner(tester, 'style');
+    expect(find.byKey(const ValueKey('look-cane')), findsNothing);
+    for (final key in [
+      'look-style-japandi',
+      'look-cane',
+      'look-rug-rug_teal',
+    ]) {
+      await tester.ensureVisible(find.byKey(ValueKey(key)));
+      await tapKey(tester, key);
+    }
+    expect(store.data!['kitchenLook'], {
+      'style': 'japandi',
+      'cane': '1',
+      'rug': 'rug_teal',
+    });
+    await tester.ensureVisible(
+      find.byKey(const ValueKey('look-style-classic')),
+    );
+    await tapKey(tester, 'look-style-classic');
+    expect((store.data!['kitchenLook'] as Map).containsKey('style'), isFalse);
+    expect(find.byKey(const ValueKey('style-cabinet-1')), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

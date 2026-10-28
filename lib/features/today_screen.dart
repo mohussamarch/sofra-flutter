@@ -268,6 +268,9 @@ class _TodayScreenState extends State<TodayScreen> {
                     ? Kitchen3D(
                         id: 'home-kitchen',
                         controller: viewer,
+                        look: SofraScope.controllerOf(context)
+                            .profile
+                            .kitchenLook,
                         vignette: true,
                         zoom: false,
                         background: Colors.transparent,

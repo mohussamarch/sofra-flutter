@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math' as math;
 
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart' show kIsWeb, mapEquals;
 import 'package:flutter/material.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -45,6 +45,7 @@ class Kitchen3D extends StatefulWidget {
     this.vignette = false,
     this.background = const Color(0xFF15100C),
     this.zoom = false,
+    this.look = const {},
   });
   final Kitchen3DController controller;
 
@@ -61,18 +62,19 @@ class Kitchen3D extends StatefulWidget {
   /// Kept for callers; the camera is fixed, so it has no effect.
   final bool zoom;
 
+  /// The kitchen's chosen parts, [Profile.kitchenLook] (R24 only).
+  final Map<String, String> look;
+
   @override
   State<Kitchen3D> createState() => _Kitchen3DState();
 }
 
-/// Drives the viewer: camera shots, door animations and cabinet colour.
+/// Drives the viewer: camera shots, door animations and the kitchen's look.
 /// The camera moves in three scenes only: the isometric overview, the zoom
 /// to the table and the turn to the fridge or microwave.
 class Kitchen3DController {
   WebViewController? _web;
   String _id = 'kitchen3d';
-
-  static const cabinetMaterial = 'r15_classic_painted_timber';
 
   Future<void> _run(String body) => runViewerJs(
     "(function(){const mv=document.querySelector('#$_id');"
@@ -99,7 +101,7 @@ class Kitchen3DController {
     "mv.cameraTarget='3.15m ${freezer ? '1.7m' : '0.95m'} -2.9m';"
     "mv.cameraOrbit='0deg ${freezer ? '78deg' : '84deg'} 4.4m';"
     "mv.fieldOfView='40deg';"
-    "${_r24 ? "mv.__door&&mv.__door('r18_${freezer ? 'freezer' : 'fridge'}_hinge',-1.75);" : "mv.timeScale=1;"
+    "${_r24 ? "mv.__fridge&&mv.__fridge($freezer);" : "mv.timeScale=1;"
               "mv.animationName='${freezer ? 'freezer_open' : 'fridge_open'}';"
               "mv.currentTime=0;mv.play({repetitions:1});"}",
   );
@@ -149,19 +151,28 @@ class Kitchen3DController {
               "mv.currentTime=0;mv.play({repetitions:1});" : ''}",
   );
 
-  /// Repaints every cabinet in [color]; null restores the rendered colour.
-  Future<void> cabinets(Color? color) {
-    final value = color == null
-        ? 'window.__sofraCabinet'
-        : '[${_linear(color.r)},${_linear(color.g)},${_linear(color.b)},1]';
-    return _run(
-      "const m=mv.model.materials.find(x=>x.name==='$cabinetMaterial');"
-      "if(!m)return;"
-      "window.__sofraCabinet=window.__sofraCabinet||"
-      "m.pbrMetallicRoughness.baseColorFactor.slice();"
-      "m.pbrMetallicRoughness.setBaseColorFactor($value);",
+  /// R24 only: shows the kitchen's chosen parts (Codex's options) and the
+  /// classic cabinet colour. Kept on the element like the lighting, so the
+  /// model opens already dressed.
+  Future<void> look(Map<String, String> look) {
+    final json = _lookJson(look);
+    return runViewerJs(
+      "(function(){const mv=document.querySelector('#$_id');if(!mv)return;"
+      "mv.__lookWant=$json;if(mv.__look)mv.__look($json);})();",
+      _web,
     );
   }
+}
+
+/// The viewer's look state: [Profile.kitchenLook] with the cabinet colour
+/// (hex) as a linear glTF factor.
+String _lookJson(Map<String, String> look) {
+  final hex = look['cabinet'];
+  final c = hex == null ? null : Color(int.parse('FF$hex', radix: 16));
+  return jsonEncode({
+    ...look,
+    'cabinet': c == null ? null : [_linear(c.r), _linear(c.g), _linear(c.b), 1],
+  });
 }
 
 /// glTF colour factors are linear; swatches are sRGB.
@@ -193,6 +204,14 @@ class _Kitchen3DState extends State<Kitchen3D> {
   }
 
   @override
+  void didUpdateWidget(Kitchen3D old) {
+    super.didUpdateWidget(old);
+    if (_r24 && !mapEquals(old.look, widget.look)) {
+      widget.controller.look(widget.look);
+    }
+  }
+
+  @override
   void dispose() {
     _setup?.cancel();
     super.dispose();
@@ -215,7 +234,8 @@ class _Kitchen3DState extends State<Kitchen3D> {
               "'radial-gradient(ellipse 52% 40% at 50% 50%,#000 58%,transparent 100%)';"
         : '';
     return "(function(){const mv=document.querySelector('#${widget.id}');"
-        "if(!mv||mv.__sofra)return;mv.__sofra=1;$fade${_r24 ? _r24Js : ''}"
+        "if(!mv)return;${_r24 ? 'if(!mv.__lookWant)mv.__lookWant=${_lookJson(widget.look)};' : ''}"
+        "if(mv.__sofra)return;mv.__sofra=1;$fade${_r24 ? _r24Js : ''}"
         "let down=null;"
         "mv.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY];});"
         "mv.addEventListener('click',e=>{"
@@ -244,15 +264,10 @@ class _Kitchen3DState extends State<Kitchen3D> {
         "if(u.reviewShadowOnly||u.r22_large_sky_backdrop||o.name.startsWith('r22_exterior_')||"
         "o.name.startsWith('exterior_')){gone.push(o);return;}"
         "for(const m of [].concat(o.material)){if(m.map&&!Tex)Tex=m.map.constructor;"
-        "if(m.name==='r18_fridge_lamp_diffuser'&&!lamps.includes(m)){m.emissiveIntensity=0;lamps.push(m);}"
-        "if(!u.reviewDynamic&&m.isMeshStandardMaterial&&m.metalness<.65&&"
-        "!(m.transmission>.05)){"
-        "if(o.geometry.attributes.uv&&!o.geometry.attributes.uv1)"
-        "o.geometry.setAttribute('uv1',o.geometry.attributes.uv.clone());"
-        "baked.push(m);}}});"
-        // Removed, not hidden: the garden and sky would still size the
-        // framing and push the near plane past the table.
-        "gone.forEach(o=>o.parent.remove(o));mv.updateFraming();"
+        "if((m.name==='r18_fridge_lamp_diffuser'||m.name==='r19_double_diffuser')&&!lamps.includes(m)){m.emissiveIntensity=0;lamps.push(m);}"
+        // The options library has no lightmap UVs: it keeps the probe only.
+        "if(!u.reviewDynamic&&o.geometry.attributes.uv1&&m.isMeshStandardMaterial&&"
+        "m.metalness<.65&&!(m.transmission>.05))baked.push(m);}});"
         "const S={$scales},maps={};"
         "mv.__light=mode=>{mv.environmentImage='$base/probe-'+mode+'.hdr';"
         "if(!Tex)return;const use=t=>{for(const m of baked){m.lightMap=t;"
@@ -271,11 +286,39 @@ class _Kitchen3DState extends State<Kitchen3D> {
         "for(const m of lamps)m.emissiveIntensity=1.5*l*l*(3-2*l);"
         "sc.queueRender&&sc.queueRender();"
         "if(f<1)requestAnimationFrame(step);};requestAnimationFrame(step);};"
-        "mv.__door=swing;"
-        "mv.__shut=()=>{swing('r18_fridge_hinge',0);swing('r18_freezer_hinge',0);"
+        "const dbl=()=>(mv.__lookNow||{}).fridge==='double';"
+        // The double fridge opens both doors, outward (left -, right +).
+        "mv.__fridge=fz=>{if(dbl()){swing('r19_double_left_hinge',-1.75);"
+        "swing('r19_double_right_hinge',1.75);}"
+        "else swing(fz?'r18_freezer_hinge':'r18_fridge_hinge',-1.75);};"
+        "mv.__shut=()=>{for(const n of ['r18_fridge_hinge','r18_freezer_hinge',"
+        "'r19_double_left_hinge','r19_double_right_hinge'])swing(n,0);"
         "if(mv.animationName==='microwave_open'&&mv.currentTime>0){"
         "mv.timeScale=-1;mv.play({repetitions:1});setTimeout(()=>{mv.pause();"
         "mv.timeScale=1;mv.currentTime=0;},1300);}};"
+        // Codex's option rules (r23-options.mjs record()): a tagged part
+        // shows when its group is chosen and its cabinet style matches.
+        "mv.__look=s=>{s=Object.assign({style:'classic',fridge:'default',"
+        "range:'default',rug:'none',curtain:'gingham'},s||{});mv.__lookNow=s;"
+        "const on={builtin:s.range==='builtin',default_range:s.range!=='builtin',"
+        "default_counter:s.range!=='builtin',default_fridge:s.fridge!=='double',"
+        "double_fridge:s.fridge==='double',rug_persian:s.rug==='rug_persian',"
+        "rug_teal:s.rug==='rug_teal',rug_ochre:s.rug==='rug_ochre',"
+        "white_blind:s.curtain==='white_blind',default_curtain:s.curtain==='gingham',"
+        "hanging_plants:s.plants==='1',japandi_cane:s.cane==='1'};"
+        // Meshes only, as Codex does: the merged scene root carries a style tag.
+        "sc.traverse(o=>{if(!o.isMesh)return;const u=o.userData||{},st=u.cabinet_style,g=u.option_group;"
+        "const tagged=Object.hasOwn(on,g||'');if(!st&&!tagged)return;"
+        "o.visible=(!tagged||on[g])&&(!st||st===s.style);});"
+        "for(const m of mv.model.materials)if(m.name==='r15_classic_painted_timber'){"
+        "const p=m.pbrMetallicRoughness;m.__base=m.__base||p.baseColorFactor.slice();"
+        "p.setBaseColorFactor(s.cabinet||m.__base);}"
+        "sc.queueRender&&sc.queueRender();};"
+        // Dressed before framing (updateFraming briefly takes the model out
+        // of the scene, so a traverse then misses it). The garden and sky are
+        // removed, not hidden: they would still size the framing and push
+        // the near plane past the table.
+        "mv.__look(mv.__lookWant);gone.forEach(o=>o.parent.remove(o));mv.updateFraming();"
         // No mode from the app yet: the hour, on the app's lighting schedule.
         "const h=new Date().getHours()+new Date().getMinutes()/60;"
         "mv.__light(mv.__mode||(h>=18.5||h<5?'night':h<6.5||h>=16.5?'golden':'morning'));};"
