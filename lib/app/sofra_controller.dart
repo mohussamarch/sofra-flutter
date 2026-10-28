@@ -44,6 +44,7 @@ class Profile {
     this.remindBefore = 30,
     this.stockAlerts = true,
     this.area = '',
+    this.kitchenLook = const {},
   });
 
   final String name, house;
@@ -67,6 +68,10 @@ class Profile {
   /// City or district the user typed, for prices from people nearby.
   final String area;
 
+  /// The kitchen's chosen parts (Codex's R24 options), group -> choice, e.g.
+  /// style: modern, rug: rug_teal. Absent groups keep the base kitchen.
+  final Map<String, String> kitchenLook;
+
   String get displayName => name.trim().isEmpty ? 'صاحب السفرة' : name.trim();
   String get houseName =>
       house.trim().isEmpty ? 'بيت $displayName' : house.trim();
@@ -86,6 +91,7 @@ class Profile {
     int? remindBefore,
     bool? stockAlerts,
     String? area,
+    Map<String, String>? kitchenLook,
   }) => Profile(
     name: name ?? this.name,
     house: house ?? this.house,
@@ -101,7 +107,10 @@ class Profile {
     remindBefore: remindBefore ?? this.remindBefore,
     stockAlerts: stockAlerts ?? this.stockAlerts,
     area: area ?? this.area,
+    kitchenLook: kitchenLook ?? this.kitchenLook,
   );
+
+  static const _legacyMeals = {'غدا': 'غداء', 'عشا': 'عشاء'};
 
   static const _legacyCuisines = {
     'مصري': 'egyptian',
@@ -125,6 +134,7 @@ class Profile {
     'remindBefore': remindBefore,
     'stockAlerts': stockAlerts,
     'area': area,
+    'kitchenLook': kitchenLook,
   };
 
   factory Profile.fromRoot(Map<String, dynamic> root) {
@@ -147,7 +157,11 @@ class Profile {
       servings: ((root['servings'] as num?)?.toInt() ?? 4).clamp(1, 12),
       cuisines: groups,
       allergies: strings('allergies', const {}),
-      meals: strings('meals', const {'غداء', 'عشاء'}),
+      // Older builds stored the colloquial slot names.
+      meals: {
+        for (final m in strings('meals', const {'غداء', 'عشاء'}))
+          _legacyMeals[m] ?? m,
+      },
       saved: strings('saved', const {}),
       quickMeals: root['quickMeals'] != false,
       reduceMotion: root['reduceMotion'] == true,
@@ -165,6 +179,11 @@ class Profile {
       ),
       stockAlerts: root['stockAlerts'] != false,
       area: root['area'] as String? ?? '',
+      kitchenLook: {
+        for (final e in ((root['kitchenLook'] as Map?) ?? const {}).entries)
+          if (e.key is String && e.value is String)
+            e.key as String: e.value as String,
+      },
     );
   }
 }

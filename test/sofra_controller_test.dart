@@ -121,6 +121,16 @@ void main() {
     expect(Profile.fromRoot(p.toJson()).cuisines, p.cuisines);
   });
 
+  test('profile reads colloquial meal names and keeps the kitchen look', () {
+    final p = Profile.fromRoot({
+      'meals': ['فطار', 'غدا', 'عشا'],
+      'kitchenLook': {'style': 'modern', 'rug': 'rug_teal', 'bad': 3},
+    });
+    expect(p.meals, {'فطار', 'غداء', 'عشاء'});
+    expect(p.kitchenLook, {'style': 'modern', 'rug': 'rug_teal'});
+    expect(Profile.fromRoot(p.toJson()).kitchenLook, p.kitchenLook);
+  });
+
   test('stock check allocates lots once and classifies every line', () async {
     final store = f.Store();
     final c = SofraController(
