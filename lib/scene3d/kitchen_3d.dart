@@ -117,13 +117,14 @@ class Kitchen3DController {
   Future<void> lighting(String mode) =>
       _r24 ? _run("mv.__light&&mv.__light('$mode');") : Future.value();
 
-  /// Seated at the far end of the dining table, eyes about 1.4 m up,
-  /// looking across it into the corner: window on the left, stove on the
-  /// right (the owner's reference shot). The move from the isometric
+  /// At the near corner of the dining table, eyes about 1.55 m up, looking
+  /// across it into the kitchen: table and vase low in front, window left,
+  /// stove right. Codex's R24c framing (position 3.65, 1.55, 1.05 looking at
+  /// 1.6, 1.05, -2.15, fov 58), put as an orbit. The move from the isometric
   /// overview is the zoom.
   Future<void> table() => _run(
-    "mv.cameraTarget='0.9m 1.05m -2.4m';"
-    "mv.cameraOrbit='45deg 85deg 3.8m';mv.fieldOfView='48deg';"
+    "mv.cameraTarget='1.6m 1.05m -2.15m';"
+    "mv.cameraOrbit='32.6deg 82.5deg 3.83m';mv.fieldOfView='58deg';"
     // Seated, the room fills the screen: no edge fade.
     "mv.style.maskImage=mv.style.webkitMaskImage='none';",
   );
