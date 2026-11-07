@@ -170,11 +170,8 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await tester.ensureVisible(find.byKey(const ValueKey('field-country')));
-      await tester.tap(find.byKey(const ValueKey('field-country')));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('السعودية · ريال سعودي').last);
-      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.byKey(const ValueKey('country-saudi')));
+      await tapKey(tester, 'country-saudi');
       await completeOnboarding(tester);
       expect(store.data!['country'], 'SA');
       expect(find.byKey(const ValueKey('circle-profile')), findsOneWidget);

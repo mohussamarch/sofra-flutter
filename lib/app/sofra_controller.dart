@@ -36,6 +36,7 @@ class Profile {
     this.servings = 4,
     this.cuisines = const {'egyptian'},
     this.allergies = const {},
+    this.health = const {},
     this.meals = const {'غداء', 'عشاء'},
     this.saved = const {},
     this.quickMeals = true,
@@ -54,6 +55,10 @@ class Profile {
   /// Cuisine group IDs from the catalog (e.g. `egyptian`).
   final Set<String> cuisines;
   final Set<String> allergies, meals, saved;
+
+  /// Health conditions the user said they have, as they named them. Kept for
+  /// the user's own reference only: nothing filters or advises by them.
+  final Set<String> health;
 
   /// Meal slot -> minutes after midnight, as the user set them. A slot with
   /// no time gets no meal reminder.
@@ -83,6 +88,7 @@ class Profile {
     int? servings,
     Set<String>? cuisines,
     Set<String>? allergies,
+    Set<String>? health,
     Set<String>? meals,
     Set<String>? saved,
     bool? quickMeals,
@@ -99,6 +105,7 @@ class Profile {
     servings: servings ?? this.servings,
     cuisines: cuisines ?? this.cuisines,
     allergies: allergies ?? this.allergies,
+    health: health ?? this.health,
     meals: meals ?? this.meals,
     saved: saved ?? this.saved,
     quickMeals: quickMeals ?? this.quickMeals,
@@ -126,6 +133,7 @@ class Profile {
     'servings': servings,
     'cuisineGroups': cuisines.toList(),
     'allergies': allergies.toList(),
+    'health': health.toList(),
     'meals': meals.toList(),
     'saved': saved.toList(),
     'quickMeals': quickMeals,
@@ -157,6 +165,7 @@ class Profile {
       servings: ((root['servings'] as num?)?.toInt() ?? 4).clamp(1, 12),
       cuisines: groups,
       allergies: strings('allergies', const {}),
+      health: strings('health', const {}),
       // Older builds stored the colloquial slot names.
       meals: {
         for (final m in strings('meals', const {'غداء', 'عشاء'}))
