@@ -469,3 +469,21 @@ APK: `E:\work\SOFRA\deliverables\sofra-20261026-community-2843ab99.apk`
 - Open: the fridge shelf backdrop image is the cream fridge's, also shown for the double fridge.
 - APK f0c0c0b2 (options + Android loading fix): deliverables/sofra-20261028-r25-options-f0c0c0b2.apk,
   SHA256 b2436af7354050896a275a0f2f3bd6dcb76f88072e1c83496f6eb6604ceb39c0. Not yet tested on the S24.
+
+## 2026-11-07 — Onboarding redesign (091f8658)
+
+- User asked (via /ui-design) to rebuild the setup journey: drop the house idea, rename the
+  allergy step, add health conditions, show at most two choices per group with the rest in a list,
+  pictures and icons instead of text.
+- lib/features/onboarding_screen.dart: six steps (welcome+country flags, name with initial avatar,
+  people row + meal tiles, cuisines with painted flags, health: conditions + foods to avoid, ready
+  with stat tiles). Two tiles + «المزيد» per group; searchable sheet in rows of three; own names
+  can be added for health and foods. House name field removed (Profile.house kept for data compat).
+- Profile.health (Set<String>, JSON `health`): user-reported conditions, stored only; nothing
+  filters or advises by them. Committed via a cached patch so Codex's uncommitted controller work
+  stayed out of the commit.
+- Tests: test/onboarding_test.dart at 1.0x and 1.4x text; persistence country test uses the flag
+  tile. Full suite 464 passed on the working tree (which also holds Codex's uncommitted lib work).
+- Screens before/after: E:\shots\sofra-onboarding\{before,after,compare}. Web preview of the working
+  tree on http://localhost:8894 (node deliverables/serve-web.cjs tmp-claude/web-new 8894).
+- Open: profile screen still titles «بيت <name>» (houseName); transitions/animation round next.
