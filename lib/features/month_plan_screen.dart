@@ -280,7 +280,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                 children: [
                   for (final MapEntry(key: slot, value: label)
                       in mealSlots.entries)
-                    FilterChip(
+                    SofraChip(
                       key: ValueKey('month-slot-$slot'),
                       label: Text(label),
                       selected: slots.contains(slot),

@@ -292,10 +292,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               runSpacing: 10,
               children: [
                 for (final meal in const ['فطار', 'غداء', 'عشاء'])
-                  FilterChip(
+                  SofraChip(
                     label: Text(meal),
                     selected: p.meals.contains(meal),
-                    selectedColor: Sofra.mint,
+                    selectedColor: Sofra.accentTint,
                     onSelected: (_) => c.updateProfile(
                       (p) => p.copyWith(meals: _toggle(p.meals, meal)),
                     ),
@@ -371,11 +371,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               runSpacing: 10,
               children: [
                 for (final item in filtered)
-                  FilterChip(
+                  SofraChip(
                     key: ValueKey('allergy-$item'),
                     label: Text(item),
                     selected: p.allergies.contains(item),
-                    selectedColor: Sofra.peach,
+                    selectedColor: Sofra.warnTint,
                     onSelected: (_) => c.updateProfile(
                       (p) => p.copyWith(allergies: _toggle(p.allergies, item)),
                     ),
@@ -476,11 +476,11 @@ class CuisineChips extends StatelessWidget {
           runSpacing: 8,
           children: [
             for (final g in groups)
-              FilterChip(
+              SofraChip(
                 key: ValueKey('cuisine-${g['id']}'),
                 label: Text('${g['name']}'),
                 selected: c.profile.cuisines.contains(g['id']),
-                selectedColor: Sofra.mint,
+                selectedColor: Sofra.accentTint,
                 onSelected: (_) => c.updateProfile(
                   (p) => p.copyWith(
                     cuisines: _toggle(p.cuisines, g['id'] as String),
