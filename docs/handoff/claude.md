@@ -495,3 +495,13 @@ APK: `E:\work\SOFRA\deliverables\sofra-20261026-community-2843ab99.apk`
 - NOT verified: a real receipt against the real model. Firebase AI Logic must be enabled once in the console for sofra-c03a1 (Gemini Developer API, no billing). Without a Firebase app the photo tiles are disabled and typing still works.
 - Only my hunks of `sofra_controller.dart` and `kitchen_screen.dart` were committed (script `E:\work\SOFRA\tmp-claude\hunks.cjs`); Codex's uncommitted work is still uncommitted.
 - Full read-only review (8 areas, 16 agents, serious findings re-checked): raw result `E:\work\SOFRA\tmp-claude\review.json`, owner page `E:\work\SOFRA\deliverables\sofra-map.html`.
+
+## 2026-11-15 — Firebase AI Logic, foundation fixes, ingredient pictures
+
+- Firebase AI Logic enabled for sofra-c03a1 (Android + web apps) through the Firebase CLI provisioning API, Gemini Developer API, no billing. Real test receipt read by `gemini-3.1-flash-lite` in 3 s, 8/8 food lines right; `gemini-4-hydrogen` same result in 10.5 s. Evidence: E:\work\SOFRA\references\07-ai-and-keys.
+- Committed Codex's 2-week working tree as-is (dcf6878e, 470 tests) so origin/main = local app. Blender/design-assets stay uncommitted.
+- e719b307: failed saves queue in order (retry saves all), StateConflict reloads and re-applies, all stock adds via one `addStockBatch` write; 169 MB unused recipe library removed from assets (tests read it from disk via test/support/recipe_library_disk.dart).
+- 12aa1d3a: owner cannot leave own shared kitchen; leave needs confirmation; rejoin by invite when already a member writes membership only. Month plan accepts best found when only the search cap stopped it (`MonthPlan.acceptable`).
+- c608b511: `IngredientPicture` (Fluent Emoji 3D, MIT) in stock, add list, quick add, shelves; stock screen top = two picture tiles. Shots: E:\shots\sofra-symbols.
+- Not done from the review: live sync listener for shared kitchens, offline open for signed-in users, 850KB archive, Draco offline decoder, release keystore, month search off the UI thread. Not device-tested.
+- References for all remaining parts: E:\work\SOFRA\references. Live dashboard: deliverables/dashboard (node server.cjs, port 8896).
