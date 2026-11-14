@@ -258,8 +258,11 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                       secondary: true,
                       label: 'اشتريت الناقص · أضفه للمخزون',
                       onPressed: () async {
-                        await c.addMissing(check);
-                        nav.notify('أُضيف الناقص إلى المخزون بالكمية المطلوبة');
+                        if (await c.addMissing(check)) {
+                          nav.notify(
+                            'أُضيف الناقص إلى المخزون بالكمية المطلوبة',
+                          );
+                        }
                       },
                     ),
                   ],

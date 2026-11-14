@@ -157,8 +157,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
               label: 'جرّب بمكونات جاهزة',
               secondary: true,
               onPressed: () async {
-                await c.loadSample();
-                nav.notify('أُضيفت مكونات تجريبية إلى مطبخك');
+                if (await c.loadSample()) {
+                  nav.notify('أُضيفت مكونات تجريبية إلى مطبخك');
+                }
               },
             ),
           ),
@@ -572,8 +573,10 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
     if (m != null && w != null && w != c.measureOf(widget.entry.id, unit, m)) {
       await c.saveUnitRule(widget.entry.id, unit, m, w);
     }
-    await c.addIngredient(widget.entry.id, q!, unit, zone);
-    if (mounted) Navigator.pop(context, true);
+    // On failure the sheet stays open; the save banner says what happened.
+    if (await c.addIngredient(widget.entry.id, q!, unit, zone) && mounted) {
+      Navigator.pop(context, true);
+    }
   }
 
   @override

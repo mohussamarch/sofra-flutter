@@ -7,7 +7,9 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tabkha_demo/data/food_repository.dart';
-import 'package:tabkha_demo/data/recipe_library_assets.dart';
+
+import 'support/recipe_library_disk.dart';
+
 import 'package:tabkha_demo/data/recipe_library_food_search.dart';
 import 'package:tabkha_demo/domain/food_nutrition.dart';
 import 'package:tabkha_demo/domain/recipe_library_draft.dart';

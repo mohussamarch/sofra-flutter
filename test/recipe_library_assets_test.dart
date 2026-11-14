@@ -7,7 +7,9 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tabkha_demo/data/recipe_library_assets.dart';
+
+import 'support/recipe_library_disk.dart';
+
 import 'package:tabkha_demo/data/recipe_repository.dart';
 import 'package:tabkha_demo/domain/recipe_library_coverage.dart';
 

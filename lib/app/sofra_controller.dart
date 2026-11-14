@@ -409,7 +409,8 @@ class SofraController extends ChangeNotifier {
   Object? loadError;
   bool saving = false;
   String? saveError;
-  Future<void> Function()? _retry;
+  final List<Future<void> Function()> _failed = [];
+  Object? _lastError;
   Profile profile = const Profile();
   int _seq = 0;
 
@@ -461,7 +462,7 @@ class SofraController extends ChangeNotifier {
   }
 
   /// Remembers which ingredient a barcode is, for the next scan.
-  Future<void> linkBarcode(String code, String ingredientId) {
+  Future<bool> linkBarcode(String code, String ingredientId) {
     _barcodes = {..._barcodes, code.trim(): ingredientId};
     return _save(() => kitchen.saveRootFields({'barcodeLinks': _barcodes}));
   }
@@ -515,32 +516,66 @@ class SofraController extends ChangeNotifier {
     );
   }
 
-  /// Runs one write; on failure keeps it for [retrySave] and shows the banner.
+  /// Runs one write. A failed write is queued, in order, for [retrySave]; the
+  /// banner stays until every queued write is saved, so a later success never
+  /// hides an earlier failure.
   Future<bool> _save(Future<void> Function() write) async {
     saving = true;
-    saveError = null;
     notifyListeners();
+    final ok = await _attempt(write);
+    if (!ok) _failed.add(write);
+    saving = false;
+    _showFailures();
+    if (ok) unawaited(syncReminders());
+    return ok;
+  }
+
+  /// One try. When another device or member saved first, the newest state is
+  /// loaded and the same change is applied to it.
+  Future<bool> _attempt(Future<void> Function() write) async {
     try {
       await write();
-      _retry = null;
-      saving = false;
-      notifyListeners();
-      unawaited(syncReminders());
       return true;
+    } on StateConflict {
+      try {
+        await kitchen.load();
+        await write();
+        return true;
+      } catch (e) {
+        _lastError = e;
+        return false;
+      }
     } catch (e) {
-      _retry = write;
-      saving = false;
-      saveError = e is StateConflict
-          ? 'تغيّرت بيانات حسابك على جهاز آخر. أغلق التطبيق وافتحه لتحميل آخر نسخة؛ التعديلات هنا لم تُحفظ.'
-          : 'لم يُحفظ آخر تعديل. تحقق من الاتصال وأعد الحفظ قبل الخروج.';
-      notifyListeners();
+      _lastError = e;
       return false;
     }
   }
 
+  void _showFailures() {
+    final n = _failed.length;
+    final full = _lastError.toString().contains('850KB');
+    saveError = n == 0
+        ? null
+        : full
+        ? 'امتلأت مساحة الحفظ في حسابك، فلم يُحفظ التعديل.'
+        : n == 1
+        ? 'لم يُحفظ آخر تعديل. تحقق من الاتصال وأعد الحفظ قبل الخروج.'
+        : 'تعديلات لم تُحفظ: $n. تحقق من الاتصال وأعد الحفظ قبل الخروج.';
+    notifyListeners();
+  }
+
+  /// Saves the queued writes in the order they were made, stopping at the
+  /// first that still fails.
   Future<void> retrySave() async {
-    final retry = _retry;
-    if (retry != null) await _save(retry);
+    if (_failed.isEmpty) return;
+    saving = true;
+    notifyListeners();
+    while (_failed.isNotEmpty && await _attempt(_failed.first)) {
+      _failed.removeAt(0);
+    }
+    saving = false;
+    _showFailures();
+    if (_failed.isEmpty) unawaited(syncReminders());
   }
 
   /// Profile edits show immediately; a failed save keeps them on screen and
@@ -760,7 +795,7 @@ class SofraController extends ChangeNotifier {
       directory?.entry(id)?.category ?? demoIngredients[id]?.category;
 
   /// Adds to stock as something the user already has (not a purchase).
-  Future<void> addIngredient(
+  Future<bool> addIngredient(
     String ingredientId,
     double amount,
     String unit,
@@ -802,81 +837,70 @@ class SofraController extends ChangeNotifier {
     return null;
   }
 
-  double? _convert(double amount, String from, String to, String id) =>
-      Units.convert(
-        amount,
-        from,
-        to,
-        ingredientId: id,
-        rules: kitchen.unitRules,
-      );
-
-  Future<void> _addAmount(
+  /// Joins a lot in the same place when the units convert, else adds one.
+  /// The merge happens inside the write, so quick repeated taps all count.
+  Future<bool> _addAmount(
     String ingredientId,
     double amount,
     String unit,
     StorageZone zone,
-  ) => _save(() async {
-    // Merge into a lot in the same place when the units convert exactly.
-    final same = kitchen.inventory.where(
-      (l) =>
-          l.ingredientId == ingredientId &&
-          l.zone == zone &&
-          l.quantity != null &&
-          _convert(1, unit, l.unit, ingredientId) != null,
-    );
-    if (same.isNotEmpty) {
-      final lot = same.first;
-      final added = _convert(amount, unit, lot.unit, ingredientId)!;
-      await kitchen.setStockQuantity(lot.id, lot.quantity! + added);
-    } else {
-      await kitchen.addStock(
-        InventoryLot(
-          id: newId('lot'),
-          ingredientId: ingredientId,
-          quantity: amount,
-          unit: unit,
-          zone: zone,
-        ),
-        newPurchase: false,
-      );
-    }
-  });
+  ) => _addLots([_arrival(ingredientId, amount, unit, zone)]);
 
-  /// Confirmed lines of a typed list, a receipt or an order go into stock
-  /// in one save, each in its usual place. False when nothing was saved.
-  Future<bool> addArrivals(Iterable<QuickLine> lines) {
+  StockArrival _arrival(
+    String ingredientId,
+    double? amount,
+    String unit,
+    StorageZone zone, {
+    double? paid,
+  }) => StockArrival(
+    InventoryLot(
+      id: newId('lot'),
+      ingredientId: ingredientId,
+      quantity: amount,
+      unit: unit,
+      zone: zone,
+    ),
+    paid: paid,
+  );
+
+  /// Several arrivals in one save: all of them or none. Ids are fixed
+  /// before the write, so a retry cannot add a second lot or purchase.
+  Future<bool> _addLots(List<StockArrival> arrivals) {
     final at = DateTime.now();
-    final arrivals = [
-      for (final l in lines)
-        if (l.ready)
-          StockArrival(
-            InventoryLot(
-              id: newId('lot'),
-              ingredientId: l.entry!.id,
-              quantity: l.quantity,
-              unit: l.unit ?? l.entry!.defaultUnit,
-              zone: l.entry!.zone,
-            ),
-            paid: l.paid,
-          ),
-    ];
     return _save(() => kitchen.addStockBatch(arrivals, at: at));
   }
 
-  Future<void> setQuantity(String lotId, double quantity) =>
+  StorageZone _zoneOf(String id) =>
+      directory?.entry(id)?.zone ??
+      demoIngredients[id]?.zone ??
+      StorageZone.pantry;
+
+  /// Confirmed lines of a typed list, a receipt or an order go into stock
+  /// in one save, each in its usual place. False when nothing was saved.
+  Future<bool> addArrivals(Iterable<QuickLine> lines) => _addLots([
+    for (final l in lines)
+      if (l.ready)
+        _arrival(
+          l.entry!.id,
+          l.quantity,
+          l.unit ?? l.entry!.defaultUnit,
+          l.entry!.zone,
+          paid: l.paid,
+        ),
+  ]);
+
+  Future<bool> setQuantity(String lotId, double quantity) =>
       _save(() => kitchen.setStockQuantity(lotId, quantity));
 
-  Future<void> loadSample() async {
-    for (final item in demoStarterStock) {
-      await addIngredient(
+  Future<bool> loadSample() => _addLots([
+    for (final item in demoStarterStock)
+      _arrival(
         item.ingredientId,
         item.quantity,
         demoIngredients[item.ingredientId]!.unit,
         item.zone,
-      );
-    }
-  }
+      ),
+  ]);
 
   /// Saves "1 [from] of this ingredient = [factor] [to]", entered by the user.
   Future<bool> saveUnitRule(
@@ -896,21 +920,16 @@ class SofraController extends ChangeNotifier {
 
   /// Records the missing amounts as stock the user says they now have. No
   /// price is invented: this is not logged as a purchase.
-  Future<void> addMissing(CookingCheck check) async {
+  Future<bool> addMissing(CookingCheck check) async {
     final labels = <String, String>{};
+    final arrivals = <StockArrival>[];
     for (final line in check.where(LineStock.missing)) {
       final i = line.ingredient;
       final id = stockId(i.id);
       labels.putIfAbsent(id, () => i.name);
-      await _addAmount(
-        id,
-        line.missing!,
-        i.unit!,
-        directory?.entry(id)?.zone ??
-            demoIngredients[id]?.zone ??
-            StorageZone.pantry,
-      );
+      arrivals.add(_arrival(id, line.missing!, i.unit!, _zoneOf(id)));
     }
+    if (!await _addLots(arrivals)) return false;
     final unknown = {
       for (final e in labels.entries)
         if (directory?.entry(e.key) == null &&
@@ -918,10 +937,9 @@ class SofraController extends ChangeNotifier {
             _labels[e.key] != e.value)
           e.key: e.value,
     };
-    if (unknown.isNotEmpty) {
-      _labels = {..._labels, ...unknown};
-      await _save(() => kitchen.saveRootFields({'ingredientLabels': _labels}));
-    }
+    if (unknown.isEmpty) return true;
+    _labels = {..._labels, ...unknown};
+    return _save(() => kitchen.saveRootFields({'ingredientLabels': _labels}));
   }
 
   /// What to buy for the uncooked meals of the coming [days], after what is
@@ -944,49 +962,21 @@ class SofraController extends ChangeNotifier {
   /// With what they say they paid ([paid], optional per item) it is logged as
   /// a purchase against the budget and kept as their price for next time;
   /// without it no price is invented and nothing is logged.
-  Future<void> addBought(
+  /// All bought items go in one save, so none is lost and a retry never
+  /// logs the spending twice.
+  Future<bool> addBought(
     Iterable<IngredientUse> bought, {
     Map<IngredientUse, double> paid = const {},
-  }) async {
-    for (final use in bought) {
-      final zone =
-          directory?.entry(use.ingredientId)?.zone ??
-          demoIngredients[use.ingredientId]?.zone ??
-          StorageZone.pantry;
-      final amount = paid[use];
-      if (amount == null) {
-        await _addAmount(use.ingredientId, use.quantity, use.unit, zone);
-        continue;
-      }
-      final now = DateTime.now();
-      await _save(() async {
-        await kitchen.addStock(
-          InventoryLot(
-            id: newId('lot'),
-            ingredientId: use.ingredientId,
-            quantity: use.quantity,
-            unit: use.unit,
-            zone: zone,
-          ),
-          newPurchase: true,
-          paid: amount,
-          purchasedAt: now,
-        );
-        await kitchen.savePrice(
-          MarketPrice(
-            country: kitchen.market.country,
-            ingredientId: use.ingredientId,
-            unit: use.unit,
-            quantity: use.quantity,
-            amount: amount,
-            recordedAt: now,
-            source: 'user-purchase',
-          ),
-          userOverride: true,
-        );
-      });
-    }
-  }
+  }) => _addLots([
+    for (final use in bought)
+      _arrival(
+        use.ingredientId,
+        use.quantity,
+        use.unit,
+        _zoneOf(use.ingredientId),
+        paid: paid[use],
+      ),
+  ]);
 
   /// Energy and macronutrients per portion of a planned meal, only those
   /// whose every ingredient has a sourced food value; null when even energy

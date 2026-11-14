@@ -3,11 +3,15 @@
 @Timeout(Duration(minutes: 2))
 library;
 
+import 'dart:io';
+
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tabkha_demo/data/kitchen_service.dart';
-import 'package:tabkha_demo/data/recipe_library_assets.dart';
+
+import 'support/recipe_library_disk.dart';
+
 import 'package:tabkha_demo/data/recipe_library_repository.dart';
 import 'package:tabkha_demo/domain/food_nutrition.dart';
 import 'package:tabkha_demo/domain/recipe_library_draft.dart';
@@ -139,7 +143,10 @@ void main() {
       save(
         k,
         await reviewed(),
-        library: RecipeLibraryRepository(expectedManifestSha256: '0' * 64),
+        library: RecipeLibraryRepository(
+          expectedManifestSha256: '0' * 64,
+          read: (path) => File(path).readAsString(),
+        ),
       ),
       throwsFormatException,
     );

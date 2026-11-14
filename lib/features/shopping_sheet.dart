@@ -198,7 +198,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                       onPressed: bought.isEmpty
                           ? null
                           : () async {
-                              await c.addBought(
+                              final ok = await c.addBought(
                                 [for (final i in bought) items[i].use],
                                 paid: {
                                   for (final i in bought)
@@ -209,7 +209,9 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                                       items[i].use: v,
                                 },
                               );
-                              if (context.mounted) Navigator.pop(context);
+                              if (ok && context.mounted) {
+                                Navigator.pop(context);
+                              }
                             },
                     ),
                   ),
