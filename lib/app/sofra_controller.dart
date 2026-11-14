@@ -1162,6 +1162,24 @@ class SofraController extends ChangeNotifier {
     ),
   );
 
+  Future<PlannedMeal?> prepareCooking(
+    String recipeId, {
+    required int servings,
+    required String slot,
+  }) async {
+    if (!mealSlots.containsKey(slot)) {
+      throw ArgumentError.value(slot, 'slot', 'Unknown meal slot');
+    }
+    final meal = PlannedMeal(
+      id: newId('meal'),
+      date: localDay(DateTime.now()),
+      slot: slot,
+      recipeId: planningId(recipeId),
+      servings: servings,
+    );
+    return await _save(() => kitchen.plan(meal)) ? meal : null;
+  }
+
   Future<bool> removePlan(String id) => _save(() => kitchen.removePlan(id));
 
   Future<CatalogRecipe> recipeForPlan(String planId) async =>

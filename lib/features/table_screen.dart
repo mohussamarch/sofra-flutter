@@ -7,6 +7,8 @@ import '../domain/kitchen_core.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'month_plan_screen.dart';
+import 'shopping_sheet.dart';
 
 /// Planned meals for the coming week, each with its live stock check.
 class TableScreen extends StatelessWidget {
@@ -17,9 +19,32 @@ class TableScreen extends StatelessWidget {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
     final meals = c.upcoming(DateTime.now());
+    final tools = Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        TextButton.icon(
+          key: const ValueKey('open-month-plan'),
+          onPressed: () => openMonthPlan(context),
+          icon: const Icon(Icons.calendar_month_outlined),
+          label: const Text('خطة الشهر والميزانية'),
+        ),
+        TextButton.icon(
+          key: const ValueKey('open-shopping'),
+          onPressed: () => openShopping(context),
+          icon: const Icon(Icons.shopping_basket_outlined),
+          label: const Text('قائمة المشتريات'),
+        ),
+      ],
+    );
     if (meals.isEmpty) {
       return ScreenBody(
         children: [
+          Text(
+            'على سفرة ${c.market.today}',
+            style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+          ),
+          tools,
           const SizedBox(height: 24),
           const Center(child: ChefArt(size: 250)),
           const Center(
@@ -53,6 +78,11 @@ class TableScreen extends StatelessWidget {
     final tomorrow = localDay(DateTime.now().add(const Duration(days: 1)));
     return ScreenBody(
       children: [
+        Text(
+          'على سفرة ${c.market.today}',
+          style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+        ),
+        tools,
         const SizedBox(height: 8),
         const Text(
           'السفرة في الأيام القادمة',

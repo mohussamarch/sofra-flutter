@@ -1,5 +1,9 @@
 # Active ownership —24October2026 (supersedes historical scope notes)
 
+## User authorization — 31 October 2026
+
+The user explicitly authorized Codex to implement Flutter, tests and APK builds as well as visual work. This supersedes the visual-only Codex prohibition below for the current delivery. Work only in E:/work/SOFRA/app; preserve existing changes and the single KitchenService state writer. Do not run a concurrent runtime writer.
+
 - Sole checkout E:\work\SOFRA\app. Read docs/STATUS.md first, then docs/OWNERSHIP.md and only the relevant owner handoff.
 - Codex owns design-assets/**, assets/scenes/** images/manifests, docs/design/**; all Blender/renders/masks, screen visual design and motion design. Do not edit lib/**, test/**, pubspec.yaml or any Dart.
 - Claude owns lib/**, test/**, integration_test/**, pubspec.yaml, tool/**, docs/SCENE-CONTRACT.md, docs/dev/**; all runtime/Flutter/KitchenService integration, animation implementation/tests/APK. Do not edit design-assets, Blender files or scripts.

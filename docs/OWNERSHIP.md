@@ -1,5 +1,9 @@
 # تقسيم ملكية الشغل — 24 أكتوبر 2026
 
+## User authorization — 31 October 2026
+
+The user explicitly authorized Codex to implement Flutter, tests and APK builds as well as visual work. This supersedes the visual-only Codex prohibition below for the current delivery. Work only in E:/work/SOFRA/app; preserve existing changes and the single KitchenService state writer. Do not run a concurrent runtime writer.
+
 | | Codex (إنت) | Claude |
 |---|---|---|
 | الدور | كل الفيجوال: Blender، الرندرات، الطبقات والماسكات، تصميم الشاشات (شكل، ألوان، خطوط، مكونات بصرية)، الحركة كتصميم | كل الكود: Flutter، ربط الواجهات بـ`KitchenService`، عارض المشهد التفاعلي، الحركة كتنفيذ، الاختبارات، الـAPK |

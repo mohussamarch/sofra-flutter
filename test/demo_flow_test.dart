@@ -78,7 +78,7 @@ void main() {
       await openCorner(tester, circle);
     }
     await openStock(tester);
-    for (final tab in ['recipes', 'table', 'community']) {
+    for (final tab in ['today', 'recipes', 'stock', 'table']) {
       await tapKey(tester, 'nav-$tab');
     }
     expect(tester.takeException(), isNull);

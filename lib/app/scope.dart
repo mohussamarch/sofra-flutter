@@ -3,8 +3,6 @@ import 'package:flutter/widgets.dart';
 import '../domain/kitchen_core.dart';
 import 'sofra_controller.dart';
 
-/// today, recipes and table are the home kitchen's three modes; the others
-/// are pages opened from its corner circles.
 enum AppTab {
   today,
   kitchen,
@@ -19,6 +17,9 @@ enum AppTab {
 /// Navigation the screens may request from the shell.
 abstract class SofraNav {
   void goTab(AppTab tab);
+  void discoverFromStock();
+  void exploreRecipes();
+  void openKitchen3d();
   void openRecipe(String recipeId);
   void openAddStock();
   void startCooking(PlannedMeal meal);

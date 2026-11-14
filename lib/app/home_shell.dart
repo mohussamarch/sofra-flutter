@@ -6,6 +6,9 @@ import '../data/recipe_repository.dart';
 import '../data/state_store.dart';
 import '../domain/kitchen_core.dart';
 import '../features/community_screen.dart';
+import '../features/daily_home_screen.dart';
+import '../features/recipes_screen.dart';
+import '../features/table_screen.dart';
 import '../features/cooking_screen.dart';
 import '../features/kitchen_screen.dart';
 import '../features/kitchen_style_screen.dart';
@@ -18,7 +21,7 @@ import 'reminders.dart';
 import 'scope.dart';
 import 'sofra_controller.dart';
 
-enum _View { tabs, addStock, recipe, cooking }
+enum _View { tabs, addStock, recipe, cooking, kitchen3d }
 
 /// Owns the controller and navigation state; screens live in lib/features.
 class SofraHome extends StatefulWidget {
@@ -74,6 +77,15 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   final name = TextEditingController();
   final house = TextEditingController();
   AppTab tab = AppTab.today;
+  static const primaryTabs = [
+    AppTab.today,
+    AppTab.recipes,
+    AppTab.kitchen,
+    AppTab.table,
+  ];
+  final visitedTabs = <AppTab>{AppTab.today};
+  String recipeFilter = 'الكل';
+  int recipeVisit = 0;
   _View view = _View.tabs;
   int onboardingStep = 0;
   String? recipeId;
@@ -104,8 +116,38 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   @override
   void goTab(AppTab value) => _go(() {
     tab = value;
+    visitedTabs.add(value);
     view = _View.tabs;
   });
+
+  @override
+  void discoverFromStock() => _go(() {
+    recipeFilter = 'من الموجود';
+    recipeVisit++;
+    tab = AppTab.recipes;
+    visitedTabs.add(tab);
+    view = _View.tabs;
+  });
+
+  @override
+  void openKitchen3d() => _go(() => view = _View.kitchen3d);
+
+  @override
+  void exploreRecipes() => _go(() {
+    recipeFilter = 'الكل';
+    recipeVisit++;
+    tab = AppTab.recipes;
+    visitedTabs.add(tab);
+    view = _View.tabs;
+  });
+
+  void _back() {
+    if (view != _View.tabs) {
+      _go(() => view = _View.tabs);
+    } else {
+      goTab(AppTab.today);
+    }
+  }
 
   @override
   void openRecipe(String id) => _go(() {
@@ -165,42 +207,48 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
         child: SofraScope(
           controller: c,
           nav: this,
-          child: Scaffold(
-            backgroundColor: Sofra.sand,
-            body: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 480),
-                child: Material(
-                  color: Sofra.cream,
-                  child: Stack(
-                    children: [
-                      SafeArea(
-                        top: !_fullBleed(c),
-                        bottom: false,
-                        child: Column(
-                          children: [
-                            if (c.saveError != null)
-                              MaterialBanner(
-                                content: Text(c.saveError!),
-                                actions: [
-                                  TextButton(
-                                    onPressed: c.retrySave,
-                                    child: const Text('إعادة الحفظ'),
-                                  ),
-                                ],
-                              ),
-                            Expanded(child: _body(c)),
-                          ],
+          child: PopScope(
+            canPop: view == _View.tabs && tab == AppTab.today,
+            onPopInvokedWithResult: (didPop, result) {
+              if (!didPop) _back();
+            },
+            child: Scaffold(
+              backgroundColor: Sofra.sand,
+              body: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 480),
+                  child: Material(
+                    color: Sofra.cream,
+                    child: Stack(
+                      children: [
+                        SafeArea(
+                          top: true,
+                          bottom: false,
+                          child: Column(
+                            children: [
+                              if (c.saveError != null)
+                                MaterialBanner(
+                                  content: Text(c.saveError!),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: c.retrySave,
+                                      child: const Text('إعادة الحفظ'),
+                                    ),
+                                  ],
+                                ),
+                              Expanded(child: _body(c)),
+                            ],
+                          ),
                         ),
-                      ),
-                      if (_showsNav(c))
-                        Positioned(
-                          left: 16,
-                          right: 16,
-                          bottom: MediaQuery.paddingOf(context).bottom + 12,
-                          child: _bottomNav(c),
-                        ),
-                    ],
+                        if (_showsNav(c))
+                          Positioned(
+                            left: 16,
+                            right: 16,
+                            bottom: MediaQuery.paddingOf(context).bottom + 12,
+                            child: _bottomNav(c),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -213,12 +261,6 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
 
   bool _ready(SofraController c) =>
       c.loadError == null && c.ready && c.profile.onboarded;
-
-  static const _homeTabs = {AppTab.today, AppTab.recipes, AppTab.table};
-
-  /// The home kitchen paints under the status bar.
-  bool _fullBleed(SofraController c) =>
-      _ready(c) && view == _View.tabs && _homeTabs.contains(tab);
 
   bool _showsNav(SofraController c) => _ready(c) && view == _View.tabs;
 
@@ -253,40 +295,59 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     }
     return Column(
       children: [
-        if (!_fullBleed(c)) _header(c),
+        _header(c),
         Expanded(
-          child: AnimatedSwitcher(
-            duration: Sofra.motion(context),
-            child: KeyedSubtree(
-              key: ValueKey(
-                view == _View.tabs && _homeTabs.contains(tab)
-                    ? 'home'
-                    : '$tab-$view-$recipeId-${cookingMeal?.id}',
-              ),
-              child: switch (view) {
-                _View.addStock => const AddStockScreen(),
-                _View.recipe => RecipeDetailScreen(recipeId: recipeId!),
-                _View.cooking => CookingScreen(
-                  meal: cookingMeal!,
-                  onDone: () => cookingMeal = null,
-                ),
-                _View.tabs => switch (tab) {
-                  AppTab.today || AppTab.recipes || AppTab.table => TodayScreen(
-                    mode: switch (tab) {
-                      AppTab.recipes => HomeMode.recipes,
-                      AppTab.table => HomeMode.table,
-                      _ => HomeMode.kitchen,
-                    },
-                    showScene: widget.showScene,
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: Offstage(
+                  offstage: view != _View.tabs || !primaryTabs.contains(tab),
+                  child: IndexedStack(
+                    index: primaryTabs.contains(tab)
+                        ? primaryTabs.indexOf(tab)
+                        : 0,
+                    children: [
+                      for (final destination in primaryTabs)
+                        if (!visitedTabs.contains(destination))
+                          const SizedBox.shrink()
+                        else
+                          switch (destination) {
+                            AppTab.today => const DailyHomeScreen(),
+                            AppTab.recipes => RecipesScreen(
+                              key: ValueKey('recipes-$recipeVisit'),
+                              initialFilter: recipeFilter,
+                            ),
+                            AppTab.kitchen => const KitchenScreen(),
+                            _ => const TableScreen(),
+                          },
+                    ],
                   ),
-                  AppTab.kitchen => const KitchenScreen(),
-                  AppTab.profile => const ProfileScreen(),
-                  AppTab.settings => SettingsScreen(signOut: widget.signOut),
-                  AppTab.community => const CommunityScreen(),
-                  AppTab.style => KitchenStyleScreen(show3d: widget.showScene),
-                },
-              },
-            ),
+                ),
+              ),
+              if (view != _View.tabs || !primaryTabs.contains(tab))
+                Positioned.fill(
+                  child: switch (view) {
+                    _View.addStock => const AddStockScreen(),
+                    _View.recipe => RecipeDetailScreen(recipeId: recipeId!),
+                    _View.cooking => CookingScreen(
+                      meal: cookingMeal!,
+                      onDone: () => cookingMeal = null,
+                    ),
+                    _View.kitchen3d => TodayScreen(showScene: widget.showScene),
+                    _View.tabs => switch (tab) {
+                      AppTab.profile => const ProfileScreen(),
+                      AppTab.settings => SettingsScreen(
+                        signOut: widget.signOut,
+                      ),
+                      AppTab.community => const CommunityScreen(),
+                      AppTab.style => KitchenStyleScreen(
+                        show3d: widget.showScene,
+                      ),
+                      _ => const SizedBox.shrink(),
+                    },
+                  },
+                ),
+            ],
           ),
         ),
       ],
@@ -301,7 +362,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
         child: Row(
           children: [
             IconButton(
-              onPressed: () => _go(() => view = _View.tabs),
+              onPressed: _back,
               icon: const Icon(Icons.arrow_back_rounded),
               tooltip: 'رجوع',
             ),
@@ -310,6 +371,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                 switch (view) {
                   _View.addStock => 'نزوّد الخير',
                   _View.recipe => 'وصفة على قدرك',
+                  _View.kitchen3d => 'مطبخي 3D',
                   _ => 'نطبخ معًا',
                 },
                 style: const TextStyle(
@@ -339,36 +401,66 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
         ),
       );
     }
+    final primary = primaryTabs.contains(tab);
     return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 8, 16, 6),
+      padding: const EdgeInsets.fromLTRB(12, 8, 12, 6),
       child: Row(
         children: [
-          IconButton(
-            key: const ValueKey('page-back'),
-            onPressed: () => goTab(AppTab.today),
-            icon: const Icon(Icons.arrow_back_rounded),
-            tooltip: 'المطبخ',
+          if (!primary)
+            IconButton(
+              key: const ValueKey('page-back'),
+              onPressed: _back,
+              icon: const Icon(Icons.arrow_back_rounded),
+              tooltip: 'رجوع',
+            ),
+          Expanded(
+            child: Text(
+              switch (tab) {
+                AppTab.today => 'سُفرة',
+                AppTab.recipes => 'الوصفات',
+                AppTab.kitchen => 'الخزين',
+                AppTab.table => 'الخطة',
+                AppTab.profile => 'حسابي',
+                AppTab.settings => 'الإعدادات',
+                AppTab.community => 'مجتمع سفرة',
+                AppTab.style => 'شكل المطبخ',
+              },
+              style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+            ),
           ),
-          Text(switch (tab) {
-            AppTab.kitchen => 'مطبخي',
-            AppTab.profile => 'بروفايلي',
-            AppTab.settings => 'الإعدادات',
-            AppTab.community => 'مجتمع سفرة',
-            AppTab.style => 'شكل المطبخ',
-            _ => '',
-          }, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
+          if (primary) ...[
+            IconButton(
+              key: const ValueKey('circle-style'),
+              tooltip: 'شكل المطبخ',
+              onPressed: () => goTab(AppTab.style),
+              icon: const Icon(Icons.palette_outlined),
+            ),
+            IconButton(
+              key: const ValueKey('circle-community'),
+              tooltip: 'المجتمع',
+              onPressed: () => goTab(AppTab.community),
+              icon: const Icon(Icons.people_outline),
+            ),
+            IconButton(
+              key: const ValueKey('circle-settings'),
+              tooltip: 'الإعدادات',
+              onPressed: () => goTab(AppTab.settings),
+              icon: const Icon(Icons.settings_outlined),
+            ),
+            IconButton(
+              key: const ValueKey('circle-profile'),
+              tooltip: 'حسابي',
+              onPressed: () => goTab(AppTab.profile),
+              icon: const Icon(Icons.person_outline),
+            ),
+          ],
         ],
       ),
     );
   }
 
-  /// Liquid-glass bar of three: recipe book, table, community. The kitchen
-  /// has no button of its own: it is what's behind them, and tapping the
-  /// open one again returns to it.
   Widget _bottomNav(SofraController c) {
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
-    // One light glass bar everywhere, the open tab in the accent.
-    const dark = false;
     const ink = Sofra.ink;
     const accent = Sofra.accent;
     Widget item(
@@ -391,7 +483,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
               child: InkWell(
                 key: ValueKey('nav-$key'),
                 borderRadius: BorderRadius.circular(Sofra.r22),
-                onTap: () => goTab(active ? AppTab.today : target),
+                onTap: () => goTab(target),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 11),
                   child: Column(
@@ -431,12 +523,17 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     return Center(
       child: SizedBox(
         width: (MediaQuery.sizeOf(context).width - 32).clamp(0, 440),
-        child: LiquidGlass(
-          radius: 40,
-          dark: dark,
+        child: Surface(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
           child: Row(
             children: [
+              item(
+                AppTab.today,
+                'today',
+                Icons.home_outlined,
+                Icons.home_rounded,
+                'اليوم',
+              ),
               item(
                 AppTab.recipes,
                 'recipes',
@@ -445,19 +542,19 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                 'الوصفات',
               ),
               item(
+                AppTab.kitchen,
+                'stock',
+                Icons.kitchen_outlined,
+                Icons.kitchen_rounded,
+                'الخزين',
+              ),
+              item(
                 AppTab.table,
                 'table',
                 Icons.table_restaurant_outlined,
                 Icons.table_restaurant_rounded,
-                'السفرة',
+                'الخطة',
                 badge: hasPlan,
-              ),
-              item(
-                AppTab.community,
-                'community',
-                Icons.diversity_3_outlined,
-                Icons.diversity_3_rounded,
-                'المجتمع',
               ),
             ],
           ),

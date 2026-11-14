@@ -19,6 +19,8 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   Future<(CatalogRecipe, CatalogRecipe)>? recipe;
   int? servings;
   int yieldGuess = 4;
+  bool starting = false;
+  String cookingSlot = 'lunch';
 
   SofraController get c => SofraScope.controllerOf(context);
 
@@ -62,10 +64,29 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       names: c.stockNames,
     );
     return ScreenBody(
-      footer: DepthButton(
-        key: const ValueKey('plan-meal'),
-        label: 'إضافة الوجبة للسفرة',
-        onPressed: known ? () => _plan(people) : null,
+      footer: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          DepthButton(
+            key: const ValueKey('cook-now'),
+            label: starting ? 'بنجهّز الطبخة…' : 'أطبخ الآن',
+            onPressed: known && !starting ? () => _cookNow(people) : null,
+          ),
+          const SizedBox(height: 6),
+          const Text(
+            'تُحفظ كوجبة لليوم لاستكمالها. لا خصم قبل التأكيد.',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Sofra.muted, fontSize: 12),
+          ),
+          const SizedBox(height: 6),
+          DepthButton(
+            key: const ValueKey('plan-meal'),
+            compact: true,
+            secondary: true,
+            label: 'أضيف للخطة',
+            onPressed: known && !starting ? () => _plan(people) : null,
+          ),
+        ],
       ),
       children: [
         FutureBuilder<List<RecipePhoto>>(
@@ -158,6 +179,24 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           )
         else
           _yieldReview(),
+        if (known) ...[
+          const SizedBox(height: 12),
+          const Text('أسجّل الطبخة كـ'),
+          Wrap(
+            spacing: 8,
+            children: [
+              for (final slot in mealSlots.entries)
+                SofraChip(
+                  key: ValueKey('cook-slot-${slot.key}'),
+                  label: Text(slot.value),
+                  selected: cookingSlot == slot.key,
+                  onSelected: starting
+                      ? null
+                      : (_) => setState(() => cookingSlot = slot.key),
+                ),
+            ],
+          ),
+        ],
         if (allergy.isNotEmpty || c.profile.allergies.isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(top: 16),
@@ -261,6 +300,22 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       ],
     ),
   );
+
+  Future<void> _cookNow(int people) async {
+    if (starting) return;
+    final nav = SofraScope.navOf(context);
+    setState(() => starting = true);
+    try {
+      final meal = await c.prepareCooking(
+        widget.recipeId,
+        servings: people,
+        slot: cookingSlot,
+      );
+      if (mounted && meal != null) nav.startCooking(meal);
+    } finally {
+      if (mounted) setState(() => starting = false);
+    }
+  }
 
   Future<void> _plan(int people) async {
     final nav = SofraScope.navOf(context);

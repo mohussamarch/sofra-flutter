@@ -11,6 +11,8 @@ import '../ui/illustrations.dart';
 import 'barcode_scan.dart';
 import 'quick_add_screen.dart';
 import 'common.dart';
+import 'shopping_sheet.dart';
+import 'shelf_wheel.dart';
 
 /// Inventory by storage zone, read from KitchenService lots.
 class KitchenScreen extends StatefulWidget {
@@ -30,6 +32,33 @@ class _KitchenScreenState extends State<KitchenScreen> {
     final visible = stock.where((l) => zone == null || l.zone == zone).toList();
     return ScreenBody(
       children: [
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: [
+            TextButton.icon(
+              key: const ValueKey('open-kitchen-3d'),
+              onPressed: nav.openKitchen3d,
+              icon: const Icon(Icons.view_in_ar_outlined),
+              label: const Text('مطبخي 3D'),
+            ),
+            TextButton.icon(
+              onPressed: () => openShopping(context),
+              icon: const Icon(Icons.shopping_basket_outlined),
+              label: const Text('المشتريات'),
+            ),
+            TextButton.icon(
+              onPressed: () => showShelves(
+                context,
+                title: 'بواقي الأكل',
+                items: leftoverShelfItems,
+                empty: 'لا توجد بواقي مسجلة.',
+              ),
+              icon: const Icon(Icons.restaurant_outlined),
+              label: const Text('البواقي'),
+            ),
+          ],
+        ),
         const SizedBox(height: 8),
         Surface(
           color: Sofra.mint,

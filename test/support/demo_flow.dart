@@ -61,7 +61,7 @@ Future<Future<String> Function(String)> warmAssets(WidgetTester tester) async {
 
 /// Back to the home kitchen: a page's back arrow, or the open tab again.
 Future<void> goHome(WidgetTester tester) async {
-  for (final key in ['page-back', 'nav-active']) {
+  for (final key in ['page-back', 'nav-today']) {
     if (find.byKey(ValueKey(key)).evaluate().isNotEmpty) {
       await tapKey(tester, key);
       return;
@@ -73,10 +73,7 @@ Future<void> goHome(WidgetTester tester) async {
 Future<void> openCorner(WidgetTester tester, String circle) async {
   await goHome(tester);
   // Community moved from a kitchen corner to the bottom bar.
-  await tapKey(
-    tester,
-    circle == 'community' ? 'nav-community' : 'circle-$circle',
-  );
+  await tapKey(tester, 'circle-$circle');
 }
 
 /// The stock page, through the kitchen (no render in tests, so its stand-in).

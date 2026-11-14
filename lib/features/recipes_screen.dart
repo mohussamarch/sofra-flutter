@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
-import '../app/sofra_controller.dart';
+import '../app/recipe_stock_preview.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
@@ -216,31 +216,44 @@ class _PaperEntry extends StatelessWidget {
 }
 
 class RecipesScreen extends StatefulWidget {
-  const RecipesScreen({super.key});
+  const RecipesScreen({super.key, this.initialFilter = 'الكل'});
+  final String initialFilter;
   @override
   State<RecipesScreen> createState() => _RecipesScreenState();
 }
 
 class _RecipesScreenState extends State<RecipesScreen> {
-  static const _filters = ['الكل', 'من الموجود', 'سريعة', 'محفوظة'];
+  static const _filters = [
+    'الكل',
+    'من الموجود',
+    'جاهزة بالموجود',
+    'سريعة',
+    'محفوظة',
+  ];
   static const _page = 20;
   final search = TextEditingController();
-  String filter = 'الكل';
+  late String filter = widget.initialFilter;
   String? group;
   int limit = _page;
   Future<List<Map<String, dynamic>>>? results;
-  Future<Set<String>>? fromStock;
+  Future<Map<String, RecipeStockPreview>>? fromStock;
+  Future<Map<String, RecipeStockPreview>>? _viewStock;
+  int? _stockVersion;
+  bool get stockFilter => filter == 'من الموجود' || filter == 'جاهزة بالموجود';
   Future<List<Map<String, dynamic>>>? _viewResults;
   String? _viewFilter;
 
   /// Cached so rebuilds do not restart the search and flash a spinner.
   Future<List<Object>> get _view {
-    if (_viewResults != results || _viewFilter != filter) {
+    if (_viewResults != results ||
+        _viewFilter != filter ||
+        _viewStock != fromStock) {
       _viewResults = results;
       _viewFilter = filter;
+      _viewStock = fromStock;
       _viewFuture = Future.wait<Object>([
         results!,
-        if (filter == 'من الموجود') fromStock!,
+        if (stockFilter) fromStock!,
       ]);
     }
     return _viewFuture!;
@@ -267,26 +280,16 @@ class _RecipesScreenState extends State<RecipesScreen> {
   void _refresh() => setState(() {
     limit = _page;
     results = _query();
+    _stockVersion = null;
   });
-
-  /// IDs of recipes with at least two non-optional ingredients in stock.
-  Future<Set<String>> _fromStock(SofraController c) async {
-    final have = {for (final l in c.stock) l.ingredientId};
-    final all = await c.recipes.loadAll();
-    return {
-      for (final r in all)
-        if (r.ingredients
-                .where((i) => !i.optional && have.contains(c.stockId(i.id)))
-                .length >=
-            2)
-          r.id,
-    };
-  }
 
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
-    if (filter == 'من الموجود') fromStock ??= _fromStock(c);
+    if (stockFilter && _stockVersion != c.stockDiscoveryVersion) {
+      _stockVersion = c.stockDiscoveryVersion;
+      fromStock = c.stockRecipePreviews();
+    }
     return ScreenBody(
       children: [
         const SizedBox(height: 8),
@@ -360,31 +363,62 @@ class _RecipesScreenState extends State<RecipesScreen> {
             ],
           ),
         ),
+        if (stockFilter)
+          Padding(
+            padding: const EdgeInsets.only(top: 12),
+            child: Text(
+              'الكميات محسوبة لـ${c.profile.servings} أفراد. المقادير غير المعروفة لا تُعتبر جاهزة.',
+              style: const TextStyle(color: Sofra.muted),
+            ),
+          ),
         const SizedBox(height: 20),
         FutureBuilder<List<Object>>(
           future: _view,
           builder: (context, snap) {
             if (snap.hasError) {
-              return const ErrorBlock('تعذّر تحميل الوصفات. حاول مرة أخرى.');
+              return Column(
+                children: [
+                  const ErrorBlock('تعذّر تحميل الوصفات.'),
+                  TextButton(
+                    onPressed: _refresh,
+                    child: const Text('حاول مرة أخرى'),
+                  ),
+                ],
+              );
             }
             final data = snap.data;
-            if (data == null) return const LoadingBlock();
+            if (data == null || snap.connectionState != ConnectionState.done) {
+              return const LoadingBlock();
+            }
+            final stock = stockFilter
+                ? data.last as Map<String, RecipeStockPreview>
+                : <String, RecipeStockPreview>{};
             var rows = (data.first as List<Map<String, dynamic>>).where((r) {
               final id = r['id'] as String;
               return switch (filter) {
-                'من الموجود' => (data.last as Set<String>).contains(id),
+                'من الموجود' => (stock[id]?.present ?? 0) > 0,
+                'جاهزة بالموجود' => stock[id]?.ready ?? false,
                 'سريعة' =>
                   r['totalTime'] is num && (r['totalTime'] as num) <= 30,
                 'محفوظة' => c.profile.saved.contains(id),
                 _ => true,
               };
             }).toList();
-            if (c.profile.quickMeals) {
-              rows.sort(
-                (a, b) => ((a['totalTime'] as num?) ?? 1e9).compareTo(
-                  (b['totalTime'] as num?) ?? 1e9,
-                ),
-              );
+            if (stockFilter || c.profile.quickMeals) {
+              rows.sort((first, second) {
+                if (stockFilter) {
+                  final readiness = (stock[first['id']]?.rank ?? 2).compareTo(
+                    stock[second['id']]?.rank ?? 2,
+                  );
+                  if (readiness != 0) return readiness;
+                  final available = (stock[second['id']]?.available ?? 0)
+                      .compareTo(stock[first['id']]?.available ?? 0);
+                  if (available != 0) return available;
+                }
+                return ((first['totalTime'] as num?) ?? 1e9).compareTo(
+                  (second['totalTime'] as num?) ?? 1e9,
+                );
+              });
             }
             final shown = rows.take(limit).toList();
             return Column(
@@ -392,9 +426,9 @@ class _RecipesScreenState extends State<RecipesScreen> {
               children: [
                 Row(
                   children: [
-                    const Expanded(
+                    Expanded(
                       child: Text(
-                        'وصفات على ذوقك',
+                        stockFilter ? 'اقتراحات من خزينك' : 'وصفات على ذوقك',
                         style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 20,
@@ -437,7 +471,26 @@ class _RecipesScreenState extends State<RecipesScreen> {
                 for (final r in shown)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 16),
-                    child: RecipeCard(r),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (stockFilter)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: Text(
+                              stock[r['id']]!.label,
+                              key: ValueKey('stock-readiness-${r['id']}'),
+                              style: TextStyle(
+                                color: stock[r['id']]!.ready
+                                    ? Sofra.green
+                                    : Sofra.muted,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        RecipeCard(r),
+                      ],
+                    ),
                   ),
                 if (rows.length > shown.length)
                   DepthButton(
