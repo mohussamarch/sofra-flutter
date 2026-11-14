@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+
+import 'symbols.g.dart';
+
 /// Stand-in art for an ingredient until Codex's drawn set arrives
 /// (`assets/ingredients/<id>.webp`, CL2C-001/4): a fitting emoji, else one for
 /// its category.
@@ -113,3 +117,35 @@ const _glyphs = {
   'coconut-milk': '🥥',
   'peanuts': '🥜',
 };
+
+/// The ingredient's picture: a soft 3D symbol (Fluent Emoji, MIT) chosen for
+/// it or for its category; the plain glyph only if neither has one.
+class IngredientPicture extends StatelessWidget {
+  const IngredientPicture(this.id, this.category, {super.key, this.size = 48});
+
+  final String id;
+  final String? category;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    final name = symbolById[id] ?? symbolByCategory[category];
+    final glyph = Text(
+      ingredientGlyph(id, category),
+      style: TextStyle(fontSize: size * .72, height: 1),
+    );
+    return SizedBox.square(
+      dimension: size,
+      child: name == null
+          ? Center(child: glyph)
+          : Image.asset(
+              'assets/symbols/$name.png',
+              width: size,
+              height: size,
+              filterQuality: FilterQuality.medium,
+              excludeFromSemantics: true,
+              errorBuilder: (_, _, _) => Center(child: glyph),
+            ),
+    );
+  }
+}

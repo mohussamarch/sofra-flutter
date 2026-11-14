@@ -39,8 +39,10 @@ List<ShelfItem> zoneShelfItems(BuildContext context, StorageZone zone) {
     for (final lot in c.stock.where((l) => l.zone == zone))
       ShelfItem(
         id: lot.ingredientId,
-        art: _Glyph(
-          ingredientGlyph(lot.ingredientId, c.category(lot.ingredientId)),
+        art: IngredientPicture(
+          lot.ingredientId,
+          c.category(lot.ingredientId),
+          size: 52,
         ),
         label: c.ingredientName(lot.ingredientId),
         amount: lot.quantity == null
@@ -669,17 +671,6 @@ class _GlassShelfPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_GlassShelfPainter old) => false;
-}
-
-class _Glyph extends StatelessWidget {
-  const _Glyph(this.glyph);
-  final String glyph;
-  @override
-  Widget build(BuildContext context) => Text(
-    glyph,
-    textScaler: TextScaler.noScaling,
-    style: const TextStyle(fontSize: 44, height: 1),
-  );
 }
 
 /// A closed dish of leftovers: a lidded box, a glass-lidded bowl or a small

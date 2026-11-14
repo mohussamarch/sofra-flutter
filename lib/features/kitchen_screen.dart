@@ -7,6 +7,7 @@ import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
 import '../ui/design.dart';
+import '../ui/ingredient_art.dart';
 import '../ui/illustrations.dart';
 import 'barcode_scan.dart';
 import 'quick_add_screen.dart';
@@ -59,52 +60,34 @@ class _KitchenScreenState extends State<KitchenScreen> {
             ),
           ],
         ),
-        const SizedBox(height: 8),
-        Surface(
-          color: Sofra.mint,
-          padding: const EdgeInsets.all(18),
+        const SizedBox(height: 12),
+        // Two ways in, side by side, each told by its picture first.
+        IntrinsicHeight(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Icon(Icons.kitchen_rounded, size: 48, color: Sofra.green),
-              const SizedBox(width: 16),
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      stock.isEmpty
-                          ? 'مكان صغير.. لخير كتير'
-                          : '${stock.length} مكونات تنتظر طبخة',
-                      style: const TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    const Text(
-                      'الثلاجة والفريزر ودولاب المطبخ، في مكان واحد.',
-                      style: TextStyle(fontSize: 13, color: Sofra.muted),
-                    ),
-                  ],
+                child: _AddTile(
+                  key: const ValueKey('add-ingredients'),
+                  symbol: 'basket',
+                  title: 'أضف مكوّنًا',
+                  detail: 'ابحث واختر',
+                  primary: true,
+                  onTap: nav.openAddStock,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: _AddTile(
+                  key: const ValueKey('quick-add'),
+                  symbol: 'receipt',
+                  title: 'فاتورة أو قائمة',
+                  detail: 'صورة أو كتابة',
+                  onTap: () => openQuickAdd(context),
                 ),
               ),
             ],
           ),
-        ),
-        const SizedBox(height: 20),
-        DepthButton(
-          key: const ValueKey('add-ingredients'),
-          label: 'إضافة مكونات',
-          icon: Icons.add_rounded,
-          onPressed: nav.openAddStock,
-        ),
-        const SizedBox(height: 10),
-        DepthButton(
-          key: const ValueKey('quick-add'),
-          label: 'فاتورة أو قائمة مشتريات',
-          icon: Icons.receipt_long_rounded,
-          secondary: true,
-          onPressed: () => openQuickAdd(context),
         ),
         const SizedBox(height: 18),
         Wrap(
@@ -112,7 +95,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
           runSpacing: 8,
           children: [
             SofraChip(
-              label: const Text('الكل'),
+              label: Text(stock.isEmpty ? 'الكل' : 'الكل ${stock.length}'),
               selected: zone == null,
               onSelected: (_) => setState(() => zone = null),
             ),
@@ -190,19 +173,7 @@ class _StockRow extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(12, 14, 16, 14),
         child: Row(
           children: [
-            Container(
-              width: 46,
-              height: 46,
-              decoration: BoxDecoration(
-                color: category == 'خضار' ? Sofra.mint : Sofra.peach,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Icon(
-                categoryIcon(category),
-                color: Sofra.greenDark,
-                size: 25,
-              ),
-            ),
+            IngredientPicture(lot.ingredientId, category, size: 52),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -393,11 +364,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                   padding: const EdgeInsets.all(14),
                   child: Row(
                     children: [
-                      Icon(
-                        categoryIcon(e.category),
-                        color: Sofra.green,
-                        size: 26,
-                      ),
+                      IngredientPicture(e.id, e.category, size: 44),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Column(
@@ -672,6 +639,78 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
               onPressed: _save,
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+/// A large way to add stock: its picture, a short name and how it works.
+class _AddTile extends StatelessWidget {
+  const _AddTile({
+    super.key,
+    required this.symbol,
+    required this.title,
+    required this.detail,
+    required this.onTap,
+    this.primary = false,
+  });
+
+  final String symbol, title, detail;
+  final VoidCallback onTap;
+  final bool primary;
+
+  @override
+  Widget build(BuildContext context) {
+    final fg = primary ? Colors.white : Sofra.ink;
+    return Semantics(
+      button: true,
+      label: title,
+      excludeSemantics: true,
+      child: Material(
+        color: primary ? Sofra.accent : Sofra.surface,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(Sofra.r22),
+          side: primary ? BorderSide.none : const BorderSide(color: Sofra.line),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 14),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset(
+                  'assets/symbols/$symbol.png',
+                  width: 52,
+                  height: 52,
+                  excludeFromSemantics: true,
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  title,
+                  style: TextStyle(
+                    color: fg,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w800,
+                    height: 1.3,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  detail,
+                  style: TextStyle(
+                    color: primary
+                        ? Colors.white.withValues(alpha: .82)
+                        : Sofra.muted,
+                    fontSize: 13,
+                    height: 1.5,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

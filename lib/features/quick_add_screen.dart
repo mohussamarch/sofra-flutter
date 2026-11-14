@@ -625,25 +625,29 @@ class _LineCard extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(12, 10, 4, 10),
         child: Row(
           children: [
-            Container(
-              width: 46,
-              height: 46,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: entry == null ? Sofra.warnTint : Sofra.accentTint,
-                shape: BoxShape.circle,
-              ),
-              child: entry == null
-                  ? const Icon(
+            entry == null
+                ? Container(
+                    width: 56,
+                    height: 56,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                      color: Sofra.warnTint,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
                       Icons.help_outline_rounded,
                       color: Sofra.warn,
-                      size: 22,
-                    )
-                  : Text(
-                      ingredientGlyph(entry.id, entry.category),
-                      style: const TextStyle(fontSize: 22),
+                      size: 28,
                     ),
-            ),
+                  )
+                : Opacity(
+                    opacity: off ? .4 : 1,
+                    child: IngredientPicture(
+                      entry.id,
+                      entry.category,
+                      size: 56,
+                    ),
+                  ),
             const SizedBox(width: 12),
             Expanded(
               child: InkWell(
@@ -796,10 +800,7 @@ class _PickSheetState extends State<_PickSheet> {
                     ListTile(
                       key: ValueKey('quick-pick-${e.id}'),
                       contentPadding: EdgeInsets.zero,
-                      leading: Text(
-                        ingredientGlyph(e.id, e.category),
-                        style: const TextStyle(fontSize: 22),
-                      ),
+                      leading: IngredientPicture(e.id, e.category, size: 40),
                       title: Text(e.name),
                       onTap: () => Navigator.pop(context, e),
                     ),
