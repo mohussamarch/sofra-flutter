@@ -487,3 +487,11 @@ APK: `E:\work\SOFRA\deliverables\sofra-20261026-community-2843ab99.apk`
 - Screens before/after: E:\shots\sofra-onboarding\{before,after,compare}. Web preview of the working
   tree on http://localhost:8894 (node deliverables/serve-web.cjs tmp-claude/web-new 8894).
 - Open: profile screen still titles «بيت <name>» (houseName); transitions/animation round next.
+
+## 2026-11-14 — Quick add (receipt / screenshot / typed list) + full review
+
+- Commit bf711d0d (pushed). New: `lib/domain/quick_add.dart` (on-device list parser + ingredient matcher), `lib/data/purchase_reader.dart` (Gemini via Firebase AI Logic, model `gemini-3.1-flash-lite`, override with `--dart-define=SOFRA_READER_MODEL`), `lib/features/quick_add_screen.dart`, `KitchenService.addStockBatch` (one atomic write), `SofraController.addArrivals`, button `quick-add` on the stock screen. Packages added: `firebase_ai`, `image_picker`.
+- Verified: analyze clean; 470 tests on the working tree; 458 on a clean checkout of the commit. Web build screenshots in `E:\shots\sofra-quick-add`.
+- NOT verified: a real receipt against the real model. Firebase AI Logic must be enabled once in the console for sofra-c03a1 (Gemini Developer API, no billing). Without a Firebase app the photo tiles are disabled and typing still works.
+- Only my hunks of `sofra_controller.dart` and `kitchen_screen.dart` were committed (script `E:\work\SOFRA\tmp-claude\hunks.cjs`); Codex's uncommitted work is still uncommitted.
+- Full read-only review (8 areas, 16 agents, serious findings re-checked): raw result `E:\work\SOFRA\tmp-claude\review.json`, owner page `E:\work\SOFRA\deliverables\sofra-map.html`.
