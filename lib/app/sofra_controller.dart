@@ -22,6 +22,7 @@ import '../domain/food_nutrition.dart';
 import '../domain/personal_recipe_draft.dart';
 import '../domain/personal_recipe_finalization.dart';
 import '../domain/purchase_forecast.dart';
+import '../domain/quick_add.dart';
 import '../domain/recipe_variants.dart';
 import '../domain/recipe_catalog.dart';
 import 'reminders.dart';
@@ -841,6 +842,27 @@ class SofraController extends ChangeNotifier {
       );
     }
   });
+
+  /// Confirmed lines of a typed list, a receipt or an order go into stock
+  /// in one save, each in its usual place. False when nothing was saved.
+  Future<bool> addArrivals(Iterable<QuickLine> lines) {
+    final at = DateTime.now();
+    final arrivals = [
+      for (final l in lines)
+        if (l.ready)
+          StockArrival(
+            InventoryLot(
+              id: newId('lot'),
+              ingredientId: l.entry!.id,
+              quantity: l.quantity,
+              unit: l.unit ?? l.entry!.defaultUnit,
+              zone: l.entry!.zone,
+            ),
+            paid: l.paid,
+          ),
+    ];
+    return _save(() => kitchen.addStockBatch(arrivals, at: at));
+  }
 
   Future<void> setQuantity(String lotId, double quantity) =>
       _save(() => kitchen.setStockQuantity(lotId, quantity));

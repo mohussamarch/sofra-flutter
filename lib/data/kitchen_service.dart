@@ -1240,6 +1240,87 @@ class KitchenService {
     items.add(lot.toJson());
   });
 
+  /// Puts several arrivals into stock in one save: all of them or none.
+  /// An arrival joins a lot of the same ingredient in the same place when
+  /// its unit converts exactly, else it becomes a new lot. One without an
+  /// amount only records that the ingredient is there. A paid arrival is
+  /// also logged as a purchase and kept as the user's price.
+  Future<void> addStockBatch(
+    List<StockArrival> arrivals, {
+    required DateTime at,
+  }) => _write((k) {
+    final items = k['inventory'] as List;
+    final rules = _storedRules(k);
+    final country = MarketProfile.fromCode(k['country'] as String).country;
+    for (final a in arrivals) {
+      final quantity = a.lot.quantity;
+      final same = items
+          .where(
+            (v) =>
+                v['ingredientId'] == a.lot.ingredientId &&
+                v['zone'] == a.lot.zone.name,
+          )
+          .toList();
+      Map? into;
+      double? added;
+      if (quantity != null) {
+        for (final v in same) {
+          if (v['quantity'] == null) continue;
+          added = Units.convert(
+            quantity,
+            a.lot.unit,
+            v['unit'] as String,
+            ingredientId: a.lot.ingredientId,
+            rules: rules,
+          );
+          if (added != null) {
+            into = v as Map;
+            break;
+          }
+        }
+      }
+      if (into != null) {
+        into['quantity'] = (into['quantity'] as num).toDouble() + added!;
+      } else if (quantity != null || same.isEmpty) {
+        if (items.any((v) => v['id'] == a.lot.id)) {
+          throw StateError('Stock lot already exists');
+        }
+        if (items.length >= 1000) throw StateError('Inventory limit reached');
+        items.add(a.lot.toJson());
+      }
+      final paid = a.paid;
+      if (paid == null) continue;
+      (k['purchases'] as List).add(
+        MoneyEntry(
+          id: 'purchase-${a.lot.id}',
+          amount: paid,
+          country: country,
+          date: at,
+          note: a.lot.ingredientId,
+        ).toJson(),
+      );
+      if (quantity == null || quantity <= 0) continue;
+      final prices = k['prices'] as List;
+      prices.removeWhere(
+        (v) =>
+            v['country'] == country.name &&
+            v['ingredientId'] == a.lot.ingredientId &&
+            v['unit'] == a.lot.unit &&
+            v['override'] == true,
+      );
+      prices.add({
+        'country': country.name,
+        'ingredientId': a.lot.ingredientId,
+        'unit': a.lot.unit,
+        'quantity': quantity,
+        'amount': paid,
+        'date': at.toIso8601String(),
+        'source': 'user-purchase',
+        'override': true,
+      });
+    }
+  });
+
   Future<void> setStockQuantity(String lotId, double? quantity) => _write((k) {
     if (quantity != null) requireAmount(quantity, zero: true);
     final row =
@@ -2229,4 +2310,13 @@ class KitchenService {
           as Map,
     );
   }
+}
+
+/// One confirmed arrival for [KitchenService.addStockBatch].
+class StockArrival {
+  const StockArrival(this.lot, {this.paid});
+  final InventoryLot lot;
+
+  /// What the user paid for it, when they said so.
+  final double? paid;
 }

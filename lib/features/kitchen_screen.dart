@@ -9,6 +9,7 @@ import '../domain/models.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'barcode_scan.dart';
+import 'quick_add_screen.dart';
 import 'common.dart';
 
 /// Inventory by storage zone, read from KitchenService lots.
@@ -67,6 +68,14 @@ class _KitchenScreenState extends State<KitchenScreen> {
           label: 'إضافة مكونات',
           icon: Icons.add_rounded,
           onPressed: nav.openAddStock,
+        ),
+        const SizedBox(height: 10),
+        DepthButton(
+          key: const ValueKey('quick-add'),
+          label: 'فاتورة أو قائمة مشتريات',
+          icon: Icons.receipt_long_rounded,
+          secondary: true,
+          onPressed: () => openQuickAdd(context),
         ),
         const SizedBox(height: 18),
         Wrap(
