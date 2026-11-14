@@ -157,7 +157,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
         // The other days are priced again on their own.
         keepPlanned = true;
         await _calculate();
-        if (plan?.outcome != MonthlyBudgetSearchOutcome.affordableFound) {
+        if (plan?.acceptable != true) {
           return;
         }
       }
@@ -231,7 +231,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
               r['id'] as String: r['name'] as String,
           };
           return ScreenBody(
-            footer: plan?.outcome == MonthlyBudgetSearchOutcome.affordableFound
+            footer: plan?.acceptable == true
                 ? DepthButton(
                     key: const ValueKey('month-accept'),
                     label: 'ضع الخطة على السفرة',
@@ -514,6 +514,17 @@ class _Result extends StatelessWidget {
             color: const Color(0xFF995333),
             text:
                 'أوفر اختيار يتجاوز الميزانية بـ ${amount(cheapest.overrun!)}. جرّب أكلات أوفر أو أضف بديلًا في بعض الخانات.',
+          ),
+        );
+      case MonthlyBudgetSearchOutcome.indeterminate when plan.acceptable:
+        final best = plan.best!;
+        children.add(
+          _Line(
+            key: const ValueKey('month-fits'),
+            icon: Icons.check_circle_outline_rounded,
+            color: Sofra.greenDark,
+            text:
+                'أوفر خطة وجدناها تكلّفك شراء نحو ${amount(best.forecast.purchaseTotal!)}، ويتبقى من الميزانية ${amount(best.remainingAfterPurchases!)}.',
           ),
         );
       case MonthlyBudgetSearchOutcome.indeterminate:

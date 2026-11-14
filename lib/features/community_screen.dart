@@ -1006,11 +1006,20 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                         if (mounted) setState(() => invite = v);
                       }),
               ),
-              TextButton(
-                key: const ValueKey('kitchen-leave'),
-                onPressed: busy ? null : () => _run(() => c.leaveKitchen(k.id)),
-                child: const Text('العودة إلى مطبخي الشخصي'),
-              ),
+              // The owner stays: leaving would lock them out of their own
+              // kitchen, since coming back needs an invite.
+              if (k.owner != c.community!.uid)
+                TextButton(
+                  key: const ValueKey('kitchen-leave'),
+                  onPressed: busy
+                      ? null
+                      : () async {
+                          if (await _confirmLeave(context)) {
+                            await _run(() => c.leaveKitchen(k.id));
+                          }
+                        },
+                  child: const Text('العودة إلى مطبخي الشخصي'),
+                ),
             ],
             if (error != null)
               Padding(
@@ -1392,3 +1401,27 @@ class _ChallengeState extends State<_Challenge> {
     );
   }
 }
+
+Future<bool> _confirmLeave(BuildContext context) async =>
+    await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('الخروج من المطبخ المشترك؟'),
+        content: const Text(
+          'ستعود إلى مطبخك الشخصي ولن ترى تعديلات أهل البيت. للعودة تحتاج رمز دعوة جديدًا من صاحب المطبخ.',
+        ),
+        actions: [
+          TextButton(
+            key: const ValueKey('kitchen-leave-cancel'),
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('إلغاء'),
+          ),
+          TextButton(
+            key: const ValueKey('kitchen-leave-confirm'),
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('اخرج'),
+          ),
+        ],
+      ),
+    ) ??
+    false;

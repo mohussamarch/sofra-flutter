@@ -88,11 +88,21 @@ class FirestoreCommunity implements CommunityBackend {
       throw const InviteProblem('انتهت صلاحية هذا الرمز. اطلب رمزًا جديدًا.');
     }
     final kitchenId = invite['kitchenId'] as String;
-    await db.doc('kitchens/$kitchenId').update({
-      'members': FieldValue.arrayUnion([uid]),
-      'names.$uid': name,
-      'joinedWith': code,
-    });
+    // Already a member (an owner or member coming back): the rules refuse a
+    // second join, and only the membership needs writing.
+    var member = false;
+    try {
+      member = (await kitchen(kitchenId)).members.contains(uid);
+    } on FirebaseException {
+      member = false;
+    }
+    if (!member) {
+      await db.doc('kitchens/$kitchenId').update({
+        'members': FieldValue.arrayUnion([uid]),
+        'names.$uid': name,
+        'joinedWith': code,
+      });
+    }
     await _membership.set({'kitchenId': kitchenId});
     return kitchenId;
   }

@@ -264,6 +264,14 @@ class MonthPlan {
   /// Cheapest option whose purchases fit the budget.
   MonthlyBudgetAssessment? get best => search.bestKnownAffordable;
 
+  /// The best plan found can be put on the table: every combination fit, or
+  /// the only open question is that not every combination of alternatives
+  /// was tried (all tried ones are fully priced).
+  bool get acceptable =>
+      best != null &&
+      (outcome == MonthlyBudgetSearchOutcome.affordableFound ||
+          (search.truncated && unpriced.isEmpty && unresolved.isEmpty));
+
   /// Cheapest fully priced option, affordable or not.
   MonthlyBudgetAssessment? get cheapest => search.eligibleRanked.firstOrNull;
 
