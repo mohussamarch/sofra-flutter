@@ -72,8 +72,11 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final primary = widget.primary;
     final glass = glassTrial;
-    final fg = primary ? Colors.white : Sofra.ink;
-    final symbolColor = primary ? Colors.white : Sofra.accent;
+    final light = primary && !glass; // white type on solid terracotta
+    final fg = light ? Colors.white : Sofra.ink;
+    final symbolColor = light || (glass && primary)
+        ? Colors.white
+        : Sofra.accent;
     final radius = BorderRadius.circular(Sofra.r28);
 
     final symbol = AnimatedBuilder(
@@ -103,7 +106,9 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: primary
+          color: glass && primary
+              ? Sofra.accent
+              : light
               ? Colors.white.withValues(alpha: .16)
               : Sofra.accentTint,
         ),
@@ -135,7 +140,7 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
               widget.detail,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: primary
+                color: light
                     ? Colors.white.withValues(alpha: .85)
                     : Sofra.muted,
                 fontSize: 13,
@@ -156,58 +161,9 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
 
     Widget tile;
     if (glass) {
-      // Liquid glass (refs: Apple HIG materials and tinted button, Flutter
-      // liquid_glass_renderer, specular rim maps). The light pools behind
-      // show through, blurred and a little more saturated; primary glass is
-      // tinted terracotta but stays see-through; a bright rim catches the
-      // light at the top corner and fades round the edge.
-      tile = ClipRRect(
-        borderRadius: radius,
-        child: BackdropFilter(
-          filter: ui.ImageFilter.compose(
-            outer: const ColorFilter.matrix(_saturate),
-            inner: ui.ImageFilter.blur(sigmaX: 22, sigmaY: 22),
-          ),
-          child: CustomPaint(
-            foregroundPainter: _RimPainter(radius: Sofra.r28),
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                borderRadius: radius,
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: primary
-                      ? [
-                          const Color(0xFFD9774F).withValues(alpha: .58),
-                          Sofra.accentDark.withValues(alpha: .80),
-                        ]
-                      : [
-                          const Color(0xFFFFFAF3).withValues(alpha: .70),
-                          const Color(0xFFFFF4E8).withValues(alpha: .48),
-                        ],
-                ),
-              ),
-              child: DecoratedBox(
-                // A soft specular bloom in the lit corner, not a band.
-                decoration: BoxDecoration(
-                  borderRadius: radius,
-                  gradient: RadialGradient(
-                    center: const AlignmentDirectional(
-                      .85,
-                      -1.05,
-                    ).resolve(Directionality.of(context)),
-                    radius: .9,
-                    colors: [
-                      Colors.white.withValues(alpha: primary ? .30 : .45),
-                      Colors.white.withValues(alpha: 0),
-                    ],
-                  ),
-                ),
-                child: Material(type: MaterialType.transparency, child: ink),
-              ),
-            ),
-          ),
-        ),
+      tile = _Glass(
+        radius: Sofra.r28,
+        child: Material(type: MaterialType.transparency, child: ink),
       );
     } else {
       tile = Material(
@@ -235,7 +191,16 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
           child: DecoratedBox(
             decoration: BoxDecoration(
               borderRadius: radius,
-              boxShadow: primary
+              boxShadow: glass
+                  ? [
+                      BoxShadow(
+                        color: const Color(0xFF8A4A2C).withValues(alpha: .15),
+                        blurRadius: 28,
+                        offset: const Offset(0, 14),
+                        spreadRadius: -6,
+                      ),
+                    ]
+                  : primary
                   ? [
                       BoxShadow(
                         color: Sofra.accentDark.withValues(alpha: .22),
@@ -253,9 +218,141 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
   }
 }
 
-/// The app's ground: warm paper under three clear pools of light (terracotta
-/// top corner, honey on the side, peach low down), so no page is one flat
-/// colour and glass has something to show through.
+/// Hand-built liquid glass, the same on every platform: a clear bevel band
+/// round the edge (light blur, so what is behind stays sharp there, like a
+/// lens), a frosted centre, a rim that is bright where the light hits and a
+/// thin inner line that gives the bevel depth.
+class _Glass extends StatelessWidget {
+  const _Glass({required this.radius, required this.child});
+  final double radius;
+  final Widget child;
+
+  static const bevel = 7.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final outer = BorderRadius.circular(radius);
+    final inner = BorderRadius.circular(radius - bevel);
+    return ClipRRect(
+      borderRadius: outer,
+      child: BackdropFilter(
+        filter: ui.ImageFilter.blur(sigmaX: 2.5, sigmaY: 2.5),
+        child: CustomPaint(
+          foregroundPainter: _GlassEdge(radius: radius, bevel: bevel),
+          child: ColoredBox(
+            color: Colors.white.withValues(alpha: .16),
+            child: Padding(
+              padding: const EdgeInsets.all(bevel),
+              child: ClipRRect(
+                borderRadius: inner,
+                child: BackdropFilter(
+                  filter: ui.ImageFilter.compose(
+                    outer: const ColorFilter.matrix(_saturate),
+                    inner: ui.ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                  ),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Colors.white.withValues(alpha: .46),
+                          Colors.white.withValues(alpha: .14),
+                        ],
+                      ),
+                    ),
+                    child: child,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Saturation 1.3 (luminance-weighted) and a touch of light.
+const _saturate = <double>[
+  1.2362, -0.2146, -0.0217, 0, 4, //
+  -0.0638, 1.0854, -0.0217, 0, 4, //
+  -0.0638, -0.2146, 1.2783, 0, 4, //
+  0, 0, 0, 1, 0, //
+];
+
+class _GlassEdge extends CustomPainter {
+  _GlassEdge({required this.radius, required this.bevel});
+  final double radius, bevel;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rect = Offset.zero & size;
+    RRect rr(double inset) => RRect.fromRectAndRadius(
+      rect.deflate(inset),
+      Radius.circular(radius - inset),
+    );
+    Shader lit(List<Color> colors, List<double> stops) => LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: colors,
+      stops: stops,
+    ).createShader(rect);
+    const w = Colors.white;
+    // Outer rim: bright at the lit corner, fading, lifting again opposite.
+    canvas.drawRRect(
+      rr(.6),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.2
+        ..shader = lit(
+          [
+            w,
+            w.withValues(alpha: .35),
+            w.withValues(alpha: .12),
+            w.withValues(alpha: .7),
+          ],
+          const [0, .3, .65, 1],
+        ),
+    );
+    // Soft glint hugging the lit corner.
+    canvas.drawRRect(
+      rr(2.5),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 3
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2.5)
+        ..shader = lit(
+          [w.withValues(alpha: .9), w.withValues(alpha: 0)],
+          const [0, .32],
+        ),
+    );
+    // Inner line of the bevel: shaded on the lit side, light on the far side.
+    const shade = Color(0xFF7A4A2E);
+    canvas.drawRRect(
+      rr(bevel),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1
+        ..shader = lit(
+          [
+            shade.withValues(alpha: .16),
+            shade.withValues(alpha: .04),
+            w.withValues(alpha: .55),
+          ],
+          const [0, .5, 1],
+        ),
+    );
+  }
+
+  @override
+  bool shouldRepaint(_GlassEdge old) =>
+      old.radius != radius || old.bevel != bevel;
+}
+
+/// The app's ground: warm paper under wide pools of light, with a few
+/// defined colour orbs near the top, so no page is one flat colour and glass
+/// has shapes to blur and bend.
 class SofraBackdrop extends StatelessWidget {
   const SofraBackdrop({super.key});
 
@@ -267,7 +364,10 @@ class SofraBackdrop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget layer = const SizedBox.expand();
+    Widget layer = const CustomPaint(
+      painter: _Orbs(),
+      child: SizedBox.expand(),
+    );
     for (final (center, radius, color) in _pools.reversed) {
       layer = DecoratedBox(
         decoration: BoxDecoration(
@@ -284,44 +384,37 @@ class SofraBackdrop extends StatelessWidget {
   }
 }
 
-/// Saturation 1.3 (luminance-weighted) and a touch of light: what is behind glass looks richer.
-const _saturate = <double>[
-  1.2362, -0.2146, -0.0217, 0, 4, //
-  -0.0638, 1.0854, -0.0217, 0, 4, //
-  -0.0638, -0.2146, 1.2783, 0, 4, //
-  0, 0, 0, 1, 0, //
-];
+class _Orbs extends CustomPainter {
+  const _Orbs();
 
-/// The glass rim: bright where the light hits (top corner), fading round the
-/// sides, with a faint lift on the far bottom edge.
-class _RimPainter extends CustomPainter {
-  _RimPainter({required this.radius});
-  final double radius;
+  // x as a share of the width, y and radius in logical pixels.
+  static const _orbs = [
+    (.84, 262.0, 84.0, Color(0xFFE2764A)),
+    (.30, 318.0, 78.0, Color(0xFFF0B347)),
+    (.56, 214.0, 46.0, Color(0xFFEE9C8A)),
+  ];
 
   @override
   void paint(Canvas canvas, Size size) {
-    final rect = Offset.zero & size;
-    final rrect = RRect.fromRectAndRadius(
-      rect.deflate(.75),
-      Radius.circular(radius),
-    );
-    final paint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.5
-      ..shader = LinearGradient(
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft,
-        colors: [
-          Colors.white.withValues(alpha: .95),
-          Colors.white.withValues(alpha: .18),
-          Colors.white.withValues(alpha: .08),
-          Colors.white.withValues(alpha: .45),
-        ],
-        stops: const [0, .35, .7, 1],
-      ).createShader(rect);
-    canvas.drawRRect(rrect, paint);
+    for (final (x, y, r, color) in _orbs) {
+      final c = Offset(size.width * x, y);
+      canvas.drawCircle(
+        c,
+        r,
+        Paint()
+          ..shader = RadialGradient(
+            center: const Alignment(-.35, -.4),
+            colors: [
+              Color.lerp(color, Colors.white, .35)!.withValues(alpha: .95),
+              color.withValues(alpha: .85),
+              color.withValues(alpha: .55),
+            ],
+            stops: const [0, .65, 1],
+          ).createShader(Rect.fromCircle(center: c, radius: r)),
+      );
+    }
   }
 
   @override
-  bool shouldRepaint(_RimPainter old) => old.radius != radius;
+  bool shouldRepaint(_Orbs old) => false;
 }

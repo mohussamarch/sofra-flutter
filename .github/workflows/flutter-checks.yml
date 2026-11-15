@@ -94,6 +94,14 @@ jobs:
         with:
           name: sofra-samsung-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+      - name: Build glass trial APK (same app, liquid glass on)
+        run: |
+          flutter build apk --release --target-platform android-arm64 --dart-define-from-file=config/firebase.android.json --dart-define=SOFRA_GLASS=true
+          mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/sofra-glass-trial.apk
+      - uses: actions/upload-artifact@v7
+        with:
+          name: sofra-glass-trial-apk
+          path: build/app/outputs/flutter-apk/sofra-glass-trial.apk
       - name: Build 2.5D kitchen scene spike APK
         run: |
           flutter build apk --release --target-platform android-arm64 -t lib/main_scene_spike.dart
