@@ -166,7 +166,9 @@ void main() {
       await tester.pumpAndSettle();
       await tapKey(tester, 'quick-add-read');
       expect(reader.texts, 0);
-      expect(find.text('3 جاهزة'), findsOneWidget);
+      // Each item is its own ticked row at once.
+      expect(find.byKey(const ValueKey('quick-line-2')), findsOneWidget);
+      expect(find.text('أضف 3 إلى المطبخ'), findsOneWidget);
       // Milk has no amount: give it one.
       await tapKey(tester, 'quick-amount-2');
       await tester.enterText(
@@ -205,6 +207,57 @@ void main() {
       expect(tester.takeException(), isNull);
     },
   );
+
+  testWidgets('a typed row the phone cannot place is looked up', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final reader = FakeReader(
+      '{"items":[{"raw":"Juhayna","id":"milk","name":"لبن","quantity":1,"unit":"l","paid":0}]}',
+    );
+    final oldReader = purchaseReader;
+    purchaseReader = () => reader;
+    addTearDown(() => purchaseReader = oldReader);
+    final store = TestStore();
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: ThemeData(
+          snackBarTheme: const SnackBarThemeData(
+            behavior: SnackBarBehavior.floating,
+          ),
+        ),
+        home: Directionality(
+          textDirection: TextDirection.rtl,
+          child: SofraHome(
+            store: store,
+            recipes: await warmRecipes(tester),
+            readAsset: await warmAssets(tester),
+            showScene: false,
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await completeOnboarding(tester);
+    await openStock(tester);
+    await tapKey(tester, 'quick-add');
+    await tester.enterText(
+      find.byKey(const ValueKey('quick-add-text')),
+      'Juhayna',
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('لم نعرفه بعد'), findsOneWidget, reason: 'live preview');
+    await tester.testTextInput.receiveAction(TextInputAction.done);
+    await tester.pumpAndSettle();
+    expect(reader.texts, 1);
+    expect(find.text('لبن'), findsOneWidget);
+    await tapKey(tester, 'quick-add-save');
+    final lots = (store.data!['kitchen'] as Map)['inventory'] as List;
+    expect(lots.single['ingredientId'], 'milk');
+  });
 
   testWidgets('a failed photo read says so and leaves typing open', (
     tester,

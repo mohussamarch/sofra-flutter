@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ import '../data/purchase_reader.dart';
 import '../domain/ingredient_directory.dart';
 import '../domain/market_profile.dart';
 import '../domain/quick_add.dart';
+import '../ui/add_tile.dart';
 import '../ui/design.dart';
 import '../ui/ingredient_art.dart';
 import 'common.dart';
@@ -71,6 +73,9 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
   String? error;
   var saving = false;
 
+  /// Typed rows the reader is still looking up.
+  final asking = <QuickLine>{};
+
   @override
   void dispose() {
     text.dispose();
@@ -127,25 +132,145 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
     await _read(() => reader!.readImage(picked.$1, picked.$2, directory));
   }
 
-  Future<void> _typed() async {
+  /// What was typed becomes rows at once, one per item, read on the phone.
+  /// A row it cannot place is sent to the reader (brands, English) when there
+  /// is one, and filled in if the reader knows it.
+  void _addTyped() {
     final directory = SofraScope.controllerOf(context).directory;
     final value = text.text.trim();
     if (directory == null || value.isEmpty) return;
-    FocusScope.of(context).unfocus();
-    final local = parseQuickText(value, directory);
-    // A plain list is read on the phone. Only text it cannot place (brands,
-    // English, a pasted order) goes to the reader, when there is one.
-    if (reader == null || local.every((l) => l.entry != null)) {
-      setState(() {
-        lines = local;
-        error = local.isEmpty ? 'اكتب ما اشتريت أولًا.' : null;
-        stage = local.isEmpty ? _Stage.choose : _Stage.review;
-      });
-      return;
+    final added = parseQuickText(value, directory);
+    for (final line in added) {
+      line.include = line.entry != null;
     }
-    await _read(
-      () => reader!.readText(value, directory),
-      otherwise: () => local,
+    setState(() {
+      lines = [...lines, ...added];
+      error = null;
+      text.clear();
+    });
+    final r = reader;
+    if (r == null) return;
+    for (final line in added.where((l) => l.entry == null)) {
+      unawaited(_ask(r, line, directory));
+    }
+  }
+
+  Future<void> _ask(
+    PurchaseReader r,
+    QuickLine line,
+    IngredientDirectory directory,
+  ) async {
+    setState(() => asking.add(line));
+    QuickLine? found;
+    try {
+      found = (await r.readText(
+        line.raw,
+        directory,
+      )).where((l) => l.entry != null).firstOrNull;
+    } catch (_) {}
+    if (!mounted) return;
+    setState(() {
+      asking.remove(line);
+      if (found == null) return;
+      line
+        ..entry = found.entry
+        ..sure = found.sure
+        ..include = true
+        ..quantity = found.quantity
+        ..unit = found.unit
+        ..paid = found.paid;
+    });
+  }
+
+  Widget _choose(SofraController c) {
+    final directory = c.directory;
+    final preview = directory == null || text.text.trim().isEmpty
+        ? const <QuickLine>[]
+        : parseQuickText(text.text, directory);
+    final ready = lines.where((l) => l.ready).length;
+    return ScreenBody(
+      padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
+      footer: lines.isEmpty
+          ? null
+          : DepthButton(
+              key: const ValueKey('quick-add-save'),
+              label: ready == 0
+                  ? 'علّم صنفًا واحدًا على الأقل'
+                  : 'أضف $ready إلى المطبخ',
+              icon: Icons.kitchen_rounded,
+              onPressed: ready == 0 || saving ? null : _save,
+            ),
+      children: [
+        IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: AddTile(
+                  key: const ValueKey('quick-add-camera'),
+                  icon: Icons.photo_camera_rounded,
+                  title: 'صوّر الفاتورة',
+                  detail: 'بالكاميرا',
+                  primary: true,
+                  minHeight: 176,
+                  onTap: reader == null ? null : () => _photo(true),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: AddTile(
+                  key: const ValueKey('quick-add-gallery'),
+                  icon: Icons.add_photo_alternate_rounded,
+                  title: 'من الصور',
+                  detail: 'لقطة طلب أو فاتورة',
+                  minHeight: 176,
+                  onTap: reader == null ? null : () => _photo(false),
+                ),
+              ),
+            ],
+          ),
+        ),
+        if (error != null) ...[const SizedBox(height: 12), _ErrorNote(error!)],
+        const SizedBox(height: 24),
+        TextField(
+          key: const ValueKey('quick-add-text'),
+          controller: text,
+          textInputAction: TextInputAction.done,
+          onChanged: (_) => setState(() {}),
+          onSubmitted: (_) => _addTyped(),
+          decoration: InputDecoration(
+            hintText: 'أو اكتب: 2 كيلو طماطم',
+            prefixIcon: const Icon(Icons.edit_note_rounded),
+            suffixIcon: IconButton(
+              key: const ValueKey('quick-add-read'),
+              tooltip: 'أضف السطر',
+              onPressed: text.text.trim().isEmpty ? null : _addTyped,
+              icon: const Icon(Icons.add_circle_rounded, color: Sofra.accent),
+            ),
+          ),
+        ),
+        // How it is understood, while typing.
+        for (final p in preview)
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: _Preview(line: p, controller: c),
+          ),
+        const SizedBox(height: 16),
+        for (final (i, line) in lines.indexed)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: asking.contains(line)
+                ? _Asking(raw: line.raw)
+                : _LineCard(
+                    key: ValueKey('quick-line-$i'),
+                    index: i,
+                    line: line,
+                    controller: c,
+                    checkbox: true,
+                    onChanged: () => setState(() => error = null),
+                  ),
+          ),
+      ],
     );
   }
 
@@ -173,136 +298,74 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final ready = lines.where((l) => l.ready).length;
-    return Scaffold(
-      backgroundColor: Sofra.cream,
-      appBar: AppBar(
-        title: const Text('أضف مشترياتك'),
-        backgroundColor: Sofra.cream,
-      ),
-      body: SafeArea(
-        child: switch (stage) {
-          _Stage.reading => const _Reading(),
-          _Stage.choose => ScreenBody(
-            padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
-            footer: DepthButton(
-              key: const ValueKey('quick-add-read'),
-              label: 'اقرأ القائمة',
-              icon: Icons.auto_awesome_rounded,
-              onPressed: text.text.trim().isEmpty || c.directory == null
-                  ? null
-                  : _typed,
-            ),
-            children: [
-              IntrinsicHeight(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+    return Stack(
+      children: [
+        const Positioned.fill(
+          child: ColoredBox(color: Sofra.cream, child: SofraBackdrop()),
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            title: const Text('أضف مشترياتك'),
+            backgroundColor: Colors.transparent,
+            surfaceTintColor: Colors.transparent,
+          ),
+          body: SafeArea(
+            child: switch (stage) {
+              _Stage.reading => const _Reading(),
+              _Stage.choose => _choose(c),
+              _Stage.review => ScreenBody(
+                padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
+                footer: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Expanded(
-                      child: _SourceTile(
-                        key: const ValueKey('quick-add-camera'),
-                        icon: Icons.receipt_long_rounded,
-                        badge: Icons.photo_camera_rounded,
-                        title: 'صوّر الفاتورة',
-                        onTap: reader == null ? null : () => _photo(true),
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: _SourceTile(
-                        key: const ValueKey('quick-add-gallery'),
-                        icon: Icons.phone_iphone_rounded,
-                        badge: Icons.image_rounded,
-                        title: 'لقطة شاشة أو صورة',
-                        onTap: reader == null ? null : () => _photo(false),
-                      ),
+                    if (error != null) ...[
+                      _ErrorNote(error!),
+                      const SizedBox(height: 10),
+                    ],
+                    DepthButton(
+                      key: const ValueKey('quick-add-save'),
+                      label: ready == 0
+                          ? 'اختر مكوّنًا واحدًا على الأقل'
+                          : 'أضف $ready إلى المطبخ',
+                      icon: Icons.kitchen_rounded,
+                      onPressed: ready == 0 || saving ? null : _save,
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(height: 10),
-              _Hint(
-                icon: reader == null
-                    ? Icons.cloud_off_rounded
-                    : Icons.lock_outline_rounded,
-                text: reader == null
-                    ? 'قراءة الصور غير متاحة في هذه النسخة. اكتب مشترياتك بالأسفل.'
-                    : 'تُرسل الصورة إلى Google لقراءتها فقط، ولا نحفظها.',
-              ),
-              if (error != null) ...[
-                const SizedBox(height: 12),
-                _ErrorNote(error!),
-              ],
-              const SizedBox(height: 24),
-              Text('أو اكتب ما اشتريت', style: Sofra.heading(19)),
-              const SizedBox(height: 10),
-              TextField(
-                key: const ValueKey('quick-add-text'),
-                controller: text,
-                minLines: 3,
-                maxLines: 8,
-                textInputAction: TextInputAction.newline,
-                onChanged: (_) => setState(() {}),
-                decoration: const InputDecoration(
-                  hintText: '2 كيلو طماطم، لبن، 6 بيض',
-                ),
-              ),
-              const SizedBox(height: 10),
-              const _Hint(
-                icon: Icons.mic_none_rounded,
-                text: 'زر الميكروفون في لوحة المفاتيح يكتب ما تقوله.',
-              ),
-            ],
-          ),
-          _Stage.review => ScreenBody(
-            padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
-            footer: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (error != null) ...[
-                  _ErrorNote(error!),
-                  const SizedBox(height: 10),
-                ],
-                DepthButton(
-                  key: const ValueKey('quick-add-save'),
-                  label: ready == 0
-                      ? 'اختر مكوّنًا واحدًا على الأقل'
-                      : 'أضف $ready إلى المطبخ',
-                  icon: Icons.kitchen_rounded,
-                  onPressed: ready == 0 || saving ? null : _save,
-                ),
-              ],
-            ),
-            children: [
-              _Summary(lines: lines),
-              const SizedBox(height: 14),
-              for (final line in lines)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 10),
-                  child: _LineCard(
-                    key: ValueKey('quick-line-${lines.indexOf(line)}'),
-                    index: lines.indexOf(line),
-                    line: line,
-                    controller: c,
-                    onChanged: () => setState(() => error = null),
+                children: [
+                  _Summary(lines: lines),
+                  const SizedBox(height: 14),
+                  for (final line in lines)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: _LineCard(
+                        key: ValueKey('quick-line-${lines.indexOf(line)}'),
+                        index: lines.indexOf(line),
+                        line: line,
+                        controller: c,
+                        onChanged: () => setState(() => error = null),
+                      ),
+                    ),
+                  Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: TextButton.icon(
+                      key: const ValueKey('quick-add-restart'),
+                      onPressed: () => setState(() {
+                        stage = _Stage.choose;
+                        lines = [];
+                        error = null;
+                      }),
+                      icon: const Icon(Icons.refresh_rounded),
+                      label: const Text('ابدأ من جديد'),
+                    ),
                   ),
-                ),
-              Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: TextButton.icon(
-                  key: const ValueKey('quick-add-restart'),
-                  onPressed: () => setState(() {
-                    stage = _Stage.choose;
-                    lines = [];
-                    error = null;
-                  }),
-                  icon: const Icon(Icons.refresh_rounded),
-                  label: const Text('ابدأ من جديد'),
-                ),
+                ],
               ),
-            ],
+            },
           ),
-        },
-      ),
+        ),
+      ],
     );
   }
 }
@@ -340,121 +403,6 @@ class _Reading extends StatelessWidget {
         Text('نقرأ مشترياتك…', style: Sofra.heading(19)),
       ],
     ),
-  );
-}
-
-/// A big pictured way in: a drawing of the source with a small action badge.
-class _SourceTile extends StatelessWidget {
-  const _SourceTile({
-    super.key,
-    required this.icon,
-    required this.badge,
-    required this.title,
-    required this.onTap,
-  });
-  final IconData icon, badge;
-  final String title;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final on = onTap != null;
-    return Semantics(
-      button: true,
-      enabled: on,
-      label: title,
-      excludeSemantics: true,
-      child: PressScale(
-        enabled: on,
-        child: Material(
-          color: on ? Sofra.surface : Sofra.sand.withValues(alpha: .5),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(Sofra.r22),
-            side: const BorderSide(color: Sofra.line),
-          ),
-          clipBehavior: Clip.antiAlias,
-          child: InkWell(
-            onTap: onTap,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(12, 20, 12, 16),
-              child: Column(
-                children: [
-                  SizedBox(
-                    width: 84,
-                    height: 76,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Container(
-                          width: 72,
-                          height: 72,
-                          decoration: BoxDecoration(
-                            color: on ? Sofra.accentTint : Sofra.line,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            icon,
-                            size: 36,
-                            color: on ? Sofra.accent : Sofra.muted,
-                          ),
-                        ),
-                        PositionedDirectional(
-                          end: 0,
-                          bottom: 0,
-                          child: Container(
-                            width: 30,
-                            height: 30,
-                            decoration: BoxDecoration(
-                              color: on ? Sofra.accent : Sofra.muted,
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Sofra.surface,
-                                width: 2,
-                              ),
-                            ),
-                            child: Icon(badge, size: 15, color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w800,
-                      color: on ? Sofra.ink : Sofra.muted,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _Hint extends StatelessWidget {
-  const _Hint({required this.icon, required this.text});
-  final IconData icon;
-  final String text;
-  @override
-  Widget build(BuildContext context) => Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Icon(icon, size: 16, color: Sofra.muted),
-      const SizedBox(width: 6),
-      Expanded(
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 12.5, color: Sofra.muted),
-        ),
-      ),
-    ],
   );
 }
 
@@ -554,11 +502,15 @@ class _LineCard extends StatelessWidget {
     required this.line,
     required this.controller,
     required this.onChanged,
+    this.checkbox = false,
   });
   final int index;
   final QuickLine line;
   final SofraController controller;
   final VoidCallback onChanged;
+
+  /// Typed rows are ticked in or out with a checkbox at the start.
+  final bool checkbox;
 
   Future<void> _pick(BuildContext context) async {
     final directory = controller.directory;
@@ -625,6 +577,16 @@ class _LineCard extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(12, 10, 4, 10),
         child: Row(
           children: [
+            if (checkbox)
+              Checkbox(
+                key: ValueKey('quick-toggle-$index'),
+                value: line.include,
+                activeColor: Sofra.accent,
+                onChanged: (v) {
+                  line.include = v ?? false;
+                  onChanged();
+                },
+              ),
             entry == null
                 ? Container(
                     width: 56,
@@ -716,18 +678,19 @@ class _LineCard extends StatelessWidget {
                 selected: line.quantity != null,
                 onPressed: () => _amount(context),
               ),
-            IconButton(
-              key: ValueKey('quick-toggle-$index'),
-              tooltip: off ? 'أعِده' : 'احذفه',
-              onPressed: () {
-                line.include = !line.include;
-                onChanged();
-              },
-              icon: Icon(
-                off ? Icons.undo_rounded : Icons.close_rounded,
-                color: Sofra.muted,
+            if (!checkbox)
+              IconButton(
+                key: ValueKey('quick-toggle-$index'),
+                tooltip: off ? 'أعِده' : 'احذفه',
+                onPressed: () {
+                  line.include = !line.include;
+                  onChanged();
+                },
+                icon: Icon(
+                  off ? Icons.undo_rounded : Icons.close_rounded,
+                  color: Sofra.muted,
+                ),
               ),
-            ),
           ],
         ),
       ),
@@ -899,4 +862,68 @@ class _AmountSheetState extends State<_AmountSheet> {
       ),
     );
   }
+}
+
+/// While typing: the picture and how the text will be added.
+class _Preview extends StatelessWidget {
+  const _Preview({required this.line, required this.controller});
+  final QuickLine line;
+  final SofraController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final e = line.entry;
+    final amount = e == null || line.quantity == null
+        ? null
+        : controller.amountText(e.id, line.quantity!, line.unit!);
+    return Row(
+      children: [
+        const SizedBox(width: 8),
+        e == null
+            ? const Icon(Icons.help_outline_rounded, color: Sofra.warn)
+            : IngredientPicture(e.id, e.category, size: 28),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Text(
+            e == null ? 'لم نعرفه بعد' : [?amount, e.name].join(' · '),
+            style: TextStyle(
+              color: e == null ? Sofra.warn : Sofra.muted,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// A typed row the reader is still looking up.
+class _Asking extends StatelessWidget {
+  const _Asking({required this.raw});
+  final String raw;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: Sofra.surface,
+      borderRadius: BorderRadius.circular(Sofra.r16),
+      border: Border.all(color: Sofra.line),
+    ),
+    child: Row(
+      children: [
+        const SizedBox.square(
+          dimension: 22,
+          child: CircularProgressIndicator(strokeWidth: 2.5),
+        ),
+        const SizedBox(width: 14),
+        Expanded(
+          child: Text(
+            'نتعرف على «$raw»…',
+            style: const TextStyle(color: Sofra.muted),
+          ),
+        ),
+      ],
+    ),
+  );
 }

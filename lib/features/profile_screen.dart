@@ -138,8 +138,31 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final p = c.profile;
+    final nav = SofraScope.navOf(context);
     return ScreenBody(
       children: [
+        const SizedBox(height: 8),
+        _AccountCard(
+          name: p.houseName,
+          initial: p.name.trim(),
+          onTap: () => nav.goTab(AppTab.profile),
+        ),
+        // Community has no place in the header any more; reachable from here
+        // until its new home is chosen.
+        const SizedBox(height: 8),
+        Surface(
+          padding: EdgeInsets.zero,
+          child: ListTile(
+            key: const ValueKey('settings-community'),
+            leading: const Icon(Icons.people_outline, color: Sofra.accent),
+            title: const Text(
+              'مجتمع سفرة',
+              style: TextStyle(fontWeight: FontWeight.w700),
+            ),
+            trailing: const Icon(Icons.chevron_right_rounded),
+            onTap: () => nav.goTab(AppTab.community),
+          ),
+        ),
         const SectionTitle('البلد والعملة'),
         const Surface(child: CountryPicker()),
         const SectionTitle('راحتك في التطبيق'),
@@ -191,6 +214,92 @@ class SettingsScreen extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// The account, on its own at the top of settings and set apart from the
+/// setting rows below it: a dark card with the person's initial.
+class _AccountCard extends StatelessWidget {
+  const _AccountCard({
+    required this.name,
+    required this.initial,
+    required this.onTap,
+  });
+
+  final String name, initial;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final shown = name.trim().isEmpty ? 'حسابي' : name.trim();
+    return Material(
+      color: Sofra.ink,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(Sofra.r22),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        key: const ValueKey('settings-profile'),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Container(
+                width: 56,
+                height: 56,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  color: Sofra.accentTint,
+                  shape: BoxShape.circle,
+                ),
+                child: initial.isEmpty
+                    ? const Icon(
+                        Icons.person_rounded,
+                        color: Sofra.accent,
+                        size: 30,
+                      )
+                    : Text(
+                        initial.characters.first,
+                        style: const TextStyle(
+                          color: Sofra.accent,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      shown,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      'حسابك وتفضيلات بيتك',
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: .75),
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right_rounded, color: Colors.white),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

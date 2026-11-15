@@ -72,8 +72,24 @@ Future<void> goHome(WidgetTester tester) async {
 /// Back to the home kitchen, then one of its corner circles.
 Future<void> openCorner(WidgetTester tester, String circle) async {
   await goHome(tester);
-  // Community moved from a kitchen corner to the bottom bar.
-  await tapKey(tester, 'circle-$circle');
+  switch (circle) {
+    // The header keeps only settings; the account and the community open
+    // from settings, and the kitchen's look from the 3D kitchen.
+    case 'profile' || 'community':
+      await tapKey(tester, 'circle-settings');
+      await tapKey(tester, 'settings-$circle');
+    case 'style':
+      await openKitchen3d(tester);
+      await tapKey(tester, 'circle-style');
+    default:
+      await tapKey(tester, 'circle-$circle');
+  }
+}
+
+/// The 3D kitchen, from the stock page.
+Future<void> openKitchen3d(WidgetTester tester) async {
+  await openStock(tester);
+  await tapKey(tester, 'open-kitchen-3d');
 }
 
 /// The stock page, through the kitchen (no render in tests, so its stand-in).

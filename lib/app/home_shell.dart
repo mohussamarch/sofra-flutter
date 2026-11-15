@@ -16,6 +16,7 @@ import '../features/onboarding_screen.dart';
 import '../features/profile_screen.dart';
 import '../features/recipe_detail_screen.dart';
 import '../features/today_screen.dart';
+import '../ui/add_tile.dart';
 import '../ui/design.dart';
 import 'reminders.dart';
 import 'scope.dart';
@@ -221,6 +222,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                     color: Sofra.cream,
                     child: Stack(
                       children: [
+                        const Positioned.fill(child: SofraBackdrop()),
                         SafeArea(
                           top: true,
                           bottom: false,
@@ -428,32 +430,15 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
               style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
             ),
           ),
-          if (primary) ...[
-            IconButton(
-              key: const ValueKey('circle-style'),
-              tooltip: 'شكل المطبخ',
-              onPressed: () => goTab(AppTab.style),
-              icon: const Icon(Icons.palette_outlined),
-            ),
-            IconButton(
-              key: const ValueKey('circle-community'),
-              tooltip: 'المجتمع',
-              onPressed: () => goTab(AppTab.community),
-              icon: const Icon(Icons.people_outline),
-            ),
+          // One way out of the main pages: settings, which opens the
+          // account first. The kitchen's look is changed from the 3D kitchen.
+          if (primary)
             IconButton(
               key: const ValueKey('circle-settings'),
               tooltip: 'الإعدادات',
               onPressed: () => goTab(AppTab.settings),
               icon: const Icon(Icons.settings_outlined),
             ),
-            IconButton(
-              key: const ValueKey('circle-profile'),
-              tooltip: 'حسابي',
-              onPressed: () => goTab(AppTab.profile),
-              icon: const Icon(Icons.person_outline),
-            ),
-          ],
         ],
       ),
     );

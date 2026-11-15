@@ -417,12 +417,6 @@ class _TopBar extends StatelessWidget {
             'الإعدادات',
             AppTab.settings,
           ),
-          icon(
-            'circle-profile',
-            Icons.person_outline_rounded,
-            'بروفايلي',
-            AppTab.profile,
-          ),
         ],
       ),
     );

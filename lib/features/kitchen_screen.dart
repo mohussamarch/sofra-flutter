@@ -6,6 +6,7 @@ import '../data/demo_data.dart';
 import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
+import '../ui/add_tile.dart';
 import '../ui/design.dart';
 import '../ui/ingredient_art.dart';
 import '../ui/illustrations.dart';
@@ -67,9 +68,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
-                child: _AddTile(
+                child: AddTile(
                   key: const ValueKey('add-ingredients'),
-                  symbol: 'basket',
+                  icon: Icons.shopping_basket_rounded,
                   title: 'أضف مكوّنًا',
                   detail: 'ابحث واختر',
                   primary: true,
@@ -78,9 +79,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: _AddTile(
+                child: AddTile(
                   key: const ValueKey('quick-add'),
-                  symbol: 'receipt',
+                  icon: Icons.receipt_long_rounded,
                   title: 'فاتورة أو قائمة',
                   detail: 'صورة أو كتابة',
                   onTap: () => openQuickAdd(context),
@@ -639,78 +640,6 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
               onPressed: _save,
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-/// A large way to add stock: its picture, a short name and how it works.
-class _AddTile extends StatelessWidget {
-  const _AddTile({
-    super.key,
-    required this.symbol,
-    required this.title,
-    required this.detail,
-    required this.onTap,
-    this.primary = false,
-  });
-
-  final String symbol, title, detail;
-  final VoidCallback onTap;
-  final bool primary;
-
-  @override
-  Widget build(BuildContext context) {
-    final fg = primary ? Colors.white : Sofra.ink;
-    return Semantics(
-      button: true,
-      label: title,
-      excludeSemantics: true,
-      child: Material(
-        color: primary ? Sofra.accent : Sofra.surface,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Sofra.r22),
-          side: primary ? BorderSide.none : const BorderSide(color: Sofra.line),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: InkWell(
-          onTap: onTap,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 14),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Image.asset(
-                  'assets/symbols/$symbol.png',
-                  width: 52,
-                  height: 52,
-                  excludeFromSemantics: true,
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: fg,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w800,
-                    height: 1.3,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  detail,
-                  style: TextStyle(
-                    color: primary
-                        ? Colors.white.withValues(alpha: .82)
-                        : Sofra.muted,
-                    fontSize: 13,
-                    height: 1.5,
-                  ),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );

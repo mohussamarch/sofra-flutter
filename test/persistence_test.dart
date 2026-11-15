@@ -72,7 +72,7 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(app(await store.load()));
     await tester.pumpAndSettle();
-    expect(find.byKey(const ValueKey('circle-style')), findsOneWidget);
+    expect(find.byKey(const ValueKey('circle-style')), findsNothing);
     await openCorner(tester, 'profile');
     expect(find.text('مريم'), findsWidgets);
     expect(jsonEncode(store.data), before);
@@ -174,7 +174,7 @@ void main() {
       await tapKey(tester, 'country-saudi');
       await completeOnboarding(tester);
       expect(store.data!['country'], 'SA');
-      expect(find.byKey(const ValueKey('circle-profile')), findsOneWidget);
+      expect(find.byKey(const ValueKey('circle-settings')), findsOneWidget);
       await tapKey(tester, 'nav-table');
       expect(find.text('على سفرة اليوم'), findsOneWidget);
       await openCorner(tester, 'profile');
