@@ -71,7 +71,7 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final primary = widget.primary;
-    final glass = primary && glassTrial;
+    final glass = glassTrial;
     final fg = primary ? Colors.white : Sofra.ink;
     final symbolColor = primary ? Colors.white : Sofra.accent;
     final radius = BorderRadius.circular(Sofra.r28);
@@ -156,53 +156,55 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
 
     Widget tile;
     if (glass) {
-      // Liquid glass: the room behind shows through, blurred, under a warm
-      // tint, a light rim and a soft shine across the top.
+      // Liquid glass (refs: Apple HIG materials and tinted button, Flutter
+      // liquid_glass_renderer, specular rim maps). The light pools behind
+      // show through, blurred and a little more saturated; primary glass is
+      // tinted terracotta but stays see-through; a bright rim catches the
+      // light at the top corner and fades round the edge.
       tile = ClipRRect(
         borderRadius: radius,
         child: BackdropFilter(
-          filter: ui.ImageFilter.blur(sigmaX: 18, sigmaY: 18),
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              borderRadius: radius,
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Sofra.accent.withValues(alpha: .62),
-                  Sofra.accentDark.withValues(alpha: .78),
-                ],
+          filter: ui.ImageFilter.compose(
+            outer: const ColorFilter.matrix(_saturate),
+            inner: ui.ImageFilter.blur(sigmaX: 22, sigmaY: 22),
+          ),
+          child: CustomPaint(
+            foregroundPainter: _RimPainter(radius: Sofra.r28),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: radius,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: primary
+                      ? [
+                          const Color(0xFFD9774F).withValues(alpha: .58),
+                          Sofra.accentDark.withValues(alpha: .80),
+                        ]
+                      : [
+                          const Color(0xFFFFFAF3).withValues(alpha: .70),
+                          const Color(0xFFFFF4E8).withValues(alpha: .48),
+                        ],
+                ),
               ),
-              border: Border.all(
-                color: Colors.white.withValues(alpha: .45),
-                width: 1.2,
-              ),
-            ),
-            child: Stack(
-              children: [
-                Positioned(
-                  left: 10,
-                  right: 10,
-                  top: 1,
-                  height: 46,
-                  child: IgnorePointer(
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(Sofra.r22),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.white.withValues(alpha: .30),
-                            Colors.white.withValues(alpha: 0),
-                          ],
-                        ),
-                      ),
-                    ),
+              child: DecoratedBox(
+                // A soft specular bloom in the lit corner, not a band.
+                decoration: BoxDecoration(
+                  borderRadius: radius,
+                  gradient: RadialGradient(
+                    center: const AlignmentDirectional(
+                      .85,
+                      -1.05,
+                    ).resolve(Directionality.of(context)),
+                    radius: .9,
+                    colors: [
+                      Colors.white.withValues(alpha: primary ? .30 : .45),
+                      Colors.white.withValues(alpha: 0),
+                    ],
                   ),
                 ),
-                Material(type: MaterialType.transparency, child: ink),
-              ],
+                child: Material(type: MaterialType.transparency, child: ink),
+              ),
             ),
           ),
         ),
@@ -251,29 +253,75 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
   }
 }
 
-/// The app's ground: warm paper with two soft light pools, so pages are not
-/// one flat colour and glass has something to show.
+/// The app's ground: warm paper under three clear pools of light (terracotta
+/// top corner, honey on the side, peach low down), so no page is one flat
+/// colour and glass has something to show through.
 class SofraBackdrop extends StatelessWidget {
   const SofraBackdrop({super.key});
 
+  static const _pools = [
+    (Alignment(1, -1), 1.15, Color(0xFFEBB79A)),
+    (Alignment(-1.05, .2), .95, Color(0xFFF0D9A6)),
+    (Alignment(.7, 1.1), 1.0, Color(0xFFF2C7B4)),
+  ];
+
   @override
-  Widget build(BuildContext context) => const DecoratedBox(
-    decoration: BoxDecoration(
-      gradient: RadialGradient(
-        center: Alignment(.9, -.95),
-        radius: 1.1,
-        colors: [Color(0xFFF3D9C6), Color(0x00F3D9C6)],
-      ),
-    ),
-    child: DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: RadialGradient(
-          center: Alignment(-1, .35),
-          radius: .9,
-          colors: [Color(0x99F2E3BF), Color(0x00F2E3BF)],
+  Widget build(BuildContext context) {
+    Widget layer = const SizedBox.expand();
+    for (final (center, radius, color) in _pools.reversed) {
+      layer = DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: center,
+            radius: radius,
+            colors: [color.withValues(alpha: .85), color.withValues(alpha: 0)],
+          ),
         ),
-      ),
-      child: SizedBox.expand(),
-    ),
-  );
+        child: layer,
+      );
+    }
+    return layer;
+  }
+}
+
+/// Saturation 1.3 (luminance-weighted) and a touch of light: what is behind glass looks richer.
+const _saturate = <double>[
+  1.2362, -0.2146, -0.0217, 0, 4, //
+  -0.0638, 1.0854, -0.0217, 0, 4, //
+  -0.0638, -0.2146, 1.2783, 0, 4, //
+  0, 0, 0, 1, 0, //
+];
+
+/// The glass rim: bright where the light hits (top corner), fading round the
+/// sides, with a faint lift on the far bottom edge.
+class _RimPainter extends CustomPainter {
+  _RimPainter({required this.radius});
+  final double radius;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rect = Offset.zero & size;
+    final rrect = RRect.fromRectAndRadius(
+      rect.deflate(.75),
+      Radius.circular(radius),
+    );
+    final paint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5
+      ..shader = LinearGradient(
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft,
+        colors: [
+          Colors.white.withValues(alpha: .95),
+          Colors.white.withValues(alpha: .18),
+          Colors.white.withValues(alpha: .08),
+          Colors.white.withValues(alpha: .45),
+        ],
+        stops: const [0, .35, .7, 1],
+      ).createShader(rect);
+    canvas.drawRRect(rrect, paint);
+  }
+
+  @override
+  bool shouldRepaint(_RimPainter old) => old.radius != radius;
 }
