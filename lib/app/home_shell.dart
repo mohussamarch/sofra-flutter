@@ -444,11 +444,11 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     );
   }
 
-  /// Trial look of the bottom bar: '' (white card), glass, dark or tint.
+  /// Look of the bottom bar: tint (chosen 17 Nov 2026), glass, dark or white.
   /// `--dart-define=SOFRA_NAV=dark`, or `?nav=dark` on the web preview.
   static final navTrial =
       Uri.base.queryParameters['nav'] ??
-      const String.fromEnvironment('SOFRA_NAV');
+      const String.fromEnvironment('SOFRA_NAV', defaultValue: 'tint');
 
   Widget _bottomNav(SofraController c) {
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
