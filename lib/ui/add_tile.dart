@@ -162,7 +162,7 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
 
     Widget tile;
     if (glass) {
-      tile = _Glass(
+      tile = SofraGlass(
         radius: r,
         child: Material(type: MaterialType.transparency, child: ink),
       );
@@ -229,8 +229,8 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
 /// frame inside a frame), lightly frosted, with a thin band at the edge where
 /// what is behind stays almost sharp, a crisp rim of light and a soft glow
 /// inside the lit corner.
-class _Glass extends StatelessWidget {
-  const _Glass({required this.radius, required this.child});
+class SofraGlass extends StatelessWidget {
+  const SofraGlass({super.key, required this.radius, required this.child});
   final double radius;
   final Widget child;
 

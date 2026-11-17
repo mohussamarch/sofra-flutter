@@ -444,10 +444,31 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     );
   }
 
+  /// Trial look of the bottom bar: '' (white card), glass, dark or tint.
+  /// `--dart-define=SOFRA_NAV=dark`, or `?nav=dark` on the web preview.
+  static final navTrial =
+      Uri.base.queryParameters['nav'] ??
+      const String.fromEnvironment('SOFRA_NAV');
+
   Widget _bottomNav(SofraController c) {
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
-    const ink = Sofra.ink;
-    const accent = Sofra.accent;
+    final look = navTrial;
+    final dark = look == 'dark';
+    final tint = look == 'tint';
+    final glass = look == 'glass';
+    final pill = look.isNotEmpty;
+    // Inactive and active colours for each look.
+    final idle = dark
+        ? const Color(0xFFF6E9DC).withValues(alpha: .62)
+        : tint
+        ? Colors.white.withValues(alpha: .72)
+        : Sofra.ink.withValues(alpha: .7);
+    final onColor = !pill
+        ? Sofra.accent
+        : tint
+        ? Sofra.accent
+        : Colors.white;
+    final pillColor = tint ? Colors.white : Sofra.accent;
     Widget item(
       AppTab target,
       String key,
@@ -469,8 +490,24 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                 key: ValueKey('nav-$key'),
                 borderRadius: BorderRadius.circular(Sofra.r22),
                 onTap: () => goTab(target),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 11),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 260),
+                  curve: Curves.easeOutBack,
+                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    color: pill && active ? pillColor : Colors.transparent,
+                    borderRadius: BorderRadius.circular(Sofra.r22),
+                    boxShadow: pill && active
+                        ? [
+                            BoxShadow(
+                              color: Sofra.accentDark.withValues(alpha: .28),
+                              blurRadius: 14,
+                              offset: const Offset(0, 5),
+                            ),
+                          ]
+                        : null,
+                  ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -480,7 +517,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                         backgroundColor: Sofra.orange,
                         child: Icon(
                           active ? on : off,
-                          color: active ? accent : ink,
+                          color: active ? onColor : idle,
                           size: 28,
                         ),
                       ),
@@ -492,7 +529,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                           fontWeight: active
                               ? FontWeight.w800
                               : FontWeight.w600,
-                          color: active ? accent : ink.withValues(alpha: .7),
+                          color: active ? onColor : idle,
                         ),
                       ),
                     ],
@@ -505,45 +542,94 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
       );
     }
 
-    return Center(
-      child: SizedBox(
-        width: (MediaQuery.sizeOf(context).width - 32).clamp(0, 440),
-        child: Surface(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-          child: Row(
-            children: [
-              item(
-                AppTab.today,
-                'today',
-                Icons.home_outlined,
-                Icons.home_rounded,
-                'اليوم',
-              ),
-              item(
-                AppTab.recipes,
-                'recipes',
-                Icons.menu_book_outlined,
-                Icons.menu_book_rounded,
-                'الوصفات',
-              ),
-              item(
-                AppTab.kitchen,
-                'stock',
-                Icons.kitchen_outlined,
-                Icons.kitchen_rounded,
-                'الخزين',
-              ),
-              item(
-                AppTab.table,
-                'table',
-                Icons.table_restaurant_outlined,
-                Icons.table_restaurant_rounded,
-                'الخطة',
-                badge: hasPlan,
+    final row = Row(
+      children: [
+        item(
+          AppTab.today,
+          'today',
+          Icons.home_outlined,
+          Icons.home_rounded,
+          'اليوم',
+        ),
+        item(
+          AppTab.recipes,
+          'recipes',
+          Icons.menu_book_outlined,
+          Icons.menu_book_rounded,
+          'الوصفات',
+        ),
+        item(
+          AppTab.kitchen,
+          'stock',
+          Icons.kitchen_outlined,
+          Icons.kitchen_rounded,
+          'الخزين',
+        ),
+        item(
+          AppTab.table,
+          'table',
+          Icons.table_restaurant_outlined,
+          Icons.table_restaurant_rounded,
+          'الخطة',
+          badge: hasPlan,
+        ),
+      ],
+    );
+    const pad = EdgeInsets.symmetric(horizontal: 6, vertical: 6);
+    final radius = BorderRadius.circular(30);
+    final Widget bar;
+    if (glass) {
+      bar = DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: radius,
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF8A4A2C).withValues(alpha: .18),
+              blurRadius: 30,
+              offset: const Offset(0, 12),
+              spreadRadius: -6,
+            ),
+          ],
+        ),
+        child: SofraGlass(
+          radius: 30,
+          child: Material(
+            type: MaterialType.transparency,
+            child: Padding(padding: pad, child: row),
+          ),
+        ),
+      );
+    } else if (dark || tint) {
+      bar = Material(
+        color: dark ? const Color(0xFF2B1F18) : Sofra.accent,
+        borderRadius: radius,
+        elevation: 0,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: radius,
+            boxShadow: [
+              BoxShadow(
+                color: (dark ? const Color(0xFF2B1F18) : Sofra.accentDark)
+                    .withValues(alpha: .32),
+                blurRadius: 26,
+                offset: const Offset(0, 10),
+                spreadRadius: -4,
               ),
             ],
           ),
+          child: Padding(padding: pad, child: row),
         ),
+      );
+    } else {
+      bar = Surface(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+        child: row,
+      );
+    }
+    return Center(
+      child: SizedBox(
+        width: (MediaQuery.sizeOf(context).width - 32).clamp(0, 440),
+        child: bar,
       ),
     );
   }
