@@ -77,7 +77,8 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
     final symbolColor = light || (glass && primary)
         ? Colors.white
         : Sofra.accent;
-    final radius = BorderRadius.circular(Sofra.r28);
+    final r = glass ? 34.0 : Sofra.r28;
+    final radius = BorderRadius.circular(r);
 
     final symbol = AnimatedBuilder(
       animation: Listenable.merge([_enter, _press]),
@@ -162,7 +163,7 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
     Widget tile;
     if (glass) {
       tile = _Glass(
-        radius: Sofra.r28,
+        radius: r,
         child: Material(type: MaterialType.transparency, child: ink),
       );
     } else {
@@ -194,10 +195,16 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
               boxShadow: glass
                   ? [
                       BoxShadow(
-                        color: const Color(0xFF8A4A2C).withValues(alpha: .15),
-                        blurRadius: 28,
-                        offset: const Offset(0, 14),
-                        spreadRadius: -6,
+                        color: const Color(0xFF8A4A2C).withValues(alpha: .10),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
+                        spreadRadius: -2,
+                      ),
+                      BoxShadow(
+                        color: const Color(0xFF8A4A2C).withValues(alpha: .16),
+                        blurRadius: 40,
+                        offset: const Offset(0, 20),
+                        spreadRadius: -10,
                       ),
                     ]
                   : primary
@@ -218,54 +225,64 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
   }
 }
 
-/// Hand-built liquid glass, the same on every platform: a clear bevel band
-/// round the edge (light blur, so what is behind stays sharp there, like a
-/// lens), a frosted centre, a rim that is bright where the light hits and a
-/// thin inner line that gives the bevel depth.
+/// Hand-built liquid glass, the same on every platform: one clear sheet (no
+/// frame inside a frame), lightly frosted, with a thin band at the edge where
+/// what is behind stays almost sharp, a crisp rim of light and a soft glow
+/// inside the lit corner.
 class _Glass extends StatelessWidget {
   const _Glass({required this.radius, required this.child});
   final double radius;
   final Widget child;
 
-  static const bevel = 7.0;
+  static const band = 3.0;
 
   @override
   Widget build(BuildContext context) {
     final outer = BorderRadius.circular(radius);
-    final inner = BorderRadius.circular(radius - bevel);
+    final inner = BorderRadius.circular(radius - band);
     return ClipRRect(
       borderRadius: outer,
       child: BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 2.5, sigmaY: 2.5),
+        filter: ui.ImageFilter.blur(sigmaX: 1.2, sigmaY: 1.2),
         child: CustomPaint(
-          foregroundPainter: _GlassEdge(radius: radius, bevel: bevel),
-          child: ColoredBox(
-            color: Colors.white.withValues(alpha: .16),
-            child: Padding(
-              padding: const EdgeInsets.all(bevel),
-              child: ClipRRect(
-                borderRadius: inner,
-                child: BackdropFilter(
-                  filter: ui.ImageFilter.compose(
-                    outer: const ColorFilter.matrix(_saturate),
-                    inner: ui.ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-                  ),
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Colors.white.withValues(alpha: .46),
-                          Colors.white.withValues(alpha: .14),
-                        ],
+          foregroundPainter: _GlassEdge(radius: radius),
+          child: Stack(
+            fit: StackFit.passthrough,
+            children: [
+              Positioned.fill(
+                child: Padding(
+                  padding: const EdgeInsets.all(band),
+                  child: ClipRRect(
+                    borderRadius: inner,
+                    child: BackdropFilter(
+                      filter: ui.ImageFilter.compose(
+                        outer: const ColorFilter.matrix(_saturate),
+                        inner: ui.ImageFilter.blur(sigmaX: 9, sigmaY: 9),
                       ),
+                      child: const SizedBox.expand(),
                     ),
-                    child: child,
                   ),
                 ),
               ),
-            ),
+              // The sheet itself: a faint milky tint, lighter at the top.
+              Positioned.fill(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.white.withValues(alpha: .30),
+                        Colors.white.withValues(alpha: .12),
+                        Colors.white.withValues(alpha: .18),
+                      ],
+                      stops: const [0, .6, 1],
+                    ),
+                  ),
+                ),
+              ),
+              child,
+            ],
           ),
         ),
       ),
@@ -282,8 +299,8 @@ const _saturate = <double>[
 ];
 
 class _GlassEdge extends CustomPainter {
-  _GlassEdge({required this.radius, required this.bevel});
-  final double radius, bevel;
+  _GlassEdge({required this.radius});
+  final double radius;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -299,55 +316,63 @@ class _GlassEdge extends CustomPainter {
       stops: stops,
     ).createShader(rect);
     const w = Colors.white;
-    // Outer rim: bright at the lit corner, fading, lifting again opposite.
+    canvas.save();
+    canvas.clipRRect(rr(0));
+    // Glow inside the lit corner, and a fainter one where light leaves.
     canvas.drawRRect(
-      rr(.6),
+      rr(1),
       Paint()
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.2
+        ..strokeWidth = 9
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6)
+        ..shader = lit(
+          [
+            w.withValues(alpha: .75),
+            w.withValues(alpha: 0),
+            w.withValues(alpha: 0),
+            w.withValues(alpha: .4),
+          ],
+          const [0, .38, .7, 1],
+        ),
+    );
+    // A thin shade just inside the far edge gives the sheet thickness.
+    const shade = Color(0xFF6B3F27);
+    canvas.drawRRect(
+      rr(2),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 1.5)
+        ..shader = lit(
+          [
+            shade.withValues(alpha: 0),
+            shade.withValues(alpha: 0),
+            shade.withValues(alpha: .13),
+          ],
+          const [0, .55, 1],
+        ),
+    );
+    canvas.restore();
+    // The rim: crisp and bright all round, strongest at the lit corner.
+    canvas.drawRRect(
+      rr(.75),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5
         ..shader = lit(
           [
             w,
-            w.withValues(alpha: .35),
-            w.withValues(alpha: .12),
-            w.withValues(alpha: .7),
+            w.withValues(alpha: .6),
+            w.withValues(alpha: .4),
+            w.withValues(alpha: .9),
           ],
-          const [0, .3, .65, 1],
-        ),
-    );
-    // Soft glint hugging the lit corner.
-    canvas.drawRRect(
-      rr(2.5),
-      Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 3
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2.5)
-        ..shader = lit(
-          [w.withValues(alpha: .9), w.withValues(alpha: 0)],
-          const [0, .32],
-        ),
-    );
-    // Inner line of the bevel: shaded on the lit side, light on the far side.
-    const shade = Color(0xFF7A4A2E);
-    canvas.drawRRect(
-      rr(bevel),
-      Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1
-        ..shader = lit(
-          [
-            shade.withValues(alpha: .16),
-            shade.withValues(alpha: .04),
-            w.withValues(alpha: .55),
-          ],
-          const [0, .5, 1],
+          const [0, .35, .7, 1],
         ),
     );
   }
 
   @override
-  bool shouldRepaint(_GlassEdge old) =>
-      old.radius != radius || old.bevel != bevel;
+  bool shouldRepaint(_GlassEdge old) => old.radius != radius;
 }
 
 /// The app's ground: warm paper under wide pools of light, with a few
