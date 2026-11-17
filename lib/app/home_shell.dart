@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
@@ -599,9 +601,56 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           ),
         ),
       );
-    } else if (dark || tint) {
+    } else if (tint) {
+      // Terracotta glass: the brand colour, slightly see-through and frosted,
+      // with a thin light rim and a soft sheen along the top.
+      bar = DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: radius,
+          boxShadow: [
+            BoxShadow(
+              color: Sofra.accentDark.withValues(alpha: .30),
+              blurRadius: 26,
+              offset: const Offset(0, 10),
+              spreadRadius: -4,
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: radius,
+          child: BackdropFilter(
+            filter: ui.ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+            child: Material(
+              type: MaterialType.transparency,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: radius,
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.lerp(
+                        Sofra.accent,
+                        Colors.white,
+                        .12,
+                      )!.withValues(alpha: .80),
+                      Sofra.accent.withValues(alpha: .86),
+                    ],
+                  ),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: .38),
+                    width: 1,
+                  ),
+                ),
+                child: Padding(padding: pad, child: row),
+              ),
+            ),
+          ),
+        ),
+      );
+    } else if (dark) {
       bar = Material(
-        color: dark ? const Color(0xFF2B1F18) : Sofra.accent,
+        color: const Color(0xFF2B1F18),
         borderRadius: radius,
         elevation: 0,
         child: DecoratedBox(
@@ -609,8 +658,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
             borderRadius: radius,
             boxShadow: [
               BoxShadow(
-                color: (dark ? const Color(0xFF2B1F18) : Sofra.accentDark)
-                    .withValues(alpha: .32),
+                color: const Color(0xFF2B1F18).withValues(alpha: .32),
                 blurRadius: 26,
                 offset: const Offset(0, 10),
                 spreadRadius: -4,
