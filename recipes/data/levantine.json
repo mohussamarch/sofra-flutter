@@ -2091,7 +2091,7 @@
           "name": "دقيق",
           "scale": true,
           "note": null,
-          "amount": 3.0
+          "amount": 3
         },
         {
           "optional": false,
@@ -2102,7 +2102,7 @@
           "name": "حليب مجفف",
           "scale": true,
           "note": null,
-          "amount": 2.0
+          "amount": 2
         },
         {
           "optional": false,
@@ -2113,7 +2113,7 @@
           "name": "ملح",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2124,7 +2124,7 @@
           "name": "خميرة",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2135,7 +2135,7 @@
           "name": "سكر",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2146,7 +2146,7 @@
           "name": "بيكنج باودر",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2168,7 +2168,7 @@
           "name": "ماء دافئ",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2179,7 +2179,7 @@
           "name": "لحم مفروم ناعم",
           "scale": true,
           "note": null,
-          "amount": 500.0
+          "amount": 500
         },
         {
           "optional": false,
@@ -2190,7 +2190,7 @@
           "name": "كبيرة بصل مبروش",
           "scale": true,
           "note": null,
-          "amount": 2.0
+          "amount": 2
         },
         {
           "optional": false,
@@ -2201,7 +2201,7 @@
           "name": "كبيرة طماطم مبروش",
           "scale": true,
           "note": null,
-          "amount": 2.0
+          "amount": 2
         },
         {
           "optional": false,
@@ -2212,7 +2212,7 @@
           "name": "ثوم مهروس",
           "scale": true,
           "note": null,
-          "amount": 2.0
+          "amount": 2
         },
         {
           "optional": false,
@@ -2223,7 +2223,7 @@
           "name": "فلفل اخضر مفروم ناعم",
           "scale": true,
           "note": null,
-          "amount": 2.0
+          "amount": 2
         },
         {
           "optional": false,
@@ -2267,7 +2267,7 @@
           "name": "قرفة",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2278,7 +2278,7 @@
           "name": "ملح",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2300,7 +2300,7 @@
           "name": "بهار مشكل",
           "scale": true,
           "note": null,
-          "amount": 1.0
+          "amount": 1
         },
         {
           "optional": false,
@@ -2314,6 +2314,741 @@
           "amount": 0.5
         }
       ],
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-kofta-bel-tahina-wel-zabadi",
+      "name": "كفتة بالطحينة والزبادي",
+      "nameEn": "Kofta with Tahini Yogurt Sauce",
+      "cuisine": "شامي",
+      "category": "طبق رئيسي",
+      "description": "كرات كفتة لحم مفروم بالبصل والبقدونس تُقلى ثم تُغمر بصوص طحينة وزبادي بالليمون وتُخبز في الفرن حتى تتسبك.",
+      "servings": 4,
+      "prepTime": 15,
+      "cookTime": 25,
+      "totalTime": 40,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "minced-meat",
+          "name": "لحم مفروم",
+          "amount": 1,
+          "unit": "كيلو"
+        },
+        {
+          "id": "onion",
+          "name": "بصل مبشور ناعم",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "garlic",
+          "name": "ثوم مفروم ناعم",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس مفروم ناعم",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "coriander",
+          "name": "كزبرة خضراء مفرومة ناعم",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "seven-spices",
+          "name": "سبع بهارات",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "oil",
+          "name": "زيت للقلي",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "tahina",
+          "name": "طحينة (لصوص الطحينة)",
+          "amount": 0.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "yogurt-sauce",
+          "name": "زبادي (لصوص الطحينة)",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "broth",
+          "name": "شوربة دجاج أو لحم بدرجة حرارة الغرفة أو ماء",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "lemon-juice",
+          "name": "عصير ليمون",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt-sauce",
+          "name": "ملح (للصوص)",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "pepper-sauce",
+          "name": "فلفل أسود (للصوص)",
+          "amount": 0.25,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "almonds",
+          "name": "لوز محمر للتزيين",
+          "amount": null,
+          "unit": null,
+          "label": "للتزيين",
+          "scale": false
+        },
+        {
+          "id": "parsley-garnish",
+          "name": "بقدونس مفروم للتزيين",
+          "amount": null,
+          "unit": null,
+          "label": "للتزيين",
+          "scale": false
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "في وعاء ضع اللحم المفروم وعليه البصل والثوم والبقدونس والكزبرة.",
+          "duration": null
+        },
+        {
+          "n": 2,
+          "text": "تبّل اللحم بالبهارات والملح والفلفل واخلط الجميع جيدًا باليد.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "شكّل اللحم كرات متوسطة الحجم، ثم سخّن الزيت في طاسة واقلها وصفّها في صينية بايركس.",
+          "duration": null
+        },
+        {
+          "n": 4,
+          "text": "اخلط الطحينة والزبادي والشوربة أو الماء وعصير الليمون والملح والفلفل حتى يصبح الصوص سائلًا متجانسًا.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اصبب الصوص فوق كرات الكفتة وأدخل الصينية فرنًا ساخنًا على حرارة 180 لمدة 20 دقيقة تقريبًا حتى يتسبك الخليط.",
+          "duration": 20,
+          "passive": true
+        },
+        {
+          "n": 6,
+          "text": "أخرج الصينية وزيّنها بالبقدونس واللوز المحمر وقدّمها.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://elwasfa.com/كفتة-بالطحينة-و-الزبادي/ | الموقع: elwasfa.com | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "eg-salata-baba-ghanoug",
+      "name": "سلطة بابا غنوج",
+      "nameEn": "Baba Ghanoush Salad",
+      "cuisine": "شامي",
+      "category": "سلطة",
+      "description": "باذنجان رومي وبصل وثوم يُشوون حتى يلينوا، ثم يُقشّرون ويُخلطون بالطحينة والخل والملح والفلفل لتحضير مقبل شهي.",
+      "servings": 2,
+      "prepTime": 10,
+      "cookTime": 10,
+      "totalTime": 20,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "eggplant",
+          "name": "باذنجان رومي",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل",
+          "amount": 2,
+          "unit": "حبة"
+        },
+        {
+          "id": "tahina",
+          "name": "طحينة",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "vinegar",
+          "name": "خل",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "pepper",
+          "name": "فلفل",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false
+        },
+        {
+          "id": "garlic",
+          "name": "رأس ثوم مفروم",
+          "amount": 1,
+          "unit": "رأس"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اشوِ الباذنجان والبصل والثوم في الفرن أو على النار حتى يلينوا ويتحمر جلدهم.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 2,
+          "text": "اقشرهم وقطّعهم إلى قطع صغيرة.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "أضف الطحينة والملح والفلفل والخل وقلّب الجميع جيدًا ثم قدّم السلطة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://elwasfa.com/سلطة-بابا-غنوج-4/ | الموقع: elwasfa.com | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "lv-shish-barak",
+      "name": "شيش برك",
+      "nameEn": "Shish Barak",
+      "cuisine": "شامي",
+      "category": "طبق رئيسي",
+      "description": "معجنات صغيرة محشوة باللحم تُخبز ثم تُترك في صلصة لبن بالثوم والكزبرة. طبق شامي كلاسيكي يحتاج صبرًا لكنه يستحق.",
+      "servings": 8,
+      "prepTime": 90,
+      "cookTime": 30,
+      "totalTime": 120,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "دقيق متعدد الاستخدامات",
+          "amount": 360,
+          "unit": "غرام"
+        },
+        {
+          "id": "sugar",
+          "name": "سكر",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "salt-dough",
+          "name": "ملح للعجينة",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "olive-oil-dough",
+          "name": "زيت زيتون للعجينة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "warm-water",
+          "name": "ماء دافئ",
+          "amount": 0.75,
+          "unit": "كوب",
+          "note": "من 0.75 لـ 1"
+        },
+        {
+          "id": "olive-oil-filling",
+          "name": "زيت زيتون للحشوة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "red-onion",
+          "name": "بصل أحمر كبير مفروم",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "ground-beef",
+          "name": "لحم بقري مفروم",
+          "amount": 350,
+          "unit": "غرام"
+        },
+        {
+          "id": "salt-filling",
+          "name": "ملح للحشوة",
+          "amount": 0.75,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "sumac",
+          "name": "سماق",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "seven-spice",
+          "name": "بهار سبع",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "pomegranate-molasses",
+          "name": "دبس رمان",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "pine-nuts",
+          "name": "صنوبر محمّص",
+          "amount": 4,
+          "unit": "ملعقة كبيرة",
+          "note": "مقسمة"
+        },
+        {
+          "id": "yogurt",
+          "name": "لبن طبيعي",
+          "amount": 1.5,
+          "unit": "لتر"
+        },
+        {
+          "id": "water-yogurt",
+          "name": "ماء للصلصة",
+          "amount": 1,
+          "unit": "كوب"
+        },
+        {
+          "id": "cornstarch",
+          "name": "نشاء ذرة",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "salt-yogurt",
+          "name": "ملح للصلصة",
+          "amount": 1.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "butter",
+          "name": "زبدة",
+          "amount": 1,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "garlic",
+          "name": "رأس ثوم مفروم",
+          "amount": 1,
+          "unit": "رأس"
+        },
+        {
+          "id": "cilantro",
+          "name": "كزبرة خضراء مفرومة",
+          "amount": 1,
+          "unit": "كوب"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "اخلط الدقيق والماء الدافئ وزيت الزيتون والسكر والملح في العجّانة حتى تتشكل كرة ناعمة، نحو خمس دقائق.",
+          "duration": 5
+        },
+        {
+          "n": 2,
+          "text": "غطِّ العجين واتركه يرتاح على حرارة الغرفة.",
+          "duration": 30,
+          "passive": true
+        },
+        {
+          "n": 3,
+          "text": "سخّن زيت الزيتون في مقلاة كبيرة وقلّب البصل حتى يشف، نحو خمس دقائق.",
+          "duration": 5
+        },
+        {
+          "n": 4,
+          "text": "أضف اللحم مع الملح والفلفل والسماق وبهار السبع واطبخ حتى يتغير لونه تمامًا، نحو سبع دقائق.",
+          "duration": 7
+        },
+        {
+          "n": 5,
+          "text": "أضف دبس الرمان ونصف كمية الصنوبر، ثم ارفع المقلاة عن النار واترك الحشوة تبرد.",
+          "duration": null,
+          "passive": true
+        },
+        {
+          "n": 6,
+          "text": "افرد العجين رقيقًا واقطع دوائر بكوب أو قطاعة، ثم ضع ملعقة صغيرة من الحشوة واطوِها نصف دائرة وأغلق الأطراف جيدًا.",
+          "duration": null
+        },
+        {
+          "n": 7,
+          "text": "لفّ طرفي الهلال معًا لتصبح الحبة بشكل التورتيليني، وأكمل بقية العجين مع إعادة تشكيل القصاصات.",
+          "duration": null
+        },
+        {
+          "n": 8,
+          "text": "رتّب الحبات على صينية مبطنة واخبزها على 400 فهرنهايت عشر دقائق، ثم حمّرها تحت الشواية ثلاث دقائق.",
+          "duration": 10
+        },
+        {
+          "n": 9,
+          "text": "في قدر كبير اخلط اللبن والماء والنشاء والملح واخفق قبل رفع النار.",
+          "duration": null
+        },
+        {
+          "n": 10,
+          "text": "سخّن الخليط على نار متوسطة مع التحريك المتكرر حتى يثخن، نحو عشر دقائق، دون أن يصل إلى غليان قوي.",
+          "duration": 10
+        },
+        {
+          "n": 11,
+          "text": "في مقلاة صغيرة أذب الزبدة وحمّر الثوم والكزبرة حتى يذهب لون الثوم وتفوح الرائحة.",
+          "duration": null
+        },
+        {
+          "n": 12,
+          "text": "اسكب الثوم والكزبرة والزبدة على صلصة اللبن واخفق حتى تتجانس.",
+          "duration": null
+        },
+        {
+          "n": 13,
+          "text": "أضف حبات الشيش برك إلى الصلصة واتركها تنضج على نار هادئة.",
+          "duration": 10
+        },
+        {
+          "n": 14,
+          "text": "قدّمها في أطباق مع بقية الصنوبر والكزبرة الطازجة.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.hungrypaprikas.com/shish-barak/ | الموقع: Hungry Paprikas | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "lv-chicken-freekeh-soup",
+      "name": "شوربة الفريكة بالدجاج",
+      "nameEn": "Chicken Freekeh Soup",
+      "cuisine": "شامي",
+      "category": "شوربة",
+      "description": "شوربة شامية من الفريكة المدخّنة مع مرق دجاج بيتي وجزر وبصل، مختلفة عن طبق الفريكة الجاف. تُقدّم مع الليمون والبقدونس.",
+      "servings": 6,
+      "prepTime": 10,
+      "cookTime": 90,
+      "totalTime": 100,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "olive-oil-broth",
+          "name": "زيت زيتون للمرق",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "chicken-drumsticks",
+          "name": "أفخاذ دجاج",
+          "amount": 870,
+          "unit": "غرام",
+          "note": "بعظمها"
+        },
+        {
+          "id": "salt-broth",
+          "name": "ملح للمرق",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "onion-broth",
+          "name": "بصل كبير مقطوع نصفين",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot-broth",
+          "name": "جزر كبير مقطوع نصفين",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "bay-leaves",
+          "name": "ورق غار",
+          "amount": 3,
+          "unit": "ورقة"
+        },
+        {
+          "id": "cardamom-pods",
+          "name": "حبهان",
+          "amount": 6,
+          "unit": "حبة"
+        },
+        {
+          "id": "cinnamon-stick",
+          "name": "عود قرفة",
+          "amount": 1,
+          "unit": "عود"
+        },
+        {
+          "id": "peppercorns",
+          "name": "فلفل أسود حب",
+          "amount": 5,
+          "unit": "حبة"
+        },
+        {
+          "id": "olive-oil-soup",
+          "name": "زيت زيتون للشوربة",
+          "amount": 2,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "onion-soup",
+          "name": "بصل كبير مفروم ناعمًا",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "carrot-soup",
+          "name": "جزر كبير مفروم ناعمًا",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "salt-soup",
+          "name": "ملح للشوربة",
+          "amount": 1.75,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper-soup",
+          "name": "فلفل أسود للشوربة",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "seven-spice",
+          "name": "بهار سبع",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "freekeh",
+          "name": "فريكة حبة كاملة مغسولة",
+          "amount": 1.5,
+          "unit": "كوب"
+        },
+        {
+          "id": "parsley",
+          "name": "بقدونس مفروم",
+          "amount": 0.25,
+          "unit": "كوب"
+        },
+        {
+          "id": "lemon-wedges",
+          "name": "أرباع ليمون",
+          "amount": null,
+          "unit": null,
+          "label": "حسب الرغبة",
+          "scale": false,
+          "note": "للتقديم"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن ملعقتين من زيت الزيتون في قدر كبير ورشّ الملح على أفخاذ الدجاج وحمّرها دقيقة أو دقيقتين لكل جهة.",
+          "duration": 1
+        },
+        {
+          "n": 2,
+          "text": "أضف الجزر والبصل وورق الغار والحبهان وعود القرفة والفلفل الأسود وقلّب ليتحمّص الكل قليلًا.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "غطِّ القدر بالماء واتركه يغلي ثم خفّف النار واتركه مغطى أو نصف مغطى.",
+          "duration": 45
+        },
+        {
+          "n": 4,
+          "text": "أخرج الدجاج وصفِّ المرق من الخضار والبهارات، ثم فتّت الدجاج بالشوكتين وأزل العظام.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "في القدر نفسه سخّن ملعقتين من الزيت وقلّب البصل حتى يشف، ثم أضف الجزر والملح والفلفل وبهار السبع.",
+          "duration": 3
+        },
+        {
+          "n": 6,
+          "text": "أضف الفريكة بعد تصفيتها وقلّبها حتى تتحمّص قليلًا، ثم اسكب المرق الساخن فوقها واتركه يغلي.",
+          "duration": 1
+        },
+        {
+          "n": 7,
+          "text": "غطِّ القدر واتركه على نار متوسطة حتى تنضج الفريكة مع تحريك من حين لآخر وإضافة مرق عند الحاجة.",
+          "duration": 45,
+          "passive": true
+        },
+        {
+          "n": 8,
+          "text": "أعد الدجاج المفتّت إلى القدر وحرّك وعدّل الملح، وإن أضفت ماءً اتركه يغلي قليلًا ليتطور الطعم.",
+          "duration": 10
+        },
+        {
+          "n": 9,
+          "text": "قدّم الشوربة مع عصرة ليمون سخية ورشة بقدونس.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.hungrypaprikas.com/chicken-freekeh-soup/ | الموقع: Hungry Paprikas | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
+      "metadataPolicy": "source-unknowns-v1"
+    },
+    {
+      "id": "lv-tomato-vermicelli-soup",
+      "name": "شوربة الشعرية بالطماطم",
+      "nameEn": "Tomato Vermicelli Soup",
+      "cuisine": "شامي",
+      "category": "شوربة",
+      "description": "شوربة سريعة من الشعرية المحمّصة على معجون الطماطم ومرق الدجاج والبصل. طبق شامي بسيط يصلح لكل يوم.",
+      "servings": 6,
+      "prepTime": 5,
+      "cookTime": 25,
+      "totalTime": 30,
+      "difficulty": "غير محدد",
+      "ingredients": [
+        {
+          "id": "vermicelli",
+          "name": "شعرية",
+          "amount": 1,
+          "unit": "كوب",
+          "note": "نحو 95 غرامًا، شعرية قمح لا أرز"
+        },
+        {
+          "id": "olive-oil",
+          "name": "زيت زيتون",
+          "amount": 3,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "onion",
+          "name": "بصل أصفر صغير مفروم ناعمًا",
+          "amount": 1,
+          "unit": "حبة"
+        },
+        {
+          "id": "tomato-paste",
+          "name": "معجون طماطم",
+          "amount": 5,
+          "unit": "ملعقة كبيرة"
+        },
+        {
+          "id": "chicken-broth",
+          "name": "مرق دجاج",
+          "amount": 5,
+          "unit": "كوب"
+        },
+        {
+          "id": "salt",
+          "name": "ملح",
+          "amount": 1,
+          "unit": "ملعقة صغيرة"
+        },
+        {
+          "id": "black-pepper",
+          "name": "فلفل أسود",
+          "amount": 0.5,
+          "unit": "ملعقة صغيرة"
+        }
+      ],
+      "steps": [
+        {
+          "n": 1,
+          "text": "سخّن ملعقتين من زيت الزيتون في مقلاة صغيرة وحمّص الشعرية مع التحريك المستمر حتى تذهب لونها.",
+          "duration": 2
+        },
+        {
+          "n": 2,
+          "text": "أخرج الشعرية من المقلاة واتركها جانبًا في وعاء.",
+          "duration": null
+        },
+        {
+          "n": 3,
+          "text": "في قدر الشوربة أضف بقية الزيت والبصل المفروم وقلّبه حتى يشف ويذهب لونه قليلًا.",
+          "duration": 5
+        },
+        {
+          "n": 4,
+          "text": "أضف معجون الطماطم على البصل واطبخه مع التحريك على قاع القدر.",
+          "duration": null
+        },
+        {
+          "n": 5,
+          "text": "اسكب مرق الدجاج كله واتركه يغلي ثم غطِّ القدر واتركه على النار.",
+          "duration": 10
+        },
+        {
+          "n": 6,
+          "text": "أضف الملح والفلفل والشعرية المحمّصة وحرّك ثم اترك الشوربة على نار هادئة حتى تلين الشعرية.",
+          "duration": 10
+        },
+        {
+          "n": 7,
+          "text": "ذُق وعدّل الملح، ثم قدّمها مع البقدونس والفلفل الأسود الطازج.",
+          "duration": null
+        }
+      ],
+      "tags": [],
+      "notes": "المصدر: https://www.hungrypaprikas.com/tomato-vermicelli-soup/ | الموقع: Hungry Paprikas | المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.",
       "metadataPolicy": "source-unknowns-v1"
     }
   ]

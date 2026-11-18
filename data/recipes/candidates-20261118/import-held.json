@@ -1,0 +1,2251 @@
+{
+  "heldAt": "2026-11-18",
+  "why": "Cuisine research found no single Arab country for these dishes; the catalog needs a concrete cuisine.",
+  "recipes": [
+    {
+      "file": "egyptian.json",
+      "reason": "no single country: This recipe is the common, generic shakshouka: eggs cooked in onion, garlic, green pepper and tomato with paprika and cumin, with no harissa or other country-specific touch. The sources place the dish's origin in Ottoman North Africa and list competing claims from Algeria, Libya, Morocco, Tunisia, Egypt, Turkey and Yemen. Tunisia is the most frequent attribution, but it is not decisive enough to name one country.",
+      "evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Shakshouka",
+          "says": "Gives the place of origin as 'Ottoman North Africa' and calls it a Maghrebi dish popular across North Africa and the Middle East. Gil Marks suggests it evolved from Turkish şakşuka, which spread to the Maghreb. Lists versions in Algeria, Tunisia, Syria (jaz maz), Morocco and Egypt (with bell peppers, eaten with eish baladi)."
+        },
+        {
+          "url": "https://www.marefa.org/%D8%B4%D9%83%D8%B4%D9%88%D9%83%D8%A9",
+          "says": "Says shakshouka goes back to Ottoman North Africa in the mid-16th century. States that 'the origin of the dish remains a matter of some controversy' with 'competing claims of Algerian, Libyan, Moroccan, Tunisian, Egyptian, Turkish, and Yemeni origins'. Associates it mainly with Tunisia and Egypt."
+        },
+        {
+          "url": "https://theculturetrip.com/middle-east/israel/articles/a-brief-history-of-israels-famous-dish-shakshuka",
+          "says": "Search-result summary only (page not opened). Says the dish is presumed to have come from Yemen or Tunis, while some historians credit the Ottoman Empire."
+        },
+        {
+          "url": "https://elwasfa.com/بيض-شكشوكة/",
+          "says": "The recipe's own source, an Egyptian recipe site. Its version (onion, garlic, green pepper, tomato, paprika, cumin) is the common shakshouka base with no country-specific element."
+        }
+      ],
+      "recipe": {
+        "id": "eg-beid-shakshouka",
+        "name": "بيض شكشوكة",
+        "nameEn": "Egg Shakshuka",
+        "cuisine": "مصري",
+        "category": "فطار",
+        "description": "بيض يُطبخ فوق خليط بصل وثوم وفلفل أخضر وطماطم متسبّك بالبابريكا والكمون، ويُغطى على نار هادئة حتى ينضج.",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 20,
+        "totalTime": 30,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "eggs",
+            "name": "بيض",
+            "amount": 5,
+            "unit": "حبة"
+          },
+          {
+            "id": "onion",
+            "name": "بصل مفروم",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "garlic",
+            "name": "ثوم مفروم",
+            "amount": 2,
+            "unit": "فص"
+          },
+          {
+            "id": "green-pepper",
+            "name": "فلفل أخضر مقطع قطعًا صغيرة",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "tomato",
+            "name": "طماطم مقطعة قطعًا صغيرة",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "paprika",
+            "name": "بابريكا",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "cumin",
+            "name": "كمون",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "oil",
+            "name": "زيت للتشويح",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "شوّح البصل في الزيت حتى يصفر لونه، ثم أضف الثوم واتركه دقيقتين، ثم أضف الفلفل الأخضر.",
+            "duration": 2
+          },
+          {
+            "n": 2,
+            "text": "أضف الطماطم وتبّل الخليط، ثم اكسر البيض فوقه وغطِّ الطاسة.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "اترك الشكشوكة على نار هادئة 15 دقيقة حتى يتم نضج البيض، ثم قدّمها.",
+            "duration": 15,
+            "passive": true
+          }
+        ],
+        "source": {
+          "url": "https://elwasfa.com/بيض-شكشوكة/",
+          "site": "elwasfa.com",
+          "title": "بيض شكشوكة",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "egyptian.json",
+      "reason": "no single country: This is a modern layered dessert cup (crumbled packaged cake, a caramel-toffee mehalabeya, then chocolate and cream). Mehalabeya is eaten across the Middle East, and layered mehalabeya cups appear on pan-Arab recipe sites with no national claim. No source ties this toffee version to any one country.",
+      "evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Muhallebi",
+          "says": "Gives the Sasanian Empire as the place of origin and describes muhallebi as a popular Middle Eastern dessert, with versions in Turkey, Syria, Lebanon, Palestine, Cyprus, Egypt (traditional in Ramadan) and Morocco."
+        },
+        {
+          "url": "https://mawdoo3.com/مهلبية_الطبقات",
+          "says": "A generic layered mehalabiya recipe (tamarind, qamar al-din and white layers in cups). It names no country."
+        },
+        {
+          "url": "https://www.webteb.com/diet/recipes/مهلبيه طبقات_117",
+          "says": "Calls mehalabiya 'the famous pudding of the Middle East' and gives a layered version. It does not attribute it to one country."
+        },
+        {
+          "url": "https://elwasfa.com/طبقات-مهلبية-الطوفي/",
+          "says": "The source recipe: cake crumbs, a caramelised sugar mehalabeya with cream and butter, and a chocolate cream topping. It makes no claim that the dish belongs to any country's traditional cuisine."
+        }
+      ],
+      "recipe": {
+        "id": "eg-tabaqat-mehalabeya-toufi",
+        "name": "طبقات مهلبية الطوفي",
+        "nameEn": "Toffee Mehalabeya Layers",
+        "cuisine": "مصري",
+        "category": "حلويات",
+        "description": "كؤوس حلوى بثلاث طبقات: كيك مفتت في القاع، ثم مهلبية بصوص طوفي مكرمل بالقشطة والزبدة، وتُزيّن بالشوكولاتة السايحة والكريمة.",
+        "servings": 6,
+        "prepTime": 15,
+        "cookTime": 20,
+        "totalTime": 35,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "cake",
+            "name": "باكت كيك مفتت",
+            "amount": 1,
+            "unit": "باكت"
+          },
+          {
+            "id": "sugar",
+            "name": "سكر",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "cream",
+            "name": "قشطة",
+            "amount": 1,
+            "unit": "علبة"
+          },
+          {
+            "id": "butter",
+            "name": "زبدة",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "milk",
+            "name": "حليب",
+            "amount": 3,
+            "unit": "كوب"
+          },
+          {
+            "id": "starch",
+            "name": "نشا",
+            "amount": 6,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "melted-chocolate",
+            "name": "شيكولاتة سايحة",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "liquid-cream",
+            "name": "كريمة سائلة",
+            "amount": 5,
+            "unit": "ملعقة كبيرة"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "الطبقة الأولى: اطحن الكيك وارصه في كؤوس التقديم.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "الطبقة الثانية: اكرمل السكر في إناء على النار، ثم ارفعه وأضف القشطة والزبدة وأعد الإناء على النار.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "اخلط النشا مع الحليب البارد ثم صبّه على خليط الطوفي، واملأ الكؤوس بالطبقة الثانية وأدخلها الثلاجة.",
+            "duration": null,
+            "passive": true
+          },
+          {
+            "n": 4,
+            "text": "الطبقة الثالثة: أذب الشوكولاتة مع الكريمة وزيّن بها المهلبية حسب الرغبة.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://elwasfa.com/طبقات-مهلبية-الطوفي/",
+          "site": "elwasfa.com",
+          "title": "طبقات مهلبية الطوفي",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "egyptian.json",
+      "reason": "no single country: This is a modern quick dessert: store-bought basbousa layered in cups and covered with custard made from custard powder. No source I found links this dish to any one country. Basbousa itself is eaten all over the Middle East, North Africa and the Balkans, and its origin is uncertain, so the base ingredient does not point to a single country either.",
+      "evidence": [
+        {
+          "url": "https://elwasfa.com/بسبوسة-الكاسترد/",
+          "says": "An assembly recipe: ready-made basbousa at the bottom of serving cups, then milk heated with custard powder, sugar and vanilla poured over it, finished with pistachios. It is filed only under the dessert category and names no country of origin."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Basbousa",
+          "says": "Basbousa is described as popular throughout the Middle East, North Africa, the Caucasus and the Balkans. Its possible roots are the Abbasid-era ma'mounia, a similar recipe in a 13th-century Andalusian cookbook, and Ottoman revani. Regional variants are listed for many countries. Custard is not mentioned; the closest version is the qishta-filled basbousa bil ashta, described as Levantine and Egyptian."
+        },
+        {
+          "url": "https://akhbarelyom.com/news/newdetails/2578237/1/حلو-اليوم-تورتة-بسبوسة-بالكاسترد",
+          "says": "An Egyptian newspaper gives a different dish: a baked basbousa cake with custard placed in the middle. It does not claim it as a national specialty."
+        }
+      ],
+      "recipe": {
+        "id": "eg-basbousa-custard",
+        "name": "بسبوسة بالكاسترد في الكاسات",
+        "nameEn": "Basbousa Custard Cups",
+        "cuisine": "مصري",
+        "category": "حلويات",
+        "description": "طبقة بسبوسة جاهزة في قاع الكاسة تُغطى بكاسترد حليب دافئ بالسكر والفانيليا ويُزيّن بالفستق، حلوى سريعة بمكونات جاهزة.",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 10,
+        "totalTime": 20,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "basbousa",
+            "name": "بسبوسة مجهزة مسبقًا",
+            "amount": null,
+            "unit": null,
+            "label": "مقدار غير محدد في المصدر",
+            "scale": false
+          },
+          {
+            "id": "milk",
+            "name": "لبن",
+            "amount": 1.25,
+            "unit": "كوب"
+          },
+          {
+            "id": "custard-powder",
+            "name": "كاسترد بودر",
+            "amount": 1,
+            "unit": "ملعقة"
+          },
+          {
+            "id": "sugar",
+            "name": "سكر",
+            "amount": 0.25,
+            "unit": "كوب"
+          },
+          {
+            "id": "vanilla",
+            "name": "فانيليا",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "pistachio",
+            "name": "فستق للتزيين",
+            "amount": null,
+            "unit": null,
+            "label": "للتزيين",
+            "scale": false
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "ضع البسبوسة في الكاسات كطبقة أولى.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "في كسرولة على النار ضع الحليب ثم أضف الكاسترد البودر والسكر والفانيليا وقلّب جيدًا حتى يثقل القوام.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "أضف الكاسترد على البسبوسة في الكاسة، وزيّن بالفستق وقدّمها.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://elwasfa.com/بسبوسة-الكاسترد/",
+          "site": "elwasfa.com",
+          "title": "بسبوسة الكاسترد",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "egyptian.json",
+      "reason": "no single country: Plain lisan asfour soup (orzo cooked in chicken stock) is a well-known Egyptian home soup, and one Arabic page titled 'Egyptian' even suggests cream and shredded chicken as variations. But the recipe as written is orzo browned in butter, cooked in stock with chicken and finished with cream, which is a generic creamy chicken orzo soup also made all over the West, and no source ties that version to one Arab country.",
+      "evidence": [
+        {
+          "url": "https://elwasfa.com/شوربة-لسان-عصفور-بالكريمة-والدجاج-2/",
+          "says": "Method: fry orzo in butter, add water and a stock cube, add shredded boiled chicken, stir in cream at the end. The page makes no claim of national origin."
+        },
+        {
+          "url": "https://mawdoo3.com/طريقة_عمل_شوربة_لسان_العصفور_المصرية",
+          "says": "The 'Egyptian lisan asfour soup' base is orzo, water, a bouillon cube and oil, with no cream or chicken pieces. A vegetable variation adds shredded chicken, and it says broth can optionally be replaced with cooking cream. This is the only Egypt link found, and it covers only the plain soup with optional add-ins."
+        },
+        {
+          "url": "https://fitfoodiefinds.com/creamy-chicken-noodle-soup/",
+          "says": "Presents creamy chicken orzo soup as a creamy version of chicken noodle soup, a generic Western comfort dish."
+        },
+        {
+          "url": "https://www.eazypeazymealz.com/wprm_print/28657",
+          "says": "Search results show this creamy chicken orzo soup recipe lists its cuisine as American."
+        },
+        {
+          "url": "https://easyfamilyrecipes.com/creamy-lemon-chicken-orzo-soup/",
+          "says": "Search results show the site says its creamy lemon chicken orzo soup is inspired by Greek avgolemono, not an Arab dish."
+        }
+      ],
+      "recipe": {
+        "id": "eg-shorbet-lisan-asfour-creamy",
+        "name": "شوربة لسان عصفور بالكريمة والدجاج",
+        "nameEn": "Creamy Chicken Orzo Soup",
+        "cuisine": "مصري",
+        "category": "شوربة",
+        "description": "شوربة كريمية دافئة يتحمّر فيها لسان العصفور في الزبدة ويُسلق في المرقة مع قطع الدجاج، وتُضاف الكريمة في النهاية لقوام ناعم.",
+        "servings": 4,
+        "prepTime": 15,
+        "cookTime": 20,
+        "totalTime": 35,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "chicken-breast",
+            "name": "صدور دجاج مسلوقة",
+            "amount": 1,
+            "unit": "قطعة"
+          },
+          {
+            "id": "broth",
+            "name": "مرقة دجاج",
+            "amount": 2,
+            "unit": "كوب"
+          },
+          {
+            "id": "cream",
+            "name": "كريمة",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "orzo",
+            "name": "لسان عصفور",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "butter",
+            "name": "زبدة",
+            "amount": 2,
+            "unit": "ملعقة"
+          },
+          {
+            "id": "salt-pepper",
+            "name": "ملح وفلفل",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "حمّر لسان عصفور في إناء به زبدة حتى يصل إلى اللون الذهبي، ثم أضف الماء ومكعب المرقة وأكمل نضجه.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "أضف الدجاج المقطع والملح والفلفل وقلّب.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "قبل آخر تسوية أضف الكريمة وارفع الإناء من النار، ثم اغرف الشوربة وقدّمها.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://elwasfa.com/شوربة-لسان-عصفور-بالكريمة-والدجاج-2/",
+          "site": "elwasfa.com",
+          "title": "شوربة لسان عصفور بالكريمة والدجاج",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "egyptian.json",
+      "reason": "no single country: This is a generic home vegetable soup in chicken broth, and the source recipe ties it to no country. Other Arab cuisines have their own \"shorbat khodar\", Sudan for example, so it is a shared everyday dish. The mastic and cardamom suggest an Egyptian cook, but that is not enough to call the dish itself Egyptian.",
+      "evidence": [
+        {
+          "url": "https://elwasfa.com/شوربة-خضار/",
+          "says": "Names no country. It is tagged only 'مطبخ خضروات, شوربة, طبق جانبى, وجبة الغذاء' (vegetable cuisine, soup, side dish, lunch) and filed under the categories 'وصفات ست البيت' (housewife recipes) and 'ابلة منال' (the host's name)."
+        },
+        {
+          "url": "https://www.sudanese.kitchen/recipe/vegetable-soup",
+          "says": "Gives 'Shorbat Khadar' as a Sudanese dish: mixed vegetables and lamb in a spiced stock, served at the start of meals. The same dish name belongs to another Arab cuisine."
+        },
+        {
+          "url": "https://www.wikiwand.com/en/articles/Arabic_cuisine",
+          "says": "Says Arab meals across the region often start with a soup, such as lentil, chicken, oat or freekeh. It does not tie vegetable soup to any one country."
+        }
+      ],
+      "recipe": {
+        "id": "eg-shorbet-khodar",
+        "name": "شوربة خضار",
+        "nameEn": "Vegetable Soup",
+        "cuisine": "مصري",
+        "category": "شوربة",
+        "description": "شوربة خضار بيتية تُشوّح فيها الجزر والبصل والكرفس مع المستكة والحبهان، ثم تُسلق الكوسة والبسلة والفلفل في مرقة الدجاج وتُقدّم ساخنة.",
+        "servings": 4,
+        "prepTime": 15,
+        "cookTime": 25,
+        "totalTime": 40,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "chicken-broth",
+            "name": "شوربة دجاج",
+            "amount": 0.75,
+            "unit": "لتر"
+          },
+          {
+            "id": "zucchini",
+            "name": "كوسة",
+            "amount": 2,
+            "unit": "حبة"
+          },
+          {
+            "id": "onion",
+            "name": "بصل شرائح",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "peas",
+            "name": "بسلة",
+            "amount": 0.5,
+            "unit": "كوب"
+          },
+          {
+            "id": "carrot",
+            "name": "جزر مكعبات",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "green-pepper",
+            "name": "فلفل أخضر مكعبات",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "celery",
+            "name": "كرفس",
+            "amount": 2,
+            "unit": "عود"
+          },
+          {
+            "id": "tomato",
+            "name": "طماطم مقطعة مكعبات صغيرة",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "pepper",
+            "name": "فلفل",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "mastic",
+            "name": "مستكة",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "cardamom",
+            "name": "حبهان",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "butter",
+            "name": "زبدة أو زيت",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "في حلة ساخنة ضع قليلًا من الزبدة أو الزيت مع المستكة والحبهان، وقلّب الجزر والبصل وجزءًا من الكرفس.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "أضف باقي الخضروات وأخيرًا الكوسة، ثم أضف الشوربة.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "اترك الشوربة تغلي 10 دقائق، وقبل رفعها ضع باقي الكرفس وأعد تتبيلها ثم قدّمها ساخنة.",
+            "duration": 10,
+            "passive": true
+          }
+        ],
+        "source": {
+          "url": "https://elwasfa.com/شوربة-خضار/",
+          "site": "elwasfa.com",
+          "title": "شوربة خضار",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "egyptian.json",
+      "reason": "no single country: This is a generic blended tomato-basil soup with ginger. Its documented history is American and European, and none of the sources tie it to any Arab country. The Egyptian source site gives it no regional or national origin.",
+      "evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Tomato_soup",
+          "says": "Dates the first published tomato soup recipe to N. K. M. Lee's The Cook's Own Book (1832). Says Eliza Leslie (1857) and Campbell's condensed soup (1897) helped popularize it. Lists regional versions from Spain, Portugal, Poland, India, Ukraine and the US, with no Arab country among them."
+        },
+        {
+          "url": "https://elwasfa.com/شوربة-طماطم-بالريحان/",
+          "says": "The source recipe is tagged only as a Ramadan dish, soup and side dish. Its method is to fry onion, ginger and sugar, add tomatoes, stock, basil and paste, simmer, blend, then boil once. The page names no country or traditional origin."
+        }
+      ],
+      "recipe": {
+        "id": "eg-shorbet-tamatem-reihan",
+        "name": "شوربة طماطم بالريحان",
+        "nameEn": "Tomato Basil Soup",
+        "cuisine": "مصري",
+        "category": "شوربة",
+        "description": "شوربة طماطم مخفوقة بالريحان الطازج والزنجبيل، تُبنى على بصل مكرمل قليلًا ثم تُخلط في الخلاط وتُغلى مرة واحدة قبل التقديم.",
+        "servings": 4,
+        "prepTime": 10,
+        "cookTime": 15,
+        "totalTime": 25,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "tomato",
+            "name": "طماطم مقطعة قطعًا صغيرة",
+            "amount": 3,
+            "unit": "حبة"
+          },
+          {
+            "id": "basil",
+            "name": "ريحان أخضر",
+            "amount": 4,
+            "unit": "فرع"
+          },
+          {
+            "id": "ginger",
+            "name": "زنجبيل فريش مفروم",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "onion",
+            "name": "بصل مفروم",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "tomato-paste",
+            "name": "صلصة طماطم",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "white-pepper",
+            "name": "فلفل أبيض",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "sugar",
+            "name": "سكر",
+            "amount": null,
+            "unit": null,
+            "label": "رشة",
+            "scale": false
+          },
+          {
+            "id": "olive-oil",
+            "name": "زيت زيتون",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "broth",
+            "name": "مرقة",
+            "amount": 2,
+            "unit": "كوب"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "في حلة ساخنة بها زيت أضف البصل والزنجبيل والسكر وقلّب حتى يصبح الخليط بني اللون.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "أضف الطماطم وقلّبها لمدة 10 دقائق.",
+            "duration": 10
+          },
+          {
+            "n": 3,
+            "text": "أضف المرقة وعيدان الريحان وصلصة الطماطم.",
+            "duration": null
+          },
+          {
+            "n": 4,
+            "text": "خفّف النار واترك المكونات 10 دقائق، ثم ارفعها واتركها تبرد قليلًا.",
+            "duration": 10,
+            "passive": true
+          },
+          {
+            "n": 5,
+            "text": "اضرب المكونات في الخلاط على سرعة عالية حتى يصبح الخليط متجانسًا.",
+            "duration": null
+          },
+          {
+            "n": 6,
+            "text": "أعد الشوربة إلى الإناء لتغلي مرة واحدة ثم قدّمها فورًا.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://elwasfa.com/شوربة-طماطم-بالريحان/",
+          "site": "elwasfa.com",
+          "title": "شوربة طماطم بالريحان",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "egyptian.json",
+      "reason": "no single country: Cucumber with yogurt is eaten across the Middle East: Iraqi jajeek, Levantine khiyar bi laban, Turkish cacik, Greek tzatziki. This version adds mayonnaise, labneh and lemon, which makes it a generic modern home salad. Neither the source page nor other Arabic recipe sites tie it to one country.",
+      "evidence": [
+        {
+          "url": "https://elwasfa.com/سلطة-خيار-بالزبادي-والمايونيز/",
+          "says": "The source recipe names no country. It is labelled only 'مطبخ سلاطات' (salads) and 'طبق جانبى' (side dish)."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Tzatziki",
+          "says": "In parts of the Arab world it is called 'salaṭat ḵiyār bi-l-laban'. In Iraq jajeek is served as meze, and early jajaq recipes appear in medieval Baghdadi and Egyptian cookbooks. Food historian Nawal Nasrallah says the dish is found throughout the Middle East."
+        },
+        {
+          "url": "https://mawdoo3.com/طريقة_عمل_سلطة_الزبادي_والمايونيز",
+          "says": "A general pan-Arab recipe site gives yogurt-and-mayonnaise salad variants with no national attribution."
+        },
+        {
+          "url": "https://kvalifood.com/posts/yogurt-cucumber-sauce/",
+          "says": "(As cited by the first researcher; I did not open this page.) Laban bi khyar is found 'across Lebanon, Syria, and Palestine', which shows the base dish is shared and not specific to one country."
+        }
+      ],
+      "recipe": {
+        "id": "eg-salata-khiyar-zabadi",
+        "name": "سلطة خيار بالزبادي والمايونيز",
+        "nameEn": "Cucumber Yogurt Salad",
+        "cuisine": "مصري",
+        "category": "سلطة",
+        "description": "سلطة باردة من الخيار المبشور مع الزبادي واللبنة والمايونيز، يضاف إليها صوص الليمون وزيت الزيتون وتُزيّن بالبقدونس.",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 15,
+        "totalTime": 25,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "cucumber",
+            "name": "خيار مقشر",
+            "amount": 3,
+            "unit": "حبة"
+          },
+          {
+            "id": "yogurt",
+            "name": "زبادي",
+            "amount": 2,
+            "unit": "علبة"
+          },
+          {
+            "id": "labneh",
+            "name": "لبنة",
+            "amount": 3,
+            "unit": "ملعقة"
+          },
+          {
+            "id": "mayonnaise",
+            "name": "مايونيز",
+            "amount": 3,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "olive-oil",
+            "name": "زيت زيتون",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "pepper",
+            "name": "فلفل",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "lemon",
+            "name": "ليمون معصور",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          },
+          {
+            "id": "parsley",
+            "name": "بقدونس مفروم",
+            "amount": null,
+            "unit": null,
+            "label": "للتزيين",
+            "scale": false
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "في بولة امزج الزبادي واللبنة جيدًا، ثم أضف المايونيز وقلّب.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "في بولة أخرى حضّر الصوص بإضافة الليمون المعصور والملح والفلفل وزيت الزيتون.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "أضف الخيار بعد تقشيره وبشره إلى الصوص، ثم امزج الخليطين في بولة واحدة وزيّن بالبقدونس.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://elwasfa.com/سلطة-خيار-بالزبادي-والمايونيز/",
+          "site": "elwasfa.com",
+          "title": "سلطة خيار بالزبادي والمايونيز",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "moroccan.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "ma-seffa",
+        "name": "سفة مغربية بالمكسرات",
+        "nameEn": "Moroccan Seffa with Nuts and Dried Fruit",
+        "cuisine": "مغربي",
+        "category": "حلويات",
+        "description": "سفة مغربية حلوة من الكسكس المطهو على البخار والمخلوط بالسكر والقرفة وعصير البرتقال وماء الزهر، تُزيّن باللوز والجوز والزبيب والتمر والمشمش المجفف. تُقدّم في الأعياد والمناسبات.",
+        "servings": 6,
+        "prepTime": 15,
+        "cookTime": 30,
+        "totalTime": 45,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "water",
+            "name": "ماء مغلي",
+            "amount": 4,
+            "unit": "كوب"
+          },
+          {
+            "id": "couscous",
+            "name": "كسكس سريع التحضير",
+            "amount": 2.67,
+            "unit": "كوب",
+            "note": "مقدار كوبين وثلثين"
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": 1,
+            "unit": "رشة"
+          },
+          {
+            "id": "orange-juice",
+            "name": "عصير برتقال أو ماء",
+            "amount": 0.75,
+            "unit": "كوب"
+          },
+          {
+            "id": "sugar",
+            "name": "سكر",
+            "amount": 0.5,
+            "unit": "كوب"
+          },
+          {
+            "id": "olive-oil",
+            "name": "زيت زيتون",
+            "amount": 0.25,
+            "unit": "كوب"
+          },
+          {
+            "id": "orange-blossom",
+            "name": "ماء زهر البرتقال",
+            "amount": 4,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "cinnamon",
+            "name": "قرفة",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "cinnamon-garnish",
+            "name": "قرفة مطحونة للتزيين",
+            "amount": null,
+            "unit": null,
+            "label": "للتزيين",
+            "scale": false
+          },
+          {
+            "id": "raisins",
+            "name": "زبيب",
+            "amount": 0.75,
+            "unit": "كوب"
+          },
+          {
+            "id": "dates",
+            "name": "تمر مقطّع",
+            "amount": 0.75,
+            "unit": "كوب"
+          },
+          {
+            "id": "apricots",
+            "name": "مشمش مجفف",
+            "amount": 0.75,
+            "unit": "كوب"
+          },
+          {
+            "id": "almonds",
+            "name": "لوز مفروم",
+            "amount": 0.75,
+            "unit": "كوب"
+          },
+          {
+            "id": "walnuts",
+            "name": "جوز مفروم",
+            "amount": 0.75,
+            "unit": "كوب"
+          },
+          {
+            "id": "pine-nuts",
+            "name": "صنوبر",
+            "amount": 0.33,
+            "unit": "كوب"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "أحضري وعاء كبير الحجم لتحضير الكسكس.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "أضيفي الكسكس واسكبي فوقه الماء المغلي وأضيفي الملح.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "غطّي الوعاء واتركي الكسكس عشر دقائق ليتشرب الماء.",
+            "duration": 10,
+            "passive": true
+          },
+          {
+            "n": 4,
+            "text": "أضيفي قليلًا من الزيت النباتي وافركي الكسكس بأطراف أصابعك، ثم ضعيه في مصفاة كبيرة.",
+            "duration": null
+          },
+          {
+            "n": 5,
+            "text": "ضعي المصفاة على البخار فوق قدر من الماء على النار.",
+            "duration": null
+          },
+          {
+            "n": 6,
+            "text": "قلّبي الكسكس بين الحين والآخر واتركيه على البخار عشرين دقيقة حتى ينضج ويتفتّت.",
+            "duration": 20,
+            "passive": true
+          },
+          {
+            "n": 7,
+            "text": "في وعاء كبير أضيفي القرفة والسكر والزيت واخلطيهم جيدًا.",
+            "duration": null
+          },
+          {
+            "n": 8,
+            "text": "أضيفي الكسكس إلى الخليط واستمري في التقليب حتى يتغلف الحب كله.",
+            "duration": null
+          },
+          {
+            "n": 9,
+            "text": "أضيفي عصير البرتقال تدريجيًا مع الاستمرار في الخلط، ثم أضيفي ماء زهر البرتقال.",
+            "duration": null
+          },
+          {
+            "n": 10,
+            "text": "ضعي الكسكس في طبق تقديم كبير أو في عدة أكواب صغيرة للتقديم الفردي.",
+            "duration": null
+          },
+          {
+            "n": 11,
+            "text": "رشّي السطح بالقرفة وزيّني بالمكسرات والفواكه المجففة بحسب الرغبة.",
+            "duration": null
+          },
+          {
+            "n": 12,
+            "text": "قدّمي السفة باردة أو دافئة.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://www.webteb.com/diet/recipes/%D8%B3%D9%81%D8%A9-%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9_1033",
+          "site": "ويب طب",
+          "title": "طريقة عمل سفة مغربية",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "saudi.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "sa-maqlal-lahm-khudar",
+        "name": "مقلقل اللحم بالخضار",
+        "nameEn": "Saudi Maqlal Lamb with Vegetables",
+        "cuisine": "سعودي",
+        "category": "طبق رئيسي",
+        "description": "مقلقل لحم سعودي يُطهى في قدر الضغط مع البطاطس والباذنجان والطماطم والزيتون، طبق شعبي غني يُقدَّم بجانب الأرز بالشعيرية.",
+        "servings": 8,
+        "prepTime": 15,
+        "cookTime": 40,
+        "totalTime": null,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "olive-oil",
+            "name": "زيت زيتون",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "onion",
+            "name": "بصل مقطّع",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "olives",
+            "name": "زيتون مقطّع ناعماً",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "capers",
+            "name": "كبر",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "lamb-cubes",
+            "name": "مكعبات لحم",
+            "amount": 900,
+            "unit": "غرام"
+          },
+          {
+            "id": "worcestershire",
+            "name": "صلصة رسيستيرشاير",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "garlic-paste",
+            "name": "معجون الثوم",
+            "amount": 1,
+            "unit": "ملعقة كبيرة",
+            "note": "أو 4 فصوص من الثوم المقطّع ناعماً"
+          },
+          {
+            "id": "tomato-paste",
+            "name": "معجون الطماطم",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "tomato",
+            "name": "طماطم مقطعة",
+            "amount": 400,
+            "unit": "غرام"
+          },
+          {
+            "id": "potato",
+            "name": "بطاطس مقطعة",
+            "amount": 4,
+            "unit": "حبة"
+          },
+          {
+            "id": "eggplant",
+            "name": "باذنجان مقطع",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "stock",
+            "name": "مرق لحم",
+            "amount": 0.33,
+            "unit": "كوب"
+          },
+          {
+            "id": "bay-leaf",
+            "name": "ورق غار",
+            "amount": 2,
+            "unit": "ورقة"
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "thyme",
+            "name": "زعتر مجفف",
+            "amount": 0.5,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "black-pepper",
+            "name": "فلفل أسود",
+            "amount": 0.25,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "parsley",
+            "name": "بقدونس مقطّع ناعماً",
+            "amount": 3,
+            "unit": "ملعقة كبيرة"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "يُسخَّن الزيت في قدر ضغط متوسط الحجم على نار متوسطة، ويُقلى البصل والزيتون والكبر معاً.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "تُضاف قطع اللحم والصلصة والثوم ومعجون الطماطم وتُحرَّك المكونات معاً وتُطهى قليلاً.",
+            "duration": 5
+          },
+          {
+            "n": 3,
+            "text": "تُضاف الطماطم المقطّعة ناعماً والبطاطس والباذنجان والمرق، ثم تُضاف التوابل ورق الغار والملح والزعتر والفلفل وتُطهى المكونات معاً حتى ينضج اللحم والخضار.",
+            "duration": 35,
+            "passive": true
+          },
+          {
+            "n": 4,
+            "text": "يُسكب المقلقل في طبق التقديم بعد إزالة ورق الغار، ويُزيَّن بالبقدونس المقطّع ناعماً ويُقدَّم مباشرة.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://yummy.layalina.com/%d9%85%d9%82%d9%84%d9%82%d9%84-%d8%a7%d9%84%d9%84%d8%ad%d9%85-%d8%a8%d8%a7%d9%84%d8%ae%d8%b6%d8%a7%d8%b1-525427.html",
+          "site": "يمّي ليالينا",
+          "title": "مقلقل اللحم بالخضار",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "saudi.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "sa-kabsa-lahm-mandi",
+        "name": "كبسة لحم مندي",
+        "nameEn": "Mandi-Style Lamb Kabsa",
+        "cuisine": "سعودي",
+        "category": "طبق رئيسي",
+        "description": "طريقة مختلفة للكبسة يجتمع فيها أرز الكبسة مع نكهة المندي؛ يُتبَّل اللحم بالتوابل المحمصة ويُطهى في المرق ثم يُدهن بالزبدة ويُحمر في الفرن قبل تقديمه فوق الأرز.",
+        "servings": 3,
+        "prepTime": 30,
+        "cookTime": 90,
+        "totalTime": null,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "long-rice",
+            "name": "أرز طويل الحبة",
+            "amount": 3,
+            "unit": "كوب"
+          },
+          {
+            "id": "onion",
+            "name": "بصلة كبيرة مقطّعة شرائح رقيقة",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "garlic-cloves",
+            "name": "ثوم مهروس",
+            "amount": 3,
+            "unit": "فص"
+          },
+          {
+            "id": "lamb",
+            "name": "لحم ضأن",
+            "amount": 0.5,
+            "unit": "كيلو"
+          },
+          {
+            "id": "oil",
+            "name": "زيت نباتي",
+            "amount": 6,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "hot-green-chili",
+            "name": "فلفل أخضر حار",
+            "amount": 2,
+            "unit": "قرن"
+          },
+          {
+            "id": "spice-mix",
+            "name": "توابل مشكلة",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "garlic-minced",
+            "name": "ثوم مهروس",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "paprika-hot",
+            "name": "بابريكا حارة",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "ginger-fresh",
+            "name": "زنجبيل طازج مبشور",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "coriander-dry",
+            "name": "كزبرة جافة",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "cumin",
+            "name": "كمون",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "turmeric",
+            "name": "كركم",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "clove-ground",
+            "name": "قرنفل مطحون ناعماً",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "black-cardamom-ground",
+            "name": "هيل أسود مطحون",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "black-pepper",
+            "name": "فلفل أسود مطحون",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "water",
+            "name": "ماء",
+            "amount": 2,
+            "unit": "لتر"
+          },
+          {
+            "id": "butter",
+            "name": "زبدة",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "whole-spices",
+            "name": "توابل كاملة",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "bay-leaf",
+            "name": "ورق غار",
+            "amount": 2,
+            "unit": "قطعة"
+          },
+          {
+            "id": "nutmeg",
+            "name": "جوزة الطيب مبشورة",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "تُوضع كمية قليلة من الزيت في قدر ويُسخَّن جيداً، ثم تُضاف إليه التوابل الصحيحة وورق الغار وتُحمَّص بالتقليب على النار لبضع ثوانٍ.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "يُتبَّل لحم الضأن بخليط التوابل المحمصة، ثم يُضاف الكركم والملح ويُوضع في الثلاجة ليتشرب النكهة.",
+            "duration": 30,
+            "passive": true
+          },
+          {
+            "n": 3,
+            "text": "يُوضع قدر آخر على النار ويُسخَّن فيه قليل من الزيت، ثم يُشوَّح البصل حتى يصير ذهبياً وتُضاف ملعقة التوابل والملح والفلفل الأسود والثوم المهروس وتُقلَّب المكونات، ثم يُضاف اللحم المتبل مع الزنجبيل والبابريكا ويُشوَّح حتى يتغير لونه.",
+            "duration": null
+          },
+          {
+            "n": 4,
+            "text": "يُغمر اللحم بالماء الساخن ويُغطى القدر ويُترك على نار عالية حتى ينضج اللحم تماماً، ثم يُرفع اللحم عن المرق ويُدهن بالزبدة ويُحمر في الفرن، ويُصفى مرق اللحم ويُعاد إلى القدر مع الأرز ويُترك حتى ينضج الأرز.",
+            "duration": 40,
+            "passive": true
+          },
+          {
+            "n": 5,
+            "text": "يُسكب الأرز في طبق التقديم ويُوضع فوقه اللحم المحمر، وتُقدَّم كبسة لحم مندي على السفرة.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://yummy.layalina.com/%d9%83%d8%a8%d8%b3%d8%a9-%d9%84%d8%ad%d9%85-%d9%85%d9%86%d8%af%d9%8a-395007.html",
+          "site": "يمّي ليالينا",
+          "title": "كبسة لحم مندي",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "saudi.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "sa-masoub-malaki",
+        "name": "معصوب ملكي بالعسل والقشطة",
+        "nameEn": "Royal Masoub with Honey and Cream",
+        "cuisine": "سعودي",
+        "category": "حلويات",
+        "description": "معصوب بالخبز المنزلي والموز والتمر والقشطة والعسل، من أشهر الحلويات الخليجية التي تُقدَّم عادة في رمضان وتُزيَّن بالمكسرات والرمان.",
+        "servings": 4,
+        "prepTime": 40,
+        "cookTime": 30,
+        "totalTime": null,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "دقيق",
+            "amount": 525,
+            "unit": "غرام"
+          },
+          {
+            "id": "water",
+            "name": "ماء",
+            "amount": 250,
+            "unit": "مللتر"
+          },
+          {
+            "id": "salt-dough",
+            "name": "ملح",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "oil-dough",
+            "name": "زيت نباتي",
+            "amount": 3,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "ghee",
+            "name": "سمن فاتر",
+            "amount": 200,
+            "unit": "غرام"
+          },
+          {
+            "id": "bananas",
+            "name": "موز",
+            "amount": 4,
+            "unit": "حبة"
+          },
+          {
+            "id": "butter",
+            "name": "زبدة",
+            "amount": 100,
+            "unit": "غرام"
+          },
+          {
+            "id": "cream",
+            "name": "قشطة",
+            "amount": 500,
+            "unit": "مللتر"
+          },
+          {
+            "id": "honey",
+            "name": "عسل",
+            "amount": 150,
+            "unit": "مللتر"
+          },
+          {
+            "id": "cardamom",
+            "name": "هيل",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "cinnamon",
+            "name": "قرفة",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "dates",
+            "name": "تمر",
+            "amount": 200,
+            "unit": "غرام"
+          },
+          {
+            "id": "brown-sugar",
+            "name": "سكر بني",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "dates-extra",
+            "name": "تمر للتزيين",
+            "amount": 50,
+            "unit": "غرام"
+          },
+          {
+            "id": "bananas-extra",
+            "name": "موز للتزيين",
+            "amount": 2,
+            "unit": "حبة"
+          },
+          {
+            "id": "cashew",
+            "name": "كاجو",
+            "amount": 100,
+            "unit": "غرام"
+          },
+          {
+            "id": "raisin",
+            "name": "زبيب",
+            "amount": 100,
+            "unit": "غرام"
+          },
+          {
+            "id": "pomegranate",
+            "name": "رمان",
+            "amount": 1,
+            "unit": "حبة"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "يُخلط الدقيق مع الزيت والماء والملح بالخلاط الكهربائي، وتُعجن المكونات حتى تتشكل عجينة طرية.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "تُوضع العجينة على سطح العمل المرشوش بالدقيق وتُعجن حتى تتماسك، ثم تُقسم إلى عشر قطع وتُفرد كل قطعة على شكل مربع رفيع وتُرش بالسمن الفاتر مع تدليك العجينة برفق.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "تُطوى جوانب العجينة إلى الداخل ثم تُفرد مرة أخرى باستخدام الشوبك.",
+            "duration": null
+          },
+          {
+            "n": 4,
+            "text": "تُسخَّن مقلاة غير لاصقة على نار متوسطة وتُوضع العجينة وتُخبز مع رشها بالسمن، وتُقلب لتُطهى على الجانب الآخر، ثم يُوضع الخبز جانباً.",
+            "duration": null
+          },
+          {
+            "n": 5,
+            "text": "يُقطع الموز مع التمر إلى قطع صغيرة ويُوضع في قدر متوسط، ويُسكب فوقه العسل وتُضاف القشطة والهيل والقرفة، ويُغلى المزيج على نار متوسطة.",
+            "duration": null
+          },
+          {
+            "n": 6,
+            "text": "يُطحن الخبز بعد أن يبرد باستخدام معالج الطعام، ثم يُضاف إلى قدر الموز والعسل وتُخلط المكونات وتُترك على نار هادئة لبضع دقائق.",
+            "duration": null
+          },
+          {
+            "n": 7,
+            "text": "يُسكب المعصوب في طبق التقديم ويُزيَّن بالموز والكاجو والزبيب والرمان والتمر ثم يُقدَّم.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://yummy.layalina.com/%d9%85%d8%b9%d8%b5%d9%88%d8%a8-%d9%85%d9%84%d9%83%d9%8a-%d8%a8%d8%a7%d9%84%d8%b9%d8%b3%d9%84-%d9%88%d8%a7%d9%84%d9%82%d8%b4%d8%b7%d8%a9-515269.html",
+          "site": "يمّي ليالينا",
+          "title": "معصوب ملكي بالعسل والقشطة",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "saudi.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "sa-kleija-qassim",
+        "name": "كليجا القصيم",
+        "nameEn": "Qassim Kleija",
+        "cuisine": "سعودي",
+        "category": "حلويات",
+        "description": "كليجة قصيمية محشوة بمعجون التمر والهيل والشمر، من حلويات الأعياد والمناسبات في السعودية، تُقدَّم مع القهوة العربية أو الشاي.",
+        "servings": 24,
+        "prepTime": 45,
+        "cookTime": 20,
+        "totalTime": null,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "دقيق",
+            "amount": 3,
+            "unit": "كوب"
+          },
+          {
+            "id": "milk",
+            "name": "حليب دافئ",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "butter",
+            "name": "زبدة مذابة",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": 0.5,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "mahlab",
+            "name": "محلب مطحون",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "yeast",
+            "name": "خميرة",
+            "amount": 2,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "sugar",
+            "name": "سكر",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "nigella",
+            "name": "حبة البركة",
+            "amount": 2,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "dates",
+            "name": "تمر",
+            "amount": 2,
+            "unit": "كوب"
+          },
+          {
+            "id": "fennel",
+            "name": "بذور الشمر",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "cardamom",
+            "name": "هيل بودرة",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "ghee",
+            "name": "سمن",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "egg",
+            "name": "بيضة مخفوقة للدهن",
+            "amount": 1,
+            "unit": "حبة"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "يُسخَّن السمن في مقلاة على نار متوسطة، ويُضاف التمر مع الشمر والهيل ويُحرَّك حتى ينضج التمر، ثم يُوضع جانباً ليبرد.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "يُخلط الدقيق مع المحلب والملح وحبة البركة في وعاء كبير.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "تُخفق الخميرة مع السكر ونصف كمية الحليب الدافئ في وعاء صغير ويُترك المزيج جانباً ليتنشط.",
+            "duration": 5,
+            "passive": true
+          },
+          {
+            "n": 4,
+            "text": "يُسكب مزيج الحليب والخميرة فوق المكونات الجافة مع الحليب المتبقي والزبدة، وتُعجن العجينة.",
+            "duration": 5
+          },
+          {
+            "n": 5,
+            "text": "تُوضع العجينة جانباً لترتاح ويتضاعف حجمها.",
+            "duration": 30,
+            "passive": true
+          },
+          {
+            "n": 6,
+            "text": "تُوضع حشوة التمر بين ورقتين من ورق البرشمان وتُفرد على شكل مستطيل باستخدام الشوبك.",
+            "duration": null
+          },
+          {
+            "n": 7,
+            "text": "تُفرد العجينة أيضاً على شكل مستطيل، وتُوضع حشوة التمر فوقها بحذر.",
+            "duration": null
+          },
+          {
+            "n": 8,
+            "text": "تُلف العجينة على شكل أسطواني ثم تُقطع إلى قطع صغيرة، وتُدهن كل قطعة بخليط البيضة المخفوقة.",
+            "duration": null
+          },
+          {
+            "n": 9,
+            "text": "تُرتب قطع الكليجة في صينية مبطنة بورق الزبدة وتُخبز في فرن محمى مسبقاً على حرارة 180 درجة مع تحمير الوجه في آخر الخبز.",
+            "duration": 15,
+            "passive": true
+          },
+          {
+            "n": 10,
+            "text": "تُبرد الكليجة قليلاً ثم تُقدَّم في طبق التقديم.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://yummy.layalina.com/%d8%b7%d8%b1%d9%8a%d9%82%d8%a9-%d8%b9%d9%85%d9%84-%d9%83%d9%84%d9%8a%d8%ac%d8%a7-%d8%a7%d9%84%d9%82%d8%b5%d9%8a%d9%85-525704.html",
+          "site": "يمّي ليالينا",
+          "title": "طريقة عمل كليجا القصيم",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "saudi.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "sa-tamriyah-saudi",
+        "name": "التمرية السعودية",
+        "nameEn": "Saudi Tamriyah",
+        "cuisine": "سعودي",
+        "category": "حلويات",
+        "description": "تمرية من الحلويات الشعبية في السعودية، بعجينة هشة محشوة بالتمر والهيل والقرفة ثم مقلية ومرشوشة بالسكر البودرة، تُقدَّم دافئة مع الشاي.",
+        "servings": 4,
+        "prepTime": null,
+        "cookTime": 15,
+        "totalTime": null,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "flour",
+            "name": "دقيق",
+            "amount": 2,
+            "unit": "كوب"
+          },
+          {
+            "id": "warm-water",
+            "name": "ماء دافئ",
+            "amount": 0.5,
+            "unit": "كوب"
+          },
+          {
+            "id": "oil",
+            "name": "زيت نباتي",
+            "amount": 0.25,
+            "unit": "كوب"
+          },
+          {
+            "id": "sugar",
+            "name": "سكر",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": null,
+            "unit": null,
+            "label": "رشّة",
+            "scale": false
+          },
+          {
+            "id": "date-paste",
+            "name": "معجون التمر",
+            "amount": 2,
+            "unit": "كوب"
+          },
+          {
+            "id": "cardamom",
+            "name": "هيل",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "cinnamon",
+            "name": "مسحوق القرفة",
+            "amount": 0.5,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "ghee",
+            "name": "سمن بلدي",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "frying-oil",
+            "name": "زيت نباتي للقلي",
+            "amount": 1,
+            "unit": "ليتر"
+          },
+          {
+            "id": "powdered-sugar",
+            "name": "سكر بودرة",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "يُخلط الدقيق مع السكر والملح، ثم يُضاف الزيت ويُخلط جيداً.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "يُضاف الماء الدافئ تدريجياً مع العجن حتى تتكون عجينة ناعمة ومتماسكة.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "تُغطى العجينة وتُترك لترتاح.",
+            "duration": 20,
+            "passive": true
+          },
+          {
+            "n": 4,
+            "text": "لتحضير الحشوة يُوضع التمر مع السمن والهيل والقرفة في قدر على نار هادئة ويُقلَّب حتى يصبح ليناً ومتجانساً.",
+            "duration": null
+          },
+          {
+            "n": 5,
+            "text": "يُترك خليط التمر ليبرد قليلاً، ثم يُشكَّل إلى كرات صغيرة.",
+            "duration": null,
+            "passive": true
+          },
+          {
+            "n": 6,
+            "text": "تُقسم العجينة إلى كرات صغيرة وتُفرد كل كرة بشكل رقيق، ثم تُوضع كرة من حشوة التمر في المنتصف.",
+            "duration": null
+          },
+          {
+            "n": 7,
+            "text": "تُغلق العجينة حول الحشوة وتُضغط برفق حتى تصبح التمرية مسطحة.",
+            "duration": null
+          },
+          {
+            "n": 8,
+            "text": "يُسخَّن الزيت في مقلاة على نار متوسطة، ثم تُقلى حبات التمرية حتى تصبح ذهبية ومقرمشة.",
+            "duration": null
+          },
+          {
+            "n": 9,
+            "text": "تُرفع من الزيت وتُوضع على ورق المطبخ للتخلص من الزيت الزائد.",
+            "duration": null
+          },
+          {
+            "n": 10,
+            "text": "تُرش بالسكر البودرة وتُقدَّم دافئة.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://kitchen.sayidaty.net/node/40743/%D8%A7%D9%84%D8%AA%D9%85%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D9%85%D8%B9-%D8%B4%D8%A7%D9%8A-%D9%84%D9%8A%D8%A8%D8%AA%D9%88%D9%86-%D8%AD%D9%84%D9%89-%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9/%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA/%D9%88%D8%B5%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D9%8A%D9%88",
+          "site": "مطبخ سيدتي",
+          "title": "التمرية السعودية مع شاي ليبتون حلى تقليدي من المنطقة الغربية",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "saudi.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "sa-mamroos-saudi",
+        "name": "الممروس السعودي",
+        "nameEn": "Saudi Mamroos",
+        "cuisine": "سعودي",
+        "category": "حلويات",
+        "description": "ممروس من طحين البر المحمص والتمر والسمن مع الهيل والزعفران، حلى تقليدي من المنطقة الشرقية يُقدَّم دافئاً بجانب الشاي.",
+        "servings": 3,
+        "prepTime": null,
+        "cookTime": 30,
+        "totalTime": null,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "dates",
+            "name": "تمر منزوع النوى",
+            "amount": 2,
+            "unit": "كوب"
+          },
+          {
+            "id": "wholewheat-flour",
+            "name": "طحين بر",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "ghee",
+            "name": "سمن",
+            "amount": 0.5,
+            "unit": "كوب"
+          },
+          {
+            "id": "cardamom",
+            "name": "هيل مطحون",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "saffron",
+            "name": "زعفران",
+            "amount": null,
+            "unit": null,
+            "label": "رشّة",
+            "scale": false
+          },
+          {
+            "id": "warm-water",
+            "name": "ماء دافئ",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": null,
+            "unit": null,
+            "label": "رشّة",
+            "scale": false
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "يُوضع طحين البر في مقلاة على نار هادئة ويُحمَّص مع التحريك المستمر حتى يتغير لونه قليلاً وتظهر رائحته مع الحرص على عدم احتراقه.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "يُرفع الطحين عن النار ويُترك جانباً ليهدأ قليلاً.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "يُوضع التمر في قدر على نار هادئة ويُضاف إليه السمن تدريجياً مع التحريك حتى يصبح التمر ليناً وسهل الخلط.",
+            "duration": null
+          },
+          {
+            "n": 4,
+            "text": "يُضاف طحين البر المحمص تدريجياً إلى خليط التمر والسمن مع الاستمرار في التقليب حتى تتجانس المكونات.",
+            "duration": null
+          },
+          {
+            "n": 5,
+            "text": "يُضاف الهيل والزعفران ورشة الملح وتُخلط المكونات جيداً.",
+            "duration": null
+          },
+          {
+            "n": 6,
+            "text": "يُضاف الماء الدافئ تدريجياً حسب الحاجة مع العجن حتى يصبح الخليط متماسكاً وطرياً.",
+            "duration": null
+          },
+          {
+            "n": 7,
+            "text": "يستمر التقليب والعجن على نار هادئة حتى يتجانس الممروس ويصبح قوامه ناعماً.",
+            "duration": null
+          },
+          {
+            "n": 8,
+            "text": "يُوضع الممروس في طبق التقديم ويُشكَّل حسب الرغبة.",
+            "duration": null
+          },
+          {
+            "n": 9,
+            "text": "يُزيَّن بالقليل من السمن المذاب والهيل أو الزعفران ويُقدَّم دافئاً.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://kitchen.sayidaty.net/node/40761/%D8%A7%D9%84%D9%85%D9%85%D8%B1%D9%88%D8%B3-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-%D9%85%D8%B9-%D8%B4%D8%A7%D9%8A-%D9%84%D9%8A%D8%A8%D8%AA%D9%88%D9%86-%D8%AD%D9%84%D9%89-%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9/%D8%AD%D9%84%D9%88%D9%8A%D8%A7%D8%AA/%D9%88%D8%B5%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D9%8A%D9%88",
+          "site": "مطبخ سيدتي",
+          "title": "الممروس السعودي مع شاي ليبتون حلى تقليدي من المنطقة الشرقية",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "saudi.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "sa-hob-soup-wheat",
+        "name": "شوربة الحب (القمح) السعودية",
+        "nameEn": "Saudi Wheat Soup",
+        "cuisine": "سعودي",
+        "category": "شوربة",
+        "description": "شوربة حب القمح الكامل مع لحم الغنم والأرز والتوابل العربية، شوربة سعودية بقوام كريمي ونكهة تقليدية.",
+        "servings": 4,
+        "prepTime": null,
+        "cookTime": 60,
+        "totalTime": null,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "wheat",
+            "name": "حب القمح مغسول ومنقوع",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "lamb",
+            "name": "لحم غنم بالعظم مقطّع",
+            "amount": 500,
+            "unit": "غرام"
+          },
+          {
+            "id": "egyptian-rice",
+            "name": "أرز مصري",
+            "amount": 0.33,
+            "unit": "كوب"
+          },
+          {
+            "id": "onion",
+            "name": "بصل مقطّع ناعماً",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "tomato",
+            "name": "طماطم مقطعة",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "tomato-paste",
+            "name": "معجون الطماطم",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "garlic",
+            "name": "ثوم مقشّر",
+            "amount": 6,
+            "unit": "فص"
+          },
+          {
+            "id": "cumin",
+            "name": "كمون حب",
+            "amount": 1,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "black-pepper",
+            "name": "فلفل أسود",
+            "amount": 0.5,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "cinnamon-stick",
+            "name": "قرفة عود",
+            "amount": 1,
+            "unit": "عود"
+          },
+          {
+            "id": "cloves",
+            "name": "قرنفل",
+            "amount": 2,
+            "unit": "حبة"
+          },
+          {
+            "id": "bay-leaf",
+            "name": "ورق غار",
+            "amount": 3,
+            "unit": "ورقة"
+          },
+          {
+            "id": "salt",
+            "name": "ملح",
+            "amount": 1,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "hot-water",
+            "name": "ماء ساخن",
+            "amount": 1,
+            "unit": "ليتر"
+          },
+          {
+            "id": "coriander-fresh",
+            "name": "كزبرة خضراء مقطّعة ناعماً للتزيين",
+            "amount": 0.33,
+            "unit": "كوب"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "يُغسل حب القمح جيداً ويُنقع في الماء لعدة ساعات أو طوال الليل لتقليل وقت الطهي.",
+            "duration": null,
+            "passive": true
+          },
+          {
+            "n": 2,
+            "text": "يُوضع قدر الضغط على نار متوسطة، ثم يُضاف البصل واللحم ويُقلَّب حتى يتغير لون اللحم وتظهر رائحة البصل.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "يُضاف الكمون والفلفل الأسود والثوم والقرفة والقرنفل وورق الغار، ثم تُقلَّب المكونات قليلاً حتى تتجانس النكهات.",
+            "duration": null
+          },
+          {
+            "n": 4,
+            "text": "يُضاف حب القمح والأرز والطماطم ومعجون الطماطم، ثم يُسكب الماء الساخن ويُضاف الملح.",
+            "duration": null
+          },
+          {
+            "n": 5,
+            "text": "يُغلق قدر الضغط وتُترك الشوربة تُطهى حتى ينضج اللحم والقمح ويصبح القوام كثيفاً (نحو 30 إلى 40 دقيقة).",
+            "duration": 30,
+            "passive": true
+          },
+          {
+            "n": 6,
+            "text": "يُفتح القدر بعد انخفاض الضغط، وتُحرَّك الشوربة جيداً حتى تندمج الحبوب مع المرق.",
+            "duration": null
+          },
+          {
+            "n": 7,
+            "text": "تُقدَّم شوربة الحب ساخنة في أطباق التقديم وتُزيَّن بالكزبرة الخضراء.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://kitchen.sayidaty.net/node/40724/%D8%B4%D9%88%D8%B1%D8%A8%D8%A9-%D8%A7%D9%84%D8%AD%D8%A8--%D8%A7%D9%84%D9%82%D9%85%D8%AD--%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%88%D8%B5%D9%81%D8%A7%D8%AA-%D8%B7%D8%A8%D8%AE/",
+          "site": "مطبخ سيدتي",
+          "title": "طريقة عمل شوربة الحب (القمح) السعودية",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    },
+    {
+      "file": "saudi.json",
+      "reason": "steps copy the source wording; the rewrite was not checked yet (usage limit)",
+      "recipe": {
+        "id": "sa-mabshal-dibs",
+        "name": "المبصل بالدبس",
+        "nameEn": "Saudi Mabshal with Date Syrup",
+        "cuisine": "سعودي",
+        "category": "مقبلات",
+        "description": "مبصل حساوي مقرمش من عجينة البصل المقطّع ناعماً المقلي، من المقبلات الشعبية السعودية، يُقدَّم ساخناً مع دبس التمر.",
+        "servings": 4,
+        "prepTime": null,
+        "cookTime": 60,
+        "totalTime": null,
+        "difficulty": null,
+        "ingredients": [
+          {
+            "id": "white-flour",
+            "name": "دقيق أبيض",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "wholewheat-flour",
+            "name": "دقيق بر",
+            "amount": 0.5,
+            "unit": "كوب"
+          },
+          {
+            "id": "red-onion",
+            "name": "بصل أحمر ناعم",
+            "amount": 1,
+            "unit": "كوب"
+          },
+          {
+            "id": "white-onion",
+            "name": "بصل أبيض ناعم",
+            "amount": 1,
+            "unit": "حبة"
+          },
+          {
+            "id": "sugar",
+            "name": "سكر",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "cardamom",
+            "name": "هيل مطحون",
+            "amount": 0.5,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "black-pepper",
+            "name": "فلفل أسود",
+            "amount": 0.5,
+            "unit": "ملعقة صغيرة"
+          },
+          {
+            "id": "milk-powder",
+            "name": "حليب بودرة",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "yeast",
+            "name": "خميرة فورية",
+            "amount": 2,
+            "unit": "ملعقة كبيرة"
+          },
+          {
+            "id": "eggs",
+            "name": "بيض",
+            "amount": 2,
+            "unit": "حبة"
+          },
+          {
+            "id": "oil",
+            "name": "زيت",
+            "amount": 0.25,
+            "unit": "كوب"
+          },
+          {
+            "id": "warm-water",
+            "name": "ماء دافئ",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الحاجة",
+            "scale": false
+          },
+          {
+            "id": "frying-oil",
+            "name": "زيت للقلي",
+            "amount": null,
+            "unit": null,
+            "label": "غزير",
+            "scale": false
+          },
+          {
+            "id": "date-syrup",
+            "name": "دبس التمر",
+            "amount": null,
+            "unit": null,
+            "label": "حسب الرغبة",
+            "scale": false,
+            "note": "للتقديم"
+          }
+        ],
+        "steps": [
+          {
+            "n": 1,
+            "text": "في وعاء كبير تُخلط جميع المكونات الجافة الدقيق الأبيض ودقيق البر والبصل الأحمر والأبيض المقطّع ناعماً والسكر والهيل والفلفل الأسود والحليب البودرة والخميرة.",
+            "duration": null
+          },
+          {
+            "n": 2,
+            "text": "يُضاف البيض والزيت والماء الدافئ تدريجياً وتُعجن المكونات جيداً حتى تتكون عجينة متماسكة ولينة.",
+            "duration": null
+          },
+          {
+            "n": 3,
+            "text": "يُغطى العجين ويُترك في مكان دافئ حتى يتخمر ويتضاعف حجمه.",
+            "duration": 60,
+            "passive": true
+          },
+          {
+            "n": 4,
+            "text": "يُقسم العجين إلى كرات متوسطة الحجم.",
+            "duration": null
+          },
+          {
+            "n": 5,
+            "text": "تُفرد كل كرة على سطح مرشوش بالدقيق باستخدام النشابة.",
+            "duration": null
+          },
+          {
+            "n": 6,
+            "text": "يُسخَّن زيت غزير في مقلاة على نار متوسطة.",
+            "duration": null
+          },
+          {
+            "n": 7,
+            "text": "تُقلى قطع العجين من كلا الجانبين حتى يصبح لونها ذهبياً ومقرمشاً.",
+            "duration": null
+          },
+          {
+            "n": 8,
+            "text": "يُقدَّم المبصل ساخناً مع دبس التمر.",
+            "duration": null
+          }
+        ],
+        "source": {
+          "url": "https://kitchen.sayidaty.net/node/32956/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D9%85%D8%A8%D8%B5%D9%84-%D8%A8%D8%A7%D9%84%D8%AF%D8%A8%D8%B3/%D8%A7%D9%84%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA/%D9%88%D8%B5%D9%81%D8%A7%D8%AA",
+          "site": "مطبخ سيدتي",
+          "title": "طريقة عمل المبصل بالدبس",
+          "retrievedAt": "2026-11-18"
+        }
+      }
+    }
+  ]
+}

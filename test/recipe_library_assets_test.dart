@@ -65,7 +65,7 @@ void main() {
     expect(await repository.search('نان'), isNotEmpty);
     expect(await repository.search('حريرة'), isNotEmpty);
     expect(await repository.filterByCuisine('Moroccan'), hasLength(15));
-    expect((await RecipeRepository().index), hasLength(413));
+    expect((await RecipeRepository().index), hasLength(495));
     expect(
       entries.where((entry) => entry.sourceSnapshot != null),
       hasLength(6504),
