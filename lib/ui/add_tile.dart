@@ -375,71 +375,51 @@ class _GlassEdge extends CustomPainter {
   bool shouldRepaint(_GlassEdge old) => old.radius != radius;
 }
 
-/// The app's ground: warm paper under wide pools of light, with a few
-/// defined colour orbs near the top, so no page is one flat colour and glass
-/// has shapes to blur and bend.
+/// The app's ground: warm colours that melt into each other, never one flat
+/// colour and never a hard edge.
 class SofraBackdrop extends StatelessWidget {
   const SofraBackdrop({super.key});
 
-  static const _pools = [
-    (Alignment(1, -1), 1.15, Color(0xFFEBB79A)),
-    (Alignment(-1.05, .2), .95, Color(0xFFF0D9A6)),
-    (Alignment(.7, 1.1), 1.0, Color(0xFFF2C7B4)),
+  // Wide soft washes of warm colour that melt into each other: each one
+  // fades over its whole radius, so no edge is ever visible.
+  static const _washes = [
+    (Alignment(1.1, -1.0), 1.25, Color(0xFFEFB49A)),
+    (Alignment(-1.2, -.35), 1.10, Color(0xFFF3D9A8)),
+    (Alignment(.3, .1), .95, Color(0xFFF6CDBB)),
+    (Alignment(-.9, .95), 1.15, Color(0xFFF1D2B0)),
+    (Alignment(1.2, 1.1), 1.10, Color(0xFFEBBBA6)),
   ];
 
   @override
   Widget build(BuildContext context) {
-    Widget layer = const CustomPaint(
-      painter: _Orbs(),
-      child: SizedBox.expand(),
-    );
-    for (final (center, radius, color) in _pools.reversed) {
+    Widget layer = const SizedBox.expand();
+    for (final (center, radius, color) in _washes.reversed) {
       layer = DecoratedBox(
         decoration: BoxDecoration(
           gradient: RadialGradient(
             center: center,
             radius: radius,
-            colors: [color.withValues(alpha: .85), color.withValues(alpha: 0)],
+            colors: [
+              color.withValues(alpha: .80),
+              color.withValues(alpha: .45),
+              color.withValues(alpha: .15),
+              color.withValues(alpha: 0),
+            ],
+            stops: const [0, .35, .7, 1],
           ),
         ),
         child: layer,
       );
     }
-    return layer;
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [Color(0xFFF7E6D8), Color(0xFFF8EDE0), Color(0xFFF5E2D3)],
+        ),
+      ),
+      child: layer,
+    );
   }
-}
-
-class _Orbs extends CustomPainter {
-  const _Orbs();
-
-  // x as a share of the width, y and radius in logical pixels.
-  static const _orbs = [
-    (.84, 262.0, 84.0, Color(0xFFE2764A)),
-    (.30, 318.0, 78.0, Color(0xFFF0B347)),
-    (.56, 214.0, 46.0, Color(0xFFEE9C8A)),
-  ];
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    for (final (x, y, r, color) in _orbs) {
-      final c = Offset(size.width * x, y);
-      canvas.drawCircle(
-        c,
-        r,
-        Paint()
-          ..shader = RadialGradient(
-            center: const Alignment(-.35, -.4),
-            colors: [
-              Color.lerp(color, Colors.white, .35)!.withValues(alpha: .95),
-              color.withValues(alpha: .85),
-              color.withValues(alpha: .55),
-            ],
-            stops: const [0, .65, 1],
-          ).createShader(Rect.fromCircle(center: c, radius: r)),
-      );
-    }
-  }
-
-  @override
-  bool shouldRepaint(_Orbs old) => false;
 }

@@ -602,8 +602,8 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
         ),
       );
     } else if (tint) {
-      // Terracotta glass: the brand colour, slightly see-through and frosted,
-      // with a thin light rim and a soft sheen along the top.
+      // Frosted terracotta: the exact brand colour, barely see-through,
+      // with a heavy blur so what passes behind is only a soft hint.
       bar = DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: radius,
@@ -619,28 +619,13 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
         child: ClipRRect(
           borderRadius: radius,
           child: BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+            filter: ui.ImageFilter.blur(sigmaX: 30, sigmaY: 30),
             child: Material(
               type: MaterialType.transparency,
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   borderRadius: radius,
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color.lerp(
-                        Sofra.accent,
-                        Colors.white,
-                        .12,
-                      )!.withValues(alpha: .80),
-                      Sofra.accent.withValues(alpha: .86),
-                    ],
-                  ),
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: .38),
-                    width: 1,
-                  ),
+                  color: Sofra.accent.withValues(alpha: .92),
                 ),
                 child: Padding(padding: pad, child: row),
               ),
