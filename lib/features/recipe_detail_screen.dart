@@ -3,20 +3,34 @@ import 'package:flutter/material.dart';
 import '../app/scope.dart';
 import '../app/sofra_controller.dart';
 import '../data/recipe_photo_library.dart';
+import '../data/recipe_repository.dart';
 import '../domain/recipe_catalog.dart';
 import '../ui/design.dart';
+import '../ui/flags.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'dish_sheet.dart';
 
 class RecipeDetailScreen extends StatefulWidget {
-  const RecipeDetailScreen({super.key, required this.recipeId});
+  const RecipeDetailScreen({
+    super.key,
+    required this.recipeId,
+    this.compare = false,
+  });
   final String recipeId;
+
+  /// Opened from a dish's card: no country chosen yet, the ways' ingredients
+  /// compared.
+  final bool compare;
   @override
   State<RecipeDetailScreen> createState() => _RecipeDetailScreenState();
 }
 
 class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   Future<(CatalogRecipe, CatalogRecipe)>? recipe;
+
+  /// The dish this recipe is one way of, with its ways' index rows.
+  Future<(Dish, List<Map<String, dynamic>>)?>? dish;
   int? servings;
   int yieldGuess = 4;
   bool starting = false;
@@ -28,6 +42,91 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     recipe ??= _load();
+    dish ??= _dish();
+  }
+
+  Future<(Dish, List<Map<String, dynamic>>)?> _dish() async {
+    try {
+      final found = (await c.recipes.dishes).where(
+        (d) => d.recipes.contains(widget.recipeId),
+      );
+      if (found.isEmpty) return null;
+      final rows = {
+        for (final r in await c.recipes.index) r['id'] as String: r,
+      };
+      final d = found.first;
+      return (d, [for (final id in d.recipes) rows[id]!]);
+    } on Object {
+      // The dish grouping is an extra: the recipe opens on its own.
+      return null;
+    }
+  }
+
+  /// The dish's countries as one bar; the chosen way is filled with its
+  /// colour. Choosing it again goes back to comparing.
+  Widget _bar(List<Map<String, dynamic>> ways) {
+    final nav = SofraScope.navOf(context);
+    final seen = <String, int>{};
+    return SingleChildScrollView(
+      key: const ValueKey('country-bar'),
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          for (final (i, w) in ways.indexed)
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: 8),
+              child: Builder(
+                builder: (context) {
+                  final id = w['id'] as String;
+                  final cuisine = '${w['cuisine']}';
+                  final n = seen[cuisine] = (seen[cuisine] ?? 0) + 1;
+                  final on = !widget.compare && id == widget.recipeId;
+                  final color = wayColors[i % wayColors.length];
+                  return Semantics(
+                    button: true,
+                    selected: on,
+                    child: Material(
+                      color: on ? color : Colors.white,
+                      shape: StadiumBorder(
+                        side: BorderSide(color: color, width: 2),
+                      ),
+                      child: InkWell(
+                        key: ValueKey('way-$id'),
+                        customBorder: const StadiumBorder(),
+                        onTap: () => on
+                            ? nav.openRecipe(widget.recipeId, compare: true)
+                            : nav.openRecipe(id),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                            6,
+                            6,
+                            14,
+                            6,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              CuisineFlag(cuisine, size: 26),
+                              const SizedBox(width: 8),
+                              Text(
+                                n > 1 ? '$cuisine $n' : cuisine,
+                                style: TextStyle(
+                                  color: on ? Colors.white : Sofra.ink,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+        ],
+      ),
+    );
   }
 
   /// (catalog source for display, planning copy that may carry a yield).
@@ -37,8 +136,19 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   }
 
   @override
-  Widget build(BuildContext context) =>
-      FutureBuilder<(CatalogRecipe, CatalogRecipe)>(
+  Widget build(
+    BuildContext context,
+  ) => FutureBuilder<(Dish, List<Map<String, dynamic>>)?>(
+    future: dish,
+    builder: (context, found) {
+      if (found.connectionState != ConnectionState.done) {
+        return const LoadingBlock();
+      }
+      final ways = found.data;
+      if (widget.compare && ways != null) {
+        return _CompareView(dish: ways.$1, ways: ways.$2, bar: _bar(ways.$2));
+      }
+      return FutureBuilder<(CatalogRecipe, CatalogRecipe)>(
         future: recipe,
         builder: (context, snap) {
           if (snap.hasError) {
@@ -48,11 +158,13 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           }
           final data = snap.data;
           if (data == null) return const LoadingBlock();
-          return _detail(data.$1, data.$2);
+          return _detail(data.$1, data.$2, ways == null ? null : _bar(ways.$2));
         },
       );
+    },
+  );
 
-  Widget _detail(CatalogRecipe source, CatalogRecipe planning) {
+  Widget _detail(CatalogRecipe source, CatalogRecipe planning, Widget? bar) {
     final c = this.c;
     final known = planning.servings != null;
     final people = servings ?? c.profile.servings;
@@ -124,6 +236,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             );
           },
         ),
+        if (bar != null) ...[const SizedBox(height: 14), bar],
         const SizedBox(height: 22),
         Text(
           source.name,
@@ -343,6 +456,191 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     if (meals.contains('غداء')) return 'lunch';
     if (meals.contains('عشاء')) return 'dinner';
     return 'breakfast';
+  }
+}
+
+/// A dish with no country chosen: its ways' ingredients in one list. What
+/// every way uses is plain; what only some use is tinted with that way's
+/// colour and carries its flag, so the difference shows at a glance.
+class _CompareView extends StatefulWidget {
+  const _CompareView({
+    required this.dish,
+    required this.ways,
+    required this.bar,
+  });
+  final Dish dish;
+  final List<Map<String, dynamic>> ways;
+  final Widget bar;
+
+  @override
+  State<_CompareView> createState() => _CompareViewState();
+}
+
+class _CompareViewState extends State<_CompareView> {
+  Future<List<CatalogRecipe>>? recipes;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final c = SofraScope.controllerOf(context);
+    recipes ??= Future.wait([
+      for (final w in widget.ways) c.recipes.get(w['id'] as String),
+    ]);
+  }
+
+  @override
+  Widget build(BuildContext context) => ScreenBody(
+    children: [
+      Surface(
+        color: const Color(0xFFF0EDD8),
+        padding: const EdgeInsets.all(12),
+        child: Center(
+          child: MealArt(
+            kind: artKind(widget.ways.first['id'] as String),
+            size: 220,
+          ),
+        ),
+      ),
+      const SizedBox(height: 14),
+      widget.bar,
+      const SizedBox(height: 22),
+      Text(
+        widget.dish.name,
+        key: const ValueKey('compare-title'),
+        style: const TextStyle(
+          fontWeight: FontWeight.w800,
+          fontSize: 27,
+          height: 1.3,
+        ),
+      ),
+      Text(
+        '${waysLabel(widget.ways.length)} لعملها',
+        style: const TextStyle(color: Sofra.muted),
+      ),
+      const SectionTitle('المكونات'),
+      FutureBuilder<List<CatalogRecipe>>(
+        future: recipes,
+        builder: (context, snap) {
+          if (snap.hasError) {
+            return const ErrorBlock('تعذّر فتح الطرق. ارجع وحاول مرة أخرى.');
+          }
+          final all = snap.data;
+          if (all == null) return const LoadingBlock();
+          final cuisines = [for (final w in widget.ways) '${w['cuisine']}'];
+          return Column(
+            children: [
+              for (final l in compareIngredients(all))
+                _CompareRow(
+                  key: ValueKey('compare-${l.id}'),
+                  name: l.name,
+                  ways: l.ways.length == all.length ? const [] : l.ways,
+                  cuisines: cuisines,
+                ),
+            ],
+          );
+        },
+      ),
+      const SizedBox(height: 16),
+      const Surface(
+        key: ValueKey('compare-pick'),
+        border: true,
+        padding: EdgeInsets.all(14),
+        child: Row(
+          children: [
+            Icon(Icons.arrow_upward_rounded, color: Sofra.accent),
+            SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                'اختر بلدًا من الشريط لترى الكميات والخطوات.',
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+}
+
+/// One ingredient of a compared dish: its name and the ways (indices) that
+/// use it.
+class ComparedLine {
+  const ComparedLine(this.id, this.name, this.ways);
+  final String id, name;
+  final List<int> ways;
+}
+
+/// Every ingredient of [recipes] once, by ingredient id, in the first way's
+/// order and then each next way's additions; each with the ways that use it.
+List<ComparedLine> compareIngredients(List<CatalogRecipe> recipes) {
+  final names = <String, String>{};
+  final ways = <String, List<int>>{};
+  for (final (i, r) in recipes.indexed) {
+    for (final line in r.ingredients) {
+      names.putIfAbsent(line.id, () => line.name);
+      final used = ways.putIfAbsent(line.id, () => []);
+      if (!used.contains(i)) used.add(i);
+    }
+  }
+  return [for (final id in names.keys) ComparedLine(id, names[id]!, ways[id]!)];
+}
+
+class _CompareRow extends StatelessWidget {
+  const _CompareRow({
+    super.key,
+    required this.name,
+    required this.ways,
+    required this.cuisines,
+  });
+  final String name;
+
+  /// The ways using it; empty when every way does.
+  final List<int> ways;
+  final List<String> cuisines;
+
+  @override
+  Widget build(BuildContext context) {
+    final own = ways.length == 1
+        ? wayColors[ways.single % wayColors.length]
+        : null;
+    return Semantics(
+      label: ways.isEmpty
+          ? name
+          : '$name: ${[for (final i in ways) cuisines[i]].join('، ')}',
+      excludeSemantics: true,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        constraints: const BoxConstraints(minHeight: 48),
+        decoration: BoxDecoration(
+          color: ways.isEmpty
+              ? Colors.white
+              : own?.withValues(alpha: .13) ?? Sofra.sand,
+          borderRadius: BorderRadius.circular(Sofra.r16),
+          border: own == null
+              ? null
+              : BorderDirectional(start: BorderSide(color: own, width: 4)),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                name,
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  color: own ?? Sofra.ink,
+                ),
+              ),
+            ),
+            for (final i in ways)
+              Padding(
+                padding: const EdgeInsetsDirectional.only(start: 4),
+                child: CuisineFlag(cuisines[i], size: 22),
+              ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

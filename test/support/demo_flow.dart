@@ -63,11 +63,14 @@ Future<Future<String> Function(String)> warmAssets(WidgetTester tester) async {
 
 /// Back to the home kitchen: a page's back arrow, or the open tab again.
 Future<void> goHome(WidgetTester tester) async {
-  for (final key in ['page-back', 'nav-today']) {
-    if (find.byKey(ValueKey(key)).evaluate().isNotEmpty) {
-      await tapKey(tester, key);
-      return;
-    }
+  bool shown(String key) => find.byKey(ValueKey(key)).evaluate().isNotEmpty;
+  if (!shown('page-back')) {
+    if (shown('nav-today')) await tapKey(tester, 'nav-today');
+    return;
+  }
+  // Pages inside pages (settings, then the account) step back one by one.
+  for (var i = 0; i < 3 && shown('page-back'); i++) {
+    await tapKey(tester, 'page-back');
   }
 }
 
@@ -145,6 +148,7 @@ Future<void> exerciseDemoFlow(WidgetTester tester) async {
   expect(stockQuantity(tester, 'onion'), contains('3'));
   await openCorner(tester, 'profile');
   expect(find.textContaining('مريم'), findsWidgets);
+  await goHome(tester);
   await tapKey(tester, 'nav-table');
   await tapKeyPrefix(tester, 'start-cooking-');
   while (find

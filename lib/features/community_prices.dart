@@ -4,6 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 
 import '../app/scope.dart';
+import '../app/sofra_controller.dart';
 import '../domain/community.dart';
 import '../domain/ingredient_directory.dart';
 import '../domain/market_profile.dart';
@@ -51,10 +52,24 @@ class _AreaPricesViewState extends State<AreaPricesView> {
   final open = <String>{};
   Places? places;
   String area = '';
+
+  /// The place shown on the map. Kept as chosen, so two places with close
+  /// labels never swap; the saved label is looked up only once, on opening.
+  Place? place;
+
+  /// Where the map opens when no area is chosen: the country's capital.
+  LatLng fallback = const LatLng(27, 38);
   Future<Map<(String, String), AreaPrice>>? prices;
   List<Place> hits = const [];
   bool locating = false, started = false;
   String? note;
+
+  /// Areas the user picked so far; an automatic lookup that finishes after
+  /// a pick does not replace it.
+  int picks = 0;
+
+  /// The automatic position lookup runs at most once per app run.
+  static bool _autoAsked = false;
 
   @override
   void didChangeDependencies() {
@@ -63,14 +78,29 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     started = true;
     final c = SofraScope.controllerOf(context);
     area = c.profile.area.trim();
-    prices = c.areaPrices(area: area);
+    prices = _fetch(c);
     c.places().then((p) {
       if (!mounted) return;
-      setState(() => places = p);
-      // First visit with no area: ask for the position once.
-      if (AreaPricesView.live && c.profile.area.trim().isEmpty) _locate();
+      final capital = p.byLabel(
+        c.market.country == MarketCountry.egypt ? 'القاهرة' : 'الرياض',
+      );
+      setState(() {
+        places = p;
+        place ??= p.byLabel(area);
+        if (capital != null) fallback = LatLng(capital.lat, capital.lon);
+      });
+      // First visit with no area: ask for the position once per run.
+      if (AreaPricesView.live && c.profile.area.trim().isEmpty && !_autoAsked) {
+        _autoAsked = true;
+        _locate(auto: true);
+      }
     }, onError: (_) {});
   }
+
+  /// The shown area's prices. A failure shows in the list, so it is not
+  /// also reported as unhandled when it comes before the list listens.
+  Future<Map<(String, String), AreaPrice>> _fetch(SofraController c) =>
+      c.areaPrices(area: area)..ignore();
 
   @override
   void dispose() {
@@ -79,12 +109,18 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     super.dispose();
   }
 
-  Future<void> _locate() async {
+  /// Finds the area at the phone's position. An [auto] lookup gives way to
+  /// any area the user picks while it runs; the «موقعي» button always
+  /// applies.
+  Future<void> _locate({bool auto = false}) async {
+    final before = picks;
+    bool overtaken() => auto && picks != before;
     setState(() {
       locating = true;
       note = null;
     });
     String? problem;
+    var applied = false;
     try {
       if (!await Geolocator.isLocationServiceEnabled()) {
         problem = 'خدمة الموقع مغلقة. اختر منطقتك من الخريطة أو البحث.';
@@ -106,7 +142,8 @@ class _AreaPricesViewState extends State<AreaPricesView> {
           final place = places?.nearest(at.latitude, at.longitude);
           if (place == null) {
             problem = 'لا نعرف منطقة قريبة من موقعك. اختر من الخريطة.';
-          } else if (mounted) {
+          } else if (mounted && !overtaken()) {
+            applied = true;
             _select(place);
           }
         }
@@ -117,7 +154,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     if (mounted) {
       setState(() {
         locating = false;
-        note = problem;
+        if (!applied && !overtaken()) note = problem;
       });
     }
   }
@@ -126,9 +163,11 @@ class _AreaPricesViewState extends State<AreaPricesView> {
   /// shared prices count) only when they have none yet.
   void _select(Place place) {
     final c = SofraScope.controllerOf(context);
+    picks++;
     setState(() {
+      this.place = place;
       area = place.label;
-      prices = c.areaPrices(area: area);
+      prices = _fetch(c);
       hits = const [];
       search.clear();
       note = null;
@@ -150,17 +189,6 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     await c.updateProfile((p) => p.copyWith(area: area));
     if (mounted) setState(() {});
     nav.notify('منطقتك الآن: $area');
-  }
-
-  LatLng get _start {
-    final p =
-        places?.byLabel(area) ??
-        places?.byLabel(
-          SofraScope.controllerOf(context).market.country == MarketCountry.egypt
-              ? 'القاهرة'
-              : 'الرياض',
-        );
-    return p == null ? const LatLng(27, 38) : LatLng(p.lat, p.lon);
   }
 
   @override
@@ -194,6 +222,15 @@ class _AreaPricesViewState extends State<AreaPricesView> {
             if (hits.isNotEmpty) _select(hits.first);
           },
         ),
+        if (hits.isEmpty && places != null && search.text.trim().isNotEmpty)
+          const Padding(
+            padding: EdgeInsetsDirectional.only(top: 6, start: 12),
+            child: Text(
+              'لا نتائج',
+              key: ValueKey('price-area-none'),
+              style: TextStyle(color: Sofra.muted, fontSize: 13),
+            ),
+          ),
         if (hits.isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(top: 8),
@@ -277,13 +314,36 @@ class _AreaPricesViewState extends State<AreaPricesView> {
         FutureBuilder<Map<(String, String), AreaPrice>>(
           future: prices,
           builder: (context, snap) {
-            if (snap.hasError) {
-              return const ErrorBlock('تعذّر جلب الأسعار. حاول مرة أخرى.');
-            }
-            final found = snap.data;
+            // Without the area's prices the user's own still show.
+            final failed = snap.hasError;
+            final found = failed
+                ? const <(String, String), AreaPrice>{}
+                : snap.data;
             if (found == null) return const LoadingBlock();
             return Column(
               children: [
+                if (failed)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Row(
+                      children: [
+                        const Expanded(
+                          child: Text(
+                            'تعذّر جلب أسعار المنطقة.',
+                            key: ValueKey('area-prices-failed'),
+                            style: TextStyle(color: Sofra.muted, fontSize: 13),
+                          ),
+                        ),
+                        TextButton(
+                          key: const ValueKey('area-prices-retry'),
+                          onPressed: () => setState(() {
+                            prices = _fetch(c);
+                          }),
+                          child: const Text('إعادة المحاولة'),
+                        ),
+                      ],
+                    ),
+                  ),
                 for (final g in priceGroups)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 10),
@@ -298,7 +358,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
   }
 
   Widget _map(BuildContext context) {
-    final p = places?.byLabel(area);
+    final p = place;
     return ClipRRect(
       borderRadius: BorderRadius.circular(Sofra.r22),
       child: SizedBox(
@@ -312,17 +372,24 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                       key: const ValueKey('price-map'),
                       mapController: map,
                       options: MapOptions(
-                        initialCenter: _start,
+                        initialCenter: p == null
+                            ? fallback
+                            : LatLng(p.lat, p.lon),
                         initialZoom: p == null ? 10 : (p.isCity ? 11 : 14),
                         interactionOptions: const InteractionOptions(
                           flags: InteractiveFlag.all & ~InteractiveFlag.rotate,
                         ),
                         onTap: (_, at) {
-                          final place = places!.nearest(
+                          final hit = places!.nearest(
                             at.latitude,
                             at.longitude,
                           );
-                          if (place != null) _select(place);
+                          if (hit != null) {
+                            _select(hit);
+                          } else {
+                            SofraScope.navOf(context)
+                                .notify('لا نعرف منطقة هنا. جرّب البحث.');
+                          }
                         },
                       ),
                       children: [
@@ -355,7 +422,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
             ),
             PositionedDirectional(
               start: 10,
-              bottom: 10,
+              top: 10,
               child: Material(
                 color: Colors.white,
                 shape: const CircleBorder(),
@@ -451,10 +518,15 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                     ),
                   ),
                   if (known > 0)
-                    SoftTag(
-                      '$known بسعر المنطقة',
-                      color: Sofra.mint,
-                      ink: Sofra.greenDark,
+                    Flexible(
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: SoftTag(
+                          '$known بسعر المنطقة',
+                          color: Sofra.mint,
+                          ink: Sofra.greenDark,
+                        ),
+                      ),
                     ),
                   AnimatedRotation(
                     turns: isOpen ? .5 : 0,
@@ -508,7 +580,6 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     String? thereUnit,
     MarketPrice? mine,
   ) {
-    final c = SofraScope.controllerOf(context);
     final unit = mine?.unit ?? thereUnit ?? e.defaultUnit;
     final myValue = mine == null ? null : mine.amount / mine.quantity;
     return Container(
@@ -534,21 +605,11 @@ class _AreaPricesViewState extends State<AreaPricesView> {
             semantic: there == null
                 ? 'لا يوجد سعر للمنطقة'
                 : 'سعر المنطقة، اضغط لتجعله سعرك',
+            // Opens the price dialog filled with the area price; nothing is
+            // saved until the user confirms.
             onTap: there == null
                 ? null
-                : () async {
-                    await c.setUserPrice(
-                      e.id,
-                      1,
-                      thereUnit!,
-                      there.medianPerUnit,
-                      source: 'user-community',
-                    );
-                    if (context.mounted) {
-                      setState(() {});
-                      SofraScope.navOf(context).notify('حُفظ كسعرك');
-                    }
-                  },
+                : () => _editPrice(context, e, thereUnit!, there.medianPerUnit),
           ),
           const SizedBox(width: 8),
           _Cell(
@@ -585,17 +646,45 @@ class _AreaPricesViewState extends State<AreaPricesView> {
       ),
     );
     if (result == null) return;
-    final (value, shared) = result;
-    await c.setUserPrice(e.id, 1, unit, value);
-    if (shared) {
-      final saved = c.myPrices.where(
-        (p) => p.ingredientId == e.id && p.unit == unit,
-      );
-      if (saved.isNotEmpty) await c.sharePrice(saved.first);
+    final (value, share) = result;
+    if (!await c.setUserPrice(e.id, 1, unit, value)) {
+      nav.notify('تعذّر حفظ السعر. حاول مرة أخرى.');
+      return;
     }
-    if (!mounted) return;
-    setState(() {});
-    nav.notify(shared ? 'حُفظ سعرك وشاركته مع منطقتك' : 'حُفظ سعرك');
+    var shared = false;
+    if (share) {
+      try {
+        await c.sharePrice(
+          MarketPrice(
+            country: c.market.country,
+            ingredientId: e.id,
+            unit: unit,
+            quantity: 1,
+            amount: value,
+            recordedAt: DateTime.now(),
+            source: 'user',
+          ),
+        );
+        shared = true;
+      } on Object {
+        shared = false;
+      }
+    }
+    if (mounted) {
+      setState(() {
+        // The area on screen now has this price too.
+        if (shared && normalizePlace(area) == normalizePlace(own)) {
+          prices = _fetch(c);
+        }
+      });
+    }
+    nav.notify(
+      !share
+          ? 'حُفظ سعرك'
+          : shared
+          ? 'حُفظ سعرك وشاركته مع منطقتك'
+          : 'حُفظ سعرك، وتعذّرت مشاركته.',
+    );
   }
 }
 
@@ -620,7 +709,7 @@ class _PriceDialog extends StatefulWidget {
 
 class _PriceDialogState extends State<_PriceDialog> {
   late final field = TextEditingController(
-    text: widget.current == null ? '' : formatAmount(widget.current!),
+    text: widget.current == null ? '' : priceText(widget.current!),
   );
   var share = false;
   var invalid = false;
@@ -702,6 +791,17 @@ double? parsePrice(String text) {
   return v == null || v <= 0 || v.isNaN || v.isInfinite ? null : v;
 }
 
+/// A price in Latin digits: a whole number plain, otherwise up to two
+/// decimals without trailing zeros, never a fraction sign such as ½.
+String priceText(double v) {
+  final fixed = v.toStringAsFixed(2);
+  if (!fixed.contains('.')) return fixed;
+  final text = fixed
+      .replaceFirst(RegExp(r'0+$'), '')
+      .replaceFirst(RegExp(r'\.$'), '');
+  return text == '-0' ? '0' : text;
+}
+
 class _Head extends StatelessWidget {
   const _Head(this.text);
   final String text;
@@ -742,7 +842,7 @@ class _Cell extends StatelessWidget {
     final has = value != null;
     return Semantics(
       button: onTap != null,
-      label: has ? '$semantic: ${formatAmount(value!)}' : semantic,
+      label: has ? '$semantic: ${priceText(value!)}' : semantic,
       excludeSemantics: true,
       child: SizedBox(
         width: 78,
@@ -768,28 +868,43 @@ class _Cell extends StatelessWidget {
                         size: 18,
                         color: Sofra.muted,
                       )
-                    : Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            formatAmount(value!),
-                            style: TextStyle(
-                              fontWeight: FontWeight.w800,
-                              color: mine ? Sofra.accent : Sofra.greenDark,
-                              fontFeatures: const [
-                                FontFeature.tabularFigures(),
-                              ],
-                            ),
-                          ),
-                          if (unit != null)
-                            Text(
-                              '/ ${unitLabel(unit)}',
-                              style: const TextStyle(
-                                color: Sofra.muted,
-                                fontSize: 10,
+                    // Large text shrinks the number to fit the cell rather
+                    // than breaking it across lines.
+                    : Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                priceText(value!),
+                                maxLines: 1,
+                                softWrap: false,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w800,
+                                  color: mine ? Sofra.accent : Sofra.greenDark,
+                                  fontFeatures: const [
+                                    FontFeature.tabularFigures(),
+                                  ],
+                                ),
                               ),
                             ),
-                        ],
+                            if (unit != null)
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  '/ ${unitLabel(unit)}',
+                                  maxLines: 1,
+                                  softWrap: false,
+                                  style: const TextStyle(
+                                    color: Sofra.muted,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
                       ),
               ),
             ),

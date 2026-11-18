@@ -141,6 +141,27 @@ class FirestoreCommunity implements CommunityBackend {
     ];
   }
 
+  /// No orderBy, so no composite index is needed; sorted here instead.
+  @override
+  Future<List<SharedRecipe>> recipesBy(String uid) async {
+    final q = await db
+        .collection('communityRecipes')
+        .where('author', isEqualTo: uid)
+        .limit(200)
+        .get();
+    final list = [
+      for (final d in q.docs)
+        SharedRecipe.fromJson(
+          d.id,
+          d.data(),
+          createdAt: _time(d.data()['createdAt']),
+        ),
+    ];
+    final epoch = DateTime.fromMillisecondsSinceEpoch(0);
+    list.sort((a, b) => (b.createdAt ?? epoch).compareTo(a.createdAt ?? epoch));
+    return list.take(50).toList();
+  }
+
   @override
   Future<void> rate(String recipeId, Rating rating) => db
       .doc('communityRecipes/$recipeId/ratings/$uid')

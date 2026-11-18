@@ -24,6 +24,11 @@ enum _Sub { kitchen, challenge }
 /// prices in their area.
 class CommunityScreen extends StatefulWidget {
   const CommunityScreen({super.key});
+
+  /// Set while a sub page is open: closes it and returns true. The shell's
+  /// back (header arrow and system back) calls it before leaving.
+  static bool Function()? closeSub;
+
   @override
   State<CommunityScreen> createState() => _CommunityScreenState();
 }
@@ -31,6 +36,24 @@ class CommunityScreen extends StatefulWidget {
 class _CommunityScreenState extends State<CommunityScreen> {
   var part = _Part.home;
   _Sub? sub;
+
+  bool _closeSub() {
+    if (!mounted || sub == null) return false;
+    setState(() => sub = null);
+    return true;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    CommunityScreen.closeSub = _closeSub;
+  }
+
+  @override
+  void dispose() {
+    if (CommunityScreen.closeSub == _closeSub) CommunityScreen.closeSub = null;
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,12 +146,12 @@ class CommunityWelcome extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'ArefRuqaa',
                     fontSize: 66,
-                    height: 1.25,
+                    height: 1.6,
                     color: Sofra.ink,
                   ),
                 ),
               ),
-              const SizedBox(height: 2),
+              const SizedBox(height: 8),
               const Text(
                 'كلنا على سفرة واحدة',
                 style: TextStyle(
@@ -217,17 +240,22 @@ class _Parts extends StatelessWidget {
                 child: AnimatedContainer(
                   duration: Sofra.motion(context, true),
                   curve: Sofra.quickCurve,
-                  height: 44,
+                  constraints: const BoxConstraints(minHeight: 44),
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: value == p ? Sofra.accent : Colors.transparent,
                     borderRadius: BorderRadius.circular(Sofra.r16),
                   ),
-                  child: Text(
-                    label,
-                    style: TextStyle(
-                      color: value == p ? Colors.white : Sofra.ink,
-                      fontWeight: FontWeight.w800,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      label,
+                      maxLines: 1,
+                      style: TextStyle(
+                        color: value == p ? Colors.white : Sofra.ink,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                   ),
                 ),
@@ -309,13 +337,17 @@ class _MineState extends State<_Mine> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    feed ??= SofraScope.controllerOf(context).community!.recentRecipes();
+    feed ??= _load();
+  }
+
+  Future<List<SharedRecipe>> _load() {
+    final community = SofraScope.controllerOf(context).community!;
+    return community.recipesBy(community.uid);
   }
 
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
-    final me = c.community!.uid;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -325,9 +357,7 @@ class _MineState extends State<_Mine> {
             label: 'شارك وصفة من عندك',
             onPressed: () async {
               final shared = await _pickToShare(context, c);
-              if (shared) {
-                setState(() => feed = c.community!.recentRecipes());
-              }
+              if (shared && mounted) setState(() => feed = _load());
             },
           ),
         const SizedBox(height: 14),
@@ -337,12 +367,8 @@ class _MineState extends State<_Mine> {
             if (snap.hasError) {
               return const ErrorBlock('تعذّر جلب الوصفات. حاول مرة أخرى.');
             }
-            final items = snap.data;
-            if (items == null) return const LoadingBlock();
-            final mine = [
-              for (final r in items)
-                if (r.authorUid == me) r,
-            ];
+            final mine = snap.data;
+            if (mine == null) return const LoadingBlock();
             if (mine.isEmpty) {
               return Surface(
                 child: Text(

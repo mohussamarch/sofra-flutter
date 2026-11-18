@@ -29,6 +29,9 @@ abstract class CommunityBackend {
   // Community.
   Future<void> shareRecipe(SharedRecipe recipe);
   Future<List<SharedRecipe>> recentRecipes({int limit = 30});
+
+  /// Recipes [uid] shared, newest first (at most 50).
+  Future<List<SharedRecipe>> recipesBy(String uid);
   Future<void> rate(String recipeId, Rating rating);
   Future<List<Rating>> ratings(String recipeId);
   Future<void> reportPrice(PriceReport report);
@@ -156,6 +159,12 @@ class MemoryCommunity implements CommunityBackend {
   @override
   Future<List<SharedRecipe>> recentRecipes({int limit = 30}) async =>
       server.recipes.values.toList().reversed.take(limit).toList();
+
+  @override
+  Future<List<SharedRecipe>> recipesBy(String uid) async => [
+    for (final r in server.recipes.values.toList().reversed)
+      if (r.authorUid == uid) r,
+  ].take(50).toList();
 
   @override
   Future<void> rate(String recipeId, Rating rating) async {

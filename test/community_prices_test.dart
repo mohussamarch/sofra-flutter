@@ -25,6 +25,34 @@ void main() {
     expect(eg.byLabel('القاهرة')!.isCity, isTrue);
   });
 
+  test('every label names one place only', () {
+    for (final places in [eg, sa]) {
+      final seen = <String>{};
+      final repeated = [
+        for (final p in places.list)
+          if (!seen.add(normalizePlace(p.label))) p.label,
+      ];
+      expect(repeated, isEmpty);
+    }
+    final riyadh = sa.byLabel('الرياض')!;
+    expect(riyadh.kind, 'c');
+    expect(distanceKm(riyadh.lat, riyadh.lon, 24.7, 46.7), lessThan(15));
+    final cairo = eg.byLabel('القاهرة')!;
+    expect(cairo.kind, 'c');
+    expect(distanceKm(cairo.lat, cairo.lon, 30.04, 31.24), lessThan(5));
+  });
+
+  test('a town is found up to the full distance limit', () {
+    final places = Places.parse(
+      '{"attribution":"x","places":[["بلدة",25,45,"t"],["حي",25.5,45,"n",0]]}',
+    );
+    // 20 km from the town: within 25 km, though 2.5 times 20 is not.
+    expect(places.nearest(25.18, 45)?.name, 'بلدة');
+    // The district 36 km away ranks before the town (2.5 times 20).
+    expect(places.nearest(25.18, 45, maxKm: 40)?.name, 'حي');
+    expect(places.nearest(25.18, 45, maxKm: 15), isNull);
+  });
+
   test('a tap names the district under it, not the city centre', () {
     final malaz = sa.byLabel('الملز، الرياض')!;
     final hit = sa.nearest(malaz.lat + .002, malaz.lon + .002);

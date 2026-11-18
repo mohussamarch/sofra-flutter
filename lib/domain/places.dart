@@ -12,28 +12,37 @@ class Place {
   /// c city, t town, s suburb, q quarter, n neighbourhood.
   final String kind;
 
-  /// The big city a district belongs to, when one is near.
+  /// The city or town the label names: the big city a district belongs to,
+  /// or, for a name that repeats, the nearest town of another name.
   final String? city;
 
   bool get isCity => kind == 'c' || kind == 't';
 
   /// What is saved and shared as the area: «الملز، الرياض». A district is
   /// named with its city because district names repeat between cities.
+  /// Labels are unique per country (the build makes them so).
   String get label => city == null || city == name ? name : '$name، $city';
 }
 
 class Places {
-  Places._(this.list, this.attribution);
+  Places._(this.list, this.attribution)
+    : _keys = List.unmodifiable([
+        for (final p in list) normalizePlace(p.label),
+      ]) {
+    for (var i = 0; i < list.length; i++) {
+      _byKey.putIfAbsent(_keys[i], () => list[i]);
+    }
+  }
   final List<Place> list;
   final String attribution;
+
+  /// normalizePlace(label) of each place in [list], worked out once.
+  final List<String> _keys;
+  final _byKey = <String, Place>{};
 
   static Places parse(String text) {
     final json = jsonDecode(text) as Map<String, dynamic>;
     final rows = (json['places'] as List).cast<List>();
-    final cities = [
-      for (final r in rows)
-        if (r[3] == 'c') r[0] as String,
-    ];
     return Places._(
       List.unmodifiable([
         for (final r in rows)
@@ -42,27 +51,31 @@ class Places {
             (r[1] as num).toDouble(),
             (r[2] as num).toDouble(),
             r[3] as String,
-            r.length > 4 ? cities[r[4] as int] : null,
+            // The index of the parent city or town row.
+            r.length > 4 ? rows[r[4] as int][0] as String : null,
           ),
       ]),
       json['attribution'] as String,
     );
   }
 
-  /// The nearest place to a point, preferring districts: a tap inside a city
-  /// names the district under the finger, not the city centre.
+  /// The nearest place within [maxKm] of a point, preferring districts: a
+  /// tap inside a city names the district under the finger, not the city
+  /// centre.
   Place? nearest(double lat, double lon, {double maxKm = 25}) {
     Place? best;
-    var bestKm = double.infinity;
+    var bestRank = double.infinity;
     for (final p in list) {
+      final d = distanceKm(lat, lon, p.lat, p.lon);
+      if (d > maxKm) continue;
       // Districts are small, so a city wins only when it is much closer.
-      final d = distanceKm(lat, lon, p.lat, p.lon) * (p.isCity ? 2.5 : 1);
-      if (d < bestKm) {
+      final rank = d * (p.isCity ? 2.5 : 1);
+      if (rank < bestRank) {
         best = p;
-        bestKm = d;
+        bestRank = rank;
       }
     }
-    return bestKm <= maxKm ? best : null;
+    return best;
   }
 
   /// Places whose name or city starts with or contains [query], names that
@@ -71,12 +84,12 @@ class Places {
     final q = normalizePlace(query);
     if (q.isEmpty) return const [];
     final starts = <Place>[], inside = <Place>[];
-    for (final p in list) {
-      final n = normalizePlace(p.label);
+    for (var i = 0; i < list.length; i++) {
+      final n = _keys[i];
       if (n.startsWith(q)) {
-        starts.add(p);
+        starts.add(list[i]);
       } else if (n.contains(q)) {
-        inside.add(p);
+        inside.add(list[i]);
       }
     }
     int byKind(Place a, Place b) => (a.isCity ? 0 : 1) - (b.isCity ? 0 : 1);
@@ -87,14 +100,7 @@ class Places {
   }
 
   /// The place saved as [label], if it is in the list.
-  Place? byLabel(String label) {
-    final key = normalizePlace(label);
-    if (key.isEmpty) return null;
-    for (final p in list) {
-      if (normalizePlace(p.label) == key) return p;
-    }
-    return null;
-  }
+  Place? byLabel(String label) => _byKey[normalizePlace(label)];
 }
 
 String normalizePlace(String value) => value

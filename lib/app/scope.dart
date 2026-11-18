@@ -20,7 +20,10 @@ abstract class SofraNav {
   void discoverFromStock();
   void exploreRecipes();
   void openKitchen3d();
-  void openRecipe(String recipeId);
+
+  /// [compare] opens a dish made in several countries with no country
+  /// chosen, its ingredients compared.
+  void openRecipe(String recipeId, {bool compare = false});
   void openAddStock();
   void startCooking(PlannedMeal meal);
   void editOnboarding(int step);

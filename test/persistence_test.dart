@@ -181,8 +181,15 @@ void main() {
       expect(find.byKey(const ValueKey('circle-settings')), findsOneWidget);
       await tapKey(tester, 'nav-table');
       expect(find.text('على سفرة اليوم'), findsOneWidget);
-      await openCorner(tester, 'profile');
+      await tapKey(tester, 'circle-settings');
+      // Settings and the account have no main bar; back brings it again.
+      expect(find.byKey(const ValueKey('nav-today')), findsNothing);
+      await tapKey(tester, 'settings-profile');
       expect(find.text('مريم'), findsWidgets);
+      expect(find.byKey(const ValueKey('nav-today')), findsNothing);
+      await tapKey(tester, 'page-back');
+      await tapKey(tester, 'page-back');
+      expect(find.byKey(const ValueKey('nav-today')), findsOneWidget);
     },
   );
   testWidgets('reminder choices in settings are saved', (tester) async {

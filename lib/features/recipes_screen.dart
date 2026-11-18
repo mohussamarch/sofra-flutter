@@ -11,9 +11,13 @@ import 'my_recipe_screen.dart';
 
 /// Card for one catalog index row (no full recipe load needed).
 class RecipeCard extends StatelessWidget {
-  const RecipeCard(this.row, {super.key, this.small = false});
+  const RecipeCard(this.row, {super.key, this.small = false, this.dish});
   final Map<String, dynamic> row;
   final bool small;
+
+  /// A dish made in several countries: the card carries the dish's name and
+  /// a countries badge, and opens the dish with its ingredients compared.
+  final (String, List<Map<String, dynamic>>)? dish;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +31,8 @@ class RecipeCard extends StatelessWidget {
       color: Colors.white,
       borderRadius: BorderRadius.circular(24),
       child: InkWell(
-        key: ValueKey('recipe-$id'),
-        onTap: () => nav.openRecipe(id),
+        key: ValueKey(dish == null ? 'recipe-$id' : 'dish-$id'),
+        onTap: () => nav.openRecipe(id, compare: dish != null),
         borderRadius: BorderRadius.circular(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,35 +89,46 @@ class RecipeCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '${row['name']}',
+                    dish?.$1 ?? '${row['name']}',
                     style: const TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 20,
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      SoftTag(
-                        '${row['cuisine']}',
-                        color: Sofra.cream,
-                        ink: Sofra.muted,
-                        icon: Icons.public_rounded,
-                      ),
-                      SoftTag(
-                        minutesLabel(row['totalTime']),
-                        color: Sofra.cream,
-                        ink: Sofra.muted,
-                        icon: Icons.schedule_rounded,
-                      ),
-                      if (row['difficulty'] != null)
-                        SoftTag(
-                          '${row['difficulty']}',
-                          color: Sofra.cream,
-                          ink: Sofra.muted,
+                      Expanded(
+                        child: Wrap(
+                          spacing: 8,
+                          runSpacing: 8,
+                          children: [
+                            if (dish == null)
+                              SoftTag(
+                                '${row['cuisine']}',
+                                color: Sofra.cream,
+                                ink: Sofra.muted,
+                                icon: Icons.public_rounded,
+                              ),
+                            SoftTag(
+                              dish == null
+                                  ? minutesLabel(row['totalTime'])
+                                  : dishTime(dish!.$2),
+                              color: Sofra.cream,
+                              ink: Sofra.muted,
+                              icon: Icons.schedule_rounded,
+                            ),
+                            if (row['difficulty'] != null && dish == null)
+                              SoftTag(
+                                '${row['difficulty']}',
+                                color: Sofra.cream,
+                                ink: Sofra.muted,
+                              ),
+                          ],
                         ),
+                      ),
+                      if (dish case (_, final ways)) CountriesBadge(ways),
                     ],
                   ),
                 ],
@@ -590,7 +605,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   ))
                     Padding(
                       padding: const EdgeInsets.only(bottom: 16),
-                      child: DishCard(dish: d, ways: ways),
+                      child: RecipeCard(ways.first, dish: (d.name, ways)),
                     )
                   else if (e case final Map<String, dynamic> r)
                     Padding(

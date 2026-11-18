@@ -92,6 +92,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   _View view = _View.tabs;
   int onboardingStep = 0;
   String? recipeId;
+  bool recipeCompare = false;
   PlannedMeal? cookingMeal;
 
   @override
@@ -147,14 +148,22 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   void _back() {
     if (view != _View.tabs) {
       _go(() => view = _View.tabs);
+    } else if (tab == AppTab.community &&
+        CommunityScreen.closeSub?.call() == true) {
+      // A community sub page closes first.
+      return;
+    } else if (tab == AppTab.profile) {
+      // The account opens from settings, so back returns there.
+      goTab(AppTab.settings);
     } else {
       goTab(AppTab.today);
     }
   }
 
   @override
-  void openRecipe(String id) => _go(() {
+  void openRecipe(String id, {bool compare = false}) => _go(() {
     recipeId = id;
+    recipeCompare = compare;
     view = _View.recipe;
   });
 
@@ -266,7 +275,13 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   bool _ready(SofraController c) =>
       c.loadError == null && c.ready && c.profile.onboarded;
 
-  bool _showsNav(SofraController c) => _ready(c) && view == _View.tabs;
+  /// Settings and the account are their own place, left by the back arrow:
+  /// no main bar there.
+  bool _showsNav(SofraController c) =>
+      _ready(c) &&
+      view == _View.tabs &&
+      tab != AppTab.settings &&
+      tab != AppTab.profile;
 
   Widget _body(SofraController c) {
     if (c.loadError != null) {
@@ -332,7 +347,11 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                 Positioned.fill(
                   child: switch (view) {
                     _View.addStock => const AddStockScreen(),
-                    _View.recipe => RecipeDetailScreen(recipeId: recipeId!),
+                    _View.recipe => RecipeDetailScreen(
+                      key: ValueKey('recipe-view-$recipeId-$recipeCompare'),
+                      recipeId: recipeId!,
+                      compare: recipeCompare,
+                    ),
                     _View.cooking => CookingScreen(
                       meal: cookingMeal!,
                       onDone: () => cookingMeal = null,

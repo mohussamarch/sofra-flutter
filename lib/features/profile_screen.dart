@@ -6,6 +6,7 @@ import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
 import 'onboarding_screen.dart';
+import 'place_picker.dart';
 import 'reminder_settings.dart';
 
 /// "حسابي": the household, its taste, meals, allergies and health notes.
@@ -80,13 +81,12 @@ class ProfileScreen extends StatelessWidget {
                 label: 'المنطقة',
                 value: p.area.trim().isEmpty ? 'أضف منطقتك' : p.area.trim(),
                 muted: p.area.trim().isEmpty,
-                onTap: () => _editText(
-                  context,
-                  title: 'المنطقة',
-                  initial: p.area,
-                  hint: 'المدينة أو الحي',
-                  save: (v) => c.updateProfile((p) => p.copyWith(area: v)),
-                ),
+                onTap: () async {
+                  final place = await showPlacePicker(context);
+                  if (place != null) {
+                    c.updateProfile((p) => p.copyWith(area: place.label));
+                  }
+                },
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),

@@ -1,188 +1,83 @@
 import 'package:flutter/material.dart';
 
-import '../app/scope.dart';
-import '../data/recipe_repository.dart';
 import '../ui/design.dart';
-import '../ui/illustrations.dart';
+import '../ui/flags.dart';
 import 'common.dart';
 
-/// One dish that is made several ways: its name, how many ways, and the
-/// countries they come from. Opens the dish with all its ways.
-class DishCard extends StatelessWidget {
-  const DishCard({super.key, required this.dish, required this.ways});
-  final Dish dish;
+/// The mark of a dish made in several countries, at the bottom corner of its
+/// card: the countries' flags overlapping, and how many.
+class CountriesBadge extends StatelessWidget {
+  const CountriesBadge(this.ways, {super.key});
 
-  /// Index rows of the dish's recipes, in the dish's order.
+  /// Index rows of the dish's recipes.
   final List<Map<String, dynamic>> ways;
 
   @override
   Widget build(BuildContext context) {
-    final countries = {for (final w in ways) '${w['cuisine']}'}.toList();
-    final material = Material(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(24),
-      child: InkWell(
-        key: ValueKey('dish-${dish.id}'),
-        borderRadius: BorderRadius.circular(24),
-        onTap: () => showDish(context, dish, ways),
-        child: Padding(
-          padding: const EdgeInsets.all(18),
-          child: Row(
-            children: [
-              MealArt(kind: artKind(ways.first['id'] as String), size: 84),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      dish.name,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontSize: 20,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      waysLabel(ways.length),
-                      style: const TextStyle(
-                        color: Sofra.accent,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Wrap(
-                      spacing: 6,
-                      runSpacing: 6,
-                      children: [
-                        for (final c in countries)
-                          SoftTag(
-                            c,
-                            color: Sofra.cream,
-                            ink: Sofra.muted,
-                            icon: Icons.public_rounded,
-                          ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const Icon(Icons.chevron_right_rounded, color: Sofra.muted),
-            ],
-          ),
-        ),
-      ),
-    );
+    final countries = countriesOf(ways);
+    final shown = countries.take(3).toList();
+    final label = countries.length > 1
+        ? countriesLabel(countries.length)
+        : waysLabel(ways.length);
     return Semantics(
-      button: true,
-      label: '${dish.name}، ${waysLabel(ways.length)}',
+      label: label,
       excludeSemantics: true,
-      child: material,
-    );
-  }
-}
-
-/// The dish with each way of making it; choosing one opens that recipe.
-Future<void> showDish(
-  BuildContext context,
-  Dish dish,
-  List<Map<String, dynamic>> ways,
-) {
-  final nav = SofraScope.navOf(context);
-  return showModalBottomSheet<void>(
-    context: context,
-    isScrollControlled: true,
-    showDragHandle: true,
-    backgroundColor: Sofra.paper,
-    builder: (sheet) => DraggableScrollableSheet(
-      expand: false,
-      initialChildSize: .85,
-      maxChildSize: .95,
-      builder: (context, scroll) => ListView(
-        key: ValueKey('dish-sheet-${dish.id}'),
-        controller: scroll,
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
-        children: [
-          Text(
-            dish.name,
-            style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800),
-          ),
-          Text(
-            '${waysLabel(ways.length)} لعملها',
-            style: const TextStyle(color: Sofra.muted),
-          ),
-          const SizedBox(height: 16),
-          for (final w in ways)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: _Way(
-                row: w,
-                onTap: () {
-                  Navigator.of(sheet).pop();
-                  nav.openRecipe(w['id'] as String);
-                },
+      child: Container(
+        key: const ValueKey('countries-badge'),
+        padding: const EdgeInsetsDirectional.fromSTEB(6, 4, 10, 4),
+        decoration: BoxDecoration(
+          color: Sofra.accentTint,
+          borderRadius: BorderRadius.circular(999),
+          border: Border.all(color: Sofra.accent.withValues(alpha: .25)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: 20.0 + 13 * (shown.length - 1),
+              height: 22,
+              child: Stack(
+                children: [
+                  for (final (i, c) in shown.indexed)
+                    PositionedDirectional(
+                      start: 13.0 * i,
+                      child: CuisineFlag(c, size: 22),
+                    ),
+                ],
               ),
             ),
-        ],
-      ),
-    ),
-  );
-}
-
-class _Way extends StatelessWidget {
-  const _Way({required this.row, required this.onTap});
-  final Map<String, dynamic> row;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final id = row['id'] as String;
-    return Material(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(20),
-      child: InkWell(
-        key: ValueKey('dish-way-$id'),
-        borderRadius: BorderRadius.circular(20),
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.all(14),
-          child: Row(
-            children: [
-              MealArt(kind: artKind(id), size: 64),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '${row['cuisine']}',
-                      style: const TextStyle(
-                        color: Sofra.accent,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                    Text(
-                      '${row['name']}',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 17,
-                      ),
-                    ),
-                    Text(
-                      minutesLabel(row['totalTime']),
-                      style: const TextStyle(color: Sofra.muted, fontSize: 13),
-                    ),
-                  ],
-                ),
+            const SizedBox(width: 6),
+            Text(
+              label,
+              style: const TextStyle(
+                color: Sofra.accent,
+                fontWeight: FontWeight.w800,
+                fontSize: 13,
               ),
-              const Icon(Icons.chevron_right_rounded, color: Sofra.muted),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
+
+/// The distinct cuisines of a dish's ways, in the dish's order.
+List<String> countriesOf(List<Map<String, dynamic>> ways) => [
+  ...{for (final w in ways) '${w['cuisine']}'},
+];
+
+/// One colour per way of a dish, for its chip and its own ingredients.
+const wayColors = [
+  Color(0xFF2E7D5B),
+  Color(0xFFC0582F),
+  Color(0xFF2F5D8C),
+  Color(0xFF8C3B5E),
+  Color(0xFFB07A0B),
+  Color(0xFF3F7F7F),
+  Color(0xFF6B4E9B),
+  Color(0xFF7A5230),
+];
 
 /// «طريقتان»، «3 طرق»، «11 طريقة» (Arabic counting).
 String waysLabel(int n) => switch (n) {
@@ -191,3 +86,22 @@ String waysLabel(int n) => switch (n) {
   <= 10 => '$n طرق',
   _ => '$n طريقة',
 };
+
+/// «بلدان»، «3 بلاد»، «11 بلدًا» (Arabic counting).
+String countriesLabel(int n) => switch (n) {
+  1 => 'بلد واحد',
+  2 => 'بلدان',
+  <= 10 => '$n بلاد',
+  _ => '$n بلدًا',
+};
+
+/// The dish's time: one time when its ways agree, else the shortest and the
+/// longest («20–45 دقيقة»). Unknown when any way's time is unknown.
+String dishTime(List<Map<String, dynamic>> ways) {
+  final times = [for (final w in ways) w['totalTime']];
+  if (times.any((t) => t is! num)) return minutesLabel(null);
+  final values = times.cast<num>().map((t) => t.round()).toList()..sort();
+  return values.first == values.last
+      ? minutesLabel(values.first)
+      : '${values.first}–${values.last} دقيقة';
+}
