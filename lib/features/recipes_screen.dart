@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
 import '../app/recipe_stock_preview.dart';
+import '../data/recipe_repository.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'dish_sheet.dart';
 import 'my_recipe_screen.dart';
 
 /// Card for one catalog index row (no full recipe load needed).
@@ -223,17 +225,17 @@ class RecipesScreen extends StatefulWidget {
 }
 
 class _RecipesScreenState extends State<RecipesScreen> {
-  static const _filters = [
-    'الكل',
-    'من الموجود',
-    'جاهزة بالموجود',
-    'سريعة',
-    'محفوظة',
-  ];
+  static const _filters = ['الكل', 'من الموجود', 'جاهزة بالموجود', 'محفوظة'];
   static const _page = 20;
   final search = TextEditingController();
   late String filter = widget.initialFilter;
   String? group;
+
+  /// Meal kind ([RecipeRepository.kinds]) and longest time, from the filters.
+  String? kind;
+  int? maxMinutes;
+  int get _filterCount => (kind == null ? 0 : 1) + (maxMinutes == null ? 0 : 1);
+  Future<List<Dish>>? dishes;
   int limit = _page;
   Future<List<Map<String, dynamic>>>? results;
   Future<Map<String, RecipeStockPreview>>? fromStock;
@@ -253,6 +255,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
       _viewStock = fromStock;
       _viewFuture = Future.wait<Object>([
         results!,
+        dishes!,
         if (stockFilter) fromStock!,
       ]);
     }
@@ -265,6 +268,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     results ??= _query();
+    dishes ??= SofraScope.controllerOf(context).recipes.dishes;
   }
 
   @override
@@ -274,8 +278,83 @@ class _RecipesScreenState extends State<RecipesScreen> {
   }
 
   Future<List<Map<String, dynamic>>> _query() =>
-      SofraScope.controllerOf(context).recipes
-          .search(query: search.text.trim(), cuisineGroup: group);
+      SofraScope.controllerOf(context).recipes.search(
+        query: search.text.trim(),
+        cuisineGroup: group,
+        kind: kind,
+        maxMinutes: maxMinutes,
+      );
+
+  /// Meal kind and time: the filters that do not fit on one line.
+  Future<void> _openFilters() => showModalBottomSheet<void>(
+    context: context,
+    showDragHandle: true,
+    backgroundColor: Sofra.paper,
+    builder: (sheet) => StatefulBuilder(
+      builder: (sheet, setSheet) {
+        void pick(VoidCallback change) {
+          setSheet(change);
+          _refresh();
+        }
+
+        Widget section(String title, List<Widget> chips) => Padding(
+          padding: const EdgeInsets.only(bottom: 18),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
+              const SizedBox(height: 8),
+              Wrap(spacing: 8, runSpacing: 8, children: chips),
+            ],
+          ),
+        );
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              section('النوع', [
+                SofraChip(
+                  label: const Text('الكل'),
+                  selected: kind == null,
+                  onSelected: (_) => pick(() => kind = null),
+                ),
+                for (final k in RecipeRepository.kinds)
+                  SofraChip(
+                    key: ValueKey('filter-kind-$k'),
+                    label: Text(k),
+                    selected: kind == k,
+                    onSelected: (_) => pick(() => kind = k),
+                  ),
+              ]),
+              section('الوقت', [
+                for (final (label, value) in const [
+                  ('أي وقت', null),
+                  ('30 دقيقة أو أقل', 30),
+                  ('ساعة أو أقل', 60),
+                ])
+                  SofraChip(
+                    key: ValueKey('filter-time-$value'),
+                    label: Text(label),
+                    selected: maxMinutes == value,
+                    onSelected: (_) => pick(() => maxMinutes = value),
+                  ),
+              ]),
+              if (_filterCount > 0)
+                TextButton(
+                  onPressed: () => pick(() {
+                    kind = null;
+                    maxMinutes = null;
+                  }),
+                  child: const Text('امسح الفلاتر'),
+                ),
+            ],
+          ),
+        );
+      },
+    ),
+  );
 
   void _refresh() => setState(() {
     limit = _page;
@@ -297,9 +376,23 @@ class _RecipesScreenState extends State<RecipesScreen> {
           key: const ValueKey('recipe-search'),
           controller: search,
           onChanged: (_) => _refresh(),
-          decoration: const InputDecoration(
-            hintText: 'ابحث عن وصفة',
-            prefixIcon: Icon(Icons.search_rounded),
+          decoration: InputDecoration(
+            hintText: 'ابحث باسم أكلة أو مكوّن',
+            prefixIcon: const Icon(Icons.search_rounded),
+            suffixIcon: IconButton(
+              key: const ValueKey('recipe-filters'),
+              tooltip: 'الفلاتر',
+              onPressed: _openFilters,
+              icon: Badge(
+                isLabelVisible: _filterCount > 0,
+                label: Text('$_filterCount'),
+                backgroundColor: Sofra.accent,
+                child: Icon(
+                  Icons.tune_rounded,
+                  color: _filterCount > 0 ? Sofra.accent : Sofra.muted,
+                ),
+              ),
+            ),
           ),
         ),
         const SizedBox(height: 10),
@@ -390,6 +483,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
             if (data == null || snap.connectionState != ConnectionState.done) {
               return const LoadingBlock();
             }
+            final dishList = data[1] as List<Dish>;
             final stock = stockFilter
                 ? data.last as Map<String, RecipeStockPreview>
                 : <String, RecipeStockPreview>{};
@@ -398,8 +492,6 @@ class _RecipesScreenState extends State<RecipesScreen> {
               return switch (filter) {
                 'من الموجود' => (stock[id]?.present ?? 0) > 0,
                 'جاهزة بالموجود' => stock[id]?.ready ?? false,
-                'سريعة' =>
-                  r['totalTime'] is num && (r['totalTime'] as num) <= 30,
                 'محفوظة' => c.profile.saved.contains(id),
                 _ => true,
               };
@@ -420,7 +512,28 @@ class _RecipesScreenState extends State<RecipesScreen> {
                 );
               });
             }
-            final shown = rows.take(limit).toList();
+            // A dish made several ways shows once, where its first way falls,
+            // unless one cuisine or the stock view is chosen.
+            final dishOf = <String, Dish>{
+              if (!stockFilter && group == null)
+                for (final d in dishList)
+                  for (final id in d.recipes) id: d,
+            };
+            final byId = {for (final r in rows) r['id'] as String: r};
+            final entries = <Object>[];
+            final placed = <String>{};
+            for (final r in rows) {
+              final d = dishOf[r['id']];
+              final ways = [
+                for (final id in d?.recipes ?? const <String>[]) ?byId[id],
+              ];
+              if (d == null || ways.length < 2) {
+                entries.add(r);
+              } else if (placed.add(d.id)) {
+                entries.add((d, ways));
+              }
+            }
+            final shown = entries.take(limit).toList();
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -462,41 +575,52 @@ class _RecipesScreenState extends State<RecipesScreen> {
                             search.clear();
                             filter = 'الكل';
                             group = null;
+                            kind = null;
+                            maxMinutes = null;
                             _refresh();
                           },
                         ),
                       ],
                     ),
                   ),
-                for (final r in shown)
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (stockFilter)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 8),
-                            child: Text(
-                              stock[r['id']]!.label,
-                              key: ValueKey('stock-readiness-${r['id']}'),
-                              style: TextStyle(
-                                color: stock[r['id']]!.ready
-                                    ? Sofra.green
-                                    : Sofra.muted,
-                                fontWeight: FontWeight.w700,
+                for (final e in shown)
+                  if (e case (
+                    final Dish d,
+                    final List<Map<String, dynamic>> ways,
+                  ))
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: DishCard(dish: d, ways: ways),
+                    )
+                  else if (e case final Map<String, dynamic> r)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (stockFilter)
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 8),
+                              child: Text(
+                                stock[r['id']]!.label,
+                                key: ValueKey('stock-readiness-${r['id']}'),
+                                style: TextStyle(
+                                  color: stock[r['id']]!.ready
+                                      ? Sofra.green
+                                      : Sofra.muted,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                             ),
-                          ),
-                        RecipeCard(r),
-                      ],
+                          RecipeCard(r),
+                        ],
+                      ),
                     ),
-                  ),
-                if (rows.length > shown.length)
+                if (entries.length > shown.length)
                   DepthButton(
                     secondary: true,
                     label:
-                        'اعرض ${rows.length - shown.length > _page ? _page : rows.length - shown.length} أخرى',
+                        'اعرض ${entries.length - shown.length > _page ? _page : entries.length - shown.length} أخرى',
                     onPressed: () => setState(() => limit += _page),
                   ),
               ],

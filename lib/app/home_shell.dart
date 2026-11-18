@@ -434,6 +434,41 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           ),
           // One way out of the main pages: settings, which opens the
           // account first. The kitchen's look is changed from the 3D kitchen.
+          // Sofra's community, always one tap away next to the gear.
+          if (primary)
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: 4),
+              child: Material(
+                color: Sofra.accentTint,
+                borderRadius: BorderRadius.circular(999),
+                child: InkWell(
+                  key: const ValueKey('header-community'),
+                  borderRadius: BorderRadius.circular(999),
+                  onTap: () => goTab(AppTab.community),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.groups_rounded,
+                          size: 20,
+                          color: Sofra.accent,
+                        ),
+                        SizedBox(width: 6),
+                        Text(
+                          'المجتمع',
+                          style: TextStyle(
+                            color: Sofra.accent,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
           if (primary)
             IconButton(
               key: const ValueKey('circle-settings'),

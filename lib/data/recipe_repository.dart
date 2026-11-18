@@ -127,26 +127,121 @@ class RecipeRepository {
     return List.unmodifiable(entries);
   }
 
+  /// Recipes whose name, English name or tags match, then (after them) the
+  /// ones that only use the searched word as an ingredient. Filters narrow
+  /// both: a cuisine or group, a source category, a meal kind ([kindOf]) and a
+  /// longest total time in minutes (unknown times never pass a time filter).
   Future<List<Map<String, dynamic>>> search({
     String query = '',
     String? cuisine,
     String? cuisineGroup,
     String? category,
+    String? kind,
+    int? maxMinutes,
   }) async {
     final needle = _normalize(query);
-    return (await index)
-        .where((r) {
-          if (cuisine != null && r['cuisine'] != cuisine) return false;
-          if (cuisineGroup != null && r['cuisineGroup'] != cuisineGroup) {
-            return false;
-          }
-          if (category != null && r['category'] != category) return false;
-          return _normalize(
-            '${r['name']} ${r['nameEn'] ?? ''} ${(r['tags'] as List).join(' ')}',
-          ).contains(needle);
-        })
-        .toList(growable: false);
+    final rows = (await index).where((r) {
+      if (cuisine != null && r['cuisine'] != cuisine) return false;
+      if (cuisineGroup != null && r['cuisineGroup'] != cuisineGroup) {
+        return false;
+      }
+      if (category != null && r['category'] != category) return false;
+      if (kind != null && kindOf(r['category'] as String?) != kind) {
+        return false;
+      }
+      if (maxMinutes != null) {
+        final t = r['totalTime'];
+        if (t is! num || t > maxMinutes) return false;
+      }
+      return true;
+    }).toList();
+    if (needle.isEmpty) return List.unmodifiable(rows);
+    bool named(Map<String, dynamic> r) => _normalize(
+      '${r['name']} ${r['nameEn'] ?? ''} ${(r['tags'] as List).join(' ')}',
+    ).contains(needle);
+    final byName = rows.where(named).toList();
+    final lines = await _ingredientText;
+    final byIngredient = rows
+        .where((r) => !named(r) && (lines[r['id']] ?? '').contains(needle))
+        .toList();
+    return List.unmodifiable([...byName, ...byIngredient]);
   }
+
+  /// Every active recipe's ingredient names, normalized, for search.
+  Future<Map<String, String>> get _ingredientText => _ingredients ??=
+      () async {
+        final all = await loadAll();
+        return {
+          for (final r in all)
+            r.id: _normalize(r.ingredients.map((i) => i.name).join(' | ')),
+        };
+      }().catchError((Object e) {
+        _ingredients = null;
+        throw e;
+      });
+  Future<Map<String, String>>? _ingredients;
+
+  /// Meal kinds shown as filters, in display order.
+  static const kinds = [
+    'رئيسي',
+    'فطار',
+    'شوربة',
+    'سلطة ومقبلات',
+    'حلويات',
+    'مخبوزات',
+  ];
+
+  /// The meal kind of a source category, or null when it fits none (sauces,
+  /// drinks, spice mixes, unknown).
+  static String? kindOf(String? category) {
+    final c = _normalize(category ?? '');
+    if (c.contains('رئيسي') || c.contains('جانبي')) return 'رئيسي';
+    if (c.contains('فطار') || c.contains('فطور')) return 'فطار';
+    if (c.contains('شورب') || c.contains('حساء')) return 'شوربة';
+    if (c.contains('سلط') || c.contains('مقبلات')) return 'سلطة ومقبلات';
+    if (c.contains('حلو')) return 'حلويات';
+    if (c.contains('مخبوز') ||
+        c.contains('خبز') ||
+        c.contains('معجنات') ||
+        c.contains('عجين')) {
+      return 'مخبوزات';
+    }
+    return null;
+  }
+
+  /// Dishes made several ways (countries or methods), from the reviewed
+  /// recipes/data/dishes.json. Only active recipes count; a dish with fewer
+  /// than two left is dropped.
+  Future<List<Dish>> get dishes => _dishes ??=
+      () async {
+        final active = {for (final r in await index) r['id'] as String};
+        final Map<String, dynamic> json;
+        try {
+          json = jsonDecode(
+            await _read('recipes/data/dishes.json'),
+          ) as Map<String, dynamic>;
+        } on Object {
+          // Grouping is an extra: without the file every recipe stands alone.
+          return const <Dish>[];
+        }
+        final list = json['dishes'];
+        if (list is! List) return const <Dish>[];
+        return List<Dish>.unmodifiable([
+          for (final d in list)
+            if ((d['recipes'] as List).where(active.contains).length >= 2)
+              Dish(
+                id: d['id'] as String,
+                name: d['name'] as String,
+                recipes: List.unmodifiable(
+                  (d['recipes'] as List).cast<String>().where(active.contains),
+                ),
+              ),
+        ]);
+      }().catchError((Object e) {
+        _dishes = null;
+        throw e;
+      });
+  Future<List<Dish>>? _dishes;
 
   Future<CatalogRecipe> get(String id, {bool includeHeld = false}) async {
     final entries = (await retainedIndex).where((v) => v['id'] == id);
@@ -198,5 +293,13 @@ class RecipeRepository {
       .replaceAll(RegExp('[ًٌٍَُِّْـ]'), '')
       .replaceAll(RegExp('[أإآ]'), 'ا')
       .replaceAll('ى', 'ي')
+      .replaceAll('ة', 'ه')
       .trim();
+}
+
+/// One dish with its ways of making it, each a catalog recipe id.
+class Dish {
+  const Dish({required this.id, required this.name, required this.recipes});
+  final String id, name;
+  final List<String> recipes;
 }

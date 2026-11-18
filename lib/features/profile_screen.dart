@@ -147,22 +147,6 @@ class SettingsScreen extends StatelessWidget {
           initial: p.name.trim(),
           onTap: () => nav.goTab(AppTab.profile),
         ),
-        // Community has no place in the header any more; reachable from here
-        // until its new home is chosen.
-        const SizedBox(height: 8),
-        Surface(
-          padding: EdgeInsets.zero,
-          child: ListTile(
-            key: const ValueKey('settings-community'),
-            leading: const Icon(Icons.people_outline, color: Sofra.accent),
-            title: const Text(
-              'مجتمع سفرة',
-              style: TextStyle(fontWeight: FontWeight.w700),
-            ),
-            trailing: const Icon(Icons.chevron_right_rounded),
-            onTap: () => nav.goTab(AppTab.community),
-          ),
-        ),
         const SectionTitle('البلد والعملة'),
         const Surface(child: CountryPicker()),
         const SectionTitle('راحتك في التطبيق'),

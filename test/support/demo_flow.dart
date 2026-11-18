@@ -73,9 +73,11 @@ Future<void> goHome(WidgetTester tester) async {
 Future<void> openCorner(WidgetTester tester, String circle) async {
   await goHome(tester);
   switch (circle) {
-    // The header keeps only settings; the account and the community open
+    // The header has the community button and settings; the account opens
     // from settings, and the kitchen's look from the 3D kitchen.
-    case 'profile' || 'community':
+    case 'community':
+      await tapKey(tester, 'header-community');
+    case 'profile':
       await tapKey(tester, 'circle-settings');
       await tapKey(tester, 'settings-$circle');
     case 'style':
