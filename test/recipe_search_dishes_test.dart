@@ -12,9 +12,7 @@ void main() {
     final rows = await r.search(query: 'باذنجان');
     final names = [for (final row in rows) row['name'] as String];
     expect(names, contains('فتة باذنجان'));
-    final firstByIngredient = names.indexWhere(
-      (n) => !n.contains('باذنجان'),
-    );
+    final firstByIngredient = names.indexWhere((n) => !n.contains('باذنجان'));
     expect(firstByIngredient, greaterThan(0));
     expect(
       names.skip(firstByIngredient).every((n) => !n.contains('باذنجان')),

@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- «أسعار منطقتي» picks the nearest district; the position stays on the phone. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- Reminders survive a restart of the phone. -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application

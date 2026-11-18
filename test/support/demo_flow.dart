@@ -52,6 +52,8 @@ Future<Future<String> Function(String)> warmAssets(WidgetTester tester) async {
       for (final path in [
         'assets/community/creators.json',
         'assets/recipe-photos/manifest.json',
+        'assets/places/eg.json',
+        'assets/places/sa.json',
       ])
         path: await File(path).readAsString(),
     };

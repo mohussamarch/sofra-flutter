@@ -4,8 +4,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tabkha_demo/app/reminders.dart';
+import 'package:tabkha_demo/features/community_prices.dart';
 import 'package:tabkha_demo/data/community_backend.dart';
 import 'package:tabkha_demo/data/state_store.dart';
+import 'package:tabkha_demo/domain/community.dart';
 import 'package:tabkha_demo/features/barcode_scan.dart';
 import 'package:tabkha_demo/main.dart';
 
@@ -26,6 +28,8 @@ class TestStore implements StateStore {
 }
 
 void main() {
+  // No map tiles or location prompt in widget tests.
+  setUpAll(() => AreaPricesView.live = false);
   testWidgets('cooking result and profile survive closing and reopening', (
     tester,
   ) async {
@@ -325,6 +329,7 @@ void main() {
     expect(find.byKey(const ValueKey('creator-name')), findsOneWidget);
     await tester.tapAt(const Offset(10, 10));
     await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('community-welcome')), findsOneWidget);
     await tapKey(tester, 'community-kitchen');
     expect(find.byKey(const ValueKey('kitchen-share')), findsOneWidget);
     await tester.enterText(find.byKey(const ValueKey('kitchen-code')), 'nope');
@@ -334,12 +339,94 @@ void main() {
     await tapKey(tester, 'kitchen-join');
     expect(reopened, 1);
     expect(server.kitchens[kid]!['members'], ['alice', 'bob']);
+    await tapKey(tester, 'community-sub-back');
+    await tapKey(tester, 'community-mine');
+    expect(find.byKey(const ValueKey('community-mine-empty')), findsOneWidget);
     await tapKey(tester, 'community-prices');
-    expect(find.text('اكتب منطقتك أولًا.'), findsOneWidget);
+    expect(find.text('اختر منطقتك'), findsOneWidget);
+    await tapKey(tester, 'community-home');
     await tapKey(tester, 'community-challenge');
     await tapKey(tester, 'challenge-join');
     expect(find.byKey(const ValueKey('challenge-entry-bob')), findsOneWidget);
   });
+
+  testWidgets(
+    'area prices: choose an area, see its price, add and share mine',
+    (tester) async {
+      tester.view.physicalSize = const Size(430, 932);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      final server = MemoryServer();
+      const area = 'الزمالك، القاهرة';
+      for (final (uid, amount) in [('u1', 20.0), ('u2', 30.0)]) {
+        await MemoryCommunity(server, uid).reportPrice(
+          PriceReport(
+            uid: uid,
+            country: 'EG',
+            area: area,
+            ingredientId: 'tomato',
+            quantity: 1,
+            unit: 'kg',
+            amount: amount,
+            paidOn: DateTime.now(),
+          ),
+        );
+      }
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: ThemeData(
+            snackBarTheme: const SnackBarThemeData(
+              behavior: SnackBarBehavior.floating,
+            ),
+          ),
+          home: SofraHome(
+            store: TestStore(),
+            recipes: await warmRecipes(tester),
+            readAsset: await warmAssets(tester),
+            showScene: false,
+            reminders: SilentReminders(),
+            community: MemoryCommunity(server, 'bob'),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await completeOnboarding(tester);
+      await openCorner(tester, 'community');
+      await tapKey(tester, 'community-prices');
+      await tester.enterText(
+        find.byKey(const ValueKey('price-area')),
+        'الزمالك',
+      );
+      await tester.pumpAndSettle();
+      await tapKey(tester, 'place-$area');
+      expect(find.text(area), findsOneWidget);
+      await tapKey(tester, 'price-group-خضار');
+      // Two homes paid 20 and 30: the area price is their median.
+      final cell = find.byKey(const ValueKey('area-price-tomato'));
+      await tester.ensureVisible(cell);
+      expect(
+        find.descendant(of: cell, matching: find.text('25')),
+        findsOneWidget,
+      );
+      await tapKey(tester, 'my-price-tomato');
+      await tester.enterText(find.byKey(const ValueKey('price-input')), '٢٢');
+      await tapKey(tester, 'price-share');
+      await tapKey(tester, 'price-save');
+      final mine = server.prices.where((r) => r.uid == 'bob').single;
+      expect(
+        (mine.area, mine.ingredientId, mine.amount),
+        (areaKey(area), 'tomato', 22.0),
+      );
+      expect(
+        find.descendant(
+          of: find.byKey(const ValueKey('my-price-tomato')),
+          matching: find.text('22'),
+        ),
+        findsOneWidget,
+      );
+    },
+  );
 
   testWidgets('community without an account says it needs one', (tester) async {
     tester.view.physicalSize = const Size(430, 932);

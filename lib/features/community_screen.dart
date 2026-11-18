@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -7,15 +8,20 @@ import '../app/scope.dart';
 import '../app/sofra_controller.dart';
 import '../data/community_backend.dart';
 import '../domain/community.dart';
-import '../domain/market_profile.dart';
+
 import '../ui/design.dart';
 import 'common.dart';
+import 'community_prices.dart';
 
-enum _Part { home, kitchen, prices, challenge }
+enum _Part { home, mine, prices }
 
-/// "مجتمع سفرة", laid out like a video feed without video: category chips,
-/// a row of day-long text stories, circles of Arab cooking channels, then
-/// recipes from other homes as large cards.
+/// Pages opened from cards on the home part.
+enum _Sub { kitchen, challenge }
+
+/// "مجتمع سفرة": a large handwritten welcome over the Sofra mark, then three
+/// parts: the home feed (stories, channels, the week's challenge, the shared
+/// kitchen, recipes from other homes), the user's own shared recipes, and
+/// prices in their area.
 class CommunityScreen extends StatefulWidget {
   const CommunityScreen({super.key});
   @override
@@ -24,41 +30,41 @@ class CommunityScreen extends StatefulWidget {
 
 class _CommunityScreenState extends State<CommunityScreen> {
   var part = _Part.home;
+  _Sub? sub;
 
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    if (sub != null) {
+      return ScreenBody(
+        children: [
+          TextButton.icon(
+            key: const ValueKey('community-sub-back'),
+            onPressed: () => setState(() => sub = null),
+            icon: const Icon(Icons.arrow_back_rounded),
+            label: const Text('مجتمع سفرة'),
+          ),
+          Text(
+            sub == _Sub.kitchen ? 'مطبخ البيت' : 'تحدي الأسبوع',
+            style: Sofra.heading(26),
+          ),
+          const SizedBox(height: 12),
+          if (c.community == null ||
+              (sub == _Sub.kitchen && c.communityPreview))
+            const _NeedsAccount()
+          else if (sub == _Sub.kitchen)
+            const _SharedKitchen()
+          else
+            const _Challenge(),
+        ],
+      );
+    }
     return ScreenBody(
       children: [
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              for (final (p, label) in const [
-                (_Part.home, 'الرئيسية'),
-                (_Part.kitchen, 'مطبخ البيت'),
-                (_Part.prices, 'أسعار منطقتي'),
-                (_Part.challenge, 'تحدي الأسبوع'),
-              ])
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 8),
-                  child: SofraChip(
-                    key: ValueKey('community-${p.name}'),
-                    label: Text(label),
-                    selected: part == p,
-                    showCheckmark: false,
-                    selectedColor: Sofra.ink,
-                    labelStyle: TextStyle(
-                      color: part == p ? Colors.white : Sofra.ink,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    onSelected: (_) => setState(() => part = p),
-                  ),
-                ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 14),
+        const CommunityWelcome(),
+        const SizedBox(height: 18),
+        _Parts(value: part, onChanged: (p) => setState(() => part = p)),
+        const SizedBox(height: 16),
         if (c.communityPreview)
           const Padding(
             padding: EdgeInsets.only(bottom: 12),
@@ -72,14 +78,288 @@ class _CommunityScreenState extends State<CommunityScreen> {
           const _NeedsAccount()
         else
           switch (part) {
-            _Part.home => const _Home(),
-            _Part.kitchen =>
-              c.communityPreview
-                  ? const _NeedsAccount()
-                  : const _SharedKitchen(),
-            _Part.prices => const _Prices(),
-            _Part.challenge => const _Challenge(),
+            _Part.home => _Home(open: (s) => setState(() => sub = s)),
+            _Part.mine => const _Mine(),
+            _Part.prices => const AreaPricesView(),
           },
+      ],
+    );
+  }
+}
+
+/// The welcome: «مجتمع سفرة» large and quick, as if written by hand, over a
+/// big faint Sofra mark (a round table seen from above with seats around it,
+/// everyone at one table). It settles in once, gently.
+class CommunityWelcome extends StatelessWidget {
+  const CommunityWelcome({super.key});
+
+  @override
+  Widget build(BuildContext context) => TweenAnimationBuilder<double>(
+    tween: Tween(begin: 0, end: 1),
+    duration: Sofra.motion(context, false) * 2,
+    curve: Curves.easeOutBack,
+    builder: (context, t, child) => Opacity(
+      opacity: t.clamp(0, 1),
+      child: Transform.scale(scale: .92 + .08 * t, child: child),
+    ),
+    child: ConstrainedBox(
+      constraints: const BoxConstraints(
+        minHeight: 230,
+        minWidth: double.infinity,
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          const Positioned.fill(child: CustomPaint(painter: _TableMark())),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Transform.rotate(
+                angle: -.06,
+                child: const Text(
+                  'مجتمع سفرة',
+                  key: ValueKey('community-welcome'),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'ArefRuqaa',
+                    fontSize: 66,
+                    height: 1.25,
+                    color: Sofra.ink,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 2),
+              const Text(
+                'كلنا على سفرة واحدة',
+                style: TextStyle(
+                  color: Sofra.accent,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+class _TableMark extends CustomPainter {
+  const _TableMark();
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = size.center(Offset.zero);
+    final r = size.shortestSide * .36;
+    canvas.drawCircle(
+      center,
+      r,
+      Paint()
+        ..shader = RadialGradient(
+          colors: [
+            Sofra.accent.withValues(alpha: .16),
+            Sofra.accent.withValues(alpha: .05),
+          ],
+        ).createShader(Rect.fromCircle(center: center, radius: r)),
+    );
+    canvas.drawCircle(
+      center,
+      r,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 3
+        ..color = Sofra.accent.withValues(alpha: .18),
+    );
+    final seat = Paint()..color = Sofra.accent.withValues(alpha: .14);
+    for (var i = 0; i < 8; i++) {
+      final a = i * math.pi / 4 + math.pi / 8;
+      canvas.drawCircle(
+        center + Offset(math.cos(a), math.sin(a)) * (r + 22),
+        13,
+        seat,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_TableMark old) => false;
+}
+
+/// The three parts as one segmented bar.
+class _Parts extends StatelessWidget {
+  const _Parts({required this.value, required this.onChanged});
+  final _Part value;
+  final ValueChanged<_Part> onChanged;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.all(4),
+    decoration: BoxDecoration(
+      color: Colors.white.withValues(alpha: .6),
+      borderRadius: BorderRadius.circular(Sofra.r16 + 4),
+      border: Border.all(color: Colors.white),
+    ),
+    child: Row(
+      children: [
+        for (final (p, label) in const [
+          (_Part.home, 'الرئيسية'),
+          (_Part.mine, 'وصفاتي'),
+          (_Part.prices, 'أسعار منطقتي'),
+        ])
+          Expanded(
+            child: Semantics(
+              button: true,
+              selected: value == p,
+              child: GestureDetector(
+                key: ValueKey('community-${p.name}'),
+                behavior: HitTestBehavior.opaque,
+                onTap: () => onChanged(p),
+                child: AnimatedContainer(
+                  duration: Sofra.motion(context, true),
+                  curve: Sofra.quickCurve,
+                  height: 44,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: value == p ? Sofra.accent : Colors.transparent,
+                    borderRadius: BorderRadius.circular(Sofra.r16),
+                  ),
+                  child: Text(
+                    label,
+                    style: TextStyle(
+                      color: value == p ? Colors.white : Sofra.ink,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+      ],
+    ),
+  );
+}
+
+/// A card on the home part that opens one of the [_Sub] pages.
+class _OpenCard extends StatelessWidget {
+  const _OpenCard({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.note,
+    required this.onTap,
+  });
+  final IconData icon;
+  final String title, note;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) => PressScale(
+    child: Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(Sofra.r22),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(Sofra.r22),
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Sofra.accentTint,
+                  borderRadius: BorderRadius.circular(Sofra.r12),
+                ),
+                child: Icon(icon, color: Sofra.accent),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                note,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(color: Sofra.muted, fontSize: 12),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+/// «وصفاتي»: recipes this home shared, and a way to share another.
+class _Mine extends StatefulWidget {
+  const _Mine();
+  @override
+  State<_Mine> createState() => _MineState();
+}
+
+class _MineState extends State<_Mine> {
+  Future<List<SharedRecipe>>? feed;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    feed ??= SofraScope.controllerOf(context).community!.recentRecipes();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final c = SofraScope.controllerOf(context);
+    final me = c.community!.uid;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (c.myRecipes.isNotEmpty)
+          DepthButton(
+            key: const ValueKey('share-recipe-open'),
+            label: 'شارك وصفة من عندك',
+            onPressed: () async {
+              final shared = await _pickToShare(context, c);
+              if (shared) {
+                setState(() => feed = c.community!.recentRecipes());
+              }
+            },
+          ),
+        const SizedBox(height: 14),
+        FutureBuilder<List<SharedRecipe>>(
+          future: feed,
+          builder: (context, snap) {
+            if (snap.hasError) {
+              return const ErrorBlock('تعذّر جلب الوصفات. حاول مرة أخرى.');
+            }
+            final items = snap.data;
+            if (items == null) return const LoadingBlock();
+            final mine = [
+              for (final r in items)
+                if (r.authorUid == me) r,
+            ];
+            if (mine.isEmpty) {
+              return Surface(
+                child: Text(
+                  c.myRecipes.isEmpty
+                      ? 'اكتب وصفة من «وصفة من عندي»، ثم شاركها هنا.'
+                      : 'لم تشارك وصفة بعد.',
+                  key: const ValueKey('community-mine-empty'),
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Sofra.muted),
+                ),
+              );
+            }
+            return Column(
+              children: [for (final r in mine) _FeedCard(recipe: r)],
+            );
+          },
+        ),
       ],
     );
   }
@@ -145,7 +425,8 @@ class _Avatar extends StatelessWidget {
 // ---- Home: stories, creators, feed ---------------------------------------
 
 class _Home extends StatefulWidget {
-  const _Home();
+  const _Home({required this.open});
+  final ValueChanged<_Sub> open;
   @override
   State<_Home> createState() => _HomeState();
 }
@@ -220,6 +501,30 @@ class _HomeState extends State<_Home> {
           ),
           const Divider(height: 20),
         ],
+        Row(
+          children: [
+            Expanded(
+              child: _OpenCard(
+                key: const ValueKey('community-challenge'),
+                icon: Icons.emoji_events_rounded,
+                title: 'تحدي الأسبوع',
+                note: 'اطبخ وشارك',
+                onTap: () => widget.open(_Sub.challenge),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: _OpenCard(
+                key: const ValueKey('community-kitchen'),
+                icon: Icons.house_rounded,
+                title: 'مطبخ البيت',
+                note: 'خزين واحد لأهل البيت',
+                onTap: () => widget.open(_Sub.kitchen),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 20),
         const Text(
           'شيفات على يوتيوب',
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
@@ -1156,149 +1461,6 @@ class _RecipeSheetState extends State<_RecipeSheet> {
           ),
         ],
       ),
-    );
-  }
-}
-
-// ---- Prices from people nearby --------------------------------------------
-
-class _Prices extends StatefulWidget {
-  const _Prices();
-  @override
-  State<_Prices> createState() => _PricesState();
-}
-
-class _PricesState extends State<_Prices> {
-  late final area = TextEditingController(
-    text: SofraScope.controllerOf(context).profile.area,
-  );
-  Future<Map<(String, String), AreaPrice>>? prices;
-  final shared = <String>{};
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    prices ??= SofraScope.controllerOf(context).areaPrices();
-  }
-
-  @override
-  void dispose() {
-    area.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final c = SofraScope.controllerOf(context);
-    final money = MarketProfile(c.market.country).currencyLabel;
-    final hasArea = c.profile.area.trim().isNotEmpty;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const Text(
-          'منطقتك (المدينة أو الحي). نعرض السعر فقط عندما يشاركه بيتان أو أكثر.',
-          style: TextStyle(color: Sofra.muted, fontSize: 12),
-        ),
-        Row(
-          children: [
-            Expanded(
-              child: TextField(
-                key: const ValueKey('price-area'),
-                controller: area,
-                decoration: const InputDecoration(hintText: 'مثلاً: مدينة نصر'),
-              ),
-            ),
-            const SizedBox(width: 8),
-            FilledButton(
-              key: const ValueKey('price-area-save'),
-              onPressed: () async {
-                await c.updateProfile(
-                  (p) => p.copyWith(area: area.text.trim()),
-                );
-                setState(() {
-                  prices = c.areaPrices();
-                });
-              },
-              child: const Text('احفظ'),
-            ),
-          ],
-        ),
-        const SectionTitle('أسعار الناس في منطقتك'),
-        if (!hasArea)
-          const Text('اكتب منطقتك أولًا.')
-        else
-          FutureBuilder<Map<(String, String), AreaPrice>>(
-            future: prices,
-            builder: (context, snap) {
-              if (snap.hasError) {
-                return const ErrorBlock('تعذّر جلب الأسعار. حاول مرة أخرى.');
-              }
-              final map = snap.data;
-              if (map == null) return const LoadingBlock();
-              if (map.isEmpty) {
-                return const Text(
-                  'لا توجد أسعار كافية في منطقتك بعد.',
-                  key: ValueKey('area-prices-empty'),
-                );
-              }
-              return Column(
-                children: [
-                  for (final MapEntry(key: k, value: p) in map.entries)
-                    ListTile(
-                      key: ValueKey('area-price-${k.$1}'),
-                      contentPadding: EdgeInsets.zero,
-                      title: Text(c.ingredientName(k.$1)),
-                      subtitle: Text(
-                        '${formatAmount(p.medianPerUnit)} $money لكل ${k.$2} · من ${p.households} بيوت',
-                      ),
-                      trailing: TextButton(
-                        key: ValueKey('area-price-use-${k.$1}'),
-                        onPressed: () async {
-                          await c.setUserPrice(
-                            k.$1,
-                            1,
-                            k.$2,
-                            p.medianPerUnit,
-                            source: 'user-community',
-                          );
-                          if (context.mounted) {
-                            SofraScope.navOf(context).notify('حُفظ كسعرك');
-                          }
-                        },
-                        child: const Text('استخدمه'),
-                      ),
-                    ),
-                ],
-              );
-            },
-          ),
-        const SectionTitle('شارك أسعارك'),
-        if (c.myPrices.isEmpty)
-          const Text(
-            'تظهر هنا الأسعار التي تكتبها أو تدفعها.',
-            style: TextStyle(color: Sofra.muted),
-          ),
-        for (final p in c.myPrices)
-          ListTile(
-            contentPadding: EdgeInsets.zero,
-            title: Text(c.ingredientName(p.ingredientId)),
-            subtitle: Text(
-              '${formatAmount(p.amount)} $money لـ ${formatAmount(p.quantity)} ${p.unit}',
-            ),
-            trailing: shared.contains(p.ingredientId)
-                ? const Icon(Icons.check, color: Sofra.green)
-                : TextButton(
-                    key: ValueKey('price-share-${p.ingredientId}'),
-                    onPressed: !hasArea
-                        ? null
-                        : () async {
-                            await c.sharePrice(p);
-                            setState(() => shared.add(p.ingredientId));
-                          },
-                    child: const Text('شارك'),
-                  ),
-          ),
-      ],
     );
   }
 }

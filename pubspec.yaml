@@ -48,6 +48,9 @@ dependencies:
   timezone: ^0.11.2
   firebase_ai: ^4.0.0
   image_picker: ^1.2.4
+  flutter_map: ^8.3.2
+  latlong2: ^0.10.1
+  geolocator: ^14.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -81,6 +84,7 @@ flutter:
     - assets/spike3d/
     - assets/recipe-photos/
     - assets/community/
+    - assets/places/
     - recipes/data/
     - data/nutrition/
     - data/usda/

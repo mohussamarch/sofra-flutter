@@ -55,8 +55,16 @@ const setupMeals = [
 /// medical advice and filters nothing by them.
 const setupHealth = [
   SetupOption('السكري', 'السكري', icon: Icons.bloodtype_rounded),
-  SetupOption('ضغط الدم المرتفع', 'ضغط الدم', icon: Icons.monitor_heart_rounded),
-  SetupOption('الكوليسترول المرتفع', 'الكوليسترول', icon: Icons.water_drop_rounded),
+  SetupOption(
+    'ضغط الدم المرتفع',
+    'ضغط الدم',
+    icon: Icons.monitor_heart_rounded,
+  ),
+  SetupOption(
+    'الكوليسترول المرتفع',
+    'الكوليسترول',
+    icon: Icons.water_drop_rounded,
+  ),
   SetupOption('السيلياك', 'السيلياك', icon: Icons.grain_rounded),
   SetupOption('القولون العصبي', 'القولون العصبي', icon: Icons.healing_rounded),
   SetupOption(
@@ -707,7 +715,8 @@ class _ChoiceRow extends StatelessWidget {
   List<SetupOption> get _all => [
     ...options,
     for (final v in selected)
-      if (!options.any((o) => o.value == v)) SetupOption(v, v, icon: customIcon),
+      if (!options.any((o) => o.value == v))
+        SetupOption(v, v, icon: customIcon),
   ];
 
   @override

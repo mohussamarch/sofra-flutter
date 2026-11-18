@@ -20,6 +20,7 @@ import '../domain/monthly_budget_search.dart';
 import '../domain/community.dart';
 import '../domain/food_nutrition.dart';
 import '../domain/personal_recipe_draft.dart';
+import '../domain/places.dart';
 import '../domain/personal_recipe_finalization.dart';
 import '../domain/purchase_forecast.dart';
 import '../domain/quick_add.dart';
@@ -385,6 +386,20 @@ class SofraController extends ChangeNotifier {
       return const [];
     }
   }
+
+  /// Cities and districts of the current country, for «أسعار منطقتي».
+  Future<Places> places() {
+    final code = market.code;
+    return _places[code] ??=
+        _readAsset('assets/places/${code.toLowerCase()}.json')
+            .then(Places.parse)
+            .catchError((Object e) {
+              _places.remove(code);
+              throw e;
+            });
+  }
+
+  final _places = <String, Future<Places>>{};
 
   Future<Story> postStory(String text, {String? dish, int colorIndex = 0}) =>
       _community.postStory(
@@ -1416,10 +1431,14 @@ class SofraController extends ChangeNotifier {
   );
 
   /// Area prices per (ingredient, unit), where at least two households
-  /// reported one.
-  Future<Map<(String, String), AreaPrice>> areaPrices({DateTime? today}) async {
-    if (profile.area.trim().isEmpty) return const {};
-    final reports = await _community.areaReports(market.code, profile.area);
+  /// reported one, for [area] (the user's own area when absent).
+  Future<Map<(String, String), AreaPrice>> areaPrices({
+    DateTime? today,
+    String? area,
+  }) async {
+    final where = (area ?? profile.area).trim();
+    if (where.isEmpty) return const {};
+    final reports = await _community.areaReports(market.code, where);
     final result = <(String, String), AreaPrice>{};
     for (final key in {for (final r in reports) (r.ingredientId, r.unit)}) {
       final p = areaPrice(

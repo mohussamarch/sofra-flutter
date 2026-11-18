@@ -426,7 +426,8 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                 AppTab.table => 'الخطة',
                 AppTab.profile => 'حسابي',
                 AppTab.settings => 'الإعدادات',
-                AppTab.community => 'مجتمع سفرة',
+                // The community page opens on its own large handwritten title.
+                AppTab.community => '',
                 AppTab.style => 'شكل المطبخ',
               },
               style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),

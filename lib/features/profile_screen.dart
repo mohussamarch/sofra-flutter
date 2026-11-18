@@ -211,35 +211,56 @@ class ProfileScreen extends StatelessWidget {
     required ValueChanged<String> save,
     String? hint,
   }) async {
-    final field = TextEditingController(text: initial);
     final value = await showDialog<String>(
       context: context,
-      builder: (dialog) => AlertDialog(
-        title: Text(title),
-        content: TextField(
-          key: const ValueKey('profile-edit-field'),
-          controller: field,
-          autofocus: true,
-          textInputAction: TextInputAction.done,
-          decoration: InputDecoration(hintText: hint),
-          onSubmitted: (v) => Navigator.of(dialog).pop(v),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(dialog).pop(),
-            child: const Text('إلغاء'),
-          ),
-          FilledButton(
-            key: const ValueKey('profile-edit-save'),
-            onPressed: () => Navigator.of(dialog).pop(field.text),
-            child: const Text('حفظ'),
-          ),
-        ],
-      ),
+      builder: (_) => _TextDialog(title: title, initial: initial, hint: hint),
     );
-    field.dispose();
     if (value != null) save(value.trim());
   }
+}
+
+/// One line of text to edit. It owns its field, which outlives the call
+/// while the dialog animates away.
+class _TextDialog extends StatefulWidget {
+  const _TextDialog({required this.title, required this.initial, this.hint});
+  final String title, initial;
+  final String? hint;
+  @override
+  State<_TextDialog> createState() => _TextDialogState();
+}
+
+class _TextDialogState extends State<_TextDialog> {
+  late final field = TextEditingController(text: widget.initial);
+
+  @override
+  void dispose() {
+    field.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => AlertDialog(
+    title: Text(widget.title),
+    content: TextField(
+      key: const ValueKey('profile-edit-field'),
+      controller: field,
+      autofocus: true,
+      textInputAction: TextInputAction.done,
+      decoration: InputDecoration(hintText: widget.hint),
+      onSubmitted: (v) => Navigator.of(context).pop(v),
+    ),
+    actions: [
+      TextButton(
+        onPressed: () => Navigator.of(context).pop(),
+        child: const Text('إلغاء'),
+      ),
+      FilledButton(
+        key: const ValueKey('profile-edit-save'),
+        onPressed: () => Navigator.of(context).pop(field.text),
+        child: const Text('حفظ'),
+      ),
+    ],
+  );
 }
 
 /// The household at a glance: chef, house name, who and where, and three
@@ -461,15 +482,6 @@ class PickedGroup extends StatelessWidget {
                     size: 18,
                     color: Sofra.muted,
                   ),
-                ),
-              ),
-            const Spacer(),
-            if (chosen.isNotEmpty)
-              Text(
-                '${chosen.length}',
-                style: const TextStyle(
-                  color: Sofra.muted,
-                  fontWeight: FontWeight.w700,
                 ),
               ),
           ],
