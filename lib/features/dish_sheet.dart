@@ -18,7 +18,7 @@ class DishCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final countries = {for (final w in ways) '${w['cuisine']}'}.toList();
-    return Material(
+    final material = Material(
       color: Colors.white,
       borderRadius: BorderRadius.circular(24),
       child: InkWell(
@@ -44,7 +44,7 @@ class DishCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      '${ways.length} طرق',
+                      waysLabel(ways.length),
                       style: const TextStyle(
                         color: Sofra.accent,
                         fontWeight: FontWeight.w700,
@@ -67,11 +67,17 @@ class DishCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_left_rounded, color: Sofra.muted),
+              const Icon(Icons.chevron_right_rounded, color: Sofra.muted),
             ],
           ),
         ),
       ),
+    );
+    return Semantics(
+      button: true,
+      label: '${dish.name}، ${waysLabel(ways.length)}',
+      excludeSemantics: true,
+      child: material,
     );
   }
 }
@@ -102,7 +108,7 @@ Future<void> showDish(
             style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800),
           ),
           Text(
-            '${ways.length} طرق لعملها',
+            '${waysLabel(ways.length)} لعملها',
             style: const TextStyle(color: Sofra.muted),
           ),
           const SizedBox(height: 16),
@@ -169,7 +175,7 @@ class _Way extends StatelessWidget {
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_left_rounded, color: Sofra.muted),
+              const Icon(Icons.chevron_right_rounded, color: Sofra.muted),
             ],
           ),
         ),
@@ -177,3 +183,11 @@ class _Way extends StatelessWidget {
     );
   }
 }
+
+/// «طريقتان»، «3 طرق»، «11 طريقة» (Arabic counting).
+String waysLabel(int n) => switch (n) {
+  1 => 'طريقة واحدة',
+  2 => 'طريقتان',
+  <= 10 => '$n طرق',
+  _ => '$n طريقة',
+};
