@@ -38,48 +38,48 @@ class CountryPicker extends StatelessWidget {
 
 /// One choice in the setup: a value as saved, its label and its picture
 /// (a flag code or an icon).
-class _Opt {
-  const _Opt(this.value, this.label, {this.icon, this.flag});
+class SetupOption {
+  const SetupOption(this.value, this.label, {this.icon, this.flag});
   final String value, label;
   final IconData? icon;
   final String? flag;
 }
 
-const _meals = [
-  _Opt('فطار', 'فطار', icon: Icons.free_breakfast_rounded),
-  _Opt('غداء', 'غداء', icon: Icons.lunch_dining_rounded),
-  _Opt('عشاء', 'عشاء', icon: Icons.dinner_dining_rounded),
+const setupMeals = [
+  SetupOption('فطار', 'فطار', icon: Icons.free_breakfast_rounded),
+  SetupOption('غداء', 'غداء', icon: Icons.lunch_dining_rounded),
+  SetupOption('عشاء', 'عشاء', icon: Icons.dinner_dining_rounded),
 ];
 
 /// Conditions the user may say they have. Labels only: the app gives no
 /// medical advice and filters nothing by them.
-const _health = [
-  _Opt('السكري', 'السكري', icon: Icons.bloodtype_rounded),
-  _Opt('ضغط الدم المرتفع', 'ضغط الدم', icon: Icons.monitor_heart_rounded),
-  _Opt('الكوليسترول المرتفع', 'الكوليسترول', icon: Icons.water_drop_rounded),
-  _Opt('السيلياك', 'السيلياك', icon: Icons.grain_rounded),
-  _Opt('القولون العصبي', 'القولون العصبي', icon: Icons.healing_rounded),
-  _Opt(
+const setupHealth = [
+  SetupOption('السكري', 'السكري', icon: Icons.bloodtype_rounded),
+  SetupOption('ضغط الدم المرتفع', 'ضغط الدم', icon: Icons.monitor_heart_rounded),
+  SetupOption('الكوليسترول المرتفع', 'الكوليسترول', icon: Icons.water_drop_rounded),
+  SetupOption('السيلياك', 'السيلياك', icon: Icons.grain_rounded),
+  SetupOption('القولون العصبي', 'القولون العصبي', icon: Icons.healing_rounded),
+  SetupOption(
     'ارتجاع المريء',
     'ارتجاع المريء',
     icon: Icons.local_fire_department_rounded,
   ),
-  _Opt('أمراض الكلى', 'الكلى', icon: Icons.medical_services_rounded),
-  _Opt('النقرس', 'النقرس', icon: Icons.accessibility_new_rounded),
-  _Opt('فقر الدم', 'فقر الدم', icon: Icons.opacity_rounded),
-  _Opt('الحمل', 'الحمل', icon: Icons.pregnant_woman_rounded),
+  SetupOption('أمراض الكلى', 'الكلى', icon: Icons.medical_services_rounded),
+  SetupOption('النقرس', 'النقرس', icon: Icons.accessibility_new_rounded),
+  SetupOption('فقر الدم', 'فقر الدم', icon: Icons.opacity_rounded),
+  SetupOption('الحمل', 'الحمل', icon: Icons.pregnant_woman_rounded),
 ];
 
 /// Foods to avoid; the recipe warning matches these names in ingredients.
-const _avoid = [
-  _Opt('ألبان', 'ألبان', icon: Icons.local_drink_rounded),
-  _Opt('قمح', 'قمح', icon: Icons.bakery_dining_rounded),
-  _Opt('بيض', 'بيض', icon: Icons.egg_rounded),
-  _Opt('مكسرات', 'مكسرات', icon: Icons.eco_rounded),
-  _Opt('سمك', 'سمك', icon: Icons.set_meal_rounded),
-  _Opt('قشريات', 'قشريات', icon: Icons.set_meal_outlined),
-  _Opt('سمسم', 'سمسم', icon: Icons.grain_rounded),
-  _Opt('فول سوداني', 'فول سوداني', icon: Icons.spa_rounded),
+const setupAvoid = [
+  SetupOption('ألبان', 'ألبان', icon: Icons.local_drink_rounded),
+  SetupOption('قمح', 'قمح', icon: Icons.bakery_dining_rounded),
+  SetupOption('بيض', 'بيض', icon: Icons.egg_rounded),
+  SetupOption('مكسرات', 'مكسرات', icon: Icons.eco_rounded),
+  SetupOption('سمك', 'سمك', icon: Icons.set_meal_rounded),
+  SetupOption('قشريات', 'قشريات', icon: Icons.set_meal_outlined),
+  SetupOption('سمسم', 'سمسم', icon: Icons.grain_rounded),
+  SetupOption('فول سوداني', 'فول سوداني', icon: Icons.spa_rounded),
 ];
 
 /// Six-step setup (welcome, name, table, taste, health, ready); the step
@@ -202,13 +202,13 @@ class OnboardingScreen extends StatelessWidget {
             _TileRow([
               _Tile(
                 key: const ValueKey('country-egypt'),
-                opt: const _Opt('egypt', 'مصر', flag: 'egyptian'),
+                opt: const SetupOption('egypt', 'مصر', flag: 'egyptian'),
                 selected: egypt,
                 onTap: () => c.setCountry(MarketCountry.egypt),
               ),
               _Tile(
                 key: const ValueKey('country-saudi'),
-                opt: const _Opt('saudi', 'السعودية', flag: 'saudi'),
+                opt: const SetupOption('saudi', 'السعودية', flag: 'saudi'),
                 selected: !egypt,
                 onTap: () => c.setCountry(MarketCountry.saudi),
               ),
@@ -287,7 +287,7 @@ class OnboardingScreen extends StatelessWidget {
             ),
             const _Label('وجباتك'),
             _TileRow([
-              for (final m in _meals)
+              for (final m in setupMeals)
                 _Tile(
                   key: ValueKey('meal-${m.value}'),
                   opt: m,
@@ -329,7 +329,7 @@ class OnboardingScreen extends StatelessWidget {
             _ChoiceRow(
               id: 'health',
               title: 'حالتك الصحية',
-              options: _health,
+              options: setupHealth,
               selected: p.health,
               customIcon: Icons.medical_services_rounded,
               onChanged: (v) => c.updateProfile((p) => p.copyWith(health: v)),
@@ -342,7 +342,7 @@ class OnboardingScreen extends StatelessWidget {
             _ChoiceRow(
               id: 'allergy',
               title: 'أطعمة تتجنبها',
-              options: _avoid,
+              options: setupAvoid,
               selected: p.allergies,
               customIcon: Icons.no_food_rounded,
               onChanged: (v) =>
@@ -510,7 +510,7 @@ class _Tile extends StatelessWidget {
     required this.selected,
     required this.onTap,
   });
-  final _Opt opt;
+  final SetupOption opt;
   final bool selected;
   final VoidCallback onTap;
 
@@ -600,7 +600,7 @@ class _Tile extends StatelessWidget {
 /// The tile's picture: a flag badge or an icon on a soft disc.
 class _Picture extends StatelessWidget {
   const _Picture({required this.opt, required this.selected});
-  final _Opt opt;
+  final SetupOption opt;
   final bool selected;
   static const size = 48.0;
   @override
@@ -697,17 +697,17 @@ class _ChoiceRow extends StatelessWidget {
     this.customIcon,
   });
   final String id, title;
-  final List<_Opt> options;
+  final List<SetupOption> options;
   final Set<String> selected;
   final ValueChanged<Set<String>> onChanged;
 
   /// Set when the user may add a name that is not in [options].
   final IconData? customIcon;
 
-  List<_Opt> get _all => [
+  List<SetupOption> get _all => [
     ...options,
     for (final v in selected)
-      if (!options.any((o) => o.value == v)) _Opt(v, v, icon: customIcon),
+      if (!options.any((o) => o.value == v)) SetupOption(v, v, icon: customIcon),
   ];
 
   @override
@@ -772,7 +772,7 @@ class _CuisineRow extends StatelessWidget {
                 if (!home.contains(g['id'])) g,
             ].map((g) {
               final id = g['id'] as String;
-              return _Opt(
+              return SetupOption(
                 id,
                 '${g['name']}',
                 flag: id,
@@ -805,7 +805,7 @@ class _PickerSheet extends StatefulWidget {
     this.customIcon,
   });
   final String id, title;
-  final List<_Opt> options;
+  final List<SetupOption> options;
   final Set<String> Function(Profile) selected;
   final ValueChanged<Set<String>> onChanged;
   final IconData? customIcon;
@@ -814,7 +814,7 @@ class _PickerSheet extends StatefulWidget {
     BuildContext context, {
     required String id,
     required String title,
-    required List<_Opt> options,
+    required List<SetupOption> options,
     required Set<String> Function(Profile) selected,
     required ValueChanged<Set<String>> onChanged,
     IconData? customIcon,
@@ -868,7 +868,7 @@ class _PickerSheetState extends State<_PickerSheet> {
       ...widget.options,
       for (final v in selected)
         if (!widget.options.any((o) => o.value == v))
-          _Opt(v, v, icon: widget.customIcon),
+          SetupOption(v, v, icon: widget.customIcon),
     ];
     final shown = all.where((o) => o.label.contains(q) || o.value.contains(q));
     final canAdd =
@@ -886,7 +886,7 @@ class _PickerSheetState extends State<_PickerSheet> {
       if (canAdd)
         _Tile(
           key: ValueKey('add-${widget.id}'),
-          opt: _Opt(q, 'إضافة «$q»', icon: Icons.add_rounded),
+          opt: SetupOption(q, 'إضافة «$q»', icon: Icons.add_rounded),
           selected: false,
           onTap: () {
             widget.onChanged({...selected, q});
