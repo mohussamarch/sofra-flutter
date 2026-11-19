@@ -519,21 +519,30 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
     final look = navTrial;
     final dark = look == 'dark';
-    final tint = look == 'tint';
+    // In the dark the terracotta slab would shout: the bar turns into a
+    // calm raised surface and only the chosen tab keeps the brand colour.
+    final night = look == 'tint' && Sofra.isDark;
+    final tint = look == 'tint' && !night;
     final glass = look == 'glass';
     final pill = look.isNotEmpty;
     // Inactive and active colours for each look.
-    final idle = dark
+    final idle = night
+        ? Sofra.muted
+        : dark
         ? Sofra.onInverse.withValues(alpha: .62)
         : tint
         ? Sofra.onAccent.withValues(alpha: .72)
         : Sofra.ink.withValues(alpha: .7);
     final onColor = !pill
         ? Sofra.accent
-        : tint
+        : tint || night
         ? Sofra.accent
         : Sofra.onAccent;
-    final pillColor = tint ? Sofra.onAccent : Sofra.accent;
+    final pillColor = night
+        ? Sofra.accentTint
+        : tint
+        ? Sofra.onAccent
+        : Sofra.accent;
     Widget item(
       AppTab target,
       String key,
@@ -563,7 +572,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                   decoration: BoxDecoration(
                     color: pill && active ? pillColor : Colors.transparent,
                     borderRadius: BorderRadius.circular(Sofra.r22),
-                    boxShadow: pill && active
+                    boxShadow: pill && active && !night
                         ? [
                             BoxShadow(
                               color: Sofra.accentDark.withValues(alpha: .28),
@@ -665,6 +674,37 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           child: Material(
             type: MaterialType.transparency,
             child: Padding(padding: pad, child: row),
+          ),
+        ),
+      );
+    } else if (night) {
+      bar = DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: radius,
+          boxShadow: [
+            BoxShadow(
+              color: Sofra.palette.shadow.withValues(alpha: .45),
+              blurRadius: 24,
+              offset: const Offset(0, 10),
+              spreadRadius: -6,
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: radius,
+          child: BackdropFilter(
+            filter: ui.ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+            child: Material(
+              type: MaterialType.transparency,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: radius,
+                  color: Sofra.inverse.withValues(alpha: .94),
+                  border: Border.all(color: Sofra.line),
+                ),
+                child: Padding(padding: pad, child: row),
+              ),
+            ),
           ),
         ),
       );

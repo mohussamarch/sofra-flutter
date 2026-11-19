@@ -69,36 +69,37 @@ class SofraPalette {
     shadow: Color(0xFF2A211B),
   );
 
-  /// Warm night: deep brown paper, cream ink, a lighter terracotta that
-  /// keeps 4.5:1 on the cards, with dark text on it.
+  /// Warm charcoal (chosen 20 Nov 2026): a near-neutral dark tinted
+  /// slightly toward brown so food colours stay true; higher surfaces are
+  /// lighter, accent desaturated to 6:1 on cards, text 15:1, never pure white.
   static const dark = SofraPalette(
-    ink: Color(0xFFF2E9DE),
-    muted: Color(0xFFB5A595),
-    accent: Color(0xFFE38A62),
-    accentDark: Color(0xFFF2AA88),
-    accentTint: Color(0xFF3D2B22),
-    onAccent: Color(0xFF1F1611),
-    paper: Color(0xFF1B1613),
-    surface: Color(0xFF26201B),
-    card: Color(0xFF2C251F),
-    inverse: Color(0xFF3A2F27),
-    onInverse: Color(0xFFF7EFE6),
-    ok: Color(0xFF93C29B),
-    okTint: Color(0xFF223127),
-    warn: Color(0xFFE6A866),
-    warnTint: Color(0xFF3A2A1A),
-    sage: Color(0xFF7A604E),
-    sand: Color(0xFF14100D),
-    line: Color(0xFF3B322A),
+    ink: Color(0xFFEEE7DF),
+    muted: Color(0xFFA99F95),
+    accent: Color(0xFFE58E6B),
+    accentDark: Color(0xFFF0AA8C),
+    accentTint: Color(0xFF3B2820),
+    onAccent: Color(0xFF1C1210),
+    paper: Color(0xFF151311),
+    surface: Color(0xFF1E1B18),
+    card: Color(0xFF272320),
+    inverse: Color(0xFF312C28),
+    onInverse: Color(0xFFF4EEE7),
+    ok: Color(0xFF94C49C),
+    okTint: Color(0xFF1F2C22),
+    warn: Color(0xFFE8AE6E),
+    warnTint: Color(0xFF33281A),
+    sage: Color(0xFF6E6259),
+    sand: Color(0xFF1A1715),
+    line: Color(0xFF3A3430),
     yellow: Color(0xFFD9B565),
     washes: [
-      Color(0xFF5A2E1E),
-      Color(0xFF4A3920),
-      Color(0xFF4F2A22),
-      Color(0xFF3F3020),
-      Color(0xFF55301F),
+      Color(0xFF3B2820),
+      Color(0xFF2A2420),
+      Color(0xFF33251E),
+      Color(0xFF26221F),
+      Color(0xFF302520),
     ],
-    washBase: [Color(0xFF1E1714), Color(0xFF1B1613), Color(0xFF201813)],
+    washBase: [Color(0xFF171412), Color(0xFF151311), Color(0xFF181513)],
     shadow: Color(0xFF000000),
   );
 }
@@ -260,6 +261,8 @@ class DepthButton extends StatelessWidget {
           boxShadow: enabled
               ? secondary
                     ? Sofra.shadow(.6)
+                    : Sofra.isDark
+                    ? null
                     : [
                         BoxShadow(
                           color: Sofra.green.withValues(alpha: .28),
