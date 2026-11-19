@@ -21,7 +21,8 @@ class Place {
   /// What is saved and shared as the area: «الملز، الرياض». A district is
   /// named with its city because district names repeat between cities.
   /// Labels are unique per country (the build makes them so).
-  String get label => city == null || city == name ? name : '$name، $city';
+  String get label =>
+      city == null || city == name ? name : '$name، $city'; // i18n-data
 }
 
 class Places {
@@ -106,10 +107,10 @@ class Places {
 String normalizePlace(String value) => value
     .trim()
     .toLowerCase()
-    .replaceAll(RegExp('[ًٌٍَُِّْـ]'), '')
-    .replaceAll(RegExp('[أإآ]'), 'ا')
-    .replaceAll('ة', 'ه')
-    .replaceAll('ى', 'ي')
+    .replaceAll(RegExp('[ًٌٍَُِّْـ]'), '') // i18n-data
+    .replaceAll(RegExp('[أإآ]'), 'ا') // i18n-data
+    .replaceAll('ة', 'ه') // i18n-data
+    .replaceAll('ى', 'ي') // i18n-data
     .replaceAll(RegExp(r'\s+'), ' ');
 
 double distanceKm(double lat1, double lon1, double lat2, double lon2) {

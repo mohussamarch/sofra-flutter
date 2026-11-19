@@ -1,3 +1,5 @@
+import '../l10n/l10n.dart';
+
 enum MarketCountry { egypt, saudi }
 
 class MarketProfile {
@@ -6,9 +8,11 @@ class MarketProfile {
   String get code => country == MarketCountry.egypt ? 'EG' : 'SA';
   String get locale => country == MarketCountry.egypt ? 'ar-EG' : 'ar-SA';
   String get currency => country == MarketCountry.egypt ? 'EGP' : 'SAR';
-  String get currencyLabel => country == MarketCountry.egypt ? 'ج.م' : 'ر.س';
-  String get today => country == MarketCountry.egypt ? 'اليوم' : 'اليوم';
-  String get fridge => country == MarketCountry.egypt ? 'الثلاجة' : 'الثلاجة';
+  String get currencyLabel => country == MarketCountry.egypt
+      ? L10n.current.priceCurrencyEgp
+      : L10n.current.priceCurrencySar;
+  String get today => L10n.current.priceToday;
+  String get fridge => L10n.current.priceFridge;
   static MarketProfile fromCode(String? code) =>
       MarketProfile(code == 'SA' ? MarketCountry.saudi : MarketCountry.egypt);
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
 import '../domain/places.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 
 /// Asks for a city or district from the bundled list of the current country,
@@ -13,10 +14,7 @@ Future<Place?> showPlacePicker(BuildContext context) {
     isScrollControlled: true,
     showDragHandle: true,
     backgroundColor: Sofra.paper,
-    builder: (_) => Directionality(
-      textDirection: TextDirection.rtl,
-      child: _PlaceSheet(places: places),
-    ),
+    builder: (_) => _PlaceSheet(places: places),
   );
 }
 
@@ -52,9 +50,9 @@ class _PlaceSheetState extends State<_PlaceSheet> {
 
   @override
   Widget build(BuildContext context) => Padding(
-    padding: EdgeInsets.only(
-      left: 20,
-      right: 20,
+    padding: EdgeInsetsDirectional.only(
+      start: 20,
+      end: 20,
       bottom: MediaQuery.viewInsetsOf(context).bottom + 16,
     ),
     child: ConstrainedBox(
@@ -69,9 +67,9 @@ class _PlaceSheetState extends State<_PlaceSheet> {
             controller: search,
             autofocus: true,
             textInputAction: TextInputAction.search,
-            decoration: const InputDecoration(
-              hintText: 'ابحث عن منطقة أو مدينة',
-              prefixIcon: Icon(Icons.search_rounded),
+            decoration: InputDecoration(
+              hintText: context.l10n.priceSearchArea,
+              prefixIcon: const Icon(Icons.search_rounded),
             ),
             onChanged: (v) =>
                 setState(() => hits = places?.search(v) ?? const []),

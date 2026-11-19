@@ -9,6 +9,7 @@ import '../domain/community.dart';
 import '../domain/ingredient_directory.dart';
 import '../domain/market_profile.dart';
 import '../domain/places.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import 'common.dart';
 
@@ -28,23 +29,26 @@ class AreaPricesView extends StatefulWidget {
   State<AreaPricesView> createState() => _AreaPricesViewState();
 }
 
-/// Food groups in shelf order: the vocabulary category, its name here and
-/// its picture.
-const priceGroups = [
-  ('خضار', 'خضار', 'carrot'),
-  ('فاكهة', 'فاكهة', 'red_apple'),
-  ('بروتين', 'لحوم ودواجن وأسماك', 'poultry_leg'),
-  ('ألبان', 'ألبان وبيض', 'glass_of_milk'),
-  ('حبوب', 'أرز وحبوب', 'sheaf_of_rice'),
-  ('بقوليات', 'بقوليات', 'beans'),
-  ('مخبوزات', 'خبز ومخبوزات', 'bread'),
-  ('زيوت', 'زيوت وسمن', 'olive'),
-  ('توابل', 'توابل وبهارات', 'salt'),
-  ('صوصات', 'صوصات ومعلبات', 'jar'),
-  ('مكسرات', 'مكسرات', 'peanuts'),
-  ('مشروبات', 'مشروبات', 'beverage_box'),
-  ('أخرى', 'أخرى', 'basket'),
-];
+/// Food groups in shelf order: the vocabulary category (an id, kept as
+/// stored), its name in the current language and its picture.
+List<(String, String, String)> get priceGroups {
+  final t = L10n.current;
+  return [
+    ('خضار', t.priceGroupVegetables, 'carrot'), // i18n-data
+    ('فاكهة', t.priceGroupFruit, 'red_apple'), // i18n-data
+    ('بروتين', t.priceGroupProtein, 'poultry_leg'), // i18n-data
+    ('ألبان', t.priceGroupDairy, 'glass_of_milk'), // i18n-data
+    ('حبوب', t.priceGroupGrains, 'sheaf_of_rice'), // i18n-data
+    ('بقوليات', t.priceGroupLegumes, 'beans'), // i18n-data
+    ('مخبوزات', t.priceGroupBread, 'bread'), // i18n-data
+    ('زيوت', t.priceGroupOils, 'olive'), // i18n-data
+    ('توابل', t.priceGroupSpices, 'salt'), // i18n-data
+    ('صوصات', t.priceGroupSauces, 'jar'), // i18n-data
+    ('مكسرات', t.priceGroupNuts, 'peanuts'), // i18n-data
+    ('مشروبات', t.priceGroupDrinks, 'beverage_box'), // i18n-data
+    ('أخرى', t.priceGroupOther, 'basket'), // i18n-data
+  ];
+}
 
 class _AreaPricesViewState extends State<AreaPricesView> {
   final search = TextEditingController();
@@ -81,8 +85,11 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     prices = _fetch(c);
     c.places().then((p) {
       if (!mounted) return;
+      // Saved place labels, looked up as data.
       final capital = p.byLabel(
-        c.market.country == MarketCountry.egypt ? 'القاهرة' : 'الرياض',
+        c.market.country == MarketCountry.egypt
+            ? 'القاهرة' // i18n-data
+            : 'الرياض', // i18n-data
       );
       setState(() {
         places = p;
@@ -121,9 +128,10 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     });
     String? problem;
     var applied = false;
+    final t = L10n.current;
     try {
       if (!await Geolocator.isLocationServiceEnabled()) {
-        problem = 'خدمة الموقع مغلقة. اختر منطقتك من الخريطة أو البحث.';
+        problem = t.priceLocationOff;
       } else {
         var allowed = await Geolocator.checkPermission();
         if (allowed == LocationPermission.denied) {
@@ -131,7 +139,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
         }
         if (allowed == LocationPermission.denied ||
             allowed == LocationPermission.deniedForever) {
-          problem = 'لم يُسمح بالموقع. اختر منطقتك من الخريطة أو البحث.';
+          problem = t.priceLocationDenied;
         } else {
           final at = await Geolocator.getCurrentPosition(
             locationSettings: const LocationSettings(
@@ -141,7 +149,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
           );
           final place = places?.nearest(at.latitude, at.longitude);
           if (place == null) {
-            problem = 'لا نعرف منطقة قريبة من موقعك. اختر من الخريطة.';
+            problem = t.priceNoAreaNearby;
           } else if (mounted && !overtaken()) {
             applied = true;
             _select(place);
@@ -149,7 +157,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
         }
       }
     } on Object {
-      problem = 'تعذّر تحديد موقعك. اختر منطقتك من الخريطة أو البحث.';
+      problem = t.priceLocateFailed;
     }
     if (mounted) {
       setState(() {
@@ -188,12 +196,13 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     final nav = SofraScope.navOf(context);
     await c.updateProfile((p) => p.copyWith(area: area));
     if (mounted) setState(() {});
-    nav.notify('منطقتك الآن: $area');
+    nav.notify(L10n.current.priceAreaNowYours(area));
   }
 
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     final own = c.profile.area.trim();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -203,12 +212,12 @@ class _AreaPricesViewState extends State<AreaPricesView> {
           controller: search,
           textInputAction: TextInputAction.search,
           decoration: InputDecoration(
-            hintText: 'ابحث عن منطقة أو مدينة',
+            hintText: t.priceSearchArea,
             prefixIcon: const Icon(Icons.search_rounded),
             suffixIcon: search.text.isEmpty
                 ? null
                 : IconButton(
-                    tooltip: 'مسح',
+                    tooltip: t.priceClear,
                     onPressed: () => setState(() {
                       search.clear();
                       hits = const [];
@@ -226,8 +235,8 @@ class _AreaPricesViewState extends State<AreaPricesView> {
           Padding(
             padding: EdgeInsetsDirectional.only(top: 6, start: 12),
             child: Text(
-              'لا نتائج',
-              key: ValueKey('price-area-none'),
+              t.priceNoResults,
+              key: const ValueKey('price-area-none'),
               style: TextStyle(color: Sofra.muted, fontSize: 13),
             ),
           ),
@@ -270,7 +279,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
             const SizedBox(width: 6),
             Expanded(
               child: Text(
-                area.isEmpty ? 'اختر منطقتك' : area,
+                area.isEmpty ? t.priceChooseArea : area,
                 key: const ValueKey('price-area-shown'),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -284,14 +293,14 @@ class _AreaPricesViewState extends State<AreaPricesView> {
               TextButton(
                 key: const ValueKey('price-area-save'),
                 onPressed: _makeMine,
-                child: const Text('اجعلها منطقتي'),
+                child: Text(t.priceMakeMyArea),
               ),
             Tooltip(
-              message: 'سعر المنطقة هو ما دفعه الناس فيها في آخر 60 يومًا، ويظهر فقط عندما يشاركه بيتان أو أكثر.',
+              message: t.priceAreaInfo,
               triggerMode: TooltipTriggerMode.tap,
-              showDuration: Duration(seconds: 5),
+              showDuration: const Duration(seconds: 5),
               child: Padding(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: Icon(
                   Icons.info_outline_rounded,
                   size: 20,
@@ -329,8 +338,8 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                       children: [
                         Expanded(
                           child: Text(
-                            'تعذّر جلب أسعار المنطقة.',
-                            key: ValueKey('area-prices-failed'),
+                            t.priceAreaFetchFailed,
+                            key: const ValueKey('area-prices-failed'),
                             style: TextStyle(color: Sofra.muted, fontSize: 13),
                           ),
                         ),
@@ -339,7 +348,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                           onPressed: () => setState(() {
                             prices = _fetch(c);
                           }),
-                          child: const Text('إعادة المحاولة'),
+                          child: Text(t.priceRetry),
                         ),
                       ],
                     ),
@@ -388,7 +397,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                             _select(hit);
                           } else {
                             SofraScope.navOf(context)
-                                .notify('لا نعرف منطقة هنا. جرّب البحث.');
+                                .notify(context.l10n.priceNoAreaHere);
                           }
                         },
                       ),
@@ -429,7 +438,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                 elevation: 2,
                 child: IconButton(
                   key: const ValueKey('price-locate'),
-                  tooltip: 'موقعي',
+                  tooltip: context.l10n.priceMyLocation,
                   onPressed: locating || places == null ? null : _locate,
                   icon: locating
                       ? const SizedBox(
@@ -495,7 +504,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
               () => isOpen ? open.remove(category) : open.add(category),
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
+              padding: const EdgeInsetsDirectional.fromSTEB(12, 12, 16, 12),
               child: Row(
                 children: [
                   Image.asset(
@@ -519,7 +528,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: SoftTag(
-                          '$known بسعر المنطقة',
+                          context.l10n.priceKnownInArea('$known'),
                           color: Sofra.mint,
                           ink: Sofra.greenDark,
                         ),
@@ -541,18 +550,23 @@ class _AreaPricesViewState extends State<AreaPricesView> {
             child: !isOpen
                 ? const SizedBox(width: double.infinity)
                 : Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 12, 12),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                      12,
+                      0,
+                      16,
+                      12,
+                    ),
                     child: Column(
                       children: [
                         Divider(height: 1, color: Sofra.line),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 8),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
                           child: Row(
                             children: [
-                              Expanded(child: SizedBox()),
-                              _Head('سعر المنطقة'),
-                              SizedBox(width: 8),
-                              _Head('سعرك'),
+                              const Expanded(child: SizedBox()),
+                              _Head(context.l10n.priceAreaColumn),
+                              const SizedBox(width: 8),
+                              _Head(context.l10n.priceYoursColumn),
                             ],
                           ),
                         ),
@@ -597,8 +611,8 @@ class _AreaPricesViewState extends State<AreaPricesView> {
             value: there?.medianPerUnit,
             unit: thereUnit,
             semantic: there == null
-                ? 'لا يوجد سعر للمنطقة'
-                : 'سعر المنطقة، اضغط لتجعله سعرك',
+                ? context.l10n.priceNoAreaPrice
+                : context.l10n.priceAreaTapToUse,
             // Opens the price dialog filled with the area price; nothing is
             // saved until the user confirms.
             onTap: there == null
@@ -611,7 +625,9 @@ class _AreaPricesViewState extends State<AreaPricesView> {
             value: myValue,
             unit: unit,
             mine: true,
-            semantic: myValue == null ? 'أضف سعرك' : 'سعرك، اضغط لتعديله',
+            semantic: myValue == null
+                ? context.l10n.priceAddYours
+                : context.l10n.priceYoursTapToEdit,
             onTap: () => _editPrice(context, e, unit, myValue),
           ),
         ],
@@ -642,7 +658,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     if (result == null) return;
     final (value, share) = result;
     if (!await c.setUserPrice(e.id, 1, unit, value)) {
-      nav.notify('تعذّر حفظ السعر. حاول مرة أخرى.');
+      nav.notify(L10n.current.priceSaveFailed);
       return;
     }
     var shared = false;
@@ -672,12 +688,13 @@ class _AreaPricesViewState extends State<AreaPricesView> {
         }
       });
     }
+    final t = L10n.current;
     nav.notify(
       !share
-          ? 'حُفظ سعرك'
+          ? t.priceSaved
           : shared
-          ? 'حُفظ سعرك وشاركته مع منطقتك'
-          : 'حُفظ سعرك، وتعذّرت مشاركته.',
+          ? t.priceSavedShared
+          : t.priceSavedShareFailed,
     );
   }
 }
@@ -737,9 +754,9 @@ class _PriceDialogState extends State<_PriceDialog> {
           textInputAction: TextInputAction.done,
           onSubmitted: (_) => _save(),
           decoration: InputDecoration(
-            hintText: 'السعر',
+            hintText: context.l10n.priceHint,
             suffixText: widget.suffix,
-            errorText: invalid ? 'اكتب سعرًا أكبر من صفر' : null,
+            errorText: invalid ? context.l10n.priceInvalid : null,
           ),
         ),
         if (widget.shareTo != null)
@@ -748,19 +765,19 @@ class _PriceDialogState extends State<_PriceDialog> {
             contentPadding: EdgeInsets.zero,
             value: share,
             onChanged: (v) => setState(() => share = v ?? false),
-            title: Text('شاركه مع ${widget.shareTo}'),
+            title: Text(context.l10n.priceShareWith(widget.shareTo!)),
           ),
       ],
     ),
     actions: [
       TextButton(
         onPressed: () => Navigator.of(context).pop(),
-        child: const Text('إلغاء'),
+        child: Text(context.l10n.priceCancel),
       ),
       FilledButton(
         key: const ValueKey('price-save'),
         onPressed: _save,
-        child: const Text('حفظ'),
+        child: Text(context.l10n.priceSave),
       ),
     ],
   );
@@ -769,14 +786,15 @@ class _PriceDialogState extends State<_PriceDialog> {
 /// A positive price from what the user typed; Arabic digits and the Arabic
 /// decimal mark are accepted.
 double? parsePrice(String text) {
-  const arabic = '٠١٢٣٤٥٦٧٨٩';
+  const arabic = '٠١٢٣٤٥٦٧٨٩'; // i18n-data
+  const decimalMarks = {'٫', ','}; // i18n-data
   final latin = StringBuffer();
   for (final ch in text.trim().split('')) {
     final i = arabic.indexOf(ch);
     latin.write(
       i >= 0
           ? '$i'
-          : ch == '٫' || ch == ','
+          : decimalMarks.contains(ch)
           ? '.'
           : ch,
     );
