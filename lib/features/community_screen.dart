@@ -8,7 +8,7 @@ import '../app/scope.dart';
 import '../app/sofra_controller.dart';
 import '../data/community_backend.dart';
 import '../domain/community.dart';
-
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import 'common.dart';
 import 'community_prices.dart';
@@ -58,6 +58,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     if (sub != null) {
       return ScreenBody(
         children: [
@@ -65,10 +66,10 @@ class _CommunityScreenState extends State<CommunityScreen> {
             key: const ValueKey('community-sub-back'),
             onPressed: () => setState(() => sub = null),
             icon: const Icon(Icons.arrow_back_rounded),
-            label: const Text('مجتمع سفرة'),
+            label: Text(t.commTitle),
           ),
           Text(
-            sub == _Sub.kitchen ? 'مطبخ البيت' : 'تحدي الأسبوع',
+            sub == _Sub.kitchen ? t.commKitchen : t.commChallenge,
             style: Sofra.heading(26),
           ),
           const SizedBox(height: 12),
@@ -92,7 +93,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
           Padding(
             padding: EdgeInsets.only(bottom: 12),
             child: Text(
-              'معاينة على الجهاز: ما تنشره هنا لا يصل لأحد، ويُحذف عند الإغلاق.',
+              t.commPreviewNote,
               key: ValueKey('community-preview'),
               style: TextStyle(color: Sofra.muted, fontSize: 12),
             ),
@@ -142,7 +143,7 @@ class CommunityWelcome extends StatelessWidget {
               Transform.rotate(
                 angle: -.06,
                 child: Text(
-                  'مجتمع سفرة',
+                  context.l10n.commTitle,
                   key: ValueKey('community-welcome'),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -155,7 +156,7 @@ class CommunityWelcome extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                'كلنا على سفرة واحدة',
+                context.l10n.commTagline,
                 style: TextStyle(
                   color: Sofra.accent,
                   fontSize: 15,
@@ -227,10 +228,10 @@ class _Parts extends StatelessWidget {
     ),
     child: Row(
       children: [
-        for (final (p, label) in const [
-          (_Part.home, 'الرئيسية'),
-          (_Part.mine, 'وصفاتي'),
-          (_Part.prices, 'أسعار منطقتي'),
+        for (final (p, label) in [
+          (_Part.home, context.l10n.commPartHome),
+          (_Part.mine, context.l10n.commPartMine),
+          (_Part.prices, context.l10n.commPartPrices),
         ])
           Expanded(
             child: Semantics(
@@ -351,13 +352,14 @@ class _MineState extends State<_Mine> {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         if (c.myRecipes.isNotEmpty)
           DepthButton(
             key: const ValueKey('share-recipe-open'),
-            label: 'شارك وصفة من عندك',
+            label: t.commShareOwnRecipe,
             onPressed: () async {
               final shared = await _pickToShare(context, c);
               if (shared && mounted) setState(() => feed = _load());
@@ -368,16 +370,14 @@ class _MineState extends State<_Mine> {
           future: feed,
           builder: (context, snap) {
             if (snap.hasError) {
-              return const ErrorBlock('تعذّر جلب الوصفات. حاول مرة أخرى.');
+              return ErrorBlock(t.commRecipesLoadError);
             }
             final mine = snap.data;
             if (mine == null) return const LoadingBlock();
             if (mine.isEmpty) {
               return Surface(
                 child: Text(
-                  c.myRecipes.isEmpty
-                      ? 'اكتب وصفة من «وصفة من عندي»، ثم شاركها هنا.'
-                      : 'لم تشارك وصفة بعد.',
+                  c.myRecipes.isEmpty ? t.commMineEmptyWrite : t.commMineEmpty,
                   key: const ValueKey('community-mine-empty'),
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Sofra.muted),
@@ -399,7 +399,7 @@ class _NeedsAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Surface(
     child: Text(
-      'هذا الجزء يحتاج إلى حساب. هذه النسخة محفوظة على الجهاز فقط.',
+      context.l10n.commNeedsAccount,
       key: ValueKey('community-needs-account'),
       textAlign: TextAlign.center,
       style: TextStyle(color: Sofra.muted),
@@ -408,7 +408,7 @@ class _NeedsAccount extends StatelessWidget {
 }
 
 String _problem(Object e) =>
-    e is InviteProblem ? e.message : 'حدثت مشكلة في الاتصال. حاول مرة أخرى.';
+    e is InviteProblem ? e.message : L10n.current.commConnectionProblem;
 
 /// Story and avatar colours (index stored with each story).
 const storyColors = [
@@ -427,7 +427,9 @@ Color _colorFor(String key) =>
 
 String _initial(String name) {
   final t = name.trim();
-  return t.isEmpty ? '؟' : String.fromCharCode(t.runes.first);
+  return t.isEmpty
+      ? L10n.current.commNoInitial
+      : String.fromCharCode(t.runes.first);
 }
 
 /// A round avatar drawn from a name (no profile photos are stored).
@@ -487,6 +489,7 @@ class _HomeState extends State<_Home> {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -502,7 +505,7 @@ class _HomeState extends State<_Home> {
                   children: [
                     _Ring(
                       key: const ValueKey('story-add'),
-                      label: 'قصتك',
+                      label: t.commYourStory,
                       add: true,
                       name: c.profile.displayName,
                       onTap: () async {
@@ -536,8 +539,8 @@ class _HomeState extends State<_Home> {
               child: _OpenCard(
                 key: const ValueKey('community-challenge'),
                 icon: Icons.emoji_events_rounded,
-                title: 'تحدي الأسبوع',
-                note: 'اطبخ وشارك',
+                title: t.commChallenge,
+                note: t.commChallengeNote,
                 onTap: () => widget.open(_Sub.challenge),
               ),
             ),
@@ -546,17 +549,17 @@ class _HomeState extends State<_Home> {
               child: _OpenCard(
                 key: const ValueKey('community-kitchen'),
                 icon: Icons.house_rounded,
-                title: 'مطبخ البيت',
-                note: 'خزين واحد لأهل البيت',
+                title: t.commKitchen,
+                note: t.commKitchenNote,
                 onTap: () => widget.open(_Sub.kitchen),
               ),
             ),
           ],
         ),
         const SizedBox(height: 20),
-        const Text(
-          'شيفات على يوتيوب',
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+        Text(
+          t.commYoutubeChefs,
+          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
         ),
         const SizedBox(height: 8),
         SizedBox(
@@ -584,10 +587,13 @@ class _HomeState extends State<_Home> {
         else ...[
           Row(
             children: [
-              const Expanded(
+              Expanded(
                 child: Text(
-                  'من بيوت سفرة',
-                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+                  t.commFromSofraHomes,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 16,
+                  ),
                 ),
               ),
               if (c.myRecipes.isNotEmpty)
@@ -598,7 +604,7 @@ class _HomeState extends State<_Home> {
                     if (shared) _reload();
                   },
                   icon: const Icon(Icons.add_circle_outline),
-                  label: const Text('شارك وصفة'),
+                  label: Text(t.commShareRecipe),
                 ),
             ],
           ),
@@ -607,15 +613,15 @@ class _HomeState extends State<_Home> {
             future: feed,
             builder: (context, snap) {
               if (snap.hasError) {
-                return const ErrorBlock('تعذّر جلب الوصفات. حاول مرة أخرى.');
+                return ErrorBlock(t.commRecipesLoadError);
               }
               final items = snap.data;
               if (items == null) return const LoadingBlock();
               if (items.isEmpty) {
-                return const Surface(
+                return Surface(
                   child: Text(
-                    'لم يشارك أحد وصفة بعد. ابدأ أنت من «وصفة من عندي».',
-                    key: ValueKey('community-recipes-empty'),
+                    t.commFeedEmpty,
+                    key: const ValueKey('community-recipes-empty'),
                   ),
                 );
               }
@@ -698,37 +704,34 @@ Future<void> _openCreator(BuildContext context, Creator cr) =>
     showModalBottomSheet<void>(
       context: context,
       showDragHandle: true,
-      builder: (_) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _Avatar(cr.name, size: 72, color: _colorFor(cr.id)),
-              const SizedBox(height: 10),
+      builder: (context) => Padding(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _Avatar(cr.name, size: 72, color: _colorFor(cr.id)),
+            const SizedBox(height: 10),
+            Text(
+              cr.name,
+              key: const ValueKey('creator-name'),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+            ),
+            if (cr.country != null)
               Text(
-                cr.name,
-                key: const ValueKey('creator-name'),
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w800,
-                ),
+                L10n.term(cr.country!),
+                style: TextStyle(color: Sofra.muted),
               ),
-              if (cr.country != null)
-                Text(cr.country!, style: TextStyle(color: Sofra.muted)),
-              const SizedBox(height: 16),
-              FilledButton.icon(
-                key: const ValueKey('creator-open'),
-                onPressed: () => launchUrl(
-                  Uri.parse(cr.channelUrl),
-                  mode: LaunchMode.externalApplication,
-                ),
-                icon: const Icon(Icons.open_in_new),
-                label: const Text('افتح القناة على يوتيوب'),
+            const SizedBox(height: 16),
+            FilledButton.icon(
+              key: const ValueKey('creator-open'),
+              onPressed: () => launchUrl(
+                Uri.parse(cr.channelUrl),
+                mode: LaunchMode.externalApplication,
               ),
-            ],
-          ),
+              icon: const Icon(Icons.open_in_new),
+              label: Text(context.l10n.commOpenChannel),
+            ),
+          ],
         ),
       ),
     );
@@ -737,38 +740,36 @@ Future<bool> _pickToShare(BuildContext context, SofraController c) async {
   final pick = await showModalBottomSheet<int>(
     context: context,
     showDragHandle: true,
-    builder: (_) => Directionality(
-      textDirection: TextDirection.rtl,
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          const Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 20, 8),
-            child: Text(
-              'شارك وصفة من وصفاتك',
-              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
-            ),
+    builder: (sheet) => ListView(
+      shrinkWrap: true,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+          child: Text(
+            sheet.l10n.commShareFromYours,
+            style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
           ),
-          for (final (i, r) in c.myRecipes.indexed)
-            ListTile(
-              key: ValueKey('share-recipe-${r.recipe.id}'),
-              leading: const Icon(Icons.ios_share),
-              title: Text(r.recipe.name),
-              onTap: () => Navigator.pop(context, i),
-            ),
-        ],
-      ),
+        ),
+        for (final (i, r) in c.myRecipes.indexed)
+          ListTile(
+            key: ValueKey('share-recipe-${r.recipe.id}'),
+            leading: const Icon(Icons.ios_share),
+            title: Text(r.recipe.name),
+            onTap: () => Navigator.pop(context, i),
+          ),
+      ],
     ),
   );
   if (pick == null || !context.mounted) return false;
   final nav = SofraScope.navOf(context);
+  final t = context.l10n;
   final r = c.myRecipes[pick];
   try {
     await c.shareMyRecipe(r);
-    nav.notify('شُوركت ${r.recipe.name}');
+    nav.notify(t.commSharedNotice(r.recipe.name));
     return true;
   } catch (_) {
-    nav.notify('تعذّرت المشاركة. حاول مرة أخرى.');
+    nav.notify(t.commShareFailed);
     return false;
   }
 }
@@ -782,6 +783,7 @@ class _FeedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     final color = _colorFor(recipe.id);
     return Padding(
       padding: const EdgeInsets.only(bottom: 18),
@@ -792,10 +794,7 @@ class _FeedCard extends StatelessWidget {
           context: context,
           isScrollControlled: true,
           showDragHandle: true,
-          builder: (_) => Directionality(
-            textDirection: TextDirection.rtl,
-            child: _RecipeSheet(recipe: recipe, controller: c),
-          ),
+          builder: (_) => _RecipeSheet(recipe: recipe, controller: c),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -806,8 +805,8 @@ class _FeedCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
                   gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
+                    begin: AlignmentDirectional.topStart,
+                    end: AlignmentDirectional.bottomEnd,
                     colors: [color, color.withValues(alpha: .7)],
                   ),
                 ),
@@ -840,7 +839,10 @@ class _FeedCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
-                          '${recipe.lines.length} مكون · ${recipe.steps.length} خطوات',
+                          t.commFeedCounts(
+                            recipe.lines.length,
+                            recipe.steps.length,
+                          ),
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 11,
@@ -876,8 +878,9 @@ class _FeedCard extends StatelessWidget {
                           return Text(
                             [
                               recipe.authorName,
-                              if (recipe.cuisine != null) recipe.cuisine!,
-                              '${recipe.servings} أفراد',
+                              if (recipe.cuisine != null)
+                                L10n.term(recipe.cuisine!),
+                              t.commServings(recipe.servings),
                               if (avg != null)
                                 '★ ${avg.toStringAsFixed(1)} (${snap.data!.length})',
                             ].join(' · '),
@@ -904,10 +907,7 @@ Future<bool> _composeStory(BuildContext context, SofraController c) async {
     context: context,
     isScrollControlled: true,
     showDragHandle: true,
-    builder: (_) => Directionality(
-      textDirection: TextDirection.rtl,
-      child: _StoryComposer(controller: c),
-    ),
+    builder: (_) => _StoryComposer(controller: c),
   );
   return posted == true;
 }
@@ -953,7 +953,7 @@ class _StoryComposerState extends State<_StoryComposer> {
             borderRadius: BorderRadius.circular(18),
           ),
           child: Text(
-            text.text.isEmpty ? 'ماذا طبخت اليوم؟' : text.text,
+            text.text.isEmpty ? context.l10n.commStoryPrompt : text.text,
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.white,
@@ -988,18 +988,18 @@ class _StoryComposerState extends State<_StoryComposer> {
           maxLines: 3,
           minLines: 1,
           onChanged: (_) => setState(() {}),
-          decoration: const InputDecoration(hintText: 'اكتب قصتك'),
+          decoration: InputDecoration(hintText: context.l10n.commStoryHint),
         ),
         TextField(
           key: const ValueKey('story-dish'),
           controller: dish,
           maxLength: 80,
-          decoration: const InputDecoration(hintText: 'اسم الأكلة (اختياري)'),
+          decoration: InputDecoration(hintText: context.l10n.commStoryDishHint),
         ),
         const SizedBox(height: 6),
         DepthButton(
           key: const ValueKey('story-post'),
-          label: 'انشر لمدة يوم',
+          label: context.l10n.commStoryPost,
           onPressed: busy || text.text.trim().isEmpty
               ? null
               : () async {
@@ -1085,105 +1085,104 @@ class _StoryViewerState extends State<_StoryViewer>
     final stories = widget.rings[ring];
     final s = stories[index];
     final ago = DateTime.now().difference(s.createdAt);
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: storyColors[s.colorIndex],
-        body: SafeArea(
-          child: GestureDetector(
-            key: const ValueKey('story-viewer'),
-            behavior: HitTestBehavior.opaque,
-            onTapUp: (d) {
-              final w = MediaQuery.sizeOf(context).width;
-              // Right-to-left: the left side goes forward.
-              d.localPosition.dx < w / 2 ? _next() : _previous();
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      for (var i = 0; i < stories.length; i++)
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2),
-                            child: AnimatedBuilder(
-                              animation: timer,
-                              builder: (_, _) => LinearProgressIndicator(
-                                value: i < index
-                                    ? 1
-                                    : i == index
-                                    ? timer.value
-                                    : 0,
-                                color: Colors.white,
-                                backgroundColor: Colors.white30,
-                                minHeight: 3,
-                              ),
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    children: [
-                      _Avatar(s.name, size: 36, color: Colors.white24),
-                      const SizedBox(width: 8),
+    final t = context.l10n;
+    final rtl = Directionality.of(context) == TextDirection.rtl;
+    return Scaffold(
+      backgroundColor: storyColors[s.colorIndex],
+      body: SafeArea(
+        child: GestureDetector(
+          key: const ValueKey('story-viewer'),
+          behavior: HitTestBehavior.opaque,
+          onTapUp: (d) {
+            final w = MediaQuery.sizeOf(context).width;
+            // The end side (left in Arabic, right in English) goes forward.
+            (d.localPosition.dx < w / 2) == rtl ? _next() : _previous();
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    for (var i = 0; i < stories.length; i++)
                       Expanded(
-                        child: Text(
-                          '${s.name} · ${ago.inHours > 0 ? 'من ${ago.inHours} ساعة' : 'الآن'}',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 2),
+                          child: AnimatedBuilder(
+                            animation: timer,
+                            builder: (_, _) => LinearProgressIndicator(
+                              value: i < index
+                                  ? 1
+                                  : i == index
+                                  ? timer.value
+                                  : 0,
+                              color: Colors.white,
+                              backgroundColor: Colors.white30,
+                              minHeight: 3,
+                            ),
                           ),
                         ),
                       ),
-                      IconButton(
-                        key: const ValueKey('story-close'),
-                        onPressed: () => Navigator.of(context).pop(),
-                        icon: const Icon(Icons.close, color: Colors.white),
-                      ),
-                    ],
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (s.dish != null)
-                            Container(
-                              margin: const EdgeInsets.only(bottom: 16),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 6,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white24,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Text(
-                                s.dish!,
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          Text(
-                            s.text,
-                            key: const ValueKey('story-text-shown'),
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              height: 1.4,
-                            ),
-                          ),
-                        ],
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    _Avatar(s.name, size: 36, color: Colors.white24),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        '${s.name} · ${ago.inHours > 0 ? t.commStoryHoursAgo(ago.inHours) : t.commStoryNow}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
+                    IconButton(
+                      key: const ValueKey('story-close'),
+                      onPressed: () => Navigator.of(context).pop(),
+                      icon: const Icon(Icons.close, color: Colors.white),
+                    ),
+                  ],
+                ),
+                Expanded(
+                  child: Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (s.dish != null)
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 16),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 14,
+                              vertical: 6,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white24,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Text(
+                              s.dish!,
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        Text(
+                          s.text,
+                          key: const ValueKey('story-text-shown'),
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.w800,
+                            height: 1.4,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -1240,6 +1239,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     return FutureBuilder<SharedKitchen?>(
       future: current,
       builder: (context, snap) {
@@ -1247,31 +1247,27 @@ class _SharedKitchenState extends State<_SharedKitchen> {
           return const LoadingBlock();
         }
         if (snap.hasError) {
-          return ErrorBlock('تعذّر فتح بيانات المطبخ. حاول مرة أخرى.');
+          return ErrorBlock(t.commKitchenLoadError);
         }
         final k = snap.data;
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             if (k == null) ...[
-              const Surface(
-                child: Text(
-                  'اجمع البيت كله على مطبخ واحد: المخزون نفسه، والخطة نفسها، وقائمة الشراء نفسها. ما في مطبخك الآن هو ما ستتم مشاركته.',
-                ),
-              ),
+              Surface(child: Text(t.commKitchenIntro)),
               const SizedBox(height: 12),
               DepthButton(
                 key: const ValueKey('kitchen-share'),
-                label: 'أنشئ مطبخًا مشتركًا',
+                label: t.commKitchenCreate,
                 onPressed: busy ? null : () => _run(() => c.shareKitchen()),
               ),
               const SizedBox(height: 20),
-              const SectionTitle('عندك كود دعوة؟'),
+              SectionTitle(t.commHaveInvite),
               TextField(
                 key: const ValueKey('kitchen-code'),
                 controller: code,
                 textCapitalization: TextCapitalization.characters,
-                decoration: const InputDecoration(hintText: 'مثلاً: K7PM2QXA'),
+                decoration: InputDecoration(hintText: t.commCodeExample),
               ),
               const SizedBox(height: 8),
               FilledButton(
@@ -1279,11 +1275,11 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                 onPressed: busy
                     ? null
                     : () => _run(() => c.joinKitchen(code.text)),
-                child: const Text('ادخل المطبخ'),
+                child: Text(t.commKitchenJoin),
               ),
               const SizedBox(height: 6),
               Text(
-                'عند دخولك مطبخًا مشتركًا، يبقى مطبخك الشخصي محفوظًا وتعود إليه عند الخروج.',
+                t.commKitchenJoinNote,
                 style: TextStyle(color: Sofra.muted, fontSize: 12),
               ),
             ] else ...[
@@ -1291,9 +1287,9 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'المطبخ المشترك',
-                      style: TextStyle(fontWeight: FontWeight.w800),
+                    Text(
+                      t.commSharedKitchen,
+                      style: const TextStyle(fontWeight: FontWeight.w800),
                     ),
                     for (final m in k.members)
                       ListTile(
@@ -1301,7 +1297,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                         leading: const Icon(Icons.person_outline),
                         title: Text(k.nameOf(m)),
                         subtitle: m == k.owner
-                            ? const Text('صاحب المطبخ')
+                            ? Text(t.commKitchenOwner)
                             : null,
                       ),
                   ],
@@ -1312,12 +1308,11 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                 Surface(
                   child: Column(
                     children: [
-                      const Text(
-                        'أرسل هذا الرمز لأهل البيت (صالح لمدة أسبوع):',
-                      ),
+                      Text(t.commInviteSend),
                       SelectableText(
                         invite!,
                         key: const ValueKey('kitchen-invite-code'),
+                        textDirection: TextDirection.ltr,
                         style: const TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w800,
@@ -1329,7 +1324,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                 ),
               DepthButton(
                 key: const ValueKey('kitchen-invite'),
-                label: 'أنشئ رمز دعوة',
+                label: t.commInviteCreate,
                 onPressed: busy
                     ? null
                     : () => _run(() async {
@@ -1349,7 +1344,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                             await _run(() => c.leaveKitchen(k.id));
                           }
                         },
-                  child: const Text('العودة إلى مطبخي الشخصي'),
+                  child: Text(t.commBackToMyKitchen),
                 ),
             ],
             if (error != null)
@@ -1392,6 +1387,7 @@ class _RecipeSheetState extends State<_RecipeSheet> {
   @override
   Widget build(BuildContext context) {
     final r = widget.recipe;
+    final t = context.l10n;
     return ConstrainedBox(
       constraints: BoxConstraints(
         maxHeight: MediaQuery.sizeOf(context).height * .85,
@@ -1410,19 +1406,19 @@ class _RecipeSheetState extends State<_RecipeSheet> {
             style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
           ),
           Text(
-            'من ${r.authorName} · ${r.servings} أفراد',
+            '${t.commByAuthor(r.authorName)} · ${t.commServings(r.servings)}',
             style: TextStyle(color: Sofra.muted),
           ),
-          const SectionTitle('المكونات'),
+          SectionTitle(t.commIngredients),
           for (final l in r.lines)
             Text(
               l.amount == null
                   ? '• ${l.name}'
-                  : '• ${l.name}: ${formatAmount(l.amount!)} ${l.unit}',
+                  : '• ${l.name}: ${formatAmount(l.amount!)} ${L10n.term(l.unit ?? '')}',
             ),
-          const SectionTitle('الطريقة'),
+          SectionTitle(t.commMethod),
           for (final (i, s) in r.steps.indexed) Text('${i + 1}. $s'),
-          const SectionTitle('التقييمات'),
+          SectionTitle(t.commRatings),
           FutureBuilder<List<Rating>>(
             future: ratings,
             builder: (context, snap) {
@@ -1434,8 +1430,11 @@ class _RecipeSheetState extends State<_RecipeSheet> {
                 children: [
                   Text(
                     avg == null
-                        ? 'لم يقيّمها أحد بعد.'
-                        : '${avg.toStringAsFixed(1)} من 5 (${list.length})',
+                        ? t.commNoRatings
+                        : t.commRatingAverage(
+                            avg.toStringAsFixed(1),
+                            '${list.length}',
+                          ),
                     key: const ValueKey('community-rating-average'),
                   ),
                   for (final x in list)
@@ -1467,7 +1466,7 @@ class _RecipeSheetState extends State<_RecipeSheet> {
             key: const ValueKey('rate-comment'),
             controller: comment,
             maxLength: 500,
-            decoration: const InputDecoration(hintText: 'تعليقك (اختياري)'),
+            decoration: InputDecoration(hintText: t.commCommentHint),
           ),
           FilledButton(
             key: const ValueKey('rate-save'),
@@ -1483,7 +1482,7 @@ class _RecipeSheetState extends State<_RecipeSheet> {
                       ratings = widget.controller.community!.ratings(r.id);
                     });
                   },
-            child: const Text('احفظ تقييمي'),
+            child: Text(t.commSaveRating),
           ),
         ],
       ),
@@ -1513,8 +1512,23 @@ class _ChallengeState extends State<_Challenge> {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     final ch = challengeFor(today);
     final progress = challengeProgress(ch, today, c.cookedMeals);
+    final (title, detail) = switch (ch.kind) {
+      ChallengeKind.cookPlanned => (
+        t.commChallengeCookPlanned('${ch.goal}'),
+        t.commChallengeCookPlannedDetail,
+      ),
+      ChallengeKind.differentRecipes => (
+        t.commChallengeDifferent('${ch.goal}'),
+        t.commChallengeDifferentDetail,
+      ),
+      ChallengeKind.newRecipes => (
+        t.commChallengeNew(ch.goal),
+        t.commChallengeNewDetail,
+      ),
+    };
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -1523,21 +1537,21 @@ class _ChallengeState extends State<_Challenge> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                ch.title,
+                title,
                 key: const ValueKey('challenge-title'),
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              Text(ch.detail, style: TextStyle(color: Sofra.muted)),
+              Text(detail, style: TextStyle(color: Sofra.muted)),
               const SizedBox(height: 10),
               LinearProgressIndicator(
                 value: (progress / ch.goal).clamp(0, 1).toDouble(),
               ),
               const SizedBox(height: 6),
               Text(
-                'أنجزت $progress من ${ch.goal}',
+                t.commChallengeProgress('$progress', '${ch.goal}'),
                 key: const ValueKey('challenge-progress'),
               ),
             ],
@@ -1546,7 +1560,7 @@ class _ChallengeState extends State<_Challenge> {
         const SizedBox(height: 10),
         DepthButton(
           key: const ValueKey('challenge-join'),
-          label: 'سجّل تقدمي في اللوحة',
+          label: t.commChallengeLog,
           onPressed: () async {
             await c.joinChallenge(today: today);
             setState(() {
@@ -1554,17 +1568,17 @@ class _ChallengeState extends State<_Challenge> {
             });
           },
         ),
-        const SectionTitle('البيوت المشاركة'),
+        SectionTitle(t.commChallengeHomes),
         FutureBuilder<List<ChallengeEntry>>(
           future: board,
           builder: (context, snap) {
             if (snap.hasError) {
-              return const ErrorBlock('تعذّر جلب اللوحة. حاول مرة أخرى.');
+              return ErrorBlock(t.commBoardLoadError);
             }
             final list = snap.data;
             if (list == null) return const LoadingBlock();
             if (list.isEmpty) {
-              return const Text('لم يسجّل أحد هذا الأسبوع بعد.');
+              return Text(t.commBoardEmpty);
             }
             final sorted = [...list]
               ..sort((a, b) => b.progress.compareTo(a.progress));
@@ -1579,7 +1593,10 @@ class _ChallengeState extends State<_Challenge> {
                       color: e.done ? Sofra.orange : Sofra.muted,
                     ),
                     title: Text(e.name),
-                    trailing: Text('${e.progress}/${e.goal}'),
+                    trailing: Text(
+                      '${e.progress}/${e.goal}',
+                      textDirection: TextDirection.ltr,
+                    ),
                   ),
               ],
             );
@@ -1594,20 +1611,18 @@ Future<bool> _confirmLeave(BuildContext context) async =>
     await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('الخروج من المطبخ المشترك؟'),
-        content: const Text(
-          'ستعود إلى مطبخك الشخصي ولن ترى تعديلات أهل البيت. للعودة تحتاج رمز دعوة جديدًا من صاحب المطبخ.',
-        ),
+        title: Text(context.l10n.commLeaveTitle),
+        content: Text(context.l10n.commLeaveBody),
         actions: [
           TextButton(
             key: const ValueKey('kitchen-leave-cancel'),
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('إلغاء'),
+            child: Text(context.l10n.commCancel),
           ),
           TextButton(
             key: const ValueKey('kitchen-leave-confirm'),
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('اخرج'),
+            child: Text(context.l10n.commLeave),
           ),
         ],
       ),
