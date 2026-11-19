@@ -4,9 +4,11 @@ import '../app/scope.dart';
 import '../app/sofra_controller.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/recipe_catalog.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'recipe_detail_screen.dart' show englishRecipeName;
 
 /// Step-by-step cooking for one planned meal, ending in an explicit stock
 /// confirmation (what is deducted, what is kept out and why).
@@ -20,6 +22,9 @@ class CookingScreen extends StatefulWidget {
 
 class _CookingScreenState extends State<CookingScreen> {
   Future<CatalogRecipe>? recipe;
+
+  /// The recipe's English name from the catalog index, when it has one.
+  Future<String?>? nameEn;
   int step = 0;
   bool cooked = false;
   bool busy = false;
@@ -30,15 +35,26 @@ class _CookingScreenState extends State<CookingScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    recipe ??= SofraScope.controllerOf(context).recipeForPlan(widget.meal.id);
+    final c = SofraScope.controllerOf(context);
+    recipe ??= c.recipeForPlan(widget.meal.id);
+    nameEn ??= englishRecipeName(c, widget.meal.recipeId);
   }
+
+  /// [r]'s name in the current language.
+  Widget _name(CatalogRecipe r, Widget Function(String name) build) =>
+      FutureBuilder<String?>(
+        future: nameEn,
+        builder: (context, en) => build(L10n.pick(r.name, en.data)),
+      );
 
   @override
   Widget build(BuildContext context) => FutureBuilder<CatalogRecipe>(
     future: recipe,
     builder: (context, snap) {
       if (snap.hasError) {
-        return const ScreenBody(children: [ErrorBlock('تعذّر فتح الوصفة.')]);
+        return ScreenBody(
+          children: [ErrorBlock(context.l10n.detailCookOpenError)],
+        );
       }
       final r = snap.data;
       if (r == null) return const LoadingBlock();
@@ -47,10 +63,10 @@ class _CookingScreenState extends State<CookingScreen> {
         return ScreenBody(
           footer: DepthButton(
             key: const ValueKey('finish-cooking'),
-            label: 'انتهى الطبخ · راجع الخصم',
+            label: context.l10n.detailFinishCooking,
             onPressed: busy ? null : () => _confirm(r),
           ),
-          children: const [Text('لا توجد خطوات مكتوبة لهذه الوصفة في المصدر.')],
+          children: [Text(context.l10n.detailNoSteps)],
         );
       }
       return _step(r);
@@ -61,10 +77,11 @@ class _CookingScreenState extends State<CookingScreen> {
     final steps = r.steps;
     final last = step >= steps.length - 1;
     final s = steps[step];
+    final t = context.l10n;
     return ScreenBody(
       footer: DepthButton(
         key: ValueKey(last ? 'finish-cooking' : 'next-cooking-step'),
-        label: last ? 'انتهى الطبخ · راجع الخصم' : 'الخطوة التالية',
+        label: last ? t.detailFinishCooking : t.detailNextStep,
         onPressed: busy
             ? null
             : last
@@ -76,12 +93,15 @@ class _CookingScreenState extends State<CookingScreen> {
         Row(
           children: [
             Expanded(
-              child: Text(
-                r.name,
-                style: TextStyle(color: Sofra.muted, fontSize: 14),
+              child: _name(
+                r,
+                (name) => Text(
+                  name,
+                  style: TextStyle(color: Sofra.muted, fontSize: 14),
+                ),
               ),
             ),
-            SoftTag('${step + 1} من ${steps.length}'),
+            SoftTag(t.detailStepOf('${step + 1}', '${steps.length}')),
           ],
         ),
         const SizedBox(height: 16),
@@ -104,7 +124,7 @@ class _CookingScreenState extends State<CookingScreen> {
         const SizedBox(height: 20),
         if (s.minutes != null)
           SoftTag(
-            'حوالي ${formatAmount(s.minutes!)} دقيقة',
+            t.detailAboutMinutes(formatAmount(s.minutes!)),
             icon: Icons.schedule_rounded,
             color: Sofra.peach,
             ink: Sofra.warn,
@@ -118,7 +138,7 @@ class _CookingScreenState extends State<CookingScreen> {
           TextButton.icon(
             onPressed: () => setState(() => step--),
             icon: const Icon(Icons.arrow_back_rounded),
-            label: const Text('الخطوة السابقة'),
+            label: Text(t.detailPreviousStep),
           ),
       ],
     );
@@ -127,11 +147,12 @@ class _CookingScreenState extends State<CookingScreen> {
   Future<void> _confirm(CatalogRecipe r) async {
     final c = SofraScope.controllerOf(context);
     final check = c.checkStock(r.forServings(widget.meal.servings));
+    final direction = Directionality.of(context);
     final cookedLess = await showModalBottomSheet<Set<int>>(
       context: context,
       isScrollControlled: true,
       builder: (ctx) => Directionality(
-        textDirection: TextDirection.rtl,
+        textDirection: direction,
         child: _ConfirmSheet(check: check),
       ),
     );
@@ -155,19 +176,22 @@ class _CookingScreenState extends State<CookingScreen> {
       const SizedBox(height: 24),
       const Center(child: ChefArt(size: 260, celebrate: true)),
       const SizedBox(height: 18),
-      const Center(
+      Center(
         child: Text(
-          'بالهنا والشفا!',
-          key: ValueKey('cooking-success'),
-          style: TextStyle(fontSize: 34, fontWeight: FontWeight.w800),
+          context.l10n.detailEnjoy,
+          key: const ValueKey('cooking-success'),
+          style: const TextStyle(fontSize: 34, fontWeight: FontWeight.w800),
         ),
       ),
       const SizedBox(height: 12),
       Center(
-        child: Text(
-          'طُبخت ${r.name}، وخُصم ما أكدته من المخزون.',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 16, color: Sofra.muted),
+        child: _name(
+          r,
+          (name) => Text(
+            context.l10n.detailCookedNote(name),
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16, color: Sofra.muted),
+          ),
         ),
       ),
       const SizedBox(height: 24),
@@ -175,7 +199,7 @@ class _CookingScreenState extends State<CookingScreen> {
       const SizedBox(height: 16),
       DepthButton(
         key: const ValueKey('after-cooking-kitchen'),
-        label: 'اعرض ما تبقى في مطبخك',
+        label: context.l10n.detailShowKitchen,
         onPressed: () {
           widget.onDone();
           SofraScope.navOf(context).goTab(AppTab.kitchen);
@@ -202,13 +226,19 @@ class _LeftoversCardState extends State<_LeftoversCard> {
   /// Days until the reminder; null: no reminder.
   int? remind = 2;
 
+  /// "2 حصة" / "2 servings" for the current count.
+  String _servings(AppLocalizations t) => servings == 1
+      ? t.detailOneServing
+      : t.detailServings(formatAmount(servings));
+
   @override
   Widget build(BuildContext context) {
+    final t = context.l10n;
     if (saved) {
       return Surface(
         color: Sofra.mint,
         child: Text(
-          'وضعنا ${formatAmount(servings)} حصة في الثلاجة، وستجدها في الميكروويف عندما تريد تسخينها.',
+          t.detailLeftoversSaved(_servings(t)),
           key: const ValueKey('leftovers-saved'),
           textAlign: TextAlign.center,
         ),
@@ -225,13 +255,13 @@ class _LeftoversCardState extends State<_LeftoversCard> {
     return Surface(
       child: Column(
         children: [
-          const Text(
-            'هل تبقّى أكل؟',
+          Text(
+            t.detailAnyLeftovers,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 4),
           Text(
-            'سجّله وسنضعه في الثلاجة لتسخّنه لاحقًا.',
+            t.detailLeftoversHint,
             style: TextStyle(color: Sofra.muted, fontSize: 13),
           ),
           const SizedBox(height: 12),
@@ -242,7 +272,7 @@ class _LeftoversCardState extends State<_LeftoversCard> {
               SizedBox(
                 width: 96,
                 child: Text(
-                  '${formatAmount(servings)} حصة',
+                  _servings(t),
                   key: const ValueKey('leftover-servings'),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
@@ -256,7 +286,7 @@ class _LeftoversCardState extends State<_LeftoversCard> {
           ),
           const SizedBox(height: 8),
           Text(
-            'ذكّرني بها بعد',
+            t.detailRemindAfter,
             style: TextStyle(color: Sofra.muted, fontSize: 13),
           ),
           Wrap(
@@ -267,11 +297,7 @@ class _LeftoversCardState extends State<_LeftoversCard> {
                 SofraChip(
                   key: ValueKey('leftover-remind-${d ?? 0}'),
                   label: Text(
-                    d == null
-                        ? 'دون'
-                        : d == 1
-                        ? 'يوم'
-                        : '$d أيام',
+                    d == null ? t.detailRemindNone : t.detailRemindDays(d),
                   ),
                   selected: remind == d,
                   onSelected: (_) => setState(() => remind = d),
@@ -292,7 +318,7 @@ class _LeftoversCardState extends State<_LeftoversCard> {
                         );
                     if (ok && mounted) setState(() => saved = true);
                   },
-            child: const Text('ضعه في الثلاجة'),
+            child: Text(t.detailPutInFridge),
           ),
         ],
       ),
@@ -322,11 +348,22 @@ class _ConfirmSheetState extends State<_ConfirmSheet> {
       ...check.where(LineStock.unresolved),
     ];
     final unmeasured = check.where(LineStock.unmeasured).toList();
-    String amount(CookingLine l) => l.quantity == null
-        ? ''
-        : l.partial
-        ? 'عندك ${formatAmount(l.quantity! - l.missing!)} من ${formatAmount(l.quantity!)} ${l.ingredient.unit ?? ''}'
-        : '${formatAmount(l.quantity!)} ${l.ingredient.unit ?? ''}';
+    final t = context.l10n;
+    String amount(CookingLine l) {
+      if (l.quantity == null) return '';
+      final unit = L10n.term(l.ingredient.unit ?? '');
+      return l.partial
+          ? t.detailHaveOf(
+              formatAmount(l.quantity! - l.missing!),
+              formatAmount(l.quantity!),
+              unit,
+            )
+          : '${formatAmount(l.quantity!)} $unit';
+    }
+
+    // In English the source line (when the data has it) names the line.
+    String name(CookingLine l) =>
+        L10n.pick(l.ingredient.name, l.ingredient.display);
     Widget group(
       String title,
       String note,
@@ -351,8 +388,12 @@ class _ConfirmSheetState extends State<_ConfirmSheet> {
                   Expanded(
                     child: Text(
                       l.stockId == null
-                          ? l.ingredient.name
-                          : '${l.ingredient.name} · سنستخدم ${SofraScope.controllerOf(context).ingredientName(l.stockId!)}',
+                          ? name(l)
+                          : t.detailUsingStock(
+                              name(l),
+                              SofraScope.controllerOf(context)
+                                  .ingredientName(l.stockId!),
+                            ),
                     ),
                   ),
                   Text(amount(l), style: TextStyle(color: Sofra.muted)),
@@ -365,14 +406,14 @@ class _ConfirmSheetState extends State<_ConfirmSheet> {
                 children: [
                   SofraChip(
                     key: ValueKey('partial-bought-${l.index}'),
-                    label: const Text('اشتريت الباقي'),
+                    label: Text(t.detailBoughtRest),
                     selected: !cookedLess.contains(l.index),
                     onSelected: (_) =>
                         setState(() => cookedLess.remove(l.index)),
                   ),
                   SofraChip(
                     key: ValueKey('partial-less-${l.index}'),
-                    label: const Text('طبخت بأقل'),
+                    label: Text(t.detailCookedLess),
                     selected: cookedLess.contains(l.index),
                     onSelected: (_) => setState(() => cookedLess.add(l.index)),
                   ),
@@ -392,47 +433,47 @@ class _ConfirmSheetState extends State<_ConfirmSheet> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'قبل الخصم من المخزون',
+              Text(
+                t.detailBeforeDeduct,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
               ),
               if (deduct.isNotEmpty)
                 group(
-                  'سيُخصم',
-                  'موجود عندك بنفس الوحدة',
+                  t.detailWillDeduct,
+                  t.detailWillDeductNote,
                   deduct,
                   Sofra.greenDark,
                 ),
               if (partial.isNotEmpty)
                 group(
-                  'عندك جزء فقط',
-                  'هل اشتريت الباقي، أم طبخت بما عندك؟ في الحالتين يُخصم ما عندك.',
+                  t.detailPartial,
+                  t.detailPartialNote,
                   partial,
                   Sofra.greenDark,
                 ),
               if (kept.isNotEmpty)
                 group(
-                  'لن يُخصم',
-                  'ناقص أو مسجّل بوحدة مختلفة. ستبقى التكلفة غير معروفة.',
+                  t.detailNotDeducted,
+                  t.detailNotDeductedNote,
                   kept,
                   Sofra.warn,
                 ),
               if (unmeasured.isNotEmpty)
                 group(
-                  'دون مقدار في الوصفة',
-                  'مثل «حسب الرغبة»، لن يُخصم',
+                  t.detailUnmeasuredGroup,
+                  t.detailUnmeasuredNote,
                   unmeasured,
                   Sofra.muted,
                 ),
               const SizedBox(height: 20),
               DepthButton(
                 key: const ValueKey('confirm-cooking'),
-                label: 'تأكيد',
+                label: t.detailConfirm,
                 onPressed: () => Navigator.pop(context, {...cookedLess}),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text('ليس بعد'),
+                child: Text(t.detailNotYet),
               ),
             ],
           ),

@@ -5,6 +5,7 @@ import '../app/sofra_controller.dart';
 import '../data/recipe_photo_library.dart';
 import '../data/recipe_repository.dart';
 import '../domain/recipe_catalog.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/flags.dart';
 import '../ui/illustrations.dart';
@@ -29,6 +30,9 @@ class RecipeDetailScreen extends StatefulWidget {
 class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   Future<(CatalogRecipe, CatalogRecipe)>? recipe;
 
+  /// The recipe's English name from the catalog index, when it has one.
+  Future<String?>? nameEn;
+
   /// The dish this recipe is one way of, with its ways' index rows.
   Future<(Dish, List<Map<String, dynamic>>)?>? dish;
   int? servings;
@@ -43,6 +47,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     super.didChangeDependencies();
     recipe ??= _load();
     dish ??= _dish();
+    nameEn ??= englishRecipeName(c, widget.recipeId);
   }
 
   Future<(Dish, List<Map<String, dynamic>>)?> _dish() async {
@@ -109,7 +114,9 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                               CuisineFlag(cuisine, size: 26),
                               const SizedBox(width: 8),
                               Text(
-                                n > 1 ? '$cuisine $n' : cuisine,
+                                n > 1
+                                    ? '${L10n.term(cuisine)} $n'
+                                    : L10n.term(cuisine),
                                 style: TextStyle(
                                   color: on ? Sofra.onAccent : Sofra.ink,
                                   fontWeight: FontWeight.w800,
@@ -152,8 +159,8 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         future: recipe,
         builder: (context, snap) {
           if (snap.hasError) {
-            return const ScreenBody(
-              children: [ErrorBlock('تعذّر فتح الوصفة. ارجع وحاول مرة أخرى.')],
+            return ScreenBody(
+              children: [ErrorBlock(context.l10n.detailOpenError)],
             );
           }
           final data = snap.data;
@@ -166,6 +173,8 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
 
   Widget _detail(CatalogRecipe source, CatalogRecipe planning, Widget? bar) {
     final c = this.c;
+    final t = context.l10n;
+    final listSep = t.detailListSeparator;
     final known = planning.servings != null;
     final people = servings ?? c.profile.servings;
     final scaled = known ? planning.forServings(people) : null;
@@ -181,12 +190,12 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         children: [
           DepthButton(
             key: const ValueKey('cook-now'),
-            label: starting ? 'بنجهّز الطبخة…' : 'أطبخ الآن',
+            label: starting ? t.detailPreparing : t.detailCookNow,
             onPressed: known && !starting ? () => _cookNow(people) : null,
           ),
           const SizedBox(height: 6),
           Text(
-            'تُحفظ كوجبة لليوم لاستكمالها. لا خصم قبل التأكيد.',
+            t.detailCookNowNote,
             textAlign: TextAlign.center,
             style: TextStyle(color: Sofra.muted, fontSize: 12),
           ),
@@ -195,7 +204,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             key: const ValueKey('plan-meal'),
             compact: true,
             secondary: true,
-            label: 'أضيف للخطة',
+            label: t.detailAddToPlan,
             onPressed: known && !starting ? () => _plan(people) : null,
           ),
         ],
@@ -229,7 +238,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                   ),
                 ),
                 Text(
-                  'الصورة: ${photo.credit} · ${photo.licence}',
+                  t.detailPhotoCredit(photo.credit, photo.licence),
                   style: TextStyle(color: Sofra.muted, fontSize: 11),
                 ),
               ],
@@ -238,12 +247,15 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         ),
         if (bar != null) ...[const SizedBox(height: 14), bar],
         const SizedBox(height: 22),
-        Text(
-          source.name,
-          style: const TextStyle(
-            fontWeight: FontWeight.w800,
-            fontSize: 27,
-            height: 1.3,
+        FutureBuilder<String?>(
+          future: nameEn,
+          builder: (context, en) => Text(
+            L10n.pick(source.name, en.data),
+            style: const TextStyle(
+              fontWeight: FontWeight.w800,
+              fontSize: 27,
+              height: 1.3,
+            ),
           ),
         ),
         const SizedBox(height: 8),
@@ -258,9 +270,10 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               minutesLabel(scaled?.totalMinutes ?? source.totalMinutes),
               icon: Icons.schedule_rounded,
             ),
-            SoftTag(source.cuisine),
-            SoftTag(source.category),
-            if (source.difficulty.isNotEmpty) SoftTag(source.difficulty),
+            SoftTag(L10n.term(source.cuisine)),
+            SoftTag(L10n.term(source.category)),
+            if (source.difficulty.isNotEmpty)
+              SoftTag(L10n.term(source.difficulty)),
           ],
         ),
         const SizedBox(height: 20),
@@ -273,11 +286,11 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'نطبخ لكم شخصًا؟',
+                        t.detailServingsQuestion,
                         style: TextStyle(fontWeight: FontWeight.w800),
                       ),
                       Text(
-                        'تُضبط الكميات تلقائيًا',
+                        t.detailServingsHint,
                         style: TextStyle(fontSize: 11, color: Sofra.muted),
                       ),
                     ],
@@ -294,14 +307,14 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           _yieldReview(),
         if (known) ...[
           const SizedBox(height: 12),
-          const Text('أسجّل الطبخة كـ'),
+          Text(t.detailLogAs),
           Wrap(
             spacing: 8,
             children: [
               for (final slot in mealSlots.entries)
                 SofraChip(
                   key: ValueKey('cook-slot-${slot.key}'),
-                  label: Text(slot.value),
+                  label: Text(L10n.term(slot.value)),
                   selected: cookingSlot == slot.key,
                   onSelected: starting
                       ? null
@@ -318,8 +331,17 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               padding: const EdgeInsets.all(16),
               child: Text(
                 allergy.isNotEmpty
-                    ? 'انتبه: ${allergy.entries.map((e) => '«${e.key}» في ${e.value.join('، ')}').join('؛ ')}. المطابقة بالاسم بس، راجع المكونات والعبوات بنفسك.'
-                    : 'راجع مكونات الوصفة والعبوات مع الحساسية المسجّلة: ${c.profile.allergies.join('، ')}.',
+                    ? t.detailAllergyMatch(
+                        allergy.entries
+                            .map(
+                              (e) => t.detailAllergyMatchItem(
+                                e.key,
+                                e.value.join(listSep),
+                              ),
+                            )
+                            .join(t.detailGroupSeparator),
+                      )
+                    : t.detailAllergyCheck(c.profile.allergies.join(listSep)),
                 style: TextStyle(
                   fontSize: 12,
                   color: Sofra.isDark ? Sofra.warn : const Color(0xFF79513D),
@@ -327,16 +349,18 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               ),
             ),
           ),
-        SectionTitle(known ? 'المكونات على قدركم' : 'المكونات كما في المصدر'),
+        SectionTitle(
+          known ? t.detailIngredientsScaled : t.detailIngredientsSource,
+        ),
         for (var i = 0; i < source.ingredients.length; i++)
           _IngredientRow(
             ingredient: (scaled?.recipe ?? source).ingredients[i],
             amount: scaled != null
-                ? scaled.display(scaled.recipe.ingredients[i])
+                ? _scaledAmount(scaled, scaled.recipe.ingredients[i])
                 : _sourceAmount(source.ingredients[i]),
             line: check?.lines[i],
           ),
-        const SectionTitle('الخطوات'),
+        SectionTitle(t.detailSteps),
         for (final step in source.steps)
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
@@ -364,9 +388,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             ),
           ),
         const SizedBox(height: 8),
-        noteText(
-          'لا تظهر الأسعار والقيم الغذائية هنا حتى تُراجع من مصادرها. الكميات من المصدر.',
-        ),
+        noteText(t.detailNoPricesNote),
       ],
     );
   }
@@ -374,21 +396,34 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   String _sourceAmount(CatalogIngredient i) =>
       i.display ??
       (i.amount == null
-          ? i.label ?? i.note ?? 'حسب الرغبة'
-          : '${formatAmount(i.amount!)} ${i.unit ?? ''}'.trim());
+          ? i.label ?? i.note ?? context.l10n.detailToTaste
+          : '${formatAmount(i.amount!)} ${L10n.term(i.unit ?? '')}'.trim());
+
+  /// [ScaledCatalogRecipe.display] with the unit in the current language.
+  String _scaledAmount(ScaledCatalogRecipe s, CatalogIngredient i) {
+    if (!L10n.isEnglish || i.display != null) return s.display(i);
+    final amount = s.quantity(i);
+    if (amount == null) return i.label ?? i.note ?? context.l10n.detailToTaste;
+    final kilo = i.unit == 'كيلو'; // i18n-data
+    if (kilo && amount < 1) {
+      final grams = roundRecipeAmount(amount * 1000, 'جرام'); // i18n-data
+      return '${recipeNumber(grams)} ${L10n.term('جم')}'; // i18n-data
+    }
+    return '${recipeNumber(amount)} ${L10n.term(i.unit ?? '')}'.trim();
+  }
 
   Widget _yieldReview() => Surface(
     color: Sofra.isDark ? Sofra.warnTint : const Color(0xFFFFF3D4),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'لم يذكر المصدر عدد من تكفيهم هذه الوصفة',
+        Text(
+          context.l10n.detailYieldUnknown,
           style: TextStyle(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 6),
         Text(
-          'لنضبط الكميات ونضعها على السفرة، أخبرنا كم فردًا تكفي الوصفة كلها تقريبًا. الوصفة الأصلية لن تتغير.',
+          context.l10n.detailYieldAsk,
           style: TextStyle(fontSize: 12, color: Sofra.muted),
         ),
         const SizedBox(height: 12),
@@ -403,7 +438,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               child: DepthButton(
                 key: const ValueKey('review-yield'),
                 compact: true,
-                label: 'تكفي $yieldGuess أفراد',
+                label: context.l10n.detailYieldServes(yieldGuess),
                 onPressed: () async {
                   if (await c.reviewYield(widget.recipeId, yieldGuess)) {
                     setState(() => recipe = _load());
@@ -435,10 +470,12 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
 
   Future<void> _plan(int people) async {
     final nav = SofraScope.navOf(context);
+    final t = context.l10n;
+    final direction = Directionality.of(context);
     final choice = await showModalBottomSheet<(DateTime, String)>(
       context: context,
       builder: (ctx) => Directionality(
-        textDirection: TextDirection.rtl,
+        textDirection: direction,
         child: _PlanSheet(defaultSlot: _defaultSlot()),
       ),
     );
@@ -451,15 +488,28 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     );
     if (!ok) return;
     nav.goTab(AppTab.table);
-    nav.notify('الوجبة على السفرة، والمخزون لم يتغير');
+    nav.notify(t.detailPlanned);
   }
 
   String _defaultSlot() {
     final meals = c.profile.meals;
-    if (meals.contains('غداء')) return 'lunch';
-    if (meals.contains('عشاء')) return 'dinner';
+    if (meals.contains('غداء')) return 'lunch'; // i18n-data
+    if (meals.contains('عشاء')) return 'dinner'; // i18n-data
     return 'breakfast';
   }
+}
+
+/// The catalog index's English name for [recipeId], or null when the index
+/// has none (or cannot be read; the Arabic name is shown then).
+Future<String?> englishRecipeName(SofraController c, String recipeId) async {
+  try {
+    for (final row in await c.recipes.retainedIndex) {
+      if (row['id'] == recipeId) return row['nameEn'] as String?;
+    }
+  } on Object {
+    // The English name is an extra; the recipe opens without it.
+  }
+  return null;
 }
 
 /// A dish with no country chosen: its ways' ingredients in one list. What
@@ -492,77 +542,80 @@ class _CompareViewState extends State<_CompareView> {
   }
 
   @override
-  Widget build(BuildContext context) => ScreenBody(
-    children: [
-      Surface(
-        color: Sofra.isDark ? Sofra.okTint : const Color(0xFFF0EDD8),
-        padding: const EdgeInsets.all(12),
-        child: Center(
-          child: MealArt(
-            kind: artKind(widget.ways.first['id'] as String),
-            size: 220,
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+    return ScreenBody(
+      children: [
+        Surface(
+          color: Sofra.isDark ? Sofra.okTint : const Color(0xFFF0EDD8),
+          padding: const EdgeInsets.all(12),
+          child: Center(
+            child: MealArt(
+              kind: artKind(widget.ways.first['id'] as String),
+              size: 220,
+            ),
           ),
         ),
-      ),
-      const SizedBox(height: 14),
-      widget.bar,
-      const SizedBox(height: 22),
-      Text(
-        widget.dish.name,
-        key: const ValueKey('compare-title'),
-        style: const TextStyle(
-          fontWeight: FontWeight.w800,
-          fontSize: 27,
-          height: 1.3,
+        const SizedBox(height: 14),
+        widget.bar,
+        const SizedBox(height: 22),
+        Text(
+          widget.dish.name,
+          key: const ValueKey('compare-title'),
+          style: const TextStyle(
+            fontWeight: FontWeight.w800,
+            fontSize: 27,
+            height: 1.3,
+          ),
         ),
-      ),
-      Text(
-        '${waysLabel(widget.ways.length)} لعملها',
-        style: TextStyle(color: Sofra.muted),
-      ),
-      const SectionTitle('المكونات'),
-      FutureBuilder<List<CatalogRecipe>>(
-        future: recipes,
-        builder: (context, snap) {
-          if (snap.hasError) {
-            return const ErrorBlock('تعذّر فتح الطرق. ارجع وحاول مرة أخرى.');
-          }
-          final all = snap.data;
-          if (all == null) return const LoadingBlock();
-          final cuisines = [for (final w in widget.ways) '${w['cuisine']}'];
-          return Column(
+        Text(
+          t.detailWaysToMake(widget.ways.length),
+          style: TextStyle(color: Sofra.muted),
+        ),
+        SectionTitle(t.detailIngredients),
+        FutureBuilder<List<CatalogRecipe>>(
+          future: recipes,
+          builder: (context, snap) {
+            if (snap.hasError) {
+              return ErrorBlock(t.detailWaysOpenError);
+            }
+            final all = snap.data;
+            if (all == null) return const LoadingBlock();
+            final cuisines = [for (final w in widget.ways) '${w['cuisine']}'];
+            return Column(
+              children: [
+                for (final l in compareIngredients(all))
+                  _CompareRow(
+                    key: ValueKey('compare-${l.id}'),
+                    name: l.name,
+                    ways: l.ways.length == all.length ? const [] : l.ways,
+                    cuisines: cuisines,
+                  ),
+              ],
+            );
+          },
+        ),
+        const SizedBox(height: 16),
+        Surface(
+          key: const ValueKey('compare-pick'),
+          border: true,
+          padding: const EdgeInsets.all(14),
+          child: Row(
             children: [
-              for (final l in compareIngredients(all))
-                _CompareRow(
-                  key: ValueKey('compare-${l.id}'),
-                  name: l.name,
-                  ways: l.ways.length == all.length ? const [] : l.ways,
-                  cuisines: cuisines,
+              Icon(Icons.arrow_upward_rounded, color: Sofra.accent),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  t.detailComparePickHint,
+                  style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
-            ],
-          );
-        },
-      ),
-      const SizedBox(height: 16),
-      Surface(
-        key: ValueKey('compare-pick'),
-        border: true,
-        padding: EdgeInsets.all(14),
-        child: Row(
-          children: [
-            Icon(Icons.arrow_upward_rounded, color: Sofra.accent),
-            SizedBox(width: 10),
-            Expanded(
-              child: Text(
-                'اختر بلدًا من الشريط لترى الكميات والخطوات.',
-                style: TextStyle(fontWeight: FontWeight.w700),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    ],
-  );
+      ],
+    );
+  }
 }
 
 /// One ingredient of a compared dish: its name and the ways (indices) that
@@ -609,7 +662,7 @@ class _CompareRow extends StatelessWidget {
     return Semantics(
       label: ways.isEmpty
           ? name
-          : '$name: ${[for (final i in ways) cuisines[i]].join('، ')}',
+          : '$name: ${[for (final i in ways) L10n.term(cuisines[i])].join(context.l10n.detailListSeparator)}',
       excludeSemantics: true,
       child: Container(
         margin: const EdgeInsets.only(bottom: 8),
@@ -667,22 +720,26 @@ class _IngredientRow extends StatelessWidget {
     final name = c.ingredientName(id);
     var input = '';
     final form = GlobalKey<FormState>();
+    final t = context.l10n;
+    final direction = Directionality.of(context);
+    final fromLabel = L10n.term(unitLabel(from));
+    final toLabel = L10n.term(unitLabel(to));
     final factor = await showDialog<double>(
       context: context,
       builder: (ctx) => Directionality(
-        textDirection: TextDirection.rtl,
+        textDirection: direction,
         child: AlertDialog(
-          title: const Text('حدد التحويل'),
+          title: Text(t.detailDefineConversion),
           content: Form(
             key: form,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('1 ${unitLabel(from)} من $name = كم ${unitLabel(to)}؟'),
+                Text(t.detailConversionQuestion(fromLabel, name, toLabel)),
                 const SizedBox(height: 4),
                 Text(
-                  'اكتب القياس من مطبخك. سيُحفظ لهذا المكوّن فقط.',
+                  t.detailConversionHint,
                   style: TextStyle(fontSize: 12, color: Sofra.muted),
                 ),
                 TextFormField(
@@ -692,11 +749,11 @@ class _IngredientRow extends StatelessWidget {
                   keyboardType: const TextInputType.numberWithOptions(
                     decimal: true,
                   ),
-                  decoration: InputDecoration(suffixText: unitLabel(to)),
+                  decoration: InputDecoration(suffixText: toLabel),
                   validator: (value) {
                     final q = double.tryParse(value ?? '');
                     return q == null || !q.isFinite || q <= 0
-                        ? 'اكتب رقمًا أكبر من صفر'
+                        ? t.detailEnterPositive
                         : null;
                   },
                 ),
@@ -706,7 +763,7 @@ class _IngredientRow extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: const Text('إلغاء'),
+              child: Text(t.detailCancel),
             ),
             TextButton(
               key: const ValueKey('unit-rule-save'),
@@ -715,7 +772,7 @@ class _IngredientRow extends StatelessWidget {
                   Navigator.pop(ctx, double.parse(input));
                 }
               },
-              child: const Text('حفظ'),
+              child: Text(t.detailSave),
             ),
           ],
         ),
@@ -724,7 +781,7 @@ class _IngredientRow extends StatelessWidget {
     if (factor == null) return;
     if (await c.saveUnitRule(id, from, to, factor)) {
       nav.notify(
-        'حُفظ: 1 ${unitLabel(from)} $name = ${formatAmount(factor)} ${unitLabel(to)}',
+        t.detailConversionSaved(fromLabel, name, formatAmount(factor), toLabel),
       );
     }
   }
@@ -732,26 +789,42 @@ class _IngredientRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     final (icon, color, status) = switch (line?.status) {
       LineStock.inStock => (
         Icons.check_circle_rounded,
         Sofra.green,
-        'موجود عندك',
+        t.detailInStock,
       ),
       LineStock.missing => (
         Icons.add_circle_outline_rounded,
         Sofra.orange,
-        'ناقص ${formatAmount(line!.missing!)} ${ingredient.unit}',
+        t.detailMissing(
+          formatAmount(line!.missing!),
+          L10n.term(ingredient.unit ?? ''),
+        ),
       ),
       LineStock.unresolved => (
         Icons.help_outline_rounded,
         Sofra.muted,
-        'الوحدة مختلفة عن المخزون',
+        t.detailUnitMismatch,
       ),
-      LineStock.unmeasured => (Icons.remove_rounded, Sofra.muted, 'دون مقدار'),
-      LineStock.optional => (Icons.remove_rounded, Sofra.muted, 'اختياري'),
+      LineStock.unmeasured => (
+        Icons.remove_rounded,
+        Sofra.muted,
+        t.detailUnmeasured,
+      ),
+      LineStock.optional => (
+        Icons.remove_rounded,
+        Sofra.muted,
+        t.detailOptional,
+      ),
       null => (Icons.circle_outlined, Sofra.muted, null),
     };
+    // In English the source line (when the data has it) names the
+    // ingredient; it already carries the amount.
+    final name = L10n.pick(ingredient.name, ingredient.display);
+    final shownAmount = name == amount ? '' : amount;
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Surface(
@@ -765,7 +838,7 @@ class _IngredientRow extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    ingredient.name,
+                    name,
                     style: const TextStyle(fontWeight: FontWeight.w800),
                   ),
                   if (status != null)
@@ -794,14 +867,17 @@ class _IngredientRow extends StatelessWidget {
                         key: ValueKey('unit-rule-${line!.index}'),
                         onPressed: () => _defineRule(context),
                         icon: const Icon(Icons.straighten_rounded, size: 16),
-                        label: const Text('حدد التحويل'),
+                        label: Text(t.detailDefineConversion),
                       ),
                     ),
                 ],
               ),
             ),
             const SizedBox(width: 8),
-            Text(amount, style: const TextStyle(fontWeight: FontWeight.w700)),
+            Text(
+              shownAmount,
+              style: const TextStyle(fontWeight: FontWeight.w700),
+            ),
           ],
         ),
       ),
@@ -823,6 +899,7 @@ class _PlanSheetState extends State<_PlanSheet> {
   @override
   Widget build(BuildContext context) {
     final today = DateTime.now();
+    final t = context.l10n;
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -830,18 +907,18 @@ class _PlanSheetState extends State<_PlanSheet> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'متى نضعها على السفرة؟',
+            Text(
+              t.detailPlanWhen,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 16),
             Wrap(
               spacing: 8,
               children: [
-                for (final (i, label) in const [
-                  (0, 'اليوم'),
-                  (1, 'غدًا'),
-                  (2, 'بعد غد'),
+                for (final (i, label) in [
+                  (0, t.detailToday),
+                  (1, t.detailTomorrow),
+                  (2, t.detailDayAfterTomorrow),
                 ])
                   SofraChip(
                     label: Text(label),
@@ -856,7 +933,7 @@ class _PlanSheetState extends State<_PlanSheet> {
               children: [
                 for (final e in mealSlots.entries)
                   SofraChip(
-                    label: Text(e.value),
+                    label: Text(L10n.term(e.value)),
                     selected: slot == e.key,
                     onSelected: (_) => setState(() => slot = e.key),
                   ),
@@ -865,7 +942,7 @@ class _PlanSheetState extends State<_PlanSheet> {
             const SizedBox(height: 20),
             DepthButton(
               key: const ValueKey('plan-confirm'),
-              label: 'تم',
+              label: t.detailDone,
               onPressed: () => Navigator.pop(context, (
                 DateTime(today.year, today.month, today.day + day),
                 slot,
