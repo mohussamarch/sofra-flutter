@@ -57,88 +57,91 @@ String? flagCodeFor(String cuisine) {
   if (FlagPainter.drawn.contains(key)) return key;
   final code = _codes[key];
   if (code != null) return code;
-  if (key.endsWith('ة')) return _codes[key.substring(0, key.length - 1)];
+  if (key.endsWith(_feminine)) {
+    return _codes[key.substring(0, key.length - 1)];
+  }
   return null;
 }
 
-final _marks = RegExp('[ً-ْٰـ]');
-final _alef = RegExp('[أإآٱ]');
+const _feminine = 'ة'; // i18n-data
+final _marks = RegExp('[ً-ْٰـ]'); // i18n-data
+final _alef = RegExp('[أإآٱ]'); // i18n-data
 final _space = RegExp(r'\s+');
 
 String _normalise(String s) => s
     .trim()
     .replaceAll(_marks, '')
-    .replaceAll(_alef, 'ا')
-    .replaceAll('ى', 'ي')
+    .replaceAll(_alef, 'ا') // i18n-data
+    .replaceAll('ى', 'ي') // i18n-data
     .replaceAll(_space, ' ')
     .toLowerCase();
 
 final Map<String, String> _codes = {
   for (final e in const {
-    'مصري': 'egyptian',
-    'سعودي': 'saudi',
-    'مغربي': 'moroccan',
-    'إيطالي': 'italian',
-    'فرنسي': 'french',
-    'يوناني': 'greek',
-    'إسباني': 'spanish',
-    'تركي': 'turkish',
-    'صيني': 'chinese',
-    'ياباني': 'japanese',
-    'هندي': 'indian',
-    'تايلاندي': 'thai',
-    'كوري': 'korean',
-    'مكسيكي': 'mexican',
-    'تونسي': 'tunisian',
-    'لبناني': 'lebanese',
-    'فلسطيني': 'palestinian',
-    'يمني': 'yemeni',
-    'أردني': 'jordanian',
-    'سوري': 'syrian',
-    'عُماني': 'omani',
-    'إماراتي': 'emirati',
-    'كويتي': 'kuwaiti',
-    'جزائري': 'algerian',
-    'ليبي': 'libyan',
-    'سوداني': 'sudanese',
-    'باكستاني': 'pakistani',
-    'أيرلندي': 'irish',
-    'بيروفي': 'peruvian',
-    'جامايكي': 'jamaican',
-    'أمريكي': 'american',
-    'برازيلي': 'brazilian',
-    'روسي': 'russian',
-    'أوزبكي': 'uzbek',
-    'مجري': 'hungarian',
-    'برتغالي': 'portuguese',
-    'بولندي': 'polish',
-    'ألماني': 'german',
-    'أوكراني': 'ukrainian',
-    'سويدي': 'swedish',
-    'فنلندي': 'finnish',
-    'نمساوي': 'austrian',
-    'أرجنتيني': 'argentinian',
-    'فلبيني': 'filipino',
-    'فيتنامي': 'vietnamese',
-    'إندونيسي': 'indonesian',
-    'ماليزي': 'malaysian',
-    'إثيوبي': 'ethiopian',
-    'بريطاني': 'british',
-    'أسترالي': 'australian',
-    'بوسني': 'bosnian',
-    'دومينيكاني': 'dominican',
-    'ليتواني': 'lithuanian',
-    'مالطي': 'maltese',
-    'فنزويلي': 'venezuelan',
-    'سويسري': 'swiss',
-    'هولندي': 'dutch',
-    'بلجيكي': 'belgian',
+    'مصري': 'egyptian', // i18n-data
+    'سعودي': 'saudi', // i18n-data
+    'مغربي': 'moroccan', // i18n-data
+    'إيطالي': 'italian', // i18n-data
+    'فرنسي': 'french', // i18n-data
+    'يوناني': 'greek', // i18n-data
+    'إسباني': 'spanish', // i18n-data
+    'تركي': 'turkish', // i18n-data
+    'صيني': 'chinese', // i18n-data
+    'ياباني': 'japanese', // i18n-data
+    'هندي': 'indian', // i18n-data
+    'تايلاندي': 'thai', // i18n-data
+    'كوري': 'korean', // i18n-data
+    'مكسيكي': 'mexican', // i18n-data
+    'تونسي': 'tunisian', // i18n-data
+    'لبناني': 'lebanese', // i18n-data
+    'فلسطيني': 'palestinian', // i18n-data
+    'يمني': 'yemeni', // i18n-data
+    'أردني': 'jordanian', // i18n-data
+    'سوري': 'syrian', // i18n-data
+    'عُماني': 'omani', // i18n-data
+    'إماراتي': 'emirati', // i18n-data
+    'كويتي': 'kuwaiti', // i18n-data
+    'جزائري': 'algerian', // i18n-data
+    'ليبي': 'libyan', // i18n-data
+    'سوداني': 'sudanese', // i18n-data
+    'باكستاني': 'pakistani', // i18n-data
+    'أيرلندي': 'irish', // i18n-data
+    'بيروفي': 'peruvian', // i18n-data
+    'جامايكي': 'jamaican', // i18n-data
+    'أمريكي': 'american', // i18n-data
+    'برازيلي': 'brazilian', // i18n-data
+    'روسي': 'russian', // i18n-data
+    'أوزبكي': 'uzbek', // i18n-data
+    'مجري': 'hungarian', // i18n-data
+    'برتغالي': 'portuguese', // i18n-data
+    'بولندي': 'polish', // i18n-data
+    'ألماني': 'german', // i18n-data
+    'أوكراني': 'ukrainian', // i18n-data
+    'سويدي': 'swedish', // i18n-data
+    'فنلندي': 'finnish', // i18n-data
+    'نمساوي': 'austrian', // i18n-data
+    'أرجنتيني': 'argentinian', // i18n-data
+    'فلبيني': 'filipino', // i18n-data
+    'فيتنامي': 'vietnamese', // i18n-data
+    'إندونيسي': 'indonesian', // i18n-data
+    'ماليزي': 'malaysian', // i18n-data
+    'إثيوبي': 'ethiopian', // i18n-data
+    'بريطاني': 'british', // i18n-data
+    'أسترالي': 'australian', // i18n-data
+    'بوسني': 'bosnian', // i18n-data
+    'دومينيكاني': 'dominican', // i18n-data
+    'ليتواني': 'lithuanian', // i18n-data
+    'مالطي': 'maltese', // i18n-data
+    'فنزويلي': 'venezuelan', // i18n-data
+    'سويسري': 'swiss', // i18n-data
+    'هولندي': 'dutch', // i18n-data
+    'بلجيكي': 'belgian', // i18n-data
     // Regional cuisines take their country's flag.
-    'بنجابي': 'indian',
-    'سيتشواني': 'chinese',
-    'كاجوني': 'american',
-    'إيطالي أمريكي': 'american',
-    'مكسيكي أمريكي': 'american',
+    'بنجابي': 'indian', // i18n-data
+    'سيتشواني': 'chinese', // i18n-data
+    'كاجوني': 'american', // i18n-data
+    'إيطالي أمريكي': 'american', // i18n-data
+    'مكسيكي أمريكي': 'american', // i18n-data
   }.entries)
     _normalise(e.key): e.value,
 };

@@ -219,10 +219,10 @@ class IngredientDirectory {
 
   /// Alef variants to ا, ة to ه, ى to ي, tashkeel and tatweel removed.
   static String normalizeArabic(String value) => value
-      .replaceAll(RegExp('[ً-ٰٟـ]'), '')
-      .replaceAll(RegExp('[أإآٱ]'), 'ا')
-      .replaceAll('ة', 'ه')
-      .replaceAll('ى', 'ي')
+      .replaceAll(RegExp('[ً-ٰٟـ]'), '') // i18n-data
+      .replaceAll(RegExp('[أإآٱ]'), 'ا') // i18n-data
+      .replaceAll('ة', 'ه') // i18n-data
+      .replaceAll('ى', 'ي') // i18n-data
       .toLowerCase()
       .replaceAll(RegExp(r'\s+'), ' ')
       .trim();

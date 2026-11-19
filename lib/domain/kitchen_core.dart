@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import '../l10n/l10n.dart';
 import 'models.dart';
 import 'market_profile.dart';
 
@@ -145,76 +146,79 @@ class UnitRule {
 }
 
 class Units {
-  /// Arabic label for a canonical unit; counted units are already Arabic.
-  static String label(String unit) => switch (canonical(unit)) {
-    'g' => 'جم',
-    'kg' => 'كيلو',
-    'ml' => 'مل',
-    'l' => 'لتر',
-    'count' => 'حبة',
-    'cup' => 'كوب',
-    'tbsp' => 'ملعقة كبيرة',
-    'tsp' => 'ملعقة صغيرة',
-    'lb' => 'رطل',
-    'oz' => 'أونصة',
-    'qt' => 'كوارت',
-    'pt' => 'باينت',
-    'dl' => 'ديسيلتر',
+  /// Label for a canonical unit in the current language. Counted units are
+  /// stored in Arabic and shown through the data terms.
+  static String label(String unit) => L10n.term(_arabicLabel(unit));
+
+  static String _arabicLabel(String unit) => switch (canonical(unit)) {
+    'g' => 'جم', // i18n-data
+    'kg' => 'كيلو', // i18n-data
+    'ml' => 'مل', // i18n-data
+    'l' => 'لتر', // i18n-data
+    'count' => 'حبة', // i18n-data
+    'cup' => 'كوب', // i18n-data
+    'tbsp' => 'ملعقة كبيرة', // i18n-data
+    'tsp' => 'ملعقة صغيرة', // i18n-data
+    'lb' => 'رطل', // i18n-data
+    'oz' => 'أونصة', // i18n-data
+    'qt' => 'كوارت', // i18n-data
+    'pt' => 'باينت', // i18n-data
+    'dl' => 'ديسيلتر', // i18n-data
     final other => other,
   };
 
   static const _synonyms = {
-    'جم': 'g',
-    'جرام': 'g',
-    'غرام': 'g',
+    'جم': 'g', // i18n-data
+    'جرام': 'g', // i18n-data
+    'غرام': 'g', // i18n-data
     'grams': 'g',
     'gram': 'g',
     'g': 'g',
-    'كيلو': 'kg',
-    'كجم': 'kg',
-    'كيلوغرام': 'kg',
-    'كيلوجرام': 'kg',
+    'كيلو': 'kg', // i18n-data
+    'كجم': 'kg', // i18n-data
+    'كيلوغرام': 'kg', // i18n-data
+    'كيلوجرام': 'kg', // i18n-data
     'kg': 'kg',
-    'مل': 'ml',
-    'مللي': 'ml',
-    'ملليلتر': 'ml',
-    'مليلتر': 'ml',
+    'مل': 'ml', // i18n-data
+    'مللي': 'ml', // i18n-data
+    'ملليلتر': 'ml', // i18n-data
+    'مليلتر': 'ml', // i18n-data
     'ml': 'ml',
-    'لتر': 'l',
+    'لتر': 'l', // i18n-data
     'l': 'l',
-    'ديسيلتر': 'dl',
+    'ديسيلتر': 'dl', // i18n-data
     'dl': 'dl',
-    'ملعقة كبيرة': 'tbsp',
-    'م.ك': 'tbsp',
+    'ملعقة كبيرة': 'tbsp', // i18n-data
+    'م.ك': 'tbsp', // i18n-data
     'T': 'tbsp',
     'tbsp': 'tbsp',
     'tablespoon': 'tbsp',
     'tablespoons': 'tbsp',
-    'ملعقة صغيرة': 'tsp',
-    'م.ص': 'tsp',
+    'ملعقة صغيرة': 'tsp', // i18n-data
+    'م.ص': 'tsp', // i18n-data
     't': 'tsp',
     'tsp': 'tsp',
     'teaspoon': 'tsp',
     'teaspoons': 'tsp',
-    'كوب': 'cup',
-    'أكواب': 'cup',
+    'كوب': 'cup', // i18n-data
+    'أكواب': 'cup', // i18n-data
     'cup': 'cup',
     'cups': 'cup',
-    'رطل': 'lb',
+    'رطل': 'lb', // i18n-data
     'lb': 'lb',
     'pound': 'lb',
     'pounds': 'lb',
-    'أونصة': 'oz',
-    'أونصات': 'oz',
+    'أونصة': 'oz', // i18n-data
+    'أونصات': 'oz', // i18n-data
     'oz': 'oz',
     'ounce': 'oz',
     'ounces': 'oz',
-    'كوارت': 'qt',
+    'كوارت': 'qt', // i18n-data
     'qt': 'qt',
-    'باينت': 'pt',
+    'باينت': 'pt', // i18n-data
     'pt': 'pt',
-    'حبة': 'count',
-    'حبات': 'count',
+    'حبة': 'count', // i18n-data
+    'حبات': 'count', // i18n-data
     'count': 'count',
   };
   static String canonical(String unit) => _synonyms[unit.trim()] ?? unit.trim();

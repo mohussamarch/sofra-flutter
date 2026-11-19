@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 
+import '../l10n/l10n.dart';
+
 double _number(Object? value, String field, {bool zero = false}) {
   if (value is! num || !value.isFinite || (zero ? value < 0 : value <= 0)) {
     throw FormatException('Invalid $field');
@@ -260,12 +262,15 @@ class ScaledCatalogRecipe {
     if (ingredient.display != null) return ingredient.display!;
     final amount = quantity(ingredient);
     if (amount == null) {
-      return ingredient.label ?? ingredient.note ?? 'حسب الرغبة';
+      return ingredient.label ?? ingredient.note ?? L10n.current.dataToTaste;
     }
-    if (ingredient.unit == 'كيلو' && amount < 1) {
-      return '${recipeNumber(roundRecipeAmount(amount * 1000, 'جرام'))} جرام';
+    if (ingredient.unit == _kilo && amount < 1) {
+      return '${recipeNumber(roundRecipeAmount(amount * 1000, _gram))} '
+          '${L10n.term(_gram)}';
     }
-    return '${recipeNumber(amount)} ${ingredient.unit ?? ''}'.trim();
+    final unit = ingredient.unit;
+    return '${recipeNumber(amount)} ${unit == null ? '' : L10n.term(unit)}'
+        .trim();
   }
 }
 
@@ -282,22 +287,38 @@ double _round(double value, int places) {
   return (value * p + 2.220446049250313e-16).round() / p;
 }
 
+// Recipe units exactly as stored in recipes/data (Arabic data values).
+const _kilo = 'كيلو'; // i18n-data
+const _gram = 'جرام'; // i18n-data
+const _quarterUnits = ['ملعقة صغيرة', 'ملعقة كبيرة', 'رشة']; // i18n-data
+const _fineUnits = ['كوب', 'لتر', 'كيلو']; // i18n-data
+const _metricUnits = ['جرام', 'مل']; // i18n-data
+const _pieceUnits = [
+  'حبة', // i18n-data
+  'فص', // i18n-data
+  'عود', // i18n-data
+  'رغيف', // i18n-data
+  'قرص', // i18n-data
+  'ورقة', // i18n-data
+  'حزمة', // i18n-data
+];
+
 /// Matches the corrected TypeScript library; display never supplies stock units.
 double roundRecipeAmount(double amount, String? unit) {
   if (!amount.isFinite || amount < 0) {
     throw ArgumentError.value(amount, 'amount');
   }
   if (amount == 0) return 0;
-  if (['ملعقة صغيرة', 'ملعقة كبيرة', 'رشة'].contains(unit)) {
+  if (_quarterUnits.contains(unit)) {
     return amount < .25 ? .25 : _round((amount * 4).round() / 4, 3);
   }
-  if (['كوب', 'لتر', 'كيلو'].contains(unit)) return _round(amount, 3);
-  if (['جرام', 'مل'].contains(unit)) {
+  if (_fineUnits.contains(unit)) return _round(amount, 3);
+  if (_metricUnits.contains(unit)) {
     return amount < 5
         ? _round((amount * 2).round() / 2, 2)
         : _round((amount / 5).round() * 5, 2);
   }
-  if (['حبة', 'فص', 'عود', 'رغيف', 'قرص', 'ورقة', 'حزمة'].contains(unit)) {
+  if (_pieceUnits.contains(unit)) {
     return math.max(.5, _round((amount * 2).round() / 2, 2));
   }
   return _round(amount, 2);
