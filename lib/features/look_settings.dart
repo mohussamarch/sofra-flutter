@@ -47,9 +47,9 @@ class LookSettings extends StatelessWidget {
               value: p.textStep,
               onChanged: (v) => c.updateProfile((p) => p.copyWith(textStep: v)),
               options: const [
-                (0, 'عادي', null, 13.0),
+                (0, 'عادي', null, 12.0),
                 (1, 'كبير', null, 16.0),
-                (2, 'أكبر', null, 19.0),
+                (2, 'أكبر', null, 21.0),
               ],
             ),
           ),
