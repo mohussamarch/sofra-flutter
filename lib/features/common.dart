@@ -4,6 +4,7 @@ import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
 import '../domain/recipe_catalog.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 
 /// Scrollable screen body with an optional pinned footer action.
@@ -97,27 +98,30 @@ Widget noteText(String text, {TextAlign align = TextAlign.start}) => Text(
 );
 
 String zoneName(StorageZone value) => switch (value) {
-  StorageZone.fridge => 'الثلاجة',
-  StorageZone.freezer => 'الفريزر',
-  StorageZone.pantry => 'الدولاب',
+  StorageZone.fridge => L10n.current.onbZoneFridge,
+  StorageZone.freezer => L10n.current.onbZoneFreezer,
+  StorageZone.pantry => L10n.current.onbZonePantry,
 };
 
+/// [category] is the stored Arabic ingredient category.
 IconData categoryIcon(String? category) => switch (category) {
-  'خضار' || 'فاكهة' => Icons.eco_outlined,
-  'توابل' => Icons.spa_outlined,
-  'زيوت' || 'صوصات' => Icons.water_drop_outlined,
-  'مخبوزات' => Icons.bakery_dining_outlined,
-  'بقوليات' || 'مكسرات' => Icons.grain_rounded,
-  'مشروبات' => Icons.local_cafe_outlined,
-  'بروتين' => Icons.egg_alt_outlined,
-  'حبوب' => Icons.grain_rounded,
-  'ألبان' => Icons.local_drink_outlined,
+  'خضار' || 'فاكهة' => Icons.eco_outlined, // i18n-data
+  'توابل' => Icons.spa_outlined, // i18n-data
+  'زيوت' || 'صوصات' => Icons.water_drop_outlined, // i18n-data
+  'مخبوزات' => Icons.bakery_dining_outlined, // i18n-data
+  'بقوليات' || 'مكسرات' => Icons.grain_rounded, // i18n-data
+  'مشروبات' => Icons.local_cafe_outlined, // i18n-data
+  'بروتين' => Icons.egg_alt_outlined, // i18n-data
+  'حبوب' => Icons.grain_rounded, // i18n-data
+  'ألبان' => Icons.local_drink_outlined, // i18n-data
   _ => Icons.kitchen_outlined,
 };
 
 String formatAmount(double value) => recipeNumber(value);
 
-/// Arabic count phrase: "حاجة واحدة", "حاجتين", "3 حاجات", "11 حاجة".
+/// Count phrase from the caller's words: in Arabic "حاجة واحدة", "حاجتين",
+/// "3 حاجات", "11 حاجة"; in English (callers pass English words) "1 thing",
+/// [two] as given, "3 things", "11 things".
 String countText(
   int n,
   String one,
@@ -126,22 +130,25 @@ String countText(
   String empty = '',
 }) => switch (n) {
   0 => empty,
-  1 => '$one واحدة',
+  1 => L10n.current.onbCountOne(one),
   2 => two,
   >= 3 && <= 10 => '$n $few',
-  _ => '$n $one',
+  _ => L10n.isEnglish ? '$n $few' : '$n $one',
 };
 
-/// Arabic label for a canonical unit; counted units are already Arabic.
-String unitLabel(String? unit) => unit == null ? '' : Units.label(unit);
+/// Label for a canonical unit in the app's language; a counted unit from
+/// the data without an English name stays as stored.
+String unitLabel(String? unit) =>
+    unit == null ? '' : L10n.term(Units.label(unit));
 
-/// "عندك 3 حبة" style amount with an Arabic unit.
+/// "عندك 3 حبة" style amount with a unit label.
 String amountLabel(double value, String? unit) =>
     '${formatAmount(value)} ${unitLabel(unit)}'.trim();
 
 /// Minutes from the catalog may be unknown; never shown as zero.
-String minutesLabel(Object? minutes) =>
-    minutes is num ? '${minutes.round()} دقيقة' : 'الوقت غير محدد';
+String minutesLabel(Object? minutes) => minutes is num
+    ? L10n.current.onbMinutes('${minutes.round()}')
+    : L10n.current.onbTimeUnknown;
 
 /// Stable illustration choice for a recipe without real photos yet.
 int artKind(String id) => id.codeUnits.fold(0, (a, b) => a + b) % 4;

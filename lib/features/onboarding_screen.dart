@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../app/scope.dart';
 import '../app/sofra_controller.dart';
 import '../domain/market_profile.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/flags.dart';
 import '../ui/illustrations.dart';
@@ -16,19 +17,20 @@ class CountryPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     return DropdownButtonFormField<MarketCountry>(
       key: const ValueKey('field-country'),
       isExpanded: true,
       initialValue: c.market.country,
-      decoration: const InputDecoration(labelText: 'البلد'),
-      items: const [
+      decoration: InputDecoration(labelText: t.onbCountry),
+      items: [
         DropdownMenuItem(
           value: MarketCountry.egypt,
-          child: Text('مصر · جنيه مصري'),
+          child: Text(t.onbCountryEgypt),
         ),
         DropdownMenuItem(
           value: MarketCountry.saudi,
-          child: Text('السعودية · ريال سعودي'),
+          child: Text(t.onbCountrySaudi),
         ),
       ],
       onChanged: (value) {
@@ -47,49 +49,65 @@ class SetupOption {
   final String? flag;
 }
 
-const setupMeals = [
-  SetupOption('فطار', 'فطار', icon: Icons.free_breakfast_rounded),
-  SetupOption('غداء', 'غداء', icon: Icons.lunch_dining_rounded),
-  SetupOption('عشاء', 'عشاء', icon: Icons.dinner_dining_rounded),
+/// Options whose label is the stored value in the app's language.
+List<SetupOption> _termOptions(List<(String, IconData)> values) => [
+  for (final (value, icon) in values)
+    SetupOption(value, L10n.term(value), icon: icon),
+];
+
+/// Meal slots; values are saved as Arabic, labels follow the language.
+List<SetupOption> get setupMeals => _termOptions(_meals);
+
+const _meals = [
+  ('فطار', Icons.free_breakfast_rounded), // i18n-data
+  ('غداء', Icons.lunch_dining_rounded), // i18n-data
+  ('عشاء', Icons.dinner_dining_rounded), // i18n-data
 ];
 
 /// Conditions the user may say they have. Labels only: the app gives no
 /// medical advice and filters nothing by them.
-const setupHealth = [
-  SetupOption('السكري', 'السكري', icon: Icons.bloodtype_rounded),
-  SetupOption(
-    'ضغط الدم المرتفع',
-    'ضغط الدم',
-    icon: Icons.monitor_heart_rounded,
-  ),
-  SetupOption(
-    'الكوليسترول المرتفع',
-    'الكوليسترول',
-    icon: Icons.water_drop_rounded,
-  ),
-  SetupOption('السيلياك', 'السيلياك', icon: Icons.grain_rounded),
-  SetupOption('القولون العصبي', 'القولون العصبي', icon: Icons.healing_rounded),
-  SetupOption(
-    'ارتجاع المريء',
-    'ارتجاع المريء',
-    icon: Icons.local_fire_department_rounded,
-  ),
-  SetupOption('أمراض الكلى', 'الكلى', icon: Icons.medical_services_rounded),
-  SetupOption('النقرس', 'النقرس', icon: Icons.accessibility_new_rounded),
-  SetupOption('فقر الدم', 'فقر الدم', icon: Icons.opacity_rounded),
-  SetupOption('الحمل', 'الحمل', icon: Icons.pregnant_woman_rounded),
+List<SetupOption> get setupHealth {
+  final t = L10n.current;
+  return [
+    for (final (value, icon) in _health)
+      SetupOption(value, switch (value) {
+        _highBloodPressure => t.onbHealthBloodPressure,
+        _highCholesterol => t.onbHealthCholesterol,
+        _kidneyDisease => t.onbHealthKidneys,
+        _ => L10n.term(value),
+      }, icon: icon),
+  ];
+}
+
+const _highBloodPressure = 'ضغط الدم المرتفع'; // i18n-data
+const _highCholesterol = 'الكوليسترول المرتفع'; // i18n-data
+const _kidneyDisease = 'أمراض الكلى'; // i18n-data
+
+const _health = [
+  ('السكري', Icons.bloodtype_rounded), // i18n-data
+  (_highBloodPressure, Icons.monitor_heart_rounded),
+  (_highCholesterol, Icons.water_drop_rounded),
+  ('السيلياك', Icons.grain_rounded), // i18n-data
+  ('القولون العصبي', Icons.healing_rounded), // i18n-data
+  ('ارتجاع المريء', Icons.local_fire_department_rounded), // i18n-data
+  (_kidneyDisease, Icons.medical_services_rounded),
+  ('النقرس', Icons.accessibility_new_rounded), // i18n-data
+  ('فقر الدم', Icons.opacity_rounded), // i18n-data
+  ('الحمل', Icons.pregnant_woman_rounded), // i18n-data
 ];
 
 /// Foods to avoid; the recipe warning matches these names in ingredients.
-const setupAvoid = [
-  SetupOption('ألبان', 'ألبان', icon: Icons.local_drink_rounded),
-  SetupOption('قمح', 'قمح', icon: Icons.bakery_dining_rounded),
-  SetupOption('بيض', 'بيض', icon: Icons.egg_rounded),
-  SetupOption('مكسرات', 'مكسرات', icon: Icons.eco_rounded),
-  SetupOption('سمك', 'سمك', icon: Icons.set_meal_rounded),
-  SetupOption('قشريات', 'قشريات', icon: Icons.set_meal_outlined),
-  SetupOption('سمسم', 'سمسم', icon: Icons.grain_rounded),
-  SetupOption('فول سوداني', 'فول سوداني', icon: Icons.spa_rounded),
+List<SetupOption> get setupAvoid => _termOptions(_avoid);
+
+const _avoid = [
+  ('ألبان', Icons.local_drink_rounded), // i18n-data
+  ('قمح', Icons.bakery_dining_rounded), // i18n-data
+  ('بيض', Icons.egg_rounded), // i18n-data
+  ('مكسرات', Icons.eco_rounded), // i18n-data
+  ('سمك', Icons.set_meal_rounded), // i18n-data
+  ('قشريات', Icons.set_meal_outlined), // i18n-data
+  ('سمسم', Icons.grain_rounded), // i18n-data
+  ('فول سوداني', Icons.spa_rounded), // i18n-data
 ];
 
 /// Six-step setup (welcome, name, table, taste, health, ready); the step
@@ -113,6 +131,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     final optional = step == 3 || step == 4;
     return Column(
       children: [
@@ -125,7 +144,7 @@ class OnboardingScreen extends StatelessWidget {
                 const SizedBox(width: 8),
                 Flexible(
                   child: Text(
-                    'سفرة',
+                    t.appTitle,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Sofra.heading(28),
@@ -138,14 +157,15 @@ class OnboardingScreen extends StatelessWidget {
           )
         else
           Padding(
-            padding: const EdgeInsets.fromLTRB(8, 10, 16, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 8, 0),
             child: Row(
               children: [
                 IconButton(
                   key: const ValueKey('onboarding-back'),
                   onPressed: () => onStep(step - 1),
+                  // Mirrors with the text direction.
                   icon: const Icon(Icons.arrow_back_rounded),
-                  tooltip: 'رجوع',
+                  tooltip: t.onbBack,
                 ),
                 const SizedBox(width: 4),
                 Expanded(child: _Progress(step: step)),
@@ -155,7 +175,7 @@ class OnboardingScreen extends StatelessWidget {
                       ? TextButton(
                           key: const ValueKey('onboarding-skip'),
                           onPressed: () => onStep(step + 1),
-                          child: const Text('تخطي'),
+                          child: Text(t.onbSkip),
                         )
                       : null,
                 ),
@@ -169,10 +189,10 @@ class OnboardingScreen extends StatelessWidget {
             footer: DepthButton(
               key: const ValueKey('onboarding-next'),
               label: step == 0
-                  ? 'ابدأ'
+                  ? t.onbStart
                   : step == 5
-                  ? 'افتح سفرتي'
-                  : 'متابعة',
+                  ? t.onbOpenSofra
+                  : t.onbContinue,
               onPressed: step == 1 && name.text.trim().isEmpty
                   ? null
                   : () {
@@ -201,6 +221,7 @@ class OnboardingScreen extends StatelessWidget {
 
   Widget _body(BuildContext context, SofraController c) {
     final p = c.profile;
+    final t = context.l10n;
     switch (step) {
       case 0:
         final egypt = c.market.country == MarketCountry.egypt;
@@ -210,7 +231,7 @@ class OnboardingScreen extends StatelessWidget {
             const Center(child: ChefArt(size: 250)),
             const SizedBox(height: 16),
             Text(
-              'كل ما في مطبخك\nيصنع أكلة طيبة',
+              t.onbWelcomeTitle,
               textAlign: TextAlign.center,
               style: Sofra.heading(32),
             ),
@@ -218,13 +239,13 @@ class OnboardingScreen extends StatelessWidget {
             _TileRow([
               _Tile(
                 key: const ValueKey('country-egypt'),
-                opt: const SetupOption('egypt', 'مصر', flag: 'egyptian'),
+                opt: SetupOption('egypt', t.onbEgypt, flag: 'egyptian'),
                 selected: egypt,
                 onTap: () => c.setCountry(MarketCountry.egypt),
               ),
               _Tile(
                 key: const ValueKey('country-saudi'),
-                opt: const SetupOption('saudi', 'السعودية', flag: 'saudi'),
+                opt: SetupOption('saudi', t.onbSaudi, flag: 'saudi'),
                 selected: !egypt,
                 onTap: () => c.setCountry(MarketCountry.saudi),
               ),
@@ -236,7 +257,7 @@ class OnboardingScreen extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const _Hero(icon: Icons.waving_hand_rounded, title: 'ما اسمك؟'),
+            _Hero(icon: Icons.waving_hand_rounded, title: t.onbNameTitle),
             const SizedBox(height: 32),
             Center(
               child: AnimatedContainer(
@@ -274,8 +295,8 @@ class OnboardingScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
               onChanged: (v) => c.updateProfile((p) => p.copyWith(name: v)),
-              decoration: const InputDecoration(
-                hintText: 'مثلًا: مريم',
+              decoration: InputDecoration(
+                hintText: t.onbNameHint,
                 counterText: '',
               ),
             ),
@@ -285,7 +306,7 @@ class OnboardingScreen extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const _Hero(icon: Icons.groups_rounded, title: 'لكم شخصًا تطبخ؟'),
+            _Hero(icon: Icons.groups_rounded, title: t.onbPeopleTitle),
             const SizedBox(height: 24),
             Surface(
               padding: const EdgeInsets.fromLTRB(16, 24, 16, 20),
@@ -301,7 +322,7 @@ class OnboardingScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const _Label('وجباتك'),
+            _Label(t.onbYourMeals),
             _TileRow([
               for (final m in setupMeals)
                 _Tile(
@@ -319,9 +340,9 @@ class OnboardingScreen extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const _Hero(
+            _Hero(
               icon: Icons.restaurant_menu_rounded,
-              title: 'ما المطابخ التي تحبها؟',
+              title: t.onbCuisinesTitle,
             ),
             const SizedBox(height: 24),
             const _CuisineRow(),
@@ -337,37 +358,31 @@ class OnboardingScreen extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const _Hero(
+            _Hero(
               icon: Icons.health_and_safety_rounded,
-              title: 'نراعي صحتك',
+              title: t.onbHealthTitle,
             ),
-            const _Label('حالتك الصحية'),
+            _Label(t.onbHealthConditions),
             _ChoiceRow(
               id: 'health',
-              title: 'حالتك الصحية',
+              title: t.onbHealthConditions,
               options: setupHealth,
               selected: p.health,
               customIcon: Icons.medical_services_rounded,
               onChanged: (v) => c.updateProfile((p) => p.copyWith(health: v)),
             ),
-            const _Note(
-              Icons.lock_outline_rounded,
-              'تُحفظ في ملفك فقط، ولا تغني عن طبيبك.',
-            ),
-            const _Label('أطعمة تتجنبها'),
+            _Note(Icons.lock_outline_rounded, t.onbHealthNote),
+            _Label(t.onbAvoidFoods),
             _ChoiceRow(
               id: 'allergy',
-              title: 'أطعمة تتجنبها',
+              title: t.onbAvoidFoods,
               options: setupAvoid,
               selected: p.allergies,
               customIcon: Icons.no_food_rounded,
               onChanged: (v) =>
                   c.updateProfile((p) => p.copyWith(allergies: v)),
             ),
-            const _Note(
-              Icons.info_outline_rounded,
-              'ننبهك إذا ظهرت في وصفة. راجع العبوات بنفسك.',
-            ),
+            _Note(Icons.info_outline_rounded, t.onbAvoidNote),
           ],
         );
       default:
@@ -377,13 +392,13 @@ class OnboardingScreen extends StatelessWidget {
             const Center(child: ChefArt(size: 220, celebrate: true)),
             const SizedBox(height: 8),
             Text(
-              'أهلًا ${p.displayName}!',
+              t.onbHello(p.displayName),
               textAlign: TextAlign.center,
               style: Sofra.heading(30),
             ),
             const SizedBox(height: 4),
             Text(
-              'سفرتك جاهزة',
+              t.onbReady,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Sofra.muted),
             ),
@@ -391,10 +406,10 @@ class OnboardingScreen extends StatelessWidget {
             Row(
               children: [
                 for (final (icon, value, label) in [
-                  (Icons.groups_rounded, p.servings, 'أشخاص'),
-                  (Icons.restaurant_rounded, p.meals.length, 'وجبات'),
-                  (Icons.public_rounded, p.cuisines.length, 'مطابخ'),
-                  (Icons.health_and_safety_rounded, cares, 'للانتباه'),
+                  (Icons.groups_rounded, p.servings, t.onbStatPeople),
+                  (Icons.restaurant_rounded, p.meals.length, t.onbStatMeals),
+                  (Icons.public_rounded, p.cuisines.length, t.onbStatCuisines),
+                  (Icons.health_and_safety_rounded, cares, t.onbStatCares),
                 ])
                   Expanded(
                     child: Padding(
@@ -419,7 +434,7 @@ class _Progress extends StatelessWidget {
   final int step;
   @override
   Widget build(BuildContext context) => Semantics(
-    label: 'الخطوة $step من 5',
+    label: context.l10n.onbStepOf('$step', '5'),
     child: Row(
       children: [
         for (var i = 1; i <= 5; i++) ...[
@@ -646,9 +661,10 @@ class _MoreTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final radius = BorderRadius.circular(Sofra.r22);
+    final t = context.l10n;
     return Semantics(
       button: true,
-      label: hidden > 0 ? 'المزيد، $hidden مختارة' : 'المزيد',
+      label: hidden > 0 ? t.onbMoreSelected('$hidden') : t.onbMore,
       excludeSemantics: true,
       child: PressScale(
         child: Material(
@@ -683,9 +699,12 @@ class _MoreTile extends StatelessWidget {
                         : Icon(Icons.add_rounded, size: 28, color: Sofra.ink),
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    'المزيد',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                  Text(
+                    t.onbMore,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ],
               ),
@@ -786,7 +805,7 @@ class _CuisineRow extends StatelessWidget {
               final id = g['id'] as String;
               return SetupOption(
                 id,
-                '${g['name']}',
+                L10n.term('${g['name']}'),
                 flag: id,
                 icon: id == 'other'
                     ? Icons.public_rounded
@@ -795,7 +814,7 @@ class _CuisineRow extends StatelessWidget {
             }).toList();
         return _ChoiceRow(
           id: 'cuisine',
-          title: 'المطابخ',
+          title: context.l10n.onbCuisines,
           options: options,
           selected: c.profile.cuisines,
           onChanged: (v) => c.updateProfile((p) => p.copyWith(cuisines: v)),
@@ -832,6 +851,7 @@ class _PickerSheet extends StatefulWidget {
     IconData? customIcon,
   }) {
     final scope = SofraScope.of(context);
+    final direction = Directionality.of(context);
     return showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
@@ -844,7 +864,7 @@ class _PickerSheet extends StatefulWidget {
         controller: scope.notifier!,
         nav: scope.nav,
         child: Directionality(
-          textDirection: TextDirection.rtl,
+          textDirection: direction,
           child: _PickerSheet(
             id: id,
             title: title,
@@ -882,7 +902,10 @@ class _PickerSheetState extends State<_PickerSheet> {
         if (!widget.options.any((o) => o.value == v))
           SetupOption(v, v, icon: widget.customIcon),
     ];
-    final shown = all.where((o) => o.label.contains(q) || o.value.contains(q));
+    final lower = q.toLowerCase();
+    final shown = all.where(
+      (o) => o.label.toLowerCase().contains(lower) || o.value.contains(q),
+    );
     final canAdd =
         widget.customIcon != null &&
         q.isNotEmpty &&
@@ -898,7 +921,11 @@ class _PickerSheetState extends State<_PickerSheet> {
       if (canAdd)
         _Tile(
           key: ValueKey('add-${widget.id}'),
-          opt: SetupOption(q, 'إضافة «$q»', icon: Icons.add_rounded),
+          opt: SetupOption(
+            q,
+            context.l10n.onbAddCustom(q),
+            icon: Icons.add_rounded,
+          ),
           selected: false,
           onTap: () {
             widget.onChanged({...selected, q});
@@ -929,8 +956,8 @@ class _PickerSheetState extends State<_PickerSheet> {
                   onChanged: (_) => setState(() {}),
                   decoration: InputDecoration(
                     hintText: widget.customIcon != null
-                        ? 'ابحث أو اكتب اسمًا'
-                        : 'ابحث',
+                        ? context.l10n.onbSearchOrType
+                        : context.l10n.onbSearch,
                     prefixIcon: const Icon(Icons.search_rounded),
                   ),
                 ),
@@ -957,7 +984,7 @@ class _PickerSheetState extends State<_PickerSheet> {
               padding: const EdgeInsets.fromLTRB(24, 4, 24, 20),
               child: DepthButton(
                 key: const ValueKey('picker-done'),
-                label: 'تم',
+                label: context.l10n.onbDone,
                 onPressed: () => Navigator.pop(context),
               ),
             ),
@@ -1018,7 +1045,7 @@ class _QuickMeals extends StatelessWidget {
   final ValueChanged<bool> onChanged;
   @override
   Widget build(BuildContext context) => Surface(
-    padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
+    padding: const EdgeInsetsDirectional.fromSTEB(12, 12, 16, 12),
     child: Row(
       children: [
         Container(
@@ -1031,10 +1058,10 @@ class _QuickMeals extends StatelessWidget {
           child: Icon(Icons.bolt_rounded, color: Sofra.accent),
         ),
         const SizedBox(width: 12),
-        const Expanded(
+        Expanded(
           child: Text(
-            'السريعة أولًا',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+            context.l10n.onbQuickFirst,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
           ),
         ),
         Switch.adaptive(
@@ -1097,7 +1124,7 @@ class CuisineChips extends StatelessWidget {
             for (final g in groups)
               SofraChip(
                 key: ValueKey('cuisine-${g['id']}'),
-                label: Text('${g['name']}'),
+                label: Text(L10n.term('${g['name']}')),
                 selected: c.profile.cuisines.contains(g['id']),
                 selectedColor: Sofra.accentTint,
                 onSelected: (_) => c.updateProfile(
