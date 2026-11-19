@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/flags.dart';
 import 'common.dart';
@@ -93,21 +94,11 @@ const _wayColorsDark = [
   Color(0xFFCB9C72),
 ];
 
-/// «طريقتان»، «3 طرق»، «11 طريقة» (Arabic counting).
-String waysLabel(int n) => switch (n) {
-  1 => 'طريقة واحدة',
-  2 => 'طريقتان',
-  <= 10 => '$n طرق',
-  _ => '$n طريقة',
-};
+/// «طريقتان»، «3 طرق»، «11 طريقة» (Arabic counting); "3 ways" in English.
+String waysLabel(int n) => L10n.current.mineWays(n);
 
-/// «بلدان»، «3 بلاد»، «11 بلدًا» (Arabic counting).
-String countriesLabel(int n) => switch (n) {
-  1 => 'بلد واحد',
-  2 => 'بلدان',
-  <= 10 => '$n بلاد',
-  _ => '$n بلدًا',
-};
+/// «بلدان»، «3 بلاد»، «11 بلدًا» (Arabic counting); "3 countries" in English.
+String countriesLabel(int n) => L10n.current.mineCountries(n);
 
 /// The dish's time: one time when its ways agree, else the shortest and the
 /// longest («20–45 دقيقة»). Unknown when any way's time is unknown.
@@ -117,5 +108,5 @@ String dishTime(List<Map<String, dynamic>> ways) {
   final values = times.cast<num>().map((t) => t.round()).toList()..sort();
   return values.first == values.last
       ? minutesLabel(values.first)
-      : '${values.first}–${values.last} دقيقة';
+      : L10n.current.mineDishTimeRange('${values.first}', '${values.last}');
 }

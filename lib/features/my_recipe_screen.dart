@@ -4,12 +4,27 @@ import '../app/scope.dart';
 import '../app/sofra_controller.dart';
 import '../domain/ingredient_directory.dart';
 import '../domain/recipe_variants.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import 'common.dart';
 
-const _categories = ['أطباق رئيسية', 'فطار', 'شوربة', 'سلطات', 'حلويات'];
-const _levels = ['سهل', 'متوسط', 'صعب'];
-const _cuisines = ['مصري', 'شامي', 'خليجي', 'مغربي', 'تركي', 'إيطالي'];
+// Stored values; shown through L10n.term.
+const _categories = [
+  'أطباق رئيسية', // i18n-data
+  'فطار', // i18n-data
+  'شوربة', // i18n-data
+  'سلطات', // i18n-data
+  'حلويات', // i18n-data
+];
+const _levels = ['سهل', 'متوسط', 'صعب']; // i18n-data
+const _cuisines = [
+  'مصري', // i18n-data
+  'شامي', // i18n-data
+  'خليجي', // i18n-data
+  'مغربي', // i18n-data
+  'تركي', // i18n-data
+  'إيطالي', // i18n-data
+];
 const _units = ['g', 'kg', 'ml', 'l', 'count'];
 
 /// The user's own recipes over the book: a row to open them and to write a
@@ -27,7 +42,7 @@ class MyRecipesStrip extends StatelessWidget {
           SofraChip(
             key: const ValueKey('my-recipe-new'),
             avatar: const Icon(Icons.edit_note_rounded, size: 18),
-            label: const Text('وصفة من عندي'),
+            label: Text(context.l10n.mineNewRecipe),
             onPressed: () => _open(context, const MyRecipeScreen()),
           ),
           for (final r in mine)
@@ -50,11 +65,8 @@ Future<void> _open(BuildContext context, Widget page) {
   final scope = SofraScope.of(context);
   return Navigator.of(context).push(
     MaterialPageRoute<void>(
-      builder: (_) => SofraScope(
-        controller: scope.notifier!,
-        nav: scope.nav,
-        child: Directionality(textDirection: TextDirection.rtl, child: page),
-      ),
+      builder: (_) =>
+          SofraScope(controller: scope.notifier!, nav: scope.nav, child: page),
     ),
   );
 }
@@ -66,63 +78,63 @@ Future<void> _planMine(BuildContext context, RecipeRevision r) async {
   var slot = 'lunch';
   final ok = await showModalBottomSheet<bool>(
     context: context,
-    builder: (ctx) => Directionality(
-      textDirection: TextDirection.rtl,
-      child: StatefulBuilder(
-        builder: (ctx, set) => SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  r.recipe.name,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
+    builder: (ctx) => StatefulBuilder(
+      builder: (ctx, set) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                r.recipe.name,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              Text(
+                ctx.l10n.mineIngredientsSteps(
+                  r.recipe.ingredients.length,
+                  r.recipe.steps.length,
+                ),
+                style: TextStyle(color: Sofra.muted),
+              ),
+              const SizedBox(height: 14),
+              Wrap(
+                spacing: 8,
+                children: [
+                  SofraChip(
+                    label: Text(c.market.today),
+                    selected: !tomorrow,
+                    onSelected: (_) => set(() => tomorrow = false),
                   ),
-                ),
-                Text(
-                  '${r.recipe.ingredients.length} مكونات · ${r.recipe.steps.length} خطوات',
-                  style: TextStyle(color: Sofra.muted),
-                ),
-                const SizedBox(height: 14),
-                Wrap(
-                  spacing: 8,
-                  children: [
+                  SofraChip(
+                    label: Text(ctx.l10n.mineTomorrow),
+                    selected: tomorrow,
+                    onSelected: (_) => set(() => tomorrow = true),
+                  ),
+                ],
+              ),
+              Wrap(
+                spacing: 8,
+                children: [
+                  for (final MapEntry(key: s, value: label)
+                      in mealSlots.entries)
                     SofraChip(
-                      label: Text(c.market.today),
-                      selected: !tomorrow,
-                      onSelected: (_) => set(() => tomorrow = false),
+                      label: Text(L10n.term(label)),
+                      selected: slot == s,
+                      onSelected: (_) => set(() => slot = s),
                     ),
-                    SofraChip(
-                      label: const Text('غدًا'),
-                      selected: tomorrow,
-                      onSelected: (_) => set(() => tomorrow = true),
-                    ),
-                  ],
-                ),
-                Wrap(
-                  spacing: 8,
-                  children: [
-                    for (final MapEntry(key: s, value: label)
-                        in mealSlots.entries)
-                      SofraChip(
-                        label: Text(label),
-                        selected: slot == s,
-                        onSelected: (_) => set(() => slot = s),
-                      ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                DepthButton(
-                  key: const ValueKey('my-recipe-plan'),
-                  label: 'ضعها على السفرة',
-                  onPressed: () => Navigator.pop(ctx, true),
-                ),
-              ],
-            ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              DepthButton(
+                key: const ValueKey('my-recipe-plan'),
+                label: ctx.l10n.minePutOnTable,
+                onPressed: () => Navigator.pop(ctx, true),
+              ),
+            ],
           ),
         ),
       ),
@@ -138,7 +150,7 @@ Future<void> _planMine(BuildContext context, RecipeRevision r) async {
   );
   if (planned && context.mounted) {
     ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('أُضيفت إلى السفرة.')));
+        .showSnackBar(SnackBar(content: Text(context.l10n.mineAddedToTable)));
   }
 }
 
@@ -167,7 +179,7 @@ class MyRecipeScreen extends StatefulWidget {
 
 class _MyRecipeScreenState extends State<MyRecipeScreen> {
   final name = TextEditingController();
-  final cuisine = TextEditingController(text: 'مصري');
+  final cuisine = TextEditingController(text: L10n.term(_cuisines.first));
   final prep = TextEditingController();
   final cook = TextEditingController();
   final description = TextEditingController();
@@ -180,6 +192,16 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
   String? error;
 
   int? _int(TextEditingController t) => int.tryParse(t.text.trim());
+
+  /// The cuisine as stored: a suggested cuisine shown in English is saved
+  /// under its Arabic name; anything typed is kept as typed.
+  String get _cuisineValue {
+    final typed = cuisine.text.trim();
+    for (final k in _cuisines) {
+      if (L10n.term(k) == typed) return k;
+    }
+    return cuisine.text;
+  }
 
   bool get _ready =>
       name.text.trim().isNotEmpty &&
@@ -204,16 +226,14 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
     final picked = await showModalBottomSheet<IngredientEntry>(
       context: context,
       isScrollControlled: true,
-      builder: (_) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: _IngredientPicker(directory: directory),
-      ),
+      builder: (_) => _IngredientPicker(directory: directory),
     );
     if (picked != null) setState(() => lines.add(_Line(picked)));
   }
 
   Future<void> _save() async {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     setState(() {
       busy = true;
       error = null;
@@ -222,7 +242,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
       final id = await c.createMyRecipe(
         name: name.text,
         servings: servings,
-        cuisine: cuisine.text,
+        cuisine: _cuisineValue,
         prepMinutes: _int(prep)!,
         cookMinutes: _int(cook)!,
         category: category,
@@ -244,15 +264,14 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
       );
       if (!mounted) return;
       if (id == null) {
-        setState(() => error = 'لم تُحفظ الوصفة. حاول مرة أخرى.');
+        setState(() => error = t.mineSaveFailed);
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('حُفظت الوصفة في وصفاتك.')),
-        );
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(t.mineSaved)));
         Navigator.pop(context);
       }
     } on ArgumentError {
-      setState(() => error = 'اكتب مطبخًا محددًا للوصفة، مثل «مصري».');
+      setState(() => error = t.mineCuisineNeeded);
     } finally {
       if (mounted) setState(() => busy = false);
     }
@@ -262,16 +281,17 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
   Widget build(BuildContext context) {
     void touch(_) => setState(() {});
     const number = TextInputType.number;
+    final t = context.l10n;
     return Scaffold(
       backgroundColor: Sofra.cream,
       appBar: AppBar(
-        title: const Text('وصفة من عندي'),
+        title: Text(t.mineNewRecipe),
         backgroundColor: Sofra.cream,
       ),
       body: ScreenBody(
         footer: DepthButton(
           key: const ValueKey('my-recipe-save'),
-          label: busy ? 'جارٍ الحفظ…' : 'احفظ الوصفة',
+          label: busy ? t.mineSaving : t.mineSave,
           onPressed: _ready && !busy ? _save : null,
         ),
         children: [
@@ -279,29 +299,29 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
             key: const ValueKey('my-recipe-name'),
             controller: name,
             onChanged: touch,
-            decoration: const InputDecoration(labelText: 'اسم الأكلة'),
+            decoration: InputDecoration(labelText: t.mineDishName),
           ),
           const SizedBox(height: 10),
           TextField(
             key: const ValueKey('my-recipe-description'),
             controller: description,
             onChanged: touch,
-            decoration: const InputDecoration(labelText: 'وصف قصير'),
+            decoration: InputDecoration(labelText: t.mineShortDescription),
           ),
           const SizedBox(height: 10),
           TextField(
             key: const ValueKey('my-recipe-cuisine'),
             controller: cuisine,
             onChanged: touch,
-            decoration: const InputDecoration(labelText: 'المطبخ'),
+            decoration: InputDecoration(labelText: t.mineCuisine),
           ),
           Wrap(
             spacing: 6,
             children: [
               for (final k in _cuisines)
                 SofraChip(
-                  label: Text(k),
-                  onPressed: () => setState(() => cuisine.text = k),
+                  label: Text(L10n.term(k)),
+                  onPressed: () => setState(() => cuisine.text = L10n.term(k)),
                 ),
             ],
           ),
@@ -314,9 +334,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                   controller: prep,
                   onChanged: touch,
                   keyboardType: number,
-                  decoration: const InputDecoration(
-                    labelText: 'التحضير (دقيقة)',
-                  ),
+                  decoration: InputDecoration(labelText: t.minePrepMinutes),
                 ),
               ),
               const SizedBox(width: 10),
@@ -326,7 +344,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                   controller: cook,
                   onChanged: touch,
                   keyboardType: number,
-                  decoration: const InputDecoration(labelText: 'الطبخ (دقيقة)'),
+                  decoration: InputDecoration(labelText: t.mineCookMinutes),
                 ),
               ),
             ],
@@ -334,7 +352,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
           const SizedBox(height: 10),
           Row(
             children: [
-              const Expanded(child: Text('تكفي كم فردًا؟')),
+              Expanded(child: Text(t.mineServesHowMany)),
               IconButton(
                 onPressed: servings > 1
                     ? () => setState(() => servings--)
@@ -359,7 +377,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
             children: [
               for (final k in _categories)
                 SofraChip(
-                  label: Text(k),
+                  label: Text(L10n.term(k)),
                   selected: category == k,
                   onSelected: (_) => setState(() => category = k),
                 ),
@@ -370,13 +388,17 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
             children: [
               for (final k in _levels)
                 SofraChip(
-                  label: Text(k),
+                  label: Text(L10n.term(k)),
                   selected: difficulty == k,
                   onSelected: (_) => setState(() => difficulty = k),
                 ),
             ],
           ),
-          SectionTitle('المكونات', action: '+ مكوّن', onAction: _addLine),
+          SectionTitle(
+            t.mineIngredients,
+            action: t.mineAddIngredient,
+            onAction: _addLine,
+          ),
           for (final (i, l) in lines.indexed)
             Padding(
               key: ValueKey('my-recipe-line-${l.entry.id}'),
@@ -400,7 +422,10 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                       value: l.unit,
                       items: [
                         for (final u in _units)
-                          DropdownMenuItem(value: u, child: Text(unitLabel(u))),
+                          DropdownMenuItem(
+                            value: u,
+                            child: Text(L10n.term(unitLabel(u))),
+                          ),
                       ],
                       onChanged: (u) => setState(() => l.unit = u!),
                     ),
@@ -408,12 +433,14 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                     Expanded(
                       flex: 2,
                       child: Text(
-                        'حسب الرغبة',
+                        t.mineToTaste,
                         style: TextStyle(color: Sofra.muted),
                       ),
                     ),
                   IconButton(
-                    tooltip: l.measured ? 'دون كمية' : 'بكمية',
+                    tooltip: l.measured
+                        ? t.mineWithoutAmount
+                        : t.mineWithAmount,
                     onPressed: () => setState(() => l.measured = !l.measured),
                     icon: Icon(
                       l.measured
@@ -423,7 +450,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                     ),
                   ),
                   IconButton(
-                    tooltip: 'احذف',
+                    tooltip: t.mineRemove,
                     onPressed: () => setState(() => lines.removeAt(i)),
                     icon: const Icon(Icons.close_rounded, size: 20),
                   ),
@@ -431,8 +458,8 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
               ),
             ),
           SectionTitle(
-            'الخطوات',
-            action: '+ خطوة',
+            t.mineSteps,
+            action: t.mineAddStep,
             onAction: () => setState(() => steps.add(_Step())),
           ),
           for (final (i, s) in steps.indexed)
@@ -453,7 +480,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                       controller: s.text,
                       onChanged: touch,
                       maxLines: null,
-                      decoration: const InputDecoration(hintText: 'ماذا ستفعل'),
+                      decoration: InputDecoration(hintText: t.mineStepHint),
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -463,7 +490,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                       controller: s.minutes,
                       onChanged: touch,
                       keyboardType: number,
-                      decoration: const InputDecoration(hintText: 'دقيقة'),
+                      decoration: InputDecoration(hintText: t.mineMinutesHint),
                     ),
                   ),
                 ],
@@ -476,7 +503,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
             ),
           const SizedBox(height: 8),
           Text(
-            'لن تُحسب القيم الغذائية لهذه الوصفة حتى تُربط مكوناتها بمصدر.',
+            t.mineNutritionUnknown,
             style: TextStyle(color: Sofra.muted, fontSize: 12),
           ),
         ],
@@ -510,9 +537,9 @@ class _IngredientPickerState extends State<_IngredientPicker> {
               child: TextField(
                 key: const ValueKey('my-recipe-ingredient-search'),
                 autofocus: true,
-                decoration: const InputDecoration(
-                  hintText: 'ابحث عن مكوّن',
-                  prefixIcon: Icon(Icons.search_rounded),
+                decoration: InputDecoration(
+                  hintText: context.l10n.mineSearchIngredient,
+                  prefixIcon: const Icon(Icons.search_rounded),
                 ),
                 onChanged: (v) => setState(() => query = v),
               ),
@@ -524,7 +551,7 @@ class _IngredientPickerState extends State<_IngredientPicker> {
                     ListTile(
                       key: ValueKey('my-recipe-pick-${e.id}'),
                       title: Text(e.name),
-                      subtitle: Text(e.category),
+                      subtitle: Text(L10n.term(e.category)),
                       onTap: () => Navigator.pop(context, e),
                     ),
                 ],

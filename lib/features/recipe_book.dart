@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import 'recipes_screen.dart';
 
@@ -22,8 +23,8 @@ BoxDecoration _outlined(Color fill, double radius) => BoxDecoration(
 );
 
 /// The recipe book opened over the kitchen, drawn like a cartoon: a brown
-/// cover, the page edges underneath, the spine on the right (Arabic binding)
-/// and a red ribbon.
+/// cover, the page edges underneath, the spine on the reading side (right in
+/// Arabic, left in English) and a red ribbon.
 class RecipeBook extends StatelessWidget {
   const RecipeBook({super.key, required this.open, required this.top});
   final bool open;
@@ -64,12 +65,21 @@ class _Cover extends StatelessWidget {
     child: Stack(
       clipBehavior: Clip.none,
       children: [
-        // Edges of the pages underneath, stepping out on the left.
-        Positioned.fill(
-          right: 8,
+        // Edges of the pages underneath, stepping out away from the spine.
+        PositionedDirectional(
+          top: 0,
+          bottom: 0,
+          start: 8,
+          end: 0,
           child: DecoratedBox(decoration: _outlined(Book.pageEdge, Sofra.r16)),
         ),
-        Positioned.fill(left: 7, child: child),
+        PositionedDirectional(
+          top: 0,
+          bottom: 0,
+          start: 0,
+          end: 7,
+          child: child,
+        ),
         const PositionedDirectional(top: -12, end: 64, child: _Ribbon()),
       ],
     ),
@@ -179,7 +189,7 @@ class _Page extends StatelessWidget {
                     children: [
                       SizedBox(height: 16),
                       Text(
-                        'كتاب الوصفات',
+                        context.l10n.mineRecipeBookTitle,
                         style: TextStyle(
                           fontFamily: 'ArefRuqaa',
                           fontSize: 32,
