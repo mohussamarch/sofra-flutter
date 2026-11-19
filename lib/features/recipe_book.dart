@@ -6,12 +6,12 @@ import 'recipes_screen.dart';
 /// Book colours on direction A: a warm leather cover, paper pages and a
 /// thin ink outline (the cartoon line, quieter), no texture or glow.
 abstract final class Book {
-  static const ink = Sofra.ink;
+  static Color get ink => Sofra.ink;
   static const cover = Color(0xFF7A4A33);
-  static const page = Sofra.surface;
-  static const pageEdge = Sofra.sand;
-  static const ribbon = Sofra.accent;
-  static const marker = Sofra.accentTint;
+  static Color get page => Sofra.surface;
+  static Color get pageEdge => Sofra.sand;
+  static Color get ribbon => Sofra.accent;
+  static Color get marker => Sofra.accentTint;
   static const line = 1.5;
 }
 
@@ -79,15 +79,16 @@ class _Cover extends StatelessWidget {
 class _Ribbon extends StatelessWidget {
   const _Ribbon();
   @override
-  Widget build(BuildContext context) => const SizedBox(
+  Widget build(BuildContext context) => SizedBox(
     width: 22,
     height: 64,
-    child: CustomPaint(painter: _RibbonPainter()),
+    child: CustomPaint(painter: _RibbonPainter(Book.ribbon, Book.ink)),
   );
 }
 
 class _RibbonPainter extends CustomPainter {
-  const _RibbonPainter();
+  const _RibbonPainter(this.fill, this.ink);
+  final Color fill, ink;
   @override
   void paint(Canvas canvas, Size size) {
     final w = size.width, h = size.height;
@@ -98,11 +99,11 @@ class _RibbonPainter extends CustomPainter {
       ..lineTo(w / 2, h - 9)
       ..lineTo(0, h)
       ..close();
-    canvas.drawPath(path, Paint()..color = Book.ribbon);
+    canvas.drawPath(path, Paint()..color = fill);
     canvas.drawPath(
       path,
       Paint()
-        ..color = Book.ink
+        ..color = ink
         ..style = PaintingStyle.stroke
         ..strokeWidth = Book.line
         ..strokeJoin = StrokeJoin.round,
@@ -110,7 +111,7 @@ class _RibbonPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_RibbonPainter old) => false;
+  bool shouldRepaint(_RibbonPainter old) => old.fill != fill || old.ink != ink;
 }
 
 class _Page extends StatelessWidget {
@@ -124,10 +125,10 @@ class _Page extends StatelessWidget {
       borderSide: BorderSide(color: Book.ink.withValues(alpha: .25)),
     );
     final theme = base.copyWith(
-      iconTheme: const IconThemeData(color: Book.ink),
+      iconTheme: IconThemeData(color: Book.ink),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: Colors.white,
+        fillColor: Sofra.card,
         border: outline,
         enabledBorder: outline,
         focusedBorder: outline,
@@ -136,12 +137,11 @@ class _Page extends StatelessWidget {
       ),
       chipTheme: base.chipTheme.copyWith(
         color: WidgetStateProperty.resolveWith(
-          (states) => states.contains(WidgetState.selected)
-              ? Book.marker
-              : Colors.white,
+          (states) =>
+              states.contains(WidgetState.selected) ? Book.marker : Sofra.card,
         ),
         side: BorderSide(color: Book.ink.withValues(alpha: .18)),
-        labelStyle: const TextStyle(
+        labelStyle: TextStyle(
           color: Book.ink,
           fontWeight: FontWeight.w600,
           height: 1.2,
@@ -154,7 +154,7 @@ class _Page extends StatelessWidget {
       child: Stack(
         children: [
           // The spine: a flat band where the page meets the binding.
-          const PositionedDirectional(
+          PositionedDirectional(
             top: 0,
             bottom: 0,
             start: 0,
@@ -170,7 +170,7 @@ class _Page extends StatelessWidget {
           ),
           Theme(
             data: theme,
-            child: const Paper(
+            child: Paper(
               child: DefaultTextStyle(
                 style: TextStyle(color: Book.ink, fontSize: 15, height: 1.6),
                 child: Padding(

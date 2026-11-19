@@ -78,7 +78,7 @@ class _CookingScreenState extends State<CookingScreen> {
             Expanded(
               child: Text(
                 r.name,
-                style: const TextStyle(color: Sofra.muted, fontSize: 14),
+                style: TextStyle(color: Sofra.muted, fontSize: 14),
               ),
             ),
             SoftTag('${step + 1} من ${steps.length}'),
@@ -107,11 +107,11 @@ class _CookingScreenState extends State<CookingScreen> {
             'حوالي ${formatAmount(s.minutes!)} دقيقة',
             icon: Icons.schedule_rounded,
             color: Sofra.peach,
-            ink: const Color(0xFF995333),
+            ink: Sofra.warn,
           ),
         if (s.tip != null) ...[
           const SizedBox(height: 12),
-          Text(s.tip!, style: const TextStyle(color: Sofra.muted)),
+          Text(s.tip!, style: TextStyle(color: Sofra.muted)),
         ],
         const SizedBox(height: 20),
         if (step > 0)
@@ -167,7 +167,7 @@ class _CookingScreenState extends State<CookingScreen> {
         child: Text(
           'طُبخت ${r.name}، وخُصم ما أكدته من المخزون.',
           textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 16, color: Sofra.muted),
+          style: TextStyle(fontSize: 16, color: Sofra.muted),
         ),
       ),
       const SizedBox(height: 24),
@@ -230,7 +230,7 @@ class _LeftoversCardState extends State<_LeftoversCard> {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 4),
-          const Text(
+          Text(
             'سجّله وسنضعه في الثلاجة لتسخّنه لاحقًا.',
             style: TextStyle(color: Sofra.muted, fontSize: 13),
           ),
@@ -255,7 +255,7 @@ class _LeftoversCardState extends State<_LeftoversCard> {
             ],
           ),
           const SizedBox(height: 8),
-          const Text(
+          Text(
             'ذكّرني بها بعد',
             style: TextStyle(color: Sofra.muted, fontSize: 13),
           ),
@@ -341,7 +341,7 @@ class _ConfirmSheetState extends State<_ConfirmSheet> {
             title,
             style: TextStyle(fontWeight: FontWeight.w800, color: color),
           ),
-          Text(note, style: const TextStyle(fontSize: 11, color: Sofra.muted)),
+          Text(note, style: TextStyle(fontSize: 11, color: Sofra.muted)),
           const SizedBox(height: 6),
           for (final l in lines) ...[
             Padding(
@@ -355,7 +355,7 @@ class _ConfirmSheetState extends State<_ConfirmSheet> {
                           : '${l.ingredient.name} · سنستخدم ${SofraScope.controllerOf(context).ingredientName(l.stockId!)}',
                     ),
                   ),
-                  Text(amount(l), style: const TextStyle(color: Sofra.muted)),
+                  Text(amount(l), style: TextStyle(color: Sofra.muted)),
                 ],
               ),
             ),
@@ -415,7 +415,7 @@ class _ConfirmSheetState extends State<_ConfirmSheet> {
                   'لن يُخصم',
                   'ناقص أو مسجّل بوحدة مختلفة. ستبقى التكلفة غير معروفة.',
                   kept,
-                  const Color(0xFF995333),
+                  Sofra.warn,
                 ),
               if (unmeasured.isNotEmpty)
                 group(

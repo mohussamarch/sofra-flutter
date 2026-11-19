@@ -245,7 +245,7 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
               key: const ValueKey('quick-add-read'),
               tooltip: 'أضف السطر',
               onPressed: text.text.trim().isEmpty ? null : _addTyped,
-              icon: const Icon(Icons.add_circle_rounded, color: Sofra.accent),
+              icon: Icon(Icons.add_circle_rounded, color: Sofra.accent),
             ),
           ),
         ),
@@ -300,7 +300,7 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
     final ready = lines.where((l) => l.ready).length;
     return Stack(
       children: [
-        const Positioned.fill(
+        Positioned.fill(
           child: ColoredBox(color: Sofra.cream, child: SofraBackdrop()),
         ),
         Scaffold(
@@ -380,18 +380,18 @@ class _Reading extends StatelessWidget {
         Container(
           width: 96,
           height: 96,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Sofra.accentTint,
             shape: BoxShape.circle,
           ),
-          child: const Icon(
+          child: Icon(
             Icons.receipt_long_rounded,
             size: 44,
             color: Sofra.accent,
           ),
         ),
         const SizedBox(height: 20),
-        const SizedBox(
+        SizedBox(
           width: 120,
           child: LinearProgressIndicator(
             minHeight: 4,
@@ -419,13 +419,13 @@ class _ErrorNote extends StatelessWidget {
     ),
     child: Row(
       children: [
-        const Icon(Icons.error_outline_rounded, size: 18, color: Sofra.warn),
+        Icon(Icons.error_outline_rounded, size: 18, color: Sofra.warn),
         const SizedBox(width: 8),
         Expanded(
           child: Text(
             text,
             key: const ValueKey('quick-add-error'),
-            style: const TextStyle(fontSize: 13, color: Sofra.warn),
+            style: TextStyle(fontSize: 13, color: Sofra.warn),
           ),
         ),
       ],
@@ -592,11 +592,11 @@ class _LineCard extends StatelessWidget {
                     width: 56,
                     height: 56,
                     alignment: Alignment.center,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Sofra.warnTint,
                       shape: BoxShape.circle,
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.help_outline_rounded,
                       color: Sofra.warn,
                       size: 28,
@@ -637,7 +637,7 @@ class _LineCard extends StatelessWidget {
                           ),
                           if (entry != null && !line.sure) ...[
                             const SizedBox(width: 6),
-                            const Icon(
+                            Icon(
                               Icons.visibility_outlined,
                               size: 15,
                               color: Sofra.warn,
@@ -652,15 +652,12 @@ class _LineCard extends StatelessWidget {
                           line.raw,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 12.5,
-                            color: Sofra.muted,
-                          ),
+                          style: TextStyle(fontSize: 12.5, color: Sofra.muted),
                         ),
                       if (line.paid != null)
                         Text(
                           '${formatAmount(line.paid!)} $money',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 12.5,
                             color: Sofra.muted,
                             fontFeatures: [FontFeature.tabularFigures()],
@@ -741,7 +738,7 @@ class _PickSheetState extends State<_PickSheet> {
               widget.raw,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Sofra.muted, fontSize: 13),
+              style: TextStyle(color: Sofra.muted, fontSize: 13),
             ),
             const SizedBox(height: 12),
             TextField(
@@ -880,7 +877,7 @@ class _Preview extends StatelessWidget {
       children: [
         const SizedBox(width: 8),
         e == null
-            ? const Icon(Icons.help_outline_rounded, color: Sofra.warn)
+            ? Icon(Icons.help_outline_rounded, color: Sofra.warn)
             : IngredientPicture(e.id, e.category, size: 28),
         const SizedBox(width: 10),
         Expanded(
@@ -920,7 +917,7 @@ class _Asking extends StatelessWidget {
         Expanded(
           child: Text(
             'نتعرف على «$raw»…',
-            style: const TextStyle(color: Sofra.muted),
+            style: TextStyle(color: Sofra.muted),
           ),
         ),
       ],

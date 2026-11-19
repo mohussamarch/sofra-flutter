@@ -426,7 +426,7 @@ class _ShelfWheelState extends State<ShelfWheel>
                                 'أشياء',
                                 empty: 'فارغ',
                               ),
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Sofra.muted,
                                 fontSize: 12,
                               ),
@@ -593,18 +593,18 @@ class _Floating extends StatelessWidget {
             item.label,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: Sofra.onInverse,
               fontWeight: FontWeight.w800,
               fontSize: 13,
-              shadows: [Shadow(color: Colors.black54, blurRadius: 6)],
+              shadows: const [Shadow(color: Colors.black54, blurRadius: 6)],
             ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 3),
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: .85),
+              color: Sofra.card.withValues(alpha: .85),
               borderRadius: BorderRadius.circular(Sofra.r12),
             ),
             child: Text(
@@ -612,7 +612,7 @@ class _Floating extends StatelessWidget {
               key: ValueKey('shelf-amount-${item.id}'),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.w700,
                 color: Sofra.ink,

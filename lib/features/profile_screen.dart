@@ -5,6 +5,7 @@ import '../domain/market_profile.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'look_settings.dart';
 import 'onboarding_screen.dart';
 import 'place_picker.dart';
 import 'reminder_settings.dart';
@@ -135,7 +136,7 @@ class ProfileScreen extends StatelessWidget {
                   );
                 },
               ),
-              const Divider(height: 28, color: Sofra.line),
+              Divider(height: 28, color: Sofra.line),
               PickedGroup(
                 id: 'meal',
                 title: 'الوجبات',
@@ -144,7 +145,7 @@ class ProfileScreen extends StatelessWidget {
                 selected: p.meals,
                 onChanged: (v) => c.updateProfile((p) => p.copyWith(meals: v)),
               ),
-              const Divider(height: 20, color: Sofra.line),
+              Divider(height: 20, color: Sofra.line),
               SwitchListTile.adaptive(
                 key: const ValueKey('profile-quick'),
                 contentPadding: EdgeInsets.zero,
@@ -175,7 +176,7 @@ class ProfileScreen extends StatelessWidget {
                 onChanged: (v) =>
                     c.updateProfile((p) => p.copyWith(allergies: v)),
               ),
-              const Divider(height: 28, color: Sofra.line),
+              Divider(height: 28, color: Sofra.line),
               PickedGroup(
                 id: 'health',
                 title: 'حالات صحية',
@@ -310,7 +311,7 @@ class _ProfileHeader extends StatelessWidget {
                     line,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: Sofra.muted, fontSize: 13),
+                    style: TextStyle(color: Sofra.muted, fontSize: 13),
                   ),
                 ],
               ),
@@ -326,7 +327,7 @@ class _ProfileHeader extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: .7),
+                    color: Sofra.card.withValues(alpha: .7),
                     borderRadius: BorderRadius.circular(Sofra.r16),
                   ),
                   child: Column(
@@ -341,10 +342,7 @@ class _ProfileHeader extends StatelessWidget {
                       ),
                       Text(
                         s.$2,
-                        style: const TextStyle(
-                          color: Sofra.muted,
-                          fontSize: 12,
-                        ),
+                        style: TextStyle(color: Sofra.muted, fontSize: 12),
                       ),
                     ],
                   ),
@@ -398,7 +396,7 @@ class _InfoRow extends StatelessWidget {
       borderRadius: BorderRadius.circular(Sofra.r12),
       child: Container(
         constraints: const BoxConstraints(minHeight: 56),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: Sofra.line, width: .6)),
         ),
         child: Row(
@@ -420,7 +418,7 @@ class _InfoRow extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 6),
-            const Icon(Icons.edit_rounded, size: 16, color: Sofra.muted),
+            Icon(Icons.edit_rounded, size: 16, color: Sofra.muted),
           ],
         ),
       ),
@@ -475,7 +473,7 @@ class PickedGroup extends StatelessWidget {
                 message: info!,
                 triggerMode: TooltipTriggerMode.tap,
                 showDuration: const Duration(seconds: 4),
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.all(8),
                   child: Icon(
                     Icons.info_outline_rounded,
@@ -499,10 +497,7 @@ class PickedGroup extends StatelessWidget {
               if (chosen.isEmpty)
                 Padding(
                   padding: const EdgeInsetsDirectional.only(end: 4),
-                  child: Text(
-                    empty,
-                    style: const TextStyle(color: Sofra.muted),
-                  ),
+                  child: Text(empty, style: TextStyle(color: Sofra.muted)),
                 ),
               for (final v in chosen)
                 _Picked(
@@ -556,7 +551,7 @@ class _Picked extends StatelessWidget {
                   children: [
                     Text(
                       label,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Sofra.accent,
                         fontWeight: FontWeight.w700,
                       ),
@@ -623,7 +618,7 @@ class _AddMenu extends StatelessWidget {
         borderRadius: BorderRadius.circular(Sofra.r12),
         border: Border.all(color: Sofra.line),
       ),
-      child: const Row(
+      child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.add_rounded, size: 18, color: Sofra.ink),
@@ -657,22 +652,7 @@ class SettingsScreen extends StatelessWidget {
         const SectionTitle('البلد والعملة'),
         const Surface(child: CountryPicker()),
         const SectionTitle('راحتك في التطبيق'),
-        Surface(
-          child: SwitchListTile.adaptive(
-            contentPadding: EdgeInsets.zero,
-            title: const Text(
-              'تقليل الحركة',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
-            ),
-            subtitle: const Text(
-              'انتقالات أهدأ دون ارتداد',
-              style: TextStyle(fontSize: 11),
-            ),
-            value: p.reduceMotion,
-            onChanged: (v) =>
-                c.updateProfile((p) => p.copyWith(reduceMotion: v)),
-          ),
-        ),
+        const LookSettings(),
         const SectionTitle('التذكيرات'),
         const ReminderSettings(),
         const SizedBox(height: 24),
@@ -698,7 +678,7 @@ class SettingsScreen extends StatelessWidget {
           const SizedBox(height: 12),
         ],
         const SizedBox(height: 22),
-        const Center(
+        Center(
           child: Text(
             'سفرة · صُنع بحب للبيوت',
             style: TextStyle(color: Sofra.muted, fontSize: 12),
@@ -725,7 +705,7 @@ class _AccountCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final shown = name.trim().isEmpty ? 'حسابي' : name.trim();
     return Material(
-      color: Sofra.ink,
+      color: Sofra.inverse,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Sofra.r22),
       ),
@@ -741,19 +721,15 @@ class _AccountCard extends StatelessWidget {
                 width: 56,
                 height: 56,
                 alignment: Alignment.center,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Sofra.accentTint,
                   shape: BoxShape.circle,
                 ),
                 child: initial.isEmpty
-                    ? const Icon(
-                        Icons.person_rounded,
-                        color: Sofra.accent,
-                        size: 30,
-                      )
+                    ? Icon(Icons.person_rounded, color: Sofra.accent, size: 30)
                     : Text(
                         initial.characters.first,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Sofra.accent,
                           fontSize: 24,
                           fontWeight: FontWeight.w800,
@@ -769,8 +745,8 @@ class _AccountCard extends StatelessWidget {
                       shown,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: Sofra.onInverse,
                         fontSize: 18,
                         fontWeight: FontWeight.w800,
                       ),
@@ -779,14 +755,14 @@ class _AccountCard extends StatelessWidget {
                     Text(
                       'حسابك وتفضيلات بيتك',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: .75),
+                        color: Sofra.onInverse.withValues(alpha: .75),
                         fontSize: 13,
                       ),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right_rounded, color: Colors.white),
+              Icon(Icons.chevron_right_rounded, color: Sofra.onInverse),
             ],
           ),
         ),

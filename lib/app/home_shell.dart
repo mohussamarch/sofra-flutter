@@ -20,6 +20,7 @@ import '../features/recipe_detail_screen.dart';
 import '../features/today_screen.dart';
 import '../ui/add_tile.dart';
 import '../ui/design.dart';
+import 'look.dart';
 import 'reminders.dart';
 import 'scope.dart';
 import 'sofra_controller.dart';
@@ -98,6 +99,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   @override
   void initState() {
     super.initState();
+    controller.addListener(_publishLook);
     controller.load().then((_) {
       name.text = controller.profile.name;
       house.text = controller.profile.house;
@@ -106,11 +108,17 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
 
   @override
   void dispose() {
+    controller.removeListener(_publishLook);
+    SofraLook.publish(const SofraLook());
     controller.dispose();
     name.dispose();
     house.dispose();
     super.dispose();
   }
+
+  /// Hands the profile's look (theme, text size, colours, motion) to the
+  /// app root, which applies it above every screen and dialog.
+  void _publishLook() => SofraLook.publish(controller.profile.look);
 
   void _go(VoidCallback change) {
     FocusManager.instance.primaryFocus?.unfocus();
@@ -465,7 +473,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                   key: const ValueKey('header-community'),
                   borderRadius: BorderRadius.circular(999),
                   onTap: () => goTab(AppTab.community),
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 14, vertical: 9),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -516,16 +524,16 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     final pill = look.isNotEmpty;
     // Inactive and active colours for each look.
     final idle = dark
-        ? const Color(0xFFF6E9DC).withValues(alpha: .62)
+        ? Sofra.onInverse.withValues(alpha: .62)
         : tint
-        ? Colors.white.withValues(alpha: .72)
+        ? Sofra.onAccent.withValues(alpha: .72)
         : Sofra.ink.withValues(alpha: .7);
     final onColor = !pill
         ? Sofra.accent
         : tint
         ? Sofra.accent
-        : Colors.white;
-    final pillColor = tint ? Colors.white : Sofra.accent;
+        : Sofra.onAccent;
+    final pillColor = tint ? Sofra.onAccent : Sofra.accent;
     Widget item(
       AppTab target,
       String key,
@@ -641,7 +649,11 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           borderRadius: radius,
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF8A4A2C).withValues(alpha: .18),
+              color:
+                  (Sofra.isDark
+                          ? Sofra.palette.shadow
+                          : const Color(0xFF8A4A2C))
+                      .withValues(alpha: .18),
               blurRadius: 30,
               offset: const Offset(0, 12),
               spreadRadius: -6,
@@ -690,7 +702,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
       );
     } else if (dark) {
       bar = Material(
-        color: const Color(0xFF2B1F18),
+        color: Sofra.inverse,
         borderRadius: radius,
         elevation: 0,
         child: DecoratedBox(
@@ -698,7 +710,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
             borderRadius: radius,
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF2B1F18).withValues(alpha: .32),
+                color: Sofra.inverse.withValues(alpha: .32),
                 blurRadius: 26,
                 offset: const Offset(0, 10),
                 spreadRadius: -4,

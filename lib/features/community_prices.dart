@@ -223,7 +223,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
           },
         ),
         if (hits.isEmpty && places != null && search.text.trim().isNotEmpty)
-          const Padding(
+          Padding(
             padding: EdgeInsetsDirectional.only(top: 6, start: 12),
             child: Text(
               'لا نتائج',
@@ -266,7 +266,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
         const SizedBox(height: 12),
         Row(
           children: [
-            const Icon(Icons.place_rounded, color: Sofra.accent, size: 22),
+            Icon(Icons.place_rounded, color: Sofra.accent, size: 22),
             const SizedBox(width: 6),
             Expanded(
               child: Text(
@@ -286,7 +286,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                 onPressed: _makeMine,
                 child: const Text('اجعلها منطقتي'),
               ),
-            const Tooltip(
+            Tooltip(
               message: 'سعر المنطقة هو ما دفعه الناس فيها في آخر 60 يومًا، ويظهر فقط عندما يشاركه بيتان أو أكثر.',
               triggerMode: TooltipTriggerMode.tap,
               showDuration: Duration(seconds: 5),
@@ -307,7 +307,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
             child: Text(
               note!,
               key: const ValueKey('price-locate-note'),
-              style: const TextStyle(color: Sofra.muted, fontSize: 13),
+              style: TextStyle(color: Sofra.muted, fontSize: 13),
             ),
           ),
         const SizedBox(height: 12),
@@ -327,7 +327,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                     padding: const EdgeInsets.only(bottom: 8),
                     child: Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Text(
                             'تعذّر جلب أسعار المنطقة.',
                             key: ValueKey('area-prices-failed'),
@@ -367,7 +367,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
           children: [
             Positioned.fill(
               child: !AreaPricesView.live || places == null
-                  ? const ColoredBox(color: Sofra.sand)
+                  ? ColoredBox(color: Sofra.sand)
                   : FlutterMap(
                       key: const ValueKey('price-map'),
                       mapController: map,
@@ -406,7 +406,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                                 width: 44,
                                 height: 44,
                                 alignment: Alignment.topCenter,
-                                child: const Icon(
+                                child: Icon(
                                   Icons.location_on_rounded,
                                   color: Sofra.accent,
                                   size: 44,
@@ -424,7 +424,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
               start: 10,
               top: 10,
               child: Material(
-                color: Colors.white,
+                color: Sofra.card,
                 shape: const CircleBorder(),
                 elevation: 2,
                 child: IconButton(
@@ -437,10 +437,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                           height: 20,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : const Icon(
-                          Icons.my_location_rounded,
-                          color: Sofra.accent,
-                        ),
+                      : Icon(Icons.my_location_rounded, color: Sofra.accent),
                 ),
               ),
             ),
@@ -531,10 +528,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                   AnimatedRotation(
                     turns: isOpen ? .5 : 0,
                     duration: Sofra.motion(context, true),
-                    child: const Icon(
-                      Icons.expand_more_rounded,
-                      color: Sofra.muted,
-                    ),
+                    child: Icon(Icons.expand_more_rounded, color: Sofra.muted),
                   ),
                 ],
               ),
@@ -550,7 +544,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                     padding: const EdgeInsets.fromLTRB(16, 0, 12, 12),
                     child: Column(
                       children: [
-                        const Divider(height: 1, color: Sofra.line),
+                        Divider(height: 1, color: Sofra.line),
                         const Padding(
                           padding: EdgeInsets.symmetric(vertical: 8),
                           child: Row(
@@ -585,7 +579,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     return Container(
       key: ValueKey('price-row-${e.id}'),
       constraints: const BoxConstraints(minHeight: 52),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         border: Border(bottom: BorderSide(color: Sofra.line, width: .6)),
       ),
       child: Row(
@@ -811,7 +805,7 @@ class _Head extends StatelessWidget {
     child: Text(
       text,
       textAlign: TextAlign.center,
-      style: const TextStyle(
+      style: TextStyle(
         color: Sofra.muted,
         fontSize: 12,
         fontWeight: FontWeight.w700,
@@ -853,7 +847,7 @@ class _Cell extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(Sofra.r12),
             side: mine && !has
-                ? const BorderSide(color: Sofra.line)
+                ? BorderSide(color: Sofra.line)
                 : BorderSide.none,
           ),
           child: InkWell(
@@ -897,7 +891,7 @@ class _Cell extends StatelessWidget {
                                   '/ ${unitLabel(unit)}',
                                   maxLines: 1,
                                   softWrap: false,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: Sofra.muted,
                                     fontSize: 10,
                                   ),

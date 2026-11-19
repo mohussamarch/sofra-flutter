@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart'
     show TargetPlatform, defaultTargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 
+import 'design.dart';
+
 /// In a desktop browser the app is always shown inside an iPhone 16 Pro screen (402×874, Dynamic Island, home
 /// indicator), so every layout is judged at a real phone's size.
 class PhoneFrame extends StatelessWidget {
@@ -21,12 +23,14 @@ class PhoneFrame extends StatelessWidget {
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context);
     if (!kIsWeb || _onPhone) return child;
+    // The desk around the phone: a quiet grey by day, near black at night.
+    final desk = Sofra.isDark ? Sofra.sand : const Color(0xFFE9E5DF);
     // A short window (e.g. a side pane) would shrink the frame until text is
     // unreadable; show the app at real size in a phone-wide column instead.
     if (media.size.height < 800) {
       final width = media.size.width.clamp(0, screen.width).toDouble();
       return ColoredBox(
-        color: const Color(0xFFE9E5DF),
+        color: desk,
         child: Center(
           child: SizedBox(
             width: width,
@@ -45,7 +49,7 @@ class PhoneFrame extends StatelessWidget {
       viewInsets: EdgeInsets.zero,
     );
     return ColoredBox(
-      color: const Color(0xFFE9E5DF),
+      color: desk,
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(16),

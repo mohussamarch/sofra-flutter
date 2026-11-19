@@ -49,7 +49,7 @@ class CountriesBadge extends StatelessWidget {
             const SizedBox(width: 6),
             Text(
               label,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Sofra.accent,
                 fontWeight: FontWeight.w800,
                 fontSize: 13,
@@ -67,8 +67,11 @@ List<String> countriesOf(List<Map<String, dynamic>> ways) => [
   ...{for (final w in ways) '${w['cuisine']}'},
 ];
 
-/// One colour per way of a dish, for its chip and its own ingredients.
-const wayColors = [
+/// One colour per way of a dish, for its chip and its own ingredients;
+/// lighter hues of the same set in the dark look.
+List<Color> get wayColors => Sofra.isDark ? _wayColorsDark : _wayColorsLight;
+
+const _wayColorsLight = [
   Color(0xFF2E7D5B),
   Color(0xFFC0582F),
   Color(0xFF2F5D8C),
@@ -77,6 +80,17 @@ const wayColors = [
   Color(0xFF3F7F7F),
   Color(0xFF6B4E9B),
   Color(0xFF7A5230),
+];
+
+const _wayColorsDark = [
+  Color(0xFF6FC29A),
+  Color(0xFFEE9068),
+  Color(0xFF86AEDB),
+  Color(0xFFD889AC),
+  Color(0xFFE2B24C),
+  Color(0xFF7FC4C4),
+  Color(0xFFB399DD),
+  Color(0xFFCB9C72),
 ];
 
 /// «طريقتان»، «3 طرق»، «11 طريقة» (Arabic counting).

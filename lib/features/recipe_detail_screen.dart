@@ -86,7 +86,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     button: true,
                     selected: on,
                     child: Material(
-                      color: on ? color : Colors.white,
+                      color: on ? color : Sofra.card,
                       shape: StadiumBorder(
                         side: BorderSide(color: color, width: 2),
                       ),
@@ -111,7 +111,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                               Text(
                                 n > 1 ? '$cuisine $n' : cuisine,
                                 style: TextStyle(
-                                  color: on ? Colors.white : Sofra.ink,
+                                  color: on ? Sofra.onAccent : Sofra.ink,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -185,7 +185,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             onPressed: known && !starting ? () => _cookNow(people) : null,
           ),
           const SizedBox(height: 6),
-          const Text(
+          Text(
             'تُحفظ كوجبة لليوم لاستكمالها. لا خصم قبل التأكيد.',
             textAlign: TextAlign.center,
             style: TextStyle(color: Sofra.muted, fontSize: 12),
@@ -207,7 +207,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             final photo = snap.data?.firstOrNull;
             if (photo == null) {
               return Surface(
-                color: const Color(0xFFF0EDD8),
+                color: Sofra.isDark ? Sofra.okTint : const Color(0xFFF0EDD8),
                 padding: const EdgeInsets.all(12),
                 child: Center(
                   child: MealArt(kind: artKind(source.id), size: 260),
@@ -230,7 +230,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                 ),
                 Text(
                   'الصورة: ${photo.credit} · ${photo.licence}',
-                  style: const TextStyle(color: Sofra.muted, fontSize: 11),
+                  style: TextStyle(color: Sofra.muted, fontSize: 11),
                 ),
               ],
             );
@@ -248,7 +248,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         ),
         const SizedBox(height: 8),
         if (source.description.isNotEmpty)
-          Text(source.description, style: const TextStyle(color: Sofra.muted)),
+          Text(source.description, style: TextStyle(color: Sofra.muted)),
         const SizedBox(height: 16),
         Wrap(
           spacing: 8,
@@ -268,7 +268,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           Surface(
             child: Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -320,7 +320,10 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                 allergy.isNotEmpty
                     ? 'انتبه: ${allergy.entries.map((e) => '«${e.key}» في ${e.value.join('، ')}').join('؛ ')}. المطابقة بالاسم بس، راجع المكونات والعبوات بنفسك.'
                     : 'راجع مكونات الوصفة والعبوات مع الحساسية المسجّلة: ${c.profile.allergies.join('، ')}.',
-                style: const TextStyle(fontSize: 12, color: Color(0xFF79513D)),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Sofra.isDark ? Sofra.warn : const Color(0xFF79513D),
+                ),
               ),
             ),
           ),
@@ -347,7 +350,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     backgroundColor: Sofra.mint,
                     child: Text(
                       '${step.number}',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         color: Sofra.greenDark,
                         fontWeight: FontWeight.w800,
@@ -375,7 +378,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           : '${formatAmount(i.amount!)} ${i.unit ?? ''}'.trim());
 
   Widget _yieldReview() => Surface(
-    color: const Color(0xFFFFF3D4),
+    color: Sofra.isDark ? Sofra.warnTint : const Color(0xFFFFF3D4),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -384,7 +387,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           style: TextStyle(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 6),
-        const Text(
+        Text(
           'لنضبط الكميات ونضعها على السفرة، أخبرنا كم فردًا تكفي الوصفة كلها تقريبًا. الوصفة الأصلية لن تتغير.',
           style: TextStyle(fontSize: 12, color: Sofra.muted),
         ),
@@ -492,7 +495,7 @@ class _CompareViewState extends State<_CompareView> {
   Widget build(BuildContext context) => ScreenBody(
     children: [
       Surface(
-        color: const Color(0xFFF0EDD8),
+        color: Sofra.isDark ? Sofra.okTint : const Color(0xFFF0EDD8),
         padding: const EdgeInsets.all(12),
         child: Center(
           child: MealArt(
@@ -515,7 +518,7 @@ class _CompareViewState extends State<_CompareView> {
       ),
       Text(
         '${waysLabel(widget.ways.length)} لعملها',
-        style: const TextStyle(color: Sofra.muted),
+        style: TextStyle(color: Sofra.muted),
       ),
       const SectionTitle('المكونات'),
       FutureBuilder<List<CatalogRecipe>>(
@@ -541,7 +544,7 @@ class _CompareViewState extends State<_CompareView> {
         },
       ),
       const SizedBox(height: 16),
-      const Surface(
+      Surface(
         key: ValueKey('compare-pick'),
         border: true,
         padding: EdgeInsets.all(14),
@@ -614,7 +617,7 @@ class _CompareRow extends StatelessWidget {
         constraints: const BoxConstraints(minHeight: 48),
         decoration: BoxDecoration(
           color: ways.isEmpty
-              ? Colors.white
+              ? Sofra.card
               : own?.withValues(alpha: .13) ?? Sofra.sand,
           borderRadius: BorderRadius.circular(Sofra.r16),
           border: own == null
@@ -678,7 +681,7 @@ class _IngredientRow extends StatelessWidget {
               children: [
                 Text('1 ${unitLabel(from)} من $name = كم ${unitLabel(to)}؟'),
                 const SizedBox(height: 4),
-                const Text(
+                Text(
                   'اكتب القياس من مطبخك. سيُحفظ لهذا المكوّن فقط.',
                   style: TextStyle(fontSize: 12, color: Sofra.muted),
                 ),
@@ -770,7 +773,9 @@ class _IngredientRow extends StatelessWidget {
                       status,
                       style: TextStyle(
                         color: line?.status == LineStock.missing
-                            ? const Color(0xFFA05233)
+                            ? (Sofra.isDark
+                                  ? Sofra.accent
+                                  : const Color(0xFFA05233))
                             : Sofra.muted,
                         fontSize: 12,
                       ),
@@ -778,7 +783,7 @@ class _IngredientRow extends StatelessWidget {
                   if (ingredient.note != null)
                     Text(
                       ingredient.note!,
-                      style: const TextStyle(fontSize: 11, color: Sofra.muted),
+                      style: TextStyle(fontSize: 11, color: Sofra.muted),
                     ),
                   if (line?.status == LineStock.unresolved &&
                       ingredient.unit != null &&

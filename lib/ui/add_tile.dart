@@ -72,11 +72,12 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final primary = widget.primary;
     final glass = glassTrial;
-    final light = primary && !glass; // white type on solid terracotta
-    final fg = light ? Colors.white : Sofra.ink;
+    final light = primary && !glass; // onAccent type on solid terracotta
+    final fg = light ? Sofra.onAccent : Sofra.ink;
     final symbolColor = light || (glass && primary)
-        ? Colors.white
+        ? Sofra.onAccent
         : Sofra.accent;
+    final glow = Sofra.isDark ? Sofra.palette.shadow : const Color(0xFF8A4A2C);
     final r = glass ? 34.0 : Sofra.r28;
     final radius = BorderRadius.circular(r);
 
@@ -110,7 +111,7 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
           color: glass && primary
               ? Sofra.accent
               : light
-              ? Colors.white.withValues(alpha: .16)
+              ? Sofra.onAccent.withValues(alpha: .16)
               : Sofra.accentTint,
         ),
         child: Icon(widget.icon, size: 40, color: symbolColor),
@@ -142,7 +143,7 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: light
-                    ? Colors.white.withValues(alpha: .85)
+                    ? Sofra.onAccent.withValues(alpha: .85)
                     : Sofra.muted,
                 fontSize: 13,
                 height: 1.5,
@@ -171,7 +172,7 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
         color: primary ? Sofra.accent : Sofra.surface,
         shape: RoundedRectangleBorder(
           borderRadius: radius,
-          side: primary ? BorderSide.none : const BorderSide(color: Sofra.line),
+          side: primary ? BorderSide.none : BorderSide(color: Sofra.line),
         ),
         clipBehavior: Clip.antiAlias,
         child: ink,
@@ -195,13 +196,13 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
               boxShadow: glass
                   ? [
                       BoxShadow(
-                        color: const Color(0xFF8A4A2C).withValues(alpha: .10),
+                        color: glow.withValues(alpha: .10),
                         blurRadius: 8,
                         offset: const Offset(0, 3),
                         spreadRadius: -2,
                       ),
                       BoxShadow(
-                        color: const Color(0xFF8A4A2C).withValues(alpha: .16),
+                        color: glow.withValues(alpha: .16),
                         blurRadius: 40,
                         offset: const Offset(0, 20),
                         spreadRadius: -10,
@@ -272,9 +273,9 @@ class SofraGlass extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Colors.white.withValues(alpha: .30),
-                        Colors.white.withValues(alpha: .12),
-                        Colors.white.withValues(alpha: .18),
+                        Sofra.card.withValues(alpha: .30),
+                        Sofra.card.withValues(alpha: .12),
+                        Sofra.card.withValues(alpha: .18),
                       ],
                       stops: const [0, .6, 1],
                     ),
@@ -381,19 +382,25 @@ class SofraBackdrop extends StatelessWidget {
   const SofraBackdrop({super.key});
 
   // Wide soft washes of warm colour that melt into each other: each one
-  // fades over its whole radius, so no edge is ever visible.
-  static const _washes = [
-    (Alignment(1.1, -1.0), 1.25, Color(0xFFEFB49A)),
-    (Alignment(-1.2, -.35), 1.10, Color(0xFFF3D9A8)),
-    (Alignment(.3, .1), .95, Color(0xFFF6CDBB)),
-    (Alignment(-.9, .95), 1.15, Color(0xFFF1D2B0)),
-    (Alignment(1.2, 1.1), 1.10, Color(0xFFEBBBA6)),
+  // fades over its whole radius, so no edge is ever visible. Where each sits
+  // and how far it spreads; its colour comes from the current palette.
+  static const _spots = [
+    (Alignment(1.1, -1.0), 1.25),
+    (Alignment(-1.2, -.35), 1.10),
+    (Alignment(.3, .1), .95),
+    (Alignment(-.9, .95), 1.15),
+    (Alignment(1.2, 1.1), 1.10),
   ];
 
   @override
   Widget build(BuildContext context) {
+    final palette = Sofra.palette;
+    final washes = [
+      for (final (i, (center, radius)) in _spots.indexed)
+        (center, radius, palette.washes[i % palette.washes.length]),
+    ];
     Widget layer = const SizedBox.expand();
-    for (final (center, radius, color) in _washes.reversed) {
+    for (final (center, radius, color) in washes.reversed) {
       layer = DecoratedBox(
         decoration: BoxDecoration(
           gradient: RadialGradient(
@@ -412,11 +419,11 @@ class SofraBackdrop extends StatelessWidget {
       );
     }
     return DecoratedBox(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: [Color(0xFFF7E6D8), Color(0xFFF8EDE0), Color(0xFFF5E2D3)],
+          colors: palette.washBase,
         ),
       ),
       child: layer,

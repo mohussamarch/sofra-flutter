@@ -34,7 +34,7 @@ class ScreenBody extends StatelessWidget {
         Container(
           width: double.infinity,
           padding: const EdgeInsets.fromLTRB(20, 12, 20, 16),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Sofra.cream,
             border: Border(top: BorderSide(color: Sofra.line)),
           ),
@@ -68,10 +68,7 @@ Widget introBlock(String title, String subtitle, {required IconData icon}) =>
           ),
         ),
         const SizedBox(height: 12),
-        Text(
-          subtitle,
-          style: const TextStyle(color: Sofra.muted, fontSize: 16),
-        ),
+        Text(subtitle, style: TextStyle(color: Sofra.muted, fontSize: 16)),
       ],
     );
 
@@ -87,7 +84,7 @@ Widget summaryLine(IconData icon, String title, String subtitle) => Row(
       child: Text(
         subtitle,
         textAlign: TextAlign.end,
-        style: const TextStyle(color: Sofra.muted, fontSize: 12),
+        style: TextStyle(color: Sofra.muted, fontSize: 12),
       ),
     ),
   ],
@@ -96,7 +93,7 @@ Widget summaryLine(IconData icon, String title, String subtitle) => Row(
 Widget noteText(String text, {TextAlign align = TextAlign.start}) => Text(
   text,
   textAlign: align,
-  style: const TextStyle(color: Sofra.muted, fontSize: 11),
+  style: TextStyle(color: Sofra.muted, fontSize: 11),
 );
 
 String zoneName(StorageZone value) => switch (value) {
@@ -189,6 +186,11 @@ class ErrorBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Surface(
     color: Sofra.peach,
-    child: Text(message, style: const TextStyle(color: Color(0xFF79513D))),
+    child: Text(
+      message,
+      style: TextStyle(
+        color: Sofra.isDark ? Sofra.warn : const Color(0xFF79513D),
+      ),
+    ),
   );
 }

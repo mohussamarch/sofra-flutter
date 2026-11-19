@@ -302,7 +302,7 @@ class _SignInPageState extends State<SignInPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.restaurant_rounded,
                       size: 64,
                       color: Sofra.green,
@@ -363,7 +363,7 @@ class _SignInPageState extends State<SignInPage> {
                         child: Text(
                           message!,
                           semanticsLabel: message,
-                          style: const TextStyle(color: Sofra.ink),
+                          style: TextStyle(color: Sofra.ink),
                         ),
                       ),
                     const SizedBox(height: 20),

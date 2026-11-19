@@ -22,7 +22,7 @@ class ReminderSettings extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             'موعد كل وجبة عندك، لنذكّرك قبلها.',
             style: TextStyle(fontSize: 12, color: Sofra.muted),
           ),

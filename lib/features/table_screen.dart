@@ -55,7 +55,7 @@ class TableScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          const Center(
+          Center(
             child: Text(
               'اختر أكلة، وسنعرض الناقص قبل البدء.',
               textAlign: TextAlign.center,
@@ -173,7 +173,7 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                   child: child,
                 )
               : Surface(
-                  color: m.completed ? Sofra.mint : Colors.white,
+                  color: m.completed ? Sofra.mint : Sofra.card,
                   child: child,
                 );
           return card(
@@ -210,7 +210,7 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                         SoftTag(
                           'ناقص ${missing.length}',
                           color: Sofra.peach,
-                          ink: const Color(0xFF995333),
+                          ink: Sofra.warn,
                         ),
                       if (unresolved > 0)
                         SoftTag(
@@ -235,7 +235,7 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                         padding: const EdgeInsets.only(bottom: 6),
                         child: Row(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.shopping_bag_outlined,
                               color: Sofra.orange,
                               size: 18,
@@ -246,7 +246,7 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                               child: Text(
                                 '${formatAmount(l.missing!)} ${l.ingredient.unit}',
                                 textAlign: TextAlign.end,
-                                style: const TextStyle(color: Sofra.muted),
+                                style: TextStyle(color: Sofra.muted),
                               ),
                             ),
                           ],
@@ -322,7 +322,7 @@ class _NutritionState extends State<_Nutrition> {
           '${g(NutrientId.protein, 'بروتين')}'
           '${g(NutrientId.carbohydrate, 'كربوهيدرات')}'
           '${g(NutrientId.fat, 'دهون')}',
-          style: const TextStyle(color: Sofra.muted, fontSize: 13),
+          style: TextStyle(color: Sofra.muted, fontSize: 13),
         ),
       );
     },

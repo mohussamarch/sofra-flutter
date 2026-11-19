@@ -28,6 +28,13 @@ const _tones = {
   'night': (Color(0xFF26323F), Color(0xFF07090D)),
 };
 
+/// The same pools in the dark look: the page dims around the lit room.
+const _darkTones = {
+  'morning': (Color(0xFF3A3128), Color(0xFF110D0A)),
+  'golden': (Color(0xFF3E3024), Color(0xFF100B08)),
+  'night': (Color(0xFF26323F), Color(0xFF07090D)),
+};
+
 /// Tappable places in the 3D kitchen, as boxes in Blender metres (z up),
 /// measured on `kitchen-morning.blend`, with room in front for handles and
 /// knobs (the floor is excluded by height). Upper zones first: the freezer sits
@@ -123,16 +130,17 @@ class _TodayScreenState extends State<TodayScreen> {
 
   /// The lighting weights mix the per-mode tones.
   (Color, Color) get _tone {
+    final tones = Sofra.isDark ? _darkTones : _tones;
     Color mix(Color Function((Color, Color)) pick) {
       var r = .0, g = .0, b = .0, total = .0;
       for (final MapEntry(key: mode, value: w) in weights.entries) {
-        final c = pick(_tones[mode] ?? _tones['morning']!);
+        final c = pick(tones[mode] ?? tones['morning']!);
         r += c.r * w;
         g += c.g * w;
         b += c.b * w;
         total += w;
       }
-      if (total == 0) return pick(_tones['morning']!);
+      if (total == 0) return pick(tones['morning']!);
       return Color.from(
         alpha: 1,
         red: r / total,
@@ -240,7 +248,7 @@ class _TodayScreenState extends State<TodayScreen> {
     final media = MediaQuery.of(context);
     // Paper by day, the dark room at night: the ink follows the page.
     final dark = top.computeLuminance() < .25;
-    final ink = dark ? Colors.white : Sofra.ink;
+    final ink = dark ? Sofra.onInverse : Sofra.ink;
     final nav = SofraScope.navOf(context);
     return LayoutBuilder(
       builder: (context, box) {
@@ -482,7 +490,7 @@ class _TodayCard extends StatelessWidget {
           if (next == null) ...[
             Text('ماذا نطبخ اليوم؟', style: Sofra.heading(20)),
             const SizedBox(height: 4),
-            const Text(
+            Text(
               'اختر وصفة، ونعرض لك الناقص من مطبخك قبل البدء.',
               style: TextStyle(color: Sofra.muted, fontSize: 14),
             ),
@@ -506,7 +514,7 @@ class _TodayCard extends StatelessWidget {
           ] else ...[
             Text(
               'التالي على السفرة · ${when(next)}',
-              style: const TextStyle(color: Sofra.muted, fontSize: 13),
+              style: TextStyle(color: Sofra.muted, fontSize: 13),
             ),
             FutureBuilder<String>(
               future: c.planTitle(next),
@@ -596,7 +604,7 @@ class _MealCardsState extends State<_MealCards> {
                     style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800),
                   ),
                   const SizedBox(height: 6),
-                  const Text(
+                  Text(
                     'افتح كتاب الوصفات واختر أكلة لتظهر هنا.',
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Sofra.muted),
@@ -620,11 +628,11 @@ class _MealCardsState extends State<_MealCards> {
         Text(
           'على سفرة ${c.market.today}',
           textAlign: TextAlign.center,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w800,
-            color: Colors.white,
-            shadows: [Shadow(color: Colors.black38, blurRadius: 12)],
+            color: Sofra.onInverse,
+            shadows: const [Shadow(color: Colors.black38, blurRadius: 12)],
           ),
         ),
         Wrap(
@@ -632,14 +640,14 @@ class _MealCardsState extends State<_MealCards> {
           children: [
             TextButton.icon(
               key: const ValueKey('open-month-plan'),
-              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              style: TextButton.styleFrom(foregroundColor: Sofra.onInverse),
               onPressed: () => openMonthPlan(context),
               icon: const Icon(Icons.calendar_month_outlined, size: 20),
               label: const Text('خطة الشهر'),
             ),
             TextButton.icon(
               key: const ValueKey('open-shopping'),
-              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              style: TextButton.styleFrom(foregroundColor: Sofra.onInverse),
               onPressed: () => openShopping(context),
               icon: const Icon(Icons.shopping_basket_outlined, size: 20),
               label: const Text('قائمة الشراء'),
@@ -765,7 +773,7 @@ class _PlansSheet extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           if (meals.isEmpty)
-            const Text(
+            Text(
               'لا توجد أكلات مخططة. اختر من كتاب الوصفات.',
               style: TextStyle(color: Sofra.muted),
             )

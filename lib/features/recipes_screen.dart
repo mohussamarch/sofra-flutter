@@ -28,7 +28,7 @@ class RecipeCard extends StatelessWidget {
     final kind = artKind(id);
     if (Paper.isOn(context)) return _PaperEntry(row: row, saved: saved);
     return Material(
-      color: Colors.white,
+      color: Sofra.card,
       borderRadius: BorderRadius.circular(24),
       child: InkWell(
         key: ValueKey(dish == null ? 'recipe-$id' : 'dish-$id'),
@@ -42,7 +42,9 @@ class RecipeCard extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
                 decoration: BoxDecoration(
-                  color: kind.isEven ? const Color(0xFFF0EDD8) : Sofra.mint,
+                  color: kind.isEven
+                      ? (Sofra.isDark ? Sofra.okTint : const Color(0xFFF0EDD8))
+                      : Sofra.mint,
                   borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(24),
                   ),
@@ -53,7 +55,7 @@ class RecipeCard extends StatelessWidget {
                       children: [
                         SoftTag(
                           '${row['category'] ?? ''}',
-                          color: Colors.white,
+                          color: Sofra.card,
                           ink: Sofra.ink,
                         ),
                         const Spacer(),
@@ -67,7 +69,7 @@ class RecipeCard extends StatelessWidget {
                             ),
                           ),
                           style: IconButton.styleFrom(
-                            backgroundColor: Colors.white,
+                            backgroundColor: Sofra.card,
                           ),
                           icon: Icon(
                             saved
@@ -476,7 +478,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
             padding: const EdgeInsets.only(top: 12),
             child: Text(
               'الكميات محسوبة لـ${c.profile.servings} أفراد. المقادير غير المعروفة لا تُعتبر جاهزة.',
-              style: const TextStyle(color: Sofra.muted),
+              style: TextStyle(color: Sofra.muted),
             ),
           ),
         const SizedBox(height: 20),
@@ -565,7 +567,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                     ),
                     Text(
                       '${rows.length} وصفة',
-                      style: const TextStyle(color: Sofra.muted, fontSize: 12),
+                      style: TextStyle(color: Sofra.muted, fontSize: 12),
                     ),
                   ],
                 ),

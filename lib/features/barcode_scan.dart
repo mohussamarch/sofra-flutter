@@ -162,7 +162,7 @@ class _PickSheetState extends State<_PickSheet> {
                 if (p.packageLabel != null) 'العبوة: ${p.packageLabel}',
                 p.code,
               ].join(' · '),
-              style: const TextStyle(color: Sofra.muted, fontSize: 12),
+              style: TextStyle(color: Sofra.muted, fontSize: 12),
             ),
             const SizedBox(height: 12),
             const Text('أي مكوّن في مطبخك هذا؟ سنتذكره في المرة القادمة.'),

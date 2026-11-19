@@ -123,7 +123,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                   ),
                 ),
                 const SizedBox(height: 8),
-                const Text(
+                Text(
                   'أضف بعض المكونات كبداية. لا نحتاج إلى جرد كامل للبدء.',
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Sofra.muted, fontSize: 14),
@@ -189,7 +189,7 @@ class _StockRow extends StatelessWidget {
                   ),
                   Text(
                     zoneName(lot.zone),
-                    style: const TextStyle(fontSize: 11, color: Sofra.muted),
+                    style: TextStyle(fontSize: 11, color: Sofra.muted),
                   ),
                 ],
               ),
@@ -204,11 +204,7 @@ class _StockRow extends StatelessWidget {
             IconButton(
               tooltip: 'تعديل $name',
               onPressed: () => editStockQuantity(context, lot),
-              icon: const Icon(
-                Icons.edit_outlined,
-                size: 18,
-                color: Sofra.muted,
-              ),
+              icon: Icon(Icons.edit_outlined, size: 18, color: Sofra.muted),
             ),
           ],
         ),
@@ -317,7 +313,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
           style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 8),
-        const Text(
+        Text(
           'اضغط + لإضافة سريعة، أو اضغط على المكوّن لكتابة الكمية والوحدة.',
           style: TextStyle(color: Sofra.muted),
         ),
@@ -379,7 +375,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                             ),
                             Text(
                               _have(c.stock, e.id) ?? zoneName(e.zone),
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Sofra.muted,
                                 fontSize: 12,
                               ),
@@ -389,10 +385,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                       ),
                       Text(
                         '+${c.amountText(e.id, SofraController.quickStep(e.defaultUnit), e.defaultUnit)}',
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: Sofra.muted,
-                        ),
+                        style: TextStyle(fontSize: 12, color: Sofra.muted),
                       ),
                       IconButton.filledTonal(
                         key: ValueKey('add-stock-${e.id}'),

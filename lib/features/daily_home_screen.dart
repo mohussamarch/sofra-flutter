@@ -28,7 +28,7 @@ class DailyHomeScreen extends StatelessWidget {
           style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 6),
-        const Text(
+        Text(
           'نطلع أكلة حلوة من الموجود؟',
           style: TextStyle(color: Sofra.muted, fontSize: 16),
         ),
@@ -38,11 +38,7 @@ class DailyHomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(
-                Icons.soup_kitchen_outlined,
-                color: Sofra.green,
-                size: 36,
-              ),
+              Icon(Icons.soup_kitchen_outlined, color: Sofra.green, size: 36),
               const SizedBox(height: 12),
               const Text(
                 'أطبخ إيه باللي عندي؟',
@@ -90,7 +86,7 @@ class DailyHomeScreen extends StatelessWidget {
             border: true,
             child: Row(
               children: [
-                const Icon(Icons.restaurant_outlined, color: Sofra.green),
+                Icon(Icons.restaurant_outlined, color: Sofra.green),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text('عندك ${leftovers.length} بواقي عليها تذكير'),

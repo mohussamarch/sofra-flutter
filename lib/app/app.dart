@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/recipe_repository.dart';
-import '../ui/design.dart';
+import 'look.dart';
 import '../ui/session_gate.dart';
 import 'home_shell.dart';
 import '../ui/phone_frame.dart';
@@ -25,10 +25,12 @@ class TabkhaApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'سفرة',
-    theme: _theme,
-    builder: (context, child) => Directionality(
-      textDirection: TextDirection.rtl,
-      child: PhoneFrame(child: child!),
+    theme: sofraTheme(),
+    builder: (context, child) => LookRoot(
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: PhoneFrame(child: child!),
+      ),
     ),
     home: persistent
         ? SessionGate(
@@ -52,78 +54,3 @@ class TabkhaApp extends StatelessWidget {
           ),
   );
 }
-
-final _field = OutlineInputBorder(
-  borderRadius: BorderRadius.circular(Sofra.r16),
-  borderSide: BorderSide.none,
-);
-
-final _theme = ThemeData(
-  useMaterial3: true,
-  fontFamily: 'IBMPlexSansArabic',
-  scaffoldBackgroundColor: Sofra.cream,
-  splashFactory: InkSparkle.splashFactory,
-  colorScheme: ColorScheme.fromSeed(
-    seedColor: Sofra.green,
-    primary: Sofra.green,
-    onPrimary: Colors.white,
-    secondary: Sofra.orange,
-    surface: Sofra.cream,
-  ),
-  textTheme: const TextTheme(
-    bodyMedium: TextStyle(color: Sofra.ink, fontSize: 15, height: 1.6),
-    bodyLarge: TextStyle(color: Sofra.ink, fontSize: 16, height: 1.6),
-    titleLarge: TextStyle(
-      fontFamily: Sofra.display,
-      color: Sofra.ink,
-      fontWeight: FontWeight.w700,
-      fontVariations: [FontVariation('wght', 700)],
-    ),
-  ),
-  inputDecorationTheme: InputDecorationTheme(
-    filled: true,
-    fillColor: Sofra.surface,
-    contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
-    hintStyle: const TextStyle(color: Sofra.muted),
-    border: _field,
-    enabledBorder: _field,
-    focusedBorder: _field.copyWith(
-      borderSide: const BorderSide(color: Sofra.sage, width: 1.5),
-    ),
-    errorBorder: _field.copyWith(
-      borderSide: const BorderSide(color: Sofra.orange, width: 1.5),
-    ),
-  ),
-  chipTheme: ChipThemeData(
-    backgroundColor: Sofra.surface,
-    selectedColor: Sofra.accentTint,
-    side: BorderSide.none,
-    labelStyle: const TextStyle(fontWeight: FontWeight.w700, color: Sofra.ink),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(Sofra.r12),
-    ),
-    showCheckmark: false,
-    labelPadding: const EdgeInsets.symmetric(horizontal: 6),
-  ),
-  bottomSheetTheme: const BottomSheetThemeData(
-    backgroundColor: Sofra.cream,
-    showDragHandle: true,
-    dragHandleColor: Sofra.line,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(Sofra.r28)),
-    ),
-  ),
-  dialogTheme: DialogThemeData(
-    backgroundColor: Sofra.cream,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(Sofra.r28),
-    ),
-  ),
-  snackBarTheme: SnackBarThemeData(
-    backgroundColor: Sofra.ink,
-    behavior: SnackBarBehavior.floating,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(Sofra.r16),
-    ),
-  ),
-);

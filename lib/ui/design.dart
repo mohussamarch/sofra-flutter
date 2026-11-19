@@ -2,44 +2,163 @@ import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
 
-/// Sofra design tokens, direction A (warm editorial, chosen by the owner):
-/// paper background, warm ink, one terracotta accent for actions.
+/// One full set of Sofra colours. [light] is direction A (warm editorial,
+/// chosen by the owner); [dark] keeps the same warm family at night.
+class SofraPalette {
+  const SofraPalette({
+    required this.ink,
+    required this.muted,
+    required this.accent,
+    required this.accentDark,
+    required this.accentTint,
+    required this.onAccent,
+    required this.paper,
+    required this.surface,
+    required this.card,
+    required this.inverse,
+    required this.onInverse,
+    required this.ok,
+    required this.okTint,
+    required this.warn,
+    required this.warnTint,
+    required this.sage,
+    required this.sand,
+    required this.line,
+    required this.yellow,
+    required this.washes,
+    required this.washBase,
+    required this.shadow,
+  });
+
+  final Color ink, muted, accent, accentDark, accentTint, onAccent;
+  final Color paper, surface, card, inverse, onInverse;
+  final Color ok, okTint, warn, warnTint, sage, sand, line, yellow;
+
+  /// The backdrop's soft colour washes, and the gradient under them.
+  final List<Color> washes, washBase;
+  final Color shadow;
+
+  static const light = SofraPalette(
+    ink: Color(0xFF2A211B),
+    muted: Color(0xFF7A6C60),
+    accent: Color(0xFFB4522F),
+    accentDark: Color(0xFF8E3F23),
+    accentTint: Color(0xFFF4E4D9),
+    onAccent: Color(0xFFFFFFFF),
+    paper: Color(0xFFF7F1E6),
+    surface: Color(0xFFFFFDF8),
+    card: Color(0xFFFFFFFF),
+    inverse: Color(0xFF2A211B),
+    onInverse: Color(0xFFFFFFFF),
+    ok: Color(0xFF4E7356),
+    okTint: Color(0xFFE7EEE4),
+    warn: Color(0xFF9A5B1C),
+    warnTint: Color(0xFFF6E7D2),
+    sage: Color(0xFFD6B7A2),
+    sand: Color(0xFFEFE6D7),
+    line: Color(0xFFE5DACA),
+    yellow: Color(0xFFE9C77B),
+    washes: [
+      Color(0xFFEFB49A),
+      Color(0xFFF3D9A8),
+      Color(0xFFF6CDBB),
+      Color(0xFFF1D2B0),
+      Color(0xFFEBBBA6),
+    ],
+    washBase: [Color(0xFFF7E6D8), Color(0xFFF8EDE0), Color(0xFFF5E2D3)],
+    shadow: Color(0xFF2A211B),
+  );
+
+  /// Warm night: deep brown paper, cream ink, a lighter terracotta that
+  /// keeps 4.5:1 on the cards, with dark text on it.
+  static const dark = SofraPalette(
+    ink: Color(0xFFF2E9DE),
+    muted: Color(0xFFB5A595),
+    accent: Color(0xFFE38A62),
+    accentDark: Color(0xFFF2AA88),
+    accentTint: Color(0xFF3D2B22),
+    onAccent: Color(0xFF1F1611),
+    paper: Color(0xFF1B1613),
+    surface: Color(0xFF26201B),
+    card: Color(0xFF2C251F),
+    inverse: Color(0xFF3A2F27),
+    onInverse: Color(0xFFF7EFE6),
+    ok: Color(0xFF93C29B),
+    okTint: Color(0xFF223127),
+    warn: Color(0xFFE6A866),
+    warnTint: Color(0xFF3A2A1A),
+    sage: Color(0xFF7A604E),
+    sand: Color(0xFF14100D),
+    line: Color(0xFF3B322A),
+    yellow: Color(0xFFD9B565),
+    washes: [
+      Color(0xFF5A2E1E),
+      Color(0xFF4A3920),
+      Color(0xFF4F2A22),
+      Color(0xFF3F3020),
+      Color(0xFF55301F),
+    ],
+    washBase: [Color(0xFF1E1714), Color(0xFF1B1613), Color(0xFF201813)],
+    shadow: Color(0xFF000000),
+  );
+}
+
+/// Sofra design tokens. Colours come from the current [SofraPalette]
+/// (light or dark), set once per look change by the app root.
 abstract final class Sofra {
-  static const ink = Color(0xFF2A211B);
-  static const muted = Color(0xFF7A6C60);
-  static const accent = Color(0xFFB4522F);
-  static const accentDark = Color(0xFF8E3F23);
-  static const accentTint = Color(0xFFF4E4D9);
-  static const paper = Color(0xFFF7F1E6);
-  static const surface = Color(0xFFFFFDF8);
+  static SofraPalette _p = SofraPalette.light;
+  static SofraPalette get palette => _p;
+  static bool get isDark => identical(_p, SofraPalette.dark);
+
+  /// Switches every token; the caller rebuilds the whole tree after it.
+  static void use(SofraPalette palette) => _p = palette;
+
+  static Color get ink => _p.ink;
+  static Color get muted => _p.muted;
+  static Color get accent => _p.accent;
+  static Color get accentDark => _p.accentDark;
+  static Color get accentTint => _p.accentTint;
+
+  /// Text and icons on an [accent] fill.
+  static Color get onAccent => _p.onAccent;
+  static Color get paper => _p.paper;
+  static Color get surface => _p.surface;
+
+  /// The brightest raised surface: white in the light look.
+  static Color get card => _p.card;
+
+  /// A dark block that stays dark in both looks (the account card), and
+  /// what goes on it.
+  static Color get inverse => _p.inverse;
+  static Color get onInverse => _p.onInverse;
 
   /// Meaning only: done / in stock, and missing / needs attention.
-  static const ok = Color(0xFF4E7356);
-  static const okTint = Color(0xFFE7EEE4);
-  static const warn = Color(0xFF9A5B1C);
-  static const warnTint = Color(0xFFF6E7D2);
+  static Color get ok => _p.ok;
+  static Color get okTint => _p.okTint;
+  static Color get warn => _p.warn;
+  static Color get warnTint => _p.warnTint;
 
   // Older role names, kept so every screen moves to direction A at once.
-  static const green = accent;
-  static const greenDark = accentDark;
-  static const sage = Color(0xFFD6B7A2);
-  static const mint = accentTint;
-  static const cream = paper;
-  static const sand = Color(0xFFEFE6D7);
-  static const line = Color(0xFFE5DACA);
-  static const orange = warn;
-  static const peach = warnTint;
-  static const yellow = Color(0xFFE9C77B);
+  static Color get green => _p.accent;
+  static Color get greenDark => _p.accentDark;
+  static Color get sage => _p.sage;
+  static Color get mint => _p.accentTint;
+  static Color get cream => _p.paper;
+  static Color get sand => _p.sand;
+  static Color get line => _p.line;
+  static Color get orange => _p.warn;
+  static Color get peach => _p.warnTint;
+  static Color get yellow => _p.yellow;
 
   /// Headings: El Messiri. Body text uses the theme's IBM Plex Sans Arabic.
   static const display = 'ElMessiri';
-  static TextStyle heading(double size, {Color color = ink}) => TextStyle(
+  static TextStyle heading(double size, {Color? color}) => TextStyle(
     fontFamily: display,
     fontSize: size,
     height: 1.3,
     fontWeight: FontWeight.w700,
     fontVariations: const [FontVariation('wght', 700)],
-    color: color,
+    color: color ?? ink,
   );
 
   /// Corner radius scale; nothing outside it.
@@ -60,12 +179,12 @@ abstract final class Sofra {
   /// Soft two-layer shadow tinted with the ink, never a hard edge.
   static List<BoxShadow> shadow([double lift = 1]) => [
     BoxShadow(
-      color: ink.withValues(alpha: .05 * lift),
+      color: _p.shadow.withValues(alpha: (isDark ? .25 : .05) * lift),
       blurRadius: 28 * lift,
       offset: Offset(0, 12 * lift),
     ),
     BoxShadow(
-      color: ink.withValues(alpha: .04),
+      color: _p.shadow.withValues(alpha: isDark ? .2 : .04),
       blurRadius: 3,
       offset: const Offset(0, 1),
     ),
@@ -124,13 +243,13 @@ class DepthButton extends StatelessWidget {
     final face = !enabled
         ? Sofra.line
         : secondary
-        ? Colors.white
+        ? Sofra.card
         : Sofra.green;
     final ink = !enabled
         ? Sofra.muted
         : secondary
         ? Sofra.ink
-        : Colors.white;
+        : Sofra.onAccent;
     final radius = BorderRadius.circular(Sofra.r16);
     return PressScale(
       enabled: enabled,
@@ -195,12 +314,14 @@ class Surface extends StatelessWidget {
   const Surface({
     super.key,
     required this.child,
-    this.color = Colors.white,
+    this.color,
     this.padding = const EdgeInsets.all(20),
     this.border = false,
   });
   final Widget child;
-  final Color color;
+
+  /// Defaults to [Sofra.card].
+  final Color? color;
   final EdgeInsetsGeometry padding;
 
   /// A flat, quieter card (no lift) for secondary content.
@@ -215,7 +336,7 @@ class Surface extends StatelessWidget {
             ? const Color(0x33FFF9EC)
             : border
             ? Sofra.sand.withValues(alpha: .6)
-            : color,
+            : color ?? Sofra.card,
         borderRadius: BorderRadius.circular(Sofra.r22),
         border: paper
             ? Border.all(color: Paper.ink.withValues(alpha: .12))
@@ -234,13 +355,15 @@ class Glass extends StatelessWidget {
     required this.child,
     this.radius = Sofra.r22,
     this.padding = EdgeInsets.zero,
-    this.tint = Colors.white,
+    this.tint,
     this.opacity = .72,
   });
   final Widget child;
   final double radius;
   final EdgeInsetsGeometry padding;
-  final Color tint;
+
+  /// Defaults to [Sofra.card].
+  final Color? tint;
   final double opacity;
   @override
   Widget build(BuildContext context) => DecoratedBox(
@@ -253,7 +376,7 @@ class Glass extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
         child: ColoredBox(
-          color: tint.withValues(alpha: opacity),
+          color: (tint ?? Sofra.card).withValues(alpha: opacity),
           child: Padding(padding: padding, child: child),
         ),
       ),
@@ -287,7 +410,7 @@ class ChoiceTile extends StatelessWidget {
             duration: Sofra.motion(context, true),
             curve: Sofra.quickCurve,
             decoration: BoxDecoration(
-              color: selected ? Sofra.mint : Colors.white,
+              color: selected ? Sofra.mint : Sofra.card,
               borderRadius: radius,
               boxShadow: selected ? null : Sofra.shadow(.5),
             ),
@@ -323,7 +446,7 @@ class ChoiceTile extends StatelessWidget {
                             if (subtitle != null)
                               Text(
                                 subtitle!,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Sofra.muted,
                                   fontSize: 12,
                                 ),
@@ -356,44 +479,40 @@ class ChoiceTile extends StatelessWidget {
 }
 
 class SoftTag extends StatelessWidget {
-  const SoftTag(
-    this.text, {
-    super.key,
-    this.color = Sofra.mint,
-    this.ink = Sofra.greenDark,
-    this.icon,
-  });
+  const SoftTag(this.text, {super.key, this.color, this.ink, this.icon});
   final String text;
-  final Color color;
-  final Color ink;
+  final Color? color, ink;
   final IconData? icon;
   @override
-  Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-    decoration: BoxDecoration(
-      color: color,
-      borderRadius: BorderRadius.circular(Sofra.r12),
-    ),
-    child: Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (icon != null) ...[
-          Icon(icon, size: 14, color: ink),
-          const SizedBox(width: 4),
-        ],
-        Flexible(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: ink,
-              fontSize: 11,
-              fontWeight: FontWeight.w700,
+  Widget build(BuildContext context) {
+    final ink = this.ink ?? Sofra.greenDark;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+        color: color ?? Sofra.mint,
+        borderRadius: BorderRadius.circular(Sofra.r12),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (icon != null) ...[
+            Icon(icon, size: 14, color: ink),
+            const SizedBox(width: 4),
+          ],
+          Flexible(
+            child: Text(
+              text,
+              style: TextStyle(
+                color: ink,
+                fontSize: 11,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
-        ),
-      ],
-    ),
-  );
+        ],
+      ),
+    );
+  }
 }
 
 class SectionTitle extends StatelessWidget {
@@ -467,7 +586,7 @@ class Counter extends StatelessWidget {
     onPressed: next == null ? null : () => onChanged(next),
     tooltip: tip,
     style: IconButton.styleFrom(
-      backgroundColor: next == null ? Colors.transparent : Colors.white,
+      backgroundColor: next == null ? Colors.transparent : Sofra.card,
       minimumSize: const Size(44, 44),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Sofra.r12),
@@ -529,7 +648,13 @@ class LiquidGlass extends StatelessWidget {
                       ],
               ),
               border: Border.all(
-                color: Colors.white.withValues(alpha: dark ? .22 : .7),
+                color: Colors.white.withValues(
+                  alpha: dark
+                      ? .22
+                      : Sofra.isDark
+                      ? .12
+                      : .7,
+                ),
                 width: 1,
               ),
             ),
@@ -549,7 +674,8 @@ class Paper extends InheritedWidget {
   @override
   bool updateShouldNotify(Paper old) => false;
 
-  static const ink = Color(0xFF3A2416);
+  /// The page's outline ink; the current ink on the dark page.
+  static Color get ink => Sofra.isDark ? Sofra.ink : const Color(0xFF3A2416);
   static const tone = Color(0xFFEBDDBF);
 }
 

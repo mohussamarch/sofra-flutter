@@ -299,7 +299,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                 action: 'أكمل الأيام الفارغة',
                 onAction: _fillWeek,
               ),
-              const Text(
+              Text(
                 'يتكرر هذا الأسبوع طوال الشهر. يمكنك وضع أكلتين في الخانة نفسها، ونختار الأوفر.',
                 style: TextStyle(color: Sofra.muted, fontSize: 13),
               ),
@@ -379,7 +379,7 @@ class _Cell extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(horizontal: 3),
     child: Material(
-      color: names.isEmpty ? Sofra.line.withValues(alpha: .35) : Colors.white,
+      color: names.isEmpty ? Sofra.line.withValues(alpha: .35) : Sofra.card,
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
         borderRadius: BorderRadius.circular(14),
@@ -390,12 +390,9 @@ class _Cell extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                slot,
-                style: const TextStyle(fontSize: 11, color: Sofra.muted),
-              ),
+              Text(slot, style: TextStyle(fontSize: 11, color: Sofra.muted)),
               if (names.isEmpty)
-                const Text('+ اختر', style: TextStyle(color: Sofra.muted))
+                Text('+ اختر', style: TextStyle(color: Sofra.muted))
               else
                 for (final (i, n) in names.indexed)
                   Text(
@@ -511,7 +508,7 @@ class _Result extends StatelessWidget {
           _Line(
             key: const ValueKey('month-over'),
             icon: Icons.warning_amber_rounded,
-            color: const Color(0xFF995333),
+            color: Sofra.warn,
             text:
                 'أوفر اختيار يتجاوز الميزانية بـ ${amount(cheapest.overrun!)}. جرّب أكلات أوفر أو أضف بديلًا في بعض الخانات.',
           ),
@@ -529,7 +526,7 @@ class _Result extends StatelessWidget {
         );
       case MonthlyBudgetSearchOutcome.indeterminate:
         children.add(
-          const _Line(
+          _Line(
             key: ValueKey('month-unknown'),
             icon: Icons.help_outline_rounded,
             color: Sofra.muted,
@@ -542,7 +539,7 @@ class _Result extends StatelessWidget {
       children
         ..add(const SectionTitle('سجّل هذه الأسعار'))
         ..add(
-          const Text(
+          Text(
             'بسعرك أنت، من آخر مرة اشتريت. لا نخمّن الأسعار.',
             style: TextStyle(color: Sofra.muted, fontSize: 13),
           ),
@@ -564,7 +561,7 @@ class _Result extends StatelessWidget {
     if (plan.unresolved.isNotEmpty &&
         plan.outcome == MonthlyBudgetSearchOutcome.indeterminate) {
       children.add(
-        const _Line(
+        _Line(
           icon: Icons.straighten_rounded,
           color: Sofra.muted,
           text: 'بعض المكونات مسجّلة بوحدة لا تتحول إلى وحدة الوصفة. حدد التحويل من صفحة المخزون.',

@@ -111,7 +111,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                         ? 'حوالي ${formatAmount(f.purchaseTotal!.roundToDouble())} $money بأسعارك.'
                         : 'المعروف سعره: ${formatAmount(f.knownPurchaseSubtotal.roundToDouble())} $money، وبعض الأشياء دون سعر.',
                     key: const ValueKey('shopping-total'),
-                    style: const TextStyle(color: Sofra.muted),
+                    style: TextStyle(color: Sofra.muted),
                   ),
                 ),
                 Flexible(
@@ -167,10 +167,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                           padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
                           child: Text(
                             'يوجد ${f.unresolvedRequirements.length} سطر دون كمية (مثل «حسب الرغبة») خارج القائمة.',
-                            style: const TextStyle(
-                              color: Sofra.muted,
-                              fontSize: 12,
-                            ),
+                            style: TextStyle(color: Sofra.muted, fontSize: 12),
                           ),
                         ),
                       if (f.unresolvedStock.isNotEmpty)
@@ -178,10 +175,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                           padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
                           child: Text(
                             'وحدة المخزون لـ ${f.unresolvedStock.map(c.ingredientName).join('، ')} لا تتحول إلى وحدة الوصفة؛ راجعها في المخزون.',
-                            style: const TextStyle(
-                              color: Sofra.muted,
-                              fontSize: 12,
-                            ),
+                            style: TextStyle(color: Sofra.muted, fontSize: 12),
                           ),
                         ),
                     ],

@@ -85,7 +85,7 @@ Future<void> _planMine(BuildContext context, RecipeRevision r) async {
                 ),
                 Text(
                   '${r.recipe.ingredients.length} مكونات · ${r.recipe.steps.length} خطوات',
-                  style: const TextStyle(color: Sofra.muted),
+                  style: TextStyle(color: Sofra.muted),
                 ),
                 const SizedBox(height: 14),
                 Wrap(
@@ -405,7 +405,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
                       onChanged: (u) => setState(() => l.unit = u!),
                     ),
                   ] else
-                    const Expanded(
+                    Expanded(
                       flex: 2,
                       child: Text(
                         'حسب الرغبة',
@@ -475,7 +475,7 @@ class _MyRecipeScreenState extends State<MyRecipeScreen> {
               child: ErrorBlock(error!),
             ),
           const SizedBox(height: 8),
-          const Text(
+          Text(
             'لن تُحسب القيم الغذائية لهذه الوصفة حتى تُربط مكوناتها بمصدر.',
             style: TextStyle(color: Sofra.muted, fontSize: 12),
           ),

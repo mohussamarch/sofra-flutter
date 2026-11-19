@@ -26,6 +26,7 @@ import '../domain/purchase_forecast.dart';
 import '../domain/quick_add.dart';
 import '../domain/recipe_variants.dart';
 import '../domain/recipe_catalog.dart';
+import 'look.dart';
 import 'reminders.dart';
 import 'scope.dart' show mealSlots;
 
@@ -48,6 +49,9 @@ class Profile {
     this.stockAlerts = true,
     this.area = '',
     this.kitchenLook = const {},
+    this.appearance = Appearance.system,
+    this.textStep = 0,
+    this.colorVision = ColorVision.none,
   });
 
   final String name, house;
@@ -79,6 +83,18 @@ class Profile {
   /// style: modern, rug: rug_teal. Absent groups keep the base kitchen.
   final Map<String, String> kitchenLook;
 
+  /// Light, dark or the phone's; text size step (0 to 2); colour correction.
+  final Appearance appearance;
+  final int textStep;
+  final ColorVision colorVision;
+
+  SofraLook get look => SofraLook(
+    appearance: appearance,
+    textStep: textStep,
+    colorVision: colorVision,
+    reduceMotion: reduceMotion,
+  );
+
   String get displayName => name.trim().isEmpty ? 'صاحب السفرة' : name.trim();
   String get houseName =>
       house.trim().isEmpty ? 'بيت $displayName' : house.trim();
@@ -100,6 +116,9 @@ class Profile {
     bool? stockAlerts,
     String? area,
     Map<String, String>? kitchenLook,
+    Appearance? appearance,
+    int? textStep,
+    ColorVision? colorVision,
   }) => Profile(
     name: name ?? this.name,
     house: house ?? this.house,
@@ -117,6 +136,9 @@ class Profile {
     stockAlerts: stockAlerts ?? this.stockAlerts,
     area: area ?? this.area,
     kitchenLook: kitchenLook ?? this.kitchenLook,
+    appearance: appearance ?? this.appearance,
+    textStep: textStep ?? this.textStep,
+    colorVision: colorVision ?? this.colorVision,
   );
 
   static const _legacyMeals = {'غدا': 'غداء', 'عشا': 'عشاء'};
@@ -145,6 +167,9 @@ class Profile {
     'stockAlerts': stockAlerts,
     'area': area,
     'kitchenLook': kitchenLook,
+    'appearance': appearance.name,
+    'textStep': textStep,
+    'colorVision': colorVision.name,
   };
 
   factory Profile.fromRoot(Map<String, dynamic> root) {
@@ -195,6 +220,13 @@ class Profile {
           if (e.key is String && e.value is String)
             e.key as String: e.value as String,
       },
+      appearance:
+          Appearance.values.asNameMap()[root['appearance']] ??
+          Appearance.system,
+      textStep: ((root['textStep'] as num?)?.toInt() ?? 0).clamp(0, 2),
+      colorVision:
+          ColorVision.values.asNameMap()[root['colorVision']] ??
+          ColorVision.none,
     );
   }
 }

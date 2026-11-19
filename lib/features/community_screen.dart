@@ -89,7 +89,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
         _Parts(value: part, onChanged: (p) => setState(() => part = p)),
         const SizedBox(height: 16),
         if (c.communityPreview)
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(bottom: 12),
             child: Text(
               'معاينة على الجهاز: ما تنشره هنا لا يصل لأحد، ويُحذف عند الإغلاق.',
@@ -133,13 +133,15 @@ class CommunityWelcome extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          const Positioned.fill(child: CustomPaint(painter: _TableMark())),
+          Positioned.fill(
+            child: CustomPaint(painter: _TableMark(Sofra.accent)),
+          ),
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Transform.rotate(
                 angle: -.06,
-                child: const Text(
+                child: Text(
                   'مجتمع سفرة',
                   key: ValueKey('community-welcome'),
                   textAlign: TextAlign.center,
@@ -152,7 +154,7 @@ class CommunityWelcome extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              const Text(
+              Text(
                 'كلنا على سفرة واحدة',
                 style: TextStyle(
                   color: Sofra.accent,
@@ -169,7 +171,8 @@ class CommunityWelcome extends StatelessWidget {
 }
 
 class _TableMark extends CustomPainter {
-  const _TableMark();
+  const _TableMark(this.accent);
+  final Color accent;
   @override
   void paint(Canvas canvas, Size size) {
     final center = size.center(Offset.zero);
@@ -180,8 +183,8 @@ class _TableMark extends CustomPainter {
       Paint()
         ..shader = RadialGradient(
           colors: [
-            Sofra.accent.withValues(alpha: .16),
-            Sofra.accent.withValues(alpha: .05),
+            accent.withValues(alpha: .16),
+            accent.withValues(alpha: .05),
           ],
         ).createShader(Rect.fromCircle(center: center, radius: r)),
     );
@@ -191,9 +194,9 @@ class _TableMark extends CustomPainter {
       Paint()
         ..style = PaintingStyle.stroke
         ..strokeWidth = 3
-        ..color = Sofra.accent.withValues(alpha: .18),
+        ..color = accent.withValues(alpha: .18),
     );
-    final seat = Paint()..color = Sofra.accent.withValues(alpha: .14);
+    final seat = Paint()..color = accent.withValues(alpha: .14);
     for (var i = 0; i < 8; i++) {
       final a = i * math.pi / 4 + math.pi / 8;
       canvas.drawCircle(
@@ -205,7 +208,7 @@ class _TableMark extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_TableMark old) => false;
+  bool shouldRepaint(_TableMark old) => old.accent != accent;
 }
 
 /// The three parts as one segmented bar.
@@ -218,9 +221,9 @@ class _Parts extends StatelessWidget {
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.all(4),
     decoration: BoxDecoration(
-      color: Colors.white.withValues(alpha: .6),
+      color: Sofra.card.withValues(alpha: .6),
       borderRadius: BorderRadius.circular(Sofra.r16 + 4),
-      border: Border.all(color: Colors.white),
+      border: Border.all(color: Sofra.card),
     ),
     child: Row(
       children: [
@@ -253,7 +256,7 @@ class _Parts extends StatelessWidget {
                       label,
                       maxLines: 1,
                       style: TextStyle(
-                        color: value == p ? Colors.white : Sofra.ink,
+                        color: value == p ? Sofra.onAccent : Sofra.ink,
                         fontWeight: FontWeight.w800,
                       ),
                     ),
@@ -283,7 +286,7 @@ class _OpenCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PressScale(
     child: Material(
-      color: Colors.white,
+      color: Sofra.card,
       borderRadius: BorderRadius.circular(Sofra.r22),
       child: InkWell(
         onTap: onTap,
@@ -314,7 +317,7 @@ class _OpenCard extends StatelessWidget {
                 note,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(color: Sofra.muted, fontSize: 12),
+                style: TextStyle(color: Sofra.muted, fontSize: 12),
               ),
             ],
           ),
@@ -377,7 +380,7 @@ class _MineState extends State<_Mine> {
                       : 'لم تشارك وصفة بعد.',
                   key: const ValueKey('community-mine-empty'),
                   textAlign: TextAlign.center,
-                  style: const TextStyle(color: Sofra.muted),
+                  style: TextStyle(color: Sofra.muted),
                 ),
               );
             }
@@ -394,7 +397,7 @@ class _MineState extends State<_Mine> {
 class _NeedsAccount extends StatelessWidget {
   const _NeedsAccount();
   @override
-  Widget build(BuildContext context) => const Surface(
+  Widget build(BuildContext context) => Surface(
     child: Text(
       'هذا الجزء يحتاج إلى حساب. هذه النسخة محفوظة على الجهاز فقط.',
       key: ValueKey('community-needs-account'),
@@ -664,13 +667,13 @@ class _Ring extends StatelessWidget {
               children: [
                 _Avatar(name, size: 58, color: color),
                 if (add)
-                  const PositionedDirectional(
+                  PositionedDirectional(
                     end: -2,
                     bottom: -2,
                     child: CircleAvatar(
                       radius: 11,
                       backgroundColor: Sofra.green,
-                      child: Icon(Icons.add, size: 16, color: Colors.white),
+                      child: Icon(Icons.add, size: 16, color: Sofra.onAccent),
                     ),
                   ),
               ],
@@ -713,7 +716,7 @@ Future<void> _openCreator(BuildContext context, Creator cr) =>
                 ),
               ),
               if (cr.country != null)
-                Text(cr.country!, style: const TextStyle(color: Sofra.muted)),
+                Text(cr.country!, style: TextStyle(color: Sofra.muted)),
               const SizedBox(height: 16),
               FilledButton.icon(
                 key: const ValueKey('creator-open'),
@@ -878,10 +881,7 @@ class _FeedCard extends StatelessWidget {
                               if (avg != null)
                                 '★ ${avg.toStringAsFixed(1)} (${snap.data!.length})',
                             ].join(' · '),
-                            style: const TextStyle(
-                              color: Sofra.muted,
-                              fontSize: 12,
-                            ),
+                            style: TextStyle(color: Sofra.muted, fontSize: 12),
                           );
                         },
                       ),
@@ -1282,7 +1282,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                 child: const Text('ادخل المطبخ'),
               ),
               const SizedBox(height: 6),
-              const Text(
+              Text(
                 'عند دخولك مطبخًا مشتركًا، يبقى مطبخك الشخصي محفوظًا وتعود إليه عند الخروج.',
                 style: TextStyle(color: Sofra.muted, fontSize: 12),
               ),
@@ -1411,7 +1411,7 @@ class _RecipeSheetState extends State<_RecipeSheet> {
           ),
           Text(
             'من ${r.authorName} · ${r.servings} أفراد',
-            style: const TextStyle(color: Sofra.muted),
+            style: TextStyle(color: Sofra.muted),
           ),
           const SectionTitle('المكونات'),
           for (final l in r.lines)
@@ -1530,7 +1530,7 @@ class _ChallengeState extends State<_Challenge> {
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              Text(ch.detail, style: const TextStyle(color: Sofra.muted)),
+              Text(ch.detail, style: TextStyle(color: Sofra.muted)),
               const SizedBox(height: 10),
               LinearProgressIndicator(
                 value: (progress / ch.goal).clamp(0, 1).toDouble(),

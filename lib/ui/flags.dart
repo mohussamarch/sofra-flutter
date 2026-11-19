@@ -40,10 +40,7 @@ class CuisineFlag extends StatelessWidget {
     return Container(
       width: size,
       height: size,
-      decoration: const BoxDecoration(
-        shape: BoxShape.circle,
-        color: Sofra.cream,
-      ),
+      decoration: BoxDecoration(shape: BoxShape.circle, color: Sofra.cream),
       child: Icon(Icons.public_rounded, size: size * .7, color: Sofra.muted),
     );
   }

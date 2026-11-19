@@ -120,11 +120,7 @@ class OnboardingScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(24, 20, 24, 0),
             child: Row(
               children: [
-                const Icon(
-                  Icons.restaurant_rounded,
-                  color: Sofra.accent,
-                  size: 26,
-                ),
+                Icon(Icons.restaurant_rounded, color: Sofra.accent, size: 26),
                 const SizedBox(width: 8),
                 Text('سفرة', style: Sofra.heading(28)),
               ],
@@ -244,7 +240,7 @@ class OnboardingScreen extends StatelessWidget {
                 child: AnimatedSwitcher(
                   duration: Sofra.motion(context, true),
                   child: typed.isEmpty
-                      ? const Icon(
+                      ? Icon(
                           Icons.person_rounded,
                           key: ValueKey('empty'),
                           size: 56,
@@ -375,7 +371,7 @@ class OnboardingScreen extends StatelessWidget {
               style: Sofra.heading(30),
             ),
             const SizedBox(height: 4),
-            const Text(
+            Text(
               'سفرتك جاهزة',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Sofra.muted),
@@ -483,10 +479,7 @@ class _Note extends StatelessWidget {
         Icon(icon, size: 16, color: Sofra.muted),
         const SizedBox(width: 6),
         Expanded(
-          child: Text(
-            text,
-            style: const TextStyle(fontSize: 13, color: Sofra.muted),
-          ),
+          child: Text(text, style: TextStyle(fontSize: 13, color: Sofra.muted)),
         ),
       ],
     ),
@@ -584,14 +577,14 @@ class _Tile extends StatelessWidget {
                       child: Container(
                         width: 20,
                         height: 20,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Sofra.accent,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.check_rounded,
                           size: 14,
-                          color: Colors.white,
+                          color: Sofra.onAccent,
                         ),
                       ),
                     ),
@@ -623,7 +616,7 @@ class _Picture extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: selected ? Colors.white : Sofra.accentTint,
+        color: selected ? Sofra.card : Sofra.accentTint,
       ),
       child: Icon(
         opt.icon ?? Icons.restaurant_rounded,
@@ -661,26 +654,22 @@ class _MoreTile extends StatelessWidget {
                   Container(
                     width: _Picture.size,
                     height: _Picture.size,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.white,
+                      color: Sofra.card,
                     ),
                     alignment: Alignment.center,
                     child: hidden > 0
                         ? Text(
                             '+$hidden',
                             textDirection: TextDirection.ltr,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.w800,
                               color: Sofra.accent,
                             ),
                           )
-                        : const Icon(
-                            Icons.add_rounded,
-                            size: 28,
-                            color: Sofra.ink,
-                          ),
+                        : Icon(Icons.add_rounded, size: 28, color: Sofra.ink),
                   ),
                   const SizedBox(height: 10),
                   const Text(
@@ -999,7 +988,7 @@ class _People extends StatelessWidget {
               child: Text(
                 '+${count - shown}',
                 textDirection: TextDirection.ltr,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w800,
                   color: Sofra.accent,
@@ -1024,11 +1013,11 @@ class _QuickMeals extends StatelessWidget {
         Container(
           width: 44,
           height: 44,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Sofra.accentTint,
           ),
-          child: const Icon(Icons.bolt_rounded, color: Sofra.accent),
+          child: Icon(Icons.bolt_rounded, color: Sofra.accent),
         ),
         const SizedBox(width: 12),
         const Expanded(
@@ -1072,7 +1061,7 @@ class _Stat extends StatelessWidget {
           label,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(fontSize: 12, color: Sofra.muted),
+          style: TextStyle(fontSize: 12, color: Sofra.muted),
         ),
       ],
     ),
