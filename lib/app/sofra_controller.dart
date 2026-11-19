@@ -649,8 +649,13 @@ class SofraController extends ChangeNotifier {
   /// Profile edits show immediately; a failed save keeps them on screen and
   /// the retry writes the latest profile.
   Future<void> updateProfile(Profile Function(Profile) change) {
+    final language = profile.language;
     profile = change(profile);
     notifyListeners();
+    // Scheduled reminders are written in the language they were set in.
+    if (ready && profile.language != language) {
+      unawaited(Future(() => syncReminders()));
+    }
     return _save(() => kitchen.saveRootFields(profile.toJson()));
   }
 
