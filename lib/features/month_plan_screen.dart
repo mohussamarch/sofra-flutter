@@ -5,19 +5,23 @@ import '../app/sofra_controller.dart';
 import '../domain/market_profile.dart';
 import '../domain/monthly_budget_search.dart';
 import '../ui/design.dart';
+import '../l10n/l10n.dart';
 import 'common.dart';
 
 /// Weekdays in the order an Egyptian week is read, Saturday first
 /// (DateTime.weekday numbers).
-const _week = [
-  (6, 'السبت'),
-  (7, 'الأحد'),
-  (1, 'الاثنين'),
-  (2, 'الثلاثاء'),
-  (3, 'الأربع'),
-  (4, 'الخميس'),
-  (5, 'الجمعة'),
-];
+const _week = [6, 7, 1, 2, 3, 4, 5];
+
+/// A weekday's name (DateTime.weekday number) in the current language.
+String _dayName(AppLocalizations t, int day) => switch (day) {
+  DateTime.saturday => t.planSaturday,
+  DateTime.sunday => t.planSunday,
+  DateTime.monday => t.planMonday,
+  DateTime.tuesday => t.planTuesday,
+  DateTime.wednesday => t.planWednesday,
+  DateTime.thursday => t.planThursday,
+  _ => t.planFriday,
+};
 
 /// Opens the month planner over the current page.
 Future<void> openMonthPlan(BuildContext context) {
@@ -27,10 +31,7 @@ Future<void> openMonthPlan(BuildContext context) {
       builder: (_) => SofraScope(
         controller: scope.notifier!,
         nav: scope.nav,
-        child: const Directionality(
-          textDirection: TextDirection.rtl,
-          child: MonthPlanScreen(),
-        ),
+        child: const MonthPlanScreen(),
       ),
     ),
   );
@@ -81,7 +82,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
   double? get _limit => double.tryParse(budget.text.trim());
 
   Map<(int, String), List<String>> get _activeMenu => {
-    for (final (day, _) in _week)
+    for (final day in _week)
       for (final slot in slots) (day, slot): menu[(day, slot)] ?? const [],
   };
 
@@ -111,9 +112,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
       if (mounted) setState(() => plan = result);
     } catch (_) {
       if (mounted) {
-        setState(
-          () => error = 'تعذّر حساب هذه الخطة. راجع الأكلات وحاول مرة أخرى.',
-        );
+        setState(() => error = L10n.current.planMonthCalcError);
       }
     } finally {
       if (mounted) setState(() => busy = false);
@@ -126,31 +125,29 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
     if (conflicts.isNotEmpty) {
       final choice = await showDialog<String>(
         context: context,
-        builder: (ctx) => Directionality(
-          textDirection: TextDirection.rtl,
-          child: AlertDialog(
-            title: const Text('توجد أيام عليها أكل'),
-            content: Text(
-              'توجد ${conflicts.length} وجبة مخططة في الأيام نفسها. ماذا نفعل بها؟',
-            ),
+        builder: (ctx) {
+          final t = ctx.l10n;
+          return AlertDialog(
+            title: Text(t.planConflictTitle),
+            content: Text(t.planConflictBody(conflicts.length)),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(ctx),
-                child: const Text('ليس بعد'),
+                child: Text(t.planNotYet),
               ),
               TextButton(
                 key: const ValueKey('month-replace'),
                 onPressed: () => Navigator.pop(ctx, 'replace'),
-                child: const Text('استبدلها'),
+                child: Text(t.planReplace),
               ),
               FilledButton(
                 key: const ValueKey('month-keep'),
                 onPressed: () => Navigator.pop(ctx, 'keep'),
-                child: const Text('أبقِ الموجود'),
+                child: Text(t.planKeepExisting),
               ),
             ],
-          ),
-        ),
+          );
+        },
       );
       if (choice == null || !mounted) return;
       if (choice == 'keep') {
@@ -168,12 +165,11 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
     if (!mounted) return;
     setState(() => busy = false);
     if (ok) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('أُضيفت الخطة إلى السفرة.')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(context.l10n.planMonthAdded)));
       Navigator.pop(context);
     } else {
-      setState(() => error = 'لم تُحفظ الخطة. احسبها مرة أخرى.');
+      setState(() => error = context.l10n.planMonthNotSaved);
     }
   }
 
@@ -181,12 +177,12 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
   void _fillWeek() => _changed(() {
     for (final slot in slots) {
       final filled = [
-        for (final (day, _) in _week)
+        for (final day in _week)
           if (menu[(day, slot)]?.isNotEmpty ?? false) menu[(day, slot)]!,
       ];
       if (filled.isEmpty) continue;
       var i = 0;
-      for (final (day, _) in _week) {
+      for (final day in _week) {
         if (menu[(day, slot)]?.isNotEmpty ?? false) continue;
         menu[(day, slot)] = List.of(filled[i++ % filled.length]);
       }
@@ -199,12 +195,9 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
     final picked = await showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,
-      builder: (_) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: _RecipePicker(
-          rows: rows.where(c.canPlanMonth).toList(),
-          saved: c.profile.saved,
-        ),
+      builder: (_) => _RecipePicker(
+        rows: rows.where(c.canPlanMonth).toList(),
+        saved: c.profile.saved,
       ),
     );
     if (picked == null) return;
@@ -217,10 +210,11 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
   @override
   Widget build(BuildContext context) {
     final market = MarketProfile(c.kitchen.market.country);
+    final t = context.l10n;
     return Scaffold(
       backgroundColor: Sofra.cream,
       appBar: AppBar(
-        title: const Text('خطة الشهر'),
+        title: Text(t.planMonthTitle),
         backgroundColor: Sofra.cream,
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
@@ -228,18 +222,21 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
         builder: (context, snap) {
           final names = {
             for (final r in snap.data ?? const <Map<String, dynamic>>[])
-              r['id'] as String: r['name'] as String,
+              r['id'] as String: L10n.pick(
+                r['name'] as String,
+                r['nameEn'] as String?,
+              ),
           };
           return ScreenBody(
             footer: plan?.acceptable == true
                 ? DepthButton(
                     key: const ValueKey('month-accept'),
-                    label: 'ضع الخطة على السفرة',
+                    label: t.planPutOnTable,
                     onPressed: busy ? null : _accept,
                   )
                 : DepthButton(
                     key: const ValueKey('month-calc'),
-                    label: busy ? 'جارٍ الحساب…' : 'احسب الشهر',
+                    label: busy ? t.planCalculating : t.planCalculateMonth,
                     onPressed: _ready && !busy ? _calculate : null,
                   ),
             children: [
@@ -249,13 +246,13 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                 children: [
                   SofraChip(
                     key: const ValueKey('month-this'),
-                    label: const Text('هذا الشهر'),
+                    label: Text(t.planThisMonth),
                     selected: !nextMonth,
                     onSelected: (_) => _changed(() => nextMonth = false),
                   ),
                   SofraChip(
                     key: const ValueKey('month-next'),
-                    label: const Text('الشهر القادم'),
+                    label: Text(t.planNextMonth),
                     selected: nextMonth,
                     onSelected: (_) => _changed(() => nextMonth = true),
                   ),
@@ -269,12 +266,12 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                   decimal: true,
                 ),
                 decoration: InputDecoration(
-                  labelText: 'ميزانية الأكل للشهر',
-                  suffixText: market.currencyLabel,
+                  labelText: t.planMonthBudget,
+                  suffixText: L10n.term(market.currencyLabel),
                 ),
                 onChanged: (_) => _changed(() {}),
               ),
-              const SectionTitle('الوجبات التي سنخطط لها'),
+              SectionTitle(t.planMealsToPlan),
               Wrap(
                 spacing: 8,
                 children: [
@@ -282,7 +279,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                       in mealSlots.entries)
                     SofraChip(
                       key: ValueKey('month-slot-$slot'),
-                      label: Text(label),
+                      label: Text(L10n.term(label)),
                       selected: slots.contains(slot),
                       onSelected: (on) => _changed(() {
                         if (on) {
@@ -295,16 +292,16 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                 ],
               ),
               SectionTitle(
-                'منيو الأسبوع',
-                action: 'أكمل الأيام الفارغة',
+                t.planWeekMenu,
+                action: t.planFillEmptyDays,
                 onAction: _fillWeek,
               ),
               Text(
-                'يتكرر هذا الأسبوع طوال الشهر. يمكنك وضع أكلتين في الخانة نفسها، ونختار الأوفر.',
+                t.planWeekMenuHint,
                 style: TextStyle(color: Sofra.muted, fontSize: 13),
               ),
               const SizedBox(height: 8),
-              for (final (day, label) in _week)
+              for (final day in _week)
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Row(
@@ -315,7 +312,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 12),
                           child: Text(
-                            label,
+                            _dayName(t, day),
                             style: const TextStyle(fontWeight: FontWeight.w700),
                           ),
                         ),
@@ -325,7 +322,7 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                           Expanded(
                             child: _Cell(
                               key: ValueKey('month-cell-$day-$slot'),
-                              slot: slotLabel(slot),
+                              slot: L10n.term(slotLabel(slot)),
                               names: [
                                 for (final id in menu[(day, slot)] ?? [])
                                   names[id] ?? id,
@@ -344,10 +341,8 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                 contentPadding: EdgeInsets.zero,
                 value: omitUnmeasured,
                 onChanged: (v) => _changed(() => omitUnmeasured = v),
-                title: const Text('استبعد الأشياء التي ليس لها كمية من الحساب'),
-                subtitle: const Text(
-                  'مثل «ملح حسب الرغبة». إذا أوقفتها، ستبقى التكلفة غير معروفة.',
-                ),
+                title: Text(t.planOmitUnmeasured),
+                subtitle: Text(t.planOmitUnmeasuredHint),
               ),
               if (error != null)
                 Padding(
@@ -392,11 +387,14 @@ class _Cell extends StatelessWidget {
             children: [
               Text(slot, style: TextStyle(fontSize: 11, color: Sofra.muted)),
               if (names.isEmpty)
-                Text('+ اختر', style: TextStyle(color: Sofra.muted))
+                Text(
+                  context.l10n.planPick,
+                  style: TextStyle(color: Sofra.muted),
+                )
               else
                 for (final (i, n) in names.indexed)
                   Text(
-                    i == 0 ? n : 'أو $n',
+                    i == 0 ? n : context.l10n.planOrAlternative(n),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -428,10 +426,19 @@ class _RecipePickerState extends State<_RecipePicker> {
   @override
   Widget build(BuildContext context) {
     final saved = widget.saved;
+    final q = query.trim();
+    String name(Map<String, dynamic> r) =>
+        L10n.pick(r['name'] as String, r['nameEn'] as String?);
+    // Either name matches, so a search typed in either language works.
+    bool matches(Map<String, dynamic> r) =>
+        (r['name'] as String).contains(q) ||
+        ((r['nameEn'] as String?) ?? '').toLowerCase().contains(
+          q.toLowerCase(),
+        );
     final shown =
         [
           for (final r in widget.rows)
-            if ((r['name'] as String).contains(query.trim())) r,
+            if (matches(r)) r,
         ]..sort((a, b) {
           final sa = saved.contains(a['id']) ? 0 : 1;
           final sb = saved.contains(b['id']) ? 0 : 1;
@@ -446,9 +453,9 @@ class _RecipePickerState extends State<_RecipePicker> {
               padding: const EdgeInsets.all(16),
               child: TextField(
                 key: const ValueKey('month-pick-search'),
-                decoration: const InputDecoration(
-                  hintText: 'ابحث عن أكلة',
-                  prefixIcon: Icon(Icons.search_rounded),
+                decoration: InputDecoration(
+                  hintText: context.l10n.planSearchMeal,
+                  prefixIcon: const Icon(Icons.search_rounded),
                 ),
                 onChanged: (v) => setState(() => query = v),
               ),
@@ -460,8 +467,8 @@ class _RecipePickerState extends State<_RecipePicker> {
                   final r = shown[i];
                   return ListTile(
                     key: ValueKey('month-pick-${r['id']}'),
-                    title: Text(r['name'] as String),
-                    subtitle: Text(r['cuisine'] as String? ?? ''),
+                    title: Text(name(r)),
+                    subtitle: Text(L10n.term(r['cuisine'] as String? ?? '')),
                     trailing: saved.contains(r['id'])
                         ? const Icon(Icons.bookmark_rounded, size: 18)
                         : null,
@@ -486,7 +493,8 @@ class _Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
-    final money = MarketProfile(plan.budget.country).currencyLabel;
+    final t = context.l10n;
+    final money = L10n.term(MarketProfile(plan.budget.country).currencyLabel);
     String amount(double v) => '${formatAmount(v.roundToDouble())} $money';
     final comparison = plan.search.comparison;
     final children = <Widget>[];
@@ -498,8 +506,10 @@ class _Result extends StatelessWidget {
             key: const ValueKey('month-fits'),
             icon: Icons.check_circle_outline_rounded,
             color: Sofra.greenDark,
-            text:
-                'يكلّفك هذا الشهر شراء نحو ${amount(best.forecast.purchaseTotal!)}، ويتبقى من الميزانية ${amount(best.remainingAfterPurchases!)}.',
+            text: t.planMonthFits(
+              amount(best.forecast.purchaseTotal!),
+              amount(best.remainingAfterPurchases!),
+            ),
           ),
         );
       case MonthlyBudgetSearchOutcome.noAffordableInSuppliedPools:
@@ -509,8 +519,7 @@ class _Result extends StatelessWidget {
             key: const ValueKey('month-over'),
             icon: Icons.warning_amber_rounded,
             color: Sofra.warn,
-            text:
-                'أوفر اختيار يتجاوز الميزانية بـ ${amount(cheapest.overrun!)}. جرّب أكلات أوفر أو أضف بديلًا في بعض الخانات.',
+            text: t.planMonthOver(amount(cheapest.overrun!)),
           ),
         );
       case MonthlyBudgetSearchOutcome.indeterminate when plan.acceptable:
@@ -520,8 +529,10 @@ class _Result extends StatelessWidget {
             key: const ValueKey('month-fits'),
             icon: Icons.check_circle_outline_rounded,
             color: Sofra.greenDark,
-            text:
-                'أوفر خطة وجدناها تكلّفك شراء نحو ${amount(best.forecast.purchaseTotal!)}، ويتبقى من الميزانية ${amount(best.remainingAfterPurchases!)}.',
+            text: t.planMonthBestFits(
+              amount(best.forecast.purchaseTotal!),
+              amount(best.remainingAfterPurchases!),
+            ),
           ),
         );
       case MonthlyBudgetSearchOutcome.indeterminate:
@@ -530,17 +541,17 @@ class _Result extends StatelessWidget {
             key: ValueKey('month-unknown'),
             icon: Icons.help_outline_rounded,
             color: Sofra.muted,
-            text: 'التكلفة الكاملة غير معروفة بعد.',
+            text: t.planMonthUnknown,
           ),
         );
     }
     final unpriced = plan.unpriced;
     if (unpriced.isNotEmpty) {
       children
-        ..add(const SectionTitle('سجّل هذه الأسعار'))
+        ..add(SectionTitle(t.planRecordPrices))
         ..add(
           Text(
-            'بسعرك أنت، من آخر مرة اشتريت. لا نخمّن الأسعار.',
+            t.planRecordPricesHint,
             style: TextStyle(color: Sofra.muted, fontSize: 13),
           ),
         );
@@ -564,7 +575,7 @@ class _Result extends StatelessWidget {
         _Line(
           icon: Icons.straighten_rounded,
           color: Sofra.muted,
-          text: 'بعض المكونات مسجّلة بوحدة لا تتحول إلى وحدة الوصفة. حدد التحويل من صفحة المخزون.',
+          text: t.planUnresolvedUnits,
         ),
       );
     }
@@ -573,8 +584,7 @@ class _Result extends StatelessWidget {
         _Line(
           icon: Icons.info_outline_rounded,
           color: Sofra.muted,
-          text:
-              'جرّبنا ${comparison.assessments.length} توليفة فقط من البدائل؛ قد توجد أوفر منها.',
+          text: t.planTruncated(comparison.assessments.length),
         ),
       );
     }
@@ -583,7 +593,9 @@ class _Result extends StatelessWidget {
         _Line(
           icon: Icons.info_outline_rounded,
           color: Sofra.muted,
-          text: 'غير محسوب: ${plan.unmeasured.take(8).join('، ')}.',
+          text: t.planUncounted(
+            plan.unmeasured.take(8).join(t.planListSeparator),
+          ),
         ),
       );
     }
@@ -664,7 +676,7 @@ class _PriceRowState extends State<_PriceRow> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),
-            child: Text(unitLabel(widget.unit)),
+            child: Text(L10n.term(unitLabel(widget.unit))),
           ),
           Expanded(
             flex: 3,
@@ -678,7 +690,7 @@ class _PriceRowState extends State<_PriceRow> {
           ),
           IconButton(
             key: const ValueKey('price-save'),
-            tooltip: 'حفظ السعر',
+            tooltip: context.l10n.planSavePrice,
             onPressed: q != null && q > 0 && p != null && p >= 0
                 ? () => widget.onSave(q, p)
                 : null,

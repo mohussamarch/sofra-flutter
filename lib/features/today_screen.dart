@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../app/scope.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
+import '../l10n/l10n.dart';
 import '../scene/scene_lighting.dart';
 import '../scene3d/kitchen_3d.dart';
 import '../ui/design.dart';
@@ -162,7 +163,7 @@ class _TodayScreenState extends State<TodayScreen> {
       context,
       title: zoneName(zone),
       items: (context) => zoneShelfItems(context, zone),
-      empty: 'أضف ما عندك هنا، وسنقترح ما تطبخه منه.',
+      empty: context.l10n.planAddHereEmpty,
       // Over an open fridge the room stays visible behind the shelves.
       barrier: overDoor ? const Color(0x990D0A08) : null,
       width: overDoor ? .72 : 1,
@@ -198,11 +199,11 @@ class _TodayScreenState extends State<TodayScreen> {
     if (!mounted) return;
     await showShelves(
       context,
-      title: 'بواقي الأكل',
+      title: context.l10n.planLeftovers,
       items: leftoverShelfItems,
       // A lighter veil: the open microwave stays visible behind.
       barrier: const Color(0x990D0A08),
-      empty: 'لا توجد بواقٍ مسجّلة. عندما تطبخ ويتبقى شيء، ستجده هنا لتسخينه.',
+      empty: context.l10n.planLeftoversEmpty,
     );
     if (mounted && widget.mode == HomeMode.kitchen) viewer.overview();
   }
@@ -216,10 +217,7 @@ class _TodayScreenState extends State<TodayScreen> {
       builder: (_) => SofraScope(
         controller: scope.notifier!,
         nav: scope.nav,
-        child: const Directionality(
-          textDirection: TextDirection.rtl,
-          child: _PlansSheet(),
-        ),
+        child: const _PlansSheet(),
       ),
     );
   }
@@ -292,7 +290,7 @@ class _TodayScreenState extends State<TodayScreen> {
                         child: IconButton.filledTonal(
                           key: const ValueKey('open-stock'),
                           iconSize: 48,
-                          tooltip: 'مخزون مطبخي',
+                          tooltip: context.l10n.planMyStock,
                           onPressed: () => nav.goTab(AppTab.kitchen),
                           icon: const Icon(Icons.kitchen_outlined),
                         ),
@@ -358,12 +356,13 @@ class _TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
+    final t = context.l10n;
     final hour = DateTime.now().hour;
     final greeting = hour < 12
-        ? 'صباح الخير'
+        ? t.planGoodMorning
         : hour < 18
-        ? 'نهارك سعيد'
-        : 'مساء الخير';
+        ? t.planGoodDay
+        : t.planGoodEvening;
     Widget icon(String key, IconData glyph, String tip, AppTab tab) => Padding(
       padding: const EdgeInsetsDirectional.only(start: 8),
       child: PressScale(
@@ -416,13 +415,13 @@ class _TopBar extends StatelessWidget {
           icon(
             'circle-style',
             Icons.format_paint_outlined,
-            'شكل المطبخ',
+            t.planKitchenStyle,
             AppTab.style,
           ),
           icon(
             'circle-settings',
             Icons.settings_outlined,
-            'الإعدادات',
+            t.planSettings,
             AppTab.settings,
           ),
         ],
@@ -448,13 +447,14 @@ class _TodayCard extends StatelessWidget {
     final next = c.upcoming(now).where((m) => !m.completed).firstOrNull;
     final due = c.leftoversDue(now);
     final today = localDay(now);
+    final t = context.l10n;
     String when(PlannedMeal m) {
       final day = m.date == today
-          ? 'اليوم'
+          ? t.planToday
           : m.date == localDay(now.add(const Duration(days: 1)))
-          ? 'غدًا'
+          ? t.planTomorrow
           : m.date;
-      return '${slotLabel(m.slot)} · $day';
+      return t.planWhen(L10n.term(slotLabel(m.slot)), day);
     }
 
     final stock = DepthButton(
@@ -462,7 +462,7 @@ class _TodayCard extends StatelessWidget {
       compact: true,
       secondary: true,
       icon: Icons.kitchen_outlined,
-      label: 'المخزون',
+      label: t.planStock,
       onPressed: () => nav.goTab(AppTab.kitchen),
     );
     return Container(
@@ -481,17 +481,17 @@ class _TodayCard extends StatelessWidget {
             SofraChip(
               key: const ValueKey('leftovers-due'),
               avatar: const Icon(Icons.microwave_outlined, size: 16),
-              label: Text('بواقٍ حان موعدها: ${due.length}'),
+              label: Text(t.planLeftoversDue('${due.length}')),
               backgroundColor: Sofra.warnTint,
               onPressed: onLeftovers,
             ),
             const SizedBox(height: 8),
           ],
           if (next == null) ...[
-            Text('ماذا نطبخ اليوم؟', style: Sofra.heading(20)),
+            Text(t.planWhatToCookToday, style: Sofra.heading(20)),
             const SizedBox(height: 4),
             Text(
-              'اختر وصفة، ونعرض لك الناقص من مطبخك قبل البدء.',
+              t.planPickRecipeHint,
               style: TextStyle(color: Sofra.muted, fontSize: 14),
             ),
             const SizedBox(height: 14),
@@ -503,7 +503,7 @@ class _TodayCard extends StatelessWidget {
                     key: const ValueKey('today-pick'),
                     compact: true,
                     icon: Icons.menu_book_outlined,
-                    label: 'اختر وصفة',
+                    label: t.planPickRecipe,
                     onPressed: () => nav.goTab(AppTab.recipes),
                   ),
                 ),
@@ -513,11 +513,11 @@ class _TodayCard extends StatelessWidget {
             ),
           ] else ...[
             Text(
-              'التالي على السفرة · ${when(next)}',
+              t.planNextOnTable(when(next)),
               style: TextStyle(color: Sofra.muted, fontSize: 13),
             ),
             FutureBuilder<String>(
-              future: c.planTitle(next),
+              future: plannedMealTitle(c, next),
               builder: (context, snap) => Text(
                 snap.data ?? '…',
                 maxLines: 1,
@@ -534,7 +534,7 @@ class _TodayCard extends StatelessWidget {
                     key: const ValueKey('today-cook'),
                     compact: true,
                     icon: Icons.soup_kitchen_outlined,
-                    label: 'ابدأ الطبخ',
+                    label: t.planStartCooking,
                     onPressed: () => nav.startCooking(next),
                   ),
                 ),
@@ -586,6 +586,7 @@ class _MealCardsState extends State<_MealCards> {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
     final rtl = Directionality.of(context) == TextDirection.rtl;
+    final t = context.l10n;
     final meals = c
         .upcoming(DateTime.now())
         .where((m) => !m.completed)
@@ -599,13 +600,16 @@ class _MealCardsState extends State<_MealCards> {
                 children: [
                   const Icon(Icons.restaurant_outlined, size: 34),
                   const SizedBox(height: 10),
-                  const Text(
-                    'السفرة فارغة',
-                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800),
+                  Text(
+                    t.planTableEmpty,
+                    style: const TextStyle(
+                      fontSize: 19,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    'افتح كتاب الوصفات واختر أكلة لتظهر هنا.',
+                    t.planTableEmptyHint,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Sofra.muted),
                   ),
@@ -614,7 +618,7 @@ class _MealCardsState extends State<_MealCards> {
                     key: const ValueKey('table-open-book'),
                     compact: true,
                     icon: Icons.menu_book_outlined,
-                    label: 'كتاب الوصفات',
+                    label: t.planRecipeBook,
                     onPressed: () => nav.goTab(AppTab.recipes),
                   ),
                 ],
@@ -626,7 +630,7 @@ class _MealCardsState extends State<_MealCards> {
     return Column(
       children: [
         Text(
-          'على سفرة ${c.market.today}',
+          t.planOnTable(L10n.term(c.market.today)),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 18,
@@ -643,14 +647,14 @@ class _MealCardsState extends State<_MealCards> {
               style: TextButton.styleFrom(foregroundColor: Sofra.onInverse),
               onPressed: () => openMonthPlan(context),
               icon: const Icon(Icons.calendar_month_outlined, size: 20),
-              label: const Text('خطة الشهر'),
+              label: Text(t.planMonthTitle),
             ),
             TextButton.icon(
               key: const ValueKey('open-shopping'),
               style: TextButton.styleFrom(foregroundColor: Sofra.onInverse),
               onPressed: () => openShopping(context),
               icon: const Icon(Icons.shopping_basket_outlined, size: 20),
-              label: const Text('قائمة الشراء'),
+              label: Text(t.planShoppingList),
             ),
           ],
         ),
@@ -740,6 +744,7 @@ class _PlansSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
+    final t = context.l10n;
     final meals = c
         .upcoming(DateTime.now())
         .where((m) => !m.completed)
@@ -755,10 +760,13 @@ class _PlansSheet extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Expanded(
+              Expanded(
                 child: Text(
-                  'الأكلات القادمة',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                  t.planUpcomingMeals,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
               ),
               TextButton(
@@ -767,16 +775,13 @@ class _PlansSheet extends StatelessWidget {
                   Navigator.pop(context);
                   nav.goTab(AppTab.table);
                 },
-                child: const Text('كل الخطط'),
+                child: Text(t.planAllPlans),
               ),
             ],
           ),
           const SizedBox(height: 12),
           if (meals.isEmpty)
-            Text(
-              'لا توجد أكلات مخططة. اختر من كتاب الوصفات.',
-              style: TextStyle(color: Sofra.muted),
-            )
+            Text(t.planNoMealsPlanned, style: TextStyle(color: Sofra.muted))
           else
             for (final m in meals)
               Padding(

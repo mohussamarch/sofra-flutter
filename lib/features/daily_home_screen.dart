@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import 'common.dart';
 import 'table_screen.dart';
@@ -18,18 +19,19 @@ class DailyHomeScreen extends StatelessWidget {
         .where((meal) => !meal.completed)
         .toList();
     final leftovers = controller.leftoversDue(DateTime.now());
+    final t = context.l10n;
     return ScreenBody(
       children: [
         const SizedBox(height: 16),
         Text(
           controller.profile.name.isEmpty
-              ? 'أهلًا بيك في سفرة'
-              : 'أهلًا يا ${controller.profile.name}',
+              ? t.planWelcome
+              : t.planWelcomeName(controller.profile.name),
           style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 6),
         Text(
-          'نطلع أكلة حلوة من الموجود؟',
+          t.planCookFromStockQuestion,
           style: TextStyle(color: Sofra.muted, fontSize: 16),
         ),
         const SizedBox(height: 22),
@@ -40,24 +42,25 @@ class DailyHomeScreen extends StatelessWidget {
             children: [
               Icon(Icons.soup_kitchen_outlined, color: Sofra.green, size: 36),
               const SizedBox(height: 12),
-              const Text(
-                'أطبخ إيه باللي عندي؟',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
+              Text(
+                t.planWhatCanICook,
+                style: const TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w800,
+                ),
               ),
               const SizedBox(height: 8),
-              const Text(
-                'اقتراحات من خزينك، مع توضيح الكميات والناقص. لا نخصم أي شيء قبل تأكيد الطبخ.',
-              ),
+              Text(t.planWhatCanICookHint),
               const SizedBox(height: 20),
               DepthButton(
                 key: const ValueKey('discover-from-stock'),
-                label: 'اكتشف من الموجود',
+                label: t.planDiscoverFromStock,
                 onPressed: nav.discoverFromStock,
               ),
               const SizedBox(height: 8),
               TextButton(
                 onPressed: nav.exploreRecipes,
-                child: const Text('أو استكشف كل الوصفات'),
+                child: Text(t.planExploreAll),
               ),
             ],
           ),
@@ -70,12 +73,12 @@ class DailyHomeScreen extends StatelessWidget {
             ActionChip(
               key: const ValueKey('open-stock'),
               avatar: const Icon(Icons.kitchen_outlined),
-              label: Text('الخزين · ${controller.stock.length} مكونات'),
+              label: Text(t.planPantryCount(controller.stock.length)),
               onPressed: () => nav.goTab(AppTab.kitchen),
             ),
             ActionChip(
               avatar: const Icon(Icons.calendar_month_outlined),
-              label: const Text('رتّب وجباتك'),
+              label: Text(t.planArrangeMeals),
               onPressed: () => nav.goTab(AppTab.table),
             ),
           ],
@@ -89,25 +92,25 @@ class DailyHomeScreen extends StatelessWidget {
                 Icon(Icons.restaurant_outlined, color: Sofra.green),
                 const SizedBox(width: 12),
                 Expanded(
-                  child: Text('عندك ${leftovers.length} بواقي عليها تذكير'),
+                  child: Text(t.planLeftoversReminder(leftovers.length)),
                 ),
                 TextButton(
                   onPressed: () => showShelves(
                     context,
-                    title: 'بواقي الأكل',
+                    title: t.planLeftovers,
                     items: leftoverShelfItems,
-                    empty: 'لا توجد بواقي مسجلة.',
+                    empty: t.planLeftoversNone,
                   ),
-                  child: const Text('شوفها'),
+                  child: Text(t.planSeeThem),
                 ),
               ],
             ),
           ),
         ],
         const SizedBox(height: 24),
-        const Text(
-          'وجبات اليوم',
-          style: TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+        Text(
+          t.planTodayMeals,
+          style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 12),
         if (today.isEmpty)
@@ -116,12 +119,10 @@ class DailyHomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'لسه مفيش وجبة مخططة لليوم. تقدر تختار وتطبخ مباشرة أو ترتّب الأيام الجاية.',
-                ),
+                Text(t.planNoMealToday),
                 TextButton(
                   onPressed: () => nav.goTab(AppTab.table),
-                  child: const Text('افتح الخطة'),
+                  child: Text(t.planOpenPlan),
                 ),
               ],
             ),

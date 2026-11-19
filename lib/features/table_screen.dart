@@ -4,11 +4,28 @@ import '../app/scope.dart';
 import '../app/sofra_controller.dart';
 import '../domain/food_nutrition.dart';
 import '../domain/kitchen_core.dart';
+import '../domain/recipe_catalog.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
 import 'month_plan_screen.dart';
 import 'shopping_sheet.dart';
+
+/// A planned meal's recipe name, in English when the catalog carries one.
+Future<String> plannedMealTitle(SofraController c, PlannedMeal meal) async =>
+    _recipeName(c, await c.recipeForPlan(meal.id));
+
+Future<String> _recipeName(SofraController c, CatalogRecipe recipe) async {
+  if (!L10n.isEnglish) return recipe.name;
+  try {
+    final rows = await c.recipes.retainedIndex;
+    final row = rows.where((r) => r['id'] == recipe.id).firstOrNull;
+    return L10n.pick(recipe.name, row?['nameEn'] as String?);
+  } catch (_) {
+    return recipe.name;
+  }
+}
 
 /// Planned meals for the coming week, each with its live stock check.
 class TableScreen extends StatelessWidget {
@@ -18,7 +35,9 @@ class TableScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
+    final t = context.l10n;
     final meals = c.upcoming(DateTime.now());
+    final today = L10n.term(c.market.today);
     final tools = Wrap(
       spacing: 8,
       runSpacing: 8,
@@ -27,13 +46,13 @@ class TableScreen extends StatelessWidget {
           key: const ValueKey('open-month-plan'),
           onPressed: () => openMonthPlan(context),
           icon: const Icon(Icons.calendar_month_outlined),
-          label: const Text('خطة الشهر والميزانية'),
+          label: Text(t.planMonthAndBudget),
         ),
         TextButton.icon(
           key: const ValueKey('open-shopping'),
           onPressed: () => openShopping(context),
           icon: const Icon(Icons.shopping_basket_outlined),
-          label: const Text('قائمة المشتريات'),
+          label: Text(t.planShoppingItems),
         ),
       ],
     );
@@ -41,30 +60,30 @@ class TableScreen extends StatelessWidget {
       return ScreenBody(
         children: [
           Text(
-            'على سفرة ${c.market.today}',
+            t.planOnTable(today),
             style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
           ),
           tools,
           const SizedBox(height: 24),
           const Center(child: ChefArt(size: 250)),
-          const Center(
+          Center(
             child: Text(
-              'سفرة تستحق اللمّة',
+              t.planTableWorthIt,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
             ),
           ),
           const SizedBox(height: 12),
           Center(
             child: Text(
-              'اختر أكلة، وسنعرض الناقص قبل البدء.',
+              t.planPickMealHint,
               textAlign: TextAlign.center,
               style: TextStyle(color: Sofra.muted, fontSize: 16),
             ),
           ),
           const SizedBox(height: 28),
           DepthButton(
-            label: 'اختر طبخة للسفرة',
+            label: t.planPickDishForTable,
             onPressed: () => nav.goTab(AppTab.recipes),
           ),
         ],
@@ -74,35 +93,32 @@ class TableScreen extends StatelessWidget {
     for (final m in meals) {
       byDay.putIfAbsent(m.date, () => []).add(m);
     }
-    final today = localDay(DateTime.now());
+    final todayKey = localDay(DateTime.now());
     final tomorrow = localDay(DateTime.now().add(const Duration(days: 1)));
     return ScreenBody(
       children: [
         Text(
-          'على سفرة ${c.market.today}',
+          t.planOnTable(today),
           style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
         ),
         tools,
         const SizedBox(height: 8),
-        const Text(
-          'السفرة في الأيام القادمة',
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 27),
+        Text(
+          t.planComingDays,
+          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 27),
         ),
         for (final e in byDay.entries) ...[
           SectionTitle(
-            e.key == today
-                ? c.market.today
+            e.key == todayKey
+                ? today
                 : e.key == tomorrow
-                ? 'غدًا'
+                ? t.planTomorrow
                 : e.key,
           ),
           for (final m in e.value) PlannedMealCard(m, key: ValueKey(m.id)),
         ],
         const SizedBox(height: 16),
-        noteText(
-          'اختيار الوجبة لا يخصم من المخزون. يتم الخصم بعد تأكيد انتهاء الطبخ.',
-          align: TextAlign.center,
-        ),
+        noteText(t.planNoDeductNote, align: TextAlign.center),
       ],
     );
   }
@@ -130,15 +146,17 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
 
   /// Re-check when inventory changes (identity of the lots list content).
   Future<(String, CookingCheck)> _data(SofraController c) {
-    final version = Object.hashAll(
-      c.kitchen.inventory.map((l) => '${l.id}:${l.quantity}'),
+    // The language too: the title follows it.
+    final version = Object.hash(
+      L10n.language,
+      Object.hashAll(c.kitchen.inventory.map((l) => '${l.id}:${l.quantity}')),
     );
     if (data == null || version != _stockVersion) {
       _stockVersion = version;
       data = () async {
         final recipe = await c.recipeForPlan(widget.meal.id);
         return (
-          recipe.name,
+          await _recipeName(c, recipe),
           c.checkStock(recipe.forServings(widget.meal.servings)),
         );
       }();
@@ -151,13 +169,14 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
     final m = widget.meal;
+    final t = context.l10n;
     return Padding(
       padding: EdgeInsets.only(bottom: widget.glass ? 0 : 14),
       child: FutureBuilder<(String, CookingCheck)>(
         future: _data(c),
         builder: (context, snap) {
           if (snap.hasError) {
-            return const ErrorBlock('تعذّر تحميل وصفة هذه الوجبة.');
+            return ErrorBlock(t.planMealLoadError);
           }
           final d = snap.data;
           if (d == null) return const LoadingBlock();
@@ -193,34 +212,42 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                         fontWeight: FontWeight.w800,
                       ),
                     ),
-                    SoftTag('${slotLabel(m.slot)} · ${m.servings} أفراد'),
+                    SoftTag(
+                      t.planSlotServings(
+                        L10n.term(slotLabel(m.slot)),
+                        m.servings,
+                      ),
+                    ),
                   ],
                 ),
                 if (m.completed) ...[
                   const SizedBox(height: 10),
-                  const SoftTag('طُبخت', icon: Icons.check_circle_rounded),
+                  SoftTag(t.planCooked, icon: Icons.check_circle_rounded),
                 ] else if (!widget.compact) ...[
                   const SizedBox(height: 12),
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
                     children: [
-                      SoftTag('$inStock متوفر', icon: Icons.check_rounded),
+                      SoftTag(
+                        t.planInStock('$inStock'),
+                        icon: Icons.check_rounded,
+                      ),
                       if (missing.isNotEmpty)
                         SoftTag(
-                          'ناقص ${missing.length}',
+                          t.planMissingCount('${missing.length}'),
                           color: Sofra.peach,
                           ink: Sofra.warn,
                         ),
                       if (unresolved > 0)
                         SoftTag(
-                          '$unresolved بوحدة مختلفة',
+                          t.planOtherUnit('$unresolved'),
                           color: Sofra.cream,
                           ink: Sofra.muted,
                         ),
                       if (unmeasured > 0)
                         SoftTag(
-                          '$unmeasured دون مقدار',
+                          t.planNoAmount('$unmeasured'),
                           color: Sofra.cream,
                           ink: Sofra.muted,
                         ),
@@ -244,7 +271,8 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                             Expanded(child: Text(l.ingredient.name)),
                             Flexible(
                               child: Text(
-                                '${formatAmount(l.missing!)} ${l.ingredient.unit}',
+                                '${formatAmount(l.missing!)} '
+                                '${L10n.term(l.ingredient.unit ?? '')}',
                                 textAlign: TextAlign.end,
                                 style: TextStyle(color: Sofra.muted),
                               ),
@@ -256,12 +284,10 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                       key: ValueKey('add-missing-${m.id}'),
                       compact: true,
                       secondary: true,
-                      label: 'اشتريت الناقص · أضفه للمخزون',
+                      label: t.planBoughtMissing,
                       onPressed: () async {
                         if (await c.addMissing(check)) {
-                          nav.notify(
-                            'أُضيف الناقص إلى المخزون بالكمية المطلوبة',
-                          );
+                          nav.notify(L10n.current.planMissingAdded);
                         }
                       },
                     ),
@@ -269,13 +295,13 @@ class _PlannedMealCardState extends State<PlannedMealCard> {
                   const SizedBox(height: 10),
                   DepthButton(
                     key: ValueKey('start-cooking-${m.id}'),
-                    label: 'ابدأ الطبخ',
+                    label: t.planStartCooking,
                     icon: Icons.soup_kitchen_rounded,
                     onPressed: () => nav.startCooking(m),
                   ),
                   TextButton(
                     onPressed: () => c.removePlan(m.id),
-                    child: const Text('احذف الوجبة من السفرة'),
+                    child: Text(t.planRemoveMeal),
                   ),
                 ],
               ],
@@ -311,17 +337,20 @@ class _NutritionState extends State<_Nutrition> {
     builder: (context, snap) {
       final v = snap.data;
       if (v == null) return const SizedBox.shrink();
+      final t = context.l10n;
       String g(NutrientId id, String label) => v[id] == null
           ? ''
-          : ' · $label ${formatAmount(v[id]!.roundToDouble())} جم';
+          : t.planNutrient(label, formatAmount(v[id]!.roundToDouble()));
       return Padding(
         key: ValueKey('nutrition-${widget.meal.id}'),
         padding: const EdgeInsets.only(top: 10),
         child: Text(
-          'للفرد: ${formatAmount(v[NutrientId.energyKcal]!.roundToDouble())} سعر'
-          '${g(NutrientId.protein, 'بروتين')}'
-          '${g(NutrientId.carbohydrate, 'كربوهيدرات')}'
-          '${g(NutrientId.fat, 'دهون')}',
+          t.planPerPortion(
+                formatAmount(v[NutrientId.energyKcal]!.roundToDouble()),
+              ) +
+              g(NutrientId.protein, t.planProtein) +
+              g(NutrientId.carbohydrate, t.planCarbs) +
+              g(NutrientId.fat, t.planFat),
           style: TextStyle(color: Sofra.muted, fontSize: 13),
         ),
       );
