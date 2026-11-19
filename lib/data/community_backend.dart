@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import '../domain/community.dart';
+import '../l10n/l10n.dart';
 
 class InviteProblem implements Exception {
   const InviteProblem(this.message);
@@ -127,10 +128,10 @@ class MemoryCommunity implements CommunityBackend {
     final code = normalizeInvite(raw);
     final invite = server.invites[code];
     if (!validInvite(code) || invite == null) {
-      throw const InviteProblem('هذا الرمز غير موجود.');
+      throw InviteProblem(L10n.current.appInviteNotFound);
     }
     if (!invite.$2.isAfter(server.clock())) {
-      throw const InviteProblem('انتهت صلاحية هذا الرمز. اطلب رمزًا جديدًا.');
+      throw InviteProblem(L10n.current.appInviteExpired);
     }
     final k = server.kitchens[invite.$1]!;
     final members = k['members'] as List;

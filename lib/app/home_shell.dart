@@ -20,6 +20,7 @@ import '../features/recipe_detail_screen.dart';
 import '../features/today_screen.dart';
 import '../ui/add_tile.dart';
 import '../ui/design.dart';
+import '../l10n/l10n.dart';
 import 'look.dart';
 import 'reminders.dart';
 import 'scope.dart';
@@ -88,7 +89,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
     AppTab.table,
   ];
   final visitedTabs = <AppTab>{AppTab.today};
-  String recipeFilter = 'الكل';
+  String recipeFilter = 'الكل'; // i18n-data
   int recipeVisit = 0;
   _View view = _View.tabs;
   int onboardingStep = 0;
@@ -135,7 +136,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
 
   @override
   void discoverFromStock() => _go(() {
-    recipeFilter = 'من الموجود';
+    recipeFilter = 'من الموجود'; // i18n-data
     recipeVisit++;
     tab = AppTab.recipes;
     visitedTabs.add(tab);
@@ -147,7 +148,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
 
   @override
   void exploreRecipes() => _go(() {
-    recipeFilter = 'الكل';
+    recipeFilter = 'الكل'; // i18n-data
     recipeVisit++;
     tab = AppTab.recipes;
     visitedTabs.add(tab);
@@ -254,7 +255,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                                   actions: [
                                     TextButton(
                                       onPressed: c.retrySave,
-                                      child: const Text('إعادة الحفظ'),
+                                      child: Text(context.l10n.appRetrySave),
                                     ),
                                   ],
                                 ),
@@ -300,13 +301,13 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
-                'تعذّر تحميل بيانات البيت. بياناتك لم تُحذف.',
+              Text(
+                context.l10n.appLoadFailed,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.w800),
+                style: const TextStyle(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 16),
-              DepthButton(label: 'حاول مرة أخرى', onPressed: c.load),
+              DepthButton(label: context.l10n.appTryAgain, onPressed: c.load),
             ],
           ),
         ),
@@ -387,24 +388,26 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   }
 
   Widget _header(SofraController c) {
+    final t = context.l10n;
     if (view != _View.tabs) {
       final saved = recipeId != null && c.profile.saved.contains(recipeId);
       return Padding(
-        padding: const EdgeInsets.fromLTRB(12, 8, 16, 10),
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 12, 10),
         child: Row(
           children: [
             IconButton(
               onPressed: _back,
+              // Mirrors with the reading direction (matchTextDirection).
               icon: const Icon(Icons.arrow_back_rounded),
-              tooltip: 'رجوع',
+              tooltip: t.appBack,
             ),
             Expanded(
               child: Text(
                 switch (view) {
-                  _View.addStock => 'نزوّد الخير',
-                  _View.recipe => 'وصفة على قدرك',
-                  _View.kitchen3d => 'مطبخي 3D',
-                  _ => 'نطبخ معًا',
+                  _View.addStock => t.appViewAddStock,
+                  _View.recipe => t.appViewRecipe,
+                  _View.kitchen3d => t.appViewKitchen3d,
+                  _ => t.appViewCooking,
                 },
                 style: const TextStyle(
                   fontWeight: FontWeight.w800,
@@ -414,7 +417,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
             ),
             if (view == _View.recipe)
               IconButton(
-                tooltip: saved ? 'إلغاء الحفظ' : 'حفظ الوصفة',
+                tooltip: saved ? t.appUnsaveRecipe : t.appSaveRecipe,
                 onPressed: () => c.updateProfile(
                   (p) => p.copyWith(
                     saved: saved
@@ -443,20 +446,20 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
               key: const ValueKey('page-back'),
               onPressed: _back,
               icon: const Icon(Icons.arrow_back_rounded),
-              tooltip: 'رجوع',
+              tooltip: t.appBack,
             ),
           Expanded(
             child: Text(
               switch (tab) {
-                AppTab.today => 'سُفرة',
-                AppTab.recipes => 'الوصفات',
-                AppTab.kitchen => 'الخزين',
-                AppTab.table => 'الخطة',
-                AppTab.profile => 'حسابي',
-                AppTab.settings => 'الإعدادات',
+                AppTab.today => t.appHeaderToday,
+                AppTab.recipes => t.appTabRecipes,
+                AppTab.kitchen => t.appTabStock,
+                AppTab.table => t.appTabPlan,
+                AppTab.profile => t.appTabAccount,
+                AppTab.settings => t.appTabSettings,
                 // The community page opens on its own large handwritten title.
                 AppTab.community => '',
-                AppTab.style => 'شكل المطبخ',
+                AppTab.style => t.appTabStyle,
               },
               style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
             ),
@@ -475,7 +478,10 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                   borderRadius: BorderRadius.circular(999),
                   onTap: () => goTab(AppTab.community),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 9,
+                    ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -484,9 +490,9 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                           size: 20,
                           color: Sofra.accent,
                         ),
-                        SizedBox(width: 6),
+                        const SizedBox(width: 6),
                         Text(
-                          'المجتمع',
+                          t.appCommunity,
                           style: TextStyle(
                             color: Sofra.accent,
                             fontWeight: FontWeight.w800,
@@ -501,7 +507,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           if (primary)
             IconButton(
               key: const ValueKey('circle-settings'),
-              tooltip: 'الإعدادات',
+              tooltip: t.appTabSettings,
               onPressed: () => goTab(AppTab.settings),
               icon: const Icon(Icons.settings_outlined),
             ),
@@ -517,6 +523,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
       const String.fromEnvironment('SOFRA_NAV', defaultValue: 'tint');
 
   Widget _bottomNav(SofraController c) {
+    final t = context.l10n;
     final hasPlan = c.upcoming(DateTime.now()).any((m) => !m.completed);
     final look = navTrial;
     final dark = look == 'dark';
@@ -624,28 +631,28 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           'today',
           Icons.home_outlined,
           Icons.home_rounded,
-          'اليوم',
+          t.appTabToday,
         ),
         item(
           AppTab.recipes,
           'recipes',
           Icons.menu_book_outlined,
           Icons.menu_book_rounded,
-          'الوصفات',
+          t.appTabRecipes,
         ),
         item(
           AppTab.kitchen,
           'stock',
           Icons.kitchen_outlined,
           Icons.kitchen_rounded,
-          'الخزين',
+          t.appTabStock,
         ),
         item(
           AppTab.table,
           'table',
           Icons.table_restaurant_outlined,
           Icons.table_restaurant_rounded,
-          'الخطة',
+          t.appTabPlan,
           badge: hasPlan,
         ),
       ],

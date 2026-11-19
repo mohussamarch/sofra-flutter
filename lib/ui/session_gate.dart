@@ -7,6 +7,7 @@ import '../data/community_backend.dart';
 import '../data/firestore_community.dart';
 import '../data/state_store.dart';
 import '../firebase_options.dart';
+import '../l10n/l10n.dart';
 import 'design.dart';
 
 typedef SessionBuilder = Widget Function(
@@ -191,16 +192,17 @@ class SessionError extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              'لا يمكن فتح بياناتك الآن. تحقق من الاتصال وحاول مرة أخرى.',
-            ),
+            Text(context.l10n.appSessionOpenFailed),
             const SizedBox(height: 20),
             FilledButton(
               onPressed: onRetry,
-              child: const Text('إعادة المحاولة'),
+              child: Text(context.l10n.appRetry),
             ),
             if (signOut != null)
-              TextButton(onPressed: signOut, child: const Text('تسجيل الخروج')),
+              TextButton(
+                onPressed: signOut,
+                child: Text(context.l10n.appSignOut),
+              ),
           ],
         ),
       ),
@@ -234,7 +236,7 @@ class _SignInPageState extends State<SignInPage> {
     if (reset
         ? !email.text.trim().contains('@')
         : !form.currentState!.validate()) {
-      if (reset) setState(() => message = 'اكتب البريد الإلكتروني الأول.');
+      if (reset) setState(() => message = context.l10n.appEnterEmailFirst);
       return;
     }
     setState(() {
@@ -246,10 +248,7 @@ class _SignInPageState extends State<SignInPage> {
       if (reset) {
         await auth.sendPasswordResetEmail(email: email.text.trim());
         if (mounted) {
-          setState(
-            () => message =
-                'إذا كان البريد مسجّلًا، سيصلك رابط استعادة كلمة المرور.',
-          );
+          setState(() => message = context.l10n.appResetSent);
         }
       } else if (creating) {
         await auth.createUserWithEmailAndPassword(
@@ -266,22 +265,19 @@ class _SignInPageState extends State<SignInPage> {
       if (mounted) {
         setState(
           () => message = switch (error.code) {
-            'network-request-failed' =>
-              'تحقق من اتصال الإنترنت وحاول مرة أخرى.',
-            'too-many-requests' =>
-              'محاولات كثيرة. انتظر قليلًا ثم حاول مرة أخرى.',
-            'weak-password' => 'اختر كلمة مرور أقوى.',
-            'email-already-in-use' => 'البريد مسجّل بالفعل. جرّب تسجيل الدخول.',
-            'invalid-email' => 'راجع كتابة البريد الإلكتروني.',
-            'operation-not-allowed' =>
-              'إنشاء الحساب غير متاح حاليًا. حاول لاحقًا.',
-            _ => 'تعذر الدخول. راجع البريد وكلمة المرور أو استعد حسابك.',
+            'network-request-failed' => context.l10n.appAuthNetwork,
+            'too-many-requests' => context.l10n.appAuthTooMany,
+            'weak-password' => context.l10n.appAuthWeakPassword,
+            'email-already-in-use' => context.l10n.appAuthEmailInUse,
+            'invalid-email' => context.l10n.appAuthInvalidEmail,
+            'operation-not-allowed' => context.l10n.appAuthSignUpUnavailable,
+            _ => context.l10n.appAuthFailed,
           },
         );
       }
     } catch (_) {
       if (mounted) {
-        setState(() => message = 'تعذّر إكمال الطلب. حاول مرة أخرى.');
+        setState(() => message = context.l10n.appRequestFailed);
       }
     } finally {
       if (mounted) setState(() => busy = false);
@@ -289,120 +285,117 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-    body: SafeArea(
-      child: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 420),
-            child: AutofillGroup(
-              child: Form(
-                key: form,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Icon(
-                      Icons.restaurant_rounded,
-                      size: 64,
-                      color: Sofra.green,
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      creating ? 'أنشئ حسابًا لسفرتك' : 'أهلًا بك في سفرة',
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 420),
+              child: AutofillGroup(
+                child: Form(
+                  key: form,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Icon(
+                        Icons.restaurant_rounded,
+                        size: 64,
+                        color: Sofra.green,
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'مكونات بيتك واختياراتك محفوظة في حسابك.',
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 28),
-                    TextFormField(
-                      controller: email,
-                      enabled: !busy,
-                      textDirection: TextDirection.ltr,
-                      keyboardType: TextInputType.emailAddress,
-                      autocorrect: false,
-                      autofillHints: const [AutofillHints.email],
-                      decoration: const InputDecoration(
-                        labelText: 'البريد الإلكتروني',
-                      ),
-                      validator: (v) => (v ?? '').trim().contains('@')
-                          ? null
-                          : 'اكتب بريدًا صحيحًا',
-                    ),
-                    const SizedBox(height: 14),
-                    TextFormField(
-                      controller: password,
-                      enabled: !busy,
-                      obscureText: true,
-                      textDirection: TextDirection.ltr,
-                      autocorrect: false,
-                      enableSuggestions: false,
-                      autofillHints: [
-                        creating
-                            ? AutofillHints.newPassword
-                            : AutofillHints.password,
-                      ],
-                      decoration: const InputDecoration(
-                        labelText: 'كلمة المرور',
-                      ),
-                      validator: (v) => (v ?? '').length >= 6
-                          ? null
-                          : 'كلمة المرور 6 أحرف على الأقل',
-                      onFieldSubmitted: (_) => submit(),
-                    ),
-                    if (message != null)
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        child: Text(
-                          message!,
-                          semanticsLabel: message,
-                          style: TextStyle(color: Sofra.ink),
+                      const SizedBox(height: 20),
+                      Text(
+                        creating ? t.appCreateAccountTitle : t.appWelcome,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    const SizedBox(height: 20),
-                    FilledButton(
-                      onPressed: busy ? null : () => submit(),
-                      child: Padding(
-                        padding: const EdgeInsets.all(14),
-                        child: Text(
-                          busy
-                              ? 'لحظة…'
-                              : creating
-                              ? 'إنشاء حساب'
-                              : 'تسجيل الدخول',
+                      const SizedBox(height: 8),
+                      Text(t.appSignInSubtitle, textAlign: TextAlign.center),
+                      const SizedBox(height: 28),
+                      TextFormField(
+                        controller: email,
+                        enabled: !busy,
+                        textDirection: TextDirection.ltr,
+                        keyboardType: TextInputType.emailAddress,
+                        autocorrect: false,
+                        autofillHints: const [AutofillHints.email],
+                        decoration: InputDecoration(labelText: t.appEmailLabel),
+                        validator: (v) => (v ?? '').trim().contains('@')
+                            ? null
+                            : t.appEmailInvalid,
+                      ),
+                      const SizedBox(height: 14),
+                      TextFormField(
+                        controller: password,
+                        enabled: !busy,
+                        obscureText: true,
+                        textDirection: TextDirection.ltr,
+                        autocorrect: false,
+                        enableSuggestions: false,
+                        autofillHints: [
+                          creating
+                              ? AutofillHints.newPassword
+                              : AutofillHints.password,
+                        ],
+                        decoration: InputDecoration(
+                          labelText: t.appPasswordLabel,
+                        ),
+                        validator: (v) =>
+                            (v ?? '').length >= 6 ? null : t.appPasswordShort,
+                        onFieldSubmitted: (_) => submit(),
+                      ),
+                      if (message != null)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          child: Text(
+                            message!,
+                            semanticsLabel: message,
+                            style: TextStyle(color: Sofra.ink),
+                          ),
+                        ),
+                      const SizedBox(height: 20),
+                      FilledButton(
+                        onPressed: busy ? null : () => submit(),
+                        child: Padding(
+                          padding: const EdgeInsets.all(14),
+                          child: Text(
+                            busy
+                                ? t.appWait
+                                : creating
+                                ? t.appCreateAccount
+                                : t.appSignIn,
+                          ),
                         ),
                       ),
-                    ),
-                    TextButton(
-                      onPressed: busy
-                          ? null
-                          : () => setState(() {
-                              creating = !creating;
-                              message = null;
-                            }),
-                      child: Text(
-                        creating ? 'عندي حساب بالفعل' : 'أول مرة؟ أنشئ حسابًا',
-                      ),
-                    ),
-                    if (!creating)
                       TextButton(
-                        onPressed: busy ? null : () => submit(reset: true),
-                        child: const Text('نسيت كلمة المرور'),
+                        onPressed: busy
+                            ? null
+                            : () => setState(() {
+                                creating = !creating;
+                                message = null;
+                              }),
+                        child: Text(
+                          creating ? t.appHaveAccount : t.appFirstTime,
+                        ),
                       ),
-                  ],
+                      if (!creating)
+                        TextButton(
+                          onPressed: busy ? null : () => submit(reset: true),
+                          child: Text(t.appForgotPassword),
+                        ),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

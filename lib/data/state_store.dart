@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../l10n/l10n.dart';
+
 abstract class StateStore {
   Future<Map<String, dynamic>?> load();
   Future<void> save(Map<String, dynamic> data);
@@ -18,7 +20,7 @@ class LocalStateStore implements StateStore {
   final SharedPreferencesAsync preferences;
   final String key;
   @override
-  String get label => 'محفوظ على الجهاز';
+  String get label => L10n.current.appSavedOnDevice;
 
   @override
   Future<Map<String, dynamic>?> load() async {
@@ -36,18 +38,22 @@ class StateConflict implements Exception {}
 class CloudStateStore implements StateStore {
   CloudStateStore(FirebaseFirestore firestore, String uid)
     : document = firestore.doc('users/$uid/state/current'),
-      label = 'محفوظ في حسابك';
+      _shared = false;
 
   /// A kitchen shared by invitation; every member reads and writes it.
   CloudStateStore.shared(FirebaseFirestore firestore, String kitchenId)
     : document = firestore.doc('kitchens/$kitchenId/state/current'),
-      label = 'محفوظ في المطبخ المشترك';
+      _shared = true;
 
   final DocumentReference<Map<String, dynamic>> document;
   int? _revision;
 
+  final bool _shared;
+
   @override
-  final String label;
+  String get label => _shared
+      ? L10n.current.appSavedInSharedKitchen
+      : L10n.current.appSavedInAccount;
 
   @override
   Future<Map<String, dynamic>?> load() async {

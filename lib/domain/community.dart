@@ -2,6 +2,8 @@
 /// Firestore shapes match firestore.rules.
 library;
 
+import '../l10n/l10n.dart';
+
 final _photoPath = RegExp(r'^photos/[A-Za-z0-9_-]{1,64}/[A-Za-z0-9_.-]{1,96}$');
 
 /// A picture kept in file storage. Uploads are not switched on yet (no
@@ -188,10 +190,10 @@ double? averageStars(List<Rating> ratings) => ratings.isEmpty
 String areaKey(String area) => area
     .trim()
     .toLowerCase()
-    .replaceAll(RegExp('[ًٌٍَُِّْـ]'), '')
-    .replaceAll(RegExp('[أإآ]'), 'ا')
-    .replaceAll('ة', 'ه')
-    .replaceAll('ى', 'ي')
+    .replaceAll(RegExp('[ًٌٍَُِّْـ]'), '') // i18n-data
+    .replaceAll(RegExp('[أإآ]'), 'ا') // i18n-data
+    .replaceAll('ة', 'ه') // i18n-data
+    .replaceAll('ى', 'ي') // i18n-data
     .replaceAll(RegExp(r'\s+'), ' ');
 
 /// A price a household paid, shared with others in the same area.
@@ -304,31 +306,31 @@ enum ChallengeKind { cookPlanned, differentRecipes, newRecipes }
 
 /// A goal measured from the household's own cooking record.
 class Challenge {
-  const Challenge(this.kind, this.goal, this.title, this.detail);
+  const Challenge(this.kind, this.goal);
   final ChallengeKind kind;
   final int goal;
-  final String title, detail;
+
+  /// Title and how it is counted, in the current language.
+  String get title => switch (kind) {
+    ChallengeKind.cookPlanned => L10n.current.appChallengeCookPlannedTitle(
+      '$goal',
+    ),
+    ChallengeKind.differentRecipes => L10n.current.appChallengeDifferentTitle(
+      '$goal',
+    ),
+    ChallengeKind.newRecipes => L10n.current.appChallengeNewTitle,
+  };
+  String get detail => switch (kind) {
+    ChallengeKind.cookPlanned => L10n.current.appChallengeCookPlannedDetail,
+    ChallengeKind.differentRecipes => L10n.current.appChallengeDifferentDetail,
+    ChallengeKind.newRecipes => L10n.current.appChallengeNewDetail,
+  };
 }
 
 const challenges = [
-  Challenge(
-    ChallengeKind.cookPlanned,
-    4,
-    'اطبخ ٤ وجبات من خطتك',
-    'تُحسب كل وجبة مخططة طُبخت هذا الأسبوع.',
-  ),
-  Challenge(
-    ChallengeKind.differentRecipes,
-    3,
-    'نوّع: ٣ أكلات مختلفة',
-    'تُحسب كل وصفة مختلفة طُبخت هذا الأسبوع مرة واحدة.',
-  ),
-  Challenge(
-    ChallengeKind.newRecipes,
-    2,
-    'جرّب وصفتين أول مرة',
-    'وصفة لم تُطبخ من قبل في مطبخك.',
-  ),
+  Challenge(ChallengeKind.cookPlanned, 4),
+  Challenge(ChallengeKind.differentRecipes, 3),
+  Challenge(ChallengeKind.newRecipes, 2),
 ];
 
 /// The same challenge for everyone in a given week, rotating weekly.
@@ -414,7 +416,7 @@ class SharedKitchen {
   final List<String> members;
   final Map<String, String> names;
 
-  String nameOf(String uid) => names[uid] ?? 'فرد من البيت';
+  String nameOf(String uid) => names[uid] ?? L10n.current.appHouseMember;
 }
 
 // ---- Stories ----------------------------------------------------------------

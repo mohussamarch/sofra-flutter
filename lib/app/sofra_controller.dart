@@ -28,7 +28,8 @@ import '../domain/recipe_variants.dart';
 import '../domain/recipe_catalog.dart';
 import 'look.dart';
 import 'reminders.dart';
-import 'scope.dart' show mealSlots;
+import '../l10n/l10n.dart';
+import 'scope.dart' show mealSlots, slotLabel;
 
 /// Household preferences kept beside `kitchen` in the same state document.
 class Profile {
@@ -40,7 +41,7 @@ class Profile {
     this.cuisines = const {'egyptian'},
     this.allergies = const {},
     this.health = const {},
-    this.meals = const {'غداء', 'عشاء'},
+    this.meals = const {'غداء', 'عشاء'}, // i18n-data
     this.saved = const {},
     this.quickMeals = true,
     this.reduceMotion = false,
@@ -100,9 +101,11 @@ class Profile {
     language: language,
   );
 
-  String get displayName => name.trim().isEmpty ? 'صاحب السفرة' : name.trim();
-  String get houseName =>
-      house.trim().isEmpty ? 'بيت $displayName' : house.trim();
+  String get displayName =>
+      name.trim().isEmpty ? L10n.current.appDefaultName : name.trim();
+  String get houseName => house.trim().isEmpty
+      ? L10n.current.appDefaultHouse(displayName)
+      : house.trim();
 
   Profile copyWith({
     String? name,
@@ -148,13 +151,13 @@ class Profile {
     language: language ?? this.language,
   );
 
-  static const _legacyMeals = {'غدا': 'غداء', 'عشا': 'عشاء'};
+  static const _legacyMeals = {'غدا': 'غداء', 'عشا': 'عشاء'}; // i18n-data
 
   static const _legacyCuisines = {
-    'مصري': 'egyptian',
-    'شامي': 'levantine',
-    'خليجي': 'saudi',
-    'إيطالي': 'italian',
+    'مصري': 'egyptian', // i18n-data
+    'شامي': 'levantine', // i18n-data
+    'خليجي': 'saudi', // i18n-data
+    'إيطالي': 'italian', // i18n-data
   };
 
   Map<String, Object?> toJson() => {
@@ -190,7 +193,7 @@ class Profile {
     final groups = root['cuisineGroups'] is List
         ? strings('cuisineGroups', const {})
         : {
-            for (final c in strings('cuisines', const {'مصري'}))
+            for (final c in strings('cuisines', const {'مصري'})) // i18n-data
               ?_legacyCuisines[c],
           };
     return Profile(
@@ -203,7 +206,7 @@ class Profile {
       health: strings('health', const {}),
       // Older builds stored the colloquial slot names.
       meals: {
-        for (final m in strings('meals', const {'غداء', 'عشاء'}))
+        for (final m in strings('meals', const {'غداء', 'عشاء'})) // i18n-data
           _legacyMeals[m] ?? m,
       },
       saved: strings('saved', const {}),
@@ -361,7 +364,7 @@ class _MemoryStore implements StateStore {
   _MemoryStore(this.data);
   Map<String, dynamic>? data;
   @override
-  String get label => 'غير محفوظ (تجربة)';
+  String get label => L10n.current.appMemoryStoreLabel;
   @override
   Future<Map<String, dynamic>?> load() async => data;
   @override
@@ -565,7 +568,7 @@ class SofraController extends ChangeNotifier {
       try {
         titles[m.id] = await planTitle(m);
       } catch (_) {
-        titles[m.id] = 'وجبة';
+        titles[m.id] = L10n.current.appMealFallback;
       }
     }
     await reminders.replaceScheduled(
@@ -574,8 +577,8 @@ class SofraController extends ChangeNotifier {
         mealTimes: profile.mealTimes,
         before: profile.remindBefore,
         meals: kitchen.plans,
-        titleOf: (m) => titles[m.id] ?? 'وجبة',
-        slotName: (s) => mealSlots[s] ?? s,
+        titleOf: (m) => titles[m.id] ?? L10n.current.appMealFallback,
+        slotName: slotLabel,
         leftovers: leftovers,
       ),
     );
@@ -622,10 +625,10 @@ class SofraController extends ChangeNotifier {
     saveError = n == 0
         ? null
         : full
-        ? 'امتلأت مساحة الحفظ في حسابك، فلم يُحفظ التعديل.'
+        ? L10n.current.appSaveFull
         : n == 1
-        ? 'لم يُحفظ آخر تعديل. تحقق من الاتصال وأعد الحفظ قبل الخروج.'
-        : 'تعديلات لم تُحفظ: $n. تحقق من الاتصال وأعد الحفظ قبل الخروج.';
+        ? L10n.current.appSaveFailedOne
+        : L10n.current.appSaveFailedMany('$n');
     notifyListeners();
   }
 
@@ -1018,7 +1021,7 @@ class SofraController extends ChangeNotifier {
 
   /// The shopping list as plain text to send (WhatsApp or any app).
   String shoppingText(PurchaseForecast list) => [
-    'قائمة الشراء من سفرة:',
+    L10n.current.appShoppingListHeader,
     for (final p in list.purchases)
       '- ${ingredientName(p.use.ingredientId)}: ${amountText(p.use.ingredientId, p.use.quantity, p.use.unit)}',
   ].join('\n');
@@ -1138,7 +1141,7 @@ class SofraController extends ChangeNotifier {
       difficulty: difficulty.trim(),
       stepMinutes: [for (final (_, minutes) in steps) minutes],
       ingredientIds: {for (final (i, l) in lines.indexed) 'line-$i': l.stockId},
-      reviewNote: 'كتبها المستخدم بنفسه',
+      reviewNote: 'كتبها المستخدم بنفسه', // i18n-data
       reviewedAt: now,
       acknowledgeInstructionsAndInputs: true,
       acknowledgeNutritionIncomplete: true,
@@ -1148,7 +1151,7 @@ class SofraController extends ChangeNotifier {
       await kitchen.savePersonalRecipeDraft(
         draft,
         acknowledgeInputsReviewed: true,
-        reviewNote: 'كتبها المستخدم بنفسه',
+        reviewNote: 'كتبها المستخدم بنفسه', // i18n-data
         reviewedAt: now,
       );
       id = (await kitchen.finalizePersonalRecipe(review)).variantId;
@@ -1182,7 +1185,8 @@ class SofraController extends ChangeNotifier {
       baseServings: servings,
       variantId: yieldVariantId(recipeId),
       revision: newId('v'),
-      reviewNote: 'المستخدم حدد إن الوصفة كلها تكفي $servings أفراد',
+      reviewNote:
+          'المستخدم حدد إن الوصفة كلها تكفي $servings أفراد', // i18n-data
       reviewedAt: DateTime.now(),
       acknowledgeWholeRecipeYield: true,
       expectedActiveKey: kitchen.recipeBook.active[yieldVariantId(recipeId)],
@@ -1365,8 +1369,10 @@ class SofraController extends ChangeNotifier {
       if (out.isNotEmpty) {
         unawaited(
           reminders.showNow(
-            'نفد من المطبخ',
-            '${out.map(ingredientName).join('، ')}. ضيفهم لقائمة الشراء.',
+            L10n.current.appRanOutTitle,
+            L10n.current.appRanOutBody(
+              out.map(ingredientName).join(L10n.current.appListSeparator),
+            ),
           ),
         );
       }

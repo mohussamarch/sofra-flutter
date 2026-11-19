@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../l10n/l10n.dart';
 import 'design.dart';
 
 /// Original Sofra character: a tomato chef, drawn as scalable layered shapes.
@@ -18,9 +19,7 @@ class ChefArt extends StatelessWidget {
   final bool compact;
   @override
   Widget build(BuildContext context) => Semantics(
-    label: celebrate
-        ? 'شيف سفرة سعيد وجاهز للطبخ'
-        : 'شيف سفرة، طماطماية مرحة بقبعة شيف',
+    label: celebrate ? context.l10n.appChefCelebrate : context.l10n.appChefIdle,
     image: true,
     child: TweenAnimationBuilder<double>(
       tween: Tween(begin: .94, end: 1),

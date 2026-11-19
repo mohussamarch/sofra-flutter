@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../domain/community.dart';
+import '../l10n/l10n.dart';
 import 'community_backend.dart';
 
 /// Firestore paths (free tier only; see firestore.rules):
@@ -80,12 +81,12 @@ class FirestoreCommunity implements CommunityBackend {
   @override
   Future<String> joinKitchen(String raw, String name) async {
     final code = normalizeInvite(raw);
-    if (!validInvite(code)) throw const InviteProblem('هذا الرمز غير موجود.');
+    if (!validInvite(code)) throw InviteProblem(L10n.current.appInviteNotFound);
     final invite = (await db.doc('invites/$code').get()).data();
-    if (invite == null) throw const InviteProblem('هذا الرمز غير موجود.');
+    if (invite == null) throw InviteProblem(L10n.current.appInviteNotFound);
     final expires = _time(invite['expiresAt']);
     if (expires == null || !expires.isAfter(DateTime.now())) {
-      throw const InviteProblem('انتهت صلاحية هذا الرمز. اطلب رمزًا جديدًا.');
+      throw InviteProblem(L10n.current.appInviteExpired);
     }
     final kitchenId = invite['kitchenId'] as String;
     // Already a member (an owner or member coming back): the rules refuse a
