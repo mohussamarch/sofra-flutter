@@ -96,4 +96,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get lookLanguageEnglishShort => 'EN';
+
+  @override
+  String get uiIncrease => 'زيادة العدد';
+
+  @override
+  String get uiDecrease => 'تقليل العدد';
 }

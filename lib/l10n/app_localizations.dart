@@ -271,6 +271,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'EN'**
   String get lookLanguageEnglishShort;
+
+  /// No description provided for @uiIncrease.
+  ///
+  /// In ar, this message translates to:
+  /// **'زيادة العدد'**
+  String get uiIncrease;
+
+  /// No description provided for @uiDecrease.
+  ///
+  /// In ar, this message translates to:
+  /// **'تقليل العدد'**
+  String get uiDecrease;
 }
 
 class _AppLocalizationsDelegate

@@ -97,4 +97,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lookLanguageEnglishShort => 'EN';
+
+  @override
+  String get uiIncrease => 'Increase';
+
+  @override
+  String get uiDecrease => 'Decrease';
 }

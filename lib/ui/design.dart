@@ -2,6 +2,8 @@ import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
 
+import '../l10n/l10n.dart';
+
 /// One full set of Sofra colours. [light] is direction A (warm editorial,
 /// chosen by the owner); [dark] keeps the same warm family at night.
 class SofraPalette {
@@ -563,7 +565,11 @@ class Counter extends StatelessWidget {
     child: Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        _step(Icons.add_rounded, 'زيادة العدد', value < max ? value + 1 : null),
+        _step(
+          Icons.add_rounded,
+          context.l10n.uiIncrease,
+          value < max ? value + 1 : null,
+        ),
         SizedBox(
           width: 46,
           child: AnimatedSwitcher(
@@ -578,7 +584,7 @@ class Counter extends StatelessWidget {
         ),
         _step(
           Icons.remove_rounded,
-          'تقليل العدد',
+          context.l10n.uiDecrease,
           value > 1 ? value - 1 : null,
         ),
       ],
