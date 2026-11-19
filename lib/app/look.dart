@@ -274,7 +274,11 @@ ThemeData sofraTheme() => ThemeData(
     backgroundColor: Sofra.surface,
     selectedColor: Sofra.accentTint,
     side: BorderSide.none,
-    labelStyle: TextStyle(fontWeight: FontWeight.w700, color: Sofra.ink),
+    labelStyle: TextStyle(
+      fontWeight: FontWeight.w700,
+      color: Sofra.ink,
+      height: 1.3,
+    ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(Sofra.r12),
     ),
