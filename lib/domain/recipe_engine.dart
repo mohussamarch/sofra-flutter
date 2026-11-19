@@ -99,9 +99,9 @@ class RecipeEngine {
     final needs = entries.values.map((entry) {
       var quantity = entry.quantity * servings / recipe.baseServings;
       final ingredient = ingredients[entry.ingredientId]!;
-      if (ingredient.unit == 'حبة' || ingredient.unit == 'علبة') {
-        quantity = quantity.ceilToDouble();
-      }
+      final whole =
+          ingredient.unit == 'حبة' || ingredient.unit == 'علبة'; // i18n-data
+      if (whole) quantity = quantity.ceilToDouble();
       return IngredientNeed(
         ingredient: ingredient,
         requiredQuantity: quantity,

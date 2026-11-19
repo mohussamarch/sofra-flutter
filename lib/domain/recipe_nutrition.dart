@@ -146,15 +146,15 @@ class RecipeFoodSelection {
 }
 
 FoodQuantityUnit? nutritionUnit(String? unit) => switch (unit) {
-  'g' || 'جرام' => FoodQuantityUnit.g,
-  'kg' || 'كيلو' => FoodQuantityUnit.kg,
-  'ml' || 'مل' => FoodQuantityUnit.ml,
-  'l' || 'لتر' => FoodQuantityUnit.l,
+  'g' || 'جرام' => FoodQuantityUnit.g, // i18n-data
+  'kg' || 'كيلو' => FoodQuantityUnit.kg, // i18n-data
+  'ml' || 'مل' => FoodQuantityUnit.ml, // i18n-data
+  'l' || 'لتر' => FoodQuantityUnit.l, // i18n-data
   'count' ||
-  'حبة' ||
-  'حبات' ||
-  'بيضة' ||
-  'بيضة كبيرة' => FoodQuantityUnit.count,
+  'حبة' || // i18n-data
+  'حبات' || // i18n-data
+  'بيضة' || // i18n-data
+  'بيضة كبيرة' => FoodQuantityUnit.count, // i18n-data
   'serving' => FoodQuantityUnit.serving,
   _ => null,
 };

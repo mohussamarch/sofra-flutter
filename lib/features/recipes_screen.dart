@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../app/scope.dart';
 import '../app/recipe_stock_preview.dart';
 import '../data/recipe_repository.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
@@ -26,6 +27,7 @@ class RecipeCard extends StatelessWidget {
     final id = row['id'] as String;
     final saved = c.profile.saved.contains(id);
     final kind = artKind(id);
+    final t = context.l10n;
     if (Paper.isOn(context)) return _PaperEntry(row: row, saved: saved);
     return Material(
       color: Sofra.card,
@@ -54,13 +56,13 @@ class RecipeCard extends StatelessWidget {
                     Row(
                       children: [
                         SoftTag(
-                          '${row['category'] ?? ''}',
+                          L10n.term('${row['category'] ?? ''}'),
                           color: Sofra.card,
                           ink: Sofra.ink,
                         ),
                         const Spacer(),
                         IconButton(
-                          tooltip: saved ? 'إلغاء الحفظ' : 'حفظ الوصفة',
+                          tooltip: saved ? t.rcpUnsaveRecipe : t.rcpSaveRecipe,
                           onPressed: () => c.updateProfile(
                             (p) => p.copyWith(
                               saved: saved
@@ -91,7 +93,8 @@ class RecipeCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    dish?.$1 ?? '${row['name']}',
+                    dish?.$1 ??
+                        L10n.pick('${row['name']}', row['nameEn'] as String?),
                     style: const TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 20,
@@ -108,7 +111,7 @@ class RecipeCard extends StatelessWidget {
                           children: [
                             if (dish == null)
                               SoftTag(
-                                '${row['cuisine']}',
+                                L10n.term('${row['cuisine']}'),
                                 color: Sofra.cream,
                                 ink: Sofra.muted,
                                 icon: Icons.public_rounded,
@@ -123,7 +126,7 @@ class RecipeCard extends StatelessWidget {
                             ),
                             if (row['difficulty'] != null && dish == null)
                               SoftTag(
-                                '${row['difficulty']}',
+                                L10n.term('${row['difficulty']}'),
                                 color: Sofra.cream,
                                 ink: Sofra.muted,
                               ),
@@ -155,13 +158,14 @@ class _PaperEntry extends StatelessWidget {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
     final id = row['id'] as String;
+    final t = context.l10n;
     final details = [
-      '${row['cuisine']}',
+      L10n.term('${row['cuisine']}'),
       minutesLabel(row['totalTime']),
       // "Not stated by the source" is noise on a list row; say nothing.
       if (row['difficulty'] != null &&
-          !'${row['difficulty']}'.startsWith('غير محدد'))
-        '${row['difficulty']}',
+          !'${row['difficulty']}'.startsWith('غير محدد')) // i18n-data
+        L10n.term('${row['difficulty']}'),
     ].join(' · ');
     final shape = RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(Sofra.r16),
@@ -199,7 +203,10 @@ class _PaperEntry extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('${row['name']}', style: Sofra.heading(18)),
+                        Text(
+                          L10n.pick('${row['name']}', row['nameEn'] as String?),
+                          style: Sofra.heading(18),
+                        ),
                         const SizedBox(height: 2),
                         Text(
                           details,
@@ -209,7 +216,7 @@ class _PaperEntry extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    tooltip: saved ? 'إلغاء الحفظ' : 'حفظ الوصفة',
+                    tooltip: saved ? t.rcpUnsaveRecipe : t.rcpSaveRecipe,
                     onPressed: () => c.updateProfile(
                       (p) => p.copyWith(
                         saved: saved
@@ -235,14 +242,28 @@ class _PaperEntry extends StatelessWidget {
 }
 
 class RecipesScreen extends StatefulWidget {
-  const RecipesScreen({super.key, this.initialFilter = 'الكل'});
+  const RecipesScreen({super.key, this.initialFilter = 'الكل'}); // i18n-data
   final String initialFilter;
   @override
   State<RecipesScreen> createState() => _RecipesScreenState();
 }
 
 class _RecipesScreenState extends State<RecipesScreen> {
-  static const _filters = ['الكل', 'من الموجود', 'جاهزة بالموجود', 'محفوظة'];
+  /// Filter ids (also used by the home shell); shown through [_filterLabel].
+  static const _filters = [
+    'الكل', // i18n-data
+    'من الموجود', // i18n-data
+    'جاهزة بالموجود', // i18n-data
+    'محفوظة', // i18n-data
+  ];
+
+  static String _filterLabel(AppLocalizations t, String id) => switch (id) {
+    'من الموجود' => t.rcpFilterFromStock, // i18n-data
+    'جاهزة بالموجود' => t.rcpFilterReadyFromStock, // i18n-data
+    'محفوظة' => t.rcpFilterSaved, // i18n-data
+    _ => t.rcpFilterAll,
+  };
+
   static const _page = 20;
   final search = TextEditingController();
   late String filter = widget.initialFilter;
@@ -258,7 +279,8 @@ class _RecipesScreenState extends State<RecipesScreen> {
   Future<Map<String, RecipeStockPreview>>? fromStock;
   Future<Map<String, RecipeStockPreview>>? _viewStock;
   int? _stockVersion;
-  bool get stockFilter => filter == 'من الموجود' || filter == 'جاهزة بالموجود';
+  bool get stockFilter =>
+      filter == 'من الموجود' || filter == 'جاهزة بالموجود'; // i18n-data
   Future<List<Map<String, dynamic>>>? _viewResults;
   String? _viewFilter;
 
@@ -309,6 +331,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
     backgroundColor: Sofra.paper,
     builder: (sheet) => StatefulBuilder(
       builder: (sheet, setSheet) {
+        final t = sheet.l10n;
         void pick(VoidCallback change) {
           setSheet(change);
           _refresh();
@@ -331,25 +354,25 @@ class _RecipesScreenState extends State<RecipesScreen> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              section('النوع', [
+              section(t.rcpKindSection, [
                 SofraChip(
-                  label: const Text('الكل'),
+                  label: Text(t.rcpFilterAll),
                   selected: kind == null,
                   onSelected: (_) => pick(() => kind = null),
                 ),
                 for (final k in RecipeRepository.kinds)
                   SofraChip(
                     key: ValueKey('filter-kind-$k'),
-                    label: Text(k),
+                    label: Text(L10n.term(k)),
                     selected: kind == k,
                     onSelected: (_) => pick(() => kind = k),
                   ),
               ]),
-              section('الوقت', [
-                for (final (label, value) in const [
-                  ('أي وقت', null),
-                  ('30 دقيقة أو أقل', 30),
-                  ('ساعة أو أقل', 60),
+              section(t.rcpTimeSection, [
+                for (final (label, value) in [
+                  (t.rcpTimeAny, null),
+                  (t.rcpTime30, 30),
+                  (t.rcpTime60, 60),
                 ])
                   SofraChip(
                     key: ValueKey('filter-time-$value'),
@@ -364,7 +387,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                     kind = null;
                     maxMinutes = null;
                   }),
-                  child: const Text('امسح الفلاتر'),
+                  child: Text(t.rcpClearFilters),
                 ),
             ],
           ),
@@ -382,6 +405,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
+    final t = context.l10n;
     if (stockFilter && _stockVersion != c.stockDiscoveryVersion) {
       _stockVersion = c.stockDiscoveryVersion;
       fromStock = c.stockRecipePreviews();
@@ -394,11 +418,11 @@ class _RecipesScreenState extends State<RecipesScreen> {
           controller: search,
           onChanged: (_) => _refresh(),
           decoration: InputDecoration(
-            hintText: 'ابحث باسم أكلة أو مكوّن',
+            hintText: t.rcpSearchHint,
             prefixIcon: const Icon(Icons.search_rounded),
             suffixIcon: IconButton(
               key: const ValueKey('recipe-filters'),
-              tooltip: 'الفلاتر',
+              tooltip: t.rcpFilters,
               onPressed: _openFilters,
               icon: Badge(
                 isLabelVisible: _filterCount > 0,
@@ -429,7 +453,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
               child: Row(
                 children: [
                   SofraChip(
-                    label: const Text('كل المطابخ'),
+                    label: Text(t.rcpAllCuisines),
                     selected: group == null,
                     onSelected: (_) {
                       group = null;
@@ -440,7 +464,9 @@ class _RecipesScreenState extends State<RecipesScreen> {
                     Padding(
                       padding: const EdgeInsetsDirectional.only(start: 8),
                       child: SofraChip(
-                        label: Text('${g['name']} · ${g['count']}'),
+                        label: Text(
+                          '${L10n.term('${g['name']}')} · ${g['count']}',
+                        ),
                         selected: group == g['id'],
                         onSelected: (_) {
                           group = g['id'] as String;
@@ -462,7 +488,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                 Padding(
                   padding: const EdgeInsetsDirectional.only(end: 8),
                   child: SofraChip(
-                    label: Text(f),
+                    label: Text(_filterLabel(t, f)),
                     selected: filter == f,
                     onSelected: (_) => setState(() {
                       filter = f;
@@ -477,7 +503,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 12),
             child: Text(
-              'الكميات محسوبة لـ${c.profile.servings} أفراد. المقادير غير المعروفة لا تُعتبر جاهزة.',
+              t.rcpStockNote('${c.profile.servings}'),
               style: TextStyle(color: Sofra.muted),
             ),
           ),
@@ -488,11 +514,8 @@ class _RecipesScreenState extends State<RecipesScreen> {
             if (snap.hasError) {
               return Column(
                 children: [
-                  const ErrorBlock('تعذّر تحميل الوصفات.'),
-                  TextButton(
-                    onPressed: _refresh,
-                    child: const Text('حاول مرة أخرى'),
-                  ),
+                  ErrorBlock(t.rcpLoadFailed),
+                  TextButton(onPressed: _refresh, child: Text(t.rcpTryAgain)),
                 ],
               );
             }
@@ -507,9 +530,9 @@ class _RecipesScreenState extends State<RecipesScreen> {
             var rows = (data.first as List<Map<String, dynamic>>).where((r) {
               final id = r['id'] as String;
               return switch (filter) {
-                'من الموجود' => (stock[id]?.present ?? 0) > 0,
-                'جاهزة بالموجود' => stock[id]?.ready ?? false,
-                'محفوظة' => c.profile.saved.contains(id),
+                'من الموجود' => (stock[id]?.present ?? 0) > 0, // i18n-data
+                'جاهزة بالموجود' => stock[id]?.ready ?? false, // i18n-data
+                'محفوظة' => c.profile.saved.contains(id), // i18n-data
                 _ => true,
               };
             }).toList();
@@ -558,7 +581,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   children: [
                     Expanded(
                       child: Text(
-                        stockFilter ? 'اقتراحات من خزينك' : 'وصفات على ذوقك',
+                        stockFilter ? t.rcpFromStockTitle : t.rcpForYouTitle,
                         style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 20,
@@ -566,7 +589,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                       ),
                     ),
                     Text(
-                      '${rows.length} وصفة',
+                      t.rcpRecipeCount(rows.length),
                       style: TextStyle(color: Sofra.muted, fontSize: 12),
                     ),
                   ],
@@ -577,8 +600,8 @@ class _RecipesScreenState extends State<RecipesScreen> {
                     child: Column(
                       children: [
                         const ChefArt(size: 170, compact: true),
-                        const Text(
-                          'نبحث عن شيء آخر؟',
+                        Text(
+                          t.rcpEmptyTitle,
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.w800,
@@ -587,10 +610,10 @@ class _RecipesScreenState extends State<RecipesScreen> {
                         const SizedBox(height: 18),
                         DepthButton(
                           secondary: true,
-                          label: 'عرض كل الوصفات',
+                          label: t.rcpShowAll,
                           onPressed: () {
                             search.clear();
-                            filter = 'الكل';
+                            filter = 'الكل'; // i18n-data
                             group = null;
                             kind = null;
                             maxMinutes = null;
@@ -636,8 +659,9 @@ class _RecipesScreenState extends State<RecipesScreen> {
                 if (entries.length > shown.length)
                   DepthButton(
                     secondary: true,
-                    label:
-                        'اعرض ${entries.length - shown.length > _page ? _page : entries.length - shown.length} أخرى',
+                    label: t.rcpShowMore(
+                      '${entries.length - shown.length > _page ? _page : entries.length - shown.length}',
+                    ),
                     onPressed: () => setState(() => limit += _page),
                   ),
               ],

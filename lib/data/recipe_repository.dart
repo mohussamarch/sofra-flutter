@@ -34,10 +34,10 @@ class RecipeRepository {
   static bool hasConcreteCuisine(String value) =>
       value.trim().isNotEmpty &&
       !const {
-        'غير محدد',
-        'عالمي متنوع',
-        'آسيوي',
-        'أمريكي جنوبي',
+        'غير محدد', // i18n-data
+        'عالمي متنوع', // i18n-data
+        'آسيوي', // i18n-data
+        'أمريكي جنوبي', // i18n-data
       }.contains(value);
 
   static bool _held(Map<String, dynamic> row) =>
@@ -183,29 +183,28 @@ class RecipeRepository {
 
   /// Meal kinds shown as filters, in display order.
   static const kinds = [
-    'رئيسي',
-    'فطار',
-    'شوربة',
-    'سلطة ومقبلات',
-    'حلويات',
-    'مخبوزات',
+    'رئيسي', // i18n-data
+    'فطار', // i18n-data
+    'شوربة', // i18n-data
+    'سلطة ومقبلات', // i18n-data
+    'حلويات', // i18n-data
+    'مخبوزات', // i18n-data
   ];
+
+  /// Words that mark a baked-goods source category (normalized Arabic).
+  static const _bakedWords = ['مخبوز', 'خبز', 'معجنات', 'عجين']; // i18n-data
 
   /// The meal kind of a source category, or null when it fits none (sauces,
   /// drinks, spice mixes, unknown).
   static String? kindOf(String? category) {
     final c = _normalize(category ?? '');
-    if (c.contains('رئيسي') || c.contains('جانبي')) return 'رئيسي';
-    if (c.contains('فطار') || c.contains('فطور')) return 'فطار';
-    if (c.contains('شورب') || c.contains('حساء')) return 'شوربة';
-    if (c.contains('سلط') || c.contains('مقبلات')) return 'سلطة ومقبلات';
-    if (c.contains('حلو')) return 'حلويات';
-    if (c.contains('مخبوز') ||
-        c.contains('خبز') ||
-        c.contains('معجنات') ||
-        c.contains('عجين')) {
-      return 'مخبوزات';
-    }
+    if (c.contains('رئيسي') || c.contains('جانبي')) return 'رئيسي'; // i18n-data
+    if (c.contains('فطار') || c.contains('فطور')) return 'فطار'; // i18n-data
+    if (c.contains('شورب') || c.contains('حساء')) return 'شوربة'; // i18n-data
+    final salad = c.contains('سلط') || c.contains('مقبلات'); // i18n-data
+    if (salad) return 'سلطة ومقبلات'; // i18n-data
+    if (c.contains('حلو')) return 'حلويات'; // i18n-data
+    if (_bakedWords.any(c.contains)) return 'مخبوزات'; // i18n-data
     return null;
   }
 
@@ -290,10 +289,10 @@ class RecipeRepository {
 
   static String _normalize(String value) => value
       .toLowerCase()
-      .replaceAll(RegExp('[ًٌٍَُِّْـ]'), '')
-      .replaceAll(RegExp('[أإآ]'), 'ا')
-      .replaceAll('ى', 'ي')
-      .replaceAll('ة', 'ه')
+      .replaceAll(RegExp('[ًٌٍَُِّْـ]'), '') // i18n-data
+      .replaceAll(RegExp('[أإآ]'), 'ا') // i18n-data
+      .replaceAll('ى', 'ي') // i18n-data
+      .replaceAll('ة', 'ه') // i18n-data
       .trim();
 }
 
