@@ -4,7 +4,7 @@ import '../app/look.dart';
 import '../app/scope.dart';
 import '../ui/design.dart';
 
-/// "راحتك في التطبيق": appearance, text size, colour correction and motion,
+/// "العرض واللغة": appearance, text size, colour correction and motion,
 /// one compact row each. Explanations sit behind an info icon.
 class LookSettings extends StatelessWidget {
   const LookSettings({super.key});

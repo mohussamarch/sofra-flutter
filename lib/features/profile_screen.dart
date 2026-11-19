@@ -651,10 +651,10 @@ class SettingsScreen extends StatelessWidget {
         ),
         const SectionTitle('البلد والعملة'),
         const Surface(child: CountryPicker()),
-        const SectionTitle('راحتك في التطبيق'),
-        const LookSettings(),
         const SectionTitle('التذكيرات'),
         const ReminderSettings(),
+        const SectionTitle('العرض واللغة'),
+        const LookSettings(),
         const SizedBox(height: 24),
         if (c.persistent) ...[
           Center(
