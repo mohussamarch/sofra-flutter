@@ -52,6 +52,7 @@ class Profile {
     this.appearance = Appearance.system,
     this.textStep = 0,
     this.colorVision = ColorVision.none,
+    this.language = AppLanguage.ar,
   });
 
   final String name, house;
@@ -88,11 +89,15 @@ class Profile {
   final int textStep;
   final ColorVision colorVision;
 
+  /// The app's language; documents saved before it existed stay Arabic.
+  final AppLanguage language;
+
   SofraLook get look => SofraLook(
     appearance: appearance,
     textStep: textStep,
     colorVision: colorVision,
     reduceMotion: reduceMotion,
+    language: language,
   );
 
   String get displayName => name.trim().isEmpty ? 'صاحب السفرة' : name.trim();
@@ -119,6 +124,7 @@ class Profile {
     Appearance? appearance,
     int? textStep,
     ColorVision? colorVision,
+    AppLanguage? language,
   }) => Profile(
     name: name ?? this.name,
     house: house ?? this.house,
@@ -139,6 +145,7 @@ class Profile {
     appearance: appearance ?? this.appearance,
     textStep: textStep ?? this.textStep,
     colorVision: colorVision ?? this.colorVision,
+    language: language ?? this.language,
   );
 
   static const _legacyMeals = {'غدا': 'غداء', 'عشا': 'عشاء'};
@@ -170,6 +177,7 @@ class Profile {
     'appearance': appearance.name,
     'textStep': textStep,
     'colorVision': colorVision.name,
+    'language': language.name,
   };
 
   factory Profile.fromRoot(Map<String, dynamic> root) {
@@ -227,6 +235,8 @@ class Profile {
       colorVision:
           ColorVision.values.asNameMap()[root['colorVision']] ??
           ColorVision.none,
+      language:
+          AppLanguage.values.asNameMap()[root['language']] ?? AppLanguage.ar,
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/l10n.dart';
 import '../app/scope.dart';
 import '../domain/market_profile.dart';
 import '../ui/design.dart';
@@ -653,7 +654,7 @@ class SettingsScreen extends StatelessWidget {
         const Surface(child: CountryPicker()),
         const SectionTitle('التذكيرات'),
         const ReminderSettings(),
-        const SectionTitle('العرض واللغة'),
+        SectionTitle(context.l10n.lookSection),
         const LookSettings(),
         const SizedBox(height: 24),
         if (c.persistent) ...[

@@ -109,7 +109,8 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   @override
   void dispose() {
     controller.removeListener(_publishLook);
-    SofraLook.publish(const SofraLook());
+    // Back to the default look, keeping the language for the sign-in.
+    SofraLook.publish(SofraLook(language: SofraLook.notifier.value.language));
     controller.dispose();
     name.dispose();
     house.dispose();

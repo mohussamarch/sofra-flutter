@@ -11,8 +11,18 @@ enum Appearance { system, light, dark }
 /// toward ones it tells apart.
 enum ColorVision { none, protan, deutan, tritan }
 
+/// The app's language: Arabic (right to left) or English (left to right).
+enum AppLanguage {
+  ar,
+  en;
+
+  Locale get locale => Locale(name);
+  TextDirection get direction =>
+      this == ar ? TextDirection.rtl : TextDirection.ltr;
+}
+
 /// How the app looks for this household: appearance, text size, colour
-/// correction and motion. The shell publishes it from the profile; [LookRoot]
+/// correction, motion and language. The shell publishes it from the profile; [LookRoot]
 /// applies it above every screen, dialog and sheet.
 @immutable
 class SofraLook {
@@ -21,6 +31,7 @@ class SofraLook {
     this.textStep = 0,
     this.colorVision = ColorVision.none,
     this.reduceMotion = false,
+    this.language = AppLanguage.ar,
   });
 
   final Appearance appearance;
@@ -29,6 +40,7 @@ class SofraLook {
   final int textStep;
   final ColorVision colorVision;
   final bool reduceMotion;
+  final AppLanguage language;
 
   static const textScales = [1.0, 1.15, 1.3];
   double get textScale => textScales[textStep.clamp(0, 2)];
@@ -54,15 +66,17 @@ class SofraLook {
       other.appearance == appearance &&
       other.textStep == textStep &&
       other.colorVision == colorVision &&
-      other.reduceMotion == reduceMotion;
+      other.reduceMotion == reduceMotion &&
+      other.language == language;
 
   @override
   int get hashCode =>
-      Object.hash(appearance, textStep, colorVision, reduceMotion);
+      Object.hash(appearance, textStep, colorVision, reduceMotion, language);
 }
 
 /// Applies [SofraLook.notifier] to everything below it: the palette and
-/// theme, text size, reduced motion and colour correction.
+/// theme, text size, reduced motion, colour correction and the language's
+/// reading direction.
 class LookRoot extends StatefulWidget {
   const LookRoot({super.key, required this.child});
   final Widget child;
@@ -83,6 +97,8 @@ class _LookRootState extends State<LookRoot> {
     SofraLook.notifier.removeListener(_changed);
     super.dispose();
   }
+
+  AppLanguage? _language;
 
   void _changed() => setState(() {});
 
@@ -111,6 +127,11 @@ class _LookRootState extends State<LookRoot> {
       Sofra.use(palette);
       SchedulerBinding.instance.addPostFrameCallback((_) => _repaintAll());
     }
+    if (_language != null && _language != look.language) {
+      // Strings read without a context change too; rebuild them all.
+      SchedulerBinding.instance.addPostFrameCallback((_) => _repaintAll());
+    }
+    _language = look.language;
     final base = media.textScaler.scale(14) / 14;
     Widget child = Theme(
       data: sofraTheme(),
@@ -119,7 +140,10 @@ class _LookRootState extends State<LookRoot> {
           textScaler: TextScaler.linear(base * look.textScale),
           disableAnimations: media.disableAnimations || look.reduceMotion,
         ),
-        child: widget.child,
+        child: Directionality(
+          textDirection: look.language.direction,
+          child: widget.child,
+        ),
       ),
     );
     final correction = colorCorrection(look.colorVision);

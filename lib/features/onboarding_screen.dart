@@ -9,6 +9,7 @@ import '../ui/design.dart';
 import '../ui/flags.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'language_pill.dart';
 
 class CountryPicker extends StatelessWidget {
   const CountryPicker({super.key});
@@ -122,7 +123,16 @@ class OnboardingScreen extends StatelessWidget {
               children: [
                 Icon(Icons.restaurant_rounded, color: Sofra.accent, size: 26),
                 const SizedBox(width: 8),
-                Text('سفرة', style: Sofra.heading(28)),
+                Flexible(
+                  child: Text(
+                    'سفرة',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Sofra.heading(28),
+                  ),
+                ),
+                const Spacer(),
+                const LanguagePill(),
               ],
             ),
           )
@@ -149,6 +159,7 @@ class OnboardingScreen extends StatelessWidget {
                         )
                       : null,
                 ),
+                const LanguagePill(),
               ],
             ),
           ),
