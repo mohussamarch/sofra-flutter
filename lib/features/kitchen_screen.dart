@@ -6,6 +6,7 @@ import '../data/demo_data.dart';
 import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
+import '../l10n/l10n.dart';
 import '../ui/add_tile.dart';
 import '../ui/design.dart';
 import '../ui/ingredient_art.dart';
@@ -32,6 +33,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
     final nav = SofraScope.navOf(context);
     final stock = c.stock;
     final visible = stock.where((l) => zone == null || l.zone == zone).toList();
+    final t = context.l10n;
     return ScreenBody(
       children: [
         Wrap(
@@ -42,22 +44,22 @@ class _KitchenScreenState extends State<KitchenScreen> {
               key: const ValueKey('open-kitchen-3d'),
               onPressed: nav.openKitchen3d,
               icon: const Icon(Icons.view_in_ar_outlined),
-              label: const Text('مطبخي 3D'),
+              label: Text(t.kitOpenKitchen3d),
             ),
             TextButton.icon(
               onPressed: () => openShopping(context),
               icon: const Icon(Icons.shopping_basket_outlined),
-              label: const Text('المشتريات'),
+              label: Text(t.kitShopping),
             ),
             TextButton.icon(
               onPressed: () => showShelves(
                 context,
-                title: 'بواقي الأكل',
+                title: t.kitLeftoversTitle,
                 items: leftoverShelfItems,
-                empty: 'لا توجد بواقي مسجلة.',
+                empty: t.kitLeftoversEmpty,
               ),
               icon: const Icon(Icons.restaurant_outlined),
-              label: const Text('البواقي'),
+              label: Text(t.kitLeftovers),
             ),
           ],
         ),
@@ -71,8 +73,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
                 child: AddTile(
                   key: const ValueKey('add-ingredients'),
                   icon: Icons.shopping_basket_rounded,
-                  title: 'أضف مكوّنًا',
-                  detail: 'ابحث واختر',
+                  title: t.kitAddIngredientTitle,
+                  detail: t.kitAddIngredientDetail,
                   primary: true,
                   onTap: nav.openAddStock,
                 ),
@@ -82,8 +84,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
                 child: AddTile(
                   key: const ValueKey('quick-add'),
                   icon: Icons.receipt_long_rounded,
-                  title: 'فاتورة أو قائمة',
-                  detail: 'صورة أو كتابة',
+                  title: t.kitReceiptTitle,
+                  detail: t.kitReceiptDetail,
                   onTap: () => openQuickAdd(context),
                 ),
               ),
@@ -96,7 +98,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
           runSpacing: 8,
           children: [
             SofraChip(
-              label: Text(stock.isEmpty ? 'الكل' : 'الكل ${stock.length}'),
+              label: Text(
+                stock.isEmpty ? t.kitAll : t.kitAllCount('${stock.length}'),
+              ),
               selected: zone == null,
               onSelected: (_) => setState(() => zone = null),
             ),
@@ -116,7 +120,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
               children: [
                 const ChefArt(size: 165, compact: true),
                 Text(
-                  stock.isEmpty ? 'ما زلنا نتعرف على مطبخك' : 'هذا الرف فارغ',
+                  stock.isEmpty ? t.kitGettingToKnow : t.kitShelfEmpty,
                   style: const TextStyle(
                     fontSize: 21,
                     fontWeight: FontWeight.w800,
@@ -124,7 +128,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'أضف بعض المكونات كبداية. لا نحتاج إلى جرد كامل للبدء.',
+                  t.kitEmptyHint,
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Sofra.muted, fontSize: 14),
                 ),
@@ -138,20 +142,17 @@ class _KitchenScreenState extends State<KitchenScreen> {
             padding: const EdgeInsets.only(top: 18),
             child: DepthButton(
               key: const ValueKey('add-sample-stock'),
-              label: 'جرّب بمكونات جاهزة',
+              label: t.kitTrySample,
               secondary: true,
               onPressed: () async {
                 if (await c.loadSample()) {
-                  nav.notify('أُضيفت مكونات تجريبية إلى مطبخك');
+                  nav.notify(L10n.current.kitSampleAdded);
                 }
               },
             ),
           ),
         const SizedBox(height: 14),
-        noteText(
-          'تُخصم الكميات عند تأكيد انتهاء الطبخ، لا عند اختيار الوصفة.',
-          align: TextAlign.center,
-        ),
+        noteText(t.kitDeductNote, align: TextAlign.center),
       ],
     );
   }
@@ -171,7 +172,7 @@ class _StockRow extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Surface(
-        padding: const EdgeInsets.fromLTRB(12, 14, 16, 14),
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 14, 12, 14),
         child: Row(
           children: [
             IngredientPicture(lot.ingredientId, category, size: 52),
@@ -196,13 +197,13 @@ class _StockRow extends StatelessWidget {
             ),
             Text(
               lot.quantity == null
-                  ? 'كمية غير محددة'
+                  ? context.l10n.kitQuantityUnknown
                   : c.amountText(lot.ingredientId, lot.quantity!, lot.unit),
               key: ValueKey('stock-quantity-${lot.ingredientId}'),
               style: const TextStyle(fontWeight: FontWeight.w700),
             ),
             IconButton(
-              tooltip: 'تعديل $name',
+              tooltip: context.l10n.kitEditItem(name),
               onPressed: () => editStockQuantity(context, lot),
               icon: Icon(Icons.edit_outlined, size: 18, color: Sofra.muted),
             ),
@@ -222,10 +223,10 @@ Future<void> editStockQuantity(BuildContext context, InventoryLot lot) async {
   final form = GlobalKey<FormState>();
   final result = await showDialog<double>(
     context: context,
-    builder: (ctx) => Directionality(
-      textDirection: TextDirection.rtl,
-      child: AlertDialog(
-        title: Text('كمية $name'),
+    builder: (ctx) {
+      final t = ctx.l10n;
+      return AlertDialog(
+        title: Text(t.kitQuantityOf(name)),
         content: Form(
           key: form,
           child: TextFormField(
@@ -234,21 +235,23 @@ Future<void> editStockQuantity(BuildContext context, InventoryLot lot) async {
             validator: (value) {
               final q = double.tryParse(value ?? '');
               return q == null || !q.isFinite || q < 0
-                  ? 'اكتب عددًا صحيحًا يساوي 0 أو أكثر'
+                  ? t.kitQuantityInvalid
                   : null;
             },
             autofocus: true,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
             decoration: InputDecoration(
-              labelText: 'الكمية (${c.unitName(lot.ingredientId, lot.unit)})',
-              helperText: 'اكتب 0 إذا نفد',
+              labelText: t.kitQuantityLabel(
+                c.unitName(lot.ingredientId, lot.unit),
+              ),
+              helperText: t.kitQuantityHelper,
             ),
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('إلغاء'),
+            child: Text(t.kitCancel),
           ),
           TextButton(
             onPressed: () {
@@ -256,15 +259,15 @@ Future<void> editStockQuantity(BuildContext context, InventoryLot lot) async {
                 Navigator.pop(ctx, double.parse(input));
               }
             },
-            child: const Text('حفظ'),
+            child: Text(t.kitSave),
           ),
         ],
-      ),
-    ),
+      );
+    },
   );
   if (result == null) return;
   await c.setQuantity(lot.id, result);
-  nav.notify('حُدّثت كمية $name');
+  nav.notify(L10n.current.kitQuantityUpdated(name));
 }
 
 /// Adds existing stock from the ingredient directory (not a purchase: no
@@ -301,22 +304,20 @@ class _AddStockScreenState extends State<AddStockScreen> {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
     final items = _items(c.directory);
+    final t = context.l10n;
     return ScreenBody(
       footer: DepthButton(
         key: const ValueKey('add-stock-done'),
-        label: 'تم، اعرض مطبخي',
+        label: t.kitAddStockDone,
         onPressed: () => nav.goTab(AppTab.kitchen),
       ),
       children: [
-        const Text(
-          'ماذا يوجد عندك؟',
-          style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
+        Text(
+          t.kitWhatDoYouHave,
+          style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 8),
-        Text(
-          'اضغط + لإضافة سريعة، أو اضغط على المكوّن لكتابة الكمية والوحدة.',
-          style: TextStyle(color: Sofra.muted),
-        ),
+        Text(t.kitAddStockHint, style: TextStyle(color: Sofra.muted)),
         const SizedBox(height: 20),
         Row(
           children: [
@@ -325,16 +326,16 @@ class _AddStockScreenState extends State<AddStockScreen> {
                 key: const ValueKey('add-stock-search'),
                 controller: search,
                 onChanged: (_) => setState(() {}),
-                decoration: const InputDecoration(
-                  hintText: 'ابحث عن مكوّن',
-                  prefixIcon: Icon(Icons.search_rounded),
+                decoration: InputDecoration(
+                  hintText: t.kitSearchIngredient,
+                  prefixIcon: const Icon(Icons.search_rounded),
                 ),
               ),
             ),
             const SizedBox(width: 8),
             IconButton.filledTonal(
               key: const ValueKey('add-stock-scan'),
-              tooltip: 'امسح باركود',
+              tooltip: t.kitScanBarcode,
               onPressed: c.directory == null ? null : () => _scan(context),
               icon: const Icon(Icons.qr_code_scanner_rounded),
             ),
@@ -344,9 +345,9 @@ class _AddStockScreenState extends State<AddStockScreen> {
         if (c.directory == null)
           const LoadingBlock()
         else if (items.isEmpty)
-          const Padding(
-            padding: EdgeInsets.all(24),
-            child: Text('المكوّن غير موجود في القائمة. جرّب اسمًا آخر.'),
+          Padding(
+            padding: const EdgeInsets.all(24),
+            child: Text(t.kitIngredientNotFound),
           ),
         for (final e in items)
           Padding(
@@ -389,7 +390,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
                       ),
                       IconButton.filledTonal(
                         key: ValueKey('add-stock-${e.id}'),
-                        tooltip: 'إضافة ${e.name}',
+                        tooltip: t.kitAddItem(e.name),
                         onPressed: () => c.addIngredient(
                           e.id,
                           SofraController.quickStep(e.defaultUnit),
@@ -435,12 +436,9 @@ class _AddStockScreenState extends State<AddStockScreen> {
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
-      builder: (_) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: _AddAmountSheet(entry: e, controller: c),
-      ),
+      builder: (_) => _AddAmountSheet(entry: e, controller: c),
     );
-    if (added == true) nav.notify('أُضيف ${e.name} إلى مطبخك');
+    if (added == true) nav.notify(L10n.current.kitAddedToKitchen(e.name));
   }
 
   String? _have(List<InventoryLot> stock, String id) {
@@ -453,7 +451,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
     if (totals.isEmpty) return null;
     final c = SofraScope.controllerOf(context);
     final parts = totals.entries.map((t) => c.amountText(id, t.value, t.key));
-    return 'عندك ${parts.join(' + ')}';
+    return context.l10n.kitYouHave(parts.join(' + '));
   }
 }
 
@@ -496,7 +494,7 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
   }
 
   static double? _number(String text) {
-    final q = double.tryParse(text.trim().replaceAll('٫', '.'));
+    final q = double.tryParse(text.trim().replaceAll('٫', '.')); // i18n-data
     return q == null || !q.isFinite || q <= 0 ? null : q;
   }
 
@@ -523,9 +521,10 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
     final q = _number(amount.text);
     final w = weight.text.trim().isEmpty ? null : _number(weight.text);
     setState(() {
-      error = q == null ? 'اكتب كمية أكبر من صفر' : null;
+      final t = context.l10n;
+      error = q == null ? t.kitEnterAmount : null;
       weightError = _asksWeight && weight.text.trim().isNotEmpty && w == null
-          ? 'اكتب وزنًا أكبر من صفر أو اتركها فارغة'
+          ? t.kitEnterWeight
           : null;
     });
     if (error != null || weightError != null) return;
@@ -544,6 +543,7 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
   Widget build(BuildContext context) {
     final c = widget.controller;
     final id = widget.entry.id;
+    final t = context.l10n;
     return Padding(
       padding: EdgeInsets.fromLTRB(
         20,
@@ -569,13 +569,16 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
                 decimal: true,
               ),
               decoration: InputDecoration(
-                labelText: 'الكمية',
+                labelText: t.kitAmount,
                 errorText: error,
               ),
               onSubmitted: (_) => _save(),
             ),
             const SizedBox(height: 14),
-            const Text('الوحدة', style: TextStyle(fontWeight: FontWeight.w700)),
+            Text(
+              t.kitUnit,
+              style: const TextStyle(fontWeight: FontWeight.w700),
+            ),
             const SizedBox(height: 6),
             Wrap(
               spacing: 8,
@@ -602,17 +605,20 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
                   decimal: true,
                 ),
                 decoration: InputDecoration(
-                  labelText:
-                      'كام ${_measure == 'g' ? 'جرام' : 'مل'} في الـ${c.unitName(id, unit)}؟ (اختياري)',
-                  helperText:
-                      'من ميزانك أو المكتوب على العبوة. يفيد في الوصفات.',
-                  suffixText: _measure == 'g' ? 'جم' : 'مل',
+                  labelText: _measure == 'g'
+                      ? t.kitPieceGrams(c.unitName(id, unit))
+                      : t.kitPieceMl(c.unitName(id, unit)),
+                  helperText: t.kitPieceHelper,
+                  suffixText: _measure == 'g' ? t.kitGramsShort : t.kitMlShort,
                   errorText: weightError,
                 ),
               ),
             ],
             const SizedBox(height: 14),
-            const Text('مكانه', style: TextStyle(fontWeight: FontWeight.w700)),
+            Text(
+              t.kitPlace,
+              style: const TextStyle(fontWeight: FontWeight.w700),
+            ),
             const SizedBox(height: 6),
             Wrap(
               spacing: 8,
@@ -629,7 +635,7 @@ class _AddAmountSheetState extends State<_AddAmountSheet> {
             const SizedBox(height: 20),
             DepthButton(
               key: const ValueKey('add-stock-save'),
-              label: 'أضفه إلى مطبخي',
+              label: t.kitAddToKitchen,
               onPressed: _save,
             ),
           ],

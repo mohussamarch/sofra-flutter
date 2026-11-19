@@ -1,3 +1,4 @@
+import '../l10n/l10n.dart';
 import 'sofra_controller.dart';
 
 class RecipeStockPreview {
@@ -50,15 +51,16 @@ class RecipeStockPreview {
       ? 1
       : 2;
   String get label {
-    if (!yieldKnown) return 'مكونات عندك؛ حدّد الحصص للتحقق من الكميات';
-    if (ready) return 'جاهزة بالموجود';
-    if (requiredLines == 0) return 'لا توجد مقادير كافية للحكم';
+    final t = L10n.current;
+    if (!yieldKnown) return t.kitPreviewNoYield;
+    if (ready) return t.kitPreviewReady;
+    if (requiredLines == 0) return t.kitPreviewNotEnough;
     if (unknown > 0) {
       return missing > 0
-          ? 'ناقص $missing · $unknown مقادير غير محسومة'
-          : '$unknown مقادير غير محسومة';
+          ? t.kitPreviewMissingUnknown(missing, unknown)
+          : t.kitPreviewUnknown(unknown);
     }
-    return 'ناقص $missing من المكونات';
+    return t.kitPreviewMissing(missing);
   }
 }
 

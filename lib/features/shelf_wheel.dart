@@ -7,9 +7,9 @@ import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
 import '../domain/recipe_catalog.dart' show recipeNumber;
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/ingredient_art.dart';
-import 'common.dart';
 import 'kitchen_screen.dart';
 
 /// One thing floating on a shelf: its art, name and amount underneath.
@@ -46,28 +46,35 @@ List<ShelfItem> zoneShelfItems(BuildContext context, StorageZone zone) {
         ),
         label: c.ingredientName(lot.ingredientId),
         amount: lot.quantity == null
-            ? 'كمية غير محددة'
+            ? context.l10n.kitQuantityUnknown
             : c.amountText(lot.ingredientId, lot.quantity!, lot.unit),
         onTap: () => editStockQuantity(context, lot),
-        group: c.category(lot.ingredientId) ?? 'أخرى',
+        group: c.category(lot.ingredientId) ?? 'أخرى', // i18n-data
       ),
     if (zone == StorageZone.fridge) ...leftoverShelfItems(context),
   ];
 }
 
-List<ShelfItem> leftoverShelfItems(BuildContext context) => [
-  for (final (i, dish) in SofraScope.controllerOf(context).leftovers.indexed)
-    ShelfItem(
-      id: 'leftover-${dish.id}',
-      art: CoveredDish(variant: i % 3),
-      label: dish.name,
-      amount: dish.dueOn(DateTime.now())
-          ? '${recipeNumber(dish.servings)} حصة · حان موعدها'
-          : '${recipeNumber(dish.servings)} حصة',
-      onTap: () => _warmUp(context, dish),
-      group: 'بواقي',
-    ),
-];
+List<ShelfItem> leftoverShelfItems(BuildContext context) {
+  final t = context.l10n;
+  return [
+    for (final (i, dish) in SofraScope.controllerOf(context).leftovers.indexed)
+      ShelfItem(
+        id: 'leftover-${dish.id}',
+        art: CoveredDish(variant: i % 3),
+        label: dish.name,
+        amount: dish.dueOn(DateTime.now())
+            ? '${_servings(t, dish.servings)} · ${t.kitLeftoverDue}'
+            : _servings(t, dish.servings),
+        onTap: () => _warmUp(context, dish),
+        group: 'بواقي', // i18n-data
+      ),
+  ];
+}
+
+String _servings(AppLocalizations t, double servings) => servings == 1
+    ? t.kitServing(recipeNumber(servings))
+    : t.kitServings(recipeNumber(servings));
 
 /// How much of a leftover dish was warmed up and eaten.
 Future<void> _warmUp(BuildContext context, LeftoverDish dish) async {
@@ -75,54 +82,51 @@ Future<void> _warmUp(BuildContext context, LeftoverDish dish) async {
   var eat = dish.servings < 1 ? dish.servings : 1.0;
   final ok = await showDialog<bool>(
     context: context,
-    builder: (ctx) => Directionality(
-      textDirection: TextDirection.rtl,
-      child: StatefulBuilder(
-        builder: (ctx, set) {
-          Widget step(String key, IconData icon, double by) => IconButton(
-            key: ValueKey(key),
-            icon: Icon(icon),
-            onPressed: () =>
-                set(() => eat = (eat + by).clamp(.5, dish.servings)),
-          );
-          return AlertDialog(
-            title: Text(dish.name),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text('كم حصة سخّنت؟'),
-                const SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    step('eat-less', Icons.remove_rounded, -.5),
-                    Text(
-                      '${recipeNumber(eat)} من ${recipeNumber(dish.servings)}',
-                      key: const ValueKey('eat-servings'),
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
-                      ),
+    builder: (ctx) => StatefulBuilder(
+      builder: (ctx, set) {
+        final t = ctx.l10n;
+        Widget step(String key, IconData icon, double by) => IconButton(
+          key: ValueKey(key),
+          icon: Icon(icon),
+          onPressed: () => set(() => eat = (eat + by).clamp(.5, dish.servings)),
+        );
+        return AlertDialog(
+          title: Text(dish.name),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(t.kitHowManyWarmed),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  step('eat-less', Icons.remove_rounded, -.5),
+                  Text(
+                    t.kitEatOf(recipeNumber(eat), recipeNumber(dish.servings)),
+                    key: const ValueKey('eat-servings'),
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
                     ),
-                    step('eat-more', Icons.add_rounded, .5),
-                  ],
-                ),
-              ],
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(ctx, false),
-                child: const Text('ليس بعد'),
-              ),
-              FilledButton(
-                key: const ValueKey('eat-leftover'),
-                onPressed: () => Navigator.pop(ctx, true),
-                child: const Text('سخّنت وأكلت'),
+                  ),
+                  step('eat-more', Icons.add_rounded, .5),
+                ],
               ),
             ],
-          );
-        },
-      ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: Text(t.kitNotYet),
+            ),
+            FilledButton(
+              key: const ValueKey('eat-leftover'),
+              onPressed: () => Navigator.pop(ctx, true),
+              child: Text(t.kitWarmedAndAte),
+            ),
+          ],
+        );
+      },
     ),
   );
   if (ok == true) await c.eatLeftover(dish.id, eat);
@@ -145,7 +149,7 @@ Future<void> showShelves(
   BuildContext context, {
   required String title,
   required List<ShelfItem> Function(BuildContext) items,
-  String empty = 'فارغ حتى الآن.',
+  String? empty,
   VoidCallback? onAdd,
   VoidCallback? onAll,
   Color? barrier,
@@ -224,12 +228,15 @@ class ShelfWheel extends StatefulWidget {
     required this.title,
     required this.items,
     required this.onClose,
-    this.empty = 'فارغ حتى الآن.',
+    this.empty,
     this.onAdd,
     this.onAll,
     this.width = 1,
   });
-  final String title, empty;
+  final String title;
+
+  /// What to say when there is nothing; defaults to "empty for now".
+  final String? empty;
 
   /// Share of the screen the shelves span (inside a fridge, its walls).
   final double width;
@@ -288,6 +295,7 @@ class _ShelfWheelState extends State<ShelfWheel>
       for (final item in widget.items)
         if (item.group != null) item.group!,
     }.toList();
+    final t = context.l10n;
     Widget chip(String key, String label, String? value) => Padding(
       padding: const EdgeInsetsDirectional.only(end: 6),
       child: SofraChip(
@@ -308,10 +316,10 @@ class _ShelfWheelState extends State<ShelfWheel>
               child: TextField(
                 key: const ValueKey('shelves-query'),
                 autofocus: true,
-                decoration: const InputDecoration(
-                  hintText: 'ابحث عن شيء',
+                decoration: InputDecoration(
+                  hintText: t.kitSearchSomething,
                   border: InputBorder.none,
-                  icon: Icon(Icons.search_rounded),
+                  icon: const Icon(Icons.search_rounded),
                 ),
                 onChanged: (v) => _filter(() => query = v),
               ),
@@ -328,12 +336,13 @@ class _ShelfWheelState extends State<ShelfWheel>
                     child: SofraChip(
                       key: const ValueKey('shelves-order'),
                       avatar: const Icon(Icons.swap_vert_rounded, size: 18),
-                      label: Text(byKind ? 'حسب النوع' : 'آخر ما وُضع'),
+                      label: Text(byKind ? t.kitByKind : t.kitLastAdded),
                       onPressed: () => _filter(() => byKind = !byKind),
                     ),
                   ),
-                  chip('shelves-group-all', 'الكل', null),
-                  for (final g in groups) chip('shelves-group-$g', g, g),
+                  chip('shelves-group-all', t.kitAll, null),
+                  for (final g in groups)
+                    chip('shelves-group-$g', L10n.term(g), g),
                 ],
               ),
             ),
@@ -344,7 +353,8 @@ class _ShelfWheelState extends State<ShelfWheel>
 
   /// The wheel's viewport doesn't hit-test its children, so taps are placed
   /// here: the centred shelf opens the item under the finger (three columns,
-  /// first on the right); a shelf above or below turns to the centre first.
+  /// first at the reading start); a shelf above or below turns to the centre
+  /// first.
   void _tap(TapUpDetails d, Size size, List<List<ShelfItem>> shelves) {
     final current = wheel.selectedItem.clamp(0, shelves.length - 1);
     final dy = d.localPosition.dy - size.height / 2;
@@ -357,7 +367,11 @@ class _ShelfWheelState extends State<ShelfWheel>
       return;
     }
     final third = (size.width - 40) / 3;
-    final fromStart = size.width - 20 - d.localPosition.dx;
+    // The shelf row lays its items out in reading order.
+    final rtl = Directionality.of(context) == TextDirection.rtl;
+    final fromStart = rtl
+        ? size.width - 20 - d.localPosition.dx
+        : d.localPosition.dx - 20;
     final column = (fromStart / third).floor();
     final shelf = shelves[current];
     if (column >= 0 && column < shelf.length) shelf[column].onTap?.call();
@@ -389,131 +403,120 @@ class _ShelfWheelState extends State<ShelfWheel>
         items.sublist(i, math.min(i + 3, items.length)),
     ];
     final media = MediaQuery.of(context);
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Material(
-        type: MaterialType.transparency,
-        child: Padding(
-          padding: EdgeInsets.only(
-            top: media.padding.top + 8,
-            bottom: media.padding.bottom + 16,
-          ),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: LiquidGlass(
-                  radius: 24,
-                  padding: const EdgeInsets.fromLTRB(8, 6, 16, 6),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              widget.title,
-                              style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                              ),
+    final t = context.l10n;
+    return Material(
+      type: MaterialType.transparency,
+      child: Padding(
+        padding: EdgeInsets.only(
+          top: media.padding.top + 8,
+          bottom: media.padding.bottom + 16,
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: LiquidGlass(
+                radius: 24,
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 6, 8, 6),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.title,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w800,
                             ),
-                            Text(
-                              countText(
-                                widget.items.length,
-                                'شيء',
-                                'شيئان',
-                                'أشياء',
-                                empty: 'فارغ',
-                              ),
-                              style: TextStyle(
-                                color: Sofra.muted,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      if (widget.items.length > 3)
-                        IconButton(
-                          key: const ValueKey('shelves-search'),
-                          tooltip: 'بحث',
-                          onPressed: () => _filter(() {
-                            searching = !searching;
-                            if (!searching) query = '';
-                          }),
-                          icon: Icon(
-                            searching
-                                ? Icons.search_off_rounded
-                                : Icons.search_rounded,
                           ),
-                        ),
-                      if (widget.onAdd != null)
-                        IconButton(
-                          key: const ValueKey('shelves-add'),
-                          tooltip: 'إضافة',
-                          onPressed: widget.onAdd,
-                          icon: const Icon(Icons.add_rounded),
-                        ),
-                      if (widget.onAll != null)
-                        IconButton(
-                          key: const ValueKey('shelves-all'),
-                          tooltip: 'كل المخزون',
-                          onPressed: widget.onAll,
-                          icon: const Icon(Icons.inventory_2_outlined),
-                        ),
-                      IconButton(
-                        key: const ValueKey('shelves-close'),
-                        tooltip: 'إغلاق',
-                        onPressed: widget.onClose,
-                        icon: const Icon(Icons.close_rounded),
+                          Text(
+                            t.kitItemCount(widget.items.length),
+                            style: TextStyle(color: Sofra.muted, fontSize: 12),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                    if (widget.items.length > 3)
+                      IconButton(
+                        key: const ValueKey('shelves-search'),
+                        tooltip: t.kitSearch,
+                        onPressed: () => _filter(() {
+                          searching = !searching;
+                          if (!searching) query = '';
+                        }),
+                        icon: Icon(
+                          searching
+                              ? Icons.search_off_rounded
+                              : Icons.search_rounded,
+                        ),
+                      ),
+                    if (widget.onAdd != null)
+                      IconButton(
+                        key: const ValueKey('shelves-add'),
+                        tooltip: t.kitAdd,
+                        onPressed: widget.onAdd,
+                        icon: const Icon(Icons.add_rounded),
+                      ),
+                    if (widget.onAll != null)
+                      IconButton(
+                        key: const ValueKey('shelves-all'),
+                        tooltip: t.kitAllStock,
+                        onPressed: widget.onAll,
+                        icon: const Icon(Icons.inventory_2_outlined),
+                      ),
+                    IconButton(
+                      key: const ValueKey('shelves-close'),
+                      tooltip: t.kitClose,
+                      onPressed: widget.onClose,
+                      icon: const Icon(Icons.close_rounded),
+                    ),
+                  ],
                 ),
               ),
-              if (widget.items.length > 3) _filters(),
-              Expanded(
-                child: shelves.isEmpty
-                    ? Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(32),
-                          child: LiquidGlass(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              filtered
-                                  ? 'لا يوجد شيء بهذا الاسم هنا.'
-                                  : widget.empty,
-                              key: const ValueKey('shelves-empty'),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                      )
-                    : FractionallySizedBox(
-                        widthFactor: widget.width,
-                        child: LayoutBuilder(
-                          builder: (context, box) => GestureDetector(
-                            onTapUp: (d) => _tap(d, box.biggest, shelves),
-                            child: ListWheelScrollView(
-                              key: const ValueKey('shelf-wheel'),
-                              controller: wheel,
-                              itemExtent: _extent,
-                              diameterRatio: 1.6,
-                              perspective: .003,
-                              overAndUnderCenterOpacity: .35,
-                              physics: const FixedExtentScrollPhysics(),
-                              children: [
-                                for (final (i, shelf) in shelves.indexed)
-                                  _Shelf(items: shelf, hover: hover, row: i),
-                              ],
-                            ),
+            ),
+            if (widget.items.length > 3) _filters(),
+            Expanded(
+              child: shelves.isEmpty
+                  ? Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(32),
+                        child: LiquidGlass(
+                          padding: const EdgeInsets.all(20),
+                          child: Text(
+                            filtered
+                                ? t.kitNothingByName
+                                : widget.empty ?? t.kitEmptySoFar,
+                            key: const ValueKey('shelves-empty'),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
-              ),
-            ],
-          ),
+                    )
+                  : FractionallySizedBox(
+                      widthFactor: widget.width,
+                      child: LayoutBuilder(
+                        builder: (context, box) => GestureDetector(
+                          onTapUp: (d) => _tap(d, box.biggest, shelves),
+                          child: ListWheelScrollView(
+                            key: const ValueKey('shelf-wheel'),
+                            controller: wheel,
+                            itemExtent: _extent,
+                            diameterRatio: 1.6,
+                            perspective: .003,
+                            overAndUnderCenterOpacity: .35,
+                            physics: const FixedExtentScrollPhysics(),
+                            children: [
+                              for (final (i, shelf) in shelves.indexed)
+                                _Shelf(items: shelf, hover: hover, row: i),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+            ),
+          ],
         ),
       ),
     );
@@ -570,7 +573,7 @@ class _Floating extends StatelessWidget {
   Widget build(BuildContext context) => Semantics(
     button: item.onTap != null,
     onTap: item.onTap,
-    label: '${item.label}، ${item.amount}',
+    label: context.l10n.kitItemSemantics(item.label, item.amount),
     child: KeyedSubtree(
       key: ValueKey('shelf-item-${item.id}'),
       child: Column(

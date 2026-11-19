@@ -5,6 +5,7 @@ import 'package:share_plus/share_plus.dart';
 import '../app/scope.dart';
 import '../domain/market_profile.dart';
 import '../domain/purchase_forecast.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import 'common.dart';
 
@@ -17,10 +18,7 @@ Future<void> openShopping(BuildContext context) {
     builder: (_) => SofraScope(
       controller: scope.notifier!,
       nav: scope.nav,
-      child: const Directionality(
-        textDirection: TextDirection.rtl,
-        child: ShoppingSheet(),
-      ),
+      child: const ShoppingSheet(),
     ),
   );
 }
@@ -55,7 +53,10 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
-    final money = MarketProfile(c.kitchen.market.country).currencyLabel;
+    final t = context.l10n;
+    final money = L10n.term(
+      MarketProfile(c.kitchen.market.country).currencyLabel,
+    );
     return SafeArea(
       child: ConstrainedBox(
         constraints: BoxConstraints(
@@ -65,9 +66,9 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
           future: list,
           builder: (context, snap) {
             if (snap.hasError) {
-              return const Padding(
-                padding: EdgeInsets.all(20),
-                child: ErrorBlock('تعذّر تجهيز القائمة. حاول مرة أخرى.'),
+              return Padding(
+                padding: const EdgeInsets.all(20),
+                child: ErrorBlock(t.kitShoppingError),
               );
             }
             final f = snap.data;
@@ -78,13 +79,13 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 12, 8, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20, 12, 8, 0),
                   child: Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: Text(
-                          'قائمة الشراء للأسبوع',
-                          style: TextStyle(
+                          t.kitShoppingTitle,
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w800,
                           ),
@@ -93,7 +94,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                       if (items.isNotEmpty)
                         IconButton(
                           key: const ValueKey('shopping-share'),
-                          tooltip: 'أرسلها (واتساب وغيره)',
+                          tooltip: t.kitShareList,
                           onPressed: () => SharePlus.instance.share(
                             ShareParams(text: c.shoppingText(f)),
                           ),
@@ -106,10 +107,18 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     items.isEmpty
-                        ? 'لا ينقصك شيء للأكلات المخططة.'
+                        ? t.kitNothingMissing
                         : f.purchaseTotal != null
-                        ? 'حوالي ${formatAmount(f.purchaseTotal!.roundToDouble())} $money بأسعارك.'
-                        : 'المعروف سعره: ${formatAmount(f.knownPurchaseSubtotal.roundToDouble())} $money، وبعض الأشياء دون سعر.',
+                        ? t.kitAboutTotal(
+                            formatAmount(f.purchaseTotal!.roundToDouble()),
+                            money,
+                          )
+                        : t.kitKnownSubtotal(
+                            formatAmount(
+                              f.knownPurchaseSubtotal.roundToDouble(),
+                            ),
+                            money,
+                          ),
                     key: const ValueKey('shopping-total'),
                     style: TextStyle(color: Sofra.muted),
                   ),
@@ -150,7 +159,7 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                                       ),
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    hintText: 'كم دفعت؟ (اختياري)',
+                                    hintText: t.kitPaidHint,
                                     suffixText: money,
                                   ),
                                 ),
@@ -166,7 +175,9 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
                           child: Text(
-                            'يوجد ${f.unresolvedRequirements.length} سطر دون كمية (مثل «حسب الرغبة») خارج القائمة.',
+                            t.kitUnresolvedLines(
+                              f.unresolvedRequirements.length,
+                            ),
                             style: TextStyle(color: Sofra.muted, fontSize: 12),
                           ),
                         ),
@@ -174,7 +185,11 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
                           child: Text(
-                            'وحدة المخزون لـ ${f.unresolvedStock.map(c.ingredientName).join('، ')} لا تتحول إلى وحدة الوصفة؛ راجعها في المخزون.',
+                            t.kitUnconvertibleStock(
+                              f.unresolvedStock
+                                  .map(c.ingredientName)
+                                  .join(t.kitListSeparator),
+                            ),
                             style: TextStyle(color: Sofra.muted, fontSize: 12),
                           ),
                         ),
@@ -187,8 +202,8 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                     child: DepthButton(
                       key: const ValueKey('shopping-bought'),
                       label: bought.isEmpty
-                          ? 'علّم ما اشتريته'
-                          : 'ضع ما اشتريته في المطبخ',
+                          ? t.kitMarkBought
+                          : t.kitPutBoughtAway,
                       onPressed: bought.isEmpty
                           ? null
                           : () async {
