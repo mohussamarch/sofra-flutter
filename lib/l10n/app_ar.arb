@@ -36,5 +36,1590 @@
   "lookLanguageArabicShort": "ع",
   "lookLanguageEnglishShort": "EN",
   "uiIncrease": "زيادة العدد",
-  "uiDecrease": "تقليل العدد"
+  "uiDecrease": "تقليل العدد",
+  "commTitle": "مجتمع سفرة",
+  "commTagline": "كلنا على سفرة واحدة",
+  "commKitchen": "مطبخ البيت",
+  "commChallenge": "تحدي الأسبوع",
+  "commPreviewNote": "معاينة على الجهاز: ما تنشره هنا لا يصل لأحد، ويُحذف عند الإغلاق.",
+  "commPartHome": "الرئيسية",
+  "commPartMine": "وصفاتي",
+  "commPartPrices": "أسعار منطقتي",
+  "commShareOwnRecipe": "شارك وصفة من عندك",
+  "commRecipesLoadError": "تعذّر جلب الوصفات. حاول مرة أخرى.",
+  "commMineEmptyWrite": "اكتب وصفة من «وصفة من عندي»، ثم شاركها هنا.",
+  "commMineEmpty": "لم تشارك وصفة بعد.",
+  "commNeedsAccount": "هذا الجزء يحتاج إلى حساب. هذه النسخة محفوظة على الجهاز فقط.",
+  "commConnectionProblem": "حدثت مشكلة في الاتصال. حاول مرة أخرى.",
+  "commNoInitial": "؟",
+  "@commNoInitial": {
+    "description": "Avatar letter when a name is empty"
+  },
+  "commYourStory": "قصتك",
+  "commChallengeNote": "اطبخ وشارك",
+  "commKitchenNote": "خزين واحد لأهل البيت",
+  "commYoutubeChefs": "شيفات على يوتيوب",
+  "commFromSofraHomes": "من بيوت سفرة",
+  "commShareRecipe": "شارك وصفة",
+  "commFeedEmpty": "لم يشارك أحد وصفة بعد. ابدأ أنت من «وصفة من عندي».",
+  "commOpenChannel": "افتح القناة على يوتيوب",
+  "commShareFromYours": "شارك وصفة من وصفاتك",
+  "commSharedNotice": "شُوركت {name}",
+  "@commSharedNotice": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "commShareFailed": "تعذّرت المشاركة. حاول مرة أخرى.",
+  "commFeedCounts": "{ingredients} مكون · {steps} خطوات",
+  "@commFeedCounts": {
+    "placeholders": {
+      "ingredients": {
+        "type": "int"
+      },
+      "steps": {
+        "type": "int"
+      }
+    }
+  },
+  "commServings": "{count} أفراد",
+  "@commServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "commStoryPrompt": "ماذا طبخت اليوم؟",
+  "commStoryHint": "اكتب قصتك",
+  "commStoryDishHint": "اسم الأكلة (اختياري)",
+  "commStoryPost": "انشر لمدة يوم",
+  "commStoryHoursAgo": "من {hours} ساعة",
+  "@commStoryHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "commStoryNow": "الآن",
+  "commKitchenLoadError": "تعذّر فتح بيانات المطبخ. حاول مرة أخرى.",
+  "commKitchenIntro": "اجمع البيت كله على مطبخ واحد: المخزون نفسه، والخطة نفسها، وقائمة الشراء نفسها. ما في مطبخك الآن هو ما ستتم مشاركته.",
+  "commKitchenCreate": "أنشئ مطبخًا مشتركًا",
+  "commHaveInvite": "عندك كود دعوة؟",
+  "commCodeExample": "مثلاً: K7PM2QXA",
+  "commKitchenJoin": "ادخل المطبخ",
+  "commKitchenJoinNote": "عند دخولك مطبخًا مشتركًا، يبقى مطبخك الشخصي محفوظًا وتعود إليه عند الخروج.",
+  "commSharedKitchen": "المطبخ المشترك",
+  "commKitchenOwner": "صاحب المطبخ",
+  "commInviteSend": "أرسل هذا الرمز لأهل البيت (صالح لمدة أسبوع):",
+  "commInviteCreate": "أنشئ رمز دعوة",
+  "commBackToMyKitchen": "العودة إلى مطبخي الشخصي",
+  "commByAuthor": "من {name}",
+  "@commByAuthor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "commIngredients": "المكونات",
+  "commMethod": "الطريقة",
+  "commRatings": "التقييمات",
+  "commNoRatings": "لم يقيّمها أحد بعد.",
+  "commRatingAverage": "{average} من 5 ({count})",
+  "@commRatingAverage": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "commCommentHint": "تعليقك (اختياري)",
+  "commSaveRating": "احفظ تقييمي",
+  "commChallengeCookPlanned": "اطبخ {goal} وجبات من خطتك",
+  "@commChallengeCookPlanned": {
+    "placeholders": {
+      "goal": {
+        "type": "String"
+      }
+    }
+  },
+  "commChallengeCookPlannedDetail": "تُحسب كل وجبة مخططة طُبخت هذا الأسبوع.",
+  "commChallengeDifferent": "نوّع: {goal} أكلات مختلفة",
+  "@commChallengeDifferent": {
+    "placeholders": {
+      "goal": {
+        "type": "String"
+      }
+    }
+  },
+  "commChallengeDifferentDetail": "تُحسب كل وصفة مختلفة طُبخت هذا الأسبوع مرة واحدة.",
+  "commChallengeNew": "{goal, plural, =2{جرّب وصفتين أول مرة} other{جرّب {goal} وصفات أول مرة}}",
+  "@commChallengeNew": {
+    "placeholders": {
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "commChallengeNewDetail": "وصفة لم تُطبخ من قبل في مطبخك.",
+  "commChallengeProgress": "أنجزت {done} من {goal}",
+  "@commChallengeProgress": {
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "goal": {
+        "type": "String"
+      }
+    }
+  },
+  "commChallengeLog": "سجّل تقدمي في اللوحة",
+  "commChallengeHomes": "البيوت المشاركة",
+  "commBoardLoadError": "تعذّر جلب اللوحة. حاول مرة أخرى.",
+  "commBoardEmpty": "لم يسجّل أحد هذا الأسبوع بعد.",
+  "commLeaveTitle": "الخروج من المطبخ المشترك؟",
+  "commLeaveBody": "ستعود إلى مطبخك الشخصي ولن ترى تعديلات أهل البيت. للعودة تحتاج رمز دعوة جديدًا من صاحب المطبخ.",
+  "commCancel": "إلغاء",
+  "commLeave": "اخرج",
+  "detailOpenError": "تعذّر فتح الوصفة. ارجع وحاول مرة أخرى.",
+  "detailPreparing": "بنجهّز الطبخة…",
+  "detailCookNow": "أطبخ الآن",
+  "detailCookNowNote": "تُحفظ كوجبة لليوم لاستكمالها. لا خصم قبل التأكيد.",
+  "detailAddToPlan": "أضيف للخطة",
+  "detailPhotoCredit": "الصورة: {credit} · {licence}",
+  "@detailPhotoCredit": {
+    "placeholders": {
+      "credit": {
+        "type": "String"
+      },
+      "licence": {
+        "type": "String"
+      }
+    }
+  },
+  "detailServingsQuestion": "نطبخ لكم شخصًا؟",
+  "detailServingsHint": "تُضبط الكميات تلقائيًا",
+  "detailLogAs": "أسجّل الطبخة كـ",
+  "detailAllergyMatch": "انتبه: {matches}. المطابقة بالاسم بس، راجع المكونات والعبوات بنفسك.",
+  "@detailAllergyMatch": {
+    "placeholders": {
+      "matches": {
+        "type": "String"
+      }
+    }
+  },
+  "detailAllergyMatchItem": "«{allergy}» في {lines}",
+  "@detailAllergyMatchItem": {
+    "placeholders": {
+      "allergy": {
+        "type": "String"
+      },
+      "lines": {
+        "type": "String"
+      }
+    }
+  },
+  "detailAllergyCheck": "راجع مكونات الوصفة والعبوات مع الحساسية المسجّلة: {allergies}.",
+  "@detailAllergyCheck": {
+    "placeholders": {
+      "allergies": {
+        "type": "String"
+      }
+    }
+  },
+  "detailListSeparator": "، ",
+  "@detailListSeparator": {
+    "description": "Joins items of a list, with its trailing space."
+  },
+  "detailGroupSeparator": "؛ ",
+  "@detailGroupSeparator": {
+    "description": "Joins groups of a list, with its trailing space."
+  },
+  "detailIngredientsScaled": "المكونات على قدركم",
+  "detailIngredientsSource": "المكونات كما في المصدر",
+  "detailSteps": "الخطوات",
+  "detailNoPricesNote": "لا تظهر الأسعار والقيم الغذائية هنا حتى تُراجع من مصادرها. الكميات من المصدر.",
+  "detailToTaste": "حسب الرغبة",
+  "detailYieldUnknown": "لم يذكر المصدر عدد من تكفيهم هذه الوصفة",
+  "detailYieldAsk": "لنضبط الكميات ونضعها على السفرة، أخبرنا كم فردًا تكفي الوصفة كلها تقريبًا. الوصفة الأصلية لن تتغير.",
+  "detailYieldServes": "تكفي {count} أفراد",
+  "@detailYieldServes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "detailPlanned": "الوجبة على السفرة، والمخزون لم يتغير",
+  "detailWaysToMake": "{count, plural, =1{طريقة واحدة لعملها} =2{طريقتان لعملها} few{{count} طرق لعملها} many{{count} طريقة لعملها} other{{count} طريقة لعملها}}",
+  "@detailWaysToMake": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "detailIngredients": "المكونات",
+  "detailWaysOpenError": "تعذّر فتح الطرق. ارجع وحاول مرة أخرى.",
+  "detailComparePickHint": "اختر بلدًا من الشريط لترى الكميات والخطوات.",
+  "detailDefineConversion": "حدد التحويل",
+  "detailConversionQuestion": "1 {from} من {name} = كم {to}؟",
+  "@detailConversionQuestion": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "detailConversionHint": "اكتب القياس من مطبخك. سيُحفظ لهذا المكوّن فقط.",
+  "detailEnterPositive": "اكتب رقمًا أكبر من صفر",
+  "detailCancel": "إلغاء",
+  "detailSave": "حفظ",
+  "detailConversionSaved": "حُفظ: 1 {from} {name} = {factor} {to}",
+  "@detailConversionSaved": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      },
+      "factor": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "detailInStock": "موجود عندك",
+  "detailMissing": "ناقص {amount} {unit}",
+  "@detailMissing": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "detailUnitMismatch": "الوحدة مختلفة عن المخزون",
+  "detailUnmeasured": "دون مقدار",
+  "detailOptional": "اختياري",
+  "detailPlanWhen": "متى نضعها على السفرة؟",
+  "detailToday": "اليوم",
+  "detailTomorrow": "غدًا",
+  "detailDayAfterTomorrow": "بعد غد",
+  "detailDone": "تم",
+  "detailCookOpenError": "تعذّر فتح الوصفة.",
+  "detailFinishCooking": "انتهى الطبخ · راجع الخصم",
+  "detailNoSteps": "لا توجد خطوات مكتوبة لهذه الوصفة في المصدر.",
+  "detailNextStep": "الخطوة التالية",
+  "detailStepOf": "{current} من {total}",
+  "@detailStepOf": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "detailAboutMinutes": "حوالي {minutes} دقيقة",
+  "@detailAboutMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "detailPreviousStep": "الخطوة السابقة",
+  "detailEnjoy": "بالهنا والشفا!",
+  "detailCookedNote": "طُبخت {name}، وخُصم ما أكدته من المخزون.",
+  "@detailCookedNote": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "detailShowKitchen": "اعرض ما تبقى في مطبخك",
+  "detailServings": "{amount} حصة",
+  "@detailServings": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "detailOneServing": "1 حصة",
+  "detailLeftoversSaved": "وضعنا {servings} في الثلاجة، وستجدها في الميكروويف عندما تريد تسخينها.",
+  "@detailLeftoversSaved": {
+    "placeholders": {
+      "servings": {
+        "type": "String",
+        "description": "Already worded, e.g. 2 servings."
+      }
+    }
+  },
+  "detailAnyLeftovers": "هل تبقّى أكل؟",
+  "detailLeftoversHint": "سجّله وسنضعه في الثلاجة لتسخّنه لاحقًا.",
+  "detailRemindAfter": "ذكّرني بها بعد",
+  "detailRemindNone": "دون",
+  "detailRemindDays": "{count, plural, =1{يوم} other{{count} أيام}}",
+  "@detailRemindDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "detailPutInFridge": "ضعه في الثلاجة",
+  "detailHaveOf": "عندك {have} من {total} {unit}",
+  "@detailHaveOf": {
+    "placeholders": {
+      "have": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "detailUsingStock": "{name} · سنستخدم {stock}",
+  "@detailUsingStock": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "stock": {
+        "type": "String"
+      }
+    }
+  },
+  "detailBoughtRest": "اشتريت الباقي",
+  "detailCookedLess": "طبخت بأقل",
+  "detailBeforeDeduct": "قبل الخصم من المخزون",
+  "detailWillDeduct": "سيُخصم",
+  "detailWillDeductNote": "موجود عندك بنفس الوحدة",
+  "detailPartial": "عندك جزء فقط",
+  "detailPartialNote": "هل اشتريت الباقي، أم طبخت بما عندك؟ في الحالتين يُخصم ما عندك.",
+  "detailNotDeducted": "لن يُخصم",
+  "detailNotDeductedNote": "ناقص أو مسجّل بوحدة مختلفة. ستبقى التكلفة غير معروفة.",
+  "detailUnmeasuredGroup": "دون مقدار في الوصفة",
+  "detailUnmeasuredNote": "مثل «حسب الرغبة»، لن يُخصم",
+  "detailConfirm": "تأكيد",
+  "detailNotYet": "ليس بعد",
+  "kitOpenKitchen3d": "مطبخي 3D",
+  "kitShopping": "المشتريات",
+  "kitLeftoversTitle": "بواقي الأكل",
+  "kitLeftoversEmpty": "لا توجد بواقي مسجلة.",
+  "kitLeftovers": "البواقي",
+  "kitAddIngredientTitle": "أضف مكوّنًا",
+  "kitAddIngredientDetail": "ابحث واختر",
+  "kitReceiptTitle": "فاتورة أو قائمة",
+  "kitReceiptDetail": "صورة أو كتابة",
+  "kitAll": "الكل",
+  "kitAllCount": "الكل {count}",
+  "@kitAllCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "kitGettingToKnow": "ما زلنا نتعرف على مطبخك",
+  "kitShelfEmpty": "هذا الرف فارغ",
+  "kitEmptyHint": "أضف بعض المكونات كبداية. لا نحتاج إلى جرد كامل للبدء.",
+  "kitTrySample": "جرّب بمكونات جاهزة",
+  "kitSampleAdded": "أُضيفت مكونات تجريبية إلى مطبخك",
+  "kitDeductNote": "تُخصم الكميات عند تأكيد انتهاء الطبخ، لا عند اختيار الوصفة.",
+  "kitQuantityUnknown": "كمية غير محددة",
+  "kitEditItem": "تعديل {name}",
+  "@kitEditItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "kitQuantityOf": "كمية {name}",
+  "@kitQuantityOf": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "kitQuantityInvalid": "اكتب عددًا صحيحًا يساوي 0 أو أكثر",
+  "kitQuantityLabel": "الكمية ({unit})",
+  "@kitQuantityLabel": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "kitQuantityHelper": "اكتب 0 إذا نفد",
+  "kitCancel": "إلغاء",
+  "kitSave": "حفظ",
+  "kitQuantityUpdated": "حُدّثت كمية {name}",
+  "@kitQuantityUpdated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "kitAddStockDone": "تم، اعرض مطبخي",
+  "kitWhatDoYouHave": "ماذا يوجد عندك؟",
+  "kitAddStockHint": "اضغط + لإضافة سريعة، أو اضغط على المكوّن لكتابة الكمية والوحدة.",
+  "kitSearchIngredient": "ابحث عن مكوّن",
+  "kitScanBarcode": "امسح باركود",
+  "kitIngredientNotFound": "المكوّن غير موجود في القائمة. جرّب اسمًا آخر.",
+  "kitAddItem": "إضافة {name}",
+  "@kitAddItem": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "kitAddedToKitchen": "أُضيف {name} إلى مطبخك",
+  "@kitAddedToKitchen": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "kitYouHave": "عندك {amounts}",
+  "@kitYouHave": {
+    "placeholders": {
+      "amounts": {
+        "type": "String"
+      }
+    }
+  },
+  "kitEnterAmount": "اكتب كمية أكبر من صفر",
+  "kitEnterWeight": "اكتب وزنًا أكبر من صفر أو اتركها فارغة",
+  "kitAmount": "الكمية",
+  "kitUnit": "الوحدة",
+  "kitPieceGrams": "كام جرام في الـ{unit}؟ (اختياري)",
+  "@kitPieceGrams": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "kitPieceMl": "كام مل في الـ{unit}؟ (اختياري)",
+  "@kitPieceMl": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "kitPieceHelper": "من ميزانك أو المكتوب على العبوة. يفيد في الوصفات.",
+  "kitGramsShort": "جم",
+  "kitMlShort": "مل",
+  "kitPlace": "مكانه",
+  "kitAddToKitchen": "أضفه إلى مطبخي",
+  "kitServing": "{count} حصة",
+  "@kitServing": {
+    "description": "Leftover servings when exactly one",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "kitServings": "{count} حصة",
+  "@kitServings": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "kitLeftoverDue": "حان موعدها",
+  "kitHowManyWarmed": "كم حصة سخّنت؟",
+  "kitEatOf": "{eaten} من {total}",
+  "@kitEatOf": {
+    "placeholders": {
+      "eaten": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "kitNotYet": "ليس بعد",
+  "kitWarmedAndAte": "سخّنت وأكلت",
+  "kitEmptySoFar": "فارغ حتى الآن.",
+  "kitSearchSomething": "ابحث عن شيء",
+  "kitByKind": "حسب النوع",
+  "kitLastAdded": "آخر ما وُضع",
+  "kitItemCount": "{count, plural, =0{فارغ} =1{شيء واحد} =2{شيئان} few{{count} أشياء} other{{count} شيء}}",
+  "@kitItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kitSearch": "بحث",
+  "kitAdd": "إضافة",
+  "kitAllStock": "كل المخزون",
+  "kitClose": "إغلاق",
+  "kitNothingByName": "لا يوجد شيء بهذا الاسم هنا.",
+  "kitItemSemantics": "{label}، {amount}",
+  "@kitItemSemantics": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "kitShoppingError": "تعذّر تجهيز القائمة. حاول مرة أخرى.",
+  "kitShoppingTitle": "قائمة الشراء للأسبوع",
+  "kitShareList": "أرسلها (واتساب وغيره)",
+  "kitNothingMissing": "لا ينقصك شيء للأكلات المخططة.",
+  "kitAboutTotal": "حوالي {amount} {currency} بأسعارك.",
+  "@kitAboutTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "currency": {
+        "type": "String"
+      }
+    }
+  },
+  "kitKnownSubtotal": "المعروف سعره: {amount} {currency}، وبعض الأشياء دون سعر.",
+  "@kitKnownSubtotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "currency": {
+        "type": "String"
+      }
+    }
+  },
+  "kitPaidHint": "كم دفعت؟ (اختياري)",
+  "kitUnresolvedLines": "يوجد {count} سطر دون كمية (مثل «حسب الرغبة») خارج القائمة.",
+  "@kitUnresolvedLines": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kitUnconvertibleStock": "وحدة المخزون لـ {names} لا تتحول إلى وحدة الوصفة؛ راجعها في المخزون.",
+  "@kitUnconvertibleStock": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "kitListSeparator": "، ",
+  "@kitListSeparator": {
+    "description": "Joins names in a list"
+  },
+  "kitMarkBought": "علّم ما اشتريته",
+  "kitPutBoughtAway": "ضع ما اشتريته في المطبخ",
+  "kitPreviewNoYield": "مكونات عندك؛ حدّد الحصص للتحقق من الكميات",
+  "kitPreviewReady": "جاهزة بالموجود",
+  "kitPreviewNotEnough": "لا توجد مقادير كافية للحكم",
+  "kitPreviewMissingUnknown": "ناقص {missing} · {unknown} مقادير غير محسومة",
+  "@kitPreviewMissingUnknown": {
+    "placeholders": {
+      "missing": {
+        "type": "int"
+      },
+      "unknown": {
+        "type": "int"
+      }
+    }
+  },
+  "kitPreviewUnknown": "{unknown} مقادير غير محسومة",
+  "@kitPreviewUnknown": {
+    "placeholders": {
+      "unknown": {
+        "type": "int"
+      }
+    }
+  },
+  "kitPreviewMissing": "ناقص {missing} من المكونات",
+  "@kitPreviewMissing": {
+    "placeholders": {
+      "missing": {
+        "type": "int"
+      }
+    }
+  },
+  "mineNewRecipe": "وصفة من عندي",
+  "mineIngredientsSteps": "{ingredients} مكونات · {steps} خطوات",
+  "@mineIngredientsSteps": {
+    "description": "Under a recipe's name: how many ingredients and steps.",
+    "placeholders": {
+      "ingredients": {
+        "type": "int"
+      },
+      "steps": {
+        "type": "int"
+      }
+    }
+  },
+  "mineTomorrow": "غدًا",
+  "minePutOnTable": "ضعها على السفرة",
+  "mineAddedToTable": "أُضيفت إلى السفرة.",
+  "mineSaveFailed": "لم تُحفظ الوصفة. حاول مرة أخرى.",
+  "mineSaved": "حُفظت الوصفة في وصفاتك.",
+  "mineCuisineNeeded": "اكتب مطبخًا محددًا للوصفة، مثل «مصري».",
+  "mineSaving": "جارٍ الحفظ…",
+  "mineSave": "احفظ الوصفة",
+  "mineDishName": "اسم الأكلة",
+  "mineShortDescription": "وصف قصير",
+  "mineCuisine": "المطبخ",
+  "minePrepMinutes": "التحضير (دقيقة)",
+  "mineCookMinutes": "الطبخ (دقيقة)",
+  "mineServesHowMany": "تكفي كم فردًا؟",
+  "mineIngredients": "المكونات",
+  "mineAddIngredient": "+ مكوّن",
+  "mineToTaste": "حسب الرغبة",
+  "mineWithoutAmount": "دون كمية",
+  "mineWithAmount": "بكمية",
+  "mineRemove": "احذف",
+  "mineSteps": "الخطوات",
+  "mineAddStep": "+ خطوة",
+  "mineStepHint": "ماذا ستفعل",
+  "mineMinutesHint": "دقيقة",
+  "mineNutritionUnknown": "لن تُحسب القيم الغذائية لهذه الوصفة حتى تُربط مكوناتها بمصدر.",
+  "mineSearchIngredient": "ابحث عن مكوّن",
+  "mineRecipeBookTitle": "كتاب الوصفات",
+  "mineWays": "{count, plural, =1{طريقة واحدة} =2{طريقتان} zero{{count} طرق} few{{count} طرق} other{{count} طريقة}}",
+  "@mineWays": {
+    "description": "How many ways (recipes) a dish has.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mineCountries": "{count, plural, =1{بلد واحد} =2{بلدان} zero{{count} بلاد} few{{count} بلاد} other{{count} بلدًا}}",
+  "@mineCountries": {
+    "description": "How many countries make a dish.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mineDishTimeRange": "{from}–{to} دقيقة",
+  "@mineDishTimeRange": {
+    "description": "Shortest and longest time of a dish's ways, in minutes.",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "onbCountry": "البلد",
+  "onbCountryEgypt": "مصر · جنيه مصري",
+  "onbCountrySaudi": "السعودية · ريال سعودي",
+  "onbEgypt": "مصر",
+  "onbSaudi": "السعودية",
+  "onbBack": "رجوع",
+  "onbSkip": "تخطي",
+  "onbStart": "ابدأ",
+  "onbOpenSofra": "افتح سفرتي",
+  "onbContinue": "متابعة",
+  "onbWelcomeTitle": "كل ما في مطبخك\nيصنع أكلة طيبة",
+  "onbNameTitle": "ما اسمك؟",
+  "onbNameHint": "مثلًا: مريم",
+  "onbPeopleTitle": "لكم شخصًا تطبخ؟",
+  "onbYourMeals": "وجباتك",
+  "onbCuisinesTitle": "ما المطابخ التي تحبها؟",
+  "onbCuisines": "المطابخ",
+  "onbQuickFirst": "السريعة أولًا",
+  "onbHealthTitle": "نراعي صحتك",
+  "onbHealthConditions": "حالتك الصحية",
+  "onbHealthNote": "تُحفظ في ملفك فقط، ولا تغني عن طبيبك.",
+  "onbAvoidFoods": "أطعمة تتجنبها",
+  "onbAvoidNote": "ننبهك إذا ظهرت في وصفة. راجع العبوات بنفسك.",
+  "onbHealthBloodPressure": "ضغط الدم",
+  "@onbHealthBloodPressure": {
+    "description": "Short label for the stored condition high blood pressure."
+  },
+  "onbHealthCholesterol": "الكوليسترول",
+  "@onbHealthCholesterol": {
+    "description": "Short label for the stored condition high cholesterol."
+  },
+  "onbHealthKidneys": "الكلى",
+  "@onbHealthKidneys": {
+    "description": "Short label for the stored condition kidney disease."
+  },
+  "onbHello": "أهلًا {name}!",
+  "@onbHello": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "onbReady": "سفرتك جاهزة",
+  "onbStatPeople": "أشخاص",
+  "onbStatMeals": "وجبات",
+  "onbStatCuisines": "مطابخ",
+  "onbStatCares": "للانتباه",
+  "onbStepOf": "الخطوة {step} من {total}",
+  "@onbStepOf": {
+    "placeholders": {
+      "step": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "onbMore": "المزيد",
+  "onbMoreSelected": "المزيد، {count} مختارة",
+  "@onbMoreSelected": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "onbAddCustom": "إضافة «{name}»",
+  "@onbAddCustom": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "onbSearchOrType": "ابحث أو اكتب اسمًا",
+  "onbSearch": "ابحث",
+  "onbDone": "تم",
+  "onbZoneFridge": "الثلاجة",
+  "onbZoneFreezer": "الفريزر",
+  "onbZonePantry": "الدولاب",
+  "onbCountOne": "{thing} واحدة",
+  "@onbCountOne": {
+    "description": "Count phrase for exactly one; thing is the singular noun the caller passes.",
+    "placeholders": {
+      "thing": {
+        "type": "String"
+      }
+    }
+  },
+  "onbMinutes": "{minutes} دقيقة",
+  "@onbMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "onbTimeUnknown": "الوقت غير محدد",
+  "planSaturday": "السبت",
+  "planSunday": "الأحد",
+  "planMonday": "الاثنين",
+  "planTuesday": "الثلاثاء",
+  "planWednesday": "الأربع",
+  "planThursday": "الخميس",
+  "planFriday": "الجمعة",
+  "planToday": "اليوم",
+  "planTomorrow": "غدًا",
+  "planMonthTitle": "خطة الشهر",
+  "planMonthCalcError": "تعذّر حساب هذه الخطة. راجع الأكلات وحاول مرة أخرى.",
+  "planConflictTitle": "توجد أيام عليها أكل",
+  "planConflictBody": "توجد {count} وجبة مخططة في الأيام نفسها. ماذا نفعل بها؟",
+  "@planConflictBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "planNotYet": "ليس بعد",
+  "planReplace": "استبدلها",
+  "planKeepExisting": "أبقِ الموجود",
+  "planMonthAdded": "أُضيفت الخطة إلى السفرة.",
+  "planMonthNotSaved": "لم تُحفظ الخطة. احسبها مرة أخرى.",
+  "planPutOnTable": "ضع الخطة على السفرة",
+  "planCalculating": "جارٍ الحساب…",
+  "planCalculateMonth": "احسب الشهر",
+  "planThisMonth": "هذا الشهر",
+  "planNextMonth": "الشهر القادم",
+  "planMonthBudget": "ميزانية الأكل للشهر",
+  "planMealsToPlan": "الوجبات التي سنخطط لها",
+  "planWeekMenu": "منيو الأسبوع",
+  "planFillEmptyDays": "أكمل الأيام الفارغة",
+  "planWeekMenuHint": "يتكرر هذا الأسبوع طوال الشهر. يمكنك وضع أكلتين في الخانة نفسها، ونختار الأوفر.",
+  "planOmitUnmeasured": "استبعد الأشياء التي ليس لها كمية من الحساب",
+  "planOmitUnmeasuredHint": "مثل «ملح حسب الرغبة». إذا أوقفتها، ستبقى التكلفة غير معروفة.",
+  "planPick": "+ اختر",
+  "planOrAlternative": "أو {name}",
+  "@planOrAlternative": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "planSearchMeal": "ابحث عن أكلة",
+  "planMonthFits": "يكلّفك هذا الشهر شراء نحو {cost}، ويتبقى من الميزانية {left}.",
+  "@planMonthFits": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      },
+      "left": {
+        "type": "String"
+      }
+    }
+  },
+  "planMonthOver": "أوفر اختيار يتجاوز الميزانية بـ {over}. جرّب أكلات أوفر أو أضف بديلًا في بعض الخانات.",
+  "@planMonthOver": {
+    "placeholders": {
+      "over": {
+        "type": "String"
+      }
+    }
+  },
+  "planMonthBestFits": "أوفر خطة وجدناها تكلّفك شراء نحو {cost}، ويتبقى من الميزانية {left}.",
+  "@planMonthBestFits": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      },
+      "left": {
+        "type": "String"
+      }
+    }
+  },
+  "planMonthUnknown": "التكلفة الكاملة غير معروفة بعد.",
+  "planRecordPrices": "سجّل هذه الأسعار",
+  "planRecordPricesHint": "بسعرك أنت، من آخر مرة اشتريت. لا نخمّن الأسعار.",
+  "planUnresolvedUnits": "بعض المكونات مسجّلة بوحدة لا تتحول إلى وحدة الوصفة. حدد التحويل من صفحة المخزون.",
+  "planTruncated": "جرّبنا {count} توليفة فقط من البدائل؛ قد توجد أوفر منها.",
+  "@planTruncated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "planUncounted": "غير محسوب: {items}.",
+  "@planUncounted": {
+    "placeholders": {
+      "items": {
+        "type": "String"
+      }
+    }
+  },
+  "planListSeparator": "، ",
+  "planSavePrice": "حفظ السعر",
+  "planAddHereEmpty": "أضف ما عندك هنا، وسنقترح ما تطبخه منه.",
+  "planLeftovers": "بواقي الأكل",
+  "planLeftoversEmpty": "لا توجد بواقٍ مسجّلة. عندما تطبخ ويتبقى شيء، ستجده هنا لتسخينه.",
+  "planMyStock": "مخزون مطبخي",
+  "planGoodMorning": "صباح الخير",
+  "planGoodDay": "نهارك سعيد",
+  "planGoodEvening": "مساء الخير",
+  "planKitchenStyle": "شكل المطبخ",
+  "planSettings": "الإعدادات",
+  "planWhen": "{slot} · {day}",
+  "@planWhen": {
+    "placeholders": {
+      "slot": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "planStock": "المخزون",
+  "planLeftoversDue": "بواقٍ حان موعدها: {count}",
+  "@planLeftoversDue": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "planWhatToCookToday": "ماذا نطبخ اليوم؟",
+  "planPickRecipeHint": "اختر وصفة، ونعرض لك الناقص من مطبخك قبل البدء.",
+  "planPickRecipe": "اختر وصفة",
+  "planNextOnTable": "التالي على السفرة · {when}",
+  "@planNextOnTable": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "planStartCooking": "ابدأ الطبخ",
+  "planTableEmpty": "السفرة فارغة",
+  "planTableEmptyHint": "افتح كتاب الوصفات واختر أكلة لتظهر هنا.",
+  "planRecipeBook": "كتاب الوصفات",
+  "planOnTable": "على سفرة {day}",
+  "@planOnTable": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "planShoppingList": "قائمة الشراء",
+  "planUpcomingMeals": "الأكلات القادمة",
+  "planAllPlans": "كل الخطط",
+  "planNoMealsPlanned": "لا توجد أكلات مخططة. اختر من كتاب الوصفات.",
+  "planWelcome": "أهلًا بيك في سفرة",
+  "planWelcomeName": "أهلًا يا {name}",
+  "@planWelcomeName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "planCookFromStockQuestion": "نطلع أكلة حلوة من الموجود؟",
+  "planWhatCanICook": "أطبخ إيه باللي عندي؟",
+  "planWhatCanICookHint": "اقتراحات من خزينك، مع توضيح الكميات والناقص. لا نخصم أي شيء قبل تأكيد الطبخ.",
+  "planDiscoverFromStock": "اكتشف من الموجود",
+  "planExploreAll": "أو استكشف كل الوصفات",
+  "planPantryCount": "الخزين · {count} مكونات",
+  "@planPantryCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "planArrangeMeals": "رتّب وجباتك",
+  "planLeftoversReminder": "عندك {count} بواقي عليها تذكير",
+  "@planLeftoversReminder": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "planLeftoversNone": "لا توجد بواقي مسجلة.",
+  "planSeeThem": "شوفها",
+  "planTodayMeals": "وجبات اليوم",
+  "planNoMealToday": "لسه مفيش وجبة مخططة لليوم. تقدر تختار وتطبخ مباشرة أو ترتّب الأيام الجاية.",
+  "planOpenPlan": "افتح الخطة",
+  "planMonthAndBudget": "خطة الشهر والميزانية",
+  "planShoppingItems": "قائمة المشتريات",
+  "planTableWorthIt": "سفرة تستحق اللمّة",
+  "planPickMealHint": "اختر أكلة، وسنعرض الناقص قبل البدء.",
+  "planPickDishForTable": "اختر طبخة للسفرة",
+  "planComingDays": "السفرة في الأيام القادمة",
+  "planNoDeductNote": "اختيار الوجبة لا يخصم من المخزون. يتم الخصم بعد تأكيد انتهاء الطبخ.",
+  "planMealLoadError": "تعذّر تحميل وصفة هذه الوجبة.",
+  "planSlotServings": "{slot} · {servings} أفراد",
+  "@planSlotServings": {
+    "placeholders": {
+      "slot": {
+        "type": "String"
+      },
+      "servings": {
+        "type": "int"
+      }
+    }
+  },
+  "planCooked": "طُبخت",
+  "planInStock": "{count} متوفر",
+  "@planInStock": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "planMissingCount": "ناقص {count}",
+  "@planMissingCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "planOtherUnit": "{count} بوحدة مختلفة",
+  "@planOtherUnit": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "planNoAmount": "{count} دون مقدار",
+  "@planNoAmount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "planBoughtMissing": "اشتريت الناقص · أضفه للمخزون",
+  "planMissingAdded": "أُضيف الناقص إلى المخزون بالكمية المطلوبة",
+  "planRemoveMeal": "احذف الوجبة من السفرة",
+  "planPerPortion": "للفرد: {kcal} سعر",
+  "@planPerPortion": {
+    "placeholders": {
+      "kcal": {
+        "type": "String"
+      }
+    }
+  },
+  "planNutrient": " · {label} {grams} جم",
+  "@planNutrient": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "grams": {
+        "type": "String"
+      }
+    }
+  },
+  "planProtein": "بروتين",
+  "planCarbs": "كربوهيدرات",
+  "planFat": "دهون",
+  "priceGroupVegetables": "خضار",
+  "priceGroupFruit": "فاكهة",
+  "priceGroupProtein": "لحوم ودواجن وأسماك",
+  "priceGroupDairy": "ألبان وبيض",
+  "priceGroupGrains": "أرز وحبوب",
+  "priceGroupLegumes": "بقوليات",
+  "priceGroupBread": "خبز ومخبوزات",
+  "priceGroupOils": "زيوت وسمن",
+  "priceGroupSpices": "توابل وبهارات",
+  "priceGroupSauces": "صوصات ومعلبات",
+  "priceGroupNuts": "مكسرات",
+  "priceGroupDrinks": "مشروبات",
+  "priceGroupOther": "أخرى",
+  "priceLocationOff": "خدمة الموقع مغلقة. اختر منطقتك من الخريطة أو البحث.",
+  "priceLocationDenied": "لم يُسمح بالموقع. اختر منطقتك من الخريطة أو البحث.",
+  "priceNoAreaNearby": "لا نعرف منطقة قريبة من موقعك. اختر من الخريطة.",
+  "priceLocateFailed": "تعذّر تحديد موقعك. اختر منطقتك من الخريطة أو البحث.",
+  "priceAreaNowYours": "منطقتك الآن: {area}",
+  "@priceAreaNowYours": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "priceSearchArea": "ابحث عن منطقة أو مدينة",
+  "priceClear": "مسح",
+  "priceNoResults": "لا نتائج",
+  "priceChooseArea": "اختر منطقتك",
+  "priceMakeMyArea": "اجعلها منطقتي",
+  "priceAreaInfo": "سعر المنطقة هو ما دفعه الناس فيها في آخر 60 يومًا، ويظهر فقط عندما يشاركه بيتان أو أكثر.",
+  "priceAreaFetchFailed": "تعذّر جلب أسعار المنطقة.",
+  "priceRetry": "إعادة المحاولة",
+  "priceNoAreaHere": "لا نعرف منطقة هنا. جرّب البحث.",
+  "priceMyLocation": "موقعي",
+  "priceKnownInArea": "{count} بسعر المنطقة",
+  "@priceKnownInArea": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "priceAreaColumn": "سعر المنطقة",
+  "priceYoursColumn": "سعرك",
+  "priceNoAreaPrice": "لا يوجد سعر للمنطقة",
+  "priceAreaTapToUse": "سعر المنطقة، اضغط لتجعله سعرك",
+  "priceAddYours": "أضف سعرك",
+  "priceYoursTapToEdit": "سعرك، اضغط لتعديله",
+  "priceSaveFailed": "تعذّر حفظ السعر. حاول مرة أخرى.",
+  "priceSaved": "حُفظ سعرك",
+  "priceSavedShared": "حُفظ سعرك وشاركته مع منطقتك",
+  "priceSavedShareFailed": "حُفظ سعرك، وتعذّرت مشاركته.",
+  "priceHint": "السعر",
+  "priceInvalid": "اكتب سعرًا أكبر من صفر",
+  "priceShareWith": "شاركه مع {area}",
+  "@priceShareWith": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "priceCancel": "إلغاء",
+  "priceSave": "حفظ",
+  "priceCurrencyEgp": "ج.م",
+  "@priceCurrencyEgp": {
+    "description": "Short Egyptian pound label after a price"
+  },
+  "priceCurrencySar": "ر.س",
+  "@priceCurrencySar": {
+    "description": "Short Saudi riyal label after a price"
+  },
+  "priceToday": "اليوم",
+  "priceFridge": "الثلاجة",
+  "profCountryEgypt": "مصر",
+  "profCountrySaudi": "السعودية",
+  "profStatPeople": "أفراد",
+  "@profStatPeople": {
+    "description": "Under the household size number"
+  },
+  "profStatMealsDaily": "وجبات يوميًا",
+  "@profStatMealsDaily": {
+    "description": "Under the number of daily meals"
+  },
+  "profStatSaved": "محفوظة",
+  "@profStatSaved": {
+    "description": "Under the number of saved recipes"
+  },
+  "profHousehold": "أهل البيت",
+  "profHouseName": "اسم البيت",
+  "profHouseHint": "بيت {name}",
+  "@profHouseHint": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "profYourName": "اسمك",
+  "profCountry": "البلد",
+  "profArea": "المنطقة",
+  "profAddArea": "أضف منطقتك",
+  "profTableSize": "أفراد السفرة",
+  "profTaste": "ذوقك في الأكل",
+  "profCuisines": "المطابخ",
+  "profAllCuisines": "كل المطابخ",
+  "profMeals": "الوجبات",
+  "profNoMeal": "لم تختر وجبة",
+  "profQuickFirst": "الوصفات السريعة أولًا",
+  "profHealth": "الصحة",
+  "profAllergies": "حساسية الأكل",
+  "profNoAllergies": "لا توجد حساسية",
+  "profAllergiesInfo": "تظهر كتنبيه بالاسم فقط، ويجب أن تراجع المكونات بنفسك.",
+  "profConditions": "حالات صحية",
+  "profNoConditions": "لا توجد حالات",
+  "profConditionsInfo": "للتذكير فقط؛ لا يغيّر التطبيق الوصفات ولا يقدّم نصيحة طبية.",
+  "profCancel": "إلغاء",
+  "profSave": "حفظ",
+  "profRemove": "إزالة {label}",
+  "@profRemove": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "profAdd": "أضف",
+  "profCountryCurrency": "البلد والعملة",
+  "profReminders": "التذكيرات",
+  "profSaving": "جاري حفظ التغييرات…",
+  "profUnsaved": "توجد تغييرات لم تُحفظ",
+  "profSignOut": "تسجيل الخروج",
+  "profFooter": "سفرة · صُنع بحب للبيوت",
+  "profMyAccount": "حسابي",
+  "profAccountLine": "حسابك وتفضيلات بيتك",
+  "profAm": "ص",
+  "profPm": "م",
+  "profMealTimesIntro": "موعد كل وجبة عندك، لنذكّرك قبلها.",
+  "profNoReminder": "دون تذكير",
+  "profClearReminder": "احذف التذكير",
+  "profMealTimeOf": "موعد {meal}",
+  "@profMealTimeOf": {
+    "placeholders": {
+      "meal": {
+        "type": "String"
+      }
+    }
+  },
+  "profRemindBefore": "ذكّرني قبلها بـ",
+  "profMinutes": "{minutes} دقيقة",
+  "@profMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "profRanOutTitle": "عندما ينفد مكوّن",
+  "profRanOutSubtitle": "تنبيه بعد الطبخ إذا استخدمت آخر ما في المخزون",
+  "profChannelName": "تذكيرات سفرة",
+  "@profChannelName": {
+    "description": "Android notification channel name"
+  },
+  "profChannelDescription": "مواعيد الأكل، والبواقي، والأشياء التي نفدت",
+  "profReminderMealTitle": "{slot} بعد {minutes} دقيقة",
+  "@profReminderMealTitle": {
+    "placeholders": {
+      "slot": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "profReminderMealBody": "متخطط: {meal}. ابدأ التحضير.",
+  "@profReminderMealBody": {
+    "placeholders": {
+      "meal": {
+        "type": "String"
+      }
+    }
+  },
+  "profReminderLeftoverTitle": "بواقي {dish} في الثلاجة",
+  "@profReminderLeftoverTitle": {
+    "placeholders": {
+      "dish": {
+        "type": "String"
+      }
+    }
+  },
+  "profReminderLeftoverBody": "تبقّى {servings}. سخّنها اليوم.",
+  "@profReminderLeftoverBody": {
+    "placeholders": {
+      "servings": {
+        "type": "String"
+      }
+    }
+  },
+  "profServingOne": "1 حصة",
+  "profServings": "{count} حصة",
+  "@profServings": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "profStyleCabinets": "طراز الخزائن",
+  "profStyleClassic": "كلاسيكي",
+  "profStyleModern": "عصري",
+  "profStyleJapandi": "ياباندي",
+  "profStyleFridge": "الثلاجة",
+  "profFridgeRetro": "كريمية قديمة",
+  "profFridgeDouble": "معدنية ببابين",
+  "profStyleRange": "الموقد",
+  "profRangeFreestanding": "موقد مستقل",
+  "profRangeBuiltin": "سطح وفرن مدمجان",
+  "profStyleRug": "السجادة",
+  "profRugNone": "بلا سجادة",
+  "profRugPersian": "حمراء منقوشة",
+  "profRugTeal": "زرقاء حديثة",
+  "profRugOchre": "كليم دافئ",
+  "profStyleCurtain": "الستارة",
+  "profCurtainGingham": "قماش مربعات",
+  "profCurtainBlind": "شرائح بيضاء",
+  "profCurtainNone": "بلا ستارة",
+  "profCabinetColor": "لون الخزائن",
+  "profColorOriginal": "الأصلي",
+  "profColorCream": "كريمي",
+  "profColorBlueGray": "أزرق رمادي",
+  "profColorTerracotta": "تيراكوتا",
+  "profShotKitchen": "المطبخ كله",
+  "profShotFridge": "افتح الثلاجة",
+  "profShotFreezer": "افتح الفريزر",
+  "profExtras": "إضافات",
+  "profPlants": "نباتات معلقة",
+  "profCane": "أبواب خيزران",
+  "addTitle": "أضف مشترياتك",
+  "addReadFailed": "تعذّرت القراءة. تحقق من الاتصال، أو اكتب المشتريات بالأسفل.",
+  "addNothingFound": "لم نجد مكونات هنا. جرّب صورة أوضح، أو اكتبها.",
+  "addCameraUnavailable": "الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف.",
+  "addPhotosFailed": "تعذّر فتح الصور.",
+  "addMarkOne": "علّم صنفًا واحدًا على الأقل",
+  "addPickOne": "اختر مكوّنًا واحدًا على الأقل",
+  "addToKitchen": "أضف {count} إلى المطبخ",
+  "@addToKitchen": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "addCameraTitle": "صوّر الفاتورة",
+  "addCameraDetail": "بالكاميرا",
+  "addGalleryTitle": "من الصور",
+  "addGalleryDetail": "لقطة طلب أو فاتورة",
+  "addTypeHint": "أو اكتب: 2 كيلو طماطم",
+  "addLineTooltip": "أضف السطر",
+  "addSaveFailed": "لم تُحفظ المشتريات. تحقق من الاتصال وحاول مرة أخرى.",
+  "addSavedNotice": "أُضيفت {count, plural, =1{مكوّن واحدة} =2{مكوّنان} few{{count} مكونات} other{{count} مكوّن}} إلى مطبخك",
+  "@addSavedNotice": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "addRestart": "ابدأ من جديد",
+  "addReading": "نقرأ مشترياتك…",
+  "addReadyCount": "{count} جاهزة",
+  "@addReadyCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "addCheckCount": "{count} للتأكد",
+  "@addCheckCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "addOpenCount": "{count} بلا مكوّن",
+  "@addOpenCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "addAmountUnknown": "الكمية؟",
+  "addChooseIngredient": "اختر المكوّن",
+  "addRestore": "أعِده",
+  "addRemove": "احذفه",
+  "addWhichIngredient": "أي مكوّن هذا؟",
+  "addSearchHint": "رز، لبن، زيت…",
+  "addAmountTitle": "كمية {name}",
+  "@addAmountTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addAmountHint": "الكمية",
+  "addSave": "حفظ",
+  "addDontKnowAmount": "لا أعرف الكمية",
+  "addNotKnownYet": "لم نعرفه بعد",
+  "addAsking": "نتعرف على «{text}»…",
+  "@addAsking": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "addScanTitle": "امسح باركود المنتج",
+  "addScanCameraOff": "الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف، أو اكتب الرقم بالأسفل.",
+  "addScanManualHint": "أو اكتب الرقم الموجود تحت الباركود",
+  "addScanGo": "ابحث",
+  "addScanUnknownProduct": "هذا المنتج غير موجود في بياناتنا بعد",
+  "addScanPackage": "العبوة: {size}",
+  "@addScanPackage": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "addScanWhich": "أي مكوّن في مطبخك هذا؟ سنتذكره في المرة القادمة.",
+  "addScanSearchHint": "اكتب اسم المكوّن (رز، لبن، زيت…)",
+  "rcpSaveRecipe": "حفظ الوصفة",
+  "rcpUnsaveRecipe": "إلغاء الحفظ",
+  "rcpFilterAll": "الكل",
+  "rcpFilterFromStock": "من الموجود",
+  "rcpFilterReadyFromStock": "جاهزة بالموجود",
+  "rcpFilterSaved": "محفوظة",
+  "rcpKindSection": "النوع",
+  "rcpTimeSection": "الوقت",
+  "rcpTimeAny": "أي وقت",
+  "rcpTime30": "30 دقيقة أو أقل",
+  "rcpTime60": "ساعة أو أقل",
+  "rcpClearFilters": "امسح الفلاتر",
+  "rcpSearchHint": "ابحث باسم أكلة أو مكوّن",
+  "rcpFilters": "الفلاتر",
+  "rcpAllCuisines": "كل المطابخ",
+  "rcpStockNote": "الكميات محسوبة لـ{servings} أفراد. المقادير غير المعروفة لا تُعتبر جاهزة.",
+  "@rcpStockNote": {
+    "placeholders": {
+      "servings": {
+        "type": "String"
+      }
+    }
+  },
+  "rcpLoadFailed": "تعذّر تحميل الوصفات.",
+  "rcpTryAgain": "حاول مرة أخرى",
+  "rcpFromStockTitle": "اقتراحات من خزينك",
+  "rcpForYouTitle": "وصفات على ذوقك",
+  "rcpRecipeCount": "{count} وصفة",
+  "@rcpRecipeCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rcpEmptyTitle": "نبحث عن شيء آخر؟",
+  "rcpShowAll": "عرض كل الوصفات",
+  "rcpShowMore": "اعرض {count} أخرى",
+  "@rcpShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "appRetrySave": "إعادة الحفظ",
+  "appLoadFailed": "تعذّر تحميل بيانات البيت. بياناتك لم تُحذف.",
+  "appTryAgain": "حاول مرة أخرى",
+  "appBack": "رجوع",
+  "appViewAddStock": "نزوّد الخير",
+  "appViewRecipe": "وصفة على قدرك",
+  "appViewKitchen3d": "مطبخي 3D",
+  "appViewCooking": "نطبخ معًا",
+  "appUnsaveRecipe": "إلغاء الحفظ",
+  "appSaveRecipe": "حفظ الوصفة",
+  "appHeaderToday": "سُفرة",
+  "@appHeaderToday": {
+    "description": "Header title on the Today tab (the brand name)."
+  },
+  "appTabRecipes": "الوصفات",
+  "appTabStock": "الخزين",
+  "appTabPlan": "الخطة",
+  "appTabAccount": "حسابي",
+  "appTabSettings": "الإعدادات",
+  "appTabStyle": "شكل المطبخ",
+  "appTabToday": "اليوم",
+  "appCommunity": "المجتمع",
+  "appMemoryStoreLabel": "غير محفوظ (تجربة)",
+  "appDefaultName": "صاحب السفرة",
+  "@appDefaultName": {
+    "description": "Shown when the user has not typed a name."
+  },
+  "appDefaultHouse": "بيت {name}",
+  "@appDefaultHouse": {
+    "description": "Home name when the user has not typed one.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "appMealFallback": "وجبة",
+  "appSaveFull": "امتلأت مساحة الحفظ في حسابك، فلم يُحفظ التعديل.",
+  "appSaveFailedOne": "لم يُحفظ آخر تعديل. تحقق من الاتصال وأعد الحفظ قبل الخروج.",
+  "appSaveFailedMany": "تعديلات لم تُحفظ: {count}. تحقق من الاتصال وأعد الحفظ قبل الخروج.",
+  "@appSaveFailedMany": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "appShoppingListHeader": "قائمة الشراء من سفرة:",
+  "appRanOutTitle": "نفد من المطبخ",
+  "appRanOutBody": "{items}. ضيفهم لقائمة الشراء.",
+  "@appRanOutBody": {
+    "placeholders": {
+      "items": {
+        "type": "String"
+      }
+    }
+  },
+  "appListSeparator": "، ",
+  "@appListSeparator": {
+    "description": "Separator between items in a list written as one line."
+  },
+  "appSessionOpenFailed": "لا يمكن فتح بياناتك الآن. تحقق من الاتصال وحاول مرة أخرى.",
+  "appRetry": "إعادة المحاولة",
+  "appSignOut": "تسجيل الخروج",
+  "appEnterEmailFirst": "اكتب البريد الإلكتروني الأول.",
+  "appResetSent": "إذا كان البريد مسجّلًا، سيصلك رابط استعادة كلمة المرور.",
+  "appAuthNetwork": "تحقق من اتصال الإنترنت وحاول مرة أخرى.",
+  "appAuthTooMany": "محاولات كثيرة. انتظر قليلًا ثم حاول مرة أخرى.",
+  "appAuthWeakPassword": "اختر كلمة مرور أقوى.",
+  "appAuthEmailInUse": "البريد مسجّل بالفعل. جرّب تسجيل الدخول.",
+  "appAuthInvalidEmail": "راجع كتابة البريد الإلكتروني.",
+  "appAuthSignUpUnavailable": "إنشاء الحساب غير متاح حاليًا. حاول لاحقًا.",
+  "appAuthFailed": "تعذر الدخول. راجع البريد وكلمة المرور أو استعد حسابك.",
+  "appRequestFailed": "تعذّر إكمال الطلب. حاول مرة أخرى.",
+  "appCreateAccountTitle": "أنشئ حسابًا لسفرتك",
+  "appWelcome": "أهلًا بك في سفرة",
+  "appSignInSubtitle": "مكونات بيتك واختياراتك محفوظة في حسابك.",
+  "appEmailLabel": "البريد الإلكتروني",
+  "appEmailInvalid": "اكتب بريدًا صحيحًا",
+  "appPasswordLabel": "كلمة المرور",
+  "appPasswordShort": "كلمة المرور 6 أحرف على الأقل",
+  "appWait": "لحظة…",
+  "appCreateAccount": "إنشاء حساب",
+  "appSignIn": "تسجيل الدخول",
+  "appHaveAccount": "عندي حساب بالفعل",
+  "appFirstTime": "أول مرة؟ أنشئ حسابًا",
+  "appForgotPassword": "نسيت كلمة المرور",
+  "appSavedOnDevice": "محفوظ على الجهاز",
+  "appSavedInAccount": "محفوظ في حسابك",
+  "appSavedInSharedKitchen": "محفوظ في المطبخ المشترك",
+  "appInviteNotFound": "هذا الرمز غير موجود.",
+  "appInviteExpired": "انتهت صلاحية هذا الرمز. اطلب رمزًا جديدًا.",
+  "appChallengeCookPlannedTitle": "اطبخ {goal} وجبات من خطتك",
+  "@appChallengeCookPlannedTitle": {
+    "placeholders": {
+      "goal": {
+        "type": "String"
+      }
+    }
+  },
+  "appChallengeCookPlannedDetail": "تُحسب كل وجبة مخططة طُبخت هذا الأسبوع.",
+  "appChallengeDifferentTitle": "نوّع: {goal} أكلات مختلفة",
+  "@appChallengeDifferentTitle": {
+    "placeholders": {
+      "goal": {
+        "type": "String"
+      }
+    }
+  },
+  "appChallengeDifferentDetail": "تُحسب كل وصفة مختلفة طُبخت هذا الأسبوع مرة واحدة.",
+  "appChallengeNewTitle": "جرّب وصفتين أول مرة",
+  "appChallengeNewDetail": "وصفة لم تُطبخ من قبل في مطبخك.",
+  "appHouseMember": "فرد من البيت",
+  "appChefCelebrate": "شيف سفرة سعيد وجاهز للطبخ",
+  "appChefIdle": "شيف سفرة، طماطماية مرحة بقبعة شيف",
+  "dataToTaste": "حسب الرغبة",
+  "@dataToTaste": {
+    "description": "Amount shown for a recipe ingredient that has no measured quantity."
+  },
+  "kitchen3dAlt": "المطبخ ثلاثي الأبعاد"
 }

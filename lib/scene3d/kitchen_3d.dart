@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../l10n/l10n.dart';
 import 'asset_server.dart';
 import 'js_runner.dart';
 
@@ -336,7 +337,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
         : kIsWeb
         ? 'assets/assets/spike3d/kitchen.glb'
         : 'assets/spike3d/kitchen.glb',
-    alt: 'المطبخ ثلاثي الأبعاد',
+    alt: context.l10n.kitchen3dAlt,
     backgroundColor: widget.background,
     cameraTarget: Kitchen3DController._homeTarget,
     cameraOrbit: Kitchen3DController._homeOrbit,

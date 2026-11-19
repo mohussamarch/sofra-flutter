@@ -61,8 +61,8 @@ class FoodRepository {
     String norm(String s) => s
         .toLowerCase()
         .replaceAll(RegExp(r'[\u064B-\u065F\u0670]'), '')
-        .replaceAll(RegExp('[أإآ]'), 'ا')
-        .replaceAll('ى', 'ي');
+        .replaceAll(RegExp('[أإآ]'), 'ا') // i18n-data
+        .replaceAll('ى', 'ي'); // i18n-data
     final q = norm(query.trim());
     final result = <Map<String, dynamic>>[];
     for (final p in await products()) {
