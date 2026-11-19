@@ -3,6 +3,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 
 import '../app/sofra_controller.dart';
 import '../domain/ingredient_directory.dart';
+import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import 'common.dart';
 
@@ -41,10 +42,10 @@ class _ScanPageState extends State<_ScanPage> {
   }
 
   @override
-  Widget build(BuildContext context) => Directionality(
-    textDirection: TextDirection.rtl,
-    child: Scaffold(
-      appBar: AppBar(title: const Text('امسح باركود المنتج')),
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+    return Scaffold(
+      appBar: AppBar(title: Text(t.addScanTitle)),
       body: Column(
         children: [
           if (widget.camera)
@@ -55,11 +56,11 @@ class _ScanPageState extends State<_ScanPage> {
                     _finish(b.rawValue);
                   }
                 },
-                errorBuilder: (context, error) => const Center(
+                errorBuilder: (context, error) => Center(
                   child: Padding(
-                    padding: EdgeInsets.all(24),
+                    padding: const EdgeInsets.all(24),
                     child: Text(
-                      'الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف، أو اكتب الرقم بالأسفل.',
+                      t.addScanCameraOff,
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -75,17 +76,16 @@ class _ScanPageState extends State<_ScanPage> {
                     key: const ValueKey('barcode-manual'),
                     controller: typed,
                     keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                      hintText: 'أو اكتب الرقم الموجود تحت الباركود',
-                    ),
+                    decoration: InputDecoration(hintText: t.addScanManualHint),
                     onSubmitted: _finish,
                   ),
                 ),
                 const SizedBox(width: 8),
                 IconButton.filled(
                   key: const ValueKey('barcode-manual-go'),
-                  tooltip: 'ابحث',
+                  tooltip: t.addScanGo,
                   onPressed: () => _finish(typed.text),
+                  // Mirrors with the reading direction (matchTextDirection).
                   icon: const Icon(Icons.arrow_back_rounded),
                 ),
               ],
@@ -93,8 +93,8 @@ class _ScanPageState extends State<_ScanPage> {
           ),
         ],
       ),
-    ),
-  );
+    );
+  }
 }
 
 /// Asks which kitchen ingredient a scanned product is. The product name is
@@ -107,10 +107,7 @@ Future<IngredientEntry?> pickIngredientFor(
   context: context,
   isScrollControlled: true,
   showDragHandle: true,
-  builder: (_) => Directionality(
-    textDirection: TextDirection.rtl,
-    child: _PickSheet(product: product, directory: directory),
-  ),
+  builder: (_) => _PickSheet(product: product, directory: directory),
 );
 
 class _PickSheet extends StatefulWidget {
@@ -132,15 +129,16 @@ class _PickSheetState extends State<_PickSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final t = context.l10n;
     final p = widget.product;
     final q = search.text.trim();
     final items = q.isEmpty
         ? const <IngredientEntry>[]
         : widget.directory.search(q).take(30).toList();
     return Padding(
-      padding: EdgeInsets.only(
-        left: 20,
-        right: 20,
+      padding: EdgeInsetsDirectional.only(
+        start: 20,
+        end: 20,
         bottom: MediaQuery.viewInsetsOf(context).bottom + 16,
       ),
       child: ConstrainedBox(
@@ -152,29 +150,29 @@ class _PickSheetState extends State<_PickSheet> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              p.known ? p.name! : 'هذا المنتج غير موجود في بياناتنا بعد',
+              p.known ? p.name! : t.addScanUnknownProduct,
               key: const ValueKey('scan-product-name'),
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
             ),
             Text(
               [
                 if (p.brand != null) p.brand!,
-                if (p.packageLabel != null) 'العبوة: ${p.packageLabel}',
+                if (p.packageLabel != null) t.addScanPackage(p.packageLabel!),
                 p.code,
               ].join(' · '),
               style: TextStyle(color: Sofra.muted, fontSize: 12),
             ),
             const SizedBox(height: 12),
-            const Text('أي مكوّن في مطبخك هذا؟ سنتذكره في المرة القادمة.'),
+            Text(t.addScanWhich),
             const SizedBox(height: 8),
             TextField(
               key: const ValueKey('scan-search'),
               controller: search,
               autofocus: true,
               onChanged: (_) => setState(() {}),
-              decoration: const InputDecoration(
-                hintText: 'اكتب اسم المكوّن (رز، لبن، زيت…)',
-                prefixIcon: Icon(Icons.search_rounded),
+              decoration: InputDecoration(
+                hintText: t.addScanSearchHint,
+                prefixIcon: const Icon(Icons.search_rounded),
               ),
             ),
             Flexible(
@@ -185,7 +183,7 @@ class _PickSheetState extends State<_PickSheet> {
                     ListTile(
                       key: ValueKey('scan-pick-${e.id}'),
                       leading: Icon(categoryIcon(e.category)),
-                      title: Text(e.name),
+                      title: Text(L10n.term(e.name)),
                       onTap: () => Navigator.pop(context, e),
                     ),
                 ],

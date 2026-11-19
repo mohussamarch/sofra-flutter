@@ -10,6 +10,7 @@ import '../data/purchase_reader.dart';
 import '../domain/ingredient_directory.dart';
 import '../domain/market_profile.dart';
 import '../domain/quick_add.dart';
+import '../l10n/l10n.dart';
 import '../ui/add_tile.dart';
 import '../ui/design.dart';
 import '../ui/ingredient_art.dart';
@@ -45,10 +46,7 @@ Future<void> openQuickAdd(BuildContext context) {
       builder: (_) => SofraScope(
         controller: scope.notifier!,
         nav: scope.nav,
-        child: const Directionality(
-          textDirection: TextDirection.rtl,
-          child: QuickAddScreen(),
-        ),
+        child: const QuickAddScreen(),
       ),
     ),
   );
@@ -97,13 +95,14 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
       found = otherwise?.call();
     }
     if (!mounted) return;
+    final t = context.l10n;
     setState(() {
       if (found == null) {
         stage = _Stage.choose;
-        error = 'تعذّرت القراءة. تحقق من الاتصال، أو اكتب المشتريات بالأسفل.';
+        error = t.addReadFailed;
       } else if (found.isEmpty) {
         stage = _Stage.choose;
-        error = 'لم نجد مكونات هنا. جرّب صورة أوضح، أو اكتبها.';
+        error = t.addNothingFound;
       } else {
         lines = found;
         stage = _Stage.review;
@@ -121,8 +120,8 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
       if (mounted) {
         setState(
           () => error = camera
-              ? 'الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف.'
-              : 'تعذّر فتح الصور.',
+              ? context.l10n.addCameraUnavailable
+              : context.l10n.addPhotosFailed,
         );
       }
       return;
@@ -188,15 +187,14 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
         ? const <QuickLine>[]
         : parseQuickText(text.text, directory);
     final ready = lines.where((l) => l.ready).length;
+    final t = context.l10n;
     return ScreenBody(
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
       footer: lines.isEmpty
           ? null
           : DepthButton(
               key: const ValueKey('quick-add-save'),
-              label: ready == 0
-                  ? 'علّم صنفًا واحدًا على الأقل'
-                  : 'أضف $ready إلى المطبخ',
+              label: ready == 0 ? t.addMarkOne : t.addToKitchen('$ready'),
               icon: Icons.kitchen_rounded,
               onPressed: ready == 0 || saving ? null : _save,
             ),
@@ -209,8 +207,8 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
                 child: AddTile(
                   key: const ValueKey('quick-add-camera'),
                   icon: Icons.photo_camera_rounded,
-                  title: 'صوّر الفاتورة',
-                  detail: 'بالكاميرا',
+                  title: t.addCameraTitle,
+                  detail: t.addCameraDetail,
                   primary: true,
                   minHeight: 176,
                   onTap: reader == null ? null : () => _photo(true),
@@ -221,8 +219,8 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
                 child: AddTile(
                   key: const ValueKey('quick-add-gallery'),
                   icon: Icons.add_photo_alternate_rounded,
-                  title: 'من الصور',
-                  detail: 'لقطة طلب أو فاتورة',
+                  title: t.addGalleryTitle,
+                  detail: t.addGalleryDetail,
                   minHeight: 176,
                   onTap: reader == null ? null : () => _photo(false),
                 ),
@@ -239,11 +237,11 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
           onChanged: (_) => setState(() {}),
           onSubmitted: (_) => _addTyped(),
           decoration: InputDecoration(
-            hintText: 'أو اكتب: 2 كيلو طماطم',
+            hintText: t.addTypeHint,
             prefixIcon: const Icon(Icons.edit_note_rounded),
             suffixIcon: IconButton(
               key: const ValueKey('quick-add-read'),
-              tooltip: 'أضف السطر',
+              tooltip: t.addLineTooltip,
               onPressed: text.text.trim().isEmpty ? null : _addTyped,
               icon: Icon(Icons.add_circle_rounded, color: Sofra.accent),
             ),
@@ -277,27 +275,25 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
   Future<void> _save() async {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
+    final t = context.l10n;
     final ready = lines.where((l) => l.ready).toList();
     setState(() => saving = true);
     final saved = await c.addArrivals(ready);
     if (!mounted) return;
     setState(() => saving = false);
     if (!saved) {
-      setState(
-        () => error = 'لم تُحفظ المشتريات. تحقق من الاتصال وحاول مرة أخرى.',
-      );
+      setState(() => error = t.addSaveFailed);
       return;
     }
     Navigator.pop(context);
-    nav.notify(
-      'أُضيفت ${countText(ready.length, 'مكوّن', 'مكوّنان', 'مكونات')} إلى مطبخك',
-    );
+    nav.notify(t.addSavedNotice(ready.length));
   }
 
   @override
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final ready = lines.where((l) => l.ready).length;
+    final t = context.l10n;
     return Stack(
       children: [
         Positioned.fill(
@@ -306,7 +302,7 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            title: const Text('أضف مشترياتك'),
+            title: Text(t.addTitle),
             backgroundColor: Colors.transparent,
             surfaceTintColor: Colors.transparent,
           ),
@@ -326,8 +322,8 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
                     DepthButton(
                       key: const ValueKey('quick-add-save'),
                       label: ready == 0
-                          ? 'اختر مكوّنًا واحدًا على الأقل'
-                          : 'أضف $ready إلى المطبخ',
+                          ? t.addPickOne
+                          : t.addToKitchen('$ready'),
                       icon: Icons.kitchen_rounded,
                       onPressed: ready == 0 || saving ? null : _save,
                     ),
@@ -357,7 +353,7 @@ class _QuickAddScreenState extends State<QuickAddScreen> {
                         error = null;
                       }),
                       icon: const Icon(Icons.refresh_rounded),
-                      label: const Text('ابدأ من جديد'),
+                      label: Text(t.addRestart),
                     ),
                   ),
                 ],
@@ -400,7 +396,7 @@ class _Reading extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        Text('نقرأ مشترياتك…', style: Sofra.heading(19)),
+        Text(context.l10n.addReading, style: Sofra.heading(19)),
       ],
     ),
   );
@@ -443,6 +439,7 @@ class _Summary extends StatelessWidget {
     final ready = kept.where((l) => l.entry != null).length;
     final open = kept.where((l) => l.entry == null).length;
     final check = kept.where((l) => l.entry != null && !l.sure).length;
+    final t = context.l10n;
     Widget pill(IconData icon, String label, Color ink, Color fill) =>
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -472,21 +469,21 @@ class _Summary extends StatelessWidget {
       children: [
         pill(
           Icons.check_circle_rounded,
-          '$ready جاهزة',
+          t.addReadyCount('$ready'),
           Sofra.ok,
           Sofra.okTint,
         ),
         if (check > 0)
           pill(
             Icons.visibility_outlined,
-            '$check للتأكد',
+            t.addCheckCount('$check'),
             Sofra.warn,
             Sofra.warnTint,
           ),
         if (open > 0)
           pill(
             Icons.help_outline_rounded,
-            '$open بلا مكوّن',
+            t.addOpenCount('$open'),
             Sofra.warn,
             Sofra.warnTint,
           ),
@@ -518,10 +515,7 @@ class _LineCard extends StatelessWidget {
     final entry = await showModalBottomSheet<IngredientEntry>(
       context: context,
       isScrollControlled: true,
-      builder: (_) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: _PickSheet(directory: directory, raw: line.raw),
-      ),
+      builder: (_) => _PickSheet(directory: directory, raw: line.raw),
     );
     if (entry == null) return;
     final quantity = line.quantity, unit = line.unit;
@@ -539,10 +533,7 @@ class _LineCard extends StatelessWidget {
     final result = await showModalBottomSheet<(double?, String?)>(
       context: context,
       isScrollControlled: true,
-      builder: (_) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: _AmountSheet(line: line, controller: controller),
-      ),
+      builder: (_) => _AmountSheet(line: line, controller: controller),
     );
     if (result == null) return;
     line
@@ -555,12 +546,13 @@ class _LineCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final entry = line.entry;
     final off = !line.include;
+    final t = context.l10n;
     final money = MarketProfile(controller.kitchen.market.country)
         .currencyLabel;
     final amount = entry == null
         ? null
         : line.quantity == null
-        ? 'الكمية؟'
+        ? t.addAmountUnknown
         : controller.amountText(entry.id, line.quantity!, line.unit!);
     return Opacity(
       opacity: off ? .45 : 1,
@@ -625,7 +617,9 @@ class _LineCard extends StatelessWidget {
                         children: [
                           Flexible(
                             child: Text(
-                              entry?.name ?? 'اختر المكوّن',
+                              entry == null
+                                  ? t.addChooseIngredient
+                                  : L10n.term(entry.name),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -678,7 +672,7 @@ class _LineCard extends StatelessWidget {
             if (!checkbox)
               IconButton(
                 key: ValueKey('quick-toggle-$index'),
-                tooltip: off ? 'أعِده' : 'احذفه',
+                tooltip: off ? t.addRestore : t.addRemove,
                 onPressed: () {
                   line.include = !line.include;
                   onChanged();
@@ -732,7 +726,7 @@ class _PickSheetState extends State<_PickSheet> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('أي مكوّن هذا؟', style: Sofra.heading(20)),
+            Text(context.l10n.addWhichIngredient, style: Sofra.heading(20)),
             const SizedBox(height: 4),
             Text(
               widget.raw,
@@ -746,9 +740,9 @@ class _PickSheetState extends State<_PickSheet> {
               controller: search,
               autofocus: true,
               onChanged: (_) => setState(() {}),
-              decoration: const InputDecoration(
-                hintText: 'رز، لبن، زيت…',
-                prefixIcon: Icon(Icons.search_rounded),
+              decoration: InputDecoration(
+                hintText: context.l10n.addSearchHint,
+                prefixIcon: const Icon(Icons.search_rounded),
               ),
             ),
             const SizedBox(height: 8),
@@ -761,7 +755,7 @@ class _PickSheetState extends State<_PickSheet> {
                       key: ValueKey('quick-pick-${e.id}'),
                       contentPadding: EdgeInsets.zero,
                       leading: IngredientPicture(e.id, e.category, size: 40),
-                      title: Text(e.name),
+                      title: Text(L10n.term(e.name)),
                       onTap: () => Navigator.pop(context, e),
                     ),
                 ],
@@ -805,6 +799,7 @@ class _AmountSheetState extends State<_AmountSheet> {
   Widget build(BuildContext context) {
     final entry = widget.line.entry!;
     final units = {...entry.units, ?widget.line.unit}.toList();
+    final t = context.l10n;
     return Padding(
       padding: EdgeInsetsDirectional.only(
         start: 20,
@@ -815,7 +810,10 @@ class _AmountSheetState extends State<_AmountSheet> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('كمية ${entry.name}', style: Sofra.heading(20)),
+          Text(
+            t.addAmountTitle(L10n.term(entry.name)),
+            style: Sofra.heading(20),
+          ),
           const SizedBox(height: 12),
           TextField(
             key: const ValueKey('quick-amount-input'),
@@ -823,7 +821,7 @@ class _AmountSheetState extends State<_AmountSheet> {
             autofocus: true,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
             onChanged: (_) => setState(() {}),
-            decoration: const InputDecoration(hintText: 'الكمية'),
+            decoration: InputDecoration(hintText: t.addAmountHint),
           ),
           const SizedBox(height: 12),
           Wrap(
@@ -842,7 +840,7 @@ class _AmountSheetState extends State<_AmountSheet> {
           const SizedBox(height: 16),
           DepthButton(
             key: const ValueKey('quick-amount-save'),
-            label: 'حفظ',
+            label: t.addSave,
             onPressed: _value == null
                 ? null
                 : () => Navigator.pop(context, (_value, unit)),
@@ -852,7 +850,7 @@ class _AmountSheetState extends State<_AmountSheet> {
             child: TextButton(
               key: const ValueKey('quick-amount-unknown'),
               onPressed: () => Navigator.pop(context, (null, null)),
-              child: const Text('لا أعرف الكمية'),
+              child: Text(t.addDontKnowAmount),
             ),
           ),
         ],
@@ -882,7 +880,9 @@ class _Preview extends StatelessWidget {
         const SizedBox(width: 10),
         Expanded(
           child: Text(
-            e == null ? 'لم نعرفه بعد' : [?amount, e.name].join(' · '),
+            e == null
+                ? context.l10n.addNotKnownYet
+                : [?amount, L10n.term(e.name)].join(' · '),
             style: TextStyle(
               color: e == null ? Sofra.warn : Sofra.muted,
               fontWeight: FontWeight.w700,
@@ -916,7 +916,7 @@ class _Asking extends StatelessWidget {
         const SizedBox(width: 14),
         Expanded(
           child: Text(
-            'نتعرف على «$raw»…',
+            context.l10n.addAsking(raw),
             style: TextStyle(color: Sofra.muted),
           ),
         ),
