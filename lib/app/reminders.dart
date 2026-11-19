@@ -4,6 +4,7 @@ import 'package:timezone/data/latest.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
 import '../domain/kitchen_core.dart';
+import '../l10n/l10n.dart';
 
 /// One notification at a set time.
 class Reminder {
@@ -42,11 +43,12 @@ class LocalReminders implements ReminderSink {
   final _plugin = FlutterLocalNotificationsPlugin();
   Future<bool>? _ready;
 
-  static const _details = NotificationDetails(
+  /// The channel's name and description in the app's language at the time.
+  static NotificationDetails get _details => NotificationDetails(
     android: AndroidNotificationDetails(
       'sofra-reminders',
-      'تذكيرات سفرة',
-      channelDescription: 'مواعيد الأكل، والبواقي، والأشياء التي نفدت',
+      L10n.current.profChannelName,
+      channelDescription: L10n.current.profChannelDescription,
     ),
   );
 
@@ -130,6 +132,7 @@ List<Reminder> upcomingReminders({
   List<LeftoverDish> leftovers = const [],
   int days = 7,
 }) {
+  final t = L10n.current;
   final end = now.add(Duration(days: days));
   DateTime at(DateTime day, int minutes) =>
       DateTime(day.year, day.month, day.day).add(Duration(minutes: minutes));
@@ -143,8 +146,9 @@ List<Reminder> upcomingReminders({
         Reminder(
           _id('meal-${m.id}'),
           when,
-          '${slotName(m.slot)} بعد $before دقيقة',
-          'متخطط: ${titleOf(m)}. ابدأ التحضير.',
+          // Slot names arrive as the stored Arabic labels.
+          t.profReminderMealTitle(L10n.term(slotName(m.slot)), '$before'),
+          t.profReminderMealBody(titleOf(m)),
         ),
       );
     }
@@ -164,8 +168,8 @@ List<Reminder> upcomingReminders({
           Reminder(
             _id('leftover-${d.id}'),
             when,
-            'بواقي ${d.name} في الثلاجة',
-            'تبقّى ${_servings(d.servings)}. سخّنها اليوم.',
+            t.profReminderLeftoverTitle(d.name),
+            t.profReminderLeftoverBody(_servings(d.servings)),
           ),
         );
       }
@@ -176,8 +180,9 @@ List<Reminder> upcomingReminders({
 }
 
 String _servings(double v) {
+  if (v == 1) return L10n.current.profServingOne;
   final n = v == v.roundToDouble() ? v.round().toString() : v.toString();
-  return '$n حصة';
+  return L10n.current.profServings(n);
 }
 
 /// Stock IDs that had something (or an unknown amount) in [before] and

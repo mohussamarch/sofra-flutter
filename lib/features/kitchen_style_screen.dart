@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
+import '../l10n/l10n.dart';
 import '../scene3d/kitchen_3d.dart';
 import '../ui/design.dart';
 import 'common.dart';
@@ -16,56 +17,61 @@ class KitchenStyleScreen extends StatefulWidget {
   final bool show3d;
 
   /// Each group's choices, the first being the base kitchen. Values are the
-  /// option names in Codex's model (r23-options.mjs).
-  static const groups =
-      <({String id, String name, List<(String, String)> items})>[
-        (
-          id: 'style',
-          name: 'طراز الخزائن',
-          items: [
-            ('classic', 'كلاسيكي'),
-            ('modern', 'عصري'),
-            ('japandi', 'ياباندي'),
-          ],
-        ),
-        (
-          id: 'fridge',
-          name: 'الثلاجة',
-          items: [('default', 'كريمية قديمة'), ('double', 'معدنية ببابين')],
-        ),
-        (
-          id: 'range',
-          name: 'الموقد',
-          items: [('default', 'موقد مستقل'), ('builtin', 'سطح وفرن مدمجان')],
-        ),
-        (
-          id: 'rug',
-          name: 'السجادة',
-          items: [
-            ('none', 'بلا سجادة'),
-            ('rug_persian', 'حمراء منقوشة'),
-            ('rug_teal', 'زرقاء حديثة'),
-            ('rug_ochre', 'كليم دافئ'),
-          ],
-        ),
-        (
-          id: 'curtain',
-          name: 'الستارة',
-          items: [
-            ('gingham', 'قماش مربعات'),
-            ('white_blind', 'شرائح بيضاء'),
-            ('none', 'بلا ستارة'),
-          ],
-        ),
-      ];
+  /// option names in Codex's model (r23-options.mjs); labels are in [t]'s
+  /// language.
+  static List<({String id, String name, List<(String, String)> items})> groups(
+    AppLocalizations t,
+  ) => [
+    (
+      id: 'style',
+      name: t.profStyleCabinets,
+      items: [
+        ('classic', t.profStyleClassic),
+        ('modern', t.profStyleModern),
+        ('japandi', t.profStyleJapandi),
+      ],
+    ),
+    (
+      id: 'fridge',
+      name: t.profStyleFridge,
+      items: [('default', t.profFridgeRetro), ('double', t.profFridgeDouble)],
+    ),
+    (
+      id: 'range',
+      name: t.profStyleRange,
+      items: [
+        ('default', t.profRangeFreestanding),
+        ('builtin', t.profRangeBuiltin),
+      ],
+    ),
+    (
+      id: 'rug',
+      name: t.profStyleRug,
+      items: [
+        ('none', t.profRugNone),
+        ('rug_persian', t.profRugPersian),
+        ('rug_teal', t.profRugTeal),
+        ('rug_ochre', t.profRugOchre),
+      ],
+    ),
+    (
+      id: 'curtain',
+      name: t.profStyleCurtain,
+      items: [
+        ('gingham', t.profCurtainGingham),
+        ('white_blind', t.profCurtainBlind),
+        ('none', t.profCurtainNone),
+      ],
+    ),
+  ];
 
   /// Cabinet colours (hex, as saved); null is the colour of the render.
   /// The colour is the classic painted timber's, so it shows on classic only.
-  static const cabinetColors = <(String, String?)>[
-    ('الأصلي', null),
-    ('كريمي', 'E9DFC8'),
-    ('أزرق رمادي', '7D93A3'),
-    ('تيراكوتا', 'C0705A'),
+  static List<(String, String?)> cabinetColors(AppLocalizations t) => [
+    (t.profColorOriginal, null),
+    (t.profColorCream, 'E9DFC8'),
+    (t.profColorBlueGray, '7D93A3'),
+    (t.profColorTerracotta, 'C0705A'),
   ];
 
   @override
@@ -107,6 +113,7 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
   Widget build(BuildContext context) {
     final look = SofraScope.controllerOf(context).profile.kitchenLook;
     final style = look['style'] ?? 'classic';
+    final t = context.l10n;
     return ScreenBody(
       children: [
         const SizedBox(height: 4),
@@ -123,10 +130,10 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
             spacing: 8,
             children: [
               for (final (i, label) in [
-                'المطبخ كله',
-                'افتح الثلاجة',
+                t.profShotKitchen,
+                t.profShotFridge,
                 // The double fridge opens both doors either way.
-                if (look['fridge'] != 'double') 'افتح الفريزر',
+                if (look['fridge'] != 'double') t.profShotFreezer,
               ].indexed)
                 SofraChip(
                   key: ValueKey('style-shot-$i'),
@@ -138,7 +145,7 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
           ),
           const SizedBox(height: 20),
         ],
-        for (final g in KitchenStyleScreen.groups) ...[
+        for (final g in KitchenStyleScreen.groups(t)) ...[
           SectionTitle(g.name),
           const SizedBox(height: 10),
           Wrap(
@@ -156,12 +163,13 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
           ),
           const SizedBox(height: 20),
           if (g.id == 'style' && style == 'classic') ...[
-            const SectionTitle('لون الخزائن'),
+            SectionTitle(t.profCabinetColor),
             const SizedBox(height: 10),
             Row(
               children: [
-                for (final (i, (name, hex))
-                    in KitchenStyleScreen.cabinetColors.indexed)
+                for (final (i, (name, hex)) in KitchenStyleScreen.cabinetColors(
+                  t,
+                ).indexed)
                   Expanded(
                     child: _Swatch(
                       key: ValueKey('style-cabinet-$i'),
@@ -178,7 +186,7 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
             const SizedBox(height: 20),
           ],
         ],
-        const SectionTitle('إضافات'),
+        SectionTitle(t.profExtras),
         const SizedBox(height: 10),
         Wrap(
           spacing: 8,
@@ -186,7 +194,7 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
           children: [
             SofraChip(
               key: const ValueKey('look-plants'),
-              label: const Text('نباتات معلقة'),
+              label: Text(t.profPlants),
               selected: look['plants'] == '1',
               onSelected: (on) => _set('plants', on ? '1' : null),
             ),
@@ -194,7 +202,7 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
             if (style == 'japandi')
               SofraChip(
                 key: const ValueKey('look-cane'),
-                label: const Text('أبواب خيزران'),
+                label: Text(t.profCane),
                 selected: look['cane'] == '1',
                 onSelected: (on) => _set('cane', on ? '1' : null),
               ),

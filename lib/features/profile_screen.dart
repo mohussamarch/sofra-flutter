@@ -21,9 +21,10 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final p = c.profile;
+    final t = context.l10n;
     final country = c.market.country == MarketCountry.egypt
-        ? 'مصر'
-        : 'السعودية';
+        ? t.profCountryEgypt
+        : t.profCountrySaudi;
     return ScreenBody(
       children: [
         const SizedBox(height: 8),
@@ -35,12 +36,12 @@ class ProfileScreen extends StatelessWidget {
             if (p.area.trim().isNotEmpty) p.area.trim(),
           ].join(' · '),
           stats: [
-            ('${p.servings}', 'أفراد'),
-            ('${p.meals.length}', 'وجبات يوميًا'),
-            ('${p.saved.length}', 'محفوظة'),
+            ('${p.servings}', t.profStatPeople),
+            ('${p.meals.length}', t.profStatMealsDaily),
+            ('${p.saved.length}', t.profStatSaved),
           ],
         ),
-        const SectionTitle('أهل البيت'),
+        SectionTitle(t.profHousehold),
         Surface(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           child: Column(
@@ -48,24 +49,24 @@ class ProfileScreen extends StatelessWidget {
               _InfoRow(
                 key: const ValueKey('profile-house'),
                 icon: Icons.home_rounded,
-                label: 'اسم البيت',
+                label: t.profHouseName,
                 value: p.houseName,
                 onTap: () => _editText(
                   context,
-                  title: 'اسم البيت',
+                  title: t.profHouseName,
                   initial: p.house,
-                  hint: 'بيت ${p.displayName}',
+                  hint: t.profHouseHint(p.displayName),
                   save: (v) => c.updateProfile((p) => p.copyWith(house: v)),
                 ),
               ),
               _InfoRow(
                 key: const ValueKey('profile-name'),
                 icon: Icons.person_rounded,
-                label: 'اسمك',
+                label: t.profYourName,
                 value: p.displayName,
                 onTap: () => _editText(
                   context,
-                  title: 'اسمك',
+                  title: t.profYourName,
                   initial: p.name,
                   save: (v) => c.updateProfile((p) => p.copyWith(name: v)),
                 ),
@@ -73,15 +74,15 @@ class ProfileScreen extends StatelessWidget {
               _InfoRow(
                 key: const ValueKey('profile-country'),
                 icon: Icons.public_rounded,
-                label: 'البلد',
+                label: t.profCountry,
                 value: country,
                 onTap: () => _pickCountry(context),
               ),
               _InfoRow(
                 key: const ValueKey('profile-area'),
                 icon: Icons.place_rounded,
-                label: 'المنطقة',
-                value: p.area.trim().isEmpty ? 'أضف منطقتك' : p.area.trim(),
+                label: t.profArea,
+                value: p.area.trim().isEmpty ? t.profAddArea : p.area.trim(),
                 muted: p.area.trim().isEmpty,
                 onTap: () async {
                   final place = await showPlacePicker(context);
@@ -96,10 +97,10 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     const _RowIcon(Icons.groups_rounded),
                     const SizedBox(width: 12),
-                    const Expanded(
+                    Expanded(
                       child: Text(
-                        'أفراد السفرة',
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        t.profTableSize,
+                        style: const TextStyle(fontWeight: FontWeight.w700),
                       ),
                     ),
                     Counter(
@@ -113,7 +114,7 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
-        const SectionTitle('ذوقك في الأكل'),
+        SectionTitle(t.profTaste),
         Surface(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,11 +126,14 @@ class ProfileScreen extends StatelessWidget {
                   if (groups == null) return const LoadingBlock();
                   return PickedGroup(
                     id: 'cuisine',
-                    title: 'المطابخ',
-                    empty: 'كل المطابخ',
+                    title: t.profCuisines,
+                    empty: t.profAllCuisines,
                     options: [
                       for (final g in groups)
-                        SetupOption(g['id'] as String, g['name'] as String),
+                        SetupOption(
+                          g['id'] as String,
+                          L10n.term(g['name'] as String),
+                        ),
                     ],
                     selected: p.cuisines,
                     onChanged: (v) =>
@@ -140,8 +144,8 @@ class ProfileScreen extends StatelessWidget {
               Divider(height: 28, color: Sofra.line),
               PickedGroup(
                 id: 'meal',
-                title: 'الوجبات',
-                empty: 'لم تختر وجبة',
+                title: t.profMeals,
+                empty: t.profNoMeal,
                 options: setupMeals,
                 selected: p.meals,
                 onChanged: (v) => c.updateProfile((p) => p.copyWith(meals: v)),
@@ -151,9 +155,12 @@ class ProfileScreen extends StatelessWidget {
                 key: const ValueKey('profile-quick'),
                 contentPadding: EdgeInsets.zero,
                 secondary: const _RowIcon(Icons.bolt_rounded),
-                title: const Text(
-                  'الوصفات السريعة أولًا',
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+                title: Text(
+                  t.profQuickFirst,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14,
+                  ),
                 ),
                 value: p.quickMeals,
                 onChanged: (v) =>
@@ -162,16 +169,16 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
-        const SectionTitle('الصحة'),
+        SectionTitle(t.profHealth),
         Surface(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               PickedGroup(
                 id: 'avoid',
-                title: 'حساسية الأكل',
-                empty: 'لا توجد حساسية',
-                info: 'تظهر كتنبيه بالاسم فقط، ويجب أن تراجع المكونات بنفسك.',
+                title: t.profAllergies,
+                empty: t.profNoAllergies,
+                info: t.profAllergiesInfo,
                 options: setupAvoid,
                 selected: p.allergies,
                 onChanged: (v) =>
@@ -180,9 +187,9 @@ class ProfileScreen extends StatelessWidget {
               Divider(height: 28, color: Sofra.line),
               PickedGroup(
                 id: 'health',
-                title: 'حالات صحية',
-                empty: 'لا توجد حالات',
-                info: 'للتذكير فقط؛ لا يغيّر التطبيق الوصفات ولا يقدّم نصيحة طبية.',
+                title: t.profConditions,
+                empty: t.profNoConditions,
+                info: t.profConditionsInfo,
                 options: setupHealth,
                 selected: p.health,
                 onChanged: (v) => c.updateProfile((p) => p.copyWith(health: v)),
@@ -254,12 +261,12 @@ class _TextDialogState extends State<_TextDialog> {
     actions: [
       TextButton(
         onPressed: () => Navigator.of(context).pop(),
-        child: const Text('إلغاء'),
+        child: Text(context.l10n.profCancel),
       ),
       FilledButton(
         key: const ValueKey('profile-edit-save'),
         onPressed: () => Navigator.of(context).pop(field.text),
-        child: const Text('حفظ'),
+        child: Text(context.l10n.profSave),
       ),
     ],
   );
@@ -503,7 +510,7 @@ class PickedGroup extends StatelessWidget {
               for (final v in chosen)
                 _Picked(
                   key: ValueKey('$id-$v'),
-                  label: labels[v] ?? v,
+                  label: L10n.term(labels[v] ?? v),
                   onRemove: () => onChanged({...selected}..remove(v)),
                 ),
               if (rest.isNotEmpty)
@@ -531,7 +538,7 @@ class _Picked extends StatelessWidget {
     final radius = BorderRadius.circular(Sofra.r12);
     return Semantics(
       button: true,
-      label: 'إزالة $label',
+      label: context.l10n.profRemove(label),
       excludeSemantics: true,
       child: PressScale(
         child: Material(
@@ -587,7 +594,7 @@ class _AddMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PopupMenuButton<String>(
-    tooltip: 'أضف',
+    tooltip: context.l10n.profAdd,
     onSelected: onPick,
     position: PopupMenuPosition.under,
     color: Sofra.paper,
@@ -606,7 +613,7 @@ class _AddMenu extends StatelessWidget {
                 Icon(o.icon, size: 20, color: Sofra.muted),
                 const SizedBox(width: 10),
               ],
-              Text(o.label),
+              Text(L10n.term(o.label)),
             ],
           ),
         ),
@@ -624,7 +631,10 @@ class _AddMenu extends StatelessWidget {
         children: [
           Icon(Icons.add_rounded, size: 18, color: Sofra.ink),
           SizedBox(width: 4),
-          Text('أضف', style: TextStyle(fontWeight: FontWeight.w700)),
+          Text(
+            context.l10n.profAdd,
+            style: const TextStyle(fontWeight: FontWeight.w700),
+          ),
           Icon(Icons.expand_more_rounded, size: 18, color: Sofra.muted),
         ],
       ),
@@ -642,6 +652,7 @@ class SettingsScreen extends StatelessWidget {
     final c = SofraScope.controllerOf(context);
     final p = c.profile;
     final nav = SofraScope.navOf(context);
+    final t = context.l10n;
     return ScreenBody(
       children: [
         const SizedBox(height: 8),
@@ -650,20 +661,20 @@ class SettingsScreen extends StatelessWidget {
           initial: p.name.trim(),
           onTap: () => nav.goTab(AppTab.profile),
         ),
-        const SectionTitle('البلد والعملة'),
+        SectionTitle(t.profCountryCurrency),
         const Surface(child: CountryPicker()),
-        const SectionTitle('التذكيرات'),
+        SectionTitle(t.profReminders),
         const ReminderSettings(),
-        SectionTitle(context.l10n.lookSection),
+        SectionTitle(t.lookSection),
         const LookSettings(),
         const SizedBox(height: 24),
         if (c.persistent) ...[
           Center(
             child: Text(
               c.saving
-                  ? 'جاري حفظ التغييرات…'
+                  ? t.profSaving
                   : c.saveError != null
-                  ? 'توجد تغييرات لم تُحفظ'
+                  ? t.profUnsaved
                   : c.storeLabel,
               key: const ValueKey('save-status'),
               textAlign: TextAlign.center,
@@ -673,7 +684,7 @@ class SettingsScreen extends StatelessWidget {
             Center(
               child: TextButton(
                 onPressed: c.saving || c.saveError != null ? null : signOut,
-                child: const Text('تسجيل الخروج'),
+                child: Text(t.profSignOut),
               ),
             ),
           const SizedBox(height: 12),
@@ -681,7 +692,7 @@ class SettingsScreen extends StatelessWidget {
         const SizedBox(height: 22),
         Center(
           child: Text(
-            'سفرة · صُنع بحب للبيوت',
+            t.profFooter,
             style: TextStyle(color: Sofra.muted, fontSize: 12),
           ),
         ),
@@ -704,7 +715,9 @@ class _AccountCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final shown = name.trim().isEmpty ? 'حسابي' : name.trim();
+    final shown = name.trim().isEmpty
+        ? context.l10n.profMyAccount
+        : name.trim();
     return Material(
       color: Sofra.inverse,
       shape: RoundedRectangleBorder(
@@ -754,7 +767,7 @@ class _AccountCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      'حسابك وتفضيلات بيتك',
+                      context.l10n.profAccountLine,
                       style: TextStyle(
                         color: Sofra.onInverse.withValues(alpha: .75),
                         fontSize: 13,
