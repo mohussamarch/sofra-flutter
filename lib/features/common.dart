@@ -13,33 +13,43 @@ class ScreenBody extends StatelessWidget {
     super.key,
     required this.children,
     this.footer,
-    this.padding = const EdgeInsets.fromLTRB(20, 4, 20, 120),
+    // Bottom: the floating bar plus 24, so the last line clears it.
+    this.padding = const EdgeInsets.fromLTRB(20, 4, 20, 140),
   });
   final List<Widget> children;
   final Widget? footer;
   final EdgeInsets padding;
 
+  Widget get scroller => SingleChildScrollView(
+    padding: padding,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: children,
+    ),
+  );
+
+  /// Content scrolling under the footer fades out over its last 24.
+  static Widget _fadeBottom(Widget child) => ShaderMask(
+    blendMode: BlendMode.dstIn,
+    shaderCallback: (r) => LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: const [Colors.white, Colors.white, Color(0x00FFFFFF)],
+      stops: [0, r.height <= 24 ? 0 : 1 - 24 / r.height, 1],
+    ).createShader(r),
+    child: child,
+  );
+
   @override
   Widget build(BuildContext context) => Column(
     children: [
-      Expanded(
-        child: SingleChildScrollView(
-          padding: padding,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: children,
-          ),
-        ),
-      ),
+      Expanded(child: footer == null ? scroller : _fadeBottom(scroller)),
+      // No flat band and no rule: the footer sits on the page's own
+      // backdrop; the content above it fades out over 24 instead.
       if (footer != null)
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.fromLTRB(20, 12, 20, 16),
-          decoration: BoxDecoration(
-            color: Sofra.cream,
-            border: Border(top: BorderSide(color: Sofra.line)),
-          ),
-          child: footer,
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+          child: SizedBox(width: double.infinity, child: footer),
         ),
     ],
   );

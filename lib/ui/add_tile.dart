@@ -209,13 +209,16 @@ class _AddTileState extends State<AddTile> with TickerProviderStateMixin {
                       ),
                     ]
                   : primary
-                  ? [
-                      BoxShadow(
-                        color: Sofra.accentDark.withValues(alpha: .22),
-                        blurRadius: 24,
-                        offset: const Offset(0, 10),
-                      ),
-                    ]
+                  // No peach glow at night: accentDark is light there.
+                  ? Sofra.isDark
+                        ? Sofra.shadow(.6)
+                        : [
+                            BoxShadow(
+                              color: Sofra.accentDark.withValues(alpha: .22),
+                              blurRadius: 24,
+                              offset: const Offset(0, 10),
+                            ),
+                          ]
                   : null,
             ),
             child: tile,

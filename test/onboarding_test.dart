@@ -77,7 +77,7 @@ void main() {
         expect(store.data!['allergies'], ['ألبان']);
         await tapKey(tester, 'onboarding-next');
 
-        expect(find.text('أهلًا مريم!'), findsOneWidget);
+        expect(find.text('أهلًا يا مريم'), findsOneWidget);
         await tapKey(tester, 'onboarding-next');
         expect(store.data!['onboarded'], isTrue);
         expect(store.data!['country'], 'SA');

@@ -233,7 +233,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             final photo = snap.data?.firstOrNull;
             if (photo == null) {
               return Surface(
-                color: Sofra.isDark ? Sofra.okTint : const Color(0xFFF0EDD8),
+                color: Sofra.isDark ? Sofra.inverse : const Color(0xFFF0EDD8),
                 padding: const EdgeInsets.all(12),
                 child: Center(
                   child: MealArt(kind: artKind(source.id), size: 260),
@@ -564,7 +564,7 @@ class _CompareViewState extends State<_CompareView> {
     return ScreenBody(
       children: [
         Surface(
-          color: Sofra.isDark ? Sofra.okTint : const Color(0xFFF0EDD8),
+          color: Sofra.isDark ? Sofra.inverse : const Color(0xFFF0EDD8),
           padding: const EdgeInsets.all(12),
           child: Center(
             child: MealArt(

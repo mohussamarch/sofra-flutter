@@ -25,10 +25,10 @@ void main() {
   });
 
   test('strings follow the published language, digits stay Latin', () {
-    expect(L10n.current.langToggle, 'English');
+    expect(L10n.current.lookLanguage, 'اللغة');
     SofraLook.notifier.value = const SofraLook(language: AppLanguage.en);
     expect(L10n.isEnglish, isTrue);
-    expect(L10n.current.langToggle, 'العربية');
+    expect(L10n.current.lookLanguage, 'Language');
     expect(L10n.pick('كشري', 'Koshari'), 'Koshari');
     expect(L10n.pick('كشري', null), 'كشري');
     SofraLook.notifier.value = const SofraLook();
@@ -39,7 +39,7 @@ void main() {
     }
   });
 
-  testWidgets('the setup pill switches to English and left to right', (
+  testWidgets('the setup language switch turns English and left to right', (
     tester,
   ) async {
     tester.view.physicalSize = const Size(390, 844);
@@ -58,9 +58,11 @@ void main() {
       tester.element(find.byKey(const ValueKey('onboarding-next'))),
     );
     expect(direction(), TextDirection.rtl);
+    // Both names are on screen, each in its own script.
     expect(find.text('English'), findsOneWidget);
+    expect(find.text('العربية'), findsOneWidget);
 
-    await tapKey(tester, 'lang-toggle');
+    await tapKey(tester, 'lang-en');
     expect(direction(), TextDirection.ltr);
     expect(find.text('العربية'), findsOneWidget);
     final material = MaterialLocalizations.of(
@@ -69,7 +71,7 @@ void main() {
     expect(material.backButtonTooltip, 'Back');
 
     // And back.
-    await tapKey(tester, 'lang-toggle');
+    await tapKey(tester, 'lang-ar');
     expect(direction(), TextDirection.rtl);
   });
 
@@ -91,7 +93,7 @@ void main() {
       final en = L10n.of(AppLanguage.en);
       final ar = L10n.of(AppLanguage.ar);
 
-      await tapKey(tester, 'lang-toggle');
+      await tapKey(tester, 'lang-en');
       expect(find.text(en.onbWelcomeTitle), findsOneWidget);
       expect(find.text(en.onbStart), findsOneWidget);
       expect(find.text(en.onbEgypt), findsOneWidget);

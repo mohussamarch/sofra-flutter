@@ -10,7 +10,7 @@ import '../ui/design.dart';
 import '../ui/flags.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
-import 'language_pill.dart';
+import 'language_switch.dart';
 
 class CountryPicker extends StatelessWidget {
   const CountryPicker({super.key});
@@ -137,27 +137,33 @@ class OnboardingScreen extends StatelessWidget {
       children: [
         if (step == 0)
           Padding(
-            padding: const EdgeInsets.fromLTRB(24, 20, 24, 0),
-            child: Row(
+            padding: const EdgeInsets.fromLTRB(24, 12, 24, 0),
+            child: Column(
               children: [
-                Icon(Icons.restaurant_rounded, color: Sofra.accent, size: 26),
-                const SizedBox(width: 8),
-                Flexible(
-                  child: Text(
-                    t.appTitle,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Sofra.heading(28),
-                  ),
+                // The language comes first, centred at the very top of the
+                // first step: «English» is visible before any Arabic text
+                // is read. Later it lives in settings only.
+                const Center(child: LanguageSwitch()),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.restaurant_rounded,
+                      color: Sofra.accent,
+                      size: 22,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(t.appTitle, maxLines: 1, style: Sofra.heading(22)),
+                  ],
                 ),
-                const Spacer(),
-                const LanguagePill(),
               ],
             ),
           )
         else
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 8, 0),
+            // The back icon's 48 box centres it on the 24 content edge.
+            padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
             child: Row(
               children: [
                 IconButton(
@@ -167,8 +173,10 @@ class OnboardingScreen extends StatelessWidget {
                   icon: const Icon(Icons.arrow_back_rounded),
                   tooltip: t.onbBack,
                 ),
-                const SizedBox(width: 4),
+                const SizedBox(width: 8),
                 Expanded(child: _Progress(step: step)),
+                const SizedBox(width: 8),
+                // A fixed slot, so the bar keeps its length on every step.
                 SizedBox(
                   width: 64,
                   child: optional
@@ -179,13 +187,13 @@ class OnboardingScreen extends StatelessWidget {
                         )
                       : null,
                 ),
-                const LanguagePill(),
               ],
             ),
           ),
         Expanded(
           child: ScreenBody(
             padding: const EdgeInsets.fromLTRB(24, 16, 24, 32),
+            // The one primary action owns the thumb zone.
             footer: DepthButton(
               key: const ValueKey('onboarding-next'),
               label: step == 0
@@ -233,7 +241,8 @@ class OnboardingScreen extends StatelessWidget {
             Text(
               t.onbWelcomeTitle,
               textAlign: TextAlign.center,
-              style: Sofra.heading(32),
+              textWidthBasis: TextWidthBasis.longestLine,
+              style: Sofra.heading(28),
             ),
             const SizedBox(height: 32),
             _TileRow([
@@ -297,6 +306,12 @@ class OnboardingScreen extends StatelessWidget {
               onChanged: (v) => c.updateProfile((p) => p.copyWith(name: v)),
               decoration: InputDecoration(
                 hintText: t.onbNameHint,
+                // Light, so an empty field never reads as a typed name.
+                hintStyle: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                  color: Sofra.muted,
+                ),
                 counterText: '',
               ),
             ),
@@ -394,7 +409,8 @@ class OnboardingScreen extends StatelessWidget {
             Text(
               t.onbHello(p.displayName),
               textAlign: TextAlign.center,
-              style: Sofra.heading(30),
+              textWidthBasis: TextWidthBasis.longestLine,
+              style: Sofra.heading(28),
             ),
             const SizedBox(height: 4),
             Text(
@@ -475,7 +491,7 @@ class _Hero extends StatelessWidget {
         child: Icon(icon, color: Sofra.accent, size: 34),
       ),
       const SizedBox(height: 16),
-      Text(title, style: Sofra.heading(30)),
+      Text(title, style: Sofra.heading(26)),
     ],
   );
 }
@@ -488,7 +504,7 @@ class _Label extends StatelessWidget {
     padding: const EdgeInsets.only(top: 32, bottom: 12),
     child: Text(
       text,
-      style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+      style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
     ),
   );
 }
@@ -568,8 +584,10 @@ class _Tile extends StatelessWidget {
             child: InkWell(
               borderRadius: radius,
               onTap: onTap,
+              // Top aligned: in a row where one name wraps to two lines,
+              // the pictures and the first lines still share one line.
               child: Stack(
-                alignment: Alignment.center,
+                alignment: Alignment.topCenter,
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(8, 18, 8, 14),
@@ -668,8 +686,11 @@ class _MoreTile extends StatelessWidget {
       excludeSemantics: true,
       child: PressScale(
         child: Material(
-          color: Sofra.sand.withValues(alpha: .55),
-          borderRadius: radius,
+          color: Sofra.surface,
+          shape: RoundedRectangleBorder(
+            borderRadius: radius,
+            side: BorderSide(color: Sofra.line),
+          ),
           child: InkWell(
             borderRadius: radius,
             onTap: onTap,
@@ -692,7 +713,7 @@ class _MoreTile extends StatelessWidget {
                             textDirection: TextDirection.ltr,
                             style: TextStyle(
                               fontSize: 17,
-                              fontWeight: FontWeight.w800,
+                              fontWeight: FontWeight.w700,
                               color: Sofra.accent,
                             ),
                           )
@@ -1028,7 +1049,7 @@ class _People extends StatelessWidget {
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w700,
                   color: Sofra.accent,
                 ),
               ),
@@ -1093,7 +1114,7 @@ class _Stat extends StatelessWidget {
         const SizedBox(height: 6),
         Text(
           '$value',
-          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
         ),
         Text(
           label,

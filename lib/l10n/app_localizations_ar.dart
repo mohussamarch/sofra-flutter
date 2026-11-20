@@ -13,9 +13,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appTitle => 'سفرة';
 
   @override
-  String get langToggle => 'English';
-
-  @override
   String get lookSection => 'العرض واللغة';
 
   @override
@@ -90,12 +87,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get lookVisionTritan => 'صعوبة تمييز الأزرق';
-
-  @override
-  String get lookLanguageArabicShort => 'ع';
-
-  @override
-  String get lookLanguageEnglishShort => 'EN';
 
   @override
   String get uiIncrease => 'زيادة العدد';
@@ -692,8 +683,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitSampleAdded => 'أُضيفت مكونات تجريبية إلى مطبخك';
 
   @override
-  String get kitDeductNote =>
-      'تُخصم الكميات عند تأكيد انتهاء الطبخ، لا عند اختيار الوصفة.';
+  String get kitDeductNote => 'تُخصم الكميات بعد تأكيد الطبخ.';
 
   @override
   String get kitQuantityUnknown => 'كمية غير محددة';
@@ -1147,7 +1137,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String onbHello(String name) {
-    return 'أهلًا $name!';
+    return 'أهلًا يا $name';
   }
 
   @override
@@ -1459,10 +1449,10 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get planCookFromStockQuestion => 'نطلع أكلة حلوة من الموجود؟';
+  String get planCookFromStockQuestion => 'نُعدّ أكلة طيبة مما لديك';
 
   @override
-  String get planWhatCanICook => 'أطبخ إيه باللي عندي؟';
+  String get planWhatCanICook => 'ماذا أطبخ مما لدي؟';
 
   @override
   String get planWhatCanICookHint =>
@@ -1497,8 +1487,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planTodayMeals => 'وجبات اليوم';
 
   @override
-  String get planNoMealToday =>
-      'لسه مفيش وجبة مخططة لليوم. تقدر تختار وتطبخ مباشرة أو ترتّب الأيام الجاية.';
+  String get planNoMealToday => 'لا توجد وجبة لليوم بعد.';
 
   @override
   String get planOpenPlan => 'افتح الخطة';

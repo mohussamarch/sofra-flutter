@@ -31,7 +31,11 @@ class ChefArt extends StatelessWidget {
         width: size,
         height: size * .88,
         child: CustomPaint(
-          painter: _ChefPainter(celebrate: celebrate, compact: compact),
+          painter: _ChefPainter(
+            celebrate: celebrate,
+            compact: compact,
+            dark: Sofra.isDark,
+          ),
         ),
       ),
     ),
@@ -39,9 +43,16 @@ class ChefArt extends StatelessWidget {
 }
 
 class _ChefPainter extends CustomPainter {
-  const _ChefPainter({required this.celebrate, required this.compact});
+  const _ChefPainter({
+    required this.celebrate,
+    required this.compact,
+    required this.dark,
+  });
   final bool celebrate;
   final bool compact;
+
+  /// The halo and floor follow the look: a quiet disc at night.
+  final bool dark;
   @override
   void paint(Canvas c, Size s) {
     c.save();
@@ -68,8 +79,14 @@ class _ChefPainter extends CustomPainter {
         ..strokeWidth = width
         ..strokeCap = StrokeCap.round,
     );
-    oval(const Rect.fromLTWH(45, 30, 238, 235), const Color(0xFFE5EFD9));
-    oval(const Rect.fromLTWH(78, 248, 170, 18), const Color(0xFFD2DFCB));
+    oval(
+      const Rect.fromLTWH(45, 30, 238, 235),
+      dark ? Sofra.inverse : const Color(0xFFE5EFD9),
+    );
+    oval(
+      const Rect.fromLTWH(78, 248, 170, 18),
+      dark ? Sofra.card : const Color(0xFFD2DFCB),
+    );
     // Playful ingredients around the chef, with quiet contact shadows.
     if (!compact) {
       c.save();
@@ -258,7 +275,9 @@ class _ChefPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_ChefPainter oldDelegate) =>
-      oldDelegate.celebrate != celebrate || oldDelegate.compact != compact;
+      oldDelegate.celebrate != celebrate ||
+      oldDelegate.compact != compact ||
+      oldDelegate.dark != dark;
 }
 
 class MealArt extends StatelessWidget {

@@ -31,11 +31,11 @@ class RecipeCard extends StatelessWidget {
     if (Paper.isOn(context)) return _PaperEntry(row: row, saved: saved);
     return Material(
       color: Sofra.card,
-      borderRadius: BorderRadius.circular(24),
+      borderRadius: BorderRadius.circular(Sofra.r22),
       child: InkWell(
         key: ValueKey(dish == null ? 'recipe-$id' : 'dish-$id'),
         onTap: () => nav.openRecipe(id, compare: dish != null),
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(Sofra.r22),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -44,11 +44,15 @@ class RecipeCard extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
                 decoration: BoxDecoration(
-                  color: kind.isEven
-                      ? (Sofra.isDark ? Sofra.okTint : const Color(0xFFF0EDD8))
+                  // One neutral backdrop for every dish at night, so the
+                  // food keeps the colour.
+                  color: Sofra.isDark
+                      ? Sofra.inverse
+                      : kind.isEven
+                      ? const Color(0xFFF0EDD8)
                       : Sofra.mint,
                   borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(24),
+                    top: Radius.circular(Sofra.r22),
                   ),
                 ),
                 child: Column(
@@ -112,7 +116,7 @@ class RecipeCard extends StatelessWidget {
                             if (dish == null)
                               SoftTag(
                                 L10n.term('${row['cuisine']}'),
-                                color: Sofra.cream,
+                                color: Sofra.sand,
                                 ink: Sofra.muted,
                                 icon: Icons.public_rounded,
                               ),
@@ -120,14 +124,14 @@ class RecipeCard extends StatelessWidget {
                               dish == null
                                   ? minutesLabel(row['totalTime'])
                                   : dishTime(dish!.$2),
-                              color: Sofra.cream,
+                              color: Sofra.sand,
                               ink: Sofra.muted,
                               icon: Icons.schedule_rounded,
                             ),
                             if (row['difficulty'] != null && dish == null)
                               SoftTag(
                                 L10n.term('${row['difficulty']}'),
-                                color: Sofra.cream,
+                                color: Sofra.sand,
                                 ink: Sofra.muted,
                               ),
                           ],

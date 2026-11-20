@@ -17,6 +17,7 @@ class SofraPalette {
     required this.paper,
     required this.surface,
     required this.card,
+    required this.raised,
     required this.inverse,
     required this.onInverse,
     required this.ok,
@@ -33,7 +34,7 @@ class SofraPalette {
   });
 
   final Color ink, muted, accent, accentDark, accentTint, onAccent;
-  final Color paper, surface, card, inverse, onInverse;
+  final Color paper, surface, card, raised, inverse, onInverse;
   final Color ok, okTint, warn, warnTint, sage, sand, line, yellow;
 
   /// The backdrop's soft colour washes, and the gradient under them.
@@ -50,6 +51,7 @@ class SofraPalette {
     paper: Color(0xFFF7F1E6),
     surface: Color(0xFFFFFDF8),
     card: Color(0xFFFFFFFF),
+    raised: Color(0xFFFFFFFF),
     inverse: Color(0xFF2A211B),
     onInverse: Color(0xFFFFFFFF),
     ok: Color(0xFF4E7356),
@@ -74,16 +76,21 @@ class SofraPalette {
   /// Warm charcoal (chosen 20 Nov 2026): a near-neutral dark tinted
   /// slightly toward brown so food colours stay true; higher surfaces are
   /// lighter, accent desaturated to 6:1 on cards, text 15:1, never pure white.
+  /// Each layer is lighter than the one under it: paper, surface (1.12:1),
+  /// card (1.24:1), sand for tracks and wells (above the card), raised for
+  /// menus and the selected segment. Brown tints stay at 22% saturation or
+  /// less so the food keeps the colour.
   static const dark = SofraPalette(
     ink: Color(0xFFEEE7DF),
     muted: Color(0xFFA99F95),
     accent: Color(0xFFE58E6B),
     accentDark: Color(0xFFF0AA8C),
-    accentTint: Color(0xFF3B2820),
+    accentTint: Color(0xFF3A2C25),
     onAccent: Color(0xFF1C1210),
     paper: Color(0xFF151311),
-    surface: Color(0xFF1E1B18),
-    card: Color(0xFF272320),
+    surface: Color(0xFF211E1B),
+    card: Color(0xFF2A2623),
+    raised: Color(0xFF453F3A),
     inverse: Color(0xFF312C28),
     onInverse: Color(0xFFF4EEE7),
     ok: Color(0xFF94C49C),
@@ -91,15 +98,15 @@ class SofraPalette {
     warn: Color(0xFFE8AE6E),
     warnTint: Color(0xFF33281A),
     sage: Color(0xFF6E6259),
-    sand: Color(0xFF1A1715),
-    line: Color(0xFF3A3430),
+    sand: Color(0xFF35312D),
+    line: Color(0xFF443E39),
     yellow: Color(0xFFD9B565),
     washes: [
-      Color(0xFF2E231D),
-      Color(0xFF25201C),
-      Color(0xFF2B221D),
+      Color(0xFF241F1C),
+      Color(0xFF211E1B),
+      Color(0xFF231F1C),
+      Color(0xFF201D1A),
       Color(0xFF221E1B),
-      Color(0xFF29211C),
     ],
     washBase: [Color(0xFF171412), Color(0xFF151311), Color(0xFF181513)],
     shadow: Color(0xFF000000),
@@ -129,6 +136,9 @@ abstract final class Sofra {
 
   /// The brightest raised surface: white in the light look.
   static Color get card => _p.card;
+
+  /// Above the card: menus and the selected part of a segmented choice.
+  static Color get raised => _p.raised;
 
   /// A dark block that stays dark in both looks (the account card), and
   /// what goes on it.
@@ -325,6 +335,7 @@ class Surface extends StatelessWidget {
     this.color,
     this.padding = const EdgeInsets.all(20),
     this.border = false,
+    this.outline,
   });
   final Widget child;
 
@@ -332,8 +343,12 @@ class Surface extends StatelessWidget {
   final Color? color;
   final EdgeInsetsGeometry padding;
 
-  /// A flat, quieter card (no lift) for secondary content.
+  /// A flat, quieter card (no lift) for secondary content, framed by a
+  /// hairline so it never melts into the page.
   final bool border;
+
+  /// A hairline around a lifted card.
+  final Color? outline;
   @override
   Widget build(BuildContext context) {
     final paper = Paper.isOn(context);
@@ -343,11 +358,15 @@ class Surface extends StatelessWidget {
         color: paper
             ? const Color(0x33FFF9EC)
             : border
-            ? Sofra.sand.withValues(alpha: .6)
+            ? (Sofra.isDark ? Sofra.surface : Sofra.sand.withValues(alpha: .6))
             : color ?? Sofra.card,
         borderRadius: BorderRadius.circular(Sofra.r22),
         border: paper
             ? Border.all(color: Paper.ink.withValues(alpha: .12))
+            : border
+            ? Border.all(color: Sofra.line)
+            : outline != null
+            ? Border.all(color: outline!)
             : null,
         boxShadow: border || paper ? null : Sofra.shadow(),
       ),
@@ -565,32 +584,40 @@ class Counter extends StatelessWidget {
       color: Sofra.sand,
       borderRadius: BorderRadius.circular(Sofra.r16),
     ),
-    child: Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        _step(
-          Icons.add_rounded,
-          context.l10n.uiIncrease,
-          value < max ? value + 1 : null,
-        ),
-        SizedBox(
-          width: 46,
-          child: AnimatedSwitcher(
-            duration: Sofra.motion(context, true),
-            child: Text(
-              '$value',
-              key: ValueKey(value),
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
+    // «− 4 +» in both languages: a counter points nowhere, so it does not
+    // mirror with the layout.
+    child: Directionality(
+      textDirection: TextDirection.ltr,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _step(
+            Icons.remove_rounded,
+            context.l10n.uiDecrease,
+            value > 1 ? value - 1 : null,
+          ),
+          SizedBox(
+            width: 46,
+            child: AnimatedSwitcher(
+              duration: Sofra.motion(context, true),
+              child: Text(
+                '$value',
+                key: ValueKey(value),
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
             ),
           ),
-        ),
-        _step(
-          Icons.remove_rounded,
-          context.l10n.uiDecrease,
-          value > 1 ? value - 1 : null,
-        ),
-      ],
+          _step(
+            Icons.add_rounded,
+            context.l10n.uiIncrease,
+            value < max ? value + 1 : null,
+          ),
+        ],
+      ),
     ),
   );
 
@@ -875,6 +902,155 @@ class SofraChip extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// One option of a [SofraSegments]: an [icon], a [glyph] drawn at
+/// [glyphSize] (the text-size letters), or a [text] label. [name] is the
+/// tooltip and the screen-reader label.
+class SofraSegment<T> {
+  const SofraSegment(
+    this.value,
+    this.name, {
+    this.icon,
+    this.glyph,
+    this.glyphSize,
+    this.text,
+  });
+  final T value;
+  final String name;
+  final IconData? icon;
+  final String? glyph;
+  final double? glyphSize;
+  final String? text;
+}
+
+/// A segmented choice: one tap picks a value and shows it at once. The
+/// track is a sand well framed by a hairline (visible on any backdrop);
+/// the chosen part is raised. Every part is at least 44 x 44.
+class SofraSegments<T> extends StatelessWidget {
+  const SofraSegments({
+    super.key,
+    required this.id,
+    required this.value,
+    required this.options,
+    required this.onChanged,
+    this.label,
+  });
+
+  /// Each part is keyed `<id>-<value>`.
+  final String id;
+  final T value;
+  final List<SofraSegment<T>> options;
+  final ValueChanged<T> onChanged;
+
+  /// What the whole choice is, for screen readers.
+  final String? label;
+
+  @override
+  Widget build(BuildContext context) => Semantics(
+    container: true,
+    label: label,
+    child: Container(
+      padding: const EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        color: Sofra.sand,
+        borderRadius: BorderRadius.circular(Sofra.r12),
+        border: Border.all(color: Sofra.line),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (final o in options)
+            _SegmentPart(
+              key: ValueKey(
+                '$id-${o.value is Enum ? (o.value as Enum).name : o.value}',
+              ),
+              option: o,
+              selected: o.value == value,
+              onTap: () => onChanged(o.value),
+            ),
+        ],
+      ),
+    ),
+  );
+}
+
+class _SegmentPart<T> extends StatelessWidget {
+  const _SegmentPart({
+    super.key,
+    required this.option,
+    required this.selected,
+    required this.onTap,
+  });
+  final SofraSegment<T> option;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final o = option;
+    final ink = !selected
+        ? Sofra.muted
+        : Sofra.isDark
+        ? Sofra.accentDark
+        : Sofra.accent;
+    final Widget face = o.icon != null
+        ? Icon(o.icon, size: 19, color: ink)
+        : o.text != null
+        ? Text(
+            o.text!,
+            maxLines: 1,
+            style: TextStyle(
+              fontSize: 14,
+              height: 1.2,
+              fontWeight: FontWeight.w700,
+              color: ink,
+            ),
+          )
+        : Text(
+            o.glyph ?? '',
+            textScaler: TextScaler.noScaling,
+            style: TextStyle(
+              fontSize: o.glyphSize,
+              height: 1,
+              fontWeight: FontWeight.w700,
+              color: ink,
+            ),
+          );
+    final part = GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: AnimatedContainer(
+        duration: Sofra.motion(context, true),
+        curve: Sofra.quickCurve,
+        height: 44,
+        constraints: const BoxConstraints(minWidth: 44),
+        padding: EdgeInsets.symmetric(horizontal: o.text != null ? 14 : 0),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: selected ? Sofra.raised : Sofra.raised.withValues(alpha: 0),
+          borderRadius: BorderRadius.circular(Sofra.r12 - 3),
+          // At night a shadow does not show, so the chosen part also gets
+          // an accent hairline: never colour of the icon alone.
+          border: Border.all(
+            color: selected && Sofra.isDark
+                ? Sofra.accent.withValues(alpha: .35)
+                : Sofra.accent.withValues(alpha: 0),
+          ),
+          boxShadow: selected ? Sofra.shadow(.25) : null,
+        ),
+        child: face,
+      ),
+    );
+    return Semantics(
+      button: true,
+      selected: selected,
+      label: o.name,
+      excludeSemantics: true,
+      // A text part names itself; icons and letters get a tooltip.
+      child: o.text != null ? part : Tooltip(message: o.name, child: part),
     );
   }
 }

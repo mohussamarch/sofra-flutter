@@ -27,7 +27,7 @@ class DailyHomeScreen extends StatelessWidget {
           controller.profile.name.isEmpty
               ? t.planWelcome
               : t.planWelcomeName(controller.profile.name),
-          style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
+          style: Sofra.heading(24),
         ),
         const SizedBox(height: 6),
         Text(
@@ -35,20 +35,16 @@ class DailyHomeScreen extends StatelessWidget {
           style: TextStyle(color: Sofra.muted, fontSize: 16),
         ),
         const SizedBox(height: 22),
+        // At night a card with an accent hairline, not a brown block.
         Surface(
-          color: Sofra.mint,
+          color: Sofra.isDark ? Sofra.card : Sofra.mint,
+          outline: Sofra.isDark ? Sofra.accent.withValues(alpha: .25) : null,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Icon(Icons.soup_kitchen_outlined, color: Sofra.green, size: 36),
               const SizedBox(height: 12),
-              Text(
-                t.planWhatCanICook,
-                style: const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
+              Text(t.planWhatCanICook, style: Sofra.heading(22)),
               const SizedBox(height: 8),
               Text(t.planWhatCanICookHint),
               const SizedBox(height: 20),
@@ -114,17 +110,21 @@ class DailyHomeScreen extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         if (today.isEmpty)
-          Surface(
-            border: true,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(t.planNoMealToday),
-                TextButton(
-                  onPressed: () => nav.goTab(AppTab.table),
-                  child: Text(t.planOpenPlan),
-                ),
-              ],
+          SizedBox(
+            width: double.infinity,
+            child: Surface(
+              border: true,
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(t.planNoMealToday),
+                  TextButton(
+                    onPressed: () => nav.goTab(AppTab.table),
+                    child: Text(t.planOpenPlan),
+                  ),
+                ],
+              ),
             ),
           ),
         for (final meal in today)

@@ -1,10 +1,6 @@
 {
   "@@locale": "ar",
   "appTitle": "سفرة",
-  "langToggle": "English",
-  "@langToggle": {
-    "description": "Pill that switches to the other language; shows that language's own name."
-  },
   "lookSection": "العرض واللغة",
   "lookAppearance": "المظهر",
   "lookLight": "فاتح",
@@ -33,8 +29,6 @@
   "lookVisionProtan": "صعوبة تمييز الأحمر",
   "lookVisionDeutan": "صعوبة تمييز الأخضر",
   "lookVisionTritan": "صعوبة تمييز الأزرق",
-  "lookLanguageArabicShort": "ع",
-  "lookLanguageEnglishShort": "EN",
   "uiIncrease": "زيادة العدد",
   "uiDecrease": "تقليل العدد",
   "commTitle": "مجتمع سفرة",
@@ -451,7 +445,7 @@
   "kitEmptyHint": "أضف بعض المكونات كبداية. لا نحتاج إلى جرد كامل للبدء.",
   "kitTrySample": "جرّب بمكونات جاهزة",
   "kitSampleAdded": "أُضيفت مكونات تجريبية إلى مطبخك",
-  "kitDeductNote": "تُخصم الكميات عند تأكيد انتهاء الطبخ، لا عند اختيار الوصفة.",
+  "kitDeductNote": "تُخصم الكميات بعد تأكيد الطبخ.",
   "kitQuantityUnknown": "كمية غير محددة",
   "kitEditItem": "تعديل {name}",
   "@kitEditItem": {
@@ -788,7 +782,7 @@
   "@onbHealthKidneys": {
     "description": "Short label for the stored condition kidney disease."
   },
-  "onbHello": "أهلًا {name}!",
+  "onbHello": "أهلًا يا {name}",
   "@onbHello": {
     "placeholders": {
       "name": {
@@ -1017,8 +1011,8 @@
       }
     }
   },
-  "planCookFromStockQuestion": "نطلع أكلة حلوة من الموجود؟",
-  "planWhatCanICook": "أطبخ إيه باللي عندي؟",
+  "planCookFromStockQuestion": "نُعدّ أكلة طيبة مما لديك",
+  "planWhatCanICook": "ماذا أطبخ مما لدي؟",
   "planWhatCanICookHint": "اقتراحات من خزينك، مع توضيح الكميات والناقص. لا نخصم أي شيء قبل تأكيد الطبخ.",
   "planDiscoverFromStock": "اكتشف من الموجود",
   "planExploreAll": "أو استكشف كل الوصفات",
@@ -1042,7 +1036,7 @@
   "planLeftoversNone": "لا توجد بواقي مسجلة.",
   "planSeeThem": "شوفها",
   "planTodayMeals": "وجبات اليوم",
-  "planNoMealToday": "لسه مفيش وجبة مخططة لليوم. تقدر تختار وتطبخ مباشرة أو ترتّب الأيام الجاية.",
+  "planNoMealToday": "لا توجد وجبة لليوم بعد.",
   "planOpenPlan": "افتح الخطة",
   "planMonthAndBudget": "خطة الشهر والميزانية",
   "planShoppingItems": "قائمة المشتريات",

@@ -104,12 +104,6 @@ abstract class AppLocalizations {
   /// **'سفرة'**
   String get appTitle;
 
-  /// Pill that switches to the other language; shows that language's own name.
-  ///
-  /// In ar, this message translates to:
-  /// **'English'**
-  String get langToggle;
-
   /// No description provided for @lookSection.
   ///
   /// In ar, this message translates to:
@@ -259,18 +253,6 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'صعوبة تمييز الأزرق'**
   String get lookVisionTritan;
-
-  /// No description provided for @lookLanguageArabicShort.
-  ///
-  /// In ar, this message translates to:
-  /// **'ع'**
-  String get lookLanguageArabicShort;
-
-  /// No description provided for @lookLanguageEnglishShort.
-  ///
-  /// In ar, this message translates to:
-  /// **'EN'**
-  String get lookLanguageEnglishShort;
 
   /// No description provided for @uiIncrease.
   ///
@@ -1270,7 +1252,7 @@ abstract class AppLocalizations {
   /// No description provided for @kitDeductNote.
   ///
   /// In ar, this message translates to:
-  /// **'تُخصم الكميات عند تأكيد انتهاء الطبخ، لا عند اختيار الوصفة.'**
+  /// **'تُخصم الكميات بعد تأكيد الطبخ.'**
   String get kitDeductNote;
 
   /// No description provided for @kitQuantityUnknown.
@@ -2014,7 +1996,7 @@ abstract class AppLocalizations {
   /// No description provided for @onbHello.
   ///
   /// In ar, this message translates to:
-  /// **'أهلًا {name}!'**
+  /// **'أهلًا يا {name}'**
   String onbHello(String name);
 
   /// No description provided for @onbReady.
@@ -2554,13 +2536,13 @@ abstract class AppLocalizations {
   /// No description provided for @planCookFromStockQuestion.
   ///
   /// In ar, this message translates to:
-  /// **'نطلع أكلة حلوة من الموجود؟'**
+  /// **'نُعدّ أكلة طيبة مما لديك'**
   String get planCookFromStockQuestion;
 
   /// No description provided for @planWhatCanICook.
   ///
   /// In ar, this message translates to:
-  /// **'أطبخ إيه باللي عندي؟'**
+  /// **'ماذا أطبخ مما لدي؟'**
   String get planWhatCanICook;
 
   /// No description provided for @planWhatCanICookHint.
@@ -2620,7 +2602,7 @@ abstract class AppLocalizations {
   /// No description provided for @planNoMealToday.
   ///
   /// In ar, this message translates to:
-  /// **'لسه مفيش وجبة مخططة لليوم. تقدر تختار وتطبخ مباشرة أو ترتّب الأيام الجاية.'**
+  /// **'لا توجد وجبة لليوم بعد.'**
   String get planNoMealToday;
 
   /// No description provided for @planOpenPlan.

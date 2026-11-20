@@ -13,9 +13,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Sofra';
 
   @override
-  String get langToggle => 'العربية';
-
-  @override
   String get lookSection => 'Display & language';
 
   @override
@@ -91,12 +88,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lookVisionTritan => 'Hard to see blue';
-
-  @override
-  String get lookLanguageArabicShort => 'ع';
-
-  @override
-  String get lookLanguageEnglishShort => 'EN';
 
   @override
   String get uiIncrease => 'Increase';
@@ -729,8 +720,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kitSampleAdded => 'Sample ingredients added to your kitchen';
 
   @override
-  String get kitDeductNote =>
-      'Amounts come off when you confirm cooking is done, not when you pick a recipe.';
+  String get kitDeductNote => 'Stock updates after you confirm cooking.';
 
   @override
   String get kitQuantityUnknown => 'Amount not set';
@@ -1160,7 +1150,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onbContinue => 'Continue';
 
   @override
-  String get onbWelcomeTitle => 'Everything in your kitchen\nmakes a good meal';
+  String get onbWelcomeTitle => 'Everything in your kitchen makes a good meal';
 
   @override
   String get onbNameTitle => 'What\'s your name?';
@@ -1211,7 +1201,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String onbHello(String name) {
-    return 'Hi $name!';
+    return 'Hi, $name';
   }
 
   @override
@@ -1542,7 +1532,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get planCookFromStockQuestion =>
-      'Shall we make something nice from what you have?';
+      'Cook something good from what you have';
 
   @override
   String get planWhatCanICook => 'What can I cook with what I have?';
@@ -1592,8 +1582,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planTodayMeals => 'Today\'s meals';
 
   @override
-  String get planNoMealToday =>
-      'No meal planned for today yet. You can pick one and cook right away, or plan the coming days.';
+  String get planNoMealToday => 'No meal planned for today yet.';
 
   @override
   String get planOpenPlan => 'Open the plan';

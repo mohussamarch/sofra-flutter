@@ -683,6 +683,7 @@ class SettingsScreen extends StatelessWidget {
                   : c.storeLabel,
               key: const ValueKey('save-status'),
               textAlign: TextAlign.center,
+              style: TextStyle(color: Sofra.muted, fontSize: 12),
             ),
           ),
           if (signOut != null)

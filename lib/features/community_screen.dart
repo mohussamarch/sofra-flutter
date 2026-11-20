@@ -1316,6 +1316,7 @@ class _SharedKitchenState extends State<_SharedKitchen> {
                         style: const TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w800,
+                          // Latin code only: never space Arabic letters.
                           letterSpacing: 4,
                         ),
                       ),

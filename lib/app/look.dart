@@ -235,6 +235,9 @@ ThemeData sofraTheme() => ThemeData(
   fontFamily: 'IBMPlexSansArabic',
   scaffoldBackgroundColor: Sofra.cream,
   splashFactory: InkSparkle.splashFactory,
+  // Warm press and highlight, never Material's cool grey.
+  highlightColor: Sofra.accentTint,
+  splashColor: Sofra.accentTint.withValues(alpha: .5),
   colorScheme: ColorScheme.fromSeed(
     seedColor: Sofra.accent,
     brightness: Sofra.isDark ? Brightness.dark : Brightness.light,
@@ -258,11 +261,15 @@ ThemeData sofraTheme() => ThemeData(
   iconTheme: IconThemeData(color: Sofra.ink),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: Sofra.surface,
+    // At night a field is a raised card with a hairline, so it reads as a
+    // field on the dark page instead of a floating hint.
+    fillColor: Sofra.isDark ? Sofra.card : Sofra.surface,
     contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
     hintStyle: TextStyle(color: Sofra.muted),
     border: _field,
-    enabledBorder: _field,
+    enabledBorder: Sofra.isDark
+        ? _field.copyWith(borderSide: BorderSide(color: Sofra.line))
+        : _field,
     focusedBorder: _field.copyWith(
       borderSide: BorderSide(color: Sofra.sage, width: 1.5),
     ),
@@ -271,9 +278,9 @@ ThemeData sofraTheme() => ThemeData(
     ),
   ),
   chipTheme: ChipThemeData(
-    backgroundColor: Sofra.surface,
+    backgroundColor: Sofra.isDark ? Sofra.card : Sofra.surface,
     selectedColor: Sofra.accentTint,
-    side: BorderSide.none,
+    side: BorderSide(color: Sofra.line),
     labelStyle: TextStyle(
       fontWeight: FontWeight.w700,
       color: Sofra.ink,
@@ -285,21 +292,32 @@ ThemeData sofraTheme() => ThemeData(
     showCheckmark: false,
     labelPadding: const EdgeInsets.symmetric(horizontal: 6),
   ),
+  // Sheets, dialogs and menus float above the page, so in the dark look
+  // they are lighter than it.
   bottomSheetTheme: BottomSheetThemeData(
-    backgroundColor: Sofra.cream,
+    backgroundColor: Sofra.isDark ? Sofra.card : Sofra.cream,
     showDragHandle: true,
-    dragHandleColor: Sofra.line,
+    dragHandleColor: Sofra.isDark
+        ? Sofra.muted.withValues(alpha: .5)
+        : Sofra.line,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(Sofra.r28)),
     ),
   ),
   dialogTheme: DialogThemeData(
-    backgroundColor: Sofra.cream,
+    backgroundColor: Sofra.isDark ? Sofra.card : Sofra.cream,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(Sofra.r28),
     ),
   ),
-  popupMenuTheme: PopupMenuThemeData(color: Sofra.paper),
+  popupMenuTheme: PopupMenuThemeData(
+    color: Sofra.isDark ? Sofra.raised : Sofra.card,
+    surfaceTintColor: Colors.transparent,
+    elevation: 8,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(Sofra.r16),
+    ),
+  ),
   snackBarTheme: SnackBarThemeData(
     backgroundColor: Sofra.inverse,
     contentTextStyle: TextStyle(color: Sofra.onInverse),
@@ -313,7 +331,12 @@ ThemeData sofraTheme() => ThemeData(
       (s) => s.contains(WidgetState.selected) ? Sofra.onAccent : Sofra.muted,
     ),
     trackColor: WidgetStateProperty.resolveWith(
-      (s) => s.contains(WidgetState.selected) ? Sofra.accent : Sofra.sand,
+      // Off at night: the hairline colour, so the track shows on a card.
+      (s) => s.contains(WidgetState.selected)
+          ? Sofra.accent
+          : Sofra.isDark
+          ? Sofra.line
+          : Sofra.sand,
     ),
     trackOutlineColor: WidgetStateProperty.resolveWith(
       (s) => s.contains(WidgetState.selected) ? Sofra.accent : Sofra.line,

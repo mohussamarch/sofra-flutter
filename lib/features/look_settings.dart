@@ -4,6 +4,7 @@ import '../app/look.dart';
 import '../app/scope.dart';
 import '../l10n/l10n.dart';
 import '../ui/design.dart';
+import 'language_switch.dart';
 
 /// Display and language: appearance, text size, colour correction, motion
 /// and language, one compact row each. Explanations sit behind an info icon.
@@ -23,20 +24,29 @@ class LookSettings extends StatelessWidget {
           _Row(
             icon: Icons.contrast_rounded,
             label: t.lookAppearance,
-            control: _Segments<Appearance>(
+            control: SofraSegments<Appearance>(
               id: 'look-appearance',
+              label: t.lookAppearance,
               value: p.appearance,
               onChanged: (v) =>
                   c.updateProfile((p) => p.copyWith(appearance: v)),
               options: [
-                (Appearance.light, t.lookLight, Icons.light_mode_rounded, null),
-                (
+                SofraSegment(
+                  Appearance.light,
+                  t.lookLight,
+                  icon: Icons.light_mode_rounded,
+                ),
+                // A phone: «same as the phone».
+                SofraSegment(
                   Appearance.system,
                   t.lookSystem,
-                  Icons.brightness_auto_rounded,
-                  null,
+                  icon: Icons.smartphone_rounded,
                 ),
-                (Appearance.dark, t.lookDark, Icons.dark_mode_rounded, null),
+                SofraSegment(
+                  Appearance.dark,
+                  t.lookDark,
+                  icon: Icons.dark_mode_rounded,
+                ),
               ],
             ),
           ),
@@ -44,15 +54,18 @@ class LookSettings extends StatelessWidget {
           _Row(
             icon: Icons.format_size_rounded,
             label: t.lookTextSize,
-            control: _Segments<int>(
+            control: SofraSegments<int>(
               id: 'look-text',
+              label: t.lookTextSize,
               value: p.textStep,
               onChanged: (v) => c.updateProfile((p) => p.copyWith(textStep: v)),
-              letter: t.lookGlyph,
               options: [
-                (0, t.lookTextNormal, null, 12.0),
-                (1, t.lookTextLarge, null, 16.0),
-                (2, t.lookTextLarger, null, 21.0),
+                for (final (step, name, size) in [
+                  (0, t.lookTextNormal, 12.0),
+                  (1, t.lookTextLarge, 16.0),
+                  (2, t.lookTextLarger, 21.0),
+                ])
+                  SofraSegment(step, name, glyph: t.lookGlyph, glyphSize: size),
               ],
             ),
           ),
@@ -83,19 +96,7 @@ class LookSettings extends StatelessWidget {
           _Row(
             icon: Icons.translate_rounded,
             label: t.lookLanguage,
-            control: _Segments<AppLanguage>(
-              id: 'look-lang',
-              value: p.language,
-              onChanged: (v) => c.updateProfile((p) => p.copyWith(language: v)),
-              options: [
-                (AppLanguage.ar, t.lookLanguageArabic, null, 15.0),
-                (AppLanguage.en, t.lookLanguageEnglish, null, 13.0),
-              ],
-              texts: {
-                AppLanguage.ar: t.lookLanguageArabicShort,
-                AppLanguage.en: t.lookLanguageEnglishShort,
-              },
-            ),
+            control: const LanguageSwitch(id: 'look-lang'),
           ),
         ],
       ),
@@ -103,6 +104,9 @@ class LookSettings extends StatelessWidget {
   }
 }
 
+/// One setting: icon and name at the start edge, the control pinned to the
+/// end edge. When the name and the control cannot share a line (larger
+/// text, a long English name) the control drops under the name.
 class _Row extends StatelessWidget {
   const _Row({
     required this.icon,
@@ -116,144 +120,89 @@ class _Row extends StatelessWidget {
   final String? info;
 
   @override
-  Widget build(BuildContext context) => ConstrainedBox(
-    constraints: const BoxConstraints(minHeight: 56),
-    child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
-      child: Row(
-        children: [
-          Icon(icon, size: 20, color: Sofra.muted),
-          const SizedBox(width: 12),
-          Flexible(
-            child: Text(
-              label,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
-            ),
-          ),
-          if (info != null)
-            Tooltip(
-              message: info!,
-              triggerMode: TooltipTriggerMode.tap,
-              showDuration: const Duration(seconds: 5),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Icon(
-                  Icons.info_outline_rounded,
-                  size: 17,
-                  color: Sofra.muted,
-                ),
-              ),
-            ),
-          const Spacer(),
-          const SizedBox(width: 8),
-          control,
-        ],
-      ),
-    ),
-  );
-}
-
-/// A small segmented choice. Each option is (value, name, icon, glyphSize):
-/// an icon, or [letter] (or the option's own text in [texts]) at glyphSize;
-/// the name is its tooltip and screen-reader label.
-class _Segments<T> extends StatelessWidget {
-  const _Segments({
-    required this.id,
-    required this.value,
-    required this.options,
-    required this.onChanged,
-    this.letter = '',
-    this.texts = const {},
-  });
-  final String id;
-  final T value;
-  final List<(T, String, IconData?, double?)> options;
-  final ValueChanged<T> onChanged;
-  final String letter;
-  final Map<T, String> texts;
-
-  @override
-  Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.all(3),
-    decoration: BoxDecoration(
-      color: Sofra.sand,
-      borderRadius: BorderRadius.circular(Sofra.r12),
-    ),
-    child: Row(
+  Widget build(BuildContext context) {
+    final name = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        for (final (v, name, icon, glyph) in options)
-          _Segment(
-            key: ValueKey('$id-${v is Enum ? v.name : v}'),
-            name: name,
-            selected: v == value,
-            onTap: () => onChanged(v),
-            child: icon != null
-                ? Icon(icon, size: 19)
-                : Text(
-                    texts[v] ?? letter,
-                    textScaler: TextScaler.noScaling,
-                    style: TextStyle(
-                      fontSize: glyph,
-                      height: 1,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-          ),
-      ],
-    ),
-  );
-}
-
-class _Segment extends StatelessWidget {
-  const _Segment({
-    super.key,
-    required this.name,
-    required this.selected,
-    required this.onTap,
-    required this.child,
-  });
-  final String name;
-  final bool selected;
-  final VoidCallback onTap;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    final ink = selected ? Sofra.accent : Sofra.muted;
-    return Semantics(
-      button: true,
-      selected: selected,
-      label: name,
-      excludeSemantics: true,
-      child: Tooltip(
-        message: name,
-        child: GestureDetector(
-          onTap: onTap,
-          behavior: HitTestBehavior.opaque,
-          child: AnimatedContainer(
-            duration: Sofra.motion(context, true),
-            curve: Sofra.quickCurve,
-            width: 42,
-            height: 38,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: selected ? Sofra.card : Sofra.sand.withValues(alpha: 0),
-              borderRadius: BorderRadius.circular(Sofra.r12 - 3),
-              boxShadow: selected ? Sofra.shadow(.25) : null,
-            ),
-            child: IconTheme.merge(
-              data: IconThemeData(color: ink),
-              child: DefaultTextStyle.merge(
-                style: TextStyle(color: ink),
-                child: child,
-              ),
-            ),
+        Icon(icon, size: 20, color: Sofra.muted),
+        const SizedBox(width: 12),
+        Flexible(
+          child: Text(
+            label,
+            maxLines: 2,
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
           ),
         ),
+        if (info != null) _InfoButton(info!),
+      ],
+    );
+    // Both sides share one 50 high band, so they centre on each other.
+    Widget band(Widget child, AlignmentGeometry at) => ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 50),
+      child: Align(widthFactor: 1, alignment: at, child: child),
+    );
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3),
+      // Name at the start edge, control at the end edge; when they do not
+      // fit on one line, the control drops under the name, still at the end.
+      child: OverflowBar(
+        alignment: MainAxisAlignment.spaceBetween,
+        overflowAlignment: OverflowBarAlignment.end,
+        spacing: 12,
+        children: [
+          band(name, AlignmentDirectional.centerStart),
+          band(
+            FittedBox(fit: BoxFit.scaleDown, child: control),
+            AlignmentDirectional.centerEnd,
+          ),
+        ],
       ),
     );
   }
+}
+
+/// The «i» beside a setting: a 44 x 44 target that shows the explanation.
+class _InfoButton extends StatelessWidget {
+  const _InfoButton(this.message);
+  final String message;
+
+  /// A small popover that stays until a tap elsewhere, never a tooltip
+  /// that disappears on its own before a slow reader is done.
+  @override
+  Widget build(BuildContext context) => MenuAnchor(
+    style: MenuStyle(
+      backgroundColor: WidgetStatePropertyAll(Sofra.inverse),
+      surfaceTintColor: const WidgetStatePropertyAll(Colors.transparent),
+      elevation: const WidgetStatePropertyAll(6),
+      shape: WidgetStatePropertyAll(
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(Sofra.r12)),
+      ),
+      padding: const WidgetStatePropertyAll(EdgeInsets.all(12)),
+    ),
+    menuChildren: [
+      ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 260),
+        child: Text(
+          message,
+          style: TextStyle(color: Sofra.onInverse, fontSize: 14, height: 1.6),
+        ),
+      ),
+    ],
+    builder: (context, menu, _) => Semantics(
+      button: true,
+      label: message,
+      excludeSemantics: true,
+      child: InkResponse(
+        radius: 22,
+        onTap: () => menu.isOpen ? menu.close() : menu.open(),
+        child: SizedBox(
+          width: 44,
+          height: 44,
+          child: Icon(Icons.info_outline_rounded, size: 18, color: Sofra.muted),
+        ),
+      ),
+    ),
+  );
 }
 
 class _VisionMenu extends StatelessWidget {
@@ -296,7 +245,7 @@ class _VisionMenu extends StatelessWidget {
               Icon(
                 v == value ? Icons.check_circle_rounded : Icons.circle_outlined,
                 size: 18,
-                color: v == value ? Sofra.accent : Sofra.line,
+                color: v == value ? Sofra.accent : Sofra.muted,
               ),
               const SizedBox(width: 10),
               Flexible(child: Text(_full(context.l10n, v))),
@@ -305,11 +254,12 @@ class _VisionMenu extends StatelessWidget {
         ),
     ],
     child: Container(
-      constraints: const BoxConstraints(minHeight: 40),
+      constraints: const BoxConstraints(minHeight: 44),
       padding: const EdgeInsetsDirectional.only(start: 12, end: 8),
       decoration: BoxDecoration(
         color: Sofra.sand,
         borderRadius: BorderRadius.circular(Sofra.r12),
+        border: Border.all(color: Sofra.line),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

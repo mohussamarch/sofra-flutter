@@ -268,6 +268,32 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                             ],
                           ),
                         ),
+                        // Content scrolling past the floating bar fades out
+                        // before the bottom edge instead of peeking out
+                        // under the bar.
+                        if (_showsNav(c))
+                          Positioned(
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            height: MediaQuery.paddingOf(context).bottom + 56,
+                            child: IgnorePointer(
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    stops: const [0, .55, 1],
+                                    colors: [
+                                      Sofra.paper.withValues(alpha: 0),
+                                      Sofra.paper.withValues(alpha: .96),
+                                      Sofra.paper,
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         if (_showsNav(c))
                           Positioned(
                             left: 16,
@@ -585,6 +611,10 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                   decoration: BoxDecoration(
                     color: pill && active ? pillColor : Colors.transparent,
                     borderRadius: BorderRadius.circular(Sofra.r22),
+                    // At night the chosen tab also gets an accent hairline.
+                    border: pill && active && night
+                        ? Border.all(color: Sofra.accent.withValues(alpha: .3))
+                        : null,
                     boxShadow: pill && active && !night
                         ? [
                             BoxShadow(
@@ -663,7 +693,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
       ],
     );
     const pad = EdgeInsets.symmetric(horizontal: 6, vertical: 6);
-    final radius = BorderRadius.circular(30);
+    final radius = BorderRadius.circular(Sofra.r28);
     final Widget bar;
     if (glass) {
       bar = DecoratedBox(
