@@ -7,6 +7,7 @@ import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'dish_name_view.dart';
 import 'dish_sheet.dart';
 import 'my_recipe_screen.dart';
 
@@ -28,6 +29,8 @@ class RecipeCard extends StatelessWidget {
     final saved = c.profile.saved.contains(id);
     final kind = artKind(id);
     final t = context.l10n;
+    // A name several countries share carries its country by the name.
+    final tagged = dish == null && DishName.of(id)?.country != null;
     if (Paper.isOn(context)) return _PaperEntry(row: row, saved: saved);
     return Material(
       color: Sofra.card,
@@ -96,14 +99,14 @@ class RecipeCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    dish?.$1 ??
-                        L10n.pick('${row['name']}', row['nameEn'] as String?),
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 20,
+                  if (dish case (final name, _))
+                    Text(name, style: _cardTitle)
+                  else
+                    DishTitle(
+                      L10n.pick('${row['name']}', row['nameEn'] as String?),
+                      recipeId: id,
+                      style: _cardTitle,
                     ),
-                  ),
                   const SizedBox(height: 10),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -113,7 +116,7 @@ class RecipeCard extends StatelessWidget {
                           spacing: 8,
                           runSpacing: 8,
                           children: [
-                            if (dish == null)
+                            if (dish == null && !tagged)
                               SoftTag(
                                 L10n.term('${row['cuisine']}'),
                                 color: Sofra.sand,
@@ -150,6 +153,8 @@ class RecipeCard extends StatelessWidget {
   }
 }
 
+const _cardTitle = TextStyle(fontWeight: FontWeight.w800, fontSize: 20);
+
 /// A recipe inside the cartoon book: a white card with the book's outline,
 /// the dish drawing in an outlined circle, the name and one line of details.
 class _PaperEntry extends StatelessWidget {
@@ -164,7 +169,7 @@ class _PaperEntry extends StatelessWidget {
     final id = row['id'] as String;
     final t = context.l10n;
     final details = [
-      L10n.term('${row['cuisine']}'),
+      if (DishName.of(id)?.country == null) L10n.term('${row['cuisine']}'),
       minutesLabel(row['totalTime']),
       // "Not stated by the source" is noise on a list row; say nothing.
       if (row['difficulty'] != null &&
@@ -207,8 +212,9 @@ class _PaperEntry extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        DishTitle(
                           L10n.pick('${row['name']}', row['nameEn'] as String?),
+                          recipeId: id,
                           style: Sofra.heading(18),
                         ),
                         const SizedBox(height: 2),
@@ -644,7 +650,10 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   ))
                     Padding(
                       padding: const EdgeInsets.only(bottom: 16),
-                      child: RecipeCard(ways.first, dish: (d.name, ways)),
+                      child: RecipeCard(
+                        ways.first,
+                        dish: (L10n.pick(d.name, d.nameEn), ways),
+                      ),
                     )
                   else if (e case final Map<String, dynamic> r)
                     Padding(

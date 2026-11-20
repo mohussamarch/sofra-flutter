@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 import '../domain/recipe_catalog.dart';
+import '../l10n/dish_name.dart';
 import 'online_recipe_library.dart';
 
 export 'online_recipe_library.dart' show RecipeNotOnDevice;
@@ -167,6 +168,10 @@ class RecipeRepository {
         .map((v) {
           final row = Map<String, dynamic>.from(v as Map);
           _keepValidImages(row);
+          // The reviewed English name wins over the catalog's own.
+          if (DishName.of(row['id']) case final name?) {
+            row['nameEn'] = name.en;
+          }
           final body = row['body'];
           if (body != null &&
               (body is! String || !RegExp(r'^[0-9a-f]{64}$').hasMatch(body))) {
@@ -400,19 +405,28 @@ class RecipeRepository {
         return List<Dish>.unmodifiable([
           for (final d in list)
             if ((d['recipes'] as List).where(active.contains).length >= 2)
-              Dish(
-                id: d['id'] as String,
-                name: d['name'] as String,
-                recipes: List.unmodifiable(
-                  (d['recipes'] as List).cast<String>().where(active.contains),
-                ),
-              ),
+              _dish(d as Map<String, dynamic>, active),
         ]);
       }().catchError((Object e) {
         _dishes = null;
         throw e;
       });
   Future<List<Dish>>? _dishes;
+
+  static Dish _dish(Map<String, dynamic> d, Set<String> active) {
+    final recipes = List<String>.unmodifiable(
+      (d['recipes'] as List).cast<String>().where(active.contains),
+    );
+    // A dish whose ways all carry the same reviewed English name is called
+    // by it (Sayadieh); otherwise it has no English name.
+    final names = {for (final id in recipes) DishName.of(id)?.en};
+    return Dish(
+      id: d['id'] as String,
+      name: d['name'] as String,
+      nameEn: names.length == 1 ? names.single : null,
+      recipes: recipes,
+    );
+  }
 
   /// The full recipe. Online: memory, the device, the network, an older copy
   /// on the device, then the bundled seed; [RecipeNotOnDevice] when none has
@@ -620,7 +634,15 @@ class _ParsedIndex {
 
 /// One dish with its ways of making it, each a catalog recipe id.
 class Dish {
-  const Dish({required this.id, required this.name, required this.recipes});
+  const Dish({
+    required this.id,
+    required this.name,
+    required this.recipes,
+    this.nameEn,
+  });
   final String id, name;
+
+  /// The English name, when every way shares one reviewed name.
+  final String? nameEn;
   final List<String> recipes;
 }

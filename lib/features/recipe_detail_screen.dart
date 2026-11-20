@@ -11,6 +11,7 @@ import '../ui/design.dart';
 import '../ui/flags.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'dish_name_view.dart';
 import 'dish_sheet.dart';
 
 class RecipeDetailScreen extends StatefulWidget {
@@ -271,8 +272,11 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         const SizedBox(height: 22),
         FutureBuilder<String?>(
           future: nameEn,
-          builder: (context, en) => Text(
+          builder: (context, en) => DishTitle(
             L10n.pick(source.name, en.data),
+            key: const ValueKey('recipe-title'),
+            recipeId: widget.recipeId,
+            pronunciation: true,
             style: const TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 27,
@@ -294,7 +298,8 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
               icon: Icons.schedule_rounded,
             ),
             if (known) _servingsTag(source, planning),
-            SoftTag(L10n.term(source.cuisine)),
+            if (DishName.of(widget.recipeId)?.country == null)
+              SoftTag(L10n.term(source.cuisine)),
             SoftTag(L10n.term(source.category)),
             if (source.difficulty.isNotEmpty)
               SoftTag(L10n.term(source.difficulty)),
@@ -747,7 +752,7 @@ class _CompareViewState extends State<_CompareView> {
         widget.bar,
         const SizedBox(height: 22),
         Text(
-          widget.dish.name,
+          L10n.pick(widget.dish.name, widget.dish.nameEn),
           key: const ValueKey('compare-title'),
           style: const TextStyle(
             fontWeight: FontWeight.w800,

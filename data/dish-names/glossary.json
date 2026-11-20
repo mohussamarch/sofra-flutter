@@ -1,0 +1,3647 @@
+{
+ "generatedAt": "2026-11-20",
+ "rules": [
+  "Name = the English Wikipedia article title for the dish when one exists, checked through the Wikipedia API. A redirect counts as the title it lands on.",
+  "If there is no Wikipedia title, use the spelling found most often in at least 2 independent English food sources or menus, with URLs.",
+  "If there is no established spelling, use a simple transliteration that follows the dish's own country (Egyptian ج = g, Gulf/Najdi ق = g). No diacritics. Apostrophes only when the established spelling has one.",
+  "Keep a translated descriptor only when the name alone would mean nothing (Chicken Kabsa). Drop redundant ones: Hummus, not Hummus with Tahini; Sayadieh, not Fish Sayadieh.",
+  "Title Case. Articles and particles stay lowercase inside a name (el, al, bil, bel, bi). No abbreviations like 'w'. No ' - ' subtitles. Keep names short.",
+  "One Arabic word gets one English spelling everywhere, unless an established title differs on purpose (see wordDecisions).",
+  "Pronunciation is given only for names that contain transliterated words. It covers the Arabic-origin words only, in display order, with the stressed syllable in capitals. It skips English words (Chicken, Oven, Soup, Moroccan, Saudi) and the English food word Tagine.",
+  "Respelling conventions: gh = غ, kh = خ, AH = long a, moo- for مُ. ق follows the dish's dialect (a glottal stop in Cairo, g in the Gulf). Before a sun letter the article is written assimilated (esh-SHAHM, bir-RAD-da).",
+  "Meaning = one plain line of at most 10 words, built only from the recipe's own ingredients and steps, with no closing full stop. The same line is given in simple Modern Standard Arabic.",
+  "Same English name in more than one country: each one gets its country word before the name (Egyptian Sayadieh, Saudi Sayadieh), shown in the app as a coloured country tag, not as plain text. Decided by the owner on 2026-11-20."
+ ],
+ "wordDecisions": [
+  {
+   "ar": "فتة",
+   "en": "Fatteh / Fattet / Fattah",
+   "why": "The Wikipedia title is 'Fatteh' and lists fatta and fattah as other romanizations, so every dish uses Fatteh: Fatteh, Chicken Fatteh, Lamb Fatteh and Eggplant Fatteh. 'Fattet' stays only in the construct form 'Fattet Hummus' (فتة حمص), the name Nigella and Food52 use. Pronunciation follows the country: Egyptian FAT-ta, Levantine FAT-teh. DECIDED 2026-11-21: the plain Egyptian dish (eg-fatta) uses 'Fattah', the spelling of Amira's Pantry, Daily News Egypt, Middle East Eye, Munaty Cooking and The Happy Foodie. Compound names keep Fatteh."
+  },
+  {
+   "ar": "كفتة",
+   "en": "Kofta / Kafta / Kefta",
+   "why": "The Wikipedia title is 'Kofta', and 'Kafta' and 'Kefta' redirect to it. Egyptian and Levantine dishes use it (Grilled Kofta, Shrimp Kofta, Kofta with Tahini and Yogurt), said KOF-ta. Moroccan dishes use the Moroccan English spelling 'Kefta', as in Taste of Maroc, Salima's Kitchen and Splendid Table: Kefta Mkaouara, Moroccan Kefta Skewers and Gharb-Style Kefta, said KEF-ta. 'Kafta' remains the owner's option for the Levantine entry. DECIDED 2026-11-21: the Levantine grilled dish uses 'Kafta' (Saveur, SBS Food, The Matbakh, Maureen Abood), said KAF-ta, so Grilled Kofta became Grilled Kafta. Egyptian dishes keep Kofta."
+  },
+  {
+   "ar": "طاجين / طاجن",
+   "en": "Tagine / Tajine",
+   "why": "The Wikipedia title is 'Tagine' ('Tajine' redirects), so every name uses it: Chicken Tagine with Green Olives, Fish Tagine with Chermoula, Meat Tagine with Cauliflower, Tilapia Tagine, Chicken Liver Tagine and Kaware Tagine. The exception is 'Tunisian Tajine', a different dish (a baked egg dish) whose established English name uses Tajine. Tagine counts as an English food word, so it has no pronunciation."
+  },
+  {
+   "ar": "صيادية",
+   "en": "Sayadieh",
+   "why": "The Wikipedia title is 'Sayadieh'. The word already means a fish-and-rice dish, so 'Fish' is dropped from both the Egyptian and the Saudi entries. Pronunciation follows the country: Egyptian sai-ya-DAY-ya, Saudi sai-ya-DEE-ya."
+  },
+  {
+   "ar": "معمول",
+   "en": "Ma'amoul",
+   "why": "'Maamoul' redirects to the Wikipedia title \"Ma'amoul\", so all three names keep the apostrophe. One respelling: ma-MOOL."
+  },
+  {
+   "ar": "فول مدمس",
+   "en": "Ful Medames",
+   "why": "The Wikipedia title is 'Ful medames'. It is used in Ful Medames, Quick Ful Medames and Saudi Ful Medames, with one respelling: FOOL meh-DAM-mes."
+  },
+  {
+   "ar": "شكشوكة",
+   "en": "Shakshouka",
+   "why": "'Shakshuka' redirects to the Wikipedia title 'Shakshouka'. One respelling: shak-SHOO-ka."
+  },
+  {
+   "ar": "بصارة / بيصارة",
+   "en": "Bissara",
+   "why": "'Bessara' redirects to the Wikipedia title 'Bissara'. It is used for both the Egyptian and the Moroccan dish, with one respelling: bi-SAH-ra."
+  },
+  {
+   "ar": "محشي",
+   "en": "Mahshi",
+   "why": "Based on common usage, because Wikipedia only redirects to Dolma. The same spelling appears in Mahshi, Hamam Mahshi, Malfouf Mahshi and Sheikh al-Mahshi."
+  },
+  {
+   "ar": "حمام",
+   "en": "Hamam",
+   "why": "The Wikipedia title is 'Hamam mahshi'. Hamam Mahshi and Hamam el Kazzab share the same spelling and the same respelling (ha-MAHM)."
+  },
+  {
+   "ar": "رقاق",
+   "en": "Roqaq",
+   "why": "The English spelling used most (Petitchef, Egyptian Streets, Al-Ahram). Both entries share one Cairo respelling: ro-AH."
+  },
+  {
+   "ar": "كبسة / مندي / مجبوس",
+   "en": "Kabsa / Mandi / Machboos",
+   "why": "The Wikipedia titles are 'Kabsa' and 'Mandi (food)', with the bracket dropped. مجبوس stays 'Machboos', the Gulf spelling used by Gulf News and Foreign Fork, even though it redirects to Kabsa."
+  },
+  {
+   "ar": "كباب",
+   "en": "Kabab / Kebab",
+   "why": "Each name follows its dish's established usage: the Egyptian 'Kabab Halla' (Chez Nermine, Cup of Yum, and the Serious Eats recipe cited by Wikipedia) and the Moroccan 'Kebab Maghdour' (Taste of Maroc). The plain English plural is 'Kebabs'."
+  },
+  {
+   "ar": "لوبيا / لوبية / فاصوليا",
+   "en": "Loubia / Loubieh / Fasoulia",
+   "why": "Each country keeps its own convention. Maghreb dishes use 'Loubia' (Loubia with Meat, Loubia bel Kamoun), said LOOB-ya. The Lebanese dish uses 'Loubieh' (Loubieh bi Zeit). The Egyptian فاصوليا is 'Fasoulia', the Wikipedia title, because 'Fasolia' redirects to a Greek dish."
+  },
+  {
+   "ar": "فريكة / فريك",
+   "en": "Freekeh / Frik",
+   "why": "The Wikipedia title is 'Freekeh', used in Vegetable Freekeh and Chicken Freekeh Soup and said FREE-keh. The Algerian soup keeps its own Wikipedia title, 'Chorba frik'."
+  },
+  {
+   "ar": "شربة / شوربة",
+   "en": "Chorba / Soup",
+   "why": "'Chorba' appears only inside the established Maghreb names (Chorba Frik, Chorba Fassia). Everywhere else the dish is named in plain English with 'Soup'."
+  },
+  {
+   "ar": "كبدة",
+   "en": "Kebda / Liver",
+   "why": "'Kebda' appears inside the established Egyptian names (Kebda Eskandarani, Kebda bel Radda). The plain-English names use 'Liver' (Chicken Liver Tagine, Hejazi Liver, Saudi Liver Sandwich)."
+  },
+  {
+   "ar": "كوسة / كوسا",
+   "en": "Kousa / Zucchini",
+   "why": "'Kousa' appears only in the established name 'Kousa bil Laban'. Everywhere else the name uses 'Zucchini', because the sources name those dishes in English (Zucchini with Eggs, Zucchini Bechamel Casserole)."
+  },
+  {
+   "ar": "مسخن",
+   "en": "Musakhan",
+   "why": "The Wikipedia title is 'Musakhan'. One respelling with the doubled kh: moo-SAKH-khan."
+  },
+  {
+   "ar": "مرق",
+   "en": "Maraq",
+   "why": "The Wikipedia title is 'Maraq (dish)', with the bracket dropped. The respelling is MA-rag because Yemeni speech says ق as g."
+  },
+  {
+   "ar": "حجازي / نجدي",
+   "en": "Hejazi / Najdi",
+   "why": "Hejazi follows the Wikipedia title 'Hejazi Arabic'. Both words stay transliterated and get a respelling, unlike 'Saudi', which is an English word."
+  },
+  {
+   "ar": "ال",
+   "en": "el / al (lowercase)",
+   "why": "The article stays lowercase inside names: Halawet el Jibn, Hamam el Kazzab, Balah el Sham. 'al' is used only where the Wikipedia title has it (Sheikh al-Mahshi). Sun-letter assimilation appears only in the respelling (esh-SHAHM)."
+  },
+  {
+   "ar": "بـ",
+   "en": "bi / bil / bel (lowercase)",
+   "why": "Levantine names use bi/bil (Loubieh bi Zeit, Riz bi Lahme, Samak bi Tahini, Kousa bil Laban). Egyptian and Maghreb names use bel (Kebda bel Radda, Loubia bel Kamoun). 'Macarona bil-Bechamel' keeps its Wikipedia form, hyphen included."
+  },
+  {
+   "ar": "غ",
+   "en": "gh (pronunciation)",
+   "why": "Every respelling writes غ as gh: gha-NOOSH, mogh-RAH-bee-yeh, mad-GHOOT, bagh-REER, magh-DOOR, GHARB."
+  }
+ ],
+ "collisions": [],
+ "entries": [
+  {
+   "id": "eg-koshari",
+   "ar": "كشري",
+   "enCurrent": "Koshari",
+   "en": "Koshary",
+   "transliterated": true,
+   "pronunciation": "KOH-sha-ree",
+   "meaningEn": "Rice, lentils and pasta with tomato sauce and crispy onions",
+   "meaningAr": "أرز وعدس ومكرونة مع صلصة طماطم وبصل مقرمش",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Koshary"
+   ],
+   "notes": "Verified. I confirmed through the Wikipedia API that the article is titled 'Koshary' (pageid 1914210). Its Egyptian Arabic IPA is ˈkoʃæɾi, which puts the stress on the first syllable. The meaning matches the recipe: rice, brown lentils, elbow pasta, a tomato sauce with garlic and vinegar, and fried onions.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-molokhia",
+   "ar": "ملوخية بالفراخ",
+   "enCurrent": "Molokhia with Chicken",
+   "en": "Mulukhiyah with Chicken",
+   "transliterated": true,
+   "pronunciation": "mo-lo-KHAY-ya",
+   "meaningEn": "Garlicky jute-leaf stew served with chicken and rice",
+   "meaningAr": "يخنة ورق الملوخية بالثوم تُقدَّم مع الدجاج والأرز",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mulukhiyah"
+   ],
+   "notes": "Verified. The Wikipedia API shows the article is titled 'Mulukhiyah', and 'Molokhia' redirects to it. The recipe has chicken, molokhia, garlic fried in ghee, and rice, so the meaning holds. I removed the Talk page source because I did not check it and it is not needed.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-bechamel-pasta",
+   "ar": "مكرونة بالبشاميل",
+   "enCurrent": "Macarona Bechamel",
+   "en": "Macarona bil-Bechamel",
+   "transliterated": true,
+   "pronunciation": "ma-ka-ROH-na bil-be-sha-MEL",
+   "meaningEn": "Baked pasta with minced meat and creamy white sauce",
+   "meaningAr": "مكرونة بالفرن مع لحم مفروم وصلصة بيضاء كريمية",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Macarona_bil-bechamel"
+   ],
+   "notes": "Verified. The Wikipedia article 'Macarona bil-bechamel' exists (pageid 79462748) and describes an Egyptian pasta bake with meat sauce and béchamel. The recipe has pasta, minced meat, and béchamel made from butter, flour and milk, plus cheese. The particle 'bil' stays lowercase, the same way 'el' does in 'Halawet el Jibn'.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-mahshi",
+   "ar": "محشي كوسة وباذنجان وفلفل",
+   "enCurrent": "Mahshi (Stuffed Vegetables)",
+   "en": "Mahshi",
+   "transliterated": true,
+   "pronunciation": "MAH-shee",
+   "meaningEn": "Zucchini, eggplant and peppers stuffed with herbed rice",
+   "meaningAr": "كوسة وباذنجان وفلفل محشوة بأرز بالأعشاب",
+   "basis": "common-usage",
+   "sources": [
+    "https://amiraspantry.com/wprm_print/mahshi",
+    "https://www.dailynewsegypt.com/2012/08/29/bites-fil-beit-mahshi-stuffed-vegetables/",
+    "https://travelfoodatlas.com/egyptian-mahshi-recipe",
+    "https://en.wikipedia.org/wiki/Dolma"
+   ],
+   "notes": "Verified. The Wikipedia API shows 'Mahshi' is only a redirect to 'Dolma', so there is no article of its own. I fetched Amira's Pantry, Daily News Egypt and Travel Food Atlas, and all three use 'Mahshi' in the title. I dropped the 'Middle Eastern cuisine' link because it is not needed. The recipe has zucchini, eggplant, bell pepper, and rice with parsley, dill and coriander.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-fatta",
+   "ar": "فتة",
+   "enCurrent": "Fatta",
+   "en": "Fattah",
+   "transliterated": true,
+   "pronunciation": "FAT-ta",
+   "meaningEn": "Toasted bread, rice and meat with garlic-vinegar tomato sauce",
+   "meaningAr": "خبز محمص وأرز ولحم مع صلصة طماطم بالثوم والخل",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fatteh",
+    "https://amiraspantry.com/egyptian-fattah/",
+    "https://www.dailynewsegypt.com/?p=171032",
+    "https://www.middleeasteye.net/discover/egyptian-fattah-recipe-eid-adha",
+    "https://www.munatycooking.com/egyptian-fattah/"
+   ],
+   "notes": "Verified with a flag. The Wikipedia article is titled 'Fatteh', and its lead lists 'fatta or fattah' as other romanizations. 'Fattah' on Wikipedia is a disambiguation page about the divine name, not a dish article. Egyptian sources such as Amira's Pantry write 'Fattah', so that stays as the owner's alternative. The pronunciation follows Egyptian speech. I removed the Middle East Eye link because it did not load. In the recipe the meat is lamb or chicken.",
+   "status": "changed",
+   "consistencyEdits": [
+    "decide pass 2026-11-21: en 'Fatteh' -> 'Fattah'"
+   ],
+   "decision": {
+    "decidedAt": "2026-11-21",
+    "chosen": "Fattah",
+    "rejected": [
+     "Fatteh",
+     "Fatta"
+    ],
+    "evidence": "English sources on the Egyptian Eid dish write 'Fattah': Amira's Pantry, Daily News Egypt, Middle East Eye, Munaty Cooking, The Happy Foodie (Munira Mahmud), Petitchef. 'Fatteh' is the Levantine form; Chez Nermine's 'Fatta' is a minority spelling."
+   }
+  },
+  {
+   "id": "eg-ful-medames",
+   "ar": "فول مدمس",
+   "enCurrent": "Ful Medames",
+   "en": "Ful Medames",
+   "transliterated": true,
+   "pronunciation": "FOOL meh-DAM-mes",
+   "meaningEn": "Fava beans dressed with olive oil, garlic, lemon and cumin",
+   "meaningAr": "فول مدمس متبل بزيت الزيتون والثوم والليمون والكمون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ful_medames"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Ful medames' (pageid 2243880). The Egyptian pronunciation is 'fool midammis'. The ingredients match the recipe. CONSISTENCY PASS: pronunciation: 'FOOL mi-DAM-mis' -> 'FOOL meh-DAM-mes' (one respelling for Ful Medames).",
+   "status": "kept",
+   "consistencyEdits": [
+    "pronunciation: 'FOOL mi-DAM-mis' -> 'FOOL meh-DAM-mes' (one respelling for Ful Medames)"
+   ]
+  },
+  {
+   "id": "eg-taameya",
+   "ar": "طعمية (فلافل مصرية)",
+   "enCurrent": "Taameya",
+   "en": "Ta'ameya",
+   "transliterated": true,
+   "pronunciation": "ta-MAY-ya",
+   "meaningEn": "Deep-fried patties of fava beans and green herbs",
+   "meaningAr": "أقراص مقلية من الفول المدشوش والأعشاب الخضراء",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ta%27ameya",
+    "https://en.wikipedia.org/wiki/Falafel"
+   ],
+   "notes": "Changed the pronunciation from 'ta-MEE-ya' to 'ta-MAY-ya'. In Egyptian Arabic the ending is 'ṭaʿmeyya', with an 'ey' sound, the same as in molokhia. I confirmed the standalone Wikipedia article \"Ta'ameya\" (pageid 83228139), which describes an Egyptian fava bean and herb fritter, so the apostrophe stays. 'Taameya' has no article. The meaning matches the recipe: split fava beans, herbs, leek and frying oil.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-hawawshi",
+   "ar": "حواوشي",
+   "enCurrent": "Hawawshi",
+   "en": "Hawawshi",
+   "transliterated": true,
+   "pronunciation": "ha-WOW-shee",
+   "meaningEn": "Bread stuffed with spiced minced meat and onion, baked crisp",
+   "meaningAr": "خبز محشو باللحم المفروم المتبل والبصل ومخبوز حتى يقرمش",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hawawshi"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Hawawshi', and its IPA is ħæˈwæwʃi, with the stress on the second syllable. The meaning matches the recipe.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-rice-pudding",
+   "ar": "رز بلبن",
+   "enCurrent": "Rice Pudding",
+   "en": "Rice Pudding",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Rice cooked in milk with sugar and vanilla",
+   "meaningAr": "أرز مطهو في الحليب مع السكر والفانيليا",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rice_pudding"
+   ],
+   "notes": "Verified. The Wikipedia article 'Rice pudding' exists, and the dish has no separate article under its Arabic name. The recipe has rice, whole milk, sugar and vanilla, and the other items are optional. I removed the 'Egyptian cuisine' link because it is not needed.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-basbousa",
+   "ar": "بسبوسة باللبن",
+   "enCurrent": "Basbousa",
+   "en": "Basbousa",
+   "transliterated": true,
+   "pronunciation": "bas-BOO-sa",
+   "meaningEn": "Baked semolina and yogurt cake soaked in sugar syrup",
+   "meaningAr": "كعكة سميد بالزبادي مخبوزة ومُشرَّبة بالقطر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Basbousa"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Basbousa' (pageid 15957258). The recipe has semolina, yogurt, butter and sugar syrup.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-sayadeya",
+   "ar": "صيادية سمك",
+   "enCurrent": "Sayadeya",
+   "en": "Sayadieh",
+   "transliterated": true,
+   "pronunciation": "sai-ya-DAY-ya",
+   "meaningEn": "Fried fish with brown onion rice cooked in fish stock",
+   "meaningAr": "سمك مقلي مع أرز بالبصل المحمر مطهو في مرق السمك",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sayadieh"
+   ],
+   "notes": "Changed the pronunciation from 'sai-ya-DEE-ya' to 'sai-ya-DAY-ya'. In Egyptian Arabic the ending is 'ṣayyadeyya', which is also why the current name is spelled 'Sayadeya'. I confirmed the Wikipedia title 'Sayadieh' (pageid 64144980), and its lead names Egypt among the dish's origins. The meaning matches the recipe: step 4 makes stock from the fish heads and bones, the rice is cooked in it with the browned onions, and the fish is fried. I removed the 'List of fish dishes' link because it is not needed.",
+   "status": "changed",
+   "consistencyEdits": [],
+   "country": {
+    "key": "eg",
+    "en": "Egyptian",
+    "ar": "مصري"
+   },
+   "displayEn": "Egyptian Sayadieh"
+  },
+  {
+   "id": "eg-macarona-red-sauce",
+   "ar": "مكرونة بالصلصة الحمراء واللحمة",
+   "enCurrent": "Pasta with Red Sauce",
+   "en": "Pasta with Meat Sauce",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Pasta in tomato sauce with minced meat and garlic",
+   "meaningAr": "مكرونة بصلصة الطماطم مع لحم مفروم وثوم",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "Verified. This everyday home dish has no established transliterated name, and 'meat sauce' is the usual English term for a tomato sauce with minced meat. The recipe has pasta, minced meat, garlic, grated tomatoes and tomato paste.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-shish-tawook",
+   "ar": "شيش طاووق",
+   "enCurrent": "Shish Tawook",
+   "en": "Shish Taouk",
+   "transliterated": true,
+   "pronunciation": "SHEESH ta-OOK",
+   "meaningEn": "Yogurt-marinated chicken cubes grilled on skewers",
+   "meaningAr": "مكعبات دجاج متبلة بالزبادي ومشوية على الأسياخ",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shish_taouk"
+   ],
+   "notes": "Verified. The Wikipedia API shows 'Shish tawook' redirects to the article 'Shish taouk'. The recipe steps cube the chicken, marinate it in yogurt, thread it on skewers and grill it.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-hummus",
+   "ar": "حمص بطحينة",
+   "enCurrent": "Hummus with Tahini",
+   "en": "Hummus",
+   "transliterated": true,
+   "pronunciation": "HUM-mus",
+   "meaningEn": "Chickpeas blended with tahini, lemon and garlic",
+   "meaningAr": "حمص مهروس مع الطحينة والليمون والثوم",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hummus"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Hummus'. In English the word already means the dip made with tahini, so 'with Tahini' adds nothing.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-mutabbal",
+   "ar": "متبل باذنجان",
+   "enCurrent": "Mutabbal (Baba Ghanoush)",
+   "en": "Mutabal",
+   "transliterated": true,
+   "pronunciation": "moo-TAB-bal",
+   "meaningEn": "Fire-roasted eggplant dip with tahini, lemon and garlic",
+   "meaningAr": "باذنجان مشوي على اللهب مهروس مع الطحينة والليمون والثوم",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.unicornsinthekitchen.com/mutabal-recipe/",
+    "https://amiraspantry.com/mutabal/",
+    "https://www.whiskaffair.com/mutabal-middle-eastern-eggplant-dip/",
+    "https://hildaskitchenblog.com/recipe/mutabal-eggplant-dip/",
+    "https://en.wikipedia.org/wiki/Mutabal"
+   ],
+   "notes": "Changed 'Mutabbal' to 'Mutabal'. There is no Wikipedia article for this dish: both 'Mutabbal' and 'Mutabal' redirect to 'Eggplant salads and appetizers'. Under the rule, that makes common usage the deciding test. A web search showed most recipe sources write 'Mutabal', including Unicorns in the Kitchen, Amira's Pantry, Whisk Affair, Hilda's Kitchen, Milk Street and MedMunch, while only a few write 'Mutabbal'. I fetched four of these pages, and each uses 'Mutabal' about 100 to 400 times. One source given for the old spelling (thefoodblog.net) was blocked, and the Wikipedia prose itself uses 'mutabbal'. I also made the meaning more exact: step 1 roasts the eggplant over an open flame.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-tabbouleh",
+   "ar": "تبولة",
+   "enCurrent": "Tabbouleh",
+   "en": "Tabbouleh",
+   "transliterated": true,
+   "pronunciation": "ta-BOO-leh",
+   "meaningEn": "Parsley salad with fine bulgur, tomato, mint and lemon",
+   "meaningAr": "سلطة بقدونس مع برغل ناعم وطماطم ونعناع وليمون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tabbouleh"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Tabbouleh'. The ingredients match the recipe.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-fattoush",
+   "ar": "فتوش",
+   "enCurrent": "Fattoush",
+   "en": "Fattoush",
+   "transliterated": true,
+   "pronunciation": "fat-TOOSH",
+   "meaningEn": "Mixed vegetable salad with crisp toasted bread and sumac",
+   "meaningAr": "سلطة خضار مشكلة مع خبز محمص مقرمش والسماق",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fattoush"
+   ],
+   "notes": "The name is unchanged. The Wikipedia article is titled 'Fattoush'. I adjusted the meaning slightly: step 1 toasts or fries the bread until it is crisp, so I wrote 'crisp toasted bread' instead of 'pita bread pieces'.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-kafta-kefta",
+   "ar": "كفتة مشوية",
+   "enCurrent": "Kafta (Grilled Kofta)",
+   "en": "Grilled Kafta",
+   "transliterated": true,
+   "pronunciation": "KAF-ta",
+   "meaningEn": "Minced meat with parsley and onion, grilled on skewers",
+   "meaningAr": "لحم مفروم بالبقدونس والبصل مشوي على الأسياخ",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kofta",
+    "https://www.saveur.com/article/Recipes/Kafta-Lebanese-Beef-Kebabs",
+    "https://www.sbs.com.au/food/recipes/kafta-skewers",
+    "https://thematbakh.com/kafta/",
+    "https://maureenabood.com/?p=16421"
+   ],
+   "notes": "Verified. The Wikipedia API shows 'Kafta' redirects to the article 'Kofta'. 'Grilled' stays because it translates مشوية. The pronunciation follows the displayed spelling. Levantine speakers say 'KAF-ta', so if the owner wants the Levantine form, the alternative is 'Kafta'.",
+   "status": "changed",
+   "consistencyEdits": [
+    "decide pass 2026-11-21: en 'Grilled Kofta' -> 'Grilled Kafta'; pronunciation -> 'KAF-ta'"
+   ],
+   "decision": {
+    "decidedAt": "2026-11-21",
+    "chosen": "Grilled Kafta",
+    "rejected": [
+     "Grilled Kofta"
+    ],
+    "evidence": "Levantine sources write 'Kafta' for this grilled skewer: Saveur 'Kafta (Lebanese Beef Kebabs)', SBS Food 'Kafta skewers', The Matbakh 'Lebanese Grilled Kafta Skewers', Maureen Abood 'Lebanese Beef Kafta'. Same per-country rule as Moroccan 'Kefta'; Egyptian dishes keep 'Kofta'."
+   }
+  },
+  {
+   "id": "sh-maqluba",
+   "ar": "مقلوبة",
+   "enCurrent": "Maqluba",
+   "en": "Maqluba",
+   "transliterated": true,
+   "pronunciation": "mak-LOO-ba",
+   "meaningEn": "Layered rice, meat and fried eggplant, flipped to serve",
+   "meaningAr": "طبقات من الأرز واللحم والباذنجان المقلي تُقلب عند التقديم",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Maqluba"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Maqluba'. The recipe has eggplant, lamb or beef, and rice, fried in ghee or oil and turned over to serve.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-warak-enab",
+   "ar": "ورق عنب",
+   "enCurrent": "Stuffed Grape Leaves",
+   "en": "Warak Enab",
+   "transliterated": true,
+   "pronunciation": "WA-rak EH-nab",
+   "meaningEn": "Grape leaves rolled around spiced rice and minced meat",
+   "meaningAr": "ورق عنب ملفوف على أرز متبل ولحم مفروم",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.hungrypaprikas.com/warak-enab/",
+    "https://thematbakh.com/stuffed-grape-leaves-warak-enab/",
+    "https://maureenabood.com/wprm_print/lebanese-stuffed-grape-leaves-recipe-warak-enab",
+    "https://www.ililirestaurants.com/ilili-nyc-menu",
+    "https://theodehlicious.com/warak-enab-stuffed-grape-leaves/"
+   ],
+   "notes": "Verified with a flag. The Wikipedia API shows no page called 'Warak enab'. I fetched Hungry Paprikas and The Matbakh, and both title the dish 'Stuffed Grape Leaves (Warak Enab)'. If the owner prefers plain English, 'Stuffed Grape Leaves' is just as widely used. I removed the 'Stuffed leaves' and Munaty links because I did not check them.",
+   "status": "changed",
+   "consistencyEdits": [],
+   "decision": {
+    "decidedAt": "2026-11-21",
+    "chosen": "Warak Enab",
+    "rejected": [
+     "Stuffed Grape Leaves"
+    ],
+    "evidence": "Lebanese restaurant menus list it as 'Warak Enab' (ilili NYC/DC, Al Wadi), and recipe sites title it 'Warak Enab' (The Matbakh, Hungry Paprikas, Theodehlicious). Owner rule prefers the established dish name over a plain-English description."
+   }
+  },
+  {
+   "id": "sh-kibbeh-kibbeh-balls",
+   "ar": "كبة مقلية",
+   "enCurrent": "Fried Kibbeh Balls",
+   "en": "Fried Kibbeh",
+   "transliterated": true,
+   "pronunciation": "KIB-beh",
+   "meaningEn": "Fried bulgur-and-meat shells stuffed with spiced minced meat",
+   "meaningAr": "أقراص من البرغل واللحم محشوة باللحم المفروم المتبل ومقلية",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kibbeh"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Kibbeh'. The recipe steps make hollow shells of bulgur and meat, fill them with spiced meat, and deep-fry them.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-fattet-hummus",
+   "ar": "فتة حمص",
+   "enCurrent": "Fattet Hummus",
+   "en": "Fattet Hummus",
+   "transliterated": true,
+   "pronunciation": "FAT-tet HUM-mus",
+   "meaningEn": "Toasted bread with chickpeas, garlic yogurt-tahini sauce and nuts",
+   "meaningAr": "خبز محمص مع حمص وصلصة زبادي وطحينة بالثوم ومكسرات",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.nigella.com/recipes/guests/joudie-kallas-fattet-hummus",
+    "https://food52.com/recipes/27712-fattet-hummus-mid-eastern-savory-chickpea-bread-pudding",
+    "https://en.wikipedia.org/wiki/Fatteh"
+   ],
+   "notes": "The name is kept. I corrected the sources: the Feel Good Foodie page writes 'Fatteh Hummus' in its text, not 'Fattet Hummus', so I removed it. The Saveur page was blocked when fetched, so I removed it too. I fetched Nigella (10 uses of 'Fattet Hummus') and Food52 (about 30 uses), and both support the name. The Wikipedia API shows no separate article for this dish.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-manakish-zaatar",
+   "ar": "مناقيش زعتر",
+   "enCurrent": "Manakish Zaatar",
+   "en": "Manakish Za'atar",
+   "transliterated": true,
+   "pronunciation": "ma-na-KEESH ZAH-tar",
+   "meaningEn": "Flatbread topped with za'atar and olive oil",
+   "meaningAr": "خبز مسطح مغطى بالزعتر وزيت الزيتون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Manakish",
+    "https://en.wikipedia.org/wiki/Za'atar",
+    "https://www.alphafoodie.com/middle-eastern-zaatar-bread-manakish-zaatar/",
+    "https://www.carolinescooking.com/manakish-zaatar-flatbread/",
+    "https://www.unicornsinthekitchen.com/wprm_print/7090"
+   ],
+   "notes": "Changed the word order from \"Za'atar Manakish\" back to the Arabic order, \"Manakish Za'atar\". English sources mostly use the Arabic order: Caroline's Cooking uses 'Manakish za'atar' 15 times, Unicorns in the Kitchen uses 'Manakish Zaatar', and Alphafoodie leans the same way. 'Za'atar' is a transliteration too, not an English descriptor, so the 'Chicken Kabsa' pattern does not apply. I confirmed both Wikipedia titles, 'Manakish' and \"Za'atar\", so the apostrophe stays. Lebanese speakers often drop the q sound and say 'ma-na-EESH'.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-shawarma-dajaj",
+   "ar": "شاورما دجاج",
+   "enCurrent": "Chicken Shawarma",
+   "en": "Chicken Shawarma",
+   "transliterated": true,
+   "pronunciation": "sha-WAR-ma",
+   "meaningEn": "Thin chicken slices marinated in yogurt and warm spices",
+   "meaningAr": "شرائح دجاج رقيقة متبلة بالزبادي والبهارات",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shawarma"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Shawarma'. The recipe has thinly sliced chicken breast marinated in yogurt, lemon and spices.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-harak-osbao",
+   "ar": "حراق أصبعه",
+   "enCurrent": "Harak Osbao (Lentils with Pasta)",
+   "en": "Harak Osbao",
+   "transliterated": true,
+   "pronunciation": "ha-RAK OS-ba-oh",
+   "meaningEn": "Lentils and pasta soured with tamarind and pomegranate molasses",
+   "meaningAr": "عدس ومعكرونة بنكهة حامضة من التمر الهندي ودبس الرمان",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.thenationalnews.com/lifestyle/food/ramadan-recipes-harak-osbao-lentils-and-pasta-with-tamarind-garlic-and-pomegranate-1.1217792",
+    "https://hadiaslebanesecuisine.com/blog/harak-osbao/",
+    "https://alwaysinthekitchen.blogspot.de/2017/04/harak-osbao-damascus-style-lentil.html"
+   ],
+   "notes": "Verified. The Wikipedia API shows no page for this dish. I fetched The National, and its title reads 'harak osbao'. The Hadia's page refused the automated request, so it is cited but I could not confirm it. I removed the Matching Food & Wine link because I did not check it. The recipe has lentils, pasta, tamarind and pomegranate molasses.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sh-halawet-el-jibn",
+   "ar": "حلاوة الجبن",
+   "enCurrent": "Halawet El Jibn",
+   "en": "Halawet el Jibn",
+   "transliterated": true,
+   "pronunciation": "ha-LA-wet el JIBN",
+   "meaningEn": "Sweet cheese-semolina rolls filled with cream, in syrup",
+   "meaningAr": "لفائف من عجينة الجبن والسميد محشوة بالقشطة مع القطر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Halawet_el_jibn"
+   ],
+   "notes": "Verified. The Wikipedia article is titled 'Halawet el jibn' (pageid 52087544). Recipe step 7 rolls each piece of cheese and semolina dough around cream, and the rolls are served with syrup.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-chicken-kabsa",
+   "ar": "كبسة دجاج",
+   "enCurrent": "Chicken Kabsa",
+   "en": "Chicken Kabsa",
+   "transliterated": true,
+   "pronunciation": "KAB-sa",
+   "meaningEn": "Spiced basmati rice cooked with chicken, tomato and dried lime",
+   "meaningAr": "أرز بسمتي متبل مطبوخ مع الدجاج والطماطم واللومي",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kabsa"
+   ],
+   "notes": "verified. I checked the Wikipedia API and the title 'Kabsa' exists. The meaning matches the ingredients: basmati rice, chicken, tomato, loomi (black dried lime), cardamom, cinnamon and cumin.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-lamb-mandi",
+   "ar": "مندي لحم",
+   "enCurrent": "Lamb Mandi",
+   "en": "Lamb Mandi",
+   "transliterated": true,
+   "pronunciation": "MAN-dee",
+   "meaningEn": "Roasted lamb on the bone over smoked spiced basmati rice",
+   "meaningAr": "لحم غنم بالعظم مشوي في الفرن فوق أرز بسمتي متبل ومدخن",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mandi_(food)"
+   ],
+   "notes": "Name is verified: the title 'Mandi (food)' exists. I CHANGED THE MEANING. In the recipe steps the lamb is roasted in the oven and browned under the grill. The coal is put into the rice pot to smoke the rice. The old line said 'smoked lamb', which is wrong.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-jareesh",
+   "ar": "جريش",
+   "enCurrent": "Jareesh",
+   "en": "Jareesh",
+   "transliterated": true,
+   "pronunciation": "ja-REESH",
+   "meaningEn": "Cracked wheat cooked with lamb, tomato and ghee",
+   "meaningAr": "قمح مجروش مطبوخ مع لحم الغنم والطماطم والسمن",
+   "basis": "common-usage",
+   "sources": [
+    "https://saudipedia.com/en/jareesh",
+    "https://visitsaudi.com/en/stories/aljareesh-dish",
+    "https://www.arabnews.pk/node/2243196"
+   ],
+   "notes": "Name is verified. I fetched Saudipedia and its title and first line both say 'Jareesh'. Wikipedia has no 'Jareesh' article, and the Harees article lists jareesh only as another name. This file has a separate harees recipe, so keeping the two apart is right. I CHANGED THE MEANING because the yogurt (laban) is marked optional in the recipe; the new line uses only required ingredients. I dropped foodmap.in because it is a weak source.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-saleeg",
+   "ar": "سليق",
+   "enCurrent": "Saleeg",
+   "en": "Saleeg",
+   "transliterated": true,
+   "pronunciation": "sa-LEEG",
+   "meaningEn": "Short-grain rice cooked in chicken broth and milk",
+   "meaningAr": "أرز قصير الحبة مطبوخ بمرق الدجاج والحليب",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Saleeg"
+   ],
+   "notes": "verified. The Wikipedia title is 'Saleeg' and it gives the Hejazi pronunciation [saˈliːg], which matches sa-LEEG. The ingredients include a whole chicken boiled in water, short-grain rice and full-fat milk.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-mutabbaq",
+   "ar": "مطبق",
+   "enCurrent": "Mutabbaq",
+   "en": "Mutabbaq",
+   "transliterated": true,
+   "pronunciation": "moo-TAB-bag",
+   "meaningEn": "Fried folded dough stuffed with fish, rice and egg",
+   "meaningAr": "عجينة مطوية مقلية محشوة بالسمك والأرز والبيض",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Murtabak",
+    "https://butfirstchai.com/saudi-mutabbaq-recipe/",
+    "https://theodehlicious.com/mutabbaq-recipe/",
+    "https://www.arabizitranslations.com/blog/that-translator-can-cook-mutabbaq",
+    "https://houseofsaud.com/travel/jeddah-street-food/",
+    "https://www.dmagazine.com/food-drink/2026/07/mutabbaq-yemeni-flatbreads-richardson/"
+   ],
+   "notes": "I confirmed that 'Mutabbaq' redirects to 'Murtabak' on Wikipedia, and that article opens 'Murtabak, or mutabbaq (مُطَبَّق)' and names Saudi Arabia. Read literally, the rule gives 'Murtabak'. I kept 'Mutabbaq' because English sources on the Saudi dish (ButFirstChai, Theodehlicious, Arabizi Translations) use it, and 'Murtabak' is the Southeast Asian form. Switch to 'Murtabak' if you want the rule applied strictly. I CHANGED THE PRONUNCIATION from mu-TAB-bak to mu-TAB-bag, because the ق is said as g in Hejazi and Najdi speech. This matches how Saleeg and Margoog are handled in this batch. The meaning is verified: the ingredients are hamour fish, boiled rice, eggs and fried dough. I replaced foodmap.in with Arabizi Translations. CONSISTENCY PASS: pronunciation: 'mu-TAB-bag' -> 'moo-TAB-bag' (moo- as in Mutabal and Mujaddara).",
+   "status": "kept",
+   "consistencyEdits": [
+    "pronunciation: 'mu-TAB-bag' -> 'moo-TAB-bag' (moo- as in Mutabal and Mujaddara)"
+   ],
+   "decision": {
+    "decidedAt": "2026-11-21",
+    "chosen": "Mutabbaq",
+    "rejected": [
+     "Murtabak",
+     "Mutabak"
+    ],
+    "evidence": "Saudi/Hejazi sources write 'Mutabbaq': ButFirstChai, Theodehlicious, House of Saud Jeddah and Riyadh street-food guides, Expatica, D Magazine (2026). 'Murtabak' is the Southeast Asian name of the wider family."
+   }
+  },
+  {
+   "id": "sa-margoog",
+   "ar": "مرقوق",
+   "enCurrent": "Margoog",
+   "en": "Margoog",
+   "transliterated": true,
+   "pronunciation": "mar-GOOG",
+   "meaningEn": "Lamb and vegetable stew with thin dough cooked in it",
+   "meaningAr": "مرق لحم غنم بالخضار تُطهى فيه رقائق العجين",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.arabnews.pk/node/2284356",
+    "https://theodehlicious.com/margoog-recipe/",
+    "https://www.foodmap.in/qatar/margoog"
+   ],
+   "notes": "Name is verified. I fetched the Arab News headline 'A filling vegetarian take on Saudi margoog for iftar' and the foodmap page title 'What is Margoog?'. Wikipedia has no article. I replaced the weak observatory.wiki and ckbk sources with Arab News and Theodehlicious. I reworded the meaning to fix the grammar: the old line ended in 'cooked in'. The ingredients are lamb, tomato, zucchini, carrot, and a flour dough.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-qursan",
+   "ar": "قُرسان",
+   "enCurrent": "Qursan",
+   "en": "Qursan",
+   "transliterated": true,
+   "pronunciation": "gur-SAHN",
+   "meaningEn": "Lamb and vegetable stew poured over thin flatbread",
+   "meaningAr": "مرق لحم غنم بالخضار يُسكب على خبز رقيق",
+   "basis": "common-usage",
+   "sources": [
+    "https://saudipedia.com/en/al-qursan",
+    "https://arabnews.com/node/1012236"
+   ],
+   "notes": "Name is kept. Saudipedia's title is actually 'Al-Qursan'. I dropped the article 'Al-' to keep the name short. Arab News uses 'Gursan'. Wikipedia has no article under either spelling. I CHANGED THE MEANING because the chickpeas are optional in the recipe. The steps say to bake thin bread rounds, break them into a dish and pour the stew over. I dropped foodmap.in as a weak source.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-sayadeyah",
+   "ar": "صيادية السمك",
+   "enCurrent": "Fish Sayadeyah",
+   "en": "Sayadieh",
+   "transliterated": true,
+   "pronunciation": "sai-ya-DEE-ya",
+   "meaningEn": "Fried fish with spiced rice, onions and dried lime",
+   "meaningAr": "سمك مقلي مع أرز متبل وبصل ولومي",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sayadieh"
+   ],
+   "notes": "Name is verified: the Wikipedia title 'Sayadieh' exists. I CHANGED THE PRONUNCIATION from -DEE-yeh to -DEE-ya. The '-yeh' ending is Levantine, and this is a Saudi recipe, where the ending is said as -ya. The meaning is verified: the fish is floured and fried, and the dish has basmati rice, four onions and loomi. CONSISTENCY PASS: en: 'Fish Sayadieh' -> 'Sayadieh' (Sayadieh is always fish; same form as the Egyptian entry).",
+   "status": "changed",
+   "consistencyEdits": [
+    "en: 'Fish Sayadieh' -> 'Sayadieh' (Sayadieh is always fish; same form as the Egyptian entry)"
+   ],
+   "country": {
+    "key": "sa",
+    "en": "Saudi",
+    "ar": "سعودي"
+   },
+   "displayEn": "Saudi Sayadieh"
+  },
+  {
+   "id": "sa-sambousek",
+   "ar": "سمبوسك",
+   "enCurrent": "Sambousek",
+   "en": "Sambousek",
+   "transliterated": true,
+   "pronunciation": "sam-BOO-sek",
+   "meaningEn": "Fried pastries filled with spiced minced meat and leek",
+   "meaningAr": "معجنات مقلية محشوة باللحم المفروم المتبل والكراث",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.munatycooking.com/sambousek-with-meat-and-cheese-filling/",
+    "https://urbanfarmandkitchen.com/beef-sambousek",
+    "https://www.chocolatesandchai.com/beef-sambousek/"
+   ],
+   "notes": "Name is kept. I confirmed that 'Sambousek' and 'Sambusak' both redirect to Samosa#Middle East, so there is no article of its own. I CHANGED THE MEANING because 'herbs' rested only on the optional parsley. The required filling is minced meat, onion, leek or spring onion, garlic, cumin and coriander. I dropped hungrypaprikas because it uses the spelling 'sambousak'.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-luqaimat",
+   "ar": "لقيمات",
+   "enCurrent": "Luqaimat",
+   "en": "Luqaimat",
+   "transliterated": true,
+   "pronunciation": "loo-gay-MAHT",
+   "meaningEn": "Fried dough balls with cardamom, drizzled with date syrup",
+   "meaningAr": "كرات عجين مقلية بالهيل مغطاة بدبس التمر",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lokma",
+    "https://gulfnews.com/food/guide-cooking/guide-to-making-the-traditional-emirati-sweet---luqaimat-1.1627206667842",
+    "https://www.thedailymeal.com/recipes/luqaimat-sweet-dumplings-recipe",
+    "https://guide.michelin.com/ae-du/en/article/features/luqaimat-iconic-emirati-dessert-dish",
+    "https://www.munatycooking.com/crunchy-sweet-dumplings-luqaimat/"
+   ],
+   "notes": "I confirmed that 'Luqaimat' redirects to 'Lokma', which is the wider family of fried dough sweets. I fetched Gulf News and it uses 'Luqaimat'. Saveur returned an error (403), so I removed it from the sources. I CHANGED THE MEANING: the sesame is optional, and the dough has only 1 tablespoon of sugar, so I dropped 'sweet'. Cardamom and date syrup are required ingredients.",
+   "status": "kept",
+   "consistencyEdits": [],
+   "decision": {
+    "decidedAt": "2026-11-21",
+    "chosen": "Luqaimat",
+    "rejected": [
+     "Lokma",
+     "Lgeimat",
+     "Lqeimat"
+    ],
+    "evidence": "'Luqaimat' is the spelling used by Gulf News, The National, Gulf Today, Khaleej Times, the Michelin Guide Dubai and Munaty Cooking. 'Lokma' is the Turkish family name; Saveur's 'Lgeimat' is a one-off."
+   }
+  },
+  {
+   "id": "sa-maamoul-tamr",
+   "ar": "معمول تمر",
+   "enCurrent": "Date Maamoul",
+   "en": "Date Ma'amoul",
+   "transliterated": true,
+   "pronunciation": "ma-MOOL",
+   "meaningEn": "Semolina butter cookies filled with date paste",
+   "meaningAr": "كعك بالسميد والزبدة محشو بمعجون التمر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ma%27amoul"
+   ],
+   "notes": "verified. The Wikipedia API shows that 'Maamoul' redirects to \"Ma'amoul\", so the apostrophe is part of the established spelling. The ingredients are flour, semolina, butter and date paste. CONSISTENCY PASS: pronunciation: 'mah-MOOL' -> 'ma-MOOL' (one respelling for Ma'amoul).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'mah-MOOL' -> 'ma-MOOL' (one respelling for Ma'amoul)"
+   ]
+  },
+  {
+   "id": "sa-harees",
+   "ar": "هريس",
+   "enCurrent": "Harees",
+   "en": "Harees",
+   "transliterated": true,
+   "pronunciation": "ha-REES",
+   "meaningEn": "Hulled wheat cooked with chicken or lamb and ghee",
+   "meaningAr": "قمح مقشور مطبوخ مع الدجاج أو اللحم والسمن",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Harees"
+   ],
+   "notes": "verified. The Wikipedia title 'Harees' exists. The ingredients are hulled wheat, chicken or lamb, and half a cup of ghee.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-maraq-bamia",
+   "ar": "مرق بامية",
+   "enCurrent": "Maraq Bamia",
+   "en": "Okra Stew",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Lamb and okra cooked in tomato with dried lime",
+   "meaningAr": "لحم غنم وبامية مطبوخان بالطماطم واللومي",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Okra_stew"
+   ],
+   "notes": "verified. I confirmed that 'Bamia' redirects to 'Okra stew'. The article says these dishes are generally called 'okra stew' and in some cuisines just 'bamia'. The meaning matches the ingredients: lamb, okra, tomato and loomi.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-thareed",
+   "ar": "ثريد",
+   "enCurrent": "Thareed",
+   "en": "Tharid",
+   "transliterated": true,
+   "pronunciation": "tha-REED",
+   "meaningEn": "Flatbread soaked in lamb and vegetable stew",
+   "meaningAr": "خبز مغموس في مرق لحم الغنم والخضار",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tharid"
+   ],
+   "notes": "Name is verified. 'Thareed' redirects to 'Tharid', and that article describes this bread soup from Mecca. I CHANGED THE MEANING because the chickpeas are optional in the recipe. The required ingredients are lamb, tamees or Arabic bread, tomato, zucchini and carrot.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "bc-tajine",
+   "ar": "طاجين تونسي",
+   "enCurrent": "Tajine Maadnous",
+   "en": "Tunisian Tajine",
+   "transliterated": true,
+   "pronunciation": "tah-JEEN",
+   "meaningEn": "Baked egg dish with chicken, potato, cheese and parsley",
+   "meaningAr": "طبق بيض مخبوز بالدجاج والبطاطس والجبن والبقدونس",
+   "basis": "common-usage",
+   "sources": [
+    "https://marocmama.com/tunisian-tajine/",
+    "https://whereismyspoon.co/wprm_print/tunisian-tajine",
+    "https://en.wikipedia.org/wiki/Tagine"
+   ],
+   "notes": "Name is verified. I fetched MarocMama: its title is 'Tunisian Tajine', described as a spiced, frittata-like dish of chicken, potato, egg, cheese and parsley, baked until set. 'Tajine' redirects to 'Tagine', the Moroccan stew, which is a different dish. I CHANGED THE MEANING to add 'Baked', because step 8 of the recipe bakes it for 30–35 minutes. I dropped the Czech site as a weak source.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma650-manal-syrian-sfiha-20261021b",
+   "ar": "صفيحة شامية",
+   "enCurrent": null,
+   "en": "Sfiha",
+   "transliterated": true,
+   "pronunciation": "SFEE-ha",
+   "meaningEn": "Dough topped with spiced minced meat, tomato and pine nuts",
+   "meaningAr": "عجين مغطى باللحم المفروم المتبل والطماطم والصنوبر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sfiha"
+   ],
+   "notes": "verified. The Wikipedia title 'Sfiha' exists and describes a Levantine flatbread topped with minced meat, onion, tomato and pine nuts. The recipe has minced meat, tomato and pine nuts (صنوبر), plus pomegranate molasses, tahini and spices.",
+   "status": "new",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma650-manal-saudi-maamoul-20261021b",
+   "ar": "معمول سعودي",
+   "enCurrent": null,
+   "en": "Saudi Ma'amoul",
+   "transliterated": true,
+   "pronunciation": "ma-MOOL",
+   "meaningEn": "Cardamom butter-and-ghee cookies stuffed with dates",
+   "meaningAr": "كعك بالهيل والزبدة والسمن محشو بالتمر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ma%27amoul"
+   ],
+   "notes": "Name is verified. I CHANGED THE MEANING. The ingredient list has no dates, but steps 6–7 of the same recipe say to prepare dates and stuff each ball with them ('احشيه بالتمر'). The filling is in the recipe itself, so the meaning now names it. This also corrects the earlier note claiming the recipe has no filling. Data note: the dates appear only in the steps, so the ingredient list may be missing that line. CONSISTENCY PASS: pronunciation: 'mah-MOOL' -> 'ma-MOOL' (one respelling for Ma'amoul).",
+   "status": "new",
+   "consistencyEdits": [
+    "pronunciation: 'mah-MOOL' -> 'ma-MOOL' (one respelling for Ma'amoul)"
+   ]
+  },
+  {
+   "id": "ma650-amjaad-al-hussain-oxtail-yemeni-marag",
+   "ar": "مرق الذيل البقري اليمني",
+   "enCurrent": null,
+   "en": "Oxtail Maraq",
+   "transliterated": true,
+   "pronunciation": "MA-rag",
+   "meaningEn": "Oxtail soup with vegetables, dried lemon and hawaij spices",
+   "meaningAr": "شوربة ذيل بقري بالخضار والليمون المجفف وبهارات الحوائج",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Maraq_(dish)",
+    "https://yemeniyah.com/2012/01/16/maraq-yemeni-soup",
+    "https://www.theinfatuation.com/new-york/reviews/yemen-cafe"
+   ],
+   "notes": "I CHANGED THE NAME from 'Marag' to 'Maraq'. The proposal missed that Wikipedia has 'Maraq (dish)' (fetched and confirmed), which describes a broth or soup of the Arabian Peninsula and is filed under Yemeni cuisine. As with 'Mandi (food)', the bracketed part is dropped. The Yemeni blog Yemeniyah also writes 'Maraq'. The 'Marag' page the proposal cited is only a disambiguation page. The pronunciation stays MA-rag, because Yemeni (Sanaani) speech says ق as g; the Yemen Cafe review writes 'marag'. I removed the toast.app source, which returned an error (403) and could not be checked. In the meaning I changed 'dried lime' to 'dried lemon', because the recipe line says '2 dried lemons'.",
+   "status": "new",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma650-amjaad-al-hussain-yemeni-chicken-in-marag",
+   "ar": "دجاج يمني بالمرق",
+   "enCurrent": null,
+   "en": "Chicken Maraq",
+   "transliterated": true,
+   "pronunciation": "MA-rag",
+   "meaningEn": "Chicken simmered with potatoes, ginger, dried lime and hawaij",
+   "meaningAr": "دجاج مطهو مع البطاطس والزنجبيل والليمون المجفف والحوائج",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Maraq_(dish)",
+    "https://yemeniyah.com/2012/01/16/maraq-yemeni-soup"
+   ],
+   "notes": "I CHANGED THE NAME from 'Marag' to 'Maraq', for the same reason as the oxtail entry: the Wikipedia title is 'Maraq (dish)'. I searched and found no restaurant menu listing a 'chicken marag', and the menu sources the proposal cited cover lamb marag only, so I removed them. 'Chicken' is kept as the descriptor. I reworded the meaning so it describes the bone-in chicken simmered in water. The ingredients include '1 dried lemon or lime', ginger, potatoes and hawaij.",
+   "status": "new",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fi650-51935",
+   "ar": "بطاطس مغربية بالخضروات وصلصة الأعشاب",
+   "enCurrent": "Moroccan Potatoes",
+   "en": "Moroccan Potatoes",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Baked potatoes, peppers and celery in a garlic-herb lemon sauce",
+   "meaningAr": "بطاطس وفلفل رومي وكرفس مخبوزة بصلصة أعشاب بالثوم والليمون",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "Name is verified. I made a small change to the meaning to add 'baked', because the steps bake it for 55–65 minutes. The ingredients are red potatoes, three bell peppers, celery, cilantro, parsley, garlic and lemon.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fi650-52265",
+   "ar": "كباب دجاج مغربي بماريناد الليمون",
+   "enCurrent": "Moroccan Lemon Shish Kebabs",
+   "en": "Moroccan Lemon Chicken Kebabs",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Chicken pieces marinated in lemon, garlic and fresh herbs",
+   "meaningAr": "قطع دجاج متبلة بالليمون والثوم والأعشاب الطازجة",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kebab"
+   ],
+   "notes": "verified. The ingredients are chicken breast, lemon zest and juice, garlic, parsley, rosemary and thyme. Adding 'Chicken' matches the Arabic name.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fi650-52352",
+   "ar": "كسكس مغربي بالدجاج واللحم والخضروات",
+   "enCurrent": "Moroccan Couscous",
+   "en": "Moroccan Couscous",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Chicken, lamb and vegetable stew with chickpeas, over couscous",
+   "meaningAr": "مرق دجاج ولحم ضأن بالخضار والحمص يُقدَّم مع الكسكس",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Couscous"
+   ],
+   "notes": "Name is verified. I CHANGED THE MEANING. Couscous is missing from the ingredient list, but the recipe step describes cooking pre-cooked couscous in chicken broth. The grain is therefore in the recipe and the meaning can name it. I dropped raisins to stay within 10 words. Data note: the ingredient list is missing the couscous line.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fi650-56111",
+   "ar": "خضروات مغربية متبلة مع الكسكس",
+   "enCurrent": "Moroccan Vegetables With Spiced Couscous",
+   "en": "Moroccan Vegetable Couscous",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Couscous topped with spiced sweet potato, broccoli, pepper and mint",
+   "meaningAr": "كسكس تعلوه بطاطا حلوة وبروكلي وفلفل متبلة مع النعناع",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Couscous"
+   ],
+   "notes": "Name is verified. I CHANGED THE MEANING. The spices (cumin, cinnamon, chili flakes, saffron) go into the vegetables, not the couscous. The couscous is only toasted in oil and soaked in water. The recipe has a single red bell pepper, so 'peppers' became 'pepper'.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fi650-56446",
+   "ar": "سمك مقلي على الطريقة المغربية",
+   "enCurrent": "Moroccan Style Fish Fry",
+   "en": "Moroccan Fried Fish",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Fried tilapia fillets with smoked paprika, cumin and ginger",
+   "meaningAr": "شرائح بلطي مقلية بالبابريكا المدخنة والكمون والزنجبيل",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The ingredients are tilapia fillets, frying oil, smoked paprika, cumin, ground coriander and ginger.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fiw650-56356",
+   "ar": "فول مدمس لبناني سريع",
+   "enCurrent": "Lebanese Quick Ful Medames",
+   "en": "Quick Ful Medames",
+   "transliterated": true,
+   "pronunciation": "FOOL meh-DAM-mes",
+   "meaningEn": "Fava beans with olive oil, garlic, lemon and onion",
+   "meaningAr": "فول بزيت الزيتون والثوم والليمون والبصل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ful_medames"
+   ],
+   "notes": "Name is verified: the Wikipedia title 'Ful medames' exists. I CHANGED THE PRONUNCIATION from 'FOOL meh-DAH-mes' to 'FOOL meh-DAM-mes'. Wikipedia gives [ˈfuːl meˈdæmmes], with a doubled m (مدمّس) and the stress on DAM, and Lebanese speech also stresses DAM. The meaning is verified against the ingredients: canned fava beans, olive oil, garlic, lemon juice and onion.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "bc650-lebanese-lentil-soup",
+   "ar": "حساء العدس اللبناني",
+   "enCurrent": "Lebanese Lentil Soup",
+   "en": "Lebanese Lentil Soup",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Red lentil soup with potato, zucchini, chard and lemon",
+   "meaningAr": "شوربة عدس أحمر بالبطاطس والكوسة والسلق والليمون",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lentil_soup"
+   ],
+   "notes": "verified. The ingredients are red lentils, Yukon gold potatoes, zucchini, Swiss chard and lemon juice.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fi650-51988",
+   "ar": "حساء الأرز والخضار المغربي",
+   "enCurrent": "Moroccan Vegan Rice Soup",
+   "en": "Moroccan Rice and Vegetable Soup",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Brown rice and vegetable soup spiced with ras el hanout",
+   "meaningAr": "حساء أرز بني وخضار متبل برأس الحانوت",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The recipe file confirms brown rice, leek, eggplant, zucchini, carrot, vegetable broth and ras el hanout.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fi650-57409",
+   "ar": "أسياخ كفتة مغربية",
+   "enCurrent": "Moroccan Brochettes",
+   "en": "Moroccan Kefta Skewers",
+   "transliterated": true,
+   "pronunciation": "KEF-ta",
+   "meaningEn": "Spiced ground beef skewers with onion, garlic and parsley",
+   "meaningAr": "أسياخ لحم بقري مفروم متبل بالبصل والثوم والبقدونس",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kofta",
+    "https://salimaskitchen.com/kefta/print/21833/",
+    "https://www.splendidtable.org/story/2012/05/30/grilled-spicy-kefta-brochettes"
+   ],
+   "notes": "verified. I checked the Wikipedia API: 'Kefta' redirects to 'Kofta'. 'Kofta kebab' redirects to 'Shish kofta', but 'Kofta Skewers' is plainer and clearer. The recipe file confirms ground beef, onion, garlic, red pepper, parsley, paprika, cumin and oregano. CONSISTENCY PASS: en: 'Moroccan Kofta Skewers' -> 'Moroccan Kefta Skewers' (Moroccan dishes use the Moroccan English spelling Kefta); pronunciation: 'KOF-ta' -> 'KEF-ta' (Kefta spelling); basis: 'wikipedia-title' -> 'common-usage' (Kefta is the Moroccan English usage, not the Wikipedia title).",
+   "status": "changed",
+   "consistencyEdits": [
+    "en: 'Moroccan Kofta Skewers' -> 'Moroccan Kefta Skewers' (Moroccan dishes use the Moroccan English spelling Kefta)",
+    "pronunciation: 'KOF-ta' -> 'KEF-ta' (Kefta spelling)",
+    "basis: 'wikipedia-title' -> 'common-usage' (Kefta is the Moroccan English usage, not the Wikipedia title)"
+   ]
+  },
+  {
+   "id": "fi650-60855",
+   "ar": "حساء الحمص المغربي",
+   "enCurrent": "Moroccan Chickpea Soup",
+   "en": "Moroccan Chickpea Soup",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Chickpea soup with saffron, cumin, ginger, cinnamon and lemon",
+   "meaningAr": "حساء حمص بالزعفران والكمون والزنجبيل والقرفة والليمون",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. All the named ingredients are in the recipe, and it has no lentils, tomato or meat, so it is not harira.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fi650-59551",
+   "ar": "دجاج مغربي بالحمص والخضار",
+   "enCurrent": "Hearty Moroccan Chicken",
+   "en": "Moroccan Chicken with Chickpeas",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Chicken thighs stewed with chickpeas, vegetables and raisins, over couscous",
+   "meaningAr": "أفخاذ دجاج مطهوة مع الحمص والخضار والزبيب، تقدم فوق الكسكس",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The recipe file confirms chicken thighs, chickpeas, carrots, zucchini, golden raisins and couscous.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "bc650-egyptian-lentils",
+   "ar": "عدس مصري بالأرز والمعكرونة",
+   "enCurrent": "Egyptian Lentils",
+   "en": "Egyptian Lentils with Rice and Pasta",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Lentils, rice and pasta with tomato-pepper sauce and fried onion",
+   "meaningAr": "عدس وأرز ومعكرونة بصلصة الطماطم والفلفل وبصل محمر",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. Steps 4 and 5 confirm the pepper-tomato sauce and the fried onion garnish. The flag stands: in substance this is koshary (Wikipedia 'Koshary', which 'Kushari' redirects to), but the Arabic name is not كشري, so the literal name is kept.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "fiw650-58507",
+   "ar": "معمول لبناني بالعسل والجوز",
+   "enCurrent": "Lebanese Cookies",
+   "en": "Ma'amoul with Honey and Walnuts",
+   "transliterated": true,
+   "pronunciation": "ma-MOOL",
+   "meaningEn": "Butter cookies dipped in honey syrup and topped with walnuts",
+   "meaningAr": "كعك بالزبدة مغموس في شراب العسل ومزين بالجوز",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ma%27amoul"
+   ],
+   "notes": "verified. The Wikipedia title 'Ma'amoul' is confirmed and defines it as 'a filled cookie made with semolina flour and butter'. The flag stands: this recipe has no semolina and no filling (oil, butter, orange juice and flour, dipped in honey syrup and topped with walnuts). The Arabic name معمول needs owner review. If it changes, 'Lebanese Honey Walnut Cookies' is the plain-English fallback.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-bamya-bel-lahma",
+   "ar": "بامية باللحمة",
+   "enCurrent": "Bamya (Okra and Meat Stew)",
+   "en": "Okra Stew with Meat",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Lamb and okra stewed in tomato sauce with spices",
+   "meaningAr": "لحم ضأن وبامية مطهوان في صلصة الطماطم بالبهارات",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Okra_stew"
+   ],
+   "notes": "verified. The Wikipedia API confirms that 'Bamia' and 'Bamya' redirect to 'Okra stew'. The article itself gives البامية باللحم as 'okra with meat' and mentions meatless variants, so 'with Meat' is justified. The recipe uses lamb and allows beef or goat.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-shorbet-ads",
+   "ar": "شوربة عدس مصري",
+   "enCurrent": "Egyptian Red Lentil Soup (Shorbat Ads)",
+   "en": "Egyptian Lentil Soup",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Blended red lentil soup with carrot, tomato, cumin and lemon",
+   "meaningAr": "شوربة عدس مضروبة بالخلاط مع الجزر والطماطم والكمون والليمون",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lentil_soup"
+   ],
+   "notes": "Name verified. Changed the meaning: the toasted bread is optional in the recipe and should not define the dish. Lemon juice (a core ingredient) and blending (step 6) were added. The Arabic meaning now says just عدس, so it no longer clashes between أصفر and 'red'.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-fasolia-khadra-bel-lahma",
+   "ar": "فاصوليا خضراء باللحمة",
+   "enCurrent": "Fasolia (Egyptian Green Bean Stew)",
+   "en": "Fasoulia with Meat",
+   "transliterated": true,
+   "pronunciation": "fa-SOOL-ya",
+   "meaningEn": "Green beans and meat stewed in tomato sauce with carrots",
+   "meaningAr": "فاصوليا خضراء ولحم مطهوان في صلصة الطماطم مع الجزر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fasoulia"
+   ],
+   "notes": "verified. The Wikipedia API confirms that 'Fasoulia' is the green bean and tomato stew and that 'Fasolia' redirects to 'Fasolada', a different dish. The recipe file confirms green beans, meat, tomato, tomato paste and carrots.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-salata-baladi",
+   "ar": "سلطة بلدي",
+   "enCurrent": "Salata Baladi (Egyptian Salad)",
+   "en": "Salata Baladi",
+   "transliterated": true,
+   "pronunciation": "sa-LAH-ta BA-la-dee",
+   "meaningEn": "Cucumber, tomato, onion and parsley salad with lemon dressing",
+   "meaningAr": "سلطة خيار وطماطم وبصل وبقدونس بالليمون وزيت الزيتون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Salata_baladi"
+   ],
+   "notes": "verified. The Wikipedia API confirms the article 'Salata baladi' exists, and the ingredients match the recipe.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-beid-bel-basterma",
+   "ar": "بيض بالبسطرمة",
+   "enCurrent": "Beid bel Basturma (Eggs with Basturma)",
+   "en": "Eggs with Basturma",
+   "transliterated": true,
+   "pronunciation": "bas-TOOR-ma",
+   "meaningEn": "Scrambled eggs with crisp basturma, cooked in ghee or butter",
+   "meaningAr": "بيض مخفوق مطهو مع البسطرمة المحمرة في السمن أو الزبدة",
+   "basis": "common-usage",
+   "sources": [
+    "https://amwhatieat.com/eggs-with-basturma/",
+    "https://cheznermine.com/2022/05/10/beid-bel-basturma-fried-eggs-over-crispy-basturma-بيض-بالبسطرمة/",
+    "https://en.wikipedia.org/wiki/Pastirma"
+   ],
+   "notes": "Name verified. I fetched amwhatieat, which uses 'Basturma' and the header 'Beid bel basturma - Eggs with basturma'. The Wikipedia API confirms 'Basturma' redirects to 'Pastirma'. Changed the meaning: the recipe whisks the eggs and scrambles them over crisped basturma (steps 1 to 3), so 'scrambled' and 'crisp' are more accurate than 'eggs cooked'.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-kebda-eskandarani",
+   "ar": "كبدة إسكندراني",
+   "enCurrent": "Kebda Eskandarani (Alexandrian Liver)",
+   "en": "Kebda Eskandarani",
+   "transliterated": true,
+   "pronunciation": "KEB-da es-kan-da-RAH-nee",
+   "meaningEn": "Beef liver sautéed with peppers, garlic, cumin and lemon",
+   "meaningAr": "كبدة بقري مشوحة مع الفلفل والثوم والكمون والليمون",
+   "basis": "common-usage",
+   "sources": [
+    "https://theodehlicious.com/kebda-eskandarani/",
+    "https://www.foodmap.in/egypt/kebda-eskandarani",
+    "https://omaliegyptianfood.blogspot.com/2024/05/httpsomaliegyptianfood.blogspot.com202405kebda-eskandarani.html"
+   ],
+   "notes": "Name verified, sources changed. The food.com URL is dead: it now 301-redirects to the fatafeat.com homepage, so I removed it. I fetched theodehlicious ('Kebda Eskandarani (Egyptian Liver Recipe)') and foodmap.in ('Kebda Eskandarani'), and both confirm the spelling. I added omaliegyptianfood (from search results) as a third source. Chez Nermine uses the variant 'Kebdah Eskandarani'.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-mesaqaa-bel-lahma",
+   "ar": "مسقعة باللحمة المفرومة",
+   "enCurrent": "Egyptian Moussaka (Mesaqa'a)",
+   "en": "Egyptian Moussaka",
+   "transliterated": true,
+   "pronunciation": "moo-SAH-ka",
+   "meaningEn": "Baked eggplant layered with spiced ground beef and tomatoes",
+   "meaningAr": "باذنجان في الفرن في طبقات مع لحم بقري مفروم متبل وطماطم",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Moussaka",
+    "https://www.themediterraneandish.com/egyptian-moussaka/",
+    "https://falasteenifoodie.com/egyptian-moussaka-eggplant-and-ground-beef-tomato-bake/"
+   ],
+   "notes": "Name verified. The Wikipedia 'Moussaka' article has a section on the Egyptian version, which supports keeping 'Egyptian'. The meaning now says 'baked' and 'layered', because the recipe bakes the eggplant and layers it with the meat sauce (steps 4, 8 and 9).",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-beid-mezalil",
+   "ar": "بيض مزغلل (بيض مسلوق مقلي)",
+   "enCurrent": "Beid Meza'lil (Egyptian Fried Boiled Eggs)",
+   "en": "Beid Meza'lil",
+   "transliterated": true,
+   "pronunciation": "BAYD meh-ZAH-lil",
+   "meaningEn": "Hard-boiled eggs fried in ghee or butter",
+   "meaningAr": "بيض مسلوق مقلي في السمن أو الزبدة",
+   "basis": "common-usage",
+   "sources": [
+    "https://cheznermine.com/2026/04/11/egyptian-fried-boiled-egg-beid-mezalil-بيض-مزعلل/",
+    "https://www.themediterraneandish.com/egyptian-fried-boiled-eggs-recipe",
+    "https://cupofyum.com/recipes/egyptian-fried-boiled-eggs-recipe-bied-mezalil"
+   ],
+   "notes": "Name verified. I fetched Chez Nermine, which uses 'Beid Meza'lil' with an apostrophe and writes the Arabic بيض مزعلل. The Mediterranean Dish and Cup of Yum titles read 'Bied Meza'lil', so the apostrophe is part of the established spelling and 'Beid' is the more standard first word. Correction to the earlier flag: مزغلل is not necessarily a typo. The Mediterranean Dish suggests saying it 'meza-gh-lil', and homeisakitchen.com spells it 'mezaghlil', so both Arabic spellings are attested.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-bessara",
+   "ar": "بصارة",
+   "enCurrent": "Bissara (Egyptian Fava Bean Dip)",
+   "en": "Bissara",
+   "transliterated": true,
+   "pronunciation": "bi-SAH-ra",
+   "meaningEn": "Fava bean dip with dill, parsley and cilantro",
+   "meaningAr": "غموس فول مدشوش بالشبت والبقدونس والكزبرة الخضراء",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bissara"
+   ],
+   "notes": "verified. The Wikipedia API confirms that 'Bessara' redirects to 'Bissara'. The recipe file confirms split fava beans with dill, parsley and cilantro.",
+   "status": "changed",
+   "consistencyEdits": [],
+   "country": {
+    "key": "eg",
+    "en": "Egyptian",
+    "ar": "مصري"
+   },
+   "displayEn": "Egyptian Bissara"
+  },
+  {
+   "id": "eg-goulash-bel-lahma",
+   "ar": "جلاش باللحمة المفرومة",
+   "enCurrent": "Egyptian Goulash (Phyllo Meat Pie)",
+   "en": "Egyptian Goulash",
+   "transliterated": true,
+   "pronunciation": "goo-LAHSH",
+   "meaningEn": "Layered phyllo pie filled with spiced ground beef",
+   "meaningAr": "فطيرة رقائق جلاش محشوة بلحم بقري مفروم متبل",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.themediterraneandish.com/phyllo-meat-pie-recipe-egyptian-goulash",
+    "https://feelgoodfoodie.net/recipe/egyptian-goulash-phyllo-meat-pie",
+    "https://www.hungrypaprikas.com/egyptian-goulash/",
+    "https://www.munatycooking.com/egyptian-goulash/"
+   ],
+   "notes": "verified. The source URL slugs all read 'egyptian-goulash', but feelgoodfoodie returned 403 when I fetched it. Wikipedia has no article for this dish. The recipe file confirms phyllo layers and a spiced ground beef filling.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-kofta-gambari",
+   "ar": "كفتة جمبري",
+   "enCurrent": "Egyptian Shrimp Fritters (Shrimp Kofta)",
+   "en": "Shrimp Kofta",
+   "transliterated": true,
+   "pronunciation": "KOF-ta",
+   "meaningEn": "Fried patties of minced shrimp, herbs and chickpea flour",
+   "meaningAr": "أقراص مقلية من الجمبري المفروم والأعشاب ودقيق الحمص",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kofta",
+    "https://www.themediterraneandish.com/egyptian-shrimp-fritters-shrimp-kofta",
+    "https://theegyptianepicurean.substack.com/p/shrimp-kofta",
+    "https://www.dailynewsegypt.com/?p=219504"
+   ],
+   "notes": "verified. I fetched The Egyptian Epicurean, titled 'Shrimp kofta'. The recipe file confirms shrimp, parsley, dill, chickpea flour and egg, and the patties are fried.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-saniyet-batates-bel-lahma",
+   "ar": "صينية بطاطس باللحمة المفرومة",
+   "enCurrent": "Egyptian-Style Potato Casserole",
+   "en": "Potato and Ground Meat Casserole",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Potatoes and carrots baked with spiced ground meat and tomatoes",
+   "meaningAr": "بطاطس وجزر في الفرن مع لحم مفروم متبل وطماطم",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The recipe file allows ground beef or turkey, so 'Ground Meat' is correct, and it confirms the potatoes, carrots and tomatoes.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-bisella-bel-gazar",
+   "ar": "بسلة بالجزر",
+   "enCurrent": "Egyptian Peas and Carrots Stew",
+   "en": "Pea and Carrot Stew",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Peas and carrots simmered in spiced tomato sauce",
+   "meaningAr": "بسلة وجزر مطهوان في صلصة طماطم متبلة",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The recipe file confirms peas, carrots, tomato sauce, coriander and paprika.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-ghorayeba",
+   "ar": "غريبة مصرية",
+   "enCurrent": "Egyptian Ghorayebah (Butter Cookies)",
+   "en": "Ghorayeba",
+   "transliterated": true,
+   "pronunciation": "gho-RAY-ba",
+   "meaningEn": "Ghee and powdered sugar shortbread cookies with sliced almonds",
+   "meaningAr": "كعك هش بالسمن والسكر البودرة مع شرائح اللوز",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ghorayeba"
+   ],
+   "notes": "verified. The Wikipedia API confirms that 'Ghoriba' and 'Ghraybeh' redirect to 'Ghorayeba'. The almonds are optional in the recipe but are the usual topping.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-feteer-meshaltet-bel-loz",
+   "ar": "فطير مشلتت باللوز والصنوبر",
+   "enCurrent": "Egyptian Feteer Meshaltet with Almond and Pine Nuts",
+   "en": "Feteer Meshaltet with Almonds and Pine Nuts",
+   "transliterated": true,
+   "pronunciation": "feh-TEER meh-SHAL-tet",
+   "meaningEn": "Flaky ghee pastry with almonds, pine nuts and sugar",
+   "meaningAr": "فطير رقائق بالسمن مع اللوز والصنوبر والسكر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Feteer_meshaltet"
+   ],
+   "notes": "verified. The Wikipedia API confirms the article 'Feteer meshaltet'. The recipe file confirms the ghee layers and the almond, pine nut and sugar filling. CONSISTENCY PASS: pronunciation: 'fe-TEER me-SHAL-tet' -> 'feh-TEER meh-SHAL-tet' (one respelling for Feteer Meshaltet).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'fe-TEER me-SHAL-tet' -> 'feh-TEER meh-SHAL-tet' (one respelling for Feteer Meshaltet)"
+   ]
+  },
+  {
+   "id": "lg-balaleet",
+   "ar": "بلاليط",
+   "enCurrent": "Balaleet (Emirati Vermicelli Egg Breakfast)",
+   "en": "Balaleet",
+   "transliterated": true,
+   "pronunciation": "ba-la-LEET",
+   "meaningEn": "Sweet buttered vermicelli topped with a saffron egg omelette",
+   "meaningAr": "شعيرية حلوة بالزبدة تعلوها عجة بيض بالزعفران",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Balaleet"
+   ],
+   "notes": "Name verified (the Wikipedia API confirms the article). Fixed the meaning: in this recipe the saffron goes into the egg (step 4), not the vermicelli, which is sweetened with butter and sugar (step 3). The earlier phrase 'sweet saffron vermicelli' misdescribed the recipe.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-chebab",
+   "ar": "خبز الجباب (الشباب)",
+   "enCurrent": "Chebaab (Emirati Cardamom Saffron Pancakes)",
+   "en": "Chebab",
+   "transliterated": true,
+   "pronunciation": "che-BAHB",
+   "meaningEn": "Cardamom and saffron pancakes served with date syrup",
+   "meaningAr": "فطائر بالهيل والزعفران تقدم مع دبس التمر",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.spinneys.com/en-ae/recipes/chebab-emirati-saffron-pancakes/",
+    "https://gulfnews.com/food/cooking-cuisines/emirati-chebab-1.1609076712834",
+    "https://www.munatycooking.com/chebab/"
+   ],
+   "notes": "verified. I fetched Spinneys ('Chebab (Emirati saffron pancakes)') and Gulf News ('Emirati Chebab'), and both use 'Chebab'. The Wikipedia API shows 'Chebab' has no article and 'Chabab' is a disambiguation page about football clubs.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-majboos-dajaj",
+   "ar": "مجبوس دجاج",
+   "enCurrent": "Chicken Majboos",
+   "en": "Chicken Machboos",
+   "transliterated": true,
+   "pronunciation": "mach-BOOS",
+   "meaningEn": "Spiced basmati rice cooked with chicken and dried lime",
+   "meaningAr": "أرز بسمتي متبل مطهو مع الدجاج واللومي",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kabsa",
+    "https://foreignfork.com/machboos/",
+    "https://gulfnews.com/food/cooking-cuisines/chicken-machboos-1.1610888105164",
+    "https://globaltableadventure.com/recipe/machboos/print"
+   ],
+   "notes": "verified. The Wikipedia API confirms that 'Majboos' and 'Machboos' redirect to 'Kabsa', and the article reads 'also known as ... Machboos (Gulf Arabic: مچبوس [mətʃˈbuːs])', which supports the 'ch' pronunciation. I fetched Foreign Fork, titled 'Chicken Machboos Recipe'.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-musakhan-rolls",
+   "ar": "مسخن دجاج (لفائف)",
+   "enCurrent": "Palestinian Chicken Musakhan",
+   "en": "Musakhan Rolls",
+   "transliterated": true,
+   "pronunciation": "moo-SAKH-khan",
+   "meaningEn": "Flatbread rolls of chicken, onion, sumac and pine nuts",
+   "meaningAr": "لفائف خبز بالدجاج والبصل والسماق والصنوبر",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Musakhan",
+    "https://palestineinadish.com/recipes/musakhan-rolls/",
+    "https://www.hungrypaprikas.com/musakhan-rolls/",
+    "https://butfirstchai.com/musakhan-rolls-sumac-chicken/"
+   ],
+   "notes": "verified. The Wikipedia API confirms the article 'Musakhan'. I fetched Palestine in a Dish, titled 'Musakhan Rolls'. The recipe file confirms markook bread, chicken, onion, sumac and pine nuts. CONSISTENCY PASS: pronunciation: 'moo-SAKH-an' -> 'moo-SAKH-khan' (one respelling for Musakhan (doubled kh)).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'moo-SAKH-an' -> 'moo-SAKH-khan' (one respelling for Musakhan (doubled kh))"
+   ]
+  },
+  {
+   "id": "lg-mansaf",
+   "ar": "منسف أردني",
+   "enCurrent": "Jordanian Mansaf",
+   "en": "Mansaf",
+   "transliterated": true,
+   "pronunciation": "MAN-saf",
+   "meaningEn": "Lamb in jameed yogurt sauce over turmeric rice with almonds",
+   "meaningAr": "لحم ضأن بصلصة الجميد فوق أرز بالكركم مع اللوز",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mansaf"
+   ],
+   "notes": "Name verified (the Wikipedia API confirms the article). Changed the meaning: the shrak bread is optional in the recipe, so it should not define the dish. It now names the turmeric rice and toasted almonds, which are core ingredients in the recipe file.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-daoud-basha",
+   "ar": "داود باشا",
+   "enCurrent": "Daoud Basha (Lebanese Meatballs)",
+   "en": "Daoud Basha",
+   "transliterated": true,
+   "pronunciation": "da-OOD BAH-sha",
+   "meaningEn": "Beef meatballs and potatoes in tomato sauce with pine nuts",
+   "meaningAr": "كرات لحم بقري وبطاطس في صلصة طماطم مع الصنوبر",
+   "basis": "common-usage",
+   "sources": [
+    "https://butfirstchai.com/daoud-basha-recipe/",
+    "https://cupofyum.com/recipes/daoud-basha",
+    "https://rovehotels.com/en/blog/recipe-day-daoud-basha",
+    "https://www.philips.com.eg/c-e/ho/philips-chef/recipe-overview-page/main-courses/daoud-basha.html"
+   ],
+   "notes": "CHANGED from 'Dawood Basha' to 'Daoud Basha'. There is no Wikipedia article (a Wikipedia search returns nothing). The proposal's lead source (tasteofbeirut.com/lebanese-meatballs-dawood-basha) returns 404, so it was dropped. A web search shows the two spellings about evenly used: Daoud on butfirstchai, Cup of Yum (fetched and confirmed), Rove Hotels, Philips, CDKitchen and Lebanon's Taste & Flavors; Dawood on Munaty, Maggi Arabia, Falasteeni Foodie and ExpatWoman. On a tie I kept the current spelling so the name does not change for no gain. The pronunciation was changed to match it: Lebanese داود is da-OOD. Meaning verified: pine nuts are the garnish and pomegranate molasses is optional.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-batata-harra",
+   "ar": "بطاطا حرة",
+   "enCurrent": "Batata Harra (Lebanese Spicy Potatoes)",
+   "en": "Batata Harra",
+   "transliterated": true,
+   "pronunciation": "ba-TAH-ta HAR-ra",
+   "meaningEn": "Fried potato cubes with garlic, coriander, lemon and chili",
+   "meaningAr": "مكعبات بطاطس مقلية بالثوم والكزبرة والليمون والفلفل الحار",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Batata_harra"
+   ],
+   "notes": "verified. The Wikipedia article title is 'Batata harra' (fetched). The meaning matches the recipe: potatoes, coriander, lemon juice, chili paste and garlic.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-galayet-bandora-lahma",
+   "ar": "قلاية بندورة باللحمة",
+   "enCurrent": "Beef Galayet Bandora",
+   "en": "Beef Qalayet Bandora",
+   "transliterated": true,
+   "pronunciation": "gal-LAH-yet ban-DOH-ra",
+   "meaningEn": "Thin beef slices and potatoes cooked in spiced tomatoes",
+   "meaningAr": "شرائح لحم بقري وبطاطس مطهوة في طماطم متبلة",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Qalayet_bandora"
+   ],
+   "notes": "Name verified. The Wikipedia title is 'Qalayet bandora', and 'Galayet bandora' redirects to it (both fetched). Small pronunciation fix: the Arabic is قلّاية with a doubled l, so it is now 'gal-LAH-yet'; ق is still said as g, as in Jordan. Meaning verified: beef slices, potatoes, canned tomatoes, cumin, allspice and cinnamon.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-loubieh-bi-zeit",
+   "ar": "لوبية بزيت",
+   "enCurrent": "Loubieh bi Zeit (Green Beans with Olive Oil)",
+   "en": "Loubieh bi Zeit",
+   "transliterated": true,
+   "pronunciation": "LOO-bee-yeh bi ZAYT",
+   "meaningEn": "Green beans stewed with tomatoes, onion, garlic and olive oil",
+   "meaningAr": "فاصوليا خضراء مطهوة مع الطماطم والبصل والثوم وزيت الزيتون",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.mediterraneanliving.com/lebanese-green-beans-with-olive-oil-loubieh-bi-zeit/",
+    "https://feelgoodfoodie.net/recipe/lebanese-green-beans/",
+    "https://norecipes.com/loubieh-bi-zeit-green-beans-braised-olive-oil/",
+    "https://butfirstchai.com/lebanese-green-beans-stew-with-tomatoes-loubieh-bi-zeit/",
+    "https://palestineinadish.com/recipes/loubieh-bi-zeit-string-beans-with-tomatoes/"
+   ],
+   "notes": "verified. Mediterranean Living was fetched and its title reads 'Loubieh bi Zeit', with 'bi' in lowercase. There is no Wikipedia article. The meaning matches the recipe's ingredients.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-moghrabieh-dajaj",
+   "ar": "مغربية بالدجاج",
+   "enCurrent": "Moghrabieh with Chicken",
+   "en": "Chicken Moghrabieh",
+   "transliterated": true,
+   "pronunciation": "mogh-RAH-bee-yeh",
+   "meaningEn": "Pearl couscous, chicken, chickpeas and shallots in spiced broth",
+   "meaningAr": "حبات المغربية مع الدجاج والحمص والبصل الصغير في مرق متبل",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Couscous#Moghrabieh",
+    "https://feelgoodfoodie.net/recipe/moghrabieh/",
+    "https://urbanfarmandkitchen.com/moghrabieh-lebanese-pearl-couscous-and-chicken-stew/",
+    "https://www.hungrypaprikas.com/moghrabieh/"
+   ],
+   "notes": "verified. 'Moghrabieh' redirects to the Moghrabieh section of the Wikipedia article 'Couscous' (fetched). The meaning matches the recipe: moghrabieh, chicken, canned chickpeas, shallots, and broth with caraway, cinnamon and allspice.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-masoub",
+   "ar": "معصوب",
+   "enCurrent": "Masoub (Yemeni Banana Bread Pudding)",
+   "en": "Masoob",
+   "transliterated": true,
+   "pronunciation": "ma-SOOB",
+   "meaningEn": "Mashed ripe banana mixed with brown bread, cream and honey",
+   "meaningAr": "موز ناضج مهروس مع خبز أسمر وقشطة وعسل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Masoob"
+   ],
+   "notes": "verified. 'Masoub' redirects to the Wikipedia article 'Masoob' (fetched). The ghee is optional in the recipe and is correctly left out of the meaning.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-qidreh",
+   "ar": "قدرة فلسطينية",
+   "enCurrent": "Palestinian Qidreh (Spiced Lamb and Rice)",
+   "en": "Qidreh",
+   "transliterated": true,
+   "pronunciation": "KID-reh",
+   "meaningEn": "Lamb shoulder and basmati rice with chickpeas, garlic and spices",
+   "meaningAr": "كتف ضأن وأرز بسمتي مع الحمص والثوم والبهارات",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Qidreh"
+   ],
+   "notes": "verified. The Wikipedia title 'Qidreh' was fetched; the article also lists Kidra, qidra and the urban form 'idreh'. KID-reh is a fair simple respelling. The meaning matches the recipe.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-mujadara",
+   "ar": "مجدرة",
+   "enCurrent": "Mujadara (Lebanese Lentils and Rice)",
+   "en": "Mujaddara",
+   "transliterated": true,
+   "pronunciation": "moo-JAD-da-ra",
+   "meaningEn": "Lentils and basmati rice topped with deeply fried onions",
+   "meaningAr": "عدس وأرز بسمتي يعلوهما بصل مقلي",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mujaddara"
+   ],
+   "notes": "verified. The Wikipedia title 'Mujaddara' (double d) was fetched. The meaning matches the recipe: lentils, basmati rice and onions fried in olive oil.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lg-mutazeez",
+   "ar": "مطازيز",
+   "enCurrent": "Mataziz (Saudi Dough and Lamb Stew)",
+   "en": "Matazeez",
+   "transliterated": true,
+   "pronunciation": "ma-ta-ZEEZ",
+   "meaningEn": "Lamb and vegetable stew with dried lime and wheat dough",
+   "meaningAr": "يخنة لحم غنم وخضار باللومي مع قطع عجين قمح كامل",
+   "basis": "common-usage",
+   "sources": [
+    "https://saudipedia.com/en/matazeez",
+    "https://en.wikipedia.org/wiki/Saudi_Arabian_cuisine",
+    "https://www.spinneys.com/en-ae/recipes/stuffed-matazeez-with-roasted-vegetable-sauce/",
+    "https://www.abouther.com/node/10156/lifestyle/travel-food/matazeez-saudi-arabia%E2%80%99s-mouthwatering-version-pasta"
+   ],
+   "notes": "Name verified. Saudipedia was fetched and uses 'Matazeez'. There is no standalone Wikipedia article, but the 'Saudi Arabian cuisine' article also spells it 'Matazeez', so I added it as a source. The meaning matches the recipe: lamb shoulder, cauliflower, carrot, eggplant, zucchini, lumi and whole wheat dough. The collision warning stands: saudi.json already has sa-matazeez-najdiya 'Najdi Matazeez', which may be a duplicate.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "mw-harira",
+   "ar": "حريرة مغربية",
+   "enCurrent": "Moroccan Harira Soup",
+   "en": "Harira",
+   "transliterated": true,
+   "pronunciation": "ha-REE-ra",
+   "meaningEn": "Thick tomato soup with chickpeas, lentils, vermicelli and herbs",
+   "meaningAr": "شوربة طماطم كثيفة بالحمص والعدس والشعرية والأعشاب",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Harira"
+   ],
+   "notes": "verified. The Wikipedia article 'Harira' exists. The meaning matches the recipe: tomatoes, chickpeas, lentils, vermicelli, parsley, coriander and mint. The beef is optional and is correctly left out.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "mw-zaalouk",
+   "ar": "زعلوك",
+   "enCurrent": "Moroccan Zaalouk (Eggplant and Tomato Salad)",
+   "en": "Zaalouk",
+   "transliterated": true,
+   "pronunciation": "zaa-LOOK",
+   "meaningEn": "Cooked eggplant and tomato salad with garlic and cumin",
+   "meaningAr": "سلطة باذنجان وطماطم مطبوخة بالثوم والكمون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zaalouk"
+   ],
+   "notes": "Name verified: the Wikipedia title 'Zaalouk' was fetched. I changed the respelling from 'zah-LOOK' to 'zaa-LOOK' so it shows the long first vowel of the 'aa' spelling; the stress is unchanged. The meaning matches the recipe.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "mw-loubia-bel-kamoun",
+   "ar": "لوبيا بالكمون جزائرية",
+   "enCurrent": "Algerian Butter Bean Stew (Loubia Bel Kamoun)",
+   "en": "Loubia bel Kamoun",
+   "transliterated": true,
+   "pronunciation": "LOOB-ya bel ka-MOON",
+   "meaningEn": "Butter beans stewed in tomato sauce with garlic and cumin",
+   "meaningAr": "فاصوليا بيضاء كبيرة مطهوة في صلصة طماطم بالثوم والكمون",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.amourdecuisine.fr/en/article-algerian-butter-bean-stew-loubia-bel-kamoun.html",
+    "https://www.food.com/recipe/my-loubia-lubia-loobia-classic-algerian-beans-372923",
+    "https://app.ckbk.com/recipe/saff30522c07s001r010"
+   ],
+   "notes": "verified. Amour de Cuisine was fetched and its title reads 'Loubia Bel Kamoun'. A Wikipedia search found no article; Wiktionary defines 'loubia' as a North African bean stew, which supports the spelling. The meaning matches the recipe: butter beans, tomato paste, garlic and cumin. CONSISTENCY PASS: pronunciation: 'LOO-bya bel ka-MOON' -> 'LOOB-ya bel ka-MOON' (one respelling for Loubia).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'LOO-bya bel ka-MOON' -> 'LOOB-ya bel ka-MOON' (one respelling for Loubia)"
+   ]
+  },
+  {
+   "id": "mw-kefta-mkaouara",
+   "ar": "طاجين كفتة بالطماطم والبيض (كفتة مقاورة)",
+   "enCurrent": "Moroccan Kefta Mkaouara (Meatball Tagine with Tomato Sauce)",
+   "en": "Kefta Mkaouara",
+   "transliterated": true,
+   "pronunciation": "KEF-ta mkah-WAH-ra",
+   "meaningEn": "Spiced meatballs in tomato sauce, often topped with eggs",
+   "meaningAr": "كرات كفتة متبلة في صلصة طماطم، وغالبًا يضاف البيض",
+   "basis": "common-usage",
+   "sources": [
+    "https://tarasmulticulturaltable.com/kefta-mkaouara-moroccan-meatball-and-egg-tagine/",
+    "https://thehappyfoodie.co.uk/recipes/kefta-mkaouara-spicy-egg-meatball-and-tomato-tagine-morocco/",
+    "https://www.justapinch.com/recipes/moroccan-kefta-tagine-recipe-kefta-mkaouara.html",
+    "https://thebuslifekitchen.com/kefta-mkaouara/"
+   ],
+   "notes": "verified. The word 'often' comes from the recipe's own description, which says the eggs are usually cracked on top, and the eggs are optional in the ingredients.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "mw-lablabi",
+   "ar": "لبلابي تونسي",
+   "enCurrent": "Tunisian Lablabi (Spiced Chickpea and Bread Soup)",
+   "en": "Lablabi",
+   "transliterated": true,
+   "pronunciation": "lab-LAH-bee",
+   "meaningEn": "Spicy chickpea soup with harissa over bread, topped with egg",
+   "meaningAr": "شوربة حمص حارة بالهريسة فوق الخبز مع بيض",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lablabi"
+   ],
+   "notes": "verified. The Wikipedia article 'Lablabi' exists. The meaning matches the recipe: chickpeas, harissa, bread pieces and a poached egg.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "mw-chorba-frik",
+   "ar": "شربة فريك جزائرية",
+   "enCurrent": "Chorba Frik (Algerian Lamb and Freekeh Soup)",
+   "en": "Chorba Frik",
+   "transliterated": true,
+   "pronunciation": "SHOR-ba FREEK",
+   "meaningEn": "Lamb soup with freekeh, chickpeas, tomato and dried mint",
+   "meaningAr": "شوربة لحم ضأن بالفريك والحمص والطماطم والنعناع الجاف",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chorba_frik"
+   ],
+   "notes": "verified. The Wikipedia title 'Chorba frik' was fetched. The meaning matches the recipe.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "mw-mbakbaka",
+   "ar": "مبكبكة ليبية",
+   "enCurrent": "Libyan Mbakbaka",
+   "en": "Mbakbaka",
+   "transliterated": true,
+   "pronunciation": "m-BAK-ba-ka",
+   "meaningEn": "Small pasta cooked in spicy meat and tomato broth",
+   "meaningAr": "مكرونة صغيرة تطهى في مرق لحم وطماطم حار",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.munatycooking.com/libyan-mbakbaka/",
+    "https://www.fooddolls.com/one-pot-mbakbaka",
+    "https://everylittlecrumb.com/wprm_print/mbakbaka",
+    "https://afrifoodnetwork.com/recipes/main-course-recipes/mbakbaka/"
+   ],
+   "notes": "verified. There is no standalone Wikipedia article. The 'Libyan cuisine' and 'Minestrone' articles mention it as 'Imbakbaka or mbakbaka', so both forms exist; 'Mbakbaka' is the common recipe spelling. The meaning matches the recipe: ditalini, meat, tomato and hot pepper.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "mw-salatat-dakwa",
+   "ar": "سلطة الدكوة السودانية",
+   "enCurrent": "Salatat Dakwa (Sudanese Peanut Salad)",
+   "en": "Salatat Dakwa",
+   "transliterated": true,
+   "pronunciation": "sa-LAH-tat DAK-wa",
+   "meaningEn": "Tomato, onion and chili salad in peanut butter dressing",
+   "meaningAr": "سلطة طماطم وبصل وفلفل حار بصوص زبدة الفول السوداني",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.sudanese.kitchen/recipe/peanut-salad",
+    "https://eatfresh.org/recipe/salads/salatat-dakwa-sudanese-peanut-salad/",
+    "https://www.spinneys.com/en-ae/recipes/salatat-dakwa-peanut-butter-salad-sudan/",
+    "https://fustany.com/en/recipes/5-minute-sudanese-salatat-dakwa-peanut-butter-salad-recipe"
+   ],
+   "notes": "verified. Sudanese Kitchen was fetched and uses the title 'Salatat Dakwa'. The meaning matches the recipe.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ar-tajine-dajaj-zaytoun-akhdar",
+   "ar": "طاجين الدجاج بالزيتون الأخضر",
+   "enCurrent": "Chicken tagine with green olives",
+   "en": "Chicken Tagine with Green Olives",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Spiced chicken baked with onions, green olives and lemon",
+   "meaningAr": "دجاج متبل يطهى في الفرن مع البصل والزيتون الأخضر والليمون",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tagine",
+    "https://app.ckbk.com/recipe/mode90549c03s001r006/chicken-tagine-with-green-olives-and-preserved-lemon",
+    "https://cookbooker.com/recipes/1575/chicken-tagine-with-green-olives-and-preserved-lemon"
+   ],
+   "notes": "verified. The recipe bakes the chicken in the oven with onion, olives, sliced lemon and lemon juice. The lemon is plain, not preserved, so leaving out 'Preserved' is correct.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ar-fatta-dajaj-zabadi-hummus",
+   "ar": "فتة الدجاج بالزبادي والحمص",
+   "enCurrent": "Chicken fatteh with yogurt sauce and chickpeas",
+   "en": "Chicken Fatteh",
+   "transliterated": true,
+   "pronunciation": "FAT-ta",
+   "meaningEn": "Toasted bread with chickpeas, chicken and garlic yogurt-tahini sauce",
+   "meaningAr": "خبز محمص مع الحمص والدجاج وصلصة زبادي بالطحينة والثوم",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fatteh"
+   ],
+   "notes": "Name verified: the Wikipedia title is 'Fatteh', and the article lists 'fatta' as another romanization (fetched). I CHANGED the pronunciation from FAT-teh to FAT-ta. The recipe is filed in egyptian.json with cuisine 'مصري', and the proposal's own note said the Egyptian pronunciation is FAT-ta but then gave the Levantine one. The meaning matches the recipe.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ar-maftoul-filastini-dajaj",
+   "ar": "مفتول فلسطيني بالدجاج",
+   "enCurrent": "Palestinian maftoul with chicken and chickpeas",
+   "en": "Chicken Maftoul",
+   "transliterated": true,
+   "pronunciation": "maf-TOOL",
+   "meaningEn": "Steamed maftoul pearls with chicken, chickpeas and fried onions",
+   "meaningAr": "حبات مفتول مطهوة بالبخار مع الدجاج والحمص والبصل المقلي",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Couscous#Maftoul",
+    "https://www.saveur.com/article/Recipes/Maftoul-Palestinian-Couscous-With-Chicken/",
+    "https://www.manusmenu.com/maftoul-with-chicken",
+    "https://www.hungrypaprikas.com/palestinian-maftoul/",
+    "https://clovegarden.com/recipes/mmc_chkmaf1.html"
+   ],
+   "notes": "verified. The Couscous article on Wikipedia has a 'Maftoul' section ('maftool' is listed as an alternative), fetched. The meaning matches the recipe: steamed maftoul, chicken, chickpeas and onion fried in ghee.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ar-mandi-yamani-dajaj",
+   "ar": "مندي دجاج يمني",
+   "enCurrent": "Yemeni chicken mandi",
+   "en": "Chicken Mandi",
+   "transliterated": true,
+   "pronunciation": "MAN-dee",
+   "meaningEn": "Spiced chicken over basmati rice cooked in broth, with raisins",
+   "meaningAr": "دجاج متبل فوق أرز بسمتي مطهو بالمرق مع الزبيب",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mandi_(food)"
+   ],
+   "notes": "verified. The Wikipedia article is 'Mandi (food)'. The meaning matches the recipe: basmati rice cooked in the chicken broth, chicken on top, toasted raisins.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ar-fatta-lahm-bidoon-salsa",
+   "ar": "فتة لحم بدون صلصة",
+   "enCurrent": "Egyptian lamb fatteh without tomato sauce",
+   "en": "Lamb Fatteh",
+   "transliterated": true,
+   "pronunciation": "FAT-ta",
+   "meaningEn": "Garlic-vinegar toasted bread with ghee rice and boiled lamb",
+   "meaningAr": "خبز محمص بالثوم والخل مع أرز بالسمنة ولحم غنم مسلوق",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fatteh"
+   ],
+   "notes": "Name verified: the Wikipedia title is 'Fatteh', and its Egypt section describes this garlic-vinegar version. I CHANGED the pronunciation from FAT-teh to FAT-ta, because this is the Egyptian dish (cuisine 'مصري') and Egyptians say fatta. The meaning matches the recipe. The look-alike warning about eg-fatta 'Fatta' still applies.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-raqaq-bel-lahma",
+   "ar": "رقاق باللحمة المفرومة",
+   "enCurrent": "Raqaq with Minced Meat",
+   "en": "Meat Roqaq",
+   "transliterated": true,
+   "pronunciation": "ro-AH",
+   "meaningEn": "Baked layered roqaq sheets filled with minced meat and peppers",
+   "meaningAr": "طبقات رقاق مخبوزة محشوة باللحم المفروم والبصل والفلفل",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.petitchef.com/recipes/egyptian-meat-pie-roqaq-fid-1403784",
+    "https://egyptianstreets.com/tag/roqaq/",
+    "https://app.ckbk.com/recipe/egyp94478c03s001ss004r009/minced-meat-pie",
+    "https://english.ahram.org.eg/NewsContent/50/1211/559903/AlAhram-Weekly/Sufra-Dayma/Roqaq-bel-lahma-elmafrooma.aspx"
+   ],
+   "notes": "Name verified. A web search confirms 'Roqaq' as the usual English spelling (Petitchef, Egyptian Streets, ckbk, Al-Ahram's article title 'Roqaq bel lahma elmafrooma'). I could not open the Al-Ahram page (HTTP 403), but the search result shows that title. Small pronunciation tweak: 'ro-AA' shows the long vowel before the glottal stop that Cairenes use in place of the final ق. CONSISTENCY PASS: pronunciation: 'ro-AA' -> 'ro-AH' (one respelling for Roqaq; AH marks a long a).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'ro-AA' -> 'ro-AH' (one respelling for Roqaq; AH marks a long a)"
+   ]
+  },
+  {
+   "id": "eg-hamam-mahshi-bel-freek",
+   "ar": "حمام محشي بالفريك",
+   "enCurrent": "Stuffed Pigeon with Freekeh",
+   "en": "Hamam Mahshi",
+   "transliterated": true,
+   "pronunciation": "ha-MAHM MAH-shee",
+   "meaningEn": "Pigeon stuffed with freekeh and giblets, then boiled and browned",
+   "meaningAr": "حمام محشي بالفريك والكبد والقوانص، يسلق ثم يحمر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hamam_mahshi",
+    "https://www.dailynewsegypt.com/2012/08/08/bites-fil-beit-ramadan-stuffed-pigeons-with-green-wheat/"
+   ],
+   "notes": "Name verified: the Wikipedia title 'Hamam mahshi' was fetched, and it says the stuffing is rice or freekeh. Correction to the note: the liver and gizzards come from the recipe's description and its 3rd step, not from the ingredient list. The meaning is still based on the recipe. The pronunciation was changed to 'ha-MAAM' to show the long vowel. CONSISTENCY PASS: pronunciation: 'ha-MAAM MAH-shee' -> 'ha-MAHM MAH-shee' (one respelling for Hamam; AH marks a long a).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'ha-MAAM MAH-shee' -> 'ha-MAHM MAH-shee' (one respelling for Hamam; AH marks a long a)"
+   ]
+  },
+  {
+   "id": "eg-tagen-kawareh",
+   "ar": "طاجن كوارع",
+   "enCurrent": "Kawareh (Beef Trotters) Tagine",
+   "en": "Kaware Tagine",
+   "transliterated": true,
+   "pronunciation": "ka-WAH-reh",
+   "meaningEn": "Boned beef trotters baked in garlicky tomato-vinegar sauce",
+   "meaningAr": "كوارع بقري منزوعة العظم مخبوزة في صلصة طماطم بالثوم والخل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kaware%CA%BB",
+    "https://cairo360.com/article/arts-culture/dish-of-the-week-kaware"
+   ],
+   "notes": "Name verified: the Wikipedia title is 'Kawareʻ', with the mark U+02BB (fetched). Dropping the mark gives 'Kaware'. I CHANGED the pronunciation from 'ka-WAH-reh ta-ZHEEN' to 'ka-WAH-reh'. 'Tagine' is treated as an English word here, as in 'Chicken Tagine with Green Olives' (no pronunciation) and 'Chicken Mandi' (only the Arabic part is respelled). Also, 'ta-ZHEEN' is the Moroccan/French sound, while Egyptians say TAH-gen. The meaning matches the recipe.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-tagen-lahm-kabab-halla",
+   "ar": "طاجن لحم كباب حلة",
+   "enCurrent": "Kabab Halla (Braised Beef)",
+   "en": "Kabab Halla",
+   "transliterated": true,
+   "pronunciation": "ka-BAB HAL-la",
+   "meaningEn": "Small meat pieces braised with garlic, cumin and pomegranate molasses",
+   "meaningAr": "قطع لحم صغيرة مطهوة ببطء مع الثوم والكمون ودبس الرمان",
+   "basis": "common-usage",
+   "sources": [
+    "https://cheznermine.com/2025/10/08/kabab-halla-egyptian-beef-stew-in-caramelized-onion-sauce",
+    "https://www.linsfood.com/?p=542768",
+    "https://cupofyum.com/recipes/kabab-halla",
+    "https://en.wikipedia.org/wiki/Egyptian_cuisine"
+   ],
+   "notes": "Name verified. There is no Wikipedia article, but the 'Egyptian cuisine' article cites a Serious Eats recipe titled 'Kabab Halla', which supports the spelling. I CHANGED meaningEn from 'Small beef pieces' to 'Small meat pieces': the recipe lists only 'لحم' and never names the animal, and the meaning must come only from the recipe. The Arabic line was already neutral. I removed the xavskitchen 'Kebab Halla' link because it uses the other spelling.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-samak-bolti-tagen",
+   "ar": "سمك بلطي طاجن",
+   "enCurrent": "Baked Bolti Fish Tray",
+   "en": "Tilapia Tagine",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Tilapia baked with tomato, onion, garlic, hot pepper and lime",
+   "meaningAr": "سمك بلطي مخبوز مع الطماطم والبصل والثوم والفلفل الحار والليمون",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nile_tilapia",
+    "https://en.wikipedia.org/wiki/Tagine"
+   ],
+   "notes": "Verified. The meaning line matches the recipe's ingredients (bolti, tomato, tomato paste, onion, garlic, green hot pepper, lime, butter).",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-kousa-bel-bechamel",
+   "ar": "كوسة بالبشاميل",
+   "enCurrent": "Zucchini Bechamel Casserole",
+   "en": "Zucchini Bechamel Casserole",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Baked layers of zucchini, spiced minced meat and cheesy bechamel",
+   "meaningAr": "طبقات من الكوسة واللحم المفروم المتبل والبشاميل بالجبن، مخبوزة في الفرن",
+   "basis": "common-usage",
+   "sources": [
+    "https://cheznermine.com/2023/07/25/koussa-bel-bechamel-zucchini-bechamel-casserole-كوسة-بالبشاميل/",
+    "https://www.themediterraneandish.com/zucchini-bechamel-casserole/",
+    "https://www.healthylifetrainer.com/zucchini-bechamel-casserole/",
+    "https://danascreativekitchen.blogspot.com/2014/04/zucchini-bechamel-casserole-kousa.html"
+   ],
+   "notes": "CHANGED back to the current name. The proposal cited no sources and dropped 'Casserole' only to shorten the name. A search shows 'Zucchini Bechamel Casserole' is the English name most sources use (Chez Nermine, The Mediterranean Dish, Healthy Life Trainer, Dana's Creative Kitchen). Only Maggi Arabia uses plain 'Zucchini Bechamel'. The owner's most-used rule outranks shortness here. The meaning line was checked against the recipe (zucchini, minced meat with cinnamon and ginger, bechamel, mozzarella and cheddar) and is unchanged.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-raqaq-bel-kebda-wel-qawanes",
+   "ar": "رقاق بالكبد والقوانص",
+   "enCurrent": "Raqaq with Liver and Giblets",
+   "en": "Roqaq with Liver and Giblets",
+   "transliterated": true,
+   "pronunciation": "roh-AH",
+   "meaningEn": "Ghee-brushed roqaq sheets baked around spiced liver and giblets",
+   "meaningAr": "رقائق رقاق مدهونة بالسمن ومخبوزة بحشوة من الكبد والقوانص المتبلة",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.petitchef.com/recipes/egyptian-meat-pie-roqaq-fid-1403784",
+    "https://english.ahram.org.eg/NewsContent/50/1211/559903/AlAhram-Weekly/Sufra-Dayma/Roqaq-bel-lahma-elmafrooma.aspx",
+    "https://sawyertravel.blogspot.com/2024/03/winter-in-egypt-2024-linda-makes-roqaq.html?m=1"
+   ],
+   "notes": "The spelling 'Roqaq' is verified: the Petitchef page title is 'Egyptian meat pie - Roqaq'. Al-Ahram returned 403 when fetched, but search shows its title is 'Roqaq bel lahma elmafrooma'. A third blog also uses 'Roqaq'. CHANGED the pronunciation from 'roh-KAHK' to 'roh-AH'. The owner rule asks for the dish's own dialect, and in Cairo speech both qafs in رقاق are glottal stops (ro'aa'); there is no k sound. The meaning was checked against the steps: sheets are moistened with broth, ghee goes between layers, the liver and giblets filling is in the middle, and it is oven-baked.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-hamam-el-kazzab",
+   "ar": "الحمام الكذاب",
+   "enCurrent": "Fake Pigeon (Stuffed Chicken Thighs)",
+   "en": "Hamam el Kazzab",
+   "transliterated": true,
+   "pronunciation": "ha-MAHM el kaz-ZAHB",
+   "meaningEn": "Boneless chicken thighs stuffed with rice, liver and giblets, baked",
+   "meaningAr": "أوراك دجاج مخلية من العظم محشوة بالأرز والكبد والقوانص ومخبوزة",
+   "basis": "transliteration-rule",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hamam_mahshi"
+   ],
+   "notes": "Verified. An independent search for 'hamam kazzab', 'hamam el kazzab' and 'mock pigeon' found no English source, so transliteration is correct. ك is not a sun letter, so 'el' is said as written. The recipe steps say to brush with qishta, but qishta is not in the ingredient list, so leaving it out of the meaning line is correct. CONSISTENCY PASS: en: 'Hamam El Kazzab' -> 'Hamam el Kazzab' (articles stay lowercase inside a name, as in Halawet el Jibn).",
+   "status": "changed",
+   "consistencyEdits": [
+    "en: 'Hamam El Kazzab' -> 'Hamam el Kazzab' (articles stay lowercase inside a name, as in Halawet el Jibn)"
+   ]
+  },
+  {
+   "id": "eg-tagen-kebda-farkh",
+   "ar": "طاجن كبدة دجاج",
+   "enCurrent": "Chicken Liver Tagine",
+   "en": "Chicken Liver Tagine",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Chicken liver baked in tomato sauce with garlic and herbs",
+   "meaningAr": "كبدة دجاج مخبوزة في صلصة الطماطم مع الثوم والأعشاب الخضراء",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tagine"
+   ],
+   "notes": "Verified. The steps finish the dish in a tagine in the oven. The herbs are parsley and green coriander, and the sauce is tomato paste.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-kofta-bel-tahina-wel-zabadi",
+   "ar": "كفتة بالطحينة والزبادي",
+   "enCurrent": "Kofta with Tahini Yogurt Sauce",
+   "en": "Kofta with Tahini and Yogurt",
+   "transliterated": true,
+   "pronunciation": "KOF-ta",
+   "meaningEn": "Fried meatballs baked in a tahini and yogurt sauce",
+   "meaningAr": "كرات لحم مفروم مقلية ومخبوزة في صلصة الطحينة والزبادي",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kofta",
+    "https://palestineinadish.com/recipes/kiftah-bi-tahini-sauce/",
+    "https://falasteenifoodie.com/middle-eastern-kufta-bil-tahiniye/",
+    "https://shibaskitchen.de/en/meatballs-with-tahini-from-the-oven-kafta-bil-tahini/"
+   ],
+   "notes": "Verified. The steps fry the meatballs, then bake them at 180 degrees under a tahini, yogurt and broth sauce. Spellings of the full dish name vary, so 'Kofta' plus a descriptor is reasonable. CONSISTENCY PASS: pronunciation: 'KOF-tah' -> 'KOF-ta' (one respelling for Kofta).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'KOF-tah' -> 'KOF-ta' (one respelling for Kofta)"
+   ]
+  },
+  {
+   "id": "eg-kebda-bel-rudda",
+   "ar": "كبدة بالردة",
+   "enCurrent": "Fried Liver Coated with Bran (Rudda)",
+   "en": "Kebda bel Radda",
+   "transliterated": true,
+   "pronunciation": "KEB-da bir-RAD-da",
+   "meaningEn": "Spiced liver fried in a bran crust, with tomato orzo",
+   "meaningAr": "كبدة متبلة مقلية بغلاف من الردة، تقدم مع لسان عصفور بالطماطم",
+   "basis": "transliteration-rule",
+   "sources": [
+    "https://theodehlicious.com/kebda-eskandarani/",
+    "https://www.ofrecipes.com/authentic-egyptian-liver-sandwiches-kebda-eskandarany"
+   ],
+   "notes": "The name is verified: a search for radda, rada or rudda with liver found no established English name, so transliteration is correct. CHANGED the pronunciation from 'KEB-da bel RAD-da' to 'KEB-da bir-RAD-da'. ر is a sun letter, so Egyptians say بالردة as 'bir-radda', not 'bel radda'. The written spelling 'bel' stays, to match the other names. The meaning was checked: the liver is marinated in yogurt and spices, coated in flour, starch and bran, then fried. It is served with orzo (لسان عصفور) cooked in tomato juice.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-belila",
+   "ar": "البليلة",
+   "enCurrent": "Belila (Wheat Porridge)",
+   "en": "Belila",
+   "transliterated": true,
+   "pronunciation": "beh-LEE-lah",
+   "meaningEn": "Boiled wheat in sweet milk, topped with cream and nuts",
+   "meaningAr": "قمح مسلوق في حليب محلى، يزين بالكريمة والمكسرات",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.food.com/recipe/belila-vegan-friendly-505077",
+    "https://bakeschool.com/belila-an-egyptian-breakfast/",
+    "https://egyptian-cuisine-recipes.com/tags-53",
+    "https://afrifoodnetwork.com/?p=1976"
+   ],
+   "notes": "Verified. I fetched the English Wikipedia page 'Belila' and confirmed it is a village in Sredets Municipality, Bulgaria. The meaning matches the ingredients (wheat, milk, sugar, whipping cream, mixed nuts).",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-eggah-batates",
+   "ar": "عجة البطاطس",
+   "enCurrent": "Potato Eggah",
+   "en": "Potato Eggah",
+   "transliterated": true,
+   "pronunciation": "EG-gah",
+   "meaningEn": "Thick potato and onion omelette with turmeric, cooked in ghee",
+   "meaningAr": "عجة سميكة من البيض والبطاطس والبصل بالكركم، مطهوة بالسمن",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Eggah"
+   ],
+   "notes": "Verified. I fetched the article: its title is 'Eggah' and it gives the Egyptian Arabic form as ʿegga, which matches 'EG-gah'.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-feteer-meshaltet",
+   "ar": "فطير مشلتت بالسمن البلدي",
+   "enCurrent": "Feteer Meshaltet (Plain)",
+   "en": "Feteer Meshaltet",
+   "transliterated": true,
+   "pronunciation": "feh-TEER meh-SHAL-tet",
+   "meaningEn": "Ghee-brushed flaky pastry, served with honey, cheese or cream",
+   "meaningAr": "فطير رقيق الطبقات مدهون بالسمن البلدي، يقدم مع العسل أو الجبن أو القشطة",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Feteer_meshaltet"
+   ],
+   "notes": "Verified. The Wikipedia API confirms the title 'Feteer meshaltet'. The honey, qishta and cheese for serving are all in the ingredient list.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-balah-el-sham",
+   "ar": "بلح الشام المقرمش",
+   "enCurrent": "Crispy Balah El Sham",
+   "en": "Balah el Sham",
+   "transliterated": true,
+   "pronunciation": "BAH-lah esh-SHAHM",
+   "meaningEn": "Crispy fried dough fingers dipped in lemon vanilla syrup",
+   "meaningAr": "أصابع عجين مقلية مقرمشة مغموسة في شربات بالليمون والفانيليا",
+   "basis": "common-usage",
+   "sources": [
+    "https://egyptianepicurean.squarespace.com/all/desserts/balah-el-sham",
+    "https://afrifoodnetwork.com/recipes/snack-recipes/balah-el-sham/",
+    "https://www.arlafoods.co.uk/recipes/balah-el-sham",
+    "https://www.gulf-times.com/story/499151/the-humble-but-essential-balah-el-sham",
+    "https://amiraspantry.com/balah-el-shaam/"
+   ],
+   "notes": "The name is verified: Wikipedia 'Tulumba' romanizes the Arabic as 'balaḥ ash-Shām', and the English food sources for the Egyptian dish use 'Balah El Sham'. The owner should still make the final call between this and 'Tulumba'. CHANGED the pronunciation from 'BAH-lah el SHAHM' to 'BAH-lah esh-SHAHM'. ش is a sun letter, so the article is said 'esh-', not 'el'. The meaning was checked: the dough is choux-style, fried in oil, and dipped in a syrup with lemon and vanilla. CONSISTENCY PASS: en: 'Balah El Sham' -> 'Balah el Sham' (articles stay lowercase inside a name, as in Halawet el Jibn).",
+   "status": "changed",
+   "consistencyEdits": [
+    "en: 'Balah El Sham' -> 'Balah el Sham' (articles stay lowercase inside a name, as in Halawet el Jibn)"
+   ],
+   "decision": {
+    "decidedAt": "2026-11-21",
+    "chosen": "Balah el Sham",
+    "rejected": [
+     "Tulumba"
+    ],
+    "evidence": "Every English source on the Egyptian dish uses 'Balah el Sham': Egyptian Epicurean, Amira's Pantry, Arla Foods UK, Gulf Times, Afrifoodnetwork, Onmanorama. 'Tulumba' is the Turkish/Balkan name and is not used for the Egyptian sweet."
+   }
+  },
+  {
+   "id": "eg-tahina-belty",
+   "ar": "طحينة بيتي بالسمسم",
+   "enCurrent": "Homemade Tahini",
+   "en": "Homemade Tahini",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Toasted sesame and peanuts ground smooth with sunflower oil",
+   "meaningAr": "سمسم وفول سوداني محمصان ومطحونان مع زيت عباد الشمس",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tahini"
+   ],
+   "notes": "Verified. The ingredient list says the peanuts are bought unroasted, but steps 1 and 2 toast both the sesame and the peanuts, so 'toasted' is correct. Mentioning peanuts is correct.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "eg-salata-baba-ghanoug",
+   "ar": "سلطة بابا غنوج",
+   "enCurrent": "Baba Ghanoush Salad",
+   "en": "Baba Ghanoush",
+   "transliterated": true,
+   "pronunciation": "BAH-bah gha-NOOSH",
+   "meaningEn": "Roasted eggplant, onion and garlic mixed with tahini and vinegar",
+   "meaningAr": "باذنجان وبصل وثوم مشوي مهروس مع الطحينة والخل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Baba_ghanoush"
+   ],
+   "notes": "Verified. Step 1 roasts the eggplant, onion and garlic together, so the meaning line is correct. One open point for the owner: the Arabic spelling غنوج is Egyptian, and Egyptians say 'gha-NOOG'. I kept 'gha-NOOSH' because it matches the English Wikipedia spelling 'Ghanoush' that will be shown on screen.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-djej-mhammar",
+   "ar": "دجاج محمر",
+   "enCurrent": "Djej Mhammar",
+   "en": "Djej Mhammar",
+   "transliterated": true,
+   "pronunciation": "DJAYJ m-HAM-mar",
+   "meaningEn": "Whole chicken roasted with garlic, lemon, seven spice and potatoes",
+   "meaningAr": "دجاجة كاملة مشوية بالثوم والليمون والبهار السبع فوق البطاطا",
+   "basis": "transliteration-rule",
+   "sources": [
+    "https://zaatarandzaytoun.com/red-chicken/",
+    "https://www.cooks.com/recipe/yl1ni89r/dajaj-mhammar-arabic-baked-chicken.html"
+   ],
+   "notes": "The name is verified: a search confirms only single-source spellings (Zaatar & Zaytoun 'Djej Muhammar', Cooks.com 'Dajaj Mhammar'), so there is no two-source winner and transliteration applies. I removed the thesaltandsweet source because it does not give the Arabic name. CHANGED the pronunciation from 'JEJ' to 'DJAYJ'. In Lebanese, دجاج is said 'djēj': the d is spoken and the long vowel is closer to 'ay'. The meaning was checked: garlic, butter, seven spice and lemon go under the skin, and the chicken roasts on potato wedges.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-samke-bi-tahini",
+   "ar": "سمك بالطحينة",
+   "enCurrent": "Samke bi Tahini",
+   "en": "Samak bi Tahini",
+   "transliterated": true,
+   "pronunciation": "SA-mak bit-HEE-neh",
+   "meaningEn": "White fish baked under caramelized onion tahini and pine nuts",
+   "meaningAr": "سمك أبيض كامل مخبوز تحت صلصة الطحينة بالبصل المكرمل والصنوبر",
+   "basis": "common-usage",
+   "sources": [
+    "https://arabamerica.com/for-a-low-carb-meal-try-samak-bi-tahini-fish-with-tahini-sauce",
+    "https://feastinthemiddleeast.com/2019/11/08/samak-bi-tahini-fish-with-tahini-sauce/amp/",
+    "https://www.slurrp.com/recipes/fish-with-tahini-2355698-1620387314",
+    "https://app.ckbk.com/recipe/medi18941c19s001r011/tajen-samak-bi-tahini"
+   ],
+   "notes": "The name is verified: a search shows 'Samak bi Tahini' on Slurrp, Arab America, Feast in the Middle East and ckbk. CHANGED the pronunciation from 'SA-mak bi ta-HEE-nee' to 'SA-mak bit-HEE-neh', which is how Palestinians say بالطحينة (this recipe is in palestinian.json). CHANGED the meaningEn to add the pine nuts that are in the recipe and in the Arabic line: 'White fish baked under caramelized onion tahini and pine nuts' (10 words). The onions are cooked slowly until sweet, so 'caramelized' is supported.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-fattet-batinjan",
+   "ar": "فتة باذنجان",
+   "enCurrent": "Fattet Batinjan",
+   "en": "Eggplant Fatteh",
+   "transliterated": true,
+   "pronunciation": "FAT-teh",
+   "meaningEn": "Fried bread with tahini yogurt, chickpeas, crispy eggplant and meat",
+   "meaningAr": "خبز مقلي مع لبن بالطحينة وحمص وباذنجان مقرمش ولحم مفروم",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fatteh",
+    "https://zaatarandzaytoun.com/eggplant-fatteh-fattet-batinjan/",
+    "https://homecookingcollective.com/eggplant-fatteh-fatet-batinjan-pita-yogurt/",
+    "https://www.sbs.com.au/food/recipes/eggplant-fatteh-fatteh-bi-batenjan",
+    "https://thematbakh.com/?p=24035"
+   ],
+   "notes": "The name and meaning are verified: the steps fry both the bread and the eggplant until crisp, and add browned minced meat and chickpeas in tahini yogurt. CHANGED the pronunciation from 'eggplant FAT-teh' to 'FAT-teh'. Mixed names like Potato Eggah, Kofta and Roqaq give the pronunciation of the transliterated word only, so this one now does the same.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-layali-lubnan",
+   "ar": "ليالي لبنان",
+   "enCurrent": "Layali Lubnan",
+   "en": "Layali Lubnan",
+   "transliterated": true,
+   "pronunciation": "la-YAH-lee loob-NAHN",
+   "meaningEn": "Chilled semolina milk pudding with cream, pistachios and blossom syrup",
+   "meaningAr": "مهلبية سميد بالحليب باردة، تعلوها الكريمة والفستق وقطر ماء الزهر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Layali_lubnan"
+   ],
+   "notes": "Verified. The Wikipedia API confirms the title 'Layali lubnan'. The ingredients include semolina, milk, cream, pistachio and an orange blossom water syrup.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-kousa-bil-laban",
+   "ar": "كوسا باللبن",
+   "enCurrent": "Kousa bil Laban",
+   "en": "Kousa bil Laban",
+   "transliterated": true,
+   "pronunciation": "KOO-sah bil LAH-ban",
+   "meaningEn": "Zucchini stuffed with meat and rice, cooked in garlicky yogurt",
+   "meaningAr": "كوسا محشوة باللحم والأرز ومطبوخة في لبن بالثوم",
+   "basis": "common-usage",
+   "sources": [
+    "https://zaatarandzaytoun.com/kousa-bil-laban/",
+    "https://hadiaslebanesecuisine.com/blog/?p=7932",
+    "https://www.nestle-family.com/en/recipes/kousa-bil-laban",
+    "https://www.maggiarabia.com/en/recipes/kousa-bil-laban",
+    "https://www.foodnetwork.com/fnk/recipes/kousabi-laban-8133986"
+   ],
+   "notes": "Verified. ل is a moon letter, so 'bil' is said as written. The meaning matches the ingredients (zucchini, minced meat, short-grain rice, yogurt, garlic).",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-shakshuka",
+   "ar": "شكشوكة بالفلفل الحلو",
+   "enCurrent": "Shakshuka with Bell Pepper",
+   "en": "Shakshouka",
+   "transliterated": true,
+   "pronunciation": "shak-SHOO-ka",
+   "meaningEn": "Eggs poached in spiced tomato, onion and bell pepper sauce",
+   "meaningAr": "بيض مطهو في صلصة طماطم متبلة بالبصل والفلفل الحلو",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shakshouka"
+   ],
+   "notes": "Verified. The Wikipedia API shows 'Shakshuka' redirects to 'Shakshouka'. The recipe file is tunisian.json even though the id starts with 'lv-'; this does not affect the name. CONSISTENCY PASS: pronunciation: 'shak-SHOO-kah' -> 'shak-SHOO-ka' (one respelling for Shakshouka).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'shak-SHOO-kah' -> 'shak-SHOO-ka' (one respelling for Shakshouka)"
+   ]
+  },
+  {
+   "id": "lv-shish-barak",
+   "ar": "شيش برك",
+   "enCurrent": "Shish Barak",
+   "en": "Shish Barak",
+   "transliterated": true,
+   "pronunciation": "SHEESH BAH-rak",
+   "meaningEn": "Meat-filled dough dumplings simmered in garlicky yogurt sauce",
+   "meaningAr": "عجينات صغيرة محشوة باللحم ومطبوخة في صلصة لبن بالثوم",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Joshpara"
+   ],
+   "notes": "Verified. The Wikipedia API confirms that 'Shish barak' redirects to 'Joshpara'. The meaning matches the ingredients (dough, minced beef filling, yogurt sauce, garlic).",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-chicken-freekeh-soup",
+   "ar": "شوربة الفريكة بالدجاج",
+   "enCurrent": "Chicken Freekeh Soup",
+   "en": "Chicken Freekeh Soup",
+   "transliterated": true,
+   "pronunciation": "FREE-keh",
+   "meaningEn": "Chicken broth soup with freekeh, carrot, onion and parsley",
+   "meaningAr": "شوربة مرق دجاج بالفريكة والجزر والبصل والبقدونس",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Freekeh"
+   ],
+   "notes": "The name and meaning are verified. CHANGED transliterated from false to true, and shortened the pronunciation to 'FREE-keh'. The proposal marked this name false but still gave a pronunciation, which breaks the owner rule that only transliterated names get one. 'Freekeh' is a transliterated word, and the similar mixed names (Eggplant Fatteh, Potato Eggah) are marked true, so this now matches them. Drop the pronunciation if the owner wants it only on fully transliterated names.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-shakriyeh",
+   "ar": "شاكرية باللحم",
+   "enCurrent": "Syrian Shakriyeh",
+   "en": "Shakriyeh",
+   "transliterated": true,
+   "pronunciation": "shak-REE-yeh",
+   "meaningEn": "Lamb shanks simmered in a garlicky cooked yogurt sauce",
+   "meaningAr": "موزات غنم مطبوخة في صلصة لبن مطبوخ بالثوم المحمر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shakriyeh"
+   ],
+   "notes": "Verified. I fetched the article: the title is 'Shakriyeh' and the Arabic is شاكرية. Step 10 fries the garlic until golden, which supports 'الثوم المحمر'.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-musakhan",
+   "ar": "مسخن دجاج على الطابون",
+   "enCurrent": "Musakhan",
+   "en": "Musakhan",
+   "transliterated": true,
+   "pronunciation": "moo-SAKH-khan",
+   "meaningEn": "Sumac roast chicken on taboon bread with onions and pine nuts",
+   "meaningAr": "دجاج مشوي بالسماق على خبز الطابون مع البصل والصنوبر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Musakhan"
+   ],
+   "notes": "The name is verified as the Wikipedia title. CHANGED the pronunciation from 'moo-sa-KHAN' to 'moo-SAKH-khan'. Wikipedia gives the Arabic as مسخّن, with a doubled kh, and Palestinians stress the doubled syllable (m-SAKH-khan), not the last one. CHANGED the meaningEn to fix the grammar ('with onions, pine nuts' became 'with onions and pine nuts').",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-knafeh-nabulsiyeh",
+   "ar": "كنافة نابلسية",
+   "enCurrent": "Knafeh Nabulsiyeh",
+   "en": "Knafeh Nabulseyeh",
+   "transliterated": true,
+   "pronunciation": "KNAH-feh na-bul-SEE-yeh",
+   "meaningEn": "Nabulsi cheese between ghee-rubbed semolina layers, with syrup",
+   "meaningAr": "جبنة نابلسية بين طبقتين من سميد الكنافة بالسمن، مع القطر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Knafeh",
+    "https://app.ckbk.com/recipe/fala57758c09s001r001/knafeh-nabulseyeh"
+   ],
+   "notes": "The name is verified. I fetched the Knafeh article: its section heading is 'Knafeh Nabulseyeh (Nablus, Palestine)' and the text says 'hence the name Nabulseyeh (also spelled as Nabilsiyeh)'. CHANGED the meaning line to match the recipe: it uses fine semolina rubbed with warm ghee, not shredded dough. Two thirds of it is pressed into the pan, the cheese goes on, the last third goes on top, and cold syrup is poured over. The Arabic line was updated to 'سميد الكنافة' to match.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-malfouf-mahshi",
+   "ar": "ملفوف محشي بالليمون والنعناع",
+   "enCurrent": "Malfouf Mahshi",
+   "en": "Malfouf Mahshi",
+   "transliterated": true,
+   "pronunciation": "mal-FOOF MAH-shee",
+   "meaningEn": "Rice and meat cabbage rolls with garlic, lemon and mint",
+   "meaningAr": "لفائف ملفوف محشوة بالأرز واللحم مع الثوم والليمون والنعناع",
+   "basis": "common-usage",
+   "sources": [
+    "https://hadiaslebanesecuisine.com/blog/?p=14176",
+    "https://zaatarandzaytoun.com/wprm_print/malfouf-mahshi-stuffed-cabbage-rolls",
+    "https://spicebreeze.com/blog/lebanese-malfouf-mahshi/"
+   ],
+   "notes": "Verified. The meaning matches the ingredients (cabbage, rice, lamb or beef, garlic, lemon, dried mint).",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-riz-bi-lahmeh",
+   "ar": "رز بلحمة أردني",
+   "enCurrent": "Riz bi Lahmeh",
+   "en": "Riz bi Lahme",
+   "transliterated": true,
+   "pronunciation": "RIZ bi LAH-meh",
+   "meaningEn": "Rice cooked with browned lamb, spices, topped with toasted nuts",
+   "meaningAr": "أرز مطبوخ مع لحم غنم محمر وبهارات، تعلوه المكسرات المحمصة",
+   "basis": "common-usage",
+   "sources": [
+    "https://hadiaslebanesecuisine.com/blog/lebanese-rice-with-meat/",
+    "https://tastegreatfoodie.com/mansaf-lebanese-rice-with-meat/"
+   ],
+   "notes": "CHANGED from 'Riz bi Lahmeh' to 'Riz bi Lahme'. The proposal found only one source, but a second independent one exists: I fetched Taste Great Foodie and it uses 'Riz bi Lahme' and 'Riz b Lahme'. Hadia's Lebanese Cuisine also uses 'Riz bi Lahme'. That meets the two-source rule. Neither source uses 'Lahmeh'. The meaning matches the ingredients (long-grain rice, lamb shoulder, cardamom, bay, turmeric, spices, mixed nuts, ghee).",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-freekeh-khodra",
+   "ar": "فريكة بالخضار",
+   "enCurrent": "Vegetable Freekeh",
+   "en": "Vegetable Freekeh",
+   "transliterated": true,
+   "pronunciation": "FREE-keh",
+   "meaningEn": "Coarse green wheat cooked with chickpeas, carrots and onion",
+   "meaningAr": "فريكة خشنة مطبوخة مع الحمص والجزر والبصل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Freekeh"
+   ],
+   "notes": "Verified. The Wikipedia API confirms 'Freekeh' is an article. The meaning matches the recipe's ingredients (jordanian.json: freekeh, chickpeas, carrot, onion). CONSISTENCY PASS: pronunciation: 'VEJ-tuh-bul FREE-keh' -> 'FREE-keh' (Arabic-origin words only).",
+   "status": "kept",
+   "consistencyEdits": [
+    "pronunciation: 'VEJ-tuh-bul FREE-keh' -> 'FREE-keh' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "lv-sheikh-el-mahshi",
+   "ar": "شيخ المحشي",
+   "enCurrent": "Sheikh el-Mahshi",
+   "en": "Sheikh al-Mahshi",
+   "transliterated": true,
+   "pronunciation": "SHAYKH el-MAH-shee",
+   "meaningEn": "Eggplants stuffed with lamb and pine nuts in yogurt sauce",
+   "meaningAr": "باذنجان محشو باللحم والصنوبر في صلصة اللبن",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sheikh_al-mahshi"
+   ],
+   "notes": "Name verified: the API confirms 'Sheikh al-mahshi' exists and 'Sheikh el-mahshi' is missing. The article's first line describes zucchini in yogurt sauce, so the recipe's eggplant is the regional variant. Changed the pronunciation from 'al-' to 'el-': Damascene speech says el-, not al-. The spelling stays on the Wikipedia form. The meaning matches the recipe (syrian.json: small eggplant, minced lamb, pine nuts, yogurt).",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-falafel",
+   "ar": "فلافل",
+   "enCurrent": "Palestinian Falafel",
+   "en": "Falafel",
+   "transliterated": true,
+   "pronunciation": "fuh-LAH-fel",
+   "meaningEn": "Fried patties of soaked chickpeas, parsley, onion and spices",
+   "meaningAr": "أقراص مقلية من الحمص المنقوع والبقدونس والبصل والتوابل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Falafel"
+   ],
+   "notes": "Verified. The 'Falafel' article exists. I checked the catalog for a name clash: the Egyptian fava version is already named 'Taameya', so dropping 'Palestinian' causes no duplicate. The meaning matches palestinian.json.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-labneh",
+   "ar": "لبنة بالزيت",
+   "enCurrent": "Labneh",
+   "en": "Labneh",
+   "transliterated": true,
+   "pronunciation": "LAB-neh",
+   "meaningEn": "Thick strained yogurt topped with olive oil and dried mint",
+   "meaningAr": "لبن مصفّى كثيف يُقدَّم بزيت الزيتون والنعناع المجفف",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Strained_yogurt",
+    "https://www.wholefoodsmarket.com/recipe/labneh-fresh-herbs-and-olive-oil",
+    "https://www.onceuponachef.com/recipes/labneh.html",
+    "https://www.themediterraneandish.com/homemade-labneh-recipe/print/11515/"
+   ],
+   "notes": "Verified. The API confirms 'Labneh' redirects to the 'The Middle East and the Mediterranean' section of 'Strained yogurt', so it has no article of its own. The meaning matches lebanese.json (full-fat yogurt, salt, olive oil, dried mint).",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-qatayef-asafiri",
+   "ar": "قطايف عصافيري",
+   "enCurrent": "Qatayef Asafiri",
+   "en": "Qatayef Asafiri",
+   "transliterated": true,
+   "pronunciation": "a-TAH-yef a-sa-FEE-ree",
+   "meaningEn": "Small pancakes filled with cream, with pistachios and syrup",
+   "meaningAr": "فطائر صغيرة محشوة بالقشطة مع الفستق والقطر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Qatayef",
+    "https://www.americastestkitchen.com/recipes/15489-qatayef-asafiri-little-birds",
+    "https://amiraspantry.com/wprm_print/qatayef-asafiri",
+    "https://asif.org/en/recipes/qatayef-asafiri/"
+   ],
+   "notes": "Name verified. 'Qatayef' is a Wikipedia article, and I fetched America's Test Kitchen: its title is 'Qatayef Asafiri (Little Birds)'. Changed the pronunciation from 'ka-TAH-yef' to 'a-TAH-yef': this is a Syrian recipe, and Damascus Arabic drops the q (a glottal stop). If the owner wants the respelling to follow the written Q, 'ka-TAH-yef' is the formal-Arabic reading. The meaning matches syrian.json (ashta cream, pistachio, syrup).",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-mshabbak",
+   "ar": "مشبك",
+   "enCurrent": "Mshabbak",
+   "en": "Mushabbak",
+   "transliterated": true,
+   "pronunciation": "moo-SHAB-bak",
+   "meaningEn": "Saffron batter fried in lattice shapes, dipped in cold syrup",
+   "meaningAr": "عجين بالزعفران يُقلى على شكل شبكة ويُغمس في القطر البارد",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zalabiyeh",
+    "https://tasteofbeirut.com/new-years-fritters-mushabbak",
+    "https://falasteenifoodie.com/mushabak-halabi-middle-eastern-funnel-cakes/"
+   ],
+   "notes": "Name verified, with a source caveat. I fetched Zalabiyeh on Wikipedia: its text uses 'mushabbak' about five times, and 'Mshabbak' appears only in one photo caption. The Taste of Beirut URL returned 404 when fetched, but search results still list the page as 'New Year's fritters (Mushabbak)', so the spelling is attested even though the page could not be opened. Falasteeni Foodie spells it 'Mushabak Halabi' and also uses 'Mchabak', 'Moshabak' and 'Mushbak', so it shows the spelling is inconsistent rather than backing 'Mushabbak'. The meaning matches jordanian.json (flour, cornstarch, yeast, saffron, cold syrup).",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-zucchini-yogurt-soup",
+   "ar": "شوربة الكوسا باللبن",
+   "enCurrent": "Shorbat Yaqtin",
+   "en": "Zucchini Yogurt Soup",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Zucchini cooked in garlicky yogurt with dried mint",
+   "meaningAr": "كوسا مطبوخة في لبن بالثوم والنعناع المجفف",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "Verified. Yaqtin (يقطين) means pumpkin or gourd, which does not match كوسا, so the current name is wrong. The meaning matches jordanian.json (zucchini, yogurt, garlic, dried mint).",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-makdous",
+   "ar": "مكدوس",
+   "enCurrent": "Makdous",
+   "en": "Makdous",
+   "transliterated": true,
+   "pronunciation": "mak-DOOS",
+   "meaningEn": "Baby eggplants with walnut-pepper stuffing, preserved in olive oil",
+   "meaningAr": "باذنجان صغير محشو بالجوز والفلفل الأحمر ومحفوظ بزيت الزيتون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Makdous"
+   ],
+   "notes": "Name verified: 'Makdous' is a Wikipedia article. Changed the English meaning to include the red pepper so it matches the Arabic line. Both come from syrian.json (walnut, red pepper, garlic, olive oil).",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-musabaha",
+   "ar": "مسبحة",
+   "enCurrent": "Hummus Musabaha",
+   "en": "Msabbaha",
+   "transliterated": true,
+   "pronunciation": "m-SAB-ba-ha",
+   "meaningEn": "Whole chickpeas with tahini, lemon, garlic and olive oil",
+   "meaningAr": "حمص حب مع الطحينة والليمون والثوم وزيت الزيتون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Msabbaha"
+   ],
+   "notes": "Name verified: 'Msabbaha' is a Wikipedia article and 'Musabbaha' redirects to it. Fixed the pronunciation from 'm-sab-BAH-ha' to 'm-SAB-ba-ha': Levantine speakers stress the 'sab' syllable (msábbaḥa), not 'ba'. The meaning matches lebanese.json.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-batata-salata",
+   "ar": "سلطة بطاطا",
+   "enCurrent": "Lebanese Potato Salad",
+   "en": "Lebanese Potato Salad",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Boiled potatoes with herbs, sumac, lemon and olive oil",
+   "meaningAr": "بطاطا مسلوقة مع الأعشاب والسماق والليمون وزيت الزيتون",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "Verified. The meaning matches lebanese.json (boiled small potatoes, basil, chives, mint, sumac, lemon, olive oil).",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-kousa-w-bayd",
+   "ar": "كوسا بالبيض",
+   "enCurrent": "Kousa w Bayd",
+   "en": "Zucchini with Eggs",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Diced zucchini sauteed with seven spice, then scrambled with eggs",
+   "meaningAr": "كوسا مقطعة تُقلّب مع بهار سبع ثم يُضاف إليها البيض المخفوق",
+   "basis": "plain-english",
+   "sources": [
+    "https://zaatarandzaytoun.com/wprm_print/zucchini-with-eggs-kousa-w-bayd",
+    "https://hadiaslebanesecuisine.com/blog/zucchini-scrambled-eggs-kousa-wbeid/"
+   ],
+   "notes": "Name verified. I fetched both sources: their titles are 'Zucchini with eggs (Kousa w bayd)' and 'Zucchini Scrambled Eggs (Kousa Wbeid)'. Fixed the meaning: the recipe lists بهار سبع (seven spice), not allspice, so I changed it in both languages.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "lv-tomato-vermicelli-soup",
+   "ar": "شوربة الشعرية بالطماطم",
+   "enCurrent": "Tomato Vermicelli Soup",
+   "en": "Tomato Vermicelli Soup",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Vermicelli simmered in chicken broth with onion and tomato paste",
+   "meaningAr": "شعرية مطبوخة في مرق الدجاج مع البصل ومعجون الطماطم",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "Verified. The meaning matches levantine.json.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-tajine-hout-chermoula",
+   "ar": "طاجين السمك بالشرمولة",
+   "enCurrent": "Moroccan Fish Tagine with Chermoula and Vegetables",
+   "en": "Fish Tagine with Chermoula",
+   "transliterated": true,
+   "pronunciation": "sher-MOO-la",
+   "meaningEn": "Chermoula fish slow-cooked over potatoes, carrots, tomatoes and peppers",
+   "meaningAr": "سمك متبّل بالشرمولة يُطهى ببطء فوق البطاطس والجزر والطماطم والفلفل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tagine",
+    "https://en.wikipedia.org/wiki/Chermoula"
+   ],
+   "notes": "Name verified: 'Tagine' and 'Chermoula' are both Wikipedia articles. Rewrote the meaning: the proposed line was a list without 'and', and the recipe says the fish is slow-cooked (يُطهى ببطء) on top of the vegetable layers. The ingredients are unchanged. CONSISTENCY PASS: pronunciation: 'fish ta-ZHEEN with sher-MOO-la' -> 'sher-MOO-la' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'fish ta-ZHEEN with sher-MOO-la' -> 'sher-MOO-la' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "ma-mrouzia-lahm-zabib",
+   "ar": "مروزية لحم الغنم بالزبيب واللوز",
+   "enCurrent": "M'rouzia - Moroccan Confit of Meat with Raisins, Almonds and Honey",
+   "en": "Mrouzia",
+   "transliterated": true,
+   "pronunciation": "mroo-ZEE-ya",
+   "meaningEn": "Lamb slow-cooked with raisins, honey, almonds and ras el hanout",
+   "meaningAr": "لحم غنم مطهو مع الزبيب والعسل واللوز ورأس الحانوت",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mrouzia"
+   ],
+   "notes": "Verified. 'Mrouzia' is a Wikipedia article. The recipe allows honey or sugar, and honey is listed first, so the meaning stands.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-loubia-bel-lahm",
+   "ar": "لوبيا باللحم (فاصوليا بيضاء مغربية)",
+   "enCurrent": "Moroccan Loubia - Stewed White Beans with Meat",
+   "en": "Loubia with Meat",
+   "transliterated": true,
+   "pronunciation": "LOOB-ya",
+   "meaningEn": "White beans stewed with meat, tomato, cumin and herbs",
+   "meaningAr": "فاصوليا بيضاء مطبوخة مع اللحم والطماطم والكمون والأعشاب",
+   "basis": "common-usage",
+   "sources": [
+    "https://tasteofmaroc.com/moroccan-stewed-white-beans-recipe-loubia/",
+    "https://carolinescooking.com/loubia-moroccan-stewed-white-beans",
+    "https://www.hungrypaprikas.com/moroccan-loubia/",
+    "https://jamilghar.com/loubia/"
+   ],
+   "notes": "Name verified: the API confirms 'Loubia' has no article. I fetched Caroline's Cooking: its title is 'Loubia (Moroccan stewed white beans)'. Fixed the pronunciation from 'LOO-bee-ya' to 'LOOB-ya': لوبيا has two syllables in Moroccan Arabic. The meaning matches moroccan.json; the meat is listed as optional there. CONSISTENCY PASS: pronunciation: 'LOOB-ya with meat' -> 'LOOB-ya' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'LOOB-ya with meat' -> 'LOOB-ya' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "ma-bastilla-bahriyya",
+   "ar": "بسطيلة بالمأكولات البحرية",
+   "enCurrent": "Moroccan Seafood Bastilla",
+   "en": "Seafood Pastilla",
+   "transliterated": true,
+   "pronunciation": "pas-TEE-ya",
+   "meaningEn": "Crisp pastry filled with shrimp, squid, fish and vermicelli",
+   "meaningAr": "عجينة رقيقة مقرمشة محشوة بالجمبري والكلمار والسمك والشعيرية",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pastilla"
+   ],
+   "notes": "Verified. The API confirms 'Bastilla' redirects to 'Pastilla'. The meaning matches moroccan.json (shrimp, squid, firm fish, rice vermicelli, pastilla sheets). CONSISTENCY PASS: pronunciation: 'SEE-food pas-TEE-ya' -> 'pas-TEE-ya' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'SEE-food pas-TEE-ya' -> 'pas-TEE-ya' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "ma-rfissa-dajaj",
+   "ar": "رفيسة بالدجاج والعدس",
+   "enCurrent": "Moroccan Chicken Rfissa - Trid with Chicken and Lentils",
+   "en": "Chicken Rfissa",
+   "transliterated": true,
+   "pronunciation": "r-FEE-sa",
+   "meaningEn": "Chicken, lentils and fenugreek in broth over torn flatbread",
+   "meaningAr": "دجاج وعدس وحلبة في مرق فوق خبز المسمن المفتّت",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rfissa"
+   ],
+   "notes": "Name verified: 'Rfissa' is a Wikipedia article. Changed the English meaning to say 'torn flatbread' instead of 'shredded msemmen': the meaning line should be plain English, and 'msemmen' means nothing to most readers. The Arabic line keeps المسمن. The recipe lists مسمن مفتّت أو رقائق التريد. CONSISTENCY PASS: pronunciation: 'CHICK-en r-FEE-sa' -> 'r-FEE-sa' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'CHICK-en r-FEE-sa' -> 'r-FEE-sa' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "ma-dajaj-bel-koummathra",
+   "ar": "دجاج مغربي بالكمثرى",
+   "enCurrent": "Moroccan Chicken with Pears",
+   "en": "Moroccan Chicken with Pears",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Chicken cooked with saffron and ginger, topped with sweetened pears",
+   "meaningAr": "دجاج مطهو بالزعفران والزنجبيل مع كمثرى محلّاة",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "Verified. The meaning matches moroccan.json (saffron, ginger, pears with sugar or honey).",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-lham-mhammar",
+   "ar": "لحم محمر بالبصل (محمر)",
+   "enCurrent": "L'ham M'hammar - Moroccan Roasted Lamb with Onion Confit",
+   "en": "Lham Mhammar",
+   "transliterated": true,
+   "pronunciation": "l-HAM m-HAM-mar",
+   "meaningEn": "Spiced lamb or beef, braised then roasted, with onion confit",
+   "meaningAr": "لحم غنم أو بقر متبّل يُطهى ثم يُحمّر ويُقدّم مع البصل المكثّف",
+   "basis": "common-usage",
+   "sources": [
+    "https://tasteofmaroc.com/mhammar-moroccan-braised-roasted-lamb/",
+    "https://app.ckbk.com/recipe/trad59138c30s001r002/el-lham-el-mahammer"
+   ],
+   "notes": "Kept the name but corrected the basis. The proposed note said Taste of Maroc mostly writes 'Mhammar' without an apostrophe. That is false: fetched, the page's title and most of its text use \"L'ham M'hammar\", 'Lham Mhammar' appears once as an alternate spelling, and 'mhammar' appears only in the URL. The spelling is still inconsistent ('M'hammar', 'Mhamer', 'Mahammer'), and the alternate form 'Lham Mhammar' is attested, so I kept it without apostrophes. Removed the tag-page URL because it adds no independent evidence. A search snippet suggests Saveur also writes 'Mhammar', but the page returned 403, so I did not cite it.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-kefta-gharb",
+   "ar": "كفتة الغرب بالشحم",
+   "enCurrent": "Moroccan Kefta dyal Gharb - Grilled Minced Meat",
+   "en": "Gharb-Style Kefta",
+   "transliterated": true,
+   "pronunciation": "GHARB KEF-ta",
+   "meaningEn": "Minced meat with suet, herbs and spices, grilled over charcoal",
+   "meaningAr": "لحم مفروم مع الشحم والأعشاب والتوابل يُشوى على الفحم",
+   "basis": "common-usage",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kofta",
+    "https://tasteofmaroc.com/wprm_print/moroccan-kefta-dyal-gharb-recipe-kefta-dyal-lham",
+    "https://salimaskitchen.com/kefta/print/21833/",
+    "https://www.splendidtable.org/story/2012/05/30/grilled-spicy-kefta-brochettes"
+   ],
+   "notes": "Verified. The API confirms 'Kefta' redirects to 'Kofta', and Taste of Maroc's title is 'Moroccan Kefta dyal Gharb Recipe'. The catalog has no other dish named 'Gharb-Style Kofta'. 'Gharb-Style Kefta' stays as the owner's option. CONSISTENCY PASS: en: 'Gharb-Style Kofta' -> 'Gharb-Style Kefta' (Moroccan dishes use Kefta); pronunciation: 'GARB-style KOF-ta' -> 'GHARB KEF-ta' (Arabic-origin words only; gh for the letter ghain); basis: 'wikipedia-title' -> 'common-usage' (Kefta is the Moroccan English usage).",
+   "status": "changed",
+   "consistencyEdits": [
+    "en: 'Gharb-Style Kofta' -> 'Gharb-Style Kefta' (Moroccan dishes use Kefta)",
+    "pronunciation: 'GARB-style KOF-ta' -> 'GHARB KEF-ta' (Arabic-origin words only; gh for the letter ghain)",
+    "basis: 'wikipedia-title' -> 'common-usage' (Kefta is the Moroccan English usage)"
+   ]
+  },
+  {
+   "id": "ma-kebab-maghdour",
+   "ar": "كباب مغدور",
+   "enCurrent": "Kebab Maghdour - Moroccan Tagine of Spiced Cubed Meat",
+   "en": "Kebab Maghdour",
+   "transliterated": true,
+   "pronunciation": "keh-BAB magh-DOOR",
+   "meaningEn": "Spiced cubed meat cooked in onion sauce, topped with eggs",
+   "meaningAr": "مكعبات لحم متبّلة تُطهى في صلصة البصل وتُقدّم بالبيض",
+   "basis": "common-usage",
+   "sources": [
+    "https://tasteofmaroc.com/kebab-maghdour/",
+    "https://allopecooking.blogspot.com/2018/12/tagine-of-moroccan-brochettes.html"
+   ],
+   "notes": "Verified. I fetched both sources: Taste of Maroc's title is 'Kebab Maghdour - Moroccan Tagine of Cubed Meat', and Allope Cooking writes 'Kebab Maghdour' in its steps but 'Magdhour' in its tips. The second source is weaker: it appears to be adapted from another site, so the two may not be fully independent. CONSISTENCY PASS: pronunciation: 'keh-BAB mag-DOOR' -> 'keh-BAB magh-DOOR' (gh for the letter ghain everywhere).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'keh-BAB mag-DOOR' -> 'keh-BAB magh-DOOR' (gh for the letter ghain everywhere)"
+   ]
+  },
+  {
+   "id": "ma-tajine-lahm-qarnabit",
+   "ar": "طاجين اللحم بالقرنبيط",
+   "enCurrent": "Moroccan Lamb or Beef Tagine with Cauliflower",
+   "en": "Meat Tagine with Cauliflower",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Lamb or beef slow-cooked with cauliflower, preserved lemon and olives",
+   "meaningAr": "لحم غنم أو بقر مطهو ببطء مع القرنبيط والليمون المصير والزيتون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tagine"
+   ],
+   "notes": "Name verified. Rewrote the meaning as a sentence instead of a list; the ingredients and the slow cooking both come from the recipe description in moroccan.json. CONSISTENCY PASS: transliterated: True -> False (Tagine is treated as an English food word; no other Arabic word left); pronunciation: 'meet ta-ZHEEN with cauliflower' -> None (no transliterated word left).",
+   "status": "changed",
+   "consistencyEdits": [
+    "transliterated: True -> False (Tagine is treated as an English food word; no other Arabic word left)",
+    "pronunciation: 'meet ta-ZHEEN with cauliflower' -> None (no transliterated word left)"
+   ]
+  },
+  {
+   "id": "ma-baghrir",
+   "ar": "بغرير (رقائق السميد المغربية)",
+   "enCurrent": "Baghrir - Moroccan Semolina Pancakes",
+   "en": "Baghrir",
+   "transliterated": true,
+   "pronunciation": "bagh-REER",
+   "meaningEn": "Thin semolina pancakes full of tiny holes, served with honey",
+   "meaningAr": "رقائق سميد رقيقة مليئة بالثقوب الصغيرة تُقدّم مع العسل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Baghrir"
+   ],
+   "notes": "Name verified: 'Baghrir' is a Wikipedia article. Simplified the pronunciation from 'bahg-REER' to 'bag-REER', which splits the syllables as bagh-rir. CONSISTENCY PASS: pronunciation: 'bag-REER' -> 'bagh-REER' (gh for the letter ghain everywhere).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'bag-REER' -> 'bagh-REER' (gh for the letter ghain everywhere)"
+   ]
+  },
+  {
+   "id": "ma-rghaif",
+   "ar": "رغايف مغربية",
+   "enCurrent": "Moroccan Rghaif - Layered Semolina Flatbreads",
+   "en": "Msemmen",
+   "transliterated": true,
+   "pronunciation": "m-SEM-men",
+   "meaningEn": "Layered semolina flatbread folded with butter, cooked on a griddle",
+   "meaningAr": "خبز من طبقات عجين السميد المطوي بالزبدة يُطهى على المقلاة",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Msemmen",
+    "https://tasteofmaroc.com/msemen-recipe/",
+    "https://www.tastingtable.com/1363195/msemen-moroccan-crepe/"
+   ],
+   "notes": "Verified. The API confirms 'Rghaif' redirects to 'Msemmen', and the article gives 'or rghaif (رغايف)' as an alternative name and describes durum semolina and folded layers. 'Rghaif' remains the fallback if the owner wants the name to match the Arabic.",
+   "status": "changed",
+   "consistencyEdits": [],
+   "decision": {
+    "decidedAt": "2026-11-21",
+    "chosen": "Msemmen",
+    "rejected": [
+     "Rghaif"
+    ],
+    "evidence": "'Msemmen/Msemen' is far more used in English than 'Rghaif' (Wikipedia title Msemmen, Taste of Maroc, Tasting Table, Morocco World News, Salima's Kitchen); Rghaif appears mostly as an aside. Kept the Wikipedia double-m spelling; 'Msemen' is the common single-m variant."
+   }
+  },
+  {
+   "id": "ma-assida",
+   "ar": "عصيدة السميد المغربية",
+   "enCurrent": "Moroccan Semolina Porridge - Assida",
+   "en": "Semolina Asida",
+   "transliterated": true,
+   "pronunciation": "a-SEE-da",
+   "meaningEn": "Thick semolina porridge served with honey and butter",
+   "meaningAr": "عصيدة سميد كثيفة تُقدّم مع العسل والزبدة",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Asida"
+   ],
+   "notes": "Name verified: 'Asida' is a Wikipedia article and 'Assida' is missing. Changed the respelling of 'semolina' to the usual English 'seh-muh-LEE-nuh'. CONSISTENCY PASS: pronunciation: 'seh-muh-LEE-nuh a-SEE-da' -> 'a-SEE-da' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'seh-muh-LEE-nuh a-SEE-da' -> 'a-SEE-da' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "ma-bessara",
+   "ar": "بيصارة (غموس الفول المجفف)",
+   "enCurrent": "Moroccan Bessara - Dried Fava Bean Dip or Soup",
+   "en": "Bissara",
+   "transliterated": true,
+   "pronunciation": "bi-SAH-ra",
+   "meaningEn": "Dried fava beans pureed with garlic, cumin and olive oil",
+   "meaningAr": "فول مجفف مهروس مع الثوم والكمون وزيت الزيتون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bissara"
+   ],
+   "notes": "Name verified: the API confirms 'Bessara' redirects to 'Bissara'. Possible name clash: the catalog already has 'Bissara (Egyptian Fava Bean Dip)'. If that dish is also renamed to plain 'Bissara', two dishes will share one name, and the app will need a marker such as 'Moroccan Bissara' to tell them apart. That is an app-level decision. CONSISTENCY PASS: pronunciation: 'bee-SAH-ra' -> 'bi-SAH-ra' (one respelling for Bissara).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'bee-SAH-ra' -> 'bi-SAH-ra' (one respelling for Bissara)"
+   ],
+   "country": {
+    "key": "ma",
+    "en": "Moroccan",
+    "ar": "مغربي"
+   },
+   "displayEn": "Moroccan Bissara"
+  },
+  {
+   "id": "ma-khobz",
+   "ar": "الخبز المغربي البلدي",
+   "enCurrent": "Moroccan White Bread - Khobz",
+   "en": "Moroccan Khobz",
+   "transliterated": true,
+   "pronunciation": "KHOBZ",
+   "meaningEn": "Flat round yeasted bread made from white flour",
+   "meaningAr": "خبز مستدير مسطح مخمّر من الدقيق الأبيض",
+   "basis": "common-usage",
+   "sources": [
+    "https://tasteofmaroc.com/moroccan-bread-khobz-recipe/",
+    "https://marocmama.com/khobz-moroccan-bread/",
+    "https://salimaskitchen.com/moroccan-bread/",
+    "https://www.sbs.com.au/food/recipe/moroccan-bread-khobz/zvpenhasw",
+    "https://amyscookingadventures.com/2022/10/moroccan-khobz-bread.html"
+   ],
+   "notes": "verified. Wikipedia has no 'Khobz' page, and 'Khubz' redirects to 'Pita', which does not mention Moroccan khobz. 'Moroccan' stays because it translates 'المغربي' in the Arabic name. The meaning matches the recipe: white flour, yeast and flat round loaves. CONSISTENCY PASS: pronunciation: 'moh-ROK-an KHOBZ' -> 'KHOBZ' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'moh-ROK-an KHOBZ' -> 'KHOBZ' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "ma-chebakia",
+   "ar": "شباكية",
+   "enCurrent": "Chebakia - Moroccan Sesame and Honey Cookies",
+   "en": "Shebakia",
+   "transliterated": true,
+   "pronunciation": "sheb-BAH-kee-ya",
+   "meaningEn": "Fried sesame dough soaked in honey and orange blossom water",
+   "meaningAr": "عجينة بالسمسم مقلية ومغموسة في العسل وماء الزهر",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shebakia"
+   ],
+   "notes": "Name verified: 'Chebakia' redirects to the Wikipedia title 'Shebakia', which lists chebakia as an alternative spelling. I changed the pronunciation slightly to sheb-BAH-kee-ya, because the Moroccan word has a doubled b (shebbakiya). The meaning matches the recipe: sesame dough, fried, then soaked in a syrup of honey and orange blossom water.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-maqrout",
+   "ar": "مقروط بالتمر",
+   "enCurrent": "Maqrout - Moroccan Semolina Cookies Stuffed with Dates",
+   "en": "Makroudh",
+   "transliterated": true,
+   "pronunciation": "mak-ROOT",
+   "meaningEn": "Fried semolina cookies stuffed with cinnamon dates, dipped in honey",
+   "meaningAr": "حلوى سميد مقلية محشوة بالتمر والقرفة ومغموسة في العسل",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Makroudh"
+   ],
+   "notes": "Name verified: the Wikipedia title is 'Makroudh' (alternative spelling 'Makrout'), a Maghreb date-filled cookie. CHANGED the pronunciation from mak-ROOD to mak-ROOT. The recipe is Moroccan, and Moroccans say maqrout with a final t sound. The 'dh' ending is the Tunisian form. The meaning matches the recipe: semolina, dates with butter, cinnamon and orange blossom water, fried and then soaked in honey.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-keks-bortokal",
+   "ar": "كيك البرتقال المغربي",
+   "enCurrent": "Moroccan Orange Cake",
+   "en": "Moroccan Orange Cake",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Oil-based cake flavored with fresh orange juice and zest",
+   "meaningAr": "كيك بالزيت بنكهة عصير البرتقال الطازج وقشره",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. 'Moroccan' translates 'المغربي' in the Arabic name. The ingredients include vegetable oil, fresh orange juice and grated zest.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-chorba-fassia",
+   "ar": "شوربة فاسية بالخضار",
+   "enCurrent": "Moroccan Diced Vegetable Soup - Chorba Fassia",
+   "en": "Chorba Fassia",
+   "transliterated": true,
+   "pronunciation": "SHOR-ba FAH-see-ya",
+   "meaningEn": "Meat soup with finely diced vegetables and small pasta",
+   "meaningAr": "شوربة لحم بالخضار المقطعة ناعمًا والشعيرية",
+   "basis": "common-usage",
+   "sources": [
+    "https://tasteofmaroc.com/moroccan-vegetable-soup-chorba-fassia/",
+    "https://www.bladi.net/recettes/chorba-fassia.html",
+    "https://app.cookeatshare.com/recipes/chorba-fassia-or-fassi-chorba-118760",
+    "https://en.wikipedia.org/wiki/Chorba"
+   ],
+   "notes": "verified. The Wikipedia 'Chorba' page exists and covers soups in general, and the Fez variant has no page of its own. The recipe uses lamb, beef or chicken, finely diced vegetables and vermicelli or small pasta.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-hssoua-belboula-hamra",
+   "ar": "حسوة بالبلبولة بالطماطم",
+   "enCurrent": "Moroccan Cracked Barley Soup with Tomatoes - Hssoua Belboula Hamra",
+   "en": "Hssoua Belboula with Tomato",
+   "transliterated": true,
+   "pronunciation": "HSOO-wa bel-BOO-la",
+   "meaningEn": "Cracked barley soup with meat, tomatoes and parsley",
+   "meaningAr": "شوربة شعير مجروش باللحم والطماطم والبقدونس",
+   "basis": "common-usage",
+   "sources": [
+    "https://tasteofmaroc.com/moroccan-cracked-barley-soup-tomatoes/",
+    "https://choumicha.ma/recette/113-h-ssoua-hamra-bel-belboula.html",
+    "https://moroccan-recipe.blogspot.com/2012/08/moroccan-barley-soup-with-milk-hssoua.html"
+   ],
+   "notes": "verified. Taste of Maroc uses the spelling 'Hssoua Belboula', which I confirmed on its milk-version page. The recipe uses cracked barley, beef or lamb, grated tomato and parsley. CONSISTENCY PASS: pronunciation: 'HSOO-wa bel-BOO-la with toh-MAY-toh' -> 'HSOO-wa bel-BOO-la' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'HSOO-wa bel-BOO-la with toh-MAY-toh' -> 'HSOO-wa bel-BOO-la' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "ma-hssoua-belboula-halib",
+   "ar": "حسوة بالبلبولة بالحليب",
+   "enCurrent": "Hssoua Belboula - Moroccan Barley Soup with Milk",
+   "en": "Hssoua Belboula with Milk",
+   "transliterated": true,
+   "pronunciation": "HSOO-wa bel-BOO-la",
+   "meaningEn": "Creamy cracked barley soup with milk, butter and cumin",
+   "meaningAr": "شوربة شعير مجروش بالحليب والزبدة والكمون",
+   "basis": "common-usage",
+   "sources": [
+    "https://tasteofmaroc.com/hssoua-belboula-moroccan-barley-soup-with-milk/",
+    "https://moroccan-recipe.blogspot.com/2012/08/moroccan-barley-soup-with-milk-hssoua.html"
+   ],
+   "notes": "verified. I fetched the Taste of Maroc page: its title is 'Hssoua Belboula - Moroccan Barley Soup with Milk'. The recipe uses barley grits, whole milk, evaporated milk, butter and cumin. CONSISTENCY PASS: pronunciation: 'HSOO-wa bel-BOO-la with MILK' -> 'HSOO-wa bel-BOO-la' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'HSOO-wa bel-BOO-la with MILK' -> 'HSOO-wa bel-BOO-la' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "ma-salade-jazar-bortokal",
+   "ar": "سلطة الجزر بالبرتقال",
+   "enCurrent": "Moroccan Carrot and Orange Salad",
+   "en": "Carrot and Orange Salad",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Grated carrots in orange juice with orange blossom and cinnamon",
+   "meaningAr": "جزر مبشور بعصير البرتقال وماء الزهر والقرفة",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "CHANGED: dropped 'Moroccan'. The Arabic name has no 'المغربية', and the name means something without it, so the owner's rules (keep a descriptor only when needed, keep names short) say to drop it. The proposer applied the same reasoning when it dropped 'Saudi' from 'Tomato Oat Soup' and 'Chicken Salona'. The meaning is verified against the ingredients: grated carrot, orange juice, orange blossom water and cinnamon.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-salade-shamandar",
+   "ar": "سلطة الشمندر المغربية",
+   "enCurrent": "Moroccan Beet Salad with Vinaigrette",
+   "en": "Moroccan Beet Salad",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Beets with red onion, parsley, olive oil and lemon",
+   "meaningAr": "شمندر مع البصل الأحمر والبقدونس بزيت الزيتون والليمون",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. 'Moroccan' translates 'المغربية' in the Arabic name. The recipe gives olive or vegetable oil and lemon juice or vinegar as options, and the meaning uses the first option of each.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "ma-salade-feggous",
+   "ar": "سلطة الفغوس بالزعتر البري",
+   "enCurrent": "Moroccan Feggous Salad - Armenian Cucumber with Oregano",
+   "en": "Feggous Salad",
+   "transliterated": true,
+   "pronunciation": "feg-GOOS",
+   "meaningEn": "Grated Armenian cucumber with vinegar, oregano and orange juice",
+   "meaningAr": "خيار أرمني مبشور بالخل والزعتر البري وعصير البرتقال",
+   "basis": "common-usage",
+   "sources": [
+    "https://tasteofmaroc.com/moroccan-feggous-salad-with-oregano/",
+    "https://justapinch.com/recipes/feggous-salad-recipe-armenian-cucumber-salad.html"
+   ],
+   "notes": "CHANGED: dropped 'Moroccan'. The Arabic name lacks it, and 'Salad' already tells readers what the dish is. The spelling 'feggous' is verified on Taste of Maroc. I also added 'Grated' to the meaning, because the recipe's first step grates the cucumber. CONSISTENCY PASS: pronunciation: 'feg-GOOS SAL-ad' -> 'feg-GOOS' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'feg-GOOS SAL-ad' -> 'feg-GOOS' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-kabsa-shrimp",
+   "ar": "كبسة الجمبري",
+   "enCurrent": "Shrimp Kabsa",
+   "en": "Shrimp Kabsa",
+   "transliterated": true,
+   "pronunciation": "KAB-sa",
+   "meaningEn": "Spiced basmati rice cooked with shrimp, tomato and dried lime",
+   "meaningAr": "أرز بسمتي متبل مطهو مع الجمبري والطماطم واللومي",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kabsa"
+   ],
+   "notes": "verified. The Wikipedia 'Kabsa' page lists shrimp among the meats used. The recipe uses basmati rice, shrimp, tomatoes and dried black lime. CONSISTENCY PASS: pronunciation: 'SHRIMP KAB-sa' -> 'KAB-sa' (Arabic-origin words only).",
+   "status": "kept",
+   "consistencyEdits": [
+    "pronunciation: 'SHRIMP KAB-sa' -> 'KAB-sa' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-mandi-dajaj-furn",
+   "ar": "مندي الدجاج بالفرن",
+   "enCurrent": "Oven Chicken Mandi",
+   "en": "Oven Chicken Mandi",
+   "transliterated": true,
+   "pronunciation": "MAN-dee",
+   "meaningEn": "Spiced chicken roasted over basmati rice, smoked with charcoal",
+   "meaningAr": "دجاج متبل يُشوى فوق الأرز البسمتي ويُدخَّن بالفحم",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mandi_(food)"
+   ],
+   "notes": "verified. The Wikipedia title 'Mandi (food)' exists. Charcoal is not in the ingredient list, but the recipe's own last steps smoke the dish with charcoal, so the meaning is grounded in the recipe. 'Oven' also separates this recipe from sa-lamb-mandi in the same file. CONSISTENCY PASS: pronunciation: 'UH-ven CHIK-en MAN-dee' -> 'MAN-dee' (Arabic-origin words only).",
+   "status": "kept",
+   "consistencyEdits": [
+    "pronunciation: 'UH-ven CHIK-en MAN-dee' -> 'MAN-dee' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-madghout-dajaj",
+   "ar": "مضغوط الدجاج",
+   "enCurrent": "Chicken Madghout",
+   "en": "Chicken Madghout",
+   "transliterated": true,
+   "pronunciation": "mad-GHOOT",
+   "meaningEn": "Chicken simmered with spices, then cooked with basmati rice",
+   "meaningAr": "دجاج مطهو بالتوابل ثم يُطبخ مع الأرز البسمتي",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.tefal-me.com/en/recipe/329620",
+    "https://healthyhorizonsjourney.blogspot.com/2025/07/arabian-madghout-rice-recipe.html",
+    "https://en.wikipedia.org/wiki/Kabsa"
+   ],
+   "notes": "verified. The Wikipedia 'Kabsa' page mentions 'madghūt' only as a pressure-cooker method and has no page for the dish. Tefal Middle East and Goody Kitchen use 'Madghout', and a search for 'Madghoot' found no comparable usage. The recipe never mentions a pressure cooker, so leaving pressure out of the meaning is correct. CONSISTENCY PASS: pronunciation: 'CHIK-en mad-GHOOT' -> 'mad-GHOOT' (Arabic-origin words only).",
+   "status": "kept",
+   "consistencyEdits": [
+    "pronunciation: 'CHIK-en mad-GHOOT' -> 'mad-GHOOT' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-salonga-dajaj",
+   "ar": "صالونة الدجاج",
+   "enCurrent": "Saudi Chicken Salona",
+   "en": "Chicken Salona",
+   "transliterated": true,
+   "pronunciation": "sa-LOO-na",
+   "meaningEn": "Chicken stew with zucchini, potatoes, tomato and dried lime",
+   "meaningAr": "يخنة دجاج بالكوسا والبطاطس والطماطم واللومي",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.maggiarabia.com/en/recipes/chicken-salona",
+    "https://butfirstchai.com/dejaj-salona-emirati-chicken-stew/",
+    "https://www.sadia-life.com/en-sa/recipes/authentic-chicken-salona-recipe-with-sadia-easy-juicy-chicken-cubes",
+    "https://theodehlicious.com/chicken-salona-recipe/",
+    "https://en.wikipedia.org/wiki/Maraq_(dish)"
+   ],
+   "notes": "verified. 'Saloona' only redirects to the broader 'Maraq (dish)' page, where it appears as an alternative name. A search confirmed 'Chicken Salona' as the dominant spelling: Maggi, Sadia, But First Chai, Theodehlicious and SparkPeople use it. The recipe includes zucchini, potatoes, tomato and loomi (dried lime). CONSISTENCY PASS: pronunciation: 'CHIK-en sa-LOO-na' -> 'sa-LOO-na' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'CHIK-en sa-LOO-na' -> 'sa-LOO-na' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-haneeth-lahm",
+   "ar": "الحنيذ السعودي",
+   "enCurrent": "Saudi Haneeth Lamb",
+   "en": "Saudi Haneeth",
+   "transliterated": true,
+   "pronunciation": "ha-NEEDH",
+   "meaningEn": "Spiced meat cooked in banana leaves, served on saffron rice",
+   "meaningAr": "لحم متبل يُطهى بين أوراق الموز ويُقدَّم على أرز بالزعفران",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Haneeth"
+   ],
+   "notes": "CHANGED: the name keeps 'Saudi' because it translates 'السعودي' in the Arabic name, the same way 'Moroccan Khobz' keeps 'المغربي'. The Wikipedia title is 'Haneeth', and dropping 'Lamb' is correct because the recipe says only 'لحم'. I changed the pronunciation from ha-NEETH to ha-NEEDH: in Saudi speech ذ is voiced, and English readers would otherwise say the 'th' in 'think'. The meaning is verified: the recipe lines the pot with banana and lemon leaves, and the rice is cooked with saffron. CONSISTENCY PASS: pronunciation: 'SOW-dee ha-NEEDH' -> 'ha-NEEDH' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'SOW-dee ha-NEEDH' -> 'ha-NEEDH' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-madbi-dajaj-furn",
+   "ar": "مظبي الدجاج بالفرن",
+   "enCurrent": "Oven Chicken Madbi",
+   "en": "Oven Chicken Madhbi",
+   "transliterated": true,
+   "pronunciation": "MADH-bee",
+   "meaningEn": "Oven-roasted spiced chicken over basmati rice, smoked with charcoal",
+   "meaningAr": "دجاج متبل مشوي في الفرن فوق أرز بسمتي ويُدخَّن بالفحم",
+   "basis": "transliteration-rule",
+   "sources": [
+    "https://cupofyum.com/recipes/chicken-madhbi",
+    "https://cookpad.wasmer.app/us/recipes/24964804",
+    "https://slurrp.com/amp/recipes/chicken-mazbi-stone-grilled-chicken-1611364257",
+    "https://en.wikipedia.org/wiki/Kabsa"
+   ],
+   "notes": "verified, with a caveat. No spelling is settled: Wikipedia has 'mathbi', Slurrp (an Indian site) has 'Mazbi', a Pakistani menu has 'Madbi', and Cup of Yum and Cookpad have 'Madhbi'. 'Madhbi' follows the Najdi and Gulf voiced ظ, so the transliteration-rule basis is correct. The Cup of Yum page backs only the spelling: its method is an oven roast with no charcoal. This recipe itself lists charcoal, so the meaning is grounded. CONSISTENCY PASS: pronunciation: 'UH-ven CHIK-en MADH-bee' -> 'MADH-bee' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'UH-ven CHIK-en MADH-bee' -> 'MADH-bee' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-matazeez-najdiya",
+   "ar": "المطازيز النجدية",
+   "enCurrent": "Najdi Matazeez",
+   "en": "Najdi Matazeez",
+   "transliterated": true,
+   "pronunciation": "NAJ-dee ma-ta-ZEEZ",
+   "meaningEn": "Wheat dough pieces cooked in lamb and vegetable stew",
+   "meaningAr": "قطع عجين قمح مطبوخة في مرق اللحم الضاني والخضار",
+   "basis": "common-usage",
+   "sources": [
+    "https://saudipedia.com/en/matazeez",
+    "https://www.arabnews.pk/node/2612639",
+    "https://www.spinneys.com/en-ae/recipes/stuffed-matazeez-with-roasted-vegetable-sauce/",
+    "https://www.abouther.com/node/10156"
+   ],
+   "notes": "verified. Saudipedia spells it 'Matazeez' throughout. It names the Riyadh and Qassim regions but not the word 'Najdi', so 'Najdi' comes from 'النجدية' in the Arabic name. The recipe has wheat dough, lamb, tomato sauce and vegetables.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-shakshoka-hejazi",
+   "ar": "شكشوكة حجازية",
+   "enCurrent": "Hijazi Shakshuka",
+   "en": "Hejazi Shakshouka",
+   "transliterated": true,
+   "pronunciation": "heh-JAH-zee shak-SHOO-ka",
+   "meaningEn": "Eggs cooked in spiced tomato and peppers with feta",
+   "meaningAr": "بيض مطبوخ في الطماطم والفلفل المتبل مع جبن الفيتا",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shakshouka",
+    "https://en.wikipedia.org/wiki/Hejazi_Arabic"
+   ],
+   "notes": "verified. Both Wikipedia titles, 'Shakshouka' and 'Hejazi Arabic', exist. The recipe has eggs, tomato, sweet green pepper, cumin, coriander and feta.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-foul-bel-khalta",
+   "ar": "فول بالخلطة السعودية",
+   "enCurrent": "Saudi Foul with Spice Mix",
+   "en": "Saudi Ful Medames",
+   "transliterated": true,
+   "pronunciation": "FOOL meh-DAM-mes",
+   "meaningEn": "Mashed fava beans with tomato, garlic, chili and cumin",
+   "meaningAr": "فول مهروس بالطماطم والثوم والفلفل الحار والكمون",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ful_medames",
+    "https://aramcoexpats.com/articles/ful-medames-the-saudi-breakfast-of-champions"
+   ],
+   "notes": "Name verified: the Wikipedia title is 'Ful medames', and the article mentions Saudi variants. CHANGED the pronunciation from meh-DAH-mes to meh-DAM-mes: 'medames' is the Egyptian word مدمس, which is stressed on DAM. CHANGED the meaning to add 'Mashed', because the recipe purées the beans first. CONSISTENCY PASS: pronunciation: 'SOW-dee FOOL meh-DAM-mes' -> 'FOOL meh-DAM-mes' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'SOW-dee FOOL meh-DAM-mes' -> 'FOOL meh-DAM-mes' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-kibda-hejazi",
+   "ar": "كبدة حجازي",
+   "enCurrent": "Hijazi Liver",
+   "en": "Hejazi Liver",
+   "transliterated": true,
+   "pronunciation": "heh-JAH-zee",
+   "meaningEn": "Lamb liver sautéed in ghee with peppers, garlic and coriander",
+   "meaningAr": "كبدة غنم مقلية بالسمن مع الفلفل والثوم والكزبرة",
+   "basis": "plain-english",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hejazi_Arabic",
+    "https://en.wikipedia.org/wiki/Liver_as_food"
+   ],
+   "notes": "verified. The Wikipedia URL for 'Kibda' returns 404. The recipe has lamb liver, ghee, sweet and hot peppers, garlic and coriander. CONSISTENCY PASS: pronunciation: 'heh-JAH-zee LIV-er' -> 'heh-JAH-zee' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'heh-JAH-zee LIV-er' -> 'heh-JAH-zee' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-sandwich-kibda",
+   "ar": "ساندويش كبدة سعودي",
+   "enCurrent": "Saudi Liver Sandwich",
+   "en": "Saudi Liver Sandwich",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Spiced lamb liver with onion and chili in bread",
+   "meaningAr": "كبدة غنم متبلة بالبصل والفلفل الحار في الخبز",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The recipe has lamb liver, onion, hot green pepper and samoli or Arabic bread.",
+   "status": "kept",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-harees-soup-carrot",
+   "ar": "شوربة الهريس بالجزر",
+   "enCurrent": "Harees and Carrot Soup",
+   "en": "Harees and Carrot Soup",
+   "transliterated": true,
+   "pronunciation": "ha-REES",
+   "meaningEn": "Harees wheat soup with grated carrot, tomato and dried lime",
+   "meaningAr": "شوربة قمح الهريس بالجزر المبشور والطماطم واللومي",
+   "basis": "wikipedia-title",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Harees"
+   ],
+   "notes": "verified. The Wikipedia title is 'Harees', and the article mentions Saudi Arabia. The recipe has harees wheat, grated carrot, tomato paste and ground black loomi. CONSISTENCY PASS: pronunciation: 'ha-REES and KAR-ot SOOP' -> 'ha-REES' (Arabic-origin words only).",
+   "status": "kept",
+   "consistencyEdits": [
+    "pronunciation: 'ha-REES and KAR-ot SOOP' -> 'ha-REES' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-lahm-soup-saudi",
+   "ar": "شوربة اللحم السعودي",
+   "enCurrent": "Saudi Lamb Soup",
+   "en": "Saudi Meat Soup",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Bone-in meat soup with oats, tomato and dried lime",
+   "meaningAr": "شوربة لحم بالعظم مع الشوفان والطماطم واللومي",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The recipe lists 'لحم قطع بالعظم' with no lamb named, along with oats, tomato and dried lime, so 'Meat' is correct.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-oats-tomato-soup",
+   "ar": "شوربة الشوفان بالطماطم",
+   "enCurrent": "Saudi Tomato Oats Soup",
+   "en": "Tomato Oat Soup",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Tomato and oat soup with vegetable broth and warm spices",
+   "meaningAr": "شوربة طماطم وشوفان بمرق الخضار والتوابل",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The recipe has tomato, oats, vegetable stock, turmeric, cumin and cinnamon.",
+   "status": "changed",
+   "consistencyEdits": []
+  },
+  {
+   "id": "sa-daqoos-kabsa",
+   "ar": "دقوس الكبسة",
+   "enCurrent": "Kabsa Daqoos Sauce",
+   "en": "Daqoos Sauce",
+   "transliterated": true,
+   "pronunciation": "da-GOOS",
+   "meaningEn": "Garlicky tomato sauce served alongside kabsa",
+   "meaningAr": "صلصة طماطم بالثوم تُقدَّم بجانب الكبسة",
+   "basis": "common-usage",
+   "sources": [
+    "https://www.jordannews.jo/Section-101/Good-Food/Spicy-Daqoos-Sauce-Recipe-for-Kabsa-Detailed-Guide-43936",
+    "https://theodehlicious.com/daqoos-recipe/",
+    "https://dinner-for-me.pages.dev/recipes/daqoos/",
+    "https://en.wikipedia.org/wiki/Kabsa"
+   ],
+   "notes": "verified. A search confirmed 'Daqoos' as the most common spelling: Jordan News, Theodehlicious and Serious Eats use it. I added Theodehlicious as a stronger second source and dropped the personal Blogspot link. The recipe has tomatoes, tomato paste, garlic, olive oil and brown sugar, and its last step serves the sauce beside kabsa. CONSISTENCY PASS: pronunciation: 'da-GOOS SAWS' -> 'da-GOOS' (Arabic-origin words only).",
+   "status": "changed",
+   "consistencyEdits": [
+    "pronunciation: 'da-GOOS SAWS' -> 'da-GOOS' (Arabic-origin words only)"
+   ]
+  },
+  {
+   "id": "sa-salad-cucumber-yogurt",
+   "ar": "سلطة الخيار باللبن والنعناع",
+   "enCurrent": "Cucumber Yogurt Mint Salad",
+   "en": "Cucumber Yogurt Mint Salad",
+   "transliterated": false,
+   "pronunciation": null,
+   "meaningEn": "Cucumber in yogurt with dried mint, garlic and olive oil",
+   "meaningAr": "خيار باللبن الزبادي مع النعناع الناشف والثوم وزيت الزيتون",
+   "basis": "plain-english",
+   "sources": [],
+   "notes": "verified. The recipe has cucumber, full-fat yogurt, dried mint, garlic and an olive oil drizzle.",
+   "status": "kept",
+   "consistencyEdits": []
+  }
+ ],
+ "resolvedCollisions": [
+  {
+   "en": "Sayadieh",
+   "ids": [
+    "eg-sayadeya",
+    "sa-sayadeyah"
+   ],
+   "decision": "country tag"
+  },
+  {
+   "en": "Bissara",
+   "ids": [
+    "eg-bessara",
+    "ma-bessara"
+   ],
+   "decision": "country tag"
+  }
+ ],
+ "spellingDecisions": [
+  {
+   "id": "sa-mutabbaq",
+   "chosen": "Mutabbaq",
+   "rejected": [
+    "Murtabak",
+    "Mutabak"
+   ],
+   "evidence": "Saudi/Hejazi sources write 'Mutabbaq': ButFirstChai, Theodehlicious, House of Saud Jeddah and Riyadh street-food guides, Expatica, D Magazine (2026). 'Murtabak' is the Southeast Asian name of the wider family.",
+   "decidedAt": "2026-11-21"
+  },
+  {
+   "id": "sa-luqaimat",
+   "chosen": "Luqaimat",
+   "rejected": [
+    "Lokma",
+    "Lgeimat",
+    "Lqeimat"
+   ],
+   "evidence": "'Luqaimat' is the spelling used by Gulf News, The National, Gulf Today, Khaleej Times, the Michelin Guide Dubai and Munaty Cooking. 'Lokma' is the Turkish family name; Saveur's 'Lgeimat' is a one-off.",
+   "decidedAt": "2026-11-21"
+  },
+  {
+   "id": "eg-balah-el-sham",
+   "chosen": "Balah el Sham",
+   "rejected": [
+    "Tulumba"
+   ],
+   "evidence": "Every English source on the Egyptian dish uses 'Balah el Sham': Egyptian Epicurean, Amira's Pantry, Arla Foods UK, Gulf Times, Afrifoodnetwork, Onmanorama. 'Tulumba' is the Turkish/Balkan name and is not used for the Egyptian sweet.",
+   "decidedAt": "2026-11-21"
+  },
+  {
+   "id": "sh-kafta-kefta",
+   "chosen": "Grilled Kafta",
+   "rejected": [
+    "Grilled Kofta"
+   ],
+   "evidence": "Levantine sources write 'Kafta' for this grilled skewer: Saveur 'Kafta (Lebanese Beef Kebabs)', SBS Food 'Kafta skewers', The Matbakh 'Lebanese Grilled Kafta Skewers', Maureen Abood 'Lebanese Beef Kafta'. Same per-country rule as Moroccan 'Kefta'; Egyptian dishes keep 'Kofta'.",
+   "decidedAt": "2026-11-21"
+  },
+  {
+   "id": "eg-fatta",
+   "chosen": "Fattah",
+   "rejected": [
+    "Fatteh",
+    "Fatta"
+   ],
+   "evidence": "English sources on the Egyptian Eid dish write 'Fattah': Amira's Pantry, Daily News Egypt, Middle East Eye, Munaty Cooking, The Happy Foodie (Munira Mahmud), Petitchef. 'Fatteh' is the Levantine form; Chez Nermine's 'Fatta' is a minority spelling.",
+   "decidedAt": "2026-11-21"
+  },
+  {
+   "id": "sh-warak-enab",
+   "chosen": "Warak Enab",
+   "rejected": [
+    "Stuffed Grape Leaves"
+   ],
+   "evidence": "Lebanese restaurant menus list it as 'Warak Enab' (ilili NYC/DC, Al Wadi), and recipe sites title it 'Warak Enab' (The Matbakh, Hungry Paprikas, Theodehlicious). Owner rule prefers the established dish name over a plain-English description.",
+   "decidedAt": "2026-11-21"
+  },
+  {
+   "id": "ma-rghaif",
+   "chosen": "Msemmen",
+   "rejected": [
+    "Rghaif"
+   ],
+   "evidence": "'Msemmen/Msemen' is far more used in English than 'Rghaif' (Wikipedia title Msemmen, Taste of Maroc, Tasting Table, Morocco World News, Salima's Kitchen); Rghaif appears mostly as an aside. Kept the Wikipedia double-m spelling; 'Msemen' is the common single-m variant.",
+   "decidedAt": "2026-11-21"
+  }
+ ]
+}

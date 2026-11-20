@@ -493,6 +493,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailIngredients => 'Ingredients';
 
   @override
+  String get detailPronunciation => 'Pronunciation';
+
+  @override
   String get detailWaysOpenError =>
       'Couldn\'t open the ways. Go back and try again.';
 

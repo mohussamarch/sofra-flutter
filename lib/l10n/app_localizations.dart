@@ -866,6 +866,12 @@ abstract class AppLocalizations {
   /// **'المكونات'**
   String get detailIngredients;
 
+  /// No description provided for @detailPronunciation.
+  ///
+  /// In ar, this message translates to:
+  /// **'النطق'**
+  String get detailPronunciation;
+
   /// No description provided for @detailWaysOpenError.
   ///
   /// In ar, this message translates to:

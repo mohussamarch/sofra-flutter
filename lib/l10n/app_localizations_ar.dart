@@ -466,6 +466,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detailIngredients => 'المكونات';
 
   @override
+  String get detailPronunciation => 'النطق';
+
+  @override
   String get detailWaysOpenError => 'تعذّر فتح الطرق. ارجع وحاول مرة أخرى.';
 
   @override
