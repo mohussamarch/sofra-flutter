@@ -112,7 +112,7 @@ extension StockRecipeDiscovery on SofraController {
                 ),
           )
           .length;
-      previews[sources[index].id] = recipe.servings != null
+      previews[sources[index].id] = recipe.hasKnownYield
           ? RecipeStockPreview.fromCheck(
               checkStock(recipe.forServings(profile.servings)),
               present: present,

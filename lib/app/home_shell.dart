@@ -102,9 +102,20 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   void initState() {
     super.initState();
     controller.addListener(_publishLook);
+    // Preview builds only (--dart-define=SOFRA_PREVIEW=true): ?recipe=<id>
+    // skips onboarding and opens that recipe directly, for screenshots.
+    const preview = bool.fromEnvironment('SOFRA_PREVIEW');
+    final previewRecipe = preview ? Uri.base.queryParameters['recipe'] : null;
+    if (previewRecipe != null) {
+      recipeId = previewRecipe;
+      view = _View.recipe;
+    }
     controller.load().then((_) {
       name.text = controller.profile.name;
       house.text = controller.profile.house;
+      if (previewRecipe != null && !controller.profile.onboarded) {
+        controller.updateProfile((p) => p.copyWith(onboarded: true));
+      }
     });
   }
 

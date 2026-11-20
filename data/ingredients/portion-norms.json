@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "note": "Per-person portions, raw and as bought. per = amount for one person (g, ml or count); band = [min, max] a plausible per-person amount when checking a stated source yield; cupG = grams (or ml) in one cup; pieceG = grams in one piece; piecesPerPerson = pieces one person eats when a batch is counted in pieces. Owner anchor: one person's dry pasta is about 200 g. Read by lib/domain/servings_engine.dart (through the generated servings_tables.g.dart) and tool/recipes/servings-engine.mjs.",
+  "norms": {
+    "pastaDry": { "per": 200, "unit": "g", "band": [100, 250], "cupG": 100, "role": "starch", "basis": "Owner anchor: a full Egyptian home plate as the main dish" },
+    "noodlesDry": { "per": 120, "unit": "g", "band": [70, 180], "cupG": 80, "role": "starch", "basis": "Lighter than pasta, often eaten with protein" },
+    "riceRaw": { "per": 150, "unit": "g", "band": [75, 250], "cupG": 200, "role": "starch", "basis": "About 3/4 cup raw; 1 kg feeds 6-7 in kabsa or mandi" },
+    "bulgur": { "per": 120, "unit": "g", "band": [60, 180], "cupG": 170, "role": "starch", "basis": "Swells more than rice" },
+    "freekeh": { "per": 120, "unit": "g", "band": [60, 180], "cupG": 170, "role": "starch", "basis": "Swells more than rice" },
+    "couscous": { "per": 120, "unit": "g", "band": [60, 180], "cupG": 180, "role": "starch", "basis": "Swells more than rice" },
+    "legumeDry": { "per": 100, "unit": "g", "band": [50, 150], "cupG": 190, "role": "starch", "basis": "As the main dish: koshary, ful, stews" },
+    "legumeCanned": { "per": 200, "unit": "g", "band": [120, 300], "cupG": 165, "pieceG": 400, "role": "starch", "basis": "Drained weight; 1 can = 400 g" },
+    "meatBoneless": { "per": 200, "unit": "g", "band": [125, 300], "role": "protein", "basis": "1 kg boneless feeds 5" },
+    "meatBoneIn": { "per": 300, "unit": "g", "band": [200, 450], "pieceG": 350, "role": "protein", "basis": "Allows for bone loss; one shank = 350 g" },
+    "mince": { "per": 150, "unit": "g", "band": [100, 250], "cupG": 225, "role": "protein", "basis": "Usually mixed with bread or rice" },
+    "chickenWhole": { "per": 350, "unit": "g", "band": [250, 500], "pieceG": 1300, "role": "protein", "basis": "Egyptian quarter chicken; one bird = 1.3 kg" },
+    "chickenBoneIn": { "per": 300, "unit": "g", "band": [200, 450], "pieceG": 150, "role": "protein", "basis": "About 2 thighs, drumsticks or wings" },
+    "chickenBoneless": { "per": 180, "unit": "g", "band": [120, 250], "pieceG": 220, "role": "protein", "basis": "One breast = 220 g" },
+    "fish": { "per": 250, "unit": "g", "band": [150, 400], "pieceG": 400, "role": "protein", "basis": "Whole fish or fillet; one fish = 400 g" },
+    "seafood": { "per": 200, "unit": "g", "band": [120, 300], "cupG": 150, "role": "protein", "basis": "Shrimp, calamari" },
+    "liver": { "per": 150, "unit": "g", "band": [100, 250], "role": "protein", "basis": "Beef or chicken liver" },
+    "eggsMain": { "per": 2, "unit": "count", "band": [1, 3], "role": "protein", "basis": "Only when eggs are the dish itself" },
+    "tofu": { "per": 150, "unit": "g", "band": [100, 250], "pieceG": 400, "role": "protein", "basis": "One block = 400 g" },
+    "potatoMain": { "per": 250, "unit": "g", "band": [150, 400], "cupG": 150, "pieceG": 200, "role": "veg", "basis": "One potato = 200 g" },
+    "vegMain": { "per": 250, "unit": "g", "band": [120, 400], "cupG": 150, "pieceG": 200, "role": "veg", "basis": "Vegetable stew or casserole" },
+    "leafyMain": { "per": 100, "unit": "g", "band": [60, 150], "cupG": 40, "role": "veg", "basis": "A 400 g pack of molokhia feeds 4" },
+    "saladVeg": { "per": 150, "unit": "g", "band": [80, 250], "cupG": 100, "pieceG": 150, "role": "veg", "basis": "Side salad" },
+    "dipBase": { "per": 70, "unit": "g", "band": [40, 120], "cupG": 165, "pieceG": 250, "role": "starch", "basis": "Mezze portion of the dry or cooked base" },
+    "flourBread": { "per": 100, "unit": "g", "band": [60, 150], "cupG": 125, "piecesPerPerson": 2, "role": "batch", "basis": "Bread, pizza, savoury pastries" },
+    "dessertBase": { "per": 60, "unit": "g", "band": [30, 100], "cupG": 125, "piecesPerPerson": 3, "role": "batch", "basis": "Cakes, basbousa, cookies" },
+    "milkDessert": { "per": 180, "unit": "ml", "band": [120, 250], "cupG": 240, "role": "liquid", "basis": "Rice pudding, mahallabia, panna cotta" },
+    "soupLiquid": { "per": 350, "unit": "ml", "band": [250, 500], "cupG": 240, "role": "liquid", "basis": "One bowl after reduction" },
+    "drink": { "per": 250, "unit": "ml", "band": [150, 350], "cupG": 240, "role": "liquid", "basis": "One glass" }
+  },
+  "cupGById": {
+    "flour": 125, "self-raising-flour": 125, "semolina": 170, "oats": 90,
+    "rice": 200, "basmati-rice": 190, "bulgur": 170, "lentils": 190, "red-lentils": 190,
+    "vermicelli": 80
+  },
+  "units": {
+    "mass": { "جرام": 1, "غرام": 1, "جم": 1, "g": 1, "gram": 1, "grams": 1, "كيلو": 1000, "كيلوغرام": 1000, "كيلوجرام": 1000, "kg": 1000, "رطل": 454, "باوند": 454, "lb": 454, "lbs": 454, "pound": 454, "أونصة": 28.35, "oz": 28.35, "ounce": 28.35 },
+    "volume": { "مل": 1, "ملليلتر": 1, "مليلتر": 1, "ml": 1, "لتر": 1000, "l": 1000, "ديسيلتر": 100, "dl": 100, "كوارت": 946, "quart": 946 },
+    "cup": { "كوب": 1, "كأس": 1, "cup": 1, "cups": 1, "ملعقة كبيرة": 0.0625, "ملعقة": 0.0625, "tbsp": 0.0625, "ملعقة صغيرة": 0.020833333333333332, "tsp": 0.020833333333333332 },
+    "piecePattern": "حب|قطع|دجاج|سمك|بيض|فخذ|جناح|صدر|فيليه|عدد|رأس|علب|عبوة|piece|whole|can",
+    "genericCupG": 240,
+    "genericPieceG": 100
+  },
+  "rules": {
+    "driverMinPeople": 0.5,
+    "combine": { "2": 0.7, "3": 0.55 },
+    "clamp": [1, 20],
+    "range": [0.8, 1.2],
+    "confidence": {
+      "highAgree": 1.6,
+      "highMappedShare": 0.8,
+      "mediumAgree": 2.5,
+      "lowUnmappedShare": 0.4,
+      "smallSinglePeople": 1.5
+    },
+    "naturalPieceCategories": ["chickenWhole", "chickenBoneIn", "chickenBoneless", "meatBoneIn", "fish", "eggsMain", "legumeCanned", "tofu"],
+    "sourceCountsPiecesRatio": 2.5,
+    "mappingGapMappedShare": 0.6
+  }
+}

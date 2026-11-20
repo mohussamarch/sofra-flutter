@@ -20,6 +20,10 @@
 //   dishes.json     dish groups, as in recipes/data.
 //   r/<sha256>.json one recipe body each, content addressed (cached forever).
 //
+// Every row and body also carries the servings engine's verdict
+// (tool/recipes/servings-engine.mjs): servingsComputed, servingsRange,
+// servingsBasis and servingsConfidence. `servings` stays the source value.
+//
 // generatedAt only changes when the content changes: an unchanged library
 // keeps the timestamp of the previous build in the output folder. Pass
 // --generated-at ISO or SOURCE_DATE_EPOCH to pin it.
@@ -27,6 +31,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { defaultEngine, servingsFields } from './servings-engine.mjs';
 
 export const SCHEMA = 1;
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -145,7 +150,7 @@ export function validateCatalog(index) {
 }
 
 /// Builds every published file in memory: {relativePath: text}.
-export function buildLibrary(dataDir, { generatedAt } = {}) {
+export function buildLibrary(dataDir, { generatedAt, engine = defaultEngine() } = {}) {
   const read = (name) => JSON.parse(fs.readFileSync(path.join(dataDir, name), 'utf8'));
   const index = read('index.json');
   if (!Array.isArray(index.recipes) || !Array.isArray(index.cuisines)) {
@@ -166,14 +171,16 @@ export function buildLibrary(dataDir, { generatedAt } = {}) {
     seen.add(row.id);
     const found = bodies.get(row.id);
     if (!found || found.file !== row.file) throw new Error(`no body for ${row.id} in ${row.file}`);
-    const { recipe } = found;
-    if (recipe.cuisine !== row.cuisine || (recipe.servings ?? null) !== (row.servings ?? null)) {
+    const { recipe: source } = found;
+    if (source.cuisine !== row.cuisine || (source.servings ?? null) !== (row.servings ?? null)) {
       throw new Error(`index/body mismatch for ${row.id}`);
     }
+    const servings = servingsFields(engine.compute(source));
+    const recipe = { ...source, ...servings };
     const text = JSON.stringify(recipe);
     const sha = sha256(text);
     files[`r/${sha}.json`] = text;
-    const out = { ...row, ...imageFields(row, recipe), body: sha };
+    const out = { ...row, ...imageFields(row, recipe), ...servings, body: sha };
     if (row.catalogStatus === 'active') {
       out.ingredients = recipe.ingredients.map(compactIngredient);
     }

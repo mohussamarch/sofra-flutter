@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import '../l10n/l10n.dart';
+import 'servings_engine.dart';
 
 double _number(Object? value, String field, {bool zero = false}) {
   if (value is! num || !value.isFinite || (zero ? value < 0 : value <= 0)) {
@@ -123,7 +124,8 @@ class CatalogRecipe {
         ),
       ),
       tags = List<String>.unmodifiable((json['tags'] as List).cast<String>()),
-      notes = json['notes'] as String? {
+      notes = json['notes'] as String?,
+      storedServings = ServingsEstimate.fromJson(json) {
     final allowsUnknown = metadataPolicy == unknownMetadataPolicy;
     final rawSteps = json['steps'] as List;
     if ((metadataPolicy != null && !allowsUnknown) ||
@@ -166,6 +168,7 @@ class CatalogRecipe {
       }
     }
   }
+
   /// Ingredients and yield only, from a catalog index row of the online
   /// library: for listing, search and stock matching. It has no steps,
   /// description or times; planning and cooking open the full recipe.
@@ -192,14 +195,64 @@ class CatalogRecipe {
       tags = List<String>.unmodifiable(
         ((row['tags'] as List?) ?? const []).cast<String>(),
       ),
-      notes = null;
+      notes = null,
+      storedServings = ServingsEstimate.fromJson(row);
 
   final String id, name, cuisine, category, description, difficulty;
   static const unknownMetadataPolicy = 'source-unknowns-v1';
   final String? metadataPolicy;
   final int? servings;
   final double? prepMinutes, cookMinutes;
-  bool get hasKnownYield => servings != null;
+
+  /// The servings-engine fields written by the library build
+  /// (tool/recipes/publish-library.mjs), when the recipe carries them.
+  final ServingsEstimate? storedServings;
+
+  static final _estimates = Expando<ServingsEstimate>('servings');
+
+  /// The engine's verdict: the stored build-time fields, or computed here
+  /// (recipes published before the fields existed, and the user's own).
+  ServingsEstimate get servingsEstimate =>
+      storedServings ??
+      (_estimates[this] ??= ServingsEngine.shared.estimate(
+        category: category,
+        servings: servings,
+        lines: [
+          for (final i in ingredients)
+            ServingsLine(
+              id: i.id,
+              name: i.name,
+              amount: i.amount,
+              unit: i.unit,
+              optional: i.optional,
+            ),
+        ],
+      ));
+
+  /// How many people the whole recipe feeds, as the app scales it: the
+  /// stated [servings] unless the library build rejected it as implausible
+  /// (then the engine's number); without a stated value, the engine's number.
+  /// A stated value is never overridden at runtime, so the user's own
+  /// recipes and reviewed yields keep theirs.
+  int? get effectiveServings {
+    final stored = storedServings;
+    if (servings != null) {
+      if (stored != null &&
+          stored.basis == ServingsBasisSource.computed &&
+          stored.hasValue) {
+        return stored.computed;
+      }
+      return servings;
+    }
+    final estimate = servingsEstimate;
+    return estimate.hasValue ? estimate.computed : null;
+  }
+
+  /// Whether [effectiveServings] is the engine's number, not the source's.
+  bool get servingsComputedByApp =>
+      effectiveServings != null && effectiveServings != servings;
+
+  bool get hasKnownYield => effectiveServings != null;
   bool get hasKnownTotalTime => prepMinutes != null && cookMinutes != null;
   bool get hasCompleteSchedule => steps.every((step) => step.minutes != null);
   double? get totalMinutes =>
@@ -225,13 +278,14 @@ class CatalogRecipe {
     'steps': steps.map((v) => v.toJson()).toList(),
     'tags': tags.toList(),
     'notes': notes,
+    ...?storedServings?.toJson(),
   };
 
   ScaledCatalogRecipe forServings(int target, {int? sourceServings}) {
     if (target < 1 || target > 1000) {
       throw ArgumentError.value(target, 'servings');
     }
-    final base = servings ?? sourceServings;
+    final base = effectiveServings ?? sourceServings;
     if (base == null || base < 1 || base > 1000) {
       throw ArgumentError(
         'Explicit valid sourceServings required for unknown yield',
@@ -244,7 +298,7 @@ class CatalogRecipe {
 class ScaledCatalogRecipe {
   ScaledCatalogRecipe(this.recipe, this.servings, [int? sourceServings])
     : sourceServings =
-          recipe.servings ??
+          recipe.effectiveServings ??
           sourceServings ??
           (throw ArgumentError('Explicit source yield required')) {
     if (servings < 1 ||

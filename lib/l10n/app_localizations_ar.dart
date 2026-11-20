@@ -412,8 +412,30 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String detailYieldServes(int count) {
-    return 'تكفي $count أفراد';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'تكفي $count فردًا',
+      few: 'تكفي $count أفراد',
+      two: 'تكفي فردين',
+      one: 'تكفي فردًا واحدًا',
+    );
+    return '$_temp0';
   }
+
+  @override
+  String get servingsInfoLabel => 'كيف حُسب عدد الأفراد';
+
+  @override
+  String servingsInfoBasis(String amount, String ingredient, String norm) {
+    return 'بناءً على $amount $ingredient، بمعدل $norm تقريبًا للفرد.';
+  }
+
+  @override
+  String get servingsInfoLow => 'هذا تقدير تقريبي، فعدّله إن لم يكن مناسبًا.';
+
+  @override
+  String get servingsInfoAdjust => 'تعديل العدد';
 
   @override
   String get detailPlanned => 'الوجبة على السفرة، والمخزون لم يتغير';

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'recipe_catalog.dart';
 import 'recipe_yield_review.dart';
+import 'servings_engine.dart';
 import 'imported_recipe_candidate.dart';
 import 'personal_recipe_finalization.dart';
 
@@ -336,7 +337,9 @@ RecipeRevision buildRecipeYieldRevision({
     revision: revision,
     kind: RecipeRevisionKind.personal,
     recipe: CatalogRecipe.fromJson({
-      ...source.recipe.toJson(),
+      // The user's yield replaces the engine's verdict on the source.
+      ...source.recipe.toJson()
+        ..removeWhere((k, _) => ServingsEstimate.fieldKeys.contains(k)),
       'id': variantId,
       'servings': baseServings,
     }),

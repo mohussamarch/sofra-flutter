@@ -5,6 +5,7 @@ import '../app/sofra_controller.dart';
 import '../data/recipe_photo_library.dart';
 import '../data/recipe_repository.dart';
 import '../domain/recipe_catalog.dart';
+import '../domain/servings_engine.dart';
 import '../l10n/l10n.dart';
 import '../ui/design.dart';
 import '../ui/flags.dart';
@@ -192,7 +193,9 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     final c = this.c;
     final t = context.l10n;
     final listSep = t.detailListSeparator;
-    final known = planning.servings != null;
+    // Known when the source states it, the servings engine computed it, or
+    // the user set it; the yellow question only shows when none can.
+    final known = planning.hasKnownYield;
     final people = servings ?? c.profile.servings;
     final scaled = known ? planning.forServings(people) : null;
     final check = scaled == null ? null : c.checkStock(scaled);
@@ -282,11 +285,13 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         Wrap(
           spacing: 8,
           runSpacing: 8,
+          crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             SoftTag(
               minutesLabel(scaled?.totalMinutes ?? source.totalMinutes),
               icon: Icons.schedule_rounded,
             ),
+            if (known) _servingsTag(source, planning),
             SoftTag(L10n.term(source.cuisine)),
             SoftTag(L10n.term(source.category)),
             if (source.difficulty.isNotEmpty)
@@ -427,6 +432,144 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       return '${recipeNumber(grams)} ${L10n.term('جم')}'; // i18n-data
     }
     return '${recipeNumber(amount)} ${L10n.term(i.unit ?? '')}'.trim();
+  }
+
+  /// The whole recipe's yield. When the app worked it out (or the user set
+  /// it), a muted (i) opens how, and the place to change it.
+  Widget _servingsTag(CatalogRecipe source, CatalogRecipe planning) {
+    final t = context.l10n;
+    final count = planning.effectiveServings!;
+    final userSet = planning.id != source.id;
+    final tag = SoftTag(t.detailYieldServes(count), icon: Icons.groups_rounded);
+    if (!userSet && !planning.servingsComputedByApp) return tag;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        tag,
+        IconButton(
+          key: const ValueKey('servings-info'),
+          tooltip: t.servingsInfoLabel,
+          onPressed: () => _servingsInfo(source, count, userSet),
+          icon: const Icon(Icons.info_outline_rounded),
+          iconSize: 18,
+          color: Sofra.muted,
+          constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
+          padding: EdgeInsets.zero,
+        ),
+      ],
+    );
+  }
+
+  Future<void> _servingsInfo(
+    CatalogRecipe source,
+    int count,
+    bool userSet,
+  ) async {
+    final t = context.l10n;
+    final direction = Directionality.of(context);
+    final estimate = source.servingsEstimate;
+    final driver = userSet ? null : estimate.mainDriver;
+    String? basis;
+    if (driver != null) {
+      final line = source.ingredients
+          .where((i) => i.id == driver.ingredientId)
+          .firstOrNull;
+      final per = ServingsEngine.shared.perPerson(driver.category);
+      if (line != null && per != null) {
+        basis = t.servingsInfoBasis(
+          _portion(driver.amount, driver.unit),
+          L10n.term(line.name),
+          _portion(per, driver.unit),
+        );
+      }
+    }
+    final low = !userSet && estimate.confidence == ServingsConfidence.low;
+    var guess = count.clamp(1, 20);
+    final chosen = await showModalBottomSheet<int>(
+      context: context,
+      builder: (ctx) => Directionality(
+        textDirection: direction,
+        child: StatefulBuilder(
+          builder: (ctx, setSheet) => SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    t.detailYieldServes(count),
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                  if (basis != null) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      basis,
+                      key: const ValueKey('servings-basis'),
+                      style: TextStyle(color: Sofra.muted),
+                    ),
+                  ],
+                  if (low) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      t.servingsInfoLow,
+                      key: const ValueKey('servings-low'),
+                      style: TextStyle(color: Sofra.muted, fontSize: 12),
+                    ),
+                  ],
+                  const SizedBox(height: 20),
+                  Text(
+                    t.servingsInfoAdjust,
+                    style: const TextStyle(fontWeight: FontWeight.w800),
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Counter(
+                        value: guess,
+                        max: 20,
+                        onChanged: (v) => setSheet(() => guess = v),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: DepthButton(
+                          key: const ValueKey('servings-adjust'),
+                          compact: true,
+                          label: t.detailYieldServes(guess),
+                          onPressed: guess == count
+                              ? null
+                              : () => Navigator.pop(ctx, guess),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    if (chosen == null || !mounted) return;
+    if (await c.reviewYield(widget.recipeId, chosen)) {
+      setState(() => recipe = _load());
+    }
+  }
+
+  /// An engine amount in g, ml or pieces, in the recipe's own units.
+  String _portion(double value, String unit) {
+    String inUnit(double v, String term) =>
+        '${recipeNumber(roundRecipeAmount(v, term))} ${L10n.term(term)}';
+    return switch (unit) {
+      'g' when value >= 1000 => inUnit(value / 1000, 'كيلو'), // i18n-data
+      'g' => inUnit(value, 'جرام'), // i18n-data
+      'ml' when value >= 1000 => inUnit(value / 1000, 'لتر'), // i18n-data
+      'ml' => inUnit(value, 'مل'), // i18n-data
+      _ => inUnit(value, 'حبة'), // i18n-data
+    };
   }
 
   Widget _yieldReview() => Surface(

@@ -127,7 +127,7 @@ void main() {
           continue;
         }
         final result = assessRecipeNutrition(
-          scaled: recipe.forServings(recipe.servings!),
+          scaled: recipe.forServings(recipe.effectiveServings!),
           selections: [],
         );
         expect(result.whole[NutrientId.protein]!.value, null);

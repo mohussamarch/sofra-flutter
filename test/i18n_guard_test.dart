@@ -11,6 +11,8 @@ const dataFiles = <String>{
   'lib/domain/quick_add.dart',
   // Generated: ingredient-group ids from vocabulary.json -> symbol.
   'lib/ui/symbols.g.dart',
+  // Generated: servings-engine tables (ingredient names, units, keywords).
+  'lib/domain/servings_tables.g.dart',
   // Sample household content, like the recipe JSON.
   'lib/data/demo_data.dart',
   // Dev spike entry point, not part of the shipped app.

@@ -9,7 +9,10 @@
 // - every measured line has a unit; ranges keep the lower bound, the range
 //   stays in the line note (no extra fields);
 // - the cuisine is concrete and belongs to one display group;
-// - no pork or alcohol (content policy, 26 October 2026).
+// - no pork or alcohol (content policy, 26 October 2026);
+// - servings may be missing when the servings engine can compute them with
+//   at least medium confidence (tool/recipes/servings-engine.mjs); the
+//   recipe then keeps servings null under source-unknowns-v1.
 //
 // Candidates already in the catalog (same id, or same name) are skipped, so
 // the script can run again as new candidate files arrive.
@@ -18,6 +21,7 @@
 import {readFileSync, writeFileSync, readdirSync, existsSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {review} from './hold-content.mjs';
+import {defaultEngine} from './servings-engine.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const indexFile = `${root}recipes/data/index.json`;
@@ -51,13 +55,20 @@ function need(ok, message) {
 
 const number = (v) => typeof v === 'number' && Number.isFinite(v);
 
+/** Whether the app can compute servings itself: engine confidence >= medium. */
+export function servingsComputable(c, engine = defaultEngine()) {
+  const r = engine.compute({...c, servings: null});
+  return r.servingsConfidence === 'high' || r.servingsConfidence === 'medium';
+}
+
 /** One candidate in catalog shape, or an error saying what is missing. */
 export function normalize(c) {
   need(typeof c.id === 'string' && /^[a-z0-9-]+$/.test(c.id), 'bad id');
   for (const k of ['name', 'cuisine', 'category', 'description']) {
     need(typeof c[k] === 'string' && c[k].trim(), `missing ${k}`);
   }
-  need(Number.isInteger(c.servings) && c.servings > 0, 'servings must be stated');
+  const stated = Number.isInteger(c.servings) && c.servings > 0;
+  need(stated || servingsComputable(c), 'servings must be stated or computable');
   need(c.source && /^https?:\/\//.test(c.source.url ?? ''), 'source url required');
   const reasons = review(c);
   need(!reasons.length, `pork/alcohol: ${reasons.map((r) => r.hit).join(',')}`);
@@ -99,8 +110,9 @@ export function normalize(c) {
   if (number(c.totalTime) && c.totalTime !== total) {
     notes.push(`الوقت الإجمالي في المصدر ${c.totalTime} دقيقة`);
   }
+  if (!stated) notes.push('المصدر لا يذكر عدد الأفراد؛ يحسبه التطبيق من المقادير.');
   notes.push('المقادير والأوقات من المصدر؛ الخطوات مكتوبة بصياغتنا، ولم يُستنتج مقدار أو زمن غير مذكور.');
-  const unknown = prep == null || cook == null || steps.some((s) => s.duration == null);
+  const unknown = !stated || prep == null || cook == null || steps.some((s) => s.duration == null);
 
   const cuisine = cuisineSpelling[c.cuisine.trim()] ?? c.cuisine.trim();
   const recipe = {
@@ -110,7 +122,7 @@ export function normalize(c) {
     cuisine,
     category: c.category.trim(),
     description: c.description.trim(),
-    servings: c.servings,
+    servings: stated ? c.servings : null,
     prepTime: prep,
     cookTime: cook,
     totalTime: total,

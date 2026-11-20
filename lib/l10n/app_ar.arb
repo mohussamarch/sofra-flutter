@@ -243,7 +243,7 @@
   "detailToTaste": "حسب الرغبة",
   "detailYieldUnknown": "لم يذكر المصدر عدد من تكفيهم هذه الوصفة",
   "detailYieldAsk": "لنضبط الكميات ونضعها على السفرة، أخبرنا كم فردًا تكفي الوصفة كلها تقريبًا. الوصفة الأصلية لن تتغير.",
-  "detailYieldServes": "تكفي {count} أفراد",
+  "detailYieldServes": "{count, plural, =1{تكفي فردًا واحدًا} =2{تكفي فردين} few{تكفي {count} أفراد} other{تكفي {count} فردًا}}",
   "@detailYieldServes": {
     "placeholders": {
       "count": {
@@ -251,6 +251,17 @@
       }
     }
   },
+  "servingsInfoLabel": "كيف حُسب عدد الأفراد",
+  "servingsInfoBasis": "بناءً على {amount} {ingredient}، بمعدل {norm} تقريبًا للفرد.",
+  "@servingsInfoBasis": {
+    "placeholders": {
+      "amount": {"type": "String"},
+      "ingredient": {"type": "String"},
+      "norm": {"type": "String"}
+    }
+  },
+  "servingsInfoLow": "هذا تقدير تقريبي، فعدّله إن لم يكن مناسبًا.",
+  "servingsInfoAdjust": "تعديل العدد",
   "detailPlanned": "الوجبة على السفرة، والمخزون لم يتغير",
   "detailWaysToMake": "{count, plural, =1{طريقة واحدة لعملها} =2{طريقتان لعملها} few{{count} طرق لعملها} many{{count} طريقة لعملها} other{{count} طريقة لعملها}}",
   "@detailWaysToMake": {

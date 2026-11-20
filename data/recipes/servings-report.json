@@ -1,0 +1,1546 @@
+{
+ "version": 1,
+ "summary": {
+  "recipes": 931,
+  "catalog": 789,
+  "candidates": 142,
+  "sourceStates": 457,
+  "sourceMissing": 474,
+  "computed": 668,
+  "computedWithoutSource": 292,
+  "withEffectiveServings": 749,
+  "withoutServings": 182,
+  "medianSourceToComputed": 1.25
+ },
+ "finalSource": {
+  "computed, no source value": 292,
+  "computed, source value rejected": 86,
+  "nothing": 182,
+  "plausible source value": 243,
+  "source kept (engine low confidence)": 47,
+  "source only (engine found no driver)": 81
+ },
+ "confidence": {
+  "high": 102,
+  "low": 159,
+  "medium": 407,
+  "none": 263
+ },
+ "distribution": {
+  "1": 69,
+  "2": 100,
+  "3": 144,
+  "4": 133,
+  "5": 85,
+  "6": 39,
+  "7": 40,
+  "8": 13,
+  "9-20": 45
+ },
+ "kinds": {
+  "base": 16,
+  "bread": 43,
+  "dessert": 100,
+  "dip": 36,
+  "drink": 6,
+  "main": 602,
+  "salad": 40,
+  "soup": 88
+ },
+ "mismatchReasons": {
+  "driverAmbiguous": 16,
+  "sourceCountsPieces": 5,
+  "sourceInflated": 65
+ },
+ "noValueReasons": {
+  "driverTooSmall": 49,
+  "noDriverIngredient": 42,
+  "noMeasuredDriver": 156,
+  "notApplicable": 16
+ },
+ "mismatches": [
+  {
+   "id": "bc650-ukrainian-vareniki",
+   "file": "recipes/data/ukrainian.json",
+   "name": "فارينيكي أوكرانية بالبطاطا والفطر",
+   "catalog": true,
+   "source": 45,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 11.7,
+   "drivers": [
+    "vegMain:bc650-ukrainian-vareniki-ing-8=525g"
+   ]
+  },
+  {
+   "id": "eg-ghorayeba",
+   "file": "recipes/data/egyptian.json",
+   "name": "غريبة مصرية",
+   "catalog": true,
+   "source": 35,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceCountsPieces",
+   "impliedPerPerson": 7.1,
+   "drivers": [
+    "dessertBase:flour=250g"
+   ]
+  },
+  {
+   "id": "eg-ghorayeba",
+   "file": "data/recipes/candidates-20261026/egyptian.json",
+   "name": "غريبة مصرية",
+   "catalog": false,
+   "source": 35,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceCountsPieces",
+   "impliedPerPerson": 7.1,
+   "drivers": [
+    "dessertBase:flour=250g"
+   ]
+  },
+  {
+   "id": "fiw650-50500",
+   "file": "recipes/data/mexican.json",
+   "name": "صينية مكسيكية بالخضار والفاصولياء",
+   "catalog": true,
+   "source": 16,
+   "computed": 2,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 30.6,
+   "drivers": [
+    "eggsMain:fiw650-50500-i11=3count",
+    "legumeCanned:fiw650-50500-i4=400g"
+   ]
+  },
+  {
+   "id": "bc-tajine",
+   "file": "recipes/data/tunisian.json",
+   "name": "طاجين تونسي",
+   "catalog": true,
+   "source": 12,
+   "computed": 2,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 34.9,
+   "drivers": [
+    "chickenBoneless:bc-tajine-ing-1=454g",
+    "potatoMain:bc-tajine-ing-3=200g"
+   ]
+  },
+  {
+   "id": "eg-mesaqaa-bel-lahma",
+   "file": "recipes/data/egyptian.json",
+   "name": "مسقعة باللحمة المفرومة",
+   "catalog": true,
+   "source": 12,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 68.1,
+   "drivers": [
+    "meatBoneless:beef=454g",
+    "vegMain:eggplant=600g"
+   ]
+  },
+  {
+   "id": "lv-shish-barak",
+   "file": "recipes/data/levantine.json",
+   "name": "شيش برك",
+   "catalog": true,
+   "source": 8,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 43.8,
+   "drivers": [
+    "mince:ground-beef=350g"
+   ]
+  },
+  {
+   "id": "fi650-51917",
+   "file": "recipes/data/unclassified.json",
+   "name": "أودون تمبورا ياباني",
+   "catalog": true,
+   "source": 4,
+   "computed": 1,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 48.1,
+   "drivers": [
+    "eggsMain:fi650-51917-i8=1count",
+    "vegMain:fi650-51917-i12=150g"
+   ]
+  },
+  {
+   "id": "eg-mesaqaa-bel-lahma",
+   "file": "data/recipes/candidates-20261026/egyptian.json",
+   "name": "مسقعة باللحمة المفرومة",
+   "catalog": false,
+   "source": 12,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 68.1,
+   "drivers": [
+    "meatBoneless:beef=454g",
+    "vegMain:eggplant=600g"
+   ]
+  },
+  {
+   "id": "lv-shish-barak",
+   "file": "data/recipes/candidates-20261118/levantine.json",
+   "name": "شيش برك",
+   "catalog": false,
+   "source": 8,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 43.8,
+   "drivers": [
+    "mince:ground-beef=350g"
+   ]
+  },
+  {
+   "id": "bc650-damper",
+   "file": "recipes/data/australian.json",
+   "name": "خبز دامبر الأسترالي",
+   "catalog": true,
+   "source": 15,
+   "computed": 5,
+   "confidence": "medium",
+   "reason": "sourceCountsPieces",
+   "impliedPerPerson": 33.3,
+   "drivers": [
+    "flourBread:bc650-damper-ing-1=500g"
+   ]
+  },
+  {
+   "id": "fiw650-52212",
+   "file": "recipes/data/mexican.json",
+   "name": "حساء الذرة المكسيكي",
+   "catalog": true,
+   "source": 6,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 120,
+   "drivers": [
+    "soupLiquid:fiw650-52212-i1=720ml"
+   ]
+  },
+  {
+   "id": "fiw650-50845",
+   "file": "recipes/data/mexican.json",
+   "name": "رغيف لحم الديك الرومي المكسيكي",
+   "catalog": true,
+   "source": 6,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 75.7,
+   "drivers": [
+    "meatBoneless:fiw650-50845-i0=454g"
+   ]
+  },
+  {
+   "id": "ma-keks-bortokal",
+   "file": "recipes/data/moroccan.json",
+   "name": "كيك البرتقال المغربي",
+   "catalog": true,
+   "source": 12,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceCountsPieces",
+   "impliedPerPerson": 20.8,
+   "drivers": [
+    "dessertBase:flour=250g"
+   ]
+  },
+  {
+   "id": "ma-keks-bortokal",
+   "file": "data/recipes/candidates-20261118/moroccan.json",
+   "name": "كيك البرتقال المغربي",
+   "catalog": false,
+   "source": 12,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceCountsPieces",
+   "impliedPerPerson": 20.8,
+   "drivers": [
+    "dessertBase:flour=250g"
+   ]
+  },
+  {
+   "id": "bc650-ratatouille",
+   "file": "recipes/data/french.json",
+   "name": "راتاتوي بالخضار والطماطم",
+   "catalog": true,
+   "source": 12,
+   "computed": 5,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 94.6,
+   "drivers": [
+    "vegMain:bc650-ratatouille-ing-2=1135g"
+   ]
+  },
+  {
+   "id": "fiw650-53450",
+   "file": "recipes/data/greek.json",
+   "name": "جيروس يوناني بلحم الضأن",
+   "catalog": true,
+   "source": 12,
+   "computed": 5,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 75.7,
+   "drivers": [
+    "meatBoneless:fiw650-53450-i0=908g"
+   ]
+  },
+  {
+   "id": "eg-kebda-bel-rudda",
+   "file": "recipes/data/egyptian.json",
+   "name": "كبدة بالردة",
+   "catalog": true,
+   "source": 3,
+   "computed": 7,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 333.3,
+   "drivers": [
+    "liver:liver=1000g"
+   ]
+  },
+  {
+   "id": "eg-kebda-bel-rudda",
+   "file": "data/recipes/candidates-20261118/egyptian.json",
+   "name": "كبدة بالردة",
+   "catalog": false,
+   "source": 3,
+   "computed": 7,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 333.3,
+   "drivers": [
+    "liver:liver=1000g"
+   ]
+  },
+  {
+   "id": "bc650-easy-chicken-rice-casserole",
+   "file": "recipes/data/international.json",
+   "name": "طاجن دجاج وأرز سهل",
+   "catalog": true,
+   "source": 4,
+   "computed": 9,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 328.1,
+   "drivers": [
+    "riceRaw:bc650-easy-chicken-rice-casserole-ing-1=1312.5g"
+   ]
+  },
+  {
+   "id": "eg-bessara",
+   "file": "recipes/data/egyptian.json",
+   "name": "بصارة",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 34.4,
+   "drivers": [
+    "dipBase:split-fava=206.3g"
+   ]
+  },
+  {
+   "id": "eg-kofta-gambari",
+   "file": "recipes/data/egyptian.json",
+   "name": "كفتة جمبري",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "seafood:shrimp=454g"
+   ]
+  },
+  {
+   "id": "eg-saniyet-batates-bel-lahma",
+   "file": "recipes/data/egyptian.json",
+   "name": "صينية بطاطس باللحمة المفرومة",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 145.7,
+   "drivers": [
+    "meatBoneless:beef=454g",
+    "potatoMain:potato=681g"
+   ]
+  },
+  {
+   "id": "eg-bisella-bel-gazar",
+   "file": "recipes/data/egyptian.json",
+   "name": "بسلة بالجزر",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "vegMain:peas=454g"
+   ]
+  },
+  {
+   "id": "eg-hamam-mahshi-bel-freek",
+   "file": "recipes/data/egyptian.json",
+   "name": "حمام محشي بالفريك",
+   "catalog": true,
+   "source": 2,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 250,
+   "drivers": [
+    "freekeh:freekeh=500g"
+   ]
+  },
+  {
+   "id": "fiw650-50699",
+   "file": "recipes/data/greek.json",
+   "name": "برغر ديك رومي على الطريقة اليونانية",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "meatBoneless:fiw650-50699-i4=454g"
+   ]
+  },
+  {
+   "id": "bc-chicken-paprikash",
+   "file": "recipes/data/hungarian.json",
+   "name": "دجاج بابريكاش",
+   "catalog": true,
+   "source": 8,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 150,
+   "drivers": [
+    "chickenBoneIn:bc-chicken-paprikash-ing-1=1200g"
+   ]
+  },
+  {
+   "id": "mw-chana-masala",
+   "file": "recipes/data/indian.json",
+   "name": "تشانا ماسالا (حمص بالماسالا)",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 47.5,
+   "drivers": [
+    "legumeDry:chickpeas=190g"
+   ]
+  },
+  {
+   "id": "it-lasagna",
+   "file": "recipes/data/italian.json",
+   "name": "لازانيا",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 83.3,
+   "drivers": [
+    "meatBoneless:beef=500g"
+   ]
+  },
+  {
+   "id": "fiw650-51916",
+   "file": "recipes/data/italian.json",
+   "name": "يخنة الفاصولياء والسجق الإيطالية",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 67,
+   "drivers": [
+    "mince:fiw650-51916-i0=454g",
+    "vegMain:fiw650-51916-i9=200g"
+   ]
+  },
+  {
+   "id": "bc650-pasta-alla-norma",
+   "file": "recipes/data/italian.json",
+   "name": "باستا ألا نورما بالباذنجان",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 75,
+   "drivers": [
+    "pastaDry:bc650-pasta-alla-norma-ing-2=300g"
+   ]
+  },
+  {
+   "id": "bc650-spaghetti-alla-puttanesca",
+   "file": "recipes/data/italian.json",
+   "name": "سباغيتي ألا بوتانيسكا",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 82.5,
+   "drivers": [
+    "pastaDry:bc650-spaghetti-alla-puttanesca-ing-2=330g"
+   ]
+  },
+  {
+   "id": "lg-galayet-bandora-lahma",
+   "file": "recipes/data/jordanian.json",
+   "name": "قلاية بندورة باللحمة",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 80.5,
+   "drivers": [
+    "meatBoneless:beef=300g",
+    "potatoMain:potato=200g"
+   ]
+  },
+  {
+   "id": "lv-riz-bi-lahmeh",
+   "file": "recipes/data/jordanian.json",
+   "name": "رز بلحمة أردني",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 66.7,
+   "drivers": [
+    "riceRaw:long-grain-rice=400g"
+   ]
+  },
+  {
+   "id": "lv-malfouf-mahshi",
+   "file": "recipes/data/lebanese.json",
+   "name": "ملفوف محشي بالليمون والنعناع",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 86.6,
+   "drivers": [
+    "mince:ground-meat=300g",
+    "meatBoneless:lamb-bones=300g",
+    "riceRaw:rice=300g",
+    "vegMain:white-cabbage=200g"
+   ]
+  },
+  {
+   "id": "lv-tomato-vermicelli-soup",
+   "file": "recipes/data/levantine.json",
+   "name": "شوربة الشعرية بالطماطم",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 200,
+   "drivers": [
+    "soupLiquid:chicken-broth=1200ml"
+   ]
+  },
+  {
+   "id": "mw-mbakbaka",
+   "file": "recipes/data/libyan.json",
+   "name": "مبكبكة ليبية",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 106.9,
+   "drivers": [
+    "meatBoneless:beef=400g",
+    "pastaDry:pasta=211g"
+   ]
+  },
+  {
+   "id": "bc650-mexican-meat-loaf",
+   "file": "recipes/data/mexican.json",
+   "name": "رغيف لحم على الطريقة المكسيكية",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 108.3,
+   "drivers": [
+    "meatBoneless:bc650-mexican-meat-loaf-ing-1=454g",
+    "legumeCanned:bc650-mexican-meat-loaf-ing-2=165g"
+   ]
+  },
+  {
+   "id": "fi650-56111",
+   "file": "recipes/data/moroccan.json",
+   "name": "خضروات مغربية متبلة مع الكسكس",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 59.5,
+   "drivers": [
+    "couscous:fi650-56111-i13=270g",
+    "potatoMain:fi650-56111-i7=200g",
+    "vegMain:fi650-56111-i10=300g"
+   ]
+  },
+  {
+   "id": "mw-kefta-mkaouara",
+   "file": "recipes/data/moroccan.json",
+   "name": "طاجين كفتة بالطماطم والبيض (كفتة مقاورة)",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "meatBoneless:beef=454g"
+   ]
+  },
+  {
+   "id": "ma-rfissa-dajaj",
+   "file": "recipes/data/moroccan.json",
+   "name": "رفيسة بالدجاج والعدس",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 190.5,
+   "drivers": [
+    "chickenWhole:chicken=1300g",
+    "legumeDry:lentils=95g"
+   ]
+  },
+  {
+   "id": "mw-karniyarik",
+   "file": "recipes/data/turkish.json",
+   "name": "قرني يارق (باذنجان محشي باللحم المفروم)",
+   "catalog": true,
+   "source": 6,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 119.6,
+   "drivers": [
+    "meatBoneless:beef=340g",
+    "vegMain:eggplant=600g"
+   ]
+  },
+  {
+   "id": "fi650-55677",
+   "file": "recipes/data/unclassified.json",
+   "name": "لحم بقري ترياكي مقلي سريعًا",
+   "catalog": true,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "meatBoneless:fi650-55677-i0=454g"
+   ]
+  },
+  {
+   "id": "eg-bessara",
+   "file": "data/recipes/candidates-20261026/egyptian.json",
+   "name": "بصارة",
+   "catalog": false,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 34.4,
+   "drivers": [
+    "dipBase:split-fava=206.3g"
+   ]
+  },
+  {
+   "id": "eg-kofta-gambari",
+   "file": "data/recipes/candidates-20261026/egyptian.json",
+   "name": "كفتة جمبري",
+   "catalog": false,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "seafood:shrimp=454g"
+   ]
+  },
+  {
+   "id": "eg-saniyet-batates-bel-lahma",
+   "file": "data/recipes/candidates-20261026/egyptian.json",
+   "name": "صينية بطاطس باللحمة المفرومة",
+   "catalog": false,
+   "source": 6,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 145.7,
+   "drivers": [
+    "meatBoneless:beef=454g",
+    "potatoMain:potato=681g"
+   ]
+  },
+  {
+   "id": "eg-bisella-bel-gazar",
+   "file": "data/recipes/candidates-20261026/egyptian.json",
+   "name": "بسلة بالجزر",
+   "catalog": false,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "vegMain:peas=454g"
+   ]
+  },
+  {
+   "id": "lg-galayet-bandora-lahma",
+   "file": "data/recipes/candidates-20261026/levant-gulf.json",
+   "name": "قلاية بندورة باللحمة",
+   "catalog": false,
+   "source": 4,
+   "computed": 2,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 80.5,
+   "drivers": [
+    "meatBoneless:beef=300g",
+    "potatoMain:potato=200g"
+   ]
+  },
+  {
+   "id": "mw-kefta-mkaouara",
+   "file": "data/recipes/candidates-20261026/maghreb-world.json",
+   "name": "طاجين كفتة بالطماطم والبيض (كفتة مقاورة)",
+   "catalog": false,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "meatBoneless:beef=454g"
+   ]
+  },
+  {
+   "id": "mw-mbakbaka",
+   "file": "data/recipes/candidates-20261026/maghreb-world.json",
+   "name": "مبكبكة ليبية",
+   "catalog": false,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 106.9,
+   "drivers": [
+    "meatBoneless:beef=400g",
+    "pastaDry:pasta=211g"
+   ]
+  },
+  {
+   "id": "mw-karniyarik",
+   "file": "data/recipes/candidates-20261026/maghreb-world.json",
+   "name": "قرني يارق (باذنجان محشي باللحم المفروم)",
+   "catalog": false,
+   "source": 6,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 119.6,
+   "drivers": [
+    "meatBoneless:beef=340g",
+    "vegMain:eggplant=600g"
+   ]
+  },
+  {
+   "id": "mw-chana-masala",
+   "file": "data/recipes/candidates-20261026/maghreb-world.json",
+   "name": "تشانا ماسالا (حمص بالماسالا)",
+   "catalog": false,
+   "source": 4,
+   "computed": 2,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 47.5,
+   "drivers": [
+    "legumeDry:chickpeas=190g"
+   ]
+  },
+  {
+   "id": "lv-malfouf-mahshi",
+   "file": "data/recipes/candidates-20261118/levantine.json",
+   "name": "ملفوف محشي بالليمون والنعناع",
+   "catalog": false,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 86.6,
+   "drivers": [
+    "mince:ground-meat=300g",
+    "meatBoneless:lamb-bones=300g",
+    "riceRaw:rice=300g",
+    "vegMain:white-cabbage=200g"
+   ]
+  },
+  {
+   "id": "lv-riz-bi-lahmeh",
+   "file": "data/recipes/candidates-20261118/levantine.json",
+   "name": "رز بلحمة أردني",
+   "catalog": false,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 66.7,
+   "drivers": [
+    "riceRaw:long-grain-rice=400g"
+   ]
+  },
+  {
+   "id": "lv-tomato-vermicelli-soup",
+   "file": "data/recipes/candidates-20261118/levantine.json",
+   "name": "شوربة الشعرية بالطماطم",
+   "catalog": false,
+   "source": 6,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 200,
+   "drivers": [
+    "soupLiquid:chicken-broth=1200ml"
+   ]
+  },
+  {
+   "id": "ma-rfissa-dajaj",
+   "file": "data/recipes/candidates-20261118/moroccan.json",
+   "name": "رفيسة بالدجاج والعدس",
+   "catalog": false,
+   "source": 6,
+   "computed": 3,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 190.5,
+   "drivers": [
+    "chickenWhole:chicken=1300g",
+    "legumeDry:lentils=95g"
+   ]
+  },
+  {
+   "id": "ar-saltah",
+   "file": "data/recipes/candidates-20261120/arab-other.json",
+   "name": "سلتة",
+   "catalog": false,
+   "source": 4,
+   "computed": 2,
+   "confidence": "high",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 135.6,
+   "drivers": [
+    "meatBoneless:meat=300g",
+    "potatoMain:potato=400g"
+   ]
+  },
+  {
+   "id": "ar-mloukhiya-tounsiya",
+   "file": "data/recipes/candidates-20261120/arab-other.json",
+   "name": "ملوخية تونسية",
+   "catalog": false,
+   "source": 8,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 105,
+   "drivers": [
+    "meatBoneless:meat=800g",
+    "leafyMain:molokhia=200g"
+   ]
+  },
+  {
+   "id": "fi650-51546",
+   "file": "recipes/data/thai.json",
+   "name": "دجاج كورنيش صغير متبل بالترياكي",
+   "catalog": true,
+   "source": 6,
+   "computed": 11,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 650,
+   "drivers": [
+    "chickenWhole:fi650-51546-i0=3900g"
+   ]
+  },
+  {
+   "id": "bc650-smoked-salmon-pasta-primavera",
+   "file": "recipes/data/international.json",
+   "name": "باستا بريمافيرا بالسلمون المدخن",
+   "catalog": true,
+   "source": 4,
+   "computed": 7,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 326.8,
+   "drivers": [
+    "pastaDry:bc650-smoked-salmon-pasta-primavera-ing-1=1307g"
+   ]
+  },
+  {
+   "id": "sa-matazeez-najdiya",
+   "file": "recipes/data/saudi.json",
+   "name": "المطازيز النجدية",
+   "catalog": true,
+   "source": 4,
+   "computed": 7,
+   "confidence": "high",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 343,
+   "drivers": [
+    "meatBoneless:lamb=1000g",
+    "vegMain:cauliflower=1200g"
+   ]
+  },
+  {
+   "id": "mw-lahmacun",
+   "file": "recipes/data/turkish.json",
+   "name": "لحم بعجين تركي (لحمجون)",
+   "catalog": true,
+   "source": 4,
+   "computed": 7,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 162.5,
+   "drivers": [
+    "flourBread:flour=650g"
+   ]
+  },
+  {
+   "id": "fiw650-51512",
+   "file": "recipes/data/unclassified.json",
+   "name": "أضلاع لحم الخنزير بالثوم والليمون",
+   "catalog": true,
+   "source": 4,
+   "computed": 7,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 340.5,
+   "drivers": [
+    "meatBoneless:fiw650-51512-i2=1362g"
+   ]
+  },
+  {
+   "id": "mw-lahmacun",
+   "file": "data/recipes/candidates-20261026/maghreb-world.json",
+   "name": "لحم بعجين تركي (لحمجون)",
+   "catalog": false,
+   "source": 4,
+   "computed": 7,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 162.5,
+   "drivers": [
+    "flourBread:flour=650g"
+   ]
+  },
+  {
+   "id": "sa-matazeez-najdiya",
+   "file": "data/recipes/candidates-20261118/saudi.json",
+   "name": "المطازيز النجدية",
+   "catalog": false,
+   "source": 4,
+   "computed": 7,
+   "confidence": "high",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 343,
+   "drivers": [
+    "meatBoneless:lamb=1000g",
+    "vegMain:cauliflower=1200g"
+   ]
+  },
+  {
+   "id": "ar-fatta-lahm-bidoon-salsa",
+   "file": "recipes/data/egyptian.json",
+   "name": "فتة لحم بدون صلصة",
+   "catalog": true,
+   "source": 6,
+   "computed": 10,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 326.7,
+   "drivers": [
+    "meatBoneless:lamb=2000g",
+    "riceRaw:rice=600g"
+   ]
+  },
+  {
+   "id": "ar-fatta-lahm-bidoon-salsa",
+   "file": "data/recipes/candidates-20261026/arab-haiku-1.json",
+   "name": "فتة لحم بدون صلصة",
+   "catalog": false,
+   "source": 6,
+   "computed": 10,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 326.7,
+   "drivers": [
+    "meatBoneless:lamb=2000g",
+    "riceRaw:rice=600g"
+   ]
+  },
+  {
+   "id": "ma-mrouzia-lahm-zabib",
+   "file": "recipes/data/moroccan.json",
+   "name": "مروزية لحم الغنم بالزبيب واللوز",
+   "catalog": true,
+   "source": 8,
+   "computed": 5,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 124.9,
+   "drivers": [
+    "meatBoneless:lamb=998.8g"
+   ]
+  },
+  {
+   "id": "ma-mrouzia-lahm-zabib",
+   "file": "data/recipes/candidates-20261118/moroccan.json",
+   "name": "مروزية لحم الغنم بالزبيب واللوز",
+   "catalog": false,
+   "source": 8,
+   "computed": 5,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 124.9,
+   "drivers": [
+    "meatBoneless:lamb=998.8g"
+   ]
+  },
+  {
+   "id": "ma-hssoua-belboula-hamra",
+   "file": "recipes/data/moroccan.json",
+   "name": "حسوة بالبلبولة بالطماطم",
+   "catalog": true,
+   "source": 4,
+   "computed": 6,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 510,
+   "drivers": [
+    "soupLiquid:water=2040ml"
+   ]
+  },
+  {
+   "id": "bc650-valencian-paella",
+   "file": "recipes/data/spanish.json",
+   "name": "باييا بلنسية",
+   "catalog": true,
+   "source": 4,
+   "computed": 6,
+   "confidence": "high",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 520.4,
+   "drivers": [
+    "chickenWhole:bc650-valencian-paella-ing-2=1300g",
+    "meatBoneIn:bc650-valencian-paella-ing-3=500g",
+    "riceRaw:bc650-valencian-paella-ing-1=500g",
+    "legumeDry:bc650-valencian-paella-ing-5=150g",
+    "vegMain:bc650-valencian-paella-ing-4=150g"
+   ]
+  },
+  {
+   "id": "ma-hssoua-belboula-hamra",
+   "file": "data/recipes/candidates-20261118/moroccan.json",
+   "name": "حسوة بالبلبولة بالطماطم",
+   "catalog": false,
+   "source": 4,
+   "computed": 6,
+   "confidence": "medium",
+   "reason": "driverAmbiguous",
+   "impliedPerPerson": 510,
+   "drivers": [
+    "soupLiquid:water=2040ml"
+   ]
+  },
+  {
+   "id": "bc650-dou-sha-bao",
+   "file": "recipes/data/chinese.json",
+   "name": "باو بمعجون الفاصوليا الحمراء",
+   "catalog": true,
+   "source": 6,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 58.3,
+   "drivers": [
+    "flourBread:bc650-dou-sha-bao-ing-1=350g"
+   ]
+  },
+  {
+   "id": "bc-chicken-in-red-wine-vinegar-sauce",
+   "file": "recipes/data/french.json",
+   "name": "دجاج بصلصة خل النبيذ الأحمر",
+   "catalog": true,
+   "source": 6,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 216.7,
+   "drivers": [
+    "chickenWhole:bc-chicken-in-red-wine-vinegar-sauce-ing-3=1300g"
+   ]
+  },
+  {
+   "id": "ma-kefta-gharb",
+   "file": "recipes/data/moroccan.json",
+   "name": "كفتة الغرب بالشحم",
+   "catalog": true,
+   "source": 6,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 124.8,
+   "drivers": [
+    "meatBoneless:meat=749.1g"
+   ]
+  },
+  {
+   "id": "ma-kefta-gharb",
+   "file": "data/recipes/candidates-20261118/moroccan.json",
+   "name": "كفتة الغرب بالشحم",
+   "catalog": false,
+   "source": 6,
+   "computed": 4,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 124.8,
+   "drivers": [
+    "meatBoneless:meat=749.1g"
+   ]
+  },
+  {
+   "id": "bc-ukrainian-borscht",
+   "file": "recipes/data/ukrainian.json",
+   "name": "بورش أوكراني",
+   "catalog": true,
+   "source": 10,
+   "computed": 7,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 240,
+   "drivers": [
+    "soupLiquid:bc-ukrainian-borscht-ing-3=2400ml"
+   ]
+  },
+  {
+   "id": "fiw650-59735",
+   "file": "recipes/data/jamaican.json",
+   "name": "دجاج جامايكي جيرك مشوي",
+   "catalog": true,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "chickenBoneless:fiw650-59735-i8=454g"
+   ]
+  },
+  {
+   "id": "mw-harira",
+   "file": "recipes/data/moroccan.json",
+   "name": "حريرة مغربية",
+   "catalog": true,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 240,
+   "drivers": [
+    "soupLiquid:water=960ml"
+   ]
+  },
+  {
+   "id": "ma-dajaj-bel-koummathra",
+   "file": "recipes/data/moroccan.json",
+   "name": "دجاج مغربي بالكمثرى",
+   "catalog": true,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 249.7,
+   "drivers": [
+    "chickenWhole:chicken=998.8g"
+   ]
+  },
+  {
+   "id": "sa-oats-tomato-soup",
+   "file": "recipes/data/saudi.json",
+   "name": "شوربة الشوفان بالطماطم",
+   "catalog": true,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 240,
+   "drivers": [
+    "soupLiquid:water=960ml"
+   ]
+  },
+  {
+   "id": "bc650-turkish-spiced-chicken",
+   "file": "recipes/data/turkish.json",
+   "name": "دجاج بالتوابل التركية",
+   "catalog": true,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 117.7,
+   "drivers": [
+    "chickenBoneless:bc650-turkish-spiced-chicken-ing-1=440g",
+    "riceRaw:bc650-turkish-spiced-chicken-ing-4=142.5g",
+    "potatoMain:bc650-turkish-spiced-chicken-ing-5=340.2g"
+   ]
+  },
+  {
+   "id": "fiw650-51053",
+   "file": "recipes/data/unclassified.json",
+   "name": "برغر دجاج بالأفوكادو بعنوان مكسيكي",
+   "catalog": true,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 113.5,
+   "drivers": [
+    "chickenBoneless:fiw650-51053-i0=454g"
+   ]
+  },
+  {
+   "id": "mw-harira",
+   "file": "data/recipes/candidates-20261026/maghreb-world.json",
+   "name": "حريرة مغربية",
+   "catalog": false,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 240,
+   "drivers": [
+    "soupLiquid:water=960ml"
+   ]
+  },
+  {
+   "id": "ma-dajaj-bel-koummathra",
+   "file": "data/recipes/candidates-20261118/moroccan.json",
+   "name": "دجاج مغربي بالكمثرى",
+   "catalog": false,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 249.7,
+   "drivers": [
+    "chickenWhole:chicken=998.8g"
+   ]
+  },
+  {
+   "id": "sa-oats-tomato-soup",
+   "file": "data/recipes/candidates-20261118/saudi.json",
+   "name": "شوربة الشوفان بالطماطم",
+   "catalog": false,
+   "source": 4,
+   "computed": 3,
+   "confidence": "medium",
+   "reason": "sourceInflated",
+   "impliedPerPerson": 240,
+   "drivers": [
+    "soupLiquid:water=960ml"
+   ]
+  }
+ ],
+ "unmappedMeasured": [
+  {
+   "ingredient": "cinnamon-stick | عود قرفة",
+   "recipes": 12
+  },
+  {
+   "ingredient": "smen | سمن مغربي",
+   "recipes": 6
+  },
+  {
+   "ingredient": "spices | كمون وكزبرة ناشفة",
+   "recipes": 6
+  },
+  {
+   "ingredient": "aleppo-pepper | فلفل حلبي",
+   "recipes": 5
+  },
+  {
+   "ingredient": "raqaq | رقاق ناشف",
+   "recipes": 4
+  },
+  {
+   "ingredient": "coriander-dry | كزبرة يابسة",
+   "recipes": 4
+  },
+  {
+   "ingredient": "basturma | بسطرمة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "arabic-bread | خبز عربي أو بيتا مقطع",
+   "recipes": 2
+  },
+  {
+   "ingredient": "green-pepper | فلفل أخضر",
+   "recipes": 2
+  },
+  {
+   "ingredient": "pigeon | حمام",
+   "recipes": 2
+  },
+  {
+   "ingredient": "onion-diced | بصل مقطع صغير",
+   "recipes": 2
+  },
+  {
+   "ingredient": "garlic-mashed | ثوم مهروس ناعم (للطاجن)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "onion-sliced | بصل كبير شرائح (للطاجن)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "colored-pepper | فلفل ألوان مقطع (للطاجن)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salt-tagen | ملح (للطاجن)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "sugar-tagen | سكر (للطاجن)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "black-pepper-tagen | فلفل أسود (للطاجن)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "coriander-dry | كسبرة جافة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "mixed-spice | توابل مشكلة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "butter-bechamel | زبدة (للبشاميل)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salt-bechamel | ملح (للبشاميل)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "pepper-bechamel | فلفل أسود (للبشاميل)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "cheese | جبن موتزاريلا وشيدر",
+   "recipes": 2
+  },
+  {
+   "ingredient": "green-pepper | فلفل أخضر مفروم",
+   "recipes": 2
+  },
+  {
+   "ingredient": "ghee-spoon | سمنة (للتقلية)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "mixed-vegetables | خضار مشكل",
+   "recipes": 2
+  },
+  {
+   "ingredient": "coriander-dry | كسبرة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "garlic-minced | ثوم مفروم",
+   "recipes": 2
+  },
+  {
+   "ingredient": "bran | ردة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "orzo | لسان عصفور",
+   "recipes": 2
+  },
+  {
+   "ingredient": "syrup-vanilla | فانيليا (للشربات)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "jameed | جميد سائل (لبن جميد)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "mixed-nuts | مكسرات مشكلة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "cold-syrup | قطر بارد",
+   "recipes": 2
+  },
+  {
+   "ingredient": "moghrabieh | حبات مغربية",
+   "recipes": 2
+  },
+  {
+   "ingredient": "lebanese-bread | خبز لبناني رقيق",
+   "recipes": 2
+  },
+  {
+   "ingredient": "heavy-cream | كريمة سائلة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "sugar-syrup | سكر للقطر",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salt-stuffing | ملح للحشوة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salad-leaves | خضار ورقية صغيرة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "herbs | ريحان وثوم معمر ونعناع",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salt-dough | ملح للعجينة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salt-filling | ملح للحشوة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "onion-soup | بصل كبير مفروم ناعمًا",
+   "recipes": 2
+  },
+  {
+   "ingredient": "carrot-soup | جزر كبير مفروم ناعمًا",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salt-soup | ملح للشوربة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "black-pepper-soup | فلفل أسود للشوربة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "pandan-leaves | أوراق باندان معقودة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "dried-anchovies | أنشوجة مجففة (إيكان بيليس)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "carrots | جزر مقطّع أعوادًا",
+   "recipes": 2
+  },
+  {
+   "ingredient": "bell-peppers | فلفل حلو مقطع شرائح رقيقة",
+   "recipes": 2
+  },
+  {
+   "ingredient": "preserved-lemon | ليمون مصير مقطّع أرباعًا",
+   "recipes": 2
+  },
+  {
+   "ingredient": "ginger-veg | زنجبيل (لطبقات الخضار)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salt-veg | ملح (لطبقات الخضار)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "pepper-veg | فلفل أسود (لطبقات الخضار)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "turmeric-veg | كركم (لطبقات الخضار)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "salt-chermoula | ملح (للشرمولة)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "ginger-chermoula | زنجبيل مطحون (للشرمولة)",
+   "recipes": 2
+  },
+  {
+   "ingredient": "ras-el-hanout-mrouzia | رأس الحانوت الخاص بالمروزية",
+   "recipes": 2
+  },
+  {
+   "ingredient": "pepper | فلفل مطحون (أسود وأبيض)",
+   "recipes": 2
+  }
+ ]
+}

@@ -31,7 +31,7 @@ void main() {
         expect(r.totalMinutes, isNull);
       }
       if (r.hasKnownYield && !r.hasCompleteSchedule) {
-        expect(() => r.forServings(r.servings!).schedule, throwsStateError);
+        expect(() => r.forServings(r.effectiveServings!).schedule, throwsStateError);
       }
     }
     for (final r in all.where((r) => r.metadataPolicy != null)) {

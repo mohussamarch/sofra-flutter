@@ -809,8 +809,32 @@ abstract class AppLocalizations {
   /// No description provided for @detailYieldServes.
   ///
   /// In ar, this message translates to:
-  /// **'تكفي {count} أفراد'**
+  /// **'{count, plural, =1{تكفي فردًا واحدًا} =2{تكفي فردين} few{تكفي {count} أفراد} other{تكفي {count} فردًا}}'**
   String detailYieldServes(int count);
+
+  /// No description provided for @servingsInfoLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'كيف حُسب عدد الأفراد'**
+  String get servingsInfoLabel;
+
+  /// No description provided for @servingsInfoBasis.
+  ///
+  /// In ar, this message translates to:
+  /// **'بناءً على {amount} {ingredient}، بمعدل {norm} تقريبًا للفرد.'**
+  String servingsInfoBasis(String amount, String ingredient, String norm);
+
+  /// No description provided for @servingsInfoLow.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا تقدير تقريبي، فعدّله إن لم يكن مناسبًا.'**
+  String get servingsInfoLow;
+
+  /// No description provided for @servingsInfoAdjust.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعديل العدد'**
+  String get servingsInfoAdjust;
 
   /// No description provided for @detailPlanned.
   ///

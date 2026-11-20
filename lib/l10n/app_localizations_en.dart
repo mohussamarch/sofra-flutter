@@ -452,6 +452,21 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get servingsInfoLabel => 'How the number of people was worked out';
+
+  @override
+  String servingsInfoBasis(String amount, String ingredient, String norm) {
+    return 'Based on $amount $ingredient, about $norm per person.';
+  }
+
+  @override
+  String get servingsInfoLow =>
+      'This is a rough estimate. Adjust it if it seems off.';
+
+  @override
+  String get servingsInfoAdjust => 'Adjust the number';
+
+  @override
   String get detailPlanned =>
       'The meal is on your table, and your stock hasn\'t changed';
 

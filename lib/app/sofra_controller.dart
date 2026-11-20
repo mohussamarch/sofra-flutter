@@ -27,6 +27,7 @@ import '../domain/purchase_forecast.dart';
 import '../domain/quick_add.dart';
 import '../domain/recipe_variants.dart';
 import '../domain/recipe_catalog.dart';
+import '../domain/servings_engine.dart';
 import 'look.dart';
 import 'reminders.dart';
 import '../l10n/l10n.dart';
@@ -812,11 +813,36 @@ class SofraController extends ChangeNotifier {
 
   // ---- Month plan ---------------------------------------------------------
 
-  /// Recipes the month can use: ones whose yield is known (in the source
-  /// or reviewed by the user), so servings can be scaled.
+  /// Recipes the month can use: ones whose yield is known (stated by the
+  /// source, computed by the servings engine, or reviewed by the user), so
+  /// servings can be scaled.
   bool canPlanMonth(Map<String, dynamic> indexRow) =>
       indexRow['servings'] != null ||
-      planningId(indexRow['id'] as String) != indexRow['id'];
+      planningId(indexRow['id'] as String) != indexRow['id'] ||
+      rowServings(indexRow) != null;
+
+  /// The yield the app would scale an index row's recipe by: the build's
+  /// `servingsComputed` verdict, or the engine run over the row's ingredients.
+  static int? rowServings(Map<String, dynamic> row) {
+    try {
+      final stored = ServingsEstimate.fromJson(row);
+      final servings = row['servings'];
+      if (stored != null) {
+        if (servings is num &&
+            !(stored.basis == ServingsBasisSource.computed &&
+                stored.hasValue)) {
+          return servings.toInt();
+        }
+        return stored.hasValue ? stored.computed : null;
+      }
+      if (servings is num) return servings.toInt();
+      if (row['ingredients'] is! List) return null;
+      final estimate = ServingsEngine.shared.estimateJson(row);
+      return estimate.hasValue ? estimate.computed : null;
+    } on Object {
+      return null;
+    }
+  }
 
   /// Saves the month's budget, repeats [menu] (weekday 1..7 and slot -> one
   /// or two recipe ids, every weekday filled for every slot) over the month,
@@ -1574,7 +1600,9 @@ class SofraController extends ChangeNotifier {
       authorName: profile.displayName,
       title: r.name,
       cuisine: r.cuisine,
-      servings: r.servings ?? (throw ArgumentError("Recipe has no servings")),
+      servings:
+          r.effectiveServings ??
+          (throw ArgumentError("Recipe has no servings")),
       lines: [
         for (final l in r.ingredients)
           SharedLine(
