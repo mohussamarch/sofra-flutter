@@ -74,6 +74,76 @@ export function imageFields(row, recipe) {
   return out;
 }
 
+// The app's own catalog checks (lib/data/recipe_repository.dart _parseIndex
+// and CatalogIngredient.fromJson). A library the app would reject is never
+// published: phones would keep their old catalog without anyone noticing.
+const VAGUE_CUISINES = new Set(['غير محدد', 'عالمي متنوع', 'آسيوي', 'أمريكي جنوبي']);
+const concreteCuisine = (v) => typeof v === 'string' && v.trim() !== '' && !VAGUE_CUISINES.has(v);
+const held = (r) =>
+  r.catalogStatus === 'held-cuisine' || r.catalogStatus === 'held-content' || !concreteCuisine(r.cuisine);
+const text = (v) => typeof v === 'string' && v.trim() !== '';
+
+function checkIngredient(line, id) {
+  const fail = (why) => {
+    throw new Error(`app would reject ${id}: ingredient ${why}`);
+  };
+  if (!line || typeof line !== 'object') fail('is not an object');
+  if (!text(line.id) || !text(line.name)) fail('needs id and name');
+  const amount = line.amount;
+  if (amount != null && !(typeof amount === 'number' && Number.isFinite(amount) && amount > 0)) {
+    fail(`${line.id} has an invalid amount`);
+  }
+  if (amount != null && !text(line.unit)) fail(`${line.id} is measured without a unit`);
+  if (line.unit != null && typeof line.unit !== 'string') fail(`${line.id} has an invalid unit`);
+  if (amount == null && line.scale !== false) fail(`${line.id} is unmeasured but scales`);
+}
+
+/// Throws when the app would not use [index] (the published catalog).
+export function validateCatalog(index) {
+  const files = new Set(index.cuisines.map((c) => c.file));
+  for (const row of index.recipes) {
+    if (!files.has(row.file)) throw new Error(`app would reject ${row.id}: unknown file ${row.file}`);
+    for (const line of row.ingredients ?? []) checkIngredient(line, row.id);
+  }
+  const groups = index.cuisineGroups;
+  if (groups == null) return;
+  if (!Array.isArray(groups) || groups.length !== 16 || groups.at(-1).id !== 'other' ||
+      new Set(groups.map((g) => g.id)).size !== 16) {
+    throw new Error('app would reject cuisineGroups: needs exactly 15 primary groups plus "other" last');
+  }
+  groups.slice(0, 15).forEach((g, i) => {
+    if (g.kind !== 'primary' || g.order !== i + 1) {
+      throw new Error(`app would reject cuisineGroups: ${g.id} must be primary with order ${i + 1}`);
+    }
+  });
+  const members = new Set();
+  for (const g of groups) {
+    if (!text(g.id) || !text(g.name) || !Array.isArray(g.members)) {
+      throw new Error(`app would reject cuisine group ${g.id}: id, name and members required`);
+    }
+    for (const m of g.members) {
+      if (!concreteCuisine(m) || members.has(m)) {
+        throw new Error(`app would reject cuisine group ${g.id}: member ${m} vague or in two groups`);
+      }
+      members.add(m);
+    }
+    const rows = index.recipes.filter((r) => !held(r) && r.cuisineGroup === g.id);
+    if (g.count !== rows.length) {
+      throw new Error(`app would reject cuisine group ${g.id}: count ${g.count} but ${rows.length} active recipes`);
+    }
+    const stray = rows.find((r) => !g.members.includes(r.cuisine));
+    if (stray) throw new Error(`app would reject ${stray.id}: cuisine ${stray.cuisine} not in group ${g.id}`);
+  }
+  const ids = new Set(groups.map((g) => g.id));
+  for (const r of index.recipes) {
+    if (held(r) ? r.cuisineGroup != null : r.catalogStatus !== 'active' || !ids.has(r.cuisineGroup)) {
+      throw new Error(
+        `app would reject ${r.id}: ${held(r) ? 'held recipe has a cuisineGroup' : 'active recipe needs a known cuisineGroup'}`,
+      );
+    }
+  }
+}
+
 /// Builds every published file in memory: {relativePath: text}.
 export function buildLibrary(dataDir, { generatedAt } = {}) {
   const read = (name) => JSON.parse(fs.readFileSync(path.join(dataDir, name), 'utf8'));
@@ -110,6 +180,7 @@ export function buildLibrary(dataDir, { generatedAt } = {}) {
     return out;
   });
   const published = { ...index, recipes: rows };
+  validateCatalog(published);
   files['index.json'] = JSON.stringify(published);
   const dishes = path.join(dataDir, 'dishes.json');
   if (fs.existsSync(dishes)) {
@@ -149,16 +220,59 @@ function previousManifest(outDir) {
   }
 }
 
-/// Writes the library to [outDir], replacing what was there.
+/// Refuses an output folder whose cleanup could delete anything but an
+/// earlier library: the repository root, a folder holding the recipe data,
+/// or a non-empty folder that is not a library build.
+function checkOutDir(dataDir, outDir) {
+  const out = path.resolve(outDir);
+  const data = path.resolve(dataDir);
+  const inside = (child, parent) => {
+    const rel = path.relative(parent, child);
+    return rel === '' || (!rel.startsWith('..') && !path.isAbsolute(rel));
+  };
+  if (inside(root, out) || inside(data, out) || inside(out, data) || out === path.parse(out).root) {
+    throw new Error(`refusing --out ${out}: it would overwrite the repository or the recipe data`);
+  }
+  if (fs.existsSync(out)) {
+    const names = fs.readdirSync(out);
+    if (names.length && !names.includes('manifest.json')) {
+      throw new Error(`refusing --out ${out}: not empty and not an earlier library build`);
+    }
+  }
+}
+
+/// The body hashes the previous build's index points at, so phones still on
+/// it can open recipes until they take the new catalog.
+function previousBodies(outDir) {
+  try {
+    const index = JSON.parse(fs.readFileSync(path.join(outDir, 'index.json'), 'utf8'));
+    return new Set(index.recipes.map((r) => r.body).filter((b) => /^[0-9a-f]{64}$/.test(b ?? '')));
+  } catch {
+    return new Set();
+  }
+}
+
+/// Writes the library to [outDir], replacing an earlier build there. Body
+/// files of the previous build stay one more version (a phone on the old
+/// catalog may still ask for them); older ones are removed.
 export function publish(dataDir, outDir, { generatedAt } = {}) {
+  checkOutDir(dataDir, outDir);
   const previous = previousManifest(outDir);
+  const keep = previousBodies(outDir);
   let built = buildLibrary(dataDir, { generatedAt: generatedAt ?? 'pending' });
   if (!generatedAt) {
     const kept = previous && previous.version === built.manifest.version && previous.generatedAt;
     built.manifest.generatedAt = kept || new Date().toISOString();
   }
-  fs.rmSync(outDir, { recursive: true, force: true });
-  fs.mkdirSync(path.join(outDir, 'r'), { recursive: true });
+  const bodyDir = path.join(outDir, 'r');
+  fs.mkdirSync(bodyDir, { recursive: true });
+  for (const name of fs.readdirSync(outDir)) {
+    if (name !== 'r') fs.rmSync(path.join(outDir, name), { recursive: true, force: true });
+  }
+  for (const name of fs.readdirSync(bodyDir)) {
+    const sha = name.replace(/\.json$/, '');
+    if (!keep.has(sha) && !built.files[`r/${name}`]) fs.rmSync(path.join(bodyDir, name), { force: true });
+  }
   for (const [name, text] of Object.entries(built.files)) {
     fs.writeFileSync(path.join(outDir, name), text);
   }

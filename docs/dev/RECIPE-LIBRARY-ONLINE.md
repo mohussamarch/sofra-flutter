@@ -18,16 +18,25 @@ Phones pick the new library up at the next launch or recipes-tab visit after
 6 hours, or at once with «تحديث الآن» in Settings → «الوصفات على جهازك».
 Never deploy plain `--only hosting`: that would also redeploy the web app.
 
-### First deploy (once)
+### Deployed (2026-11-21)
 
-```bash
-firebase hosting:sites:create sofra-library --project sofra-c03a1
-# if that id is taken: use the first free variant (e.g. sofra-library-1),
-# put it in .firebaserc targets.library and in OnlineRecipeLibrary.defaultBaseUrl
-node tool/recipes/publish-library.mjs
-firebase deploy --only hosting:library --project sofra-c03a1
-firebase deploy --only firestore:rules --project sofra-c03a1
-```
+Site `sofra-library` was created on sofra-c03a1 and is live at
+https://sofra-library.web.app/ (the app's default `SOFRA_LIBRARY_URL`); the
+Firestore rules with `savedRecipes` are released. First live version
+`8ebced9c976c…` (495 active recipes, 789 bodies).
+
+### Safety built into the publisher and the app
+
+- The publisher runs the app's own catalog checks (15 primary groups plus
+  other, group counts, held rows outside groups, listing ingredient lines) and
+  refuses to write a library the app would reject.
+- `--out` refuses the repository root, the recipe data, or a non-empty folder
+  that is not an earlier library build.
+- Body files of the previous build stay one more version, so a phone still on
+  the old catalog can open recipes; the app also retries a 404 after taking
+  the new catalog. Publish from the same `build/library` folder each time.
+- The app checks at most every 6 hours, waits 30 minutes after a failed check,
+  and does not download a rejected version again until a new one is published.
 
 ## What is published (`build/library/`, gitignored)
 

@@ -27,6 +27,7 @@ class OnlineRecipeLibrary extends ChangeNotifier {
     LibraryFetch? fetch,
     DateTime Function()? clock,
     this.checkEvery = const Duration(hours: 6),
+    this.retryAfterFailure = const Duration(minutes: 30),
     int? maxBodyBytes,
   }) : maxBodyBytes = maxBodyBytes ?? defaultMaxBodyBytes,
        baseUrl = _folder(baseUrl ?? Uri.parse(defaultBaseUrl)),
@@ -49,6 +50,11 @@ class OnlineRecipeLibrary extends ChangeNotifier {
   final LibraryFetch _fetch;
   final DateTime Function() _clock;
   final Duration checkEvery;
+
+  /// After a failed or rejected check, automatic checks wait this long (the
+  /// button always checks), so a broken library is not downloaded again on
+  /// every launch and tab.
+  final Duration retryAfterFailure;
   final int maxBodyBytes;
 
   /// Throws when a downloaded index is not a catalog the app can use; set by
@@ -93,7 +99,12 @@ class OnlineRecipeLibrary extends ChangeNotifier {
       final bodies = map(await store.read('bodies')) ?? {};
       final pins = map(await store.read('pins')) ?? {};
       final checked = int.tryParse(await store.read('checkedAt') ?? '');
+      final failed = int.tryParse(await store.read('failedAt') ?? '');
       return _state = _State(
+        failedAt: failed == null
+            ? null
+            : DateTime.fromMillisecondsSinceEpoch(failed),
+        rejected: await store.read('rejectedVersion'),
         manifest: manifest,
         bodies: {
           for (final e in bodies.entries)
@@ -202,9 +213,12 @@ class OnlineRecipeLibrary extends ChangeNotifier {
           return text;
         }
       } else if (response.status == 404) {
-        // The library moved on since this catalog was downloaded.
-        unawaited(update(force: true).catchError((Object _) => false));
+        // The library moved on since this catalog was downloaded: the
+        // repository updates the catalog and asks again with the new hash.
+        throw RecipeMoved(id);
       }
+    } on RecipeMoved {
+      rethrow;
     } on Object {
       // Offline or unreachable: fall back to what the device has.
     }
@@ -376,10 +390,10 @@ class OnlineRecipeLibrary extends ChangeNotifier {
   /// Checks the library at most every [checkEvery] (always with [force]) and
   /// swaps in a newer catalog. True when the catalog changed. Never throws;
   /// a failure leaves the device's library as it was.
-  Future<bool> update({bool force = false}) {
+  Future<bool> update({bool force = false, bool? retryRejected}) {
     final running = _checking;
     if (running != null) return running;
-    final result = _update(force).whenComplete(() {
+    final result = _update(force, retryRejected ?? force).whenComplete(() {
       _checking = null;
       notifyListeners();
     });
@@ -388,28 +402,49 @@ class OnlineRecipeLibrary extends ChangeNotifier {
     return result;
   }
 
-  Future<bool> _update(bool force) async {
+  Future<bool> _update(bool force, bool retryRejected) async {
     final s = await _loaded;
-    final last = s.checkedAt;
-    if (!force && last != null && _clock().difference(last) < checkEvery) {
+    final now = _clock();
+    // A clock set back (a time in the future) never stops the checks.
+    bool recent(DateTime? at, Duration within) {
+      if (at == null) return false;
+      final age = now.difference(at);
+      return !age.isNegative && age < within;
+    }
+
+    if (!force &&
+        (recent(s.checkedAt, checkEvery) ||
+            recent(s.failedAt, retryAfterFailure))) {
       return false;
     }
+    String? version;
     try {
       final manifest = _parseManifest(
         await _download(baseUrl.resolve('manifest.json'), null),
       );
-      final version = manifest['version'] as String;
+      version = manifest['version'] as String;
       var changed = false;
       if (version != s.manifest?['version'] || await catalogIndex() == null) {
+        // A version already rejected is not downloaded again until the
+        // library publishes another one (the button still tries).
+        if (!retryRejected && version == s.rejected) {
+          throw const LibraryRejected('Library version rejected');
+        }
         await _swap(manifest);
         changed = true;
       }
       await _locked((s) async {
         s.checkedAt = _clock();
+        s.failedAt = null;
         await store.write(
           'checkedAt',
           '${s.checkedAt!.millisecondsSinceEpoch}',
         );
+        await store.remove('failedAt');
+        if (s.rejected != null) {
+          s.rejected = null;
+          await store.remove('rejectedVersion');
+        }
       });
       _lastCheckFailed = false;
       if (changed) {
@@ -418,8 +453,24 @@ class OnlineRecipeLibrary extends ChangeNotifier {
         await _refreshKept();
       }
       return changed;
-    } on Object {
+    } on Object catch (e) {
       _lastCheckFailed = true;
+      try {
+        await _locked((s) async {
+          s.failedAt = _clock();
+          await store.write(
+            'failedAt',
+            '${s.failedAt!.millisecondsSinceEpoch}',
+          );
+          // Only an index the app cannot use; a bad download may retry.
+          if (version != null && e is LibraryRejected) {
+            s.rejected = version;
+            await store.write('rejectedVersion', version);
+          }
+        });
+      } on Object {
+        // The device store is unwritable: the next check simply runs.
+      }
       return false;
     }
   }
@@ -464,7 +515,11 @@ class OnlineRecipeLibrary extends ChangeNotifier {
       indexSha,
       size: size('index.json'),
     );
-    validateIndex?.call(index);
+    try {
+      validateIndex?.call(index);
+    } on Object catch (e) {
+      throw LibraryRejected('Index rejected: $e');
+    }
     String? dishes;
     if (dishesSha != null) {
       dishes = await _download(
@@ -514,7 +569,13 @@ class OnlineRecipeLibrary extends ChangeNotifier {
     for (final id in kept) {
       final row = rows[id];
       final sha = row?['body'];
-      if (row == null || sha is! String || !_sha.hasMatch(sha)) continue;
+      // Held rows (off the catalog) keep the copy the device has.
+      if (row == null ||
+          row['catalogStatus'] != 'active' ||
+          sha is! String ||
+          !_sha.hasMatch(sha)) {
+        continue;
+      }
       final current = s.pins[id]?.sha ?? s.bodies[id]?.sha;
       try {
         if (current != sha) {
@@ -572,11 +633,17 @@ class _State {
     required this.bodies,
     required this.pins,
     required this.checkedAt,
+    required this.failedAt,
+    required this.rejected,
   });
   Map<String, dynamic>? manifest;
   final Map<String, _BodyMeta> bodies;
   final Map<String, _Pin> pins;
   DateTime? checkedAt;
+  DateTime? failedAt;
+
+  /// A published version whose index the app could not use.
+  String? rejected;
 }
 
 class _BodyMeta {
@@ -664,6 +731,14 @@ class RecipeNotOnDevice implements Exception {
   String toString() => 'RecipeNotOnDevice($recipeId)';
 }
 
+/// The library no longer has the recipe body the catalog on the device
+/// points at (a newer library was published since).
+class RecipeMoved extends RecipeNotOnDevice {
+  const RecipeMoved(super.recipeId);
+  @override
+  String toString() => 'RecipeMoved($recipeId)';
+}
+
 class LibraryIntegrityError implements Exception {
   const LibraryIntegrityError(this.message);
   final String message;
@@ -716,4 +791,11 @@ class PreferencesLibraryStore implements LibraryStore {
       preferences.setString('$prefix$key', value);
   @override
   Future<void> remove(String key) => preferences.remove('$prefix$key');
+}
+
+/// A published library the app cannot use (its index fails the app's
+/// catalog checks): remembered, so it is not downloaded again until the
+/// library publishes another version.
+class LibraryRejected extends LibraryIntegrityError {
+  const LibraryRejected(super.message);
 }

@@ -506,10 +506,11 @@ APK: `E:\work\SOFRA\deliverables\sofra-20261026-community-2843ab99.apk`
 - Not done from the review: live sync listener for shared kitchens, offline open for signed-in users, 850KB archive, Draco offline decoder, release keystore, month search off the UI thread. Not device-tested.
 - References for all remaining parts: E:\work\SOFRA\references. Live dashboard: deliverables/dashboard (node server.cjs, port 8896).
 
-## 2026-11-20 — Online recipe library (Firebase Hosting site, not deployed yet)
+## 2026-11-20 — Online recipe library (deployed 2026-11-21)
 
 - Recipes now come from a separate hosting site (target `library`, site `sofra-library` on sofra-c03a1), with the bundled recipes kept as first-run/offline seed. Design and owner flow: docs/dev/RECIPE-LIBRARY-ONLINE.md.
 - Publisher `tool/recipes/publish-library.mjs` -> build/library (manifest/index/dishes no-cache, `r/<sha256>.json` per-recipe bodies immutable). Client `lib/data/online_recipe_library.dart`: sha256-verified atomic catalog swap, per-recipe bodies cached only when opened/cooked/planned/saved, 30 MB (web 1.5 MB) LRU cap, saved recipes pinned and copied to `.../savedRecipes/{id}` in the account. Settings section «الوصفات على جهازك» before «العرض واللغة».
-- firebase.json hosting is now an array (app config byte-identical); .firebaserc has targets; firestore.rules has savedRecipes rules. NOT deployed: run the commands in the doc's "First deploy" section.
+- firebase.json hosting is now an array (app config byte-identical); .firebaserc has targets; firestore.rules has savedRecipes rules. Deployed 2026-11-21: site sofra-library created, hosting:library + firestore:rules released (sofra-c03a1 only, no billing); live https://sofra-library.web.app/ verified (sha256 + headers).
 - Verified: flutter analyze clean; full flutter test 529 passed; node publisher tests 4 passed; real-HTTP localhost test passes.
-- Open: rules emulator test (tool/rules/rules.test.mjs) not run here (no JDK); not device-tested; images only prepared (index fields + doc), none published; site id sofra-library availability not checked (firebase CLI not on PATH here).
+- Open: rules emulator test (tool/rules/rules.test.mjs) not run here (no JDK); not device-tested; images only prepared (index fields + doc), none published. firebase CLI: node C:/Users/atgs0/AppData/Local/npm-cache/_npx/ba4f1959e38407b5/node_modules/firebase-tools/lib/bin/firebase.js (15.36.0).
+- 2026-11-21 review fixes: saved held recipes stay listed/openable; failed-check backoff (30 min) + rejected version memory; clock set back no longer stops checks; older pinned copy opens offline and is re-pinned online; 404 body -> take new catalog and retry; account writes of saved recipes no longer awaited (offline Firestore); account copy removed only by the phone that unsaved it; publisher validates like the app, guards --out, keeps previous bodies one version. Tests: test/online_recipe_library_review_test.dart, publisher tests 7.

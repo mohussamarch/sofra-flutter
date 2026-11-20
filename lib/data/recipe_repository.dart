@@ -258,7 +258,8 @@ class RecipeRepository {
   Future<List<Map<String, dynamic>>> pinnedOnlyRows() async {
     final online = library;
     if (online == null) return const [];
-    final known = {for (final r in await retainedIndex) r['id'] as String};
+    // Held rows are off the catalog too: a saved one lists from its pin.
+    final known = {for (final r in await index) r['id'] as String};
     return [
       for (final e in (await online.pinnedRows()).entries)
         if (!known.contains(e.key))
@@ -425,6 +426,9 @@ class RecipeRepository {
     }
     final entry = entries.single;
     if (!includeHeld && _held(entry)) {
+      // Off the catalog now, but saved: the user's pinned copy still opens.
+      final pinned = await library?.pinnedCopy(id);
+      if (pinned != null) return _parseBody(pinned.body, id);
       throw StateError('Recipe cuisine requires review before new selection');
     }
     final sha = entry['body'];
@@ -443,12 +447,32 @@ class RecipeRepository {
     return _seed(entry);
   }
 
-  Future<CatalogRecipe> _online(Map<String, dynamic> entry, String sha) async {
+  Future<CatalogRecipe> _online(
+    Map<String, dynamic> entry,
+    String sha, {
+    bool retried = false,
+  }) async {
     final id = entry['id'] as String;
+    final online = library!;
     try {
-      final recipe = _parseBody(await library!.body(id, sha), id);
+      final recipe = _parseBody(await online.body(id, sha), id);
       _matches(recipe, entry);
       return recipe;
+    } on RecipeMoved {
+      // A newer library replaced this body: take its catalog, then ask once
+      // more with the new hash.
+      if (!retried) {
+        final generation = catalogGeneration;
+        await online.update(force: true, retryRejected: false);
+        if (catalogGeneration != generation) {
+          _libraryChanged();
+          final fresh = (await retainedIndex).where((v) => v['id'] == id);
+          final next = fresh.isEmpty ? null : fresh.single['body'];
+          if (next is String && next != sha) {
+            return _online(fresh.single, next, retried: true);
+          }
+        }
+      }
     } on Object {
       // Not on the device, offline, or an older copy that no longer fits
       // the catalog: the bundled recipe, when the app has it.
@@ -456,7 +480,35 @@ class RecipeRepository {
     try {
       return await _seed(entry);
     } on Object {
-      throw RecipeNotOnDevice(id);
+      // Neither: a saved recipe opens from the user's pinned copy, even when
+      // the catalog has changed it since.
+    }
+    final pinned = await online.pinnedCopy(id);
+    if (pinned != null) {
+      try {
+        return _parseBody(pinned.body, id);
+      } on Object {
+        // A pinned copy that no longer reads.
+      }
+    }
+    throw RecipeNotOnDevice(id);
+  }
+
+  /// A saved recipe whose pinned copy is older than the catalog's (restored
+  /// from the account, or pinned from the bundled text) is pinned again from
+  /// the current catalog when it can be fetched; otherwise the copy stays.
+  Future<void> refreshPin(String id) async {
+    final online = library;
+    if (online == null) return;
+    final entries = (await index).where((v) => v['id'] == id);
+    final copy = await online.pinnedCopy(id);
+    if (entries.isEmpty || copy == null) return;
+    final sha = entries.single['body'];
+    if (sha is! String || sha == copy.sha256) return;
+    try {
+      await pin(id);
+    } on Object {
+      // Offline: the older copy keeps working.
     }
   }
 

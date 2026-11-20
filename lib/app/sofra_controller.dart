@@ -637,41 +637,70 @@ class SofraController extends ChangeNotifier {
       }
     }
     var pinned = await library.pinnedIds();
+    // The device first: every saved recipe pinned, every unsaved one
+    // unpinned, whatever the account's connection.
     for (final id in want) {
-      if (!pinned.contains(id)) {
-        final copy = remote?[id];
-        try {
-          if (copy == null) throw StateError('No account copy');
-          await library.restorePinned(id, copy);
-        } catch (_) {
-          try {
-            await recipes.pin(id);
-          } catch (_) {
-            continue;
-          }
-        }
-      }
-      if (archive == null || remote == null) continue;
-      final local = await library.pinnedCopy(id);
-      if (local == null || remote[id]?.sha256 == local.sha256) continue;
+      if (pinned.contains(id)) continue;
+      final copy = remote?[id];
       try {
-        await archive.put(id, local);
-        remote[id] = local;
-      } catch (_) {}
+        if (copy == null) throw StateError('No account copy');
+        await library.restorePinned(id, copy);
+        // An older copy (saved before the library changed it) is pinned
+        // again from the current catalog when it can be fetched.
+        await recipes.refreshPin(id);
+      } catch (_) {
+        try {
+          await recipes.pin(id);
+        } catch (_) {}
+      }
     }
     pinned = await library.pinnedIds();
     for (final id in pinned.difference(want)) {
       await library.unpin(id);
     }
-    if (archive != null && remote != null) {
-      for (final id in remote.keys.toSet().difference(want)) {
-        try {
-          await archive.remove(id);
-          remote.remove(id);
-        } catch (_) {}
+    if (archive == null || remote == null) return;
+    final copies = remote;
+    // Then the account, without waiting: offline, Firestore only finishes a
+    // write once the server has it, and that must not hold up the device.
+    for (final id in want) {
+      final local = await library.pinnedCopy(id);
+      if (local == null ||
+          copies[id]?.sha256 == local.sha256 ||
+          _savedWrites[id] == local.sha256) {
+        continue;
       }
+      _savedWrites[id] = local.sha256;
+      unawaited(
+        archive
+            .put(id, local)
+            .then((_) => copies[id] = local, onError: (Object _) {})
+            .whenComplete(() {
+              if (_savedWrites[id] == local.sha256) _savedWrites.remove(id);
+            }),
+      );
+    }
+    // A copy is removed only by the phone that unsaved it: another phone's
+    // older view of the saved list never deletes a copy just written.
+    for (final id in _unsavedHere.intersection(copies.keys.toSet())) {
+      if (want.contains(id) || _savedWrites.containsKey('-$id')) continue;
+      _savedWrites['-$id'] = '';
+      unawaited(
+        archive
+            .remove(id)
+            .then((_) {
+              copies.remove(id);
+              _unsavedHere.remove(id);
+            }, onError: (Object _) {})
+            .whenComplete(() => _savedWrites.remove('-$id')),
+      );
     }
   }
+
+  /// Account writes of saved recipes in flight, by id (removals as `-id`).
+  final _savedWrites = <String, String>{};
+
+  /// Recipes unsaved on this phone whose account copy is still to remove.
+  final _unsavedHere = <String>{};
 
   /// Reschedules the coming week's meal and leftover reminders.
   Future<void> syncReminders({DateTime? now}) async {
@@ -769,7 +798,12 @@ class SofraController extends ChangeNotifier {
     if (ready && profile.language != language) {
       unawaited(Future(() => syncReminders()));
     }
-    if (!setEquals(saved, profile.saved)) unawaited(syncSavedRecipes());
+    if (!setEquals(saved, profile.saved)) {
+      _unsavedHere
+        ..addAll(saved.difference(profile.saved))
+        ..removeAll(profile.saved);
+      unawaited(syncSavedRecipes());
+    }
     return _save(() => kitchen.saveRootFields(profile.toJson()));
   }
 
