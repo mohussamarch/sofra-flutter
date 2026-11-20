@@ -144,10 +144,11 @@ class _Row extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 3),
       // Name at the start edge, control at the end edge; when they do not
-      // fit on one line, the control drops under the name, still at the end.
+      // fit on one line, the control drops under the name; both then keep
+      // the start edge, so the name never drifts away from its icon.
       child: OverflowBar(
         alignment: MainAxisAlignment.spaceBetween,
-        overflowAlignment: OverflowBarAlignment.end,
+        overflowAlignment: OverflowBarAlignment.start,
         spacing: 12,
         children: [
           band(name, AlignmentDirectional.centerStart),
