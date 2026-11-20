@@ -153,12 +153,15 @@ abstract final class Sofra {
   static Color get peach => _p.warnTint;
   static Color get yellow => _p.yellow;
 
-  /// Headings: El Messiri. Body text uses the theme's IBM Plex Sans Arabic.
+  /// Headings: El Messiri in Arabic. In English its Latin letters clash with
+  /// the body, so headings use the body family (IBM Plex Sans) in bold.
   static const display = 'ElMessiri';
+  static const body = 'IBMPlexSansArabic';
+  static String get headingFamily => L10n.isEnglish ? body : display;
   static TextStyle heading(double size, {Color? color}) => TextStyle(
-    fontFamily: display,
+    fontFamily: headingFamily,
     fontSize: size,
-    height: 1.3,
+    height: L10n.isEnglish ? 1.25 : 1.3,
     fontWeight: FontWeight.w700,
     fontVariations: const [FontVariation('wght', 700)],
     color: color ?? ink,

@@ -249,7 +249,7 @@ ThemeData sofraTheme() => ThemeData(
     bodyMedium: TextStyle(color: Sofra.ink, fontSize: 15, height: 1.6),
     bodyLarge: TextStyle(color: Sofra.ink, fontSize: 16, height: 1.6),
     titleLarge: TextStyle(
-      fontFamily: Sofra.display,
+      fontFamily: Sofra.headingFamily,
       color: Sofra.ink,
       fontWeight: FontWeight.w700,
       fontVariations: const [FontVariation('wght', 700)],
