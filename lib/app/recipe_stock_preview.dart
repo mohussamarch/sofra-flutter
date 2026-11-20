@@ -92,10 +92,11 @@ extension StockRecipeDiscovery on SofraController {
   );
 
   Future<Map<String, RecipeStockPreview>> stockRecipePreviews() async {
-    final sources = await recipes.loadAll();
-    final planning = await Future.wait(
-      sources.map((source) => planningRecipe(source.id)),
-    );
+    // From the catalog index alone: no full recipe is downloaded here.
+    final sources = await recipes.listingRecipes();
+    final planning = [
+      for (final source in sources) reviewedYield(source.id) ?? source,
+    ];
     final inventory = stock;
     final previews = <String, RecipeStockPreview>{};
     for (var index = 0; index < sources.length; index++) {

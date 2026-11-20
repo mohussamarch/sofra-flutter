@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../l10n/l10n.dart';
+import 'online_recipe_library.dart';
 
 abstract class StateStore {
   Future<Map<String, dynamic>?> load();
@@ -35,7 +36,7 @@ class LocalStateStore implements StateStore {
 
 class StateConflict implements Exception {}
 
-class CloudStateStore implements StateStore {
+class CloudStateStore implements StateStore, HasSavedRecipeArchive {
   CloudStateStore(FirebaseFirestore firestore, String uid)
     : document = firestore.doc('users/$uid/state/current'),
       _shared = false;
@@ -49,6 +50,11 @@ class CloudStateStore implements StateStore {
   int? _revision;
 
   final bool _shared;
+
+  @override
+  late final SavedRecipeArchive savedRecipes = FirestoreSavedRecipes(
+    document.parent.parent!.collection('savedRecipes'),
+  );
 
   @override
   String get label => _shared
@@ -98,4 +104,44 @@ class StateWriter {
     _tail = result.catchError((Object _) {});
     return result;
   }
+}
+
+/// Saved recipes kept in the account, one document each beside the state
+/// document (users/{uid}/savedRecipes or kitchens/{id}/savedRecipes), so the
+/// 850KB state document never carries recipe text.
+class FirestoreSavedRecipes implements SavedRecipeArchive {
+  FirestoreSavedRecipes(this.collection);
+  final CollectionReference<Map<String, dynamic>> collection;
+
+  @override
+  Future<Map<String, SavedRecipeCopy>> list() async {
+    final snapshot = await collection.get(
+      const GetOptions(source: Source.server),
+    );
+    final result = <String, SavedRecipeCopy>{};
+    for (final doc in snapshot.docs) {
+      final data = doc.data();
+      try {
+        result[doc.id] = SavedRecipeCopy(
+          row: Map<String, dynamic>.from(jsonDecode(data['row'] as String) as Map),
+          body: data['body'] as String,
+          sha256: data['sha256'] as String,
+        );
+      } catch (_) {
+        // A copy that does not read is skipped; the next save replaces it.
+      }
+    }
+    return result;
+  }
+
+  @override
+  Future<void> put(String id, SavedRecipeCopy copy) => collection.doc(id).set({
+    'row': jsonEncode(copy.row),
+    'body': copy.body,
+    'sha256': copy.sha256,
+    'savedAt': FieldValue.serverTimestamp(),
+  });
+
+  @override
+  Future<void> remove(String id) => collection.doc(id).delete();
 }

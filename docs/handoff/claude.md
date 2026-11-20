@@ -505,3 +505,11 @@ APK: `E:\work\SOFRA\deliverables\sofra-20261026-community-2843ab99.apk`
 - c608b511: `IngredientPicture` (Fluent Emoji 3D, MIT) in stock, add list, quick add, shelves; stock screen top = two picture tiles. Shots: E:\shots\sofra-symbols.
 - Not done from the review: live sync listener for shared kitchens, offline open for signed-in users, 850KB archive, Draco offline decoder, release keystore, month search off the UI thread. Not device-tested.
 - References for all remaining parts: E:\work\SOFRA\references. Live dashboard: deliverables/dashboard (node server.cjs, port 8896).
+
+## 2026-11-20 — Online recipe library (Firebase Hosting site, not deployed yet)
+
+- Recipes now come from a separate hosting site (target `library`, site `sofra-library` on sofra-c03a1), with the bundled recipes kept as first-run/offline seed. Design and owner flow: docs/dev/RECIPE-LIBRARY-ONLINE.md.
+- Publisher `tool/recipes/publish-library.mjs` -> build/library (manifest/index/dishes no-cache, `r/<sha256>.json` per-recipe bodies immutable). Client `lib/data/online_recipe_library.dart`: sha256-verified atomic catalog swap, per-recipe bodies cached only when opened/cooked/planned/saved, 30 MB (web 1.5 MB) LRU cap, saved recipes pinned and copied to `.../savedRecipes/{id}` in the account. Settings section «الوصفات على جهازك» before «العرض واللغة».
+- firebase.json hosting is now an array (app config byte-identical); .firebaserc has targets; firestore.rules has savedRecipes rules. NOT deployed: run the commands in the doc's "First deploy" section.
+- Verified: flutter analyze clean; full flutter test 529 passed; node publisher tests 4 passed; real-HTTP localhost test passes.
+- Open: rules emulator test (tool/rules/rules.test.mjs) not run here (no JDK); not device-tested; images only prepared (index fields + doc), none published; site id sofra-library availability not checked (firebase CLI not on PATH here).

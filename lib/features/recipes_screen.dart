@@ -302,12 +302,14 @@ class _RecipesScreenState extends State<RecipesScreen> {
   }
 
   Future<List<Object>>? _viewFuture;
+  int? _catalog;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     results ??= _query();
     dishes ??= SofraScope.controllerOf(context).recipes.dishes;
+    _catalog ??= SofraScope.controllerOf(context).recipes.catalogGeneration;
   }
 
   @override
@@ -406,6 +408,13 @@ class _RecipesScreenState extends State<RecipesScreen> {
   Widget build(BuildContext context) {
     final c = SofraScope.controllerOf(context);
     final t = context.l10n;
+    if (_catalog != c.recipes.catalogGeneration) {
+      // A newer library arrived: list it without leaving the screen.
+      _catalog = c.recipes.catalogGeneration;
+      results = _query();
+      dishes = c.recipes.dishes;
+      _stockVersion = null;
+    }
     if (stockFilter && _stockVersion != c.stockDiscoveryVersion) {
       _stockVersion = c.stockDiscoveryVersion;
       fromStock = c.stockRecipePreviews();
@@ -533,7 +542,8 @@ class _RecipesScreenState extends State<RecipesScreen> {
                 'من الموجود' => (stock[id]?.present ?? 0) > 0, // i18n-data
                 'جاهزة بالموجود' => stock[id]?.ready ?? false, // i18n-data
                 'محفوظة' => c.profile.saved.contains(id), // i18n-data
-                _ => true,
+                // Saved recipes the library dropped list as saved only.
+                _ => r['pinnedOnly'] != true,
               };
             }).toList();
             if (stockFilter || c.profile.quickMeals) {

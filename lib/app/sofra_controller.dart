@@ -9,6 +9,7 @@ import '../data/demo_data.dart';
 import '../data/food_repository.dart';
 import '../data/recipe_photo_library.dart';
 import '../data/kitchen_service.dart';
+import '../data/online_recipe_library.dart';
 import '../data/recipe_repository.dart';
 import '../data/state_store.dart';
 import '../domain/ingredient_directory.dart';
@@ -397,6 +398,13 @@ class SofraController extends ChangeNotifier {
       stockIdOf: stockId,
       stockOptionsOf: stockOptions,
     );
+    this.recipes.library?.addListener(notifyListeners);
+  }
+
+  @override
+  void dispose() {
+    recipes.library?.removeListener(notifyListeners);
+    super.dispose();
   }
 
   final bool persistent;
@@ -558,7 +566,111 @@ class SofraController extends ChangeNotifier {
       loadError = e;
     }
     notifyListeners();
-    if (ready) unawaited(syncReminders());
+    if (ready) {
+      unawaited(syncReminders());
+      unawaited(checkLibrary());
+      unawaited(syncSavedRecipes());
+    }
+  }
+
+  // ---- Online recipe library ----------------------------------------------
+
+  /// Looks for new or changed recipes, at most every 6 hours unless [force]
+  /// (the settings button). Never blocks: screens keep the catalog they have
+  /// until a verified newer one is swapped in.
+  Future<bool> checkLibrary({bool force = false}) =>
+      recipes.library?.update(force: force) ?? Future.value(false);
+
+  /// The account's copies of saved recipes, beside its state document; null
+  /// without an account.
+  SavedRecipeArchive? get _archive {
+    final store = kitchen.store;
+    return store is HasSavedRecipeArchive
+        ? (store as HasSavedRecipeArchive).savedRecipes
+        : null;
+  }
+
+  Map<String, SavedRecipeCopy>? _archived;
+  SavedRecipeArchive? _archivedFrom;
+  Future<void>? _syncingSaved;
+  bool _syncSavedAgain = false;
+
+  /// Keeps every saved recipe pinned on the device and copied to the
+  /// account: a saved recipe missing here is restored from the account copy
+  /// (a new phone) or downloaded and pinned; unsaved ones are unpinned and
+  /// their copies removed. Failures (offline) wait for the next sync.
+  Future<void> syncSavedRecipes() async {
+    final library = recipes.library;
+    if (library == null || !ready) return;
+    if (_syncingSaved != null) {
+      _syncSavedAgain = true;
+      return _syncingSaved;
+    }
+    final run = () async {
+      do {
+        _syncSavedAgain = false;
+        await _syncSavedOnce(library);
+      } while (_syncSavedAgain);
+    }();
+    _syncingSaved = run;
+    try {
+      await run;
+    } finally {
+      _syncingSaved = null;
+    }
+  }
+
+  Future<void> _syncSavedOnce(OnlineRecipeLibrary library) async {
+    final want = profile.saved;
+    final archive = _archive;
+    if (!identical(archive, _archivedFrom)) {
+      // Another account or kitchen: its copies are listed afresh.
+      _archivedFrom = archive;
+      _archived = null;
+    }
+    var remote = _archived;
+    if (archive != null && remote == null) {
+      try {
+        remote = _archived = await archive.list();
+      } catch (_) {
+        // Offline: pin what the device can; the account catches up later.
+      }
+    }
+    var pinned = await library.pinnedIds();
+    for (final id in want) {
+      if (!pinned.contains(id)) {
+        final copy = remote?[id];
+        try {
+          if (copy == null) throw StateError('No account copy');
+          await library.restorePinned(id, copy);
+        } catch (_) {
+          try {
+            await recipes.pin(id);
+          } catch (_) {
+            continue;
+          }
+        }
+      }
+      if (archive == null || remote == null) continue;
+      final local = await library.pinnedCopy(id);
+      if (local == null || remote[id]?.sha256 == local.sha256) continue;
+      try {
+        await archive.put(id, local);
+        remote[id] = local;
+      } catch (_) {}
+    }
+    pinned = await library.pinnedIds();
+    for (final id in pinned.difference(want)) {
+      await library.unpin(id);
+    }
+    if (archive != null && remote != null) {
+      for (final id in remote.keys.toSet().difference(want)) {
+        try {
+          await archive.remove(id);
+          remote.remove(id);
+        } catch (_) {}
+      }
+    }
   }
 
   /// Reschedules the coming week's meal and leftover reminders.
@@ -650,12 +762,14 @@ class SofraController extends ChangeNotifier {
   /// the retry writes the latest profile.
   Future<void> updateProfile(Profile Function(Profile) change) {
     final language = profile.language;
+    final saved = profile.saved;
     profile = change(profile);
     notifyListeners();
     // Scheduled reminders are written in the language they were set in.
     if (ready && profile.language != language) {
       unawaited(Future(() => syncReminders()));
     }
+    if (!setEquals(saved, profile.saved)) unawaited(syncSavedRecipes());
     return _save(() => kitchen.saveRootFields(profile.toJson()));
   }
 
@@ -1170,10 +1284,13 @@ class SofraController extends ChangeNotifier {
 
   /// Recipe used for scaling and planning: the reviewed yield variant when the
   /// catalog source does not state its servings.
-  Future<CatalogRecipe> planningRecipe(String recipeId) async {
+  Future<CatalogRecipe> planningRecipe(String recipeId) async =>
+      reviewedYield(recipeId) ?? await recipes.get(recipeId);
+
+  /// The user's reviewed yield copy of a catalog recipe, if any.
+  CatalogRecipe? reviewedYield(String recipeId) {
     final active = kitchen.recipeBook.active[yieldVariantId(recipeId)];
-    if (active != null) return kitchen.recipeBook.revisions[active]!.recipe;
-    return recipes.get(recipeId);
+    return active == null ? null : kitchen.recipeBook.revisions[active]!.recipe;
   }
 
   String planningId(String recipeId) =>

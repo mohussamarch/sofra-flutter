@@ -141,3 +141,31 @@ test('stories: own, short, text-only, gone within a day', async () => {
   await assertFails(deleteDoc(doc(db('alice'), `stories/${ref.id}`)));
   await assertSucceeds(deleteDoc(doc(db('bob'), `stories/${ref.id}`)));
 });
+
+test('saved recipes: one document each, only the account or kitchen members', async () => {
+  await env.clearFirestore();
+  const sha = 'a'.repeat(64);
+  const copy = (extra = {}) => ({
+    row: '{"id":"eg-koshari"}', body: '{"id":"eg-koshari"}', sha256: sha,
+    savedAt: serverTimestamp(), ...extra,
+  });
+  const mine = 'users/alice/savedRecipes/eg-koshari';
+  await assertFails(setDoc(doc(db(null), mine), copy()));
+  await assertFails(setDoc(doc(db('bob'), mine), copy()));
+  await assertSucceeds(setDoc(doc(db('alice'), mine), copy()));
+  await assertSucceeds(getDocs(collection(db('alice'), 'users/alice/savedRecipes')));
+  await assertFails(getDocs(collection(db('bob'), 'users/alice/savedRecipes')));
+  await assertFails(setDoc(doc(db('alice'), mine), copy({ sha256: 'nope' })));
+  await assertFails(setDoc(doc(db('alice'), mine), copy({ extra: true })));
+  await assertFails(setDoc(doc(db('alice'), mine), copy({ body: 'x'.repeat(200001) })));
+  await assertFails(setDoc(doc(db('alice'), 'users/alice/savedRecipes/bad id'), copy()));
+  await assertSucceeds(deleteDoc(doc(db('alice'), mine)));
+  // A shared kitchen's saved recipes belong to its members.
+  await sharedKitchen('k5');
+  const shared = 'kitchens/k5/savedRecipes/eg-koshari';
+  await assertSucceeds(setDoc(doc(db('alice'), shared), copy()));
+  await assertSucceeds(getDoc(doc(db('alice'), shared)));
+  await assertFails(getDoc(doc(db('bob'), shared)));
+  await assertFails(setDoc(doc(db('bob'), shared), copy()));
+  await assertFails(deleteDoc(doc(db('bob'), shared)));
+});

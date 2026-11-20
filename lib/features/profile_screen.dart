@@ -6,6 +6,7 @@ import '../domain/market_profile.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
+import 'library_settings.dart';
 import 'look_settings.dart';
 import 'onboarding_screen.dart';
 import 'place_picker.dart';
@@ -665,6 +666,10 @@ class SettingsScreen extends StatelessWidget {
         const Surface(child: CountryPicker()),
         SectionTitle(t.profReminders),
         const ReminderSettings(),
+        if (c.recipes.library != null) ...[
+          SectionTitle(t.librarySection),
+          const LibrarySettings(),
+        ],
         SectionTitle(t.lookSection),
         const LookSettings(),
         const SizedBox(height: 24),

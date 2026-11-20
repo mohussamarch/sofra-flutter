@@ -166,6 +166,34 @@ class CatalogRecipe {
       }
     }
   }
+  /// Ingredients and yield only, from a catalog index row of the online
+  /// library: for listing, search and stock matching. It has no steps,
+  /// description or times; planning and cooking open the full recipe.
+  CatalogRecipe.listing(Map<String, dynamic> row)
+    : id = _text(row['id'], 'recipe id'),
+      name = _text(row['name'], 'recipe name'),
+      cuisine = _text(row['cuisine'], 'cuisine'),
+      category = (row['category'] as String?) ?? '',
+      description = '',
+      difficulty = (row['difficulty'] as String?) ?? '',
+      metadataPolicy = null,
+      servings = row['servings'] == null
+          ? null
+          : _number(row['servings'], 'servings').toInt(),
+      prepMinutes = null,
+      cookMinutes = null,
+      ingredients = List.unmodifiable(
+        (row['ingredients'] as List).map(
+          (v) =>
+              CatalogIngredient.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+      ),
+      steps = const [],
+      tags = List<String>.unmodifiable(
+        ((row['tags'] as List?) ?? const []).cast<String>(),
+      ),
+      notes = null;
+
   final String id, name, cuisine, category, description, difficulty;
   static const unknownMetadataPolicy = 'source-unknowns-v1';
   final String? metadataPolicy;

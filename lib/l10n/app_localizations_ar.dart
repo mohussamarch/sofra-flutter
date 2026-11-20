@@ -2480,4 +2480,49 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get kitchen3dAlt => 'المطبخ ثلاثي الأبعاد';
+
+  @override
+  String get librarySection => 'الوصفات على جهازك';
+
+  @override
+  String get libraryInfo =>
+      'قائمة الوصفات محفوظة على جهازك دائمًا. تُحفظ الوصفة كاملة عند فتحها أو حفظها، والمحفوظة تبقى في حسابك أيضًا وإن حُذفت من المكتبة. تصل الوصفات الجديدة تلقائيًا دون تحديث التطبيق.';
+
+  @override
+  String get libraryOnDevice => 'على الجهاز';
+
+  @override
+  String get librarySaved => 'محفوظة';
+
+  @override
+  String get librarySize => 'المساحة';
+
+  @override
+  String librarySizeValue(String value) {
+    return '$value ميجابايت';
+  }
+
+  @override
+  String libraryUpdated(String date) {
+    return 'آخر تحديث للمكتبة: $date';
+  }
+
+  @override
+  String get libraryUpdateNow => 'تحديث الآن';
+
+  @override
+  String get libraryUpdating => 'جارٍ التحديث…';
+
+  @override
+  String get libraryUpToDate => 'المكتبة محدّثة';
+
+  @override
+  String get libraryUpdateFailed => 'تعذّر الاتصال بالمكتبة';
+
+  @override
+  String get recipeNotOnDevice =>
+      'هذه الوصفة غير محفوظة على جهازك. اتصل بالإنترنت ثم حاول مرة أخرى.';
+
+  @override
+  String get recipeRetry => 'إعادة المحاولة';
 }

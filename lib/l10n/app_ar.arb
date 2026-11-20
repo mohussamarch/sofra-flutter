@@ -1621,5 +1621,36 @@
   "@dataToTaste": {
     "description": "Amount shown for a recipe ingredient that has no measured quantity."
   },
-  "kitchen3dAlt": "المطبخ ثلاثي الأبعاد"
+  "kitchen3dAlt": "المطبخ ثلاثي الأبعاد",
+  "librarySection": "الوصفات على جهازك",
+  "libraryInfo": "قائمة الوصفات محفوظة على جهازك دائمًا. تُحفظ الوصفة كاملة عند فتحها أو حفظها، والمحفوظة تبقى في حسابك أيضًا وإن حُذفت من المكتبة. تصل الوصفات الجديدة تلقائيًا دون تحديث التطبيق.",
+  "libraryOnDevice": "على الجهاز",
+  "librarySaved": "محفوظة",
+  "librarySize": "المساحة",
+  "librarySizeValue": "{value} ميجابايت",
+  "@librarySizeValue": {
+    "description": "Storage the recipe library uses, in megabytes.",
+    "placeholders": {
+      "value": {
+        "type": "String",
+        "example": "1.2"
+      }
+    }
+  },
+  "libraryUpdated": "آخر تحديث للمكتبة: {date}",
+  "@libraryUpdated": {
+    "description": "Date the recipe library on the device was published.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "2026-11-20"
+      }
+    }
+  },
+  "libraryUpdateNow": "تحديث الآن",
+  "libraryUpdating": "جارٍ التحديث…",
+  "libraryUpToDate": "المكتبة محدّثة",
+  "libraryUpdateFailed": "تعذّر الاتصال بالمكتبة",
+  "recipeNotOnDevice": "هذه الوصفة غير محفوظة على جهازك. اتصل بالإنترنت ثم حاول مرة أخرى.",
+  "recipeRetry": "إعادة المحاولة"
 }

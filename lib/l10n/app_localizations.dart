@@ -4386,6 +4386,84 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'المطبخ ثلاثي الأبعاد'**
   String get kitchen3dAlt;
+
+  /// No description provided for @librarySection.
+  ///
+  /// In ar, this message translates to:
+  /// **'الوصفات على جهازك'**
+  String get librarySection;
+
+  /// No description provided for @libraryInfo.
+  ///
+  /// In ar, this message translates to:
+  /// **'قائمة الوصفات محفوظة على جهازك دائمًا. تُحفظ الوصفة كاملة عند فتحها أو حفظها، والمحفوظة تبقى في حسابك أيضًا وإن حُذفت من المكتبة. تصل الوصفات الجديدة تلقائيًا دون تحديث التطبيق.'**
+  String get libraryInfo;
+
+  /// No description provided for @libraryOnDevice.
+  ///
+  /// In ar, this message translates to:
+  /// **'على الجهاز'**
+  String get libraryOnDevice;
+
+  /// No description provided for @librarySaved.
+  ///
+  /// In ar, this message translates to:
+  /// **'محفوظة'**
+  String get librarySaved;
+
+  /// No description provided for @librarySize.
+  ///
+  /// In ar, this message translates to:
+  /// **'المساحة'**
+  String get librarySize;
+
+  /// Storage the recipe library uses, in megabytes.
+  ///
+  /// In ar, this message translates to:
+  /// **'{value} ميجابايت'**
+  String librarySizeValue(String value);
+
+  /// Date the recipe library on the device was published.
+  ///
+  /// In ar, this message translates to:
+  /// **'آخر تحديث للمكتبة: {date}'**
+  String libraryUpdated(String date);
+
+  /// No description provided for @libraryUpdateNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحديث الآن'**
+  String get libraryUpdateNow;
+
+  /// No description provided for @libraryUpdating.
+  ///
+  /// In ar, this message translates to:
+  /// **'جارٍ التحديث…'**
+  String get libraryUpdating;
+
+  /// No description provided for @libraryUpToDate.
+  ///
+  /// In ar, this message translates to:
+  /// **'المكتبة محدّثة'**
+  String get libraryUpToDate;
+
+  /// No description provided for @libraryUpdateFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر الاتصال بالمكتبة'**
+  String get libraryUpdateFailed;
+
+  /// No description provided for @recipeNotOnDevice.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذه الوصفة غير محفوظة على جهازك. اتصل بالإنترنت ثم حاول مرة أخرى.'**
+  String get recipeNotOnDevice;
+
+  /// No description provided for @recipeRetry.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة المحاولة'**
+  String get recipeRetry;
 }
 
 class _AppLocalizationsDelegate

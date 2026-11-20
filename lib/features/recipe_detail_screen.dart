@@ -158,6 +158,23 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       return FutureBuilder<(CatalogRecipe, CatalogRecipe)>(
         future: recipe,
         builder: (context, snap) {
+          if (snap.error is RecipeNotOnDevice) {
+            final l = context.l10n;
+            return ScreenBody(
+              children: [
+                ErrorBlock(l.recipeNotOnDevice),
+                const SizedBox(height: 12),
+                Center(
+                  child: TextButton.icon(
+                    key: const ValueKey('recipe-retry'),
+                    onPressed: () => setState(() => recipe = _load()),
+                    icon: const Icon(Icons.refresh_rounded, size: 18),
+                    label: Text(l.recipeRetry),
+                  ),
+                ),
+              ],
+            );
+          }
           if (snap.hasError) {
             return ScreenBody(
               children: [ErrorBlock(context.l10n.detailOpenError)],

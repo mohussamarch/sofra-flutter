@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui' as ui;
 
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -125,6 +126,10 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   void _go(VoidCallback change) {
     FocusManager.instance.primaryFocus?.unfocus();
     setState(change);
+    // Opening the recipes looks for new ones (at most every 6 hours).
+    if (tab == AppTab.recipes && view == _View.tabs) {
+      unawaited(controller.checkLibrary());
+    }
   }
 
   @override

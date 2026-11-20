@@ -1,1 +1,11 @@
-{"projects":{"default":"sofra-c03a1"}}
+{
+  "projects": {"default": "sofra-c03a1"},
+  "targets": {
+    "sofra-c03a1": {
+      "hosting": {
+        "app": ["sofra-c03a1"],
+        "library": ["sofra-library"]
+      }
+    }
+  }
+}

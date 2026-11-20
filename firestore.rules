@@ -15,6 +15,15 @@ service cloud.firestore {
         && d.data.stock is list && d.data.stock.size() <= 1000
         && d.updatedAt == request.time;
     }
+    // A saved recipe copied to the account (not inside the state document).
+    function savedRecipeValid(rid) {
+      let d = request.resource.data;
+      return rid.matches('^[A-Za-z0-9_.-]{1,120}$')
+        && d.keys().hasOnly(['row', 'body', 'sha256', 'savedAt'])
+        && text(d.row, 20000) && text(d.body, 200000)
+        && d.sha256 is string && d.sha256.matches('^[0-9a-f]{64}$')
+        && d.savedAt == request.time;
+    }
 
     // Personal kitchen (unchanged).
     match /users/{uid}/state/current {
@@ -23,6 +32,12 @@ service cloud.firestore {
       allow create: if owner() && stateValid() && request.resource.data.revision == 1;
       allow update: if owner() && stateValid()
         && request.resource.data.revision == resource.data.revision + 1;
+    }
+
+    // Saved recipes of the personal kitchen, one document each.
+    match /users/{uid}/savedRecipes/{rid} {
+      allow read, delete: if signedIn() && me() == uid;
+      allow create, update: if signedIn() && me() == uid && savedRecipeValid(rid);
     }
 
     // Which shared kitchen this account opens; only one it belongs to.
@@ -79,6 +94,13 @@ service cloud.firestore {
         allow create: if member() && stateValid() && request.resource.data.revision == 1;
         allow update: if member() && stateValid()
           && request.resource.data.revision == resource.data.revision + 1;
+      }
+
+      // Saved recipes of the shared kitchen, one document each.
+      match /savedRecipes/{rid} {
+        function member() { return signedIn() && me() in kitchenDoc(kid).members; }
+        allow read, delete: if member();
+        allow create, update: if member() && savedRecipeValid(rid);
       }
     }
 

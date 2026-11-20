@@ -2597,4 +2597,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get kitchen3dAlt => '3D kitchen';
+
+  @override
+  String get librarySection => 'Recipes on your device';
+
+  @override
+  String get libraryInfo =>
+      'The recipe list is always on your device. A full recipe is kept once you open or save it, and saved ones also stay in your account even if the library drops them. New recipes arrive on their own, without an app update.';
+
+  @override
+  String get libraryOnDevice => 'On device';
+
+  @override
+  String get librarySaved => 'Saved';
+
+  @override
+  String get librarySize => 'Storage';
+
+  @override
+  String librarySizeValue(String value) {
+    return '$value MB';
+  }
+
+  @override
+  String libraryUpdated(String date) {
+    return 'Library updated: $date';
+  }
+
+  @override
+  String get libraryUpdateNow => 'Update now';
+
+  @override
+  String get libraryUpdating => 'Updating…';
+
+  @override
+  String get libraryUpToDate => 'Library is up to date';
+
+  @override
+  String get libraryUpdateFailed => 'Couldn\'t reach the library';
+
+  @override
+  String get recipeNotOnDevice =>
+      'This recipe isn\'t on your device yet. Connect to the internet and try again.';
+
+  @override
+  String get recipeRetry => 'Try again';
 }
