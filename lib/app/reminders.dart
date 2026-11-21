@@ -91,6 +91,9 @@ class LocalReminders implements ReminderSink {
     if (!await (_ready ??= _init())) return;
     try {
       await _plugin.cancelAllPendingNotifications();
+      final now = DateTime.now();
+      // A finished step timer is in the past; scheduling it would throw.
+      _extra.removeWhere((_, r) => !r.at.isAfter(now));
       for (final r in [...reminders, ..._extra.values]) {
         await _schedule(r);
       }
