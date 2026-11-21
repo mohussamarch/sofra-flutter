@@ -280,38 +280,40 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                           ),
                         ),
                         // Content scrolling past the floating bar fades out
-                        // before the bottom edge instead of peeking out
-                        // under the bar.
+                        // instead of peeking out beside or under it: the
+                        // page's own backdrop is painted again over the
+                        // bar's full height, gap and safe area, opaque from
+                        // the bar's top edge and fading in over the 24 above
+                        // it, so there is no flat band either.
                         if (_showsNav(c))
-                          Positioned(
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            // Covers the bar's full height plus its 12 gap
-                            // and safe area: opaque from the bar's top edge,
-                            // fading in over the 24 above it.
-                            height: MediaQuery.paddingOf(context).bottom + 120,
+                          Positioned.fill(
                             child: IgnorePointer(
-                              child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
+                              child: ShaderMask(
+                                blendMode: BlendMode.dstIn,
+                                shaderCallback: (r) {
+                                  final band =
+                                      MediaQuery.paddingOf(context).bottom +
+                                      120;
+                                  final top = ((r.height - band) / r.height)
+                                      .clamp(0.0, 1.0);
+                                  final solid =
+                                      ((r.height - band + 24) / r.height).clamp(
+                                        0.0,
+                                        1.0,
+                                      );
+                                  return LinearGradient(
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
-                                    stops: [
-                                      0,
-                                      24 /
-                                          (MediaQuery.paddingOf(context)
-                                                  .bottom +
-                                              120),
-                                      1,
+                                    colors: const [
+                                      Color(0x00FFFFFF),
+                                      Color(0x00FFFFFF),
+                                      Colors.white,
+                                      Colors.white,
                                     ],
-                                    colors: [
-                                      Sofra.paper.withValues(alpha: 0),
-                                      Sofra.paper,
-                                      Sofra.paper,
-                                    ],
-                                  ),
-                                ),
+                                    stops: [0, top, solid, 1],
+                                  ).createShader(r);
+                                },
+                                child: const SofraBackdrop(),
                               ),
                             ),
                           ),
