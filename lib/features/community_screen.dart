@@ -866,7 +866,7 @@ class _FeedCard extends StatelessWidget {
                   context,
                   () => c.community!.deleteSharedRecipe(recipe.id),
                 );
-                if (done) onDeleted();
+                if (done && context.mounted) onDeleted();
               },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
