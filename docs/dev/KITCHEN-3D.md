@@ -42,6 +42,12 @@ under-cabinet LEDs and the fridge lamps are live and cast shadow maps.
 
 ## Drawing
 
+The model arrives as 1,065 meshes, one draw call each. At load, meshes that
+never move and share a material and option tags are merged (`mergeStatics`):
+about 150 draw calls per frame instead of about 740, pixel for pixel the same
+picture. Doors and what hangs on them, glass, and the hidden walls stay
+separate. `?unmerged=1` on the standalone page turns it off for comparison.
+
 On demand: a frame is drawn only while the camera, a door or the light moves.
 A shadow map redraws only for a light that has power, and only when what it
 sees changed (a door swing redraws the big room maps every second frame).
@@ -100,8 +106,7 @@ In the console: `sofraKitchen({shot:'fridge', weights:{night:1}})`,
 
 ## Open (next rounds)
 
-- Never run on the S24 Ultra. About 700 draw calls per frame (1,065 separate
-  meshes): static meshes are to be merged next. If the WebView's renderer
+- Never run on the S24 Ultra. If the WebView's renderer
   process dies (memory), `webview_flutter` has no hook and Android closes the
   app: watch for that on the device.
 - The reflection probe switches at the midpoint of a change of hour; it is

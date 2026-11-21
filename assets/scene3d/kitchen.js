@@ -18,6 +18,7 @@ import * as THREE from './vendor/three.module.min.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
 import { DRACOLoader } from './vendor/DRACOLoader.js';
 import { HDRLoader } from './vendor/HDRLoader.js';
+import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
 const params = new URLSearchParams(location.search);
 const view = document.getElementById('view');
@@ -420,7 +421,52 @@ function setUp(gltf) {
     scene.add(strip, led, led.target);
     leds.push({ strip, light: led });
   }
+  if (!params.has('unmerged')) mergeStatics();
 }
+
+// The model is 1,065 separate meshes, one draw call each, and a phone pays
+// for every call in every pass (the room, then each shadow map). Nearly all
+// of them never move: those that share a material and the same option tags
+// become one mesh. Doors and what hangs on them stay as they are.
+function mergeStatics() {
+  const moving = new Set(Object.values(doorParts).flat().map((part) => part.node));
+  const groups = new Map();
+  root.traverse((o) => {
+    if (!o.isMesh || o.userData.reviewShadowOnly || o.userData.dressing) return;
+    const m = o.material;
+    // See-through parts are sorted by distance one by one.
+    if (m.transparent || m.transmission > 0) return;
+    for (let up = o; up; up = up.parent) if (moving.has(up)) return;
+    const g = o.geometry, u = o.userData;
+    const shape = Object.keys(g.attributes).sort().map((name) => name + g.attributes[name].itemSize + g.attributes[name].array.constructor.name + (g.attributes[name].normalized ? 'n' : '')).join(',');
+    const key = [m.uuid, u.option_group || '', u.cabinet_style || '', o.castShadow ? 1 : 0, g.index ? 'i' : '', shape].join('|');
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(o);
+  });
+  let before = 0, after = 0;
+  for (const meshes of groups.values()) {
+    before += meshes.length;
+    if (meshes.length < 2) { after += 1; continue; }
+    const parts = meshes.map((o) => o.geometry.clone().applyMatrix4(o.matrixWorld));
+    let merged = null;
+    try { merged = mergeGeometries(parts, false); } catch { merged = null; }
+    for (const part of parts) part.dispose();
+    if (!merged) { after += meshes.length; continue; }
+    const first = meshes[0];
+    const mesh = new THREE.Mesh(merged, first.material);
+    mesh.name = 'merged_' + first.material.name;
+    mesh.castShadow = first.castShadow;
+    mesh.receiveShadow = true;
+    mesh.visible = first.visible;
+    if (first.userData.option_group) mesh.userData.option_group = first.userData.option_group;
+    if (first.userData.cabinet_style) mesh.userData.cabinet_style = first.userData.cabinet_style;
+    root.add(mesh);
+    for (const o of meshes) { o.parent.remove(o); o.geometry.dispose(); }
+    after += 1;
+  }
+  mergeInfo = `${before} static meshes in ${after}`;
+}
+let mergeInfo = '';
 
 // The room is a closed box in Blender (ceiling and near walls block the
 // light), so what the cut-away shows from outside baked black: the joints
@@ -788,7 +834,7 @@ function adapt() {
 let lastPerf = '', startInfo = '';
 function showHud() {
   hud.textContent = `${mainDraws} draws · ${Math.round(mainTriangles / 1000)}k tris · x${pixelRatio} · ${tier}\n`
-    + `${lastPerf || 'no move measured yet'}\n${startInfo}\nview ${view.clientWidth}x${view.clientHeight}${lastWarning ? '\n! ' + lastWarning : ''}`;
+    + `${lastPerf || 'no move measured yet'}\n${startInfo}\n${mergeInfo} · view ${view.clientWidth}x${view.clientHeight}${lastWarning ? '\n! ' + lastWarning : ''}`;
 }
 function resize() {
   const w = view.clientWidth, h = view.clientHeight;
