@@ -324,11 +324,14 @@ class _Nutrition extends StatefulWidget {
 
 class _NutritionState extends State<_Nutrition> {
   Future<Map<NutrientId, double>?>? values;
+  Future<int>? missing;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     values ??= SofraScope.controllerOf(context).portionNutrition(widget.meal);
+    missing ??= SofraScope.controllerOf(context)
+        .nutritionMissingCount(widget.meal);
   }
 
   @override
@@ -336,7 +339,23 @@ class _NutritionState extends State<_Nutrition> {
     future: values,
     builder: (context, snap) {
       final v = snap.data;
-      if (v == null) return const SizedBox.shrink();
+      if (v == null) {
+        return FutureBuilder<int>(
+          future: missing,
+          builder: (context, gap) {
+            final n = gap.data ?? 0;
+            if (n == 0) return const SizedBox.shrink();
+            return Padding(
+              key: ValueKey('nutrition-incomplete-${widget.meal.id}'),
+              padding: const EdgeInsets.only(top: 10),
+              child: Text(
+                context.l10n.planNutritionIncomplete(n),
+                style: TextStyle(color: Sofra.muted, fontSize: 13),
+              ),
+            );
+          },
+        );
+      }
       final t = context.l10n;
       String g(NutrientId id, String label) => v[id] == null
           ? ''

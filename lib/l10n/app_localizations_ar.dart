@@ -779,6 +779,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitQuantityHelper => 'اكتب 0 إذا نفد';
 
   @override
+  String get kitDeleteLot => 'حذف من المخزون';
+
+  @override
+  String planNutritionIncomplete(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'القيم الغذائية ناقصة: $count مكوّنًا بلا بيانات',
+      few: 'القيم الغذائية ناقصة: $count مكوّنات بلا بيانات',
+      two: 'القيم الغذائية ناقصة: مكوّنان بلا بيانات',
+      one: 'القيم الغذائية ناقصة: مكوّن واحد بلا بيانات',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get kitCancel => 'إلغاء';
 
   @override

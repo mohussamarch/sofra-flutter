@@ -798,6 +798,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kitQuantityHelper => 'Enter 0 if it ran out';
 
   @override
+  String get kitDeleteLot => 'Remove from stock';
+
+  @override
+  String planNutritionIncomplete(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Nutrition incomplete: $count ingredients lack data',
+      one: 'Nutrition incomplete: 1 ingredient lacks data',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get kitCancel => 'Cancel';
 
   @override

@@ -529,6 +529,15 @@
     }
   },
   "kitQuantityHelper": "اكتب 0 إذا نفد",
+  "kitDeleteLot": "حذف من المخزون",
+  "planNutritionIncomplete": "{count, plural, =1{القيم الغذائية ناقصة: مكوّن واحد بلا بيانات} =2{القيم الغذائية ناقصة: مكوّنان بلا بيانات} few{القيم الغذائية ناقصة: {count} مكوّنات بلا بيانات} other{القيم الغذائية ناقصة: {count} مكوّنًا بلا بيانات}}",
+  "@planNutritionIncomplete": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "kitCancel": "إلغاء",
   "kitSave": "حفظ",
   "kitQuantityUpdated": "حُدّثت كمية {name}",

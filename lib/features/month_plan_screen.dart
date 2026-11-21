@@ -66,6 +66,22 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     index ??= c.recipes.index;
+    if (!_prefilled) {
+      _prefilled = true;
+      _prefillBudget();
+    }
+  }
+
+  bool _prefilled = false;
+
+  /// Shows the saved budget of the chosen month (empty when none saved).
+  void _prefillBudget() {
+    final saved = c.savedMonthLimit(_month);
+    budget.text = saved == null || saved <= 0
+        ? ''
+        : (saved == saved.roundToDouble()
+              ? saved.toInt().toString()
+              : saved.toString());
   }
 
   @override
@@ -248,13 +264,19 @@ class _MonthPlanScreenState extends State<MonthPlanScreen> {
                     key: const ValueKey('month-this'),
                     label: Text(t.planThisMonth),
                     selected: !nextMonth,
-                    onSelected: (_) => _changed(() => nextMonth = false),
+                    onSelected: (_) => _changed(() {
+                      nextMonth = false;
+                      _prefillBudget();
+                    }),
                   ),
                   SofraChip(
                     key: const ValueKey('month-next'),
                     label: Text(t.planNextMonth),
                     selected: nextMonth,
-                    onSelected: (_) => _changed(() => nextMonth = true),
+                    onSelected: (_) => _changed(() {
+                      nextMonth = true;
+                      _prefillBudget();
+                    }),
                   ),
                 ],
               ),

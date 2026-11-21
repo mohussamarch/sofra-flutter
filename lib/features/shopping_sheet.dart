@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../app/scope.dart';
@@ -34,6 +35,40 @@ class ShoppingSheet extends StatefulWidget {
 class _ShoppingSheetState extends State<ShoppingSheet> {
   Future<PurchaseForecast>? list;
   final bought = <int>{};
+  static const boughtKey = 'sofra.shopping.bought';
+  SharedPreferencesAsync get _prefs => SharedPreferencesAsync();
+  List<ForecastPurchase> _items = const [];
+
+  /// Ticks live while the list does: they are kept on the device and
+  /// restored when the sheet opens again.
+  Future<void> _restore(PurchaseForecast f) async {
+    _items = f.purchases;
+    try {
+      final saved = await _prefs.getStringList(boughtKey) ?? const [];
+      if (!mounted || saved.isEmpty) return;
+      setState(() {
+        for (final (i, p) in _items.indexed) {
+          if (saved.contains(p.use.ingredientId)) bought.add(i);
+        }
+      });
+    } on Object {
+      // Ticks are a convenience; the list works without them.
+    }
+  }
+
+  Future<void> _persist() async {
+    try {
+      final ids = [for (final i in bought) _items[i].use.ingredientId];
+      if (ids.isEmpty) {
+        await _prefs.remove(boughtKey);
+      } else {
+        await _prefs.setStringList(boughtKey, ids);
+      }
+    } on Object {
+      // Never block shopping on storage.
+    }
+  }
+
   final paid = <int, TextEditingController>{};
 
   @override
@@ -47,7 +82,12 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    list ??= SofraScope.controllerOf(context).shoppingList(DateTime.now());
+    list ??= SofraScope.controllerOf(context)
+        .shoppingList(DateTime.now())
+        .then((f) {
+          _restore(f);
+          return f;
+        });
   }
 
   @override
@@ -132,9 +172,12 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                         CheckboxListTile(
                           key: ValueKey('shopping-${p.use.ingredientId}'),
                           value: bought.contains(i),
-                          onChanged: (v) => setState(
-                            () => v! ? bought.add(i) : bought.remove(i),
-                          ),
+                          onChanged: (v) {
+                            setState(
+                              () => v! ? bought.add(i) : bought.remove(i),
+                            );
+                            _persist();
+                          },
                           title: Text(c.ingredientName(p.use.ingredientId)),
                           subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -218,6 +261,10 @@ class _ShoppingSheetState extends State<ShoppingSheet> {
                                       items[i].use: v,
                                 },
                               );
+                              if (ok) {
+                                bought.clear();
+                                await _persist();
+                              }
                               if (ok && context.mounted) {
                                 Navigator.pop(context);
                               }

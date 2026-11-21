@@ -250,6 +250,14 @@ Future<void> editStockQuantity(BuildContext context, InventoryLot lot) async {
         ),
         actions: [
           TextButton(
+            key: const ValueKey('stock-delete'),
+            onPressed: () => Navigator.pop(ctx, 0.0),
+            child: Text(
+              t.kitDeleteLot,
+              style: TextStyle(color: Theme.of(ctx).colorScheme.error),
+            ),
+          ),
+          TextButton(
             onPressed: () => Navigator.pop(ctx),
             child: Text(t.kitCancel),
           ),

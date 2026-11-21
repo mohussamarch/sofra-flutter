@@ -1433,6 +1433,18 @@ abstract class AppLocalizations {
   /// **'اكتب 0 إذا نفد'**
   String get kitQuantityHelper;
 
+  /// No description provided for @kitDeleteLot.
+  ///
+  /// In ar, this message translates to:
+  /// **'حذف من المخزون'**
+  String get kitDeleteLot;
+
+  /// No description provided for @planNutritionIncomplete.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{القيم الغذائية ناقصة: مكوّن واحد بلا بيانات} =2{القيم الغذائية ناقصة: مكوّنان بلا بيانات} few{القيم الغذائية ناقصة: {count} مكوّنات بلا بيانات} other{القيم الغذائية ناقصة: {count} مكوّنًا بلا بيانات}}'**
+  String planNutritionIncomplete(int count);
+
   /// No description provided for @kitCancel.
   ///
   /// In ar, this message translates to:

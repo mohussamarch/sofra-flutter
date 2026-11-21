@@ -849,6 +849,16 @@ class SofraController extends ChangeNotifier {
     }
   }
 
+  /// The limit already saved for [month], or null when none was saved.
+  double? savedMonthLimit(DateTime month) {
+    final id =
+        'budget-${localDay(DateTime(month.year, month.month)).substring(0, 7)}';
+    for (final v in kitchen.snapshot['budgets'] as List) {
+      if (v['id'] == id) return (v['limit'] as num?)?.toDouble();
+    }
+    return null;
+  }
+
   /// Saves the month's budget, repeats [menu] (weekday 1..7 and slot -> one
   /// or two recipe ids, every weekday filled for every slot) over the month,
   /// and prices it. A second recipe in a cell is a cheaper alternative the
@@ -1252,6 +1262,26 @@ class SofraController extends ChangeNotifier {
         id: ?result.perPortion[id]?.value,
     };
   }
+
+  /// How many ingredients keep a planned meal's energy unknown (no food
+  /// value yet). 0 when the value is complete or cannot be previewed.
+  Future<int> nutritionMissingCount(PlannedMeal meal) async {
+    try {
+      return missingNutritionIngredients(
+        await kitchen.previewNutrition(meal.id),
+      );
+    } on Object {
+      return 0;
+    }
+  }
+
+  /// Distinct ingredients that block the energy figure of [result].
+  static int missingNutritionIngredients(RecipeNutritionResult result) => {
+    for (final g
+        in result.whole[NutrientId.energyKcal]?.missing ??
+            const <NutrientGap>[])
+      g.ingredientId,
+  }.length;
 
   // ---- The user's own recipes ----------------------------------------------
 
