@@ -52,7 +52,7 @@ class _FrameHost implements ViewerHost {
       style['pointerEvents'] = 'none'.toJS;
       frame.callMethod('setAttribute'.toJS, 'allowtransparency'.toJS, 'true'.toJS);
       // The web serves Flutter assets one folder deeper.
-      frame['src'] = 'assets/assets/scene3d/index.html?id=$id'.toJS;
+      frame['src'] = 'assets/assets/scene3d/index.html?${viewerQuery(id)}'.toJS;
     },
   );
 

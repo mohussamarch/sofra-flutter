@@ -15,6 +15,15 @@ abstract class ViewerHost {
   void dispose();
 }
 
+/// Trial switches for the page, for comparing on a real phone, for example
+/// `--dart-define=SOFRA_3D_QUERY=unmerged=1` (one switch; `&` does not
+/// survive every shell). Empty in normal builds.
+const viewerTrialQuery = String.fromEnvironment('SOFRA_3D_QUERY');
+
+/// The page's address query: its id, then any trial switches.
+String viewerQuery(String id) =>
+    viewerTrialQuery.isEmpty ? 'id=$id' : 'id=$id&$viewerTrialQuery';
+
 /// Opens the viewer page. [onMessage] gets the page's JSON messages.
 ViewerHost openViewer({
   required String id,

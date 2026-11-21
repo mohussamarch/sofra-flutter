@@ -35,10 +35,10 @@ function post(message) {
 // A stray script error once the room is up is reported but is not the end
 // of it. Before that, any error means the room will not appear.
 let lastWarning = '', started = false;
-function warn(message) {
+function warn(message, fatal = !started) {
   lastWarning = String(message && message.message || message).slice(0, 200);
-  post({ t: started ? 'warn' : 'error', message: lastWarning });
-  if (!started) hud.textContent = '! ' + lastWarning;
+  post({ t: fatal ? 'error' : 'warn', message: lastWarning });
+  if (fatal) hud.textContent = '! ' + lastWarning;
 }
 window.addEventListener('error', (e) => warn(e.message));
 window.addEventListener('unhandledrejection', (e) => warn(e.reason));
@@ -332,7 +332,7 @@ function materialFor(source, mesh, isBaked) {
     if (Q.refract) { m.opacity = 1; m.thickness = .006; m.ior = 1.46; }
     // Refraction draws the whole room a second time: on the phone glass is
     // plain see-through with the room's reflections, as clear as it was.
-    else { m.opacity = 1 - .62 * m.transmission; m.transmission = 0; m.transparent = true; m.roughness = Math.min(m.roughness, .12); }
+    else { m.opacity = 1 - .62 * m.transmission; m.transmission = 0; m.transparent = true; m.forceSinglePass = !params.has('twopass'); m.roughness = Math.min(m.roughness, .12); }
   }
   if (m.name === 'r18_fridge_lamp_diffuser' || m.name === 'r19_double_diffuser') { m.emissiveIntensity = 0; lampMaterials.push(m); }
   if (m.name === 'r15_classic_painted_timber') { m.userData.base = m.color.clone(); paintMaterials.push(m); }
@@ -425,46 +425,58 @@ function setUp(gltf) {
 }
 
 // The model is 1,065 separate meshes, one draw call each, and a phone pays
-// for every call in every pass (the room, then each shadow map). Nearly all
-// of them never move: those that share a material and the same option tags
-// become one mesh. Doors and what hangs on them stay as they are.
+// for every call in every pass (the room, then each shadow map). Meshes that
+// share a material and the same option tags become one mesh: the ones that
+// never move in the room's space, a door's parts in its hinge's space.
+// Glass stays apart (see-through parts are sorted by distance one by one).
 function mergeStatics() {
-  const moving = new Set(Object.values(doorParts).flat().map((part) => part.node));
+  const t0 = performance.now();
+  const hinges = new Set(Object.values(doorParts).flat().map((part) => part.node));
   const groups = new Map();
   root.traverse((o) => {
     if (!o.isMesh || o.userData.reviewShadowOnly || o.userData.dressing) return;
+    // A hinge, or a part that carries other parts, stays as it is.
+    if (hinges.has(o) || o.children.length) return;
     const m = o.material;
-    // See-through parts are sorted by distance one by one.
-    if (m.transparent || m.transmission > 0) return;
-    for (let up = o; up; up = up.parent) if (moving.has(up)) return;
+    if (Array.isArray(m) || m.transparent || m.transmission > 0) return;
+    // A mirrored part would come out inside-out; none exists today.
+    if (o.matrixWorld.determinant() < 0) return;
+    let base = root;
+    for (let up = o.parent; up; up = up.parent) if (hinges.has(up)) { base = up; break; }
     const g = o.geometry, u = o.userData;
     const shape = Object.keys(g.attributes).sort().map((name) => name + g.attributes[name].itemSize + g.attributes[name].array.constructor.name + (g.attributes[name].normalized ? 'n' : '')).join(',');
-    const key = [m.uuid, u.option_group || '', u.cabinet_style || '', o.castShadow ? 1 : 0, g.index ? 'i' : '', shape].join('|');
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(o);
+    const key = [base.uuid, m.uuid, u.option_group || '', u.cabinet_style || '', o.castShadow ? 1 : 0, g.index ? 'i' : '', shape].join('|');
+    if (!groups.has(key)) groups.set(key, { base, meshes: [] });
+    groups.get(key).meshes.push(o);
   });
-  let before = 0, after = 0;
-  for (const meshes of groups.values()) {
+  let before = 0, after = 0, failed = 0;
+  const toBase = new THREE.Matrix4(), place = new THREE.Matrix4();
+  for (const { base, meshes } of groups.values()) {
     before += meshes.length;
     if (meshes.length < 2) { after += 1; continue; }
-    const parts = meshes.map((o) => o.geometry.clone().applyMatrix4(o.matrixWorld));
-    let merged = null;
-    try { merged = mergeGeometries(parts, false); } catch { merged = null; }
+    let mesh = null;
+    const parts = [];
+    try {
+      toBase.copy(base.matrixWorld).invert();
+      for (const o of meshes) parts.push(o.geometry.clone().applyMatrix4(place.multiplyMatrices(toBase, o.matrixWorld)));
+      const merged = mergeGeometries(parts, false);
+      if (merged) mesh = new THREE.Mesh(merged, meshes[0].material);
+    } catch { mesh = null; } // out of memory on a small phone: these stay as they were
     for (const part of parts) part.dispose();
-    if (!merged) { after += meshes.length; continue; }
+    if (!mesh) { after += meshes.length; failed++; continue; }
     const first = meshes[0];
-    const mesh = new THREE.Mesh(merged, first.material);
     mesh.name = 'merged_' + first.material.name;
     mesh.castShadow = first.castShadow;
     mesh.receiveShadow = true;
     mesh.visible = first.visible;
     if (first.userData.option_group) mesh.userData.option_group = first.userData.option_group;
     if (first.userData.cabinet_style) mesh.userData.cabinet_style = first.userData.cabinet_style;
-    root.add(mesh);
+    base.add(mesh);
     for (const o of meshes) { o.parent.remove(o); o.geometry.dispose(); }
     after += 1;
   }
-  mergeInfo = `${before} static meshes in ${after}`;
+  mergeInfo = `${before} meshes in ${after}, ${Math.round(performance.now() - t0)} ms${failed ? `, ${failed} groups not merged` : ''}`;
+  if (failed) warn(failed + ' mesh groups could not be merged', false); // the room is whole, only slower
 }
 let mergeInfo = '';
 
@@ -613,6 +625,8 @@ const doors = {}; // name -> {value, from, to, t0, delay}
 function doorTo(name, to, delay = 0) {
   const d = doors[name] ||= { value: 0, from: 0, to: 0, t0: 0, delay: 0 };
   if (d.to === to) return;
+  // Stopped mid-swing by a new order, it may wait there: shadows catch up now.
+  if (d.value !== d.to) stale(shadowLights);
   d.from = d.value; d.to = to; d.t0 = performance.now(); d.delay = delay;
   wake();
 }
@@ -629,13 +643,6 @@ function applyDoors(now) {
     swung = true;
     if (f >= 1) settled = true;
   }
-  if (swung) {
-    // A swinging door changes every shadow. The fridge lamps follow each
-    // frame; the big room maps every second frame, and once more at rest.
-    doorFrame++;
-    stale(insideLights);
-    if (settled || doorFrame % 2 === 0) stale(roomLights);
-  }
   // Lamps come on as the door leaves the frame: off shut, full by about 20°.
   const level = (v) => THREE.MathUtils.smoothstep(v * 1.75, .035, .35);
   const twin = state.look.fridge === 'double';
@@ -644,6 +651,17 @@ function applyDoors(now) {
   insideLights[0].intensity = insideLights[0].userData.placed ? 4 * fridge : 0;
   insideLights[1].intensity = insideLights[1].userData.placed ? 4 * freezer : 0;
   for (const m of lampMaterials) m.emissiveIntensity = 1.5 * Math.max(fridge, freezer);
+  if (swung) {
+    // A swinging door changes every shadow. The small fridge-lamp maps follow
+    // it every frame. The room lights that have power take turns, one a
+    // frame (by day the sun and the window, at night the lamp alone, so every
+    // frame); a map more than a frame old would shadow the door with its own
+    // earlier position. All are redrawn when the door comes to rest.
+    doorFrame++;
+    const lit = roomLights.filter((l) => l.intensity > 0);
+    if (settled || !lit.length) stale(shadowLights);
+    else { stale(shadowLights.filter((l) => l.intensity <= 0)); stale(insideLights); stale([lit[doorFrame % lit.length]]); }
+  }
   return moving;
 }
 let doorFrame = 0;
@@ -802,27 +820,55 @@ function tick(now) {
   // the frame before it: skip it when that one redrew shadow maps, which is
   // slow because of draw calls that fewer pixels would not help.
   const gap = now - lastFrame;
-  if (moving && lastFrame && !lastShadows && gap < 100) { pace.push(gap); if (pace.length > 90) pace.shift(); }
+  if (lastFrame) {
+    if (moving && gap > 3) beat = Math.min(beat, gap);
+    // A gap this long is the app in the background, not a frame.
+    if (lastShadows) { if (gap < 250) { heavy.push(gap); if (heavy.length > 120) heavy.shift(); } }
+    else if (moving && gap < 100) { pace.push(gap); if (pace.length > 90) pace.shift(); }
+  }
   lastShadows = draw();
-  if (!lastShadows) { mainDraws = renderer.info.render.calls; mainTriangles = renderer.info.render.triangles; }
-  lastFrame = moving ? now : 0;
-  if (!moving && pace.length >= 20) adapt();
+  if (lastShadows) heavyDraws = Math.max(heavyDraws, renderer.info.render.calls);
+  else { mainDraws = renderer.info.render.calls; mainTriangles = renderer.info.render.triangles; }
+  lastFrame = moving || lastShadows ? now : 0;
+  // One more frame after a shadow frame, so that its cost is seen (the
+  // frame that redraws every map as a door comes to rest is the heaviest).
+  if (lastShadows && settle < 1) settle = 1;
+  if (!moving && !lastShadows && heavy.length >= 8) reportHeavy();
+  if (!moving && !lastShadows && pace.length >= 20) adapt();
   if (hud.style.display === 'block') showHud();
   if (settle > 0 || moving) wake();
 }
+// Frames that redrew shadow maps (a door swinging, the hour turning): what
+// they cost, with every pass counted. Fewer pixels would not help these.
+const heavy = [];
+let heavyDraws = 0, lastHeavy = '', beat = 1000;
+function reportHeavy() {
+  const sorted = heavy.slice().sort((a, b) => a - b), median = sorted[sorted.length >> 1], worst = sorted[sorted.length - 1];
+  lastHeavy = `shadow frames ${median.toFixed(1)} ms (worst ${worst.toFixed(0)}), up to ${heavyDraws} draws`;
+  post({ t: 'perf', kind: 'shadow', median: +median.toFixed(1), worst: +worst.toFixed(1), frames: sorted.length, draws: heavyDraws, pixelRatio, tier });
+  heavy.length = 0; heavyDraws = 0;
+}
 // After a move: if frames ran long twice running, draw fewer pixels.
+const provedSlow = new Map();
 function adapt() {
   const sorted = pace.slice().sort((a, b) => a - b), median = sorted[sorted.length >> 1], p95 = sorted[Math.floor(sorted.length * .95)];
   lastPerf = `frame ${median.toFixed(1)} ms (p95 ${p95.toFixed(1)})`;
   post({ t: 'perf', median: +median.toFixed(1), p95: +p95.toFixed(1), frames: sorted.length, draws: mainDraws, triangles: mainTriangles, pixelRatio, tier });
   pace.length = 0;
   slowMoves = median > 24 ? slowMoves + 1 : 0;
-  fastMoves = median < 14 ? fastMoves + 1 : 0;
+  // "Fast" is close to the display's own beat (8.3 ms at 120 Hz, 16.7 at 60).
+  fastMoves = median < Math.max(14, beat * 1.25) ? fastMoves + 1 : 0;
   const top = Math.min(devicePixelRatio || 1, Q.dpr);
   let next = pixelRatio;
-  if (slowMoves >= 2) next = Math.max(Q.minDpr, pixelRatio - .25);
-  // A bad spell (a hot phone, another app) should not cost sharpness for good.
-  else if (fastMoves >= 3) next = Math.min(top, pixelRatio + .25);
+  if (slowMoves >= 2) {
+    provedSlow.set(pixelRatio, (provedSlow.get(pixelRatio) || 0) + 1);
+    next = Math.max(Q.minDpr, pixelRatio - .25);
+  } else if (fastMoves >= 3) {
+    // A bad spell (a hot phone, another app) should not cost sharpness for
+    // good; a step that proved slow twice is this phone's limit.
+    const up = Math.min(top, pixelRatio + .25);
+    if ((provedSlow.get(up) || 0) < 2) next = up; else fastMoves = 0;
+  }
   if (next !== pixelRatio) {
     slowMoves = fastMoves = 0;
     pixelRatio = next;
@@ -834,7 +880,7 @@ function adapt() {
 let lastPerf = '', startInfo = '';
 function showHud() {
   hud.textContent = `${mainDraws} draws · ${Math.round(mainTriangles / 1000)}k tris · x${pixelRatio} · ${tier}\n`
-    + `${lastPerf || 'no move measured yet'}\n${startInfo}\n${mergeInfo} · view ${view.clientWidth}x${view.clientHeight}${lastWarning ? '\n! ' + lastWarning : ''}`;
+    + `${lastPerf || 'no move measured yet'}\n${lastHeavy || 'no shadow frames measured yet'}\n${startInfo}\n${mergeInfo}${params.has('unmerged') ? 'unmerged' : ''} · view ${view.clientWidth}x${view.clientHeight}${lastWarning ? '\n! ' + lastWarning : ''}`;
 }
 function resize() {
   const w = view.clientWidth, h = view.clientHeight;
@@ -851,7 +897,7 @@ function resize() {
   if (firstFrame) { draw(); invalidate(); }
 }
 new ResizeObserver(resize).observe(view);
-document.addEventListener('visibilitychange', () => { if (!document.hidden) invalidate(); });
+document.addEventListener('visibilitychange', () => { lastFrame = 0; if (!document.hidden) invalidate(); });
 // A lost context (a long spell in the background, memory pressure) takes
 // the baked reflections with it: start the page again; the host sends its
 // state when the page says hello.
@@ -903,7 +949,11 @@ function command(message) {
     }
   }
   if (m.pick) pick(m.pick);
-  if (typeof m.hud === 'boolean') { hud.style.display = m.hud ? 'block' : 'none'; if (m.hud && ready) showHud(); }
+  if (typeof m.hud === 'boolean') {
+    const on = m.hud || params.get('hud') === '1';
+    hud.style.display = on ? 'block' : 'none';
+    if (on && ready) showHud();
+  }
 }
 if (params.get('hud') === '1') hud.style.display = 'block';
 // For the screenshot driver and bug hunts: what the viewer thinks is going on.
@@ -945,6 +995,7 @@ async function start() {
   applyMask();
   goTo(state.shot, true);
   doorsFor(state.shot, 0);
+  const built = performance.now();
   // Build the shaders without freezing the page, then draw the first frame.
   await renderer.compileAsync(scene, camera);
   const compiled = performance.now();
@@ -953,8 +1004,8 @@ async function start() {
   started = true;
   invalidate();
   canvas.classList.add('ready');
-  startInfo = `start ${Math.round(firstFrame - t0)} ms = load ${Math.round(loaded - t0)} + shaders ${Math.round(compiled - loaded)} + first frame ${Math.round(firstFrame - compiled)}\n${graphics()}`;
-  post({ t: 'ready', ms: Math.round(firstFrame - t0), load: Math.round(loaded - t0), shaders: Math.round(compiled - loaded), frame: Math.round(firstFrame - compiled), draws: renderer.info.render.calls, triangles: renderer.info.render.triangles, tier, pixelRatio, gpu: graphics() });
+  startInfo = `start ${Math.round(firstFrame - t0)} ms = load ${Math.round(loaded - t0)} + scene ${Math.round(built - loaded)} + shaders ${Math.round(compiled - built)} + first frame ${Math.round(firstFrame - compiled)}\n${graphics()}`;
+  post({ t: 'ready', ms: Math.round(firstFrame - t0), load: Math.round(loaded - t0), scene: Math.round(built - loaded), shaders: Math.round(compiled - built), frame: Math.round(firstFrame - compiled), draws: renderer.info.render.calls, triangles: renderer.info.render.triangles, tier, pixelRatio, gpu: graphics() });
   // The other hours load one at a time while nothing moves, so the light can
   // turn later without a pause and a first tap is not slowed.
   const rest = MODES.flatMap((mode) => [() => loadLightmap(mode), () => loadProbe(mode)]);

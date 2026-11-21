@@ -42,7 +42,7 @@ class _WebViewHost implements ViewerHost {
     viewerAssetBase().then((base) {
       if (_disposed) return;
       _controller.loadRequest(
-        Uri.parse('$base/assets/scene3d/index.html?id=$id'),
+        Uri.parse('$base/assets/scene3d/index.html?${viewerQuery(id)}'),
       );
     }, onError: (Object e) => _fail('$e'));
   }

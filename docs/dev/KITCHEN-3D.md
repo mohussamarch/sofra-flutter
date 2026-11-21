@@ -43,14 +43,24 @@ under-cabinet LEDs and the fridge lamps are live and cast shadow maps.
 ## Drawing
 
 The model arrives as 1,065 meshes, one draw call each. At load, meshes that
-never move and share a material and option tags are merged (`mergeStatics`):
-about 150 draw calls per frame instead of about 740, pixel for pixel the same
-picture. Doors and what hangs on them, glass, and the hidden walls stay
-separate. `?unmerged=1` on the standalone page turns it off for comparison.
+share a material and option tags are merged (`mergeStatics`): the ones that
+never move in the room's space, a door's parts in its hinge's space. Glass and
+the hidden walls stay separate. Measured on the desktop page, phone tier,
+default look: 715 draw calls a frame down to 104; the heaviest frame of a door
+swing (room plus shadow maps) 1,576 down to 208; the merge itself takes about
+80 ms. The picture is the same pixel for pixel in every shot and with the
+style options. `?unmerged=1` turns it off for comparison.
+
+While a door swings the two small fridge-lamp maps are redrawn every frame
+and the room lights that have power take turns, one a frame (the sun and the
+window by day, the lamp alone at night); all are redrawn when it settles.
+
+On the phone tier glass is drawn in one pass (three otherwise draws
+double-sided see-through parts twice and rebuilds their state each time).
 
 On demand: a frame is drawn only while the camera, a door or the light moves.
 A shadow map redraws only for a light that has power, and only when what it
-sees changed (a door swing redraws the big room maps every second frame).
+sees changed.
 After a camera move the viewer reports frame pacing (`t: 'perf'`); after two
 slow moves running (median over 24 ms) it lowers its pixel ratio one step,
 down to 1.5.
@@ -62,8 +72,14 @@ draw the room twice).
 **Numbers on a real phone:** hold a finger on the kitchen for three seconds
 (long enough not to happen by accident; a normal slow press still taps). A small box
 shows draw calls, triangles, pixel ratio, frame time of the last camera move,
-start-up time split into load / shaders / first frame, the graphics chip and
-its texture units, and the view size. Hold again to hide it. If the page
+start-up time split into load / scene / shaders / first frame, the graphics chip and
+its texture units, and the view size. Hold again to hide it. A second line
+gives the frames that redrew shadow maps (a door swing): their time and their
+draw calls with every pass counted.
+
+To compare on the phone, build with trial switches for the page, for example
+`--dart-define=SOFRA_3D_QUERY=unmerged=1` (or `q=desk`, or `twopass=1` for
+glass drawn in two passes); one switch at a time, empty in normal builds. If the page
 could not start, the error state shows the page's own reason in small print.
 
 The view never ends on a hard line against the page: the overview and the
@@ -86,7 +102,9 @@ or `postMessage({sofraKitchenCmd: json})` (iframe):
 
 Page to host: `{t:'hello'}` when it can listen, `{t:'ready', ms, ...}` after the
 first frame, `{t:'tap', p:[x,y,z]}` (Blender metres, z up) for a pick that hit,
-`{t:'perf', median, p95, draws, triangles, pixelRatio, tier}`, `{t:'warn'}`
+`{t:'perf', median, p95, draws, triangles, pixelRatio, tier}` for camera
+frames and `{t:'perf', kind:'shadow', median, worst, frames, draws, ...}` for
+frames that redrew shadow maps (draws count every pass), `{t:'warn'}`
 for a script error the room survives, `{t:'error'}` when it could not start.
 
 The widget sends its whole state on every change and again on `hello` and
@@ -124,6 +142,15 @@ In the console: `sofraKitchen({shot:'fridge', weights:{night:1}})`,
   light with dark furniture (the lamp is at 44 instead of the master's 53);
   rug fringe reads as a barcode from the overview; the overview is centred in
   the whole view although the today card covers its lower part.
+- Performance, not done yet (from the round 2 review, to be decided by the
+  phone's numbers): a tap now tests every triangle of the merged meshes
+  (about 5 ms on a desktop, more on a phone); merged meshes are not culled, so
+  close shots send about twice the vertices; all 87 materials are
+  double-sided although most parts are closed solids; shadow maps hold about
+  80 MB and the three lightmaps 50 MB of graphics memory (a 1024 sun and lamp
+  map and dropping the unused lightmap are the first cuts); merging in the
+  asset pipeline would only save load time, and stock `dedup`/`join` would
+  break the option tags and name lookups.
 - To watch on the phone: sparkle or a thin wrong line at the edge of the
   window light, the lamp's cone and the fridge lamps (the shadow slope uses
   screen derivatives inside a per-pixel condition); grain on cloth and
