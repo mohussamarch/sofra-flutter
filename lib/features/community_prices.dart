@@ -194,7 +194,18 @@ class _AreaPricesViewState extends State<AreaPricesView> {
   Future<void> _makeMine() async {
     final c = SofraScope.controllerOf(context);
     final nav = SofraScope.navOf(context);
-    await c.updateProfile((p) => p.copyWith(area: area));
+    try {
+      await c.updateProfile((p) => p.copyWith(area: area));
+    } on Object {
+      nav.notify(
+        L10n.current.priceAreaSaveFailed,
+        actionLabel: L10n.current.commRetry,
+        onAction: () {
+          if (mounted) _makeMine();
+        },
+      );
+      return;
+    }
     if (mounted) setState(() {});
     nav.notify(L10n.current.priceAreaNowYours(area));
   }
@@ -588,6 +599,7 @@ class _AreaPricesViewState extends State<AreaPricesView> {
     String? thereUnit,
     MarketPrice? mine,
   ) {
+    final c = SofraScope.controllerOf(context);
     final unit = mine?.unit ?? thereUnit ?? e.defaultUnit;
     final myValue = mine == null ? null : mine.amount / mine.quantity;
     return Container(
@@ -629,6 +641,16 @@ class _AreaPricesViewState extends State<AreaPricesView> {
                 ? context.l10n.priceAddYours
                 : context.l10n.priceYoursTapToEdit,
             onTap: () => _editPrice(context, e, unit, myValue),
+            // Long-press takes back a price shared with the area.
+            onLongPress: mine == null || c.community == null
+                ? null
+                : () async {
+                    final done = await deleteOwn(
+                      context,
+                      () => c.unsharePrice(mine),
+                    );
+                    if (done && mounted) setState(() => prices = _fetch(c));
+                  },
           ),
         ],
       ),
@@ -662,19 +684,18 @@ class _AreaPricesViewState extends State<AreaPricesView> {
       return;
     }
     var shared = false;
+    final price = MarketPrice(
+      country: c.market.country,
+      ingredientId: e.id,
+      unit: unit,
+      quantity: 1,
+      amount: value,
+      recordedAt: DateTime.now(),
+      source: 'user',
+    );
     if (share) {
       try {
-        await c.sharePrice(
-          MarketPrice(
-            country: c.market.country,
-            ingredientId: e.id,
-            unit: unit,
-            quantity: 1,
-            amount: value,
-            recordedAt: DateTime.now(),
-            source: 'user',
-          ),
-        );
+        await c.sharePrice(price);
         shared = true;
       } on Object {
         shared = false;
@@ -695,7 +716,27 @@ class _AreaPricesViewState extends State<AreaPricesView> {
           : shared
           ? t.priceSavedShared
           : t.priceSavedShareFailed,
+      actionLabel: share && !shared ? t.commRetry : null,
+      onAction: share && !shared ? () => _retryShare(c, nav, price) : null,
     );
+  }
+
+  Future<void> _retryShare(
+    SofraController c,
+    SofraNav nav,
+    MarketPrice price,
+  ) async {
+    try {
+      await c.sharePrice(price);
+      if (mounted) setState(() => prices = _fetch(c));
+      nav.notify(L10n.current.priceSavedShared);
+    } on Object {
+      nav.notify(
+        L10n.current.priceSavedShareFailed,
+        actionLabel: L10n.current.commRetry,
+        onAction: () => _retryShare(c, nav, price),
+      );
+    }
   }
 }
 
@@ -842,7 +883,9 @@ class _Cell extends StatelessWidget {
     required this.semantic,
     required this.onTap,
     this.mine = false,
+    this.onLongPress,
   });
+  final VoidCallback? onLongPress;
   final double? value;
   final String? unit;
   final String semantic;
@@ -871,6 +914,7 @@ class _Cell extends StatelessWidget {
           child: InkWell(
             borderRadius: BorderRadius.circular(Sofra.r12),
             onTap: onTap,
+            onLongPress: onLongPress,
             child: ConstrainedBox(
               constraints: const BoxConstraints(minHeight: 44),
               child: Center(

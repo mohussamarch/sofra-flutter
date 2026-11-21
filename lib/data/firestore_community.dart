@@ -228,6 +228,42 @@ class FirestoreCommunity implements CommunityBackend {
   }
 
   @override
+  Future<void> deleteStory(String id) => db.doc('stories/$id').delete();
+
+  @override
+  Future<void> deleteSharedRecipe(String id) =>
+      db.doc('communityRecipes/$id').delete();
+
+  @override
+  Future<void> deleteRating(String recipeId) =>
+      db.doc('communityRecipes/$recipeId/ratings/$uid').delete();
+
+  /// Queries by own uid and country (so the rules allow the read), then
+  /// filters the rest here; no composite index is needed.
+  @override
+  Future<void> deletePriceReports({
+    required String country,
+    required String area,
+    required String ingredientId,
+    required String unit,
+  }) async {
+    final q = await db
+        .collection('priceReports')
+        .where('uid', isEqualTo: uid)
+        .where('country', isEqualTo: country)
+        .get();
+    final key = areaKey(area);
+    for (final d in q.docs) {
+      final v = d.data();
+      if (v['area'] == key &&
+          v['ingredientId'] == ingredientId &&
+          v['unit'] == unit) {
+        await d.reference.delete();
+      }
+    }
+  }
+
+  @override
   Future<List<Story>> liveStories() async {
     final q = await db
         .collection('stories')

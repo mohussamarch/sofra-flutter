@@ -323,6 +323,36 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commCancel => 'إلغاء';
 
   @override
+  String get commRetry => 'إعادة المحاولة';
+
+  @override
+  String get commDelete => 'حذف';
+
+  @override
+  String get commDeleteConfirm => 'هل تريد الحذف نهائيًا؟';
+
+  @override
+  String get commDeleteFailed => 'تعذّر الحذف. حاول مرة أخرى.';
+
+  @override
+  String get commDeleted => 'تم الحذف.';
+
+  @override
+  String get commStoryFailed => 'تعذّر نشر القصة.';
+
+  @override
+  String get commRatingFailed => 'تعذّر حفظ التقييم.';
+
+  @override
+  String get commChallengeFailed => 'تعذّر تسجيل التقدّم.';
+
+  @override
+  String get priceAreaSaveFailed => 'تعذّر حفظ المنطقة.';
+
+  @override
+  String get priceDeleteShared => 'حذف سعري المشارَك';
+
+  @override
   String get commLeave => 'اخرج';
 
   @override

@@ -671,6 +671,66 @@ abstract class AppLocalizations {
   /// **'إلغاء'**
   String get commCancel;
 
+  /// No description provided for @commRetry.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة المحاولة'**
+  String get commRetry;
+
+  /// No description provided for @commDelete.
+  ///
+  /// In ar, this message translates to:
+  /// **'حذف'**
+  String get commDelete;
+
+  /// No description provided for @commDeleteConfirm.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل تريد الحذف نهائيًا؟'**
+  String get commDeleteConfirm;
+
+  /// No description provided for @commDeleteFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر الحذف. حاول مرة أخرى.'**
+  String get commDeleteFailed;
+
+  /// No description provided for @commDeleted.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم الحذف.'**
+  String get commDeleted;
+
+  /// No description provided for @commStoryFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر نشر القصة.'**
+  String get commStoryFailed;
+
+  /// No description provided for @commRatingFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر حفظ التقييم.'**
+  String get commRatingFailed;
+
+  /// No description provided for @commChallengeFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر تسجيل التقدّم.'**
+  String get commChallengeFailed;
+
+  /// No description provided for @priceAreaSaveFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر حفظ المنطقة.'**
+  String get priceAreaSaveFailed;
+
+  /// No description provided for @priceDeleteShared.
+  ///
+  /// In ar, this message translates to:
+  /// **'حذف سعري المشارَك'**
+  String get priceDeleteShared;
+
   /// No description provided for @commLeave.
   ///
   /// In ar, this message translates to:

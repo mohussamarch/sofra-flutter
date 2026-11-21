@@ -347,6 +347,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commCancel => 'Cancel';
 
   @override
+  String get commRetry => 'Retry';
+
+  @override
+  String get commDelete => 'Delete';
+
+  @override
+  String get commDeleteConfirm => 'Delete this for good?';
+
+  @override
+  String get commDeleteFailed => 'Couldn\'t delete. Try again.';
+
+  @override
+  String get commDeleted => 'Deleted.';
+
+  @override
+  String get commStoryFailed => 'Couldn\'t post the story.';
+
+  @override
+  String get commRatingFailed => 'Couldn\'t save the rating.';
+
+  @override
+  String get commChallengeFailed => 'Couldn\'t log your progress.';
+
+  @override
+  String get priceAreaSaveFailed => 'Couldn\'t save the area.';
+
+  @override
+  String get priceDeleteShared => 'Remove my shared price';
+
+  @override
   String get commLeave => 'Leave';
 
   @override

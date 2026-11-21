@@ -1667,6 +1667,14 @@ class SofraController extends ChangeNotifier {
     ),
   );
 
+  /// Takes back a price shared with the area.
+  Future<void> unsharePrice(MarketPrice price) => _community.deletePriceReports(
+    country: market.code,
+    area: profile.area,
+    ingredientId: price.ingredientId,
+    unit: price.unit,
+  );
+
   /// Area prices per (ingredient, unit), where at least two households
   /// reported one, for [area] (the user's own area when absent).
   Future<Map<(String, String), AreaPrice>> areaPrices({

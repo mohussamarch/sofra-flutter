@@ -426,7 +426,13 @@ class _MineState extends State<_Mine> {
               );
             }
             return Column(
-              children: [for (final r in mine) _FeedCard(recipe: r)],
+              children: [
+                for (final r in mine)
+                  _FeedCard(
+                    recipe: r,
+                    onDeleted: () => setState(() => feed = _load()),
+                  ),
+              ],
             );
           },
         ),
@@ -560,12 +566,19 @@ class _HomeState extends State<_Home> {
                         label: ring.first.name,
                         name: ring.first.name,
                         color: storyColors[ring.last.colorIndex],
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute<void>(
-                            builder: (_) =>
-                                _StoryViewer(rings: rings, start: i),
-                          ),
-                        ),
+                        onTap: () async {
+                          final deleted = await Navigator.of(context)
+                              .push<bool>(
+                                MaterialPageRoute<bool>(
+                                  builder: (_) => _StoryViewer(
+                                    rings: rings,
+                                    start: i,
+                                    community: c.community!,
+                                  ),
+                                ),
+                              );
+                          if (deleted == true && mounted) _reload();
+                        },
                       ),
                   ],
                 );
@@ -667,7 +680,10 @@ class _HomeState extends State<_Home> {
                 );
               }
               return Column(
-                children: [for (final r in items) _FeedCard(recipe: r)],
+                children: [
+                  for (final r in items)
+                    _FeedCard(recipe: r, onDeleted: _reload),
+                ],
               );
             },
           ),
@@ -818,8 +834,9 @@ Future<bool> _pickToShare(BuildContext context, SofraController c) async {
 /// A recipe from another home as a large card (photo area kept for when
 /// photos are switched on).
 class _FeedCard extends StatelessWidget {
-  const _FeedCard({required this.recipe});
+  const _FeedCard({required this.recipe, required this.onDeleted});
   final SharedRecipe recipe;
+  final VoidCallback onDeleted;
 
   @override
   Widget build(BuildContext context) {
@@ -835,8 +852,22 @@ class _FeedCard extends StatelessWidget {
           context: context,
           isScrollControlled: true,
           showDragHandle: true,
-          builder: (_) => _RecipeSheet(recipe: recipe, controller: c),
+          builder: (_) => _RecipeSheet(
+            recipe: recipe,
+            controller: c,
+            nav: SofraScope.navOf(context),
+          ),
         ),
+        // Only the author can delete a shared recipe (long-press).
+        onLongPress: c.community?.uid != recipe.authorUid
+            ? null
+            : () async {
+                final done = await deleteOwn(
+                  context,
+                  () => c.community!.deleteSharedRecipe(recipe.id),
+                );
+                if (done) onDeleted();
+              },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -948,14 +979,16 @@ Future<bool> _composeStory(BuildContext context, SofraController c) async {
     context: context,
     isScrollControlled: true,
     showDragHandle: true,
-    builder: (_) => _StoryComposer(controller: c),
+    builder: (_) =>
+        _StoryComposer(controller: c, nav: SofraScope.navOf(context)),
   );
   return posted == true;
 }
 
 class _StoryComposer extends StatefulWidget {
-  const _StoryComposer({required this.controller});
+  const _StoryComposer({required this.controller, required this.nav});
   final SofraController controller;
+  final SofraNav nav;
   @override
   State<_StoryComposer> createState() => _StoryComposerState();
 }
@@ -965,6 +998,27 @@ class _StoryComposerState extends State<_StoryComposer> {
   final dish = TextEditingController();
   var color = 0;
   var busy = false;
+
+  Future<void> _post() async {
+    setState(() => busy = true);
+    try {
+      await widget.controller.postStory(
+        text.text,
+        dish: dish.text,
+        colorIndex: color,
+      );
+      if (mounted) Navigator.pop(context, true);
+    } catch (_) {
+      if (mounted) setState(() => busy = false);
+      widget.nav.notify(
+        L10n.current.commStoryFailed,
+        actionLabel: L10n.current.commRetry,
+        onAction: () {
+          if (mounted && !busy && text.text.trim().isNotEmpty) _post();
+        },
+      );
+    }
+  }
 
   @override
   void dispose() {
@@ -1041,21 +1095,7 @@ class _StoryComposerState extends State<_StoryComposer> {
         DepthButton(
           key: const ValueKey('story-post'),
           label: context.l10n.commStoryPost,
-          onPressed: busy || text.text.trim().isEmpty
-              ? null
-              : () async {
-                  setState(() => busy = true);
-                  try {
-                    await widget.controller.postStory(
-                      text.text,
-                      dish: dish.text,
-                      colorIndex: color,
-                    );
-                    if (context.mounted) Navigator.pop(context, true);
-                  } catch (_) {
-                    if (mounted) setState(() => busy = false);
-                  }
-                },
+          onPressed: busy || text.text.trim().isEmpty ? null : _post,
         ),
       ],
     ),
@@ -1064,9 +1104,14 @@ class _StoryComposerState extends State<_StoryComposer> {
 
 /// Full-screen stories: tap to go on, each lasts a few seconds.
 class _StoryViewer extends StatefulWidget {
-  const _StoryViewer({required this.rings, required this.start});
+  const _StoryViewer({
+    required this.rings,
+    required this.start,
+    required this.community,
+  });
   final List<List<Story>> rings;
   final int start;
+  final CommunityBackend community;
   @override
   State<_StoryViewer> createState() => _StoryViewerState();
 }
@@ -1107,6 +1152,21 @@ class _StoryViewerState extends State<_StoryViewer>
       return;
     }
     timer.forward(from: 0);
+  }
+
+  /// The author can delete a story; the feed reloads when this pops true.
+  Future<void> _delete(Story s) async {
+    timer.stop();
+    final done = await deleteOwn(
+      context,
+      () => widget.community.deleteStory(s.id),
+    );
+    if (!mounted) return;
+    if (done) {
+      Navigator.of(context).pop(true);
+    } else {
+      timer.forward();
+    }
   }
 
   void _previous() {
@@ -1180,6 +1240,16 @@ class _StoryViewerState extends State<_StoryViewer>
                         ),
                       ),
                     ),
+                    if (s.uid == widget.community.uid)
+                      IconButton(
+                        key: const ValueKey('story-delete'),
+                        tooltip: t.commDelete,
+                        onPressed: () => _delete(s),
+                        icon: const Icon(
+                          Icons.delete_outline,
+                          color: Colors.white,
+                        ),
+                      ),
                     IconButton(
                       key: const ValueKey('story-close'),
                       onPressed: () => Navigator.of(context).pop(),
@@ -1406,9 +1476,14 @@ class _SharedKitchenState extends State<_SharedKitchen> {
 }
 
 class _RecipeSheet extends StatefulWidget {
-  const _RecipeSheet({required this.recipe, required this.controller});
+  const _RecipeSheet({
+    required this.recipe,
+    required this.controller,
+    required this.nav,
+  });
   final SharedRecipe recipe;
   final SofraController controller;
+  final SofraNav nav;
   @override
   State<_RecipeSheet> createState() => _RecipeSheetState();
 }
@@ -1419,6 +1494,33 @@ class _RecipeSheetState extends State<_RecipeSheet> {
   );
   final comment = TextEditingController();
   var stars = 0;
+
+  Future<void> _save() async {
+    try {
+      await widget.controller.rateRecipe(widget.recipe.id, stars, comment.text);
+      if (!mounted) return;
+      setState(() {
+        ratings = widget.controller.community!.ratings(widget.recipe.id);
+      });
+    } catch (_) {
+      widget.nav.notify(
+        L10n.current.commRatingFailed,
+        actionLabel: L10n.current.commRetry,
+        onAction: () {
+          if (mounted) _save();
+        },
+      );
+    }
+  }
+
+  Future<void> _deleteMine() async {
+    final c = widget.controller.community!;
+    final done = await deleteOwn(
+      context,
+      () => c.deleteRating(widget.recipe.id),
+    );
+    if (done && mounted) setState(() => ratings = c.ratings(widget.recipe.id));
+  }
 
   @override
   void dispose() {
@@ -1480,11 +1582,20 @@ class _RecipeSheetState extends State<_RecipeSheet> {
                     key: const ValueKey('community-rating-average'),
                   ),
                   for (final x in list)
-                    if (x.comment.isNotEmpty)
+                    if (x.comment.isNotEmpty ||
+                        x.uid == widget.controller.community!.uid)
                       ListTile(
                         contentPadding: EdgeInsets.zero,
                         title: Text('${x.name} · ${'★' * x.stars}'),
-                        subtitle: Text(x.comment),
+                        subtitle: x.comment.isEmpty ? null : Text(x.comment),
+                        trailing: x.uid != widget.controller.community!.uid
+                            ? null
+                            : IconButton(
+                                key: const ValueKey('rating-delete'),
+                                tooltip: t.commDelete,
+                                onPressed: _deleteMine,
+                                icon: const Icon(Icons.delete_outline),
+                              ),
                       ),
                 ],
               );
@@ -1512,18 +1623,7 @@ class _RecipeSheetState extends State<_RecipeSheet> {
           ),
           FilledButton(
             key: const ValueKey('rate-save'),
-            onPressed: stars == 0
-                ? null
-                : () async {
-                    await widget.controller.rateRecipe(
-                      r.id,
-                      stars,
-                      comment.text,
-                    );
-                    setState(() {
-                      ratings = widget.controller.community!.ratings(r.id);
-                    });
-                  },
+            onPressed: stars == 0 ? null : _save,
             child: Text(t.commSaveRating),
           ),
         ],
@@ -1549,6 +1649,25 @@ class _ChallengeState extends State<_Challenge> {
     super.didChangeDependencies();
     board ??= SofraScope.controllerOf(context).community!
         .challengeEntries(weekKey(today));
+  }
+
+  Future<void> _log(SofraController c) async {
+    final nav = SofraScope.navOf(context);
+    try {
+      await c.joinChallenge(today: today);
+      if (!mounted) return;
+      setState(() {
+        board = c.community!.challengeEntries(weekKey(today));
+      });
+    } catch (_) {
+      nav.notify(
+        L10n.current.commChallengeFailed,
+        actionLabel: L10n.current.commRetry,
+        onAction: () {
+          if (mounted) _log(c);
+        },
+      );
+    }
   }
 
   @override
@@ -1603,12 +1722,7 @@ class _ChallengeState extends State<_Challenge> {
         DepthButton(
           key: const ValueKey('challenge-join'),
           label: t.commChallengeLog,
-          onPressed: () async {
-            await c.joinChallenge(today: today);
-            setState(() {
-              board = c.community!.challengeEntries(weekKey(today));
-            });
-          },
+          onPressed: () => _log(c),
         ),
         SectionTitle(t.commChallengeHomes),
         FutureBuilder<List<ChallengeEntry>>(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../app/scope.dart';
 import '../domain/ingredient_directory.dart';
 import '../domain/kitchen_core.dart';
 import '../domain/models.dart';
@@ -186,6 +187,47 @@ Map<String, List<String>> allergyMatches(
     }
   }
   return found;
+}
+
+/// Asks before deleting something the user wrote; true on confirm.
+Future<bool> confirmDelete(BuildContext context) async =>
+    await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(context.l10n.commDelete),
+        content: Text(context.l10n.commDeleteConfirm),
+        actions: [
+          TextButton(
+            key: const ValueKey('delete-cancel'),
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(context.l10n.commCancel),
+          ),
+          TextButton(
+            key: const ValueKey('delete-confirm'),
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(context.l10n.commDelete),
+          ),
+        ],
+      ),
+    ) ??
+    false;
+
+/// Confirms, runs [action] and says how it went; true when deleted.
+Future<bool> deleteOwn(
+  BuildContext context,
+  Future<void> Function() action,
+) async {
+  final nav = SofraScope.navOf(context);
+  final t = context.l10n;
+  if (!await confirmDelete(context)) return false;
+  try {
+    await action();
+    nav.notify(t.commDeleted);
+    return true;
+  } catch (_) {
+    nav.notify(t.commDeleteFailed);
+    return false;
+  }
 }
 
 class LoadingBlock extends StatelessWidget {

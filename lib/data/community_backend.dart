@@ -50,6 +50,19 @@ abstract class CommunityBackend {
 
   /// Stories posted in the last day.
   Future<List<Story>> liveStories();
+
+  // Deleting what this account wrote (the rules allow only the owner).
+  Future<void> deleteStory(String id);
+  Future<void> deleteSharedRecipe(String id);
+  Future<void> deleteRating(String recipeId);
+
+  /// Removes this account's shared price reports for one ingredient and unit.
+  Future<void> deletePriceReports({
+    required String country,
+    required String area,
+    required String ingredientId,
+    required String unit,
+  });
 }
 
 String newInviteCode([Random? random]) {
@@ -224,4 +237,32 @@ class MemoryCommunity implements CommunityBackend {
     for (final s in server.stories)
       if (s.liveAt(server.clock())) s,
   ];
+
+  @override
+  Future<void> deleteStory(String id) async =>
+      server.stories.removeWhere((s) => s.id == id && s.uid == uid);
+
+  @override
+  Future<void> deleteSharedRecipe(String id) async {
+    if (server.recipes[id]?.authorUid == uid) server.recipes.remove(id);
+  }
+
+  @override
+  Future<void> deleteRating(String recipeId) async =>
+      server.ratings[recipeId]?.remove(uid);
+
+  @override
+  Future<void> deletePriceReports({
+    required String country,
+    required String area,
+    required String ingredientId,
+    required String unit,
+  }) async => server.prices.removeWhere(
+    (r) =>
+        r.uid == uid &&
+        r.country == country &&
+        r.area == areaKey(area) &&
+        r.ingredientId == ingredientId &&
+        r.unit == unit,
+  );
 }

@@ -210,7 +210,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
   }
 
   @override
-  void notify(String text) {
+  void notify(String text, {String? actionLabel, VoidCallback? onAction}) {
     if (!mounted) return;
     final horizontal =
         ((MediaQuery.sizeOf(context).width - 480) / 2).clamp(
@@ -229,6 +229,9 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
             104 + MediaQuery.paddingOf(context).bottom,
           ),
           content: Text(text),
+          action: actionLabel == null || onAction == null
+              ? null
+              : SnackBarAction(label: actionLabel, onPressed: onAction),
         ),
       );
   }

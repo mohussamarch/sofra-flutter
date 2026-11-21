@@ -28,7 +28,7 @@ abstract class SofraNav {
   void openAddStock();
   void startCooking(PlannedMeal meal);
   void editOnboarding(int step);
-  void notify(String text);
+  void notify(String text, {String? actionLabel, VoidCallback? onAction});
 }
 
 /// Gives screens the controller (rebuilding on change) and the shell's nav.
