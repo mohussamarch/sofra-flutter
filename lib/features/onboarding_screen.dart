@@ -866,7 +866,6 @@ class _PickerSheet extends StatefulWidget {
     return showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Sofra.paper,
       barrierColor: const Color(0x990D0A08),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(Sofra.r28)),

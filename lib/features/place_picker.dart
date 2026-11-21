@@ -13,7 +13,6 @@ Future<Place?> showPlacePicker(BuildContext context) {
     context: context,
     isScrollControlled: true,
     showDragHandle: true,
-    backgroundColor: Sofra.paper,
     builder: (_) => _PlaceSheet(places: places),
   );
 }

@@ -208,7 +208,6 @@ class ProfileScreen extends StatelessWidget {
       showModalBottomSheet<void>(
         context: context,
         showDragHandle: true,
-        backgroundColor: Sofra.paper,
         builder: (_) => const Padding(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 32),
           child: CountryPicker(),

@@ -340,7 +340,6 @@ class _RecipesScreenState extends State<RecipesScreen> {
   Future<void> _openFilters() => showModalBottomSheet<void>(
     context: context,
     showDragHandle: true,
-    backgroundColor: Sofra.paper,
     builder: (sheet) => StatefulBuilder(
       builder: (sheet, setSheet) {
         final t = sheet.l10n;
