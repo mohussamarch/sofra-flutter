@@ -88,6 +88,22 @@ export interface Step {
   passive?: boolean;
   /** نصيحة عملية قصيرة (اختياري) */
   tip?: string;
+  /** الثانية اللي الخطوة بتبدأ فيها في فيديو صانع المحتوى؛ null لو مش متأكدين */
+  videoStartSec?: number | null;
+}
+
+/** فيديو المصدر وإحصاءاته وقت التسجيل (docs/product/CREATORS-COMMUNITY.md) */
+export interface RecipeVideo {
+  platform: 'youtube';
+  id: string;
+  url: string;
+  publishedAt: string | null;
+  views: number | null;
+  likes: number | null;
+  thumbnailUrl: string | null;
+  durationSec: number | null;
+  /** ترتيب الوصفة لو الفيديو فيه أكتر من وصفة */
+  recipeIndex: number;
 }
 
 /** وصفة كاملة */
@@ -112,6 +128,10 @@ export interface Recipe {
   steps: Step[];
   tags: string[];
   notes?: string;
+  /** صانع المحتوى: yt:<channelId> (وصفات المكتبة الأونلاين فقط) */
+  creatorId?: string;
+  /** فيديو المصدر: يتعرض جوه التطبيق ومش بيتحمّل */
+  video?: RecipeVideo;
 }
 
 /** ملف مطبخ واحد = كل وصفات مطبخ معيّن */

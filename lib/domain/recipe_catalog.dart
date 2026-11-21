@@ -69,18 +69,94 @@ class CatalogStep {
            ? null
            : _number(json['duration'], 'duration', zero: true),
        passive = json['passive'] == true,
-       tip = json['tip'] as String?;
+       tip = json['tip'] as String?,
+       videoStartSec = _second(json['videoStartSec']);
   final int number;
   final String text;
   final double? minutes;
   final bool passive;
   final String? tip;
+
+  /// The second the step starts in the creator's video (see [RecipeVideo]);
+  /// null when unknown or unsure.
+  final int? videoStartSec;
   Map<String, dynamic> toJson() => {
     'n': number,
     'text': text,
     'duration': minutes,
     'passive': passive,
     'tip': tip,
+    if (videoStartSec != null) 'videoStartSec': videoStartSec,
+  };
+}
+
+/// A whole, non-negative count or second; anything else is unknown (these
+/// source facts never make a recipe unreadable).
+int? _second(Object? value) => value is int && value >= 0 ? value : null;
+
+/// The creator's video a recipe comes from (docs/product/CREATORS-COMMUNITY.md).
+/// Played embedded, never downloaded. Stats are a snapshot.
+class RecipeVideo {
+  const RecipeVideo({
+    required this.platform,
+    required this.id,
+    required this.url,
+    this.publishedAt,
+    this.views,
+    this.likes,
+    this.thumbnailUrl,
+    this.durationSec,
+    this.recipeIndex = 1,
+  });
+
+  /// Null when [json] is not a usable video reference.
+  static RecipeVideo? tryParse(Object? json) {
+    if (json is! Map) return null;
+    final platform = json['platform'];
+    final id = json['id'];
+    final url = json['url'];
+    if (platform is! String ||
+        id is! String ||
+        id.isEmpty ||
+        url is! String ||
+        !url.startsWith('https://')) {
+      return null;
+    }
+    final thumbnail = json['thumbnailUrl'];
+    final published = json['publishedAt'];
+    return RecipeVideo(
+      platform: platform,
+      id: id,
+      url: url,
+      publishedAt: published is String ? DateTime.tryParse(published) : null,
+      views: _second(json['views']),
+      likes: _second(json['likes']),
+      thumbnailUrl: thumbnail is String && thumbnail.startsWith('https://')
+          ? thumbnail
+          : null,
+      durationSec: _second(json['durationSec']),
+      recipeIndex: _second(json['recipeIndex']) ?? 1,
+    );
+  }
+
+  final String platform, id, url;
+  final DateTime? publishedAt;
+  final int? views, likes, durationSec;
+  final String? thumbnailUrl;
+
+  /// Which recipe of the video this is, when one video holds several.
+  final int recipeIndex;
+
+  Map<String, dynamic> toJson() => {
+    'platform': platform,
+    'id': id,
+    'url': url,
+    'publishedAt': publishedAt?.toIso8601String().substring(0, 10),
+    'views': views,
+    'likes': likes,
+    'thumbnailUrl': thumbnailUrl,
+    'durationSec': durationSec,
+    'recipeIndex': recipeIndex,
   };
 }
 
@@ -125,6 +201,8 @@ class CatalogRecipe {
       ),
       tags = List<String>.unmodifiable((json['tags'] as List).cast<String>()),
       notes = json['notes'] as String?,
+      creatorId = _creator(json['creatorId']),
+      video = RecipeVideo.tryParse(json['video']),
       storedServings = ServingsEstimate.fromJson(json) {
     final allowsUnknown = metadataPolicy == unknownMetadataPolicy;
     final rawSteps = json['steps'] as List;
@@ -196,7 +274,12 @@ class CatalogRecipe {
         ((row['tags'] as List?) ?? const []).cast<String>(),
       ),
       notes = null,
+      creatorId = _creator(row['creatorId']),
+      video = null,
       storedServings = ServingsEstimate.fromJson(row);
+
+  static String? _creator(Object? value) =>
+      value is String && value.trim().isNotEmpty ? value : null;
 
   final String id, name, cuisine, category, description, difficulty;
   static const unknownMetadataPolicy = 'source-unknowns-v1';
@@ -262,6 +345,13 @@ class CatalogRecipe {
   final List<String> tags;
   final String? notes;
 
+  /// The creator who made the recipe (`yt:<channelId>`), when it comes from
+  /// a creator's video; see creators.json in the online library.
+  final String? creatorId;
+
+  /// The source video, when the recipe comes from one.
+  final RecipeVideo? video;
+
   Map<String, dynamic> toJson() => {
     'id': id,
     'name': name,
@@ -278,6 +368,8 @@ class CatalogRecipe {
     'steps': steps.map((v) => v.toJson()).toList(),
     'tags': tags.toList(),
     'notes': notes,
+    if (creatorId != null) 'creatorId': creatorId,
+    if (video != null) 'video': video!.toJson(),
     ...?storedServings?.toJson(),
   };
 

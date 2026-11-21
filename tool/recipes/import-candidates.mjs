@@ -13,6 +13,11 @@
 // - servings may be missing when the servings engine can compute them with
 //   at least medium confidence (tool/recipes/servings-engine.mjs); the
 //   recipe then keeps servings null under source-unknowns-v1.
+// - a creator's video recipe keeps who made it and where: creatorId,
+//   video{platform, id, url, publishedAt, views, likes, thumbnailUrl,
+//   durationSec, recipeIndex}, the source record, ingredient groups and on
+//   every step videoStartSec (the second the step starts; null when unsure).
+//   See docs/product/CREATORS-COMMUNITY.md.
 //
 // Candidates already in the catalog (same id, or same name) are skipped, so
 // the script can run again as new candidate files arrive.
@@ -86,6 +91,7 @@ export function normalize(c) {
       line.scale = false;
     }
     if (i.optional) line.optional = true;
+    if (typeof i.group === 'string' && i.group.trim()) line.group = i.group.trim();
     const notes = [i.note, number(i.amountMax) ? `من ${i.amount} لـ ${i.amountMax}` : null]
       .filter((v) => typeof v === 'string' && v.trim());
     if (notes.length) line.note = [...new Set(notes)].join('، ');
@@ -98,6 +104,7 @@ export function normalize(c) {
     const step = {n: n + 1, text: s.text.trim(), duration: number(s.duration) && s.duration >= 0 ? s.duration : null};
     if (s.passive) step.passive = true;
     if (typeof s.tip === 'string' && s.tip.trim()) step.tip = s.tip.trim();
+    if (c.video != null) step.videoStartSec = videoSecond(s.videoStartSec);
     return step;
   });
   need(steps.length, 'no steps');
@@ -133,7 +140,52 @@ export function normalize(c) {
     notes: notes.join(' | '),
   };
   if (unknown) recipe.metadataPolicy = unknownPolicy;
+  if (c.creatorId != null || c.video != null) {
+    need(typeof c.creatorId === 'string' && /^yt:UC[\w-]{22}$/.test(c.creatorId), 'bad creatorId');
+    recipe.creatorId = c.creatorId;
+    recipe.video = videoOf(c.video);
+    recipe.source = sourceOf(c.source);
+    if (Array.isArray(c.tags) && c.tags.every((t) => typeof t === 'string')) recipe.tags = [...c.tags];
+    if (typeof c.notes === 'string' && c.notes.trim()) recipe.notes += ` | ${c.notes.trim()}`;
+    for (const k of sourceExtras) if (c[k] != null) recipe[k] = c[k];
+  }
   return recipe;
+}
+
+/** Source facts a creator's recipe keeps as they are (the app may ignore
+ *  them): the yield in the source's own words, meal times and so on. */
+const sourceExtras = ['sourceType', 'sourceServings', 'sourceTime', 'sourceNote', 'dishName', 'wayNote',
+  'mealTimes', 'region', 'equipment', 'occasion', 'spicy'];
+
+/** A whole second inside the video, or null when unsure. */
+export function videoSecond(v) {
+  return Number.isInteger(v) && v >= 0 ? v : null;
+}
+
+/** The source video's identity and its stats snapshot, nothing else. */
+export function videoOf(v) {
+  need(v && v.platform === 'youtube' && typeof v.id === 'string' && /^[\w-]{11}$/.test(v.id), 'bad video');
+  need(/^https:\/\/(www\.)?youtube\.com\/watch\?v=[\w-]{11}/.test(v.url ?? ''), 'bad video url');
+  const count = (n) => (Number.isInteger(n) && n >= 0 ? n : null);
+  return {
+    platform: 'youtube',
+    id: v.id,
+    url: v.url,
+    publishedAt: typeof v.publishedAt === 'string' && /^\d{4}-\d{2}-\d{2}/.test(v.publishedAt) ? v.publishedAt : null,
+    views: count(v.views),
+    likes: count(v.likes),
+    thumbnailUrl: typeof v.thumbnailUrl === 'string' && /^https:\/\//.test(v.thumbnailUrl) ? v.thumbnailUrl : null,
+    durationSec: count(v.durationSec),
+    recipeIndex: Number.isInteger(v.recipeIndex) && v.recipeIndex > 0 ? v.recipeIndex : 1,
+  };
+}
+
+function sourceOf(s) {
+  const out = {url: s.url};
+  for (const k of ['site', 'title', 'author', 'retrievedAt']) {
+    if (typeof s[k] === 'string' && s[k].trim()) out[k] = s[k].trim();
+  }
+  return out;
 }
 
 function main(dir) {

@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 // Builds the online recipe library that the app downloads from Firebase
-// Hosting (site target "library"), from the reviewed catalog in recipes/data.
+// Hosting (site target "library"), from the reviewed catalog in recipes/data
+// (also the app's bundled offline seed) plus the library-only recipes in
+// recipes/library-only (never bundled: creators' video recipes).
 //
 //   node tool/recipes/publish-library.mjs            # -> build/library/
 //   node tool/recipes/publish-library.mjs --out DIR  # another folder
+//   node tool/recipes/publish-library.mjs --library none  # recipes/data only
 //   firebase deploy --only hosting:library --project sofra-c03a1
 //
 // Output (deterministic for the same recipes/data):
 //   manifest.json   {schema, version, generatedAt, recipeCount, files, bodies}
 //                   served no-cache; the app checks it at most every 6 hours.
-//                   files: {"index.json"|"dishes.json": {sha256, size}};
+//                   files: {"index.json"|"dishes.json"|"creators.json":
+//                   {sha256, size}};
 //                   bodies: {count, size}; each body is checked by its row.
 //   index.json      the catalog: every row of recipes/data/index.json plus
 //                   `body` (sha256 of its body file) and, for active rows,
@@ -17,7 +21,13 @@
 //                   listing, search and stock matching need no body; and
 //                   optional image references `thumbnail` and `photos[]`
 //                   (URLs or img/ paths, never image bytes).
-//   dishes.json     dish groups, as in recipes/data.
+//                   Library-only rows also carry `creatorId` and `video`
+//                   ({id, publishedAt, views}) so a creator's recipes list
+//                   and sort without bodies.
+//   dishes.json     dish groups: recipes/library-only/dishes.json when the
+//                   library has one (the catalog's dishes plus the library's),
+//                   else recipes/data/dishes.json.
+//   creators.json   the creators (recipes/library-only/creators.json).
 //   r/<sha256>.json one recipe body each, content addressed (cached forever).
 //
 // Every row and body also carries the servings engine's verdict
@@ -149,10 +159,89 @@ export function validateCatalog(index) {
   }
 }
 
-/// Builds every published file in memory: {relativePath: text}.
-export function buildLibrary(dataDir, { generatedAt, engine = defaultEngine() } = {}) {
+/// The library-only recipe files in recipes/library-only (active recipes).
+export const LIBRARY_FILES = ['youtube.json'];
+export const defaultLibraryDir = path.join(root, 'recipes', 'library-only');
+
+/// The catalog index row of a library-only recipe.
+export function libraryRow(recipe, file, cuisineGroup) {
+  const row = {
+    id: recipe.id,
+    name: recipe.name,
+    nameEn: recipe.nameEn ?? null,
+    cuisine: recipe.cuisine,
+    category: recipe.category,
+    servings: recipe.servings ?? null,
+    totalTime: recipe.totalTime ?? null,
+    difficulty: recipe.difficulty,
+    tags: recipe.tags ?? [],
+    ingredientCount: recipe.ingredients.length,
+    stepCount: recipe.steps.length,
+    file,
+    catalogStatus: 'active',
+    cuisineGroup,
+  };
+  if (recipe.creatorId) row.creatorId = recipe.creatorId;
+  if (recipe.video) {
+    row.video = { id: recipe.video.id, publishedAt: recipe.video.publishedAt ?? null, views: recipe.video.views ?? null };
+  }
+  return row;
+}
+
+/// recipes/data's index plus the library-only recipes: {index, bodies,
+/// dishes, creators}. Every library recipe is active and needs a cuisine the
+/// catalog's files and groups know and a known creator.
+export function mergeLibrary(index, libraryDir) {
+  const readLib = (name) => JSON.parse(fs.readFileSync(path.join(libraryDir, name), 'utf8'));
+  const has = (name) => fs.existsSync(path.join(libraryDir, name));
+  const creators = has('creators.json') ? readLib('creators.json') : null;
+  const creatorIds = new Set((creators?.creators ?? []).map((c) => c.creatorId));
+  const fileOf = new Map(index.cuisines.map((c) => [c.name, c.file]));
+  const groupOf = new Map();
+  for (const g of index.cuisineGroups ?? []) for (const m of g.members) groupOf.set(m, g.id);
+  const rows = [];
+  const bodies = [];
+  const units = new Set(index.units ?? []);
+  const categories = new Set(index.categories ?? []);
+  for (const name of LIBRARY_FILES.filter(has)) {
+    for (const { importTag, ...recipe } of readLib(name).recipes) {
+      const file = fileOf.get(recipe.cuisine);
+      const group = groupOf.get(recipe.cuisine);
+      if (!file || !group) throw new Error(`library recipe ${recipe.id}: cuisine ${recipe.cuisine} has no file or group`);
+      if (recipe.creatorId && !creatorIds.has(recipe.creatorId)) {
+        throw new Error(`library recipe ${recipe.id}: unknown creator ${recipe.creatorId}`);
+      }
+      rows.push(libraryRow(recipe, file, group));
+      bodies.push({ recipe, file });
+      for (const line of recipe.ingredients) if (line.unit) units.add(line.unit);
+      categories.add(recipe.category);
+    }
+  }
+  const recipes = [...index.recipes, ...rows];
+  const activeOf = (pick) => recipes.filter((r) => r.catalogStatus === 'active' && pick(r)).length;
+  const merged = {
+    ...index,
+    categories: [...categories],
+    units: [...units],
+    cuisines: index.cuisines.map((c) => ({ ...c, count: activeOf((r) => r.file === c.file) })),
+    recipes,
+  };
+  if (index.cuisineGroups) {
+    merged.cuisineGroups = index.cuisineGroups.map((g) => ({ ...g, count: activeOf((r) => r.cuisineGroup === g.id) }));
+  }
+  return {
+    index: merged,
+    bodies,
+    dishes: has('dishes.json') ? readLib('dishes.json') : null,
+    creators,
+  };
+}
+
+/// Builds every published file in memory: {relativePath: text}. With
+/// [libraryDir], the library-only recipes join recipes/data's catalog.
+export function buildLibrary(dataDir, { generatedAt, engine = defaultEngine(), libraryDir } = {}) {
   const read = (name) => JSON.parse(fs.readFileSync(path.join(dataDir, name), 'utf8'));
-  const index = read('index.json');
+  let index = read('index.json');
   if (!Array.isArray(index.recipes) || !Array.isArray(index.cuisines)) {
     throw new Error('index.json needs recipes and cuisines');
   }
@@ -162,6 +251,14 @@ export function buildLibrary(dataDir, { generatedAt, engine = defaultEngine() } 
     for (const recipe of read(cuisine.file).recipes) {
       if (bodies.has(recipe.id)) throw new Error(`duplicate recipe ${recipe.id}`);
       bodies.set(recipe.id, { recipe, file: cuisine.file });
+    }
+  }
+  const library = libraryDir ? mergeLibrary(index, libraryDir) : null;
+  if (library) {
+    index = library.index;
+    for (const body of library.bodies) {
+      if (bodies.has(body.recipe.id)) throw new Error(`duplicate recipe ${body.recipe.id}`);
+      bodies.set(body.recipe.id, body);
     }
   }
   const files = {};
@@ -190,9 +287,17 @@ export function buildLibrary(dataDir, { generatedAt, engine = defaultEngine() } 
   validateCatalog(published);
   files['index.json'] = JSON.stringify(published);
   const dishes = path.join(dataDir, 'dishes.json');
-  if (fs.existsSync(dishes)) {
+  if (library?.dishes) {
+    const ids = new Set(rows.filter((r) => r.catalogStatus === 'active').map((r) => r.id));
+    for (const d of library.dishes.dishes) {
+      const missing = d.recipes.find((id) => !ids.has(id));
+      if (missing) throw new Error(`dish ${d.id}: ${missing} is not an active recipe`);
+    }
+    files['dishes.json'] = JSON.stringify(library.dishes);
+  } else if (fs.existsSync(dishes)) {
     files['dishes.json'] = JSON.stringify(JSON.parse(fs.readFileSync(dishes, 'utf8')));
   }
+  if (library?.creators) files['creators.json'] = JSON.stringify(library.creators);
   // Bodies are verified through their index row (`body` is their sha256),
   // so the manifest the app fetches every few hours stays small.
   const entries = {};
@@ -262,11 +367,12 @@ function previousBodies(outDir) {
 /// Writes the library to [outDir], replacing an earlier build there. Body
 /// files of the previous build stay one more version (a phone on the old
 /// catalog may still ask for them); older ones are removed.
-export function publish(dataDir, outDir, { generatedAt } = {}) {
+export function publish(dataDir, outDir, { generatedAt, libraryDir } = {}) {
   checkOutDir(dataDir, outDir);
+  if (libraryDir) checkOutDir(libraryDir, outDir);
   const previous = previousManifest(outDir);
   const keep = previousBodies(outDir);
-  let built = buildLibrary(dataDir, { generatedAt: generatedAt ?? 'pending' });
+  let built = buildLibrary(dataDir, { generatedAt: generatedAt ?? 'pending', libraryDir });
   if (!generatedAt) {
     const kept = previous && previous.version === built.manifest.version && previous.generatedAt;
     built.manifest.generatedAt = kept || new Date().toISOString();
@@ -295,10 +401,12 @@ function argument(name) {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const outDir = path.resolve(argument('--out') ?? path.join(root, 'build', 'library'));
   const dataDir = path.resolve(argument('--data') ?? path.join(root, 'recipes', 'data'));
+  const lib = argument('--library') ?? defaultLibraryDir;
+  const libraryDir = lib === 'none' ? undefined : path.resolve(lib);
   const epoch = process.env.SOURCE_DATE_EPOCH;
   const generatedAt =
     argument('--generated-at') ?? (epoch ? new Date(Number(epoch) * 1000).toISOString() : undefined);
-  const manifest = publish(dataDir, outDir, { generatedAt });
+  const manifest = publish(dataDir, outDir, { generatedAt, libraryDir });
   const bytes = Object.values(manifest.files).reduce((a, f) => a + f.size, manifest.bodies.size);
   console.log(
     `library ${manifest.version.slice(0, 12)}: ${manifest.recipeCount} recipes, ` +

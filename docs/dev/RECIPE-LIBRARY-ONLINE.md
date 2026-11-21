@@ -8,6 +8,10 @@ without an app-store update. The web app site (target `app`, site
 ## Adding recipes (owner)
 
 1. Add or edit recipes in `recipes/data` with the existing importer/tools.
+   `recipes/data` is also the app's bundled offline seed; recipes meant for
+   the online library only (creators' video recipes) go in
+   `recipes/library-only` instead (see its README), which the publisher
+   merges in and the app never bundles.
 2. Publish and deploy, one command from the repository root:
 
 ```bash

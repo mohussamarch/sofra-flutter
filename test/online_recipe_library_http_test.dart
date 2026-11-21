@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -54,12 +55,25 @@ void main() {
     expect(await library.update(force: true), isTrue);
     expect(served, containsAll(['manifest.json', 'index.json']));
     expect(await repo.catalogDate, DateTime.utc(2026, 11, 20));
-    expect(await repo.index, hasLength(495));
+    // The bundled seed (495 active) plus the library-only creators' recipes.
+    final libraryOnly =
+        (jsonDecode(
+                  File('recipes/library-only/youtube.json').readAsStringSync(),
+                )['recipes']
+                as List)
+            .cast<Map<String, dynamic>>();
+    expect(await repo.index, hasLength(495 + libraryOnly.length));
     final recipe = await repo.get('eg-koshari');
     expect(recipe.steps, isNotEmpty);
-    expect(served.where((p) => p.startsWith('r/')), hasLength(1));
+    // A creator's recipe opens from the network with its creator and video.
+    final first = libraryOnly.first;
+    final opened = await repo.get(first['id'] as String);
+    expect(opened.creatorId, first['creatorId']);
+    expect(opened.video?.id, first['video']['id']);
+    expect(served.where((p) => p.startsWith('r/')), hasLength(2));
+    expect((await repo.dishes).map((d) => d.id), contains('koshari'));
     final usage = await library.usage();
-    expect(usage.onDevice, 1);
+    expect(usage.onDevice, 2);
     expect(usage.bytes, greaterThan(900000));
     // Same version again: only the manifest is read.
     served.clear();
