@@ -2520,6 +2520,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitchen3dError => 'تعذّر عرض المطبخ.';
 
   @override
+  String get kitchen3dLoading => 'يُجهَّز المطبخ';
+
+  @override
   String get librarySection => 'الوصفات على جهازك';
 
   @override

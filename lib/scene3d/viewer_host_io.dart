@@ -31,6 +31,12 @@ class _WebViewHost implements ViewerHost {
           onWebResourceError: (error) {
             if (error.isForMainFrame ?? false) _fail(error.description);
           },
+          onHttpError: (error) {
+            final uri = error.request?.uri;
+            if (uri != null && uri.path.endsWith('/scene3d/index.html')) {
+              _fail('HTTP ${error.response?.statusCode} for the viewer page');
+            }
+          },
         ),
       );
     viewerAssetBase().then((base) {

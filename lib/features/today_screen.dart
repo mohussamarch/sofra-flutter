@@ -187,7 +187,7 @@ class _TodayScreenState extends State<TodayScreen> {
   /// shelves come up; closing them shuts the door and returns to the room.
   Future<void> _openFridge(StorageZone zone) async {
     if (_busy) return;
-    _busy = true;
+    setState(() => _busy = true);
     try {
       await viewer.open(freezer: zone == StorageZone.freezer);
       // The camera turns to the door, then the door swings: wait for both
@@ -197,12 +197,13 @@ class _TodayScreenState extends State<TodayScreen> {
       await _openZone(zone, overDoor: true);
       viewer.close();
     } finally {
-      _busy = false;
+      if (mounted) setState(() => _busy = false);
     }
   }
 
   /// A camera move is under way with a sheet to follow: further taps on
-  /// the room wait, so two sheets never stack over the wrong view.
+  /// the room wait, so two sheets never stack over the wrong view, and the
+  /// top bar and today card step aside so the sheet has a clear stage.
   var _busy = false;
 
   Duration _turn(int ms) => MediaQuery.disableAnimationsOf(context)
@@ -212,7 +213,7 @@ class _TodayScreenState extends State<TodayScreen> {
   /// The microwave holds what can be warmed up again.
   Future<void> _openLeftovers() async {
     if (_busy) return;
-    _busy = true;
+    setState(() => _busy = true);
     try {
       viewer.microwave();
       await Future<void>.delayed(_turn(1300));
@@ -227,7 +228,7 @@ class _TodayScreenState extends State<TodayScreen> {
       );
       if (mounted && widget.mode == HomeMode.kitchen) viewer.overview();
     } finally {
-      _busy = false;
+      if (mounted) setState(() => _busy = false);
     }
   }
 
@@ -246,7 +247,7 @@ class _TodayScreenState extends State<TodayScreen> {
   }
 
   void _onHotspot(String id) {
-    if (widget.mode != HomeMode.kitchen) return;
+    if (widget.mode != HomeMode.kitchen || _busy) return;
     switch (id) {
       case 'fridge':
         _openFridge(StorageZone.fridge);
@@ -276,7 +277,7 @@ class _TodayScreenState extends State<TodayScreen> {
         final head = media.padding.top + 48;
         final foot = media.padding.bottom + 112;
         final room = box.maxHeight - head - foot;
-        final kitchen = widget.mode == HomeMode.kitchen;
+        final kitchen = widget.mode == HomeMode.kitchen && !_busy;
         return AnimatedContainer(
           duration: const Duration(seconds: 2),
           decoration: BoxDecoration(

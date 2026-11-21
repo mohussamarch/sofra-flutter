@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
@@ -83,11 +85,22 @@ class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
   final viewer = Kitchen3DController();
   var shot = 0;
 
+  Timer? _clock;
+
   @override
   void initState() {
     super.initState();
     // The same hour as the home kitchen, on the same schedule.
-    viewer.light(LightingSchedule.provisional().weightsAtTime(DateTime.now()));
+    final schedule = LightingSchedule.provisional();
+    void tick() => viewer.light(schedule.weightsAtTime(DateTime.now()));
+    tick();
+    _clock = Timer.periodic(const Duration(minutes: 1), (_) => tick());
+  }
+
+  @override
+  void dispose() {
+    _clock?.cancel();
+    super.dispose();
   }
 
   void _shot(int i) {

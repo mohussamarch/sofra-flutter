@@ -4435,6 +4435,12 @@ abstract class AppLocalizations {
   /// **'تعذّر عرض المطبخ.'**
   String get kitchen3dError;
 
+  /// No description provided for @kitchen3dLoading.
+  ///
+  /// In ar, this message translates to:
+  /// **'يُجهَّز المطبخ'**
+  String get kitchen3dLoading;
+
   /// No description provided for @librarySection.
   ///
   /// In ar, this message translates to:

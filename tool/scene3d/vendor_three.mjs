@@ -9,6 +9,9 @@ import path from 'node:path';
 
 const src = process.argv[2];
 if (!src) throw new Error('usage: vendor_three.mjs <three package folder>');
+const version = JSON.parse(fs.readFileSync(path.join(src, 'package.json'), 'utf8')).version;
+// kitchen.js patches this revision's shader text and refuses any other.
+if (!version.startsWith('0.180.')) throw new Error('kitchen.js is written for three r180, this is ' + version);
 const out = 'assets/scene3d/vendor';
 fs.mkdirSync(path.join(out, 'draco'), { recursive: true });
 const copy = (from, to) => fs.copyFileSync(path.join(src, from), path.join(out, to));
@@ -28,4 +31,4 @@ for (const f of ['loaders/GLTFLoader.js', 'loaders/DRACOLoader.js', 'loaders/HDR
 for (const f of ['draco_wasm_wrapper.js', 'draco_decoder.wasm']) {
   copy('examples/jsm/libs/draco/gltf/' + f, 'draco/' + f);
 }
-console.log('vendored three', JSON.parse(fs.readFileSync(path.join(src, 'package.json'), 'utf8')).version);
+console.log('vendored three', version);

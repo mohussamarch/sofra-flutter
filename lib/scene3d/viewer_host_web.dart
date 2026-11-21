@@ -15,7 +15,13 @@ ViewerHost createViewerHost({
 class _FrameHost implements ViewerHost {
   _FrameHost(this.id, this.onMessage) {
     _listener = ((JSAny? event) {
-      final data = (event as JSObject?)?['data'];
+      final source = (event as JSObject?)?['source'];
+      final frame = _frame?['contentWindow'];
+      // Only this viewer's own frame is listened to.
+      if (source == null || frame == null || !source.strictEquals(frame).toDart) {
+        return;
+      }
+      final data = event?['data'];
       if (data == null || !data.isA<JSObject>()) return;
       final object = data as JSObject;
       final from = object['sofraKitchen'];

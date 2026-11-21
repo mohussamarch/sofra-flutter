@@ -31,10 +31,14 @@ function post(message) {
   else if (parent !== window) parent.postMessage({ sofraKitchen: params.get('id') || '', data: text }, '*');
   if (params.has('log')) console.log('sofra', text);
 }
-// A stray script error is reported but is not the end of the room; only a
-// failed start is (`start().catch` below).
-let lastWarning = '';
-function warn(message) { lastWarning = String(message).slice(0, 160); post({ t: 'warn', message: lastWarning }); }
+// A stray script error once the room is up is reported but is not the end
+// of it. Before that, any error means the room will not appear.
+let lastWarning = '', started = false;
+function warn(message) {
+  lastWarning = String(message && message.message || message).slice(0, 200);
+  post({ t: started ? 'warn' : 'error', message: lastWarning });
+  if (!started) hud.textContent = '! ' + lastWarning;
+}
 window.addEventListener('error', (e) => warn(e.message));
 window.addEventListener('unhandledrejection', (e) => warn(e.reason));
 
@@ -126,7 +130,9 @@ const BOUNCE_SCALE = { morning: 1.5039, golden: .9639, night: .2241 };
 // is too coarse for grooves, joints and the corners against the hidden walls:
 // they bake pure black and read as ink outlines. No surface of a lit room is
 // black; this keeps them dark but not drawn on.
-const BOUNCE_FLOOR = { morning: .11, golden: .075, night: .014 };
+const BOUNCE_FLOOR = { morning: .11, golden: .075, night: .03 };
+// Shade in this room is warm, not grey.
+const FLOOR_TINT = new THREE.Vector3(1, .9, .78);
 // From the masters (Codex export-report.json), Blender z-up turned to y-up.
 const SUN = {
   morning: { power: 15.36, color: [1, .78, .48], toward: new THREE.Vector3(-.8609, .4649, .2066) },
@@ -140,18 +146,18 @@ const ROOM_CENTRE = new THREE.Vector3(1.8, 1.1, -1.8);
 // times PI (Codex's unit calibration). Two maps are mixed while the hour turns.
 const bounce = {
   sofraBounceB: { value: null }, sofraBlend: { value: 0 },
-  sofraScaleA: { value: 1 }, sofraScaleB: { value: 1 }, sofraFloor: { value: 0 },
+  sofraScaleA: { value: 1 }, sofraScaleB: { value: 1 }, sofraFloor: { value: new THREE.Vector3() },
 };
 let bakedChunk = patch(THREE.ShaderChunk.lights_fragment_maps,
   'vec4 lightMapTexel = texture2D( lightMap, vLightMapUv );',
   'vec4 lightMapTexel = mix( texture2D( lightMap, vLightMapUv ) * sofraScaleA, texture2D( sofraBounceB, vLightMapUv ) * sofraScaleB, sofraBlend );\n'
-  + '\t\tlightMapTexel.rgb = max( lightMapTexel.rgb, vec3( sofraFloor ) );');
+  + '\t\tlightMapTexel.rgb = max( lightMapTexel.rgb, sofraFloor );');
 // The lightmap already holds the room's diffuse bounce: no probe diffuse on top.
 bakedChunk = patch(bakedChunk, 'iblIrradiance += getIBLIrradiance( geometryNormal );', '');
 function bakeInto(material) {
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, bounce);
-    shader.fragmentShader = 'uniform sampler2D sofraBounceB;\nuniform float sofraBlend, sofraScaleA, sofraScaleB, sofraFloor;\n'
+    shader.fragmentShader = 'uniform sampler2D sofraBounceB;\nuniform float sofraBlend, sofraScaleA, sofraScaleB;\nuniform vec3 sofraFloor;\n'
       + patch(shader.fragmentShader, '#include <lights_fragment_maps>', bakedChunk);
   };
   material.customProgramCacheKey = () => 'sofra-baked';
@@ -325,7 +331,7 @@ function materialFor(source, mesh, isBaked) {
     if (Q.refract) { m.opacity = 1; m.thickness = .006; m.ior = 1.46; }
     // Refraction draws the whole room a second time: on the phone glass is
     // plain see-through with the room's reflections, as clear as it was.
-    else { m.opacity = 1 - .76 * m.transmission; m.transmission = 0; m.transparent = true; m.roughness = Math.min(m.roughness, .12); }
+    else { m.opacity = 1 - .62 * m.transmission; m.transmission = 0; m.transparent = true; m.roughness = Math.min(m.roughness, .12); }
   }
   if (m.name === 'r18_fridge_lamp_diffuser' || m.name === 'r19_double_diffuser') { m.emissiveIntensity = 0; lampMaterials.push(m); }
   if (m.name === 'r15_classic_painted_timber') { m.userData.base = m.color.clone(); paintMaterials.push(m); }
@@ -337,7 +343,7 @@ function setUp(gltf) {
   root = gltf.scene;
   scene.add(root);
   root.updateMatrixWorld(true);
-  const gone = [], windowBox = new THREE.Box3(), tileBox = new THREE.Box3(), walls = [];
+  const gone = [], windowBox = new THREE.Box3(), tileBox = new THREE.Box3(), walls = [], hiddenWalls = [];
   root.traverse((o) => {
     if (!o.isMesh) return;
     const u = o.userData || {};
@@ -356,7 +362,7 @@ function setUp(gltf) {
     if (source.name === 'r13_soft_cream_plaster' && !u.reviewShadowOnly) walls.push(o);
     // Ceiling and the two near walls: never drawn, they only block light
     // (the owner's closed room, cut away for the camera).
-    if (u.reviewShadowOnly) { o.material = hiddenMaterial; return; }
+    if (u.reviewShadowOnly) { o.material = hiddenMaterial; hiddenWalls.push(new THREE.Box3().setFromObject(o)); return; }
     // The rim around the floor sits outside the closed room, so its baked
     // light is black: it takes the probe's light instead. So does the slab
     // under the tiles, whose joints are finer than the lightmap.
@@ -367,7 +373,7 @@ function setUp(gltf) {
   });
   for (const o of gone) o.parent.remove(o);
   skyUniforms.uWindow.value.set(windowBox.min.y - .04, windowBox.max.y + .04, windowBox.min.z - .04, windowBox.max.z + .04);
-  dressCuts(tileBox, walls);
+  dressCuts(tileBox, walls, hiddenWalls);
 
   // Doors: the clips' first and last poses, turned by hand so the lamps follow.
   for (const clip of gltf.animations) {
@@ -420,7 +426,7 @@ function setUp(gltf) {
 // light), so what the cut-away shows from outside baked black: the joints
 // between tiles (finer than the lightmap) and the cut faces of the two far
 // walls. Thin planes lit by the room's own light cover them.
-function dressCuts(tileBox, walls) {
+function dressCuts(tileBox, walls, hiddenWalls) {
   const add = (width, height, colour, shadowed, place) => {
     const mesh = new THREE.Mesh(new THREE.PlaneGeometry(width, height),
       new THREE.MeshStandardMaterial({ color: colour, roughness: .92, metalness: 0 }));
@@ -443,6 +449,18 @@ function dressCuts(tileBox, walls) {
     // The end that the cut-away exposes: towards the viewer.
     if (alongX) add(size.z, size.y, 0xd9cbb6, false, (m) => { m.rotation.y = Math.PI / 2; m.position.set(box.max.x + .002, centre.y, centre.z); });
     else add(size.x, size.y, 0xd9cbb6, false, (m) => { m.position.set(centre.x, centre.y, box.max.z + .002); });
+    // And the strip of its inner face that a hidden wall butts against.
+    for (const hidden of hiddenWalls) {
+      const thin = hidden.getSize(new THREE.Vector3());
+      if (alongX && thin.x < thin.z && thin.x < thin.y && hidden.min.x < box.max.x && hidden.min.x > centre.x) {
+        const width = box.max.x - hidden.min.x;
+        add(width, size.y, 0xd9cbb6, false, (m) => { m.position.set(hidden.min.x + width / 2, centre.y, box.max.z + .002); });
+      }
+      if (!alongX && thin.z < thin.x && thin.z < thin.y && hidden.min.z < box.max.z && hidden.min.z > centre.z) {
+        const width = box.max.z - hidden.min.z;
+        add(width, size.y, 0xd9cbb6, false, (m) => { m.rotation.y = Math.PI / 2; m.position.set(box.max.x + .002, centre.y, hidden.min.z + width / 2); });
+      }
+    }
   }
 }
 
@@ -506,7 +524,7 @@ function applyLight() {
   bounce.sofraBlend.value = mix;
   bounce.sofraScaleA.value = BOUNCE_SCALE[a];
   bounce.sofraScaleB.value = BOUNCE_SCALE[b];
-  bounce.sofraFloor.value = BOUNCE_FLOOR.morning * day + BOUNCE_FLOOR.golden * gold + BOUNCE_FLOOR.night * night;
+  bounce.sofraFloor.value.copy(FLOOR_TINT).multiplyScalar(BOUNCE_FLOOR.morning * day + BOUNCE_FLOOR.golden * gold + BOUNCE_FLOOR.night * night);
   if (probes[a]) scene.environment = probes[a]; else want('p' + a, () => loadProbe(a));
 
   const w = Math.max(daylight, 1e-6);
@@ -520,7 +538,7 @@ function applyLight() {
   sun.color.setRGB(...SUN.morning.color.map((v, i) => (v * day + SUN.golden.color[i] * gold) / w));
   windowLight.intensity = 35 * day + 22 * gold;
   windowLight.color.setRGB(...WINDOW_COLOR.morning.map((v, i) => (v * day + WINDOW_COLOR.golden[i] * gold) / w));
-  lamp.intensity = 53 * night;
+  lamp.intensity = 44 * night; // the master's 53 burns the floor white under AgX here
   const led = state.look.led === '0' ? 0 : Math.pow(night, 1.15);
   for (const f of leds) { f.light.intensity = 2.4 * led; f.strip.visible = led > .015; }
   scene.environmentIntensity = .7;
@@ -553,19 +571,24 @@ function doorTo(name, to, delay = 0) {
   wake();
 }
 function applyDoors(now) {
-  let moving = false;
+  let moving = false, swung = false, settled = false;
   for (const [name, d] of Object.entries(doors)) {
     if (d.value === d.to) continue;
     const span = state.calm ? 1 : 900;
-    const f = Math.min(1, Math.max(0, (now - d.t0 - (state.calm ? 0 : d.delay)) / span));
-    d.value = d.from + (d.to - d.from) * (1 - Math.pow(1 - f, 3));
-    if (f >= 1) d.value = d.to; else moving = true;
+    const f = Math.min(1, Math.max(0, (now - d.t0 - d.delay) / span));
+    if (f < 1) moving = true;
+    if (f <= 0) continue; // still waiting for the camera: nothing has moved
+    d.value = f >= 1 ? d.to : d.from + (d.to - d.from) * (1 - Math.pow(1 - f, 3));
     for (const part of doorParts[name] || []) part.node.quaternion.slerpQuaternions(part.shut, part.open, d.value);
-    doorFrame++;
+    swung = true;
+    if (f >= 1) settled = true;
+  }
+  if (swung) {
     // A swinging door changes every shadow. The fridge lamps follow each
     // frame; the big room maps every second frame, and once more at rest.
+    doorFrame++;
     stale(insideLights);
-    if (!moving || doorFrame % 2 === 0) stale(roomLights);
+    if (settled || doorFrame % 2 === 0) stale(roomLights);
   }
   // Lamps come on as the door leaves the frame: off shut, full by about 20°.
   const level = (v) => THREE.MathUtils.smoothstep(v * 1.75, .035, .35);
@@ -594,7 +617,8 @@ function doorsFor(shot, delay) {
 const HOME_DIR = new THREE.Vector3(Math.sin(1.0123) * Math.sin(Math.PI / 4), Math.cos(1.0123), Math.sin(1.0123) * Math.cos(Math.PI / 4));
 const SHOTS = {
   fridge: { position: [3.15, 1.41, 1.476], target: [3.15, .95, -2.9], fov: 40, ms: 1000 },
-  freezer: { position: [3.15, 2.615, 1.404], target: [3.15, 1.7, -2.9], fov: 40, ms: 1000 },
+  // Level with the freezer door: from higher up the view runs over the wall tops.
+  freezer: { position: [3.15, 1.62, .9], target: [3.15, 1.68, -2.9], fov: 32, ms: 1000 },
   microwave: { position: [.772, 1.307, -1.442], target: [.48, 1.07, -3.1], fov: 45, ms: 1000 },
   // Codex C2C-014: from the table's near corner, 45° across the room.
   table: { position: [4.35, 1.4, .75], target: [0, .9, -3.6], fov: 50, ms: 1800 },
@@ -645,15 +669,17 @@ function goTo(name, jump) {
   tween.name = name;
   if (jump || !ready) { jumpTo(to); return; }
   if (state.calm) {
-    // No travel: the view dips out, changes and comes back.
+    // No travel: the view fades out, changes and fades back.
     canvas.classList.remove('ready');
-    setTimeout(() => { jumpTo(shotOf(tween.name)); canvas.classList.add('ready'); }, 180);
+    clearTimeout(calmTimer);
+    calmTimer = setTimeout(() => { jumpTo(shotOf(tween.name)); applyMask(); canvas.classList.add('ready'); }, 330);
     return;
   }
   tween.from = { position: cam.position.clone(), target: cam.target.clone(), fov: cam.fov };
   tween.to = to; tween.t0 = performance.now(); tween.ms = to.ms; tween.on = true;
   wake();
 }
+let calmTimer = 0;
 const half = (fov) => Math.tan(THREE.MathUtils.degToRad(fov) / 2);
 function stepCamera(now) {
   if (!tween.on) return false;
@@ -669,30 +695,38 @@ function stepCamera(now) {
   cam.target.lerpVectors(a.target, b.target, e);
   const size = sizeA * Math.pow(sizeB / sizeA, e);
   cam.position.copy(cam.target).addScaledVector(dir, size / half(cam.fov));
+  if (maskDue && f >= .5) applyMask();
   if (f >= 1) tween.on = false;
   placeCamera();
   return tween.on;
 }
 // The view never ends on a hard line against the page: the overview fades
 // around the room, a close shot fades at its edges.
+// The table fills the view, so it fades at the frame; an appliance sits in
+// the middle of a cut-away room, so the fade is an oval around it.
 function applyMask() {
-  const home = state.shot === 'home';
+  const shot = state.shot, home = shot === 'home', frameFade = shot === 'table';
   const style = canvas.style;
+  maskDue = false;
   if (home && !state.vignette) { style.maskImage = style.webkitMaskImage = 'none'; return; }
-  const mask = home
-    ? 'radial-gradient(ellipse 52% 40% at 50% 50%, #000 58%, transparent 100%)'
-    : 'linear-gradient(to bottom, transparent, #000 9%, #000 93%, transparent), linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)';
+  const mask = home ? 'radial-gradient(ellipse 56% 44% at 50% 50%, #000 64%, transparent 100%)'
+    : frameFade ? 'linear-gradient(to bottom, transparent, #000 9%, #000 93%, transparent), linear-gradient(to right, transparent, #000 5%, #000 95%, transparent)'
+      : 'radial-gradient(ellipse 66% 58% at 50% 50%, #000 60%, transparent 100%)';
   style.maskImage = style.webkitMaskImage = mask;
-  style.maskComposite = home ? 'add' : 'intersect';
-  style.webkitMaskComposite = home ? 'source-over' : 'source-in';
+  style.maskComposite = frameFade ? 'intersect' : 'add';
+  style.webkitMaskComposite = frameFade ? 'source-in' : 'source-over';
 }
+// Masks cannot ease from one shape to another: the change is made halfway
+// through the camera's move, when the view is travelling fastest.
+let maskDue = false;
 
 // ---------------------------------------------------------------- drawing
-let frame = null, settle = 0, lastFrame = 0, slowMoves = 0, firstFrame = 0;
+let frame = null, settle = 0, lastFrame = 0, lastShadows = false, slowMoves = 0, fastMoves = 0, firstFrame = 0;
+let mainDraws = 0, mainTriangles = 0; // one pass of the room, without shadow maps
 const pace = [];
 // The browser holds animation frames back while the page is out of sight,
 // so a hidden viewer costs nothing and picks up where it was.
-function wake() { if (ready && frame === null) frame = requestAnimationFrame(tick); }
+function wake() { if (firstFrame && frame === null) frame = requestAnimationFrame(tick); }
 function invalidate() { settle = 2; wake(); }
 function draw() {
   let shadows = false;
@@ -718,11 +752,13 @@ function tick(now) {
   if (moving) settle = 2;
   if (settle <= 0) { lastFrame = 0; return; }
   settle--;
-  const shadows = draw();
-  // Pacing counts camera-only frames: a frame that redraws shadow maps is
-  // slow because of draw calls, which fewer pixels would not help.
+  // Pacing counts camera-only frames. The gap to this frame is the cost of
+  // the frame before it: skip it when that one redrew shadow maps, which is
+  // slow because of draw calls that fewer pixels would not help.
   const gap = now - lastFrame;
-  if (moving && lastFrame && !shadows && gap < 100) { pace.push(gap); if (pace.length > 90) pace.shift(); }
+  if (moving && lastFrame && !lastShadows && gap < 100) { pace.push(gap); if (pace.length > 90) pace.shift(); }
+  lastShadows = draw();
+  if (!lastShadows) { mainDraws = renderer.info.render.calls; mainTriangles = renderer.info.render.triangles; }
   lastFrame = moving ? now : 0;
   if (!moving && pace.length >= 20) adapt();
   if (hud.style.display === 'block') showHud();
@@ -732,12 +768,18 @@ function tick(now) {
 function adapt() {
   const sorted = pace.slice().sort((a, b) => a - b), median = sorted[sorted.length >> 1], p95 = sorted[Math.floor(sorted.length * .95)];
   lastPerf = `frame ${median.toFixed(1)} ms (p95 ${p95.toFixed(1)})`;
-  post({ t: 'perf', median: +median.toFixed(1), p95: +p95.toFixed(1), frames: sorted.length, draws: renderer.info.render.calls, triangles: renderer.info.render.triangles, pixelRatio, tier });
+  post({ t: 'perf', median: +median.toFixed(1), p95: +p95.toFixed(1), frames: sorted.length, draws: mainDraws, triangles: mainTriangles, pixelRatio, tier });
   pace.length = 0;
   slowMoves = median > 24 ? slowMoves + 1 : 0;
-  if (slowMoves >= 2 && pixelRatio > Q.minDpr) {
-    slowMoves = 0;
-    pixelRatio = Math.max(Q.minDpr, pixelRatio - .25);
+  fastMoves = median < 14 ? fastMoves + 1 : 0;
+  const top = Math.min(devicePixelRatio || 1, Q.dpr);
+  let next = pixelRatio;
+  if (slowMoves >= 2) next = Math.max(Q.minDpr, pixelRatio - .25);
+  // A bad spell (a hot phone, another app) should not cost sharpness for good.
+  else if (fastMoves >= 3) next = Math.min(top, pixelRatio + .25);
+  if (next !== pixelRatio) {
+    slowMoves = fastMoves = 0;
+    pixelRatio = next;
     renderer.setPixelRatio(pixelRatio);
     resize();
   }
@@ -745,7 +787,7 @@ function adapt() {
 // The numbers to read on a real phone (long-press the kitchen in the app).
 let lastPerf = '', startInfo = '';
 function showHud() {
-  hud.textContent = `${renderer.info.render.calls} draws · ${Math.round(renderer.info.render.triangles / 1000)}k tris · x${pixelRatio} · ${tier}\n`
+  hud.textContent = `${mainDraws} draws · ${Math.round(mainTriangles / 1000)}k tris · x${pixelRatio} · ${tier}\n`
     + `${lastPerf || 'no move measured yet'}\n${startInfo}\nview ${view.clientWidth}x${view.clientHeight}${lastWarning ? '\n! ' + lastWarning : ''}`;
 }
 function resize() {
@@ -773,7 +815,7 @@ canvas.addEventListener('webglcontextrestored', () => location.reload());
 // ---------------------------------------------------------------- commands
 const raycaster = new THREE.Raycaster();
 function pick(point) {
-  if (!ready || !Array.isArray(point) || point.length < 2) return;
+  if (!firstFrame || !Array.isArray(point) || point.length < 2) return;
   raycaster.setFromCamera(new THREE.Vector2(point[0] * 2 - 1, 1 - point[1] * 2), camera);
   const hit = raycaster.intersectObjects(pickable, false)[0];
   // Blender's axes (z up), the space the app measures its zones in.
@@ -795,7 +837,7 @@ function command(message) {
       if (ready) {
         applyLook(); applyLight(); doorsFor(state.shot, 0);
         // A different fridge or rug changes the room's outline.
-        if (tween.name === 'home') { if (tween.on) tween.to = homeShot(); else goTo('home'); }
+        if (tween.name === 'home') { if (tween.on) tween.to = homeShot(); else if (state.calm) jumpTo(homeShot()); else goTo('home'); }
       }
     }
   }
@@ -807,10 +849,11 @@ function command(message) {
     const fromHome = state.shot === 'home';
     state.shot = m.shot;
     if (ready) {
-      applyMask();
       goTo(m.shot);
-      // The camera turns to the door first, then the door swings.
-      doorsFor(m.shot, fromHome && m.shot !== 'home' ? 480 : 0);
+      if (tween.on) maskDue = true; else if (!state.calm) applyMask();
+      // The camera turns to the door first, then the door swings (with
+      // motion reduced it is simply open when the view comes back).
+      doorsFor(m.shot, state.calm ? 330 : fromHome && m.shot !== 'home' ? 480 : 0);
     }
   }
   if (m.pick) pick(m.pick);
@@ -861,6 +904,7 @@ async function start() {
   const compiled = performance.now();
   draw();
   firstFrame = performance.now();
+  started = true;
   invalidate();
   canvas.classList.add('ready');
   startInfo = `start ${Math.round(firstFrame - t0)} ms = load ${Math.round(loaded - t0)} + shaders ${Math.round(compiled - loaded)} + first frame ${Math.round(firstFrame - compiled)}\n${graphics()}`;
@@ -876,4 +920,4 @@ async function start() {
   };
   setTimeout(idle, 2500);
 }
-start().catch((e) => post({ t: 'error', message: String(e && e.message || e) }));
+start().catch(warn);

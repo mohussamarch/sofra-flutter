@@ -20,9 +20,16 @@
   window.__sofraQueue = [];
   window.sofraKitchen = function (m) { window.__sofraQueue.push(m); };
   window.addEventListener('message', function (e) {
-    if (e.data && e.data.sofraKitchenCmd) window.sofraKitchen(e.data.sofraKitchenCmd);
+    // Only the app that embeds this page may drive it.
+    if (e.source === parent && e.data && e.data.sofraKitchenCmd) window.sofraKitchen(e.data.sofraKitchenCmd);
   });
+  // The viewer script (or one of its imports) did not load at all.
+  window.sofraFailed = function () {
+    var text = JSON.stringify({ t: 'error', message: 'viewer script did not load' });
+    if (window.SofraKitchen) window.SofraKitchen.postMessage(text);
+    else if (parent !== window) parent.postMessage({ sofraKitchen: new URLSearchParams(location.search).get('id') || '', data: text }, '*');
+  };
 </script>
-<script type="module" src="./kitchen.js"></script>
+<script type="module" src="./kitchen.js" onerror="sofraFailed()"></script>
 </body>
 </html>

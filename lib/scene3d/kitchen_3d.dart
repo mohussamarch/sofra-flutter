@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart' show mapEquals;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../l10n/l10n.dart';
@@ -103,6 +104,11 @@ class _Kitchen3DState extends State<Kitchen3D> {
   var _slow = false;
   var _hud = false;
   var _calm = false;
+
+  /// Why the page failed, in its own words (shown small under the message:
+  /// the first thing to read when a phone shows no kitchen).
+  String? _cause;
+  Timer? _lost;
   Timer? _slowTimer;
   Timer? _giveUp;
 
@@ -114,7 +120,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
   }
 
   void _open() {
-    _ready = _failed = _slow = false;
+    _cause = null;
     final generation = ++_generation;
     _host = openViewer(
       id: '${widget.id}-$generation',
@@ -123,7 +129,15 @@ class _Kitchen3DState extends State<Kitchen3D> {
         if (generation == _generation) _message(text);
       },
     );
-    // The page fades in by itself; a spinner only if it is taking a while.
+    _waitForPage();
+  }
+
+  /// A page is loading (the first time, a retry, or after its graphics
+  /// context was lost): it fades in by itself; a spinner only if it is
+  /// taking a while, and the error state if it never comes.
+  void _waitForPage() {
+    _ready = _failed = _slow = false;
+    _lost?.cancel();
     _slowTimer?.cancel();
     _slowTimer = Timer(const Duration(milliseconds: 900), () {
       if (mounted && !_ready) setState(() => _slow = true);
@@ -163,6 +177,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
     if (widget.controller._view == this) widget.controller._view = null;
     _slowTimer?.cancel();
     _giveUp?.cancel();
+    _lost?.cancel();
     _host.dispose();
     super.dispose();
   }
@@ -195,10 +210,13 @@ class _Kitchen3DState extends State<Kitchen3D> {
     if (decoded is! Map) return;
     switch (decoded['t']) {
       case 'hello':
+        // A hello from a room that was up: its page started again.
+        if (_ready) setState(_waitForPage);
         _push();
       case 'ready':
         _slowTimer?.cancel();
         _giveUp?.cancel();
+        _lost?.cancel();
         _push();
         setState(() {
           _ready = true;
@@ -214,7 +232,27 @@ class _Kitchen3DState extends State<Kitchen3D> {
         ));
       case 'error':
         // The page could not start (or could not load at all).
-        if (!_ready) setState(() => _failed = true);
+        final why = decoded['message'];
+        if (!_ready) {
+          setState(() {
+            _failed = true;
+            _cause = why is String ? why : null;
+          });
+        }
+      case 'warn':
+        // The page reloads itself when its graphics context comes back; if
+        // it never does, say so instead of leaving a blank room.
+        if (decoded['message'] == 'context lost') {
+          _lost?.cancel();
+          _lost = Timer(const Duration(seconds: 6), () {
+            if (!mounted) return;
+            setState(() {
+              _ready = false;
+              _failed = true;
+              _cause = 'context lost';
+            });
+          });
+        }
     }
   }
 
@@ -223,8 +261,9 @@ class _Kitchen3DState extends State<Kitchen3D> {
     _open();
   });
 
-  /// Long press: the page's own numbers (draw calls, frame time, start-up,
-  /// graphics chip), for reading on a real phone.
+  /// A three-second hold: the page's own numbers (draw calls, frame time,
+  /// start-up, graphics chip), for reading on a real phone. Long enough not
+  /// to happen by accident, and an ordinary slow press still taps.
   void _toggleHud() {
     _hud = !_hud;
     _push();
@@ -256,19 +295,34 @@ class _Kitchen3DState extends State<Kitchen3D> {
               ),
             ),
             // Touches are the app's: a tap asks the page what it hit.
-            GestureDetector(
+            RawGestureDetector(
               behavior: HitTestBehavior.opaque,
-              onLongPress: _toggleHud,
-              onTapUp: widget.onTap == null
-                  ? null
-                  : (d) => _host.send(
-                      jsonEncode({
-                        'pick': [
-                          d.localPosition.dx / box.maxWidth,
-                          d.localPosition.dy / box.maxHeight,
-                        ],
-                      }),
+              gestures: {
+                LongPressGestureRecognizer:
+                    GestureRecognizerFactoryWithHandlers<
+                      LongPressGestureRecognizer
+                    >(
+                      () => LongPressGestureRecognizer(
+                        duration: const Duration(seconds: 3),
+                      ),
+                      (r) => r.onLongPress = _toggleHud,
                     ),
+                if (widget.onTap != null)
+                  TapGestureRecognizer:
+                      GestureRecognizerFactoryWithHandlers<
+                        TapGestureRecognizer
+                      >(
+                        TapGestureRecognizer.new,
+                        (r) => r.onTapUp = (d) => _host.send(
+                          jsonEncode({
+                            'pick': [
+                              d.localPosition.dx / box.maxWidth,
+                              d.localPosition.dy / box.maxHeight,
+                            ],
+                          }),
+                        ),
+                      ),
+              },
             ),
             if (_failed)
               Center(
@@ -280,13 +334,29 @@ class _Kitchen3DState extends State<Kitchen3D> {
                       textAlign: TextAlign.center,
                       style: TextStyle(color: ink, height: 1.6),
                     ),
-                    const SizedBox(height: 8),
-                    TextButton.icon(
+                    const SizedBox(height: 12),
+                    FilledButton.tonalIcon(
                       onPressed: _retry,
-                      style: TextButton.styleFrom(foregroundColor: ink),
                       icon: const Icon(Icons.refresh_rounded),
                       label: Text(t.recipeRetry),
                     ),
+                    if (_cause != null) ...[
+                      const SizedBox(height: 12),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: Text(
+                          _cause!,
+                          textAlign: TextAlign.center,
+                          textDirection: TextDirection.ltr,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: ink.withValues(alpha: .6),
+                            fontSize: 11,
+                          ),
+                        ),
+                      ),
+                    ],
                   ],
                 ),
               )
@@ -297,7 +367,7 @@ class _Kitchen3DState extends State<Kitchen3D> {
                   child: CircularProgressIndicator(
                     strokeWidth: 2.5,
                     color: ink,
-                    semanticsLabel: t.kitchen3dAlt,
+                    semanticsLabel: t.kitchen3dLoading,
                   ),
                 ),
               ),

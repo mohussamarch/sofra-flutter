@@ -46,6 +46,7 @@ process.on('exit', () => {
     Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 300);
   }
 });
+for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => process.exit(1));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let tabs;
 for (let i = 0; i < 50; i++) {

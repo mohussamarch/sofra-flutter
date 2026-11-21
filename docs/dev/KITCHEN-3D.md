@@ -53,10 +53,16 @@ Quality tiers (`?q=desk|phone`, picked from the device by default): they share
 shadow settings; the phone tier draws glass without refraction (which would
 draw the room twice).
 
-**Numbers on a real phone:** long-press the kitchen in the app. A small box
+**Numbers on a real phone:** hold a finger on the kitchen for three seconds
+(long enough not to happen by accident; a normal slow press still taps). A small box
 shows draw calls, triangles, pixel ratio, frame time of the last camera move,
 start-up time split into load / shaders / first frame, the graphics chip and
-its texture units, and the view size. Long-press again to hide it.
+its texture units, and the view size. Hold again to hide it. If the page
+could not start, the error state shows the page's own reason in small print.
+
+The view never ends on a hard line against the page: the overview and the
+appliance shots fade in an oval, the table shot fades at the frame. The mask
+changes halfway through a camera move.
 
 ## Messages
 
@@ -107,3 +113,16 @@ In the console: `sofraKitchen({shot:'fridge', weights:{night:1}})`,
 - The fridge shelves' backdrop (`assets/scenes/kitchen/fridge-interior-r24`)
   is a still that no longer matches the live fridge behind it.
 - The garden outside the window is not in the mobile model; the sky is a shader.
+- Look, from the two review passes of round 1: cabinet door grooves are still
+  dark by day (lifted, not rebaked); a green-yellow sheen on the fridge side
+  at golden hour (the 8-bit golden lightmap may clip); night is one pool of
+  light with dark furniture (the lamp is at 44 instead of the master's 53);
+  rug fringe reads as a barcode from the overview; the overview is centred in
+  the whole view although the today card covers its lower part.
+- To watch on the phone: sparkle or a thin wrong line at the edge of the
+  window light, the lamp's cone and the fridge lamps (the shadow slope uses
+  screen derivatives inside a per-pixel condition); grain on cloth and
+  plaster at night.
+- The table shot cannot be reached in the app today: 3D opens from the stock
+  tab in kitchen mode only. Whether the kitchen returns to the home tab is
+  the owner's call.
