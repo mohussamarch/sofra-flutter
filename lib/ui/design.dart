@@ -102,11 +102,11 @@ class SofraPalette {
     line: Color(0xFF443E39),
     yellow: Color(0xFFD9B565),
     washes: [
-      Color(0xFF241F1C),
-      Color(0xFF211E1B),
-      Color(0xFF231F1C),
-      Color(0xFF201D1A),
-      Color(0xFF221E1B),
+      Color(0xFF2B2622),
+      Color(0xFF26231F),
+      Color(0xFF2A2521),
+      Color(0xFF24211E),
+      Color(0xFF282420),
     ],
     washBase: [Color(0xFF171412), Color(0xFF151311), Color(0xFF181513)],
     shadow: Color(0xFF000000),
@@ -156,6 +156,11 @@ abstract final class Sofra {
   static Color get greenDark => _p.accentDark;
   static Color get sage => _p.sage;
   static Color get mint => _p.accentTint;
+
+  /// Quiet ground for an icon badge or a standing link chip: the accent
+  /// tint by day; at night a neutral raised tone, since a brown tint
+  /// repeated on every screen stops marking anything.
+  static Color get badge => isDark ? _p.inverse : _p.accentTint;
   static Color get cream => _p.paper;
   static Color get sand => _p.sand;
   static Color get line => _p.line;

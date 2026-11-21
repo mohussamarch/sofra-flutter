@@ -56,6 +56,12 @@ class DailyHomeScreen extends StatelessWidget {
               const SizedBox(height: 8),
               TextButton(
                 onPressed: nav.exploreRecipes,
+                style: TextButton.styleFrom(
+                  // Text starts on the card's own start edge.
+                  padding: EdgeInsets.zero,
+                  minimumSize: const Size(44, 44),
+                  alignment: AlignmentDirectional.centerStart,
+                ),
                 child: Text(t.planExploreAll),
               ),
             ],
@@ -121,6 +127,12 @@ class DailyHomeScreen extends StatelessWidget {
                   Text(t.planNoMealToday),
                   TextButton(
                     onPressed: () => nav.goTab(AppTab.table),
+                    style: TextButton.styleFrom(
+                      // Text starts on the box's own start edge.
+                      padding: EdgeInsets.zero,
+                      minimumSize: const Size(44, 44),
+                      alignment: AlignmentDirectional.centerStart,
+                    ),
                     child: Text(t.planOpenPlan),
                   ),
                 ],

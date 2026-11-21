@@ -20,9 +20,11 @@ class LanguageSwitch extends StatelessWidget {
     // Fixed order in both languages («العربية» right, «English» left):
     // the layout flips when the language changes, but the two names must
     // not swap places under the finger; only the selection slides.
-    // Shrinks rather than overflows at the largest text sizes.
-    return FittedBox(
-      fit: BoxFit.scaleDown,
+    // Never scaled down as a whole: each part keeps its 44 height at every
+    // text size; the two short names stop growing at 1.3x so both still fit
+    // side by side on a 320 phone.
+    return MediaQuery.withClampedTextScaling(
+      maxScaleFactor: 1.3,
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: SofraSegments<AppLanguage>(

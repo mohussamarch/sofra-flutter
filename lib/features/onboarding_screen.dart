@@ -485,7 +485,7 @@ class _Hero extends StatelessWidget {
         width: 64,
         height: 64,
         decoration: BoxDecoration(
-          color: Sofra.accentTint,
+          color: Sofra.badge,
           borderRadius: BorderRadius.circular(Sofra.r22),
         ),
         child: Icon(icon, color: Sofra.accent, size: 34),
@@ -660,7 +660,7 @@ class _Picture extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: selected ? Sofra.card : Sofra.accentTint,
+        color: selected ? Sofra.card : Sofra.badge,
       ),
       child: Icon(
         opt.icon ?? Icons.restaurant_rounded,
@@ -1072,10 +1072,7 @@ class _QuickMeals extends StatelessWidget {
         Container(
           width: 44,
           height: 44,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Sofra.accentTint,
-          ),
+          decoration: BoxDecoration(shape: BoxShape.circle, color: Sofra.badge),
           child: Icon(Icons.bolt_rounded, color: Sofra.accent),
         ),
         const SizedBox(width: 12),

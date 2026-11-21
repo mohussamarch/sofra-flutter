@@ -287,17 +287,27 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
                             left: 0,
                             right: 0,
                             bottom: 0,
-                            height: MediaQuery.paddingOf(context).bottom + 56,
+                            // Covers the bar's full height plus its 12 gap
+                            // and safe area: opaque from the bar's top edge,
+                            // fading in over the 24 above it.
+                            height: MediaQuery.paddingOf(context).bottom + 120,
                             child: IgnorePointer(
                               child: DecoratedBox(
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
-                                    stops: const [0, .55, 1],
+                                    stops: [
+                                      0,
+                                      24 /
+                                          (MediaQuery.paddingOf(context)
+                                                  .bottom +
+                                              120),
+                                      1,
+                                    ],
                                     colors: [
                                       Sofra.paper.withValues(alpha: 0),
-                                      Sofra.paper.withValues(alpha: .96),
+                                      Sofra.paper,
                                       Sofra.paper,
                                     ],
                                   ),
@@ -513,7 +523,7 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
             Padding(
               padding: const EdgeInsetsDirectional.only(end: 4),
               child: Material(
-                color: Sofra.accentTint,
+                color: Sofra.badge,
                 borderRadius: BorderRadius.circular(999),
                 child: InkWell(
                   key: const ValueKey('header-community'),
