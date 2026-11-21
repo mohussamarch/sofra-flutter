@@ -506,11 +506,16 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
           Expanded(
             child: tab == AppTab.today
                 // The home page carries the brand, not a page name.
-                ? const Align(
+                ? Align(
                     alignment: AlignmentDirectional.centerStart,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.only(start: 4),
-                      child: SofraLogo(height: 32),
+                      // The table line's tail reaches past the word's ink
+                      // (further in the Latin cut), so the mark starts a
+                      // touch in to share the greeting's start edge below.
+                      padding: EdgeInsetsDirectional.only(
+                        start: L10n.isEnglish ? 8.5 : 6,
+                      ),
+                      child: const SofraLogo(height: 32),
                     ),
                   )
                 : Text(

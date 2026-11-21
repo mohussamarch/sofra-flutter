@@ -142,16 +142,36 @@ class CommunityWelcome extends StatelessWidget {
             children: [
               Transform.rotate(
                 angle: -.06,
-                child: Text(
-                  context.l10n.commTitle,
-                  key: ValueKey('community-welcome'),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'ArefRuqaa',
-                    fontSize: 66,
-                    height: 1.6,
-                    color: Sofra.ink,
-                  ),
+                child: LayoutBuilder(
+                  builder: (context, box) {
+                    final title = context.l10n.commTitle;
+                    // "Community" at 66 is wider than a phone and broke
+                    // mid-word, so the Latin title starts smaller, and
+                    // any title shrinks until its longest word fits.
+                    var style = TextStyle(
+                      fontFamily: 'ArefRuqaa',
+                      fontSize: L10n.isEnglish ? 52 : 66,
+                      height: 1.6,
+                      color: Sofra.ink,
+                    );
+                    final widest = _widestWord(
+                      title,
+                      style,
+                      Directionality.of(context),
+                      MediaQuery.textScalerOf(context),
+                    );
+                    if (box.maxWidth.isFinite && widest > box.maxWidth) {
+                      style = style.copyWith(
+                        fontSize: style.fontSize! * box.maxWidth / widest * .98,
+                      );
+                    }
+                    return Text(
+                      title,
+                      key: const ValueKey('community-welcome'),
+                      textAlign: TextAlign.center,
+                      style: style,
+                    );
+                  },
                 ),
               ),
               const SizedBox(height: 8),
@@ -169,6 +189,27 @@ class CommunityWelcome extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// Width of the widest single word of [text] in [style].
+double _widestWord(
+  String text,
+  TextStyle style,
+  TextDirection direction,
+  TextScaler scaler,
+) {
+  var widest = 0.0;
+  for (final word in text.split(RegExp(r'\s+'))) {
+    final painter = TextPainter(
+      text: TextSpan(text: word, style: style),
+      textDirection: direction,
+      textScaler: scaler,
+      maxLines: 1,
+    )..layout();
+    widest = math.max(widest, painter.width);
+    painter.dispose();
+  }
+  return widest;
 }
 
 class _TableMark extends CustomPainter {

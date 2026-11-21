@@ -11,12 +11,15 @@ Writes, and overwrites:
   android/app/src/main/res/mipmap-*/ic_launcher.png, ic_launcher_round.png
   android/app/src/main/res/mipmap-*/ic_launcher_foreground.png
   android/app/src/main/res/mipmap-*/ic_launcher_monochrome.png
+  ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-*.png (opaque,
+    square; iOS rounds the corners itself)
   web/favicon.png, web/favicon-dark.png, web/icons/Icon-*.png
-  assets/brand/[2.0x/|3.0x/]logo-{ar,en}[-dark].png
+  assets/brand/[2.0x/|3.0x/|4.0x/]logo-{ar,en}[-dark].png
 
 The XML (adaptive icon, background colour) is hand written and lives next
 to the PNGs; this script only makes pixels.
 """
+import json
 import os
 import pathlib
 import re
@@ -33,6 +36,7 @@ SVG = REPO / 'tool' / 'brand' / 'svg'
 RES = REPO / 'android' / 'app' / 'src' / 'main' / 'res'
 WEB = REPO / 'web'
 BRAND = REPO / 'assets' / 'brand'
+IOS_ICONS = REPO / 'ios' / 'Runner' / 'Assets.xcassets' / 'AppIcon.appiconset'
 
 BROWSERS = [
     r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe',
@@ -45,8 +49,9 @@ BROWSERS = [
 DENSITIES = {'mdpi': 1, 'hdpi': 1.5, 'xhdpi': 2, 'xxhdpi': 3, 'xxxhdpi': 4}
 
 # In-app wordmark: logical height of the 1x bitmap. Shown at this height or
-# smaller, so the 2x/3x bitmaps stay sharp on dense phones.
-LOGO_H = 40
+# smaller (SofraLogo.maxHeight asserts it), so the 2x/3x/4x bitmaps stay
+# sharp on dense phones. Keep in step with lib/ui/brand_logo.dart.
+LOGO_H = 48
 
 MASTER = 1536  # icon master edge in px (108 units); the 72 viewport is 1024
 
@@ -154,14 +159,20 @@ def main():
         # Maskable: the whole 108 canvas; the mark sits inside the safe circle.
         save(shrink(full, px, px).convert('RGB'), WEB / 'icons' / f'Icon-maskable-{px}.png')
 
-    # In-app wordmarks, 1x/2x/3x by height.
+    # iOS: every size Contents.json lists, opaque and square (no alpha is
+    # allowed on the 1024 store icon; the system draws the rounded corners).
+    for entry in json.loads((IOS_ICONS / 'Contents.json').read_text(encoding='utf-8'))['images']:
+        px = round(float(entry['size'].split('x')[0]) * int(entry['scale'][0]))
+        save(shrink(viewport, px, px).convert('RGB'), IOS_ICONS / entry['filename'])
+
+    # In-app wordmarks, 1x/2x/3x/4x by height.
     for lang in ('ar', 'en'):
         vw, vh = viewbox(f'logo-{lang}.svg')
         for suffix in ('', '-dark'):
-            mh = 600
+            mh = 800
             mw = round(mh * vw / vh)
             master = render(f'logo-{lang}{suffix}.svg', mw, mh)
-            for ratio, sub in ((1, ''), (2, '2.0x/'), (3, '3.0x/')):
+            for ratio, sub in ((1, ''), (2, '2.0x/'), (3, '3.0x/'), (4, '4.0x/')):
                 # Width from the 1x width, so every scale has the same size.
                 h = LOGO_H * ratio
                 w = round(LOGO_H * vw / vh) * ratio

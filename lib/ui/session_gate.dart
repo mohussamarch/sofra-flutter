@@ -8,6 +8,7 @@ import '../data/firestore_community.dart';
 import '../data/state_store.dart';
 import '../firebase_options.dart';
 import '../l10n/l10n.dart';
+import 'brand_logo.dart';
 import 'design.dart';
 
 typedef SessionBuilder = Widget Function(
@@ -300,11 +301,7 @@ class _SignInPageState extends State<SignInPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Icon(
-                        Icons.restaurant_rounded,
-                        size: 64,
-                        color: Sofra.green,
-                      ),
+                      const Center(child: SofraLogo(height: 40)),
                       const SizedBox(height: 20),
                       Text(
                         creating ? t.appCreateAccountTitle : t.appWelcome,
