@@ -72,15 +72,15 @@ const servingsTablesJson = r'''{
    "basis": "Swells more than rice"
   },
   "legumeDry": {
-   "per": 100,
+   "per": 75,
    "unit": "g",
    "band": [
-    50,
+    40,
     150
    ],
    "cupG": 190,
    "role": "starch",
-   "basis": "As the main dish: koshary, ful, stews"
+   "basis": "Dry weight as the main dish, eaten with rice or bread: koshary, ful, curries"
   },
   "legumeCanned": {
    "per": 200,
@@ -284,16 +284,28 @@ const servingsTablesJson = r'''{
    "basis": "Bread, pizza, savoury pastries"
   },
   "dessertBase": {
-   "per": 60,
+   "per": 35,
    "unit": "g",
    "band": [
-    30,
-    100
+    20,
+    70
    ],
    "cupG": 125,
    "piecesPerPerson": 3,
    "role": "batch",
-   "basis": "Cakes, basbousa, cookies"
+   "basis": "Flour or semolina in one slice of cake, basbousa or a few cookies"
+  },
+  "dessertRich": {
+   "per": 80,
+   "unit": "g",
+   "band": [
+    40,
+    150
+   ],
+   "cupG": 225,
+   "pieceG": 250,
+   "role": "batch",
+   "basis": "Cream cheese, kunafa or phyllo pastry, biscuits, dates, chocolate: only in desserts"
   },
   "milkDessert": {
    "per": 180,
@@ -374,6 +386,7 @@ const servingsTablesJson = r'''{
    "tsp": 0.020833333333333332
   },
   "piecePattern": "حب|قطع|دجاج|سمك|بيض|فخذ|جناح|صدر|فيليه|عدد|رأس|علب|عبوة|piece|whole|can",
+  "lineIdPattern": "-(i|ing-?)[0-9]+$",
   "genericCupG": 240,
   "genericPieceG": 100
  },
@@ -409,6 +422,13 @@ const servingsTablesJson = r'''{
    "tofu"
   ],
   "sourceCountsPiecesRatio": 2.5,
+  "sourceKeepRatio": 2,
+  "eggsDriveMinCount": 4,
+  "lowConfidenceMinPeople": 2.5,
+  "minPeople": 1.5,
+  "kindScale": {
+   "side": 0.5
+  },
   "mappingGapMappedShare": 0.6
  },
  "cupG": {
@@ -525,6 +545,7 @@ const servingsTablesJson = r'''{
   "bc-tajine-ing-4": "soupLiquid",
   "bc-tajine-ing-6": "eggsMain",
   "bc-tarta-de-santiago-ing-1": "eggsMain",
+  "bc-tarte-merengada-ing-3": "dessertRich",
   "bc-tarte-merengada-ing-5": "eggsMain",
   "bc-tzatziki-ing-2": "saladVeg",
   "bc-ukrainian-borscht-ing-3": "soupLiquid",
@@ -553,6 +574,8 @@ const servingsTablesJson = r'''{
   "bc650-beef-tips-ing-3": "potatoMain",
   "bc650-beef-tips-ing-6": "milkDessert",
   "bc650-beef-tips-ing-9": "soupLiquid",
+  "bc650-beijinho-ing-1": "dessertRich",
+  "bc650-bolinhos-de-coco-ing-1": "dessertRich",
   "bc650-bolinhos-de-coco-ing-3": "eggsMain",
   "bc650-bolinhos-de-coco-ing-4": "eggsMain",
   "bc650-caesar-salad-ing-1": "saladVeg",
@@ -572,6 +595,7 @@ const servingsTablesJson = r'''{
   "bc650-chili-con-carne-ing-11": "soupLiquid",
   "bc650-chili-con-carne-ing-6": "meatBoneless",
   "bc650-chili-con-carne-ing-7": "legumeDry",
+  "bc650-chili-con-carne-ing-8": "dessertRich",
   "bc650-chimichanga-ing-3": "saladVeg",
   "bc650-colcannon-bake-ing-1": "potatoMain",
   "bc650-colcannon-bake-ing-4": "eggsMain",
@@ -752,6 +776,7 @@ const servingsTablesJson = r'''{
   "bc650-shrimp-chicken-jambalaya-ing-15": "riceRaw",
   "bc650-shrimp-chicken-jambalaya-ing-16": "soupLiquid",
   "bc650-shrimp-chicken-jambalaya-ing-20": "seafood",
+  "bc650-shrimp-fettuccine-alfredo-ing-1": "dessertRich",
   "bc650-shrimp-fettuccine-alfredo-ing-2": "seafood",
   "bc650-shrimp-fettuccine-alfredo-ing-3": "milkDessert",
   "bc650-slow-cooked-chicken-tacos-ing-1": "chickenBoneless",
@@ -826,9 +851,16 @@ const servingsTablesJson = r'''{
   "chicken-thighs": "chickenBoneIn",
   "chicken-wings": "chickenBoneIn",
   "chickpeas": "legumeDry",
+  "chocolate": "dessertRich",
   "clams": "seafood",
+  "coconut": "dessertRich",
+  "condensed-milk": "dessertRich",
   "cracked-wheat": "freekeh",
+  "cream-cheese": "dessertRich",
   "cucumber": "saladVeg",
+  "dark-chocolate": "dessertRich",
+  "dates": "dessertRich",
+  "desiccated-coconut": "dessertRich",
   "dough-water": "soupLiquid",
   "drumsticks": "chickenBoneIn",
   "duck": "meatBoneIn",
@@ -848,6 +880,7 @@ const servingsTablesJson = r'''{
   "fi650-51415-i16": "seafood",
   "fi650-51415-i2": "saladVeg",
   "fi650-51423-i3": "seafood",
+  "fi650-51423-i5": "dessertRich",
   "fi650-51470-i7": "seafood",
   "fi650-51470-i8": "chickenBoneless",
   "fi650-51470-i9": "eggsMain",
@@ -899,6 +932,7 @@ const servingsTablesJson = r'''{
   "fi650-52537-i8": "saladVeg",
   "fi650-52555-i0": "vegMain",
   "fi650-52555-i1": "potatoMain",
+  "fi650-52555-i3": "dessertRich",
   "fi650-52631-i2": "leafyMain",
   "fi650-52631-i9": "soupLiquid",
   "fi650-52688-i4": "vegMain",
@@ -1069,6 +1103,7 @@ const servingsTablesJson = r'''{
   "fiw650-52387-i4": "vegMain",
   "fiw650-52393-i1": "saladVeg",
   "fiw650-52393-i4": "legumeDry",
+  "fiw650-52412-i0": "dessertRich",
   "fiw650-52412-i6": "soupLiquid",
   "fiw650-52460-i0": "milkDessert",
   "fiw650-52460-i10": "eggsMain",
@@ -1195,6 +1230,7 @@ const servingsTablesJson = r'''{
   "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i5": "vegMain",
   "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i7": "potatoMain",
   "ma650-panlasang-pinoy-pinakbet-tagalog-20261021-i8": "saladVeg",
+  "mascarpone": "dessertRich",
   "meat": "meatBoneless",
   "milk": "milkDessert",
   "minced-meat": "mince",
@@ -1209,8 +1245,10 @@ const servingsTablesJson = r'''{
   "pasta": "pastaDry",
   "peas": "vegMain",
   "penne": "pastaDry",
+  "phyllo": "dessertRich",
   "potato": "potatoMain",
   "potatoes": "potatoMain",
+  "puff-pastry": "dessertRich",
   "pumpkin": "vegMain",
   "rabbit": "meatBoneIn",
   "red-lentils": "legumeDry",
@@ -1304,7 +1342,6 @@ const servingsTablesJson = r'''{
   "bc-tarta-de-santiago-ing-6",
   "bc-tarta-de-santiago-ing-8",
   "bc-tarte-merengada-ing-2",
-  "bc-tarte-merengada-ing-3",
   "bc-tarte-merengada-ing-4",
   "bc-tarte-merengada-ing-6",
   "bc-tzatziki-ing-1",
@@ -1384,10 +1421,8 @@ const servingsTablesJson = r'''{
   "bc650-bebek-mprol-ing-9",
   "bc650-beef-tips-ing-4",
   "bc650-beef-tips-ing-5",
-  "bc650-beijinho-ing-1",
   "bc650-beijinho-ing-2",
   "bc650-beijinho-ing-5",
-  "bc650-bolinhos-de-coco-ing-1",
   "bc650-bolinhos-de-coco-ing-2",
   "bc650-bolinhos-de-coco-ing-5",
   "bc650-caesar-salad-ing-2",
@@ -1436,7 +1471,6 @@ const servingsTablesJson = r'''{
   "bc650-chili-con-carne-ing-3",
   "bc650-chili-con-carne-ing-4",
   "bc650-chili-con-carne-ing-5",
-  "bc650-chili-con-carne-ing-8",
   "bc650-chili-con-carne-ing-9",
   "bc650-chimichanga-ing-2",
   "bc650-chimichanga-ing-4",
@@ -1906,7 +1940,6 @@ const servingsTablesJson = r'''{
   "bc650-shrimp-chicken-jambalaya-ing-6",
   "bc650-shrimp-chicken-jambalaya-ing-7",
   "bc650-shrimp-chicken-jambalaya-ing-8",
-  "bc650-shrimp-fettuccine-alfredo-ing-1",
   "bc650-shrimp-fettuccine-alfredo-ing-5",
   "bc650-shrimp-fettuccine-alfredo-ing-6",
   "bc650-slow-cooked-chicken-tacos-ing-2",
@@ -2035,15 +2068,12 @@ const servingsTablesJson = r'''{
   "chili-flakes",
   "chili-paste",
   "chives",
-  "chocolate",
   "cilantro",
   "cinnamon",
   "cloves",
   "cocoa",
-  "coconut",
   "coconut-milk",
   "coconut-oil",
-  "condensed-milk",
   "coriander",
   "coriander-seeds",
   "corn",
@@ -2052,17 +2082,13 @@ const servingsTablesJson = r'''{
   "corn-tortilla",
   "cornstarch",
   "cream",
-  "cream-cheese",
   "cumin",
   "cumin-seeds",
   "curry-leaves",
   "curry-powder",
-  "dark-chocolate",
   "dark-soy-sauce",
   "date-molasses",
   "date-syrup",
-  "dates",
-  "desiccated-coconut",
   "dijon",
   "dill",
   "dried-basil",
@@ -2130,7 +2156,6 @@ const servingsTablesJson = r'''{
   "fi650-51423-i0",
   "fi650-51423-i1",
   "fi650-51423-i12",
-  "fi650-51423-i5",
   "fi650-51423-i7",
   "fi650-51423-i8",
   "fi650-51423-i9",
@@ -2344,7 +2369,6 @@ const servingsTablesJson = r'''{
   "fi650-52555-i10",
   "fi650-52555-i11",
   "fi650-52555-i2",
-  "fi650-52555-i3",
   "fi650-52555-i4",
   "fi650-52555-i5",
   "fi650-52555-i7",
@@ -2996,7 +3020,6 @@ const servingsTablesJson = r'''{
   "fiw650-52393-i6",
   "fiw650-52393-i7",
   "fiw650-52393-i8",
-  "fiw650-52412-i0",
   "fiw650-52412-i1",
   "fiw650-52412-i2",
   "fiw650-52412-i3",
@@ -3346,7 +3369,6 @@ const servingsTablesJson = r'''{
   "maple-syrup",
   "margarine",
   "marjoram",
-  "mascarpone",
   "mastic",
   "mayonnaise",
   "mexican-cheese",
@@ -3388,7 +3410,6 @@ const servingsTablesJson = r'''{
   "pecorino",
   "peppercorns",
   "pesto",
-  "phyllo",
   "pine-nuts",
   "pineapple",
   "pistachio",
@@ -3401,7 +3422,6 @@ const servingsTablesJson = r'''{
   "poppy-seeds",
   "potato-starch",
   "powdered-sugar",
-  "puff-pastry",
   "qeshta",
   "radish",
   "raisins",
@@ -3558,8 +3578,10 @@ const servingsTablesJson = r'''{
   "بطاطس يوكون": "potatoMain",
   "بطاطس يوكون ذهبية": "potatoMain",
   "بطة": "meatBoneIn",
+  "بف باستري": "dessertRich",
   "بلح البحر": "seafood",
   "بلح بحر": "seafood",
+  "بلح ناشف": "dessertRich",
   "بلطي": "fish",
   "بندورة": "saladVeg",
   "بياض البيض": "eggsMain",
@@ -3578,6 +3600,8 @@ const servingsTablesJson = r'''{
   "بيني": "pastaDry",
   "بيني ريجاتي": "pastaDry",
   "تراوت": "fish",
+  "تمر": "dessertRich",
+  "تمر منزوع النوى": "dessertRich",
   "توفو": "tofu",
   "توفو صلب": "tofu",
   "توفو متماسك": "tofu",
@@ -3586,14 +3610,26 @@ const servingsTablesJson = r'''{
   "تونة قطع": "seafood",
   "تونة معلبة": "seafood",
   "جبن التوفو": "tofu",
+  "جبن كريمي": "dessertRich",
+  "جبنة فيلادلفيا": "dessertRich",
+  "جبنة كريمي": "dessertRich",
+  "جبنة كريمية": "dessertRich",
+  "جبنة ماسكاربوني": "dessertRich",
+  "جبنة مسكربوني": "dessertRich",
   "جرجير": "saladVeg",
   "جريش": "freekeh",
+  "جلاش": "dessertRich",
   "جمبري": "seafood",
   "جمبري جامبو": "seafood",
   "جمبري كبير": "seafood",
   "جمبري نيئ": "seafood",
   "جناحات دجاج": "chickenBoneIn",
   "جوانح فراخ": "chickenBoneIn",
+  "جوز الهند": "dessertRich",
+  "جوز الهند المبشور": "dessertRich",
+  "جوز هند": "dessertRich",
+  "جوز هند مبشور": "dessertRich",
+  "جوز هند مجفف": "dessertRich",
   "حبات بطاطس": "potatoMain",
   "حبات طماطم": "saladVeg",
   "حبار": "seafood",
@@ -3603,6 +3639,8 @@ const servingsTablesJson = r'''{
   "حليب": "milkDessert",
   "حليب بقري": "milkDessert",
   "حليب سائل": "milkDessert",
+  "حليب مكثف": "dessertRich",
+  "حليب مكثف محلى": "dessertRich",
   "حمص": "legumeDry",
   "حمص الشام": "legumeDry",
   "حمص حب": "legumeDry",
@@ -3660,8 +3698,11 @@ const servingsTablesJson = r'''{
   "رز مصري": "riceRaw",
   "رز نيئ": "riceRaw",
   "رز ياسمين": "riceRaw",
+  "رقائق الجلاش": "dessertRich",
   "رقائق الشوفان": "dessertBase",
   "رقائق شوفان": "dessertBase",
+  "رقائق شوكولاتة": "dessertRich",
+  "رقائق فيلو": "dessertRich",
   "رقائق لازانيا": "pastaDry",
   "روبيان": "seafood",
   "روبيان كبير": "seafood",
@@ -3718,6 +3759,15 @@ const servingsTablesJson = r'''{
   "شوربة لحمة": "soupLiquid",
   "شوفان": "dessertBase",
   "شوفان ملفوف": "dessertBase",
+  "شوكولاتة": "dessertRich",
+  "شوكولاتة بالحليب": "dessertRich",
+  "شوكولاتة خام": "dessertRich",
+  "شوكولاتة دارك": "dessertRich",
+  "شوكولاتة داكنة": "dessertRich",
+  "شوكولاتة سوداء": "dessertRich",
+  "شوكولاتة مرة": "dessertRich",
+  "شوكولاته داكنه": "dessertRich",
+  "شيكولاتة": "dessertRich",
   "صدر دجاج": "chickenBoneless",
   "صدر دجاج نيئ": "chickenBoneless",
   "صدر فراخ": "chickenBoneless",
@@ -3752,7 +3802,13 @@ const servingsTablesJson = r'''{
   "طماطم كرزية": "saladVeg",
   "طماطم كرزيه": "saladVeg",
   "طماطمتا روما": "saladVeg",
+  "عجوة": "dessertRich",
+  "عجينة الميل فاي": "dessertRich",
+  "عجينة بف باستري": "dessertRich",
+  "عجينة جلاش": "dessertRich",
+  "عجينة فيلو": "dessertRich",
   "عجينة لازانيا": "pastaDry",
+  "عجينة مورقة": "dessertRich",
   "عدس": "legumeDry",
   "عدس أبو جبة": "legumeDry",
   "عدس أحمر": "legumeDry",
@@ -3808,6 +3864,7 @@ const servingsTablesJson = r'''{
   "قرنبيط": "vegMain",
   "قرنبيط أخضر": "vegMain",
   "قريدس": "seafood",
+  "قطع شوكولاتة": "dessertRich",
   "قلوب خرشوف": "vegMain",
   "قمح الهريس": "freekeh",
   "كاليمار": "seafood",
@@ -3822,6 +3879,7 @@ const servingsTablesJson = r'''{
   "كرنب": "vegMain",
   "كرنب صيني": "vegMain",
   "كرنبة": "vegMain",
+  "كريم تشيز": "dessertRich",
   "كوسا": "vegMain",
   "كوساية": "vegMain",
   "كوسايه": "vegMain",
@@ -3830,6 +3888,8 @@ const servingsTablesJson = r'''{
   "لبن": "milkDessert",
   "لبن حليب": "milkDessert",
   "لبن سائل": "milkDessert",
+  "لبن مكثف": "dessertRich",
+  "لبن مكثف محلى": "dessertRich",
   "لحم أرانب": "meatBoneIn",
   "لحم بتلو": "meatBoneless",
   "لحم بط": "meatBoneIn",
@@ -3859,6 +3919,7 @@ const servingsTablesJson = r'''{
   "ماء عادي": "soupLiquid",
   "ماء مثلج": "soupLiquid",
   "ماء مغلي": "soupLiquid",
+  "ماسكاربوني": "dessertRich",
   "ماسل": "seafood",
   "محار": "seafood",
   "محار بحري": "seafood",
@@ -3874,6 +3935,7 @@ const servingsTablesJson = r'''{
   "مرقة سمك": "soupLiquid",
   "مرقة فراخ": "soupLiquid",
   "مرقة لحم": "soupLiquid",
+  "مسكربوني": "dessertRich",
   "مشروم": "vegMain",
   "مشروم شامبينيون": "vegMain",
   "معكرونة": "pastaDry",
@@ -4069,7 +4131,6 @@ const servingsTablesJson = r'''{
   "بصلتان خضراوان",
   "بصلتان من نوع شالوت",
   "بصلتين",
-  "بف باستري",
   "بقان",
   "بقدونس",
   "بقدونس أخضر",
@@ -4083,7 +4144,6 @@ const servingsTablesJson = r'''{
   "بقسماط مطحون",
   "بكنج باودر",
   "بلانتين",
-  "بلح ناشف",
   "بلسميك",
   "بنجر",
   "بنجر أحمر",
@@ -4128,8 +4188,6 @@ const servingsTablesJson = r'''{
   "تفاحة",
   "تفاحة فوجي",
   "تماري",
-  "تمر",
-  "تمر منزوع النوى",
   "تمر هندي",
   "توابل أعشاب إيطالية",
   "توابل إيطالية",
@@ -4169,7 +4227,6 @@ const servingsTablesJson = r'''{
   "جبن فيتا",
   "جبن فيتا مفتت",
   "جبن قشقوان",
-  "جبن كريمي",
   "جبن مانشيغو",
   "جبن مكسيكي",
   "جبن موتزاريلا",
@@ -4197,13 +4254,8 @@ const servingsTablesJson = r'''{
   "جبنة غرويير",
   "جبنة فيتا",
   "جبنة فيتا مفتتة",
-  "جبنة فيلادلفيا",
   "جبنة قشقوان",
-  "جبنة كريمي",
-  "جبنة كريمية",
-  "جبنة ماسكاربوني",
   "جبنة مانشيجو",
-  "جبنة مسكربوني",
   "جبنة مكسيكية",
   "جبنة موتزاريلا",
   "جبنة موزاريلا",
@@ -4218,7 +4270,6 @@ const servingsTablesJson = r'''{
   "جزرة",
   "جزرتان",
   "جزرتين",
-  "جلاش",
   "جلوتامات أحادية الصوديوم",
   "جلوكوز سائل",
   "جنزبيل",
@@ -4226,13 +4277,8 @@ const servingsTablesJson = r'''{
   "جوتشوجانج",
   "جوز",
   "جوز الطيب",
-  "جوز الهند",
-  "جوز الهند المبشور",
   "جوز بيكان",
   "جوز عين الجمل",
-  "جوز هند",
-  "جوز هند مبشور",
-  "جوز هند مجفف",
   "جوزة الطيب",
   "جوزة الطيب المطحونة",
   "جوزة طيب",
@@ -4278,8 +4324,6 @@ const servingsTablesJson = r'''{
   "حليب مبخّر",
   "حليب مجفف",
   "حليب مخيض",
-  "حليب مكثف",
-  "حليب مكثف محلى",
   "حوائج",
   "خبز",
   "خبز أبيض",
@@ -4361,17 +4405,14 @@ const servingsTablesJson = r'''{
   "رغيف خبز أبيض",
   "رغيف عيش",
   "رقائق أرز",
-  "رقائق الجلاش",
   "رقائق الفلفل الأحمر",
   "رقائق الفلفل الحار",
   "رقائق سبرنج رول",
   "رقائق شطة",
-  "رقائق شوكولاتة",
   "رقائق فلفل أحمر",
   "رقائق فلفل أحمر حار",
   "رقائق فلفل حار",
   "رقائق فلفل غوچوغارو",
-  "رقائق فيلو",
   "رقائق لفائف لومبيا",
   "رقائق وون تون",
   "رمان",
@@ -4517,18 +4558,9 @@ const servingsTablesJson = r'''{
   "شمر حب",
   "شمندر",
   "شمندر أحمر",
-  "شوكولاتة",
-  "شوكولاتة بالحليب",
-  "شوكولاتة خام",
-  "شوكولاتة دارك",
-  "شوكولاتة داكنة",
-  "شوكولاتة سوداء",
-  "شوكولاتة مرة",
-  "شوكولاته داكنه",
   "شويو",
   "شيدر",
   "شيدر حاد",
-  "شيكولاتة",
   "صلصة السمك",
   "صلصة الصويا",
   "صلصة الطماطم",
@@ -4596,12 +4628,6 @@ const servingsTablesJson = r'''{
   "طماطم معلبة مقطعة",
   "طماطم معلبه مهروسه",
   "طماطم مقشرة معلبة",
-  "عجوة",
-  "عجينة الميل فاي",
-  "عجينة بف باستري",
-  "عجينة جلاش",
-  "عجينة فيلو",
-  "عجينة مورقة",
   "عروق كزبرة",
   "عسل",
   "عسل أبيض",
@@ -4724,7 +4750,6 @@ const servingsTablesJson = r'''{
   "قشطة",
   "قشطة بلدي",
   "قشقوان",
-  "قطع شوكولاتة",
   "قطعة زنجبيل",
   "كاتشاب",
   "كاتشب",
@@ -4753,7 +4778,6 @@ const servingsTablesJson = r'''{
   "كركم",
   "كركم بودرة",
   "كركم مطحون",
-  "كريم تشيز",
   "كريمة",
   "كريمة الخفق",
   "كريمة الطبخ",
@@ -4799,8 +4823,6 @@ const servingsTablesJson = r'''{
   "لبن زبادي",
   "لبن مبخر",
   "لبن مخيض",
-  "لبن مكثف",
-  "لبن مكثف محلى",
   "لبن يوناني",
   "لبنة",
   "لبنة بلدي",
@@ -4830,7 +4852,6 @@ const servingsTablesJson = r'''{
   "ماء ورد",
   "مارجرين",
   "مارغرين",
-  "ماسكاربوني",
   "مانجا",
   "مانجة",
   "مانجو",
@@ -4872,7 +4893,6 @@ const servingsTablesJson = r'''{
   "مسحوق كزبرة",
   "مسطردة",
   "مسطردة ديجون",
-  "مسكربوني",
   "مسمار قرنفل",
   "مشروم معلب",
   "معجون الطماطم",
@@ -4978,7 +4998,7 @@ const servingsTablesJson = r'''{
   "يوسف أفندي",
   "يوسفي"
  ],
- "deny": "مسحوق|بودرة|powder|بهار|زيت|oil|cube|مكعب|صلصة|صوص|sauce|خل|vinegar|نشا|starch|خميرة|yeast|baking|معجون|paste|مرقة مكعب|bouillon|عصير|juice|extract|essence|سوداني|peanut",
+ "deny": "مسحوق|بودرة|powder|بهار|زيت|oil|cube|مكعب|صلصة|صوص|sauce|خل|vinegar|نشا|starch|خميرة|yeast|baking|معجون|paste|مرقة مكعب|bouillon|عصير|juice|extract|essence|سوداني|peanut|حليب جوز|لبن جوز|coconut milk|coconut cream|كريمة جوز",
  "keywords": [
   [
    "كبد|كبدة|liver",
@@ -5013,7 +5033,7 @@ const servingsTablesJson = r'''{
    "vegMain"
   ],
   [
-   "عدس|حمص|فول|فاصوليا|لوبيا|lentil|chickpea|bean",
+   "عدس|(?<!م)حمص|فول|فاصوليا|لوبيا|lentil|chickpea|bean",
    "legumeDry"
   ],
   [
@@ -5029,7 +5049,7 @@ const servingsTablesJson = r'''{
    "meatBoneless"
   ],
   [
-   "أفخاذ|افخاذ|وراك|أوراك|أجنحة|اجنحة|دبابيس|thigh|wing|drumstick|leg quarter",
+   "أفخاذ|افخاذ|وراك|أوراك|أجنحة|اجنحة|دبابيس|دبوس|thigh|wing|drumstick|leg quarter",
    "chickenBoneIn"
   ],
   [
@@ -5053,7 +5073,7 @@ const servingsTablesJson = r'''{
    "potatoMain"
   ],
   [
-   "باذنجان|كوسة|كوسا|بامية|قرنبيط|كرنب|ملفوف|بسلة|بازلاء|eggplant|zucchini|okra|cauliflower|cabbage",
+   "باذنجان|كوسة|كوسا|كوسي|كوسى|بامية|قرنبيط|كرنب|ملفوف|بسلة|بازلاء|eggplant|zucchini|okra|cauliflower|cabbage",
    "vegMain"
   ],
   [
@@ -5063,6 +5083,10 @@ const servingsTablesJson = r'''{
   [
    "^بيض|egg",
    "eggsMain"
+  ],
+  [
+   "جبن كريمي|جبنة كريمي|جبنة كريم|كريم تشيز|cream cheese|ماسكاربوني|mascarpone|كنافة|كنافه|kunafa|knafeh|kataifi|بسكويت|biscuit|graham|فيلو|phyllo|filo|تمر(?! هندي)|عجوة|\bdates\b|شوكولات|chocolate|جوز هند|جوز الهند|coconut|حليب مكثف|لبن مكثف|condensed",
+   "dessertRich"
   ],
   [
    "دقيق|طحين|flour",
@@ -5079,6 +5103,62 @@ const servingsTablesJson = r'''{
   [
    "مرق|^ماء|مياه|^مية|stock|broth|water",
    "soupLiquid"
+  ]
+ ],
+ "refine": [
+  [
+   "مفروم|مفرومة|كفتة|كفته|minced|ground (beef|lamb|meat|turkey|pork|chicken|veal)",
+   "mince",
+   [
+    "meatBoneless",
+    "meatBoneIn",
+    "chickenWhole",
+    "chickenBoneless",
+    "chickenBoneIn"
+   ]
+  ],
+  [
+   "(?<!(بدون|منزوع|منزوعة|مخلي|مخلية|خالي|خالية) ?(من )?(ال)?)(عظم|عظام)|بالعظم|أضلاع|اضلاع|ضلوع|ريش|موزة|كوارع|شقف|\bbone(?!less)|bone-in|ribs|shank|chops",
+   "meatBoneIn",
+   [
+    "meatBoneless"
+   ]
+  ],
+  [
+   "أفخاذ|افخاذ|وراك|أوراك|أجنحة|اجنحة|دبابيس|دبوس|thigh|wing|drumstick|leg quarter",
+   "chickenBoneIn",
+   [
+    "chickenWhole"
+   ]
+  ],
+  [
+   "صدور|صدر دجاج|صدر فراخ|فيليه دجاج|فيليه فراخ|breast|tender",
+   "chickenBoneless",
+   [
+    "chickenWhole"
+   ]
+  ]
+ ],
+ "pieceWeights": [
+  [
+   "ملفوف|كرنب|cabbage",
+   1500
+  ],
+  [
+   "قرنبيط|cauliflower",
+   1000
+  ],
+  [
+   "قرع|يقطين|pumpkin|squash",
+   1500
+  ],
+  [
+   "باذنجان|eggplant|aubergine",
+   250
+  ],
+  [
+   "كوسة|كوسا|كوسي|كوسى|zucchini|courgette",
+   150
   ]
  ],
  "kinds": [
@@ -5109,6 +5189,10 @@ const servingsTablesJson = r'''{
   [
    "مقبل|غموس",
    "dip"
+  ],
+  [
+   "جانب|side",
+   "side"
   ]
  ],
  "defaultKind": "main",
@@ -5141,6 +5225,14 @@ const servingsTablesJson = r'''{
    "starch",
    "veg"
   ],
-  "base": []
+  "side": [
+   "veg",
+   "starch",
+   "protein",
+   "batch"
+  ],
+  "base": [
+   "protein"
+  ]
  }
 }''';

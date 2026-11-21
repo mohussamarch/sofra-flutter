@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Maps recipe ingredients to the portion norms in portion-norms.json. Lookup order, first match wins: (1) canonical id (directory.json idMap[id] ?? id) in `ids`; (2) exact vocabulary name or alias of an id in `ids`; (3) any other known vocabulary id: no category (spices, oils, sauces never drive servings); (4) `deny` on the name or id: no category; (5) `keywords` in order on the name or id. `nameOverrides` replace a vocabulary alias whose portion differs (the vocabulary files minced meat under beef). `rawOverrides` set a recipe-local id directly and win over idMap (the directory maps \"meat\" to chicken). `kinds` turns the recipe category into a dish kind, first match wins; `priority` lists the roles that can drive each kind.",
+  "note": "Maps recipe ingredients to the portion norms in portion-norms.json. Lookup order, first match wins: (1) canonical id (directory.json idMap[id] ?? id) in `ids`; (2) exact vocabulary name or alias of an id in `ids`; (3) any other known vocabulary id: no category (spices, oils, sauces never drive servings); (4) `deny` on the name or id: no category; (5) `keywords` in order on the name or id. `refine` corrects a category resolved from a plain id when the name says more (\"لحم بقري مفروم\" with id beef is mince, \"لحم غنم شقف\" is bone-in): pattern on the name, new category, the categories it may replace. `pieceWeights` give the weight of one piece by name or id where the norm's piece weight is wrong (a whole cabbage). `nameOverrides` replace a vocabulary alias whose portion differs (the vocabulary files minced meat under beef). `rawOverrides` set a recipe-local id directly and win over idMap (the directory maps \"meat\" to chicken). `kinds` turns the recipe category into a dish kind, first match wins; `priority` lists the roles that can drive each kind.",
   "ids": {
     "pasta": "pastaDry", "spaghetti": "pastaDry", "penne": "pastaDry", "lasagna": "pastaDry",
     "noodles": "noodlesDry", "rice-noodles": "noodlesDry", "vermicelli": "noodlesDry",
@@ -20,6 +20,7 @@
     "molokhia": "leafyMain", "spinach": "leafyMain", "chard": "leafyMain", "grape-leaves": "leafyMain",
     "flour": "flourBread", "self-raising-flour": "flourBread",
     "semolina": "dessertBase", "oats": "dessertBase",
+    "cream-cheese": "dessertRich", "mascarpone": "dessertRich", "phyllo": "dessertRich", "puff-pastry": "dessertRich", "dates": "dessertRich", "chocolate": "dessertRich", "dark-chocolate": "dessertRich", "desiccated-coconut": "dessertRich", "condensed-milk": "dessertRich",
     "milk": "milkDessert",
     "water": "soupLiquid", "warm-water": "soupLiquid", "broth": "soupLiquid", "chicken-stock": "soupLiquid", "beef-stock": "soupLiquid", "vegetable-stock": "soupLiquid", "fish-stock": "soupLiquid",
     "tomato": "saladVeg", "tomatoes": "saladVeg", "cherry-tomato": "saladVeg", "cucumber": "saladVeg", "lettuce": "saladVeg", "arugula": "saladVeg"
@@ -28,8 +29,21 @@
     "لحم مفروم": "mince", "لحمة مفرومة": "mince", "لحم بقري مفروم": "mince", "لحمة بقري مفرومة": "mince", "ديك رومي مفروم": "mince",
     "أضلاع لحم بقر قصيرة": "meatBoneIn", "ضلوع بقري قصيرة": "meatBoneIn"
   },
+  "refine": [
+    ["مفروم|مفرومة|كفتة|كفته|minced|ground (beef|lamb|meat|turkey|pork|chicken|veal)","mince",["meatBoneless","meatBoneIn","chickenWhole","chickenBoneless","chickenBoneIn"]],
+    ["(?<!(بدون|منزوع|منزوعة|مخلي|مخلية|خالي|خالية) ?(من )?(ال)?)(عظم|عظام)|بالعظم|أضلاع|اضلاع|ضلوع|ريش|موزة|كوارع|شقف|\bbone(?!less)|bone-in|ribs|shank|chops","meatBoneIn",["meatBoneless"]],
+    ["أفخاذ|افخاذ|وراك|أوراك|أجنحة|اجنحة|دبابيس|دبوس|thigh|wing|drumstick|leg quarter", "chickenBoneIn", ["chickenWhole"]],
+    ["صدور|صدر دجاج|صدر فراخ|فيليه دجاج|فيليه فراخ|breast|tender", "chickenBoneless", ["chickenWhole"]]
+  ],
+  "pieceWeights": [
+    ["ملفوف|كرنب|cabbage", 1500],
+    ["قرنبيط|cauliflower", 1000],
+    ["قرع|يقطين|pumpkin|squash", 1500],
+    ["باذنجان|eggplant|aubergine", 250],
+    ["كوسة|كوسا|كوسي|كوسى|zucchini|courgette", 150]
+  ],
   "rawOverrides": { "meat": "meatBoneless", "lamb-meat": "meatBoneless", "beef-meat": "meatBoneless" },
-  "deny": "مسحوق|بودرة|powder|بهار|زيت|oil|cube|مكعب|صلصة|صوص|sauce|خل|vinegar|نشا|starch|خميرة|yeast|baking|معجون|paste|مرقة مكعب|bouillon|عصير|juice|extract|essence|سوداني|peanut",
+  "deny": "مسحوق|بودرة|powder|بهار|زيت|oil|cube|مكعب|صلصة|صوص|sauce|خل|vinegar|نشا|starch|خميرة|yeast|baking|معجون|paste|مرقة مكعب|bouillon|عصير|juice|extract|essence|سوداني|peanut|حليب جوز|لبن جوز|coconut milk|coconut cream|كريمة جوز",
   "keywords": [
     ["كبد|كبدة|liver", "liver"],
     ["مكرونة|معكرونة|اسباجيتي|سباغيتي|لازانيا|pasta|spaghetti|macaroni|fettuccine|linguine|penne", "pastaDry"],
@@ -39,19 +53,20 @@
     ["فريك|freekeh", "freekeh"],
     ["كسكس|couscous", "couscous"],
     ["فاصوليا خضراء|فاصوليا خضرا|green bean|string bean", "vegMain"],
-    ["عدس|حمص|فول|فاصوليا|لوبيا|lentil|chickpea|bean", "legumeDry"],
+    ["عدس|(?<!م)حمص|فول|فاصوليا|لوبيا|lentil|chickpea|bean", "legumeDry"],
     ["لحم.*مفروم|لحمة.*مفروم|مفروم.*لحم|كفتة|كفته|سجق|نقانق|minced (beef|lamb|meat|pork)|ground (beef|lamb|meat|turkey|pork)|sausage", "mince"],
     ["كوارع|كارع|موزة|ريش|بالعظم|ضلوع|ضلع|trotter|ribs|shank|bone-in|bone in|on the bone", "meatBoneIn"],
     ["لحم|ضأن|بتلو|beef|lamb|veal|steak|mutton|pork|\\bham\\b", "meatBoneless"],
-    ["أفخاذ|افخاذ|وراك|أوراك|أجنحة|اجنحة|دبابيس|thigh|wing|drumstick|leg quarter", "chickenBoneIn"],
+    ["أفخاذ|افخاذ|وراك|أوراك|أجنحة|اجنحة|دبابيس|دبوس|thigh|wing|drumstick|leg quarter", "chickenBoneIn"],
     ["صدور|صدر دجاج|صدر فراخ|breast", "chickenBoneless"],
     ["دجاج|فراخ|فرخة|chicken", "chickenWhole"],
     ["جمبري|روبيان|shrimp|prawn|كاليماري|سبيط|squid", "seafood"],
     ["سمك|فيليه|سردين|بلطي|بوري|fish|\\bcod\\b|salmon|tilapia|sardine", "fish"],
     ["بطاطس|بطاطا|potato", "potatoMain"],
-    ["باذنجان|كوسة|كوسا|بامية|قرنبيط|كرنب|ملفوف|بسلة|بازلاء|eggplant|zucchini|okra|cauliflower|cabbage", "vegMain"],
+    ["باذنجان|كوسة|كوسا|كوسي|كوسى|بامية|قرنبيط|كرنب|ملفوف|بسلة|بازلاء|eggplant|zucchini|okra|cauliflower|cabbage", "vegMain"],
     ["ملوخية|سبانخ|ورق عنب|spinach", "leafyMain"],
     ["^بيض|egg", "eggsMain"],
+    ["جبن كريمي|جبنة كريمي|جبنة كريم|كريم تشيز|cream cheese|ماسكاربوني|mascarpone|كنافة|كنافه|kunafa|knafeh|kataifi|بسكويت|biscuit|graham|فيلو|phyllo|filo|تمر(?! هندي)|عجوة|\bdates\b|شوكولات|chocolate|جوز هند|جوز الهند|coconut|حليب مكثف|لبن مكثف|condensed", "dessertRich"],
     ["دقيق|طحين|flour", "flourBread"],
     ["سميد|semolina", "dessertBase"],
     ["حليب|^لبن|milk", "milkDessert"],
@@ -64,7 +79,8 @@
     ["صلص|بهار|توابل|أساس|^عجين$", "base"],
     ["خبز|مخبوز|معجن", "bread"],
     ["سلط", "salad"],
-    ["مقبل|غموس", "dip"]
+    ["مقبل|غموس", "dip"],
+    ["جانب|side", "side"]
   ],
   "defaultKind": "main",
   "priority": {
@@ -75,6 +91,7 @@
     "bread": ["batch"],
     "salad": ["veg", "starch", "protein"],
     "dip": ["starch", "veg"],
-    "base": []
+    "side": ["veg", "starch", "protein", "batch"],
+    "base": ["protein"]
   }
 }

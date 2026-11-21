@@ -121,6 +121,13 @@
   "detailYieldServes": "{count, plural, =1{Serves 1} other{Serves {count}}}",
   "servingsInfoLabel": "How the number of people was worked out",
   "servingsInfoBasis": "Based on {amount} {ingredient}, about {norm} per person.",
+  "servingsInfoBasisMany": "Based on the main ingredients together: {list}.",
+  "@servingsInfoBasisMany": {
+    "placeholders": {
+      "list": {"type": "String"}
+    }
+  },
+  "servingsInfoApply": "Apply",
   "servingsInfoLow": "This is a rough estimate. Adjust it if it seems off.",
   "servingsInfoAdjust": "Adjust the number",
   "detailPlanned": "The meal is on your table, and your stock hasn't changed",

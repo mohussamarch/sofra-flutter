@@ -824,6 +824,18 @@ abstract class AppLocalizations {
   /// **'بناءً على {amount} {ingredient}، بمعدل {norm} تقريبًا للفرد.'**
   String servingsInfoBasis(String amount, String ingredient, String norm);
 
+  /// No description provided for @servingsInfoBasisMany.
+  ///
+  /// In ar, this message translates to:
+  /// **'بناءً على المكونات الأساسية معًا: {list}.'**
+  String servingsInfoBasisMany(String list);
+
+  /// No description provided for @servingsInfoApply.
+  ///
+  /// In ar, this message translates to:
+  /// **'تطبيق'**
+  String get servingsInfoApply;
+
   /// No description provided for @servingsInfoLow.
   ///
   /// In ar, this message translates to:

@@ -29,20 +29,37 @@ test('kind rules: bases are not applicable, soups count liquid, mains ignore it'
   assert.equal(main.servingsComputed, 2);
   const eggs = engine.compute(recipe('فطار', [['eggs', 'بيض', 6, 'حبة']]));
   assert.equal(eggs.servingsComputed, 3);
-  const eggsWithMeat = engine.compute(recipe('طبق رئيسي', [['eggs', 'بيض', 6, 'حبة'], ['beef', 'لحم', 1, 'كيلو']]));
+  const eggsWithMeat = engine.compute(recipe('طبق رئيسي', [['eggs', 'بيض', 2, 'حبة'], ['beef', 'لحم', 1, 'كيلو']]));
   assert.deepEqual(eggsWithMeat.servingsBasis.drivers.map((d) => d.category), ['meatBoneless']);
+  const side = engine.compute(recipe('أطباق جانبية', [['x-i0', 'أرز', 300, 'جرام']]));
+  assert.equal(side.kind, 'side');
+  assert.equal(side.servingsComputed, 4);
+  const bolognese = engine.compute(recipe('صلصة', [['x-i0', 'لحم بقري مفروم', 1, 'كيلو']]));
+  assert.equal(bolognese.servingsComputed, 7);
 });
 
-test('a stated yield is kept when plausible and rejected when not', () => {
+test('a stated yield is kept when plausible and rejected only by a sure engine', () => {
   const ok = engine.compute(recipe('طبق رئيسي', [['pasta', 'مكرونة', 500, 'جرام']], 3));
   assert.equal(ok.servingsBasis.source, 'source');
   assert.equal(effectiveServings(ok), 3);
-  const inflated = engine.compute(recipe('طبق رئيسي', [['pasta', 'مكرونة', 500, 'جرام']], 10));
+  const lines = [['pasta', 'مكرونة', 500, 'جرام'], ['beef', 'لحمة بقري', 500, 'جرام']];
+  const inflated = engine.compute(recipe('طبق رئيسي', lines, 10));
+  assert.equal(inflated.servingsConfidence, 'high');
   assert.equal(inflated.servingsBasis.source, 'computed');
   assert.equal(inflated.servingsBasis.reason, 'sourceInflated');
-  assert.equal(effectiveServings(inflated), 3);
-  const cookies = engine.compute(recipe('حلويات', [['flour', 'دقيق', 2, 'كوب'], ['sugar', 'سكر', 1, 'كوب']], 36));
+  assert.equal(effectiveServings(inflated), 4);
+  const medium = engine.compute(recipe('طبق رئيسي', [['pasta', 'مكرونة', 500, 'جرام']], 10));
+  assert.equal(medium.servingsBasis.reason, 'sourceKeptMediumConfidence');
+  assert.equal(effectiveServings(medium), 10);
+  const cookies = engine.compute(recipe('حلويات', [['flour', 'دقيق', 250, 'جرام'], ['milk', 'حليب', 1.2, 'لتر']], 36));
   assert.equal(cookies.servingsBasis.reason, 'sourceCountsPieces');
+});
+
+test('the name corrects a plain id; generated line ids never match', () => {
+  assert.equal(engine.categoryOf({ id: 'beef', name: 'لحم بقري أو ضاني مفروم (أو خليط منهما)' }), 'mince');
+  assert.equal(engine.categoryOf({ id: 'lamb', name: 'لحم غنم شقف' }), 'meatBoneIn');
+  assert.equal(engine.categoryOf({ id: 'beef', name: 'لحم بقري بدون عظم' }), 'meatBoneless');
+  assert.equal(engine.categoryOf({ id: 'ma650-manal-coconut-cake-20261021b-i6', name: 'زبدة، لينة' }), null);
 });
 
 test('unknown units, odd lines and prototype names never crash', () => {

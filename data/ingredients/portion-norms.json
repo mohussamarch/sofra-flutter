@@ -8,7 +8,7 @@
     "bulgur": { "per": 120, "unit": "g", "band": [60, 180], "cupG": 170, "role": "starch", "basis": "Swells more than rice" },
     "freekeh": { "per": 120, "unit": "g", "band": [60, 180], "cupG": 170, "role": "starch", "basis": "Swells more than rice" },
     "couscous": { "per": 120, "unit": "g", "band": [60, 180], "cupG": 180, "role": "starch", "basis": "Swells more than rice" },
-    "legumeDry": { "per": 100, "unit": "g", "band": [50, 150], "cupG": 190, "role": "starch", "basis": "As the main dish: koshary, ful, stews" },
+    "legumeDry": { "per": 75, "unit": "g", "band": [40, 150], "cupG": 190, "role": "starch", "basis": "Dry weight as the main dish, eaten with rice or bread: koshary, ful, curries" },
     "legumeCanned": { "per": 200, "unit": "g", "band": [120, 300], "cupG": 165, "pieceG": 400, "role": "starch", "basis": "Drained weight; 1 can = 400 g" },
     "meatBoneless": { "per": 200, "unit": "g", "band": [125, 300], "role": "protein", "basis": "1 kg boneless feeds 5" },
     "meatBoneIn": { "per": 300, "unit": "g", "band": [200, 450], "pieceG": 350, "role": "protein", "basis": "Allows for bone loss; one shank = 350 g" },
@@ -27,7 +27,8 @@
     "saladVeg": { "per": 150, "unit": "g", "band": [80, 250], "cupG": 100, "pieceG": 150, "role": "veg", "basis": "Side salad" },
     "dipBase": { "per": 70, "unit": "g", "band": [40, 120], "cupG": 165, "pieceG": 250, "role": "starch", "basis": "Mezze portion of the dry or cooked base" },
     "flourBread": { "per": 100, "unit": "g", "band": [60, 150], "cupG": 125, "piecesPerPerson": 2, "role": "batch", "basis": "Bread, pizza, savoury pastries" },
-    "dessertBase": { "per": 60, "unit": "g", "band": [30, 100], "cupG": 125, "piecesPerPerson": 3, "role": "batch", "basis": "Cakes, basbousa, cookies" },
+    "dessertBase": { "per": 35, "unit": "g", "band": [20, 70], "cupG": 125, "piecesPerPerson": 3, "role": "batch", "basis": "Flour or semolina in one slice of cake, basbousa or a few cookies" },
+    "dessertRich": { "per": 80, "unit": "g", "band": [40, 150], "cupG": 225, "pieceG": 250, "role": "batch", "basis": "Cream cheese, kunafa or phyllo pastry, biscuits, dates, chocolate: only in desserts" },
     "milkDessert": { "per": 180, "unit": "ml", "band": [120, 250], "cupG": 240, "role": "liquid", "basis": "Rice pudding, mahallabia, panna cotta" },
     "soupLiquid": { "per": 350, "unit": "ml", "band": [250, 500], "cupG": 240, "role": "liquid", "basis": "One bowl after reduction" },
     "drink": { "per": 250, "unit": "ml", "band": [150, 350], "cupG": 240, "role": "liquid", "basis": "One glass" }
@@ -42,6 +43,7 @@
     "volume": { "مل": 1, "ملليلتر": 1, "مليلتر": 1, "ml": 1, "لتر": 1000, "l": 1000, "ديسيلتر": 100, "dl": 100, "كوارت": 946, "quart": 946 },
     "cup": { "كوب": 1, "كأس": 1, "cup": 1, "cups": 1, "ملعقة كبيرة": 0.0625, "ملعقة": 0.0625, "tbsp": 0.0625, "ملعقة صغيرة": 0.020833333333333332, "tsp": 0.020833333333333332 },
     "piecePattern": "حب|قطع|دجاج|سمك|بيض|فخذ|جناح|صدر|فيليه|عدد|رأس|علب|عبوة|piece|whole|can",
+    "lineIdPattern": "-(i|ing-?)[0-9]+$",
     "genericCupG": 240,
     "genericPieceG": 100
   },
@@ -59,6 +61,11 @@
     },
     "naturalPieceCategories": ["chickenWhole", "chickenBoneIn", "chickenBoneless", "meatBoneIn", "fish", "eggsMain", "legumeCanned", "tofu"],
     "sourceCountsPiecesRatio": 2.5,
+    "sourceKeepRatio": 2,
+    "eggsDriveMinCount": 4,
+    "lowConfidenceMinPeople": 2.5,
+    "minPeople": 1.5,
+    "kindScale": { "side": 0.5 },
     "mappingGapMappedShare": 0.6
   }
 }

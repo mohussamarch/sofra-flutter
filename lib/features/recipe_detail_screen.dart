@@ -168,7 +168,9 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                 Center(
                   child: TextButton.icon(
                     key: const ValueKey('recipe-retry'),
-                    onPressed: () => setState(() => recipe = _load()),
+                    onPressed: () => setState(() {
+                      recipe = _load();
+                    }),
                     icon: const Icon(Icons.refresh_rounded, size: 18),
                     label: Text(l.recipeRetry),
                   ),
@@ -468,20 +470,30 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     final t = context.l10n;
     final direction = Directionality.of(context);
     final estimate = source.servingsEstimate;
-    final driver = userSet ? null : estimate.mainDriver;
-    String? basis;
-    if (driver != null) {
+    final kind = ServingsEngine.shared.kindOf(source.category);
+    // "600 g rice" for each ingredient the number rests on.
+    final named = <(String, String, double?, String)>[];
+    for (final d in userSet ? const <ServingsDriver>[] : estimate.drivers) {
       final line = source.ingredients
-          .where((i) => i.id == driver.ingredientId)
+          .where((i) => i.id == d.ingredientId)
           .firstOrNull;
-      final per = ServingsEngine.shared.perPerson(driver.category);
-      if (line != null && per != null) {
-        basis = t.servingsInfoBasis(
-          _portion(driver.amount, driver.unit),
-          L10n.term(line.name),
-          _portion(per, driver.unit),
-        );
-      }
+      if (line == null) continue;
+      named.add((
+        _portion(d.amount, d.unit),
+        _ingredientWord(L10n.term(line.name)),
+        ServingsEngine.shared.perPerson(d.category, kind: kind),
+        d.unit,
+      ));
+    }
+    String? basis;
+    if (named.length == 1 && named.single.$3 != null) {
+      final (amount, name, per, unit) = named.single;
+      basis = t.servingsInfoBasis(amount, name, _portion(per!, unit));
+    } else if (named.length > 1) {
+      // The number combines them, so no single per-person amount is named.
+      basis = t.servingsInfoBasisMany(
+        named.map((n) => '${n.$1} ${n.$2}').join(t.detailListSeparator),
+      );
     }
     final low = !userSet && estimate.confidence == ServingsConfidence.low;
     var guess = count.clamp(1, 20);
@@ -538,7 +550,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                         child: DepthButton(
                           key: const ValueKey('servings-adjust'),
                           compact: true,
-                          label: t.detailYieldServes(guess),
+                          label: t.servingsInfoApply,
                           onPressed: guess == count
                               ? null
                               : () => Navigator.pop(ctx, guess),
@@ -555,8 +567,21 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
     );
     if (chosen == null || !mounted) return;
     if (await c.reviewYield(widget.recipeId, chosen)) {
-      setState(() => recipe = _load());
+      setState(() {
+        recipe = _load();
+      });
     }
+  }
+
+  /// An ingredient name without the amount or note some names carry:
+  /// "دجاج، رطل واحد" -> "دجاج", "بصل (مفروم)" -> "بصل".
+  static String _ingredientWord(String name) {
+    final word = name
+        .split(RegExp('[\u060C,]'))
+        .first
+        .replaceAll(RegExp(r'\s*\([^)]*\)'), '')
+        .trim();
+    return word.isEmpty ? name.trim() : word;
   }
 
   /// An engine amount in g, ml or pieces, in the recipe's own units.
@@ -601,7 +626,9 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                 label: context.l10n.detailYieldServes(yieldGuess),
                 onPressed: () async {
                   if (await c.reviewYield(widget.recipeId, yieldGuess)) {
-                    setState(() => recipe = _load());
+                    setState(() {
+                      recipe = _load();
+                    });
                   }
                 },
               ),

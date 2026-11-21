@@ -128,13 +128,30 @@ void main() {
       expect(r.computed, 3);
     });
 
-    test('eggs drive only without another protein', () {
+    test('eggs drive when they are the bulk, not when they bind', () {
       expect(run('فطار', [('eggs', 'بيض', 6, 'حبة')]).computed, 3);
-      final withMeat = run('طبق رئيسي', [
-        ('eggs', 'بيض', 6, 'حبة'),
+      final binding = run('طبق رئيسي', [
+        ('eggs', 'بيض', 2, 'حبة'),
         ('beef', 'لحم', 1, 'كيلو'),
       ]);
-      expect(withMeat.drivers.map((d) => d.category), ['meatBoneless']);
+      expect(binding.drivers.map((d) => d.category), ['meatBoneless']);
+      // Tunisian tajine: 8 eggs and a pound of chicken breast.
+      final tajine = run('طبق رئيسي', [
+        ('chicken-breast', 'صدور دجاج', 1, 'رطل'),
+        ('eggs', 'بيض كبير', 8, 'حبة'),
+      ]);
+      expect(tajine.drivers.map((d) => d.category).toSet(), {
+        'chickenBoneless',
+        'eggsMain',
+      });
+      expect(tajine.computed, 7);
+      // A side dish: two eggs only bind the bread.
+      final dumplings = run('أطباق جانبية', [
+        ('x-i0', 'بيض', 2, 'حبة'),
+        ('x-i1', 'دقيق أبيض', 2, 'كوب'),
+      ]);
+      expect(dumplings.drivers.map((d) => d.category), ['flourBread']);
+      expect(dumplings.computed, 5);
     });
 
     test('keyword order: liver before chicken, mince before meat', () {
@@ -152,12 +169,77 @@ void main() {
       expect(onion, isNull);
     });
 
+    test('the name corrects a plain catalog id', () {
+      String? of(String id, String name) =>
+          engine.categoryOf(ServingsLine(id: id, name: name));
+      // Real catalog lines: mw-kefta-mkaouara, mw-karniyarik,
+      // ar-fatta-lahm-bidoon-salsa, lv-malfouf-mahshi.
+      expect(of('beef', 'لحم بقري أو ضاني مفروم (أو خليط منهما)'), 'mince');
+      expect(of('beef', 'لحم ضاني أو بقري مفروم قليل الدهن'), 'mince');
+      expect(of('meat', 'لحم مفروم بخليط من اللحم الهبر والدهن'), 'mince');
+      expect(of('lamb', 'لحم غنم شقف'), 'meatBoneIn');
+      expect(of('lamb-bones', 'عظام غنم أو قطع صغيرة بعظم'), 'meatBoneIn');
+      expect(of('beef', 'لحم بقري بدون عظم'), 'meatBoneless');
+      expect(of('beef', 'لحمة بقري'), 'meatBoneless');
+      expect(of('x-i14', 'دبوس دجاج'), 'chickenBoneIn');
+      // "محمص" (roasted) is not chickpeas.
+      expect(of('fiw650-51270-i7', 'جوز بيكان محمص'), isNull);
+      expect(of('x-i3', 'حمص مسلوق'), 'legumeDry');
+      // A generated line id names the recipe, not the ingredient.
+      expect(of('ma650-manal-coconut-cake-20261021b-i6', 'زبدة، لينة'), isNull);
+    });
+
+    test('piece weights by name: a whole cabbage is not 200 g', () {
+      final r = run('طبق رئيسي', [
+        ('white-cabbage', 'ملفوف أبيض كبير', 1, 'حبة'),
+      ]);
+      expect(r.drivers.single.amount, 1500);
+      expect(r.computed, 6);
+    });
+
+    test('side dishes take half a main portion', () {
+      final pilaf = run('أطباق جانبية', [('x-i0', 'أرز', 300, 'جرام')]);
+      expect(pilaf.kind, 'side');
+      expect(pilaf.computed, 4);
+      expect(engine.perPerson('riceRaw', kind: 'side'), 75);
+      expect(engine.perPerson('riceRaw'), 150);
+    });
+
+    test('a rough guess of one or two is not shown', () {
+      final r = run('طبق رئيسي', [('x-i0', 'دجاج، رطل واحد', 455, 'جرام')]);
+      expect(r.computed, isNull);
+      expect(r.confidence, ServingsConfidence.none);
+      expect(r.reason, 'tooUncertain');
+      final kept = run('طبق رئيسي', [
+        ('x-i0', 'دجاج', 455, 'جرام'),
+      ], servings: 2);
+      expect(kept.basis, ServingsBasisSource.source);
+    });
+
     test(
       'desserts count flour as a dessert base; bases are not applicable',
       () {
         final cake = run('حلويات', [('flour', 'دقيق', 300, 'جرام')]);
         expect(cake.drivers.single.category, 'dessertBase');
-        expect(cake.computed, 5);
+        // 35 g of flour in one slice.
+        expect(cake.computed, 9);
+        final cheesecake = run('الحلويات', [
+          ('x-i0', 'دقيق', 4, 'ملعقة كبيرة'),
+          ('x-i2', 'جبن كريمي', 1, 'كيلو'),
+        ]);
+        expect(cheesecake.computed, inInclusiveRange(10, 16));
+        // Cream cheese never drives outside desserts.
+        expect(
+          run('طبق رئيسي', [
+            ('cream-cheese', 'جبنة كريمي', 1, 'كيلو'),
+          ]).computed,
+          isNull,
+        );
+        final bolognese = run('صلصة', [
+          ('x-i0', 'لحم بقري مفروم', 1, 'كيلو'),
+          ('x-i1', 'طماطم', 1, 'كيلو'),
+        ]);
+        expect(bolognese.drivers.single.category, 'mince');
         final sauce = run('صلصة', [('tomato', 'طماطم', 1, 'كيلو')]);
         expect(sauce.computed, isNull);
         expect(sauce.reason, 'notApplicable');
@@ -170,8 +252,8 @@ void main() {
         ('lentils', 'عدس', 200, 'جرام'),
         ('pasta', 'مكرونة', 200, 'جرام'),
       ]);
-      // One starch role: 2 + 2 + 1 people, no sharing factor.
-      expect(koshary.people, 5);
+      // One starch role: 2 + 2.67 + 1 people, no sharing factor.
+      expect(koshary.people, 5.67);
     });
   });
 
@@ -184,22 +266,31 @@ void main() {
       expect(r.impliedPerPerson, 166.7);
     });
 
-    test('an implausible one is rejected with a reason', () {
-      final r = run('طبق رئيسي', [
+    test('an implausible one is rejected only by a sure engine', () {
+      final sure = run('طبق رئيسي', [
         ('pasta', 'مكرونة', 500, 'جرام'),
+        ('beef', 'لحمة بقري', 500, 'جرام'),
       ], servings: 10);
-      expect(r.basis, ServingsBasisSource.computed);
-      expect(r.reason, 'sourceInflated');
+      expect(sure.confidence, ServingsConfidence.high);
+      expect(sure.basis, ServingsBasisSource.computed);
+      expect(sure.reason, 'sourceInflated');
       final cookies = run('حلويات', [
-        ('flour', 'دقيق', 2, 'كوب'),
+        ('flour', 'دقيق', 250, 'جرام'),
+        ('milk', 'حليب', 1.2, 'لتر'),
       ], servings: 36);
       expect(cookies.reason, 'sourceCountsPieces');
+      final single = run('طبق رئيسي', [
+        ('pasta', 'مكرونة', 500, 'جرام'),
+      ], servings: 10);
+      expect(single.confidence, ServingsConfidence.medium);
+      expect(single.basis, ServingsBasisSource.source);
+      expect(single.reason, 'sourceKeptMediumConfidence');
     });
 
     test('a low-confidence result does not reject the source', () {
       final r = run('طبق رئيسي', [
-        ('pasta', 'مكرونة', 120, 'جرام'),
-      ], servings: 4);
+        ('potatoes', 'بطاطس', 10, 'حبة'),
+      ], servings: 2);
       expect(r.confidence, ServingsConfidence.low);
       expect(r.basis, ServingsBasisSource.source);
       expect(r.reason, 'sourceKeptLowConfidence');
@@ -227,16 +318,24 @@ void main() {
     test('the build verdict is read, kept through toJson and applied', () {
       final verdict = run('طبق رئيسي', [
         ('pasta', 'مكرونة', 1000, 'جرام'),
-      ], servings: 12);
+        ('beef', 'لحمة بقري', 1000, 'جرام'),
+      ], servings: 20);
       expect(verdict.basis, ServingsBasisSource.computed);
       final recipe = CatalogRecipe.fromJson(
-        catalogJson(servings: 12, extra: verdict.toJson()),
+        catalogJson(
+          servings: 20,
+          ingredients: [
+            {'id': 'pasta', 'name': 'مكرونة', 'amount': 1000, 'unit': 'جرام'},
+            {'id': 'beef', 'name': 'لحمة بقري', 'amount': 1000, 'unit': 'جرام'},
+          ],
+          extra: verdict.toJson(),
+        ),
       );
-      expect(recipe.servings, 12);
-      expect(recipe.effectiveServings, 5);
-      expect(recipe.forServings(5).factor, 1);
+      expect(recipe.servings, 20);
+      expect(recipe.effectiveServings, 7);
+      expect(recipe.forServings(7).factor, 1);
       final again = CatalogRecipe.fromJson(recipe.toJson());
-      expect(again.effectiveServings, 5);
+      expect(again.effectiveServings, 7);
       expect(again.toJson(), recipe.toJson());
     });
 
@@ -301,6 +400,66 @@ void main() {
       expect(mismatches, isEmpty, reason: mismatches.take(5).join('\n'));
     });
 
+    // Known dishes and the number of people a home cook would expect. Catches
+    // what parity cannot: a bug both engines share.
+    const golden = <String, (int, int)>{
+      'eg-koshari': (4, 6),
+      'eg-fatta': (3, 6),
+      'sa-chicken-kabsa': (4, 6),
+      'sa-kabsa-shrimp': (3, 5),
+      'mw-kefta-mkaouara': (3, 5),
+      'ma-kefta-gharb': (4, 7),
+      'mw-karniyarik': (3, 6),
+      'lv-malfouf-mahshi': (5, 8),
+      'ar-fatta-lahm-bidoon-salsa': (5, 8),
+      'mw-chana-masala': (3, 5),
+      'it-spaghetti-bolognese': (3, 5),
+      'bc-tajine': (4, 8),
+      'fiw650-52303': (4, 7),
+      'fiw650-52264': (3, 6),
+      'fiw650-57507': (3, 7),
+      'lv-knafeh-nabulsiyeh': (6, 12),
+      'ma650-manal-san-sebastian-cheesecake-20261021b': (8, 16),
+      'ma650-manal-kunafa-cream-20261021b': (5, 10),
+      'ma650-manal-meat-kabsa-20261021b': (4, 6),
+      'ma650-manal-chicken-potato-tray-20261021b': (4, 8),
+      'ma650-manal-stuffed-zucchini-20261021b': (3, 5),
+      // A source within a factor of two of the engine is kept.
+      'ar-saltah': (4, 4),
+      'sa-matazeez-najdiya': (4, 4),
+      'fiw650-51270': (8, 16),
+    };
+
+    test('known dishes land in the expected range', () {
+      final off = <String>[];
+      for (final MapEntry(key: id, value: (lo, hi)) in golden.entries) {
+        final entry = fixture.firstWhere((e) => e['id'] == id);
+        final recipe = recipeAt(entry);
+        final r = engine.estimateJson(recipe);
+        final stated = recipe['servings'] as int?;
+        final shown = stated != null && r.basis != ServingsBasisSource.computed
+            ? stated
+            : r.computed;
+        if (shown == null || shown < lo || shown > hi) {
+          off.add('$id: $shown not in $lo-$hi');
+        }
+      }
+      expect(off, isEmpty, reason: off.join('\n'));
+    });
+
+    test('no computed number is a low-confidence 1 or 2', () {
+      for (final entry in fixture) {
+        final r = engine.estimateJson(recipeAt(entry));
+        if (r.hasValue && r.computed! <= 2) {
+          expect(
+            r.confidence,
+            isNot(ServingsConfidence.low),
+            reason: entry['id'] as String,
+          );
+        }
+      }
+    });
+
     test('every recipe gets a value or an explicit reason', () {
       var withValue = 0;
       for (final entry in fixture) {
@@ -343,6 +502,8 @@ void main() {
       );
       expect(tables['keywords'], categories['keywords']);
       expect(tables['deny'], categories['deny']);
+      expect(tables['refine'], categories['refine']);
+      expect(tables['pieceWeights'], categories['pieceWeights']);
     });
   });
 }

@@ -90,7 +90,7 @@ export function buildReport(corpus, engine = defaultEngine()) {
     if (r.servings != null && r.servingsComputed != null) {
       ratios.push(r.servings / r.people);
       how = r.servingsBasis.source === 'source'
-        ? (r.servingsBasis.reason ? 'source kept (engine low confidence)' : 'plausible source value')
+        ? (r.servingsBasis.reason ? (r.servingsBasis.reason === 'sourceKeptLowConfidence' ? 'source kept (engine low confidence)' : 'source kept (engine medium confidence)') : 'plausible source value')
         : 'computed, source value rejected';
     } else if (r.servings != null) how = 'source only (engine found no driver)';
     else if (r.servingsComputed != null) how = 'computed, no source value';

@@ -460,6 +460,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String servingsInfoBasisMany(String list) {
+    return 'Based on the main ingredients together: $list.';
+  }
+
+  @override
+  String get servingsInfoApply => 'Apply';
+
+  @override
   String get servingsInfoLow =>
       'This is a rough estimate. Adjust it if it seems off.';
 

@@ -38,6 +38,9 @@ export function buildTables({
   for (const [, cat] of categories.keywords) {
     if (!norms.norms[cat]) throw new Error(`unknown norm ${cat} in keywords`);
   }
+  for (const [, cat, from] of categories.refine ?? []) {
+    for (const c of [cat, ...from]) if (!norms.norms[c]) throw new Error(`unknown norm ${c} in refine`);
+  }
   const idMap = directory.idMap;
   const vocabIds = new Set(vocabulary.map((v) => v.id));
   // rawId -> category, already resolved through idMap.
@@ -101,6 +104,8 @@ export function buildTables({
     knownNames: [...knownNames].sort(),
     deny: categories.deny,
     keywords: categories.keywords,
+    refine: categories.refine ?? [],
+    pieceWeights: categories.pieceWeights ?? [],
     kinds: categories.kinds,
     defaultKind: categories.defaultKind,
     priority: categories.priority,
@@ -119,6 +124,8 @@ export function createEngine(tables) {
   const deny = re(tables.deny);
   const keywords = tables.keywords.map(([p, c]) => [re(p), c]);
   const kinds = tables.kinds.map(([p, k]) => [re(p), k]);
+  const refine = tables.refine.map(([p, c, from]) => [re(p), c, new Set(from)]);
+  const pieceWeights = tables.pieceWeights.map(([p, g]) => [re(p), g]);
   const piece = re(tables.units.piecePattern);
   // Maps, not objects: an ingredient called "constructor" must not hit
   // Object.prototype.
@@ -141,16 +148,40 @@ export function createEngine(tables) {
 
   const text = (v) => (typeof v === 'string' ? v.trim() : '');
 
-  /// Category of one ingredient line, or null when it never drives.
-  const categoryOf = (line) => {
-    const id = text(line.id);
-    const name = text(line.name);
+  /// The id as a word to match patterns on. A generated line id
+  /// ("…-coconut-cake-i6", "…-ing-3") names the recipe, not the ingredient.
+  const lineIdPattern = re(tables.units.lineIdPattern);
+  const wordId = (id) => (lineIdPattern.test(id) ? '' : id);
+
+  const baseCategory = (id, name) => {
     if (driving.has(id)) return driving.get(id);
     if (aliases.has(name)) return aliases.get(name);
     if (known.has(id) || knownNames.has(name)) return null;
-    if (deny.test(name) || deny.test(id)) return null;
-    for (const [r, c] of keywords) if (r.test(name) || r.test(id)) return c;
+    const w = wordId(id);
+    if (deny.test(name) || deny.test(w)) return null;
+    for (const [r, c] of keywords) if (r.test(name) || r.test(w)) return c;
     return null;
+  };
+
+  /// Category of one ingredient line, or null when it never drives. The
+  /// name corrects a plain id: "لحم بقري مفروم" with id beef is mince,
+  /// "لحم غنم شقف" is on the bone.
+  const categoryOf = (line) => {
+    const id = text(line.id);
+    const name = text(line.name);
+    const cat = baseCategory(id, name);
+    if (cat == null) return null;
+    for (const [r, c, from] of refine) if (from.has(cat) && r.test(name)) return c;
+    return cat;
+  };
+
+  /// Grams in one piece of [line]: by name where the norm's weight is wrong
+  /// (a whole cabbage is not 200 g).
+  const pieceG = (line, norm) => {
+    const id = wordId(text(line.id));
+    const name = text(line.name);
+    for (const [r, g] of pieceWeights) if (r.test(name) || r.test(id)) return g;
+    return norm.pieceG ?? null;
   };
 
   /// Whether a line without a category is still understood (a known
@@ -158,7 +189,7 @@ export function createEngine(tables) {
   const understood = (line) => {
     const id = text(line.id);
     const name = text(line.name);
-    return known.has(id) || knownNames.has(name) || deny.test(name) || deny.test(id);
+    return known.has(id) || knownNames.has(name) || deny.test(name) || deny.test(wordId(id));
   };
 
   const amountOf = (line) => {
@@ -183,8 +214,9 @@ export function createEngine(tables) {
       const g = cupG.get(text(line.id)) ?? norm.cupG;
       return g == null ? null : { value: a * cup.get(u) * g, via: 'cup' };
     }
-    if (u !== '' && piece.test(u) && norm.pieceG != null) {
-      return { value: a * norm.pieceG, via: 'piece' };
+    const pg = pieceG(line, norm);
+    if (u !== '' && piece.test(u) && pg != null) {
+      return { value: a * pg, via: 'piece' };
     }
     return null;
   };
@@ -199,7 +231,7 @@ export function createEngine(tables) {
     if (mass.has(u)) return a * mass.get(u);
     if (volume.has(u)) return a * volume.get(u);
     if (cup.has(u)) return a * cup.get(u) * (norm?.cupG ?? tables.units.genericCupG);
-    if (u === '' || piece.test(u)) return a * (norm?.pieceG ?? tables.units.genericPieceG);
+    if (u === '' || piece.test(u)) return a * ((norm ? pieceG(line, norm) : null) ?? tables.units.genericPieceG);
     return null;
   };
 
@@ -212,7 +244,9 @@ export function createEngine(tables) {
       return kind === 'drink' ? 'drink' : 'soupLiquid';
     }
     if (role(cat) === 'liquid') return kind === 'dessert' && cat === 'milkDessert' ? cat : null;
+    if (cat === 'dessertRich' && kind !== 'dessert') return null;
     if (cat === 'eggsMain' && kind !== 'main' && kind !== 'salad') return null;
+    if (kind === 'base' && (role(cat) !== 'protein' || cat === 'eggsMain')) return null;
     if (cat === 'saladVeg' && kind !== 'salad') return null;
     if (kind === 'salad' && role(cat) === 'veg') return 'saladVeg';
     if (kind === 'dip' && role(cat) === 'starch') return 'dipBase';
@@ -228,12 +262,8 @@ export function createEngine(tables) {
     const kind = kindOf(recipe.category);
     const stated = Number.isInteger(recipe.servings) && recipe.servings > 0 ? recipe.servings : null;
     const out = (fields) => ({ kind, servings: stated, ...fields });
-    if (kind === 'base') {
-      return out({
-        servingsComputed: null, servingsRange: null, servingsConfidence: 'none',
-        servingsBasis: { source: stated == null ? 'none' : 'source', drivers: [], reason: 'notApplicable' },
-      });
-    }
+    // A side portion is smaller than a main one.
+    const scale = rules.kindScale?.[kind] ?? 1;
     const lines = Array.isArray(recipe.ingredients) ? recipe.ingredients : [];
     let total = 0;
     let unmapped = 0;
@@ -256,13 +286,16 @@ export function createEngine(tables) {
       const norm = norms.get(cat);
       const entry = byCat.get(cat) ?? { category: cat, role: norm.role, unit: norm.unit, amount: 0, people: 0, ids: [], vias: [] };
       entry.amount += amount.value;
-      entry.people += amount.value / norm.per;
+      entry.people += amount.value / (norm.per * scale);
       entry.ids.push(text(line.id));
       entry.vias.push(amount.via);
       byCat.set(cat, entry);
     }
     let cats = [...byCat.values()];
-    if (cats.some((c) => c.role === 'protein' && c.category !== 'eggsMain')) {
+    // Eggs drive when they are the bulk of the dish (4 or more) or the only
+    // thing that can; a couple of eggs only bind.
+    const eggs = byCat.get('eggsMain');
+    if (eggs && eggs.amount < rules.eggsDriveMinCount && cats.length > 1) {
       cats = cats.filter((c) => c.category !== 'eggsMain');
     }
     const roles = new Map();
@@ -277,7 +310,7 @@ export function createEngine(tables) {
       .filter((r) => r && r.people >= rules.driverMinPeople);
     const mappedShare = total > 0 ? 1 - unmapped / total : 1;
     if (!drivers.length) {
-      const reason = cats.length ? 'driverTooSmall' : categorized ? 'noMeasuredDriver' : 'noDriverIngredient';
+      const reason = kind === 'base' ? 'notApplicable' : cats.length ? 'driverTooSmall' : categorized ? 'noMeasuredDriver' : 'noDriverIngredient';
       return out({
         servingsComputed: null, servingsRange: null, servingsConfidence: 'none',
         servingsBasis: { source: stated == null ? 'none' : 'source', drivers: [], reason },
@@ -309,6 +342,16 @@ export function createEngine(tables) {
     } else {
       confidence = 'medium';
     }
+    // A recipe for one, or a rough guess of one or two people, is more often
+    // wrong than right, and more than the clamp is a data error unless the
+    // engine is sure: the app asks instead of showing it.
+    if (p < rules.minPeople || (confidence === 'low' && p < rules.lowConfidenceMinPeople) || (confidence !== 'high' && p > hi + 0.5)) {
+      return out({
+        servingsComputed: null, servingsRange: null, servingsConfidence: 'none',
+        servingsBasis: { source: stated == null ? 'none' : 'source', drivers: [], reason: 'tooUncertain' },
+        mappedShare: r2(mappedShare),
+      });
+    }
     let dominant = used[0];
     for (const c of used) if (c.people > dominant.people) dominant = c;
     const basis = {
@@ -319,14 +362,24 @@ export function createEngine(tables) {
     };
     if (stated != null) {
       const norm = norms.get(dominant.category);
-      const implied = (norm.per * p) / stated;
+      const implied = (norm.per * scale * p) / stated;
       basis.impliedPerPerson = r1(implied);
-      const plausible = implied >= norm.band[0] && implied <= norm.band[1];
-      if (plausible) {
+      const bandLo = norm.band[0] * scale;
+      const bandHi = norm.band[1] * scale;
+      // Within a factor of two the source confirms the number: the engine
+      // only replaces a stated value it is sure is far off.
+      const ratio = stated / p;
+      const close = ratio <= rules.sourceKeepRatio && ratio >= 1 / rules.sourceKeepRatio;
+      if (close || (implied >= bandLo && implied <= bandHi)) {
         basis.source = 'source';
       } else if (confidence === 'low') {
         basis.source = 'source';
         basis.reason = 'sourceKeptLowConfidence';
+      } else if (confidence !== 'high') {
+        // Only a sure engine (two or more roles that agree) replaces a stated
+        // number.
+        basis.source = 'source';
+        basis.reason = 'sourceKeptMediumConfidence';
       } else {
         basis.reason = mismatchReason({ kind, stated, p, mappedShare, dominant, rules });
       }

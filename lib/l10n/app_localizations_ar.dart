@@ -432,6 +432,14 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String servingsInfoBasisMany(String list) {
+    return 'بناءً على المكونات الأساسية معًا: $list.';
+  }
+
+  @override
+  String get servingsInfoApply => 'تطبيق';
+
+  @override
   String get servingsInfoLow => 'هذا تقدير تقريبي، فعدّله إن لم يكن مناسبًا.';
 
   @override

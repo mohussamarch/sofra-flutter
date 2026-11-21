@@ -210,6 +210,19 @@ class ServingsEngine {
         for (final e in (tables['priority'] as Map).entries)
           e.key as String: List<String>.from(e.value as List),
       },
+      _refine = [
+        for (final r in tables['refine'] as List? ?? const [])
+          (
+            _re((r as List)[0] as String),
+            r[1] as String,
+            Set<String>.from(r[2] as List),
+          ),
+      ],
+      _pieceWeights = [
+        for (final w in tables['pieceWeights'] as List? ?? const [])
+          (_re((w as List)[0] as String), (w[1] as num).toDouble()),
+      ],
+      _lineId = _re((tables['units'] as Map)['lineIdPattern'] as String),
       _piece = _re((tables['units'] as Map)['piecePattern'] as String);
 
   /// The engine over the compiled repository tables.
@@ -222,19 +235,24 @@ class ServingsEngine {
   final Map<String, dynamic> _norms, _units, _rules, _cupG;
   final Map<String, String> _driving, _aliases;
   final Set<String> _known, _knownNames;
-  final RegExp _deny, _piece;
+  final RegExp _deny, _piece, _lineId;
   final List<(RegExp, String)> _keywords, _kinds;
+  final List<(RegExp, String, Set<String>)> _refine;
+  final List<(RegExp, double)> _pieceWeights;
   final String _defaultKind;
   final Map<String, List<String>> _priority;
 
   Map<String, dynamic> _norm(String category) =>
       Map<String, dynamic>.from(_norms[category] as Map);
 
-  /// Per-person norm of [category] in its unit (200 for pastaDry), or null.
-  double? perPerson(String category) =>
-      (_norms[category] as Map?)?['per'] == null
-      ? null
-      : ((_norms[category] as Map)['per'] as num).toDouble();
+  /// Per-person norm of [category] in its unit (200 for pastaDry), or null;
+  /// in a dish of [kind] (a side portion is smaller).
+  double? perPerson(String category, {String? kind}) {
+    final per = (_norms[category] as Map?)?['per'] as num?;
+    if (per == null) return null;
+    final scale = ((_rules['kindScale'] as Map?)?[kind] as num?) ?? 1;
+    return (per * scale).toDouble();
+  }
 
   String? normUnit(String category) =>
       (_norms[category] as Map?)?['unit'] as String?;
@@ -247,20 +265,46 @@ class ServingsEngine {
     return _defaultKind;
   }
 
-  /// The portion category of one line, or null when it never drives.
-  String? categoryOf(ServingsLine line) {
-    final id = line.id.trim();
-    final name = line.name.trim();
+  /// The id as a word to match patterns on. A generated line id
+  /// ("…-coconut-cake-i6", "…-ing-3") names the recipe, not the ingredient.
+  String _wordId(String id) => _lineId.hasMatch(id) ? '' : id;
+
+  String? _baseCategory(String id, String name) {
     final driving = _driving[id];
     if (driving != null) return driving;
     final alias = _aliases[name];
     if (alias != null) return alias;
     if (_known.contains(id) || _knownNames.contains(name)) return null;
-    if (_deny.hasMatch(name) || _deny.hasMatch(id)) return null;
+    final word = _wordId(id);
+    if (_deny.hasMatch(name) || _deny.hasMatch(word)) return null;
     for (final (re, category) in _keywords) {
-      if (re.hasMatch(name) || re.hasMatch(id)) return category;
+      if (re.hasMatch(name) || re.hasMatch(word)) return category;
     }
     return null;
+  }
+
+  /// The portion category of one line, or null when it never drives. The
+  /// name corrects a plain id: "لحم بقري مفروم" with id beef is mince,
+  /// "لحم غنم شقف" is on the bone.
+  String? categoryOf(ServingsLine line) {
+    final name = line.name.trim();
+    final category = _baseCategory(line.id.trim(), name);
+    if (category == null) return null;
+    for (final (re, refined, from) in _refine) {
+      if (from.contains(category) && re.hasMatch(name)) return refined;
+    }
+    return category;
+  }
+
+  /// Grams in one piece of [line]: by name where the norm's weight is wrong
+  /// (a whole cabbage is not 200 g).
+  double? _pieceG(ServingsLine line, Map<String, dynamic> norm) {
+    final id = _wordId(line.id.trim());
+    final name = line.name.trim();
+    for (final (re, grams) in _pieceWeights) {
+      if (re.hasMatch(name) || re.hasMatch(id)) return grams;
+    }
+    return (norm['pieceG'] as num?)?.toDouble();
   }
 
   /// A line without a category that is still understood: a known
@@ -271,7 +315,7 @@ class ServingsEngine {
     return _known.contains(id) ||
         _knownNames.contains(name) ||
         _deny.hasMatch(name) ||
-        _deny.hasMatch(id);
+        _deny.hasMatch(_wordId(id));
   }
 
   static double? _amount(ServingsLine line) {
@@ -300,7 +344,7 @@ class ServingsEngine {
       final g = (_cupG[line.id.trim()] ?? norm['cupG']) as num?;
       return g == null ? null : (a * cup * g, 'cup');
     }
-    final piece = norm['pieceG'] as num?;
+    final piece = _pieceG(line, norm);
     if (u.isNotEmpty && _piece.hasMatch(u) && piece != null) {
       return (a * piece, 'piece');
     }
@@ -321,7 +365,9 @@ class ServingsEngine {
       return a * cup * ((norm?['cupG'] ?? _units['genericCupG']) as num);
     }
     if (u.isEmpty || _piece.hasMatch(u)) {
-      return a * ((norm?['pieceG'] ?? _units['genericPieceG']) as num);
+      return a *
+          ((norm == null ? null : _pieceG(line, norm)) ??
+              (_units['genericPieceG'] as num).toDouble());
     }
     return null;
   }
@@ -337,7 +383,11 @@ class ServingsEngine {
     if (role == 'liquid') {
       return kind == 'dessert' && category == 'milkDessert' ? category : null;
     }
+    if (category == 'dessertRich' && kind != 'dessert') return null;
     if (category == 'eggsMain' && kind != 'main' && kind != 'salad') {
+      return null;
+    }
+    if (kind == 'base' && (role != 'protein' || category == 'eggsMain')) {
       return null;
     }
     if (category == 'saladVeg' && kind != 'salad') return null;
@@ -362,17 +412,9 @@ class ServingsEngine {
     final noneBasis = stated == null
         ? ServingsBasisSource.none
         : ServingsBasisSource.source;
-    if (kind == 'base') {
-      return ServingsEstimate(
-        computed: null,
-        range: null,
-        confidence: ServingsConfidence.none,
-        basis: noneBasis,
-        drivers: const [],
-        reason: 'notApplicable',
-        kind: kind,
-      );
-    }
+    // A side portion is smaller than a main one.
+    final scale =
+        ((_rules['kindScale'] as Map?)?[kind] as num?)?.toDouble() ?? 1.0;
     var total = 0.0, unmapped = 0.0;
     var categorized = 0;
     final byCategory = <String, _Group>{};
@@ -396,12 +438,17 @@ class ServingsEngine {
         () => _Group(category, norm['role'] as String, norm['unit'] as String),
       );
       group.amount += amount.$1;
-      group.people += amount.$1 / (norm['per'] as num);
+      group.people += amount.$1 / ((norm['per'] as num) * scale);
       group.ids.add(line.id.trim());
       group.vias.add(amount.$2);
     }
     var groups = byCategory.values.toList();
-    if (groups.any((g) => g.role == 'protein' && g.category != 'eggsMain')) {
+    // Eggs drive when they are the bulk of the dish (4 or more) or the only
+    // thing that can; a couple of eggs only bind.
+    final eggs = byCategory['eggsMain'];
+    if (eggs != null &&
+        eggs.amount < (_rules['eggsDriveMinCount'] as num) &&
+        groups.length > 1) {
       groups = groups.where((g) => g.category != 'eggsMain').toList();
     }
     final roles = <String, _Role>{};
@@ -423,7 +470,9 @@ class ServingsEngine {
         confidence: ServingsConfidence.none,
         basis: noneBasis,
         drivers: const [],
-        reason: groups.isNotEmpty
+        reason: kind == 'base'
+            ? 'notApplicable'
+            : groups.isNotEmpty
             ? 'driverTooSmall'
             : categorized > 0
             ? 'noMeasuredDriver'
@@ -468,6 +517,23 @@ class ServingsEngine {
     } else {
       confidence = ServingsConfidence.medium;
     }
+    // A recipe for one, or a rough guess of one or two people, is more often
+    // wrong than right, and more than the clamp is a data error unless the
+    // engine is sure: the app asks instead of showing it.
+    if (p < (_rules['minPeople'] as num) ||
+        (confidence == ServingsConfidence.low &&
+            p < (_rules['lowConfidenceMinPeople'] as num)) ||
+        (confidence != ServingsConfidence.high && p > hi + 0.5)) {
+      return ServingsEstimate(
+        computed: null,
+        range: null,
+        confidence: ServingsConfidence.none,
+        basis: noneBasis,
+        drivers: const [],
+        reason: 'tooUncertain',
+        kind: kind,
+      );
+    }
     var dominant = used.first;
     for (final g in used) {
       if (g.people > dominant.people) dominant = g;
@@ -477,14 +543,26 @@ class ServingsEngine {
     double? implied;
     if (stated != null) {
       final norm = _norm(dominant.category);
-      final value = (norm['per'] as num) * p / stated;
+      final value = (norm['per'] as num) * scale * p / stated;
       implied = _r1(value);
       final band = norm['band'] as List;
-      if (value >= (band[0] as num) && value <= (band[1] as num)) {
+      final bandLo = (band[0] as num) * scale;
+      final bandHi = (band[1] as num) * scale;
+      // Within a factor of two the source confirms the number: the engine
+      // only replaces a stated value it is sure is far off.
+      final keep = (_rules['sourceKeepRatio'] as num).toDouble();
+      final ratio = stated / p;
+      final close = ratio <= keep && ratio >= 1 / keep;
+      if (close || (value >= bandLo && value <= bandHi)) {
         basis = ServingsBasisSource.source;
       } else if (confidence == ServingsConfidence.low) {
         basis = ServingsBasisSource.source;
         reason = 'sourceKeptLowConfidence';
+      } else if (confidence != ServingsConfidence.high) {
+        // Only a sure engine (two or more roles that agree) replaces a stated
+        // number.
+        basis = ServingsBasisSource.source;
+        reason = 'sourceKeptMediumConfidence';
       } else {
         reason = _mismatch(kind, stated, p, mappedShare);
       }
