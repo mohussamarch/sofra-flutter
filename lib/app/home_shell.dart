@@ -20,6 +20,7 @@ import '../features/profile_screen.dart';
 import '../features/recipe_detail_screen.dart';
 import '../features/today_screen.dart';
 import '../ui/add_tile.dart';
+import '../ui/brand_logo.dart';
 import '../ui/design.dart';
 import '../l10n/l10n.dart';
 import 'look.dart';
@@ -503,20 +504,32 @@ class _SofraHomeState extends State<SofraHome> implements SofraNav {
               tooltip: t.appBack,
             ),
           Expanded(
-            child: Text(
-              switch (tab) {
-                AppTab.today => t.appHeaderToday,
-                AppTab.recipes => t.appTabRecipes,
-                AppTab.kitchen => t.appTabStock,
-                AppTab.table => t.appTabPlan,
-                AppTab.profile => t.appTabAccount,
-                AppTab.settings => t.appTabSettings,
-                // The community page opens on its own large handwritten title.
-                AppTab.community => '',
-                AppTab.style => t.appTabStyle,
-              },
-              style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
-            ),
+            child: tab == AppTab.today
+                // The home page carries the brand, not a page name.
+                ? const Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.only(start: 4),
+                      child: SofraLogo(height: 32),
+                    ),
+                  )
+                : Text(
+                    switch (tab) {
+                      AppTab.today => t.appHeaderToday,
+                      AppTab.recipes => t.appTabRecipes,
+                      AppTab.kitchen => t.appTabStock,
+                      AppTab.table => t.appTabPlan,
+                      AppTab.profile => t.appTabAccount,
+                      AppTab.settings => t.appTabSettings,
+                      // The community page opens on its own large handwritten title.
+                      AppTab.community => '',
+                      AppTab.style => t.appTabStyle,
+                    },
+                    style: const TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
           ),
           // One way out of the main pages: settings, which opens the
           // account first. The kitchen's look is changed from the 3D kitchen.

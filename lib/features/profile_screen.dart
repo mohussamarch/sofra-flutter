@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../l10n/l10n.dart';
 import '../app/scope.dart';
 import '../domain/market_profile.dart';
+import '../ui/brand_logo.dart';
 import '../ui/design.dart';
 import '../ui/illustrations.dart';
 import 'common.dart';
@@ -695,7 +696,9 @@ class SettingsScreen extends StatelessWidget {
             ),
           const SizedBox(height: 12),
         ],
-        const SizedBox(height: 22),
+        const SizedBox(height: 24),
+        const Center(child: SofraLogo(height: 24)),
+        const SizedBox(height: 4),
         Center(
           child: Text(
             t.profFooter,

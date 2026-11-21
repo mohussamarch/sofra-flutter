@@ -96,7 +96,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get uiDecrease => 'Decrease';
 
   @override
-  String get commTitle => 'Sofra community';
+  String get commTitle => 'Sofra Community';
 
   @override
   String get commTagline => 'All of us at one table';
@@ -1971,7 +1971,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profSignOut => 'Sign out';
 
   @override
-  String get profFooter => 'Sofra · Made with love for homes';
+  String get profFooter => 'Made with love for homes';
 
   @override
   String get profMyAccount => 'My account';

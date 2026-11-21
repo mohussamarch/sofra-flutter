@@ -6,6 +6,7 @@ import '../app/scope.dart';
 import '../app/sofra_controller.dart';
 import '../domain/market_profile.dart';
 import '../l10n/l10n.dart';
+import '../ui/brand_logo.dart';
 import '../ui/design.dart';
 import '../ui/flags.dart';
 import '../ui/illustrations.dart';
@@ -145,18 +146,7 @@ class OnboardingScreen extends StatelessWidget {
                 // is read. Later it lives in settings only.
                 const Center(child: LanguageSwitch()),
                 const SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.restaurant_rounded,
-                      color: Sofra.accent,
-                      size: 22,
-                    ),
-                    const SizedBox(width: 8),
-                    Text(t.appTitle, maxLines: 1, style: Sofra.heading(22)),
-                  ],
-                ),
+                const SofraLogo(height: 40),
               ],
             ),
           )

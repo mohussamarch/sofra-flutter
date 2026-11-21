@@ -3286,7 +3286,7 @@ abstract class AppLocalizations {
   /// No description provided for @profFooter.
   ///
   /// In ar, this message translates to:
-  /// **'سفرة · صُنع بحب للبيوت'**
+  /// **'صُنع بحب للبيوت'**
   String get profFooter;
 
   /// No description provided for @profMyAccount.

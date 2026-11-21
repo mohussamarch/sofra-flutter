@@ -1873,7 +1873,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profSignOut => 'تسجيل الخروج';
 
   @override
-  String get profFooter => 'سفرة · صُنع بحب للبيوت';
+  String get profFooter => 'صُنع بحب للبيوت';
 
   @override
   String get profMyAccount => 'حسابي';
