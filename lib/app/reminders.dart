@@ -21,6 +21,11 @@ abstract class ReminderSink {
 
   /// Shows a notification right away.
   Future<void> showNow(String title, String body);
+
+  /// Schedules one extra notification (a step timer) that survives
+  /// [replaceScheduled]; [cancel] removes it.
+  Future<void> scheduleOne(Reminder reminder);
+  Future<void> cancel(int id);
 }
 
 /// Keeps what it was given; for tests and platforms without notifications.
@@ -35,6 +40,15 @@ class SilentReminders implements ReminderSink {
   @override
   Future<void> showNow(String title, String body) async =>
       shown.add((title, body));
+
+  final extra = <int, Reminder>{};
+
+  @override
+  Future<void> scheduleOne(Reminder reminder) async =>
+      extra[reminder.id] = reminder;
+
+  @override
+  Future<void> cancel(int id) async => extra.remove(id);
 }
 
 /// Android notifications. Best effort: a refused permission or a missing
@@ -77,19 +91,45 @@ class LocalReminders implements ReminderSink {
     if (!await (_ready ??= _init())) return;
     try {
       await _plugin.cancelAllPendingNotifications();
-      for (final r in reminders) {
-        await _plugin.zonedSchedule(
-          id: r.id,
-          // An absolute instant; no device time-zone name is needed.
-          scheduledDate: tz.TZDateTime.from(r.at, tz.UTC),
-          notificationDetails: _details,
-          androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-          title: r.title,
-          body: r.body,
-        );
+      for (final r in [...reminders, ..._extra.values]) {
+        await _schedule(r);
       }
     } catch (e) {
       debugPrint('Scheduling reminders failed: $e');
+    }
+  }
+
+  final _extra = <int, Reminder>{};
+
+  Future<void> _schedule(Reminder r) => _plugin.zonedSchedule(
+    id: r.id,
+    // An absolute instant; no device time-zone name is needed.
+    scheduledDate: tz.TZDateTime.from(r.at, tz.UTC),
+    notificationDetails: _details,
+    androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+    title: r.title,
+    body: r.body,
+  );
+
+  @override
+  Future<void> scheduleOne(Reminder reminder) async {
+    _extra[reminder.id] = reminder;
+    if (!await (_ready ??= _init())) return;
+    try {
+      await _schedule(reminder);
+    } catch (e) {
+      debugPrint('Scheduling timer failed: $e');
+    }
+  }
+
+  @override
+  Future<void> cancel(int id) async {
+    _extra.remove(id);
+    if (!await (_ready ??= _init())) return;
+    try {
+      await _plugin.cancel(id: id);
+    } catch (e) {
+      debugPrint('Cancelling timer failed: $e');
     }
   }
 

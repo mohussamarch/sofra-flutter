@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -46,8 +45,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lookColors => 'تمييز الألوان';
 
   @override
-  String get lookColorsInfo =>
-      'لمن يصعب عليه تمييز بعض الألوان: يغيّر ألوان التطبيق كله لتصبح أوضح، مثل «تصحيح الألوان» في إعدادات الهاتف.';
+  String get lookColorsInfo => 'لمن يصعب عليه تمييز بعض الألوان: يغيّر ألوان التطبيق كله لتصبح أوضح، مثل «تصحيح الألوان» في إعدادات الهاتف.';
 
   @override
   String get lookMotion => 'تقليل الحركة';
@@ -107,8 +105,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commChallenge => 'تحدي الأسبوع';
 
   @override
-  String get commPreviewNote =>
-      'معاينة على الجهاز: ما تنشره هنا لا يصل لأحد، ويُحذف عند الإغلاق.';
+  String get commPreviewNote => 'معاينة على الجهاز: ما تنشره هنا لا يصل لأحد، ويُحذف عند الإغلاق.';
 
   @override
   String get commPartHome => 'الرئيسية';
@@ -126,15 +123,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commRecipesLoadError => 'تعذّر جلب الوصفات. حاول مرة أخرى.';
 
   @override
-  String get commMineEmptyWrite =>
-      'اكتب وصفة من «وصفة من عندي»، ثم شاركها هنا.';
+  String get commMineEmptyWrite => 'اكتب وصفة من «وصفة من عندي»، ثم شاركها هنا.';
 
   @override
   String get commMineEmpty => 'لم تشارك وصفة بعد.';
 
   @override
-  String get commNeedsAccount =>
-      'هذا الجزء يحتاج إلى حساب. هذه النسخة محفوظة على الجهاز فقط.';
+  String get commNeedsAccount => 'هذا الجزء يحتاج إلى حساب. هذه النسخة محفوظة على الجهاز فقط.';
 
   @override
   String get commConnectionProblem => 'حدثت مشكلة في الاتصال. حاول مرة أخرى.';
@@ -161,8 +156,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commShareRecipe => 'شارك وصفة';
 
   @override
-  String get commFeedEmpty =>
-      'لم يشارك أحد وصفة بعد. ابدأ أنت من «وصفة من عندي».';
+  String get commFeedEmpty => 'لم يشارك أحد وصفة بعد. ابدأ أنت من «وصفة من عندي».';
 
   @override
   String get commOpenChannel => 'افتح القناة على يوتيوب';
@@ -212,8 +206,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commKitchenLoadError => 'تعذّر فتح بيانات المطبخ. حاول مرة أخرى.';
 
   @override
-  String get commKitchenIntro =>
-      'اجمع البيت كله على مطبخ واحد: المخزون نفسه، والخطة نفسها، وقائمة الشراء نفسها. ما في مطبخك الآن هو ما ستتم مشاركته.';
+  String get commKitchenIntro => 'اجمع البيت كله على مطبخ واحد: المخزون نفسه، والخطة نفسها، وقائمة الشراء نفسها. ما في مطبخك الآن هو ما ستتم مشاركته.';
 
   @override
   String get commKitchenCreate => 'أنشئ مطبخًا مشتركًا';
@@ -228,8 +221,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commKitchenJoin => 'ادخل المطبخ';
 
   @override
-  String get commKitchenJoinNote =>
-      'عند دخولك مطبخًا مشتركًا، يبقى مطبخك الشخصي محفوظًا وتعود إليه عند الخروج.';
+  String get commKitchenJoinNote => 'عند دخولك مطبخًا مشتركًا، يبقى مطبخك الشخصي محفوظًا وتعود إليه عند الخروج.';
 
   @override
   String get commSharedKitchen => 'المطبخ المشترك';
@@ -280,8 +272,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get commChallengeCookPlannedDetail =>
-      'تُحسب كل وجبة مخططة طُبخت هذا الأسبوع.';
+  String get commChallengeCookPlannedDetail => 'تُحسب كل وجبة مخططة طُبخت هذا الأسبوع.';
 
   @override
   String commChallengeDifferent(String goal) {
@@ -289,8 +280,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get commChallengeDifferentDetail =>
-      'تُحسب كل وصفة مختلفة طُبخت هذا الأسبوع مرة واحدة.';
+  String get commChallengeDifferentDetail => 'تُحسب كل وصفة مختلفة طُبخت هذا الأسبوع مرة واحدة.';
 
   @override
   String commChallengeNew(int goal) {
@@ -327,8 +317,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commLeaveTitle => 'الخروج من المطبخ المشترك؟';
 
   @override
-  String get commLeaveBody =>
-      'ستعود إلى مطبخك الشخصي ولن ترى تعديلات أهل البيت. للعودة تحتاج رمز دعوة جديدًا من صاحب المطبخ.';
+  String get commLeaveBody => 'ستعود إلى مطبخك الشخصي ولن ترى تعديلات أهل البيت. للعودة تحتاج رمز دعوة جديدًا من صاحب المطبخ.';
 
   @override
   String get commCancel => 'إلغاء';
@@ -346,8 +335,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detailCookNow => 'أطبخ الآن';
 
   @override
-  String get detailCookNowNote =>
-      'تُحفظ كوجبة لليوم لاستكمالها. لا خصم قبل التأكيد.';
+  String get detailCookNowNote => 'تُحفظ كوجبة لليوم لاستكمالها. لا خصم قبل التأكيد.';
 
   @override
   String get detailAddToPlan => 'أضيف للخطة';
@@ -397,8 +385,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detailSteps => 'الخطوات';
 
   @override
-  String get detailNoPricesNote =>
-      'لا تظهر الأسعار والقيم الغذائية هنا حتى تُراجع من مصادرها. الكميات من المصدر.';
+  String get detailNoPricesNote => 'لا تظهر الأسعار والقيم الغذائية هنا حتى تُراجع من مصادرها. الكميات من المصدر.';
 
   @override
   String get detailToTaste => 'حسب الرغبة';
@@ -407,8 +394,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detailYieldUnknown => 'لم يذكر المصدر عدد من تكفيهم هذه الوصفة';
 
   @override
-  String get detailYieldAsk =>
-      'لنضبط الكميات ونضعها على السفرة، أخبرنا كم فردًا تكفي الوصفة كلها تقريبًا. الوصفة الأصلية لن تتغير.';
+  String get detailYieldAsk => 'لنضبط الكميات ونضعها على السفرة، أخبرنا كم فردًا تكفي الوصفة كلها تقريبًا. الوصفة الأصلية لن تتغير.';
 
   @override
   String detailYieldServes(int count) {
@@ -485,8 +471,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detailWaysOpenError => 'تعذّر فتح الطرق. ارجع وحاول مرة أخرى.';
 
   @override
-  String get detailComparePickHint =>
-      'اختر بلدًا من الشريط لترى الكميات والخطوات.';
+  String get detailComparePickHint => 'اختر بلدًا من الشريط لترى الكميات والخطوات.';
 
   @override
   String get detailDefineConversion => 'حدد التحويل';
@@ -497,8 +482,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get detailConversionHint =>
-      'اكتب القياس من مطبخك. سيُحفظ لهذا المكوّن فقط.';
+  String get detailConversionHint => 'اكتب القياس من مطبخك. سيُحفظ لهذا المكوّن فقط.';
 
   @override
   String get detailEnterPositive => 'اكتب رقمًا أكبر من صفر';
@@ -510,12 +494,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detailSave => 'حفظ';
 
   @override
-  String detailConversionSaved(
-    String from,
-    String name,
-    String factor,
-    String to,
-  ) {
+  String detailConversionSaved(String from, String name, String factor, String to) {
     return 'حُفظ: 1 $from $name = $factor $to';
   }
 
@@ -571,6 +550,23 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String detailAboutMinutes(String minutes) {
     return 'حوالي $minutes دقيقة';
+  }
+
+  @override
+  String get stepTimerStart => 'ابدأ المؤقت';
+
+  @override
+  String get stepTimerPause => 'إيقاف مؤقت';
+
+  @override
+  String get stepTimerReset => 'إعادة ضبط المؤقت';
+
+  @override
+  String get stepTimerDoneTitle => 'انتهى المؤقت';
+
+  @override
+  String stepTimerDone(String step) {
+    return 'انتهى وقت الخطوة $step';
   }
 
   @override
@@ -655,15 +651,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detailPartial => 'عندك جزء فقط';
 
   @override
-  String get detailPartialNote =>
-      'هل اشتريت الباقي، أم طبخت بما عندك؟ في الحالتين يُخصم ما عندك.';
+  String get detailPartialNote => 'هل اشتريت الباقي، أم طبخت بما عندك؟ في الحالتين يُخصم ما عندك.';
 
   @override
   String get detailNotDeducted => 'لن يُخصم';
 
   @override
-  String get detailNotDeductedNote =>
-      'ناقص أو مسجّل بوحدة مختلفة. ستبقى التكلفة غير معروفة.';
+  String get detailNotDeductedNote => 'ناقص أو مسجّل بوحدة مختلفة. ستبقى التكلفة غير معروفة.';
 
   @override
   String get detailUnmeasuredGroup => 'دون مقدار في الوصفة';
@@ -719,8 +713,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitShelfEmpty => 'هذا الرف فارغ';
 
   @override
-  String get kitEmptyHint =>
-      'أضف بعض المكونات كبداية. لا نحتاج إلى جرد كامل للبدء.';
+  String get kitEmptyHint => 'أضف بعض المكونات كبداية. لا نحتاج إلى جرد كامل للبدء.';
 
   @override
   String get kitTrySample => 'جرّب بمكونات جاهزة';
@@ -773,8 +766,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitWhatDoYouHave => 'ماذا يوجد عندك؟';
 
   @override
-  String get kitAddStockHint =>
-      'اضغط + لإضافة سريعة، أو اضغط على المكوّن لكتابة الكمية والوحدة.';
+  String get kitAddStockHint => 'اضغط + لإضافة سريعة، أو اضغط على المكوّن لكتابة الكمية والوحدة.';
 
   @override
   String get kitSearchIngredient => 'ابحث عن مكوّن';
@@ -783,8 +775,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitScanBarcode => 'امسح باركود';
 
   @override
-  String get kitIngredientNotFound =>
-      'المكوّن غير موجود في القائمة. جرّب اسمًا آخر.';
+  String get kitIngredientNotFound => 'المكوّن غير موجود في القائمة. جرّب اسمًا آخر.';
 
   @override
   String kitAddItem(String name) {
@@ -824,8 +815,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get kitPieceHelper =>
-      'من ميزانك أو المكتوب على العبوة. يفيد في الوصفات.';
+  String get kitPieceHelper => 'من ميزانك أو المكتوب على العبوة. يفيد في الوصفات.';
 
   @override
   String get kitGramsShort => 'جم';
@@ -1061,8 +1051,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get mineMinutesHint => 'دقيقة';
 
   @override
-  String get mineNutritionUnknown =>
-      'لن تُحسب القيم الغذائية لهذه الوصفة حتى تُربط مكوناتها بمصدر.';
+  String get mineNutritionUnknown => 'لن تُحسب القيم الغذائية لهذه الوصفة حتى تُربط مكوناتها بمصدر.';
 
   @override
   String get mineSearchIngredient => 'ابحث عن مكوّن';
@@ -1281,8 +1270,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planMonthTitle => 'خطة الشهر';
 
   @override
-  String get planMonthCalcError =>
-      'تعذّر حساب هذه الخطة. راجع الأكلات وحاول مرة أخرى.';
+  String get planMonthCalcError => 'تعذّر حساب هذه الخطة. راجع الأكلات وحاول مرة أخرى.';
 
   @override
   String get planConflictTitle => 'توجد أيام عليها أكل';
@@ -1335,15 +1323,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planFillEmptyDays => 'أكمل الأيام الفارغة';
 
   @override
-  String get planWeekMenuHint =>
-      'يتكرر هذا الأسبوع طوال الشهر. يمكنك وضع أكلتين في الخانة نفسها، ونختار الأوفر.';
+  String get planWeekMenuHint => 'يتكرر هذا الأسبوع طوال الشهر. يمكنك وضع أكلتين في الخانة نفسها، ونختار الأوفر.';
 
   @override
   String get planOmitUnmeasured => 'استبعد الأشياء التي ليس لها كمية من الحساب';
 
   @override
-  String get planOmitUnmeasuredHint =>
-      'مثل «ملح حسب الرغبة». إذا أوقفتها، ستبقى التكلفة غير معروفة.';
+  String get planOmitUnmeasuredHint => 'مثل «ملح حسب الرغبة». إذا أوقفتها، ستبقى التكلفة غير معروفة.';
 
   @override
   String get planPick => '+ اختر';
@@ -1378,12 +1364,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planRecordPrices => 'سجّل هذه الأسعار';
 
   @override
-  String get planRecordPricesHint =>
-      'بسعرك أنت، من آخر مرة اشتريت. لا نخمّن الأسعار.';
+  String get planRecordPricesHint => 'بسعرك أنت، من آخر مرة اشتريت. لا نخمّن الأسعار.';
 
   @override
-  String get planUnresolvedUnits =>
-      'بعض المكونات مسجّلة بوحدة لا تتحول إلى وحدة الوصفة. حدد التحويل من صفحة المخزون.';
+  String get planUnresolvedUnits => 'بعض المكونات مسجّلة بوحدة لا تتحول إلى وحدة الوصفة. حدد التحويل من صفحة المخزون.';
 
   @override
   String planTruncated(int count) {
@@ -1408,8 +1392,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planLeftovers => 'بواقي الأكل';
 
   @override
-  String get planLeftoversEmpty =>
-      'لا توجد بواقٍ مسجّلة. عندما تطبخ ويتبقى شيء، ستجده هنا لتسخينه.';
+  String get planLeftoversEmpty => 'لا توجد بواقٍ مسجّلة. عندما تطبخ ويتبقى شيء، ستجده هنا لتسخينه.';
 
   @override
   String get planMyStock => 'مخزون مطبخي';
@@ -1446,8 +1429,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planWhatToCookToday => 'ماذا نطبخ اليوم؟';
 
   @override
-  String get planPickRecipeHint =>
-      'اختر وصفة، ونعرض لك الناقص من مطبخك قبل البدء.';
+  String get planPickRecipeHint => 'اختر وصفة، ونعرض لك الناقص من مطبخك قبل البدء.';
 
   @override
   String get planPickRecipe => 'اختر وصفة';
@@ -1501,8 +1483,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planWhatCanICook => 'ماذا أطبخ مما لدي؟';
 
   @override
-  String get planWhatCanICookHint =>
-      'اقتراحات من خزينك، مع توضيح الكميات والناقص. لا نخصم أي شيء قبل تأكيد الطبخ.';
+  String get planWhatCanICookHint => 'اقتراحات من خزينك، مع توضيح الكميات والناقص. لا نخصم أي شيء قبل تأكيد الطبخ.';
 
   @override
   String get planDiscoverFromStock => 'اكتشف من الموجود';
@@ -1557,8 +1538,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get planComingDays => 'السفرة في الأيام القادمة';
 
   @override
-  String get planNoDeductNote =>
-      'اختيار الوجبة لا يخصم من المخزون. يتم الخصم بعد تأكيد انتهاء الطبخ.';
+  String get planNoDeductNote => 'اختيار الوجبة لا يخصم من المخزون. يتم الخصم بعد تأكيد انتهاء الطبخ.';
 
   @override
   String get planMealLoadError => 'تعذّر تحميل وصفة هذه الوجبة.';
@@ -1659,20 +1639,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get priceGroupOther => 'أخرى';
 
   @override
-  String get priceLocationOff =>
-      'خدمة الموقع مغلقة. اختر منطقتك من الخريطة أو البحث.';
+  String get priceLocationOff => 'خدمة الموقع مغلقة. اختر منطقتك من الخريطة أو البحث.';
 
   @override
-  String get priceLocationDenied =>
-      'لم يُسمح بالموقع. اختر منطقتك من الخريطة أو البحث.';
+  String get priceLocationDenied => 'لم يُسمح بالموقع. اختر منطقتك من الخريطة أو البحث.';
 
   @override
-  String get priceNoAreaNearby =>
-      'لا نعرف منطقة قريبة من موقعك. اختر من الخريطة.';
+  String get priceNoAreaNearby => 'لا نعرف منطقة قريبة من موقعك. اختر من الخريطة.';
 
   @override
-  String get priceLocateFailed =>
-      'تعذّر تحديد موقعك. اختر منطقتك من الخريطة أو البحث.';
+  String get priceLocateFailed => 'تعذّر تحديد موقعك. اختر منطقتك من الخريطة أو البحث.';
 
   @override
   String priceAreaNowYours(String area) {
@@ -1695,8 +1671,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get priceMakeMyArea => 'اجعلها منطقتي';
 
   @override
-  String get priceAreaInfo =>
-      'سعر المنطقة هو ما دفعه الناس فيها في آخر 60 يومًا، ويظهر فقط عندما يشاركه بيتان أو أكثر.';
+  String get priceAreaInfo => 'سعر المنطقة هو ما دفعه الناس فيها في آخر 60 يومًا، ويظهر فقط عندما يشاركه بيتان أو أكثر.';
 
   @override
   String get priceAreaFetchFailed => 'تعذّر جلب أسعار المنطقة.';
@@ -1843,8 +1818,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profNoAllergies => 'لا توجد حساسية';
 
   @override
-  String get profAllergiesInfo =>
-      'تظهر كتنبيه بالاسم فقط، ويجب أن تراجع المكونات بنفسك.';
+  String get profAllergiesInfo => 'تظهر كتنبيه بالاسم فقط، ويجب أن تراجع المكونات بنفسك.';
 
   @override
   String get profConditions => 'حالات صحية';
@@ -1853,8 +1827,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profNoConditions => 'لا توجد حالات';
 
   @override
-  String get profConditionsInfo =>
-      'للتذكير فقط؛ لا يغيّر التطبيق الوصفات ولا يقدّم نصيحة طبية.';
+  String get profConditionsInfo => 'للتذكير فقط؛ لا يغيّر التطبيق الوصفات ولا يقدّم نصيحة طبية.';
 
   @override
   String get profCancel => 'إلغاء';
@@ -1926,15 +1899,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profRanOutTitle => 'عندما ينفد مكوّن';
 
   @override
-  String get profRanOutSubtitle =>
-      'تنبيه بعد الطبخ إذا استخدمت آخر ما في المخزون';
+  String get profRanOutSubtitle => 'تنبيه بعد الطبخ إذا استخدمت آخر ما في المخزون';
 
   @override
   String get profChannelName => 'تذكيرات سفرة';
 
   @override
-  String get profChannelDescription =>
-      'مواعيد الأكل، والبواقي، والأشياء التي نفدت';
+  String get profChannelDescription => 'مواعيد الأكل، والبواقي، والأشياء التي نفدت';
 
   @override
   String profReminderMealTitle(String slot, String minutes) {
@@ -2058,15 +2029,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addTitle => 'أضف مشترياتك';
 
   @override
-  String get addReadFailed =>
-      'تعذّرت القراءة. تحقق من الاتصال، أو اكتب المشتريات بالأسفل.';
+  String get addReadFailed => 'تعذّرت القراءة. تحقق من الاتصال، أو اكتب المشتريات بالأسفل.';
 
   @override
   String get addNothingFound => 'لم نجد مكونات هنا. جرّب صورة أوضح، أو اكتبها.';
 
   @override
-  String get addCameraUnavailable =>
-      'الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف.';
+  String get addCameraUnavailable => 'الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف.';
 
   @override
   String get addPhotosFailed => 'تعذّر فتح الصور.';
@@ -2101,8 +2070,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addLineTooltip => 'أضف السطر';
 
   @override
-  String get addSaveFailed =>
-      'لم تُحفظ المشتريات. تحقق من الاتصال وحاول مرة أخرى.';
+  String get addSaveFailed => 'لم تُحفظ المشتريات. تحقق من الاتصال وحاول مرة أخرى.';
 
   @override
   String addSavedNotice(int count) {
@@ -2182,8 +2150,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addScanTitle => 'امسح باركود المنتج';
 
   @override
-  String get addScanCameraOff =>
-      'الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف، أو اكتب الرقم بالأسفل.';
+  String get addScanCameraOff => 'الكاميرا غير متاحة. اسمح بها من إعدادات الهاتف، أو اكتب الرقم بالأسفل.';
 
   @override
   String get addScanManualHint => 'أو اكتب الرقم الموجود تحت الباركود';
@@ -2358,8 +2325,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appSaveFull => 'امتلأت مساحة الحفظ في حسابك، فلم يُحفظ التعديل.';
 
   @override
-  String get appSaveFailedOne =>
-      'لم يُحفظ آخر تعديل. تحقق من الاتصال وأعد الحفظ قبل الخروج.';
+  String get appSaveFailedOne => 'لم يُحفظ آخر تعديل. تحقق من الاتصال وأعد الحفظ قبل الخروج.';
 
   @override
   String appSaveFailedMany(String count) {
@@ -2381,8 +2347,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appListSeparator => '، ';
 
   @override
-  String get appSessionOpenFailed =>
-      'لا يمكن فتح بياناتك الآن. تحقق من الاتصال وحاول مرة أخرى.';
+  String get appSessionOpenFailed => 'لا يمكن فتح بياناتك الآن. تحقق من الاتصال وحاول مرة أخرى.';
 
   @override
   String get appRetry => 'إعادة المحاولة';
@@ -2394,8 +2359,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appEnterEmailFirst => 'اكتب البريد الإلكتروني الأول.';
 
   @override
-  String get appResetSent =>
-      'إذا كان البريد مسجّلًا، سيصلك رابط استعادة كلمة المرور.';
+  String get appResetSent => 'إذا كان البريد مسجّلًا، سيصلك رابط استعادة كلمة المرور.';
 
   @override
   String get appAuthNetwork => 'تحقق من اتصال الإنترنت وحاول مرة أخرى.';
@@ -2413,12 +2377,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appAuthInvalidEmail => 'راجع كتابة البريد الإلكتروني.';
 
   @override
-  String get appAuthSignUpUnavailable =>
-      'إنشاء الحساب غير متاح حاليًا. حاول لاحقًا.';
+  String get appAuthSignUpUnavailable => 'إنشاء الحساب غير متاح حاليًا. حاول لاحقًا.';
 
   @override
-  String get appAuthFailed =>
-      'تعذر الدخول. راجع البريد وكلمة المرور أو استعد حسابك.';
+  String get appAuthFailed => 'تعذر الدخول. راجع البريد وكلمة المرور أو استعد حسابك.';
 
   @override
   String get appRequestFailed => 'تعذّر إكمال الطلب. حاول مرة أخرى.';
@@ -2483,8 +2445,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get appChallengeCookPlannedDetail =>
-      'تُحسب كل وجبة مخططة طُبخت هذا الأسبوع.';
+  String get appChallengeCookPlannedDetail => 'تُحسب كل وجبة مخططة طُبخت هذا الأسبوع.';
 
   @override
   String appChallengeDifferentTitle(String goal) {
@@ -2492,8 +2453,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get appChallengeDifferentDetail =>
-      'تُحسب كل وصفة مختلفة طُبخت هذا الأسبوع مرة واحدة.';
+  String get appChallengeDifferentDetail => 'تُحسب كل وصفة مختلفة طُبخت هذا الأسبوع مرة واحدة.';
 
   @override
   String get appChallengeNewTitle => 'جرّب وصفتين أول مرة';
@@ -2526,8 +2486,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get librarySection => 'الوصفات على جهازك';
 
   @override
-  String get libraryInfo =>
-      'قائمة الوصفات محفوظة على جهازك دائمًا. تُحفظ الوصفة كاملة عند فتحها أو حفظها، والمحفوظة تبقى في حسابك أيضًا وإن حُذفت من المكتبة. تصل الوصفات الجديدة تلقائيًا دون تحديث التطبيق.';
+  String get libraryInfo => 'قائمة الوصفات محفوظة على جهازك دائمًا. تُحفظ الوصفة كاملة عند فتحها أو حفظها، والمحفوظة تبقى في حسابك أيضًا وإن حُذفت من المكتبة. تصل الوصفات الجديدة تلقائيًا دون تحديث التطبيق.';
 
   @override
   String get libraryOnDevice => 'على الجهاز';
@@ -2561,8 +2520,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get libraryUpdateFailed => 'تعذّر الاتصال بالمكتبة';
 
   @override
-  String get recipeNotOnDevice =>
-      'هذه الوصفة غير محفوظة على جهازك. اتصل بالإنترنت ثم حاول مرة أخرى.';
+  String get recipeNotOnDevice => 'هذه الوصفة غير محفوظة على جهازك. اتصل بالإنترنت ثم حاول مرة أخرى.';
 
   @override
   String get recipeRetry => 'إعادة المحاولة';

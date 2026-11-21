@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -46,15 +45,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lookColors => 'Color correction';
 
   @override
-  String get lookColorsInfo =>
-      'For people who find some colors hard to tell apart: shifts the whole app\'s colors so they\'re clearer, like “Color correction” in your phone\'s settings.';
+  String get lookColorsInfo => 'For people who find some colors hard to tell apart: shifts the whole app\'s colors so they\'re clearer, like “Color correction” in your phone\'s settings.';
 
   @override
   String get lookMotion => 'Reduce motion';
 
   @override
-  String get lookMotionInfo =>
-      'Calmer transitions, with no bounce or background movement.';
+  String get lookMotionInfo => 'Calmer transitions, with no bounce or background movement.';
 
   @override
   String get lookLanguage => 'Language';
@@ -108,8 +105,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commChallenge => 'Weekly challenge';
 
   @override
-  String get commPreviewNote =>
-      'On-device preview: nothing you post here reaches anyone, and it\'s deleted when you close the app.';
+  String get commPreviewNote => 'On-device preview: nothing you post here reaches anyone, and it\'s deleted when you close the app.';
 
   @override
   String get commPartHome => 'Home';
@@ -127,19 +123,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commRecipesLoadError => 'Couldn\'t load recipes. Try again.';
 
   @override
-  String get commMineEmptyWrite =>
-      'Write a recipe in “My own recipe”, then share it here.';
+  String get commMineEmptyWrite => 'Write a recipe in “My own recipe”, then share it here.';
 
   @override
   String get commMineEmpty => 'You haven\'t shared a recipe yet.';
 
   @override
-  String get commNeedsAccount =>
-      'This part needs an account. This copy is saved on this device only.';
+  String get commNeedsAccount => 'This part needs an account. This copy is saved on this device only.';
 
   @override
-  String get commConnectionProblem =>
-      'There was a connection problem. Try again.';
+  String get commConnectionProblem => 'There was a connection problem. Try again.';
 
   @override
   String get commNoInitial => '?';
@@ -163,8 +156,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commShareRecipe => 'Share a recipe';
 
   @override
-  String get commFeedEmpty =>
-      'No one has shared a recipe yet. Start with “My own recipe”.';
+  String get commFeedEmpty => 'No one has shared a recipe yet. Start with “My own recipe”.';
 
   @override
   String get commOpenChannel => 'Open the channel on YouTube';
@@ -238,8 +230,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commKitchenLoadError => 'Couldn\'t open the kitchen. Try again.';
 
   @override
-  String get commKitchenIntro =>
-      'Bring the whole home to one kitchen: the same pantry, the same plan and the same shopping list. What\'s in your kitchen now is what will be shared.';
+  String get commKitchenIntro => 'Bring the whole home to one kitchen: the same pantry, the same plan and the same shopping list. What\'s in your kitchen now is what will be shared.';
 
   @override
   String get commKitchenCreate => 'Create a shared kitchen';
@@ -254,8 +245,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commKitchenJoin => 'Join the kitchen';
 
   @override
-  String get commKitchenJoinNote =>
-      'When you join a shared kitchen, your own kitchen stays saved and you go back to it when you leave.';
+  String get commKitchenJoinNote => 'When you join a shared kitchen, your own kitchen stays saved and you go back to it when you leave.';
 
   @override
   String get commSharedKitchen => 'Shared kitchen';
@@ -264,8 +254,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commKitchenOwner => 'Kitchen owner';
 
   @override
-  String get commInviteSend =>
-      'Send this code to your household (valid for one week):';
+  String get commInviteSend => 'Send this code to your household (valid for one week):';
 
   @override
   String get commInviteCreate => 'Create an invite code';
@@ -307,8 +296,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get commChallengeCookPlannedDetail =>
-      'Every planned meal cooked this week counts.';
+  String get commChallengeCookPlannedDetail => 'Every planned meal cooked this week counts.';
 
   @override
   String commChallengeDifferent(String goal) {
@@ -316,8 +304,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get commChallengeDifferentDetail =>
-      'Each different recipe cooked this week counts once.';
+  String get commChallengeDifferentDetail => 'Each different recipe cooked this week counts once.';
 
   @override
   String commChallengeNew(int goal) {
@@ -331,8 +318,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get commChallengeNewDetail =>
-      'A recipe never cooked before in your kitchen.';
+  String get commChallengeNewDetail => 'A recipe never cooked before in your kitchen.';
 
   @override
   String commChallengeProgress(String done, String goal) {
@@ -355,8 +341,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commLeaveTitle => 'Leave the shared kitchen?';
 
   @override
-  String get commLeaveBody =>
-      'You\'ll go back to your own kitchen and won\'t see your household\'s changes. To come back, you\'ll need a new invite code from the kitchen owner.';
+  String get commLeaveBody => 'You\'ll go back to your own kitchen and won\'t see your household\'s changes. To come back, you\'ll need a new invite code from the kitchen owner.';
 
   @override
   String get commCancel => 'Cancel';
@@ -365,8 +350,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commLeave => 'Leave';
 
   @override
-  String get detailOpenError =>
-      'Couldn\'t open the recipe. Go back and try again.';
+  String get detailOpenError => 'Couldn\'t open the recipe. Go back and try again.';
 
   @override
   String get detailPreparing => 'Getting it ready…';
@@ -375,8 +359,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailCookNow => 'Cook now';
 
   @override
-  String get detailCookNowNote =>
-      'Saved as today\'s meal so you can finish it. Nothing is deducted until you confirm.';
+  String get detailCookNowNote => 'Saved as today\'s meal so you can finish it. Nothing is deducted until you confirm.';
 
   @override
   String get detailAddToPlan => 'Add to plan';
@@ -426,19 +409,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailSteps => 'Steps';
 
   @override
-  String get detailNoPricesNote =>
-      'Prices and nutrition aren\'t shown here until they\'re checked against their sources. Amounts are from the source.';
+  String get detailNoPricesNote => 'Prices and nutrition aren\'t shown here until they\'re checked against their sources. Amounts are from the source.';
 
   @override
   String get detailToTaste => 'to taste';
 
   @override
-  String get detailYieldUnknown =>
-      'The source doesn\'t say how many this recipe serves';
+  String get detailYieldUnknown => 'The source doesn\'t say how many this recipe serves';
 
   @override
-  String get detailYieldAsk =>
-      'To scale the amounts and put it on your table, tell us roughly how many people the whole recipe serves. The original recipe won\'t change.';
+  String get detailYieldAsk => 'To scale the amounts and put it on your table, tell us roughly how many people the whole recipe serves. The original recipe won\'t change.';
 
   @override
   String detailYieldServes(int count) {
@@ -481,15 +461,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get servingsInfoApply => 'Apply';
 
   @override
-  String get servingsInfoLow =>
-      'This is a rough estimate. Adjust it if it seems off.';
+  String get servingsInfoLow => 'This is a rough estimate. Adjust it if it seems off.';
 
   @override
   String get servingsInfoAdjust => 'Adjust the number';
 
   @override
-  String get detailPlanned =>
-      'The meal is on your table, and your stock hasn\'t changed';
+  String get detailPlanned => 'The meal is on your table, and your stock hasn\'t changed';
 
   @override
   String detailWaysToMake(int count) {
@@ -509,12 +487,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailPronunciation => 'Pronunciation';
 
   @override
-  String get detailWaysOpenError =>
-      'Couldn\'t open the ways. Go back and try again.';
+  String get detailWaysOpenError => 'Couldn\'t open the ways. Go back and try again.';
 
   @override
-  String get detailComparePickHint =>
-      'Pick a country from the bar to see the amounts and steps.';
+  String get detailComparePickHint => 'Pick a country from the bar to see the amounts and steps.';
 
   @override
   String get detailDefineConversion => 'Set conversion';
@@ -525,8 +501,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get detailConversionHint =>
-      'Use a measurement from your kitchen. It\'s saved for this ingredient only.';
+  String get detailConversionHint => 'Use a measurement from your kitchen. It\'s saved for this ingredient only.';
 
   @override
   String get detailEnterPositive => 'Enter a number greater than zero';
@@ -538,12 +513,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailSave => 'Save';
 
   @override
-  String detailConversionSaved(
-    String from,
-    String name,
-    String factor,
-    String to,
-  ) {
+  String detailConversionSaved(String from, String name, String factor, String to) {
     return 'Saved: 1 $from $name = $factor $to';
   }
 
@@ -586,8 +556,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailFinishCooking => 'Done cooking · Review stock';
 
   @override
-  String get detailNoSteps =>
-      'The source has no written steps for this recipe.';
+  String get detailNoSteps => 'The source has no written steps for this recipe.';
 
   @override
   String get detailNextStep => 'Next step';
@@ -600,6 +569,23 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String detailAboutMinutes(String minutes) {
     return 'About $minutes min';
+  }
+
+  @override
+  String get stepTimerStart => 'Start timer';
+
+  @override
+  String get stepTimerPause => 'Pause';
+
+  @override
+  String get stepTimerReset => 'Reset timer';
+
+  @override
+  String get stepTimerDoneTitle => 'Timer finished';
+
+  @override
+  String stepTimerDone(String step) {
+    return 'Step $step time is up';
   }
 
   @override
@@ -633,8 +619,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailAnyLeftovers => 'Any food left over?';
 
   @override
-  String get detailLeftoversHint =>
-      'Log it and we\'ll put it in the fridge so you can heat it up later.';
+  String get detailLeftoversHint => 'Log it and we\'ll put it in the fridge so you can heat it up later.';
 
   @override
   String get detailRemindAfter => 'Remind me in';
@@ -685,15 +670,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailPartial => 'You only have part';
 
   @override
-  String get detailPartialNote =>
-      'Did you buy the rest, or cook with what you had? Either way, what you have is taken out.';
+  String get detailPartialNote => 'Did you buy the rest, or cook with what you had? Either way, what you have is taken out.';
 
   @override
   String get detailNotDeducted => 'Won\'t be taken out';
 
   @override
-  String get detailNotDeductedNote =>
-      'Missing, or logged in a different unit. The cost stays unknown.';
+  String get detailNotDeductedNote => 'Missing, or logged in a different unit. The cost stays unknown.';
 
   @override
   String get detailUnmeasuredGroup => 'No amount in the recipe';
@@ -749,8 +732,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kitShelfEmpty => 'This shelf is empty';
 
   @override
-  String get kitEmptyHint =>
-      'Add a few ingredients to start. No need for a full inventory.';
+  String get kitEmptyHint => 'Add a few ingredients to start. No need for a full inventory.';
 
   @override
   String get kitTrySample => 'Try with sample ingredients';
@@ -803,8 +785,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kitWhatDoYouHave => 'What do you have?';
 
   @override
-  String get kitAddStockHint =>
-      'Tap + to add quickly, or tap an ingredient to enter the amount and unit.';
+  String get kitAddStockHint => 'Tap + to add quickly, or tap an ingredient to enter the amount and unit.';
 
   @override
   String get kitSearchIngredient => 'Search for an ingredient';
@@ -813,8 +794,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kitScanBarcode => 'Scan a barcode';
 
   @override
-  String get kitIngredientNotFound =>
-      'That ingredient isn\'t on the list. Try another name.';
+  String get kitIngredientNotFound => 'That ingredient isn\'t on the list. Try another name.';
 
   @override
   String kitAddItem(String name) {
@@ -854,8 +834,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get kitPieceHelper =>
-      'From your scale or the package label. Helps with recipes.';
+  String get kitPieceHelper => 'From your scale or the package label. Helps with recipes.';
 
   @override
   String get kitGramsShort => 'g';
@@ -970,8 +949,7 @@ class AppLocalizationsEn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other:
-          '$count lines have no amount (like “to taste”) and are left off the list.',
+      other: '$count lines have no amount (like “to taste”) and are left off the list.',
       one: '1 line has no amount (like “to taste”) and is left off the list.',
     );
     return '$_temp0';
@@ -992,8 +970,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kitPutBoughtAway => 'Put what you bought in the kitchen';
 
   @override
-  String get kitPreviewNoYield =>
-      'You have the ingredients. Set servings to check amounts';
+  String get kitPreviewNoYield => 'You have the ingredients. Set servings to check amounts';
 
   @override
   String get kitPreviewReady => 'Ready with what you have';
@@ -1064,8 +1041,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mineSaved => 'Saved to your recipes.';
 
   @override
-  String get mineCuisineNeeded =>
-      'Enter a specific cuisine for the recipe, like “Egyptian.”';
+  String get mineCuisineNeeded => 'Enter a specific cuisine for the recipe, like “Egyptian.”';
 
   @override
   String get mineSaving => 'Saving…';
@@ -1122,8 +1098,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mineMinutesHint => 'min';
 
   @override
-  String get mineNutritionUnknown =>
-      'Nutrition won\'t be calculated for this recipe until its ingredients are linked to a source.';
+  String get mineNutritionUnknown => 'Nutrition won\'t be calculated for this recipe until its ingredients are linked to a source.';
 
   @override
   String get mineSearchIngredient => 'Search for an ingredient';
@@ -1219,15 +1194,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onbHealthConditions => 'Your health';
 
   @override
-  String get onbHealthNote =>
-      'Saved only in your profile. Not a substitute for your doctor.';
+  String get onbHealthNote => 'Saved only in your profile. Not a substitute for your doctor.';
 
   @override
   String get onbAvoidFoods => 'Foods you avoid';
 
   @override
-  String get onbAvoidNote =>
-      'We\'ll let you know if one shows up in a recipe. Check packaging yourself.';
+  String get onbAvoidNote => 'We\'ll let you know if one shows up in a recipe. Check packaging yourself.';
 
   @override
   String get onbHealthBloodPressure => 'Blood pressure';
@@ -1338,8 +1311,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planMonthTitle => 'Month plan';
 
   @override
-  String get planMonthCalcError =>
-      'Couldn\'t work out this plan. Check the meals and try again.';
+  String get planMonthCalcError => 'Couldn\'t work out this plan. Check the meals and try again.';
 
   @override
   String get planConflictTitle => 'Some days already have meals';
@@ -1349,10 +1321,8 @@ class AppLocalizationsEn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other:
-          '$count meals are already planned on these days. What should we do with them?',
-      one:
-          '1 meal is already planned on these days. What should we do with it?',
+      other: '$count meals are already planned on these days. What should we do with them?',
+      one: '1 meal is already planned on these days. What should we do with it?',
     );
     return '$_temp0';
   }
@@ -1400,15 +1370,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planFillEmptyDays => 'Fill empty days';
 
   @override
-  String get planWeekMenuHint =>
-      'This week repeats all month. You can put two meals in one slot, and we\'ll pick the cheaper one.';
+  String get planWeekMenuHint => 'This week repeats all month. You can put two meals in one slot, and we\'ll pick the cheaper one.';
 
   @override
   String get planOmitUnmeasured => 'Leave out items with no amount';
 
   @override
-  String get planOmitUnmeasuredHint =>
-      'Like “salt to taste”. If you turn this off, the cost stays unknown.';
+  String get planOmitUnmeasuredHint => 'Like “salt to taste”. If you turn this off, the cost stays unknown.';
 
   @override
   String get planPick => '+ Pick';
@@ -1443,20 +1411,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planRecordPrices => 'Add these prices';
 
   @override
-  String get planRecordPricesHint =>
-      'Your own price, from the last time you bought it. We don\'t guess prices.';
+  String get planRecordPricesHint => 'Your own price, from the last time you bought it. We don\'t guess prices.';
 
   @override
-  String get planUnresolvedUnits =>
-      'Some ingredients are stored in a unit that doesn\'t convert to the recipe\'s unit. Set the conversion on the stock page.';
+  String get planUnresolvedUnits => 'Some ingredients are stored in a unit that doesn\'t convert to the recipe\'s unit. Set the conversion on the stock page.';
 
   @override
   String planTruncated(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other:
-          'We only tried $count combinations of alternatives; there may be a cheaper one.',
+      other: 'We only tried $count combinations of alternatives; there may be a cheaper one.',
       one: 'We only tried 1 combination of alternatives; there may be a cheaper one.',
     );
     return '$_temp0';
@@ -1474,15 +1439,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planSavePrice => 'Save price';
 
   @override
-  String get planAddHereEmpty =>
-      'Add what you have here, and we\'ll suggest what to cook with it.';
+  String get planAddHereEmpty => 'Add what you have here, and we\'ll suggest what to cook with it.';
 
   @override
   String get planLeftovers => 'Leftovers';
 
   @override
-  String get planLeftoversEmpty =>
-      'No leftovers saved. When you cook and something\'s left, you\'ll find it here to warm up.';
+  String get planLeftoversEmpty => 'No leftovers saved. When you cook and something\'s left, you\'ll find it here to warm up.';
 
   @override
   String get planMyStock => 'My kitchen stock';
@@ -1519,8 +1482,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planWhatToCookToday => 'What are we cooking today?';
 
   @override
-  String get planPickRecipeHint =>
-      'Pick a recipe, and we\'ll show what your kitchen is missing before you start.';
+  String get planPickRecipeHint => 'Pick a recipe, and we\'ll show what your kitchen is missing before you start.';
 
   @override
   String get planPickRecipe => 'Pick a recipe';
@@ -1537,8 +1499,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planTableEmpty => 'The table is empty';
 
   @override
-  String get planTableEmptyHint =>
-      'Open the recipe book and pick a meal to see it here.';
+  String get planTableEmptyHint => 'Open the recipe book and pick a meal to see it here.';
 
   @override
   String get planRecipeBook => 'Recipe book';
@@ -1558,8 +1519,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planAllPlans => 'All plans';
 
   @override
-  String get planNoMealsPlanned =>
-      'No meals planned. Pick one from the recipe book.';
+  String get planNoMealsPlanned => 'No meals planned. Pick one from the recipe book.';
 
   @override
   String get planWelcome => 'Welcome to Sofra';
@@ -1570,15 +1530,13 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get planCookFromStockQuestion =>
-      'Cook something good from what you have';
+  String get planCookFromStockQuestion => 'Cook something good from what you have';
 
   @override
   String get planWhatCanICook => 'What can I cook with what I have?';
 
   @override
-  String get planWhatCanICookHint =>
-      'Ideas from your pantry, with amounts and what\'s missing. Nothing is taken off until you confirm you cooked.';
+  String get planWhatCanICookHint => 'Ideas from your pantry, with amounts and what\'s missing. Nothing is taken off until you confirm you cooked.';
 
   @override
   String get planDiscoverFromStock => 'Discover from what you have';
@@ -1636,8 +1594,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planTableWorthIt => 'A table worth gathering around';
 
   @override
-  String get planPickMealHint =>
-      'Pick a meal, and we\'ll show what\'s missing before you start.';
+  String get planPickMealHint => 'Pick a meal, and we\'ll show what\'s missing before you start.';
 
   @override
   String get planPickDishForTable => 'Pick a dish for the table';
@@ -1646,8 +1603,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planComingDays => 'The table in the coming days';
 
   @override
-  String get planNoDeductNote =>
-      'Picking a meal doesn\'t take anything from your stock. That happens once you confirm you\'re done cooking.';
+  String get planNoDeductNote => 'Picking a meal doesn\'t take anything from your stock. That happens once you confirm you\'re done cooking.';
 
   @override
   String get planMealLoadError => 'Couldn\'t load this meal\'s recipe.';
@@ -1690,8 +1646,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planBoughtMissing => 'Bought what\'s missing · Add to stock';
 
   @override
-  String get planMissingAdded =>
-      'Missing items added to stock in the amounts needed';
+  String get planMissingAdded => 'Missing items added to stock in the amounts needed';
 
   @override
   String get planRemoveMeal => 'Remove the meal from the table';
@@ -1755,20 +1710,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get priceGroupOther => 'Other';
 
   @override
-  String get priceLocationOff =>
-      'Location is off. Pick your area on the map or search for it.';
+  String get priceLocationOff => 'Location is off. Pick your area on the map or search for it.';
 
   @override
-  String get priceLocationDenied =>
-      'Location access wasn\'t allowed. Pick your area on the map or search for it.';
+  String get priceLocationDenied => 'Location access wasn\'t allowed. Pick your area on the map or search for it.';
 
   @override
-  String get priceNoAreaNearby =>
-      'We don\'t know an area near you. Pick one on the map.';
+  String get priceNoAreaNearby => 'We don\'t know an area near you. Pick one on the map.';
 
   @override
-  String get priceLocateFailed =>
-      'Couldn\'t find your location. Pick your area on the map or search for it.';
+  String get priceLocateFailed => 'Couldn\'t find your location. Pick your area on the map or search for it.';
 
   @override
   String priceAreaNowYours(String area) {
@@ -1791,8 +1742,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get priceMakeMyArea => 'Make it my area';
 
   @override
-  String get priceAreaInfo =>
-      'The area price is what people there paid in the last 60 days. It shows only when two or more homes share it.';
+  String get priceAreaInfo => 'The area price is what people there paid in the last 60 days. It shows only when two or more homes share it.';
 
   @override
   String get priceAreaFetchFailed => 'Couldn\'t load the area\'s prices.';
@@ -1836,12 +1786,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get priceSaved => 'Your price is saved';
 
   @override
-  String get priceSavedShared =>
-      'Your price is saved and shared with your area';
+  String get priceSavedShared => 'Your price is saved and shared with your area';
 
   @override
-  String get priceSavedShareFailed =>
-      'Your price is saved, but it couldn\'t be shared.';
+  String get priceSavedShareFailed => 'Your price is saved, but it couldn\'t be shared.';
 
   @override
   String get priceHint => 'Price';
@@ -1941,8 +1889,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profNoAllergies => 'No allergies';
 
   @override
-  String get profAllergiesInfo =>
-      'Shown as a name-only warning. Always check the ingredients yourself.';
+  String get profAllergiesInfo => 'Shown as a name-only warning. Always check the ingredients yourself.';
 
   @override
   String get profConditions => 'Health conditions';
@@ -1951,8 +1898,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profNoConditions => 'No conditions';
 
   @override
-  String get profConditionsInfo =>
-      'A reminder only. The app doesn\'t change recipes or give medical advice.';
+  String get profConditionsInfo => 'A reminder only. The app doesn\'t change recipes or give medical advice.';
 
   @override
   String get profCancel => 'Cancel';
@@ -1999,8 +1945,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profPm => 'PM';
 
   @override
-  String get profMealTimesIntro =>
-      'Set each meal\'s time and we\'ll remind you before it.';
+  String get profMealTimesIntro => 'Set each meal\'s time and we\'ll remind you before it.';
 
   @override
   String get profNoReminder => 'No reminder';
@@ -2025,15 +1970,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profRanOutTitle => 'When an ingredient runs out';
 
   @override
-  String get profRanOutSubtitle =>
-      'A notice after cooking if you used the last of it';
+  String get profRanOutSubtitle => 'A notice after cooking if you used the last of it';
 
   @override
   String get profChannelName => 'Sofra reminders';
 
   @override
-  String get profChannelDescription =>
-      'Meal times, leftovers and things that ran out';
+  String get profChannelDescription => 'Meal times, leftovers and things that ran out';
 
   @override
   String profReminderMealTitle(String slot, String minutes) {
@@ -2157,16 +2100,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addTitle => 'Add your shopping';
 
   @override
-  String get addReadFailed =>
-      'Couldn\'t read that. Check your connection, or type your purchases below.';
+  String get addReadFailed => 'Couldn\'t read that. Check your connection, or type your purchases below.';
 
   @override
-  String get addNothingFound =>
-      'No ingredients found here. Try a clearer photo, or type them.';
+  String get addNothingFound => 'No ingredients found here. Try a clearer photo, or type them.';
 
   @override
-  String get addCameraUnavailable =>
-      'The camera isn\'t available. Allow it in your phone settings.';
+  String get addCameraUnavailable => 'The camera isn\'t available. Allow it in your phone settings.';
 
   @override
   String get addPhotosFailed => 'Couldn\'t open your photos.';
@@ -2201,8 +2141,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addLineTooltip => 'Add line';
 
   @override
-  String get addSaveFailed =>
-      'Your purchases weren\'t saved. Check your connection and try again.';
+  String get addSaveFailed => 'Your purchases weren\'t saved. Check your connection and try again.';
 
   @override
   String addSavedNotice(int count) {
@@ -2280,8 +2219,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addScanTitle => 'Scan the product barcode';
 
   @override
-  String get addScanCameraOff =>
-      'The camera isn\'t available. Allow it in your phone settings, or type the number below.';
+  String get addScanCameraOff => 'The camera isn\'t available. Allow it in your phone settings, or type the number below.';
 
   @override
   String get addScanManualHint => 'Or type the number under the barcode';
@@ -2298,8 +2236,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get addScanWhich =>
-      'Which ingredient in your kitchen is this? We\'ll remember it next time.';
+  String get addScanWhich => 'Which ingredient in your kitchen is this? We\'ll remember it next time.';
 
   @override
   String get addScanSearchHint => 'Type the ingredient name (rice, milk, oil…)';
@@ -2392,8 +2329,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appRetrySave => 'Save again';
 
   @override
-  String get appLoadFailed =>
-      'Couldn\'t load your home\'s data. Nothing was deleted.';
+  String get appLoadFailed => 'Couldn\'t load your home\'s data. Nothing was deleted.';
 
   @override
   String get appTryAgain => 'Try again';
@@ -2461,12 +2397,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appMealFallback => 'Meal';
 
   @override
-  String get appSaveFull =>
-      'Your account\'s storage is full, so the change wasn\'t saved.';
+  String get appSaveFull => 'Your account\'s storage is full, so the change wasn\'t saved.';
 
   @override
-  String get appSaveFailedOne =>
-      'Your last change wasn\'t saved. Check your connection and save again before you leave.';
+  String get appSaveFailedOne => 'Your last change wasn\'t saved. Check your connection and save again before you leave.';
 
   @override
   String appSaveFailedMany(String count) {
@@ -2488,8 +2422,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appListSeparator => ', ';
 
   @override
-  String get appSessionOpenFailed =>
-      'Can\'t open your data right now. Check your connection and try again.';
+  String get appSessionOpenFailed => 'Can\'t open your data right now. Check your connection and try again.';
 
   @override
   String get appRetry => 'Retry';
@@ -2501,8 +2434,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appEnterEmailFirst => 'Enter your email first.';
 
   @override
-  String get appResetSent =>
-      'If this email has an account, you\'ll get a link to reset your password.';
+  String get appResetSent => 'If this email has an account, you\'ll get a link to reset your password.';
 
   @override
   String get appAuthNetwork => 'Check your internet connection and try again.';
@@ -2514,19 +2446,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appAuthWeakPassword => 'Choose a stronger password.';
 
   @override
-  String get appAuthEmailInUse =>
-      'This email already has an account. Try signing in.';
+  String get appAuthEmailInUse => 'This email already has an account. Try signing in.';
 
   @override
   String get appAuthInvalidEmail => 'Check how the email is written.';
 
   @override
-  String get appAuthSignUpUnavailable =>
-      'Creating an account isn\'t available right now. Try later.';
+  String get appAuthSignUpUnavailable => 'Creating an account isn\'t available right now. Try later.';
 
   @override
-  String get appAuthFailed =>
-      'Couldn\'t sign in. Check your email and password, or recover your account.';
+  String get appAuthFailed => 'Couldn\'t sign in. Check your email and password, or recover your account.';
 
   @override
   String get appRequestFailed => 'Couldn\'t finish that. Try again.';
@@ -2538,8 +2467,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appWelcome => 'Welcome to Sofra';
 
   @override
-  String get appSignInSubtitle =>
-      'Your home\'s ingredients and choices are kept in your account.';
+  String get appSignInSubtitle => 'Your home\'s ingredients and choices are kept in your account.';
 
   @override
   String get appEmailLabel => 'Email';
@@ -2592,8 +2520,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get appChallengeCookPlannedDetail =>
-      'Every planned meal cooked this week counts.';
+  String get appChallengeCookPlannedDetail => 'Every planned meal cooked this week counts.';
 
   @override
   String appChallengeDifferentTitle(String goal) {
@@ -2601,15 +2528,13 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get appChallengeDifferentDetail =>
-      'Each different recipe cooked this week counts once.';
+  String get appChallengeDifferentDetail => 'Each different recipe cooked this week counts once.';
 
   @override
   String get appChallengeNewTitle => 'Try 2 recipes for the first time';
 
   @override
-  String get appChallengeNewDetail =>
-      'A recipe never cooked in your kitchen before.';
+  String get appChallengeNewDetail => 'A recipe never cooked in your kitchen before.';
 
   @override
   String get appHouseMember => 'Household member';
@@ -2636,8 +2561,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get librarySection => 'Recipes on your device';
 
   @override
-  String get libraryInfo =>
-      'The recipe list is always on your device. A full recipe is kept once you open or save it, and saved ones also stay in your account even if the library drops them. New recipes arrive on their own, without an app update.';
+  String get libraryInfo => 'The recipe list is always on your device. A full recipe is kept once you open or save it, and saved ones also stay in your account even if the library drops them. New recipes arrive on their own, without an app update.';
 
   @override
   String get libraryOnDevice => 'On device';
@@ -2671,8 +2595,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get libraryUpdateFailed => 'Couldn\'t reach the library';
 
   @override
-  String get recipeNotOnDevice =>
-      'This recipe isn\'t on your device yet. Connect to the internet and try again.';
+  String get recipeNotOnDevice => 'This recipe isn\'t on your device yet. Connect to the internet and try again.';
 
   @override
   String get recipeRetry => 'Try again';

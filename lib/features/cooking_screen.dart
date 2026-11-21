@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
@@ -129,6 +131,15 @@ class _CookingScreenState extends State<CookingScreen> {
             color: Sofra.peach,
             ink: Sofra.warn,
           ),
+        if (s.minutes != null && s.minutes! > 0) ...[
+          const SizedBox(height: 12),
+          StepTimerControl(
+            key: ValueKey('timer-$step'),
+            timerKey: '${widget.meal.id}:$step',
+            minutes: s.minutes!,
+            stepNumber: step + 1,
+          ),
+        ],
         if (s.tip != null) ...[
           const SizedBox(height: 12),
           Text(s.tip!, style: TextStyle(color: Sofra.muted)),
@@ -479,6 +490,104 @@ class _ConfirmSheetState extends State<_ConfirmSheet> {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Start / pause / reset for one timed step. The timer itself lives on the
+/// controller, so it keeps running when the step or the screen changes.
+class StepTimerControl extends StatefulWidget {
+  const StepTimerControl({
+    super.key,
+    required this.timerKey,
+    required this.minutes,
+    required this.stepNumber,
+  });
+  final String timerKey;
+  final double minutes;
+  final int stepNumber;
+  @override
+  State<StepTimerControl> createState() => _StepTimerControlState();
+}
+
+class _StepTimerControlState extends State<StepTimerControl> {
+  Timer? _tick;
+
+  int get _seconds => (widget.minutes * 60).round();
+
+  @override
+  void initState() {
+    super.initState();
+    _tick = Timer.periodic(
+      const Duration(seconds: 1),
+      (_) => mounted ? setState(() {}) : null,
+    );
+  }
+
+  @override
+  void dispose() {
+    _tick?.cancel();
+    super.dispose();
+  }
+
+  static String _clock(int s) =>
+      '${(s ~/ 60).toString().padLeft(2, '0')}:${(s % 60).toString().padLeft(2, '0')}';
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+    final hub = SofraScope.controllerOf(context).stepTimers;
+    final key = widget.timerKey;
+    return ListenableBuilder(
+      listenable: hub,
+      builder: (context, _) {
+        final timer = hub.timer(key, _seconds);
+        final running = timer.runningSince != null && !timer.finished;
+        final fresh = !running && !timer.finished && timer.remaining == _seconds;
+        return Surface(
+          color: timer.finished ? Sofra.mint : Sofra.peach,
+          child: Row(
+            children: [
+              Icon(Icons.timer_outlined, color: Sofra.warn),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  _clock(timer.remaining),
+                  key: const ValueKey('step-timer-clock'),
+                  style: const TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.w700,
+                    fontFeatures: [FontFeature.tabularFigures()],
+                  ),
+                ),
+              ),
+              if (!timer.finished)
+                IconButton(
+                  key: ValueKey(running ? 'step-timer-pause' : 'step-timer-start'),
+                  tooltip: running ? t.stepTimerPause : t.stepTimerStart,
+                  icon: Icon(
+                    running ? Icons.pause_rounded : Icons.play_arrow_rounded,
+                  ),
+                  onPressed: () => running
+                      ? hub.pause(key, _seconds)
+                      : hub.start(
+                          key,
+                          _seconds,
+                          t.stepTimerDoneTitle,
+                          t.stepTimerDone('${widget.stepNumber}'),
+                        ),
+                ),
+              if (!fresh)
+                IconButton(
+                  key: const ValueKey('step-timer-reset'),
+                  tooltip: t.stepTimerReset,
+                  icon: const Icon(Icons.replay_rounded),
+                  onPressed: () => hub.reset(key, _seconds),
+                ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

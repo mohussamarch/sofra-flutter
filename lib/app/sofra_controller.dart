@@ -30,6 +30,7 @@ import '../domain/recipe_catalog.dart';
 import '../domain/servings_engine.dart';
 import 'look.dart';
 import 'reminders.dart';
+import 'step_timers.dart';
 import '../l10n/l10n.dart';
 import 'scope.dart' show mealSlots, slotLabel;
 
@@ -405,6 +406,7 @@ class SofraController extends ChangeNotifier {
   @override
   void dispose() {
     recipes.library?.removeListener(notifyListeners);
+    stepTimers.dispose();
     super.dispose();
   }
 
@@ -415,6 +417,9 @@ class SofraController extends ChangeNotifier {
 
   /// Phone notifications (silent in tests).
   final ReminderSink reminders;
+
+  /// Step timers that keep running when the cooking screen is left.
+  late final stepTimers = StepTimers(reminders);
 
   /// Shared kitchen and community; null when not signed in (local mode).
   final CommunityBackend? community;
