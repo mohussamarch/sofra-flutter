@@ -9,6 +9,7 @@ import 'package:tabkha_demo/features/dish_name_view.dart';
 import 'package:tabkha_demo/l10n/dish_names.g.dart';
 import 'package:tabkha_demo/l10n/l10n.dart';
 import 'package:tabkha_demo/main.dart';
+import 'package:tabkha_demo/ui/design.dart';
 
 import 'support/demo_flow.dart';
 
@@ -105,6 +106,102 @@ void main() {
     expect(dishes['sayadieh']!.nameEn, 'Sayadieh');
     // Ways with different names: the dish has no English name of its own.
     expect(dishes['fatteh']!.nameEn, isNull);
+  });
+
+  test(
+    'old English spellings still find the dish, and are never shown',
+    () async {
+      final repo = RecipeRepository(read: (p) => File(p).readAsString());
+      Future<List<String>> ids(String q) async => [
+        for (final r in await repo.search(query: q)) r['id'] as String,
+      ];
+      expect(await ids('Koshari'), contains('eg-koshari'));
+      expect(await ids('Stuffed Grape Leaves'), isNotEmpty);
+      expect(await ids('Shish Tawook'), isNotEmpty);
+      expect(await ids('Taameya'), contains('eg-taameya'));
+      // The shown name is the reviewed one, not the old spelling.
+      final rows = {
+        for (final r in await repo.retainedIndex) r['id'] as String: r,
+      };
+      expect(rows['eg-koshari']!['nameEn'], 'Koshary');
+      expect(dishNames['eg-koshari']!.also, ['Koshari']);
+    },
+  );
+
+  for (final english in [true, false]) {
+    testWidgets('the country tag replaces the cuisine tag '
+        '(${english ? 'English' : 'Arabic'})', (tester) async {
+      await _pumpApp(tester);
+      await completeOnboarding(tester);
+      SofraLook.notifier.value = SofraLook(
+        language: english ? AppLanguage.en : AppLanguage.ar,
+      );
+      await tester.pumpAndSettle();
+      await tapKey(tester, 'nav-recipes');
+      await _search(tester, english ? 'Bissara' : 'بصارة');
+
+      final country = english ? 'Egyptian' : 'مصري';
+      final card = find.byKey(const ValueKey('recipe-eg-bessara'));
+      expect(card, findsOneWidget);
+      final tag = find.byKey(const ValueKey('country-tag-eg-bessara'));
+      expect(
+        find.descendant(of: tag, matching: find.text(country)),
+        findsOneWidget,
+      );
+      // Paper (the recipe book) lists cuisine in a details line; cards use
+      // SoftTag. Either way the country is said once, by the tag.
+      final paper = find
+          .ancestor(of: card, matching: find.byType(Paper))
+          .evaluate()
+          .isNotEmpty;
+      expect(
+        find.descendant(of: card, matching: find.text(country)),
+        findsOneWidget,
+        reason: paper ? 'paper' : 'card',
+      );
+      expect(
+        find.descendant(of: card, matching: find.textContaining(country)),
+        findsOneWidget,
+      );
+
+      await tester.tap(card);
+      await tester.pumpAndSettle();
+      final title = find.byKey(const ValueKey('recipe-title'));
+      expect(
+        find.descendant(of: title, matching: find.text(country)),
+        findsOneWidget,
+      );
+      expect(
+        find.byWidgetPredicate((w) => w is SoftTag && w.text == country),
+        findsOneWidget,
+        reason: 'only the country tag, no plain cuisine tag',
+      );
+      expect(
+        find.byWidgetPredicate(
+          (w) => w is SoftTag && w.text == country && w.leading != null,
+        ),
+        findsOneWidget,
+      );
+    });
+  }
+
+  testWidgets('the country tag renders on the book paper', (tester) async {
+    SofraLook.notifier.value = const SofraLook(language: AppLanguage.en);
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: Paper(
+            child: DishTitle(
+              'Bissara',
+              recipeId: 'ma-bessara',
+              style: Sofra.heading(18),
+            ),
+          ),
+        ),
+      ),
+    );
+    expect(find.text('Moroccan'), findsOneWidget);
+    expect(find.byType(CountryNameTag), findsOneWidget);
   });
 
   testWidgets('a shared name shows its country tag; others show none', (

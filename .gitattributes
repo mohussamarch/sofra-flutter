@@ -3,3 +3,6 @@
 data/** -text whitespace=cr-at-eol
 
 /research/nutrition/usda/retn06.txt -text whitespace=cr-at-eol
+
+# Checked byte for byte against an LF build (tool/recipes/build-dishes.mjs --check).
+recipes/data/*.json text eol=lf

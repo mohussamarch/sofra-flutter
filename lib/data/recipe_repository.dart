@@ -271,6 +271,8 @@ class RecipeRepository {
           Map<String, dynamic>.unmodifiable({
             ...e.value,
             'id': e.key,
+            // The reviewed English name, as for catalog rows.
+            if (DishName.of(e.key) case final name?) 'nameEn': name.en,
             'pinnedOnly': true,
           }),
     ];
@@ -306,8 +308,11 @@ class RecipeRepository {
       return true;
     }
 
+    // Old English spellings of reviewed names still find the dish.
     bool named(Map<String, dynamic> r) => _normalize(
-      '${r['name']} ${r['nameEn'] ?? ''} ${((r['tags'] as List?) ?? const []).join(' ')}',
+      '${r['name']} ${r['nameEn'] ?? ''} '
+      '${DishName.of(r['id'])?.also.join(' ') ?? ''} '
+      '${((r['tags'] as List?) ?? const []).join(' ')}',
     ).contains(needle);
     final rows = (await index).where(passes).toList();
     final pinned = (await pinnedOnlyRows())

@@ -7,6 +7,15 @@
 // name, its pronunciation (only for transliterated names) and, when the
 // same English name belongs to dishes of several countries, the country
 // word shown as a tag next to the name.
+//
+// The entry's `displayEn` ("Egyptian Sayadieh") is deliberately not used:
+// resolvedCollisions decides "country tag", so the country is shown as the
+// tag beside the plain name, and writing it in the name too would say it
+// twice.
+//
+// Old and rejected spellings (`enCurrent` without its brackets, and
+// spellingDecisions[].rejected) become hidden search words, so a reader who
+// types "Koshari" or "Stuffed Grape Leaves" still finds the dish.
 import 'dart:convert';
 import 'dart:io';
 
@@ -21,6 +30,11 @@ void main(List<String> args) {
     final en = _text(e['en'], 'en of ${e['id']}');
     uses[en] = (uses[en] ?? 0) + 1;
   }
+
+  final rejected = <String, List<String>>{
+    for (final d in (json['spellingDecisions'] as List? ?? const []))
+      d['id'] as String: [for (final r in d['rejected'] as List) '$r'],
+  };
 
   final ids = <String>{};
   final out = StringBuffer()
@@ -38,6 +52,18 @@ void main(List<String> args) {
     final say = e['pronunciation'];
     final parts = [_dart(en)];
     if (say != null) parts.add('say: ${_dart(_text(say, 'say of $id'))}');
+    final also = <String>{};
+    for (final old in [e['enCurrent'], ...?rejected[id]]) {
+      if (old is! String) continue;
+      final words = old.replaceAll(RegExp(r'[()]'), ' ').trim();
+      final plain = words.replaceAll(RegExp(r'\s+'), ' ');
+      if (plain.isNotEmpty && plain.toLowerCase() != en.toLowerCase()) {
+        also.add(plain);
+      }
+    }
+    if (also.isNotEmpty) {
+      parts.add('also: [${also.map(_dart).join(', ')}]');
+    }
     if (uses[en]! > 1) {
       final country = e['country'];
       if (country is! Map) {

@@ -511,10 +511,20 @@ class ChoiceTile extends StatelessWidget {
 }
 
 class SoftTag extends StatelessWidget {
-  const SoftTag(this.text, {super.key, this.color, this.ink, this.icon});
+  const SoftTag(
+    this.text, {
+    super.key,
+    this.color,
+    this.ink,
+    this.icon,
+    this.leading,
+  });
   final String text;
   final Color? color, ink;
   final IconData? icon;
+
+  /// A small widget before the text (a flag), in place of [icon].
+  final Widget? leading;
   @override
   Widget build(BuildContext context) {
     final ink = this.ink ?? Sofra.greenDark;
@@ -527,7 +537,10 @@ class SoftTag extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (icon != null) ...[
+          if (leading != null) ...[
+            leading!,
+            const SizedBox(width: 4),
+          ] else if (icon != null) ...[
             Icon(icon, size: 14, color: ink),
             const SizedBox(width: 4),
           ],

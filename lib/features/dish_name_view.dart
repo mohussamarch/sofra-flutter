@@ -43,7 +43,11 @@ class DishTitle extends StatelessWidget {
               key: ValueKey('country-tag-$recipeId'),
             ),
           ),
-        if (say != null) PronunciationInfo(name!),
+        if (say != null)
+          PronunciationInfo(
+            name!,
+            lineHeight: (style.fontSize ?? 14) * (style.height ?? 1.3),
+          ),
       ],
     );
   }
@@ -56,37 +60,21 @@ class CountryNameTag extends StatelessWidget {
   final DishName name;
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsetsDirectional.fromSTEB(4, 3, 10, 3),
-      decoration: BoxDecoration(
-        color: Sofra.okTint,
-        borderRadius: BorderRadius.circular(Sofra.r12),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CuisineFlag(name.countryAr!, size: 16),
-          const SizedBox(width: 6),
-          Text(
-            name.country!,
-            style: TextStyle(
-              color: Sofra.ok,
-              fontSize: 12,
-              fontWeight: FontWeight.w800,
-              height: 1.2,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  Widget build(BuildContext context) => SoftTag(
+    name.country!,
+    color: Sofra.okTint,
+    ink: Sofra.ok,
+    leading: CuisineFlag(name.countryAr!, size: 14),
+  );
 }
 
 /// An (i) after a dish name: a tap shows how to say it.
 class PronunciationInfo extends StatelessWidget {
-  const PronunciationInfo(this.name, {super.key});
+  const PronunciationInfo(this.name, {super.key, this.lineHeight = 44});
   final DishName name;
+
+  /// Height of the tap area: the title's line height.
+  final double lineHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -120,14 +108,23 @@ class PronunciationInfo extends StatelessWidget {
       ),
       textAlign: TextAlign.start,
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+      // A border and a soft lift keep the box apart from the page in dark
+      // mode, where inverse is close to the surfaces.
       decoration: BoxDecoration(
         color: Sofra.inverse,
         borderRadius: BorderRadius.circular(Sofra.r12),
+        border: Border.all(color: Sofra.line),
+        boxShadow: Sofra.shadow(),
       ),
       textStyle: TextStyle(color: Sofra.onInverse, height: 1.5),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Icon(Icons.info_outline_rounded, size: 20, color: Sofra.muted),
+      // 44px wide and one title line high, so the (i) is easy to hit but
+      // does not push the description down.
+      child: SizedBox(
+        width: 44,
+        height: lineHeight,
+        child: Center(
+          child: Icon(Icons.info_outline_rounded, size: 20, color: Sofra.muted),
+        ),
       ),
     );
   }

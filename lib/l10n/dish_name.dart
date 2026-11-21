@@ -3,7 +3,13 @@ import 'l10n.dart';
 
 /// A catalog dish's reviewed English name (data/dish-names/glossary.json).
 class DishName {
-  const DishName(this.en, {this.say, this.countryEn, this.countryAr});
+  const DishName(
+    this.en, {
+    this.say,
+    this.also = const [],
+    this.countryEn,
+    this.countryAr,
+  });
 
   /// The English name: the most used verified spelling.
   final String en;
@@ -11,6 +17,9 @@ class DishName {
   /// How to say the transliterated words, stressed syllable in capitals;
   /// null when the name is plain English.
   final String? say;
+
+  /// Old and rejected English spellings: searched, never shown.
+  final List<String> also;
 
   /// Set only when dishes of several countries share [en]: the country
   /// word shown as a small tag next to the name.
