@@ -16,6 +16,17 @@ const servingsTablesJson = r'''{
    "role": "starch",
    "basis": "Owner anchor: a full Egyptian home plate as the main dish"
   },
+  "pastaCooked": {
+   "per": 300,
+   "unit": "g",
+   "band": [
+    180,
+    450
+   ],
+   "cupG": 140,
+   "role": "starch",
+   "basis": "Already cooked pasta or noodles; dry pasta doubles in weight"
+  },
   "noodlesDry": {
    "per": 120,
    "unit": "g",
@@ -37,6 +48,17 @@ const servingsTablesJson = r'''{
    "cupG": 200,
    "role": "starch",
    "basis": "About 3/4 cup raw; 1 kg feeds 6-7 in kabsa or mandi"
+  },
+  "riceCooked": {
+   "per": 250,
+   "unit": "g",
+   "band": [
+    150,
+    400
+   ],
+   "cupG": 170,
+   "role": "starch",
+   "basis": "Already cooked rice, about 1.5 cups a person; raw rice swells about 2.5 times"
   },
   "bulgur": {
    "per": 120,
@@ -70,6 +92,17 @@ const servingsTablesJson = r'''{
    "cupG": 180,
    "role": "starch",
    "basis": "Swells more than rice"
+  },
+  "grainCooked": {
+   "per": 250,
+   "unit": "g",
+   "band": [
+    150,
+    400
+   ],
+   "cupG": 180,
+   "role": "starch",
+   "basis": "Already cooked bulgur, freekeh or couscous"
   },
   "legumeDry": {
    "per": 75,
@@ -307,6 +340,17 @@ const servingsTablesJson = r'''{
    "role": "batch",
    "basis": "Cream cheese, kunafa or phyllo pastry, biscuits, dates, chocolate: only in desserts"
   },
+  "oats": {
+   "per": 40,
+   "unit": "g",
+   "band": [
+    25,
+    80
+   ],
+   "cupG": 90,
+   "role": "batch",
+   "basis": "Rolled oats: a bowl of porridge or a few bars; only in desserts"
+  },
   "milkDessert": {
    "per": 180,
    "unit": "ml",
@@ -328,6 +372,51 @@ const servingsTablesJson = r'''{
    "cupG": 240,
    "role": "liquid",
    "basis": "One bowl after reduction"
+  },
+  "soupVeg": {
+   "per": 150,
+   "unit": "g",
+   "band": [
+    80,
+    250
+   ],
+   "cupG": 150,
+   "pieceG": 150,
+   "role": "veg",
+   "basis": "Vegetables, potatoes or canned beans in one bowl of soup"
+  },
+  "soupLegume": {
+   "per": 60,
+   "unit": "g",
+   "band": [
+    35,
+    100
+   ],
+   "cupG": 190,
+   "role": "starch",
+   "basis": "Dry lentils or beans in one bowl of soup"
+  },
+  "soupStarch": {
+   "per": 60,
+   "unit": "g",
+   "band": [
+    30,
+    120
+   ],
+   "cupG": 180,
+   "role": "starch",
+   "basis": "Dry rice, noodles, pasta or grains in one bowl of soup"
+  },
+  "soupProtein": {
+   "per": 120,
+   "unit": "g",
+   "band": [
+    60,
+    200
+   ],
+   "pieceG": 150,
+   "role": "protein",
+   "basis": "Meat, chicken or fish in one bowl of soup"
   },
   "drink": {
    "per": 250,
@@ -388,7 +477,15 @@ const servingsTablesJson = r'''{
   "piecePattern": "حب|قطع|دجاج|سمك|بيض|فخذ|جناح|صدر|فيليه|عدد|رأس|علب|عبوة|piece|whole|can",
   "lineIdPattern": "-(i|ing-?)[0-9]+$",
   "genericCupG": 240,
-  "genericPieceG": 100
+  "genericPieceG": 100,
+  "dustPattern": "^(?!.*(مع زيادة|مع المزيد|وزيادة|والمزيد|plus more|plus extra|and more)).*(للرش|للتغبير|للفرد|للتلبيس|dusting)",
+  "servingPattern": "للتقديم|للتزيين|للتزين|حسب الرغبة|عند التقديم|المقدار غير محدد|for serving|to serve|for garnish|garnish",
+  "pieceSize": [
+   [
+    "(?<!(مكعبات|قطع|شرائح|أجزاء|اجزاء|cubes|pieces|dice) )(صغير|صغيرة|صغار|small)|baby|mini",
+    0.7
+   ]
+  ]
  },
  "rules": {
   "driverMinPeople": 0.5,
@@ -396,6 +493,10 @@ const servingsTablesJson = r'''{
    "2": 0.7,
    "3": 0.55
   },
+  "sharedBowlKinds": [
+   "soup",
+   "drink"
+  ],
   "clamp": [
    1,
    20
@@ -429,7 +530,19 @@ const servingsTablesJson = r'''{
   "kindScale": {
    "side": 0.5
   },
-  "mappingGapMappedShare": 0.6
+  "mappingGapMappedShare": 0.6,
+  "unsourcedMaxPeople": {
+   "main": {
+    "low": 8,
+    "medium": 12,
+    "high": 16
+   },
+   "dessert": {
+    "low": 14,
+    "medium": 16,
+    "high": 20
+   }
+  }
  },
  "cupG": {
   "basmati-rice": 190,
@@ -1040,7 +1153,7 @@ const servingsTablesJson = r'''{
   "filling-meat": "meatBoneless",
   "fish": "fish",
   "fish-stock": "soupLiquid",
-  "fiw650-50297-i1": "dessertBase",
+  "fiw650-50297-i1": "oats",
   "fiw650-50319-i0": "saladVeg",
   "fiw650-50500-i11": "eggsMain",
   "fiw650-50500-i12": "soupLiquid",
@@ -1149,7 +1262,7 @@ const servingsTablesJson = r'''{
   "fiw650-56698-i2": "eggsMain",
   "fiw650-56698-i3": "flourBread",
   "fiw650-56698-i4": "soupLiquid",
-  "fiw650-56698-i6": "dessertBase",
+  "fiw650-56698-i6": "oats",
   "fiw650-56999-i6": "soupLiquid",
   "fiw650-56999-i8": "flourBread",
   "fiw650-56999-i9": "chickenBoneIn",
@@ -1160,7 +1273,7 @@ const servingsTablesJson = r'''{
   "fiw650-57629-i7": "chickenWhole",
   "fiw650-57843-i0": "flourBread",
   "fiw650-57843-i1": "flourBread",
-  "fiw650-57843-i4": "dessertBase",
+  "fiw650-57843-i4": "oats",
   "fiw650-57843-i7": "soupLiquid",
   "fiw650-58254-i0": "flourBread",
   "fiw650-58254-i13": "meatBoneless",
@@ -1239,7 +1352,7 @@ const servingsTablesJson = r'''{
   "mushrooms": "vegMain",
   "mussels": "seafood",
   "noodles": "noodlesDry",
-  "oats": "dessertBase",
+  "oats": "oats",
   "octopus": "seafood",
   "okra": "vegMain",
   "pasta": "pastaDry",
@@ -3699,8 +3812,8 @@ const servingsTablesJson = r'''{
   "رز نيئ": "riceRaw",
   "رز ياسمين": "riceRaw",
   "رقائق الجلاش": "dessertRich",
-  "رقائق الشوفان": "dessertBase",
-  "رقائق شوفان": "dessertBase",
+  "رقائق الشوفان": "oats",
+  "رقائق شوفان": "oats",
   "رقائق شوكولاتة": "dessertRich",
   "رقائق فيلو": "dessertRich",
   "رقائق لازانيا": "pastaDry",
@@ -3757,8 +3870,8 @@ const servingsTablesJson = r'''{
   "شوربة سمك": "soupLiquid",
   "شوربة فراخ": "soupLiquid",
   "شوربة لحمة": "soupLiquid",
-  "شوفان": "dessertBase",
-  "شوفان ملفوف": "dessertBase",
+  "شوفان": "oats",
+  "شوفان ملفوف": "oats",
   "شوكولاتة": "dessertRich",
   "شوكولاتة بالحليب": "dessertRich",
   "شوكولاتة خام": "dessertRich",
@@ -4998,7 +5111,7 @@ const servingsTablesJson = r'''{
   "يوسف أفندي",
   "يوسفي"
  ],
- "deny": "مسحوق|بودرة|powder|بهار|زيت|oil|cube|مكعب|صلصة|صوص|sauce|خل|vinegar|نشا|starch|خميرة|yeast|baking|معجون|paste|مرقة مكعب|bouillon|عصير|juice|extract|essence|سوداني|peanut|حليب جوز|لبن جوز|coconut milk|coconut cream|كريمة جوز",
+ "deny": "مسحوق|بودرة|powder|بهار|زيت|oil|cube|مكعب|صلصة|صوص|sauce|خل|vinegar|نشا|starch|خميرة|yeast|baking|معجون|paste|مرقة مكعب|bouillon|عصير|juice|extract|essence|سوداني|peanut|حليب جوز|لبن جوز|coconut milk|coconut cream|كريمة جوز|نبيذ|wine|ساكي|sake|شاوشينغ|shaoxing|ميرين|mirin",
  "keywords": [
   [
    "كبد|كبدة|liver",
@@ -5093,6 +5206,10 @@ const servingsTablesJson = r'''{
    "flourBread"
   ],
   [
+   "شوفان|\\boats?\\b",
+   "oats"
+  ],
+  [
    "سميد|semolina",
    "dessertBase"
   ],
@@ -5106,6 +5223,60 @@ const servingsTablesJson = r'''{
   ]
  ],
  "refine": [
+  [
+   "خضار|خضروات|خضراوات|vegetable|مشكل|مجمد|frozen|فول أخضر|فول اخضر|green fava|بسلة|بازلاء|\\bpeas\\b",
+   "vegMain",
+   [
+    "legumeDry"
+   ]
+  ],
+  [
+   "(?<!غير |un)(مطهو|مطهوة|مطبوخ|مطبوخة|مسلوق|مسلوقة|cooked|boiled)|leftover|بايت|مدمس|معلب|معلبة|canned|tinned",
+   "legumeCanned",
+   [
+    "legumeDry"
+   ]
+  ],
+  [
+   "(?<!غير |un)(مطهو|مطهوة|مطبوخ|مطبوخة|مسلوق|مسلوقة|cooked|boiled)|leftover|بايت|steamed",
+   "riceCooked",
+   [
+    "riceRaw"
+   ]
+  ],
+  [
+   "(?<!غير |un)(مطهو|مطهوة|مطبوخ|مطبوخة|مسلوق|مسلوقة|cooked|boiled)|leftover|بايت",
+   "pastaCooked",
+   [
+    "pastaDry",
+    "noodlesDry"
+   ]
+  ],
+  [
+   "(?<!غير |un)(مطهو|مطهوة|مطبوخ|مطبوخة|مسلوق|مسلوقة|cooked|boiled)|leftover|بايت",
+   "grainCooked",
+   [
+    "bulgur",
+    "freekeh",
+    "couscous"
+   ]
+  ],
+  [
+   "سمك|تراوت|سلمون|بلطي|قاروص|دنيس|هامور|بوري|سردين|fish|trout|salmon|\\bcod\\b|tilapia|snapper",
+   "fish",
+   [
+    "meatBoneless",
+    "meatBoneIn",
+    "mince"
+   ]
+  ],
+  [
+   "نيئ|طازج|fresh|raw|baby",
+   "vegMain",
+   [
+    "leafyMain"
+   ]
+  ],
   [
    "مفروم|مفرومة|كفتة|كفته|minced|ground (beef|lamb|meat|turkey|pork|chicken|veal)",
    "mince",
@@ -5203,7 +5374,10 @@ const servingsTablesJson = r'''{
    "veg"
   ],
   "soup": [
-   "liquid"
+   "liquid",
+   "veg",
+   "starch",
+   "protein"
   ],
   "drink": [
    "liquid"

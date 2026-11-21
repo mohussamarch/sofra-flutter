@@ -19,7 +19,7 @@
     "eggplant": "vegMain", "zucchini": "vegMain", "okra": "vegMain", "green-beans": "vegMain", "cauliflower": "vegMain", "peas": "vegMain", "cabbage": "vegMain", "pumpkin": "vegMain", "mushrooms": "vegMain", "broccoli": "vegMain", "artichoke": "vegMain",
     "molokhia": "leafyMain", "spinach": "leafyMain", "chard": "leafyMain", "grape-leaves": "leafyMain",
     "flour": "flourBread", "self-raising-flour": "flourBread",
-    "semolina": "dessertBase", "oats": "dessertBase",
+    "semolina": "dessertBase", "oats": "oats",
     "cream-cheese": "dessertRich", "mascarpone": "dessertRich", "phyllo": "dessertRich", "puff-pastry": "dessertRich", "dates": "dessertRich", "chocolate": "dessertRich", "dark-chocolate": "dessertRich", "desiccated-coconut": "dessertRich", "condensed-milk": "dessertRich",
     "milk": "milkDessert",
     "water": "soupLiquid", "warm-water": "soupLiquid", "broth": "soupLiquid", "chicken-stock": "soupLiquid", "beef-stock": "soupLiquid", "vegetable-stock": "soupLiquid", "fish-stock": "soupLiquid",
@@ -30,6 +30,13 @@
     "أضلاع لحم بقر قصيرة": "meatBoneIn", "ضلوع بقري قصيرة": "meatBoneIn"
   },
   "refine": [
+    ["خضار|خضروات|خضراوات|vegetable|مشكل|مجمد|frozen|فول أخضر|فول اخضر|green fava|بسلة|بازلاء|\\bpeas\\b", "vegMain", ["legumeDry"]],
+    ["(?<!غير |un)(مطهو|مطهوة|مطبوخ|مطبوخة|مسلوق|مسلوقة|cooked|boiled)|leftover|بايت|مدمس|معلب|معلبة|canned|tinned", "legumeCanned", ["legumeDry"]],
+    ["(?<!غير |un)(مطهو|مطهوة|مطبوخ|مطبوخة|مسلوق|مسلوقة|cooked|boiled)|leftover|بايت|steamed", "riceCooked", ["riceRaw"]],
+    ["(?<!غير |un)(مطهو|مطهوة|مطبوخ|مطبوخة|مسلوق|مسلوقة|cooked|boiled)|leftover|بايت", "pastaCooked", ["pastaDry", "noodlesDry"]],
+    ["(?<!غير |un)(مطهو|مطهوة|مطبوخ|مطبوخة|مسلوق|مسلوقة|cooked|boiled)|leftover|بايت", "grainCooked", ["bulgur", "freekeh", "couscous"]],
+    ["سمك|تراوت|سلمون|بلطي|قاروص|دنيس|هامور|بوري|سردين|fish|trout|salmon|\\bcod\\b|tilapia|snapper", "fish", ["meatBoneless", "meatBoneIn", "mince"]],
+    ["نيئ|طازج|fresh|raw|baby", "vegMain", ["leafyMain"]],
     ["مفروم|مفرومة|كفتة|كفته|minced|ground (beef|lamb|meat|turkey|pork|chicken|veal)","mince",["meatBoneless","meatBoneIn","chickenWhole","chickenBoneless","chickenBoneIn"]],
     ["(?<!(بدون|منزوع|منزوعة|مخلي|مخلية|خالي|خالية) ?(من )?(ال)?)(عظم|عظام)|بالعظم|أضلاع|اضلاع|ضلوع|ريش|موزة|كوارع|شقف|\bbone(?!less)|bone-in|ribs|shank|chops","meatBoneIn",["meatBoneless"]],
     ["أفخاذ|افخاذ|وراك|أوراك|أجنحة|اجنحة|دبابيس|دبوس|thigh|wing|drumstick|leg quarter", "chickenBoneIn", ["chickenWhole"]],
@@ -43,7 +50,7 @@
     ["كوسة|كوسا|كوسي|كوسى|zucchini|courgette", 150]
   ],
   "rawOverrides": { "meat": "meatBoneless", "lamb-meat": "meatBoneless", "beef-meat": "meatBoneless" },
-  "deny": "مسحوق|بودرة|powder|بهار|زيت|oil|cube|مكعب|صلصة|صوص|sauce|خل|vinegar|نشا|starch|خميرة|yeast|baking|معجون|paste|مرقة مكعب|bouillon|عصير|juice|extract|essence|سوداني|peanut|حليب جوز|لبن جوز|coconut milk|coconut cream|كريمة جوز",
+  "deny": "مسحوق|بودرة|powder|بهار|زيت|oil|cube|مكعب|صلصة|صوص|sauce|خل|vinegar|نشا|starch|خميرة|yeast|baking|معجون|paste|مرقة مكعب|bouillon|عصير|juice|extract|essence|سوداني|peanut|حليب جوز|لبن جوز|coconut milk|coconut cream|كريمة جوز|نبيذ|wine|ساكي|sake|شاوشينغ|shaoxing|ميرين|mirin",
   "keywords": [
     ["كبد|كبدة|liver", "liver"],
     ["مكرونة|معكرونة|اسباجيتي|سباغيتي|لازانيا|pasta|spaghetti|macaroni|fettuccine|linguine|penne", "pastaDry"],
@@ -68,6 +75,7 @@
     ["^بيض|egg", "eggsMain"],
     ["جبن كريمي|جبنة كريمي|جبنة كريم|كريم تشيز|cream cheese|ماسكاربوني|mascarpone|كنافة|كنافه|kunafa|knafeh|kataifi|بسكويت|biscuit|graham|فيلو|phyllo|filo|تمر(?! هندي)|عجوة|\bdates\b|شوكولات|chocolate|جوز هند|جوز الهند|coconut|حليب مكثف|لبن مكثف|condensed", "dessertRich"],
     ["دقيق|طحين|flour", "flourBread"],
+    ["شوفان|\\boats?\\b", "oats"],
     ["سميد|semolina", "dessertBase"],
     ["حليب|^لبن|milk", "milkDessert"],
     ["مرق|^ماء|مياه|^مية|stock|broth|water", "soupLiquid"]
@@ -85,7 +93,7 @@
   "defaultKind": "main",
   "priority": {
     "main": ["protein", "starch", "veg"],
-    "soup": ["liquid"],
+    "soup": ["liquid", "veg", "starch", "protein"],
     "drink": ["liquid"],
     "dessert": ["batch", "liquid", "starch"],
     "bread": ["batch"],

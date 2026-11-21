@@ -830,6 +830,24 @@ abstract class AppLocalizations {
   /// **'بناءً على المكونات الأساسية معًا: {list}.'**
   String servingsInfoBasisMany(String list);
 
+  /// No description provided for @servingsInfoShared.
+  ///
+  /// In ar, this message translates to:
+  /// **'يأخذ كل فرد جزءًا من كلٍّ منها.'**
+  String get servingsInfoShared;
+
+  /// No description provided for @servingsInfoEstimated.
+  ///
+  /// In ar, this message translates to:
+  /// **'{item} (نحو {weight})'**
+  String servingsInfoEstimated(String item, String weight);
+
+  /// No description provided for @detailServingsScaled.
+  ///
+  /// In ar, this message translates to:
+  /// **'الكميات معدّلة من {count} إلى {people}'**
+  String detailServingsScaled(int count, int people);
+
   /// No description provided for @servingsInfoApply.
   ///
   /// In ar, this message translates to:

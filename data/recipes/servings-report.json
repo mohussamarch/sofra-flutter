@@ -6,36 +6,36 @@
   "candidates": 142,
   "sourceStates": 457,
   "sourceMissing": 474,
-  "computed": 595,
-  "computedWithoutSource": 260,
-  "withEffectiveServings": 717,
-  "withoutServings": 214,
-  "medianSourceToComputed": 1.11
+  "computed": 577,
+  "computedWithoutSource": 237,
+  "withEffectiveServings": 694,
+  "withoutServings": 237,
+  "medianSourceToComputed": 1.1
  },
  "finalSource": {
-  "computed, no source value": 260,
-  "computed, source value rejected": 8,
-  "nothing": 214,
-  "plausible source value": 284,
-  "source kept (engine low confidence)": 11,
-  "source kept (engine medium confidence)": 32,
-  "source only (engine found no driver)": 122
+  "computed, no source value": 237,
+  "computed, source value rejected": 4,
+  "nothing": 237,
+  "plausible source value": 296,
+  "source kept (engine low confidence)": 5,
+  "source kept (engine medium confidence)": 35,
+  "source only (engine found no driver)": 117
  },
  "confidence": {
-  "high": 89,
-  "low": 96,
-  "medium": 410,
-  "none": 336
+  "high": 65,
+  "low": 72,
+  "medium": 440,
+  "none": 354
  },
  "distribution": {
-  "2": 66,
-  "3": 147,
-  "4": 113,
-  "5": 90,
-  "6": 53,
-  "7": 45,
-  "8": 21,
-  "9-20": 60
+  "2": 58,
+  "3": 138,
+  "4": 119,
+  "5": 77,
+  "6": 58,
+  "7": 55,
+  "8": 20,
+  "9-20": 52
  },
  "kinds": {
   "base": 16,
@@ -49,14 +49,15 @@
   "soup": 88
  },
  "mismatchReasons": {
-  "sourceInflated": 8
+  "sourceInflated": 4
  },
  "noValueReasons": {
-  "driverTooSmall": 46,
+  "driverTooSmall": 40,
   "noDriverIngredient": 40,
-  "noMeasuredDriver": 160,
+  "noMeasuredDriver": 144,
   "notApplicable": 15,
-  "tooUncertain": 75
+  "tooUncertain": 87,
+  "unmeasuredDriver": 28
  },
  "mismatches": [
   {
@@ -68,10 +69,10 @@
    "computed": 4,
    "confidence": "high",
    "reason": "sourceInflated",
-   "impliedPerPerson": 52.7,
+   "impliedPerPerson": 44.9,
    "drivers": [
     "mince:beef=454g",
-    "vegMain:eggplant=750g"
+    "vegMain:eggplant=525g"
    ]
   },
   {
@@ -83,10 +84,10 @@
    "computed": 4,
    "confidence": "high",
    "reason": "sourceInflated",
-   "impliedPerPerson": 52.7,
+   "impliedPerPerson": 44.9,
    "drivers": [
     "mince:beef=454g",
-    "vegMain:eggplant=750g"
+    "vegMain:eggplant=525g"
    ]
   },
   {
@@ -105,52 +106,6 @@
    ]
   },
   {
-   "id": "bc-tajine",
-   "file": "recipes/data/tunisian.json",
-   "name": "طاجين تونسي",
-   "catalog": true,
-   "source": 12,
-   "computed": 5,
-   "confidence": "high",
-   "reason": "sourceInflated",
-   "impliedPerPerson": 0.9,
-   "drivers": [
-    "chickenBoneless:bc-tajine-ing-1=454g",
-    "eggsMain:bc-tajine-ing-6=8count",
-    "potatoMain:bc-tajine-ing-3=200g"
-   ]
-  },
-  {
-   "id": "fiw650-51916",
-   "file": "recipes/data/italian.json",
-   "name": "يخنة الفاصولياء والسجق الإيطالية",
-   "catalog": true,
-   "source": 6,
-   "computed": 3,
-   "confidence": "high",
-   "reason": "sourceInflated",
-   "impliedPerPerson": 63.5,
-   "drivers": [
-    "mince:fiw650-51916-i0=454g",
-    "vegMain:fiw650-51916-i9=150g"
-   ]
-  },
-  {
-   "id": "lg-galayet-bandora-lahma",
-   "file": "recipes/data/jordanian.json",
-   "name": "قلاية بندورة باللحمة",
-   "catalog": true,
-   "source": 4,
-   "computed": 2,
-   "confidence": "high",
-   "reason": "sourceInflated",
-   "impliedPerPerson": 80.5,
-   "drivers": [
-    "meatBoneless:beef=300g",
-    "potatoMain:potato=200g"
-   ]
-  },
-  {
    "id": "fi650-56111",
    "file": "recipes/data/moroccan.json",
    "name": "خضروات مغربية متبلة مع الكسكس",
@@ -164,21 +119,6 @@
     "couscous:fi650-56111-i13=270g",
     "potatoMain:fi650-56111-i7=200g",
     "vegMain:fi650-56111-i10=300g"
-   ]
-  },
-  {
-   "id": "lg-galayet-bandora-lahma",
-   "file": "data/recipes/candidates-20261026/levant-gulf.json",
-   "name": "قلاية بندورة باللحمة",
-   "catalog": false,
-   "source": 4,
-   "computed": 2,
-   "confidence": "high",
-   "reason": "sourceInflated",
-   "impliedPerPerson": 80.5,
-   "drivers": [
-    "meatBoneless:beef=300g",
-    "potatoMain:potato=200g"
    ]
   }
  ],

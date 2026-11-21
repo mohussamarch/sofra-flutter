@@ -465,6 +465,19 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get servingsInfoShared => 'Each person gets some of each.';
+
+  @override
+  String servingsInfoEstimated(String item, String weight) {
+    return '$item (about $weight)';
+  }
+
+  @override
+  String detailServingsScaled(int count, int people) {
+    return 'Amounts scaled from $count to $people';
+  }
+
+  @override
   String get servingsInfoApply => 'Apply';
 
   @override

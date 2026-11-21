@@ -301,7 +301,10 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             if (DishName.of(widget.recipeId)?.country == null)
               SoftTag(L10n.term(source.cuisine)),
             SoftTag(L10n.term(source.category)),
-            if (source.difficulty.isNotEmpty)
+            // "Not stated by the source" says nothing; next to the yield it
+            // read as if the yield were unknown.
+            if (source.difficulty.isNotEmpty &&
+                !source.difficulty.startsWith('غير محدد')) // i18n-data
               SoftTag(L10n.term(source.difficulty)),
           ],
         ),
@@ -319,7 +322,14 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                         style: TextStyle(fontWeight: FontWeight.w800),
                       ),
                       Text(
-                        t.detailServingsHint,
+                        // Ties the "serves N" tag to this counter.
+                        people == planning.effectiveServings
+                            ? t.detailServingsHint
+                            : t.detailServingsScaled(
+                                planning.effectiveServings!,
+                                people,
+                              ),
+                        key: const ValueKey('servings-scaled'),
                         style: TextStyle(fontSize: 11, color: Sofra.muted),
                       ),
                     ],
@@ -483,9 +493,29 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
           .where((i) => i.id == d.ingredientId)
           .firstOrNull;
       if (line == null) continue;
+      final word = _ingredientWord(L10n.term(line.name));
+      // "1 large head of cabbage": the recipe's own amount, and the weight
+      // the app assumed for it marked as an estimate.
+      final estimated = ServingsEngine.shared.estimatedFromPieces(
+        ServingsLine(
+          id: line.id,
+          name: line.name,
+          amount: line.amount,
+          unit: line.unit,
+        ),
+        d.category,
+      );
+      // "1 رأس" + "رأس ملفوف كبير": the number alone when the name already
+      // carries the unit.
+      final unit = L10n.term(line.unit ?? '');
+      final own = unit.isNotEmpty && word.contains(unit) && line.amount != null
+          ? formatAmount(line.amount!)
+          : _sourceAmount(line);
       named.add((
-        _portion(d.amount, d.unit),
-        _ingredientWord(L10n.term(line.name)),
+        estimated ? own : _portion(d.amount, d.unit),
+        estimated
+            ? t.servingsInfoEstimated(word, _portion(d.amount, d.unit))
+            : word,
         ServingsEngine.shared.perPerson(d.category, kind: kind),
         d.unit,
       ));
@@ -495,10 +525,11 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       final (amount, name, per, unit) = named.single;
       basis = t.servingsInfoBasis(amount, name, _portion(per!, unit));
     } else if (named.length > 1) {
-      // The number combines them, so no single per-person amount is named.
-      basis = t.servingsInfoBasisMany(
-        named.map((n) => '${n.$1} ${n.$2}').join(t.detailListSeparator),
-      );
+      // The number combines them, so no single per-person amount is named;
+      // each one feeds fewer on its own than the plate they make together.
+      basis =
+          '${t.servingsInfoBasisMany(named.map((n) => '${n.$1} ${n.$2}').join(t.detailListSeparator))} '
+          '${t.servingsInfoShared}';
     }
     final low = !userSet && estimate.confidence == ServingsConfidence.low;
     var guess = count.clamp(1, 20);
@@ -593,11 +624,14 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
   String _portion(double value, String unit) {
     String inUnit(double v, String term) =>
         '${recipeNumber(roundRecipeAmount(v, term))} ${L10n.term(term)}';
+    // Under a kilo the recipe's own figure, not rounded to 5 (454 g).
+    String exact(double v, String term) =>
+        '${recipeNumber(v.roundToDouble())} ${L10n.term(term)}';
     return switch (unit) {
       'g' when value >= 1000 => inUnit(value / 1000, 'كيلو'), // i18n-data
-      'g' => inUnit(value, 'جرام'), // i18n-data
+      'g' => exact(value, 'جرام'), // i18n-data
       'ml' when value >= 1000 => inUnit(value / 1000, 'لتر'), // i18n-data
-      'ml' => inUnit(value, 'مل'), // i18n-data
+      'ml' => exact(value, 'مل'), // i18n-data
       _ => inUnit(value, 'حبة'), // i18n-data
     };
   }
@@ -1066,9 +1100,14 @@ class _IngredientRow extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 8),
-            Text(
-              shownAmount,
-              style: const TextStyle(fontWeight: FontWeight.w700),
+            // A long amount ("1 large head") wraps instead of overflowing.
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 140),
+              child: Text(
+                shownAmount,
+                textAlign: TextAlign.end,
+                style: const TextStyle(fontWeight: FontWeight.w700),
+              ),
             ),
           ],
         ),

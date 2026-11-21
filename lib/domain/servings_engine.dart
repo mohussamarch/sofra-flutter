@@ -223,7 +223,14 @@ class ServingsEngine {
           (_re((w as List)[0] as String), (w[1] as num).toDouble()),
       ],
       _lineId = _re((tables['units'] as Map)['lineIdPattern'] as String),
-      _piece = _re((tables['units'] as Map)['piecePattern'] as String);
+      _piece = _re((tables['units'] as Map)['piecePattern'] as String),
+      _serving = _re((tables['units'] as Map)['servingPattern'] as String),
+      _dust = _re((tables['units'] as Map)['dustPattern'] as String),
+      _pieceSize = [
+        for (final w
+            in (tables['units'] as Map)['pieceSize'] as List? ?? const [])
+          (_re((w as List)[0] as String), (w[1] as num).toDouble()),
+      ];
 
   /// The engine over the compiled repository tables.
   static final ServingsEngine shared = ServingsEngine(
@@ -235,10 +242,10 @@ class ServingsEngine {
   final Map<String, dynamic> _norms, _units, _rules, _cupG;
   final Map<String, String> _driving, _aliases;
   final Set<String> _known, _knownNames;
-  final RegExp _deny, _piece, _lineId;
+  final RegExp _deny, _piece, _lineId, _serving, _dust;
   final List<(RegExp, String)> _keywords, _kinds;
   final List<(RegExp, String, Set<String>)> _refine;
-  final List<(RegExp, double)> _pieceWeights;
+  final List<(RegExp, double)> _pieceWeights, _pieceSize;
   final String _defaultKind;
   final Map<String, List<String>> _priority;
 
@@ -288,6 +295,8 @@ class ServingsEngine {
   /// "لحم غنم شقف" is on the bone.
   String? categoryOf(ServingsLine line) {
     final name = line.name.trim();
+    // Flour or semolina for dusting the board never feeds anyone.
+    if (_dust.hasMatch(name)) return null;
     final category = _baseCategory(line.id.trim(), name);
     if (category == null) return null;
     for (final (re, refined, from) in _refine) {
@@ -297,15 +306,28 @@ class ServingsEngine {
   }
 
   /// Grams in one piece of [line]: by name where the norm's weight is wrong
-  /// (a whole cabbage is not 200 g).
+  /// (a whole cabbage is not 200 g), less when the name says small.
   double? _pieceG(ServingsLine line, Map<String, dynamic> norm) {
     final id = _wordId(line.id.trim());
     final name = line.name.trim();
-    for (final (re, grams) in _pieceWeights) {
-      if (re.hasMatch(name) || re.hasMatch(id)) return grams;
+    var grams = (norm['pieceG'] as num?)?.toDouble();
+    for (final (re, weight) in _pieceWeights) {
+      if (re.hasMatch(name) || re.hasMatch(id)) {
+        grams = weight;
+        break;
+      }
     }
-    return (norm['pieceG'] as num?)?.toDouble();
+    if (grams == null) return null;
+    for (final (re, factor) in _pieceSize) {
+      if (re.hasMatch(name)) return grams * factor;
+    }
+    return grams;
   }
+
+  /// Whether [line]'s amount in [category] is an estimate from a piece
+  /// weight ("1 large head of cabbage") rather than stated by the recipe.
+  bool estimatedFromPieces(ServingsLine line, String category) =>
+      _norms.containsKey(category) && convert(line, category)?.$2 == 'piece';
 
   /// A line without a category that is still understood: a known
   /// vocabulary item, or something that never drives (oil, spice, sauce).
@@ -315,7 +337,8 @@ class ServingsEngine {
     return _known.contains(id) ||
         _knownNames.contains(name) ||
         _deny.hasMatch(name) ||
-        _deny.hasMatch(_wordId(id));
+        _deny.hasMatch(_wordId(id)) ||
+        _dust.hasMatch(name);
   }
 
   static double? _amount(ServingsLine line) {
@@ -376,14 +399,32 @@ class ServingsEngine {
 
   String? _inContext(String kind, String category) {
     final role = _role(category);
-    if (kind == 'soup' || kind == 'drink') {
-      if (role != 'liquid') return null;
-      return kind == 'drink' ? 'drink' : 'soupLiquid';
+    if (kind == 'drink') return role == 'liquid' ? 'drink' : null;
+    if (kind == 'soup') {
+      // One bowl: the liquid, or what is cooked in it when the liquid is not
+      // measured (a lentil soup lists its lentils).
+      if (role == 'liquid') return 'soupLiquid';
+      if (category == 'legumeDry') return 'soupLegume';
+      if (category == 'legumeCanned' || role == 'veg') return 'soupVeg';
+      if (role == 'starch' && !category.endsWith('Cooked')) {
+        return 'soupStarch';
+      }
+      if (role == 'protein' && category != 'eggsMain' && category != 'tofu') {
+        return 'soupProtein';
+      }
+      return null;
     }
     if (role == 'liquid') {
       return kind == 'dessert' && category == 'milkDessert' ? category : null;
     }
-    if (category == 'dessertRich' && kind != 'dessert') return null;
+    if ((category == 'dessertRich' || category == 'oats') &&
+        kind != 'dessert') {
+      return null;
+    }
+    // Semolina in a bread is flour; outside desserts and breads it only dusts.
+    if (category == 'dessertBase' && kind != 'dessert') {
+      return kind == 'bread' ? 'flourBread' : null;
+    }
     if (category == 'eggsMain' && kind != 'main' && kind != 'salad') {
       return null;
     }
@@ -418,6 +459,9 @@ class ServingsEngine {
     var total = 0.0, unmapped = 0.0;
     var categorized = 0;
     final byCategory = <String, _Group>{};
+    // Roles of lines that would drive but carry no usable amount ("chicken
+    // thighs" with no weight): the number cannot see them.
+    final unmeasured = <String>{};
     for (final line in lines) {
       if (line.optional) continue;
       final base = categoryOf(line);
@@ -431,7 +475,14 @@ class ServingsEngine {
       final category = _inContext(kind, base);
       if (category == null) continue;
       final amount = convert(line, category);
-      if (amount == null || !(amount.$1 > 0)) continue;
+      if (amount == null || !(amount.$1 > 0)) {
+        if (category != 'eggsMain' &&
+            _role(category) != 'liquid' &&
+            !_serving.hasMatch(line.name.trim())) {
+          unmeasured.add(_role(category));
+        }
+        continue;
+      }
       final norm = _norm(category);
       final group = byCategory.putIfAbsent(
         category,
@@ -458,34 +509,81 @@ class ServingsEngine {
       role.groups.add(g);
     }
     final minPeople = (_rules['driverMinPeople'] as num).toDouble();
-    final drivers = [
-      for (final r in _priority[kind] ?? const <String>[])
+    final priority = _priority[kind] ?? const <String>[];
+    final candidates = [
+      for (final r in priority)
         if (roles[r] != null && roles[r]!.people >= minPeople) roles[r]!,
     ];
     final mappedShare = total > 0 ? 1 - unmapped / total : 1.0;
+    ServingsEstimate none(String reason) => ServingsEstimate(
+      computed: null,
+      range: null,
+      confidence: ServingsConfidence.none,
+      basis: noneBasis,
+      drivers: const [],
+      reason: reason,
+      kind: kind,
+    );
+    // Several roles share the plate (sum x 0.70 for two, x 0.55 for three),
+    // but a role too small to matter never lowers the number: the best of
+    // the largest one, two or three roles wins, so adding food never lowers
+    // it. A soup is one bowl: its largest measure alone.
+    final order = {
+      for (var i = 0; i < candidates.length; i++) candidates[i]: i,
+    };
+    final ranked = [...candidates]
+      ..sort((a, b) {
+        final c = b.people.compareTo(a.people);
+        return c != 0 ? c : order[a]!.compareTo(order[b]!);
+      });
+    final shared = (_rules['sharedBowlKinds'] as List? ?? const []).contains(
+      kind,
+    );
+    final maxK = shared ? math.min(1, ranked.length) : ranked.length;
+    var best = 0;
+    var p = 0.0;
+    var acc = 0.0;
+    for (var k = 1; k <= maxK; k++) {
+      acc += ranked[k - 1].people;
+      final v = k == 1
+          ? acc
+          : acc * ((_rules['combine'] as Map)['${math.min(k, 3)}'] as num);
+      if (v > p) {
+        p = v;
+        best = k;
+      }
+    }
+    final chosen = ranked.take(best).toSet();
+    final drivers = [
+      for (final r in candidates)
+        if (chosen.contains(r)) r,
+    ];
+    // A role named without an amount that ranks above every measured one
+    // (chicken thighs with no weight, potatoes weighed): the number would
+    // describe the side, not the dish, so the app asks.
+    final missing = [
+      for (final r in unmeasured)
+        if (priority.contains(r) && !drivers.any((d) => d.role == r)) r,
+    ];
+    if (drivers.isNotEmpty) {
+      final top = drivers.map((d) => priority.indexOf(d.role)).reduce(math.min);
+      if (missing.any((r) => priority.indexOf(r) < top)) {
+        return none('unmeasuredDriver');
+      }
+    }
     if (drivers.isEmpty) {
-      return ServingsEstimate(
-        computed: null,
-        range: null,
-        confidence: ServingsConfidence.none,
-        basis: noneBasis,
-        drivers: const [],
-        reason: kind == 'base'
+      return none(
+        kind == 'base'
             ? 'notApplicable'
             : groups.isNotEmpty
             ? 'driverTooSmall'
             : categorized > 0
             ? 'noMeasuredDriver'
             : 'noDriverIngredient',
-        kind: kind,
       );
     }
     final values = [for (final d in drivers) d.people];
-    final sum = values.fold(0.0, (s, v) => s + v);
     final n = drivers.length;
-    final p = n == 1
-        ? sum
-        : sum * ((_rules['combine'] as Map)['${math.min(n, 3)}'] as num);
     final clamp = _rules['clamp'] as List;
     final lo = (clamp[0] as num).toInt(), hi = (clamp[1] as num).toInt();
     final spreadRange = _rules['range'] as List;
@@ -504,13 +602,20 @@ class ServingsEngine {
       (g) => g.vias.every((v) => v == 'piece') && !natural.contains(g.category),
     );
     final conf = Map<String, dynamic>.from(_rules['confidence'] as Map);
+    // Another driving role with no amount makes it a rough guess; an
+    // unweighed line beside a weighed one of the same role (lamb with no
+    // weight next to weighed chicken) keeps it from being sure.
+    final partly = unmeasured.any((r) => drivers.any((d) => d.role == r));
     final ServingsConfidence confidence;
     if (spread > (conf['mediumAgree'] as num) ||
         1 - mappedShare > (conf['lowUnmappedShare'] as num) ||
         pieceOnly ||
-        (n == 1 && p < (conf['smallSinglePeople'] as num))) {
+        (n == 1 && p < (conf['smallSinglePeople'] as num)) ||
+        missing.isNotEmpty) {
       confidence = ServingsConfidence.low;
     } else if (n >= 2 &&
+        firm.length >= 2 &&
+        !partly &&
         spread <= (conf['highAgree'] as num) &&
         mappedShare >= (conf['highMappedShare'] as num)) {
       confidence = ServingsConfidence.high;
@@ -520,19 +625,18 @@ class ServingsEngine {
     // A recipe for one, or a rough guess of one or two people, is more often
     // wrong than right, and more than the clamp is a data error unless the
     // engine is sure: the app asks instead of showing it.
+    // Without a source to check it against, a large number shows only when
+    // the engine is sure enough of it. A dessert is cut into pieces, so its
+    // numbers run higher.
+    final caps = _rules['unsourcedMaxPeople'] as Map? ?? const {};
+    final unsourcedMax =
+        ((caps[kind] ?? caps['main']) as Map?)?[confidence.name] as num?;
     if (p < (_rules['minPeople'] as num) ||
         (confidence == ServingsConfidence.low &&
             p < (_rules['lowConfidenceMinPeople'] as num)) ||
-        (confidence != ServingsConfidence.high && p > hi + 0.5)) {
-      return ServingsEstimate(
-        computed: null,
-        range: null,
-        confidence: ServingsConfidence.none,
-        basis: noneBasis,
-        drivers: const [],
-        reason: 'tooUncertain',
-        kind: kind,
-      );
+        (confidence != ServingsConfidence.high && p > hi + 0.5) ||
+        (stated == null && unsourcedMax != null && p > unsourcedMax + 0.5)) {
+      return none('tooUncertain');
     }
     var dominant = used.first;
     for (final g in used) {

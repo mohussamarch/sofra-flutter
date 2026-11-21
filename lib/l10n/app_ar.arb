@@ -266,6 +266,21 @@
       "list": {"type": "String"}
     }
   },
+  "servingsInfoShared": "يأخذ كل فرد جزءًا من كلٍّ منها.",
+  "servingsInfoEstimated": "{item} (نحو {weight})",
+  "@servingsInfoEstimated": {
+    "placeholders": {
+      "item": {"type": "String"},
+      "weight": {"type": "String"}
+    }
+  },
+  "detailServingsScaled": "الكميات معدّلة من {count} إلى {people}",
+  "@detailServingsScaled": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "people": {"type": "int"}
+    }
+  },
   "servingsInfoApply": "تطبيق",
   "servingsInfoLow": "هذا تقدير تقريبي، فعدّله إن لم يكن مناسبًا.",
   "servingsInfoAdjust": "تعديل العدد",

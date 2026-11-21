@@ -127,6 +127,9 @@ export function createEngine(tables) {
   const refine = tables.refine.map(([p, c, from]) => [re(p), c, new Set(from)]);
   const pieceWeights = tables.pieceWeights.map(([p, g]) => [re(p), g]);
   const piece = re(tables.units.piecePattern);
+  const serving = re(tables.units.servingPattern);
+  const dust = re(tables.units.dustPattern);
+  const pieceSize = (tables.units.pieceSize ?? []).map(([p, f]) => [re(p), f]);
   // Maps, not objects: an ingredient called "constructor" must not hit
   // Object.prototype.
   const asMap = (o) => new Map(Object.entries(o));
@@ -169,6 +172,8 @@ export function createEngine(tables) {
   const categoryOf = (line) => {
     const id = text(line.id);
     const name = text(line.name);
+    // Flour or semolina for dusting the board never feeds anyone.
+    if (dust.test(name)) return null;
     const cat = baseCategory(id, name);
     if (cat == null) return null;
     for (const [r, c, from] of refine) if (from.has(cat) && r.test(name)) return c;
@@ -176,12 +181,20 @@ export function createEngine(tables) {
   };
 
   /// Grams in one piece of [line]: by name where the norm's weight is wrong
-  /// (a whole cabbage is not 200 g).
+  /// (a whole cabbage is not 200 g), less when the name says small.
   const pieceG = (line, norm) => {
     const id = wordId(text(line.id));
     const name = text(line.name);
-    for (const [r, g] of pieceWeights) if (r.test(name) || r.test(id)) return g;
-    return norm.pieceG ?? null;
+    let g = norm.pieceG ?? null;
+    for (const [r, w] of pieceWeights) {
+      if (r.test(name) || r.test(id)) {
+        g = w;
+        break;
+      }
+    }
+    if (g == null) return null;
+    for (const [r, f] of pieceSize) if (r.test(name)) return g * f;
+    return g;
   };
 
   /// Whether a line without a category is still understood (a known
@@ -189,7 +202,7 @@ export function createEngine(tables) {
   const understood = (line) => {
     const id = text(line.id);
     const name = text(line.name);
-    return known.has(id) || knownNames.has(name) || deny.test(name) || deny.test(wordId(id));
+    return known.has(id) || knownNames.has(name) || deny.test(name) || deny.test(wordId(id)) || dust.test(name);
   };
 
   const amountOf = (line) => {
@@ -239,12 +252,22 @@ export function createEngine(tables) {
 
   /// The category [cat] counts as in a dish of [kind], or null to ignore it.
   const inContext = (kind, cat) => {
-    if (kind === 'soup' || kind === 'drink') {
-      if (role(cat) !== 'liquid') return null;
-      return kind === 'drink' ? 'drink' : 'soupLiquid';
+    if (kind === 'drink') return role(cat) === 'liquid' ? 'drink' : null;
+    if (kind === 'soup') {
+      // One bowl: the liquid, or what is cooked in it when the liquid is not
+      // measured (a lentil soup lists its lentils).
+      const r = role(cat);
+      if (r === 'liquid') return 'soupLiquid';
+      if (cat === 'legumeDry') return 'soupLegume';
+      if (cat === 'legumeCanned' || r === 'veg') return 'soupVeg';
+      if (r === 'starch' && !cat.endsWith('Cooked')) return 'soupStarch';
+      if (r === 'protein' && cat !== 'eggsMain' && cat !== 'tofu') return 'soupProtein';
+      return null;
     }
     if (role(cat) === 'liquid') return kind === 'dessert' && cat === 'milkDessert' ? cat : null;
-    if (cat === 'dessertRich' && kind !== 'dessert') return null;
+    if ((cat === 'dessertRich' || cat === 'oats') && kind !== 'dessert') return null;
+    // Semolina in a bread is flour; outside desserts and breads it only dusts.
+    if (cat === 'dessertBase' && kind !== 'dessert') return kind === 'bread' ? 'flourBread' : null;
     if (cat === 'eggsMain' && kind !== 'main' && kind !== 'salad') return null;
     if (kind === 'base' && (role(cat) !== 'protein' || cat === 'eggsMain')) return null;
     if (cat === 'saladVeg' && kind !== 'salad') return null;
@@ -269,6 +292,9 @@ export function createEngine(tables) {
     let unmapped = 0;
     let categorized = 0;
     const byCat = new Map();
+    // Roles of lines that would drive but carry no usable amount ("chicken
+    // thighs" with no weight): the number cannot see them.
+    const unmeasured = new Set();
     for (const line of lines) {
       if (!line || typeof line !== 'object' || line.optional === true) continue;
       const base = categoryOf(line);
@@ -282,7 +308,10 @@ export function createEngine(tables) {
       const cat = inContext(kind, base);
       if (cat == null) continue;
       const amount = convert(line, cat);
-      if (amount == null || !(amount.value > 0)) continue;
+      if (amount == null || !(amount.value > 0)) {
+        if (cat !== 'eggsMain' && role(cat) !== 'liquid' && !serving.test(text(line.name))) unmeasured.add(role(cat));
+        continue;
+      }
       const norm = norms.get(cat);
       const entry = byCat.get(cat) ?? { category: cat, role: norm.role, unit: norm.unit, amount: 0, people: 0, ids: [], vias: [] };
       entry.amount += amount.value;
@@ -305,22 +334,51 @@ export function createEngine(tables) {
       r.cats.push(c);
       roles.set(c.role, r);
     }
-    const drivers = (tables.priority[kind] ?? [])
+    const priority = tables.priority[kind] ?? [];
+    const candidates = priority
       .map((r) => roles.get(r))
       .filter((r) => r && r.people >= rules.driverMinPeople);
     const mappedShare = total > 0 ? 1 - unmapped / total : 1;
+    const none = (reason) => out({
+      servingsComputed: null, servingsRange: null, servingsConfidence: 'none',
+      servingsBasis: { source: stated == null ? 'none' : 'source', drivers: [], reason },
+      mappedShare: r2(mappedShare),
+    });
+    // Several roles share the plate (sum x 0.70 for two, x 0.55 for three),
+    // but a role too small to matter never lowers the number: the best of
+    // the largest one, two or three roles wins, so adding food never lowers
+    // it. A soup is one bowl: its largest measure alone.
+    const ranked = candidates
+      .map((r, i) => ({ r, i }))
+      .sort((a, b) => b.r.people - a.r.people || a.i - b.i)
+      .map((x) => x.r);
+    const maxK = (rules.sharedBowlKinds ?? []).includes(kind) ? Math.min(1, ranked.length) : ranked.length;
+    let best = 0;
+    let p = 0;
+    let acc = 0;
+    for (let k = 1; k <= maxK; k++) {
+      acc += ranked[k - 1].people;
+      const v = k === 1 ? acc : acc * rules.combine[String(Math.min(k, 3))];
+      if (v > p) {
+        p = v;
+        best = k;
+      }
+    }
+    const chosen = new Set(ranked.slice(0, best));
+    const drivers = candidates.filter((r) => chosen.has(r));
+    // A role named without an amount that ranks above every measured one
+    // (chicken thighs with no weight, potatoes weighed): the number would
+    // describe the side, not the dish, so the app asks.
+    const rank = (r) => priority.indexOf(r);
+    const missing = [...unmeasured].filter((r) => rank(r) >= 0 && !drivers.some((d) => d.role === r));
+    if (drivers.length && missing.some((r) => rank(r) < Math.min(...drivers.map((d) => rank(d.role))))) {
+      return none('unmeasuredDriver');
+    }
     if (!drivers.length) {
-      const reason = kind === 'base' ? 'notApplicable' : cats.length ? 'driverTooSmall' : categorized ? 'noMeasuredDriver' : 'noDriverIngredient';
-      return out({
-        servingsComputed: null, servingsRange: null, servingsConfidence: 'none',
-        servingsBasis: { source: stated == null ? 'none' : 'source', drivers: [], reason },
-        mappedShare: r2(mappedShare),
-      });
+      return none(kind === 'base' ? 'notApplicable' : cats.length ? 'driverTooSmall' : categorized ? 'noMeasuredDriver' : 'noDriverIngredient');
     }
     const values = drivers.map((d) => d.people);
-    const sum = values.reduce((s, v) => s + v, 0);
     const n = drivers.length;
-    const p = n === 1 ? sum : sum * rules.combine[String(Math.min(n, 3))];
     const [lo, hi] = rules.clamp;
     const computed = Math.max(lo, Math.min(hi, Math.round(p)));
     const range = [
@@ -335,9 +393,13 @@ export function createEngine(tables) {
     const pieceOnly = used.every((c) => c.vias.every((v) => v === 'piece') && !natural.has(c.category));
     const conf = rules.confidence;
     let confidence;
-    if (spread > conf.mediumAgree || 1 - mappedShare > conf.lowUnmappedShare || pieceOnly || (n === 1 && p < conf.smallSinglePeople)) {
+    // Another driving role with no amount makes it a rough guess; an
+    // unweighed line beside a weighed one of the same role (lamb with no
+    // weight next to weighed chicken) keeps it from being sure.
+    const partly = [...unmeasured].some((r) => drivers.some((d) => d.role === r));
+    if (spread > conf.mediumAgree || 1 - mappedShare > conf.lowUnmappedShare || pieceOnly || (n === 1 && p < conf.smallSinglePeople) || missing.length > 0) {
       confidence = 'low';
-    } else if (n >= 2 && spread <= conf.highAgree && mappedShare >= conf.highMappedShare) {
+    } else if (n >= 2 && firm.length >= 2 && !partly && spread <= conf.highAgree && mappedShare >= conf.highMappedShare) {
       confidence = 'high';
     } else {
       confidence = 'medium';
@@ -345,12 +407,14 @@ export function createEngine(tables) {
     // A recipe for one, or a rough guess of one or two people, is more often
     // wrong than right, and more than the clamp is a data error unless the
     // engine is sure: the app asks instead of showing it.
-    if (p < rules.minPeople || (confidence === 'low' && p < rules.lowConfidenceMinPeople) || (confidence !== 'high' && p > hi + 0.5)) {
-      return out({
-        servingsComputed: null, servingsRange: null, servingsConfidence: 'none',
-        servingsBasis: { source: stated == null ? 'none' : 'source', drivers: [], reason: 'tooUncertain' },
-        mappedShare: r2(mappedShare),
-      });
+    // Without a source to check it against, a large number shows only when
+    // the engine is sure enough of it.
+    // A dessert is cut into pieces, so its numbers run higher.
+    const caps = rules.unsourcedMaxPeople ?? {};
+    const unsourcedMax = (caps[kind] ?? caps.main)?.[confidence];
+    if (p < rules.minPeople || (confidence === 'low' && p < rules.lowConfidenceMinPeople) || (confidence !== 'high' && p > hi + 0.5) ||
+        (stated == null && unsourcedMax != null && p > unsourcedMax + 0.5)) {
+      return none('tooUncertain');
     }
     let dominant = used[0];
     for (const c of used) if (c.people > dominant.people) dominant = c;

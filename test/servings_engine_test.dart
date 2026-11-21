@@ -184,7 +184,8 @@ void main() {
       expect(of('x-i14', 'دبوس دجاج'), 'chickenBoneIn');
       // "محمص" (roasted) is not chickpeas.
       expect(of('fiw650-51270-i7', 'جوز بيكان محمص'), isNull);
-      expect(of('x-i3', 'حمص مسلوق'), 'legumeDry');
+      // Boiled chickpeas are already cooked: counted like canned ones.
+      expect(of('x-i3', 'حمص مسلوق'), 'legumeCanned');
       // A generated line id names the recipe, not the ingredient.
       expect(of('ma650-manal-coconut-cake-20261021b-i6', 'زبدة، لينة'), isNull);
     });
@@ -414,12 +415,14 @@ void main() {
       'ar-fatta-lahm-bidoon-salsa': (5, 8),
       'mw-chana-masala': (3, 5),
       'it-spaghetti-bolognese': (3, 5),
-      'bc-tajine': (4, 8),
+      // 1 lb chicken and 8 eggs: the source's 12 squares is within a factor
+      // of two of the engine and is kept.
+      'bc-tajine': (12, 12),
       'fiw650-52303': (4, 7),
       'fiw650-52264': (3, 6),
       'fiw650-57507': (3, 7),
-      'lv-knafeh-nabulsiyeh': (6, 12),
-      'ma650-manal-san-sebastian-cheesecake-20261021b': (8, 16),
+      'lv-knafeh-nabulsiyeh': (6, 10),
+      'ma650-manal-san-sebastian-cheesecake-20261021b': (10, 14),
       'ma650-manal-kunafa-cream-20261021b': (5, 10),
       'ma650-manal-meat-kabsa-20261021b': (4, 6),
       'ma650-manal-chicken-potato-tray-20261021b': (4, 8),
@@ -427,7 +430,7 @@ void main() {
       // A source within a factor of two of the engine is kept.
       'ar-saltah': (4, 4),
       'sa-matazeez-najdiya': (4, 4),
-      'fiw650-51270': (8, 16),
+      'fiw650-51270': (10, 16),
     };
 
     test('known dishes land in the expected range', () {
@@ -445,6 +448,156 @@ void main() {
         }
       }
       expect(off, isEmpty, reason: off.join('\n'));
+    });
+
+    ServingsEstimate byId(String id) =>
+        engine.estimateJson(recipeAt(fixture.firstWhere((e) => e['id'] == id)));
+
+    test('cooked or boiled grain and legumes are not counted as dry', () {
+      String? of(String id, String name) =>
+          engine.categoryOf(ServingsLine(id: id, name: name));
+      // Real catalog lines.
+      expect(
+        of('bc650-spinach-rice-casserole-ing-1', 'أرز بني مطهو، 4 أكواب'),
+        'riceCooked',
+      );
+      expect(of('rice', 'أرز أبيض مطبوخ بايت وبارد'), 'riceCooked');
+      expect(of('chickpeas', 'حمص حب مسلوق (منقوع ليلة)'), 'legumeCanned');
+      expect(of('x-i3', 'أرز بسمتي مسلوق'), 'riceCooked');
+      // "Not cooked" stays raw.
+      expect(of('x-i1', 'أرز أبيض طويل الحبة غير مطبوخ'), 'riceRaw');
+      expect(
+        of('x-i1', 'معكرونة غير مطهوة، 8 أونصات (سباغيتي أو أي نودلز طويلة)'),
+        'pastaDry',
+      );
+      // Spinach casserole: 4 cups cooked rice and 2 lb raw spinach feed
+      // about 4 to 6, not 10.
+      final casserole = byId('bc650-spinach-rice-casserole');
+      expect(casserole.computed, inInclusiveRange(3, 6));
+      expect(
+        casserole.drivers.map((d) => d.category),
+        containsAll(['riceCooked', 'vegMain']),
+      );
+      expect(byId('mw-nasi-goreng').drivers.last.category, 'riceCooked');
+    });
+
+    test('a main protein with no amount: the app asks', () {
+      // Chicken thighs, cod, lamb with no weight; only the potatoes or a few
+      // thighs are measured.
+      for (final id in [
+        'bc650-lemon-and-oregano-chicken-traybake',
+        'bc650-portuguese-creamy-cod',
+        'fi650-52352',
+      ]) {
+        final r = byId(id);
+        expect(r.hasValue, isFalse, reason: id);
+        expect(r.reason, isIn(['unmeasuredDriver', 'tooUncertain']));
+      }
+      expect(
+        byId('bc650-lemon-and-oregano-chicken-traybake').reason,
+        'unmeasuredDriver',
+      );
+    });
+
+    test('adding food never lowers the number', () {
+      // Tunisian tajine: chicken and eggs alone, then with its potato.
+      final tajine = recipeAt(
+        fixture.firstWhere((e) => e['id'] == 'bc-tajine'),
+      );
+      final lines = (tajine['ingredients'] as List).cast<Map>();
+      final withoutPotato = engine.estimateJson({
+        ...tajine,
+        'ingredients': [
+          for (final l in lines)
+            if (l['id'] != 'bc-tajine-ing-3') l,
+        ],
+      });
+      final full = engine.estimateJson(tajine);
+      expect(full.people!, greaterThanOrEqualTo(withoutPotato.people!));
+      // Across the catalog: dropping any one driving line never raises it.
+      final raised = <String>[];
+      for (final entry in fixture.where(
+        (e) => (e['file'] as String).startsWith('recipes/data/'),
+      )) {
+        final recipe = recipeAt(entry);
+        final whole = engine.estimateJson(recipe);
+        if (whole.people == null) continue;
+        final all = recipe['ingredients'] as List;
+        for (var i = 0; i < all.length; i++) {
+          final line = all[i];
+          if (line is! Map || line['optional'] == true) continue;
+          final less = engine.estimateJson({
+            ...recipe,
+            'ingredients': [...all.take(i), ...all.skip(i + 1)],
+          });
+          if (less.people != null && less.people! > whole.people! + 1e-9) {
+            raised.add('${entry['id']} without ${line['name']}');
+          }
+        }
+      }
+      expect(raised, isEmpty, reason: raised.take(5).join('\n'));
+    });
+
+    test('soups count what is cooked in the bowl', () {
+      final lentil = byId('ma650-manal-lentil-soup-20261021b');
+      expect(lentil.computed, inInclusiveRange(5, 7));
+      expect(lentil.drivers.single.category, 'soupLegume');
+      // Squash, potatoes and carrots with no amount: three cups of liquid
+      // are not the soup.
+      expect(byId('bc650-autumn-soup').hasValue, isFalse);
+    });
+
+    test('keyword fixes on real lines', () {
+      String? of(String id, String name) =>
+          engine.categoryOf(ServingsLine(id: id, name: name));
+      expect(of('fi650-57392-i1', 'نبيذ أرز، مثل الساكي أو شاوشينغ'), isNull);
+      expect(
+        of('fi650-58413-i0', 'تراوت بحجم حصة فردية أو سمك أبيض اللحم'),
+        'fish',
+      );
+      expect(
+        of(
+          'fi650-54316-i1',
+          'خضار مطهوة على البخار، مثل البازلاء والفاصوليا والجزر والقرنبيط',
+        ),
+        'vegMain',
+      );
+      expect(of('semolina', 'سمولينا أو دقيق للرش'), isNull);
+      // The main flour "with more for dusting" still counts.
+      expect(
+        of('flour', 'دقيق قوي (عالي البروتين) مع زيادة للفرد'),
+        'flourBread',
+      );
+      // Oats do not add people to a bread.
+      expect(byId('fiw650-57843').drivers.map((d) => d.category), [
+        'flourBread',
+      ]);
+      expect(byId('it-pizza-margherita').drivers.single.category, 'flourBread');
+    });
+
+    test('large numbers without a source show only when sure', () {
+      for (final id in [
+        'fiw650-58514',
+        'fi650-52098',
+        'fiw650-57629',
+        'fiw650-57675',
+        'bc650-meatloaf',
+        'bc650-frijol-con-puerco',
+      ]) {
+        expect(byId(id).hasValue, isFalse, reason: id);
+      }
+      // "Four small eggplants" are not a kilo.
+      final eggplant = byId('fi650-56200');
+      expect(eggplant.drivers.single.amount, lessThan(1000));
+      for (final entry in fixture) {
+        final recipe = recipeAt(entry);
+        final r = engine.estimateJson(recipe);
+        if (!r.hasValue || recipe['servings'] != null) continue;
+        final cap = r.kind == 'dessert' ? 14 : 8;
+        if (r.confidence == ServingsConfidence.low) {
+          expect(r.computed, lessThanOrEqualTo(cap), reason: entry['id']);
+        }
+      }
     });
 
     test('no computed number is a low-confidence 1 or 2', () {

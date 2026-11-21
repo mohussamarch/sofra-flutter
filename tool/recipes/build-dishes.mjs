@@ -68,7 +68,8 @@ if (process.argv[1] && fileURLToPath(new URL(`file:///${process.argv[1].replace(
   const data = build(JSON.parse(readFileSync(indexFile, 'utf8')));
   const text = `${JSON.stringify(data, null, 2)}\n`;
   if (process.argv.includes('--check')) {
-    if (readFileSync(outFile, 'utf8') !== text) {
+    // A Windows checkout with core.autocrlf has CRLF on disk; compare content.
+    if (readFileSync(outFile, 'utf8').replace(/\r\n/g, '\n') !== text) {
       console.error('dishes.json is out of date; run without --check');
       process.exit(1);
     }

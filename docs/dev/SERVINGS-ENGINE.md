@@ -37,27 +37,48 @@ After changing a table: `node tool/recipes/servings-engine.mjs --emit-dart && no
    amount is converted to g, ml or a count (mass, volume, cup by density,
    pieces by piece weight, with `pieceWeights` by name where the norm's is
    wrong: a whole cabbage is 1.5 kg); unknown units are skipped, never fatal.
-3. Kind context: soups and drinks count only liquid; mains ignore liquid and
-   tomatoes/cucumbers; desserts count flour as dessert base and milk; dips
-   count starch as dip base; salads count vegetables as salad. Cream cheese,
-   kunafa or phyllo pastry, biscuits, dates and chocolate (`dessertRich`,
-   80 g) count only in desserts; flour or semolina in a dessert is 35 g a
-   person. Eggs drive only in mains and salads, and only when there are 4 or
-   more or nothing else can drive: two eggs bind, they do not feed.
-4. Same-category lines are summed, then roles (protein, starch, veg, liquid,
-   batch). A role drives from 0.5 people up. One role: its people. Several
-   roles share the plate: sum x 0.70 (2 roles) or x 0.55 (3).
-5. `servingsComputed = clamp(round(p), 1, 20)`, range `[floor(0.8p), ceil(1.2p)]`.
-6. Confidence: none without a driver; low when roles that feed at least one
-   person disagree by more than 2.5x, more than 40% of the measured mass is
-   not understood, every driver came from piece estimates (except natural
-   pieces: whole chicken, chicken pieces, shanks, fish, eggs, cans, tofu), or
-   one driver feeds under 1.5; high with 2+ roles within 1.6x and 80% mapped;
-   otherwise medium. A low-confidence result under 2.5 people, or any result
-   above the clamp that is not high, becomes no value (`tooUncertain`): the
-   app asks instead of showing "serves 1". So does any result under 1.5
-   people.
-7. Source check: implied per-person amount of the main driver
+3. Cooked or boiled grain and legumes ("أرز مطهو", "حمص مسلوق", "cooked
+   rice", not "غير مطبوخ") are counted against cooked norms (`riceCooked`
+   250 g, `pastaCooked` 300 g, `grainCooked` 250 g; cooked or canned
+   legumes as `legumeCanned`). Rice wine, sake and mirin never drive; a
+   line only "for dusting" never drives (the main flour "with more for
+   dusting" still does). Fish named as such wins over "لحم" in the name
+   ("سمك أبيض اللحم"); mixed or frozen vegetables, peas and green fava are
+   vegetables, not dry legumes. A piece named small weighs 0.7 of the norm.
+4. Kind context: drinks count only liquid. A soup is one bowl: liquid
+   (350 ml), vegetables or canned beans (150 g), dry legumes (60 g), dry
+   starch (60 g) or meat (120 g) each give a bowl count, and the largest
+   alone is the number. Mains ignore liquid and tomatoes/cucumbers;
+   desserts count flour as dessert base and milk; dips count starch as dip
+   base; salads count vegetables as salad. Cream cheese, kunafa or phyllo
+   pastry, biscuits, dates, chocolate (`dessertRich`, 80 g) and oats count
+   only in desserts; semolina counts as flour in a bread and nowhere else
+   outside desserts. Eggs drive only in mains and salads, and only when
+   there are 4 or more or nothing else can drive.
+5. Same-category lines are summed, then roles (protein, starch, veg, liquid,
+   batch). A role drives from 0.5 people up. Several roles share the plate
+   (sum x 0.70 for two, x 0.55 for three), but the number is the best of
+   the largest one, two or three roles, so a small extra role never lowers
+   it: adding food never lowers the count (tested over the catalog). The
+   drivers shown are the roles that set it.
+6. A line that would drive but has no usable amount ("أفخاذ دجاج" with no
+   weight) is unmeasured. When its role ranks above every measured driver
+   (the chicken is unweighed, only the potatoes are), there is no value
+   (`unmeasuredDriver`): the app asks. Another unmeasured driving role makes
+   the result low; an unmeasured line in a measured role keeps it from high.
+   Lines "for serving" or "to taste" do not count.
+7. `servingsComputed = clamp(round(p), 1, 20)`, range `[floor(0.8p), ceil(1.2p)]`.
+   Confidence: none without a driver; low when roles that feed at least
+   one person disagree by more than 2.5x, more than 40% of the measured
+   mass is not understood, every driver came from piece estimates (except
+   natural pieces), one driver feeds under 1.5, or a driving role has no
+   amount; high only with 2+ roles that each feed at least one person,
+   within 1.6x, 80% mapped and nothing unmeasured in them; otherwise
+   medium. No value (`tooUncertain`) under 1.5 people, a low result under
+   2.5, a result above the clamp that is not high, and, without a source to
+   check it, more than 8 (low), 12 (medium) or 16 (high) people; desserts
+   are cut into pieces, so 14, 16 and 20.
+8. Source check: implied per-person amount of the main driver
    (`per x p / stated`) inside its band keeps the source, and so does a
    stated value within a factor of `sourceKeepRatio` (2) of the computed
    one. Outside both, the
@@ -106,58 +127,55 @@ After changing a table: `node tool/recipes/servings-engine.mjs --emit-dart && no
 <!-- servings-report:start (generated by tool/recipes/servings-report.mjs) -->
 Corpus: **931** recipes (789 catalog, 142 candidates). The source states servings for 457; 474 have none.
 
-The engine computes a value for **595** recipes, 260 of them without a source value. **717** recipes end up with a yield the app can scale; 214 have none, each with an explicit reason below. Median source / computed ratio: 1.11.
+The engine computes a value for **577** recipes, 237 of them without a source value. **694** recipes end up with a yield the app can scale; 237 have none, each with an explicit reason below. Median source / computed ratio: 1.1.
 
 | final source of the number | recipes |
 |---|---|
-| computed, no source value | 260 |
-| computed, source value rejected | 8 |
-| nothing | 214 |
-| plausible source value | 284 |
-| source kept (engine low confidence) | 11 |
-| source kept (engine medium confidence) | 32 |
-| source only (engine found no driver) | 122 |
+| computed, no source value | 237 |
+| computed, source value rejected | 4 |
+| nothing | 237 |
+| plausible source value | 296 |
+| source kept (engine low confidence) | 5 |
+| source kept (engine medium confidence) | 35 |
+| source only (engine found no driver) | 117 |
 
 | confidence | recipes |
 |---|---|
-| high | 89 |
-| low | 96 |
-| medium | 410 |
-| none | 336 |
+| high | 65 |
+| low | 72 |
+| medium | 440 |
+| none | 354 |
 
 | computed people | recipes |
 |---|---|
-| 2 | 66 |
-| 3 | 147 |
-| 4 | 113 |
-| 5 | 90 |
-| 6 | 53 |
-| 7 | 45 |
-| 8 | 21 |
-| 9-20 | 60 |
+| 2 | 58 |
+| 3 | 138 |
+| 4 | 119 |
+| 5 | 77 |
+| 6 | 58 |
+| 7 | 55 |
+| 8 | 20 |
+| 9-20 | 52 |
 
 | reason a source value was rejected | recipes |
 |---|---|
-| sourceInflated | 8 |
+| sourceInflated | 4 |
 
 | reason there is no computed value | recipes |
 |---|---|
-| driverTooSmall | 46 |
+| driverTooSmall | 40 |
 | noDriverIngredient | 40 |
-| noMeasuredDriver | 160 |
+| noMeasuredDriver | 144 |
 | notApplicable | 15 |
-| tooUncertain | 75 |
+| tooUncertain | 87 |
+| unmeasuredDriver | 28 |
 
 | largest mismatches | source | computed | reason | drivers |
 |---|---|---|---|---|
-| eg-mesaqaa-bel-lahma | 12 | 4 | sourceInflated | mince:beef=454g, vegMain:eggplant=750g |
-| eg-mesaqaa-bel-lahma | 12 | 4 | sourceInflated | mince:beef=454g, vegMain:eggplant=750g |
+| eg-mesaqaa-bel-lahma | 12 | 4 | sourceInflated | mince:beef=454g, vegMain:eggplant=525g |
+| eg-mesaqaa-bel-lahma | 12 | 4 | sourceInflated | mince:beef=454g, vegMain:eggplant=525g |
 | bc650-fish-curry | 5 | 2 | sourceInflated | fish:bc650-fish-curry-ing-12=400g, vegMain:bc650-fish-curry-ing-8=250g |
-| bc-tajine | 12 | 5 | sourceInflated | chickenBoneless:bc-tajine-ing-1=454g, eggsMain:bc-tajine-ing-6=8count, potatoMain:bc-tajine-ing-3=200g |
-| fiw650-51916 | 6 | 3 | sourceInflated | mince:fiw650-51916-i0=454g, vegMain:fiw650-51916-i9=150g |
-| lg-galayet-bandora-lahma | 4 | 2 | sourceInflated | meatBoneless:beef=300g, potatoMain:potato=200g |
 | fi650-56111 | 6 | 3 | sourceInflated | couscous:fi650-56111-i13=270g, potatoMain:fi650-56111-i7=200g, vegMain:fi650-56111-i10=300g |
-| lg-galayet-bandora-lahma | 4 | 2 | sourceInflated | meatBoneless:beef=300g, potatoMain:potato=200g |
 <!-- servings-report:end -->
 
 Duplicate ids in the corpus (for example `eg-ghorayeba`, `lv-shish-barak`,

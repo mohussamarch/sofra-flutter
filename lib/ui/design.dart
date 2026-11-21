@@ -601,6 +601,8 @@ class Counter extends StatelessWidget {
     decoration: BoxDecoration(
       color: Sofra.sand,
       borderRadius: BorderRadius.circular(Sofra.r16),
+      // Keeps the counter's edge on a sheet as dark as the sand.
+      border: Border.all(color: Sofra.line),
     ),
     // «− 4 +» in both languages: a counter points nowhere, so it does not
     // mirror with the layout.
@@ -643,7 +645,9 @@ class Counter extends StatelessWidget {
     onPressed: next == null ? null : () => onChanged(next),
     tooltip: tip,
     style: IconButton.styleFrom(
-      backgroundColor: next == null ? Colors.transparent : Sofra.card,
+      // Raised above the sand: in the dark look a sheet is card-coloured, so
+      // card-coloured steps vanished into it.
+      backgroundColor: next == null ? Colors.transparent : Sofra.raised,
       minimumSize: const Size(44, 44),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Sofra.r12),

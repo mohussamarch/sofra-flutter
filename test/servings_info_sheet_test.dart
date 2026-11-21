@@ -70,4 +70,50 @@ void main() {
       expect(find.text('تكفي 6 أفراد'), findsOneWidget);
     },
   );
+
+  testWidgets(
+    'several drivers: own amounts, estimates marked, a shared plate',
+    (tester) async {
+      tester.view.physicalSize = const Size(390, 844);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      await tester.pumpWidget(
+        TabkhaApp(
+          recipes: await warmRecipes(tester),
+          readAsset: await warmAssets(tester),
+          showScene: false,
+        ),
+      );
+      await tester.pumpAndSettle();
+      await completeOnboarding(tester);
+      await tapKey(tester, 'nav-recipes');
+      await tester.enterText(
+        find.byKey(const ValueKey('recipe-search')),
+        'ملفوف محشي هنغاري',
+      );
+      await tester.pumpAndSettle();
+      // Hungarian stuffed cabbage: 1 lb mince and one large head of cabbage.
+      await tapKey(tester, 'recipe-fiw650-52303');
+      // The counter's hint ties the household number to the recipe's.
+      final hint = tester.widget<Text>(
+        find.byKey(const ValueKey('servings-scaled')),
+      );
+      expect(hint.data, contains('6'));
+      // "Not stated by the source" is not shown next to the yield.
+      expect(find.text('غير محدد بالمصدر'), findsNothing);
+
+      await tapKey(tester, 'servings-info');
+      final basis = tester
+          .widget<Text>(find.byKey(const ValueKey('servings-basis')))
+          .data!;
+      expect(basis, contains('454'));
+      expect(basis, isNot(contains('455')));
+      // The head of cabbage keeps the recipe's own "1"; its weight is marked
+      // as an estimate.
+      expect(basis, contains('نحو'));
+      expect(basis, contains('يأخذ كل فرد جزءًا'));
+      expect(tester.takeException(), isNull);
+    },
+  );
 }

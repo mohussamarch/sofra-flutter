@@ -127,6 +127,21 @@
       "list": {"type": "String"}
     }
   },
+  "servingsInfoShared": "Each person gets some of each.",
+  "servingsInfoEstimated": "{item} (about {weight})",
+  "@servingsInfoEstimated": {
+    "placeholders": {
+      "item": {"type": "String"},
+      "weight": {"type": "String"}
+    }
+  },
+  "detailServingsScaled": "Amounts scaled from {count} to {people}",
+  "@detailServingsScaled": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "people": {"type": "int"}
+    }
+  },
   "servingsInfoApply": "Apply",
   "servingsInfoLow": "This is a rough estimate. Adjust it if it seems off.",
   "servingsInfoAdjust": "Adjust the number",
