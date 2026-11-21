@@ -1,5 +1,5 @@
 """Turns a Codex bounce lightmap (Radiance .hdr, linear) into an 8-bit sRGB
-PNG the app can load as a three.js lightMap through model-viewer.
+PNG the kitchen viewer (assets/scene3d/kitchen.js) loads as its lightmap.
 
 The PNG holds value / scale; the app multiplies the scale back in through
 lightMapIntensity. Prints the scale to stdout as JSON.

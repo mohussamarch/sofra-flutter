@@ -8,7 +8,10 @@ have vertices to land on. The .blend is opened in a background Blender and
 never saved; the result is a separate GLB.
 
     blender --background design-assets/blender/current/kitchen-morning.blend \
-        --python tool/scene3d/bake_light.py -- assets/spike3d/kitchen.glb
+        --python tool/scene3d/bake_light.py -- <out>.glb
+
+History: this made the first real-time kitchen (25-26 October 2026), which
+the app no longer ships; the R24 masters have changed since.
 """
 
 import math

@@ -2,41 +2,24 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math' as math;
 
-import 'package:flutter/foundation.dart' show kIsWeb, mapEquals;
+import 'package:flutter/foundation.dart' show mapEquals;
 import 'package:flutter/material.dart';
-import 'package:model_viewer_plus/model_viewer_plus.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 import '../l10n/l10n.dart';
-import 'asset_server.dart';
-import 'js_runner.dart';
-
-/// Which kitchen the viewer loads. `r24` (the default) is Codex's R25
-/// mobile export of the R24 kitchen (`kitchen-mobile.glb`: 7.2MB Draco,
-/// ~148k triangles, 768px colour / 512px normal pages on UV0, the Cycles
-/// bounce light as a lightmap on UV1, hinged doors and the fridge, freezer
-/// and microwave clips). Not yet tested on a phone or visually approved.
-/// `spike` is the older vertex-baked model.
-/// Build with `--dart-define=SOFRA_KITCHEN=spike` to go back.
-const kitchenModel = String.fromEnvironment(
-  'SOFRA_KITCHEN',
-  defaultValue: 'r24',
-);
-bool get _r24 => kitchenModel == 'r24';
-
-/// Bounce lightmap scale per lighting mode, printed by
-/// `tool/scene3d/bounce_to_png.py` when it wrote the PNGs.
-const _bounceScale = {'morning': 1.5039, 'golden': .9639, 'night': .2241};
+import '../ui/design.dart';
+import 'viewer_host.dart';
 
 /// A point in the kitchen in Blender's coordinates (metres, z up), the same
 /// space the zones are measured in.
 typedef KitchenPoint = ({double x, double y, double z});
 
-/// The Blender kitchen as a real-time model (`assets/spike3d/kitchen.glb`,
-/// made by `tool/scene3d/bake_light.py`): the Cycles light of the render is
-/// baked into vertex colours, each material keeps its own colour, so cabinet
-/// colours still change live and the fridge opens in place, with no render per
-/// option. The baked light already holds the shading, hence no extra shadow.
+/// The Blender kitchen as a real-time room: the app's own three.js viewer
+/// (`assets/scene3d/`) showing Codex's R25 mobile model with its options
+/// (`assets/spike3d/r24/kitchen.glb`). The light is the hybrid the owner
+/// chose: Cycles bounce light baked into lightmaps, plus a live sun, window
+/// light, ceiling lamp, LEDs and fridge lamps casting real shadows. Cabinet
+/// colour and every option change live, with no render per choice.
+/// How the page works and what it is told: `docs/dev/KITCHEN-3D.md`.
 class Kitchen3D extends StatefulWidget {
   const Kitchen3D({
     super.key,
@@ -45,326 +28,300 @@ class Kitchen3D extends StatefulWidget {
     this.onTap,
     this.vignette = false,
     this.background = const Color(0xFF15100C),
-    this.zoom = false,
+    this.foreground,
     this.look = const {},
   });
   final Kitchen3DController controller;
 
-  /// DOM id; two viewers on screen at once need different ids.
+  /// Names this viewer's messages; two viewers alive at once need two ids.
   final String id;
 
-  /// A tap (not a drag) on the model, where it hit.
+  /// A tap on the room, where it hit.
   final ValueChanged<KitchenPoint>? onTap;
 
-  /// Fades the room's edges into the page.
+  /// Fades the room's edges into the page (overview only).
   final bool vignette;
   final Color background;
 
-  /// Kept for callers; the camera is fixed, so it has no effect.
-  final bool zoom;
+  /// Ink for the loading and error states, readable on what is behind the
+  /// room. Without it, chosen from [background].
+  final Color? foreground;
 
-  /// The kitchen's chosen parts, [Profile.kitchenLook] (R24 only).
+  /// The kitchen's chosen parts, [Profile.kitchenLook].
   final Map<String, String> look;
 
   @override
   State<Kitchen3D> createState() => _Kitchen3DState();
 }
 
-/// Drives the viewer: camera shots, door animations and the kitchen's look.
-/// The camera moves in three scenes only: the isometric overview, the zoom
-/// to the table and the turn to the fridge or microwave.
+/// Drives the viewer: camera shots with their doors, and the time of day.
+/// The camera moves in fixed shots only: the isometric overview, the table,
+/// and the turn to the fridge, freezer or microwave, whose door then opens.
 class Kitchen3DController {
-  WebViewController? _web;
-  String _id = 'kitchen3d';
+  _Kitchen3DState? _view;
+  String _shot = 'home';
+  Map<String, double>? _weights;
 
-  Future<void> _run(String body) => runViewerJs(
-    "(function(){const mv=document.querySelector('#$_id');"
-    "if(!mv||!mv.loaded)return;$body})();",
-    _web,
-  );
+  Future<void> _go(String shot) async {
+    _shot = shot;
+    _view?._push();
+  }
 
-  // R24 carries the garden and sky outside the window, so 'auto' would frame
-  // those too: the room's own centre and distance instead.
-  static final _homeTarget = _r24 ? '1.76m 1.26m -1.65m' : 'auto auto auto';
-  static final _homeOrbit = _r24 ? '45deg 58deg 34m' : '45deg 58deg auto';
-
-  static final _home =
-      "${_r24 ? 'mv.__shut&&mv.__shut();' : ''}"
-      "mv.cameraTarget='$_homeTarget';"
-      "mv.cameraOrbit='$_homeOrbit';mv.fieldOfView='11.5deg';"
-      "if(mv.__mask)mv.style.maskImage=mv.style.webkitMaskImage=mv.__mask;";
-
-  /// The isometric overview.
-  Future<void> overview() => _run(_home);
+  /// The isometric overview; any open door swings shut.
+  Future<void> overview() => _go('home');
 
   /// Turns to face the fridge (or freezer) and opens its door.
-  Future<void> open({bool freezer = false}) => _run(
-    "mv.cameraTarget='3.15m ${freezer ? '1.7m' : '0.95m'} -2.9m';"
-    "mv.cameraOrbit='0deg ${freezer ? '78deg' : '84deg'} 4.4m';"
-    "mv.fieldOfView='40deg';"
-    "${_r24 ? "mv.__fridge&&mv.__fridge($freezer);" : "mv.timeScale=1;"
-              "mv.animationName='${freezer ? 'freezer_open' : 'fridge_open'}';"
-              "mv.currentTime=0;mv.play({repetitions:1});"}",
-  );
+  Future<void> open({bool freezer = false}) =>
+      _go(freezer ? 'freezer' : 'fridge');
 
-  /// Swings the open door shut while the camera goes back to the overview.
-  Future<void> close() => _run(
-    _r24
-        ? "mv.__shut&&mv.__shut();$_home"
-        : "if(mv.animationName){mv.timeScale=-1;mv.currentTime=mv.duration;"
-              "mv.play({repetitions:1});}"
-              // Reverse play is not reliable everywhere: make sure the door
-              // ends shut.
-              "setTimeout(()=>{mv.pause();mv.timeScale=1;mv.currentTime=0;},1200);"
-              "$_home",
-  );
+  /// Shuts the open door while the camera goes back to the overview.
+  Future<void> close() => _go('home');
 
-  /// R24 only: swaps the probe and bounce lightmap to the time of day.
-  /// Kept on the element even before the model loads, so the first light
-  /// is the right one.
-  Future<void> lighting(String mode) => _r24
-      ? runViewerJs(
-          "(function(){const mv=document.querySelector('#$_id');if(!mv)return;"
-          "mv.__mode='$mode';if(mv.loaded&&mv.__light)mv.__light('$mode');})();",
-          _web,
-        )
-      : Future.value();
+  /// From the near corner of the dining table, looking across it into the
+  /// kitchen (Codex C2C-014: 45° across the room, field of view 50°).
+  Future<void> table() => _go('table');
 
-  /// At the near corner of the dining table, eyes about 1.55 m up, looking
-  /// across it into the kitchen: table and vase low in front, window left,
-  /// stove right. Codex's R24c framing (position 3.65, 1.55, 1.05 looking at
-  /// 1.6, 1.05, -2.15, fov 58), put as an orbit. The move from the isometric
-  /// overview is the zoom.
-  Future<void> table() => _run(
-    "mv.cameraTarget='1.6m 1.05m -2.15m';"
-    "mv.cameraOrbit='32.6deg 82.5deg 3.83m';mv.fieldOfView='58deg';"
-    // Seated, the room fills the screen: no edge fade.
-    "mv.style.maskImage=mv.style.webkitMaskImage='none';",
-  );
+  /// Turns to the microwave on the counter and opens its door.
+  Future<void> microwave() => _go('microwave');
 
-  /// Turns to the microwave on the back counter; on R24 its door opens too
-  /// (`microwave_open`). The overview shuts it again.
-  Future<void> microwave() => _run(
-    // R24 moved it onto the counter by the window (`microwave_root`).
-    "${_r24 ? "mv.cameraTarget='0.48m 1.07m -3.1m';mv.cameraOrbit='10deg 82deg 1.7m';" : "mv.cameraTarget='1m 1.08m -3.3m';mv.cameraOrbit='15deg 80deg 2.1m';"}"
-    "mv.fieldOfView='45deg';"
-    "${_r24 ? "mv.timeScale=1;mv.animationName='microwave_open';"
-              "mv.currentTime=0;mv.play({repetitions:1});" : ''}",
-  );
-
-  /// R24 only: shows the kitchen's chosen parts (Codex's options) and the
-  /// classic cabinet colour. Kept on the element like the lighting, so the
-  /// model opens already dressed.
-  Future<void> look(Map<String, String> look) {
-    final json = _lookJson(look);
-    return runViewerJs(
-      "(function(){const mv=document.querySelector('#$_id');if(!mv)return;"
-      "mv.__lookWant=$json;if(mv.__look)mv.__look($json);})();",
-      _web,
-    );
+  /// The time of day as weights of `morning`, `golden` and `night`; the room
+  /// eases between them. Without any, the viewer follows the clock.
+  Future<void> light(Map<String, double> weights) async {
+    _weights = Map.of(weights);
+    _view?._push();
   }
-}
 
-/// The viewer's look state: [Profile.kitchenLook] with the cabinet colour
-/// (hex) as a linear glTF factor.
-String _lookJson(Map<String, String> look) {
-  final hex = look['cabinet'];
-  final c = hex == null ? null : Color(int.parse('FF$hex', radix: 16));
-  return jsonEncode({
-    ...look,
-    'cabinet': c == null ? null : [_linear(c.r), _linear(c.g), _linear(c.b), 1],
-  });
+  /// One lighting mode at full weight.
+  Future<void> lighting(String mode) => light({mode: 1});
 }
-
-/// glTF colour factors are linear; swatches are sRGB.
-double _linear(double c) =>
-    c <= .04045 ? c / 12.92 : math.pow((c + .055) / 1.055, 2.4).toDouble();
 
 class _Kitchen3DState extends State<Kitchen3D> {
-  Timer? _setup;
-
-  /// Where the viewer fetches lighting files; null until known.
-  String? _assetBase;
-
-  String get _channel => 'SofraKitchen_${widget.id}';
+  late ViewerHost _host;
+  var _generation = 0;
+  var _ready = false;
+  var _failed = false;
+  var _slow = false;
+  var _hud = false;
+  var _calm = false;
+  Timer? _slowTimer;
+  Timer? _giveUp;
 
   @override
   void initState() {
     super.initState();
-    widget.controller._id = widget.id;
-    registerViewerChannel(_channel, _message);
-    // The element appears a little after the widget; hook it up once found.
-    if (_r24) viewerAssetBase().then((b) => _assetBase = b);
-    var tries = 0;
-    _setup = Timer.periodic(const Duration(milliseconds: 400), (t) {
-      if (++tries > 60) t.cancel();
-      // R24 needs the lighting files' address before hooking up.
-      if (_r24 && _assetBase == null) return;
-      runViewerJs(_hookJs, widget.controller._web);
+    widget.controller._view = this;
+    _open();
+  }
+
+  void _open() {
+    _ready = _failed = _slow = false;
+    final generation = ++_generation;
+    _host = openViewer(
+      id: '${widget.id}-$generation',
+      // A page that was replaced may still be talking.
+      onMessage: (text) {
+        if (generation == _generation) _message(text);
+      },
+    );
+    // The page fades in by itself; a spinner only if it is taking a while.
+    _slowTimer?.cancel();
+    _slowTimer = Timer(const Duration(milliseconds: 900), () {
+      if (mounted && !_ready) setState(() => _slow = true);
     });
+    _giveUp?.cancel();
+    _giveUp = Timer(const Duration(seconds: 30), () {
+      if (mounted && !_ready) setState(() => _failed = true);
+    });
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Reduced motion can change while the room is up.
+    final calm = MediaQuery.disableAnimationsOf(context);
+    if (calm != _calm) {
+      _calm = calm;
+      _push();
+    }
   }
 
   @override
   void didUpdateWidget(Kitchen3D old) {
     super.didUpdateWidget(old);
-    if (_r24 && !mapEquals(old.look, widget.look)) {
-      widget.controller.look(widget.look);
+    if (old.controller != widget.controller) {
+      if (old.controller._view == this) old.controller._view = null;
+      widget.controller._view = this;
+      _push();
+    } else if (!mapEquals(old.look, widget.look) ||
+        old.vignette != widget.vignette) {
+      _push();
     }
   }
 
   @override
   void dispose() {
-    _setup?.cancel();
+    if (widget.controller._view == this) widget.controller._view = null;
+    _slowTimer?.cancel();
+    _giveUp?.cancel();
+    _host.dispose();
     super.dispose();
   }
 
+  /// The whole state every time: the page keeps what has not changed, and a
+  /// page that was not up yet misses nothing.
+  void _push() {
+    if (!mounted) return;
+    final c = widget.controller;
+    _host.send(
+      jsonEncode({
+        'shot': c._shot,
+        'weights': c._weights,
+        'look': _lookJson(widget.look),
+        'vignette': widget.vignette,
+        'calm': _calm,
+        'hud': _hud,
+      }),
+    );
+  }
+
   void _message(String text) {
-    final p = (jsonDecode(text) as List).cast<num>();
-    widget.onTap?.call((
-      x: p[0].toDouble(),
-      y: p[1].toDouble(),
-      z: p[2].toDouble(),
-    ));
+    if (!mounted) return;
+    final Object? decoded;
+    try {
+      decoded = jsonDecode(text);
+    } on FormatException {
+      return;
+    }
+    if (decoded is! Map) return;
+    switch (decoded['t']) {
+      case 'hello':
+        _push();
+      case 'ready':
+        _slowTimer?.cancel();
+        _giveUp?.cancel();
+        _push();
+        setState(() {
+          _ready = true;
+          _failed = false;
+        });
+      case 'tap':
+        final p = decoded['p'];
+        if (p is! List || p.length < 3 || p.any((v) => v is! num)) return;
+        widget.onTap?.call((
+          x: (p[0] as num).toDouble(),
+          y: (p[1] as num).toDouble(),
+          z: (p[2] as num).toDouble(),
+        ));
+      case 'error':
+        // The page could not start (or could not load at all).
+        if (!_ready) setState(() => _failed = true);
+    }
   }
 
-  /// Idempotent: forwards taps (glTF y-up to Blender z-up) and applies the
-  /// edge fade. Drags (scrolling past the view) are not taps.
-  String get _hookJs {
-    final fade = widget.vignette
-        ? "mv.__mask=mv.style.webkitMaskImage=mv.style.maskImage="
-              "'radial-gradient(ellipse 52% 40% at 50% 50%,#000 58%,transparent 100%)';"
-        : '';
-    return "(function(){const mv=document.querySelector('#${widget.id}');"
-        "if(!mv)return;${_r24 ? 'if(!mv.__lookWant)mv.__lookWant=${_lookJson(widget.look)};' : ''}"
-        "if(mv.__sofra)return;mv.__sofra=1;$fade${_r24 ? _r24Js : ''}"
-        "let down=null;"
-        "mv.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY];});"
-        "mv.addEventListener('click',e=>{"
-        "if(down&&Math.hypot(e.clientX-down[0],e.clientY-down[1])>8)return;"
-        "const h=mv.positionAndNormalFromPoint(e.clientX,e.clientY);"
-        "const c=window['$_channel'];if(!h||!c)return;"
-        "const p=h.position;c.postMessage(JSON.stringify([p.x,-p.z,p.y]));});"
-        "})();";
-  }
+  void _retry() => setState(() {
+    _host.dispose();
+    _open();
+  });
 
-  /// R24 setup, run once per viewer after load: hides the review-only
-  /// shadow catchers and the outdoor trees, puts the bounce lightmap on UV1
-  /// of the baked (non-metal, non-glass) materials like Codex's viewer, and
-  /// adds the door helpers. model-viewer keeps three.js private, so this
-  /// reaches its scene through the element's `scene` symbol (experiment).
-  String get _r24Js {
-    final base = '$_assetBase/assets/spike3d/r24';
-    final scales = _bounceScale.entries
-        .map((e) => "${e.key}:${e.value}")
-        .join(',');
-    return "mv.setAttribute('tone-mapping','agx');"
-        "const go=()=>{const k=Object.getOwnPropertySymbols(mv)"
-        ".find(x=>x.description==='scene');const sc=k&&mv[k];if(!sc)return;"
-        "const baked=[],gone=[],lamps=[];let Tex=null;"
-        "sc.traverse(o=>{if(!o.isMesh)return;const u=o.userData||{};"
-        "if(u.reviewShadowOnly||u.r22_large_sky_backdrop||o.name.startsWith('r22_exterior_')||"
-        "o.name.startsWith('exterior_')){gone.push(o);return;}"
-        "for(const m of [].concat(o.material)){if(m.map&&!Tex)Tex=m.map.constructor;"
-        "if((m.name==='r18_fridge_lamp_diffuser'||m.name==='r19_double_diffuser')&&!lamps.includes(m)){m.emissiveIntensity=0;lamps.push(m);}"
-        // The options library has no lightmap UVs: it keeps the probe only.
-        "if(!u.reviewDynamic&&o.geometry.attributes.uv1&&m.isMeshStandardMaterial&&"
-        "m.metalness<.65&&!(m.transmission>.05))baked.push(m);}});"
-        "const S={$scales},maps={};"
-        "mv.__light=mode=>{mv.environmentImage='$base/probe-'+mode+'.hdr';"
-        "if(!Tex)return;const use=t=>{for(const m of baked){m.lightMap=t;"
-        "m.lightMapIntensity=S[mode]*Math.PI;m.needsUpdate=true;}"
-        "sc.queueRender&&sc.queueRender();};"
-        "if(maps[mode])return use(maps[mode]);const img=new Image();"
-        "img.crossOrigin='anonymous';img.onload=()=>{const t=new Tex(img);t.flipY=false;t.channel=1;"
-        "t.colorSpace='srgb';t.needsUpdate=true;maps[mode]=t;use(t);};"
-        "img.src='$base/bounce-'+mode+'.png';};"
-        "const swing=(name,to)=>{const o=sc.getObjectByName(name);if(!o)return;"
-        "const from=o.rotation.y,t0=performance.now();const step=t=>{"
-        "const f=Math.min(1,(t-t0)/900),e=1-Math.pow(1-f,3);"
-        "o.rotation.y=from+(to-from)*e;"
-        // The fridge lamp follows the door angle (off shut, full by ~20°).
-        "const a=Math.abs(o.rotation.y),l=Math.min(1,Math.max(0,(a-.035)/.315));"
-        "for(const m of lamps)m.emissiveIntensity=1.5*l*l*(3-2*l);"
-        "sc.queueRender&&sc.queueRender();"
-        "if(f<1)requestAnimationFrame(step);};requestAnimationFrame(step);};"
-        "const dbl=()=>(mv.__lookNow||{}).fridge==='double';"
-        // The double fridge opens both doors, outward (left -, right +).
-        "mv.__fridge=fz=>{if(dbl()){swing('r19_double_left_hinge',-1.75);"
-        "swing('r19_double_right_hinge',1.75);}"
-        "else swing(fz?'r18_freezer_hinge':'r18_fridge_hinge',-1.75);};"
-        "mv.__shut=()=>{for(const n of ['r18_fridge_hinge','r18_freezer_hinge',"
-        "'r19_double_left_hinge','r19_double_right_hinge'])swing(n,0);"
-        "if(mv.animationName==='microwave_open'&&mv.currentTime>0){"
-        "mv.timeScale=-1;mv.play({repetitions:1});setTimeout(()=>{mv.pause();"
-        "mv.timeScale=1;mv.currentTime=0;},1300);}};"
-        // Codex's option rules (r23-options.mjs record()): a tagged part
-        // shows when its group is chosen and its cabinet style matches.
-        "mv.__look=s=>{s=Object.assign({style:'classic',fridge:'default',"
-        "range:'default',rug:'none',curtain:'gingham'},s||{});mv.__lookNow=s;"
-        "const on={builtin:s.range==='builtin',default_range:s.range!=='builtin',"
-        "default_counter:s.range!=='builtin',default_fridge:s.fridge!=='double',"
-        "double_fridge:s.fridge==='double',rug_persian:s.rug==='rug_persian',"
-        "rug_teal:s.rug==='rug_teal',rug_ochre:s.rug==='rug_ochre',"
-        "white_blind:s.curtain==='white_blind',default_curtain:s.curtain==='gingham',"
-        "hanging_plants:s.plants==='1',japandi_cane:s.cane==='1'};"
-        // Meshes only, as Codex does: the merged scene root carries a style tag.
-        "sc.traverse(o=>{if(!o.isMesh)return;const u=o.userData||{},st=u.cabinet_style,g=u.option_group;"
-        "const tagged=Object.hasOwn(on,g||'');if(!st&&!tagged)return;"
-        "o.visible=(!tagged||on[g])&&(!st||st===s.style);});"
-        "for(const m of mv.model.materials)if(m.name==='r15_classic_painted_timber'){"
-        "const p=m.pbrMetallicRoughness;m.__base=m.__base||p.baseColorFactor.slice();"
-        "p.setBaseColorFactor(s.cabinet||m.__base);}"
-        "sc.queueRender&&sc.queueRender();};"
-        // Dressed before framing (updateFraming briefly takes the model out
-        // of the scene, so a traverse then misses it). The garden and sky are
-        // removed, not hidden: they would still size the framing and push
-        // the near plane past the table.
-        "mv.__look(mv.__lookWant);gone.forEach(o=>o.parent.remove(o));mv.updateFraming();"
-        // No mode from the app yet: the hour, on the app's lighting schedule.
-        "const h=new Date().getHours()+new Date().getMinutes()/60;"
-        "mv.__light(mv.__mode||(h>=18.5||h<5?'night':h<6.5||h>=16.5?'golden':'morning'));};"
-        "if(mv.loaded)go();else mv.addEventListener('load',go,{once:true});";
+  /// Long press: the page's own numbers (draw calls, frame time, start-up,
+  /// graphics chip), for reading on a real phone.
+  void _toggleHud() {
+    _hud = !_hud;
+    _push();
   }
 
   @override
-  Widget build(BuildContext context) => ModelViewer(
-    id: widget.id,
-    // The web serves Flutter assets one folder deeper.
-    src: _r24
-        ? (kIsWeb
-              ? 'assets/assets/spike3d/r24/kitchen.glb'
-              : 'assets/spike3d/r24/kitchen.glb')
-        : kIsWeb
-        ? 'assets/assets/spike3d/kitchen.glb'
-        : 'assets/spike3d/kitchen.glb',
-    alt: context.l10n.kitchen3dAlt,
-    backgroundColor: widget.background,
-    cameraTarget: Kitchen3DController._homeTarget,
-    cameraOrbit: Kitchen3DController._homeOrbit,
-    fieldOfView: '11.5deg',
-    minFieldOfView: '10deg',
-    maxFieldOfView: '70deg',
-    minCameraOrbit: 'auto auto 0.3m',
-    maxCameraOrbit: 'auto 100deg auto',
-    // Fixed shots only: the room is not something to spin around like a
-    // game. The app moves the camera (overview, fridge, table); taps still
-    // reach the zones.
-    cameraControls: false,
-    disablePan: true,
-    disableZoom: true,
-    interactionPrompt: InteractionPrompt.none,
-    // R24 swaps in its probe HDR once loaded (`lighting`); the phone's
-    // WebView can only reach those files through the asset server.
-    environmentImage: 'neutral',
-    exposure: _r24 ? .8 : 2.1,
-    shadowIntensity: 0,
-    debugLogging: false,
-    javascriptChannels: {
-      JavascriptChannel(
-        _channel,
-        onMessageReceived: (m) => _message(m.message),
+  Widget build(BuildContext context) {
+    final t = context.l10n;
+    final back = widget.background;
+    final ink =
+        widget.foreground ??
+        (back.a > .5 && back.computeLuminance() < .25
+            ? Sofra.onInverse
+            : Sofra.ink);
+    return ColoredBox(
+      color: back,
+      child: LayoutBuilder(
+        builder: (context, box) => Stack(
+          fit: StackFit.expand,
+          children: [
+            Semantics(
+              label: t.kitchen3dAlt,
+              image: true,
+              child: IgnorePointer(
+                child: KeyedSubtree(
+                  key: ValueKey(_generation),
+                  child: _host.view,
+                ),
+              ),
+            ),
+            // Touches are the app's: a tap asks the page what it hit.
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onLongPress: _toggleHud,
+              onTapUp: widget.onTap == null
+                  ? null
+                  : (d) => _host.send(
+                      jsonEncode({
+                        'pick': [
+                          d.localPosition.dx / box.maxWidth,
+                          d.localPosition.dy / box.maxHeight,
+                        ],
+                      }),
+                    ),
+            ),
+            if (_failed)
+              Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      t.kitchen3dError,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: ink, height: 1.6),
+                    ),
+                    const SizedBox(height: 8),
+                    TextButton.icon(
+                      onPressed: _retry,
+                      style: TextButton.styleFrom(foregroundColor: ink),
+                      icon: const Icon(Icons.refresh_rounded),
+                      label: Text(t.recipeRetry),
+                    ),
+                  ],
+                ),
+              )
+            else if (_slow && !_ready)
+              Center(
+                child: SizedBox.square(
+                  dimension: 28,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2.5,
+                    color: ink,
+                    semanticsLabel: t.kitchen3dAlt,
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
-    },
-    onWebViewCreated: (c) => widget.controller._web = c,
-  );
+    );
+  }
 }
+
+/// The viewer's look: [Profile.kitchenLook] with the cabinet colour (hex) as
+/// a linear colour, the space the model's materials are in.
+Map<String, Object?> _lookJson(Map<String, String> look) {
+  final hex = look['cabinet'];
+  final value = hex == null || hex.length != 6
+      ? null
+      : int.tryParse('FF$hex', radix: 16);
+  final c = value == null ? null : Color(value);
+  return {
+    ...look,
+    'cabinet': c == null ? null : [_linear(c.r), _linear(c.g), _linear(c.b)],
+  };
+}
+
+/// Swatches are sRGB; material colours are linear.
+double _linear(double c) =>
+    c <= .04045 ? c / 12.92 : math.pow((c + .055) / 1.055, 2.4).toDouble();

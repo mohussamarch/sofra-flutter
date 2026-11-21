@@ -2627,6 +2627,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get kitchen3dAlt => '3D kitchen';
 
   @override
+  String get kitchen3dError => 'Couldn\'t show the kitchen.';
+
+  @override
   String get librarySection => 'Recipes on your device';
 
   @override

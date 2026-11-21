@@ -2517,6 +2517,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get kitchen3dAlt => 'المطبخ ثلاثي الأبعاد';
 
   @override
+  String get kitchen3dError => 'تعذّر عرض المطبخ.';
+
+  @override
   String get librarySection => 'الوصفات على جهازك';
 
   @override

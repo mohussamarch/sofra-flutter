@@ -119,7 +119,8 @@ class _TodayScreenState extends State<TodayScreen> {
   void _tick() {
     if (!mounted) return;
     setState(() => weights = schedule.weightsAtTime(DateTime.now()));
-    viewer.lighting(_lighting);
+    // The room's light eases with the hour, like the page behind it.
+    viewer.light(weights);
   }
 
   @override
@@ -185,27 +186,49 @@ class _TodayScreenState extends State<TodayScreen> {
   /// The camera turns to the fridge (or freezer), the door swings open, the
   /// shelves come up; closing them shuts the door and returns to the room.
   Future<void> _openFridge(StorageZone zone) async {
-    await viewer.open(freezer: zone == StorageZone.freezer);
-    await Future<void>.delayed(const Duration(milliseconds: 1100));
-    if (!mounted) return;
-    await _openZone(zone, overDoor: true);
-    viewer.close();
+    if (_busy) return;
+    _busy = true;
+    try {
+      await viewer.open(freezer: zone == StorageZone.freezer);
+      // The camera turns to the door, then the door swings: wait for both
+      // (with motion reduced the view just changes).
+      await Future<void>.delayed(_turn(1400));
+      if (!mounted) return;
+      await _openZone(zone, overDoor: true);
+      viewer.close();
+    } finally {
+      _busy = false;
+    }
   }
+
+  /// A camera move is under way with a sheet to follow: further taps on
+  /// the room wait, so two sheets never stack over the wrong view.
+  var _busy = false;
+
+  Duration _turn(int ms) => MediaQuery.disableAnimationsOf(context)
+      ? const Duration(milliseconds: 250)
+      : Duration(milliseconds: ms);
 
   /// The microwave holds what can be warmed up again.
   Future<void> _openLeftovers() async {
-    viewer.microwave();
-    await Future<void>.delayed(const Duration(milliseconds: 900));
-    if (!mounted) return;
-    await showShelves(
-      context,
-      title: context.l10n.planLeftovers,
-      items: leftoverShelfItems,
-      // A lighter veil: the open microwave stays visible behind.
-      barrier: const Color(0x990D0A08),
-      empty: context.l10n.planLeftoversEmpty,
-    );
-    if (mounted && widget.mode == HomeMode.kitchen) viewer.overview();
+    if (_busy) return;
+    _busy = true;
+    try {
+      viewer.microwave();
+      await Future<void>.delayed(_turn(1300));
+      if (!mounted) return;
+      await showShelves(
+        context,
+        title: context.l10n.planLeftovers,
+        items: leftoverShelfItems,
+        // A lighter veil: the open microwave stays visible behind.
+        barrier: const Color(0x990D0A08),
+        empty: context.l10n.planLeftoversEmpty,
+      );
+      if (mounted && widget.mode == HomeMode.kitchen) viewer.overview();
+    } finally {
+      _busy = false;
+    }
   }
 
   /// The oven shows what's coming up; the full plan lives on the table.
@@ -278,8 +301,8 @@ class _TodayScreenState extends State<TodayScreen> {
                             .profile
                             .kitchenLook,
                         vignette: true,
-                        zoom: false,
                         background: Colors.transparent,
+                        foreground: ink,
                         onTap: (p) {
                           final zone = _zoneAt(p);
                           if (zone != null) _onHotspot(zone);

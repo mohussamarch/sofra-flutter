@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/scope.dart';
 import '../l10n/l10n.dart';
+import '../scene/scene_lighting.dart';
 import '../scene3d/kitchen_3d.dart';
 import '../ui/design.dart';
 import 'common.dart';
@@ -81,6 +82,13 @@ class KitchenStyleScreen extends StatefulWidget {
 class _KitchenStyleScreenState extends State<KitchenStyleScreen> {
   final viewer = Kitchen3DController();
   var shot = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // The same hour as the home kitchen, on the same schedule.
+    viewer.light(LightingSchedule.provisional().weightsAtTime(DateTime.now()));
+  }
 
   void _shot(int i) {
     setState(() => shot = i);

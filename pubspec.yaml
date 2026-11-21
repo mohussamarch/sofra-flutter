@@ -43,7 +43,6 @@ dependencies:
   cloud_firestore: ^6.10.0
   shared_preferences: ^2.5.6
   http: ^1.6.0
-  model_viewer_plus: ^1.10.0
   webview_flutter: ^4.14.1
   url_launcher: ^6.3.0
   share_plus: ^13.3.1
@@ -87,7 +86,9 @@ flutter:
     - assets/scenes/kitchen/spike-r14/
     - assets/scenes/kitchen/fridge-interior-r24/
     - assets/spike3d/r24/
-    - assets/spike3d/
+    - assets/scene3d/
+    - assets/scene3d/vendor/
+    - assets/scene3d/vendor/draco/
     - assets/recipe-photos/
     - assets/community/
     - assets/places/

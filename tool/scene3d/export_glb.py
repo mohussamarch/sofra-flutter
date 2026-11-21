@@ -4,7 +4,9 @@ only) to a Draco-compressed GLB with door animations, for real-time display.
 The .blend is opened read-only in a background Blender and never saved.
 
     blender --background design-assets/blender/current/kitchen-morning.blend \
-        --python tool/scene3d/export_glb.py -- assets/spike3d/kitchen.glb
+        --python tool/scene3d/export_glb.py -- <out>.glb
+
+History: this made the first 3D spike, which the app no longer ships.
 
 Animations (glTF names): fridge_open, freezer_open (0 to 104 degrees on the
 r18 hinges, the same hinges and angle as the rendered motion).

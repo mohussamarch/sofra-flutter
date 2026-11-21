@@ -4429,6 +4429,12 @@ abstract class AppLocalizations {
   /// **'المطبخ ثلاثي الأبعاد'**
   String get kitchen3dAlt;
 
+  /// No description provided for @kitchen3dError.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر عرض المطبخ.'**
+  String get kitchen3dError;
+
   /// No description provided for @librarySection.
   ///
   /// In ar, this message translates to:
