@@ -24,7 +24,8 @@ import 'sofra_controller_test.dart' show threeLines;
 class _Nav implements SofraNav {
   final notes = <String>[];
   @override
-  void notify(String text) => notes.add(text);
+  void notify(String text, {String? actionLabel, VoidCallback? onAction}) =>
+      notes.add(text);
   @override
   dynamic noSuchMethod(Invocation i) => null;
 }
